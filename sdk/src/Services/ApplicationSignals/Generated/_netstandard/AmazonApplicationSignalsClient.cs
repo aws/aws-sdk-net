@@ -559,6 +559,49 @@ namespace Amazon.ApplicationSignals
         }
         #endregion
         
+        #region  DeleteGroupingConfiguration
+
+        internal virtual DeleteGroupingConfigurationResponse DeleteGroupingConfiguration(DeleteGroupingConfigurationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteGroupingConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteGroupingConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteGroupingConfigurationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes the grouping configuration for this account. This removes all custom grouping
+        /// attribute definitions that were previously configured.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteGroupingConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteGroupingConfiguration service method, as returned by ApplicationSignals.</returns>
+        /// <exception cref="Amazon.ApplicationSignals.Model.AccessDeniedException">
+        /// You don't have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationSignals.Model.ThrottlingException">
+        /// The request was throttled because of quota limits.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationSignals.Model.ValidationException">
+        /// The resource is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/DeleteGroupingConfiguration">REST API Reference for DeleteGroupingConfiguration Operation</seealso>
+        public virtual Task<DeleteGroupingConfigurationResponse> DeleteGroupingConfigurationAsync(DeleteGroupingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteGroupingConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteGroupingConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteGroupingConfigurationResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  DeleteServiceLevelObjective
 
         internal virtual DeleteServiceLevelObjectiveResponse DeleteServiceLevelObjective(DeleteServiceLevelObjectiveRequest request)
@@ -679,6 +722,94 @@ namespace Amazon.ApplicationSignals
             options.ResponseUnmarshaller = GetServiceLevelObjectiveResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetServiceLevelObjectiveResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  ListAuditFindings
+
+        internal virtual ListAuditFindingsResponse ListAuditFindings(ListAuditFindingsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListAuditFindingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAuditFindingsResponseUnmarshaller.Instance;
+
+            return Invoke<ListAuditFindingsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns a list of audit findings that provide automated analysis of service behavior
+        /// and root cause analysis. These findings help identify the most significant observations
+        /// about your services, including performance issues, anomalies, and potential problems.
+        /// The findings are generated using heuristic algorithms based on established troubleshooting
+        /// patterns.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAuditFindings service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAuditFindings service method, as returned by ApplicationSignals.</returns>
+        /// <exception cref="Amazon.ApplicationSignals.Model.ThrottlingException">
+        /// The request was throttled because of quota limits.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationSignals.Model.ValidationException">
+        /// The resource is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/ListAuditFindings">REST API Reference for ListAuditFindings Operation</seealso>
+        public virtual Task<ListAuditFindingsResponse> ListAuditFindingsAsync(ListAuditFindingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListAuditFindingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAuditFindingsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListAuditFindingsResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  ListGroupingAttributeDefinitions
+
+        internal virtual ListGroupingAttributeDefinitionsResponse ListGroupingAttributeDefinitions(ListGroupingAttributeDefinitionsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListGroupingAttributeDefinitionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListGroupingAttributeDefinitionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListGroupingAttributeDefinitionsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns the current grouping configuration for this account, including all custom
+        /// grouping attribute definitions that have been configured. These definitions determine
+        /// how services are logically grouped based on telemetry attributes, Amazon Web Services
+        /// tags, or predefined mappings.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListGroupingAttributeDefinitions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListGroupingAttributeDefinitions service method, as returned by ApplicationSignals.</returns>
+        /// <exception cref="Amazon.ApplicationSignals.Model.AccessDeniedException">
+        /// You don't have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationSignals.Model.ThrottlingException">
+        /// The request was throttled because of quota limits.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationSignals.Model.ValidationException">
+        /// The resource is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/ListGroupingAttributeDefinitions">REST API Reference for ListGroupingAttributeDefinitions Operation</seealso>
+        public virtual Task<ListGroupingAttributeDefinitionsResponse> ListGroupingAttributeDefinitionsAsync(ListGroupingAttributeDefinitionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListGroupingAttributeDefinitionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListGroupingAttributeDefinitionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListGroupingAttributeDefinitionsResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -928,6 +1059,47 @@ namespace Amazon.ApplicationSignals
         }
         #endregion
         
+        #region  ListServiceStates
+
+        internal virtual ListServiceStatesResponse ListServiceStates(ListServiceStatesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListServiceStatesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListServiceStatesResponseUnmarshaller.Instance;
+
+            return Invoke<ListServiceStatesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns information about the last deployment and other change states of services.
+        /// This API provides visibility into recent changes that may have affected service performance,
+        /// helping with troubleshooting and change correlation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListServiceStates service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListServiceStates service method, as returned by ApplicationSignals.</returns>
+        /// <exception cref="Amazon.ApplicationSignals.Model.ThrottlingException">
+        /// The request was throttled because of quota limits.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationSignals.Model.ValidationException">
+        /// The resource is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/ListServiceStates">REST API Reference for ListServiceStates Operation</seealso>
+        public virtual Task<ListServiceStatesResponse> ListServiceStatesAsync(ListServiceStatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListServiceStatesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListServiceStatesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListServiceStatesResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  ListTagsForResource
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
@@ -965,6 +1137,52 @@ namespace Amazon.ApplicationSignals
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  PutGroupingConfiguration
+
+        internal virtual PutGroupingConfigurationResponse PutGroupingConfiguration(PutGroupingConfigurationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = PutGroupingConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutGroupingConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<PutGroupingConfigurationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates or updates the grouping configuration for this account. This operation allows
+        /// you to define custom grouping attributes that determine how services are logically
+        /// grouped based on telemetry attributes, Amazon Web Services tags, or predefined mappings.
+        /// These grouping attributes can then be used to organize and filter services in the
+        /// Application Signals console and APIs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutGroupingConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutGroupingConfiguration service method, as returned by ApplicationSignals.</returns>
+        /// <exception cref="Amazon.ApplicationSignals.Model.AccessDeniedException">
+        /// You don't have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationSignals.Model.ThrottlingException">
+        /// The request was throttled because of quota limits.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationSignals.Model.ValidationException">
+        /// The resource is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/PutGroupingConfiguration">REST API Reference for PutGroupingConfiguration Operation</seealso>
+        public virtual Task<PutGroupingConfigurationResponse> PutGroupingConfigurationAsync(PutGroupingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = PutGroupingConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutGroupingConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutGroupingConfigurationResponse>(request, options, cancellationToken);
         }
         #endregion
         

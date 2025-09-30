@@ -18,6 +18,11 @@
     <pattern>[0-9A-Za-z][-._0-9A-Za-z ]{0,126}[0-9A-Za-z]$|^arn:aws:application-signals:[^:]*:[^:]*:slo/[0-9A-Za-z][-._0-9A-Za-z ]{0,126}[0-9A-Za-z]</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ApplicationSignals.Model.ListAuditFindingsRequest.MaxResults</property>
+    <min>1</min>
+    <max>10</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ApplicationSignals.Model.ListServiceDependenciesRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
@@ -65,6 +70,14 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ApplicationSignals.Model.ListServiceStatesRequest.AwsAccountId</property>
+    <pattern>[0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApplicationSignals.Model.ListServiceStatesRequest.MaxResults</property>
+    <max>250</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ApplicationSignals.Model.ListTagsForResourceRequest.ResourceArn</property>
     <min>1</min>
     <max>1024</max>
@@ -89,6 +102,15 @@
     <pattern>[0-9A-Za-z][-._0-9A-Za-z ]{0,126}[0-9A-Za-z]$|^arn:aws:application-signals:[^:]*:[^:]*:slo/[0-9A-Za-z][-._0-9A-Za-z ]{0,126}[0-9A-Za-z]</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ApplicationSignals.Model.AttributeFilter.AttributeFilterName</property>
+    <pattern>[A-Za-z0-9 :/-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApplicationSignals.Model.AuditorResult.Description</property>
+    <min>0</min>
+    <max>10240</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ApplicationSignals.Model.BatchUpdateExclusionWindowsError.SloId</property>
     <pattern>[0-9A-Za-z][-._0-9A-Za-z ]{0,126}[0-9A-Za-z]$|^arn:aws:application-signals:[^:]*:[^:]*:slo/[0-9A-Za-z][-._0-9A-Za-z ]{0,126}[0-9A-Za-z]</pattern>
   </property-value-rule>
@@ -100,6 +122,10 @@
   <property-value-rule>
     <property>Amazon.ApplicationSignals.Model.CalendarInterval.Duration</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApplicationSignals.Model.ChangeEvent.AccountId</property>
+    <pattern>[0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationSignals.Model.DependencyConfig.DependencyOperationName</property>
@@ -120,6 +146,18 @@
     <property>Amazon.ApplicationSignals.Model.ExclusionWindow.Reason</property>
     <min>1</min>
     <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApplicationSignals.Model.GroupingAttributeDefinition.DefaultGroupingValue</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9\s+\-=\._:/@]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApplicationSignals.Model.GroupingAttributeDefinition.GroupingName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9\s+\-=\._:/@]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationSignals.Model.Metric.MetricName</property>
@@ -214,7 +252,32 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ApplicationSignals.Model.ServiceGroup.GroupIdentifier</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApplicationSignals.Model.ServiceGroup.GroupName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApplicationSignals.Model.ServiceGroup.GroupSource</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApplicationSignals.Model.ServiceGroup.GroupValue</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ApplicationSignals.Model.ServiceLevelIndicatorMetric.OperationName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApplicationSignals.Model.ServiceLevelIndicatorMetricConfig.MetricName</property>
     <min>1</min>
     <max>255</max>
   </property-value-rule>

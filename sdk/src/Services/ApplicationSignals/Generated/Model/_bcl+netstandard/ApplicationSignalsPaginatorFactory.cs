@@ -83,5 +83,13 @@ namespace Amazon.ApplicationSignals.Model
         {
             return new ListServicesPaginator(this.client, request);
         }
+
+        /// <summary>
+        /// Paginator for ListServiceStates operation
+        ///</summary>
+        public IListServiceStatesPaginator ListServiceStates(ListServiceStatesRequest request) 
+        {
+            return new ListServiceStatesPaginator(this.client, request);
+        }
     }
 }

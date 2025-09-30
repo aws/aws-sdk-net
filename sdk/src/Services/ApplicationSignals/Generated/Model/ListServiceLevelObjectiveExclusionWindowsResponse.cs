@@ -65,7 +65,8 @@ namespace Amazon.ApplicationSignals.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// Include this value, if it was returned by the previous operation, to get the next
-        /// set of service level objectives. <pre><c> &lt;/p&gt; </c></pre>
+        /// set of service level objectives. 
+        /// </para>
         /// </summary>
         public string NextToken
         {

@@ -91,7 +91,8 @@ namespace Amazon.ApplicationSignals.Model
         /// Gets and sets the property IncludeLinkedAccounts. 
         /// <para>
         /// If you are using this operation in a monitoring account, specify <c>true</c> to include
-        /// services from source accounts in the returned data. <pre><c> &lt;/p&gt; </c></pre>
+        /// services from source accounts in the returned data. 
+        /// </para>
         /// </summary>
         public bool? IncludeLinkedAccounts
         {
