@@ -31,8 +31,39 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteAccountCustomization operation.
+    /// <important> 
+    /// <para>
+    /// This API permanently deletes all QuickSight customizations for the specified Amazon
+    /// Web Services account and namespace in this Amazon Web Services Region. When you delete
+    /// account customizations:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// All customizations are removed including themes, branding, and visual settings
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The deletion affects only the specified Amazon Web Services Region - customizations
+    /// in other regions remain unchanged
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// This action cannot be undone through the API
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Users will see default QuickSight styling after customizations are deleted
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    ///  <b>Before proceeding:</b> Ensure you have backups of any custom themes or branding
+    /// elements you may want to recreate.
+    /// </para>
+    ///  </important> 
+    /// <para>
     /// Deletes all Amazon QuickSight customizations in this Amazon Web Services Region for
     /// the specified Amazon Web Services account and QuickSight namespace.
+    /// </para>
     /// </summary>
     public partial class DeleteAccountCustomizationRequest : AmazonQuickSightRequest
     {
