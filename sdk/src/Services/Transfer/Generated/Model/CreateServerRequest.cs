@@ -577,9 +577,16 @@ namespace Amazon.Transfer.Model
         /// Gets and sets the property S3StorageOptions. 
         /// <para>
         /// Specifies whether or not performance for your Amazon S3 directories is optimized.
-        /// This is disabled by default.
         /// </para>
-        ///  
+        ///  <ul> <li> 
+        /// <para>
+        /// If using the console, this is enabled by default.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If using the API or CLI, this is disabled by default.
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// By default, home directory mappings have a <c>TYPE</c> of <c>DIRECTORY</c>. If you
         /// enable this option, you would then need to explicitly set the <c>HomeDirectoryMapEntry</c>

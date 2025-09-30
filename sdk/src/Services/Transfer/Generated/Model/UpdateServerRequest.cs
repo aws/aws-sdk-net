@@ -46,6 +46,7 @@ namespace Amazon.Transfer.Model
         private EndpointType _endpointType;
         private string _hostKey;
         private IdentityProviderDetails _identityProviderDetails;
+        private IdentityProviderType _identityProviderType;
         private IpAddressType _ipAddressType;
         private string _loggingRole;
         private string _postAuthenticationLoginBanner;
@@ -276,6 +277,44 @@ namespace Amazon.Transfer.Model
         internal bool IsSetIdentityProviderDetails()
         {
             return this._identityProviderDetails != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IdentityProviderType. 
+        /// <para>
+        /// The mode of authentication for a server. The default value is <c>SERVICE_MANAGED</c>,
+        /// which allows you to store and access user credentials within the Transfer Family service.
+        /// </para>
+        ///  
+        /// <para>
+        /// Use <c>AWS_DIRECTORY_SERVICE</c> to provide access to Active Directory groups in Directory
+        /// Service for Microsoft Active Directory or Microsoft Active Directory in your on-premises
+        /// environment or in Amazon Web Services using AD Connector. This option also requires
+        /// you to provide a Directory ID by using the <c>IdentityProviderDetails</c> parameter.
+        /// </para>
+        ///  
+        /// <para>
+        /// Use the <c>API_GATEWAY</c> value to integrate with an identity provider of your choosing.
+        /// The <c>API_GATEWAY</c> setting requires you to provide an Amazon API Gateway endpoint
+        /// URL to call for authentication by using the <c>IdentityProviderDetails</c> parameter.
+        /// </para>
+        ///  
+        /// <para>
+        /// Use the <c>AWS_LAMBDA</c> value to directly use an Lambda function as your identity
+        /// provider. If you choose this value, you must specify the ARN for the Lambda function
+        /// in the <c>Function</c> parameter for the <c>IdentityProviderDetails</c> data type.
+        /// </para>
+        /// </summary>
+        public IdentityProviderType IdentityProviderType
+        {
+            get { return this._identityProviderType; }
+            set { this._identityProviderType = value; }
+        }
+
+        // Check to see if IdentityProviderType property is set
+        internal bool IsSetIdentityProviderType()
+        {
+            return this._identityProviderType != null;
         }
 
         /// <summary>
@@ -512,9 +551,16 @@ namespace Amazon.Transfer.Model
         /// Gets and sets the property S3StorageOptions. 
         /// <para>
         /// Specifies whether or not performance for your Amazon S3 directories is optimized.
-        /// This is disabled by default.
         /// </para>
-        ///  
+        ///  <ul> <li> 
+        /// <para>
+        /// If using the console, this is enabled by default.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If using the API or CLI, this is disabled by default.
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// By default, home directory mappings have a <c>TYPE</c> of <c>DIRECTORY</c>. If you
         /// enable this option, you would then need to explicitly set the <c>HomeDirectoryMapEntry</c>
