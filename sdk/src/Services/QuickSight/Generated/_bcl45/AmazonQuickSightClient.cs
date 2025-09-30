@@ -3113,8 +3113,39 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// This API permanently deletes all QuickSight customizations for the specified Amazon
+        /// Web Services account and namespace in this Amazon Web Services Region. When you delete
+        /// account customizations:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// All customizations are removed including themes, branding, and visual settings
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The deletion affects only the specified Amazon Web Services Region - customizations
+        /// in other regions remain unchanged
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// This action cannot be undone through the API
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Users will see default QuickSight styling after customizations are deleted
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Before proceeding:</b> Ensure you have backups of any custom themes or branding
+        /// elements you may want to recreate.
+        /// </para>
+        ///  </important> 
+        /// <para>
         /// Deletes all Amazon QuickSight customizations in this Amazon Web Services Region for
         /// the specified Amazon Web Services account and QuickSight namespace.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAccountCustomization service method.</param>
         /// 
@@ -3161,8 +3192,39 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// This API permanently deletes all QuickSight customizations for the specified Amazon
+        /// Web Services account and namespace in this Amazon Web Services Region. When you delete
+        /// account customizations:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// All customizations are removed including themes, branding, and visual settings
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The deletion affects only the specified Amazon Web Services Region - customizations
+        /// in other regions remain unchanged
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// This action cannot be undone through the API
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Users will see default QuickSight styling after customizations are deleted
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Before proceeding:</b> Ensure you have backups of any custom themes or branding
+        /// elements you may want to recreate.
+        /// </para>
+        ///  </important> 
+        /// <para>
         /// Deletes all Amazon QuickSight customizations in this Amazon Web Services Region for
         /// the specified Amazon Web Services account and QuickSight namespace.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAccountCustomization service method.</param>
         /// <param name="cancellationToken">
@@ -3293,12 +3355,55 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// Deleting your QuickSight account subscription has permanent, irreversible consequences
+        /// across all Amazon Web Services regions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Global deletion – Running this operation from any single region will delete your QuickSight
+        /// account and all data in every Amazon Web Services region where you have QuickSight
+        /// resources.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Complete data loss – All dashboards, analyses, datasets, data sources, and custom
+        /// visuals will be permanently deleted across all regions.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Embedded content failure – All embedded dashboards and visuals in your applications
+        /// will immediately stop working and display errors to end users.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Shared resources removed – All shared dashboards, folders, and resources will become
+        /// inaccessible to other users and external recipients.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// User access terminated – All QuickSight users in your account will lose access immediately,
+        /// including authors, readers, and administrators.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>No recovery possible</b> – Once deleted, your QuickSight account and all associated
+        /// data cannot be restored.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Consider exporting critical dashboards and data before proceeding with account deletion.
+        /// </para>
+        ///  </important> 
+        /// <para>
         /// Use the <c>DeleteAccountSubscription</c> operation to delete an QuickSight account.
         /// This operation will result in an error message if you have configured your account
         /// termination protection settings to <c>True</c>. To change this setting and delete
         /// your account, call the <c>UpdateAccountSettings</c> API and set the value of the <c>TerminationProtectionEnabled</c>
         /// parameter to <c>False</c>, then make another call to the <c>DeleteAccountSubscription</c>
         /// API.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAccountSubscription service method.</param>
         /// 
@@ -3339,12 +3444,55 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// Deleting your QuickSight account subscription has permanent, irreversible consequences
+        /// across all Amazon Web Services regions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Global deletion – Running this operation from any single region will delete your QuickSight
+        /// account and all data in every Amazon Web Services region where you have QuickSight
+        /// resources.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Complete data loss – All dashboards, analyses, datasets, data sources, and custom
+        /// visuals will be permanently deleted across all regions.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Embedded content failure – All embedded dashboards and visuals in your applications
+        /// will immediately stop working and display errors to end users.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Shared resources removed – All shared dashboards, folders, and resources will become
+        /// inaccessible to other users and external recipients.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// User access terminated – All QuickSight users in your account will lose access immediately,
+        /// including authors, readers, and administrators.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>No recovery possible</b> – Once deleted, your QuickSight account and all associated
+        /// data cannot be restored.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Consider exporting critical dashboards and data before proceeding with account deletion.
+        /// </para>
+        ///  </important> 
+        /// <para>
         /// Use the <c>DeleteAccountSubscription</c> operation to delete an QuickSight account.
         /// This operation will result in an error message if you have configured your account
         /// termination protection settings to <c>True</c>. To change this setting and delete
         /// your account, call the <c>UpdateAccountSettings</c> API and set the value of the <c>TerminationProtectionEnabled</c>
         /// parameter to <c>False</c>, then make another call to the <c>DeleteAccountSubscription</c>
         /// API.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAccountSubscription service method.</param>
         /// <param name="cancellationToken">
@@ -3511,7 +3659,31 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// This API permanently deletes the specified QuickSight brand. When you delete a brand:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The brand and all its associated branding elements are permanently removed
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Any applications or dashboards using this brand will revert to default styling
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// This action cannot be undone through the API
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Before proceeding:</b> Verify that the brand is no longer needed and consider
+        /// the impact on any applications currently using this brand.
+        /// </para>
+        ///  </important> 
+        /// <para>
         /// Deletes an QuickSight brand.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteBrand service method.</param>
         /// 
@@ -3550,7 +3722,31 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// This API permanently deletes the specified QuickSight brand. When you delete a brand:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The brand and all its associated branding elements are permanently removed
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Any applications or dashboards using this brand will revert to default styling
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// This action cannot be undone through the API
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Before proceeding:</b> Verify that the brand is no longer needed and consider
+        /// the impact on any applications currently using this brand.
+        /// </para>
+        ///  </important> 
+        /// <para>
         /// Deletes an QuickSight brand.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteBrand service method.</param>
         /// <param name="cancellationToken">
@@ -19024,9 +19220,29 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// This API controls public sharing settings for your entire QuickSight account, affecting
+        /// data security and access. When you enable public sharing:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Dashboards can be shared publicly
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// This setting affects your entire Amazon Web Services account and all QuickSight users
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Before proceeding:</b> Ensure you understand the security implications and have
+        /// proper IAM permissions configured.
+        /// </para>
+        ///  </important> 
+        /// <para>
         /// Use the <c>UpdatePublicSharingSettings</c> operation to turn on or turn off the public
         /// sharing settings of an QuickSight dashboard.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// To use this operation, turn on session capacity pricing for your QuickSight account.
@@ -19084,9 +19300,29 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// This API controls public sharing settings for your entire QuickSight account, affecting
+        /// data security and access. When you enable public sharing:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Dashboards can be shared publicly
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// This setting affects your entire Amazon Web Services account and all QuickSight users
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Before proceeding:</b> Ensure you understand the security implications and have
+        /// proper IAM permissions configured.
+        /// </para>
+        ///  </important> 
+        /// <para>
         /// Use the <c>UpdatePublicSharingSettings</c> operation to turn on or turn off the public
         /// sharing settings of an QuickSight dashboard.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// To use this operation, turn on session capacity pricing for your QuickSight account.
