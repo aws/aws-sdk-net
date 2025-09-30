@@ -420,7 +420,7 @@ namespace <#=this.Config.Namespace#>
 #>
         <#=operation.IsInternal ? "internal" : "public"#> virtual <#=operation.Name#>Response <#=operation.Name#>(<#=operation.Name#>Request request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = <#=operation.Name#>RequestMarshaller.Instance;
             options.ResponseUnmarshaller = <#=operation.Name#>ResponseUnmarshaller.Instance;
 <#
@@ -447,7 +447,7 @@ namespace <#=this.Config.Namespace#>
 #>
         <#=operation.IsInternal ? "internal" : "public"#> virtual IAsyncResult Begin<#=operation.Name#>(<#=operation.Name#>Request request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = <#=operation.Name#>RequestMarshaller.Instance;
             options.ResponseUnmarshaller = <#=operation.Name#>ResponseUnmarshaller.Instance;
 <#
