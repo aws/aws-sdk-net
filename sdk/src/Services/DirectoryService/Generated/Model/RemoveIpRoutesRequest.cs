@@ -36,6 +36,7 @@ namespace Amazon.DirectoryService.Model
     public partial class RemoveIpRoutesRequest : AmazonDirectoryServiceRequest
     {
         private List<string> _cidrIps = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _cidrIpv6s = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _directoryId;
 
         /// <summary>
@@ -49,7 +50,6 @@ namespace Amazon.DirectoryService.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Required=true)]
         public List<string> CidrIps
         {
             get { return this._cidrIps; }
@@ -60,6 +60,29 @@ namespace Amazon.DirectoryService.Model
         internal bool IsSetCidrIps()
         {
             return this._cidrIps != null && (this._cidrIps.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CidrIpv6s. 
+        /// <para>
+        /// IPv6 address blocks that you want to remove.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<string> CidrIpv6s
+        {
+            get { return this._cidrIpv6s; }
+            set { this._cidrIpv6s = value; }
+        }
+
+        // Check to see if CidrIpv6s property is set
+        internal bool IsSetCidrIpv6s()
+        {
+            return this._cidrIpv6s != null && (this._cidrIpv6s.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

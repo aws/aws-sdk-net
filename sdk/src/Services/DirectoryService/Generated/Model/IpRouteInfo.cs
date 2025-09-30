@@ -36,6 +36,7 @@ namespace Amazon.DirectoryService.Model
     {
         private DateTime? _addedDateTime;
         private string _cidrIp;
+        private string _cidrIpv6;
         private string _description;
         private string _directoryId;
         private IpRouteStatusMsg _ipRouteStatusMsg;
@@ -75,6 +76,24 @@ namespace Amazon.DirectoryService.Model
         internal bool IsSetCidrIp()
         {
             return this._cidrIp != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CidrIpv6. 
+        /// <para>
+        /// IPv6 address block in the <a>IpRoute</a>.
+        /// </para>
+        /// </summary>
+        public string CidrIpv6
+        {
+            get { return this._cidrIpv6; }
+            set { this._cidrIpv6 = value; }
+        }
+
+        // Check to see if CidrIpv6 property is set
+        internal bool IsSetCidrIpv6()
+        {
+            return this._cidrIpv6 != null;
         }
 
         /// <summary>

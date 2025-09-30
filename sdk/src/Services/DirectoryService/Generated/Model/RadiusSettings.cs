@@ -39,6 +39,7 @@ namespace Amazon.DirectoryService.Model
         private int? _radiusPort;
         private int? _radiusRetries;
         private List<string> _radiusServers = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _radiusServersIpv6 = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _radiusTimeout;
         private string _sharedSecret;
         private bool? _useSameUsername;
@@ -123,9 +124,8 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property RadiusServers. 
         /// <para>
-        /// An array of strings that contains the fully qualified domain name (FQDN) or IP addresses
-        /// of the RADIUS server endpoints, or the FQDN or IP addresses of your RADIUS server
-        /// load balancer.
+        /// The fully qualified domain name (FQDN) or IP addresses of the RADIUS server endpoints,
+        /// or the FQDN or IP addresses of your RADIUS server load balancer.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -143,6 +143,29 @@ namespace Amazon.DirectoryService.Model
         internal bool IsSetRadiusServers()
         {
             return this._radiusServers != null && (this._radiusServers.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RadiusServersIpv6. 
+        /// <para>
+        /// The IPv6 addresses of the RADIUS server endpoints or RADIUS server load balancer.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<string> RadiusServersIpv6
+        {
+            get { return this._radiusServersIpv6; }
+            set { this._radiusServersIpv6 = value; }
+        }
+
+        // Check to see if RadiusServersIpv6 property is set
+        internal bool IsSetRadiusServersIpv6()
+        {
+            return this._radiusServersIpv6 != null && (this._radiusServersIpv6.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

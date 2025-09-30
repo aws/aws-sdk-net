@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// IpRoute Marshaller
+    /// DirectorySizeUpdateSettings Marshaller
     /// </summary>
-    public class IpRouteMarshaller : IRequestMarshaller<IpRoute, JsonMarshallerContext> 
+    public class DirectorySizeUpdateSettingsMarshaller : IRequestMarshaller<DirectorySizeUpdateSettings, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,26 +42,14 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(IpRoute requestObject, JsonMarshallerContext context)
+        public void Marshall(DirectorySizeUpdateSettings requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetCidrIp())
+            if(requestObject.IsSetDirectorySize())
             {
-                context.Writer.WritePropertyName("CidrIp");
-                context.Writer.WriteStringValue(requestObject.CidrIp);
-            }
-
-            if(requestObject.IsSetCidrIpv6())
-            {
-                context.Writer.WritePropertyName("CidrIpv6");
-                context.Writer.WriteStringValue(requestObject.CidrIpv6);
-            }
-
-            if(requestObject.IsSetDescription())
-            {
-                context.Writer.WritePropertyName("Description");
-                context.Writer.WriteStringValue(requestObject.Description);
+                context.Writer.WritePropertyName("DirectorySize");
+                context.Writer.WriteStringValue(requestObject.DirectorySize);
             }
 
         }
@@ -69,7 +57,7 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static IpRouteMarshaller Instance = new IpRouteMarshaller();
+        public readonly static DirectorySizeUpdateSettingsMarshaller Instance = new DirectorySizeUpdateSettingsMarshaller();
 
     }
 }

@@ -30,20 +30,21 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectoryService.Model
 {
     /// <summary>
-    /// IP address block. This is often the address block of the DNS server used for your
-    /// self-managed domain.
+    /// Contains the IP address block. This is often the address block of the DNS server used
+    /// for your self-managed domain.
     /// </summary>
     public partial class IpRoute
     {
         private string _cidrIp;
+        private string _cidrIpv6;
         private string _description;
 
         /// <summary>
         /// Gets and sets the property CidrIp. 
         /// <para>
-        /// IP address block using CIDR format, for example 10.0.0.0/24. This is often the address
-        /// block of the DNS server used for your self-managed domain. For a single IP address
-        /// use a CIDR address block with /32. For example 10.0.0.0/32.
+        /// IP address block in CIDR format, such as 10.0.0.0/24. This is often the address block
+        /// of the DNS server used for your self-managed domain. For a single IP address, use
+        /// a CIDR address block with /32. For example, 10.0.0.0/32.
         /// </para>
         /// </summary>
         public string CidrIp
@@ -56,6 +57,26 @@ namespace Amazon.DirectoryService.Model
         internal bool IsSetCidrIp()
         {
             return this._cidrIp != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CidrIpv6. 
+        /// <para>
+        /// IPv6 address block in CIDR format, such as 2001:db8::/32. This is often the address
+        /// block of the DNS server used for your self-managed domain. For a single IPv6 address,
+        /// use a CIDR address block with /128. For example, 2001:db8::1/128.
+        /// </para>
+        /// </summary>
+        public string CidrIpv6
+        {
+            get { return this._cidrIpv6; }
+            set { this._cidrIpv6 = value; }
+        }
+
+        // Check to see if CidrIpv6 property is set
+        internal bool IsSetCidrIpv6()
+        {
+            return this._cidrIpv6 != null;
         }
 
         /// <summary>
