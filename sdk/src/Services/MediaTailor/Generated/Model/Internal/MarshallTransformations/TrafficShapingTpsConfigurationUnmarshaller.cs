@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for RecurringRetrieval Object
+    /// Response Unmarshaller for TrafficShapingTpsConfiguration Object
     /// </summary>  
-    public class RecurringRetrievalUnmarshaller : IUnmarshaller<RecurringRetrieval, XmlUnmarshallerContext>, IUnmarshaller<RecurringRetrieval, JsonUnmarshallerContext>
+    public class TrafficShapingTpsConfigurationUnmarshaller : IUnmarshaller<TrafficShapingTpsConfiguration, XmlUnmarshallerContext>, IUnmarshaller<TrafficShapingTpsConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        RecurringRetrieval IUnmarshaller<RecurringRetrieval, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        TrafficShapingTpsConfiguration IUnmarshaller<TrafficShapingTpsConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public RecurringRetrieval Unmarshall(JsonUnmarshallerContext context)
+        public TrafficShapingTpsConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
-            RecurringRetrieval unmarshalledObject = new RecurringRetrieval();
+            TrafficShapingTpsConfiguration unmarshalledObject = new TrafficShapingTpsConfiguration();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,34 +66,16 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("DelayAfterAvailEndSeconds", targetDepth))
+                if (context.TestExpression("PeakConcurrentUsers", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.DelayAfterAvailEndSeconds = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PeakConcurrentUsers = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("DynamicVariables", targetDepth))
+                if (context.TestExpression("PeakTps", targetDepth))
                 {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    unmarshalledObject.DynamicVariables = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("TrafficShapingRetrievalWindow", targetDepth))
-                {
-                    var unmarshaller = TrafficShapingRetrievalWindowUnmarshaller.Instance;
-                    unmarshalledObject.TrafficShapingRetrievalWindow = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("TrafficShapingTpsConfiguration", targetDepth))
-                {
-                    var unmarshaller = TrafficShapingTpsConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.TrafficShapingTpsConfiguration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("TrafficShapingType", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TrafficShapingType = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.PeakTps = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -101,12 +83,12 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
         }
 
 
-        private static RecurringRetrievalUnmarshaller _instance = new RecurringRetrievalUnmarshaller();        
+        private static TrafficShapingTpsConfigurationUnmarshaller _instance = new TrafficShapingTpsConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static RecurringRetrievalUnmarshaller Instance
+        public static TrafficShapingTpsConfigurationUnmarshaller Instance
         {
             get
             {

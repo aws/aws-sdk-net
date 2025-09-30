@@ -40,6 +40,7 @@ namespace Amazon.MediaTailor.Model
         private DateTime? _endTime;
         private DateTime? _startTime;
         private TrafficShapingRetrievalWindow _trafficShapingRetrievalWindow;
+        private TrafficShapingTpsConfiguration _trafficShapingTpsConfiguration;
         private TrafficShapingType _trafficShapingType;
 
         /// <summary>
@@ -128,9 +129,28 @@ namespace Amazon.MediaTailor.Model
         }
 
         /// <summary>
+        /// Gets and sets the property TrafficShapingTpsConfiguration. 
+        /// <para>
+        /// The configuration for TPS-based traffic shaping that limits the number of requests
+        /// to the ad decision server (ADS) based on transactions per second instead of time windows.
+        /// </para>
+        /// </summary>
+        public TrafficShapingTpsConfiguration TrafficShapingTpsConfiguration
+        {
+            get { return this._trafficShapingTpsConfiguration; }
+            set { this._trafficShapingTpsConfiguration = value; }
+        }
+
+        // Check to see if TrafficShapingTpsConfiguration property is set
+        internal bool IsSetTrafficShapingTpsConfiguration()
+        {
+            return this._trafficShapingTpsConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property TrafficShapingType. 
         /// <para>
-        /// Indicates if this configuration uses a retrieval window for traffic shaping and limiting
+        /// Indicates the type of traffic shaping used for prefetch traffic shaping and limiting
         /// the number of requests to the ADS at one time.
         /// </para>
         /// </summary>

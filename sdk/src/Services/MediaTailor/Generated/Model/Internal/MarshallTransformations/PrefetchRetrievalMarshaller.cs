@@ -85,6 +85,17 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetTrafficShapingTpsConfiguration())
+            {
+                context.Writer.WritePropertyName("TrafficShapingTpsConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = TrafficShapingTpsConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.TrafficShapingTpsConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetTrafficShapingType())
             {
                 context.Writer.WritePropertyName("TrafficShapingType");
