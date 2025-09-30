@@ -44,6 +44,7 @@ namespace Amazon.FSx.Model
         private DiskIopsConfiguration _diskIopsConfiguration;
         private List<string> _maintenanceOperationsInProgress = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _preferredFileServerIp;
+        private string _preferredFileServerIpv6;
         private string _preferredSubnetId;
         private string _remoteAdministrationEndpoint;
         private SelfManagedActiveDirectoryAttributes _selfManagedActiveDirectoryConfiguration;
@@ -261,18 +262,18 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property PreferredFileServerIp. 
         /// <para>
-        /// For <c>MULTI_AZ_1</c> deployment types, the IP address of the primary, or preferred,
+        /// For <c>MULTI_AZ_1</c> deployment types, the IPv4 address of the primary, or preferred,
         /// file server.
         /// </para>
         ///  
         /// <para>
         /// Use this IP address when mounting the file system on Linux SMB clients or Windows
         /// SMB clients that are not joined to a Microsoft Active Directory. Applicable for all
-        /// Windows file system deployment types. This IP address is temporarily unavailable when
-        /// the file system is undergoing maintenance. For Linux and Windows SMB clients that
-        /// are joined to an Active Directory, use the file system's DNSName instead. For more
-        /// information on mapping and mounting file shares, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/accessing-file-shares.html">Accessing
-        /// File Shares</a>.
+        /// Windows file system deployment types. This IPv4 address is temporarily unavailable
+        /// when the file system is undergoing maintenance. For Linux and Windows SMB clients
+        /// that are joined to an Active Directory, use the file system's DNSName instead. For
+        /// more information on mapping and mounting file shares, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/using-file-shares.html">Accessing
+        /// data using file shares</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=45)]
@@ -286,6 +287,30 @@ namespace Amazon.FSx.Model
         internal bool IsSetPreferredFileServerIp()
         {
             return this._preferredFileServerIp != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PreferredFileServerIpv6. 
+        /// <para>
+        /// For MULTI_AZ_1 deployment types, the IPv6 address of the primary, or preferred, file
+        /// server. Use this IP address when mounting the file system on Linux SMB clients or
+        /// Windows SMB clients that are not joined to a Microsoft Active Directory. Applicable
+        /// for all Windows file system deployment types. This IPv6 address is temporarily unavailable
+        /// when the file system is undergoing maintenance. For Linux and Windows SMB clients
+        /// that are joined to an Active Directory, use the file system's DNSName instead.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=45)]
+        public string PreferredFileServerIpv6
+        {
+            get { return this._preferredFileServerIpv6; }
+            set { this._preferredFileServerIpv6 = value; }
+        }
+
+        // Check to see if PreferredFileServerIpv6 property is set
+        internal bool IsSetPreferredFileServerIpv6()
+        {
+            return this._preferredFileServerIpv6 != null;
         }
 
         /// <summary>

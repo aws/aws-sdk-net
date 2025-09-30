@@ -168,11 +168,11 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property EndpointIpv6AddressRange. 
         /// <para>
-        /// (Multi-AZ only) Specifies the IP address range in which the endpoints to access your
-        /// file system will be created. By default in the Amazon FSx API and Amazon FSx console,
-        /// Amazon FSx selects an available /118 IP address range for you from one of the VPC's
-        /// CIDR ranges. You can have overlapping endpoint IP addresses for file systems deployed
-        /// in the same VPC/route tables, as long as they don't overlap with any subnet.
+        /// (Multi-AZ only) Specifies the IPv6 address range in which the endpoints to access
+        /// your file system will be created. By default in the Amazon FSx API and Amazon FSx
+        /// console, Amazon FSx selects an available /118 IP address range for you from one of
+        /// the VPC's CIDR ranges. You can have overlapping endpoint IP addresses for file systems
+        /// deployed in the same VPC/route tables, as long as they don't overlap with any subnet.
         /// </para>
         /// </summary>
         [AWSProperty(Min=4, Max=43)]

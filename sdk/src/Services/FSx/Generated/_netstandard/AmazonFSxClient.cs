@@ -476,7 +476,7 @@ namespace Amazon.FSx
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.ServiceLimitExceededException">
         /// An error indicating that a particular service limit was exceeded. You can increase
-        /// some service limits by contacting Amazon Web ServicesSupport.
+        /// some service limits by contacting Amazon Web Services Support.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.SourceBackupUnavailableException">
         /// The request was rejected because the lifecycle status of the source backup isn't <c>AVAILABLE</c>.
@@ -532,7 +532,7 @@ namespace Amazon.FSx
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.ServiceLimitExceededException">
         /// An error indicating that a particular service limit was exceeded. You can increase
-        /// some service limits by contacting Amazon Web ServicesSupport.
+        /// some service limits by contacting Amazon Web Services Support.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CopySnapshotAndUpdateVolume">REST API Reference for CopySnapshotAndUpdateVolume Operation</seealso>
         public virtual Task<CopySnapshotAndUpdateVolumeResponse> CopySnapshotAndUpdateVolumeAsync(CopySnapshotAndUpdateVolumeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -768,7 +768,7 @@ namespace Amazon.FSx
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.ServiceLimitExceededException">
         /// An error indicating that a particular service limit was exceeded. You can increase
-        /// some service limits by contacting Amazon Web ServicesSupport.
+        /// some service limits by contacting Amazon Web Services Support.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.UnsupportedOperationException">
         /// The requested operation is not supported for this resource or API.
@@ -844,7 +844,7 @@ namespace Amazon.FSx
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.ServiceLimitExceededException">
         /// An error indicating that a particular service limit was exceeded. You can increase
-        /// some service limits by contacting Amazon Web ServicesSupport.
+        /// some service limits by contacting Amazon Web Services Support.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.UnsupportedOperationException">
         /// The requested operation is not supported for this resource or API.
@@ -926,7 +926,7 @@ namespace Amazon.FSx
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.ServiceLimitExceededException">
         /// An error indicating that a particular service limit was exceeded. You can increase
-        /// some service limits by contacting Amazon Web ServicesSupport.
+        /// some service limits by contacting Amazon Web Services Support.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.UnsupportedOperationException">
         /// The requested operation is not supported for this resource or API.
@@ -1014,7 +1014,7 @@ namespace Amazon.FSx
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.ServiceLimitExceededException">
         /// An error indicating that a particular service limit was exceeded. You can increase
-        /// some service limits by contacting Amazon Web ServicesSupport.
+        /// some service limits by contacting Amazon Web Services Support.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateFileCache">REST API Reference for CreateFileCache Operation</seealso>
         public virtual Task<CreateFileCacheResponse> CreateFileCacheAsync(CreateFileCacheRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1137,7 +1137,7 @@ namespace Amazon.FSx
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.ServiceLimitExceededException">
         /// An error indicating that a particular service limit was exceeded. You can increase
-        /// some service limits by contacting Amazon Web ServicesSupport.
+        /// some service limits by contacting Amazon Web Services Support.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateFileSystem">REST API Reference for CreateFileSystem Operation</seealso>
         public virtual Task<CreateFileSystemResponse> CreateFileSystemAsync(CreateFileSystemRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1244,7 +1244,7 @@ namespace Amazon.FSx
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.ServiceLimitExceededException">
         /// An error indicating that a particular service limit was exceeded. You can increase
-        /// some service limits by contacting Amazon Web ServicesSupport.
+        /// some service limits by contacting Amazon Web Services Support.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateFileSystemFromBackup">REST API Reference for CreateFileSystemFromBackup Operation</seealso>
         public virtual Task<CreateFileSystemFromBackupResponse> CreateFileSystemFromBackupAsync(CreateFileSystemFromBackupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1322,7 +1322,7 @@ namespace Amazon.FSx
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.ServiceLimitExceededException">
         /// An error indicating that a particular service limit was exceeded. You can increase
-        /// some service limits by contacting Amazon Web ServicesSupport.
+        /// some service limits by contacting Amazon Web Services Support.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.VolumeNotFoundException">
         /// No Amazon FSx volumes were found based upon the supplied parameters.
@@ -1379,7 +1379,7 @@ namespace Amazon.FSx
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.ServiceLimitExceededException">
         /// An error indicating that a particular service limit was exceeded. You can increase
-        /// some service limits by contacting Amazon Web ServicesSupport.
+        /// some service limits by contacting Amazon Web Services Support.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.UnsupportedOperationException">
         /// The requested operation is not supported for this resource or API.
@@ -1436,7 +1436,7 @@ namespace Amazon.FSx
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.ServiceLimitExceededException">
         /// An error indicating that a particular service limit was exceeded. You can increase
-        /// some service limits by contacting Amazon Web ServicesSupport.
+        /// some service limits by contacting Amazon Web Services Support.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.StorageVirtualMachineNotFoundException">
         /// No FSx for ONTAP SVMs were found based upon the supplied parameters.
@@ -1500,7 +1500,7 @@ namespace Amazon.FSx
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.ServiceLimitExceededException">
         /// An error indicating that a particular service limit was exceeded. You can increase
-        /// some service limits by contacting Amazon Web ServicesSupport.
+        /// some service limits by contacting Amazon Web Services Support.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.StorageVirtualMachineNotFoundException">
         /// No FSx for ONTAP SVMs were found based upon the supplied parameters.
@@ -1628,7 +1628,7 @@ namespace Amazon.FSx
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.ServiceLimitExceededException">
         /// An error indicating that a particular service limit was exceeded. You can increase
-        /// some service limits by contacting Amazon Web ServicesSupport.
+        /// some service limits by contacting Amazon Web Services Support.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DeleteDataRepositoryAssociation">REST API Reference for DeleteDataRepositoryAssociation Operation</seealso>
         public virtual Task<DeleteDataRepositoryAssociationResponse> DeleteDataRepositoryAssociationAsync(DeleteDataRepositoryAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1694,7 +1694,7 @@ namespace Amazon.FSx
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.ServiceLimitExceededException">
         /// An error indicating that a particular service limit was exceeded. You can increase
-        /// some service limits by contacting Amazon Web ServicesSupport.
+        /// some service limits by contacting Amazon Web Services Support.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DeleteFileCache">REST API Reference for DeleteFileCache Operation</seealso>
         public virtual Task<DeleteFileCacheResponse> DeleteFileCacheAsync(DeleteFileCacheRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1801,7 +1801,7 @@ namespace Amazon.FSx
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.ServiceLimitExceededException">
         /// An error indicating that a particular service limit was exceeded. You can increase
-        /// some service limits by contacting Amazon Web ServicesSupport.
+        /// some service limits by contacting Amazon Web Services Support.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DeleteFileSystem">REST API Reference for DeleteFileSystem Operation</seealso>
         public virtual Task<DeleteFileSystemResponse> DeleteFileSystemAsync(DeleteFileSystemRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1948,7 +1948,7 @@ namespace Amazon.FSx
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.ServiceLimitExceededException">
         /// An error indicating that a particular service limit was exceeded. You can increase
-        /// some service limits by contacting Amazon Web ServicesSupport.
+        /// some service limits by contacting Amazon Web Services Support.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.VolumeNotFoundException">
         /// No Amazon FSx volumes were found based upon the supplied parameters.
@@ -2871,7 +2871,7 @@ namespace Amazon.FSx
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.ServiceLimitExceededException">
         /// An error indicating that a particular service limit was exceeded. You can increase
-        /// some service limits by contacting Amazon Web ServicesSupport.
+        /// some service limits by contacting Amazon Web Services Support.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/ReleaseFileSystemNfsV3Locks">REST API Reference for ReleaseFileSystemNfsV3Locks Operation</seealso>
         public virtual Task<ReleaseFileSystemNfsV3LocksResponse> ReleaseFileSystemNfsV3LocksAsync(ReleaseFileSystemNfsV3LocksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3108,7 +3108,7 @@ namespace Amazon.FSx
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.ServiceLimitExceededException">
         /// An error indicating that a particular service limit was exceeded. You can increase
-        /// some service limits by contacting Amazon Web ServicesSupport.
+        /// some service limits by contacting Amazon Web Services Support.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/UpdateDataRepositoryAssociation">REST API Reference for UpdateDataRepositoryAssociation Operation</seealso>
         public virtual Task<UpdateDataRepositoryAssociationResponse> UpdateDataRepositoryAssociationAsync(UpdateDataRepositoryAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3163,7 +3163,7 @@ namespace Amazon.FSx
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.ServiceLimitExceededException">
         /// An error indicating that a particular service limit was exceeded. You can increase
-        /// some service limits by contacting Amazon Web ServicesSupport.
+        /// some service limits by contacting Amazon Web Services Support.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.UnsupportedOperationException">
         /// The requested operation is not supported for this resource or API.
@@ -3314,6 +3314,10 @@ namespace Amazon.FSx
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <c>EndpointIpv6AddressRange</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <c>FsxAdminPassword</c> 
         /// </para>
         ///  </li> <li> 
@@ -3422,7 +3426,7 @@ namespace Amazon.FSx
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.ServiceLimitExceededException">
         /// An error indicating that a particular service limit was exceeded. You can increase
-        /// some service limits by contacting Amazon Web ServicesSupport.
+        /// some service limits by contacting Amazon Web Services Support.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.UnsupportedOperationException">
         /// The requested operation is not supported for this resource or API.

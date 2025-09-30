@@ -77,14 +77,10 @@ namespace Amazon.FSx.Model
         /// at any time. You can associate additional DNS aliases after you create the file system
         /// using the AssociateFileSystemAliases operation. You can remove DNS aliases from the
         /// file system after it is created using the DisassociateFileSystemAliases operation.
-        /// You only need to specify the alias name in the request payload.
-        /// </para>
-        ///  
-        /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-dns-aliases.html">Working
-        /// with DNS Aliases</a> and <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/walkthrough05-file-system-custom-CNAME.html">Walkthrough
-        /// 5: Using DNS aliases to access your file system</a>, including additional steps you
-        /// must take to be able to access your file system using a DNS alias.
+        /// You only need to specify the alias name in the request payload. For more information,
+        /// see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-dns-aliases.html">Managing
+        /// DNS aliases</a> and <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/dns-aliases.html">Accessing
+        /// data using DNS aliases</a>.
         /// </para>
         ///  
         /// <para>

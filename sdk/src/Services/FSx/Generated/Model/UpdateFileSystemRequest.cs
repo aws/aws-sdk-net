@@ -152,6 +152,10 @@ namespace Amazon.FSx.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
+    ///  <c>EndpointIpv6AddressRange</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <c>FsxAdminPassword</c> 
     /// </para>
     ///  </li> <li> 
