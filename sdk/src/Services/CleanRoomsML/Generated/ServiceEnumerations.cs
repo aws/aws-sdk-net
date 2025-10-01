@@ -25,6 +25,64 @@ namespace Amazon.CleanRoomsML
 {
 
     /// <summary>
+    /// Constants used for properties of type AccessBudgetType.
+    /// </summary>
+    public class AccessBudgetType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CALENDAR_DAY for AccessBudgetType
+        /// </summary>
+        public static readonly AccessBudgetType CALENDAR_DAY = new AccessBudgetType("CALENDAR_DAY");
+        /// <summary>
+        /// Constant CALENDAR_MONTH for AccessBudgetType
+        /// </summary>
+        public static readonly AccessBudgetType CALENDAR_MONTH = new AccessBudgetType("CALENDAR_MONTH");
+        /// <summary>
+        /// Constant CALENDAR_WEEK for AccessBudgetType
+        /// </summary>
+        public static readonly AccessBudgetType CALENDAR_WEEK = new AccessBudgetType("CALENDAR_WEEK");
+        /// <summary>
+        /// Constant LIFETIME for AccessBudgetType
+        /// </summary>
+        public static readonly AccessBudgetType LIFETIME = new AccessBudgetType("LIFETIME");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AccessBudgetType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AccessBudgetType FindValue(string value)
+        {
+            return FindValue<AccessBudgetType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AccessBudgetType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AudienceExportJobStatus.
     /// </summary>
     public class AudienceExportJobStatus : ConstantClass
@@ -266,6 +324,56 @@ namespace Amazon.CleanRoomsML
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator AudienceSizeType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AutoRefreshMode.
+    /// </summary>
+    public class AutoRefreshMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for AutoRefreshMode
+        /// </summary>
+        public static readonly AutoRefreshMode DISABLED = new AutoRefreshMode("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for AutoRefreshMode
+        /// </summary>
+        public static readonly AutoRefreshMode ENABLED = new AutoRefreshMode("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AutoRefreshMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AutoRefreshMode FindValue(string value)
+        {
+            return FindValue<AutoRefreshMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AutoRefreshMode(string value)
         {
             return FindValue(value);
         }

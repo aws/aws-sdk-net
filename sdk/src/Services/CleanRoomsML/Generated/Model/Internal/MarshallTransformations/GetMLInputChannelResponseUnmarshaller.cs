@@ -118,6 +118,12 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
                     response.NumberOfRecords = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("privacyBudgets", targetDepth))
+                {
+                    var unmarshaller = PrivacyBudgetsUnmarshaller.Instance;
+                    response.PrivacyBudgets = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("protectedQueryIdentifier", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

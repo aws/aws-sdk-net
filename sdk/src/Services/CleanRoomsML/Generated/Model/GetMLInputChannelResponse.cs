@@ -45,6 +45,7 @@ namespace Amazon.CleanRoomsML.Model
         private string _name;
         private double? _numberOfFiles;
         private long? _numberOfRecords;
+        private PrivacyBudgets _privacyBudgets;
         private string _protectedQueryIdentifier;
         private int? _retentionInDays;
         private double? _sizeInGb;
@@ -262,6 +263,25 @@ namespace Amazon.CleanRoomsML.Model
         internal bool IsSetNumberOfRecords()
         {
             return this._numberOfRecords.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PrivacyBudgets. 
+        /// <para>
+        /// Returns the privacy budgets that control access to this Clean Rooms ML input channel.
+        /// Use these budgets to monitor and limit resource consumption over specified time periods.
+        /// </para>
+        /// </summary>
+        public PrivacyBudgets PrivacyBudgets
+        {
+            get { return this._privacyBudgets; }
+            set { this._privacyBudgets = value; }
+        }
+
+        // Check to see if PrivacyBudgets property is set
+        internal bool IsSetPrivacyBudgets()
+        {
+            return this._privacyBudgets != null;
         }
 
         /// <summary>
