@@ -459,7 +459,7 @@ namespace Amazon.Runtime
                 if (!string.IsNullOrEmpty(this.authSchemePreference))
                     return this.authSchemePreference;
                 
-                // Use FallbackInternalConfigurationFactory which follows SEP hierarchy:
+                // Fallback to environment variable or config file:
                 // 1. Environment variable: AWS_AUTH_SCHEME_PREFERENCE
                 // 2. Config file: auth_scheme_preference
                 return FallbackInternalConfigurationFactory.AuthSchemePreference;
@@ -479,7 +479,7 @@ namespace Amazon.Runtime
                 if (!string.IsNullOrEmpty(this.sigV4aSigningRegionSet))
                     return this.sigV4aSigningRegionSet;
                 
-                // Use FallbackInternalConfigurationFactory which follows SEP hierarchy:
+                // Fallback to environment variable or config file:
                 // 1. Environment variable: AWS_SIGV4A_SIGNING_REGION_SET
                 // 2. Config file: sigv4a_signing_region_set
                 return FallbackInternalConfigurationFactory.SigV4aSigningRegionSet;

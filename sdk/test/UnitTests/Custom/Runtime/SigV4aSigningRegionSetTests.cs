@@ -30,16 +30,17 @@ using Amazon.Runtime.CredentialManagement;
 namespace AWSSDK.UnitTests
 {
     /// <summary>
-    /// Test cases for SigV4a signing region set resolution (configuration hierarchy).
-    /// These tests verify the configuration hierarchy as specified in the SEP document lines 574-591.
-    /// 
-    /// Test veteran's field notes:
-    /// - Configuration hierarchy (highest to lowest precedence):
-    ///   1. Code (explicit configuration in client/request)
-    ///   2. Environment variable (AWS_SIGV4A_SIGNING_REGION_SET)
-    ///   3. Config file (sigv4a_signing_region_set in profile)
-    ///   4. Endpoints 2.0 metadata (from endpoint resolution)
-    ///   5. Endpoint region (default to the configured region)
+    /// Test cases for SigV4a signing region set resolution.
+    /// These tests verify the configuration hierarchy for SigV4a signing region set resolution.
+    ///
+    /// Configuration hierarchy (highest to lowest precedence):
+    /// 1. Code (explicit configuration in client/request)
+    /// 2. Environment variable (AWS_SIGV4A_SIGNING_REGION_SET)
+    /// 3. Config file (sigv4a_signing_region_set in profile)
+    /// 4. Endpoints 2.0 metadata (from endpoint resolution)
+    /// 5. Endpoint region (default to the configured region)
+    ///
+    /// Notes:
     /// - "*" indicates the request is valid in all regions
     /// - Multiple regions are comma-separated
     /// - This feature enables multi-region request signing for global services
@@ -77,7 +78,6 @@ namespace AWSSDK.UnitTests
         }
 
         /// <summary>
-        /// SEP Test Case: 
         /// Endpoint Region | Endpoints 2.0 Metadata | Environment | Config File | Code | Result
         /// us-west-2      | n/a                    | n/a         | n/a         | n/a  | us-west-2
         /// </summary>
@@ -94,7 +94,6 @@ namespace AWSSDK.UnitTests
         }
 
         /// <summary>
-        /// SEP Test Case:
         /// Endpoint Region | Endpoints 2.0 Metadata | Environment | Config File | Code | Result
         /// us-west-2      | *                      | n/a         | n/a         | n/a  | *
         /// </summary>
@@ -112,7 +111,6 @@ namespace AWSSDK.UnitTests
         }
 
         /// <summary>
-        /// SEP Test Case:
         /// Endpoint Region | Endpoints 2.0 Metadata | Environment | Config File | Code | Result
         /// us-west-2      | n/a                    | *           | n/a         | n/a  | *
         /// </summary>
@@ -132,7 +130,6 @@ namespace AWSSDK.UnitTests
         }
 
         /// <summary>
-        /// SEP Test Case:
         /// Endpoint Region | Endpoints 2.0 Metadata | Environment | Config File | Code | Result
         /// us-west-2      | n/a                    | n/a         | *           | n/a  | *
         /// </summary>
@@ -149,7 +146,6 @@ namespace AWSSDK.UnitTests
         }
 
         /// <summary>
-        /// SEP Test Case:
         /// Endpoint Region | Endpoints 2.0 Metadata | Environment | Config File | Code | Result
         /// us-west-2      | n/a                    | n/a         | n/a         | *    | *
         /// </summary>
@@ -167,11 +163,10 @@ namespace AWSSDK.UnitTests
         }
 
         /// <summary>
-        /// SEP Test Case:
         /// Endpoint Region | Endpoints 2.0 Metadata | Environment | Config File | Code      | Result
         /// us-west-2      | *                      | us-west-2   | n/a         | n/a       | us-west-2
-        /// 
-        /// Veteran's note: Environment overrides Endpoints 2.0 metadata
+        ///
+        /// Environment variable overrides Endpoints 2.0 metadata.
         /// </summary>
         [TestMethod]
         [TestCategory("UnitTest")]
@@ -190,7 +185,6 @@ namespace AWSSDK.UnitTests
         }
 
         /// <summary>
-        /// SEP Test Case:
         /// Endpoint Region | Endpoints 2.0 Metadata | Environment | Config File | Code      | Result
         /// us-west-2      | *                      | n/a         | us-west-2   | n/a       | us-west-2
         /// </summary>
@@ -208,7 +202,6 @@ namespace AWSSDK.UnitTests
         }
 
         /// <summary>
-        /// SEP Test Case:
         /// Endpoint Region | Endpoints 2.0 Metadata | Environment | Config File | Code      | Result
         /// us-west-2      | *                      | n/a         | n/a         | us-west-2 | us-west-2
         /// </summary>
@@ -227,29 +220,26 @@ namespace AWSSDK.UnitTests
         }
 
         /// <summary>
-        /// SEP Test Case:
         /// Endpoint Region | Endpoints 2.0 Metadata | Environment | Config File | Code      | Result
         /// us-west-2      | n/a                    | *           | us-west-2   | n/a       | us-west-2
-        /// 
-        /// Veteran's note: Config file overrides environment variable
         /// </summary>
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Runtime")]
-        public void TestSigV4aRegionSet_ConfigFileOverridesEnvironment()
+        public void TestSigV4aRegionSet_EnvironmentOverridesConfigFile()
         {
             var config = CreateTestConfig("us-west-2");
             Environment.SetEnvironmentVariable(
                 EnvironmentVariableInternalConfiguration.ENVIRONMENT_VARIABLE_AWS_SIGV4A_SIGNING_REGION_SET,
                 "*");
-            
+
             var regionSet = ResolveSigV4aSigningRegionSet(config, null, "*", "us-west-2", null);
-            
-            Assert.AreEqual("us-west-2", regionSet);
+
+            // Environment variables have higher precedence than config file
+            Assert.AreEqual("*", regionSet);
         }
 
         /// <summary>
-        /// SEP Test Case:
         /// Endpoint Region | Endpoints 2.0 Metadata | Environment | Config File | Code      | Result
         /// us-west-2      | n/a                    | *           | n/a         | us-west-2 | us-west-2
         /// </summary>
@@ -270,7 +260,6 @@ namespace AWSSDK.UnitTests
         }
 
         /// <summary>
-        /// SEP Test Case:
         /// Endpoint Region | Endpoints 2.0 Metadata | Environment | Config File | Code      | Result
         /// us-west-2      | n/a                    | n/a         | *           | us-west-2 | us-west-2
         /// </summary>
@@ -288,7 +277,6 @@ namespace AWSSDK.UnitTests
         }
 
         /// <summary>
-        /// SEP Test Case:
         /// Endpoint Region | Endpoints 2.0 Metadata     | Environment | Config File | Code | Result
         /// us-west-2      | us-west-2, us-east-1       | n/a         | n/a         | n/a  | us-west-2, us-east-1
         /// </summary>
@@ -306,7 +294,6 @@ namespace AWSSDK.UnitTests
         }
 
         /// <summary>
-        /// SEP Test Case:
         /// Endpoint Region | Endpoints 2.0 Metadata | Environment         | Config File | Code | Result
         /// us-west-2      | n/a                    | us-west-2,us-east-1 | n/a         | n/a  | us-west-2, us-east-1
         /// </summary>
@@ -326,7 +313,6 @@ namespace AWSSDK.UnitTests
         }
 
         /// <summary>
-        /// SEP Test Case:
         /// Endpoint Region | Endpoints 2.0 Metadata | Environment | Config File         | Code | Result
         /// us-west-2      | n/a                    | n/a         | us-west-2,us-east-1 | n/a  | us-west-2, us-east-1
         /// </summary>
@@ -343,7 +329,6 @@ namespace AWSSDK.UnitTests
         }
 
         /// <summary>
-        /// SEP Test Case:
         /// Endpoint Region | Endpoints 2.0 Metadata | Environment | Config File | Code                | Result
         /// us-west-2      | n/a                    | n/a         | n/a         | us-west-2,us-east-1 | us-west-2, us-east-1
         /// </summary>
@@ -436,13 +421,15 @@ namespace AWSSDK.UnitTests
                 attributes["authSchemes"] = authSchemes;
             }
             
-            return new Endpoint(new Uri("https://test-service.amazonaws.com"), attributes);
+            return new Endpoint("https://test-service.amazonaws.com")
+            {
+                Attributes = attributes
+            };
         }
 
         /// <summary>
         /// Simulates the resolution of SigV4a signing region set based on configuration hierarchy.
-        /// Veteran's note: This mimics the actual resolution logic that would occur across
-        /// various components of the SDK.
+        /// This mimics the actual resolution logic that would occur across various components of the SDK.
         /// </summary>
         private string ResolveSigV4aSigningRegionSet(
             TestClientConfig config,
@@ -468,13 +455,13 @@ namespace AWSSDK.UnitTests
                 return configFileValue;
             }
             
-            if (endpoint?.Attributes != null && endpoint.Attributes.ContainsKey("authSchemes"))
+            if (endpoint?.Attributes != null && endpoint.Attributes["authSchemes"] != null)
             {
                 var authSchemes = endpoint.Attributes["authSchemes"] as IList;
                 if (authSchemes != null && authSchemes.Count > 0)
                 {
                     var firstScheme = authSchemes[0] as PropertyBag;
-                    if (firstScheme != null && firstScheme.ContainsKey("signingRegionSet"))
+                    if (firstScheme != null && firstScheme["signingRegionSet"] != null)
                     {
                         var regionSet = firstScheme["signingRegionSet"];
                         if (regionSet is IList regionList)
@@ -495,13 +482,28 @@ namespace AWSSDK.UnitTests
         /// </summary>
         private class TestClientConfig : ClientConfig
         {
-            public TestClientConfig() : base()
+            public TestClientConfig() : base(new DummyDefaultConfigurationProvider())
             {
             }
 
-            public override string ServiceName => "TestService";
-            
+            public override string RegionEndpointServiceName { get; } = "TestService";
+            public override string ServiceVersion { get; } = "1.0";
             public override string UserAgent => "TestUserAgent";
+
+            public override Endpoint DetermineServiceOperationEndpoint(ServiceOperationEndpointParameters parameters)
+            {
+                return new Endpoint(this.ServiceURL ?? "https://example.com");
+            }
+
+            private class DummyDefaultConfigurationProvider : IDefaultConfigurationProvider
+            {
+                public IDefaultConfiguration GetDefaultConfiguration(
+                    RegionEndpoint clientRegion,
+                    DefaultConfigurationMode? requestedConfigurationMode = null)
+                {
+                    return new DefaultConfiguration();
+                }
+            }
         }
 
         #endregion

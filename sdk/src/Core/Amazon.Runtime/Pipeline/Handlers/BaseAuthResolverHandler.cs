@@ -68,7 +68,7 @@ namespace Amazon.Runtime.Internal
                 if (scheme == null)
                 {
                     // Current auth scheme option is not enabled / supported, continue iterating.
-                    Logger.DebugFormat($"{authOptions[i].SchemeId} scheme is not supported for {executionContext.RequestContext.RequestName}");
+                    Logger?.DebugFormat($"{authOptions[i].SchemeId} scheme is not supported for {executionContext.RequestContext.RequestName}");
                     continue;
                 }
 
@@ -121,7 +121,7 @@ namespace Amazon.Runtime.Internal
                     var areSchemesLeft = i < authOptions.Count - 1;
                     if (areSchemesLeft)
                     {
-                        Logger.DebugFormat($"Could not resolve identity for {executionContext.RequestContext.RequestName} using {scheme.SchemeId} scheme: {ex.Message}");
+                        Logger?.DebugFormat($"Could not resolve identity for {executionContext.RequestContext.RequestName} using {scheme.SchemeId} scheme: {ex.Message}");
                         continue;
                     }
 
@@ -158,7 +158,7 @@ namespace Amazon.Runtime.Internal
                 if (scheme == null)
                 {
                     // Current auth scheme option is not enabled / supported, continue iterating.
-                    Logger.DebugFormat($"{authOptions[i].SchemeId} scheme is not supported for {executionContext.RequestContext.RequestName}");
+                    Logger?.DebugFormat($"{authOptions[i].SchemeId} scheme is not supported for {executionContext.RequestContext.RequestName}");
                     continue;
                 }
 
@@ -206,7 +206,7 @@ namespace Amazon.Runtime.Internal
                     var areSchemesLeft = i < authOptions.Count - 1;
                     if (areSchemesLeft)
                     {
-                        Logger.DebugFormat($"Could not resolve identity for {executionContext.RequestContext.RequestName} using {scheme.SchemeId} scheme: {ex.Message}");
+                        Logger?.DebugFormat($"Could not resolve identity for {executionContext.RequestContext.RequestName} using {scheme.SchemeId} scheme: {ex.Message}");
                         continue;
                     }
 
@@ -339,12 +339,11 @@ namespace Amazon.Runtime.Internal
                 }
             }
 
-            // CRITICAL: Ensure NoAuth/Anonymous is always last in the list (SEP security requirement)
-            // This prevents unauthenticated requests when authentication is available
-            var noAuthOption = reorderedOptions.FirstOrDefault(o => 
-                o.SchemeId == "smithy.api#noAuth" || 
-                o.SchemeId.EndsWith("#noAuth") || 
-                o is AnonymousAuthSchemeOption);
+            // CRITICAL: Ensure NoAuth/Anonymous is always last in the list.
+            // This prevents unauthenticated requests when authentication is available.
+            var noAuthOption = reorderedOptions.FirstOrDefault(o =>
+                o.SchemeId == "smithy.api#noAuth" ||
+                o.SchemeId.EndsWith("#noAuth"));
             
             if (noAuthOption != null)
             {

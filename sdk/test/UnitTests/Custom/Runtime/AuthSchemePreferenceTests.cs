@@ -13,7 +13,10 @@
  * permissions and limitations under the License.
  */
 
+using Amazon;
 using Amazon.Runtime;
+using Amazon.Runtime.Credentials.Internal;
+using Amazon.Runtime.Endpoints;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -25,14 +28,14 @@ using System.Reflection;
 namespace AWSSDK.UnitTests
 {
     /// <summary>
-    /// Test cases for Manual auth schemes configuration (preference list reordering).
-    /// These tests verify the auth scheme preference list functionality as specified in the SEP document lines 556-564.
-    /// 
-    /// Test veteran's field notes:
-    /// - This feature was introduced in 2025 for the "Selectable Authentication Schemes" Kingpin Goal
-    /// - The preference list is a customer experience enhancement, not a hard override
+    /// Test cases for authentication scheme preference configuration.
+    /// These tests verify that users can configure their preferred authentication schemes
+    /// and that the SDK correctly reorders authentication options based on those preferences.
+    ///
+    /// Key behaviors tested:
+    /// - The preference list reorders available auth schemes, not overrides them
     /// - Unsupported auth schemes in the preference list are ignored
-    /// - The pattern follows the SRA's auth scheme resolver approach
+    /// - The SDK maintains security by always placing noAuth last
     /// </summary>
     [TestClass]
     public class AuthSchemePreferenceTests
@@ -54,8 +57,8 @@ namespace AWSSDK.UnitTests
         }
 
         /// <summary>
-        /// SEP Test Case: Supported Auth | Service Trait | Operation Trait | Preference List | Resolved Auth
-        ///                sigv4, sigv4a  | sigv4, sigv4a | n/a            | n/a            | sigv4
+        /// Test default behavior when no preference list is configured.
+        /// Expected: Original auth scheme order is preserved (sigv4, sigv4a).
         /// </summary>
         [TestMethod]
         [TestCategory("UnitTest")]
@@ -79,8 +82,8 @@ namespace AWSSDK.UnitTests
         }
 
         /// <summary>
-        /// SEP Test Case: Supported Auth | Service Trait | Operation Trait | Preference List | Resolved Auth
-        ///                sigv4, sigv4a  | sigv4, sigv4a | n/a            | sigv4a         | sigv4a
+        /// Test that a single scheme preference correctly reorders auth options.
+        /// Expected: sigv4a is moved to first position when preferred.
         /// </summary>
         [TestMethod]
         [TestCategory("UnitTest")]
@@ -104,8 +107,8 @@ namespace AWSSDK.UnitTests
         }
 
         /// <summary>
-        /// SEP Test Case: Supported Auth | Service Trait | Operation Trait | Preference List    | Resolved Auth
-        ///                sigv4, sigv4a  | sigv4, sigv4a | n/a            | sigv4a, sigv4     | sigv4a
+        /// Test that multiple schemes in preference list are applied in order.
+        /// Expected: Auth schemes are reordered to match preference list order.
         /// </summary>
         [TestMethod]
         [TestCategory("UnitTest")]
@@ -129,10 +132,9 @@ namespace AWSSDK.UnitTests
         }
 
         /// <summary>
-        /// SEP Test Case: Supported Auth | Service Trait | Operation Trait | Preference List | Resolved Auth
-        ///                sigv4, sigv4a  | sigv4         | n/a            | sigv4a         | sigv4
-        /// 
-        /// Veteran's note: When the preference specifies an unsupported scheme, it's ignored
+        /// Test that unsupported schemes in preference list are ignored.
+        /// When a preferred scheme is not available, the SDK falls back to available schemes.
+        /// Expected: sigv4 is used when sigv4a is preferred but not available.
         /// </summary>
         [TestMethod]
         [TestCategory("UnitTest")]
@@ -154,10 +156,10 @@ namespace AWSSDK.UnitTests
         }
 
         /// <summary>
-        /// SEP Test Case: Supported Auth | Service Trait | Operation Trait | Preference List | Resolved Auth
-        ///                sigv4, sigv4a  | sigv4, sigv4a | sigv4          | sigv4a         | sigv4
-        /// 
-        /// Veteran's note: Operation trait overrides service trait, preference applies to the operation's options
+        /// Test preference list behavior when operation has limited auth options.
+        /// When an operation only supports a subset of auth schemes, the preference list
+        /// is applied only to those available options.
+        /// Expected: sigv4 is used when operation only supports sigv4.
         /// </summary>
         [TestMethod]
         [TestCategory("UnitTest")]
@@ -180,10 +182,10 @@ namespace AWSSDK.UnitTests
         }
 
         /// <summary>
-        /// SEP Test Case: Supported Auth | Service Trait | Operation Trait | Preference List | Resolved Auth
-        ///                sigv4          | sigv4, sigv4a | n/a            | sigv4a         | sigv4
-        /// 
-        /// Veteran's note: Client only supports sigv4, preference for sigv4a is ignored
+        /// Test client-side limitation handling.
+        /// When the client only has certain auth scheme implementations available,
+        /// preferences for unavailable schemes are ignored.
+        /// Expected: sigv4 is used when client only supports sigv4, even if sigv4a is preferred.
         /// </summary>
         [TestMethod]
         [TestCategory("UnitTest")]
@@ -206,10 +208,10 @@ namespace AWSSDK.UnitTests
         }
 
         /// <summary>
-        /// SEP Test Case: Supported Auth | Service Trait | Operation Trait | Preference List | Resolved Auth
-        ///                sigv4, sigv4a  | sigv4, sigv4a | n/a            | sigv3          | sigv4
-        /// 
-        /// Veteran's note: Unknown auth scheme in preference list is ignored, falls back to default order
+        /// Test handling of unknown schemes in preference list.
+        /// When preference list contains schemes that don't exist in available options,
+        /// those schemes are ignored and the SDK falls back to default ordering.
+        /// Expected: Original order (sigv4, sigv4a) when preference contains unknown scheme.
         /// </summary>
         [TestMethod]
         [TestCategory("UnitTest")]
@@ -234,7 +236,7 @@ namespace AWSSDK.UnitTests
 
         /// <summary>
         /// Test that spaces and tabs between auth scheme names are properly trimmed.
-        /// SEP requirement: Space and tab characters between names MUST be ignored.
+        /// The SDK should handle various whitespace patterns gracefully.
         /// </summary>
         [TestMethod]
         [TestCategory("UnitTest")]
@@ -249,7 +251,7 @@ namespace AWSSDK.UnitTests
             };
 
             var config = new TestClientConfig();
-            // Test various whitespace patterns as per SEP
+            // Test various whitespace patterns
             config.AuthSchemePreference = "sigv4a, \tsigv4   ,\t httpBearerAuth \t";
 
             var result = ApplyAuthSchemePreference(authOptions, config);
@@ -262,7 +264,7 @@ namespace AWSSDK.UnitTests
 
         /// <summary>
         /// Test Bearer auth scheme preference handling.
-        /// Veteran's note: Bearer auth uses a different identity type than SigV4/SigV4a
+        /// Bearer auth can be preferred over signature-based authentication schemes.
         /// </summary>
         [TestMethod]
         [TestCategory("UnitTest")]
@@ -334,8 +336,10 @@ namespace AWSSDK.UnitTests
         }
 
         /// <summary>
-        /// Test that noAuth scheme is handled correctly.
-        /// Veteran's note: noAuth allows operations to proceed without credentials
+        /// Test that noAuth scheme is always placed last for security.
+        /// CRITICAL: noAuth must always be last to prevent unauthenticated requests
+        /// when authentication is available.
+        /// This test verifies that even when noAuth is preferred, it's moved to the end.
         /// </summary>
         [TestMethod]
         [TestCategory("UnitTest")]
@@ -354,8 +358,37 @@ namespace AWSSDK.UnitTests
             var result = ApplyAuthSchemePreference(authOptions, config);
 
             Assert.AreEqual(2, result.Count);
-            Assert.AreEqual("smithy.api#noAuth", result[0].SchemeId);
+            // SECURITY: noAuth must always be last, even when preferred
+            Assert.AreEqual(AuthSchemeOption.SigV4, result[0].SchemeId);
+            Assert.AreEqual("smithy.api#noAuth", result[1].SchemeId);
+        }
+
+        /// <summary>
+        /// Test that noAuth is always placed last even when it's the only preference.
+        /// This verifies the critical security requirement in all scenarios.
+        /// </summary>
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
+        public void TestPreferenceList_NoAuthOnly_AlwaysLast()
+        {
+            var authOptions = new List<IAuthSchemeOption>
+            {
+                new AuthSchemeOption { SchemeId = "smithy.api#httpBearerAuth" },
+                new AuthSchemeOption { SchemeId = "smithy.api#noAuth" },
+                new AuthSchemeOption { SchemeId = AuthSchemeOption.SigV4 }
+            };
+
+            var config = new TestClientConfig();
+            config.AuthSchemePreference = "noAuth";  // Only noAuth in preference
+
+            var result = ApplyAuthSchemePreference(authOptions, config);
+
+            Assert.AreEqual(3, result.Count);
+            // SECURITY: noAuth must be last, other schemes maintain their original order
+            Assert.AreEqual("smithy.api#httpBearerAuth", result[0].SchemeId);
             Assert.AreEqual(AuthSchemeOption.SigV4, result[1].SchemeId);
+            Assert.AreEqual("smithy.api#noAuth", result[2].SchemeId);  // Always last!
         }
 
         #region Helper Methods
@@ -393,14 +426,29 @@ namespace AWSSDK.UnitTests
         /// </summary>
         private class TestClientConfig : ClientConfig
         {
-            public TestClientConfig() : base()
+            public TestClientConfig() : base(new DummyDefaultConfigurationProvider())
             {
                 this.RegionEndpoint = RegionEndpoint.USEast1;
             }
 
-            public override string ServiceName => "TestService";
-            
+            public override string RegionEndpointServiceName { get; } = "TestService";
+            public override string ServiceVersion { get; } = "1.0";
             public override string UserAgent => "TestUserAgent";
+
+            public override Endpoint DetermineServiceOperationEndpoint(ServiceOperationEndpointParameters parameters)
+            {
+                return new Endpoint(this.ServiceURL ?? "https://example.com");
+            }
+
+            private class DummyDefaultConfigurationProvider : IDefaultConfigurationProvider
+            {
+                public IDefaultConfiguration GetDefaultConfiguration(
+                    RegionEndpoint clientRegion,
+                    DefaultConfigurationMode? requestedConfigurationMode = null)
+                {
+                    return new DefaultConfiguration();
+                }
+            }
         }
 
         #endregion

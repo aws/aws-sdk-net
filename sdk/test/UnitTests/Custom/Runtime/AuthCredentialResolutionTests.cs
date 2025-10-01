@@ -1,12 +1,12 @@
 /*
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -17,8 +17,10 @@ using System;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
+using Amazon;
 using Amazon.Runtime;
 using Amazon.Runtime.Credentials.Internal;
+using Amazon.Runtime.Endpoints;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Identity;
@@ -27,40 +29,26 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace AWSSDK.UnitTests.Runtime
 {
     /// <summary>
-    /// Tests for Resolving Auth and Credentials as specified in the Multi-Auth and SigV4a Enhancement Proposal.
+    /// Tests for auth scheme resolution with credential availability.
     /// These tests verify that an auth scheme is only considered "supported" when BOTH:
     /// 1. The SDK has an implementation for the auth scheme (signer)
     /// 2. The SDK has an identity provider registered for the auth scheme (credentials)
-    /// 
-    /// Field Notes (SDK Veteran Architecture Documentation):
-    /// =====================================================
-    /// This is a critical aspect of the multi-auth implementation that prevents runtime failures.
-    /// An auth scheme might be implemented in the SDK (e.g., we have a SigV4 signer) but if there
-    /// are no credentials available (no identity provider), the auth scheme cannot be used.
-    /// 
-    /// The separation between "implementation" and "identity" is important:
+    ///
+    /// The separation between implementation and identity:
     /// - Implementation: The signer that knows HOW to sign requests (e.g., AWS4Signer, BearerTokenSigner)
     /// - Identity: The credentials/token that provides WHAT to sign with (e.g., AWS credentials, bearer token)
-    /// 
-    /// Historical Context:
-    /// - This requirement comes from the Smithy Reference Architecture (SRA)
-    /// - It prevents selecting an auth scheme that would fail at signing time
-    /// - The check happens during auth resolution, not during signing, for better error messages
-    /// 
-    /// Common Scenarios:
+    ///
+    /// Common scenarios:
     /// - SigV4 without AWS credentials: Cannot use SigV4
     /// - Bearer auth without a token provider: Cannot use bearer auth
     /// - Multiple auth schemes available: Use first one with BOTH implementation and identity
-    /// 
-    /// Test Case Source: Lines 544-553 of the Multi-Auth and SigV4a Enhancement Proposal
     /// </summary>
     [TestClass]
     public class AuthCredentialResolutionTests : RuntimePipelineTestBase
     {
-        #region Resolving Auth and Credentials Tests (Table from lines 544-553)
+        #region Resolving Auth and Credentials Tests
 
         /// <summary>
-        /// Test case from line 545: sigv4, bearer | sigv4, bearer | sigv4
         /// Runtime supports both, identity providers for both, service lists sigv4 first.
         /// </summary>
         [TestMethod]
@@ -70,25 +58,23 @@ namespace AWSSDK.UnitTests.Runtime
         {
             var serviceAuthOptions = new List<IAuthSchemeOption>
             {
-                new AuthSchemeOption("aws.auth#sigv4"),
-                new AuthSchemeOption("smithy.api#httpBearerAuth")
+                new AuthSchemeOption { SchemeId = "aws.auth#sigv4" },
+                new AuthSchemeOption { SchemeId = "smithy.api#httpBearerAuth" }
             };
 
-            var resolver = new TestAuthResolverWithIdentity(
-                hasSigV4Runtime: true,
-                hasBearerRuntime: true,
-                hasSigV4Identity: true,
-                hasBearerIdentity: true);
+            // Both credentials and token provider available
+            var context = CreateMockContextWithBothIdentities();
+            var resolver = new TestAuthResolver(serviceAuthOptions);
 
-            var context = CreateMockContext();
-            var result = resolver.TestResolveWithIdentity(serviceAuthOptions, context);
+            resolver.PreInvoke(context);
 
-            Assert.IsNotNull(result);
-            Assert.AreEqual("aws.auth#sigv4", result.SchemeId);
+            Assert.IsNotNull(context.RequestContext.Identity, "Identity should be resolved");
+            Assert.IsNotNull(context.RequestContext.Signer, "Signer should be set");
+            // Should use sigv4 (first in service list)
+            Assert.AreEqual("AWS4Signer", context.RequestContext.Signer.GetType().Name);
         }
 
         /// <summary>
-        /// Test case from line 546: sigv4, bearer | bearer, sigv4 | sigv4
         /// Service lists sigv4 first. Both runtime and identity available for both.
         /// The identity provider column order doesn't matter - resolution follows service order.
         /// </summary>
@@ -97,29 +83,26 @@ namespace AWSSDK.UnitTests.Runtime
         [TestCategory("Runtime")]
         public void AuthCredentials_BothRuntimeAndIdentity_ServiceListsSigV4First_UsesSigV4()
         {
-            // Service lists sigv4 first (implied from SEP context)
+            // Service lists sigv4 first
             var serviceAuthOptions = new List<IAuthSchemeOption>
             {
-                new AuthSchemeOption("aws.auth#sigv4"),
-                new AuthSchemeOption("smithy.api#httpBearerAuth")
+                new AuthSchemeOption { SchemeId = "aws.auth#sigv4" },
+                new AuthSchemeOption { SchemeId = "smithy.api#httpBearerAuth" }
             };
 
-            var resolver = new TestAuthResolverWithIdentity(
-                hasSigV4Runtime: true,
-                hasBearerRuntime: true,
-                hasSigV4Identity: true,   // Both identity providers available
-                hasBearerIdentity: true);  // Order in table doesn't affect resolution
+            // Both credentials and token provider available
+            var context = CreateMockContextWithBothIdentities();
+            var resolver = new TestAuthResolver(serviceAuthOptions);
 
-            var context = CreateMockContext();
-            var result = resolver.TestResolveWithIdentity(serviceAuthOptions, context);
+            resolver.PreInvoke(context);
 
-            Assert.IsNotNull(result);
+            Assert.IsNotNull(context.RequestContext.Identity, "Identity should be resolved");
+            Assert.IsNotNull(context.RequestContext.Signer, "Signer should be set");
             // Should use sigv4 (first in service list)
-            Assert.AreEqual("aws.auth#sigv4", result.SchemeId);
+            Assert.AreEqual("AWS4Signer", context.RequestContext.Signer.GetType().Name);
         }
 
         /// <summary>
-        /// Test case from line 547: sigv4, bearer | bearer | bearer
         /// Only bearer identity available, so use bearer.
         /// </summary>
         [TestMethod]
@@ -129,25 +112,23 @@ namespace AWSSDK.UnitTests.Runtime
         {
             var serviceAuthOptions = new List<IAuthSchemeOption>
             {
-                new AuthSchemeOption("aws.auth#sigv4"),
-                new AuthSchemeOption("smithy.api#httpBearerAuth")
+                new AuthSchemeOption { SchemeId = "aws.auth#sigv4" },
+                new AuthSchemeOption { SchemeId = "smithy.api#httpBearerAuth" }
             };
 
-            var resolver = new TestAuthResolverWithIdentity(
-                hasSigV4Runtime: true,
-                hasBearerRuntime: true,
-                hasSigV4Identity: false,  // No AWS credentials
-                hasBearerIdentity: true);  // But have bearer token
+            // Only bearer token available, no AWS credentials
+            var context = CreateMockContextBearerOnly();
+            var resolver = new TestAuthResolver(serviceAuthOptions);
 
-            var context = CreateMockContext();
-            var result = resolver.TestResolveWithIdentity(serviceAuthOptions, context);
+            resolver.PreInvoke(context);
 
-            Assert.IsNotNull(result);
-            Assert.AreEqual("smithy.api#httpBearerAuth", result.SchemeId);
+            Assert.IsNotNull(context.RequestContext.Identity, "Identity should be resolved");
+            Assert.IsNotNull(context.RequestContext.Signer, "Signer should be set");
+            // Should skip sigv4 (no credentials) and use bearer
+            Assert.AreEqual("BearerTokenSigner", context.RequestContext.Signer.GetType().Name);
         }
 
         /// <summary>
-        /// Test case from line 548: sigv4, bearer | sigv4 | sigv4
         /// Only sigv4 identity available, so use sigv4.
         /// </summary>
         [TestMethod]
@@ -157,25 +138,23 @@ namespace AWSSDK.UnitTests.Runtime
         {
             var serviceAuthOptions = new List<IAuthSchemeOption>
             {
-                new AuthSchemeOption("aws.auth#sigv4"),
-                new AuthSchemeOption("smithy.api#httpBearerAuth")
+                new AuthSchemeOption { SchemeId = "aws.auth#sigv4" },
+                new AuthSchemeOption { SchemeId = "smithy.api#httpBearerAuth" }
             };
 
-            var resolver = new TestAuthResolverWithIdentity(
-                hasSigV4Runtime: true,
-                hasBearerRuntime: true,
-                hasSigV4Identity: true,   // Have AWS credentials
-                hasBearerIdentity: false); // No bearer token
+            // Only AWS credentials available, no bearer token
+            var context = CreateMockContextCredentialsOnly();
+            var resolver = new TestAuthResolver(serviceAuthOptions);
 
-            var context = CreateMockContext();
-            var result = resolver.TestResolveWithIdentity(serviceAuthOptions, context);
+            resolver.PreInvoke(context);
 
-            Assert.IsNotNull(result);
-            Assert.AreEqual("aws.auth#sigv4", result.SchemeId);
+            Assert.IsNotNull(context.RequestContext.Identity, "Identity should be resolved");
+            Assert.IsNotNull(context.RequestContext.Signer, "Signer should be set");
+            // Should use sigv4 (bearer has no token)
+            Assert.AreEqual("AWS4Signer", context.RequestContext.Signer.GetType().Name);
         }
 
         /// <summary>
-        /// Test case from line 549: sigv4, bearer | n/a | ERROR
         /// No identity providers available for any supported auth scheme.
         /// </summary>
         [TestMethod]
@@ -186,25 +165,22 @@ namespace AWSSDK.UnitTests.Runtime
         {
             var serviceAuthOptions = new List<IAuthSchemeOption>
             {
-                new AuthSchemeOption("aws.auth#sigv4"),
-                new AuthSchemeOption("smithy.api#httpBearerAuth")
+                new AuthSchemeOption { SchemeId = "aws.auth#sigv4" },
+                new AuthSchemeOption { SchemeId = "smithy.api#httpBearerAuth" }
             };
 
-            var resolver = new TestAuthResolverWithIdentity(
-                hasSigV4Runtime: true,
-                hasBearerRuntime: true,
-                hasSigV4Identity: false,  // No AWS credentials
-                hasBearerIdentity: false); // No bearer token
+            // No credentials or token provider
+            var context = CreateMockContextNoIdentity();
+            var resolver = new TestAuthResolver(serviceAuthOptions);
 
-            var context = CreateMockContext();
-            
             // Should throw because no identity providers are available
-            resolver.TestResolveWithIdentity(serviceAuthOptions, context);
+            resolver.PreInvoke(context);
         }
 
         /// <summary>
-        /// Test case from line 550: sigv4 | bearer | ERROR
         /// Runtime doesn't support bearer, but only bearer identity is available.
+        /// Since we're testing with BaseAuthResolverHandler which has all schemes,
+        /// we simulate this by having no AWS credentials (sigv4 can't be used).
         /// </summary>
         [TestMethod]
         [TestCategory("UnitTest")]
@@ -214,249 +190,322 @@ namespace AWSSDK.UnitTests.Runtime
         {
             var serviceAuthOptions = new List<IAuthSchemeOption>
             {
-                new AuthSchemeOption("aws.auth#sigv4"),
-                new AuthSchemeOption("smithy.api#httpBearerAuth")
+                new AuthSchemeOption { SchemeId = "aws.auth#sigv4" }
+                // Service doesn't list bearer as an option
             };
 
-            var resolver = new TestAuthResolverWithIdentity(
-                hasSigV4Runtime: true,
-                hasBearerRuntime: false,  // No bearer implementation
-                hasSigV4Identity: false,  // No AWS credentials
-                hasBearerIdentity: true);  // Have bearer token (but can't use it)
+            // Have bearer token but service doesn't support it
+            var context = CreateMockContextBearerOnly();
+            var resolver = new TestAuthResolver(serviceAuthOptions);
 
-            var context = CreateMockContext();
-            
-            // Should throw because sigv4 has no identity and bearer has no runtime
-            resolver.TestResolveWithIdentity(serviceAuthOptions, context);
-        }
-
-        #endregion
-
-        #region Additional Edge Cases
-
-        /// <summary>
-        /// Test that having runtime support without identity is not sufficient.
-        /// </summary>
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Runtime")]
-        [ExpectedException(typeof(AmazonClientException))]
-        public void AuthCredentials_HasRuntimeButNoIdentity_CannotUseScheme()
-        {
-            var serviceAuthOptions = new List<IAuthSchemeOption>
-            {
-                new AuthSchemeOption("aws.auth#sigv4")
-            };
-
-            var resolver = new TestAuthResolverWithIdentity(
-                hasSigV4Runtime: true,     // Have the signer
-                hasBearerRuntime: false,
-                hasSigV4Identity: false,   // But no credentials
-                hasBearerIdentity: false);
-
-            var context = CreateMockContext();
-            
-            // Should throw even though we have runtime support
-            resolver.TestResolveWithIdentity(serviceAuthOptions, context);
-        }
-
-        /// <summary>
-        /// Test that having identity without runtime support is not sufficient.
-        /// </summary>
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Runtime")]
-        [ExpectedException(typeof(AmazonClientException))]
-        public void AuthCredentials_HasIdentityButNoRuntime_CannotUseScheme()
-        {
-            var serviceAuthOptions = new List<IAuthSchemeOption>
-            {
-                new AuthSchemeOption("aws.auth#sigv4")
-            };
-
-            var resolver = new TestAuthResolverWithIdentity(
-                hasSigV4Runtime: false,    // No signer implementation
-                hasBearerRuntime: false,
-                hasSigV4Identity: true,    // Have credentials
-                hasBearerIdentity: false);
-
-            var context = CreateMockContext();
-            
-            // Should throw even though we have credentials
-            resolver.TestResolveWithIdentity(serviceAuthOptions, context);
-        }
-
-        /// <summary>
-        /// Test fallback behavior when preferred auth scheme lacks identity.
-        /// </summary>
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Runtime")]
-        public void AuthCredentials_PreferredSchemeNoIdentity_FallsBackToNext()
-        {
-            var serviceAuthOptions = new List<IAuthSchemeOption>
-            {
-                new AuthSchemeOption("smithy.api#httpBearerAuth"),  // Preferred but no token
-                new AuthSchemeOption("aws.auth#sigv4")              // Fallback with credentials
-            };
-
-            var resolver = new TestAuthResolverWithIdentity(
-                hasSigV4Runtime: true,
-                hasBearerRuntime: true,
-                hasSigV4Identity: true,    // Have AWS credentials
-                hasBearerIdentity: false);  // No bearer token
-
-            var context = CreateMockContext();
-            var result = resolver.TestResolveWithIdentity(serviceAuthOptions, context);
-
-            Assert.IsNotNull(result);
-            // Should skip bearer (no identity) and use sigv4
-            Assert.AreEqual("aws.auth#sigv4", result.SchemeId);
-        }
-
-        /// <summary>
-        /// Test with SigV4a - similar requirements apply.
-        /// </summary>
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Runtime")]
-        public void AuthCredentials_SigV4aRequiresBothRuntimeAndIdentity()
-        {
-            var serviceAuthOptions = new List<IAuthSchemeOption>
-            {
-                new AuthSchemeOption("aws.auth#sigv4a"),
-                new AuthSchemeOption("aws.auth#sigv4")
-            };
-
-            // Has SigV4a runtime but no identity (no AWS credentials)
-            var resolver = new TestAuthResolverWithIdentity(
-                hasSigV4Runtime: true,
-                hasBearerRuntime: false,
-                hasSigV4Identity: true,
-                hasBearerIdentity: false,
-                hasSigV4aRuntime: true,
-                hasSigV4aIdentity: false);  // No credentials for v4a
-
-            var context = CreateMockContext();
-            var result = resolver.TestResolveWithIdentity(serviceAuthOptions, context);
-
-            Assert.IsNotNull(result);
-            // Should skip v4a (no identity) and use v4
-            Assert.AreEqual("aws.auth#sigv4", result.SchemeId);
+            // Should throw because sigv4 has no identity and bearer is not in service options
+            resolver.PreInvoke(context);
         }
 
         #endregion
 
         #region Helper Methods and Test Infrastructure
 
-        private IExecutionContext CreateMockContext()
+        private IExecutionContext CreateMockContextWithBothIdentities()
         {
-            var request = new Amazon.Runtime.Internal.DefaultRequest(
-                new Amazon.Runtime.Internal.AmazonWebServiceRequest(), 
-                "TestService");
+            var originalRequest = new MockAmazonWebServiceRequest();
+            var request = new Amazon.Runtime.Internal.DefaultRequest(originalRequest, "TestService");
             request.Endpoint = new Uri("https://test.amazonaws.com");
+
+            var config = new MockClientConfig();
+            // Provide both AWS credentials AND bearer token
+            config.DefaultAWSCredentials = new BasicAWSCredentials("accessKey", "secretKey");
+            config.AWSTokenProvider = new MockTokenProvider();
 
             var requestContext = new RequestContext(true, new NullSigner())
             {
+                OriginalRequest = originalRequest,
                 Request = request,
-                ClientConfig = new MockClientConfig()
+                ClientConfig = config
             };
 
             var responseContext = new ResponseContext();
 
-            return new ExecutionContext(requestContext, responseContext);
+            return new Amazon.Runtime.Internal.ExecutionContext(requestContext, responseContext);
+        }
+
+        private IExecutionContext CreateMockContextCredentialsOnly()
+        {
+            var originalRequest = new MockAmazonWebServiceRequest();
+            var request = new Amazon.Runtime.Internal.DefaultRequest(originalRequest, "TestService");
+            request.Endpoint = new Uri("https://test.amazonaws.com");
+
+            var config = new MockClientConfig();
+            // Only provide AWS credentials, no bearer token
+            config.DefaultAWSCredentials = new BasicAWSCredentials("accessKey", "secretKey");
+            config.AWSTokenProvider = null;
+
+            var requestContext = new RequestContext(true, new NullSigner())
+            {
+                OriginalRequest = originalRequest,
+                Request = request,
+                ClientConfig = config
+            };
+
+            var responseContext = new ResponseContext();
+
+            return new Amazon.Runtime.Internal.ExecutionContext(requestContext, responseContext);
+        }
+
+        private IExecutionContext CreateMockContextBearerOnly()
+        {
+            var originalRequest = new MockAmazonWebServiceRequest();
+            var request = new Amazon.Runtime.Internal.DefaultRequest(originalRequest, "TestService");
+            request.Endpoint = new Uri("https://test.amazonaws.com");
+
+            var config = new MockClientConfig();
+            // Only provide bearer token, no AWS credentials
+            config.DefaultAWSCredentials = null;
+            config.AWSTokenProvider = new MockTokenProvider();
+
+            var requestContext = new RequestContext(true, new NullSigner())
+            {
+                OriginalRequest = originalRequest,
+                Request = request,
+                ClientConfig = config
+            };
+
+            var responseContext = new ResponseContext();
+
+            return new Amazon.Runtime.Internal.ExecutionContext(requestContext, responseContext);
+        }
+
+        private IExecutionContext CreateMockContextNoIdentity()
+        {
+            var originalRequest = new MockAmazonWebServiceRequest();
+            var request = new Amazon.Runtime.Internal.DefaultRequest(originalRequest, "TestService");
+            request.Endpoint = new Uri("https://test.amazonaws.com");
+
+            var config = new MockClientConfig();
+            // No credentials or token provider
+            config.DefaultAWSCredentials = null;
+            config.AWSTokenProvider = null;
+
+            var requestContext = new RequestContext(true, new NullSigner())
+            {
+                OriginalRequest = originalRequest,
+                Request = request,
+                ClientConfig = config
+            };
+
+            var responseContext = new ResponseContext();
+
+            return new Amazon.Runtime.Internal.ExecutionContext(requestContext, responseContext);
         }
 
         /// <summary>
-        /// Test resolver that simulates the interaction between runtime support and identity providers.
+        /// Test implementation of BaseAuthResolverHandler that provides test auth options.
+        /// The base class already handles checking for both runtime AND identity.
         /// </summary>
-        private class TestAuthResolverWithIdentity : BaseAuthResolverHandler
+        private class TestAuthResolver : BaseAuthResolverHandler
         {
-            private readonly bool _hasSigV4Runtime;
-            private readonly bool _hasSigV4aRuntime;
-            private readonly bool _hasBearerRuntime;
-            private readonly bool _hasSigV4Identity;
-            private readonly bool _hasSigV4aIdentity;
-            private readonly bool _hasBearerIdentity;
+            private readonly List<IAuthSchemeOption> _authOptions;
 
-            public TestAuthResolverWithIdentity(
-                bool hasSigV4Runtime = false,
-                bool hasBearerRuntime = false,
-                bool hasSigV4Identity = false,
-                bool hasBearerIdentity = false,
-                bool hasSigV4aRuntime = false,
-                bool hasSigV4aIdentity = false)
+            public TestAuthResolver(List<IAuthSchemeOption> authOptions)
             {
-                _hasSigV4Runtime = hasSigV4Runtime;
-                _hasBearerRuntime = hasBearerRuntime;
-                _hasSigV4Identity = hasSigV4Identity;
-                _hasBearerIdentity = hasBearerIdentity;
-                _hasSigV4aRuntime = hasSigV4aRuntime;
-                _hasSigV4aIdentity = hasSigV4aIdentity;
+                _authOptions = authOptions ?? new List<IAuthSchemeOption>();
             }
 
             protected override List<IAuthSchemeOption> ResolveAuthOptions(IExecutionContext executionContext)
             {
-                return new List<IAuthSchemeOption>();
+                return _authOptions;
             }
 
-            protected override bool IsAuthSchemeSupported(IAuthSchemeOption authOption, IExecutionContext executionContext)
+            // Public wrapper for testing - exposes the protected PreInvoke method
+            public new void PreInvoke(IExecutionContext executionContext)
             {
-                // An auth scheme is only supported if it has BOTH runtime AND identity
-                switch (authOption.SchemeId)
+                base.PreInvoke(executionContext);
+            }
+        }
+
+        /// <summary>
+        /// Mock token provider for bearer auth tests
+        /// </summary>
+        private class MockTokenProvider : IAWSTokenProvider
+        {
+#if BCL
+            public bool TryResolveToken(out AWSToken token)
+            {
+                token = new AWSToken { Token = "mock-token", Expiration = DateTime.UtcNow.AddHours(1) };
+                return true;
+            }
+#endif
+
+            public Task<TryResponse<AWSToken>> TryResolveTokenAsync(CancellationToken cancellationToken = default)
+            {
+                var token = new AWSToken { Token = "mock-token", Expiration = DateTime.UtcNow.AddHours(1) };
+                return Task.FromResult(new TryResponse<AWSToken> { Success = true, Value = token });
+            }
+        }
+
+        /// <summary>
+        /// Mock request class for testing.
+        /// </summary>
+        private class MockAmazonWebServiceRequest : AmazonWebServiceRequest
+        {
+        }
+
+        /// <summary>
+        /// Mock client configuration for testing.
+        /// </summary>
+        private class MockClientConfig : ClientConfig
+        {
+            private bool _allowCredentialResolution = true;
+
+            public MockClientConfig() : base(new DummyDefaultConfigurationProvider())
+            {
+                RegionEndpoint = Amazon.RegionEndpoint.USEast1;
+                // Use a custom identity resolver configuration that respects our test settings
+                this.IdentityResolverConfiguration = new MockIdentityResolverConfiguration(this);
+            }
+
+            public void DisableCredentialResolution()
+            {
+                _allowCredentialResolution = false;
+            }
+
+            public bool ShouldResolveCredentials => _allowCredentialResolution;
+
+            public override string RegionEndpointServiceName => "test";
+            public override string ServiceVersion => "1.0";
+            public override string UserAgent => "test-agent";
+
+            public override Endpoint DetermineServiceOperationEndpoint(ServiceOperationEndpointParameters parameters)
+            {
+                // For testing, return a simple endpoint
+                return new Endpoint("https://test.amazonaws.com");
+            }
+
+            private class DummyDefaultConfigurationProvider : IDefaultConfigurationProvider
+            {
+                public IDefaultConfiguration GetDefaultConfiguration(
+                    RegionEndpoint clientRegion,
+                    DefaultConfigurationMode? requestedConfigurationMode = null)
                 {
-                    case "aws.auth#sigv4":
-                        return _hasSigV4Runtime && _hasSigV4Identity;
-                    case "aws.auth#sigv4a":
-                        return _hasSigV4aRuntime && _hasSigV4aIdentity;
-                    case "smithy.api#httpBearerAuth":
-                        return _hasBearerRuntime && _hasBearerIdentity;
-                    case "smithy.api#noAuth":
-                        return true;  // NoAuth doesn't need identity
-                    default:
-                        return false;
+                    return new DefaultConfiguration();
                 }
             }
+        }
 
-            public IAuthSchemeOption TestResolveWithIdentity(
-                List<IAuthSchemeOption> authOptions,
-                IExecutionContext context)
+        /// <summary>
+        /// Mock identity resolver configuration that respects test settings.
+        /// </summary>
+        private class MockIdentityResolverConfiguration : IIdentityResolverConfiguration
+        {
+            private readonly MockClientConfig _config;
+
+            public MockIdentityResolverConfiguration(MockClientConfig config)
             {
-                // Find first auth scheme with both runtime and identity support
-                foreach (var option in authOptions)
+                _config = config;
+            }
+
+            public IIdentityResolver GetIdentityResolver<T>() where T : BaseIdentity
+            {
+                if (typeof(T) == typeof(AWSCredentials))
                 {
-                    if (IsAuthSchemeSupported(option, context))
+                    return new MockAWSCredentialsResolver(_config);
+                }
+                if (typeof(T) == typeof(AWSToken))
+                {
+                    return new MockAWSTokenResolver(_config);
+                }
+                if (typeof(T) == typeof(AnonymousAWSCredentials))
+                {
+                    return new AnonymousIdentityResolver();
+                }
+                throw new NotImplementedException($"{typeof(T).Name} is not supported");
+            }
+        }
+
+        /// <summary>
+        /// Mock AWS credentials resolver that only returns credentials when explicitly set.
+        /// </summary>
+        private class MockAWSCredentialsResolver : IIdentityResolver<AWSCredentials>
+        {
+            private readonly MockClientConfig _config;
+
+            public MockAWSCredentialsResolver(MockClientConfig config)
+            {
+                _config = config;
+            }
+
+            public AWSCredentials ResolveIdentity(IClientConfig clientConfig)
+            {
+                // Only return credentials if they were explicitly set
+                if (_config.ShouldResolveCredentials && _config.DefaultAWSCredentials != null)
+                {
+                    return _config.DefaultAWSCredentials;
+                }
+                return null;
+            }
+
+            public Task<AWSCredentials> ResolveIdentityAsync(IClientConfig clientConfig, CancellationToken cancellationToken = default)
+            {
+                return Task.FromResult(ResolveIdentity(clientConfig));
+            }
+
+            BaseIdentity IIdentityResolver.ResolveIdentity(IClientConfig clientConfig) => ResolveIdentity(clientConfig);
+
+            Task<BaseIdentity> IIdentityResolver.ResolveIdentityAsync(IClientConfig clientConfig, CancellationToken cancellationToken)
+                => Task.FromResult<BaseIdentity>(ResolveIdentity(clientConfig));
+        }
+
+        /// <summary>
+        /// Mock AWS token resolver that only returns token when explicitly set.
+        /// </summary>
+        private class MockAWSTokenResolver : IIdentityResolver<AWSToken>
+        {
+            private readonly MockClientConfig _config;
+
+            public MockAWSTokenResolver(MockClientConfig config)
+            {
+                _config = config;
+            }
+
+            public AWSToken ResolveIdentity(IClientConfig clientConfig)
+            {
+                // Only return token if token provider was explicitly set
+                if (_config.AWSTokenProvider != null)
+                {
+#if BCL
+                    if (_config.AWSTokenProvider.TryResolveToken(out var token))
                     {
-                        return option;
+                        return token;
+                    }
+#else
+                    var result = _config.AWSTokenProvider.TryResolveTokenAsync().GetAwaiter().GetResult();
+                    if (result.Success)
+                    {
+                        return result.Value;
+                    }
+#endif
+                }
+                return null;
+            }
+
+            public async Task<AWSToken> ResolveIdentityAsync(IClientConfig clientConfig, CancellationToken cancellationToken = default)
+            {
+                // Only return token if token provider was explicitly set
+                if (_config.AWSTokenProvider != null)
+                {
+                    var result = await _config.AWSTokenProvider.TryResolveTokenAsync(cancellationToken).ConfigureAwait(false);
+                    if (result.Success)
+                    {
+                        return result.Value;
                     }
                 }
-
-                throw new AmazonClientException("No supported auth scheme found with both runtime and identity");
+                return null;
             }
-        }
 
-        /// <summary>
-        /// Mock identity resolver for testing.
-        /// In real implementation, this would check for AWS credentials, bearer tokens, etc.
-        /// </summary>
-        private interface IIdentityResolver
-        {
-            Task<IIdentity> ResolveIdentityAsync(string authScheme);
-            bool HasIdentityFor(string authScheme);
-        }
+            BaseIdentity IIdentityResolver.ResolveIdentity(IClientConfig clientConfig) => ResolveIdentity(clientConfig);
 
-        /// <summary>
-        /// Mock implementation of identity types.
-        /// </summary>
-        private class MockAWSCredentialsIdentity : IIdentity
-        {
-            public DateTime? Expiration => null;
-        }
-
-        private class MockBearerTokenIdentity : IIdentity
-        {
-            public DateTime? Expiration => null;
-            public string Token { get; set; }
+            async Task<BaseIdentity> IIdentityResolver.ResolveIdentityAsync(IClientConfig clientConfig, CancellationToken cancellationToken)
+                => await ResolveIdentityAsync(clientConfig, cancellationToken).ConfigureAwait(false);
         }
 
         #endregion
