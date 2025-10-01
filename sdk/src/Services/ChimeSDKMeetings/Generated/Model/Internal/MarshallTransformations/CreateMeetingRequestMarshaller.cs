@@ -84,6 +84,12 @@ namespace Amazon.ChimeSDKMeetings.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ExternalMeetingId);
                 }
 
+                if(publicRequest.IsSetMediaPlacementNetworkType())
+                {
+                    context.Writer.WritePropertyName("MediaPlacementNetworkType");
+                    context.Writer.Write(publicRequest.MediaPlacementNetworkType);
+                }
+
                 if(publicRequest.IsSetMediaRegion())
                 {
                     context.Writer.WritePropertyName("MediaRegion");

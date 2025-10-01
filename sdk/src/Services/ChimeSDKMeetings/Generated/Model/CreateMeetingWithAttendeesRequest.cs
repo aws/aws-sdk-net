@@ -32,16 +32,34 @@ namespace Amazon.ChimeSDKMeetings.Model
     /// <summary>
     /// Container for the parameters to the CreateMeetingWithAttendees operation.
     /// Creates a new Amazon Chime SDK meeting in the specified media Region, with attendees.
-    /// For more information about specifying media Regions, see <a href="https://docs.aws.amazon.com/chime/latest/dg/chime-sdk-meetings-regions.html">Amazon
-    /// Chime SDK Media Regions</a> in the <i>Amazon Chime Developer Guide</i>. For more information
-    /// about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using
-    /// the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.
+    /// For more information about specifying media Regions, see <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/sdk-available-regions">Available
+    /// Regions</a> and <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/chime-sdk-meetings-regions.html">Using
+    /// meeting Regions</a>, both in the <i>Amazon Chime SDK Developer Guide</i>. For more
+    /// information about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/meetings-sdk.html">Using
+    /// the Amazon Chime SDK</a> in the <i>Amazon Chime SDK Developer Guide</i>. 
+    /// 
+    ///  <note> 
+    /// <para>
+    /// If you use this API in conjuction with the and APIs, and you don't specify the <c>MeetingFeatures.Content.MaxResolution</c>
+    /// or <c>MeetingFeatures.Video.MaxResolution</c> parameters, the following defaults are
+    /// used:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// Content.MaxResolution: FHD
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Video.MaxResolution: HD
+    /// </para>
+    ///  </li> </ul> </note>
     /// </summary>
     public partial class CreateMeetingWithAttendeesRequest : AmazonChimeSDKMeetingsRequest
     {
         private List<CreateAttendeeRequestItem> _attendees = AWSConfigs.InitializeCollections ? new List<CreateAttendeeRequestItem>() : null;
         private string _clientRequestToken;
         private string _externalMeetingId;
+        private MediaPlacementNetworkType _mediaPlacementNetworkType;
         private string _mediaRegion;
         private MeetingFeaturesConfiguration _meetingFeatures;
         private string _meetingHostId;
@@ -115,6 +133,25 @@ namespace Amazon.ChimeSDKMeetings.Model
         internal bool IsSetExternalMeetingId()
         {
             return this._externalMeetingId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MediaPlacementNetworkType. 
+        /// <para>
+        /// The type of network for the media placement. Either IPv4 only or dual-stack (IPv4
+        /// and IPv6).
+        /// </para>
+        /// </summary>
+        public MediaPlacementNetworkType MediaPlacementNetworkType
+        {
+            get { return this._mediaPlacementNetworkType; }
+            set { this._mediaPlacementNetworkType = value; }
+        }
+
+        // Check to see if MediaPlacementNetworkType property is set
+        internal bool IsSetMediaPlacementNetworkType()
+        {
+            return this._mediaPlacementNetworkType != null;
         }
 
         /// <summary>
