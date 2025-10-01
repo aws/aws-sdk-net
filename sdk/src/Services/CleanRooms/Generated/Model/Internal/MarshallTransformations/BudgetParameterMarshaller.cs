@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// PrivacyBudgetTemplateUpdateParameters Marshaller
+    /// BudgetParameter Marshaller
     /// </summary>
-    public class PrivacyBudgetTemplateUpdateParametersMarshaller : IRequestMarshaller<PrivacyBudgetTemplateUpdateParameters, JsonMarshallerContext> 
+    public class BudgetParameterMarshaller : IRequestMarshaller<BudgetParameter, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,30 +44,26 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(PrivacyBudgetTemplateUpdateParameters requestObject, JsonMarshallerContext context)
+        public void Marshall(BudgetParameter requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetAccessBudget())
+            if(requestObject.IsSetAutoRefresh())
             {
-                context.Writer.WritePropertyName("accessBudget");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = AccessBudgetsPrivacyTemplateUpdateParametersMarshaller.Instance;
-                marshaller.Marshall(requestObject.AccessBudget, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("autoRefresh");
+                context.Writer.Write(requestObject.AutoRefresh);
             }
 
-            if(requestObject.IsSetDifferentialPrivacy())
+            if(requestObject.IsSetBudget())
             {
-                context.Writer.WritePropertyName("differentialPrivacy");
-                context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("budget");
+                context.Writer.Write(requestObject.Budget);
+            }
 
-                var marshaller = DifferentialPrivacyTemplateUpdateParametersMarshaller.Instance;
-                marshaller.Marshall(requestObject.DifferentialPrivacy, context);
-
-                context.Writer.WriteObjectEnd();
+            if(requestObject.IsSetType())
+            {
+                context.Writer.WritePropertyName("type");
+                context.Writer.Write(requestObject.Type);
             }
 
         }
@@ -75,7 +71,7 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static PrivacyBudgetTemplateUpdateParametersMarshaller Instance = new PrivacyBudgetTemplateUpdateParametersMarshaller();
+        public readonly static BudgetParameterMarshaller Instance = new BudgetParameterMarshaller();
 
     }
 }

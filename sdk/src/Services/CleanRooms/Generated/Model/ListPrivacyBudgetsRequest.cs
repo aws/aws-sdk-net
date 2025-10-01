@@ -35,10 +35,31 @@ namespace Amazon.CleanRooms.Model
     /// </summary>
     public partial class ListPrivacyBudgetsRequest : AmazonCleanRoomsRequest
     {
+        private string _accessBudgetResourceArn;
         private int? _maxResults;
         private string _membershipIdentifier;
         private string _nextToken;
         private PrivacyBudgetType _privacyBudgetType;
+
+        /// <summary>
+        /// Gets and sets the property AccessBudgetResourceArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the access budget resource to filter privacy budgets
+        /// by.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=200)]
+        public string AccessBudgetResourceArn
+        {
+            get { return this._accessBudgetResourceArn; }
+            set { this._accessBudgetResourceArn = value; }
+        }
+
+        // Check to see if AccessBudgetResourceArn property is set
+        internal bool IsSetAccessBudgetResourceArn()
+        {
+            return this._accessBudgetResourceArn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property MaxResults. 

@@ -126,6 +126,12 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
                     unmarshalledObject.PartitionKeys = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("resourceArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ResourceArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("schemaStatusDetails", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<SchemaStatusDetail, SchemaStatusDetailUnmarshaller>(SchemaStatusDetailUnmarshaller.Instance);

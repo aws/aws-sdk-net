@@ -63,6 +63,9 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
                 throw new AmazonCleanRoomsException("Request object does not have required field CollaborationIdentifier set");
             request.AddPathResource("{collaborationIdentifier}", StringUtils.FromString(publicRequest.CollaborationIdentifier));
             
+            if (publicRequest.IsSetAccessBudgetResourceArn())
+                request.Parameters.Add("accessBudgetResourceArn", StringUtils.FromString(publicRequest.AccessBudgetResourceArn));
+            
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
             

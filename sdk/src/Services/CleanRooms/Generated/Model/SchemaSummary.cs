@@ -41,6 +41,7 @@ namespace Amazon.CleanRooms.Model
         private DateTime? _createTime;
         private string _creatorAccountId;
         private string _name;
+        private string _resourceArn;
         private List<string> _selectedAnalysisMethods = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private SchemaType _type;
         private DateTime? _updateTime;
@@ -188,6 +189,25 @@ namespace Amazon.CleanRooms.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the schema summary resource.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=200)]
+        public string ResourceArn
+        {
+            get { return this._resourceArn; }
+            set { this._resourceArn = value; }
+        }
+
+        // Check to see if ResourceArn property is set
+        internal bool IsSetResourceArn()
+        {
+            return this._resourceArn != null;
         }
 
         /// <summary>

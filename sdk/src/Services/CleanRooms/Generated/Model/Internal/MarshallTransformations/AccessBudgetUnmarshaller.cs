@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for PrivacyBudgetTemplateParametersOutput Object
+    /// Response Unmarshaller for AccessBudget Object
     /// </summary>  
-    public class PrivacyBudgetTemplateParametersOutputUnmarshaller : IUnmarshaller<PrivacyBudgetTemplateParametersOutput, XmlUnmarshallerContext>, IUnmarshaller<PrivacyBudgetTemplateParametersOutput, JsonUnmarshallerContext>
+    public class AccessBudgetUnmarshaller : IUnmarshaller<AccessBudget, XmlUnmarshallerContext>, IUnmarshaller<AccessBudget, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        PrivacyBudgetTemplateParametersOutput IUnmarshaller<PrivacyBudgetTemplateParametersOutput, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AccessBudget IUnmarshaller<AccessBudget, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public PrivacyBudgetTemplateParametersOutput Unmarshall(JsonUnmarshallerContext context)
+        public AccessBudget Unmarshall(JsonUnmarshallerContext context)
         {
-            PrivacyBudgetTemplateParametersOutput unmarshalledObject = new PrivacyBudgetTemplateParametersOutput();
+            AccessBudget unmarshalledObject = new AccessBudget();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,16 +66,22 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("accessBudget", targetDepth))
+                if (context.TestExpression("aggregateRemainingBudget", targetDepth))
                 {
-                    var unmarshaller = AccessBudgetsPrivacyTemplateParametersOutputUnmarshaller.Instance;
-                    unmarshalledObject.AccessBudget = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.AggregateRemainingBudget = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("differentialPrivacy", targetDepth))
+                if (context.TestExpression("details", targetDepth))
                 {
-                    var unmarshaller = DifferentialPrivacyTemplateParametersOutputUnmarshaller.Instance;
-                    unmarshalledObject.DifferentialPrivacy = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<AccessBudgetDetails, AccessBudgetDetailsUnmarshaller>(AccessBudgetDetailsUnmarshaller.Instance);
+                    unmarshalledObject.Details = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("resourceArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ResourceArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -83,12 +89,12 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         }
 
 
-        private static PrivacyBudgetTemplateParametersOutputUnmarshaller _instance = new PrivacyBudgetTemplateParametersOutputUnmarshaller();        
+        private static AccessBudgetUnmarshaller _instance = new AccessBudgetUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static PrivacyBudgetTemplateParametersOutputUnmarshaller Instance
+        public static AccessBudgetUnmarshaller Instance
         {
             get
             {

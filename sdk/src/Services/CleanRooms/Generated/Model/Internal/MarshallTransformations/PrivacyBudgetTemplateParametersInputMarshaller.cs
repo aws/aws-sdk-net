@@ -48,6 +48,17 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAccessBudget())
+            {
+                context.Writer.WritePropertyName("accessBudget");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AccessBudgetsPrivacyTemplateParametersInputMarshaller.Instance;
+                marshaller.Marshall(requestObject.AccessBudget, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetDifferentialPrivacy())
             {
                 context.Writer.WritePropertyName("differentialPrivacy");

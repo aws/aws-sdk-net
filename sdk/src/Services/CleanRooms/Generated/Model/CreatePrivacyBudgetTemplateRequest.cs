@@ -58,7 +58,6 @@ namespace Amazon.CleanRooms.Model
         /// </para>
         ///  </important>
         /// </summary>
-        [AWSProperty(Required=true)]
         public PrivacyBudgetTemplateAutoRefresh AutoRefresh
         {
             get { return this._autoRefresh; }
