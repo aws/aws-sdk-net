@@ -3585,6 +3585,253 @@ namespace Amazon.PCS
 
         #endregion
         
+        #region  UpdateCluster
+
+
+        /// <summary>
+        /// Updates a cluster configuration. You can modify Slurm scheduler settings, accounting
+        /// configuration, and security groups for an existing cluster. 
+        /// 
+        ///  <note> 
+        /// <para>
+        /// You can only update clusters that are in <c>ACTIVE</c>, <c>UPDATE_FAILED</c>, or <c>SUSPENDED</c>
+        /// state. All associated resources (queues and compute node groups) must be in <c>ACTIVE</c>
+        /// state before you can update the cluster.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCluster service method.</param>
+        /// 
+        /// <returns>The response from the UpdateCluster service method, as returned by PCS.</returns>
+        /// <exception cref="Amazon.PCS.Model.AccessDeniedException">
+        /// You don't have permission to perform the action.
+        /// 
+        ///  
+        /// <para>
+        ///  <u>Examples</u> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The launch template instance profile doesn't pass <c>iam:PassRole</c> verification.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// There is a mismatch between the account ID and cluster ID.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The cluster ID doesn't exist.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The EC2 instance isn't present.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.PCS.Model.ConflictException">
+        /// Your request has conflicting operations. This can occur if you're trying to perform
+        /// more than 1 operation on the same resource at the same time.
+        /// 
+        ///  
+        /// <para>
+        ///  <u>Examples</u> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// A cluster with the same name already exists.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A cluster isn't in <c>ACTIVE</c> status.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A cluster to delete is in an unstable state. For example, because it still has <c>ACTIVE</c>
+        /// node groups or queues.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A queue already exists in a cluster.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.PCS.Model.InternalServerException">
+        /// PCS can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.PCS.Model.ResourceNotFoundException">
+        /// The requested resource can't be found. The cluster, node group, or queue you're attempting
+        /// to get, update, list, or delete doesn't exist.
+        /// 
+        ///  
+        /// <para>
+        ///  <u>Examples</u> 
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PCS.Model.ThrottlingException">
+        /// Your request exceeded a request rate quota. Check the resource's request rate quota
+        /// and try again.
+        /// </exception>
+        /// <exception cref="Amazon.PCS.Model.ValidationException">
+        /// The request isn't valid.
+        /// 
+        ///  
+        /// <para>
+        ///  <u>Examples</u> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Your request contains malformed JSON or unsupported characters.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The scheduler version isn't supported.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// There are networking related errors, such as network validation failure.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// AMI type is <c>CUSTOM</c> and the launch template doesn't define the AMI ID, or the
+        /// AMI type is AL2 and the launch template defines the AMI.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pcs-2023-02-10/UpdateCluster">REST API Reference for UpdateCluster Operation</seealso>
+        public virtual UpdateClusterResponse UpdateCluster(UpdateClusterRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateClusterResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateClusterResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates a cluster configuration. You can modify Slurm scheduler settings, accounting
+        /// configuration, and security groups for an existing cluster. 
+        /// 
+        ///  <note> 
+        /// <para>
+        /// You can only update clusters that are in <c>ACTIVE</c>, <c>UPDATE_FAILED</c>, or <c>SUSPENDED</c>
+        /// state. All associated resources (queues and compute node groups) must be in <c>ACTIVE</c>
+        /// state before you can update the cluster.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCluster service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateCluster service method, as returned by PCS.</returns>
+        /// <exception cref="Amazon.PCS.Model.AccessDeniedException">
+        /// You don't have permission to perform the action.
+        /// 
+        ///  
+        /// <para>
+        ///  <u>Examples</u> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The launch template instance profile doesn't pass <c>iam:PassRole</c> verification.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// There is a mismatch between the account ID and cluster ID.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The cluster ID doesn't exist.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The EC2 instance isn't present.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.PCS.Model.ConflictException">
+        /// Your request has conflicting operations. This can occur if you're trying to perform
+        /// more than 1 operation on the same resource at the same time.
+        /// 
+        ///  
+        /// <para>
+        ///  <u>Examples</u> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// A cluster with the same name already exists.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A cluster isn't in <c>ACTIVE</c> status.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A cluster to delete is in an unstable state. For example, because it still has <c>ACTIVE</c>
+        /// node groups or queues.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A queue already exists in a cluster.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.PCS.Model.InternalServerException">
+        /// PCS can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.PCS.Model.ResourceNotFoundException">
+        /// The requested resource can't be found. The cluster, node group, or queue you're attempting
+        /// to get, update, list, or delete doesn't exist.
+        /// 
+        ///  
+        /// <para>
+        ///  <u>Examples</u> 
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PCS.Model.ThrottlingException">
+        /// Your request exceeded a request rate quota. Check the resource's request rate quota
+        /// and try again.
+        /// </exception>
+        /// <exception cref="Amazon.PCS.Model.ValidationException">
+        /// The request isn't valid.
+        /// 
+        ///  
+        /// <para>
+        ///  <u>Examples</u> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Your request contains malformed JSON or unsupported characters.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The scheduler version isn't supported.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// There are networking related errors, such as network validation failure.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// AMI type is <c>CUSTOM</c> and the launch template doesn't define the AMI ID, or the
+        /// AMI type is AL2 and the launch template defines the AMI.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pcs-2023-02-10/UpdateCluster">REST API Reference for UpdateCluster Operation</seealso>
+        public virtual Task<UpdateClusterResponse> UpdateClusterAsync(UpdateClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateClusterResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateClusterResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  UpdateComputeNodeGroup
 
 

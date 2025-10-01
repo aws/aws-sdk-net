@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.PCS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// UpdateQueue Request Marshaller
+    /// UpdateCluster Request Marshaller
     /// </summary>       
-    public class UpdateQueueRequestMarshaller : IMarshaller<IRequest, UpdateQueueRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class UpdateClusterRequestMarshaller : IMarshaller<IRequest, UpdateClusterRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -45,7 +45,7 @@ namespace Amazon.PCS.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((UpdateQueueRequest)input);
+            return this.Marshall((UpdateClusterRequest)input);
         }
 
         /// <summary>
@@ -53,10 +53,10 @@ namespace Amazon.PCS.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(UpdateQueueRequest publicRequest)
+        public IRequest Marshall(UpdateClusterRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.PCS");
-            string target = "AWSParallelComputingService.UpdateQueue";
+            string target = "AWSParallelComputingService.UpdateCluster";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.0";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2023-02-10";
@@ -86,34 +86,12 @@ namespace Amazon.PCS.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ClusterIdentifier);
                 }
 
-                if(publicRequest.IsSetComputeNodeGroupConfigurations())
-                {
-                    context.Writer.WritePropertyName("computeNodeGroupConfigurations");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestComputeNodeGroupConfigurationsListValue in publicRequest.ComputeNodeGroupConfigurations)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ComputeNodeGroupConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequestComputeNodeGroupConfigurationsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetQueueIdentifier())
-                {
-                    context.Writer.WritePropertyName("queueIdentifier");
-                    context.Writer.Write(publicRequest.QueueIdentifier);
-                }
-
                 if(publicRequest.IsSetSlurmConfiguration())
                 {
                     context.Writer.WritePropertyName("slurmConfiguration");
                     context.Writer.WriteObjectStart();
 
-                    var marshaller = UpdateQueueSlurmConfigurationRequestMarshaller.Instance;
+                    var marshaller = UpdateClusterSlurmConfigurationRequestMarshaller.Instance;
                     marshaller.Marshall(publicRequest.SlurmConfiguration, context);
 
                     context.Writer.WriteObjectEnd();
@@ -127,9 +105,9 @@ namespace Amazon.PCS.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static UpdateQueueRequestMarshaller _instance = new UpdateQueueRequestMarshaller();        
+        private static UpdateClusterRequestMarshaller _instance = new UpdateClusterRequestMarshaller();        
 
-        internal static UpdateQueueRequestMarshaller GetInstance()
+        internal static UpdateClusterRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -137,7 +115,7 @@ namespace Amazon.PCS.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UpdateQueueRequestMarshaller Instance
+        public static UpdateClusterRequestMarshaller Instance
         {
             get
             {

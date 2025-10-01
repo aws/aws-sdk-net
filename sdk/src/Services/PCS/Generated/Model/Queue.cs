@@ -42,6 +42,7 @@ namespace Amazon.PCS.Model
         private string _id;
         private DateTime? _modifiedAt;
         private string _name;
+        private QueueSlurmConfiguration _slurmConfiguration;
         private QueueStatus _status;
 
         /// <summary>
@@ -194,6 +195,24 @@ namespace Amazon.PCS.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SlurmConfiguration. 
+        /// <para>
+        /// Additional options related to the Slurm scheduler.
+        /// </para>
+        /// </summary>
+        public QueueSlurmConfiguration SlurmConfiguration
+        {
+            get { return this._slurmConfiguration; }
+            set { this._slurmConfiguration = value; }
+        }
+
+        // Check to see if SlurmConfiguration property is set
+        internal bool IsSetSlurmConfiguration()
+        {
+            return this._slurmConfiguration != null;
         }
 
         /// <summary>

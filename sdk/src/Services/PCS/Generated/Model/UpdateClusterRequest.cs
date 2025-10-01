@@ -30,17 +30,23 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PCS.Model
 {
     /// <summary>
-    /// Container for the parameters to the UpdateQueue operation.
-    /// Updates the compute node group configuration of a queue. Use this API to change the
-    /// compute node groups that the queue can send jobs to.
+    /// Container for the parameters to the UpdateCluster operation.
+    /// Updates a cluster configuration. You can modify Slurm scheduler settings, accounting
+    /// configuration, and security groups for an existing cluster. 
+    /// 
+    ///  <note> 
+    /// <para>
+    /// You can only update clusters that are in <c>ACTIVE</c>, <c>UPDATE_FAILED</c>, or <c>SUSPENDED</c>
+    /// state. All associated resources (queues and compute node groups) must be in <c>ACTIVE</c>
+    /// state before you can update the cluster.
+    /// </para>
+    ///  </note>
     /// </summary>
-    public partial class UpdateQueueRequest : AmazonPCSRequest
+    public partial class UpdateClusterRequest : AmazonPCSRequest
     {
         private string _clientToken;
         private string _clusterIdentifier;
-        private List<ComputeNodeGroupConfiguration> _computeNodeGroupConfigurations = AWSConfigs.InitializeCollections ? new List<ComputeNodeGroupConfiguration>() : null;
-        private string _queueIdentifier;
-        private UpdateQueueSlurmConfigurationRequest _slurmConfiguration;
+        private UpdateClusterSlurmConfigurationRequest _slurmConfiguration;
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
@@ -69,7 +75,7 @@ namespace Amazon.PCS.Model
         /// <summary>
         /// Gets and sets the property ClusterIdentifier. 
         /// <para>
-        /// The name or ID of the cluster of the queue.
+        /// The name or ID of the cluster to update.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -86,50 +92,12 @@ namespace Amazon.PCS.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ComputeNodeGroupConfigurations. 
-        /// <para>
-        /// The list of compute node group configurations to associate with the queue. Queues
-        /// assign jobs to associated compute node groups.
-        /// </para>
-        /// </summary>
-        public List<ComputeNodeGroupConfiguration> ComputeNodeGroupConfigurations
-        {
-            get { return this._computeNodeGroupConfigurations; }
-            set { this._computeNodeGroupConfigurations = value; }
-        }
-
-        // Check to see if ComputeNodeGroupConfigurations property is set
-        internal bool IsSetComputeNodeGroupConfigurations()
-        {
-            return this._computeNodeGroupConfigurations != null && (this._computeNodeGroupConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
-        }
-
-        /// <summary>
-        /// Gets and sets the property QueueIdentifier. 
-        /// <para>
-        /// The name or ID of the queue.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public string QueueIdentifier
-        {
-            get { return this._queueIdentifier; }
-            set { this._queueIdentifier = value; }
-        }
-
-        // Check to see if QueueIdentifier property is set
-        internal bool IsSetQueueIdentifier()
-        {
-            return this._queueIdentifier != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property SlurmConfiguration. 
         /// <para>
         /// Additional options related to the Slurm scheduler.
         /// </para>
         /// </summary>
-        public UpdateQueueSlurmConfigurationRequest SlurmConfiguration
+        public UpdateClusterSlurmConfigurationRequest SlurmConfiguration
         {
             get { return this._slurmConfiguration; }
             set { this._slurmConfiguration = value; }

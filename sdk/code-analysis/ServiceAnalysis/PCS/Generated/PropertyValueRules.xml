@@ -156,6 +156,15 @@
     <pattern>arn:aws.*:pcs:.*:[0-9]{12}:.*/[a-z0-9_\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.PCS.Model.UpdateClusterRequest.ClientToken</property>
+    <min>8</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PCS.Model.UpdateClusterRequest.ClusterIdentifier</property>
+    <pattern>(pcs_[a-zA-Z0-9]+|[A-Za-z][A-Za-z0-9-]{2,40})</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.PCS.Model.UpdateComputeNodeGroupRequest.AmiId</property>
     <pattern>ami-[a-z0-9]+</pattern>
   </property-value-rule>
@@ -254,5 +263,14 @@
   <property-value-rule>
     <property>Amazon.PCS.Model.ScalingConfigurationRequest.MinInstanceCount</property>
     <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PCS.Model.UpdateAccountingRequest.DefaultPurgeTimeInDays</property>
+    <min>-1</min>
+    <max>10000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PCS.Model.UpdateClusterSlurmConfigurationRequest.ScaleDownIdleTimeInSeconds</property>
+    <min>1</min>
   </property-value-rule>
 </property-value-rules>

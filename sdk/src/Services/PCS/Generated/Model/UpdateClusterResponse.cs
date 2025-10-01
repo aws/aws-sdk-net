@@ -30,32 +30,25 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PCS.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetCluster operation.
-    /// Returns detailed information about a running cluster in your account. This API action
-    /// provides networking information, endpoint information for communication with the scheduler,
-    /// and provisioning status.
+    /// This is the response object from the UpdateCluster operation.
     /// </summary>
-    public partial class GetClusterRequest : AmazonPCSRequest
+    public partial class UpdateClusterResponse : AmazonWebServiceResponse
     {
-        private string _clusterIdentifier;
+        private Cluster _cluster;
 
         /// <summary>
-        /// Gets and sets the property ClusterIdentifier. 
-        /// <para>
-        /// The name or ID of the cluster.
-        /// </para>
+        /// Gets and sets the property Cluster.
         /// </summary>
-        [AWSProperty(Required=true)]
-        public string ClusterIdentifier
+        public Cluster Cluster
         {
-            get { return this._clusterIdentifier; }
-            set { this._clusterIdentifier = value; }
+            get { return this._cluster; }
+            set { this._cluster = value; }
         }
 
-        // Check to see if ClusterIdentifier property is set
-        internal bool IsSetClusterIdentifier()
+        // Check to see if Cluster property is set
+        internal bool IsSetCluster()
         {
-            return this._clusterIdentifier != null;
+            return this._cluster != null;
         }
 
     }

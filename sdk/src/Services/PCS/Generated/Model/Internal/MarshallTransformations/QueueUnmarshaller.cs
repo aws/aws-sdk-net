@@ -114,6 +114,12 @@ namespace Amazon.PCS.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("slurmConfiguration", targetDepth))
+                {
+                    var unmarshaller = QueueSlurmConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.SlurmConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

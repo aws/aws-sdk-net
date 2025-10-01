@@ -30,32 +30,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PCS.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetCluster operation.
-    /// Returns detailed information about a running cluster in your account. This API action
-    /// provides networking information, endpoint information for communication with the scheduler,
-    /// and provisioning status.
+    /// Additional options related to the Slurm scheduler.
     /// </summary>
-    public partial class GetClusterRequest : AmazonPCSRequest
+    public partial class UpdateQueueSlurmConfigurationRequest
     {
-        private string _clusterIdentifier;
+        private List<SlurmCustomSetting> _slurmCustomSettings = AWSConfigs.InitializeCollections ? new List<SlurmCustomSetting>() : null;
 
         /// <summary>
-        /// Gets and sets the property ClusterIdentifier. 
+        /// Gets and sets the property SlurmCustomSettings. 
         /// <para>
-        /// The name or ID of the cluster.
+        /// Additional Slurm-specific configuration that directly maps to Slurm settings.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public string ClusterIdentifier
+        public List<SlurmCustomSetting> SlurmCustomSettings
         {
-            get { return this._clusterIdentifier; }
-            set { this._clusterIdentifier = value; }
+            get { return this._slurmCustomSettings; }
+            set { this._slurmCustomSettings = value; }
         }
 
-        // Check to see if ClusterIdentifier property is set
-        internal bool IsSetClusterIdentifier()
+        // Check to see if SlurmCustomSettings property is set
+        internal bool IsSetSlurmCustomSettings()
         {
-            return this._clusterIdentifier != null;
+            return this._slurmCustomSettings != null && (this._slurmCustomSettings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }
