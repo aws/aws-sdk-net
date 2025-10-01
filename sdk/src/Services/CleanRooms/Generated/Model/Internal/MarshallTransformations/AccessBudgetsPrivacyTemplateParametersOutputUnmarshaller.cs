@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for PrivacyBudget Object
+    /// Response Unmarshaller for AccessBudgetsPrivacyTemplateParametersOutput Object
     /// </summary>  
-    public class PrivacyBudgetUnmarshaller : IJsonUnmarshaller<PrivacyBudget, JsonUnmarshallerContext>
+    public class AccessBudgetsPrivacyTemplateParametersOutputUnmarshaller : IJsonUnmarshaller<AccessBudgetsPrivacyTemplateParametersOutput, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public PrivacyBudget Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public AccessBudgetsPrivacyTemplateParametersOutput Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            PrivacyBudget unmarshalledObject = new PrivacyBudget();
+            AccessBudgetsPrivacyTemplateParametersOutput unmarshalledObject = new AccessBudgetsPrivacyTemplateParametersOutput();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,16 +56,16 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("accessBudget", targetDepth))
+                if (context.TestExpression("budgetParameters", targetDepth))
                 {
-                    var unmarshaller = AccessBudgetUnmarshaller.Instance;
-                    unmarshalledObject.AccessBudget = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = new JsonListUnmarshaller<BudgetParameter, BudgetParameterUnmarshaller>(BudgetParameterUnmarshaller.Instance);
+                    unmarshalledObject.BudgetParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("differentialPrivacy", targetDepth))
+                if (context.TestExpression("resourceArn", targetDepth))
                 {
-                    var unmarshaller = DifferentialPrivacyPrivacyBudgetUnmarshaller.Instance;
-                    unmarshalledObject.DifferentialPrivacy = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ResourceArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -73,12 +73,12 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         }
 
 
-        private static PrivacyBudgetUnmarshaller _instance = new PrivacyBudgetUnmarshaller();        
+        private static AccessBudgetsPrivacyTemplateParametersOutputUnmarshaller _instance = new AccessBudgetsPrivacyTemplateParametersOutputUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static PrivacyBudgetUnmarshaller Instance
+        public static AccessBudgetsPrivacyTemplateParametersOutputUnmarshaller Instance
         {
             get
             {

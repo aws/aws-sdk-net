@@ -66,6 +66,9 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
                 throw new AmazonCleanRoomsException("Request object does not have required field MembershipIdentifier set");
             request.AddPathResource("{membershipIdentifier}", StringUtils.FromString(publicRequest.MembershipIdentifier));
             
+            if (publicRequest.IsSetAccessBudgetResourceArn())
+                request.Parameters.Add("accessBudgetResourceArn", StringUtils.FromString(publicRequest.AccessBudgetResourceArn));
+            
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
             
