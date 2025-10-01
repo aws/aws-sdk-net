@@ -1,3 +1,17 @@
+### 3.7.1135.0 (2025-10-01 18:36 UTC)
+* ChimeSDKMeetings (3.7.502.0)
+	* Add support to receive dual stack MediaPlacement URLs in Chime Meetings SDK
+* CleanRooms (3.7.506.0)
+	* This release introduces data access budgets to control how many times a table can be used for queries and jobs in a collaboration.
+* CleanRoomsML (3.7.503.0)
+	* This release introduces data access budgets to view how many times an input channel can be used for ML jobs in a collaboration.
+* DatabaseMigrationService (3.7.501.19)
+	* This is a doc-only update, revising text for kms-key-arns.
+* ECS (3.7.502.1)
+	* This is a documentation only Amazon ECS release that adds additional information for health checks.
+* PCS (3.7.505.0)
+	* Added the UpdateCluster API action to modify cluster configurations, and Slurm custom settings for queues.
+
 ### 3.7.1134.0 (2025-09-30 18:37 UTC)
 * ApplicationSignals (3.7.502.0)
 	* Amazon CloudWatch Application Signals is introducing the Application Map to give users a more comprehensive view of their service health. Users will now be able to group services, track their latest deployments, and view automated audit findings concerning service performance.
