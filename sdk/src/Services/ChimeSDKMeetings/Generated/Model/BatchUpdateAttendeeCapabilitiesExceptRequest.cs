@@ -66,6 +66,14 @@ namespace Amazon.ChimeSDKMeetings.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
+    /// If meeting features is defined as <c>Video:MaxResolution:None</c> but <c>Content:MaxResolution</c>
+    /// is defined as something other than <c>None</c> and attendee capabilities are not defined
+    /// in the API request, then the default attendee video capability is set to <c>Receive</c>
+    /// and attendee content capability is set to <c>SendReceive</c>. This is because content
+    /// <c>SendReceive</c> requires video to be at least <c>Receive</c>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     /// When you change an <c>audio</c> capability from <c>None</c> or <c>Receive</c> to <c>Send</c>
     /// or <c>SendReceive</c> , and if the attendee left their microphone unmuted, audio will
     /// flow from the attendee to the other meeting participants.
