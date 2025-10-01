@@ -1,7 +1,12 @@
-﻿using System;
-using Xunit;
+﻿using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Util;
 using Amazon.Util.Internal;
 using Moq;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using Xunit;
 namespace AWSSDK_NetStandard.UnitTests
 {
     public class InternalSDKUtilsTests
@@ -108,6 +113,85 @@ namespace AWSSDK_NetStandard.UnitTests
             // Assert
             Assert.Equal("Unknown", framework);
             InternalSDKUtils.ResetRuntimeInformationWrapper();
+        }
+
+        [Fact]
+        public void SimpleSetTaskContext()
+        {
+            SDKTaskContext.Default.Set("key1", "value1");
+            Assert.Equal("value1", SDKTaskContext.Default.Get("key1"));
+        }
+
+        [Fact]
+        public async Task EnsureTaskContextAcrossTasks()
+        {
+            bool task1Confirmed = false;
+            bool task2Set = false;
+            var key = "key1";
+            var task1 = Task.Run(async () =>
+            {
+                SDKTaskContext.Default.Set(key, "task1");
+                while(!task2Set)
+                {
+                    await Task.Delay(100);
+                }
+                await Task.Run(() =>
+                {
+                    if (string.Equals("task1", SDKTaskContext.Default.Get(key)))
+                        task1Confirmed = true;
+                    return Task.CompletedTask;
+                });
+            });
+
+            var task2 = Task.Run(() =>
+            {
+                SDKTaskContext.Default.Set(key, "task2");
+                task2Set = true;
+            });
+
+            await Task.WhenAll(task1, task2);
+            Assert.True(task1Confirmed);
+        }
+
+        [Fact]
+        public void ConfirmTraceIdSetForMarshaller()
+        {
+            try
+            {
+                SDKTaskContext.Default.Set(EnvironmentVariables._X_AMZN_TRACE_ID, "contextTraceId");
+                Environment.SetEnvironmentVariable(EnvironmentVariables._X_AMZN_TRACE_ID, "environmentTraceId");
+
+                IDictionary<string, string> headers = new Dictionary<string, string>();
+                Marshaller.SetRecursionDetectionHeader(headers);
+                Assert.DoesNotContain(HeaderKeys.XAmznTraceIdHeader, headers);
+
+                Environment.SetEnvironmentVariable(EnvironmentVariables.AWS_LAMBDA_FUNCTION_NAME, "LambdaFunction");
+
+                headers = new Dictionary<string, string>();
+                Marshaller.SetRecursionDetectionHeader(headers);
+                Assert.Equal("environmentTraceId", headers[HeaderKeys.XAmznTraceIdHeader]);
+
+                Environment.SetEnvironmentVariable(EnvironmentVariables.AWS_LAMBDA_MAX_CONCURRENCY, "1");
+                headers = new Dictionary<string, string>();
+                Marshaller.SetRecursionDetectionHeader(headers);
+                Assert.Equal("contextTraceId", headers[HeaderKeys.XAmznTraceIdHeader]);
+
+                SDKTaskContext.Default.Set(EnvironmentVariables._X_AMZN_TRACE_ID, null);
+                headers = new Dictionary<string, string>();
+                Marshaller.SetRecursionDetectionHeader(headers);
+                Assert.Equal("environmentTraceId", headers[HeaderKeys.XAmznTraceIdHeader]);
+
+                headers = new Dictionary<string, string>() { { HeaderKeys.XAmznTraceIdHeader, "existingTrace" } };
+                Marshaller.SetRecursionDetectionHeader(headers);
+                Assert.Equal("existingTrace", headers[HeaderKeys.XAmznTraceIdHeader]);
+            }
+            finally
+            {
+                Environment.SetEnvironmentVariable(EnvironmentVariables._X_AMZN_TRACE_ID, null);
+                Environment.SetEnvironmentVariable(EnvironmentVariables.AWS_LAMBDA_FUNCTION_NAME, null);
+                Environment.SetEnvironmentVariable(EnvironmentVariables.AWS_LAMBDA_MAX_CONCURRENCY, null);
+                SDKTaskContext.Default.Set(EnvironmentVariables._X_AMZN_TRACE_ID, null);
+            }
         }
     }
 }
