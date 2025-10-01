@@ -50,9 +50,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property HookDetails. 
         /// <para>
-        /// The details of the deployment lifecycle hook. This provides additional configuration
-        /// for how the hook should be executed during deployment operations on Amazon ECS Managed
-        /// Instances.
+        /// Use this field to specify custom parameters that Amazon ECS will pass to your hook
+        /// target invocations (such as a Lambda function).
         /// </para>
         /// </summary>
         public Amazon.Runtime.Documents.Document HookDetails

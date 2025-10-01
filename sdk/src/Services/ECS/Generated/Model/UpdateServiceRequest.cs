@@ -226,6 +226,23 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
+        /// The default behavior of <c>AvailabilityZoneRebalancing</c> differs between create
+        /// and update requests:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// For create service requests, when no value is specified for <c>AvailabilityZoneRebalancing</c>,
+        /// Amazon ECS defaults the value to <c>ENABLED</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For update service requests, when no value is specified for <c>AvailabilityZoneRebalancing</c>,
+        /// Amazon ECS defaults to the existing service’s <c>AvailabilityZoneRebalancing</c> value.
+        /// If the service never had an <c>AvailabilityZoneRebalancing</c> value set, Amazon ECS
+        /// treats this as <c>DISABLED</c>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
         /// This parameter doesn't trigger a new service deployment.
         /// </para>
         /// </summary>
@@ -488,6 +505,11 @@ namespace Amazon.ECS.Model
         /// During that time, the Amazon ECS service scheduler ignores health check status. This
         /// grace period can prevent the service scheduler from marking tasks as unhealthy and
         /// stopping them before they have time to come up.
+        /// </para>
+        ///  
+        /// <para>
+        /// If your service has more running tasks than desired, unhealthy tasks in the grace
+        /// period might be stopped to reach the desired count.
         /// </para>
         ///  
         /// <para>
