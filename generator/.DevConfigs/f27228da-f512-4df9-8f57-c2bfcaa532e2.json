@@ -1,9 +1,0 @@
-{
-  "core": {
-    "updateMinimum": true,
-    "type": "patch",
-    "changeLogMessages": [
-      "Fix issue with computing the x-amzn-trace-id header value"
-    ]
-  }
-}

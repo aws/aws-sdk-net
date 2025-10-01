@@ -1,9 +1,0 @@
-{
-    "core": {
-        "updateMinimum": true,
-        "type": "Patch",
-        "changeLogMessages": [
-            "Revert [background refresh of credentials during preempt expiry period](https://github.com/aws/aws-sdk-net/commit/ab7f535b92fcfb07c92bf7a0aa91853f3114e46d) as it has caused the SDK to return expired credentials in some scenarios"
-        ]
-    }
-}

@@ -33,7 +33,7 @@ namespace Amazon.KinesisVideoSignalingChannels
     public partial class AmazonKinesisVideoSignalingChannelsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Kinesis Video Signaling", "4.0.1.5");
+            InternalSDKUtils.BuildUserAgentString("Kinesis Video Signaling", "4.0.1.6");
 
         private static readonly AmazonKinesisVideoSignalingChannelsEndpointResolver EndpointResolver =
             new AmazonKinesisVideoSignalingChannelsEndpointResolver();

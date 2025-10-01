@@ -33,7 +33,7 @@ namespace Amazon.Braket
     public partial class AmazonBraketConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Braket", "4.0.1.7");
+            InternalSDKUtils.BuildUserAgentString("Braket", "4.0.1.8");
 
         private static readonly AmazonBraketEndpointResolver EndpointResolver =
             new AmazonBraketEndpointResolver();

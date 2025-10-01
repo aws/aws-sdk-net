@@ -33,7 +33,7 @@ namespace Amazon.RecycleBin
     public partial class AmazonRecycleBinConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("rbin", "4.0.1.5");
+            InternalSDKUtils.BuildUserAgentString("rbin", "4.0.1.6");
 
         private static readonly AmazonRecycleBinEndpointResolver EndpointResolver =
             new AmazonRecycleBinEndpointResolver();
