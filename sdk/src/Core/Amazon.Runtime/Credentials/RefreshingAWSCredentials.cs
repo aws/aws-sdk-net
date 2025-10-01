@@ -26,7 +26,7 @@ namespace Amazon.Runtime
     /// </summary>
     public abstract class RefreshingAWSCredentials : AWSCredentials, IDisposable
     {
-        private Logger _logger = Logger.GetLogger(typeof(RefreshingAWSCredentials));
+        private readonly Logger _logger = Logger.GetLogger(typeof(RefreshingAWSCredentials));
 
         /// <inheritdoc />
         public override DateTime? Expiration
@@ -67,14 +67,6 @@ namespace Amazon.Runtime
                 var now = AWSSDKUtils.CorrectedUtcNow;
                 var exp = Expiration.ToUniversalTime();
                 return now > exp - preemptExpiryTime;
-            }
-
-            internal TimeSpan GetTimeToLive(TimeSpan preemptExpiryTime)
-            {
-                var now = AWSSDKUtils.CorrectedUtcNow;
-                var exp = Expiration.ToUniversalTime();
-
-                return exp - now + preemptExpiryTime;
             }
         }
 
@@ -127,105 +119,51 @@ namespace Amazon.Runtime
         /// <returns></returns>
         public override sealed ImmutableCredentials GetCredentials()
         {
-            // We save the currentState as it might be modified or cleared.
-            var tempState = currentState;
+            _updateGeneratedCredentialsSemaphore.Wait();
 
-            var ttl = tempState?.GetTimeToLive(PreemptExpiryTime);
-
-            if (ttl > TimeSpan.Zero)
+            try
             {
-                if (ttl < PreemptExpiryTime)
+                // We save the currentState as it might be modified or cleared.
+                var tempState = currentState;
+
+                // If credentials are expired or we don't have any state yet, update
+                if (ShouldUpdateState(tempState))
                 {
-                    // background refresh (fire & forget)
-                    if (_updateGeneratedCredentialsSemaphore.Wait(0))
-                    {
-                        _ = System.Threading.Tasks.Task.Run(GenerateCredentialsAndUpdateState);
-                    }
+                    tempState = GenerateNewCredentials();
+                    UpdateToGeneratedCredentials(tempState);
+                    currentState = tempState;
                 }
+
+                return tempState.Credentials;
             }
-            else
+            finally
             {
-                // If credentials are expired, update
-                _updateGeneratedCredentialsSemaphore.Wait();
-                tempState = GenerateCredentialsAndUpdateState();
-            }
-
-            return tempState.Credentials;
-
-            CredentialsRefreshState GenerateCredentialsAndUpdateState()
-            {
-                System.Diagnostics.Debug.Assert(_updateGeneratedCredentialsSemaphore.CurrentCount == 0);
-
-                try
-                {
-                    var tempState = currentState;
-                    // double-check that the credentials still need updating
-                    // as it's possible that multiple requests were queued acquiring the semaphore
-                    if (ShouldUpdateState(tempState))
-                    {
-                        tempState = GenerateNewCredentials();
-                        UpdateToGeneratedCredentials(tempState);
-                        currentState = tempState;
-                    }
-
-                    return tempState;
-                }
-                finally
-                {
-                    _updateGeneratedCredentialsSemaphore.Release();
-                }
+                _updateGeneratedCredentialsSemaphore.Release();
             }
         }
 
         public override sealed async System.Threading.Tasks.Task<ImmutableCredentials> GetCredentialsAsync()
         {
-            // We save the currentState as it might be modified or cleared.
-            var tempState = currentState;
+            await _updateGeneratedCredentialsSemaphore.WaitAsync().ConfigureAwait(false);
 
-            var ttl = tempState?.GetTimeToLive(PreemptExpiryTime);
+            try
+            {
+                // We save the currentState as it might be modified or cleared.
+                var tempState = currentState;
 
-            if (ttl > TimeSpan.Zero)
-            {
-                if (ttl < PreemptExpiryTime)
-                {
-                    // background refresh (fire & forget)
-                    if (_updateGeneratedCredentialsSemaphore.Wait(0))
-                    {
-                        _ = GenerateCredentialsAndUpdateStateAsync();
-                    }
-                }
-            }
-            else
-            {
                 // If credentials are expired, update
-                await _updateGeneratedCredentialsSemaphore.WaitAsync().ConfigureAwait(false);
-                tempState = await GenerateCredentialsAndUpdateStateAsync().ConfigureAwait(false);
+                if (ShouldUpdateState(tempState))
+                {
+                    tempState = await GenerateNewCredentialsAsync().ConfigureAwait(false);
+                    UpdateToGeneratedCredentials(tempState);
+                    currentState = tempState;
+                }
+
+                return tempState.Credentials;
             }
-
-            return tempState.Credentials;
-
-            async System.Threading.Tasks.Task<CredentialsRefreshState> GenerateCredentialsAndUpdateStateAsync()
+            finally
             {
-                System.Diagnostics.Debug.Assert(_updateGeneratedCredentialsSemaphore.CurrentCount == 0);
-
-                try
-                {
-                    var tempState = currentState;
-                    // double-check that the credentials still need updating
-                    // as it's possible that multiple requests were queued acquiring the semaphore
-                    if (ShouldUpdateState(tempState))
-                    {
-                        tempState = await GenerateNewCredentialsAsync().ConfigureAwait(false);
-                        UpdateToGeneratedCredentials(tempState);
-                        currentState = tempState;
-                    }
-
-                    return tempState;
-                }
-                finally
-                {
-                    _updateGeneratedCredentialsSemaphore.Release();
-                }
+                _updateGeneratedCredentialsSemaphore.Release();
             }
         }
 
@@ -261,8 +199,7 @@ namespace Amazon.Runtime
             {
                 // This could happen if the default value of PreemptExpiryTime is
                 // overridden and set too high such that ShouldUpdate returns true.
-                var logger = Logger.GetLogger(typeof(RefreshingAWSCredentials));
-                logger.InfoFormat(
+                _logger.InfoFormat(
                     "The preempt expiry time is set too high: Current time = {0}, Credentials expiry time = {1}, Preempt expiry time = {2}.",
                     AWSSDKUtils.CorrectedUtcNow,
                     state.Expiration, PreemptExpiryTime);
@@ -301,8 +238,7 @@ namespace Amazon.Runtime
             var isExpired = state?.IsExpiredWithin(TimeSpan.Zero);
             if (isExpired == true)
             {
-                var logger = Logger.GetLogger(typeof(RefreshingAWSCredentials));
-                logger.InfoFormat("Determined refreshing credentials should update. Expiration time: {0}, Current time: {1}",
+                _logger.InfoFormat("Determined refreshing credentials should update. Expiration time: {0}, Current time: {1}",
                                 state.Expiration.Add(PreemptExpiryTime).ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.f ffffffK", CultureInfo.InvariantCulture),
                                 AWSSDKUtils.CorrectedUtcNow.ToString("yyyy-MM-ddTHH:mm:ss.fffffffK", CultureInfo.InvariantCulture));
             }

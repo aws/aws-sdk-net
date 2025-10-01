@@ -115,13 +115,6 @@ namespace Amazon.Runtime.Internal
                     return _userAgentDetails;
 
                 _userAgentDetails = new UserAgentDetails();
-
-                _userAgentDetails.AddUserAgentComponent(((IAmazonWebServiceRequest)OriginalRequest).UserAgentDetails.GetCustomUserAgentComponents());
-                foreach (var featureId in ((IAmazonWebServiceRequest)OriginalRequest).UserAgentDetails.TrackedFeatureIds)
-                {
-                    _userAgentDetails.AddFeature(featureId);
-                }
-
                 return _userAgentDetails;
             }
         }

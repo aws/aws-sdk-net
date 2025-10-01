@@ -525,6 +525,14 @@ namespace Amazon.Runtime.Internal
             if (requestContext.Request.SignatureVersion == SignatureVersion.SigV4a)
                 requestContext.UserAgentDetails.AddFeature(UserAgentFeatureId.SIGV4A_SIGNING);
 
+            var originalRequest = (IAmazonWebServiceRequest)requestContext.OriginalRequest;
+
+            requestContext.UserAgentDetails.AddUserAgentComponent(originalRequest.UserAgentDetails.GetCustomUserAgentComponents());
+            foreach (var featureId in originalRequest.UserAgentDetails.TrackedFeatureIds)
+            {
+                requestContext.UserAgentDetails.AddFeature(featureId);
+            }
+
             var metricsUserAgent = requestContext.UserAgentDetails.GenerateUserAgentWithMetrics();
             Logger.DebugFormat("User-Agent Header: {0}", metricsUserAgent);
 
