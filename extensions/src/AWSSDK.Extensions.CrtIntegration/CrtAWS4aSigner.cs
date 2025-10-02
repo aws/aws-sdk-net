@@ -119,12 +119,21 @@ namespace Amazon.Extensions.CrtIntegration
                 : AWS4Signer.DetermineService(clientConfig, request);
             if (serviceSigningName == "s3")
             {
-                // Older versions of the S3 package can be used with newer versions of Core, this guarantees no double encoding will be used.
-                // The new behavior uses endpoint resolution rules, which are not present prior to 3.7.100
+                // S3 requests require special URI encoding handling for compatibility
                 request.UseDoubleEncoding = false;
             }
 
-            var regionSet = AWS4Signer.DetermineSigningRegion(clientConfig, clientConfig.RegionEndpointServiceName, request.AlternateEndpoint, request);
+            // Use the configured SigV4aSigningRegionSet if available (configured for multi-region signing),
+            // otherwise fall back to single region determination for backward compatibility
+            string regionSet;
+            if (!string.IsNullOrEmpty(request.SigV4aSigningRegionSet))
+            {
+                regionSet = request.SigV4aSigningRegionSet;
+            }
+            else
+            {
+                regionSet = AWS4Signer.DetermineSigningRegion(clientConfig, clientConfig.RegionEndpointServiceName, request.AlternateEndpoint, request);
+            }
             request.DeterminedSigningRegion = regionSet;
             AWS4Signer.SetXAmzTrailerHeader(request.Headers, request.TrailingHeaders);
 
@@ -150,6 +159,7 @@ namespace Amazon.Extensions.CrtIntegration
             var signedCrtRequest = signingResult.Get().SignedRequest;
 
             CrtHttpRequestConverter.CopyHeadersFromCrtRequest(request, signedCrtRequest);
+            request.Headers[HeaderKeys.XAmzRegionSetHeader] = regionSet;
 
             var dateStamp = AWS4Signer.FormatDateTime(signedAt, AWSSDKUtils.ISO8601BasicDateFormat);
             var scope = string.Format(CultureInfo.InvariantCulture, "{0}/{1}/{2}", dateStamp, serviceSigningName, AWS4Signer.Terminator);
@@ -194,14 +204,18 @@ namespace Amazon.Extensions.CrtIntegration
         {
             if (serviceSigningName == "s3")
             {
-                // Older versions of the S3 package can be used with newer versions of Core, this guarantees no double encoding will be used.
-                // The new behavior uses endpoint resolution rules, which are not present prior to 3.7.100
+                // S3 requests require special URI encoding handling for compatibility
                 request.UseDoubleEncoding = false;
             }
 
             var signedAt = AWS4Signer.InitializeHeaders(request.Headers, request.Endpoint);
             request.SignedAt = CorrectClockSkew.GetCorrectedUtcNowForEndpoint(request.Endpoint.ToString());
-            var regionSet = overrideSigningRegion ?? AWS4Signer.DetermineSigningRegion(clientConfig, clientConfig.RegionEndpointServiceName, request.AlternateEndpoint, request);
+            
+            // Use explicit override, then SigV4aSigningRegionSet, then fall back to single region
+            var regionSet = overrideSigningRegion
+                ?? (!string.IsNullOrEmpty(request.SigV4aSigningRegionSet)
+                    ? request.SigV4aSigningRegionSet
+                    : AWS4Signer.DetermineSigningRegion(clientConfig, clientConfig.RegionEndpointServiceName, request.AlternateEndpoint, request));
 
             var signingConfig = PrepareCRTSigningConfig(
                 AwsSignatureType.HTTP_REQUEST_VIA_QUERY_PARAMS, 
@@ -331,7 +345,7 @@ namespace Amazon.Extensions.CrtIntegration
             signingConfig.UseDoubleUriEncode = useDoubleEncoding;
             signingConfig.ShouldNormalizeUriPath = useDoubleEncoding;
 
-            // The request headers aren't an input for chunked signing, so don't pass the callback that filters headers.
+            // The request headers aren't an input for chunked signing, so header filtering is not required
             var addCallback = signatureType != AwsSignatureType.HTTP_REQUEST_CHUNK && signatureType != AwsSignatureType.HTTP_REQUEST_TRAILING_HEADERS;
             if (addCallback)
             {
@@ -359,7 +373,7 @@ namespace Amazon.Extensions.CrtIntegration
         /// </para>
         /// </summary>
         /// <remarks>
-        /// Based on the example from the CRT repository: https://github.com/awslabs/aws-crt-dotnet/blob/v0.4.4/tests/SigningTest.cs#L40-L43
+        /// Implements AWS CRT best practices for header filtering
         /// </remarks>
         private static bool ShouldSignHeader(byte[] headerName, uint length)
         {

@@ -52,13 +52,13 @@ namespace CrtIntegrationTests
 
         public V4aSignerTests()
         {
-            // Override the SDK's AWSConfigs.utcNowSource to return a fixed time to test predictable signatures
+            // Configure a fixed timestamp for predictable test signatures
             SetUtcNowSource(() => SigningTestTimepoint);
         }
 
         public void Dispose()
         {
-            // Reset back to the SDK's usual GetUtcNow function
+            // Restore default timestamp behavior
             SetUtcNowSource((Func<DateTime>)Delegate.CreateDelegate(typeof(Func<DateTime>),
                 typeof(AWSConfigs).GetMethod("GetUtcNow", BindingFlags.Static | BindingFlags.NonPublic)));
         }
@@ -132,6 +132,36 @@ namespace CrtIntegrationTests
             request.ResourcePath = resourcePath;
             request.Content = Encoding.ASCII.GetBytes("Param1=value1");
             request.Endpoint = new Uri("https://" + SigningTestHost + "/");
+
+            return request;
+        }
+
+        /// <summary>
+        /// Dummy request class needed for DefaultRequest constructor
+        /// </summary>
+        private class DummyRequest : AmazonWebServiceRequest { }
+
+        /// <summary>
+        /// Creates a test request with mutable collections to verify header modifications
+        /// during signing.
+        /// </summary>
+        internal static IRequest CreateDefaultRequest(string resourcePath)
+        {
+            var publicRequest = new DummyRequest();
+            var request = new DefaultRequest(publicRequest, SigningTestService)
+            {
+                HttpMethod = "POST",
+                ResourcePath = resourcePath,
+                Endpoint = new Uri($"https://{SigningTestHost}/"),
+                Content = Encoding.ASCII.GetBytes("Param1=value1")
+            };
+
+            request.Headers["Content-Type"] = "application/x-www-form-urlencoded";
+            request.Headers["Content-Length"] = "13";
+            // Add SDK tracking headers that should NOT be signed
+            request.Headers["amz-sdk-request"] = "attempt=1; max=5";
+            request.Headers["amz-sdk-invocation-id"] = "a7d0c828-1fc1-43e8-9f9e-367a7011fc84";
+            request.Headers["x-amzn-trace-id"] = "Root=1-63441c4a-abcdef012345678912345678";
 
             return request;
         }
@@ -439,6 +469,168 @@ namespace CrtIntegrationTests
             Assert.True(AwsSigner.VerifyV4aSignature(BuildV4aTrailerChunkHelper(headerResult, chunk3Result, request.TrailingHeaders), 
                                                      Encoding.ASCII.GetBytes(trailerChunkResult), SigningTestEccPubX, SigningTestEccPubY));
         }
+        #endregion
+
+        #region Multi-Region SigV4a Signing Tests
+
+        /// <summary>
+        /// Tests multi-region SigV4a signing by comparing signed requests with different region configurations.
+        ///
+        /// The CRT library handles signature calculation but does not automatically add the x-amz-region-set
+        /// header to the HTTP request. The SDK must add this header after signing so AWS services can
+        /// validate which regions the signature covers.
+        ///
+        /// </summary>
+        [Fact]
+        public void TestMultiRegionSigV4a_DifferentialVerification()
+        {
+            // Create signer and THREE identical requests using DefaultRequest
+            var signer = new CrtAWS4aSigner();
+            var clientConfig = BuildSigningClientConfig(SigningTestService);
+
+            var singleRegionRequest = CreateDefaultRequest("/");
+            var multiRegionRequest = CreateDefaultRequest("/");
+            var wildcardRequest = CreateDefaultRequest("/");
+
+            // Configure different region sets
+            singleRegionRequest.SigV4aSigningRegionSet = "us-west-2";
+            multiRegionRequest.SigV4aSigningRegionSet = "us-west-2,us-east-1";
+            wildcardRequest.SigV4aSigningRegionSet = "*";
+
+            // Sign all three requests
+            var singleResult = signer.SignRequest(singleRegionRequest, clientConfig, null, SigningTestCredentials);
+            var multiResult = signer.SignRequest(multiRegionRequest, clientConfig, null, SigningTestCredentials);
+            var wildcardResult = signer.SignRequest(wildcardRequest, clientConfig, null, SigningTestCredentials);
+
+            // DIFF ASSERTION 1: Different region sets produce different signatures
+            // proves the region set value affects the signature calculation
+            Assert.NotEqual(singleResult.Signature, multiResult.Signature);
+            Assert.NotEqual(multiResult.Signature, wildcardResult.Signature);
+            Assert.NotEqual(singleResult.Signature, wildcardResult.Signature);
+
+            // DIFF ASSERTION 2: Verify x-amz-region-set header is in HTTP request with correct value
+            Assert.True(singleRegionRequest.Headers.ContainsKey(HeaderKeys.XAmzRegionSetHeader),
+                "Single region request must have x-amz-region-set header");
+            Assert.Equal("us-west-2", singleRegionRequest.Headers[HeaderKeys.XAmzRegionSetHeader]);
+
+            Assert.True(multiRegionRequest.Headers.ContainsKey(HeaderKeys.XAmzRegionSetHeader),
+                "Multi-region request must have x-amz-region-set header");
+            Assert.Equal("us-west-2,us-east-1", multiRegionRequest.Headers[HeaderKeys.XAmzRegionSetHeader]);
+
+            Assert.True(wildcardRequest.Headers.ContainsKey(HeaderKeys.XAmzRegionSetHeader),
+                "Wildcard request must have x-amz-region-set header");
+            Assert.Equal("*", wildcardRequest.Headers[HeaderKeys.XAmzRegionSetHeader]);
+
+            // DIFF ASSERTION 3: Verify region set is in signed headers list
+            Assert.Contains("x-amz-region-set", singleResult.SignedHeaders);
+            Assert.Contains("x-amz-region-set", multiResult.SignedHeaders);
+            Assert.Contains("x-amz-region-set", wildcardResult.SignedHeaders);
+
+            var singleCanonicalRequest = String.Join('\n',
+                "POST", "/", "",
+                "content-length:13",
+                "content-type:application/x-www-form-urlencoded",
+                "host:example.amazonaws.com",
+                "x-amz-content-sha256:9095672bbd1f56dfc5b65f3e153adc8731a4a654192329106275f4c7b24d0b6e",
+                "x-amz-date:20150830T123600Z",
+                "x-amz-region-set:us-west-2",
+                "",
+                "content-length;content-type;host;x-amz-content-sha256;x-amz-date;x-amz-region-set",
+                "9095672bbd1f56dfc5b65f3e153adc8731a4a654192329106275f4c7b24d0b6e");
+
+            var multiCanonicalRequest = String.Join('\n',
+                "POST", "/", "",
+                "content-length:13",
+                "content-type:application/x-www-form-urlencoded",
+                "host:example.amazonaws.com",
+                "x-amz-content-sha256:9095672bbd1f56dfc5b65f3e153adc8731a4a654192329106275f4c7b24d0b6e",
+                "x-amz-date:20150830T123600Z",
+                "x-amz-region-set:us-west-2,us-east-1",
+                "",
+                "content-length;content-type;host;x-amz-content-sha256;x-amz-date;x-amz-region-set",
+                "9095672bbd1f56dfc5b65f3e153adc8731a4a654192329106275f4c7b24d0b6e");
+
+            var wildcardCanonicalRequest = String.Join('\n',
+                "POST", "/", "",
+                "content-length:13",
+                "content-type:application/x-www-form-urlencoded",
+                "host:example.amazonaws.com",
+                "x-amz-content-sha256:9095672bbd1f56dfc5b65f3e153adc8731a4a654192329106275f4c7b24d0b6e",
+                "x-amz-date:20150830T123600Z",
+                "x-amz-region-set:*",
+                "",
+                "content-length;content-type;host;x-amz-content-sha256;x-amz-date;x-amz-region-set",
+                "9095672bbd1f56dfc5b65f3e153adc8731a4a654192329106275f4c7b24d0b6e");
+
+            var singleConfig = BuildDefaultSigningConfig(SigningTestService);
+            singleConfig.SignatureType = AwsSignatureType.CANONICAL_REQUEST_VIA_HEADERS;
+            singleConfig.Region = "us-west-2";
+
+            var multiConfig = BuildDefaultSigningConfig(SigningTestService);
+            multiConfig.SignatureType = AwsSignatureType.CANONICAL_REQUEST_VIA_HEADERS;
+            multiConfig.Region = "us-west-2,us-east-1";
+
+            var wildcardConfig = BuildDefaultSigningConfig(SigningTestService);
+            wildcardConfig.SignatureType = AwsSignatureType.CANONICAL_REQUEST_VIA_HEADERS;
+            wildcardConfig.Region = "*";
+
+            Assert.True(AwsSigner.VerifyV4aCanonicalSigning(
+                singleCanonicalRequest, singleConfig, singleResult.Signature,
+                SigningTestEccPubX, SigningTestEccPubY),
+                "Single region signature verification failed");
+
+            Assert.True(AwsSigner.VerifyV4aCanonicalSigning(
+                multiCanonicalRequest, multiConfig, multiResult.Signature,
+                SigningTestEccPubX, SigningTestEccPubY),
+                "Multi-region signature verification failed");
+
+            Assert.True(AwsSigner.VerifyV4aCanonicalSigning(
+                wildcardCanonicalRequest, wildcardConfig, wildcardResult.Signature,
+                SigningTestEccPubX, SigningTestEccPubY),
+                "Wildcard signature verification failed");
+        }
+
+        /// <summary>
+        /// Tests backward compatibility: when SigV4aSigningRegionSet is not set,
+        /// the signer should fall back to single-region behavior.
+        /// </summary>
+        [Fact]
+        public void TestSigV4aFallbackToSingleRegion()
+        {
+            var signer = new CrtAWS4aSigner();
+            var request = CreateDefaultRequest("/");
+            // Explicitly NOT setting request.SigV4aSigningRegionSet
+
+            var clientConfig = BuildSigningClientConfig(SigningTestService);
+            var result = signer.SignRequest(request, clientConfig, null, SigningTestCredentials);
+
+            // Should fall back to us-east-1 (from SigningTestRegion)
+            Assert.Equal(SigningTestRegion, request.DeterminedSigningRegion);
+            Assert.True(request.Headers.ContainsKey(HeaderKeys.XAmzRegionSetHeader));
+            Assert.Equal(SigningTestRegion, request.Headers[HeaderKeys.XAmzRegionSetHeader]);
+
+            var expectedCanonicalRequest = String.Join('\n',
+                "POST", "/", "",
+                "content-length:13",
+                "content-type:application/x-www-form-urlencoded",
+                "host:example.amazonaws.com",
+                "x-amz-content-sha256:9095672bbd1f56dfc5b65f3e153adc8731a4a654192329106275f4c7b24d0b6e",
+                "x-amz-date:20150830T123600Z",
+                $"x-amz-region-set:{SigningTestRegion}",
+                "",
+                "content-length;content-type;host;x-amz-content-sha256;x-amz-date;x-amz-region-set",
+                "9095672bbd1f56dfc5b65f3e153adc8731a4a654192329106275f4c7b24d0b6e");
+
+            var config = BuildDefaultSigningConfig(SigningTestService);
+            config.SignatureType = AwsSignatureType.CANONICAL_REQUEST_VIA_HEADERS;
+            config.Region = SigningTestRegion;
+
+            Assert.True(AwsSigner.VerifyV4aCanonicalSigning(
+                expectedCanonicalRequest, config, result.Signature,
+                SigningTestEccPubX, SigningTestEccPubY),
+                "Fallback signature verification failed");
+        }
+
         #endregion
     }
 }
