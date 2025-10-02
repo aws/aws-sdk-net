@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConnectCases.Model
 {
     /// <summary>
-    /// Represents the content of a Case related item
+    /// Represents the content of a <c>ConnectCase</c> type related item.
     /// </summary>
     public partial class ConnectCaseContent
     {
@@ -39,7 +39,7 @@ namespace Amazon.ConnectCases.Model
         /// <summary>
         /// Gets and sets the property CaseId. 
         /// <para>
-        /// The unique identifier of the related case
+        /// A unique identifier of the case.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=500)]

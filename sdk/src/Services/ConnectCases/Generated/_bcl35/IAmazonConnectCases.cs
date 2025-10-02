@@ -2267,6 +2267,110 @@ namespace Amazon.ConnectCases
 
         #endregion
         
+        #region  SearchAllRelatedItems
+
+
+        /// <summary>
+        /// Searches for related items across all cases within a domain. This is a global search
+        /// operation that returns related items from multiple cases, unlike the case-specific
+        /// <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_SearchRelatedItems.html">SearchRelatedItems</a>
+        /// API.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Use cases</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Following are common uses cases for this API:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Find cases with similar issues across the domain. For example, search for all cases
+        /// containing comments about "product defect" to identify patterns and existing solutions.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Locate all cases associated with specific contacts or orders. For example, find all
+        /// cases linked to a contactArn to understand the complete customer journey. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Monitor SLA compliance across cases. For example, search for all cases with "Active"
+        /// SLA status to prioritize remediation efforts.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Important things to know</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// This API returns case IDs, not complete case objects. To retrieve full case details,
+        /// you must make additional calls to the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_GetCase.html">GetCase</a>
+        /// API for each returned case ID. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// This API searches across related items content, not case fields. Use the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_SearchCases.html">SearchCases</a>
+        /// API to search within case field values.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
+        /// Connect endpoints and quotas</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchAllRelatedItems service method.</param>
+        /// 
+        /// <returns>The response from the SearchAllRelatedItems service method, as returned by ConnectCases.</returns>
+        /// <exception cref="Amazon.ConnectCases.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.InternalServerException">
+        /// We couldn't process your request because of an issue with the server. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ResourceNotFoundException">
+        /// We couldn't find the requested resource. Check that your resources exists and were
+        /// created in the same Amazon Web Services Region as your request, and try your request
+        /// again.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ThrottlingException">
+        /// The rate has been exceeded for this API. Please try again after a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ValidationException">
+        /// The request isn't valid. Check the syntax and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/SearchAllRelatedItems">REST API Reference for SearchAllRelatedItems Operation</seealso>
+        SearchAllRelatedItemsResponse SearchAllRelatedItems(SearchAllRelatedItemsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SearchAllRelatedItems operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SearchAllRelatedItems operation on AmazonConnectCasesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSearchAllRelatedItems
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/SearchAllRelatedItems">REST API Reference for SearchAllRelatedItems Operation</seealso>
+        IAsyncResult BeginSearchAllRelatedItems(SearchAllRelatedItemsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  SearchAllRelatedItems operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSearchAllRelatedItems.</param>
+        /// 
+        /// <returns>Returns a  SearchAllRelatedItemsResult from ConnectCases.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/SearchAllRelatedItems">REST API Reference for SearchAllRelatedItems Operation</seealso>
+        SearchAllRelatedItemsResponse EndSearchAllRelatedItems(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  SearchCases
 
 

@@ -109,6 +109,14 @@ namespace Amazon.ConnectCases.Model
         }
 
         /// <summary>
+        /// Paginator for SearchAllRelatedItems operation
+        ///</summary>
+        public ISearchAllRelatedItemsPaginator SearchAllRelatedItems(SearchAllRelatedItemsRequest request) 
+        {
+            return new SearchAllRelatedItemsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for SearchCases operation
         ///</summary>
         public ISearchCasesPaginator SearchCases(SearchCasesRequest request) 

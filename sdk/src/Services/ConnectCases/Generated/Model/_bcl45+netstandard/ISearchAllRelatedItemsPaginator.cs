@@ -16,44 +16,24 @@
 /*
  * Do not modify this file. This file is generated from the connectcases-2022-10-03.normal.json service model.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
-using System.IO;
-using System.Net;
-
 using Amazon.Runtime;
-using Amazon.Runtime.Internal;
 
-#pragma warning disable CS0612,CS0618,CS1570
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ConnectCases.Model
 {
     /// <summary>
-    /// A filter for related items of type <c>ConnectCase</c>.
-    /// </summary>
-    public partial class ConnectCaseFilter
+    /// Paginator for the SearchAllRelatedItems operation
+    ///</summary>
+    public interface ISearchAllRelatedItemsPaginator
     {
-        private string _caseId;
+        /// <summary>
+        /// Enumerable containing all full responses for the operation
+        /// </summary>
+        IPaginatedEnumerable<SearchAllRelatedItemsResponse> Responses { get; }
 
         /// <summary>
-        /// Gets and sets the property CaseId. 
-        /// <para>
-        /// A unique identifier of the case.
-        /// </para>
+        /// Enumerable containing all of the RelatedItems
         /// </summary>
-        [AWSProperty(Min=1, Max=500)]
-        public string CaseId
-        {
-            get { return this._caseId; }
-            set { this._caseId = value; }
-        }
-
-        // Check to see if CaseId property is set
-        internal bool IsSetCaseId()
-        {
-            return this._caseId != null;
-        }
-
+        IPaginatedEnumerable<SearchAllRelatedItemsResponseItem> RelatedItems { get; }
     }
 }

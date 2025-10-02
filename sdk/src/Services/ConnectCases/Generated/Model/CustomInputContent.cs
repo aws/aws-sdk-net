@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConnectCases.Model
 {
     /// <summary>
-    /// Represents the input content of a Custom related item
+    /// Represents the content of a <c>Custom</c> related item.
     /// </summary>
     public partial class CustomInputContent
     {
@@ -39,7 +39,7 @@ namespace Amazon.ConnectCases.Model
         /// <summary>
         /// Gets and sets the property Fields. 
         /// <para>
-        /// List of field values for the custom related item
+        /// List of field values for the <c>Custom</c> related item.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=50)]

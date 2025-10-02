@@ -539,6 +539,26 @@
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ConnectCases.Model.SearchAllRelatedItemsRequest.DomainId</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectCases.Model.SearchAllRelatedItemsRequest.MaxResults</property>
+    <min>1</min>
+    <max>25</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectCases.Model.SearchAllRelatedItemsRequest.NextToken</property>
+    <min>0</min>
+    <max>9000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectCases.Model.SearchAllRelatedItemsResponse.NextToken</property>
+    <min>0</min>
+    <max>9000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ConnectCases.Model.SearchCasesRequest.DomainId</property>
     <min>1</min>
     <max>500</max>
@@ -953,6 +973,16 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectCases.Model.RequiredField.FieldId</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectCases.Model.SearchAllRelatedItemsResponseItem.CaseId</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectCases.Model.SearchAllRelatedItemsResponseItem.RelatedItemId</property>
     <min>1</min>
     <max>500</max>
   </property-value-rule>
