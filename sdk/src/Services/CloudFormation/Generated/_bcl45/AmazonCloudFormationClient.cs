@@ -1293,7 +1293,7 @@ namespace Amazon.CloudFormation
         ///  
         /// <para>
         /// Deactivating an extension deletes the configuration details that are associated with
-        /// it. To temporary disable a CloudFormation Hook instead, you can use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html">SetTypeConfiguration</a>.
+        /// it. To temporarily disable a CloudFormation Hook instead, you can use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html">SetTypeConfiguration</a>.
         /// </para>
         ///  
         /// <para>
@@ -1334,7 +1334,7 @@ namespace Amazon.CloudFormation
         ///  
         /// <para>
         /// Deactivating an extension deletes the configuration details that are associated with
-        /// it. To temporary disable a CloudFormation Hook instead, you can use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html">SetTypeConfiguration</a>.
+        /// it. To temporarily disable a CloudFormation Hook instead, you can use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html">SetTypeConfiguration</a>.
         /// </para>
         ///  
         /// <para>
@@ -2964,6 +2964,12 @@ namespace Amazon.CloudFormation
         /// specific extension version. Otherwise, it returns information about the default extension
         /// version.
         /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-set-configuration.html">Edit
+        /// configuration data for extensions in your account</a> in the <i>CloudFormation User
+        /// Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeType service method.</param>
         /// 
@@ -2994,6 +3000,12 @@ namespace Amazon.CloudFormation
         /// If you specify a <c>VersionId</c>, <c>DescribeType</c> returns information about that
         /// specific extension version. Otherwise, it returns information about the default extension
         /// version.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-set-configuration.html">Edit
+        /// configuration data for extensions in your account</a> in the <i>CloudFormation User
+        /// Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeType service method.</param>
@@ -4112,7 +4124,8 @@ namespace Amazon.CloudFormation
 
         /// <summary>
         /// Returns summaries of invoked Hooks. For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/hooks-userguide/hooks-view-invocations.html">View
-        /// CloudFormation Hooks invocations</a> in the <i>CloudFormation Hooks User Guide</i>.
+        /// invocation summaries for CloudFormation Hooks</a> in the <i>CloudFormation Hooks User
+        /// Guide</i>.
         /// 
         ///  
         /// <para>
@@ -4157,7 +4170,8 @@ namespace Amazon.CloudFormation
 
         /// <summary>
         /// Returns summaries of invoked Hooks. For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/hooks-userguide/hooks-view-invocations.html">View
-        /// CloudFormation Hooks invocations</a> in the <i>CloudFormation Hooks User Guide</i>.
+        /// invocation summaries for CloudFormation Hooks</a> in the <i>CloudFormation Hooks User
+        /// Guide</i>.
         /// 
         ///  
         /// <para>
@@ -5675,26 +5689,36 @@ namespace Amazon.CloudFormation
 
 
         /// <summary>
-        /// Specifies the configuration data for a registered CloudFormation extension, in the
-        /// given account and Region.
+        /// Specifies the configuration data for a CloudFormation extension, such as a resource
+        /// or Hook, in the given account and Region.
         /// 
         ///  
         /// <para>
-        /// To view the current configuration data for an extension, refer to the <c>ConfigurationSchema</c>
-        /// element of <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a>.
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-set-configuration.html">Edit
         /// configuration data for extensions in your account</a> in the <i>CloudFormation User
         /// Guide</i>.
         /// </para>
+        ///  
+        /// <para>
+        /// To view the current configuration data for an extension, refer to the <c>ConfigurationSchema</c>
+        /// element of <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a>.
+        /// </para>
         ///  <important> 
         /// <para>
         /// It's strongly recommended that you use dynamic references to restrict sensitive configuration
-        /// definitions, such as third-party credentials. For more details on dynamic references,
-        /// see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/dynamic-references.html">Specify
+        /// definitions, such as third-party credentials. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/dynamic-references.html">Specify
         /// values stored in other services using dynamic references</a> in the <i>CloudFormation
         /// User Guide</i>.
         /// </para>
-        ///  </important>
+        ///  </important> 
+        /// <para>
+        /// For more information about setting the configuration data for resource types, see
+        /// <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-model.html#resource-type-howto-configuration">Defining
+        /// the account-level configuration of an extension</a> in the <i>CloudFormation Command
+        /// Line Interface (CLI) User Guide</i>. For more information about setting the configuration
+        /// data for Hooks, see the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/hooks-userguide/what-is-cloudformation-hooks.html">CloudFormation
+        /// Hooks User Guide</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SetTypeConfiguration service method.</param>
         /// 
@@ -5717,26 +5741,36 @@ namespace Amazon.CloudFormation
 
 
         /// <summary>
-        /// Specifies the configuration data for a registered CloudFormation extension, in the
-        /// given account and Region.
+        /// Specifies the configuration data for a CloudFormation extension, such as a resource
+        /// or Hook, in the given account and Region.
         /// 
         ///  
         /// <para>
-        /// To view the current configuration data for an extension, refer to the <c>ConfigurationSchema</c>
-        /// element of <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a>.
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-set-configuration.html">Edit
         /// configuration data for extensions in your account</a> in the <i>CloudFormation User
         /// Guide</i>.
         /// </para>
+        ///  
+        /// <para>
+        /// To view the current configuration data for an extension, refer to the <c>ConfigurationSchema</c>
+        /// element of <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a>.
+        /// </para>
         ///  <important> 
         /// <para>
         /// It's strongly recommended that you use dynamic references to restrict sensitive configuration
-        /// definitions, such as third-party credentials. For more details on dynamic references,
-        /// see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/dynamic-references.html">Specify
+        /// definitions, such as third-party credentials. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/dynamic-references.html">Specify
         /// values stored in other services using dynamic references</a> in the <i>CloudFormation
         /// User Guide</i>.
         /// </para>
-        ///  </important>
+        ///  </important> 
+        /// <para>
+        /// For more information about setting the configuration data for resource types, see
+        /// <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-model.html#resource-type-howto-configuration">Defining
+        /// the account-level configuration of an extension</a> in the <i>CloudFormation Command
+        /// Line Interface (CLI) User Guide</i>. For more information about setting the configuration
+        /// data for Hooks, see the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/hooks-userguide/what-is-cloudformation-hooks.html">CloudFormation
+        /// Hooks User Guide</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SetTypeConfiguration service method.</param>
         /// <param name="cancellationToken">

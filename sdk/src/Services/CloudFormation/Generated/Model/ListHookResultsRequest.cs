@@ -32,7 +32,8 @@ namespace Amazon.CloudFormation.Model
     /// <summary>
     /// Container for the parameters to the ListHookResults operation.
     /// Returns summaries of invoked Hooks. For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/hooks-userguide/hooks-view-invocations.html">View
-    /// CloudFormation Hooks invocations</a> in the <i>CloudFormation Hooks User Guide</i>.
+    /// invocation summaries for CloudFormation Hooks</a> in the <i>CloudFormation Hooks User
+    /// Guide</i>.
     /// 
     ///  
     /// <para>
