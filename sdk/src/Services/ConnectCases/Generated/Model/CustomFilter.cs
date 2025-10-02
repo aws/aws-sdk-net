@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConnectCases.Model
 {
     /// <summary>
-    /// A filter for related items of type Custom
+    /// A filter for related items of type <c>Custom</c>.
     /// </summary>
     public partial class CustomFilter
     {
@@ -39,7 +39,7 @@ namespace Amazon.ConnectCases.Model
         /// <summary>
         /// Gets and sets the property Fields. 
         /// <para>
-        /// Filter conditions for custom fields
+        /// Filter conditions for custom fields.
         /// </para>
         /// </summary>
         public CustomFieldsFilter Fields

@@ -30,16 +30,37 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConnectCases.Model
 {
     /// <summary>
-    /// Represents the content of a <c>Custom</c> type related item.
+    /// This is the response object from the SearchAllRelatedItems operation.
     /// </summary>
-    public partial class CustomContent
+    public partial class SearchAllRelatedItemsResponse : AmazonWebServiceResponse
     {
-        private List<FieldValue> _fields = AWSConfigs.InitializeCollections ? new List<FieldValue>() : null;
+        private string _nextToken;
+        private List<SearchAllRelatedItemsResponseItem> _relatedItems = AWSConfigs.InitializeCollections ? new List<SearchAllRelatedItemsResponseItem>() : null;
 
         /// <summary>
-        /// Gets and sets the property Fields. 
+        /// Gets and sets the property NextToken. 
         /// <para>
-        /// List of field values for the <c>Custom</c> related item.
+        /// The token for the next set of results. This is null if there are no more results to
+        /// return.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=9000)]
+        public string NextToken
+        {
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
+        }
+
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
+        {
+            return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RelatedItems. 
+        /// <para>
+        /// A list of items related to a case.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -47,17 +68,17 @@ namespace Amazon.ConnectCases.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Required=true)]
-        public List<FieldValue> Fields
+        [AWSProperty(Required=true, Min=0, Max=25)]
+        public List<SearchAllRelatedItemsResponseItem> RelatedItems
         {
-            get { return this._fields; }
-            set { this._fields = value; }
+            get { return this._relatedItems; }
+            set { this._relatedItems = value; }
         }
 
-        // Check to see if Fields property is set
-        internal bool IsSetFields()
+        // Check to see if RelatedItems property is set
+        internal bool IsSetRelatedItems()
         {
-            return this._fields != null && (this._fields.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._relatedItems != null && (this._relatedItems.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

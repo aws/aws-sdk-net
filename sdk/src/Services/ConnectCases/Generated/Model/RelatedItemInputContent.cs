@@ -62,7 +62,7 @@ namespace Amazon.ConnectCases.Model
         /// <summary>
         /// Gets and sets the property ConnectCase. 
         /// <para>
-        /// Input content for a related Connect case
+        /// Represents the Amazon Connect case to be created as a related item.
         /// </para>
         /// </summary>
         public ConnectCaseInputContent ConnectCase
@@ -98,7 +98,7 @@ namespace Amazon.ConnectCases.Model
         /// <summary>
         /// Gets and sets the property Custom. 
         /// <para>
-        /// Input content for a custom related item
+        /// Represents the content of a <c>Custom</c> type related item.
         /// </para>
         /// </summary>
         public CustomInputContent Custom

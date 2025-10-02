@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConnectCases.Model
 {
     /// <summary>
-    /// A filter for fields in related items of type Custom
+    /// A filter for fields in <c>Custom</c> type related items. Only one value can be provided.
     /// </summary>
     public partial class CustomFieldsFilter
     {
@@ -42,7 +42,7 @@ namespace Amazon.ConnectCases.Model
         /// <summary>
         /// Gets and sets the property AndAll. 
         /// <para>
-        /// Matches items that satisfy all of the specified filter conditions
+        /// Provides "and all" filtering.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -81,7 +81,7 @@ namespace Amazon.ConnectCases.Model
         /// <summary>
         /// Gets and sets the property Not. 
         /// <para>
-        /// Excludes items matching the filter
+        /// Excludes items matching the filter.
         /// </para>
         /// </summary>
         public CustomFieldsFilter Not
@@ -99,7 +99,7 @@ namespace Amazon.ConnectCases.Model
         /// <summary>
         /// Gets and sets the property OrAll. 
         /// <para>
-        /// Matches items that satisfy any of the specified filter conditions
+        /// Provides "or all" filtering.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

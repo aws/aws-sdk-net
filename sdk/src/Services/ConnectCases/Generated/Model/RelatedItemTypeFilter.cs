@@ -62,7 +62,7 @@ namespace Amazon.ConnectCases.Model
         /// <summary>
         /// Gets and sets the property ConnectCase. 
         /// <para>
-        /// Filter for related items of type Connect case
+        /// Represents the Amazon Connect case to be created as a related item.
         /// </para>
         /// </summary>
         public ConnectCaseFilter ConnectCase
@@ -98,7 +98,7 @@ namespace Amazon.ConnectCases.Model
         /// <summary>
         /// Gets and sets the property Custom. 
         /// <para>
-        /// Filter for related items of type Custom
+        /// Represents the content of a <c>Custom</c> type related item.
         /// </para>
         /// </summary>
         public CustomFilter Custom
