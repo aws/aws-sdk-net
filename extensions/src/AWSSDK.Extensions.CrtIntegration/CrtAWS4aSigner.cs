@@ -159,7 +159,6 @@ namespace Amazon.Extensions.CrtIntegration
             var signedCrtRequest = signingResult.Get().SignedRequest;
 
             CrtHttpRequestConverter.CopyHeadersFromCrtRequest(request, signedCrtRequest);
-            request.Headers[HeaderKeys.XAmzRegionSetHeader] = regionSet;
 
             var dateStamp = AWS4Signer.FormatDateTime(signedAt, AWSSDKUtils.ISO8601BasicDateFormat);
             var scope = string.Format(CultureInfo.InvariantCulture, "{0}/{1}/{2}", dateStamp, serviceSigningName, AWS4Signer.Terminator);

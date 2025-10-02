@@ -40,8 +40,8 @@ namespace CrtIntegrationTests
             {
                 { HeaderKeys.ContentLengthHeader, "13" },
                 { HeaderKeys.ContentTypeHeader, "application/x-www-form-urlencoded"},
-                { HeaderKeys.XAmzRegionSetHeader, "us-east-1" },    // should not be passed into CRT
-                { HeaderKeys.XAmzSecurityTokenHeader, "token" }     // should not be passed into CRT
+                { HeaderKeys.XAmzRegionSetHeader, "us-east-1" },    // CRT sets this based on signingConfig.Region
+                { HeaderKeys.XAmzSecurityTokenHeader, "token" }     // CRT sets this based on credentials
             });
 
             var sdkRequest = mock.Object;

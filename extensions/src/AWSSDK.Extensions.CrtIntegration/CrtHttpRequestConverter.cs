@@ -28,7 +28,8 @@ namespace AWSSDK.Extensions.CrtIntegration
     /// </summary>
     public class CrtHttpRequestConverter
     {
-        // CRT calculates and sets these headers when signing, the SDK must not pass them in
+        // CRT calculates and sets these headers when signing (Authorization, X-Amz-Date, X-Amz-Content-SHA256,
+        // X-Amz-Security-Token, X-Amz-Region-Set). The SDK must not pass these in to avoid duplication.
         // See s_forbidden_headers in aws_signing.c
         private static readonly HashSet<string> CrtForbiddenHeaders = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
         {

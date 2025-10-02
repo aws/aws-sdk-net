@@ -6,6 +6,11 @@
       "Added support for AWS_SIGV4A_SIGNING_REGION_SET environment variable and sigv4a_signing_region_set profile key to configure SigV4a signing region set"
     ],
     "type": "minor",
-    "updateMinimum": true
+    "updateMinimum": true,
+    "backwardIncompatibilitiesToIgnore": [
+      "Amazon.Runtime.Internal.IRequest/MethodAbstractMethodAdded",
+      "Amazon.Runtime.IClientConfig/MethodAbstractMethodAdded",
+      "Amazon.Runtime.IRequestContext/MethodAbstractMethodAdded"
+    ]
   }
 }
