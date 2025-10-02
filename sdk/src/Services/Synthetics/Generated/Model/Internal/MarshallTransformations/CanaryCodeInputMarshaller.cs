@@ -46,6 +46,17 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetBlueprintTypes())
+            {
+                context.Writer.WritePropertyName("BlueprintTypes");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectBlueprintTypesListValue in requestObject.BlueprintTypes)
+                {
+                        context.Writer.WriteStringValue(requestObjectBlueprintTypesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(requestObject.IsSetDependencies())
             {
                 context.Writer.WritePropertyName("Dependencies");
