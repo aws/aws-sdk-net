@@ -363,9 +363,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Synthetics.Model.CanaryCodeInput.Handler</property>
-    <min>1</min>
+    <min>0</min>
     <max>128</max>
-    <pattern>^([0-9a-zA-Z_-]+(\/|\.))*[0-9A-Za-z_\\-]+(\.|::)[A-Za-z_][A-Za-z0-9_]*$</pattern>
+    <pattern>^(([0-9a-zA-Z_-]+(\/|\.))*[0-9A-Za-z_\\-]+(\.|::)[A-Za-z_][A-Za-z0-9_]*)?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Synthetics.Model.CanaryCodeInput.S3Bucket</property>
