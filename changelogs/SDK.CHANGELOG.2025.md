@@ -1,3 +1,15 @@
+### 4.0.104.0 (2025-10-02 19:09 UTC)
+* CloudFormation (4.0.4.0)
+	* Add new warning type 'EXCLUDED_RESOURCES'
+* ConnectCases (4.0.5.0)
+	* New Search All Related Items API enables searching related items across cases
+* DynamoDBv2 (4.0.7.0)
+	* Add support for dual-stack account endpoint generation
+* GuardDuty (4.0.7.6)
+	* Updated descriptions for the Location parameter in CreateTrustedEntitySet and CreateThreatEntitySet.
+* Synthetics (4.0.7.0)
+	* Adds support to configure canaries with pre-configured blueprint code on supported runtime versions.  This behavior can be controlled via the new BlueprintTypes property exposed in the CreateCanary and UpdateCanary APIs.
+
 ### 4.0.103.0 (2025-10-01 18:35 UTC)
 * ChimeSDKMeetings (4.0.2.0)
 	* Add support to receive dual stack MediaPlacement URLs in Chime Meetings SDK
