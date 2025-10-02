@@ -41,10 +41,10 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        ///  If the number of available results exceeds this maximum, the response includes a
-        /// <c>NextToken</c> value that you can use for the <c>NextToken</c> parameter to get
-        /// the next set of results. By default the <c>ListGeneratedTemplates</c> API action will
-        /// return at most 50 results in each response. The maximum value is 100.
+        /// If the number of available results exceeds this maximum, the response includes a <c>NextToken</c>
+        /// value that you can use for the <c>NextToken</c> parameter to get the next set of results.
+        /// By default the <c>ListGeneratedTemplates</c> API action will return at most 50 results
+        /// in each response. The maximum value is 100.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

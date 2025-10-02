@@ -37,7 +37,7 @@ namespace Amazon.CloudFormation.Model
     ///  
     /// <para>
     /// Deactivating an extension deletes the configuration details that are associated with
-    /// it. To temporary disable a CloudFormation Hook instead, you can use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html">SetTypeConfiguration</a>.
+    /// it. To temporarily disable a CloudFormation Hook instead, you can use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html">SetTypeConfiguration</a>.
     /// </para>
     ///  
     /// <para>
@@ -60,7 +60,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) for the extension, in this account and Region.
+        /// The Amazon Resource Name (ARN) for the extension in this account and Region.
         /// </para>
         ///  
         /// <para>
@@ -105,7 +105,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property TypeName. 
         /// <para>
-        /// The type name of the extension, in this account and Region. If you specified a type
+        /// The type name of the extension in this account and Region. If you specified a type
         /// name alias when enabling the extension, use the type name alias.
         /// </para>
         ///  

@@ -233,8 +233,8 @@ namespace Amazon.CloudFormation.Model
         ///  </li> </ul> </li> <li> 
         /// <para>
         ///  <c>PUBLIC</c>: Extensions that are publicly visible and available to be activated
-        /// within any Amazon Web Services account. This includes extensions from Amazon Web Services,
-        /// in addition to third-party publishers.
+        /// within any Amazon Web Services account. This includes extensions from Amazon Web Services
+        /// and third-party publishers.
         /// </para>
         ///  </li> </ul> 
         /// <para>
