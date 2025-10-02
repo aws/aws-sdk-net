@@ -35,6 +35,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 {
     [TestClass]
+    [TestCategory("S3SelectObjectContent")]
     public class SelectObjectContentTests : TestBase<AmazonS3Client>
     {
         private static readonly string TestFileKey = "selectobjectcontent_content.txt";
