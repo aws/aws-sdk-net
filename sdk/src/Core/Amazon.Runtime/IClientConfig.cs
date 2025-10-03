@@ -164,6 +164,20 @@ namespace Amazon.Runtime
         string AuthenticationServiceName { get; }
 
         /// <summary>
+        /// Gets the AuthSchemePreference property.
+        /// A comma-separated list of authentication scheme names to use in order of preference.
+        /// For example: "sigv4a,sigv4" to prefer SigV4a over SigV4.
+        /// </summary>
+        string AuthSchemePreference { get; }
+
+        /// <summary>
+        /// Gets the SigV4aSigningRegionSet property.
+        /// A comma-separated list of regions that a SigV4a signature will be valid for.
+        /// Use "*" to indicate all regions.
+        /// </summary>
+        string SigV4aSigningRegionSet { get; }
+
+        /// <summary>
         /// Gets the UserAgent property.
         /// </summary>
         string UserAgent { get; }

@@ -71,6 +71,8 @@ namespace Amazon.Runtime.CredentialManagement
         private const string AccountIdEndpointModeField = "account_id_endpoint_mode";
         private const string RequestChecksumCalculationField = "request_checksum_calculation";
         private const string ResponseChecksumValidationField = "response_checksum_validation";
+        private const string AuthSchemePreferenceField = "auth_scheme_preference";
+        private const string SigV4aSigningRegionSetField = "sigv4a_signing_region_set";
         private const string AwsAccountIdField = "aws_account_id";
         private readonly Logger _logger = Logger.GetLogger(typeof(SharedCredentialsFile));
 
@@ -106,6 +108,8 @@ namespace Amazon.Runtime.CredentialManagement
             AccountIdEndpointModeField,
             RequestChecksumCalculationField,
             ResponseChecksumValidationField,
+            AuthSchemePreferenceField,
+            SigV4aSigningRegionSetField,
             AwsAccountIdField,
         };
 
@@ -404,6 +408,12 @@ namespace Amazon.Runtime.CredentialManagement
 
             if (profile.Services != null)
                 reservedProperties[ServicesField] = profile.Services.ToString().ToLowerInvariant();
+
+            if (profile.AuthSchemePreference != null && profile.AuthSchemePreference.Count > 0)
+                reservedProperties[AuthSchemePreferenceField] = string.Join(",", profile.AuthSchemePreference);
+
+            if (profile.SigV4aSigningRegionSet != null && profile.SigV4aSigningRegionSet.Count > 0)
+                reservedProperties[SigV4aSigningRegionSetField] = string.Join(",", profile.SigV4aSigningRegionSet);
 
             var profileDictionary = PropertyMapping.CombineProfileParts(
                 profile.Options, ReservedPropertyNames, reservedProperties, profile.Properties);
@@ -859,6 +869,19 @@ namespace Amazon.Runtime.CredentialManagement
                     }
                     responseChecksumValidation = responseChecksumValidationTemp;
                 }
+
+                List<string> authSchemePreference = null;
+                if (reservedProperties.TryGetValue(AuthSchemePreferenceField, out var authSchemePrefString))
+                {
+                    authSchemePreference = ParseCommaDelimitedList(authSchemePrefString);
+                }
+
+                List<string> sigV4aSigningRegionSet = null;
+                if (reservedProperties.TryGetValue(SigV4aSigningRegionSetField, out var sigV4aRegionSetString))
+                {
+                    sigV4aSigningRegionSet = ParseCommaDelimitedList(sigV4aRegionSetString);
+                }
+
                     profile = new CredentialProfile(profileName, profileOptions)
                 {
                     UniqueKey = toolkitArtifactGuid,
@@ -886,6 +909,8 @@ namespace Amazon.Runtime.CredentialManagement
                     AccountIdEndpointMode = accountIdEndpointMode,
                     RequestChecksumCalculation = requestChecksumCalculation,
                     ResponseChecksumValidation = responseChecksumValidation,
+                    AuthSchemePreference = authSchemePreference,
+                    SigV4aSigningRegionSet = sigV4aSigningRegionSet,
                     Services = servicesSection
                     };
 
@@ -941,6 +966,20 @@ namespace Amazon.Runtime.CredentialManagement
 
             iniProperties = credentialsProperties;
             return hasCredentialsProperties;
+        }
+
+        /// <summary>
+        /// Parses comma-delimited list from profile file.
+        /// </summary>
+        private static List<string> ParseCommaDelimitedList(string value)
+        {
+            if (string.IsNullOrWhiteSpace(value))
+                return null;
+
+            return value.Split(',')
+                .Select(s => s.Trim())
+                .Where(s => !string.IsNullOrEmpty(s))
+                .ToList();
         }
 
         private static bool IsSupportedProfileType(CredentialProfileType? profileType)

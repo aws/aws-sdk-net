@@ -471,7 +471,9 @@ namespace Amazon.Runtime.Internal
 
         /// <summary>
         /// The authentication region to use for the request.
-        /// Set from Config.AuthenticationRegion.
+        /// For SigV4: Contains a single region (e.g., "us-west-2").
+        /// For SigV4a: Contains a comma-separated list of regions (e.g., "us-west-2,us-east-1") or "*" for all regions.
+        /// Set from Config.AuthenticationRegion or Config.SigV4aSigningRegionSet.
         /// </summary>
         public string AuthenticationRegion { get; set; }
 

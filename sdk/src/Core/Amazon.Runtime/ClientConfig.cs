@@ -14,6 +14,7 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net;
 using System.Threading;
 using System.Globalization;
@@ -66,6 +67,10 @@ namespace Amazon.Runtime
         private string serviceURL = null;
         private string authRegion = null;
         private string authServiceName = null;
+        private string authSchemePreference = null;
+        private string sigV4aSigningRegionSet = null;
+        private List<string> _authSchemePreferenceList = null;
+        private List<string> _sigV4aSigningRegionSetList = null;
         private string clientAppId = null;
         private SigningAlgorithm signatureMethod = SigningAlgorithm.HmacSHA256;
         private bool logResponse = false;
@@ -443,6 +448,106 @@ namespace Amazon.Runtime
         {
             get { return this.authServiceName; }
             set { this.authServiceName = value; }
+        }
+
+        /// <summary>
+        /// Gets and sets the AuthSchemePreference property.
+        /// A comma-separated list of authentication scheme names to use in order of preference.
+        /// </summary>
+        public string AuthSchemePreference
+        {
+            get
+            {
+                // Return cached string if explicitly set
+                if (!string.IsNullOrEmpty(this.authSchemePreference))
+                    return this.authSchemePreference;
+
+                // Fallback to config. Convert List to string for backward compatibility
+                var fallback = FallbackInternalConfigurationFactory.AuthSchemePreference;
+                return fallback != null ? string.Join(",", fallback) : null;
+            }
+            set
+            {
+                this.authSchemePreference = value;
+
+                if (string.IsNullOrEmpty(value))
+                {
+                    this._authSchemePreferenceList = null;
+                }
+                else
+                {
+                    this._authSchemePreferenceList = value.Split(',')
+                        .Select(s => s.Trim())
+                        .Where(s => !string.IsNullOrEmpty(s))
+                        .Distinct()
+                        .ToList();
+                }
+            }
+        }
+
+        /// <summary>
+        /// Internal accessor, uses pre-parsed list
+        /// </summary>
+        internal List<string> AuthSchemePreferenceList
+        {
+            get
+            {
+                if (this._authSchemePreferenceList != null)
+                    return this._authSchemePreferenceList;
+
+                return FallbackInternalConfigurationFactory.AuthSchemePreference;
+            }
+        }
+
+        /// <summary>
+        /// Gets and sets the SigV4aSigningRegionSet property.
+        /// A comma-separated list of regions that a SigV4a signature will be valid for.
+        /// Use "*" to indicate all regions.
+        /// </summary>
+        public string SigV4aSigningRegionSet
+        {
+            get
+            {
+                // Return cached string if explicitly set
+                if (!string.IsNullOrEmpty(this.sigV4aSigningRegionSet))
+                    return this.sigV4aSigningRegionSet;
+
+                // Fallback to config
+                var fallback = FallbackInternalConfigurationFactory.SigV4aSigningRegionSet;
+                return fallback != null ? string.Join(",", fallback) : null;
+            }
+            set
+            {
+                this.sigV4aSigningRegionSet = value;
+
+                // Parse immediately and cache as List
+                if (string.IsNullOrEmpty(value))
+                {
+                    this._sigV4aSigningRegionSetList = null;
+                }
+                else
+                {
+                    this._sigV4aSigningRegionSetList = value.Split(',')
+                        .Select(s => s.Trim())
+                        .Where(s => !string.IsNullOrEmpty(s))
+                        .Distinct()  // Deduplicate
+                        .ToList();
+                }
+            }
+        }
+
+        /// <summary>
+        /// Internal accessor, uses pre-parsed list
+        /// </summary>
+        internal List<string> SigV4aSigningRegionSetList
+        {
+            get
+            {
+                if (this._sigV4aSigningRegionSetList != null)
+                    return this._sigV4aSigningRegionSetList;
+
+                return FallbackInternalConfigurationFactory.SigV4aSigningRegionSet;
+            }
         }
         
         /// <summary>

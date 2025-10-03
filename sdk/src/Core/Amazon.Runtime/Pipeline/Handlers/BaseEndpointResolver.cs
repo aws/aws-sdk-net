@@ -78,12 +78,12 @@ namespace Amazon.Runtime.Internal
             }
 
             // set authentication parameters and headers
-            SetAuthenticationAndHeaders(requestContext.Request, endpoint);
+            SetAuthenticationAndHeaders(executionContext, endpoint);
 
             // service-specific handling, code-generated
             ServiceSpecificHandler(executionContext, parameters);
 
-            // override AuthenticationRegion from ClientConfig if specified
+            // AuthenticationRegion has highest priority, overrides everything
             if (!string.IsNullOrEmpty(config.AuthenticationRegion))
             {
                 requestContext.Request.AuthenticationRegion = config.AuthenticationRegion;
@@ -129,8 +129,10 @@ namespace Amazon.Runtime.Internal
         }
 
         private static readonly string[] SupportedAuthSchemas = { "sigv4-s3express", "sigv4", "sigv4a" };
-        private static void SetAuthenticationAndHeaders(IRequest request, Endpoint endpoint)
+        private static void SetAuthenticationAndHeaders(IExecutionContext executionContext, Endpoint endpoint)
         {
+            var request = executionContext.RequestContext.Request;
+            var config = executionContext.RequestContext.ClientConfig;
             if (endpoint.Attributes != null)
             {
                 var authSchemes = (IList)endpoint.Attributes["authSchemes"];
@@ -201,6 +203,21 @@ namespace Amazon.Runtime.Internal
                 foreach (var header in endpoint.Headers)
                 {
                     request.Headers[header.Key] = string.Join(",", header.Value.ToArray());
+                }
+            }
+
+            if (executionContext.RequestContext.Signer is AWS4aSignerCRTWrapper)
+            {
+                request.SignatureVersion = SignatureVersion.SigV4a;
+
+                var userRegionSet = ((ClientConfig)config).SigV4aSigningRegionSetList;
+                if (userRegionSet != null && userRegionSet.Count > 0)
+                {
+                    var authenticationRegion = string.Join(",", userRegionSet);
+                    if (!string.IsNullOrEmpty(authenticationRegion))
+                    {
+                        request.AuthenticationRegion = authenticationRegion;
+                    }
                 }
             }
         }

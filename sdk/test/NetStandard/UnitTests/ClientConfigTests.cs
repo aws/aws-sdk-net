@@ -72,7 +72,9 @@ namespace UnitTests
             "RequestChecksumCalculation",
             "ResponseChecksumValidation",
             "IdentityResolverConfiguration",
-            "DefaultAWSCredentials"
+            "DefaultAWSCredentials",
+            "AuthSchemePreference",
+            "SigV4aSigningRegionSet"
         };
 
         [Fact]

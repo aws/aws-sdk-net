@@ -440,5 +440,96 @@ namespace CrtIntegrationTests
                                                      Encoding.ASCII.GetBytes(trailerChunkResult), SigningTestEccPubX, SigningTestEccPubY));
         }
         #endregion
+
+        #region Multi-Region SigV4a Signing Tests
+
+        /// <summary>
+        /// Tests multi-region SigV4a signing with different region set configurations.
+        ///
+        /// The CRT library handles the x-amz-region-set header internally during the signing process.
+        /// This test verifies that different region configurations produce different signatures
+        /// and that the region set is actually used in the signing calculation.
+        /// </summary>
+        [Fact]
+        public void TestMultiRegionSigV4a_DifferentRegionSetsProduceDifferentSignatures()
+        {
+            var signer = new CrtAWS4aSigner();
+            var clientConfig = BuildSigningClientConfig(SigningTestService);
+
+            // Test with different region configurations
+            var regionSets = new[] { "us-west-2", "us-west-2,us-east-1", "*", "eu-west-1" };
+            var signatures = new Dictionary<string, string>();
+
+            foreach (var regionSet in regionSets)
+            {
+                var request = BuildHeaderRequestToSign("/", new Dictionary<string, string>());
+                // AuthenticationRegion now handles both SigV4 and SigV4a regions
+                request.AuthenticationRegion = regionSet;
+
+                var result = signer.SignRequest(request, clientConfig, null, SigningTestCredentials);
+
+                // Verify basic result properties
+                Assert.NotNull(result);
+                Assert.NotNull(result.Signature);
+                Assert.NotEmpty(result.Signature);
+                Assert.Equal(regionSet, result.RegionSet);
+
+                // Store signature for comparison
+                signatures[regionSet] = result.Signature;
+            }
+
+            // Verify that different region sets produce different signatures
+            // This ensures the region set is actually being used in the signing calculation
+            Assert.NotEqual(signatures["us-west-2"], signatures["us-west-2,us-east-1"]);
+            Assert.NotEqual(signatures["us-west-2"], signatures["*"]);
+            Assert.NotEqual(signatures["us-west-2"], signatures["eu-west-1"]);
+            Assert.NotEqual(signatures["us-west-2,us-east-1"], signatures["*"]);
+
+            // The x-amz-region-set header is handled internally by CRT for signing.
+            // Different signatures confirm that multi-region information is being used correctly.
+        }
+
+        /// <summary>
+        /// Tests backward compatibility: when AuthenticationRegion is not set,
+        /// the signer should fall back to single-region behavior.
+        /// </summary>
+        [Fact]
+        public void TestSigV4aFallbackToSingleRegion()
+        {
+            var signer = new CrtAWS4aSigner();
+            var request = BuildHeaderRequestToSign("/", new Dictionary<string, string>());
+            // Explicitly NOT setting request.AuthenticationRegion for multi-region
+
+            var clientConfig = BuildSigningClientConfig(SigningTestService);
+            var result = signer.SignRequest(request, clientConfig, null, SigningTestCredentials);
+
+            // Should fall back to us-east-1 (from SigningTestRegion)
+            Assert.Equal(SigningTestRegion, request.DeterminedSigningRegion);
+            Assert.True(request.Headers.ContainsKey(HeaderKeys.XAmzRegionSetHeader));
+            Assert.Equal(SigningTestRegion, request.Headers[HeaderKeys.XAmzRegionSetHeader]);
+
+            var expectedCanonicalRequest = String.Join('\n',
+                "POST", "/", "",
+                "content-length:13",
+                "content-type:application/x-www-form-urlencoded",
+                "host:example.amazonaws.com",
+                "x-amz-content-sha256:9095672bbd1f56dfc5b65f3e153adc8731a4a654192329106275f4c7b24d0b6e",
+                "x-amz-date:20150830T123600Z",
+                $"x-amz-region-set:{SigningTestRegion}",
+                "",
+                "content-length;content-type;host;x-amz-content-sha256;x-amz-date;x-amz-region-set",
+                "9095672bbd1f56dfc5b65f3e153adc8731a4a654192329106275f4c7b24d0b6e");
+
+            var config = BuildDefaultSigningConfig(SigningTestService);
+            config.SignatureType = AwsSignatureType.CANONICAL_REQUEST_VIA_HEADERS;
+            config.Region = SigningTestRegion;
+
+            Assert.True(AwsSigner.VerifyV4aCanonicalSigning(
+                expectedCanonicalRequest, config, result.Signature,
+                SigningTestEccPubX, SigningTestEccPubY),
+                "Fallback signature verification failed");
+        }
+
+        #endregion
     }
 }
