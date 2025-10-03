@@ -409,6 +409,12 @@ namespace Amazon.Runtime.CredentialManagement
             if (profile.Services != null)
                 reservedProperties[ServicesField] = profile.Services.ToString().ToLowerInvariant();
 
+            if (profile.AuthSchemePreference != null && profile.AuthSchemePreference.Count > 0)
+                reservedProperties[AuthSchemePreferenceField] = string.Join(",", profile.AuthSchemePreference);
+
+            if (profile.SigV4aSigningRegionSet != null && profile.SigV4aSigningRegionSet.Count > 0)
+                reservedProperties[SigV4aSigningRegionSetField] = string.Join(",", profile.SigV4aSigningRegionSet);
+
             var profileDictionary = PropertyMapping.CombineProfileParts(
                 profile.Options, ReservedPropertyNames, reservedProperties, profile.Properties);
 
@@ -864,16 +870,16 @@ namespace Amazon.Runtime.CredentialManagement
                     responseChecksumValidation = responseChecksumValidationTemp;
                 }
 
-                string authSchemePreference = null;
+                List<string> authSchemePreference = null;
                 if (reservedProperties.TryGetValue(AuthSchemePreferenceField, out var authSchemePrefString))
                 {
-                    authSchemePreference = authSchemePrefString;
+                    authSchemePreference = ParseCommaDelimitedList(authSchemePrefString);
                 }
 
-                string sigV4aSigningRegionSet = null;
+                List<string> sigV4aSigningRegionSet = null;
                 if (reservedProperties.TryGetValue(SigV4aSigningRegionSetField, out var sigV4aRegionSetString))
                 {
-                    sigV4aSigningRegionSet = sigV4aRegionSetString;
+                    sigV4aSigningRegionSet = ParseCommaDelimitedList(sigV4aRegionSetString);
                 }
 
                     profile = new CredentialProfile(profileName, profileOptions)
@@ -960,6 +966,20 @@ namespace Amazon.Runtime.CredentialManagement
 
             iniProperties = credentialsProperties;
             return hasCredentialsProperties;
+        }
+
+        /// <summary>
+        /// Parses comma-delimited list from profile file.
+        /// </summary>
+        private static List<string> ParseCommaDelimitedList(string value)
+        {
+            if (string.IsNullOrWhiteSpace(value))
+                return null;
+
+            return value.Split(',')
+                .Select(s => s.Trim())
+                .Where(s => !string.IsNullOrEmpty(s))
+                .ToList();
         }
 
         private static bool IsSupportedProfileType(CredentialProfileType? profileType)

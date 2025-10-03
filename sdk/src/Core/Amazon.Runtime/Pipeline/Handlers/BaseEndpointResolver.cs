@@ -78,22 +78,15 @@ namespace Amazon.Runtime.Internal
             }
 
             // set authentication parameters and headers
-            SetAuthenticationAndHeaders(requestContext.Request, endpoint);
+            SetAuthenticationAndHeaders(requestContext.Request, endpoint, config);
 
             // service-specific handling, code-generated
             ServiceSpecificHandler(executionContext, parameters);
 
-            // Override AuthenticationRegion from ClientConfig if specified
-            // AuthenticationRegion is used for both SigV4 (single region) and SigV4a (multi-region)
+            // AuthenticationRegion has highest priority, overrides everything
             if (!string.IsNullOrEmpty(config.AuthenticationRegion))
             {
                 requestContext.Request.AuthenticationRegion = config.AuthenticationRegion;
-            }
-            // For SigV4a, also accept SigV4aSigningRegionSet config as an alternative source
-            // This maintains backwards compatibility with existing configurations
-            else if (!string.IsNullOrEmpty(config.SigV4aSigningRegionSet))
-            {
-                requestContext.Request.AuthenticationRegion = config.SigV4aSigningRegionSet;
             }
         }
 
@@ -136,7 +129,7 @@ namespace Amazon.Runtime.Internal
         }
 
         private static readonly string[] SupportedAuthSchemas = { "sigv4-s3express", "sigv4", "sigv4a" };
-        private static void SetAuthenticationAndHeaders(IRequest request, Endpoint endpoint)
+        private static void SetAuthenticationAndHeaders(IRequest request, Endpoint endpoint, IClientConfig config)
         {
             if (endpoint.Attributes != null)
             {
@@ -181,8 +174,22 @@ namespace Amazon.Runtime.Internal
 
                                         request.SignatureVersion = SignatureVersion.SigV4a;
 
-                                        var signingRegions = ((List<object>)schema["signingRegionSet"]).OfType<string>().ToArray();
-                                        var authenticationRegion = string.Join(",", signingRegions);
+                                        // Apply user config override (parsed once at config time)
+                                        var userRegionSet = ((ClientConfig)config).SigV4aSigningRegionSetList;
+
+                                        string authenticationRegion;
+                                        if (userRegionSet != null && userRegionSet.Count > 0)
+                                        {
+                                            // User config wins (highest precedence per spec)
+                                            authenticationRegion = string.Join(",", userRegionSet);
+                                        }
+                                        else
+                                        {
+                                            // Endpoint metadata default
+                                            var signingRegions = ((List<object>)schema["signingRegionSet"]).OfType<string>().ToArray();
+                                            authenticationRegion = string.Join(",", signingRegions);
+                                        }
+
                                         if (!string.IsNullOrEmpty(authenticationRegion))
                                         {
                                             request.AuthenticationRegion = authenticationRegion;

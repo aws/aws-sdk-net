@@ -14,6 +14,7 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net;
 using System.Threading;
 using System.Globalization;
@@ -68,6 +69,8 @@ namespace Amazon.Runtime
         private string authServiceName = null;
         private string authSchemePreference = null;
         private string sigV4aSigningRegionSet = null;
+        private List<string> _authSchemePreferenceList = null;
+        private List<string> _sigV4aSigningRegionSetList = null;
         private string clientAppId = null;
         private SigningAlgorithm signatureMethod = SigningAlgorithm.HmacSHA256;
         private bool logResponse = false;
@@ -450,21 +453,50 @@ namespace Amazon.Runtime
         /// <summary>
         /// Gets and sets the AuthSchemePreference property.
         /// A comma-separated list of authentication scheme names to use in order of preference.
-        /// For example: "sigv4a,sigv4" to prefer SigV4a over SigV4.
         /// </summary>
         public string AuthSchemePreference
         {
-            get 
-            { 
+            get
+            {
+                // Return cached string if explicitly set
                 if (!string.IsNullOrEmpty(this.authSchemePreference))
                     return this.authSchemePreference;
-                
-                // Fallback to environment variable or config file:
-                // 1. Environment variable: AWS_AUTH_SCHEME_PREFERENCE
-                // 2. Config file: auth_scheme_preference
+
+                // Fallback to config. Convert List to string for backward compatibility
+                var fallback = FallbackInternalConfigurationFactory.AuthSchemePreference;
+                return fallback != null ? string.Join(",", fallback) : null;
+            }
+            set
+            {
+                this.authSchemePreference = value;
+
+                if (string.IsNullOrEmpty(value))
+                {
+                    this._authSchemePreferenceList = null;
+                }
+                else
+                {
+                    this._authSchemePreferenceList = value.Split(',')
+                        .Select(s => s.Trim())
+                        .Where(s => !string.IsNullOrEmpty(s))
+                        .Distinct()
+                        .ToList();
+                }
+            }
+        }
+
+        /// <summary>
+        /// Internal accessor, uses pre-parsed list
+        /// </summary>
+        internal List<string> AuthSchemePreferenceList
+        {
+            get
+            {
+                if (this._authSchemePreferenceList != null)
+                    return this._authSchemePreferenceList;
+
                 return FallbackInternalConfigurationFactory.AuthSchemePreference;
             }
-            set { this.authSchemePreference = value; }
         }
 
         /// <summary>
@@ -474,17 +506,48 @@ namespace Amazon.Runtime
         /// </summary>
         public string SigV4aSigningRegionSet
         {
-            get 
-            { 
+            get
+            {
+                // Return cached string if explicitly set
                 if (!string.IsNullOrEmpty(this.sigV4aSigningRegionSet))
                     return this.sigV4aSigningRegionSet;
-                
-                // Fallback to environment variable or config file:
-                // 1. Environment variable: AWS_SIGV4A_SIGNING_REGION_SET
-                // 2. Config file: sigv4a_signing_region_set
+
+                // Fallback to config
+                var fallback = FallbackInternalConfigurationFactory.SigV4aSigningRegionSet;
+                return fallback != null ? string.Join(",", fallback) : null;
+            }
+            set
+            {
+                this.sigV4aSigningRegionSet = value;
+
+                // Parse immediately and cache as List
+                if (string.IsNullOrEmpty(value))
+                {
+                    this._sigV4aSigningRegionSetList = null;
+                }
+                else
+                {
+                    this._sigV4aSigningRegionSetList = value.Split(',')
+                        .Select(s => s.Trim())
+                        .Where(s => !string.IsNullOrEmpty(s))
+                        .Distinct()  // Deduplicate
+                        .ToList();
+                }
+            }
+        }
+
+        /// <summary>
+        /// Internal accessor, uses pre-parsed list
+        /// </summary>
+        internal List<string> SigV4aSigningRegionSetList
+        {
+            get
+            {
+                if (this._sigV4aSigningRegionSetList != null)
+                    return this._sigV4aSigningRegionSetList;
+
                 return FallbackInternalConfigurationFactory.SigV4aSigningRegionSet;
             }
-            set { this.sigV4aSigningRegionSet = value; }
         }
         
         /// <summary>

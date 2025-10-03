@@ -294,23 +294,14 @@ namespace Amazon.Runtime.Internal
         /// </summary>
         private static List<IAuthSchemeOption> ApplyAuthSchemePreference(List<IAuthSchemeOption> authOptions, IClientConfig clientConfig)
         {
-            var preferenceList = clientConfig.AuthSchemePreference;
-            if (string.IsNullOrEmpty(preferenceList))
+            var preferences = ((ClientConfig)clientConfig).AuthSchemePreferenceList;
+
+            if (preferences == null || preferences.Count == 0)
             {
                 return authOptions;
             }
 
-            // Parse the preference list (comma-separated, trimming spaces and tabs between names)
-            var preferences = preferenceList
-                .Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries)
-                .Select(s => s.Trim(' ', '\t'))  // Trim spaces and tabs between auth scheme names
-                .Where(s => !string.IsNullOrEmpty(s))
-                .ToList();
-
-            if (preferences.Count == 0)
-            {
-                return authOptions;
-            }
+            // Preferences are already trimmed and deduped during property set
 
             // Reorder auth options based on preferences
             var reorderedOptions = new List<IAuthSchemeOption>();

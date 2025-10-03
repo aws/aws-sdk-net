@@ -117,15 +117,14 @@ namespace Amazon.Runtime.Internal
         
         /// <summary>
         /// Preference list of authentication schemes to use when multiple schemes are available.
-        /// This is a comma-separated list of auth scheme names like "sigv4,sigv4a,bearer".
+        /// Parsed from comma-separated format at load time.
         /// </summary>
-        public string AuthSchemePreference { get; set; }
-        
+        public List<string> AuthSchemePreference { get; set; }
+
         /// <summary>
-        /// The region set to use for SigV4a signing. This can be a single region,
-        /// a comma-separated list of regions, or "*" for all regions.
+        /// The region set to use for SigV4a signing.
         /// </summary>
-        public string SigV4aSigningRegionSet { get; set; }
+        public List<string> SigV4aSigningRegionSet { get; set; }
     }
 
 #if BCL || NETSTANDARD
@@ -179,8 +178,8 @@ namespace Amazon.Runtime.Internal
             RequestChecksumCalculation = GetEnvironmentVariable<RequestChecksumCalculation>(ENVIRONMENT_VARIABLE_AWS_REQUEST_CHECKSUM_CALCULATION);
             ResponseChecksumValidation = GetEnvironmentVariable<ResponseChecksumValidation>(ENVIRONMENT_VARIABLE_AWS_RESPONSE_CHECKSUM_VALIDATION);
             ClientAppId = GetClientAppIdEnvironmentVariable();
-            AuthSchemePreference = GetStringEnvironmentVariable(ENVIRONMENT_VARIABLE_AWS_AUTH_SCHEME_PREFERENCE);
-            SigV4aSigningRegionSet = GetStringEnvironmentVariable(ENVIRONMENT_VARIABLE_AWS_SIGV4A_SIGNING_REGION_SET);
+            AuthSchemePreference = GetCommaDelimitedEnvironmentVariable(ENVIRONMENT_VARIABLE_AWS_AUTH_SCHEME_PREFERENCE);
+            SigV4aSigningRegionSet = GetCommaDelimitedEnvironmentVariable(ENVIRONMENT_VARIABLE_AWS_SIGV4A_SIGNING_REGION_SET);
         }
 
         private bool GetEnvironmentVariable(string name, bool defaultValue)
@@ -314,6 +313,25 @@ namespace Amazon.Runtime.Internal
             }
 
             return rawValue;
+        }
+
+        /// <summary>
+        /// Parses an environment variable containing a comma delimited list into a list of strings.
+        /// Whitespace between names is ignored
+        /// </summary>
+        private List<string> GetCommaDelimitedEnvironmentVariable(string environmentVariableName)
+        {
+            if (!TryGetEnvironmentVariable(environmentVariableName, out var rawValue))
+            {
+                return null;
+            }
+
+            var values = rawValue.Split(',')
+                .Select(s => s.Trim())
+                .Where(s => !string.IsNullOrEmpty(s))
+                .ToList();
+
+            return values.Count > 0 ? values : null;
         }
     }
 
@@ -470,8 +488,8 @@ namespace Amazon.Runtime.Internal
             _cachedConfiguration.AccountIdEndpointMode = SeekValue(standardGenerators,(c) => c.AccountIdEndpointMode);
             _cachedConfiguration.RequestChecksumCalculation = SeekValue(standardGenerators, (c) => c.RequestChecksumCalculation);
             _cachedConfiguration.ResponseChecksumValidation = SeekValue(standardGenerators, (c) => c.ResponseChecksumValidation);
-            _cachedConfiguration.AuthSchemePreference = SeekString(standardGenerators, (c) => c.AuthSchemePreference, defaultValue: null);
-            _cachedConfiguration.SigV4aSigningRegionSet = SeekString(standardGenerators, (c) => c.SigV4aSigningRegionSet, defaultValue: null);
+            _cachedConfiguration.AuthSchemePreference = SeekList(standardGenerators, (c) => c.AuthSchemePreference);
+            _cachedConfiguration.SigV4aSigningRegionSet = SeekList(standardGenerators, (c) => c.SigV4aSigningRegionSet);
         }        
                 
         private static T? SeekValue<T>(List<ConfigGenerator> generators, Func<InternalConfiguration, T?> getValue) where T : struct
@@ -506,8 +524,24 @@ namespace Amazon.Runtime.Internal
             return defaultValue;
         }
 
+        private static List<T> SeekList<T>(List<ConfigGenerator> generators, Func<InternalConfiguration, List<T>> getValue)
+        {
+            // Look for the configuration value stopping at the first generator that returns the expected value.
+            foreach (var generator in generators)
+            {
+                var configuration = generator();
+                List<T> value = getValue(configuration);
+                if (value != null && value.Count > 0)
+                {
+                    return value;
+                }
+            }
+
+            return null;
+        }
+
         /// <summary>
-        /// Flag that specifies if endpoint discovery is enabled, disabled, 
+        /// Flag that specifies if endpoint discovery is enabled, disabled,
         /// or not set.
         /// </summary>
         public static bool? EndpointDiscoveryEnabled
@@ -673,26 +707,14 @@ namespace Amazon.Runtime.Internal
 
         /// <summary>
         /// Preference list of authentication schemes to use when multiple schemes are available.
-        /// This is a comma-separated list of auth scheme names like "sigv4,sigv4a,bearer".
+        /// Parsed from comma-separated format at load time.
         /// </summary>
-        public static string AuthSchemePreference
-        {
-            get
-            {
-                return _cachedConfiguration.AuthSchemePreference;
-            }
-        }
+        public static List<string> AuthSchemePreference => _cachedConfiguration.AuthSchemePreference;
 
         /// <summary>
-        /// The region set to use for SigV4a signing. This can be a single region,
-        /// a comma-separated list of regions, or "*" for all regions.
+        /// The region set to use for SigV4a signing.
+        /// Parsed from comma-separated format at load time.
         /// </summary>
-        public static string SigV4aSigningRegionSet
-        {
-            get
-            {
-                return _cachedConfiguration.SigV4aSigningRegionSet;
-            }
-        }
+        public static List<string> SigV4aSigningRegionSet => _cachedConfiguration.SigV4aSigningRegionSet;
     }
 }
