@@ -64,6 +64,60 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetId3Behavior())
+            {
+                context.Writer.WritePropertyName("id3Behavior");
+                context.Writer.Write(requestObject.Id3Behavior);
+            }
+
+            if(requestObject.IsSetKlvBehavior())
+            {
+                context.Writer.WritePropertyName("klvBehavior");
+                context.Writer.Write(requestObject.KlvBehavior);
+            }
+
+            if(requestObject.IsSetNielsenId3Behavior())
+            {
+                context.Writer.WritePropertyName("nielsenId3Behavior");
+                context.Writer.Write(requestObject.NielsenId3Behavior);
+            }
+
+            if(requestObject.IsSetScte35Type())
+            {
+                context.Writer.WritePropertyName("scte35Type");
+                context.Writer.Write(requestObject.Scte35Type);
+            }
+
+            if(requestObject.IsSetSegmentLength())
+            {
+                context.Writer.WritePropertyName("segmentLength");
+                context.Writer.Write(requestObject.SegmentLength);
+            }
+
+            if(requestObject.IsSetSegmentLengthUnits())
+            {
+                context.Writer.WritePropertyName("segmentLengthUnits");
+                context.Writer.Write(requestObject.SegmentLengthUnits);
+            }
+
+            if(requestObject.IsSetTimedMetadataId3Frame())
+            {
+                context.Writer.WritePropertyName("timedMetadataId3Frame");
+                context.Writer.Write(requestObject.TimedMetadataId3Frame);
+            }
+
+            if(requestObject.IsSetTimedMetadataId3Period())
+            {
+                context.Writer.WritePropertyName("timedMetadataId3Period");
+                context.Writer.Write(requestObject.TimedMetadataId3Period);
+            }
+
+            if(requestObject.IsSetTimedMetadataPassthrough())
+            {
+                context.Writer.WritePropertyName("timedMetadataPassthrough");
+                context.Writer.Write(requestObject.TimedMetadataPassthrough);
+            }
+
         }
 
         /// <summary>

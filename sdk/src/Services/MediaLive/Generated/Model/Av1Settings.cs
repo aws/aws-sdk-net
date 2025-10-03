@@ -107,7 +107,9 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ColorSpaceSettings. Color Space settings
+        /// Gets and sets the property ColorSpaceSettings. Specify the type of color space to
+        /// apply or choose to pass through. The default is to pass through the color space that
+        /// is in the source.
         /// </summary>
         public Av1ColorSpaceSettings ColorSpaceSettings
         {
