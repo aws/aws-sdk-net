@@ -119,21 +119,12 @@ namespace Amazon.Extensions.CrtIntegration
                 : AWS4Signer.DetermineService(clientConfig, request);
             if (serviceSigningName == "s3")
             {
-                // S3 requests require special URI encoding handling for compatibility
+                // Older versions of the S3 package can be used with newer versions of Core, this guarantees no double encoding will be used.
+                // The new behavior uses endpoint resolution rules, which are not present prior to 3.7.100
                 request.UseDoubleEncoding = false;
             }
 
-            // Use the configured SigV4aSigningRegionSet if available (configured for multi-region signing),
-            // otherwise fall back to single region determination for backward compatibility
-            string regionSet;
-            if (!string.IsNullOrEmpty(request.SigV4aSigningRegionSet))
-            {
-                regionSet = request.SigV4aSigningRegionSet;
-            }
-            else
-            {
-                regionSet = AWS4Signer.DetermineSigningRegion(clientConfig, clientConfig.RegionEndpointServiceName, request.AlternateEndpoint, request);
-            }
+            var regionSet = AWS4Signer.DetermineSigningRegion(clientConfig, clientConfig.RegionEndpointServiceName, request.AlternateEndpoint, request);
             request.DeterminedSigningRegion = regionSet;
             AWS4Signer.SetXAmzTrailerHeader(request.Headers, request.TrailingHeaders);
 
@@ -203,18 +194,14 @@ namespace Amazon.Extensions.CrtIntegration
         {
             if (serviceSigningName == "s3")
             {
-                // S3 requests require special URI encoding handling for compatibility
+                // Older versions of the S3 package can be used with newer versions of Core, this guarantees no double encoding will be used.
+                // The new behavior uses endpoint resolution rules, which are not present prior to 3.7.100
                 request.UseDoubleEncoding = false;
             }
 
             var signedAt = AWS4Signer.InitializeHeaders(request.Headers, request.Endpoint);
             request.SignedAt = CorrectClockSkew.GetCorrectedUtcNowForEndpoint(request.Endpoint.ToString());
-            
-            // Use explicit override, then SigV4aSigningRegionSet, then fall back to single region
-            var regionSet = overrideSigningRegion
-                ?? (!string.IsNullOrEmpty(request.SigV4aSigningRegionSet)
-                    ? request.SigV4aSigningRegionSet
-                    : AWS4Signer.DetermineSigningRegion(clientConfig, clientConfig.RegionEndpointServiceName, request.AlternateEndpoint, request));
+            var regionSet = overrideSigningRegion ?? AWS4Signer.DetermineSigningRegion(clientConfig, clientConfig.RegionEndpointServiceName, request.AlternateEndpoint, request);
 
             var signingConfig = PrepareCRTSigningConfig(
                 AwsSignatureType.HTTP_REQUEST_VIA_QUERY_PARAMS, 

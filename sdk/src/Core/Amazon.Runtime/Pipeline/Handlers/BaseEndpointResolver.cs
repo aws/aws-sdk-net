@@ -97,14 +97,14 @@ namespace Amazon.Runtime.Internal
                 {
                     requestContext.Request.SigV4aSigningRegionSet = config.SigV4aSigningRegionSet;
                     requestContext.SigV4aSigningRegionSet = config.SigV4aSigningRegionSet;
+                    // Also set AuthenticationRegion for CRT compatibility - CRT uses this to set x-amz-region-set header
+                    requestContext.Request.AuthenticationRegion = config.SigV4aSigningRegionSet;
                 }
                 else if (!string.IsNullOrEmpty(requestContext.Request.AuthenticationRegion))
                 {
                     // AuthenticationRegion was set from endpoint metadata - use it for SigV4a
                     requestContext.Request.SigV4aSigningRegionSet = requestContext.Request.AuthenticationRegion;
                     requestContext.SigV4aSigningRegionSet = requestContext.Request.AuthenticationRegion;
-                    // Clear AuthenticationRegion to avoid confusion with SigV4 single-region
-                    requestContext.Request.AuthenticationRegion = null;
                 }
             }
         }
