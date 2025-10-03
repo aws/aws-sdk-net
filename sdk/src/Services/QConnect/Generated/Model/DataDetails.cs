@@ -35,6 +35,9 @@ namespace Amazon.QConnect.Model
     public partial class DataDetails
     {
         private ContentDataDetails _contentData;
+        private EmailGenerativeAnswerChunkDataDetails _emailGenerativeAnswerChunkData;
+        private EmailOverviewChunkDataDetails _emailOverviewChunkData;
+        private EmailResponseChunkDataDetails _emailResponseChunkData;
         private GenerativeChunkDataDetails _generativeChunkData;
         private GenerativeDataDetails _generativeData;
         private IntentDetectedDataDetails _intentDetectedData;
@@ -56,6 +59,61 @@ namespace Amazon.QConnect.Model
         internal bool IsSetContentData()
         {
             return this._contentData != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EmailGenerativeAnswerChunkData. 
+        /// <para>
+        /// Streaming chunk data for email generative answers containing partial knowledge-based
+        /// response content.
+        /// </para>
+        /// </summary>
+        public EmailGenerativeAnswerChunkDataDetails EmailGenerativeAnswerChunkData
+        {
+            get { return this._emailGenerativeAnswerChunkData; }
+            set { this._emailGenerativeAnswerChunkData = value; }
+        }
+
+        // Check to see if EmailGenerativeAnswerChunkData property is set
+        internal bool IsSetEmailGenerativeAnswerChunkData()
+        {
+            return this._emailGenerativeAnswerChunkData != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EmailOverviewChunkData. 
+        /// <para>
+        /// Streaming chunk data for email overview containing partial overview content.
+        /// </para>
+        /// </summary>
+        public EmailOverviewChunkDataDetails EmailOverviewChunkData
+        {
+            get { return this._emailOverviewChunkData; }
+            set { this._emailOverviewChunkData = value; }
+        }
+
+        // Check to see if EmailOverviewChunkData property is set
+        internal bool IsSetEmailOverviewChunkData()
+        {
+            return this._emailOverviewChunkData != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EmailResponseChunkData. 
+        /// <para>
+        /// Streaming chunk data for email response generation containing partial response content.
+        /// </para>
+        /// </summary>
+        public EmailResponseChunkDataDetails EmailResponseChunkData
+        {
+            get { return this._emailResponseChunkData; }
+            set { this._emailResponseChunkData = value; }
+        }
+
+        // Check to see if EmailResponseChunkData property is set
+        internal bool IsSetEmailResponseChunkData()
+        {
+            return this._emailResponseChunkData != null;
         }
 
         /// <summary>

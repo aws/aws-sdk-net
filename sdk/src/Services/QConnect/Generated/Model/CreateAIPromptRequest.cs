@@ -32,13 +32,6 @@ namespace Amazon.QConnect.Model
     /// <summary>
     /// Container for the parameters to the CreateAIPrompt operation.
     /// Creates an Amazon Q in Connect AI Prompt.
-    /// 
-    ///  <note> 
-    /// <para>
-    /// For more information on supported models, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-ai-prompts.html#cli-create-aiprompt">Supported
-    /// models for system and custom prompts</a>.
-    /// </para>
-    ///  </note>
     /// </summary>
     public partial class CreateAIPromptRequest : AmazonQConnectRequest
     {
@@ -149,6 +142,13 @@ namespace Amazon.QConnect.Model
         /// <para>
         /// The identifier of the model used for this AI Prompt.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// For information about which models are supported in each Amazon Web Services Region,
+        /// see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-ai-prompts.html#cli-create-aiprompt">Supported
+        /// models for system/custom prompts</a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]
         public string ModelId

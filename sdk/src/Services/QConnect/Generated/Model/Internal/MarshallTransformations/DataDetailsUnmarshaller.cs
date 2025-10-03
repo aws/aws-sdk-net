@@ -62,6 +62,24 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
                     unmarshalledObject.ContentData = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("emailGenerativeAnswerChunkData", targetDepth))
+                {
+                    var unmarshaller = EmailGenerativeAnswerChunkDataDetailsUnmarshaller.Instance;
+                    unmarshalledObject.EmailGenerativeAnswerChunkData = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("emailOverviewChunkData", targetDepth))
+                {
+                    var unmarshaller = EmailOverviewChunkDataDetailsUnmarshaller.Instance;
+                    unmarshalledObject.EmailOverviewChunkData = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("emailResponseChunkData", targetDepth))
+                {
+                    var unmarshaller = EmailResponseChunkDataDetailsUnmarshaller.Instance;
+                    unmarshalledObject.EmailResponseChunkData = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("generativeChunkData", targetDepth))
                 {
                     var unmarshaller = GenerativeChunkDataDetailsUnmarshaller.Instance;
