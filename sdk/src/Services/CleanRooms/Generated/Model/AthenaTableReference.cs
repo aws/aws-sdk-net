@@ -36,6 +36,7 @@ namespace Amazon.CleanRooms.Model
     {
         private string _databaseName;
         private string _outputLocation;
+        private CommercialRegion _region;
         private string _tableName;
         private string _workGroup;
 
@@ -75,6 +76,25 @@ namespace Amazon.CleanRooms.Model
         internal bool IsSetOutputLocation()
         {
             return this._outputLocation != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Region. 
+        /// <para>
+        /// The Amazon Web Services Region where the Athena table is located. This parameter is
+        /// required to uniquely identify and access tables across different Regions.
+        /// </para>
+        /// </summary>
+        public CommercialRegion Region
+        {
+            get { return this._region; }
+            set { this._region = value; }
+        }
+
+        // Check to see if Region property is set
+        internal bool IsSetRegion()
+        {
+            return this._region != null;
         }
 
         /// <summary>

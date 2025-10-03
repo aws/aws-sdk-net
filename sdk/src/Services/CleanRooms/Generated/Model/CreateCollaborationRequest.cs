@@ -35,6 +35,7 @@ namespace Amazon.CleanRooms.Model
     /// </summary>
     public partial class CreateCollaborationRequest : AmazonCleanRoomsRequest
     {
+        private List<string> _allowedResultRegions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private AnalyticsEngine _analyticsEngine;
         private List<string> _autoApprovedChangeRequestTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _creatorDisplayName;
@@ -48,6 +49,32 @@ namespace Amazon.CleanRooms.Model
         private string _name;
         private CollaborationQueryLogStatus _queryLogStatus;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+
+        /// <summary>
+        /// Gets and sets the property AllowedResultRegions. 
+        /// <para>
+        /// The Amazon Web Services Regions where collaboration query results can be stored. When
+        /// specified, results can only be written to these Regions. This parameter enables you
+        /// to meet your compliance and data governance requirements, and implement regional data
+        /// governance policies.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<string> AllowedResultRegions
+        {
+            get { return this._allowedResultRegions; }
+            set { this._allowedResultRegions = value; }
+        }
+
+        // Check to see if AllowedResultRegions property is set
+        internal bool IsSetAllowedResultRegions()
+        {
+            return this._allowedResultRegions != null && (this._allowedResultRegions.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property AnalyticsEngine. 
