@@ -180,6 +180,8 @@ namespace AWSSDK.UnitTests
             Assert.AreEqual("us-west-2", regionSet);
         }
 
+        #region Helper Methods
+
         /// <summary>
         /// Create a test client configuration with specified region.
         /// </summary>
