@@ -2,7 +2,6 @@
   "type": "object",
 
   "properties": {
-
     "AWS": {
       "description": "Settings for configuring the AWS SDK for .NET",
       "type": "object",
@@ -14,6 +13,13 @@
         "AuthenticationRegion": {
           "type": "string",
           "description": "Overrides the region used when computing AWS signature."
+        },
+        "AuthSchemePreference": {
+          "type": "array",
+          "description": "List of preferred authentication schemes in priority order.",
+          "items": {
+            "type": "string"
+          }
         },
         "BufferSize": {
           "type": "integer",
@@ -127,6 +133,13 @@
         "SessionRoleArn": {
           "type": "string",
           "description": "If set this role will be assumed using the resolved AWS credentials."
+        },
+        "SigV4aSigningRegionSet": {
+          "type": "array",
+          "description": "List of AWS regions for SigV4a multi-region signing.",
+          "items": {
+            "type": "string"
+          }
         },
         "ThrottleRetries": {
           "type": "boolean",

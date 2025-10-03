@@ -107,6 +107,12 @@ namespace NETCore.SetupTests
             Assert.Equal(DefaultConfigurationMode.Standard, options.DefaultConfigurationMode);
             Assert.Equal(RequestRetryMode.Standard, options.DefaultClientConfig.RetryMode);
 
+            Assert.Equal(2, options.DefaultClientConfig.AuthSchemePreference.Count);
+            Assert.Equal("sigv4a", options.DefaultClientConfig.AuthSchemePreference[0]);
+            Assert.Equal("sigv4", options.DefaultClientConfig.AuthSchemePreference[1]);
+            Assert.Single(options.DefaultClientConfig.SigV4aSigningRegionSet);
+            Assert.Equal("*", options.DefaultClientConfig.SigV4aSigningRegionSet[0]);
+
             IAmazonS3 client = options.CreateServiceClient<IAmazonS3>();
             Assert.NotNull(client);
             Assert.Equal(RegionEndpoint.USWest2, client.Config.RegionEndpoint);

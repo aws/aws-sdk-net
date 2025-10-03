@@ -9,6 +9,8 @@
     "Region": "us-west-2",
     "DefaultsMode": "Standard",
     "ForcePathStyle": true,
-    "RetryMode": "Standard"
+    "RetryMode": "Standard",
+    "AuthSchemePreference": ["sigv4a", "sigv4"],
+    "SigV4aSigningRegionSet": ["*"]
   }
 }

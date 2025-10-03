@@ -17,7 +17,6 @@ using Amazon.Runtime.Credentials.Internal;
 using Amazon.Runtime.Endpoints;
 using Amazon.Runtime.Identity;
 using Amazon.Runtime.Internal.Auth;
-using Amazon.Runtime.Internal.UserAgent;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -58,16 +57,21 @@ namespace Amazon.Runtime.Internal
 
             var clientConfig = executionContext.RequestContext.ClientConfig;
             var defaultCredentials = executionContext.RequestContext.ExplicitAWSCredentials ?? clientConfig.DefaultAWSCredentials;
+            
+            var preferredOptions = ApplyPreferences(authOptions, executionContext.RequestContext);
+            IAuthSchemeOption chosenOption = null;
 
-            for (int i = 0; i < authOptions.Count; i++)
+            for (int i = 0; i < preferredOptions.Count; i++)
             {
-                var scheme = _supportedSchemes.FirstOrDefault(s => s.SchemeId == authOptions[i].SchemeId);
+                var scheme = _supportedSchemes.FirstOrDefault(s => s.SchemeId == preferredOptions[i].SchemeId);
                 if (scheme == null)
                 {
                     // Current auth scheme option is not enabled / supported, continue iterating.
-                    Logger.DebugFormat($"{authOptions[i].SchemeId} scheme is not supported for {executionContext.RequestContext.RequestName}");
+                    Logger.DebugFormat($"{preferredOptions[i].SchemeId} scheme is not supported for {executionContext.RequestContext.RequestName}");
                     continue;
                 }
+
+                chosenOption = preferredOptions[i];
 
                 try
                 {
@@ -115,7 +119,7 @@ namespace Amazon.Runtime.Internal
                 {
                     // If there are multiple authentication schemes and we cannot resolve the identity for some reason (e.g. the CRT is
                     // required for SigV4A signing), we'll attempt the next option (if there are any left) before returning.
-                    var areSchemesLeft = i < authOptions.Count - 1;
+                    var areSchemesLeft = i < preferredOptions.Count - 1;
                     if (areSchemesLeft)
                     {
                         Logger.DebugFormat($"Could not resolve identity for {executionContext.RequestContext.RequestName} using {scheme.SchemeId} scheme: {ex.Message}");
@@ -130,8 +134,12 @@ namespace Amazon.Runtime.Internal
             {
                 throw new AmazonClientException($"Could not determine which authentication scheme to use for {executionContext.RequestContext.RequestName}");
             }
-
-            AddUserAgentDetails(executionContext);
+            else
+            {
+                executionContext.RequestContext.Request.ChosenAuthScheme = chosenOption;
+                AddUserAgentDetails(executionContext);
+                ApplySigningRegionSetOverrides(executionContext.RequestContext);
+            }
         }
 
         protected async Task PreInvokeAsync(IExecutionContext executionContext)
@@ -145,16 +153,21 @@ namespace Amazon.Runtime.Internal
             var clientConfig = executionContext.RequestContext.ClientConfig;
             var cancellationToken = executionContext.RequestContext.CancellationToken;
             var defaultCredentials = executionContext.RequestContext.ExplicitAWSCredentials ?? clientConfig.DefaultAWSCredentials;
+            
+            var preferredOptions = ApplyPreferences(authOptions, executionContext.RequestContext);
+            IAuthSchemeOption chosenOption = null;
 
-            for (int i = 0; i < authOptions.Count; i++)
+            for (int i = 0; i < preferredOptions.Count; i++)
             {
-                var scheme = _supportedSchemes.FirstOrDefault(s => s.SchemeId == authOptions[i].SchemeId);
+                var scheme = _supportedSchemes.FirstOrDefault(s => s.SchemeId == preferredOptions[i].SchemeId);
                 if (scheme == null)
                 {
                     // Current auth scheme option is not enabled / supported, continue iterating.
-                    Logger.DebugFormat($"{authOptions[i].SchemeId} scheme is not supported for {executionContext.RequestContext.RequestName}");
+                    Logger.DebugFormat($"{preferredOptions[i].SchemeId} scheme is not supported for {executionContext.RequestContext.RequestName}");
                     continue;
                 }
+
+                chosenOption = preferredOptions[i];
 
                 try
                 {
@@ -197,7 +210,7 @@ namespace Amazon.Runtime.Internal
                 {
                     // If there are multiple authentication schemes and we cannot resolve the identity for some reason (e.g. the CRT is
                     // required for SigV4A signing), we'll attempt the next option (if there are any left) before returning.
-                    var areSchemesLeft = i < authOptions.Count - 1;
+                    var areSchemesLeft = i < preferredOptions.Count - 1;
                     if (areSchemesLeft)
                     {
                         Logger.DebugFormat($"Could not resolve identity for {executionContext.RequestContext.RequestName} using {scheme.SchemeId} scheme: {ex.Message}");
@@ -212,8 +225,12 @@ namespace Amazon.Runtime.Internal
             {
                 throw new AmazonClientException($"Could not determine which authentication scheme to use for {executionContext.RequestContext.RequestName}");
             }
-
-            AddUserAgentDetails(executionContext);
+            else
+            {
+                executionContext.RequestContext.Request.ChosenAuthScheme = chosenOption;
+                AddUserAgentDetails(executionContext);
+                ApplySigningRegionSetOverrides(executionContext.RequestContext);
+            }
         }
 
         protected virtual ISigner GetSigner(IAuthScheme<BaseIdentity> scheme)
@@ -294,6 +311,93 @@ namespace Amazon.Runtime.Internal
             foreach (var featureId in credentials.FeatureIdSources)
             {
                 requestContext.UserAgentDetails.AddFeature(featureId);
+            }
+        }
+
+        /// <summary>
+        /// Apply any auth scheme preferences that were manually set in the client config.
+        /// Only schemes supported by the service (i.e. in <paramref name="candidates"/>) will be considered.
+        /// </summary>
+        /// <remarks>
+        /// For majority of use cases, no preferences will be set so this method will be a no-op.
+        /// <para />
+        /// When preferences are set however, the auth schemes will be (potentially) reorderd on every request,
+        /// but there should not be a large amount of preferences to impact performance.
+        /// <para />
+        /// If that happens, we may look into some form of caching the data in the request context, but we need
+        /// to be aware the client config can be modified between service calls.
+        /// </remarks>
+        private List<IAuthSchemeOption> ApplyPreferences(List<IAuthSchemeOption> candidates, IRequestContext requestContext)
+        {
+            var preferences = requestContext.ClientConfig.AuthSchemePreference?.Select(x => x.Trim()).Distinct().ToList();
+            if (preferences == null || preferences.Count == 0)
+            {
+                return candidates;
+            }
+
+            var preferredOptions = new List<IAuthSchemeOption>();
+            var addedCandidates = new HashSet<IAuthSchemeOption>();
+
+            // Add preferred candidates first.
+            foreach (var preference in preferences)
+            {
+                foreach (var candidate in candidates)
+                {
+                    if (preference == candidate.ShortName)
+                    {
+                        preferredOptions.Add(candidate);
+                        addedCandidates.Add(candidate);
+                    }
+                }
+            }
+
+            if (!addedCandidates.Any())
+            {
+                Logger.InfoFormat($"None of the preferred authentication schemes are supported by {requestContext.RequestName}");
+            }
+
+            // Add any remaining candidates.
+            foreach (var candidate in candidates)
+            {
+                if (!addedCandidates.Contains(candidate))
+                {
+                    preferredOptions.Add(candidate);
+                }
+            }
+
+            return preferredOptions;
+        }
+
+        /// <summary>
+        /// For SigV4a signing only, customers can override the signing region set. If a value is set in the client config,
+        /// we'll apply it to the AuthenticationRegion property (which the signer will try to use first when determining the
+        /// region to be used for signing).
+        /// <para />
+        /// In the endpoint resolver handler, there's existing logic that can override the AuthenticationRegion property if a 
+        /// value was set in the client config.
+        /// </summary>
+        private void ApplySigningRegionSetOverrides(IRequestContext requestContext)
+        {
+            var request = requestContext.Request;
+            if (request.ChosenAuthScheme.SchemeId != AuthSchemeOption.SigV4A)
+            {
+                return;
+            }
+
+            var config = requestContext.ClientConfig;
+            request.SignatureVersion = SignatureVersion.SigV4a;
+
+            var overrides = config.SigV4aSigningRegionSet?.Select(x => x.Trim()).Distinct().ToList();
+            if (overrides == null || overrides.Count == 0)
+            {
+                return;
+            }
+
+            var authenticationRegion = string.Join(",", overrides);
+            if (!string.IsNullOrEmpty(authenticationRegion))
+            {
+                Logger.InfoFormat($"Signing region set has been overriden for {requestContext.RequestName} to use: {authenticationRegion}");
+                request.AuthenticationRegion = authenticationRegion;
             }
         }
     }

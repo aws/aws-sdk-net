@@ -114,6 +114,16 @@ namespace Amazon.Runtime.Internal
         /// Determines the behavior for validating checksums on response payloads.
         /// </summary>
         public ResponseChecksumValidation? ResponseChecksumValidation { get; set; }
+
+        /// <summary>
+        /// List of preferred authentication schemes in priority order.
+        /// </summary>
+        public List<string> AuthSchemePreference { get; set; }
+
+        /// <summary>
+        /// List of AWS regions for SigV4a multi-region signing.
+        /// </summary>
+        public List<string> SigV4aSigningRegionSet { get; set; }
     }
 
 #if BCL || NETSTANDARD
@@ -140,6 +150,8 @@ namespace Amazon.Runtime.Internal
         public const string ENVIRONMENT_VARAIBLE_AWS_ACCOUNT_ID_ENDPOINT_MODE = "AWS_ACCOUNT_ID_ENDPOINT_MODE";
         public const string ENVIRONMENT_VARIABLE_AWS_REQUEST_CHECKSUM_CALCULATION = "AWS_REQUEST_CHECKSUM_CALCULATION";
         public const string ENVIRONMENT_VARIABLE_AWS_RESPONSE_CHECKSUM_VALIDATION = "AWS_RESPONSE_CHECKSUM_VALIDATION";
+        public const string ENVIRONMENT_VARIABLE_AWS_AUTH_SCHEME_PREFERENCE = "AWS_AUTH_SCHEME_PREFERENCE";
+        public const string ENVIRONMENT_VARIABLE_AWS_SIGV4A_SIGNING_REGION_SET = "AWS_SIGV4A_SIGNING_REGION_SET";
         public const int AWS_SDK_UA_APP_ID_MAX_LENGTH = 50;
 
         /// <summary>
@@ -165,6 +177,8 @@ namespace Amazon.Runtime.Internal
             RequestChecksumCalculation = GetEnvironmentVariable<RequestChecksumCalculation>(ENVIRONMENT_VARIABLE_AWS_REQUEST_CHECKSUM_CALCULATION);
             ResponseChecksumValidation = GetEnvironmentVariable<ResponseChecksumValidation>(ENVIRONMENT_VARIABLE_AWS_RESPONSE_CHECKSUM_VALIDATION);
             ClientAppId = GetClientAppIdEnvironmentVariable();
+            AuthSchemePreference = GetCommaDelimitedEnvironmentVariable(ENVIRONMENT_VARIABLE_AWS_AUTH_SCHEME_PREFERENCE);
+            SigV4aSigningRegionSet = GetCommaDelimitedEnvironmentVariable(ENVIRONMENT_VARIABLE_AWS_SIGV4A_SIGNING_REGION_SET);
         }
 
         private bool GetEnvironmentVariable(string name, bool defaultValue)
@@ -285,6 +299,20 @@ namespace Amazon.Runtime.Internal
 
             return rawValue;
         }
+
+        /// <summary>
+        /// Parses an environment variable containing a comma delimited list into a list of strings.
+        /// </summary>
+        private List<string> GetCommaDelimitedEnvironmentVariable(string environmentVariableName)
+        {
+            if (!TryGetEnvironmentVariable(environmentVariableName, out var rawValue))
+            {
+                return null;
+            }
+
+            var values = rawValue.Split(',').Where(s => !string.IsNullOrEmpty(s));
+            return values.ToList();
+        }
     }
 
     /// <summary>
@@ -340,6 +368,8 @@ namespace Amazon.Runtime.Internal
                 AccountIdEndpointMode = profile.AccountIdEndpointMode;
                 RequestChecksumCalculation = profile.RequestChecksumCalculation;
                 ResponseChecksumValidation = profile.ResponseChecksumValidation;
+                AuthSchemePreference = profile.AuthSchemePreference;
+                SigV4aSigningRegionSet = profile.SigV4aSigningRegionSet;
             }
             else
             {
@@ -357,7 +387,7 @@ namespace Amazon.Runtime.Internal
                 new KeyValuePair<string, object>("ec2_metadata_service_endpoint_mode", profile.EC2MetadataServiceEndpointMode),
                 new KeyValuePair<string, object>("use_dualstack_endpoint", profile.UseDualstackEndpoint),
                 new KeyValuePair<string, object>("use_fips_endpoint", profile.UseFIPSEndpoint),
-                new KeyValuePair<string,object>( "ignore_configured_endpoint_urls", profile.IgnoreConfiguredEndpointUrls),
+                new KeyValuePair<string, object>("ignore_configured_endpoint_urls", profile.IgnoreConfiguredEndpointUrls),
                 new KeyValuePair<string, object>("endpoint_url", profile.EndpointUrl),
                 new KeyValuePair<string, object>("disable_request_compression", profile.DisableRequestCompression),
                 new KeyValuePair<string, object>("request_min_compression_size_bytes", profile.RequestMinCompressionSizeBytes),
@@ -365,6 +395,8 @@ namespace Amazon.Runtime.Internal
                 new KeyValuePair<string, object>("account_id_endpoint_mode", profile.AccountIdEndpointMode),
                 new KeyValuePair<string, object>("request_checksum_calculation", profile.RequestChecksumCalculation),
                 new KeyValuePair<string, object>("response_checksum_validation", profile.ResponseChecksumValidation),
+                new KeyValuePair<string, object>("auth_scheme_preference", profile.AuthSchemePreference),
+                new KeyValuePair<string, object>("sigv4a_signing_region_set", profile.SigV4aSigningRegionSet),
             };
 
             foreach(var item in items)
@@ -406,7 +438,7 @@ namespace Amazon.Runtime.Internal
 #if BCL || NETSTANDARD
             //Preload configurations that are fast or pull all the values at the same time. Slower configurations
             //should be called for specific values dynamically.
-            InternalConfiguration environmentVariablesConfiguration =  new EnvironmentVariableInternalConfiguration();
+            InternalConfiguration environmentVariablesConfiguration = new EnvironmentVariableInternalConfiguration();
             InternalConfiguration profileConfiguration = new ProfileInternalConfiguration(_credentialProfileChain);
 #endif
 
@@ -433,11 +465,29 @@ namespace Amazon.Runtime.Internal
             _cachedConfiguration.DisableRequestCompression = SeekValue(standardGenerators, (c) => c.DisableRequestCompression);
             _cachedConfiguration.RequestMinCompressionSizeBytes = SeekValue(standardGenerators, (c) => c.RequestMinCompressionSizeBytes);
             _cachedConfiguration.ClientAppId = SeekString(standardGenerators, (c) => c.ClientAppId, defaultValue: null);
-            _cachedConfiguration.AccountIdEndpointMode = SeekValue(standardGenerators,(c) => c.AccountIdEndpointMode);
+            _cachedConfiguration.AccountIdEndpointMode = SeekValue(standardGenerators, (c) => c.AccountIdEndpointMode);
             _cachedConfiguration.RequestChecksumCalculation = SeekValue(standardGenerators, (c) => c.RequestChecksumCalculation);
             _cachedConfiguration.ResponseChecksumValidation = SeekValue(standardGenerators, (c) => c.ResponseChecksumValidation);
-        }        
-                
+            _cachedConfiguration.AuthSchemePreference = SeekList(standardGenerators, (c) => c.AuthSchemePreference);
+            _cachedConfiguration.SigV4aSigningRegionSet = SeekList(standardGenerators, (c) => c.SigV4aSigningRegionSet);
+        }
+
+        private static List<T> SeekList<T>(List<ConfigGenerator> generators, Func<InternalConfiguration, List<T>> getValue)
+        {
+            // Look for the configuration value stopping at the first generator that returns the expected value.
+            foreach (var generator in generators)
+            {
+                var configuration = generator();
+                List<T> value = getValue(configuration);
+                if (value != null && value.Count > 0)
+                {
+                    return value;
+                }
+            }
+
+            return null;
+        }
+
         private static T? SeekValue<T>(List<ConfigGenerator> generators, Func<InternalConfiguration, T?> getValue) where T : struct
         {
             //Look for the configuration value stopping at the first generator that returns the expected value.
@@ -521,7 +571,7 @@ namespace Amazon.Runtime.Internal
         /// Internet protocol version to be used for communicating with the EC2 Instance Metadata Service
         /// </summary>
         public static EC2MetadataServiceEndpointMode? EC2MetadataServiceEndpointMode
-        { 
+        {
             get
             {
                 return _cachedConfiguration.EC2MetadataServiceEndpointMode;
@@ -577,7 +627,8 @@ namespace Amazon.Runtime.Internal
         /// This setting only applies to operations that support compression.
         /// The default value is "false". Set to "true" to disable compression.
         /// </summary>
-        public static bool? DisableRequestCompression {
+        public static bool? DisableRequestCompression
+        {
             get
             {
                 return _cachedConfiguration.DisableRequestCompression;
@@ -587,7 +638,8 @@ namespace Amazon.Runtime.Internal
         /// <summary>
         /// Minimum size in bytes that a request body should be to trigger compression.
         /// </summary>
-        public static long? RequestMinCompressionSizeBytes {
+        public static long? RequestMinCompressionSizeBytes
+        {
             get
             {
                 return _cachedConfiguration.RequestMinCompressionSizeBytes;
@@ -634,5 +686,9 @@ namespace Amazon.Runtime.Internal
                 return _cachedConfiguration.ResponseChecksumValidation;
             }
         }
+
+        public static List<string> AuthSchemePreference => _cachedConfiguration.AuthSchemePreference;
+
+        public static List<string> SigV4aSigningRegionSet => _cachedConfiguration.SigV4aSigningRegionSet;
     }
 }
