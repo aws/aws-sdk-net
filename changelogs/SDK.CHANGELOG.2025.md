@@ -1,3 +1,13 @@
+### 3.7.1137.0 (2025-10-03 18:26 UTC)
+* CleanRooms (3.7.507.0)
+	* Added support for reading data sources across regions, and results delivery to allowedlisted regions.
+* MediaLive (3.7.505.0)
+	* AWS Elemental MediaLive enables Mediapackage V2 users to configure ID3, KLV, Nielsen ID3, and Segment Length related parameters through the Mediapackage output group.
+* PaymentCryptographyData (3.7.502.0)
+	* Added a new API - translateKeyMaterial; allows keys wrapped by ECDH derived keys to be rewrapped under a static AES keyblock without first importing the key into the service.
+* QConnect (3.7.502.0)
+	* Updated Amazon Q in Connect APIs to support Email Contact Recommendations.
+
 ### 3.7.1136.0 (2025-10-02 19:11 UTC)
 * CloudFormation (3.7.502.0)
 	* Add new warning type 'EXCLUDED_RESOURCES'
