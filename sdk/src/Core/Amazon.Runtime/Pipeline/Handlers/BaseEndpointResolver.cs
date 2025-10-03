@@ -83,29 +83,17 @@ namespace Amazon.Runtime.Internal
             // service-specific handling, code-generated
             ServiceSpecificHandler(executionContext, parameters);
 
-            // override AuthenticationRegion from ClientConfig if specified
+            // Override AuthenticationRegion from ClientConfig if specified
+            // AuthenticationRegion is used for both SigV4 (single region) and SigV4a (multi-region)
             if (!string.IsNullOrEmpty(config.AuthenticationRegion))
             {
                 requestContext.Request.AuthenticationRegion = config.AuthenticationRegion;
             }
-            
-            // Set SigV4a region set if configured (either from endpoint metadata or explicit config)
-            if (requestContext.Request.SignatureVersion == SignatureVersion.SigV4a)
+            // For SigV4a, also accept SigV4aSigningRegionSet config as an alternative source
+            // This maintains backwards compatibility with existing configurations
+            else if (!string.IsNullOrEmpty(config.SigV4aSigningRegionSet))
             {
-                // Explicit configuration takes precedence
-                if (!string.IsNullOrEmpty(config.SigV4aSigningRegionSet))
-                {
-                    requestContext.Request.SigV4aSigningRegionSet = config.SigV4aSigningRegionSet;
-                    requestContext.SigV4aSigningRegionSet = config.SigV4aSigningRegionSet;
-                    // Also set AuthenticationRegion for CRT compatibility - CRT uses this to set x-amz-region-set header
-                    requestContext.Request.AuthenticationRegion = config.SigV4aSigningRegionSet;
-                }
-                else if (!string.IsNullOrEmpty(requestContext.Request.AuthenticationRegion))
-                {
-                    // AuthenticationRegion was set from endpoint metadata - use it for SigV4a
-                    requestContext.Request.SigV4aSigningRegionSet = requestContext.Request.AuthenticationRegion;
-                    requestContext.SigV4aSigningRegionSet = requestContext.Request.AuthenticationRegion;
-                }
+                requestContext.Request.AuthenticationRegion = config.SigV4aSigningRegionSet;
             }
         }
 

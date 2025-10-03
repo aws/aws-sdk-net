@@ -56,11 +56,6 @@ namespace Amazon.Runtime
 
         IHttpRequestStreamHandle RequestStreamHandle {get;set;}
         UserAgentDetails UserAgentDetails { get; }
-        
-        /// <summary>
-        /// The region set for SigV4a signing.
-        /// </summary>
-        string SigV4aSigningRegionSet { get; set; }
     }
 
     public interface IResponseContext
@@ -180,11 +175,6 @@ namespace Amazon.Runtime.Internal
         }
 
         public IHttpRequestStreamHandle RequestStreamHandle { get; set; }
-        
-        /// <summary>
-        /// The region set for SigV4a signing.
-        /// </summary>
-        public string SigV4aSigningRegionSet { get; set; }
     }
 
     public class ResponseContext : IResponseContext

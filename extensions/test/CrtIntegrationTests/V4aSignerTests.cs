@@ -136,36 +136,6 @@ namespace CrtIntegrationTests
             return request;
         }
 
-        /// <summary>
-        /// Dummy request class needed for DefaultRequest constructor
-        /// </summary>
-        private class DummyRequest : AmazonWebServiceRequest { }
-
-        /// <summary>
-        /// Creates a test request with mutable collections to verify header modifications
-        /// during signing.
-        /// </summary>
-        internal static IRequest CreateDefaultRequest(string resourcePath)
-        {
-            var publicRequest = new DummyRequest();
-            var request = new DefaultRequest(publicRequest, SigningTestService)
-            {
-                HttpMethod = "POST",
-                ResourcePath = resourcePath,
-                Endpoint = new Uri($"https://{SigningTestHost}/"),
-                Content = Encoding.ASCII.GetBytes("Param1=value1")
-            };
-
-            request.Headers["Content-Type"] = "application/x-www-form-urlencoded";
-            request.Headers["Content-Length"] = "13";
-            // Add SDK tracking headers that should NOT be signed
-            request.Headers["amz-sdk-request"] = "attempt=1; max=5";
-            request.Headers["amz-sdk-invocation-id"] = "a7d0c828-1fc1-43e8-9f9e-367a7011fc84";
-            request.Headers["x-amzn-trace-id"] = "Root=1-63441c4a-abcdef012345678912345678";
-
-            return request;
-        }
-
         internal string GetExpectedCanonicalRequestForHeaderSigningTest(string canonicalizedResourePath)
         {
             return String.Join('\n',
@@ -492,9 +462,8 @@ namespace CrtIntegrationTests
 
             foreach (var regionSet in regionSets)
             {
-                var request = CreateDefaultRequest("/");
-                request.SigV4aSigningRegionSet = regionSet;
-                // The base endpoint resolver would normally set AuthenticationRegion from SigV4aSigningRegionSet
+                var request = BuildHeaderRequestToSign("/", new Dictionary<string, string>());
+                // AuthenticationRegion now handles both SigV4 and SigV4a regions
                 request.AuthenticationRegion = regionSet;
 
                 var result = signer.SignRequest(request, clientConfig, null, SigningTestCredentials);
@@ -521,15 +490,15 @@ namespace CrtIntegrationTests
         }
 
         /// <summary>
-        /// Tests backward compatibility: when SigV4aSigningRegionSet is not set,
+        /// Tests backward compatibility: when AuthenticationRegion is not set,
         /// the signer should fall back to single-region behavior.
         /// </summary>
         [Fact]
         public void TestSigV4aFallbackToSingleRegion()
         {
             var signer = new CrtAWS4aSigner();
-            var request = CreateDefaultRequest("/");
-            // Explicitly NOT setting request.SigV4aSigningRegionSet
+            var request = BuildHeaderRequestToSign("/", new Dictionary<string, string>());
+            // Explicitly NOT setting request.AuthenticationRegion for multi-region
 
             var clientConfig = BuildSigningClientConfig(SigningTestService);
             var result = signer.SignRequest(request, clientConfig, null, SigningTestCredentials);

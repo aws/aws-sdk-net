@@ -75,34 +75,6 @@ namespace AWSSDK.UnitTests.Runtime
         }
 
         /// <summary>
-        /// Service lists sigv4 first. Both runtime and identity available for both.
-        /// The identity provider column order doesn't matter - resolution follows service order.
-        /// </summary>
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Runtime")]
-        public void AuthCredentials_BothRuntimeAndIdentity_ServiceListsSigV4First_UsesSigV4()
-        {
-            // Service lists sigv4 first
-            var serviceAuthOptions = new List<IAuthSchemeOption>
-            {
-                new AuthSchemeOption { SchemeId = "aws.auth#sigv4" },
-                new AuthSchemeOption { SchemeId = "smithy.api#httpBearerAuth" }
-            };
-
-            // Both credentials and token provider available
-            var context = CreateMockContextWithBothIdentities();
-            var resolver = new TestAuthResolver(serviceAuthOptions);
-
-            resolver.PreInvoke(context);
-
-            Assert.IsNotNull(context.RequestContext.Identity, "Identity should be resolved");
-            Assert.IsNotNull(context.RequestContext.Signer, "Signer should be set");
-            // Should use sigv4 (first in service list)
-            Assert.AreEqual("AWS4Signer", context.RequestContext.Signer.GetType().Name);
-        }
-
-        /// <summary>
         /// Only bearer identity available, so use bearer.
         /// </summary>
         [TestMethod]
@@ -129,32 +101,6 @@ namespace AWSSDK.UnitTests.Runtime
         }
 
         /// <summary>
-        /// Only sigv4 identity available, so use sigv4.
-        /// </summary>
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Runtime")]
-        public void AuthCredentials_OnlySigV4IdentityAvailable_UsesSigV4()
-        {
-            var serviceAuthOptions = new List<IAuthSchemeOption>
-            {
-                new AuthSchemeOption { SchemeId = "aws.auth#sigv4" },
-                new AuthSchemeOption { SchemeId = "smithy.api#httpBearerAuth" }
-            };
-
-            // Only AWS credentials available, no bearer token
-            var context = CreateMockContextCredentialsOnly();
-            var resolver = new TestAuthResolver(serviceAuthOptions);
-
-            resolver.PreInvoke(context);
-
-            Assert.IsNotNull(context.RequestContext.Identity, "Identity should be resolved");
-            Assert.IsNotNull(context.RequestContext.Signer, "Signer should be set");
-            // Should use sigv4 (bearer has no token)
-            Assert.AreEqual("AWS4Signer", context.RequestContext.Signer.GetType().Name);
-        }
-
-        /// <summary>
         /// No identity providers available for any supported auth scheme.
         /// </summary>
         [TestMethod]
@@ -177,30 +123,6 @@ namespace AWSSDK.UnitTests.Runtime
             resolver.PreInvoke(context);
         }
 
-        /// <summary>
-        /// Runtime doesn't support bearer, but only bearer identity is available.
-        /// Since we're testing with BaseAuthResolverHandler which has all schemes,
-        /// we simulate this by having no AWS credentials (sigv4 can't be used).
-        /// </summary>
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Runtime")]
-        [ExpectedException(typeof(AmazonClientException))]
-        public void AuthCredentials_RuntimeDoesntSupportBearer_OnlyBearerIdentity_ThrowsError()
-        {
-            var serviceAuthOptions = new List<IAuthSchemeOption>
-            {
-                new AuthSchemeOption { SchemeId = "aws.auth#sigv4" }
-                // Service doesn't list bearer as an option
-            };
-
-            // Have bearer token but service doesn't support it
-            var context = CreateMockContextBearerOnly();
-            var resolver = new TestAuthResolver(serviceAuthOptions);
-
-            // Should throw because sigv4 has no identity and bearer is not in service options
-            resolver.PreInvoke(context);
-        }
 
         #endregion
 

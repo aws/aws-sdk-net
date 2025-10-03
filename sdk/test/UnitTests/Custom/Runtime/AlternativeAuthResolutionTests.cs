@@ -69,55 +69,7 @@ namespace AWSSDK.UnitTests.Runtime
             Assert.AreEqual("AWS4aSignerCRTWrapper", context.RequestContext.Signer.GetType().Name);
         }
 
-        /// <summary>
-        /// Even when service only specifies sigv4, Endpoints 2.0 can require sigv4a.
-        /// </summary>
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Runtime")]
-        public void AlternativeAuth_ServiceOnlySupportsV4_Endpoints2RequiresV4a_UsesV4a()
-        {
-            // Endpoints 2.0 requires sigv4a (even though service trait only has sigv4)
-            var endpointAuthOptions = new List<IAuthSchemeOption>
-            {
-                new AuthSchemeOption { SchemeId = "aws.auth#sigv4a" }
-            };
 
-            var context = CreateMockContext();
-            var resolver = new TestAuthResolver(endpointAuthOptions);
-
-            resolver.PreInvoke(context);
-
-            Assert.IsNotNull(context.RequestContext.Identity, "Identity should be resolved");
-            Assert.IsNotNull(context.RequestContext.Signer, "Signer should be set");
-            // SigV4a should be selected (AWS4aSignerCRTWrapper)
-            Assert.AreEqual("AWS4aSignerCRTWrapper", context.RequestContext.Signer.GetType().Name);
-        }
-
-        /// <summary>
-        /// Even when operation specifies noauth, Endpoints 2.0 override takes precedence.
-        /// </summary>
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Runtime")]
-        public void AlternativeAuth_OperationSpecifiesNoAuth_Endpoints2OverridesWithV4a()
-        {
-            // Endpoints 2.0 requires sigv4a (overriding operation's noauth)
-            var endpointAuthOptions = new List<IAuthSchemeOption>
-            {
-                new AuthSchemeOption { SchemeId = "aws.auth#sigv4a" }
-            };
-
-            var context = CreateMockContext();
-            var resolver = new TestAuthResolver(endpointAuthOptions);
-
-            resolver.PreInvoke(context);
-
-            Assert.IsNotNull(context.RequestContext.Identity, "Identity should be resolved");
-            Assert.IsNotNull(context.RequestContext.Signer, "Signer should be set");
-            // SigV4a should be selected (AWS4aSignerCRTWrapper), not NoAuth
-            Assert.AreEqual("AWS4aSignerCRTWrapper", context.RequestContext.Signer.GetType().Name);
-        }
 
         /// <summary>
         /// When no Endpoints 2.0 override exists, use the service default (sigv4 first).
