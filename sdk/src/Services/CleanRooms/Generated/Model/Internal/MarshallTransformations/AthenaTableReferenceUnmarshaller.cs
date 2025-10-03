@@ -78,6 +78,12 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
                     unmarshalledObject.OutputLocation = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("region", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Region = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("tableName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

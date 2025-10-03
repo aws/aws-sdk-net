@@ -1003,6 +1003,180 @@ namespace Amazon.CleanRooms
 
 
     /// <summary>
+    /// Constants used for properties of type CommercialRegion.
+    /// </summary>
+    public class CommercialRegion : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AfSouth1 for CommercialRegion
+        /// </summary>
+        public static readonly CommercialRegion AfSouth1 = new CommercialRegion("af-south-1");
+        /// <summary>
+        /// Constant ApEast1 for CommercialRegion
+        /// </summary>
+        public static readonly CommercialRegion ApEast1 = new CommercialRegion("ap-east-1");
+        /// <summary>
+        /// Constant ApEast2 for CommercialRegion
+        /// </summary>
+        public static readonly CommercialRegion ApEast2 = new CommercialRegion("ap-east-2");
+        /// <summary>
+        /// Constant ApNortheast1 for CommercialRegion
+        /// </summary>
+        public static readonly CommercialRegion ApNortheast1 = new CommercialRegion("ap-northeast-1");
+        /// <summary>
+        /// Constant ApNortheast2 for CommercialRegion
+        /// </summary>
+        public static readonly CommercialRegion ApNortheast2 = new CommercialRegion("ap-northeast-2");
+        /// <summary>
+        /// Constant ApNortheast3 for CommercialRegion
+        /// </summary>
+        public static readonly CommercialRegion ApNortheast3 = new CommercialRegion("ap-northeast-3");
+        /// <summary>
+        /// Constant ApSouth1 for CommercialRegion
+        /// </summary>
+        public static readonly CommercialRegion ApSouth1 = new CommercialRegion("ap-south-1");
+        /// <summary>
+        /// Constant ApSouth2 for CommercialRegion
+        /// </summary>
+        public static readonly CommercialRegion ApSouth2 = new CommercialRegion("ap-south-2");
+        /// <summary>
+        /// Constant ApSoutheast1 for CommercialRegion
+        /// </summary>
+        public static readonly CommercialRegion ApSoutheast1 = new CommercialRegion("ap-southeast-1");
+        /// <summary>
+        /// Constant ApSoutheast2 for CommercialRegion
+        /// </summary>
+        public static readonly CommercialRegion ApSoutheast2 = new CommercialRegion("ap-southeast-2");
+        /// <summary>
+        /// Constant ApSoutheast3 for CommercialRegion
+        /// </summary>
+        public static readonly CommercialRegion ApSoutheast3 = new CommercialRegion("ap-southeast-3");
+        /// <summary>
+        /// Constant ApSoutheast4 for CommercialRegion
+        /// </summary>
+        public static readonly CommercialRegion ApSoutheast4 = new CommercialRegion("ap-southeast-4");
+        /// <summary>
+        /// Constant ApSoutheast5 for CommercialRegion
+        /// </summary>
+        public static readonly CommercialRegion ApSoutheast5 = new CommercialRegion("ap-southeast-5");
+        /// <summary>
+        /// Constant ApSoutheast7 for CommercialRegion
+        /// </summary>
+        public static readonly CommercialRegion ApSoutheast7 = new CommercialRegion("ap-southeast-7");
+        /// <summary>
+        /// Constant CaCentral1 for CommercialRegion
+        /// </summary>
+        public static readonly CommercialRegion CaCentral1 = new CommercialRegion("ca-central-1");
+        /// <summary>
+        /// Constant CaWest1 for CommercialRegion
+        /// </summary>
+        public static readonly CommercialRegion CaWest1 = new CommercialRegion("ca-west-1");
+        /// <summary>
+        /// Constant EuCentral1 for CommercialRegion
+        /// </summary>
+        public static readonly CommercialRegion EuCentral1 = new CommercialRegion("eu-central-1");
+        /// <summary>
+        /// Constant EuCentral2 for CommercialRegion
+        /// </summary>
+        public static readonly CommercialRegion EuCentral2 = new CommercialRegion("eu-central-2");
+        /// <summary>
+        /// Constant EuNorth1 for CommercialRegion
+        /// </summary>
+        public static readonly CommercialRegion EuNorth1 = new CommercialRegion("eu-north-1");
+        /// <summary>
+        /// Constant EuSouth1 for CommercialRegion
+        /// </summary>
+        public static readonly CommercialRegion EuSouth1 = new CommercialRegion("eu-south-1");
+        /// <summary>
+        /// Constant EuSouth2 for CommercialRegion
+        /// </summary>
+        public static readonly CommercialRegion EuSouth2 = new CommercialRegion("eu-south-2");
+        /// <summary>
+        /// Constant EuWest1 for CommercialRegion
+        /// </summary>
+        public static readonly CommercialRegion EuWest1 = new CommercialRegion("eu-west-1");
+        /// <summary>
+        /// Constant EuWest2 for CommercialRegion
+        /// </summary>
+        public static readonly CommercialRegion EuWest2 = new CommercialRegion("eu-west-2");
+        /// <summary>
+        /// Constant EuWest3 for CommercialRegion
+        /// </summary>
+        public static readonly CommercialRegion EuWest3 = new CommercialRegion("eu-west-3");
+        /// <summary>
+        /// Constant IlCentral1 for CommercialRegion
+        /// </summary>
+        public static readonly CommercialRegion IlCentral1 = new CommercialRegion("il-central-1");
+        /// <summary>
+        /// Constant MeCentral1 for CommercialRegion
+        /// </summary>
+        public static readonly CommercialRegion MeCentral1 = new CommercialRegion("me-central-1");
+        /// <summary>
+        /// Constant MeSouth1 for CommercialRegion
+        /// </summary>
+        public static readonly CommercialRegion MeSouth1 = new CommercialRegion("me-south-1");
+        /// <summary>
+        /// Constant MxCentral1 for CommercialRegion
+        /// </summary>
+        public static readonly CommercialRegion MxCentral1 = new CommercialRegion("mx-central-1");
+        /// <summary>
+        /// Constant SaEast1 for CommercialRegion
+        /// </summary>
+        public static readonly CommercialRegion SaEast1 = new CommercialRegion("sa-east-1");
+        /// <summary>
+        /// Constant UsEast1 for CommercialRegion
+        /// </summary>
+        public static readonly CommercialRegion UsEast1 = new CommercialRegion("us-east-1");
+        /// <summary>
+        /// Constant UsEast2 for CommercialRegion
+        /// </summary>
+        public static readonly CommercialRegion UsEast2 = new CommercialRegion("us-east-2");
+        /// <summary>
+        /// Constant UsWest1 for CommercialRegion
+        /// </summary>
+        public static readonly CommercialRegion UsWest1 = new CommercialRegion("us-west-1");
+        /// <summary>
+        /// Constant UsWest2 for CommercialRegion
+        /// </summary>
+        public static readonly CommercialRegion UsWest2 = new CommercialRegion("us-west-2");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CommercialRegion(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CommercialRegion FindValue(string value)
+        {
+            return FindValue<CommercialRegion>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CommercialRegion(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ConfiguredTableAnalysisRuleType.
     /// </summary>
     public class ConfiguredTableAnalysisRuleType : ConstantClass
@@ -2938,6 +3112,180 @@ namespace Amazon.CleanRooms
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SelectedAnalysisMethod(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SupportedS3Region.
+    /// </summary>
+    public class SupportedS3Region : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AfSouth1 for SupportedS3Region
+        /// </summary>
+        public static readonly SupportedS3Region AfSouth1 = new SupportedS3Region("af-south-1");
+        /// <summary>
+        /// Constant ApEast1 for SupportedS3Region
+        /// </summary>
+        public static readonly SupportedS3Region ApEast1 = new SupportedS3Region("ap-east-1");
+        /// <summary>
+        /// Constant ApEast2 for SupportedS3Region
+        /// </summary>
+        public static readonly SupportedS3Region ApEast2 = new SupportedS3Region("ap-east-2");
+        /// <summary>
+        /// Constant ApNortheast1 for SupportedS3Region
+        /// </summary>
+        public static readonly SupportedS3Region ApNortheast1 = new SupportedS3Region("ap-northeast-1");
+        /// <summary>
+        /// Constant ApNortheast2 for SupportedS3Region
+        /// </summary>
+        public static readonly SupportedS3Region ApNortheast2 = new SupportedS3Region("ap-northeast-2");
+        /// <summary>
+        /// Constant ApNortheast3 for SupportedS3Region
+        /// </summary>
+        public static readonly SupportedS3Region ApNortheast3 = new SupportedS3Region("ap-northeast-3");
+        /// <summary>
+        /// Constant ApSouth1 for SupportedS3Region
+        /// </summary>
+        public static readonly SupportedS3Region ApSouth1 = new SupportedS3Region("ap-south-1");
+        /// <summary>
+        /// Constant ApSouth2 for SupportedS3Region
+        /// </summary>
+        public static readonly SupportedS3Region ApSouth2 = new SupportedS3Region("ap-south-2");
+        /// <summary>
+        /// Constant ApSoutheast1 for SupportedS3Region
+        /// </summary>
+        public static readonly SupportedS3Region ApSoutheast1 = new SupportedS3Region("ap-southeast-1");
+        /// <summary>
+        /// Constant ApSoutheast2 for SupportedS3Region
+        /// </summary>
+        public static readonly SupportedS3Region ApSoutheast2 = new SupportedS3Region("ap-southeast-2");
+        /// <summary>
+        /// Constant ApSoutheast3 for SupportedS3Region
+        /// </summary>
+        public static readonly SupportedS3Region ApSoutheast3 = new SupportedS3Region("ap-southeast-3");
+        /// <summary>
+        /// Constant ApSoutheast4 for SupportedS3Region
+        /// </summary>
+        public static readonly SupportedS3Region ApSoutheast4 = new SupportedS3Region("ap-southeast-4");
+        /// <summary>
+        /// Constant ApSoutheast5 for SupportedS3Region
+        /// </summary>
+        public static readonly SupportedS3Region ApSoutheast5 = new SupportedS3Region("ap-southeast-5");
+        /// <summary>
+        /// Constant ApSoutheast7 for SupportedS3Region
+        /// </summary>
+        public static readonly SupportedS3Region ApSoutheast7 = new SupportedS3Region("ap-southeast-7");
+        /// <summary>
+        /// Constant CaCentral1 for SupportedS3Region
+        /// </summary>
+        public static readonly SupportedS3Region CaCentral1 = new SupportedS3Region("ca-central-1");
+        /// <summary>
+        /// Constant CaWest1 for SupportedS3Region
+        /// </summary>
+        public static readonly SupportedS3Region CaWest1 = new SupportedS3Region("ca-west-1");
+        /// <summary>
+        /// Constant EuCentral1 for SupportedS3Region
+        /// </summary>
+        public static readonly SupportedS3Region EuCentral1 = new SupportedS3Region("eu-central-1");
+        /// <summary>
+        /// Constant EuCentral2 for SupportedS3Region
+        /// </summary>
+        public static readonly SupportedS3Region EuCentral2 = new SupportedS3Region("eu-central-2");
+        /// <summary>
+        /// Constant EuNorth1 for SupportedS3Region
+        /// </summary>
+        public static readonly SupportedS3Region EuNorth1 = new SupportedS3Region("eu-north-1");
+        /// <summary>
+        /// Constant EuSouth1 for SupportedS3Region
+        /// </summary>
+        public static readonly SupportedS3Region EuSouth1 = new SupportedS3Region("eu-south-1");
+        /// <summary>
+        /// Constant EuSouth2 for SupportedS3Region
+        /// </summary>
+        public static readonly SupportedS3Region EuSouth2 = new SupportedS3Region("eu-south-2");
+        /// <summary>
+        /// Constant EuWest1 for SupportedS3Region
+        /// </summary>
+        public static readonly SupportedS3Region EuWest1 = new SupportedS3Region("eu-west-1");
+        /// <summary>
+        /// Constant EuWest2 for SupportedS3Region
+        /// </summary>
+        public static readonly SupportedS3Region EuWest2 = new SupportedS3Region("eu-west-2");
+        /// <summary>
+        /// Constant EuWest3 for SupportedS3Region
+        /// </summary>
+        public static readonly SupportedS3Region EuWest3 = new SupportedS3Region("eu-west-3");
+        /// <summary>
+        /// Constant IlCentral1 for SupportedS3Region
+        /// </summary>
+        public static readonly SupportedS3Region IlCentral1 = new SupportedS3Region("il-central-1");
+        /// <summary>
+        /// Constant MeCentral1 for SupportedS3Region
+        /// </summary>
+        public static readonly SupportedS3Region MeCentral1 = new SupportedS3Region("me-central-1");
+        /// <summary>
+        /// Constant MeSouth1 for SupportedS3Region
+        /// </summary>
+        public static readonly SupportedS3Region MeSouth1 = new SupportedS3Region("me-south-1");
+        /// <summary>
+        /// Constant MxCentral1 for SupportedS3Region
+        /// </summary>
+        public static readonly SupportedS3Region MxCentral1 = new SupportedS3Region("mx-central-1");
+        /// <summary>
+        /// Constant SaEast1 for SupportedS3Region
+        /// </summary>
+        public static readonly SupportedS3Region SaEast1 = new SupportedS3Region("sa-east-1");
+        /// <summary>
+        /// Constant UsEast1 for SupportedS3Region
+        /// </summary>
+        public static readonly SupportedS3Region UsEast1 = new SupportedS3Region("us-east-1");
+        /// <summary>
+        /// Constant UsEast2 for SupportedS3Region
+        /// </summary>
+        public static readonly SupportedS3Region UsEast2 = new SupportedS3Region("us-east-2");
+        /// <summary>
+        /// Constant UsWest1 for SupportedS3Region
+        /// </summary>
+        public static readonly SupportedS3Region UsWest1 = new SupportedS3Region("us-west-1");
+        /// <summary>
+        /// Constant UsWest2 for SupportedS3Region
+        /// </summary>
+        public static readonly SupportedS3Region UsWest2 = new SupportedS3Region("us-west-2");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SupportedS3Region(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SupportedS3Region FindValue(string value)
+        {
+            return FindValue<SupportedS3Region>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SupportedS3Region(string value)
         {
             return FindValue(value);
         }

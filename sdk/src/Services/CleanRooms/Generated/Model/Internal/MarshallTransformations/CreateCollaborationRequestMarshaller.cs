@@ -67,6 +67,17 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAllowedResultRegions())
+                {
+                    context.Writer.WritePropertyName("allowedResultRegions");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestAllowedResultRegionsListValue in publicRequest.AllowedResultRegions)
+                    {
+                            context.Writer.Write(publicRequestAllowedResultRegionsListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetAnalyticsEngine())
                 {
                     context.Writer.WritePropertyName("analyticsEngine");

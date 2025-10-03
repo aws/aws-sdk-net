@@ -35,6 +35,7 @@ namespace Amazon.CleanRooms.Model
     /// </summary>
     public partial class Collaboration
     {
+        private List<string> _allowedResultRegions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private AnalyticsEngine _analyticsEngine;
         private string _arn;
         private List<string> _autoApprovedChangeTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
@@ -51,6 +52,26 @@ namespace Amazon.CleanRooms.Model
         private string _name;
         private CollaborationQueryLogStatus _queryLogStatus;
         private DateTime? _updateTime;
+
+        /// <summary>
+        /// Gets and sets the property AllowedResultRegions. 
+        /// <para>
+        /// The Amazon Web Services Regions where collaboration query results can be stored. Returns
+        /// the list of Region identifiers that were specified when the collaboration was created.
+        /// This list is used to enforce regional storage policies and compliance requirements.
+        /// </para>
+        /// </summary>
+        public List<string> AllowedResultRegions
+        {
+            get { return this._allowedResultRegions; }
+            set { this._allowedResultRegions = value; }
+        }
+
+        // Check to see if AllowedResultRegions property is set
+        internal bool IsSetAllowedResultRegions()
+        {
+            return this._allowedResultRegions != null && (this._allowedResultRegions.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property AnalyticsEngine. 

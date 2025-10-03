@@ -54,6 +54,12 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.DatabaseName);
             }
 
+            if(requestObject.IsSetRegion())
+            {
+                context.Writer.WritePropertyName("region");
+                context.Writer.Write(requestObject.Region);
+            }
+
             if(requestObject.IsSetTableName())
             {
                 context.Writer.WritePropertyName("tableName");
