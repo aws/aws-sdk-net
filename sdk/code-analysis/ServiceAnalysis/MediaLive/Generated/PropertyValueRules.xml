@@ -2128,6 +2128,15 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaLive.Model.MediaPackageV2GroupSettings.SegmentLength</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.MediaPackageV2GroupSettings.TimedMetadataId3Period</property>
+    <min>0</min>
+    <max>10000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaLive.Model.MediaResource.Name</property>
     <min>1</min>
     <max>256</max>

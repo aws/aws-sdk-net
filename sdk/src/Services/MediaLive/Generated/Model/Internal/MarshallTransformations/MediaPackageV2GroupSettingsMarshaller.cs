@@ -62,6 +62,60 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(requestObject.IsSetId3Behavior())
+            {
+                context.Writer.WritePropertyName("id3Behavior");
+                context.Writer.WriteStringValue(requestObject.Id3Behavior);
+            }
+
+            if(requestObject.IsSetKlvBehavior())
+            {
+                context.Writer.WritePropertyName("klvBehavior");
+                context.Writer.WriteStringValue(requestObject.KlvBehavior);
+            }
+
+            if(requestObject.IsSetNielsenId3Behavior())
+            {
+                context.Writer.WritePropertyName("nielsenId3Behavior");
+                context.Writer.WriteStringValue(requestObject.NielsenId3Behavior);
+            }
+
+            if(requestObject.IsSetScte35Type())
+            {
+                context.Writer.WritePropertyName("scte35Type");
+                context.Writer.WriteStringValue(requestObject.Scte35Type);
+            }
+
+            if(requestObject.IsSetSegmentLength())
+            {
+                context.Writer.WritePropertyName("segmentLength");
+                context.Writer.WriteNumberValue(requestObject.SegmentLength.Value);
+            }
+
+            if(requestObject.IsSetSegmentLengthUnits())
+            {
+                context.Writer.WritePropertyName("segmentLengthUnits");
+                context.Writer.WriteStringValue(requestObject.SegmentLengthUnits);
+            }
+
+            if(requestObject.IsSetTimedMetadataId3Frame())
+            {
+                context.Writer.WritePropertyName("timedMetadataId3Frame");
+                context.Writer.WriteStringValue(requestObject.TimedMetadataId3Frame);
+            }
+
+            if(requestObject.IsSetTimedMetadataId3Period())
+            {
+                context.Writer.WritePropertyName("timedMetadataId3Period");
+                context.Writer.WriteNumberValue(requestObject.TimedMetadataId3Period.Value);
+            }
+
+            if(requestObject.IsSetTimedMetadataPassthrough())
+            {
+                context.Writer.WritePropertyName("timedMetadataPassthrough");
+                context.Writer.WriteStringValue(requestObject.TimedMetadataPassthrough);
+            }
+
         }
 
         /// <summary>
