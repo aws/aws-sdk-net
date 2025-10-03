@@ -48,7 +48,7 @@ namespace Amazon.PaymentCryptographyData.Model
     /// You can use this operation to generate a DUPKT, CMAC, HMAC or EMV MAC by setting generation
     /// attributes and algorithm to the associated values. The MAC generation encryption key
     /// must have valid values for <c>KeyUsage</c> such as <c>TR31_M7_HMAC_KEY</c> for HMAC
-    /// generation, and they key must have <c>KeyModesOfUse</c> set to <c>Generate</c> and
+    /// generation, and the key must have <c>KeyModesOfUse</c> set to <c>Generate</c> and
     /// <c>Verify</c>.
     /// </para>
     ///  
