@@ -40,6 +40,7 @@ namespace Amazon.QConnect.Model
         private Dictionary<string, AIAgentConfigurationData> _aiAgentConfiguration = AWSConfigs.InitializeCollections ? new Dictionary<string, AIAgentConfigurationData>() : null;
         private string _assistantId;
         private string _clientToken;
+        private string _contactArn;
         private string _description;
         private string _name;
         private TagFilter _tagFilter;
@@ -104,6 +105,26 @@ namespace Amazon.QConnect.Model
         internal bool IsSetClientToken()
         {
             return this._clientToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ContactArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the email contact in Amazon Connect. Used to retrieve
+        /// email content and establish session context for AI-powered email assistance.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string ContactArn
+        {
+            get { return this._contactArn; }
+            set { this._contactArn = value; }
+        }
+
+        // Check to see if ContactArn property is set
+        internal bool IsSetContactArn()
+        {
+            return this._contactArn != null;
         }
 
         /// <summary>

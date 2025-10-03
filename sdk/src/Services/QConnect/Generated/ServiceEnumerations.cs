@@ -81,6 +81,18 @@ namespace Amazon.QConnect
         /// </summary>
         public static readonly AIAgentType ANSWER_RECOMMENDATION = new AIAgentType("ANSWER_RECOMMENDATION");
         /// <summary>
+        /// Constant EMAIL_GENERATIVE_ANSWER for AIAgentType
+        /// </summary>
+        public static readonly AIAgentType EMAIL_GENERATIVE_ANSWER = new AIAgentType("EMAIL_GENERATIVE_ANSWER");
+        /// <summary>
+        /// Constant EMAIL_OVERVIEW for AIAgentType
+        /// </summary>
+        public static readonly AIAgentType EMAIL_OVERVIEW = new AIAgentType("EMAIL_OVERVIEW");
+        /// <summary>
+        /// Constant EMAIL_RESPONSE for AIAgentType
+        /// </summary>
+        public static readonly AIAgentType EMAIL_RESPONSE = new AIAgentType("EMAIL_RESPONSE");
+        /// <summary>
         /// Constant MANUAL_SEARCH for AIAgentType
         /// </summary>
         public static readonly AIAgentType MANUAL_SEARCH = new AIAgentType("MANUAL_SEARCH");
@@ -238,6 +250,22 @@ namespace Amazon.QConnect
         /// Constant ANSWER_GENERATION for AIPromptType
         /// </summary>
         public static readonly AIPromptType ANSWER_GENERATION = new AIPromptType("ANSWER_GENERATION");
+        /// <summary>
+        /// Constant EMAIL_GENERATIVE_ANSWER for AIPromptType
+        /// </summary>
+        public static readonly AIPromptType EMAIL_GENERATIVE_ANSWER = new AIPromptType("EMAIL_GENERATIVE_ANSWER");
+        /// <summary>
+        /// Constant EMAIL_OVERVIEW for AIPromptType
+        /// </summary>
+        public static readonly AIPromptType EMAIL_OVERVIEW = new AIPromptType("EMAIL_OVERVIEW");
+        /// <summary>
+        /// Constant EMAIL_QUERY_REFORMULATION for AIPromptType
+        /// </summary>
+        public static readonly AIPromptType EMAIL_QUERY_REFORMULATION = new AIPromptType("EMAIL_QUERY_REFORMULATION");
+        /// <summary>
+        /// Constant EMAIL_RESPONSE for AIPromptType
+        /// </summary>
+        public static readonly AIPromptType EMAIL_RESPONSE = new AIPromptType("EMAIL_RESPONSE");
         /// <summary>
         /// Constant INTENT_LABELING_GENERATION for AIPromptType
         /// </summary>
@@ -2351,6 +2379,18 @@ namespace Amazon.QConnect
         /// </summary>
         public static readonly QueryResultType BLOCKED_INTENT_ANSWER_CHUNK = new QueryResultType("BLOCKED_INTENT_ANSWER_CHUNK");
         /// <summary>
+        /// Constant EMAIL_GENERATIVE_ANSWER_CHUNK for QueryResultType
+        /// </summary>
+        public static readonly QueryResultType EMAIL_GENERATIVE_ANSWER_CHUNK = new QueryResultType("EMAIL_GENERATIVE_ANSWER_CHUNK");
+        /// <summary>
+        /// Constant EMAIL_OVERVIEW_CHUNK for QueryResultType
+        /// </summary>
+        public static readonly QueryResultType EMAIL_OVERVIEW_CHUNK = new QueryResultType("EMAIL_OVERVIEW_CHUNK");
+        /// <summary>
+        /// Constant EMAIL_RESPONSE_CHUNK for QueryResultType
+        /// </summary>
+        public static readonly QueryResultType EMAIL_RESPONSE_CHUNK = new QueryResultType("EMAIL_RESPONSE_CHUNK");
+        /// <summary>
         /// Constant GENERATIVE_ANSWER for QueryResultType
         /// </summary>
         public static readonly QueryResultType GENERATIVE_ANSWER = new QueryResultType("GENERATIVE_ANSWER");
@@ -2702,6 +2742,18 @@ namespace Amazon.QConnect
         /// Constant DETECTED_INTENT for RecommendationType
         /// </summary>
         public static readonly RecommendationType DETECTED_INTENT = new RecommendationType("DETECTED_INTENT");
+        /// <summary>
+        /// Constant EMAIL_GENERATIVE_ANSWER_CHUNK for RecommendationType
+        /// </summary>
+        public static readonly RecommendationType EMAIL_GENERATIVE_ANSWER_CHUNK = new RecommendationType("EMAIL_GENERATIVE_ANSWER_CHUNK");
+        /// <summary>
+        /// Constant EMAIL_OVERVIEW_CHUNK for RecommendationType
+        /// </summary>
+        public static readonly RecommendationType EMAIL_OVERVIEW_CHUNK = new RecommendationType("EMAIL_OVERVIEW_CHUNK");
+        /// <summary>
+        /// Constant EMAIL_RESPONSE_CHUNK for RecommendationType
+        /// </summary>
+        public static readonly RecommendationType EMAIL_RESPONSE_CHUNK = new RecommendationType("EMAIL_RESPONSE_CHUNK");
         /// <summary>
         /// Constant GENERATIVE_ANSWER for RecommendationType
         /// </summary>

@@ -757,13 +757,6 @@ namespace Amazon.QConnect
 
         /// <summary>
         /// Creates an Amazon Q in Connect AI Prompt.
-        /// 
-        ///  <note> 
-        /// <para>
-        /// For more information on supported models, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-ai-prompts.html#cli-create-aiprompt">Supported
-        /// models for system and custom prompts</a>.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAIPrompt service method.</param>
         /// 
@@ -806,13 +799,6 @@ namespace Amazon.QConnect
 
         /// <summary>
         /// Creates an Amazon Q in Connect AI Prompt.
-        /// 
-        ///  <note> 
-        /// <para>
-        /// For more information on supported models, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-ai-prompts.html#cli-create-aiprompt">Supported
-        /// models for system and custom prompts</a>.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAIPrompt service method.</param>
         /// <param name="cancellationToken">
@@ -1887,6 +1873,10 @@ namespace Amazon.QConnect
         /// that accepts name, a conflicting resource (usually with the same name) is being created
         /// or mutated.
         /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.DependencyFailedException">
+        /// An error occurred while calling a dependency. For example, calling <c>connect:DecribeContact</c>
+        /// as part of <c>CreateSession</c> with a contactArn.
+        /// </exception>
         /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
         /// </exception>
@@ -1926,6 +1916,10 @@ namespace Amazon.QConnect
         /// resource. For example, if you're using a <c>Create</c> API (such as <c>CreateAssistant</c>)
         /// that accepts name, a conflicting resource (usually with the same name) is being created
         /// or mutated.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.DependencyFailedException">
+        /// An error occurred while calling a dependency. For example, calling <c>connect:DecribeContact</c>
+        /// as part of <c>CreateSession</c> with a contactArn.
         /// </exception>
         /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
         /// The specified resource does not exist.

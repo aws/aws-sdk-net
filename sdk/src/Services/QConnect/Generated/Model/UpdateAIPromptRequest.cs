@@ -130,8 +130,9 @@ namespace Amazon.QConnect.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// For more information on supported models, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-ai-prompts.html#cli-create-aiprompt">Supported
-        /// models for system and custom prompts</a>.
+        /// For information about which models are supported in each Amazon Web Services Region,
+        /// see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-ai-prompts.html#cli-create-aiprompt">Supported
+        /// models for system/custom prompts</a>.
         /// </para>
         ///  </note>
         /// </summary>

@@ -72,6 +72,24 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
                     unmarshalledObject.AnswerRecommendationAIAgentConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("emailGenerativeAnswerAIAgentConfiguration", targetDepth))
+                {
+                    var unmarshaller = EmailGenerativeAnswerAIAgentConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.EmailGenerativeAnswerAIAgentConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("emailOverviewAIAgentConfiguration", targetDepth))
+                {
+                    var unmarshaller = EmailOverviewAIAgentConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.EmailOverviewAIAgentConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("emailResponseAIAgentConfiguration", targetDepth))
+                {
+                    var unmarshaller = EmailResponseAIAgentConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.EmailResponseAIAgentConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("manualSearchAIAgentConfiguration", targetDepth))
                 {
                     var unmarshaller = ManualSearchAIAgentConfigurationUnmarshaller.Instance;

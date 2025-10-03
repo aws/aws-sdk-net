@@ -59,6 +59,39 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetEmailGenerativeAnswerAIAgentConfiguration())
+            {
+                context.Writer.WritePropertyName("emailGenerativeAnswerAIAgentConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = EmailGenerativeAnswerAIAgentConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.EmailGenerativeAnswerAIAgentConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetEmailOverviewAIAgentConfiguration())
+            {
+                context.Writer.WritePropertyName("emailOverviewAIAgentConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = EmailOverviewAIAgentConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.EmailOverviewAIAgentConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetEmailResponseAIAgentConfiguration())
+            {
+                context.Writer.WritePropertyName("emailResponseAIAgentConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = EmailResponseAIAgentConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.EmailResponseAIAgentConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetManualSearchAIAgentConfiguration())
             {
                 context.Writer.WritePropertyName("manualSearchAIAgentConfiguration");
