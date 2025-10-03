@@ -52,13 +52,13 @@ namespace CrtIntegrationTests
 
         public V4aSignerTests()
         {
-            // Configure a fixed timestamp for predictable test signatures
+            // Override the SDK's AWSConfigs.utcNowSource to return a fixed time to test predictable signatures
             SetUtcNowSource(() => SigningTestTimepoint);
         }
 
         public void Dispose()
         {
-            // Restore default timestamp behavior
+            // Reset back to the SDK's usual GetUtcNow function
             SetUtcNowSource((Func<DateTime>)Delegate.CreateDelegate(typeof(Func<DateTime>),
                 typeof(AWSConfigs).GetMethod("GetUtcNow", BindingFlags.Static | BindingFlags.NonPublic)));
         }

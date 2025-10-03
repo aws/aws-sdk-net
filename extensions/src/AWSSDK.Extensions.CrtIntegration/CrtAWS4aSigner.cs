@@ -331,7 +331,7 @@ namespace Amazon.Extensions.CrtIntegration
             signingConfig.UseDoubleUriEncode = useDoubleEncoding;
             signingConfig.ShouldNormalizeUriPath = useDoubleEncoding;
 
-            // The request headers aren't an input for chunked signing, so header filtering is not required
+            // The request headers aren't an input for chunked signing, so don't pass the callback that filters headers.
             var addCallback = signatureType != AwsSignatureType.HTTP_REQUEST_CHUNK && signatureType != AwsSignatureType.HTTP_REQUEST_TRAILING_HEADERS;
             if (addCallback)
             {
@@ -359,7 +359,7 @@ namespace Amazon.Extensions.CrtIntegration
         /// </para>
         /// </summary>
         /// <remarks>
-        /// Implements AWS CRT best practices for header filtering
+        /// Based on the example from the CRT repository: https://github.com/awslabs/aws-crt-dotnet/blob/v0.4.4/tests/SigningTest.cs#L40-L43
         /// </remarks>
         private static bool ShouldSignHeader(byte[] headerName, uint length)
         {
