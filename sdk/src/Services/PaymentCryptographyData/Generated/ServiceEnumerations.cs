@@ -773,6 +773,10 @@ namespace Amazon.PaymentCryptographyData
         /// </summary>
         public static readonly PinBlockFormatForPinData ISO_FORMAT_0 = new PinBlockFormatForPinData("ISO_FORMAT_0");
         /// <summary>
+        /// Constant ISO_FORMAT_1 for PinBlockFormatForPinData
+        /// </summary>
+        public static readonly PinBlockFormatForPinData ISO_FORMAT_1 = new PinBlockFormatForPinData("ISO_FORMAT_1");
+        /// <summary>
         /// Constant ISO_FORMAT_3 for PinBlockFormatForPinData
         /// </summary>
         public static readonly PinBlockFormatForPinData ISO_FORMAT_3 = new PinBlockFormatForPinData("ISO_FORMAT_3");
@@ -1108,6 +1112,60 @@ namespace Amazon.PaymentCryptographyData
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator VerificationFailedReason(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type WrappedKeyMaterialFormat.
+    /// </summary>
+    public class WrappedKeyMaterialFormat : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant KEY_CRYPTOGRAM for WrappedKeyMaterialFormat
+        /// </summary>
+        public static readonly WrappedKeyMaterialFormat KEY_CRYPTOGRAM = new WrappedKeyMaterialFormat("KEY_CRYPTOGRAM");
+        /// <summary>
+        /// Constant TR31_KEY_BLOCK for WrappedKeyMaterialFormat
+        /// </summary>
+        public static readonly WrappedKeyMaterialFormat TR31_KEY_BLOCK = new WrappedKeyMaterialFormat("TR31_KEY_BLOCK");
+        /// <summary>
+        /// Constant TR34_KEY_BLOCK for WrappedKeyMaterialFormat
+        /// </summary>
+        public static readonly WrappedKeyMaterialFormat TR34_KEY_BLOCK = new WrappedKeyMaterialFormat("TR34_KEY_BLOCK");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public WrappedKeyMaterialFormat(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static WrappedKeyMaterialFormat FindValue(string value)
+        {
+            return FindValue<WrappedKeyMaterialFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator WrappedKeyMaterialFormat(string value)
         {
             return FindValue(value);
         }

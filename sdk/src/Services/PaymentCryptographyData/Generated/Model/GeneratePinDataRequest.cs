@@ -170,7 +170,8 @@ namespace Amazon.PaymentCryptographyData.Model
         /// Gets and sets the property PinBlockFormat. 
         /// <para>
         /// The PIN encoding format for pin data generation as specified in ISO 9564. Amazon Web
-        /// Services Payment Cryptography supports <c>ISO_Format_0</c> and <c>ISO_Format_3</c>.
+        /// Services Payment Cryptography supports <c>ISO_Format_0</c>, <c>ISO_Format_3</c> and
+        /// <c>ISO_Format_4</c>.
         /// </para>
         ///  
         /// <para>
@@ -182,6 +183,12 @@ namespace Amazon.PaymentCryptographyData.Model
         /// <para>
         /// The <c>ISO_Format_3</c> PIN block format is the same as <c>ISO_Format_0</c> except
         /// that the fill digits are random values from 10 to 15.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <c>ISO_Format_4</c> PIN block format is the only one supporting AES encryption.
+        /// It is similar to <c>ISO_Format_3</c> but doubles the pin block length by padding with
+        /// fill digit A and random values from 10 to 15.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -223,7 +230,7 @@ namespace Amazon.PaymentCryptographyData.Model
         /// card that associates the card with a specific account holder.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true, Min=12, Max=19)]
+        [AWSProperty(Sensitive=true, Min=12, Max=19)]
         public string PrimaryAccountNumber
         {
             get { return this._primaryAccountNumber; }

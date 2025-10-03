@@ -30,16 +30,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PaymentCryptographyData.Model
 {
     /// <summary>
-    /// Parameters required to establish ECDH based key exchange.
+    /// Parameter information of a TR31KeyBlock wrapped using an ECDH derived key.
     /// </summary>
-    public partial class EcdhDerivationAttributes
+    public partial class IncomingDiffieHellmanTr31KeyBlock
     {
         private string _certificateAuthorityPublicKeyIdentifier;
-        private SymmetricKeyAlgorithm _keyAlgorithm;
+        private DiffieHellmanDerivationData _derivationData;
+        private SymmetricKeyAlgorithm _deriveKeyAlgorithm;
         private KeyDerivationFunction _keyDerivationFunction;
         private KeyDerivationHashAlgorithm _keyDerivationHashAlgorithm;
+        private string _privateKeyIdentifier;
         private string _publicKeyCertificate;
-        private string _sharedInformation;
+        private string _wrappedKeyBlock;
 
         /// <summary>
         /// Gets and sets the property CertificateAuthorityPublicKeyIdentifier. 
@@ -61,22 +63,38 @@ namespace Amazon.PaymentCryptographyData.Model
         }
 
         /// <summary>
-        /// Gets and sets the property KeyAlgorithm. 
+        /// Gets and sets the property DerivationData.
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public DiffieHellmanDerivationData DerivationData
+        {
+            get { return this._derivationData; }
+            set { this._derivationData = value; }
+        }
+
+        // Check to see if DerivationData property is set
+        internal bool IsSetDerivationData()
+        {
+            return this._derivationData != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeriveKeyAlgorithm. 
         /// <para>
         /// The key algorithm of the derived ECDH key.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public SymmetricKeyAlgorithm KeyAlgorithm
+        public SymmetricKeyAlgorithm DeriveKeyAlgorithm
         {
-            get { return this._keyAlgorithm; }
-            set { this._keyAlgorithm = value; }
+            get { return this._deriveKeyAlgorithm; }
+            set { this._deriveKeyAlgorithm = value; }
         }
 
-        // Check to see if KeyAlgorithm property is set
-        internal bool IsSetKeyAlgorithm()
+        // Check to see if DeriveKeyAlgorithm property is set
+        internal bool IsSetDeriveKeyAlgorithm()
         {
-            return this._keyAlgorithm != null;
+            return this._deriveKeyAlgorithm != null;
         }
 
         /// <summary>
@@ -118,6 +136,25 @@ namespace Amazon.PaymentCryptographyData.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PrivateKeyIdentifier. 
+        /// <para>
+        /// The <c>keyARN</c> of the asymmetric ECC key pair.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=7, Max=322)]
+        public string PrivateKeyIdentifier
+        {
+            get { return this._privateKeyIdentifier; }
+            set { this._privateKeyIdentifier = value; }
+        }
+
+        // Check to see if PrivateKeyIdentifier property is set
+        internal bool IsSetPrivateKeyIdentifier()
+        {
+            return this._privateKeyIdentifier != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property PublicKeyCertificate. 
         /// <para>
         /// The client's public key certificate in PEM format (base64 encoded) to use for ECDH
@@ -138,29 +175,23 @@ namespace Amazon.PaymentCryptographyData.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SharedInformation. 
+        /// Gets and sets the property WrappedKeyBlock. 
         /// <para>
-        /// A byte string containing information that binds the ECDH derived key to the two parties
-        /// involved or to the context of the key.
-        /// </para>
-        ///  
-        /// <para>
-        /// It may include details like identities of the two parties deriving the key, context
-        /// of the operation, session IDs, and optionally a nonce. It must not contain zero bytes,
-        /// and re-using shared information for multiple ECDH key derivations is not recommended.
+        /// The WrappedKeyBlock containing the transaction key wrapped using an ECDH dervied key.
+        /// 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=2, Max=2048)]
-        public string SharedInformation
+        [AWSProperty(Required=true, Sensitive=true, Min=56, Max=9984)]
+        public string WrappedKeyBlock
         {
-            get { return this._sharedInformation; }
-            set { this._sharedInformation = value; }
+            get { return this._wrappedKeyBlock; }
+            set { this._wrappedKeyBlock = value; }
         }
 
-        // Check to see if SharedInformation property is set
-        internal bool IsSetSharedInformation()
+        // Check to see if WrappedKeyBlock property is set
+        internal bool IsSetWrappedKeyBlock()
         {
-            return this._sharedInformation != null;
+            return this._wrappedKeyBlock != null;
         }
 
     }
