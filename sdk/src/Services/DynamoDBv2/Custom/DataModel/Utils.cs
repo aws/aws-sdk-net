@@ -158,6 +158,21 @@ namespace Amazon.DynamoDBv2.DataModel
             throw new InvalidOperationException("Version property must be of primitive, numeric, integer, nullable type (e.g. int?, long?, byte?)");
         }
 
+        internal static void ValidateTimestampType(Type memberType)
+        {
+            if (memberType.IsGenericType && memberType.GetGenericTypeDefinition() == typeof(Nullable<>) &&
+                (memberType.IsAssignableFrom(typeof(DateTime)) ||
+                 memberType.IsAssignableFrom(typeof(DateTimeOffset))))
+            {
+                return;
+            }
+            throw new InvalidOperationException(
+                $"Timestamp properties must be of type Nullable<DateTime> (DateTime?) or Nullable<DateTimeOffset> (DateTimeOffset?). " +
+                $"Invalid type: {memberType.FullName}. " +
+                "Please ensure your property is declared as 'DateTime?' or 'DateTimeOffset?'."
+            );
+        }
+
         [return: DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicMethods | DynamicallyAccessedMemberTypes.PublicConstructors)]
         internal static Type GetPrimitiveElementType(Type collectionType)
         {
