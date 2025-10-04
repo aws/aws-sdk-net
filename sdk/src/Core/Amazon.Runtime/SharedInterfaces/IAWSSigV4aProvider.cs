@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -16,7 +16,9 @@
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Util;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
 
 namespace Amazon.Runtime.SharedInterfaces
@@ -24,6 +26,7 @@ namespace Amazon.Runtime.SharedInterfaces
     /// <summary>
     /// Interface for an asymmetric SigV4 (SigV4a) signer
     /// </summary>
+    [Obsolete("SigV4a provider is now built-in; this interface is no longer necessary to implement."), EditorBrowsable(EditorBrowsableState.Never)]
     public interface IAWSSigV4aProvider
     {
         /// <summary>
