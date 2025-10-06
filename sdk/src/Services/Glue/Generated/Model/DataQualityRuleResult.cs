@@ -38,6 +38,7 @@ namespace Amazon.Glue.Model
         private Dictionary<string, double> _evaluatedMetrics = AWSConfigs.InitializeCollections ? new Dictionary<string, double>() : null;
         private string _evaluatedRule;
         private string _evaluationMessage;
+        private Dictionary<string, string> _labels = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _name;
         private DataQualityRuleResultStatus _result;
         private Dictionary<string, double> _ruleMetrics = AWSConfigs.InitializeCollections ? new Dictionary<string, double>() : null;
@@ -116,6 +117,24 @@ namespace Amazon.Glue.Model
         internal bool IsSetEvaluationMessage()
         {
             return this._evaluationMessage != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Labels. 
+        /// <para>
+        /// A map containing labels assigned to the data quality rule. 
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> Labels
+        {
+            get { return this._labels; }
+            set { this._labels = value; }
+        }
+
+        // Check to see if Labels property is set
+        internal bool IsSetLabels()
+        {
+            return this._labels != null && (this._labels.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
