@@ -148,6 +148,11 @@
     <property>Amazon.Backup.Model.DisassociateRecoveryPointFromParentRequest.BackupVaultName</property>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Backup.Model.GetBackupPlanRequest.MaxScheduledRunsPreview</property>
+    <min>0</min>
+    <max>10</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Backup.Model.GetBackupVaultAccessPolicyRequest.BackupVaultName</property>
   </property-value-rule>
   <property-value-rule>
