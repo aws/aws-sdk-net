@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MemoryDB.Model
 {
     /// <summary>
-    /// 
+    /// The specified KMS key is not valid or accessible.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

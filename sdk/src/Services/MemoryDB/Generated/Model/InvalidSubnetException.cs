@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MemoryDB.Model
 {
     /// <summary>
-    /// 
+    /// The specified subnet is not valid.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -280,10 +280,10 @@ namespace Amazon.MemoryDB
         /// 
         /// <returns>The response from the BatchUpdateCluster service method, as returned by MemoryDB.</returns>
         /// <exception cref="Amazon.MemoryDB.Model.InvalidParameterValueException">
-        /// 
+        /// The specified parameter value is not valid.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.ServiceUpdateNotFoundException">
-        /// 
+        /// The specified service update does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/BatchUpdateCluster">REST API Reference for BatchUpdateCluster Operation</seealso>
         public virtual BatchUpdateClusterResponse BatchUpdateCluster(BatchUpdateClusterRequest request)
@@ -340,28 +340,30 @@ namespace Amazon.MemoryDB
         /// 
         /// <returns>The response from the CopySnapshot service method, as returned by MemoryDB.</returns>
         /// <exception cref="Amazon.MemoryDB.Model.InvalidParameterCombinationException">
-        /// 
+        /// The specified parameter combination is not valid.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.InvalidParameterValueException">
-        /// 
+        /// The specified parameter value is not valid.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.InvalidSnapshotStateException">
-        /// 
+        /// The snapshot is not in a valid state for the requested operation.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.ServiceLinkedRoleNotFoundException">
-        /// 
+        /// The required service-linked role was not found.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.SnapshotAlreadyExistsException">
-        /// 
+        /// A snapshot with the specified name already exists.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.SnapshotNotFoundException">
-        /// 
+        /// The specified snapshot does not exist.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.SnapshotQuotaExceededException">
-        /// 
+        /// The request cannot be processed because it would exceed the maximum number of snapshots
+        /// allowed.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.TagQuotaPerResourceExceededException">
-        /// 
+        /// The request cannot be processed because it would exceed the maximum number of tags
+        /// allowed per resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/CopySnapshot">REST API Reference for CopySnapshot Operation</seealso>
         public virtual CopySnapshotResponse CopySnapshot(CopySnapshotRequest request)
@@ -419,25 +421,27 @@ namespace Amazon.MemoryDB
         /// 
         /// <returns>The response from the CreateACL service method, as returned by MemoryDB.</returns>
         /// <exception cref="Amazon.MemoryDB.Model.ACLAlreadyExistsException">
-        /// 
+        /// An ACL with the specified name already exists.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.ACLQuotaExceededException">
-        /// 
+        /// The request cannot be processed because it would exceed the maximum number of ACLs
+        /// allowed.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.DefaultUserRequiredException">
-        /// 
+        /// A default user is required and must be specified.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.DuplicateUserNameException">
-        /// 
+        /// A user with the specified name already exists.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.InvalidParameterValueException">
-        /// 
+        /// The specified parameter value is not valid.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.TagQuotaPerResourceExceededException">
-        /// 
+        /// The request cannot be processed because it would exceed the maximum number of tags
+        /// allowed per resource.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.UserNotFoundException">
-        /// 
+        /// The specified user does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/CreateACL">REST API Reference for CreateACL Operation</seealso>
         public virtual CreateACLResponse CreateACL(CreateACLRequest request)
@@ -495,59 +499,64 @@ namespace Amazon.MemoryDB
         /// 
         /// <returns>The response from the CreateCluster service method, as returned by MemoryDB.</returns>
         /// <exception cref="Amazon.MemoryDB.Model.ACLNotFoundException">
-        /// 
+        /// The specified ACL does not exist.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.ClusterAlreadyExistsException">
-        /// 
+        /// A cluster with the specified name already exists.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.ClusterQuotaForCustomerExceededException">
-        /// 
+        /// The request cannot be processed because it would exceed the maximum number of clusters
+        /// allowed for this customer.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.InsufficientClusterCapacityException">
-        /// 
+        /// The cluster does not have sufficient capacity to perform the requested operation.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.InvalidACLStateException">
-        /// 
+        /// The ACL is not in a valid state for the requested operation.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.InvalidCredentialsException">
-        /// 
+        /// The provided credentials are not valid.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.InvalidMultiRegionClusterStateException">
         /// The requested operation cannot be performed on the multi-Region cluster in its current
         /// state.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.InvalidParameterCombinationException">
-        /// 
+        /// The specified parameter combination is not valid.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.InvalidParameterValueException">
-        /// 
+        /// The specified parameter value is not valid.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.InvalidVPCNetworkStateException">
-        /// 
+        /// The VPC network is not in a valid state for the requested operation.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.MultiRegionClusterNotFoundException">
         /// The specified multi-Region cluster does not exist.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.NodeQuotaForClusterExceededException">
-        /// 
+        /// The request cannot be processed because it would exceed the maximum number of nodes
+        /// allowed for this cluster.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.NodeQuotaForCustomerExceededException">
-        /// 
+        /// The request cannot be processed because it would exceed the maximum number of nodes
+        /// allowed for this customer.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.ParameterGroupNotFoundException">
-        /// 
+        /// The specified parameter group does not exist.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.ServiceLinkedRoleNotFoundException">
-        /// 
+        /// The required service-linked role was not found.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.ShardsPerClusterQuotaExceededException">
-        /// 
+        /// The request cannot be processed because it would exceed the maximum number of shards
+        /// allowed per cluster.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.SubnetGroupNotFoundException">
-        /// 
+        /// The specified subnet group does not exist.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.TagQuotaPerResourceExceededException">
-        /// 
+        /// The request cannot be processed because it would exceed the maximum number of tags
+        /// allowed per resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/CreateCluster">REST API Reference for CreateCluster Operation</seealso>
         public virtual CreateClusterResponse CreateCluster(CreateClusterRequest request)
@@ -604,13 +613,14 @@ namespace Amazon.MemoryDB
         /// 
         /// <returns>The response from the CreateMultiRegionCluster service method, as returned by MemoryDB.</returns>
         /// <exception cref="Amazon.MemoryDB.Model.ClusterQuotaForCustomerExceededException">
-        /// 
+        /// The request cannot be processed because it would exceed the maximum number of clusters
+        /// allowed for this customer.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.InvalidParameterCombinationException">
-        /// 
+        /// The specified parameter combination is not valid.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.InvalidParameterValueException">
-        /// 
+        /// The specified parameter value is not valid.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.MultiRegionClusterAlreadyExistsException">
         /// A multi-Region cluster with the specified name already exists.
@@ -619,7 +629,8 @@ namespace Amazon.MemoryDB
         /// The specified multi-Region parameter group does not exist.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.TagQuotaPerResourceExceededException">
-        /// 
+        /// The request cannot be processed because it would exceed the maximum number of tags
+        /// allowed per resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/CreateMultiRegionCluster">REST API Reference for CreateMultiRegionCluster Operation</seealso>
         public virtual CreateMultiRegionClusterResponse CreateMultiRegionCluster(CreateMultiRegionClusterRequest request)
@@ -679,25 +690,27 @@ namespace Amazon.MemoryDB
         /// 
         /// <returns>The response from the CreateParameterGroup service method, as returned by MemoryDB.</returns>
         /// <exception cref="Amazon.MemoryDB.Model.InvalidParameterCombinationException">
-        /// 
+        /// The specified parameter combination is not valid.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.InvalidParameterGroupStateException">
-        /// 
+        /// The parameter group is not in a valid state for the requested operation.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.InvalidParameterValueException">
-        /// 
+        /// The specified parameter value is not valid.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.ParameterGroupAlreadyExistsException">
-        /// 
+        /// A parameter group with the specified name already exists.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.ParameterGroupQuotaExceededException">
-        /// 
+        /// The request cannot be processed because it would exceed the maximum number of parameter
+        /// groups allowed.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.ServiceLinkedRoleNotFoundException">
-        /// 
+        /// The required service-linked role was not found.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.TagQuotaPerResourceExceededException">
-        /// 
+        /// The request cannot be processed because it would exceed the maximum number of tags
+        /// allowed per resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/CreateParameterGroup">REST API Reference for CreateParameterGroup Operation</seealso>
         public virtual CreateParameterGroupResponse CreateParameterGroup(CreateParameterGroupRequest request)
@@ -754,28 +767,30 @@ namespace Amazon.MemoryDB
         /// 
         /// <returns>The response from the CreateSnapshot service method, as returned by MemoryDB.</returns>
         /// <exception cref="Amazon.MemoryDB.Model.ClusterNotFoundException">
-        /// 
+        /// The specified cluster does not exist.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.InvalidClusterStateException">
-        /// 
+        /// The cluster is not in a valid state for the requested operation.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.InvalidParameterCombinationException">
-        /// 
+        /// The specified parameter combination is not valid.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.InvalidParameterValueException">
-        /// 
+        /// The specified parameter value is not valid.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.ServiceLinkedRoleNotFoundException">
-        /// 
+        /// The required service-linked role was not found.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.SnapshotAlreadyExistsException">
-        /// 
+        /// A snapshot with the specified name already exists.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.SnapshotQuotaExceededException">
-        /// 
+        /// The request cannot be processed because it would exceed the maximum number of snapshots
+        /// allowed.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.TagQuotaPerResourceExceededException">
-        /// 
+        /// The request cannot be processed because it would exceed the maximum number of tags
+        /// allowed per resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/CreateSnapshot">REST API Reference for CreateSnapshot Operation</seealso>
         public virtual CreateSnapshotResponse CreateSnapshot(CreateSnapshotRequest request)
@@ -837,25 +852,28 @@ namespace Amazon.MemoryDB
         /// 
         /// <returns>The response from the CreateSubnetGroup service method, as returned by MemoryDB.</returns>
         /// <exception cref="Amazon.MemoryDB.Model.InvalidSubnetException">
-        /// 
+        /// The specified subnet is not valid.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.ServiceLinkedRoleNotFoundException">
-        /// 
+        /// The required service-linked role was not found.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.SubnetGroupAlreadyExistsException">
-        /// 
+        /// A subnet group with the specified name already exists.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.SubnetGroupQuotaExceededException">
-        /// 
+        /// The request cannot be processed because it would exceed the maximum number of subnet
+        /// groups allowed.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.SubnetNotAllowedException">
-        /// 
+        /// The specified subnet is not allowed for this operation.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.SubnetQuotaExceededException">
-        /// 
+        /// The request cannot be processed because it would exceed the maximum number of subnets
+        /// allowed.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.TagQuotaPerResourceExceededException">
-        /// 
+        /// The request cannot be processed because it would exceed the maximum number of tags
+        /// allowed per resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/CreateSubnetGroup">REST API Reference for CreateSubnetGroup Operation</seealso>
         public virtual CreateSubnetGroupResponse CreateSubnetGroup(CreateSubnetGroupRequest request)
@@ -913,22 +931,24 @@ namespace Amazon.MemoryDB
         /// 
         /// <returns>The response from the CreateUser service method, as returned by MemoryDB.</returns>
         /// <exception cref="Amazon.MemoryDB.Model.DuplicateUserNameException">
-        /// 
+        /// A user with the specified name already exists.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.InvalidParameterCombinationException">
-        /// 
+        /// The specified parameter combination is not valid.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.InvalidParameterValueException">
-        /// 
+        /// The specified parameter value is not valid.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.TagQuotaPerResourceExceededException">
-        /// 
+        /// The request cannot be processed because it would exceed the maximum number of tags
+        /// allowed per resource.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.UserAlreadyExistsException">
-        /// 
+        /// A user with the specified name already exists.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.UserQuotaExceededException">
-        /// 
+        /// The request cannot be processed because it would exceed the maximum number of users
+        /// allowed.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/CreateUser">REST API Reference for CreateUser Operation</seealso>
         public virtual CreateUserResponse CreateUser(CreateUserRequest request)
@@ -987,13 +1007,13 @@ namespace Amazon.MemoryDB
         /// 
         /// <returns>The response from the DeleteACL service method, as returned by MemoryDB.</returns>
         /// <exception cref="Amazon.MemoryDB.Model.ACLNotFoundException">
-        /// 
+        /// The specified ACL does not exist.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.InvalidACLStateException">
-        /// 
+        /// The ACL is not in a valid state for the requested operation.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.InvalidParameterValueException">
-        /// 
+        /// The specified parameter value is not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/DeleteACL">REST API Reference for DeleteACL Operation</seealso>
         public virtual DeleteACLResponse DeleteACL(DeleteACLRequest request)
@@ -1057,22 +1077,22 @@ namespace Amazon.MemoryDB
         /// 
         /// <returns>The response from the DeleteCluster service method, as returned by MemoryDB.</returns>
         /// <exception cref="Amazon.MemoryDB.Model.ClusterNotFoundException">
-        /// 
+        /// The specified cluster does not exist.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.InvalidClusterStateException">
-        /// 
+        /// The cluster is not in a valid state for the requested operation.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.InvalidParameterCombinationException">
-        /// 
+        /// The specified parameter combination is not valid.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.InvalidParameterValueException">
-        /// 
+        /// The specified parameter value is not valid.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.ServiceLinkedRoleNotFoundException">
-        /// 
+        /// The required service-linked role was not found.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.SnapshotAlreadyExistsException">
-        /// 
+        /// A snapshot with the specified name already exists.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/DeleteCluster">REST API Reference for DeleteCluster Operation</seealso>
         public virtual DeleteClusterResponse DeleteCluster(DeleteClusterRequest request)
@@ -1133,7 +1153,7 @@ namespace Amazon.MemoryDB
         /// state.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.InvalidParameterValueException">
-        /// 
+        /// The specified parameter value is not valid.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.MultiRegionClusterNotFoundException">
         /// The specified multi-Region cluster does not exist.
@@ -1195,19 +1215,19 @@ namespace Amazon.MemoryDB
         /// 
         /// <returns>The response from the DeleteParameterGroup service method, as returned by MemoryDB.</returns>
         /// <exception cref="Amazon.MemoryDB.Model.InvalidParameterCombinationException">
-        /// 
+        /// The specified parameter combination is not valid.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.InvalidParameterGroupStateException">
-        /// 
+        /// The parameter group is not in a valid state for the requested operation.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.InvalidParameterValueException">
-        /// 
+        /// The specified parameter value is not valid.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.ParameterGroupNotFoundException">
-        /// 
+        /// The specified parameter group does not exist.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.ServiceLinkedRoleNotFoundException">
-        /// 
+        /// The required service-linked role was not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/DeleteParameterGroup">REST API Reference for DeleteParameterGroup Operation</seealso>
         public virtual DeleteParameterGroupResponse DeleteParameterGroup(DeleteParameterGroupRequest request)
@@ -1266,19 +1286,19 @@ namespace Amazon.MemoryDB
         /// 
         /// <returns>The response from the DeleteSnapshot service method, as returned by MemoryDB.</returns>
         /// <exception cref="Amazon.MemoryDB.Model.InvalidParameterCombinationException">
-        /// 
+        /// The specified parameter combination is not valid.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.InvalidParameterValueException">
-        /// 
+        /// The specified parameter value is not valid.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.InvalidSnapshotStateException">
-        /// 
+        /// The snapshot is not in a valid state for the requested operation.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.ServiceLinkedRoleNotFoundException">
-        /// 
+        /// The required service-linked role was not found.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.SnapshotNotFoundException">
-        /// 
+        /// The specified snapshot does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/DeleteSnapshot">REST API Reference for DeleteSnapshot Operation</seealso>
         public virtual DeleteSnapshotResponse DeleteSnapshot(DeleteSnapshotRequest request)
@@ -1336,13 +1356,13 @@ namespace Amazon.MemoryDB
         /// 
         /// <returns>The response from the DeleteSubnetGroup service method, as returned by MemoryDB.</returns>
         /// <exception cref="Amazon.MemoryDB.Model.ServiceLinkedRoleNotFoundException">
-        /// 
+        /// The required service-linked role was not found.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.SubnetGroupInUseException">
-        /// 
+        /// The subnet group is currently in use and cannot be deleted.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.SubnetGroupNotFoundException">
-        /// 
+        /// The specified subnet group does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/DeleteSubnetGroup">REST API Reference for DeleteSubnetGroup Operation</seealso>
         public virtual DeleteSubnetGroupResponse DeleteSubnetGroup(DeleteSubnetGroupRequest request)
@@ -1400,13 +1420,13 @@ namespace Amazon.MemoryDB
         /// 
         /// <returns>The response from the DeleteUser service method, as returned by MemoryDB.</returns>
         /// <exception cref="Amazon.MemoryDB.Model.InvalidParameterValueException">
-        /// 
+        /// The specified parameter value is not valid.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.InvalidUserStateException">
-        /// 
+        /// The user is not in a valid state for the requested operation.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.UserNotFoundException">
-        /// 
+        /// The specified user does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/DeleteUser">REST API Reference for DeleteUser Operation</seealso>
         public virtual DeleteUserResponse DeleteUser(DeleteUserRequest request)
@@ -1463,10 +1483,10 @@ namespace Amazon.MemoryDB
         /// 
         /// <returns>The response from the DescribeACLs service method, as returned by MemoryDB.</returns>
         /// <exception cref="Amazon.MemoryDB.Model.ACLNotFoundException">
-        /// 
+        /// The specified ACL does not exist.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.InvalidParameterCombinationException">
-        /// 
+        /// The specified parameter combination is not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/DescribeACLs">REST API Reference for DescribeACLs Operation</seealso>
         public virtual DescribeACLsResponse DescribeACLs(DescribeACLsRequest request)
@@ -1524,16 +1544,16 @@ namespace Amazon.MemoryDB
         /// 
         /// <returns>The response from the DescribeClusters service method, as returned by MemoryDB.</returns>
         /// <exception cref="Amazon.MemoryDB.Model.ClusterNotFoundException">
-        /// 
+        /// The specified cluster does not exist.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.InvalidParameterCombinationException">
-        /// 
+        /// The specified parameter combination is not valid.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.InvalidParameterValueException">
-        /// 
+        /// The specified parameter value is not valid.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.ServiceLinkedRoleNotFoundException">
-        /// 
+        /// The required service-linked role was not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/DescribeClusters">REST API Reference for DescribeClusters Operation</seealso>
         public virtual DescribeClustersResponse DescribeClusters(DescribeClustersRequest request)
@@ -1590,13 +1610,13 @@ namespace Amazon.MemoryDB
         /// 
         /// <returns>The response from the DescribeEngineVersions service method, as returned by MemoryDB.</returns>
         /// <exception cref="Amazon.MemoryDB.Model.InvalidParameterCombinationException">
-        /// 
+        /// The specified parameter combination is not valid.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.InvalidParameterValueException">
-        /// 
+        /// The specified parameter value is not valid.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.ServiceLinkedRoleNotFoundException">
-        /// 
+        /// The required service-linked role was not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/DescribeEngineVersions">REST API Reference for DescribeEngineVersions Operation</seealso>
         public virtual DescribeEngineVersionsResponse DescribeEngineVersions(DescribeEngineVersionsRequest request)
@@ -1657,13 +1677,13 @@ namespace Amazon.MemoryDB
         /// 
         /// <returns>The response from the DescribeEvents service method, as returned by MemoryDB.</returns>
         /// <exception cref="Amazon.MemoryDB.Model.InvalidParameterCombinationException">
-        /// 
+        /// The specified parameter combination is not valid.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.InvalidParameterValueException">
-        /// 
+        /// The specified parameter value is not valid.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.ServiceLinkedRoleNotFoundException">
-        /// 
+        /// The required service-linked role was not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/DescribeEvents">REST API Reference for DescribeEvents Operation</seealso>
         public virtual DescribeEventsResponse DescribeEvents(DescribeEventsRequest request)
@@ -1720,13 +1740,13 @@ namespace Amazon.MemoryDB
         /// 
         /// <returns>The response from the DescribeMultiRegionClusters service method, as returned by MemoryDB.</returns>
         /// <exception cref="Amazon.MemoryDB.Model.ClusterNotFoundException">
-        /// 
+        /// The specified cluster does not exist.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.InvalidParameterCombinationException">
-        /// 
+        /// The specified parameter combination is not valid.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.InvalidParameterValueException">
-        /// 
+        /// The specified parameter value is not valid.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.MultiRegionClusterNotFoundException">
         /// The specified multi-Region cluster does not exist.
@@ -1777,6 +1797,138 @@ namespace Amazon.MemoryDB
 
         #endregion
         
+        #region  DescribeMultiRegionParameterGroups
+
+        /// <summary>
+        /// Returns a list of multi-region parameter groups.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMultiRegionParameterGroups service method.</param>
+        /// 
+        /// <returns>The response from the DescribeMultiRegionParameterGroups service method, as returned by MemoryDB.</returns>
+        /// <exception cref="Amazon.MemoryDB.Model.InvalidParameterCombinationException">
+        /// The specified parameter combination is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.MemoryDB.Model.InvalidParameterValueException">
+        /// The specified parameter value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.MemoryDB.Model.MultiRegionParameterGroupNotFoundException">
+        /// The specified multi-Region parameter group does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.MemoryDB.Model.ServiceLinkedRoleNotFoundException">
+        /// The required service-linked role was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/DescribeMultiRegionParameterGroups">REST API Reference for DescribeMultiRegionParameterGroups Operation</seealso>
+        public virtual DescribeMultiRegionParameterGroupsResponse DescribeMultiRegionParameterGroups(DescribeMultiRegionParameterGroupsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeMultiRegionParameterGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeMultiRegionParameterGroupsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeMultiRegionParameterGroupsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeMultiRegionParameterGroups operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMultiRegionParameterGroups operation on AmazonMemoryDBClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeMultiRegionParameterGroups
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/DescribeMultiRegionParameterGroups">REST API Reference for DescribeMultiRegionParameterGroups Operation</seealso>
+        public virtual IAsyncResult BeginDescribeMultiRegionParameterGroups(DescribeMultiRegionParameterGroupsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeMultiRegionParameterGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeMultiRegionParameterGroupsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeMultiRegionParameterGroups operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeMultiRegionParameterGroups.</param>
+        /// 
+        /// <returns>Returns a  DescribeMultiRegionParameterGroupsResult from MemoryDB.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/DescribeMultiRegionParameterGroups">REST API Reference for DescribeMultiRegionParameterGroups Operation</seealso>
+        public virtual DescribeMultiRegionParameterGroupsResponse EndDescribeMultiRegionParameterGroups(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeMultiRegionParameterGroupsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeMultiRegionParameters
+
+        /// <summary>
+        /// Returns the detailed parameter list for a particular multi-region parameter group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMultiRegionParameters service method.</param>
+        /// 
+        /// <returns>The response from the DescribeMultiRegionParameters service method, as returned by MemoryDB.</returns>
+        /// <exception cref="Amazon.MemoryDB.Model.InvalidParameterCombinationException">
+        /// The specified parameter combination is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.MemoryDB.Model.InvalidParameterValueException">
+        /// The specified parameter value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.MemoryDB.Model.MultiRegionParameterGroupNotFoundException">
+        /// The specified multi-Region parameter group does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.MemoryDB.Model.ServiceLinkedRoleNotFoundException">
+        /// The required service-linked role was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/DescribeMultiRegionParameters">REST API Reference for DescribeMultiRegionParameters Operation</seealso>
+        public virtual DescribeMultiRegionParametersResponse DescribeMultiRegionParameters(DescribeMultiRegionParametersRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeMultiRegionParametersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeMultiRegionParametersResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeMultiRegionParametersResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeMultiRegionParameters operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMultiRegionParameters operation on AmazonMemoryDBClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeMultiRegionParameters
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/DescribeMultiRegionParameters">REST API Reference for DescribeMultiRegionParameters Operation</seealso>
+        public virtual IAsyncResult BeginDescribeMultiRegionParameters(DescribeMultiRegionParametersRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeMultiRegionParametersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeMultiRegionParametersResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeMultiRegionParameters operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeMultiRegionParameters.</param>
+        /// 
+        /// <returns>Returns a  DescribeMultiRegionParametersResult from MemoryDB.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/DescribeMultiRegionParameters">REST API Reference for DescribeMultiRegionParameters Operation</seealso>
+        public virtual DescribeMultiRegionParametersResponse EndDescribeMultiRegionParameters(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeMultiRegionParametersResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeParameterGroups
 
         /// <summary>
@@ -1787,16 +1939,16 @@ namespace Amazon.MemoryDB
         /// 
         /// <returns>The response from the DescribeParameterGroups service method, as returned by MemoryDB.</returns>
         /// <exception cref="Amazon.MemoryDB.Model.InvalidParameterCombinationException">
-        /// 
+        /// The specified parameter combination is not valid.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.InvalidParameterValueException">
-        /// 
+        /// The specified parameter value is not valid.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.ParameterGroupNotFoundException">
-        /// 
+        /// The specified parameter group does not exist.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.ServiceLinkedRoleNotFoundException">
-        /// 
+        /// The required service-linked role was not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/DescribeParameterGroups">REST API Reference for DescribeParameterGroups Operation</seealso>
         public virtual DescribeParameterGroupsResponse DescribeParameterGroups(DescribeParameterGroupsRequest request)
@@ -1853,16 +2005,16 @@ namespace Amazon.MemoryDB
         /// 
         /// <returns>The response from the DescribeParameters service method, as returned by MemoryDB.</returns>
         /// <exception cref="Amazon.MemoryDB.Model.InvalidParameterCombinationException">
-        /// 
+        /// The specified parameter combination is not valid.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.InvalidParameterValueException">
-        /// 
+        /// The specified parameter value is not valid.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.ParameterGroupNotFoundException">
-        /// 
+        /// The specified parameter group does not exist.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.ServiceLinkedRoleNotFoundException">
-        /// 
+        /// The required service-linked role was not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/DescribeParameters">REST API Reference for DescribeParameters Operation</seealso>
         public virtual DescribeParametersResponse DescribeParameters(DescribeParametersRequest request)
@@ -1920,16 +2072,16 @@ namespace Amazon.MemoryDB
         /// 
         /// <returns>The response from the DescribeReservedNodes service method, as returned by MemoryDB.</returns>
         /// <exception cref="Amazon.MemoryDB.Model.InvalidParameterCombinationException">
-        /// 
+        /// The specified parameter combination is not valid.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.InvalidParameterValueException">
-        /// 
+        /// The specified parameter value is not valid.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.ReservedNodeNotFoundException">
         /// The requested node does not exist.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.ServiceLinkedRoleNotFoundException">
-        /// 
+        /// The required service-linked role was not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/DescribeReservedNodes">REST API Reference for DescribeReservedNodes Operation</seealso>
         public virtual DescribeReservedNodesResponse DescribeReservedNodes(DescribeReservedNodesRequest request)
@@ -1986,16 +2138,16 @@ namespace Amazon.MemoryDB
         /// 
         /// <returns>The response from the DescribeReservedNodesOfferings service method, as returned by MemoryDB.</returns>
         /// <exception cref="Amazon.MemoryDB.Model.InvalidParameterCombinationException">
-        /// 
+        /// The specified parameter combination is not valid.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.InvalidParameterValueException">
-        /// 
+        /// The specified parameter value is not valid.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.ReservedNodesOfferingNotFoundException">
         /// The requested node offering does not exist.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.ServiceLinkedRoleNotFoundException">
-        /// 
+        /// The required service-linked role was not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/DescribeReservedNodesOfferings">REST API Reference for DescribeReservedNodesOfferings Operation</seealso>
         public virtual DescribeReservedNodesOfferingsResponse DescribeReservedNodesOfferings(DescribeReservedNodesOfferingsRequest request)
@@ -2052,10 +2204,10 @@ namespace Amazon.MemoryDB
         /// 
         /// <returns>The response from the DescribeServiceUpdates service method, as returned by MemoryDB.</returns>
         /// <exception cref="Amazon.MemoryDB.Model.InvalidParameterCombinationException">
-        /// 
+        /// The specified parameter combination is not valid.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.InvalidParameterValueException">
-        /// 
+        /// The specified parameter value is not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/DescribeServiceUpdates">REST API Reference for DescribeServiceUpdates Operation</seealso>
         public virtual DescribeServiceUpdatesResponse DescribeServiceUpdates(DescribeServiceUpdatesRequest request)
@@ -2114,16 +2266,16 @@ namespace Amazon.MemoryDB
         /// 
         /// <returns>The response from the DescribeSnapshots service method, as returned by MemoryDB.</returns>
         /// <exception cref="Amazon.MemoryDB.Model.InvalidParameterCombinationException">
-        /// 
+        /// The specified parameter combination is not valid.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.InvalidParameterValueException">
-        /// 
+        /// The specified parameter value is not valid.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.ServiceLinkedRoleNotFoundException">
-        /// 
+        /// The required service-linked role was not found.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.SnapshotNotFoundException">
-        /// 
+        /// The specified snapshot does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/DescribeSnapshots">REST API Reference for DescribeSnapshots Operation</seealso>
         public virtual DescribeSnapshotsResponse DescribeSnapshots(DescribeSnapshotsRequest request)
@@ -2181,10 +2333,10 @@ namespace Amazon.MemoryDB
         /// 
         /// <returns>The response from the DescribeSubnetGroups service method, as returned by MemoryDB.</returns>
         /// <exception cref="Amazon.MemoryDB.Model.ServiceLinkedRoleNotFoundException">
-        /// 
+        /// The required service-linked role was not found.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.SubnetGroupNotFoundException">
-        /// 
+        /// The specified subnet group does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/DescribeSubnetGroups">REST API Reference for DescribeSubnetGroups Operation</seealso>
         public virtual DescribeSubnetGroupsResponse DescribeSubnetGroups(DescribeSubnetGroupsRequest request)
@@ -2241,10 +2393,10 @@ namespace Amazon.MemoryDB
         /// 
         /// <returns>The response from the DescribeUsers service method, as returned by MemoryDB.</returns>
         /// <exception cref="Amazon.MemoryDB.Model.InvalidParameterCombinationException">
-        /// 
+        /// The specified parameter combination is not valid.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.UserNotFoundException">
-        /// 
+        /// The specified user does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/DescribeUsers">REST API Reference for DescribeUsers Operation</seealso>
         public virtual DescribeUsersResponse DescribeUsers(DescribeUsersRequest request)
@@ -2305,28 +2457,28 @@ namespace Amazon.MemoryDB
         /// 
         /// <returns>The response from the FailoverShard service method, as returned by MemoryDB.</returns>
         /// <exception cref="Amazon.MemoryDB.Model.APICallRateForCustomerExceededException">
-        /// 
+        /// The customer has exceeded the maximum number of API requests allowed per time period.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.ClusterNotFoundException">
-        /// 
+        /// The specified cluster does not exist.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.InvalidClusterStateException">
-        /// 
+        /// The cluster is not in a valid state for the requested operation.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.InvalidKMSKeyException">
-        /// 
+        /// The specified KMS key is not valid or accessible.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.InvalidParameterCombinationException">
-        /// 
+        /// The specified parameter combination is not valid.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.InvalidParameterValueException">
-        /// 
+        /// The specified parameter value is not valid.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.ShardNotFoundException">
-        /// 
+        /// The specified shard does not exist.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.TestFailoverNotAvailableException">
-        /// 
+        /// Test failover is not available for this cluster configuration.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/FailoverShard">REST API Reference for FailoverShard Operation</seealso>
         public virtual FailoverShardResponse FailoverShard(FailoverShardRequest request)
@@ -2383,10 +2535,10 @@ namespace Amazon.MemoryDB
         /// 
         /// <returns>The response from the ListAllowedMultiRegionClusterUpdates service method, as returned by MemoryDB.</returns>
         /// <exception cref="Amazon.MemoryDB.Model.InvalidParameterCombinationException">
-        /// 
+        /// The specified parameter combination is not valid.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.InvalidParameterValueException">
-        /// 
+        /// The specified parameter value is not valid.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.MultiRegionClusterNotFoundException">
         /// The specified multi-Region cluster does not exist.
@@ -2448,16 +2600,16 @@ namespace Amazon.MemoryDB
         /// 
         /// <returns>The response from the ListAllowedNodeTypeUpdates service method, as returned by MemoryDB.</returns>
         /// <exception cref="Amazon.MemoryDB.Model.ClusterNotFoundException">
-        /// 
+        /// The specified cluster does not exist.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.InvalidParameterCombinationException">
-        /// 
+        /// The specified parameter combination is not valid.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.InvalidParameterValueException">
-        /// 
+        /// The specified parameter value is not valid.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.ServiceLinkedRoleNotFoundException">
-        /// 
+        /// The required service-linked role was not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/ListAllowedNodeTypeUpdates">REST API Reference for ListAllowedNodeTypeUpdates Operation</seealso>
         public virtual ListAllowedNodeTypeUpdatesResponse ListAllowedNodeTypeUpdates(ListAllowedNodeTypeUpdatesRequest request)
@@ -2525,16 +2677,16 @@ namespace Amazon.MemoryDB
         /// 
         /// <returns>The response from the ListTags service method, as returned by MemoryDB.</returns>
         /// <exception cref="Amazon.MemoryDB.Model.ACLNotFoundException">
-        /// 
+        /// The specified ACL does not exist.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.ClusterNotFoundException">
-        /// 
+        /// The specified cluster does not exist.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.InvalidARNException">
-        /// 
+        /// The specified Amazon Resource Name (ARN) is not valid.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.InvalidClusterStateException">
-        /// 
+        /// The cluster is not in a valid state for the requested operation.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.MultiRegionClusterNotFoundException">
         /// The specified multi-Region cluster does not exist.
@@ -2543,19 +2695,19 @@ namespace Amazon.MemoryDB
         /// The specified multi-Region parameter group does not exist.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.ParameterGroupNotFoundException">
-        /// 
+        /// The specified parameter group does not exist.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.ServiceLinkedRoleNotFoundException">
-        /// 
+        /// The required service-linked role was not found.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.SnapshotNotFoundException">
-        /// 
+        /// The specified snapshot does not exist.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.SubnetGroupNotFoundException">
-        /// 
+        /// The specified subnet group does not exist.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.UserNotFoundException">
-        /// 
+        /// The specified user does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/ListTags">REST API Reference for ListTags Operation</seealso>
         public virtual ListTagsResponse ListTags(ListTagsRequest request)
@@ -2613,10 +2765,10 @@ namespace Amazon.MemoryDB
         /// 
         /// <returns>The response from the PurchaseReservedNodesOffering service method, as returned by MemoryDB.</returns>
         /// <exception cref="Amazon.MemoryDB.Model.InvalidParameterCombinationException">
-        /// 
+        /// The specified parameter combination is not valid.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.InvalidParameterValueException">
-        /// 
+        /// The specified parameter value is not valid.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.ReservedNodeAlreadyExistsException">
         /// You already have a reservation with the given identifier.
@@ -2628,10 +2780,11 @@ namespace Amazon.MemoryDB
         /// The requested node offering does not exist.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.ServiceLinkedRoleNotFoundException">
-        /// 
+        /// The required service-linked role was not found.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.TagQuotaPerResourceExceededException">
-        /// 
+        /// The request cannot be processed because it would exceed the maximum number of tags
+        /// allowed per resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/PurchaseReservedNodesOffering">REST API Reference for PurchaseReservedNodesOffering Operation</seealso>
         public virtual PurchaseReservedNodesOfferingResponse PurchaseReservedNodesOffering(PurchaseReservedNodesOfferingRequest request)
@@ -2690,19 +2843,19 @@ namespace Amazon.MemoryDB
         /// 
         /// <returns>The response from the ResetParameterGroup service method, as returned by MemoryDB.</returns>
         /// <exception cref="Amazon.MemoryDB.Model.InvalidParameterCombinationException">
-        /// 
+        /// The specified parameter combination is not valid.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.InvalidParameterGroupStateException">
-        /// 
+        /// The parameter group is not in a valid state for the requested operation.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.InvalidParameterValueException">
-        /// 
+        /// The specified parameter value is not valid.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.ParameterGroupNotFoundException">
-        /// 
+        /// The specified parameter group does not exist.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.ServiceLinkedRoleNotFoundException">
-        /// 
+        /// The required service-linked role was not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/ResetParameterGroup">REST API Reference for ResetParameterGroup Operation</seealso>
         public virtual ResetParameterGroupResponse ResetParameterGroup(ResetParameterGroupRequest request)
@@ -2779,19 +2932,19 @@ namespace Amazon.MemoryDB
         /// 
         /// <returns>The response from the TagResource service method, as returned by MemoryDB.</returns>
         /// <exception cref="Amazon.MemoryDB.Model.ACLNotFoundException">
-        /// 
+        /// The specified ACL does not exist.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.ClusterNotFoundException">
-        /// 
+        /// The specified cluster does not exist.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.InvalidARNException">
-        /// 
+        /// The specified Amazon Resource Name (ARN) is not valid.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.InvalidClusterStateException">
-        /// 
+        /// The cluster is not in a valid state for the requested operation.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.InvalidParameterValueException">
-        /// 
+        /// The specified parameter value is not valid.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.MultiRegionClusterNotFoundException">
         /// The specified multi-Region cluster does not exist.
@@ -2800,22 +2953,23 @@ namespace Amazon.MemoryDB
         /// The specified multi-Region parameter group does not exist.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.ParameterGroupNotFoundException">
-        /// 
+        /// The specified parameter group does not exist.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.ServiceLinkedRoleNotFoundException">
-        /// 
+        /// The required service-linked role was not found.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.SnapshotNotFoundException">
-        /// 
+        /// The specified snapshot does not exist.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.SubnetGroupNotFoundException">
-        /// 
+        /// The specified subnet group does not exist.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.TagQuotaPerResourceExceededException">
-        /// 
+        /// The request cannot be processed because it would exceed the maximum number of tags
+        /// allowed per resource.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.UserNotFoundException">
-        /// 
+        /// The specified user does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
@@ -2892,19 +3046,19 @@ namespace Amazon.MemoryDB
         /// 
         /// <returns>The response from the UntagResource service method, as returned by MemoryDB.</returns>
         /// <exception cref="Amazon.MemoryDB.Model.ACLNotFoundException">
-        /// 
+        /// The specified ACL does not exist.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.ClusterNotFoundException">
-        /// 
+        /// The specified cluster does not exist.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.InvalidARNException">
-        /// 
+        /// The specified Amazon Resource Name (ARN) is not valid.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.InvalidClusterStateException">
-        /// 
+        /// The cluster is not in a valid state for the requested operation.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.InvalidParameterValueException">
-        /// 
+        /// The specified parameter value is not valid.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.MultiRegionClusterNotFoundException">
         /// The specified multi-Region cluster does not exist.
@@ -2913,22 +3067,22 @@ namespace Amazon.MemoryDB
         /// The specified multi-Region parameter group does not exist.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.ParameterGroupNotFoundException">
-        /// 
+        /// The specified parameter group does not exist.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.ServiceLinkedRoleNotFoundException">
-        /// 
+        /// The required service-linked role was not found.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.SnapshotNotFoundException">
-        /// 
+        /// The specified snapshot does not exist.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.SubnetGroupNotFoundException">
-        /// 
+        /// The specified subnet group does not exist.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.TagNotFoundException">
-        /// 
+        /// The specified tag does not exist.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.UserNotFoundException">
-        /// 
+        /// The specified user does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
@@ -2985,25 +3139,25 @@ namespace Amazon.MemoryDB
         /// 
         /// <returns>The response from the UpdateACL service method, as returned by MemoryDB.</returns>
         /// <exception cref="Amazon.MemoryDB.Model.ACLNotFoundException">
-        /// 
+        /// The specified ACL does not exist.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.DefaultUserRequiredException">
-        /// 
+        /// A default user is required and must be specified.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.DuplicateUserNameException">
-        /// 
+        /// A user with the specified name already exists.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.InvalidACLStateException">
-        /// 
+        /// The ACL is not in a valid state for the requested operation.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.InvalidParameterCombinationException">
-        /// 
+        /// The specified parameter combination is not valid.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.InvalidParameterValueException">
-        /// 
+        /// The specified parameter value is not valid.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.UserNotFoundException">
-        /// 
+        /// The specified user does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/UpdateACL">REST API Reference for UpdateACL Operation</seealso>
         public virtual UpdateACLResponse UpdateACL(UpdateACLRequest request)
@@ -3061,52 +3215,56 @@ namespace Amazon.MemoryDB
         /// 
         /// <returns>The response from the UpdateCluster service method, as returned by MemoryDB.</returns>
         /// <exception cref="Amazon.MemoryDB.Model.ACLNotFoundException">
-        /// 
+        /// The specified ACL does not exist.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.ClusterNotFoundException">
-        /// 
+        /// The specified cluster does not exist.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.ClusterQuotaForCustomerExceededException">
-        /// 
+        /// The request cannot be processed because it would exceed the maximum number of clusters
+        /// allowed for this customer.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.InvalidACLStateException">
-        /// 
+        /// The ACL is not in a valid state for the requested operation.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.InvalidClusterStateException">
-        /// 
+        /// The cluster is not in a valid state for the requested operation.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.InvalidKMSKeyException">
-        /// 
+        /// The specified KMS key is not valid or accessible.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.InvalidNodeStateException">
-        /// 
+        /// The node is not in a valid state for the requested operation.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.InvalidParameterCombinationException">
-        /// 
+        /// The specified parameter combination is not valid.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.InvalidParameterValueException">
-        /// 
+        /// The specified parameter value is not valid.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.InvalidVPCNetworkStateException">
-        /// 
+        /// The VPC network is not in a valid state for the requested operation.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.NodeQuotaForClusterExceededException">
-        /// 
+        /// The request cannot be processed because it would exceed the maximum number of nodes
+        /// allowed for this cluster.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.NodeQuotaForCustomerExceededException">
-        /// 
+        /// The request cannot be processed because it would exceed the maximum number of nodes
+        /// allowed for this customer.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.NoOperationException">
-        /// 
+        /// The requested operation would result in no changes.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.ParameterGroupNotFoundException">
-        /// 
+        /// The specified parameter group does not exist.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.ServiceLinkedRoleNotFoundException">
-        /// 
+        /// The required service-linked role was not found.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.ShardsPerClusterQuotaExceededException">
-        /// 
+        /// The request cannot be processed because it would exceed the maximum number of shards
+        /// allowed per cluster.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/UpdateCluster">REST API Reference for UpdateCluster Operation</seealso>
         public virtual UpdateClusterResponse UpdateCluster(UpdateClusterRequest request)
@@ -3167,10 +3325,10 @@ namespace Amazon.MemoryDB
         /// state.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.InvalidParameterCombinationException">
-        /// 
+        /// The specified parameter combination is not valid.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.InvalidParameterValueException">
-        /// 
+        /// The specified parameter value is not valid.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.MultiRegionClusterNotFoundException">
         /// The specified multi-Region cluster does not exist.
@@ -3234,19 +3392,19 @@ namespace Amazon.MemoryDB
         /// 
         /// <returns>The response from the UpdateParameterGroup service method, as returned by MemoryDB.</returns>
         /// <exception cref="Amazon.MemoryDB.Model.InvalidParameterCombinationException">
-        /// 
+        /// The specified parameter combination is not valid.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.InvalidParameterGroupStateException">
-        /// 
+        /// The parameter group is not in a valid state for the requested operation.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.InvalidParameterValueException">
-        /// 
+        /// The specified parameter value is not valid.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.ParameterGroupNotFoundException">
-        /// 
+        /// The specified parameter group does not exist.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.ServiceLinkedRoleNotFoundException">
-        /// 
+        /// The required service-linked role was not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/UpdateParameterGroup">REST API Reference for UpdateParameterGroup Operation</seealso>
         public virtual UpdateParameterGroupResponse UpdateParameterGroup(UpdateParameterGroupRequest request)
@@ -3304,22 +3462,23 @@ namespace Amazon.MemoryDB
         /// 
         /// <returns>The response from the UpdateSubnetGroup service method, as returned by MemoryDB.</returns>
         /// <exception cref="Amazon.MemoryDB.Model.InvalidSubnetException">
-        /// 
+        /// The specified subnet is not valid.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.ServiceLinkedRoleNotFoundException">
-        /// 
+        /// The required service-linked role was not found.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.SubnetGroupNotFoundException">
-        /// 
+        /// The specified subnet group does not exist.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.SubnetInUseException">
-        /// 
+        /// The subnet is currently in use and cannot be deleted.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.SubnetNotAllowedException">
-        /// 
+        /// The specified subnet is not allowed for this operation.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.SubnetQuotaExceededException">
-        /// 
+        /// The request cannot be processed because it would exceed the maximum number of subnets
+        /// allowed.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/UpdateSubnetGroup">REST API Reference for UpdateSubnetGroup Operation</seealso>
         public virtual UpdateSubnetGroupResponse UpdateSubnetGroup(UpdateSubnetGroupRequest request)
@@ -3376,16 +3535,16 @@ namespace Amazon.MemoryDB
         /// 
         /// <returns>The response from the UpdateUser service method, as returned by MemoryDB.</returns>
         /// <exception cref="Amazon.MemoryDB.Model.InvalidParameterCombinationException">
-        /// 
+        /// The specified parameter combination is not valid.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.InvalidParameterValueException">
-        /// 
+        /// The specified parameter value is not valid.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.InvalidUserStateException">
-        /// 
+        /// The user is not in a valid state for the requested operation.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.UserNotFoundException">
-        /// 
+        /// The specified user does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/UpdateUser">REST API Reference for UpdateUser Operation</seealso>
         public virtual UpdateUserResponse UpdateUser(UpdateUserRequest request)

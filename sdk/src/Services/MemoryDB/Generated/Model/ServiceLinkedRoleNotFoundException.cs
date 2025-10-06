@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MemoryDB.Model
 {
     /// <summary>
-    /// 
+    /// The required service-linked role was not found.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MemoryDB.Model
 {
     /// <summary>
-    /// 
+    /// The specified tag does not exist.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MemoryDB.Model
 {
     /// <summary>
-    /// 
+    /// An ACL with the specified name already exists.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

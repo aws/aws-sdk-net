@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MemoryDB.Model
 {
     /// <summary>
-    /// 
+    /// The subnet group is currently in use and cannot be deleted.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MemoryDB.Model
 {
     /// <summary>
-    /// 
+    /// The specified parameter value is not valid.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

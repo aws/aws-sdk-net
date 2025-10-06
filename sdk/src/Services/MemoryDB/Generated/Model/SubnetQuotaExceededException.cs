@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MemoryDB.Model
 {
     /// <summary>
-    /// 
+    /// The request cannot be processed because it would exceed the maximum number of subnets
+    /// allowed.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
