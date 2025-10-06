@@ -26,92 +26,13 @@ namespace Amazon.Extensions.CborProtocol.Internal
     /// the entire payload into memory at once. This class wraps <see cref="CborReader"/>
     /// to provide streaming capabilities while maintaining the same reading interface.
     /// </summary>
-    public class CborStreamReaderOld : CborStreamReader
-    {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="CborStreamReader"/> class that reads CBOR data
-        /// from the specified stream.
-        /// </summary>
-        /// <param name="stream">The input stream containing CBOR-formatted data.
-        /// The stream must be readable and remain open for the lifetime of the reader.</param>
-        /// <exception cref="ArgumentNullException">Thrown when the stream parameter is null.</exception>
-        /// <remarks>
-        /// The reader uses a configurable initial buffer size (from <see cref="AWSConfigs.CborReaderInitialBufferSize"/>)
-        /// and will automatically resize the buffer if needed to handle larger CBOR items.
-        /// </remarks>
-        public CborStreamReaderOld(Stream stream) : base(stream)
-        {
-        }
-
-        /// <summary>
-        /// This method is called when a read operation fails because it needs more
-        /// data than is currently available in the buffer. It handles stitching leftover
-        /// data with a new chunk from the stream and, if necessary, resizing the buffer.
-        /// </summary>
-        /// <param name="bytesToSkip">Number of bytes to skip before reading new data (e.g., 1 to skip CBOR break byte 0xFF)</param>
-        protected override void RefillBuffer(int bytesToSkip = 0)
-        {
-            int leftoverBytesCount = _internalCborReader.BytesRemaining;
-
-            // Determine where the leftover bytes start
-            int leftoverStartIndex = _currentChunkSize - leftoverBytesCount;
-
-            // If we are skipping bytes, we need to move the start forward
-            leftoverStartIndex += bytesToSkip;
-            leftoverBytesCount = leftoverBytesCount - bytesToSkip;
-
-            // If the leftover data completely fills the buffer, grow it
-            if (leftoverBytesCount >= _buffer.Length)
-            {
-                int newSize = _buffer.Length * 2;
-                var newBuffer = ArrayPool<byte>.Shared.Rent(newSize);
-
-                Buffer.BlockCopy(_buffer, leftoverStartIndex, newBuffer, 0, leftoverBytesCount);
-                ArrayPool<byte>.Shared.Return(_buffer);
-                _buffer = newBuffer;
-            }
-            else if (leftoverBytesCount > 0)  // Shift leftovers (after skipping) to the beginning of the buffer
-            {
-                Buffer.BlockCopy(_buffer, leftoverStartIndex, _buffer, 0, leftoverBytesCount);
-            }
-
-            // Read from stream into buffer after leftovers
-            int bytesReadFromStream = _stream.Read(_buffer, leftoverBytesCount, _buffer.Length - leftoverBytesCount);
-
-            // Update the total size of valid data in our buffer.
-            _currentChunkSize = leftoverBytesCount + bytesReadFromStream;
-
-            var newMemorySlice = new ReadOnlyMemory<byte>(_buffer, 0, _currentChunkSize);
-            _internalCborReader.Reset(newMemorySlice);
-
-            _logger.DebugFormat("Buffer refilled: read {0} byte(s), total in buffer now: {1}.", bytesReadFromStream, _currentChunkSize);
-        }
-
-        protected override T ExecuteValueRead<T>(Func<CborReader, T> readOperation)
-        {
-            
-            var result = ExecuteRead<T>(readOperation);
-            if (_nestingStack.Count > 0)
-            {
-                _nestingStack.Peek().ConsumeItem();
-            }
-
-            return result;
-        }
-
-        public override string ReadTextString() => ExecuteValueRead(r => r.ReadTextString());
-        public override byte[] ReadByteString() => ExecuteValueRead(r => r.ReadByteString());
-
-    }
-
-
     public class CborStreamReader : IDisposable
     {
         /// <summary>
         /// Represents a single container frame (map or array) within the nesting stack
         /// of the <see cref="CborStreamReader"/>.
         /// </summary>
-        protected class ContainerFrame
+        private class ContainerFrame
         {
             /// <summary>
             /// Gets the type of CBOR container (map or array).
@@ -170,18 +91,18 @@ namespace Amazon.Extensions.CborProtocol.Internal
         /// Enum to track the type of CBOR container (map or array)
         /// for state management within the CborStreamReader.
         /// </summary>
-        protected enum CborContainerType
+        private enum CborContainerType
         {
             Map,
             Array
         }
 
-        protected static readonly ILogger _logger = Logger.GetLogger(typeof(CborStreamReader));
-        protected readonly Stack<ContainerFrame> _nestingStack = new Stack<ContainerFrame>();
-        protected readonly Stream _stream;
-        protected byte[] _buffer;
-        protected CborReader _internalCborReader;
-        protected int _currentChunkSize;
+        private static readonly ILogger _logger = Logger.GetLogger(typeof(CborStreamReader));
+        private readonly Stack<ContainerFrame> _nestingStack = new Stack<ContainerFrame>();
+        private readonly Stream _stream;
+        private byte[] _buffer;
+        private CborReader _internalCborReader;
+        private int _currentChunkSize;
         protected bool streamEnded = false;
 
         /// <summary>
@@ -216,57 +137,45 @@ namespace Amazon.Extensions.CborProtocol.Internal
         /// data with a new chunk from the stream and, if necessary, resizing the buffer.
         /// </summary>
         /// <param name="bytesToSkip">Number of bytes to skip before reading new data (e.g., 1 to skip CBOR break byte 0xFF)</param>
-        protected virtual void RefillBuffer(int bytesToSkip = 0)
+        private void RefillBuffer(int bytesToSkip = 0)
         {
             if (streamEnded && _internalCborReader.BytesRemaining == 0) return;
 
             int leftoverBytesCount = _internalCborReader.BytesRemaining;
+
+            // Determine where the leftover bytes start
             int leftoverStartIndex = _currentChunkSize - leftoverBytesCount;
 
-            // Adjust for skipped bytes (like CBOR break 0xFF)
+            // If we are skipping bytes, we need to move the start forward
             leftoverStartIndex += bytesToSkip;
-            leftoverBytesCount -= bytesToSkip;
+            leftoverBytesCount = leftoverBytesCount - bytesToSkip;
 
-            // If there’s no leftover data, just read directly into buffer
-            if (leftoverBytesCount <= 0)
+            // If the leftover data completely fills the buffer, grow it
+            if (leftoverBytesCount >= _buffer.Length)
             {
-                int bytesRead = _stream.Read(_buffer, 0, _buffer.Length);
-                if (bytesRead < _buffer.Length)
-                    streamEnded = true;
+                int newSize = _buffer.Length * 2;
+                var newBuffer = ArrayPool<byte>.Shared.Rent(newSize);
 
-                _currentChunkSize = bytesRead;
+                Buffer.BlockCopy(_buffer, leftoverStartIndex, newBuffer, 0, leftoverBytesCount);
+                ArrayPool<byte>.Shared.Return(_buffer);
+                _buffer = newBuffer;
             }
-            else
+            else if (leftoverBytesCount > 0)  // Shift leftovers (after skipping) to the beginning of the buffer
             {
-                // If leftover fits at the beginning, slide it down with Span
-                if (leftoverStartIndex > 0 && leftoverBytesCount <= _buffer.Length)
-                {
-                    var span = _buffer.AsSpan();
-                    span.Slice(leftoverStartIndex, leftoverBytesCount).CopyTo(span);
-                }
-                else if (leftoverBytesCount > _buffer.Length / 2)
-                {
-                    // If leftovers are too big, grow early
-                    int newSize = Math.Min(_buffer.Length * 2, int.MaxValue);
-                    var newBuffer = ArrayPool<byte>.Shared.Rent(newSize);
-
-                    _buffer.AsSpan(leftoverStartIndex, leftoverBytesCount).CopyTo(newBuffer);
-                    ArrayPool<byte>.Shared.Return(_buffer);
-                    _buffer = newBuffer;
-                }
-
-                // Read new data after leftovers
-                int bytesRead = _stream.Read(_buffer, leftoverBytesCount, _buffer.Length - leftoverBytesCount);
-                if (bytesRead < _buffer.Length - leftoverBytesCount)
-                    streamEnded = true;
-
-                _currentChunkSize = leftoverBytesCount + bytesRead;
+                Buffer.BlockCopy(_buffer, leftoverStartIndex, _buffer, 0, leftoverBytesCount);
             }
 
-            // Reset CBOR reader with the new span without allocating a fresh memory slice
-            _internalCborReader.Reset(_buffer.AsMemory(0, _currentChunkSize));
+            // Read from stream into buffer after leftovers
+            int bytesReadFromStream = _stream.Read(_buffer, leftoverBytesCount, _buffer.Length - leftoverBytesCount);
+
+            // Update the total size of valid data in our buffer.
+            _currentChunkSize = leftoverBytesCount + bytesReadFromStream;
+
+            var newMemorySlice = new ReadOnlyMemory<byte>(_buffer, 0, _currentChunkSize);
+            _internalCborReader.Reset(newMemorySlice);
+
+            _logger.DebugFormat("Buffer refilled: read {0} byte(s), total in buffer now: {1}.", bytesReadFromStream, _currentChunkSize);
         }
-
 
         /// <summary>
         /// Executes a CBOR read operation, refilling the buffer and retrying if a CborContentException is thrown.
@@ -277,7 +186,7 @@ namespace Amazon.Extensions.CborProtocol.Internal
         /// <exception cref="CborContentException">
         /// Thrown if too many retries are attempted or if the stream ends unexpectedly.
         /// </exception>
-        protected virtual T ExecuteRead<T>(Func<CborReader, T> readOperation)
+        private T ExecuteRead<T>(Func<CborReader, T> readOperation)
         {
             int maxRetries = 64;
             int retryCount = 0;
@@ -317,7 +226,7 @@ namespace Amazon.Extensions.CborProtocol.Internal
         }
 
 
-        protected virtual bool IsNextByteEndOfContainer()
+        private bool IsNextByteEndOfContainer()
         {
             int unreadOffset = _currentChunkSize - _internalCborReader.BytesRemaining;
             if (unreadOffset < _currentChunkSize)
@@ -326,7 +235,7 @@ namespace Amazon.Extensions.CborProtocol.Internal
             return false;
         }
 
-        protected virtual void ReadEndContainer(CborContainerType expectedType, CborReaderState expectedEndState, Action<CborReader> readEndAction)
+        private void ReadEndContainer(CborContainerType expectedType, CborReaderState expectedEndState, Action<CborReader> readEndAction)
         {
             ExecuteRead(r =>
             {
@@ -488,12 +397,9 @@ namespace Amazon.Extensions.CborProtocol.Internal
                     }
                     catch (CborContentException ex)
                     {
-                        if (attempt < 1) // No need to refill second time
-                        {
-                            // PeekState threw an exception, we will attempt to refill in case we aren't at the end of the stream.
-                            _logger.Debug(ex, "PeekState threw exception (attempt #{0}). Attempting refill.", attempt + 1);
-                            RefillBuffer(0);
-                        }
+                        // PeekState threw an exception, we will attempt to refill in case we aren't at the end of the stream.
+                        _logger.Debug(ex, "PeekState threw exception (attempt #{0}). Attempting refill.", attempt + 1);
+                        RefillBuffer(0);
                     }
                 }
 
@@ -518,7 +424,7 @@ namespace Amazon.Extensions.CborProtocol.Internal
         /// of the current container (if any) to ensure that whenever an item is read, the parent
         /// container's RemainingItems count is decremented.
         /// </summary>
-        protected virtual T ExecuteValueRead<T>(Func<CborReader, T> readOperation)
+        private T ExecuteValueRead<T>(Func<CborReader, T> readOperation)
         {
             var result = ExecuteRead<T>(readOperation);
             if (_nestingStack.Count > 0)
@@ -575,12 +481,8 @@ namespace Amazon.Extensions.CborProtocol.Internal
             // If we need to read additional bytes for length, ensure we can peek them
             if (lengthBytes > 0)
             {
-                // Check if we have enough bytes in current buffer to read full header
-                if (_internalCborReader.BytesRemaining < 1 + lengthBytes)
-                {
-                    RefillBuffer(1 + lengthBytes);
-                }
-
+                if (_internalCborReader.BytesRemaining <= lengthBytes)
+                    return;
                 // Parse the length from the header (big endian)
                 declaredLength = 0;
                 for (int i = 0; i < lengthBytes; i++)
@@ -592,35 +494,34 @@ namespace Amazon.Extensions.CborProtocol.Internal
 
 
             // Now ensure the full content fits
-            if (declaredLength > _internalCborReader.BytesRemaining)
-            {
-                int leftoverBytesCount = _internalCborReader.BytesRemaining;
+            if (declaredLength <= _buffer.Length)
+                return;
 
-                // Determine where the leftover bytes start
-                int leftoverStartIndex = _currentChunkSize - leftoverBytesCount;
+            int leftoverBytesCount = _internalCborReader.BytesRemaining;
 
-                var newBuffer = ArrayPool<byte>.Shared.Rent(declaredLength);
+            // Determine where the leftover bytes start
+            int leftoverStartIndex = _currentChunkSize - leftoverBytesCount;
 
-                Buffer.BlockCopy(_buffer, leftoverStartIndex, newBuffer, 0, leftoverBytesCount);
-                ArrayPool<byte>.Shared.Return(_buffer);
-                _buffer = newBuffer;
+            var newBuffer = ArrayPool<byte>.Shared.Rent(declaredLength);
 
-                // Read from stream into buffer after leftovers
-                int bytesReadFromStream = _stream.Read(_buffer, leftoverBytesCount, _buffer.Length - leftoverBytesCount);
+            Buffer.BlockCopy(_buffer, leftoverStartIndex, newBuffer, 0, leftoverBytesCount);
+            ArrayPool<byte>.Shared.Return(_buffer);
+            _buffer = newBuffer;
 
-                // Update the total size of valid data in our buffer.
-                _currentChunkSize = leftoverBytesCount + bytesReadFromStream;
+            // Read from stream into buffer after leftovers
+            int bytesReadFromStream = _stream.Read(_buffer, leftoverBytesCount, _buffer.Length - leftoverBytesCount);
 
-                var newMemorySlice = new ReadOnlyMemory<byte>(_buffer, 0, _currentChunkSize);
-                _internalCborReader.Reset(newMemorySlice);
+            // Update the total size of valid data in our buffer.
+            _currentChunkSize = leftoverBytesCount + bytesReadFromStream;
 
-                _logger.DebugFormat("Buffer refilled: read {0} byte(s), total in buffer now: {1}.", bytesReadFromStream, _currentChunkSize);
-            }
+            var newMemorySlice = new ReadOnlyMemory<byte>(_buffer, 0, _currentChunkSize);
+            _internalCborReader.Reset(newMemorySlice);
+
+            _logger.DebugFormat("Buffer refilled: read {0} byte(s), total in buffer now: {1}.", bytesReadFromStream, _currentChunkSize);
         }
 
-
-        public virtual string ReadTextString() => ExecuteValueRead(r => { EnsureBufferedEnoughForCurrentValue(); return r.ReadTextString(); });
-        public virtual byte[] ReadByteString() => ExecuteValueRead(r => { EnsureBufferedEnoughForCurrentValue(); return r.ReadByteString(); });
+        public string ReadTextString() => ExecuteValueRead(r => { EnsureBufferedEnoughForCurrentValue(); return r.ReadTextString(); });
+        public byte[] ReadByteString() => ExecuteValueRead(r => { EnsureBufferedEnoughForCurrentValue(); return r.ReadByteString(); });
         public int ReadInt32() => ExecuteValueRead(r => r.ReadInt32());
         public long ReadInt64() => ExecuteValueRead(r => r.ReadInt64());
         public ulong ReadUInt64() => ExecuteValueRead(r => r.ReadUInt64());
