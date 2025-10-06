@@ -44,6 +44,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         private string _description;
         private Dictionary<string, string> _environmentVariables = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private DateTime? _lastUpdatedAt;
+        private LifecycleConfiguration _lifecycleConfiguration;
         private NetworkConfiguration _networkConfiguration;
         private ProtocolConfiguration _protocolConfiguration;
         private RequestHeaderConfiguration _requestHeaderConfiguration;
@@ -237,6 +238,25 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetLastUpdatedAt()
         {
             return this._lastUpdatedAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LifecycleConfiguration. 
+        /// <para>
+        /// The life cycle configuration for the AgentCore Runtime.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public LifecycleConfiguration LifecycleConfiguration
+        {
+            get { return this._lifecycleConfiguration; }
+            set { this._lifecycleConfiguration = value; }
+        }
+
+        // Check to see if LifecycleConfiguration property is set
+        internal bool IsSetLifecycleConfiguration()
+        {
+            return this._lifecycleConfiguration != null;
         }
 
         /// <summary>

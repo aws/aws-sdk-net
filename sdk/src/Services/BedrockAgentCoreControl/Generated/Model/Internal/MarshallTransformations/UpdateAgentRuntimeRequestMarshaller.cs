@@ -123,6 +123,17 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetLifecycleConfiguration())
+                {
+                    context.Writer.WritePropertyName("lifecycleConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = LifecycleConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.LifecycleConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetNetworkConfiguration())
                 {
                     context.Writer.WritePropertyName("networkConfiguration");
