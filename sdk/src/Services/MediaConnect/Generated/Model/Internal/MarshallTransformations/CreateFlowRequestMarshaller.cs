@@ -101,6 +101,20 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.FlowSize);
             }
 
+            if(publicRequest.IsSetFlowTags())
+            {
+                context.Writer.WritePropertyName("flowTags");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestFlowTagsKvp in publicRequest.FlowTags)
+                {
+                    context.Writer.WritePropertyName(publicRequestFlowTagsKvp.Key);
+                    var publicRequestFlowTagsValue = publicRequestFlowTagsKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestFlowTagsValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetMaintenance())
             {
                 context.Writer.WritePropertyName("maintenance");

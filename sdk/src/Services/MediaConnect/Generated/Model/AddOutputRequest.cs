@@ -45,6 +45,7 @@ namespace Amazon.MediaConnect.Model
         private string _ndiProgramName;
         private int? _ndiSpeedHqQuality;
         private OutputStatus _outputStatus;
+        private Dictionary<string, string> _outputTags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private int? _port;
         private Protocol _protocol;
         private string _remoteId;
@@ -275,6 +276,29 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
+        /// Gets and sets the property OutputTags. 
+        /// <para>
+        ///  The key-value pairs that can be used to tag and organize the output. 
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public Dictionary<string, string> OutputTags
+        {
+            get { return this._outputTags; }
+            set { this._outputTags = value; }
+        }
+
+        // Check to see if OutputTags property is set
+        internal bool IsSetOutputTags()
+        {
+            return this._outputTags != null && (this._outputTags.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
         /// Gets and sets the property Port. 
         /// <para>
         ///  The port to use when content is distributed to this output.
@@ -304,7 +328,6 @@ namespace Amazon.MediaConnect.Model
         /// </para>
         ///  </note>
         /// </summary>
-        [AWSProperty(Required=true)]
         public Protocol Protocol
         {
             get { return this._protocol; }

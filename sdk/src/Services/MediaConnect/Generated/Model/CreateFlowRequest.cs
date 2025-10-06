@@ -39,6 +39,7 @@ namespace Amazon.MediaConnect.Model
         private string _availabilityZone;
         private List<GrantEntitlementRequest> _entitlements = AWSConfigs.InitializeCollections ? new List<GrantEntitlementRequest>() : null;
         private FlowSize _flowSize;
+        private Dictionary<string, string> _flowTags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private AddMaintenance _maintenance;
         private List<AddMediaStreamRequest> _mediaStreams = AWSConfigs.InitializeCollections ? new List<AddMediaStreamRequest>() : null;
         private string _name;
@@ -109,6 +110,29 @@ namespace Amazon.MediaConnect.Model
         internal bool IsSetFlowSize()
         {
             return this._flowSize != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FlowTags. 
+        /// <para>
+        ///  The key-value pairs that can be used to tag and organize the flow. 
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public Dictionary<string, string> FlowTags
+        {
+            get { return this._flowTags; }
+            set { this._flowTags = value; }
+        }
+
+        // Check to see if FlowTags property is set
+        internal bool IsSetFlowTags()
+        {
+            return this._flowTags != null && (this._flowTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

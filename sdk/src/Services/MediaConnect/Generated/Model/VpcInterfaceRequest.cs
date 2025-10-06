@@ -39,6 +39,7 @@ namespace Amazon.MediaConnect.Model
         private string _roleArn;
         private List<string> _securityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _subnetId;
+        private Dictionary<string, string> _vpcInterfaceTags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property Name. 
@@ -144,6 +145,30 @@ namespace Amazon.MediaConnect.Model
         internal bool IsSetSubnetId()
         {
             return this._subnetId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcInterfaceTags. 
+        /// <para>
+        ///  The key-value pairs that can be used to tag and organize the VPC network interface.
+        /// 
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public Dictionary<string, string> VpcInterfaceTags
+        {
+            get { return this._vpcInterfaceTags; }
+            set { this._vpcInterfaceTags = value; }
+        }
+
+        // Check to see if VpcInterfaceTags property is set
+        internal bool IsSetVpcInterfaceTags()
+        {
+            return this._vpcInterfaceTags != null && (this._vpcInterfaceTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

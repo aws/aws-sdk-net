@@ -76,6 +76,12 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetFlowSize())
+            {
+                context.Writer.WritePropertyName("flowSize");
+                context.Writer.WriteStringValue(publicRequest.FlowSize);
+            }
+
             if(publicRequest.IsSetMaintenance())
             {
                 context.Writer.WritePropertyName("maintenance");
