@@ -431,12 +431,31 @@ internal sealed partial class BedrockChatClient : IChatClient
             if (chatMessage.Role != ChatRole.System &&
                 CreateContents(chatMessage) is { Count: > 0 } contents)
             {
+                foreach (ContentBlock c in contents)
+                {
+                    // Avoid empty/blank text blocks; they trigger the service to fail.
+                    if (c.Text is { } s && string.IsNullOrWhiteSpace(s))
+                    {
+                        c.Text = "\u200b"; // zero-width space
+                    }
+                }
+
                 messages.Add(new()
                 {
                     Role = chatMessage.Role == ChatRole.Assistant ? ConversationRole.Assistant : ConversationRole.User,
                     Content = contents,
                 });
             }
+        }
+
+        // Ensure there's at least one message with content; zero content triggers the service to fail.
+        if (messages.Count == 0)
+        {
+            messages.Add(new()
+            {
+                Role = ConversationRole.User,
+                Content = [new() { Text = "\u200B" }], // zero-width space
+            });
         }
 
         return messages;
