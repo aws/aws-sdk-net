@@ -38,6 +38,7 @@ namespace Amazon.MediaConnect.Model
         private string _description;
         private Encryption _encryption;
         private EntitlementStatus _entitlementStatus;
+        private Dictionary<string, string> _entitlementTags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _name;
         private List<string> _subscribers = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
@@ -115,6 +116,24 @@ namespace Amazon.MediaConnect.Model
         internal bool IsSetEntitlementStatus()
         {
             return this._entitlementStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EntitlementTags. 
+        /// <para>
+        ///  The key-value pairs that can be used to tag and organize the entitlement. 
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> EntitlementTags
+        {
+            get { return this._entitlementTags; }
+            set { this._entitlementTags = value; }
+        }
+
+        // Check to see if EntitlementTags property is set
+        internal bool IsSetEntitlementTags()
+        {
+            return this._entitlementTags != null && (this._entitlementTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

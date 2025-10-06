@@ -83,6 +83,20 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.SubnetId);
             }
 
+            if(requestObject.IsSetVpcInterfaceTags())
+            {
+                context.Writer.WritePropertyName("vpcInterfaceTags");
+                context.Writer.WriteObjectStart();
+                foreach (var requestObjectVpcInterfaceTagsKvp in requestObject.VpcInterfaceTags)
+                {
+                    context.Writer.WritePropertyName(requestObjectVpcInterfaceTagsKvp.Key);
+                    var requestObjectVpcInterfaceTagsValue = requestObjectVpcInterfaceTagsKvp.Value;
+
+                        context.Writer.Write(requestObjectVpcInterfaceTagsValue);
+                }
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

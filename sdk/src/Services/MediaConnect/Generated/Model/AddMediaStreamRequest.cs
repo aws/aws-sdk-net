@@ -39,6 +39,7 @@ namespace Amazon.MediaConnect.Model
         private string _description;
         private int? _mediaStreamId;
         private string _mediaStreamName;
+        private Dictionary<string, string> _mediaStreamTags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private MediaStreamType _mediaStreamType;
         private string _videoFormat;
 
@@ -134,6 +135,24 @@ namespace Amazon.MediaConnect.Model
         internal bool IsSetMediaStreamName()
         {
             return this._mediaStreamName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MediaStreamTags. 
+        /// <para>
+        ///  The key-value pairs that can be used to tag and organize the media stream. 
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> MediaStreamTags
+        {
+            get { return this._mediaStreamTags; }
+            set { this._mediaStreamTags = value; }
+        }
+
+        // Check to see if MediaStreamTags property is set
+        internal bool IsSetMediaStreamTags()
+        {
+            return this._mediaStreamTags != null && (this._mediaStreamTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

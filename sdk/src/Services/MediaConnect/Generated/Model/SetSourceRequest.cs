@@ -50,6 +50,7 @@ namespace Amazon.MediaConnect.Model
         private string _senderIpAddress;
         private string _sourceListenerAddress;
         private int? _sourceListenerPort;
+        private Dictionary<string, string> _sourceTags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _streamId;
         private string _vpcInterfaceName;
         private string _whitelistCidr;
@@ -357,6 +358,24 @@ namespace Amazon.MediaConnect.Model
         internal bool IsSetSourceListenerPort()
         {
             return this._sourceListenerPort.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceTags. 
+        /// <para>
+        ///  The key-value pairs that can be used to tag and organize the source. 
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> SourceTags
+        {
+            get { return this._sourceTags; }
+            set { this._sourceTags = value; }
+        }
+
+        // Check to see if SourceTags property is set
+        internal bool IsSetSourceTags()
+        {
+            return this._sourceTags != null && (this._sourceTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

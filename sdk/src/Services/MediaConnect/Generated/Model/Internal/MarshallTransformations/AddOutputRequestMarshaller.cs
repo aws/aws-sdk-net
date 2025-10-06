@@ -134,6 +134,20 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.OutputStatus);
             }
 
+            if(requestObject.IsSetOutputTags())
+            {
+                context.Writer.WritePropertyName("outputTags");
+                context.Writer.WriteObjectStart();
+                foreach (var requestObjectOutputTagsKvp in requestObject.OutputTags)
+                {
+                    context.Writer.WritePropertyName(requestObjectOutputTagsKvp.Key);
+                    var requestObjectOutputTagsValue = requestObjectOutputTagsKvp.Value;
+
+                        context.Writer.Write(requestObjectOutputTagsValue);
+                }
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetPort())
             {
                 context.Writer.WritePropertyName("port");
