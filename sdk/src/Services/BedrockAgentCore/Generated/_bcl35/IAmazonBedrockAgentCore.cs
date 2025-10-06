@@ -55,6 +55,209 @@ namespace Amazon.BedrockAgentCore
 
 
         
+        #region  BatchCreateMemoryRecords
+
+
+        /// <summary>
+        /// Creates multiple memory records in a single batch operation for the specified memory
+        /// with custom content.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchCreateMemoryRecords service method.</param>
+        /// 
+        /// <returns>The response from the BatchCreateMemoryRecords service method, as returned by BedrockAgentCore.</returns>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.AccessDeniedException">
+        /// The exception that occurs when you do not have sufficient permissions to perform an
+        /// action. Verify that your IAM policy includes the necessary permissions for the operation
+        /// you are trying to perform.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ResourceNotFoundException">
+        /// The exception that occurs when the specified resource does not exist. This can happen
+        /// when using an invalid identifier or when trying to access a resource that has been
+        /// deleted.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ServiceException">
+        /// The service encountered an internal error. Try your request again later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ServiceQuotaExceededException">
+        /// The exception that occurs when the request would cause a service quota to be exceeded.
+        /// Review your service quotas and either reduce your request rate or request a quota
+        /// increase.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ThrottledException">
+        /// The request was denied due to request throttling. Reduce the frequency of requests
+        /// and try again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ValidationException">
+        /// The exception that occurs when the input fails to satisfy the constraints specified
+        /// by the service. Check the error message for details about which input parameter is
+        /// invalid and correct your request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/BatchCreateMemoryRecords">REST API Reference for BatchCreateMemoryRecords Operation</seealso>
+        BatchCreateMemoryRecordsResponse BatchCreateMemoryRecords(BatchCreateMemoryRecordsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchCreateMemoryRecords operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchCreateMemoryRecords operation on AmazonBedrockAgentCoreClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchCreateMemoryRecords
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/BatchCreateMemoryRecords">REST API Reference for BatchCreateMemoryRecords Operation</seealso>
+        IAsyncResult BeginBatchCreateMemoryRecords(BatchCreateMemoryRecordsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchCreateMemoryRecords operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchCreateMemoryRecords.</param>
+        /// 
+        /// <returns>Returns a  BatchCreateMemoryRecordsResult from BedrockAgentCore.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/BatchCreateMemoryRecords">REST API Reference for BatchCreateMemoryRecords Operation</seealso>
+        BatchCreateMemoryRecordsResponse EndBatchCreateMemoryRecords(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  BatchDeleteMemoryRecords
+
+
+        /// <summary>
+        /// Deletes multiple memory records in a single batch operation from the specified memory.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchDeleteMemoryRecords service method.</param>
+        /// 
+        /// <returns>The response from the BatchDeleteMemoryRecords service method, as returned by BedrockAgentCore.</returns>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.AccessDeniedException">
+        /// The exception that occurs when you do not have sufficient permissions to perform an
+        /// action. Verify that your IAM policy includes the necessary permissions for the operation
+        /// you are trying to perform.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ResourceNotFoundException">
+        /// The exception that occurs when the specified resource does not exist. This can happen
+        /// when using an invalid identifier or when trying to access a resource that has been
+        /// deleted.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ServiceException">
+        /// The service encountered an internal error. Try your request again later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ServiceQuotaExceededException">
+        /// The exception that occurs when the request would cause a service quota to be exceeded.
+        /// Review your service quotas and either reduce your request rate or request a quota
+        /// increase.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ThrottledException">
+        /// The request was denied due to request throttling. Reduce the frequency of requests
+        /// and try again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ValidationException">
+        /// The exception that occurs when the input fails to satisfy the constraints specified
+        /// by the service. Check the error message for details about which input parameter is
+        /// invalid and correct your request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/BatchDeleteMemoryRecords">REST API Reference for BatchDeleteMemoryRecords Operation</seealso>
+        BatchDeleteMemoryRecordsResponse BatchDeleteMemoryRecords(BatchDeleteMemoryRecordsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchDeleteMemoryRecords operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchDeleteMemoryRecords operation on AmazonBedrockAgentCoreClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchDeleteMemoryRecords
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/BatchDeleteMemoryRecords">REST API Reference for BatchDeleteMemoryRecords Operation</seealso>
+        IAsyncResult BeginBatchDeleteMemoryRecords(BatchDeleteMemoryRecordsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchDeleteMemoryRecords operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchDeleteMemoryRecords.</param>
+        /// 
+        /// <returns>Returns a  BatchDeleteMemoryRecordsResult from BedrockAgentCore.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/BatchDeleteMemoryRecords">REST API Reference for BatchDeleteMemoryRecords Operation</seealso>
+        BatchDeleteMemoryRecordsResponse EndBatchDeleteMemoryRecords(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  BatchUpdateMemoryRecords
+
+
+        /// <summary>
+        /// Updates multiple memory records with custom content in a single batch operation within
+        /// the specified memory.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchUpdateMemoryRecords service method.</param>
+        /// 
+        /// <returns>The response from the BatchUpdateMemoryRecords service method, as returned by BedrockAgentCore.</returns>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.AccessDeniedException">
+        /// The exception that occurs when you do not have sufficient permissions to perform an
+        /// action. Verify that your IAM policy includes the necessary permissions for the operation
+        /// you are trying to perform.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ResourceNotFoundException">
+        /// The exception that occurs when the specified resource does not exist. This can happen
+        /// when using an invalid identifier or when trying to access a resource that has been
+        /// deleted.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ServiceException">
+        /// The service encountered an internal error. Try your request again later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ServiceQuotaExceededException">
+        /// The exception that occurs when the request would cause a service quota to be exceeded.
+        /// Review your service quotas and either reduce your request rate or request a quota
+        /// increase.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ThrottledException">
+        /// The request was denied due to request throttling. Reduce the frequency of requests
+        /// and try again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ValidationException">
+        /// The exception that occurs when the input fails to satisfy the constraints specified
+        /// by the service. Check the error message for details about which input parameter is
+        /// invalid and correct your request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/BatchUpdateMemoryRecords">REST API Reference for BatchUpdateMemoryRecords Operation</seealso>
+        BatchUpdateMemoryRecordsResponse BatchUpdateMemoryRecords(BatchUpdateMemoryRecordsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchUpdateMemoryRecords operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchUpdateMemoryRecords operation on AmazonBedrockAgentCoreClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchUpdateMemoryRecords
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/BatchUpdateMemoryRecords">REST API Reference for BatchUpdateMemoryRecords Operation</seealso>
+        IAsyncResult BeginBatchUpdateMemoryRecords(BatchUpdateMemoryRecordsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchUpdateMemoryRecords operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchUpdateMemoryRecords.</param>
+        /// 
+        /// <returns>Returns a  BatchUpdateMemoryRecordsResult from BedrockAgentCore.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/BatchUpdateMemoryRecords">REST API Reference for BatchUpdateMemoryRecords Operation</seealso>
+        BatchUpdateMemoryRecordsResponse EndBatchUpdateMemoryRecords(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateEvent
 
 
@@ -288,6 +491,81 @@ namespace Amazon.BedrockAgentCore
         /// <returns>Returns a  DeleteMemoryRecordResult from BedrockAgentCore.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/DeleteMemoryRecord">REST API Reference for DeleteMemoryRecord Operation</seealso>
         DeleteMemoryRecordResponse EndDeleteMemoryRecord(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetAgentCard
+
+
+        /// <summary>
+        /// Retrieves the A2A agent card associated with an AgentCore Runtime agent.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAgentCard service method.</param>
+        /// 
+        /// <returns>The response from the GetAgentCard service method, as returned by BedrockAgentCore.</returns>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.AccessDeniedException">
+        /// The exception that occurs when you do not have sufficient permissions to perform an
+        /// action. Verify that your IAM policy includes the necessary permissions for the operation
+        /// you are trying to perform.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.InternalServerException">
+        /// The exception that occurs when the service encounters an unexpected internal error.
+        /// This is a temporary condition that will resolve itself with retries. We recommend
+        /// implementing exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ResourceNotFoundException">
+        /// The exception that occurs when the specified resource does not exist. This can happen
+        /// when using an invalid identifier or when trying to access a resource that has been
+        /// deleted.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.RuntimeClientErrorException">
+        /// The exception that occurs when there is an error in the runtime client. This can happen
+        /// due to network issues, invalid configuration, or other client-side problems. Check
+        /// the error message for specific details about the error.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ServiceQuotaExceededException">
+        /// The exception that occurs when the request would cause a service quota to be exceeded.
+        /// Review your service quotas and either reduce your request rate or request a quota
+        /// increase.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ThrottlingException">
+        /// The exception that occurs when the request was denied due to request throttling. This
+        /// happens when you exceed the allowed request rate for an operation. Reduce the frequency
+        /// of requests or implement exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ValidationException">
+        /// The exception that occurs when the input fails to satisfy the constraints specified
+        /// by the service. Check the error message for details about which input parameter is
+        /// invalid and correct your request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/GetAgentCard">REST API Reference for GetAgentCard Operation</seealso>
+        GetAgentCardResponse GetAgentCard(GetAgentCardRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAgentCard operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAgentCard operation on AmazonBedrockAgentCoreClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAgentCard
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/GetAgentCard">REST API Reference for GetAgentCard Operation</seealso>
+        IAsyncResult BeginGetAgentCard(GetAgentCardRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetAgentCard operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAgentCard.</param>
+        /// 
+        /// <returns>Returns a  GetAgentCardResult from BedrockAgentCore.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/GetAgentCard">REST API Reference for GetAgentCard Operation</seealso>
+        GetAgentCardResponse EndGetAgentCard(IAsyncResult asyncResult);
 
         #endregion
         
@@ -635,7 +913,7 @@ namespace Amazon.BedrockAgentCore
 
 
         /// <summary>
-        /// Retrieves an API Key associated with an API Key Credential Provider
+        /// Retrieves the API key associated with an API key credential provider.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetResourceApiKey service method.</param>
         /// 
@@ -704,7 +982,7 @@ namespace Amazon.BedrockAgentCore
 
 
         /// <summary>
-        /// Returns the OAuth 2.0 token of the provided resource
+        /// Returns the OAuth 2.0 token of the provided resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetResourceOauth2Token service method.</param>
         /// 
@@ -773,7 +1051,7 @@ namespace Amazon.BedrockAgentCore
 
 
         /// <summary>
-        /// Obtains an Workload access token for agentic workloads not acting on behalf of user.
+        /// Obtains a workload access token for agentic workloads not acting on behalf of a user.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetWorkloadAccessToken service method.</param>
         /// 
@@ -842,8 +1120,8 @@ namespace Amazon.BedrockAgentCore
 
 
         /// <summary>
-        /// Obtains an Workload access token for agentic workloads acting on behalf of user with
-        /// JWT token
+        /// Obtains a workload access token for agentic workloads acting on behalf of a user,
+        /// using a JWT token.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetWorkloadAccessTokenForJWT service method.</param>
         /// 
@@ -912,8 +1190,8 @@ namespace Amazon.BedrockAgentCore
 
 
         /// <summary>
-        /// Obtains an Workload access token for agentic workloads acting on behalf of user with
-        /// User Id.
+        /// Obtains a workload access token for agentic workloads acting on behalf of a user,
+        /// using the user's ID.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetWorkloadAccessTokenForUserId service method.</param>
         /// 
@@ -2165,6 +2443,90 @@ namespace Amazon.BedrockAgentCore
         /// <returns>Returns a  StopCodeInterpreterSessionResult from BedrockAgentCore.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/StopCodeInterpreterSession">REST API Reference for StopCodeInterpreterSession Operation</seealso>
         StopCodeInterpreterSessionResponse EndStopCodeInterpreterSession(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  StopRuntimeSession
+
+
+        /// <summary>
+        /// Stops a session that is running in an running AgentCore Runtime agent.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopRuntimeSession service method.</param>
+        /// 
+        /// <returns>The response from the StopRuntimeSession service method, as returned by BedrockAgentCore.</returns>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.AccessDeniedException">
+        /// The exception that occurs when you do not have sufficient permissions to perform an
+        /// action. Verify that your IAM policy includes the necessary permissions for the operation
+        /// you are trying to perform.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ConflictException">
+        /// The exception that occurs when the request conflicts with the current state of the
+        /// resource. This can happen when trying to modify a resource that is currently being
+        /// modified by another request, or when trying to create a resource that already exists.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.InternalServerException">
+        /// The exception that occurs when the service encounters an unexpected internal error.
+        /// This is a temporary condition that will resolve itself with retries. We recommend
+        /// implementing exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ResourceNotFoundException">
+        /// The exception that occurs when the specified resource does not exist. This can happen
+        /// when using an invalid identifier or when trying to access a resource that has been
+        /// deleted.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.RuntimeClientErrorException">
+        /// The exception that occurs when there is an error in the runtime client. This can happen
+        /// due to network issues, invalid configuration, or other client-side problems. Check
+        /// the error message for specific details about the error.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ServiceQuotaExceededException">
+        /// The exception that occurs when the request would cause a service quota to be exceeded.
+        /// Review your service quotas and either reduce your request rate or request a quota
+        /// increase.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ThrottlingException">
+        /// The exception that occurs when the request was denied due to request throttling. This
+        /// happens when you exceed the allowed request rate for an operation. Reduce the frequency
+        /// of requests or implement exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.UnauthorizedException">
+        /// This exception is thrown when the JWT bearer token is invalid or not found for OAuth
+        /// bearer token based access
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ValidationException">
+        /// The exception that occurs when the input fails to satisfy the constraints specified
+        /// by the service. Check the error message for details about which input parameter is
+        /// invalid and correct your request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/StopRuntimeSession">REST API Reference for StopRuntimeSession Operation</seealso>
+        StopRuntimeSessionResponse StopRuntimeSession(StopRuntimeSessionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopRuntimeSession operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopRuntimeSession operation on AmazonBedrockAgentCoreClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStopRuntimeSession
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/StopRuntimeSession">REST API Reference for StopRuntimeSession Operation</seealso>
+        IAsyncResult BeginStopRuntimeSession(StopRuntimeSessionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StopRuntimeSession operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStopRuntimeSession.</param>
+        /// 
+        /// <returns>Returns a  StopRuntimeSessionResult from BedrockAgentCore.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/StopRuntimeSession">REST API Reference for StopRuntimeSession Operation</seealso>
+        StopRuntimeSessionResponse EndStopRuntimeSession(IAsyncResult asyncResult);
 
         #endregion
         

@@ -35,6 +35,7 @@ namespace Amazon.BedrockAgentCore.Model
     public partial class FilterInput
     {
         private BranchFilter _branch;
+        private List<EventMetadataFilterExpression> _eventMetadata = AWSConfigs.InitializeCollections ? new List<EventMetadataFilterExpression>() : null;
 
         /// <summary>
         /// Gets and sets the property Branch. 
@@ -52,6 +53,25 @@ namespace Amazon.BedrockAgentCore.Model
         internal bool IsSetBranch()
         {
             return this._branch != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EventMetadata. 
+        /// <para>
+        /// Event metadata filter criteria to apply when retrieving events.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=5)]
+        public List<EventMetadataFilterExpression> EventMetadata
+        {
+            get { return this._eventMetadata; }
+            set { this._eventMetadata = value; }
+        }
+
+        // Check to see if EventMetadata property is set
+        internal bool IsSetEventMetadata()
+        {
+            return this._eventMetadata != null && (this._eventMetadata.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

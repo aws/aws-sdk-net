@@ -85,7 +85,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// The unique identifier of the memory record.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=40, Max=40)]
+        [AWSProperty(Required=true, Min=40, Max=50)]
         public string MemoryRecordId
         {
             get { return this._memoryRecordId; }
@@ -123,7 +123,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// The namespaces associated with this memory record.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1)]
+        [AWSProperty(Required=true, Min=0, Max=1)]
         public List<string> Namespaces
         {
             get { return this._namespaces; }

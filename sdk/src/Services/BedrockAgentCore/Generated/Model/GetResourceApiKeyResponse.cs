@@ -39,7 +39,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property ApiKey. 
         /// <para>
-        /// The API Key associated with the resource requested.
+        /// The API key associated with the resource requested.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=1, Max=65536)]

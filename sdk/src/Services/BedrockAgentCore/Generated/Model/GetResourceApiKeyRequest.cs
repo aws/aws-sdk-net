@@ -31,7 +31,7 @@ namespace Amazon.BedrockAgentCore.Model
 {
     /// <summary>
     /// Container for the parameters to the GetResourceApiKey operation.
-    /// Retrieves an API Key associated with an API Key Credential Provider
+    /// Retrieves the API key associated with an API key credential provider.
     /// </summary>
     public partial class GetResourceApiKeyRequest : AmazonBedrockAgentCoreRequest
     {
@@ -41,7 +41,8 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property ResourceCredentialProviderName. 
         /// <para>
-        /// The credential provider name of the resource you are retrieving the API Key of.
+        /// The credential provider name for the resource from which you are retrieving the API
+        /// key.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -60,7 +61,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property WorkloadIdentityToken. 
         /// <para>
-        /// The identity token of the workload you want to get the API Key of.
+        /// The identity token of the workload from which you want to retrieve the API key.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=1, Max=131072)]
