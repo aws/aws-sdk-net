@@ -15,6 +15,7 @@
 using Amazon.Runtime.Internal.Util;
 using System;
 using System.Buffers;
+using System.Buffers.Binary;
 using System.Collections.Generic;
 using System.Formats.Cbor;
 using System.IO;
@@ -103,7 +104,6 @@ namespace Amazon.Extensions.CborProtocol.Internal
         private byte[] _buffer;
         private CborReader _internalCborReader;
         private int _currentChunkSize;
-        protected bool streamEnded = false;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="CborStreamReader"/> class that reads CBOR data
@@ -122,13 +122,10 @@ namespace Amazon.Extensions.CborProtocol.Internal
             _buffer = ArrayPool<byte>.Shared.Rent(AWSConfigs.CborReaderInitialBufferSize);
 
             _currentChunkSize = _stream.Read(_buffer, 0, _buffer.Length);
-            if (_currentChunkSize < _buffer.Length)
-            {
-                streamEnded = true;
-            }
+            var memorySlice = new ReadOnlyMemory<byte>(_buffer, 0, _currentChunkSize);
 
             // We must allow multiple root values because when refilling the new chunk is just a fragment of the whole stream.
-            _internalCborReader = new CborReader(_buffer.AsMemory(0, _currentChunkSize), allowMultipleRootLevelValues: true);
+            _internalCborReader = new CborReader(memorySlice, allowMultipleRootLevelValues: true);
         }
 
         /// <summary>
@@ -139,8 +136,6 @@ namespace Amazon.Extensions.CborProtocol.Internal
         /// <param name="bytesToSkip">Number of bytes to skip before reading new data (e.g., 1 to skip CBOR break byte 0xFF)</param>
         private void RefillBuffer(int bytesToSkip = 0)
         {
-            if (streamEnded && _internalCborReader.BytesRemaining == 0) return;
-
             int leftoverBytesCount = _internalCborReader.BytesRemaining;
 
             // Determine where the leftover bytes start
@@ -363,21 +358,16 @@ namespace Amazon.Extensions.CborProtocol.Internal
         {
             return ExecuteRead(r =>
             {
-                // Handle containers completion manually because CborReader.PeekState() can return Finished
-                // if it didn't read the beginning of the container in the current buffer chunk.
+                // Handle definite-length containers that silently complete
                 if (_nestingStack.Count > 0)
                 {
                     var frame = _nestingStack.Peek();
-                    if (frame.IsComplete || IsNextByteEndOfContainer())
+                    if (frame.IsComplete)
                     {
                         return frame.Type == CborContainerType.Map
                             ? CborReaderState.EndMap
                             : CborReaderState.EndArray;
                     }
-                }
-                else if (streamEnded && _internalCborReader.BytesRemaining == 0)
-                {
-                    return CborReaderState.Finished;
                 }
 
                 // We need to Peek twice in case the first time failed because we are near the end of the current chunk and we just need to refill.
@@ -435,81 +425,91 @@ namespace Amazon.Extensions.CborProtocol.Internal
             return result;
         }
 
-        private void EnsureBufferedEnoughForCurrentValue()
+        /// <summary>
+        /// Preemptively expands the buffer if the upcoming CBOR text or byte string
+        /// declares a length larger than the current buffer capacity.
+        ///
+        /// This reduces multiple incremental refills when reading large definite-length
+        /// CBOR strings by allocating enough space for the entire value in one step.
+        /// </summary>
+        private void ExpandBufferSizeForLargeStrings()
         {
-            if (_internalCborReader.BytesRemaining == 0)
+            var leftoverBytesCount = _internalCborReader.BytesRemaining;
+            var unreadOffset = _currentChunkSize - leftoverBytesCount;
+            var maxHeaderLength = 1 + 8; // initial byte + max 64-bit length
+
+            // Ensure we have enough bytes to read the declared length header
+            if (leftoverBytesCount < maxHeaderLength)
                 return;
 
-            int unreadOffset = _currentChunkSize - _internalCborReader.BytesRemaining;
-            byte initialByte = _buffer[unreadOffset];
-
-            int additionalInfo = initialByte & 0b0001_1111;
-
-            // Indefinite length — skip (no declared size)
-            if (additionalInfo == 31)
-                return;
+            // Extract the additional information field which determines how the length is encoded.
+            var additionalInfoMask = 0b0001_1111;
+            var additionalInfo = _buffer[unreadOffset] & additionalInfoMask;
 
             int declaredLength = 0;
-            int lengthBytes = 0;
 
+            // The bytes following the initial type/length header.
+            var valueSpan = _buffer.AsSpan(unreadOffset + 1);
+
+            // Decode the declared length according to CBOR major type encoding rules.
             if (additionalInfo < 24)
             {
-                declaredLength = additionalInfo;
+                declaredLength = additionalInfo; // Length directly encoded in the additionalInfo bits.
             }
             else if (additionalInfo == 24)
             {
-                lengthBytes = 1;
+                declaredLength = valueSpan[0];
             }
             else if (additionalInfo == 25)
             {
-                lengthBytes = 2;
+                declaredLength = BinaryPrimitives.ReadUInt16BigEndian(valueSpan);
             }
             else if (additionalInfo == 26)
             {
-                lengthBytes = 4;
+                declaredLength = (int)BinaryPrimitives.ReadUInt32BigEndian(valueSpan);
             }
             else if (additionalInfo == 27)
             {
-                lengthBytes = 8;
+                // If the declared length is encoded as a 64-bit integer (additionalInfo == 27),
+                // read it from the next 8 bytes in big-endian order. Most CBOR values in practice
+                // will never use this, as it allows strings or byte arrays larger than 4GB, which
+                // is extremely rare and usually not expected in typical SDK scenarios, but we are
+                // handling it for completeness.
+
+                ulong len64 = BinaryPrimitives.ReadUInt64BigEndian(valueSpan);
+                if (len64 > (ulong)int.MaxValue + (ulong)maxHeaderLength)
+                {
+                    // To pass this check, the declared length must be < (2,147,483,647 + maxHeaderLength).
+                    // Any declared length larger than this threshold is considered "unexpected" and we skip
+                    // preemptive expansion.
+
+                    _logger.DebugFormat("Skipping preemptive expansion: declared length {0} too large.", len64);
+                    return;
+                }
+                declaredLength = (int)len64;
             }
             else
             {
-                // Unsupported additional info (reserved)
+                // Indefinite-length item (31) or unsupported additional info.
+                // We cant precompute its total size, so skip expansion.
                 return;
             }
 
-            // If we need to read additional bytes for length, ensure we can peek them
-            if (lengthBytes > 0)
-            {
-                if (_internalCborReader.BytesRemaining <= lengthBytes)
-                    return;
-                // Parse the length from the header (big endian)
-                declaredLength = 0;
-                for (int i = 0; i < lengthBytes; i++)
-                {
-                    declaredLength = (declaredLength << 8) | _buffer[unreadOffset + 1 + i];
-                }
-            }
-            declaredLength += 16; // +16 for safety margin
+            // Add small safety margin to ensure we can read the full header + payload contiguously.
+            declaredLength += maxHeaderLength;
 
-
-            // Now ensure the full content fits
+            // If the declared value fits within the current buffer capacity, no expansion is needed.
             if (declaredLength <= _buffer.Length)
                 return;
 
-            int leftoverBytesCount = _internalCborReader.BytesRemaining;
-
-            // Determine where the leftover bytes start
-            int leftoverStartIndex = _currentChunkSize - leftoverBytesCount;
-
             var newBuffer = ArrayPool<byte>.Shared.Rent(declaredLength);
 
-            Buffer.BlockCopy(_buffer, leftoverStartIndex, newBuffer, 0, leftoverBytesCount);
+            Buffer.BlockCopy(_buffer, unreadOffset, newBuffer, 0, leftoverBytesCount);
             ArrayPool<byte>.Shared.Return(_buffer);
             _buffer = newBuffer;
 
             // Read from stream into buffer after leftovers
-            int bytesReadFromStream = _stream.Read(_buffer, leftoverBytesCount, _buffer.Length - leftoverBytesCount);
+            var bytesReadFromStream = _stream.Read(_buffer, leftoverBytesCount, _buffer.Length - leftoverBytesCount);
 
             // Update the total size of valid data in our buffer.
             _currentChunkSize = leftoverBytesCount + bytesReadFromStream;
@@ -517,11 +517,13 @@ namespace Amazon.Extensions.CborProtocol.Internal
             var newMemorySlice = new ReadOnlyMemory<byte>(_buffer, 0, _currentChunkSize);
             _internalCborReader.Reset(newMemorySlice);
 
-            _logger.DebugFormat("Buffer refilled: read {0} byte(s), total in buffer now: {1}.", bytesReadFromStream, _currentChunkSize);
+            _logger.DebugFormat(
+                "Preemptive buffer expansion for large CBOR value. Declared length: {0}, buffer resized to {1}.",
+                declaredLength, _buffer.Length);
         }
 
-        public string ReadTextString() => ExecuteValueRead(r => { EnsureBufferedEnoughForCurrentValue(); return r.ReadTextString(); });
-        public byte[] ReadByteString() => ExecuteValueRead(r => { EnsureBufferedEnoughForCurrentValue(); return r.ReadByteString(); });
+        public string ReadTextString() => ExecuteValueRead(r => { ExpandBufferSizeForLargeStrings(); return r.ReadTextString(); });
+        public byte[] ReadByteString() => ExecuteValueRead(r => { ExpandBufferSizeForLargeStrings(); return r.ReadByteString(); });
         public int ReadInt32() => ExecuteValueRead(r => r.ReadInt32());
         public long ReadInt64() => ExecuteValueRead(r => r.ReadInt64());
         public ulong ReadUInt64() => ExecuteValueRead(r => r.ReadUInt64());
