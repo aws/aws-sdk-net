@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MemoryDB.Model
 {
     /// <summary>
-    /// 
+    /// The cluster does not have sufficient capacity to perform the requested operation.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

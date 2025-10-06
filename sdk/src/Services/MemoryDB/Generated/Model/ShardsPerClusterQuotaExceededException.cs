@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MemoryDB.Model
 {
     /// <summary>
-    /// 
+    /// The request cannot be processed because it would exceed the maximum number of shards
+    /// allowed per cluster.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

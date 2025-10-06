@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MemoryDB.Model
 {
     /// <summary>
-    /// 
+    /// The specified service update does not exist.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
