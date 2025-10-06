@@ -40,7 +40,8 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property GlobalSettings. 
         /// <para>
-        /// The status of the flag <c>isCrossAccountBackupEnabled</c>.
+        /// The status of the flags <c>isCrossAccountBackupEnabled</c> and <c>isMpaEnabled</c>
+        /// ('Mpa' refers to multi-party approval).
         /// </para>
         /// </summary>
         public Dictionary<string, string> GlobalSettings

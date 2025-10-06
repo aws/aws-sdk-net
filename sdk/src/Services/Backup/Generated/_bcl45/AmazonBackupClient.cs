@@ -6433,6 +6433,11 @@ namespace Amazon.Backup
         /// <para>
         /// Does not support continuous backups.
         /// </para>
+        ///  
+        /// <para>
+        /// See <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/recov-point-create-a-copy.html#backup-copy-retry">Copy
+        /// job retry</a> for information on how Backup retries copy job operations.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartCopyJob service method.</param>
         /// 
@@ -6475,6 +6480,11 @@ namespace Amazon.Backup
         ///  
         /// <para>
         /// Does not support continuous backups.
+        /// </para>
+        ///  
+        /// <para>
+        /// See <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/recov-point-create-a-copy.html#backup-copy-retry">Copy
+        /// job retry</a> for information on how Backup retries copy job operations.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartCopyJob service method.</param>

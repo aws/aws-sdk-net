@@ -42,6 +42,7 @@ namespace Amazon.Backup.Model
         private string _creatorRequestId;
         private DateTime? _deletionDate;
         private DateTime? _lastExecutionDate;
+        private List<ScheduledPlanExecutionMember> _scheduledRunsPreview = AWSConfigs.InitializeCollections ? new List<ScheduledPlanExecutionMember>() : null;
         private string _versionId;
 
         /// <summary>
@@ -197,6 +198,26 @@ namespace Amazon.Backup.Model
         internal bool IsSetLastExecutionDate()
         {
             return this._lastExecutionDate.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ScheduledRunsPreview. 
+        /// <para>
+        /// List of upcoming scheduled backup runs. Only included when <c>MaxScheduledRunsPreview</c>
+        /// parameter is greater than 0. Contains up to 10 future backup executions with their
+        /// scheduled times, execution types, and associated rule IDs.
+        /// </para>
+        /// </summary>
+        public List<ScheduledPlanExecutionMember> ScheduledRunsPreview
+        {
+            get { return this._scheduledRunsPreview; }
+            set { this._scheduledRunsPreview = value; }
+        }
+
+        // Check to see if ScheduledRunsPreview property is set
+        internal bool IsSetScheduledRunsPreview()
+        {
+            return this._scheduledRunsPreview != null && (this._scheduledRunsPreview.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
