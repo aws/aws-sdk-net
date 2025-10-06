@@ -1917,12 +1917,15 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
+        /// Valid for Cluster Type: Multi-AZ DB clusters only
+        /// </para>
+        ///  
+        /// <para>
         /// When the DB cluster is publicly accessible and you connect from outside of the DB
-        /// cluster's virtual private cloud (VPC), its Domain Name System (DNS) endpoint resolves
+        /// cluster's virtual private cloud (VPC), its domain name system (DNS) endpoint resolves
         /// to the public IP address. When you connect from within the same VPC as the DB cluster,
-        /// the endpoint resolves to the private IP address. Access to the DB cluster is ultimately
-        /// controlled by the security group it uses. That public access isn't permitted if the
-        /// security group assigned to the DB cluster doesn't permit it.
+        /// the endpoint resolves to the private IP address. Access to the DB cluster is controlled
+        /// by its security group settings.
         /// </para>
         ///  
         /// <para>
@@ -1931,44 +1934,24 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid for Cluster Type: Multi-AZ DB clusters only
+        /// The default behavior when <c>PubliclyAccessible</c> is not specified depends on whether
+        /// a <c>DBSubnetGroup</c> is specified.
         /// </para>
         ///  
         /// <para>
-        /// Default: The default behavior varies depending on whether <c>DBSubnetGroupName</c>
-        /// is specified.
+        /// If <c>DBSubnetGroup</c> isn't specified, <c>PubliclyAccessible</c> defaults to <c>true</c>.
         /// </para>
         ///  
         /// <para>
-        /// If <c>DBSubnetGroupName</c> isn't specified, and <c>PubliclyAccessible</c> isn't specified,
-        /// the following applies:
+        /// If <c>DBSubnetGroup</c> is specified, <c>PubliclyAccessible</c> defaults to <c>false</c>
+        /// unless the value of <c>DBSubnetGroup</c> is <c>default</c>, in which case <c>PubliclyAccessible</c>
+        /// defaults to <c>true</c>.
         /// </para>
-        ///  <ul> <li> 
+        ///  
         /// <para>
-        /// If the default VPC in the target Region doesn’t have an internet gateway attached
-        /// to it, the DB cluster is private.
+        /// If <c>PubliclyAccessible</c> is true and the VPC that the <c>DBSubnetGroup</c> is
+        /// in doesn't have an internet gateway attached to it, Amazon RDS returns an error.
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// If the default VPC in the target Region has an internet gateway attached to it, the
-        /// DB cluster is public.
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// If <c>DBSubnetGroupName</c> is specified, and <c>PubliclyAccessible</c> isn't specified,
-        /// the following applies:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// If the subnets are part of a VPC that doesn’t have an internet gateway attached to
-        /// it, the DB cluster is private.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// If the subnets are part of a VPC that has an internet gateway attached to it, the
-        /// DB cluster is public.
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         public bool? PubliclyAccessible
         {
