@@ -34,17 +34,11 @@ namespace Amazon.QuickSight.Model
     /// <important> 
     /// <para>
     /// This API permanently deletes all QuickSight customizations for the specified Amazon
-    /// Web Services account and namespace in this Amazon Web Services Region. When you delete
-    /// account customizations:
+    /// Web Services account and namespace. When you delete account customizations:
     /// </para>
     ///  <ul> <li> 
     /// <para>
     /// All customizations are removed including themes, branding, and visual settings
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// The deletion affects only the specified Amazon Web Services Region - customizations
-    /// in other regions remain unchanged
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -61,8 +55,8 @@ namespace Amazon.QuickSight.Model
     /// </para>
     ///  </important> 
     /// <para>
-    /// Deletes all Amazon QuickSight customizations in this Amazon Web Services Region for
-    /// the specified Amazon Web Services account and QuickSight namespace.
+    /// Deletes all Amazon QuickSight customizations for the specified Amazon Web Services
+    /// account and QuickSight namespace.
     /// </para>
     /// </summary>
     public partial class DeleteAccountCustomizationRequest : AmazonQuickSightRequest
@@ -74,7 +68,7 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property AwsAccountId. 
         /// <para>
         /// The ID for the Amazon Web Services account that you want to delete QuickSight customizations
-        /// from in this Amazon Web Services Region.
+        /// from.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]
