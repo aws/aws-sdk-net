@@ -31,7 +31,7 @@ namespace Amazon.BedrockAgentCore.Model
 {
     /// <summary>
     /// Container for the parameters to the GetResourceOauth2Token operation.
-    /// Returns the OAuth 2.0 token of the provided resource
+    /// Returns the OAuth 2.0 token of the provided resource.
     /// </summary>
     public partial class GetResourceOauth2TokenRequest : AmazonBedrockAgentCoreRequest
     {
@@ -46,8 +46,9 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property CustomParameters. 
         /// <para>
-        /// Gives the ability to send extra/custom parameters to the resource credentials provider
-        /// during the authorization process. Standard OAuth2 flow parameters will not be overriden.
+        /// A map of custom parameters to include in the authorization request to the resource
+        /// credential provider. These parameters are in addition to the standard OAuth 2.0 flow
+        /// parameters, and will not override them.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -70,7 +71,8 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property ForceAuthentication. 
         /// <para>
-        /// If true, always initiate a new 3LO flow
+        /// Indicates whether to always initiate a new three-legged OAuth (3LO) flow, regardless
+        /// of any existing session.
         /// </para>
         /// </summary>
         public bool? ForceAuthentication
@@ -88,7 +90,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property Oauth2Flow. 
         /// <para>
-        /// The type of flow to be performed
+        /// The type of flow to be performed.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -107,7 +109,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property ResourceCredentialProviderName. 
         /// <para>
-        /// Reference to the credential provider
+        /// The name of the resource's credential provider.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -126,8 +128,8 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property ResourceOauth2ReturnUrl. 
         /// <para>
-        /// Callback url to redirect after token retrieval completes. Should be one of the provideded
-        /// urls during WorkloadIdentity creation
+        /// The callback URL to redirect to after the OAuth 2.0 token retrieval is complete. This
+        /// URL must be one of the provided URLs configured for the workload identity.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
@@ -146,7 +148,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property Scopes. 
         /// <para>
-        /// The OAuth scopes requested
+        /// The OAuth scopes being requested.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -170,7 +172,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property WorkloadIdentityToken. 
         /// <para>
-        /// The identity token of the workload you want to retrive the Oauth2 Token of.
+        /// The identity token of the workload from which you want to retrieve the OAuth2 token.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=1, Max=131072)]

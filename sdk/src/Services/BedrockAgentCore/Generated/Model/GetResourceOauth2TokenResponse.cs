@@ -40,7 +40,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property AccessToken. 
         /// <para>
-        /// OAuth2 token ready for use
+        /// The OAuth 2.0 access token to use.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=131072)]
@@ -59,8 +59,8 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property AuthorizationUrl. 
         /// <para>
-        /// The URL for the authorization process, provided if the Access token requires user
-        /// Authorization.
+        /// The URL to initiate the authorization process, provided when the access token requires
+        /// user authorization.
         /// </para>
         /// </summary>
         public string AuthorizationUrl
