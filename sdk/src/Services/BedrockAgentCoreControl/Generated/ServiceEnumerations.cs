@@ -1263,6 +1263,10 @@ namespace Amazon.BedrockAgentCoreControl
     {
 
         /// <summary>
+        /// Constant A2A for ServerProtocol
+        /// </summary>
+        public static readonly ServerProtocol A2A = new ServerProtocol("A2A");
+        /// <summary>
         /// Constant HTTP for ServerProtocol
         /// </summary>
         public static readonly ServerProtocol HTTP = new ServerProtocol("HTTP");
