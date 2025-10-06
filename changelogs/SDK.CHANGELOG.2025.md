@@ -1,3 +1,23 @@
+### 3.7.1138.0 (2025-10-06 19:29 UTC)
+* Backup (3.7.502.0)
+	* Adds optional MaxScheduledRunsPreview input to GetBackupPlan API to provide a preview of up to 10 next scheduled backup plan runs in the GetBackupPlan response.
+* BedrockAgentCore (3.7.503.0)
+	* Add support for batch memory management, agent card retrieval and session termination
+* BedrockAgentCoreControl (3.7.504.0)
+	* Add support for VM lifecycle configuration parameters and A2A protocol
+* Glue (3.7.507.0)
+	* Adds labeling for DataQualityRuleResult for GetDataQualityResult and PublishDataQualityResult APIs
+* MediaConnect (3.7.502.0)
+	* Enabling Tag-on-Create for AWS Elemental MediaConnect flow-based resource types
+* MemoryDB (3.7.502.0)
+	* Support for DescribeMultiRegionParameterGroups and DescribeMultiRegionParameters API.
+* QuickSight (3.7.503.10)
+	* Documentation improvements for QuickSight API documentation to clarify that delete operation APIs are global.
+* RDS (3.7.506.1)
+	* Documentation updates to the CreateDBClusterMessage$PubliclyAccessible and CreateDBInstanceMessage$PubliclyAccessible properties.
+* ResourceExplorer2 (3.7.502.0)
+	* Add new AWS Resource Explorer APIs
+
 ### 3.7.1137.0 (2025-10-03 18:26 UTC)
 * CleanRooms (3.7.507.0)
 	* Added support for reading data sources across regions, and results delivery to allowedlisted regions.
