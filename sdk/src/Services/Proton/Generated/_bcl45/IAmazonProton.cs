@@ -320,6 +320,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/AcceptEnvironmentAccountConnection">REST API Reference for AcceptEnvironmentAccountConnection Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         AcceptEnvironmentAccountConnectionResponse AcceptEnvironmentAccountConnection(AcceptEnvironmentAccountConnectionRequest request);
 
 
@@ -361,6 +362,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/AcceptEnvironmentAccountConnection">REST API Reference for AcceptEnvironmentAccountConnection Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         Task<AcceptEnvironmentAccountConnectionResponse> AcceptEnvironmentAccountConnectionAsync(AcceptEnvironmentAccountConnectionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -400,6 +402,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CancelComponentDeployment">REST API Reference for CancelComponentDeployment Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         CancelComponentDeploymentResponse CancelComponentDeployment(CancelComponentDeploymentRequest request);
 
 
@@ -439,6 +442,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CancelComponentDeployment">REST API Reference for CancelComponentDeployment Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         Task<CancelComponentDeploymentResponse> CancelComponentDeploymentAsync(CancelComponentDeploymentRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -493,6 +497,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CancelEnvironmentDeployment">REST API Reference for CancelEnvironmentDeployment Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         CancelEnvironmentDeploymentResponse CancelEnvironmentDeployment(CancelEnvironmentDeploymentRequest request);
 
 
@@ -547,6 +552,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CancelEnvironmentDeployment">REST API Reference for CancelEnvironmentDeployment Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         Task<CancelEnvironmentDeploymentResponse> CancelEnvironmentDeploymentAsync(CancelEnvironmentDeploymentRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -601,6 +607,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CancelServiceInstanceDeployment">REST API Reference for CancelServiceInstanceDeployment Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         CancelServiceInstanceDeploymentResponse CancelServiceInstanceDeployment(CancelServiceInstanceDeploymentRequest request);
 
 
@@ -655,6 +662,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CancelServiceInstanceDeployment">REST API Reference for CancelServiceInstanceDeployment Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         Task<CancelServiceInstanceDeploymentResponse> CancelServiceInstanceDeploymentAsync(CancelServiceInstanceDeploymentRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -709,6 +717,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CancelServicePipelineDeployment">REST API Reference for CancelServicePipelineDeployment Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         CancelServicePipelineDeploymentResponse CancelServicePipelineDeployment(CancelServicePipelineDeploymentRequest request);
 
 
@@ -763,6 +772,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CancelServicePipelineDeployment">REST API Reference for CancelServicePipelineDeployment Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         Task<CancelServicePipelineDeploymentResponse> CancelServicePipelineDeploymentAsync(CancelServicePipelineDeploymentRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -806,6 +816,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateComponent">REST API Reference for CreateComponent Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         CreateComponentResponse CreateComponent(CreateComponentRequest request);
 
 
@@ -849,6 +860,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateComponent">REST API Reference for CreateComponent Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         Task<CreateComponentResponse> CreateComponentAsync(CreateComponentRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -908,6 +920,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateEnvironment">REST API Reference for CreateEnvironment Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         CreateEnvironmentResponse CreateEnvironment(CreateEnvironmentRequest request);
 
 
@@ -967,6 +980,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateEnvironment">REST API Reference for CreateEnvironment Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         Task<CreateEnvironmentResponse> CreateEnvironmentAsync(CreateEnvironmentRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1010,6 +1024,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateEnvironmentAccountConnection">REST API Reference for CreateEnvironmentAccountConnection Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         CreateEnvironmentAccountConnectionResponse CreateEnvironmentAccountConnection(CreateEnvironmentAccountConnectionRequest request);
 
 
@@ -1053,6 +1068,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateEnvironmentAccountConnection">REST API Reference for CreateEnvironmentAccountConnection Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         Task<CreateEnvironmentAccountConnectionResponse> CreateEnvironmentAccountConnectionAsync(CreateEnvironmentAccountConnectionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1108,6 +1124,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateEnvironmentTemplate">REST API Reference for CreateEnvironmentTemplate Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         CreateEnvironmentTemplateResponse CreateEnvironmentTemplate(CreateEnvironmentTemplateRequest request);
 
 
@@ -1163,6 +1180,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateEnvironmentTemplate">REST API Reference for CreateEnvironmentTemplate Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         Task<CreateEnvironmentTemplateResponse> CreateEnvironmentTemplateAsync(CreateEnvironmentTemplateRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1202,6 +1220,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateEnvironmentTemplateVersion">REST API Reference for CreateEnvironmentTemplateVersion Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         CreateEnvironmentTemplateVersionResponse CreateEnvironmentTemplateVersion(CreateEnvironmentTemplateVersionRequest request);
 
 
@@ -1241,6 +1260,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateEnvironmentTemplateVersion">REST API Reference for CreateEnvironmentTemplateVersion Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         Task<CreateEnvironmentTemplateVersionResponse> CreateEnvironmentTemplateVersionAsync(CreateEnvironmentTemplateVersionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1287,6 +1307,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateRepository">REST API Reference for CreateRepository Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         CreateRepositoryResponse CreateRepository(CreateRepositoryRequest request);
 
 
@@ -1333,6 +1354,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateRepository">REST API Reference for CreateRepository Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         Task<CreateRepositoryResponse> CreateRepositoryAsync(CreateRepositoryRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1372,6 +1394,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateService">REST API Reference for CreateService Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         CreateServiceResponse CreateService(CreateServiceRequest request);
 
 
@@ -1411,6 +1434,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateService">REST API Reference for CreateService Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         Task<CreateServiceResponse> CreateServiceAsync(CreateServiceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1443,6 +1467,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateServiceInstance">REST API Reference for CreateServiceInstance Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         CreateServiceInstanceResponse CreateServiceInstance(CreateServiceInstanceRequest request);
 
 
@@ -1475,6 +1500,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateServiceInstance">REST API Reference for CreateServiceInstance Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         Task<CreateServiceInstanceResponse> CreateServiceInstanceAsync(CreateServiceInstanceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1508,6 +1534,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateServiceSyncConfig">REST API Reference for CreateServiceSyncConfig Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         CreateServiceSyncConfigResponse CreateServiceSyncConfig(CreateServiceSyncConfigRequest request);
 
 
@@ -1541,6 +1568,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateServiceSyncConfig">REST API Reference for CreateServiceSyncConfig Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         Task<CreateServiceSyncConfigResponse> CreateServiceSyncConfigAsync(CreateServiceSyncConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1580,6 +1608,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateServiceTemplate">REST API Reference for CreateServiceTemplate Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         CreateServiceTemplateResponse CreateServiceTemplate(CreateServiceTemplateRequest request);
 
 
@@ -1619,6 +1648,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateServiceTemplate">REST API Reference for CreateServiceTemplate Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         Task<CreateServiceTemplateResponse> CreateServiceTemplateAsync(CreateServiceTemplateRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1657,6 +1687,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateServiceTemplateVersion">REST API Reference for CreateServiceTemplateVersion Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         CreateServiceTemplateVersionResponse CreateServiceTemplateVersion(CreateServiceTemplateVersionRequest request);
 
 
@@ -1695,6 +1726,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateServiceTemplateVersion">REST API Reference for CreateServiceTemplateVersion Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         Task<CreateServiceTemplateVersionResponse> CreateServiceTemplateVersionAsync(CreateServiceTemplateVersionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1739,6 +1771,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateTemplateSyncConfig">REST API Reference for CreateTemplateSyncConfig Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         CreateTemplateSyncConfigResponse CreateTemplateSyncConfig(CreateTemplateSyncConfigRequest request);
 
 
@@ -1783,6 +1816,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateTemplateSyncConfig">REST API Reference for CreateTemplateSyncConfig Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         Task<CreateTemplateSyncConfigResponse> CreateTemplateSyncConfigAsync(CreateTemplateSyncConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1821,6 +1855,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteComponent">REST API Reference for DeleteComponent Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         DeleteComponentResponse DeleteComponent(DeleteComponentRequest request);
 
 
@@ -1859,6 +1894,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteComponent">REST API Reference for DeleteComponent Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         Task<DeleteComponentResponse> DeleteComponentAsync(DeleteComponentRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1888,6 +1924,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteDeployment">REST API Reference for DeleteDeployment Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         DeleteDeploymentResponse DeleteDeployment(DeleteDeploymentRequest request);
 
 
@@ -1917,6 +1954,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteDeployment">REST API Reference for DeleteDeployment Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         Task<DeleteDeploymentResponse> DeleteDeploymentAsync(DeleteDeploymentRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1949,6 +1987,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteEnvironment">REST API Reference for DeleteEnvironment Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         DeleteEnvironmentResponse DeleteEnvironment(DeleteEnvironmentRequest request);
 
 
@@ -1981,6 +2020,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteEnvironment">REST API Reference for DeleteEnvironment Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         Task<DeleteEnvironmentResponse> DeleteEnvironmentAsync(DeleteEnvironmentRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2027,6 +2067,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteEnvironmentAccountConnection">REST API Reference for DeleteEnvironmentAccountConnection Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         DeleteEnvironmentAccountConnectionResponse DeleteEnvironmentAccountConnection(DeleteEnvironmentAccountConnectionRequest request);
 
 
@@ -2073,6 +2114,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteEnvironmentAccountConnection">REST API Reference for DeleteEnvironmentAccountConnection Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         Task<DeleteEnvironmentAccountConnectionResponse> DeleteEnvironmentAccountConnectionAsync(DeleteEnvironmentAccountConnectionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2106,6 +2148,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteEnvironmentTemplate">REST API Reference for DeleteEnvironmentTemplate Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         DeleteEnvironmentTemplateResponse DeleteEnvironmentTemplate(DeleteEnvironmentTemplateRequest request);
 
 
@@ -2139,6 +2182,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteEnvironmentTemplate">REST API Reference for DeleteEnvironmentTemplate Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         Task<DeleteEnvironmentTemplateResponse> DeleteEnvironmentTemplateAsync(DeleteEnvironmentTemplateRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2183,6 +2227,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteEnvironmentTemplateVersion">REST API Reference for DeleteEnvironmentTemplateVersion Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         DeleteEnvironmentTemplateVersionResponse DeleteEnvironmentTemplateVersion(DeleteEnvironmentTemplateVersionRequest request);
 
 
@@ -2227,6 +2272,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteEnvironmentTemplateVersion">REST API Reference for DeleteEnvironmentTemplateVersion Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         Task<DeleteEnvironmentTemplateVersionResponse> DeleteEnvironmentTemplateVersionAsync(DeleteEnvironmentTemplateVersionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2259,6 +2305,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteRepository">REST API Reference for DeleteRepository Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         DeleteRepositoryResponse DeleteRepository(DeleteRepositoryRequest request);
 
 
@@ -2291,6 +2338,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteRepository">REST API Reference for DeleteRepository Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         Task<DeleteRepositoryResponse> DeleteRepositoryAsync(DeleteRepositoryRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2335,6 +2383,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteService">REST API Reference for DeleteService Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         DeleteServiceResponse DeleteService(DeleteServiceRequest request);
 
 
@@ -2379,6 +2428,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteService">REST API Reference for DeleteService Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         Task<DeleteServiceResponse> DeleteServiceAsync(DeleteServiceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2411,6 +2461,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteServiceSyncConfig">REST API Reference for DeleteServiceSyncConfig Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         DeleteServiceSyncConfigResponse DeleteServiceSyncConfig(DeleteServiceSyncConfigRequest request);
 
 
@@ -2443,6 +2494,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteServiceSyncConfig">REST API Reference for DeleteServiceSyncConfig Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         Task<DeleteServiceSyncConfigResponse> DeleteServiceSyncConfigAsync(DeleteServiceSyncConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2476,6 +2528,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteServiceTemplate">REST API Reference for DeleteServiceTemplate Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         DeleteServiceTemplateResponse DeleteServiceTemplate(DeleteServiceTemplateRequest request);
 
 
@@ -2509,6 +2562,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteServiceTemplate">REST API Reference for DeleteServiceTemplate Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         Task<DeleteServiceTemplateResponse> DeleteServiceTemplateAsync(DeleteServiceTemplateRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2553,6 +2607,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteServiceTemplateVersion">REST API Reference for DeleteServiceTemplateVersion Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         DeleteServiceTemplateVersionResponse DeleteServiceTemplateVersion(DeleteServiceTemplateVersionRequest request);
 
 
@@ -2597,6 +2652,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteServiceTemplateVersion">REST API Reference for DeleteServiceTemplateVersion Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         Task<DeleteServiceTemplateVersionResponse> DeleteServiceTemplateVersionAsync(DeleteServiceTemplateVersionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2629,6 +2685,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteTemplateSyncConfig">REST API Reference for DeleteTemplateSyncConfig Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         DeleteTemplateSyncConfigResponse DeleteTemplateSyncConfig(DeleteTemplateSyncConfigRequest request);
 
 
@@ -2661,6 +2718,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteTemplateSyncConfig">REST API Reference for DeleteTemplateSyncConfig Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         Task<DeleteTemplateSyncConfigResponse> DeleteTemplateSyncConfigAsync(DeleteTemplateSyncConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2690,6 +2748,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetAccountSettings">REST API Reference for GetAccountSettings Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         GetAccountSettingsResponse GetAccountSettings(GetAccountSettingsRequest request);
 
 
@@ -2719,6 +2778,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetAccountSettings">REST API Reference for GetAccountSettings Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         Task<GetAccountSettingsResponse> GetAccountSettingsAsync(GetAccountSettingsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2754,6 +2814,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetComponent">REST API Reference for GetComponent Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         GetComponentResponse GetComponent(GetComponentRequest request);
 
 
@@ -2789,6 +2850,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetComponent">REST API Reference for GetComponent Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         Task<GetComponentResponse> GetComponentAsync(GetComponentRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2818,6 +2880,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetDeployment">REST API Reference for GetDeployment Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         GetDeploymentResponse GetDeployment(GetDeploymentRequest request);
 
 
@@ -2847,6 +2910,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetDeployment">REST API Reference for GetDeployment Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         Task<GetDeploymentResponse> GetDeploymentAsync(GetDeploymentRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2876,6 +2940,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetEnvironment">REST API Reference for GetEnvironment Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         GetEnvironmentResponse GetEnvironment(GetEnvironmentRequest request);
 
 
@@ -2905,6 +2970,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetEnvironment">REST API Reference for GetEnvironment Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         Task<GetEnvironmentResponse> GetEnvironmentAsync(GetEnvironmentRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2940,6 +3006,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetEnvironmentAccountConnection">REST API Reference for GetEnvironmentAccountConnection Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         GetEnvironmentAccountConnectionResponse GetEnvironmentAccountConnection(GetEnvironmentAccountConnectionRequest request);
 
 
@@ -2975,6 +3042,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetEnvironmentAccountConnection">REST API Reference for GetEnvironmentAccountConnection Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         Task<GetEnvironmentAccountConnectionResponse> GetEnvironmentAccountConnectionAsync(GetEnvironmentAccountConnectionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3004,6 +3072,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetEnvironmentTemplate">REST API Reference for GetEnvironmentTemplate Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         GetEnvironmentTemplateResponse GetEnvironmentTemplate(GetEnvironmentTemplateRequest request);
 
 
@@ -3033,6 +3102,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetEnvironmentTemplate">REST API Reference for GetEnvironmentTemplate Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         Task<GetEnvironmentTemplateResponse> GetEnvironmentTemplateAsync(GetEnvironmentTemplateRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3062,6 +3132,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetEnvironmentTemplateVersion">REST API Reference for GetEnvironmentTemplateVersion Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         GetEnvironmentTemplateVersionResponse GetEnvironmentTemplateVersion(GetEnvironmentTemplateVersionRequest request);
 
 
@@ -3091,6 +3162,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetEnvironmentTemplateVersion">REST API Reference for GetEnvironmentTemplateVersion Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         Task<GetEnvironmentTemplateVersionResponse> GetEnvironmentTemplateVersionAsync(GetEnvironmentTemplateVersionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3120,6 +3192,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetRepository">REST API Reference for GetRepository Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         GetRepositoryResponse GetRepository(GetRepositoryRequest request);
 
 
@@ -3149,6 +3222,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetRepository">REST API Reference for GetRepository Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         Task<GetRepositoryResponse> GetRepositoryAsync(GetRepositoryRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3193,6 +3267,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetRepositorySyncStatus">REST API Reference for GetRepositorySyncStatus Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         GetRepositorySyncStatusResponse GetRepositorySyncStatus(GetRepositorySyncStatusRequest request);
 
 
@@ -3237,6 +3312,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetRepositorySyncStatus">REST API Reference for GetRepositorySyncStatus Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         Task<GetRepositorySyncStatusResponse> GetRepositorySyncStatusAsync(GetRepositorySyncStatusRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3289,6 +3365,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetResourcesSummary">REST API Reference for GetResourcesSummary Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         GetResourcesSummaryResponse GetResourcesSummary(GetResourcesSummaryRequest request);
 
 
@@ -3341,6 +3418,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetResourcesSummary">REST API Reference for GetResourcesSummary Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         Task<GetResourcesSummaryResponse> GetResourcesSummaryAsync(GetResourcesSummaryRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3370,6 +3448,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetService">REST API Reference for GetService Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         GetServiceResponse GetService(GetServiceRequest request);
 
 
@@ -3399,6 +3478,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetService">REST API Reference for GetService Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         Task<GetServiceResponse> GetServiceAsync(GetServiceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3429,6 +3509,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetServiceInstance">REST API Reference for GetServiceInstance Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         GetServiceInstanceResponse GetServiceInstance(GetServiceInstanceRequest request);
 
 
@@ -3459,6 +3540,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetServiceInstance">REST API Reference for GetServiceInstance Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         Task<GetServiceInstanceResponse> GetServiceInstanceAsync(GetServiceInstanceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3488,6 +3570,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetServiceInstanceSyncStatus">REST API Reference for GetServiceInstanceSyncStatus Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         GetServiceInstanceSyncStatusResponse GetServiceInstanceSyncStatus(GetServiceInstanceSyncStatusRequest request);
 
 
@@ -3517,6 +3600,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetServiceInstanceSyncStatus">REST API Reference for GetServiceInstanceSyncStatus Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         Task<GetServiceInstanceSyncStatusResponse> GetServiceInstanceSyncStatusAsync(GetServiceInstanceSyncStatusRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3546,6 +3630,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetServiceSyncBlockerSummary">REST API Reference for GetServiceSyncBlockerSummary Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         GetServiceSyncBlockerSummaryResponse GetServiceSyncBlockerSummary(GetServiceSyncBlockerSummaryRequest request);
 
 
@@ -3575,6 +3660,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetServiceSyncBlockerSummary">REST API Reference for GetServiceSyncBlockerSummary Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         Task<GetServiceSyncBlockerSummaryResponse> GetServiceSyncBlockerSummaryAsync(GetServiceSyncBlockerSummaryRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3604,6 +3690,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetServiceSyncConfig">REST API Reference for GetServiceSyncConfig Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         GetServiceSyncConfigResponse GetServiceSyncConfig(GetServiceSyncConfigRequest request);
 
 
@@ -3633,6 +3720,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetServiceSyncConfig">REST API Reference for GetServiceSyncConfig Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         Task<GetServiceSyncConfigResponse> GetServiceSyncConfigAsync(GetServiceSyncConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3662,6 +3750,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetServiceTemplate">REST API Reference for GetServiceTemplate Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         GetServiceTemplateResponse GetServiceTemplate(GetServiceTemplateRequest request);
 
 
@@ -3691,6 +3780,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetServiceTemplate">REST API Reference for GetServiceTemplate Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         Task<GetServiceTemplateResponse> GetServiceTemplateAsync(GetServiceTemplateRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3720,6 +3810,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetServiceTemplateVersion">REST API Reference for GetServiceTemplateVersion Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         GetServiceTemplateVersionResponse GetServiceTemplateVersion(GetServiceTemplateVersionRequest request);
 
 
@@ -3749,6 +3840,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetServiceTemplateVersion">REST API Reference for GetServiceTemplateVersion Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         Task<GetServiceTemplateVersionResponse> GetServiceTemplateVersionAsync(GetServiceTemplateVersionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3778,6 +3870,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetTemplateSyncConfig">REST API Reference for GetTemplateSyncConfig Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         GetTemplateSyncConfigResponse GetTemplateSyncConfig(GetTemplateSyncConfigRequest request);
 
 
@@ -3807,6 +3900,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetTemplateSyncConfig">REST API Reference for GetTemplateSyncConfig Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         Task<GetTemplateSyncConfigResponse> GetTemplateSyncConfigAsync(GetTemplateSyncConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3836,6 +3930,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetTemplateSyncStatus">REST API Reference for GetTemplateSyncStatus Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         GetTemplateSyncStatusResponse GetTemplateSyncStatus(GetTemplateSyncStatusRequest request);
 
 
@@ -3865,6 +3960,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetTemplateSyncStatus">REST API Reference for GetTemplateSyncStatus Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         Task<GetTemplateSyncStatusResponse> GetTemplateSyncStatusAsync(GetTemplateSyncStatusRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3900,6 +3996,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListComponentOutputs">REST API Reference for ListComponentOutputs Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         ListComponentOutputsResponse ListComponentOutputs(ListComponentOutputsRequest request);
 
 
@@ -3935,6 +4032,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListComponentOutputs">REST API Reference for ListComponentOutputs Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         Task<ListComponentOutputsResponse> ListComponentOutputsAsync(ListComponentOutputsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3970,6 +4068,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListComponentProvisionedResources">REST API Reference for ListComponentProvisionedResources Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         ListComponentProvisionedResourcesResponse ListComponentProvisionedResources(ListComponentProvisionedResourcesRequest request);
 
 
@@ -4005,6 +4104,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListComponentProvisionedResources">REST API Reference for ListComponentProvisionedResources Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         Task<ListComponentProvisionedResourcesResponse> ListComponentProvisionedResourcesAsync(ListComponentProvisionedResourcesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -4038,6 +4138,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListComponents">REST API Reference for ListComponents Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         ListComponentsResponse ListComponents(ListComponentsRequest request);
 
 
@@ -4071,6 +4172,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListComponents">REST API Reference for ListComponents Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         Task<ListComponentsResponse> ListComponentsAsync(ListComponentsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -4101,6 +4203,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListDeployments">REST API Reference for ListDeployments Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         ListDeploymentsResponse ListDeployments(ListDeploymentsRequest request);
 
 
@@ -4131,6 +4234,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListDeployments">REST API Reference for ListDeployments Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         Task<ListDeploymentsResponse> ListDeploymentsAsync(ListDeploymentsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -4163,6 +4267,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListEnvironmentAccountConnections">REST API Reference for ListEnvironmentAccountConnections Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         ListEnvironmentAccountConnectionsResponse ListEnvironmentAccountConnections(ListEnvironmentAccountConnectionsRequest request);
 
 
@@ -4195,6 +4300,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListEnvironmentAccountConnections">REST API Reference for ListEnvironmentAccountConnections Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         Task<ListEnvironmentAccountConnectionsResponse> ListEnvironmentAccountConnectionsAsync(ListEnvironmentAccountConnectionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -4224,6 +4330,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListEnvironmentOutputs">REST API Reference for ListEnvironmentOutputs Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         ListEnvironmentOutputsResponse ListEnvironmentOutputs(ListEnvironmentOutputsRequest request);
 
 
@@ -4253,6 +4360,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListEnvironmentOutputs">REST API Reference for ListEnvironmentOutputs Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         Task<ListEnvironmentOutputsResponse> ListEnvironmentOutputsAsync(ListEnvironmentOutputsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -4282,6 +4390,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListEnvironmentProvisionedResources">REST API Reference for ListEnvironmentProvisionedResources Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         ListEnvironmentProvisionedResourcesResponse ListEnvironmentProvisionedResources(ListEnvironmentProvisionedResourcesRequest request);
 
 
@@ -4311,6 +4420,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListEnvironmentProvisionedResources">REST API Reference for ListEnvironmentProvisionedResources Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         Task<ListEnvironmentProvisionedResourcesResponse> ListEnvironmentProvisionedResourcesAsync(ListEnvironmentProvisionedResourcesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -4340,6 +4450,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListEnvironments">REST API Reference for ListEnvironments Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         ListEnvironmentsResponse ListEnvironments(ListEnvironmentsRequest request);
 
 
@@ -4369,6 +4480,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListEnvironments">REST API Reference for ListEnvironments Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         Task<ListEnvironmentsResponse> ListEnvironmentsAsync(ListEnvironmentsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -4395,6 +4507,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListEnvironmentTemplates">REST API Reference for ListEnvironmentTemplates Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         ListEnvironmentTemplatesResponse ListEnvironmentTemplates(ListEnvironmentTemplatesRequest request);
 
 
@@ -4421,6 +4534,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListEnvironmentTemplates">REST API Reference for ListEnvironmentTemplates Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         Task<ListEnvironmentTemplatesResponse> ListEnvironmentTemplatesAsync(ListEnvironmentTemplatesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -4450,6 +4564,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListEnvironmentTemplateVersions">REST API Reference for ListEnvironmentTemplateVersions Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         ListEnvironmentTemplateVersionsResponse ListEnvironmentTemplateVersions(ListEnvironmentTemplateVersionsRequest request);
 
 
@@ -4479,6 +4594,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListEnvironmentTemplateVersions">REST API Reference for ListEnvironmentTemplateVersions Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         Task<ListEnvironmentTemplateVersionsResponse> ListEnvironmentTemplateVersionsAsync(ListEnvironmentTemplateVersionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -4508,6 +4624,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListRepositories">REST API Reference for ListRepositories Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         ListRepositoriesResponse ListRepositories(ListRepositoriesRequest request);
 
 
@@ -4537,6 +4654,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListRepositories">REST API Reference for ListRepositories Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         Task<ListRepositoriesResponse> ListRepositoriesAsync(ListRepositoriesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -4563,6 +4681,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListRepositorySyncDefinitions">REST API Reference for ListRepositorySyncDefinitions Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         ListRepositorySyncDefinitionsResponse ListRepositorySyncDefinitions(ListRepositorySyncDefinitionsRequest request);
 
 
@@ -4589,6 +4708,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListRepositorySyncDefinitions">REST API Reference for ListRepositorySyncDefinitions Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         Task<ListRepositorySyncDefinitionsResponse> ListRepositorySyncDefinitionsAsync(ListRepositorySyncDefinitionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -4618,6 +4738,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListServiceInstanceOutputs">REST API Reference for ListServiceInstanceOutputs Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         ListServiceInstanceOutputsResponse ListServiceInstanceOutputs(ListServiceInstanceOutputsRequest request);
 
 
@@ -4647,6 +4768,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListServiceInstanceOutputs">REST API Reference for ListServiceInstanceOutputs Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         Task<ListServiceInstanceOutputsResponse> ListServiceInstanceOutputsAsync(ListServiceInstanceOutputsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -4676,6 +4798,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListServiceInstanceProvisionedResources">REST API Reference for ListServiceInstanceProvisionedResources Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         ListServiceInstanceProvisionedResourcesResponse ListServiceInstanceProvisionedResources(ListServiceInstanceProvisionedResourcesRequest request);
 
 
@@ -4705,6 +4828,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListServiceInstanceProvisionedResources">REST API Reference for ListServiceInstanceProvisionedResources Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         Task<ListServiceInstanceProvisionedResourcesResponse> ListServiceInstanceProvisionedResourcesAsync(ListServiceInstanceProvisionedResourcesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -4735,6 +4859,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListServiceInstances">REST API Reference for ListServiceInstances Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         ListServiceInstancesResponse ListServiceInstances(ListServiceInstancesRequest request);
 
 
@@ -4765,6 +4890,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListServiceInstances">REST API Reference for ListServiceInstances Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         Task<ListServiceInstancesResponse> ListServiceInstancesAsync(ListServiceInstancesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -4794,6 +4920,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListServicePipelineOutputs">REST API Reference for ListServicePipelineOutputs Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         ListServicePipelineOutputsResponse ListServicePipelineOutputs(ListServicePipelineOutputsRequest request);
 
 
@@ -4823,6 +4950,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListServicePipelineOutputs">REST API Reference for ListServicePipelineOutputs Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         Task<ListServicePipelineOutputsResponse> ListServicePipelineOutputsAsync(ListServicePipelineOutputsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -4852,6 +4980,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListServicePipelineProvisionedResources">REST API Reference for ListServicePipelineProvisionedResources Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         ListServicePipelineProvisionedResourcesResponse ListServicePipelineProvisionedResources(ListServicePipelineProvisionedResourcesRequest request);
 
 
@@ -4881,6 +5010,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListServicePipelineProvisionedResources">REST API Reference for ListServicePipelineProvisionedResources Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         Task<ListServicePipelineProvisionedResourcesResponse> ListServicePipelineProvisionedResourcesAsync(ListServicePipelineProvisionedResourcesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -4907,6 +5037,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListServices">REST API Reference for ListServices Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         ListServicesResponse ListServices(ListServicesRequest request);
 
 
@@ -4933,6 +5064,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListServices">REST API Reference for ListServices Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         Task<ListServicesResponse> ListServicesAsync(ListServicesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -4959,6 +5091,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListServiceTemplates">REST API Reference for ListServiceTemplates Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         ListServiceTemplatesResponse ListServiceTemplates(ListServiceTemplatesRequest request);
 
 
@@ -4985,6 +5118,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListServiceTemplates">REST API Reference for ListServiceTemplates Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         Task<ListServiceTemplatesResponse> ListServiceTemplatesAsync(ListServiceTemplatesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -5014,6 +5148,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListServiceTemplateVersions">REST API Reference for ListServiceTemplateVersions Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         ListServiceTemplateVersionsResponse ListServiceTemplateVersions(ListServiceTemplateVersionsRequest request);
 
 
@@ -5043,6 +5178,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListServiceTemplateVersions">REST API Reference for ListServiceTemplateVersions Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         Task<ListServiceTemplateVersionsResponse> ListServiceTemplateVersionsAsync(ListServiceTemplateVersionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -5073,6 +5209,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request);
 
 
@@ -5103,6 +5240,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -5146,6 +5284,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/NotifyResourceDeploymentStatusChange">REST API Reference for NotifyResourceDeploymentStatusChange Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         NotifyResourceDeploymentStatusChangeResponse NotifyResourceDeploymentStatusChange(NotifyResourceDeploymentStatusChangeRequest request);
 
 
@@ -5189,6 +5328,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/NotifyResourceDeploymentStatusChange">REST API Reference for NotifyResourceDeploymentStatusChange Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         Task<NotifyResourceDeploymentStatusChangeResponse> NotifyResourceDeploymentStatusChangeAsync(NotifyResourceDeploymentStatusChangeRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -5237,6 +5377,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/RejectEnvironmentAccountConnection">REST API Reference for RejectEnvironmentAccountConnection Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         RejectEnvironmentAccountConnectionResponse RejectEnvironmentAccountConnection(RejectEnvironmentAccountConnectionRequest request);
 
 
@@ -5285,6 +5426,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/RejectEnvironmentAccountConnection">REST API Reference for RejectEnvironmentAccountConnection Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         Task<RejectEnvironmentAccountConnectionResponse> RejectEnvironmentAccountConnectionAsync(RejectEnvironmentAccountConnectionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -5324,6 +5466,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/TagResource">REST API Reference for TagResource Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         TagResourceResponse TagResource(TagResourceRequest request);
 
 
@@ -5363,6 +5506,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/TagResource">REST API Reference for TagResource Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -5402,6 +5546,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         UntagResourceResponse UntagResource(UntagResourceRequest request);
 
 
@@ -5441,6 +5586,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -5471,6 +5617,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateAccountSettings">REST API Reference for UpdateAccountSettings Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         UpdateAccountSettingsResponse UpdateAccountSettings(UpdateAccountSettingsRequest request);
 
 
@@ -5501,6 +5648,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateAccountSettings">REST API Reference for UpdateAccountSettings Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         Task<UpdateAccountSettingsResponse> UpdateAccountSettingsAsync(UpdateAccountSettingsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -5553,6 +5701,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateComponent">REST API Reference for UpdateComponent Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         UpdateComponentResponse UpdateComponent(UpdateComponentRequest request);
 
 
@@ -5605,6 +5754,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateComponent">REST API Reference for UpdateComponent Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         Task<UpdateComponentResponse> UpdateComponentAsync(UpdateComponentRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -5725,6 +5875,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateEnvironment">REST API Reference for UpdateEnvironment Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         UpdateEnvironmentResponse UpdateEnvironment(UpdateEnvironmentRequest request);
 
 
@@ -5845,6 +5996,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateEnvironment">REST API Reference for UpdateEnvironment Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         Task<UpdateEnvironmentResponse> UpdateEnvironmentAsync(UpdateEnvironmentRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -5884,6 +6036,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateEnvironmentAccountConnection">REST API Reference for UpdateEnvironmentAccountConnection Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         UpdateEnvironmentAccountConnectionResponse UpdateEnvironmentAccountConnection(UpdateEnvironmentAccountConnectionRequest request);
 
 
@@ -5923,6 +6076,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateEnvironmentAccountConnection">REST API Reference for UpdateEnvironmentAccountConnection Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         Task<UpdateEnvironmentAccountConnectionResponse> UpdateEnvironmentAccountConnectionAsync(UpdateEnvironmentAccountConnectionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -5955,6 +6109,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateEnvironmentTemplate">REST API Reference for UpdateEnvironmentTemplate Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         UpdateEnvironmentTemplateResponse UpdateEnvironmentTemplate(UpdateEnvironmentTemplateRequest request);
 
 
@@ -5987,6 +6142,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateEnvironmentTemplate">REST API Reference for UpdateEnvironmentTemplate Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         Task<UpdateEnvironmentTemplateResponse> UpdateEnvironmentTemplateAsync(UpdateEnvironmentTemplateRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -6019,6 +6175,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateEnvironmentTemplateVersion">REST API Reference for UpdateEnvironmentTemplateVersion Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         UpdateEnvironmentTemplateVersionResponse UpdateEnvironmentTemplateVersion(UpdateEnvironmentTemplateVersionRequest request);
 
 
@@ -6051,6 +6208,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateEnvironmentTemplateVersion">REST API Reference for UpdateEnvironmentTemplateVersion Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         Task<UpdateEnvironmentTemplateVersionResponse> UpdateEnvironmentTemplateVersionAsync(UpdateEnvironmentTemplateVersionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -6112,6 +6270,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateService">REST API Reference for UpdateService Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         UpdateServiceResponse UpdateService(UpdateServiceRequest request);
 
 
@@ -6173,6 +6332,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateService">REST API Reference for UpdateService Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         Task<UpdateServiceResponse> UpdateServiceAsync(UpdateServiceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -6222,6 +6382,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateServiceInstance">REST API Reference for UpdateServiceInstance Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         UpdateServiceInstanceResponse UpdateServiceInstance(UpdateServiceInstanceRequest request);
 
 
@@ -6271,6 +6432,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateServiceInstance">REST API Reference for UpdateServiceInstance Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         Task<UpdateServiceInstanceResponse> UpdateServiceInstanceAsync(UpdateServiceInstanceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -6350,6 +6512,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateServicePipeline">REST API Reference for UpdateServicePipeline Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         UpdateServicePipelineResponse UpdateServicePipeline(UpdateServicePipelineRequest request);
 
 
@@ -6429,6 +6592,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateServicePipeline">REST API Reference for UpdateServicePipeline Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         Task<UpdateServicePipelineResponse> UpdateServicePipelineAsync(UpdateServicePipelineRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -6461,6 +6625,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateServiceSyncBlocker">REST API Reference for UpdateServiceSyncBlocker Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         UpdateServiceSyncBlockerResponse UpdateServiceSyncBlocker(UpdateServiceSyncBlockerRequest request);
 
 
@@ -6493,6 +6658,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateServiceSyncBlocker">REST API Reference for UpdateServiceSyncBlocker Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         Task<UpdateServiceSyncBlockerResponse> UpdateServiceSyncBlockerAsync(UpdateServiceSyncBlockerRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -6525,6 +6691,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateServiceSyncConfig">REST API Reference for UpdateServiceSyncConfig Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         UpdateServiceSyncConfigResponse UpdateServiceSyncConfig(UpdateServiceSyncConfigRequest request);
 
 
@@ -6557,6 +6724,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateServiceSyncConfig">REST API Reference for UpdateServiceSyncConfig Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         Task<UpdateServiceSyncConfigResponse> UpdateServiceSyncConfigAsync(UpdateServiceSyncConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -6589,6 +6757,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateServiceTemplate">REST API Reference for UpdateServiceTemplate Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         UpdateServiceTemplateResponse UpdateServiceTemplate(UpdateServiceTemplateRequest request);
 
 
@@ -6621,6 +6790,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateServiceTemplate">REST API Reference for UpdateServiceTemplate Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         Task<UpdateServiceTemplateResponse> UpdateServiceTemplateAsync(UpdateServiceTemplateRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -6653,6 +6823,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateServiceTemplateVersion">REST API Reference for UpdateServiceTemplateVersion Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         UpdateServiceTemplateVersionResponse UpdateServiceTemplateVersion(UpdateServiceTemplateVersionRequest request);
 
 
@@ -6685,6 +6856,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateServiceTemplateVersion">REST API Reference for UpdateServiceTemplateVersion Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         Task<UpdateServiceTemplateVersionResponse> UpdateServiceTemplateVersionAsync(UpdateServiceTemplateVersionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -6720,6 +6892,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateTemplateSyncConfig">REST API Reference for UpdateTemplateSyncConfig Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         UpdateTemplateSyncConfigResponse UpdateTemplateSyncConfig(UpdateTemplateSyncConfigRequest request);
 
 
@@ -6755,6 +6928,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateTemplateSyncConfig">REST API Reference for UpdateTemplateSyncConfig Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         Task<UpdateTemplateSyncConfigResponse> UpdateTemplateSyncConfigAsync(UpdateTemplateSyncConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion

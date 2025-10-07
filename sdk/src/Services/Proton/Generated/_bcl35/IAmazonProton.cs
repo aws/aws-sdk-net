@@ -322,6 +322,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/AcceptEnvironmentAccountConnection">REST API Reference for AcceptEnvironmentAccountConnection Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         AcceptEnvironmentAccountConnectionResponse AcceptEnvironmentAccountConnection(AcceptEnvironmentAccountConnectionRequest request);
 
         /// <summary>
@@ -336,6 +337,7 @@ namespace Amazon.Proton
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAcceptEnvironmentAccountConnection
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/AcceptEnvironmentAccountConnection">REST API Reference for AcceptEnvironmentAccountConnection Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         IAsyncResult BeginAcceptEnvironmentAccountConnection(AcceptEnvironmentAccountConnectionRequest request, AsyncCallback callback, object state);
 
 
@@ -348,6 +350,7 @@ namespace Amazon.Proton
         /// 
         /// <returns>Returns a  AcceptEnvironmentAccountConnectionResult from Proton.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/AcceptEnvironmentAccountConnection">REST API Reference for AcceptEnvironmentAccountConnection Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         AcceptEnvironmentAccountConnectionResponse EndAcceptEnvironmentAccountConnection(IAsyncResult asyncResult);
 
         #endregion
@@ -387,6 +390,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CancelComponentDeployment">REST API Reference for CancelComponentDeployment Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         CancelComponentDeploymentResponse CancelComponentDeployment(CancelComponentDeploymentRequest request);
 
         /// <summary>
@@ -401,6 +405,7 @@ namespace Amazon.Proton
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCancelComponentDeployment
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CancelComponentDeployment">REST API Reference for CancelComponentDeployment Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         IAsyncResult BeginCancelComponentDeployment(CancelComponentDeploymentRequest request, AsyncCallback callback, object state);
 
 
@@ -413,6 +418,7 @@ namespace Amazon.Proton
         /// 
         /// <returns>Returns a  CancelComponentDeploymentResult from Proton.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CancelComponentDeployment">REST API Reference for CancelComponentDeployment Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         CancelComponentDeploymentResponse EndCancelComponentDeployment(IAsyncResult asyncResult);
 
         #endregion
@@ -467,6 +473,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CancelEnvironmentDeployment">REST API Reference for CancelEnvironmentDeployment Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         CancelEnvironmentDeploymentResponse CancelEnvironmentDeployment(CancelEnvironmentDeploymentRequest request);
 
         /// <summary>
@@ -481,6 +488,7 @@ namespace Amazon.Proton
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCancelEnvironmentDeployment
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CancelEnvironmentDeployment">REST API Reference for CancelEnvironmentDeployment Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         IAsyncResult BeginCancelEnvironmentDeployment(CancelEnvironmentDeploymentRequest request, AsyncCallback callback, object state);
 
 
@@ -493,6 +501,7 @@ namespace Amazon.Proton
         /// 
         /// <returns>Returns a  CancelEnvironmentDeploymentResult from Proton.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CancelEnvironmentDeployment">REST API Reference for CancelEnvironmentDeployment Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         CancelEnvironmentDeploymentResponse EndCancelEnvironmentDeployment(IAsyncResult asyncResult);
 
         #endregion
@@ -547,6 +556,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CancelServiceInstanceDeployment">REST API Reference for CancelServiceInstanceDeployment Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         CancelServiceInstanceDeploymentResponse CancelServiceInstanceDeployment(CancelServiceInstanceDeploymentRequest request);
 
         /// <summary>
@@ -561,6 +571,7 @@ namespace Amazon.Proton
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCancelServiceInstanceDeployment
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CancelServiceInstanceDeployment">REST API Reference for CancelServiceInstanceDeployment Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         IAsyncResult BeginCancelServiceInstanceDeployment(CancelServiceInstanceDeploymentRequest request, AsyncCallback callback, object state);
 
 
@@ -573,6 +584,7 @@ namespace Amazon.Proton
         /// 
         /// <returns>Returns a  CancelServiceInstanceDeploymentResult from Proton.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CancelServiceInstanceDeployment">REST API Reference for CancelServiceInstanceDeployment Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         CancelServiceInstanceDeploymentResponse EndCancelServiceInstanceDeployment(IAsyncResult asyncResult);
 
         #endregion
@@ -627,6 +639,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CancelServicePipelineDeployment">REST API Reference for CancelServicePipelineDeployment Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         CancelServicePipelineDeploymentResponse CancelServicePipelineDeployment(CancelServicePipelineDeploymentRequest request);
 
         /// <summary>
@@ -641,6 +654,7 @@ namespace Amazon.Proton
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCancelServicePipelineDeployment
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CancelServicePipelineDeployment">REST API Reference for CancelServicePipelineDeployment Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         IAsyncResult BeginCancelServicePipelineDeployment(CancelServicePipelineDeploymentRequest request, AsyncCallback callback, object state);
 
 
@@ -653,6 +667,7 @@ namespace Amazon.Proton
         /// 
         /// <returns>Returns a  CancelServicePipelineDeploymentResult from Proton.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CancelServicePipelineDeployment">REST API Reference for CancelServicePipelineDeployment Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         CancelServicePipelineDeploymentResponse EndCancelServicePipelineDeployment(IAsyncResult asyncResult);
 
         #endregion
@@ -696,6 +711,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateComponent">REST API Reference for CreateComponent Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         CreateComponentResponse CreateComponent(CreateComponentRequest request);
 
         /// <summary>
@@ -710,6 +726,7 @@ namespace Amazon.Proton
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateComponent
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateComponent">REST API Reference for CreateComponent Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         IAsyncResult BeginCreateComponent(CreateComponentRequest request, AsyncCallback callback, object state);
 
 
@@ -722,6 +739,7 @@ namespace Amazon.Proton
         /// 
         /// <returns>Returns a  CreateComponentResult from Proton.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateComponent">REST API Reference for CreateComponent Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         CreateComponentResponse EndCreateComponent(IAsyncResult asyncResult);
 
         #endregion
@@ -781,6 +799,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateEnvironment">REST API Reference for CreateEnvironment Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         CreateEnvironmentResponse CreateEnvironment(CreateEnvironmentRequest request);
 
         /// <summary>
@@ -795,6 +814,7 @@ namespace Amazon.Proton
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateEnvironment
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateEnvironment">REST API Reference for CreateEnvironment Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         IAsyncResult BeginCreateEnvironment(CreateEnvironmentRequest request, AsyncCallback callback, object state);
 
 
@@ -807,6 +827,7 @@ namespace Amazon.Proton
         /// 
         /// <returns>Returns a  CreateEnvironmentResult from Proton.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateEnvironment">REST API Reference for CreateEnvironment Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         CreateEnvironmentResponse EndCreateEnvironment(IAsyncResult asyncResult);
 
         #endregion
@@ -850,6 +871,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateEnvironmentAccountConnection">REST API Reference for CreateEnvironmentAccountConnection Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         CreateEnvironmentAccountConnectionResponse CreateEnvironmentAccountConnection(CreateEnvironmentAccountConnectionRequest request);
 
         /// <summary>
@@ -864,6 +886,7 @@ namespace Amazon.Proton
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateEnvironmentAccountConnection
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateEnvironmentAccountConnection">REST API Reference for CreateEnvironmentAccountConnection Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         IAsyncResult BeginCreateEnvironmentAccountConnection(CreateEnvironmentAccountConnectionRequest request, AsyncCallback callback, object state);
 
 
@@ -876,6 +899,7 @@ namespace Amazon.Proton
         /// 
         /// <returns>Returns a  CreateEnvironmentAccountConnectionResult from Proton.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateEnvironmentAccountConnection">REST API Reference for CreateEnvironmentAccountConnection Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         CreateEnvironmentAccountConnectionResponse EndCreateEnvironmentAccountConnection(IAsyncResult asyncResult);
 
         #endregion
@@ -931,6 +955,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateEnvironmentTemplate">REST API Reference for CreateEnvironmentTemplate Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         CreateEnvironmentTemplateResponse CreateEnvironmentTemplate(CreateEnvironmentTemplateRequest request);
 
         /// <summary>
@@ -945,6 +970,7 @@ namespace Amazon.Proton
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateEnvironmentTemplate
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateEnvironmentTemplate">REST API Reference for CreateEnvironmentTemplate Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         IAsyncResult BeginCreateEnvironmentTemplate(CreateEnvironmentTemplateRequest request, AsyncCallback callback, object state);
 
 
@@ -957,6 +983,7 @@ namespace Amazon.Proton
         /// 
         /// <returns>Returns a  CreateEnvironmentTemplateResult from Proton.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateEnvironmentTemplate">REST API Reference for CreateEnvironmentTemplate Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         CreateEnvironmentTemplateResponse EndCreateEnvironmentTemplate(IAsyncResult asyncResult);
 
         #endregion
@@ -996,6 +1023,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateEnvironmentTemplateVersion">REST API Reference for CreateEnvironmentTemplateVersion Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         CreateEnvironmentTemplateVersionResponse CreateEnvironmentTemplateVersion(CreateEnvironmentTemplateVersionRequest request);
 
         /// <summary>
@@ -1010,6 +1038,7 @@ namespace Amazon.Proton
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateEnvironmentTemplateVersion
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateEnvironmentTemplateVersion">REST API Reference for CreateEnvironmentTemplateVersion Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         IAsyncResult BeginCreateEnvironmentTemplateVersion(CreateEnvironmentTemplateVersionRequest request, AsyncCallback callback, object state);
 
 
@@ -1022,6 +1051,7 @@ namespace Amazon.Proton
         /// 
         /// <returns>Returns a  CreateEnvironmentTemplateVersionResult from Proton.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateEnvironmentTemplateVersion">REST API Reference for CreateEnvironmentTemplateVersion Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         CreateEnvironmentTemplateVersionResponse EndCreateEnvironmentTemplateVersion(IAsyncResult asyncResult);
 
         #endregion
@@ -1068,6 +1098,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateRepository">REST API Reference for CreateRepository Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         CreateRepositoryResponse CreateRepository(CreateRepositoryRequest request);
 
         /// <summary>
@@ -1082,6 +1113,7 @@ namespace Amazon.Proton
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateRepository
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateRepository">REST API Reference for CreateRepository Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         IAsyncResult BeginCreateRepository(CreateRepositoryRequest request, AsyncCallback callback, object state);
 
 
@@ -1094,6 +1126,7 @@ namespace Amazon.Proton
         /// 
         /// <returns>Returns a  CreateRepositoryResult from Proton.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateRepository">REST API Reference for CreateRepository Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         CreateRepositoryResponse EndCreateRepository(IAsyncResult asyncResult);
 
         #endregion
@@ -1133,6 +1166,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateService">REST API Reference for CreateService Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         CreateServiceResponse CreateService(CreateServiceRequest request);
 
         /// <summary>
@@ -1147,6 +1181,7 @@ namespace Amazon.Proton
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateService
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateService">REST API Reference for CreateService Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         IAsyncResult BeginCreateService(CreateServiceRequest request, AsyncCallback callback, object state);
 
 
@@ -1159,6 +1194,7 @@ namespace Amazon.Proton
         /// 
         /// <returns>Returns a  CreateServiceResult from Proton.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateService">REST API Reference for CreateService Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         CreateServiceResponse EndCreateService(IAsyncResult asyncResult);
 
         #endregion
@@ -1191,6 +1227,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateServiceInstance">REST API Reference for CreateServiceInstance Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         CreateServiceInstanceResponse CreateServiceInstance(CreateServiceInstanceRequest request);
 
         /// <summary>
@@ -1205,6 +1242,7 @@ namespace Amazon.Proton
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateServiceInstance
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateServiceInstance">REST API Reference for CreateServiceInstance Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         IAsyncResult BeginCreateServiceInstance(CreateServiceInstanceRequest request, AsyncCallback callback, object state);
 
 
@@ -1217,6 +1255,7 @@ namespace Amazon.Proton
         /// 
         /// <returns>Returns a  CreateServiceInstanceResult from Proton.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateServiceInstance">REST API Reference for CreateServiceInstance Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         CreateServiceInstanceResponse EndCreateServiceInstance(IAsyncResult asyncResult);
 
         #endregion
@@ -1250,6 +1289,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateServiceSyncConfig">REST API Reference for CreateServiceSyncConfig Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         CreateServiceSyncConfigResponse CreateServiceSyncConfig(CreateServiceSyncConfigRequest request);
 
         /// <summary>
@@ -1264,6 +1304,7 @@ namespace Amazon.Proton
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateServiceSyncConfig
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateServiceSyncConfig">REST API Reference for CreateServiceSyncConfig Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         IAsyncResult BeginCreateServiceSyncConfig(CreateServiceSyncConfigRequest request, AsyncCallback callback, object state);
 
 
@@ -1276,6 +1317,7 @@ namespace Amazon.Proton
         /// 
         /// <returns>Returns a  CreateServiceSyncConfigResult from Proton.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateServiceSyncConfig">REST API Reference for CreateServiceSyncConfig Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         CreateServiceSyncConfigResponse EndCreateServiceSyncConfig(IAsyncResult asyncResult);
 
         #endregion
@@ -1315,6 +1357,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateServiceTemplate">REST API Reference for CreateServiceTemplate Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         CreateServiceTemplateResponse CreateServiceTemplate(CreateServiceTemplateRequest request);
 
         /// <summary>
@@ -1329,6 +1372,7 @@ namespace Amazon.Proton
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateServiceTemplate
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateServiceTemplate">REST API Reference for CreateServiceTemplate Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         IAsyncResult BeginCreateServiceTemplate(CreateServiceTemplateRequest request, AsyncCallback callback, object state);
 
 
@@ -1341,6 +1385,7 @@ namespace Amazon.Proton
         /// 
         /// <returns>Returns a  CreateServiceTemplateResult from Proton.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateServiceTemplate">REST API Reference for CreateServiceTemplate Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         CreateServiceTemplateResponse EndCreateServiceTemplate(IAsyncResult asyncResult);
 
         #endregion
@@ -1379,6 +1424,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateServiceTemplateVersion">REST API Reference for CreateServiceTemplateVersion Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         CreateServiceTemplateVersionResponse CreateServiceTemplateVersion(CreateServiceTemplateVersionRequest request);
 
         /// <summary>
@@ -1393,6 +1439,7 @@ namespace Amazon.Proton
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateServiceTemplateVersion
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateServiceTemplateVersion">REST API Reference for CreateServiceTemplateVersion Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         IAsyncResult BeginCreateServiceTemplateVersion(CreateServiceTemplateVersionRequest request, AsyncCallback callback, object state);
 
 
@@ -1405,6 +1452,7 @@ namespace Amazon.Proton
         /// 
         /// <returns>Returns a  CreateServiceTemplateVersionResult from Proton.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateServiceTemplateVersion">REST API Reference for CreateServiceTemplateVersion Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         CreateServiceTemplateVersionResponse EndCreateServiceTemplateVersion(IAsyncResult asyncResult);
 
         #endregion
@@ -1449,6 +1497,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateTemplateSyncConfig">REST API Reference for CreateTemplateSyncConfig Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         CreateTemplateSyncConfigResponse CreateTemplateSyncConfig(CreateTemplateSyncConfigRequest request);
 
         /// <summary>
@@ -1463,6 +1512,7 @@ namespace Amazon.Proton
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateTemplateSyncConfig
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateTemplateSyncConfig">REST API Reference for CreateTemplateSyncConfig Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         IAsyncResult BeginCreateTemplateSyncConfig(CreateTemplateSyncConfigRequest request, AsyncCallback callback, object state);
 
 
@@ -1475,6 +1525,7 @@ namespace Amazon.Proton
         /// 
         /// <returns>Returns a  CreateTemplateSyncConfigResult from Proton.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateTemplateSyncConfig">REST API Reference for CreateTemplateSyncConfig Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         CreateTemplateSyncConfigResponse EndCreateTemplateSyncConfig(IAsyncResult asyncResult);
 
         #endregion
@@ -1513,6 +1564,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteComponent">REST API Reference for DeleteComponent Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         DeleteComponentResponse DeleteComponent(DeleteComponentRequest request);
 
         /// <summary>
@@ -1527,6 +1579,7 @@ namespace Amazon.Proton
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteComponent
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteComponent">REST API Reference for DeleteComponent Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         IAsyncResult BeginDeleteComponent(DeleteComponentRequest request, AsyncCallback callback, object state);
 
 
@@ -1539,6 +1592,7 @@ namespace Amazon.Proton
         /// 
         /// <returns>Returns a  DeleteComponentResult from Proton.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteComponent">REST API Reference for DeleteComponent Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         DeleteComponentResponse EndDeleteComponent(IAsyncResult asyncResult);
 
         #endregion
@@ -1568,6 +1622,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteDeployment">REST API Reference for DeleteDeployment Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         DeleteDeploymentResponse DeleteDeployment(DeleteDeploymentRequest request);
 
         /// <summary>
@@ -1582,6 +1637,7 @@ namespace Amazon.Proton
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteDeployment
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteDeployment">REST API Reference for DeleteDeployment Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         IAsyncResult BeginDeleteDeployment(DeleteDeploymentRequest request, AsyncCallback callback, object state);
 
 
@@ -1594,6 +1650,7 @@ namespace Amazon.Proton
         /// 
         /// <returns>Returns a  DeleteDeploymentResult from Proton.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteDeployment">REST API Reference for DeleteDeployment Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         DeleteDeploymentResponse EndDeleteDeployment(IAsyncResult asyncResult);
 
         #endregion
@@ -1626,6 +1683,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteEnvironment">REST API Reference for DeleteEnvironment Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         DeleteEnvironmentResponse DeleteEnvironment(DeleteEnvironmentRequest request);
 
         /// <summary>
@@ -1640,6 +1698,7 @@ namespace Amazon.Proton
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteEnvironment
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteEnvironment">REST API Reference for DeleteEnvironment Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         IAsyncResult BeginDeleteEnvironment(DeleteEnvironmentRequest request, AsyncCallback callback, object state);
 
 
@@ -1652,6 +1711,7 @@ namespace Amazon.Proton
         /// 
         /// <returns>Returns a  DeleteEnvironmentResult from Proton.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteEnvironment">REST API Reference for DeleteEnvironment Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         DeleteEnvironmentResponse EndDeleteEnvironment(IAsyncResult asyncResult);
 
         #endregion
@@ -1698,6 +1758,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteEnvironmentAccountConnection">REST API Reference for DeleteEnvironmentAccountConnection Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         DeleteEnvironmentAccountConnectionResponse DeleteEnvironmentAccountConnection(DeleteEnvironmentAccountConnectionRequest request);
 
         /// <summary>
@@ -1712,6 +1773,7 @@ namespace Amazon.Proton
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteEnvironmentAccountConnection
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteEnvironmentAccountConnection">REST API Reference for DeleteEnvironmentAccountConnection Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         IAsyncResult BeginDeleteEnvironmentAccountConnection(DeleteEnvironmentAccountConnectionRequest request, AsyncCallback callback, object state);
 
 
@@ -1724,6 +1786,7 @@ namespace Amazon.Proton
         /// 
         /// <returns>Returns a  DeleteEnvironmentAccountConnectionResult from Proton.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteEnvironmentAccountConnection">REST API Reference for DeleteEnvironmentAccountConnection Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         DeleteEnvironmentAccountConnectionResponse EndDeleteEnvironmentAccountConnection(IAsyncResult asyncResult);
 
         #endregion
@@ -1757,6 +1820,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteEnvironmentTemplate">REST API Reference for DeleteEnvironmentTemplate Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         DeleteEnvironmentTemplateResponse DeleteEnvironmentTemplate(DeleteEnvironmentTemplateRequest request);
 
         /// <summary>
@@ -1771,6 +1835,7 @@ namespace Amazon.Proton
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteEnvironmentTemplate
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteEnvironmentTemplate">REST API Reference for DeleteEnvironmentTemplate Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         IAsyncResult BeginDeleteEnvironmentTemplate(DeleteEnvironmentTemplateRequest request, AsyncCallback callback, object state);
 
 
@@ -1783,6 +1848,7 @@ namespace Amazon.Proton
         /// 
         /// <returns>Returns a  DeleteEnvironmentTemplateResult from Proton.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteEnvironmentTemplate">REST API Reference for DeleteEnvironmentTemplate Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         DeleteEnvironmentTemplateResponse EndDeleteEnvironmentTemplate(IAsyncResult asyncResult);
 
         #endregion
@@ -1827,6 +1893,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteEnvironmentTemplateVersion">REST API Reference for DeleteEnvironmentTemplateVersion Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         DeleteEnvironmentTemplateVersionResponse DeleteEnvironmentTemplateVersion(DeleteEnvironmentTemplateVersionRequest request);
 
         /// <summary>
@@ -1841,6 +1908,7 @@ namespace Amazon.Proton
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteEnvironmentTemplateVersion
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteEnvironmentTemplateVersion">REST API Reference for DeleteEnvironmentTemplateVersion Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         IAsyncResult BeginDeleteEnvironmentTemplateVersion(DeleteEnvironmentTemplateVersionRequest request, AsyncCallback callback, object state);
 
 
@@ -1853,6 +1921,7 @@ namespace Amazon.Proton
         /// 
         /// <returns>Returns a  DeleteEnvironmentTemplateVersionResult from Proton.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteEnvironmentTemplateVersion">REST API Reference for DeleteEnvironmentTemplateVersion Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         DeleteEnvironmentTemplateVersionResponse EndDeleteEnvironmentTemplateVersion(IAsyncResult asyncResult);
 
         #endregion
@@ -1885,6 +1954,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteRepository">REST API Reference for DeleteRepository Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         DeleteRepositoryResponse DeleteRepository(DeleteRepositoryRequest request);
 
         /// <summary>
@@ -1899,6 +1969,7 @@ namespace Amazon.Proton
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteRepository
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteRepository">REST API Reference for DeleteRepository Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         IAsyncResult BeginDeleteRepository(DeleteRepositoryRequest request, AsyncCallback callback, object state);
 
 
@@ -1911,6 +1982,7 @@ namespace Amazon.Proton
         /// 
         /// <returns>Returns a  DeleteRepositoryResult from Proton.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteRepository">REST API Reference for DeleteRepository Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         DeleteRepositoryResponse EndDeleteRepository(IAsyncResult asyncResult);
 
         #endregion
@@ -1955,6 +2027,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteService">REST API Reference for DeleteService Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         DeleteServiceResponse DeleteService(DeleteServiceRequest request);
 
         /// <summary>
@@ -1969,6 +2042,7 @@ namespace Amazon.Proton
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteService
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteService">REST API Reference for DeleteService Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         IAsyncResult BeginDeleteService(DeleteServiceRequest request, AsyncCallback callback, object state);
 
 
@@ -1981,6 +2055,7 @@ namespace Amazon.Proton
         /// 
         /// <returns>Returns a  DeleteServiceResult from Proton.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteService">REST API Reference for DeleteService Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         DeleteServiceResponse EndDeleteService(IAsyncResult asyncResult);
 
         #endregion
@@ -2013,6 +2088,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteServiceSyncConfig">REST API Reference for DeleteServiceSyncConfig Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         DeleteServiceSyncConfigResponse DeleteServiceSyncConfig(DeleteServiceSyncConfigRequest request);
 
         /// <summary>
@@ -2027,6 +2103,7 @@ namespace Amazon.Proton
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteServiceSyncConfig
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteServiceSyncConfig">REST API Reference for DeleteServiceSyncConfig Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         IAsyncResult BeginDeleteServiceSyncConfig(DeleteServiceSyncConfigRequest request, AsyncCallback callback, object state);
 
 
@@ -2039,6 +2116,7 @@ namespace Amazon.Proton
         /// 
         /// <returns>Returns a  DeleteServiceSyncConfigResult from Proton.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteServiceSyncConfig">REST API Reference for DeleteServiceSyncConfig Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         DeleteServiceSyncConfigResponse EndDeleteServiceSyncConfig(IAsyncResult asyncResult);
 
         #endregion
@@ -2072,6 +2150,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteServiceTemplate">REST API Reference for DeleteServiceTemplate Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         DeleteServiceTemplateResponse DeleteServiceTemplate(DeleteServiceTemplateRequest request);
 
         /// <summary>
@@ -2086,6 +2165,7 @@ namespace Amazon.Proton
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteServiceTemplate
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteServiceTemplate">REST API Reference for DeleteServiceTemplate Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         IAsyncResult BeginDeleteServiceTemplate(DeleteServiceTemplateRequest request, AsyncCallback callback, object state);
 
 
@@ -2098,6 +2178,7 @@ namespace Amazon.Proton
         /// 
         /// <returns>Returns a  DeleteServiceTemplateResult from Proton.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteServiceTemplate">REST API Reference for DeleteServiceTemplate Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         DeleteServiceTemplateResponse EndDeleteServiceTemplate(IAsyncResult asyncResult);
 
         #endregion
@@ -2142,6 +2223,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteServiceTemplateVersion">REST API Reference for DeleteServiceTemplateVersion Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         DeleteServiceTemplateVersionResponse DeleteServiceTemplateVersion(DeleteServiceTemplateVersionRequest request);
 
         /// <summary>
@@ -2156,6 +2238,7 @@ namespace Amazon.Proton
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteServiceTemplateVersion
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteServiceTemplateVersion">REST API Reference for DeleteServiceTemplateVersion Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         IAsyncResult BeginDeleteServiceTemplateVersion(DeleteServiceTemplateVersionRequest request, AsyncCallback callback, object state);
 
 
@@ -2168,6 +2251,7 @@ namespace Amazon.Proton
         /// 
         /// <returns>Returns a  DeleteServiceTemplateVersionResult from Proton.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteServiceTemplateVersion">REST API Reference for DeleteServiceTemplateVersion Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         DeleteServiceTemplateVersionResponse EndDeleteServiceTemplateVersion(IAsyncResult asyncResult);
 
         #endregion
@@ -2200,6 +2284,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteTemplateSyncConfig">REST API Reference for DeleteTemplateSyncConfig Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         DeleteTemplateSyncConfigResponse DeleteTemplateSyncConfig(DeleteTemplateSyncConfigRequest request);
 
         /// <summary>
@@ -2214,6 +2299,7 @@ namespace Amazon.Proton
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteTemplateSyncConfig
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteTemplateSyncConfig">REST API Reference for DeleteTemplateSyncConfig Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         IAsyncResult BeginDeleteTemplateSyncConfig(DeleteTemplateSyncConfigRequest request, AsyncCallback callback, object state);
 
 
@@ -2226,6 +2312,7 @@ namespace Amazon.Proton
         /// 
         /// <returns>Returns a  DeleteTemplateSyncConfigResult from Proton.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteTemplateSyncConfig">REST API Reference for DeleteTemplateSyncConfig Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         DeleteTemplateSyncConfigResponse EndDeleteTemplateSyncConfig(IAsyncResult asyncResult);
 
         #endregion
@@ -2255,6 +2342,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetAccountSettings">REST API Reference for GetAccountSettings Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         GetAccountSettingsResponse GetAccountSettings(GetAccountSettingsRequest request);
 
         /// <summary>
@@ -2269,6 +2357,7 @@ namespace Amazon.Proton
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAccountSettings
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetAccountSettings">REST API Reference for GetAccountSettings Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         IAsyncResult BeginGetAccountSettings(GetAccountSettingsRequest request, AsyncCallback callback, object state);
 
 
@@ -2281,6 +2370,7 @@ namespace Amazon.Proton
         /// 
         /// <returns>Returns a  GetAccountSettingsResult from Proton.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetAccountSettings">REST API Reference for GetAccountSettings Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         GetAccountSettingsResponse EndGetAccountSettings(IAsyncResult asyncResult);
 
         #endregion
@@ -2316,6 +2406,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetComponent">REST API Reference for GetComponent Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         GetComponentResponse GetComponent(GetComponentRequest request);
 
         /// <summary>
@@ -2330,6 +2421,7 @@ namespace Amazon.Proton
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetComponent
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetComponent">REST API Reference for GetComponent Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         IAsyncResult BeginGetComponent(GetComponentRequest request, AsyncCallback callback, object state);
 
 
@@ -2342,6 +2434,7 @@ namespace Amazon.Proton
         /// 
         /// <returns>Returns a  GetComponentResult from Proton.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetComponent">REST API Reference for GetComponent Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         GetComponentResponse EndGetComponent(IAsyncResult asyncResult);
 
         #endregion
@@ -2371,6 +2464,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetDeployment">REST API Reference for GetDeployment Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         GetDeploymentResponse GetDeployment(GetDeploymentRequest request);
 
         /// <summary>
@@ -2385,6 +2479,7 @@ namespace Amazon.Proton
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDeployment
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetDeployment">REST API Reference for GetDeployment Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         IAsyncResult BeginGetDeployment(GetDeploymentRequest request, AsyncCallback callback, object state);
 
 
@@ -2397,6 +2492,7 @@ namespace Amazon.Proton
         /// 
         /// <returns>Returns a  GetDeploymentResult from Proton.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetDeployment">REST API Reference for GetDeployment Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         GetDeploymentResponse EndGetDeployment(IAsyncResult asyncResult);
 
         #endregion
@@ -2426,6 +2522,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetEnvironment">REST API Reference for GetEnvironment Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         GetEnvironmentResponse GetEnvironment(GetEnvironmentRequest request);
 
         /// <summary>
@@ -2440,6 +2537,7 @@ namespace Amazon.Proton
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetEnvironment
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetEnvironment">REST API Reference for GetEnvironment Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         IAsyncResult BeginGetEnvironment(GetEnvironmentRequest request, AsyncCallback callback, object state);
 
 
@@ -2452,6 +2550,7 @@ namespace Amazon.Proton
         /// 
         /// <returns>Returns a  GetEnvironmentResult from Proton.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetEnvironment">REST API Reference for GetEnvironment Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         GetEnvironmentResponse EndGetEnvironment(IAsyncResult asyncResult);
 
         #endregion
@@ -2487,6 +2586,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetEnvironmentAccountConnection">REST API Reference for GetEnvironmentAccountConnection Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         GetEnvironmentAccountConnectionResponse GetEnvironmentAccountConnection(GetEnvironmentAccountConnectionRequest request);
 
         /// <summary>
@@ -2501,6 +2601,7 @@ namespace Amazon.Proton
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetEnvironmentAccountConnection
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetEnvironmentAccountConnection">REST API Reference for GetEnvironmentAccountConnection Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         IAsyncResult BeginGetEnvironmentAccountConnection(GetEnvironmentAccountConnectionRequest request, AsyncCallback callback, object state);
 
 
@@ -2513,6 +2614,7 @@ namespace Amazon.Proton
         /// 
         /// <returns>Returns a  GetEnvironmentAccountConnectionResult from Proton.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetEnvironmentAccountConnection">REST API Reference for GetEnvironmentAccountConnection Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         GetEnvironmentAccountConnectionResponse EndGetEnvironmentAccountConnection(IAsyncResult asyncResult);
 
         #endregion
@@ -2542,6 +2644,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetEnvironmentTemplate">REST API Reference for GetEnvironmentTemplate Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         GetEnvironmentTemplateResponse GetEnvironmentTemplate(GetEnvironmentTemplateRequest request);
 
         /// <summary>
@@ -2556,6 +2659,7 @@ namespace Amazon.Proton
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetEnvironmentTemplate
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetEnvironmentTemplate">REST API Reference for GetEnvironmentTemplate Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         IAsyncResult BeginGetEnvironmentTemplate(GetEnvironmentTemplateRequest request, AsyncCallback callback, object state);
 
 
@@ -2568,6 +2672,7 @@ namespace Amazon.Proton
         /// 
         /// <returns>Returns a  GetEnvironmentTemplateResult from Proton.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetEnvironmentTemplate">REST API Reference for GetEnvironmentTemplate Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         GetEnvironmentTemplateResponse EndGetEnvironmentTemplate(IAsyncResult asyncResult);
 
         #endregion
@@ -2597,6 +2702,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetEnvironmentTemplateVersion">REST API Reference for GetEnvironmentTemplateVersion Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         GetEnvironmentTemplateVersionResponse GetEnvironmentTemplateVersion(GetEnvironmentTemplateVersionRequest request);
 
         /// <summary>
@@ -2611,6 +2717,7 @@ namespace Amazon.Proton
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetEnvironmentTemplateVersion
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetEnvironmentTemplateVersion">REST API Reference for GetEnvironmentTemplateVersion Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         IAsyncResult BeginGetEnvironmentTemplateVersion(GetEnvironmentTemplateVersionRequest request, AsyncCallback callback, object state);
 
 
@@ -2623,6 +2730,7 @@ namespace Amazon.Proton
         /// 
         /// <returns>Returns a  GetEnvironmentTemplateVersionResult from Proton.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetEnvironmentTemplateVersion">REST API Reference for GetEnvironmentTemplateVersion Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         GetEnvironmentTemplateVersionResponse EndGetEnvironmentTemplateVersion(IAsyncResult asyncResult);
 
         #endregion
@@ -2652,6 +2760,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetRepository">REST API Reference for GetRepository Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         GetRepositoryResponse GetRepository(GetRepositoryRequest request);
 
         /// <summary>
@@ -2666,6 +2775,7 @@ namespace Amazon.Proton
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetRepository
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetRepository">REST API Reference for GetRepository Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         IAsyncResult BeginGetRepository(GetRepositoryRequest request, AsyncCallback callback, object state);
 
 
@@ -2678,6 +2788,7 @@ namespace Amazon.Proton
         /// 
         /// <returns>Returns a  GetRepositoryResult from Proton.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetRepository">REST API Reference for GetRepository Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         GetRepositoryResponse EndGetRepository(IAsyncResult asyncResult);
 
         #endregion
@@ -2722,6 +2833,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetRepositorySyncStatus">REST API Reference for GetRepositorySyncStatus Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         GetRepositorySyncStatusResponse GetRepositorySyncStatus(GetRepositorySyncStatusRequest request);
 
         /// <summary>
@@ -2736,6 +2848,7 @@ namespace Amazon.Proton
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetRepositorySyncStatus
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetRepositorySyncStatus">REST API Reference for GetRepositorySyncStatus Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         IAsyncResult BeginGetRepositorySyncStatus(GetRepositorySyncStatusRequest request, AsyncCallback callback, object state);
 
 
@@ -2748,6 +2861,7 @@ namespace Amazon.Proton
         /// 
         /// <returns>Returns a  GetRepositorySyncStatusResult from Proton.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetRepositorySyncStatus">REST API Reference for GetRepositorySyncStatus Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         GetRepositorySyncStatusResponse EndGetRepositorySyncStatus(IAsyncResult asyncResult);
 
         #endregion
@@ -2800,6 +2914,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetResourcesSummary">REST API Reference for GetResourcesSummary Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         GetResourcesSummaryResponse GetResourcesSummary(GetResourcesSummaryRequest request);
 
         /// <summary>
@@ -2814,6 +2929,7 @@ namespace Amazon.Proton
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetResourcesSummary
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetResourcesSummary">REST API Reference for GetResourcesSummary Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         IAsyncResult BeginGetResourcesSummary(GetResourcesSummaryRequest request, AsyncCallback callback, object state);
 
 
@@ -2826,6 +2942,7 @@ namespace Amazon.Proton
         /// 
         /// <returns>Returns a  GetResourcesSummaryResult from Proton.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetResourcesSummary">REST API Reference for GetResourcesSummary Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         GetResourcesSummaryResponse EndGetResourcesSummary(IAsyncResult asyncResult);
 
         #endregion
@@ -2855,6 +2972,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetService">REST API Reference for GetService Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         GetServiceResponse GetService(GetServiceRequest request);
 
         /// <summary>
@@ -2869,6 +2987,7 @@ namespace Amazon.Proton
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetService
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetService">REST API Reference for GetService Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         IAsyncResult BeginGetService(GetServiceRequest request, AsyncCallback callback, object state);
 
 
@@ -2881,6 +3000,7 @@ namespace Amazon.Proton
         /// 
         /// <returns>Returns a  GetServiceResult from Proton.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetService">REST API Reference for GetService Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         GetServiceResponse EndGetService(IAsyncResult asyncResult);
 
         #endregion
@@ -2911,6 +3031,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetServiceInstance">REST API Reference for GetServiceInstance Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         GetServiceInstanceResponse GetServiceInstance(GetServiceInstanceRequest request);
 
         /// <summary>
@@ -2925,6 +3046,7 @@ namespace Amazon.Proton
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetServiceInstance
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetServiceInstance">REST API Reference for GetServiceInstance Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         IAsyncResult BeginGetServiceInstance(GetServiceInstanceRequest request, AsyncCallback callback, object state);
 
 
@@ -2937,6 +3059,7 @@ namespace Amazon.Proton
         /// 
         /// <returns>Returns a  GetServiceInstanceResult from Proton.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetServiceInstance">REST API Reference for GetServiceInstance Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         GetServiceInstanceResponse EndGetServiceInstance(IAsyncResult asyncResult);
 
         #endregion
@@ -2966,6 +3089,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetServiceInstanceSyncStatus">REST API Reference for GetServiceInstanceSyncStatus Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         GetServiceInstanceSyncStatusResponse GetServiceInstanceSyncStatus(GetServiceInstanceSyncStatusRequest request);
 
         /// <summary>
@@ -2980,6 +3104,7 @@ namespace Amazon.Proton
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetServiceInstanceSyncStatus
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetServiceInstanceSyncStatus">REST API Reference for GetServiceInstanceSyncStatus Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         IAsyncResult BeginGetServiceInstanceSyncStatus(GetServiceInstanceSyncStatusRequest request, AsyncCallback callback, object state);
 
 
@@ -2992,6 +3117,7 @@ namespace Amazon.Proton
         /// 
         /// <returns>Returns a  GetServiceInstanceSyncStatusResult from Proton.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetServiceInstanceSyncStatus">REST API Reference for GetServiceInstanceSyncStatus Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         GetServiceInstanceSyncStatusResponse EndGetServiceInstanceSyncStatus(IAsyncResult asyncResult);
 
         #endregion
@@ -3021,6 +3147,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetServiceSyncBlockerSummary">REST API Reference for GetServiceSyncBlockerSummary Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         GetServiceSyncBlockerSummaryResponse GetServiceSyncBlockerSummary(GetServiceSyncBlockerSummaryRequest request);
 
         /// <summary>
@@ -3035,6 +3162,7 @@ namespace Amazon.Proton
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetServiceSyncBlockerSummary
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetServiceSyncBlockerSummary">REST API Reference for GetServiceSyncBlockerSummary Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         IAsyncResult BeginGetServiceSyncBlockerSummary(GetServiceSyncBlockerSummaryRequest request, AsyncCallback callback, object state);
 
 
@@ -3047,6 +3175,7 @@ namespace Amazon.Proton
         /// 
         /// <returns>Returns a  GetServiceSyncBlockerSummaryResult from Proton.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetServiceSyncBlockerSummary">REST API Reference for GetServiceSyncBlockerSummary Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         GetServiceSyncBlockerSummaryResponse EndGetServiceSyncBlockerSummary(IAsyncResult asyncResult);
 
         #endregion
@@ -3076,6 +3205,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetServiceSyncConfig">REST API Reference for GetServiceSyncConfig Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         GetServiceSyncConfigResponse GetServiceSyncConfig(GetServiceSyncConfigRequest request);
 
         /// <summary>
@@ -3090,6 +3220,7 @@ namespace Amazon.Proton
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetServiceSyncConfig
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetServiceSyncConfig">REST API Reference for GetServiceSyncConfig Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         IAsyncResult BeginGetServiceSyncConfig(GetServiceSyncConfigRequest request, AsyncCallback callback, object state);
 
 
@@ -3102,6 +3233,7 @@ namespace Amazon.Proton
         /// 
         /// <returns>Returns a  GetServiceSyncConfigResult from Proton.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetServiceSyncConfig">REST API Reference for GetServiceSyncConfig Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         GetServiceSyncConfigResponse EndGetServiceSyncConfig(IAsyncResult asyncResult);
 
         #endregion
@@ -3131,6 +3263,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetServiceTemplate">REST API Reference for GetServiceTemplate Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         GetServiceTemplateResponse GetServiceTemplate(GetServiceTemplateRequest request);
 
         /// <summary>
@@ -3145,6 +3278,7 @@ namespace Amazon.Proton
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetServiceTemplate
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetServiceTemplate">REST API Reference for GetServiceTemplate Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         IAsyncResult BeginGetServiceTemplate(GetServiceTemplateRequest request, AsyncCallback callback, object state);
 
 
@@ -3157,6 +3291,7 @@ namespace Amazon.Proton
         /// 
         /// <returns>Returns a  GetServiceTemplateResult from Proton.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetServiceTemplate">REST API Reference for GetServiceTemplate Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         GetServiceTemplateResponse EndGetServiceTemplate(IAsyncResult asyncResult);
 
         #endregion
@@ -3186,6 +3321,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetServiceTemplateVersion">REST API Reference for GetServiceTemplateVersion Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         GetServiceTemplateVersionResponse GetServiceTemplateVersion(GetServiceTemplateVersionRequest request);
 
         /// <summary>
@@ -3200,6 +3336,7 @@ namespace Amazon.Proton
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetServiceTemplateVersion
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetServiceTemplateVersion">REST API Reference for GetServiceTemplateVersion Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         IAsyncResult BeginGetServiceTemplateVersion(GetServiceTemplateVersionRequest request, AsyncCallback callback, object state);
 
 
@@ -3212,6 +3349,7 @@ namespace Amazon.Proton
         /// 
         /// <returns>Returns a  GetServiceTemplateVersionResult from Proton.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetServiceTemplateVersion">REST API Reference for GetServiceTemplateVersion Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         GetServiceTemplateVersionResponse EndGetServiceTemplateVersion(IAsyncResult asyncResult);
 
         #endregion
@@ -3241,6 +3379,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetTemplateSyncConfig">REST API Reference for GetTemplateSyncConfig Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         GetTemplateSyncConfigResponse GetTemplateSyncConfig(GetTemplateSyncConfigRequest request);
 
         /// <summary>
@@ -3255,6 +3394,7 @@ namespace Amazon.Proton
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetTemplateSyncConfig
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetTemplateSyncConfig">REST API Reference for GetTemplateSyncConfig Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         IAsyncResult BeginGetTemplateSyncConfig(GetTemplateSyncConfigRequest request, AsyncCallback callback, object state);
 
 
@@ -3267,6 +3407,7 @@ namespace Amazon.Proton
         /// 
         /// <returns>Returns a  GetTemplateSyncConfigResult from Proton.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetTemplateSyncConfig">REST API Reference for GetTemplateSyncConfig Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         GetTemplateSyncConfigResponse EndGetTemplateSyncConfig(IAsyncResult asyncResult);
 
         #endregion
@@ -3296,6 +3437,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetTemplateSyncStatus">REST API Reference for GetTemplateSyncStatus Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         GetTemplateSyncStatusResponse GetTemplateSyncStatus(GetTemplateSyncStatusRequest request);
 
         /// <summary>
@@ -3310,6 +3452,7 @@ namespace Amazon.Proton
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetTemplateSyncStatus
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetTemplateSyncStatus">REST API Reference for GetTemplateSyncStatus Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         IAsyncResult BeginGetTemplateSyncStatus(GetTemplateSyncStatusRequest request, AsyncCallback callback, object state);
 
 
@@ -3322,6 +3465,7 @@ namespace Amazon.Proton
         /// 
         /// <returns>Returns a  GetTemplateSyncStatusResult from Proton.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetTemplateSyncStatus">REST API Reference for GetTemplateSyncStatus Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         GetTemplateSyncStatusResponse EndGetTemplateSyncStatus(IAsyncResult asyncResult);
 
         #endregion
@@ -3357,6 +3501,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListComponentOutputs">REST API Reference for ListComponentOutputs Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         ListComponentOutputsResponse ListComponentOutputs(ListComponentOutputsRequest request);
 
         /// <summary>
@@ -3371,6 +3516,7 @@ namespace Amazon.Proton
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListComponentOutputs
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListComponentOutputs">REST API Reference for ListComponentOutputs Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         IAsyncResult BeginListComponentOutputs(ListComponentOutputsRequest request, AsyncCallback callback, object state);
 
 
@@ -3383,6 +3529,7 @@ namespace Amazon.Proton
         /// 
         /// <returns>Returns a  ListComponentOutputsResult from Proton.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListComponentOutputs">REST API Reference for ListComponentOutputs Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         ListComponentOutputsResponse EndListComponentOutputs(IAsyncResult asyncResult);
 
         #endregion
@@ -3418,6 +3565,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListComponentProvisionedResources">REST API Reference for ListComponentProvisionedResources Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         ListComponentProvisionedResourcesResponse ListComponentProvisionedResources(ListComponentProvisionedResourcesRequest request);
 
         /// <summary>
@@ -3432,6 +3580,7 @@ namespace Amazon.Proton
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListComponentProvisionedResources
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListComponentProvisionedResources">REST API Reference for ListComponentProvisionedResources Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         IAsyncResult BeginListComponentProvisionedResources(ListComponentProvisionedResourcesRequest request, AsyncCallback callback, object state);
 
 
@@ -3444,6 +3593,7 @@ namespace Amazon.Proton
         /// 
         /// <returns>Returns a  ListComponentProvisionedResourcesResult from Proton.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListComponentProvisionedResources">REST API Reference for ListComponentProvisionedResources Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         ListComponentProvisionedResourcesResponse EndListComponentProvisionedResources(IAsyncResult asyncResult);
 
         #endregion
@@ -3477,6 +3627,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListComponents">REST API Reference for ListComponents Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         ListComponentsResponse ListComponents(ListComponentsRequest request);
 
         /// <summary>
@@ -3491,6 +3642,7 @@ namespace Amazon.Proton
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListComponents
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListComponents">REST API Reference for ListComponents Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         IAsyncResult BeginListComponents(ListComponentsRequest request, AsyncCallback callback, object state);
 
 
@@ -3503,6 +3655,7 @@ namespace Amazon.Proton
         /// 
         /// <returns>Returns a  ListComponentsResult from Proton.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListComponents">REST API Reference for ListComponents Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         ListComponentsResponse EndListComponents(IAsyncResult asyncResult);
 
         #endregion
@@ -3533,6 +3686,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListDeployments">REST API Reference for ListDeployments Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         ListDeploymentsResponse ListDeployments(ListDeploymentsRequest request);
 
         /// <summary>
@@ -3547,6 +3701,7 @@ namespace Amazon.Proton
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDeployments
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListDeployments">REST API Reference for ListDeployments Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         IAsyncResult BeginListDeployments(ListDeploymentsRequest request, AsyncCallback callback, object state);
 
 
@@ -3559,6 +3714,7 @@ namespace Amazon.Proton
         /// 
         /// <returns>Returns a  ListDeploymentsResult from Proton.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListDeployments">REST API Reference for ListDeployments Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         ListDeploymentsResponse EndListDeployments(IAsyncResult asyncResult);
 
         #endregion
@@ -3591,6 +3747,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListEnvironmentAccountConnections">REST API Reference for ListEnvironmentAccountConnections Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         ListEnvironmentAccountConnectionsResponse ListEnvironmentAccountConnections(ListEnvironmentAccountConnectionsRequest request);
 
         /// <summary>
@@ -3605,6 +3762,7 @@ namespace Amazon.Proton
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListEnvironmentAccountConnections
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListEnvironmentAccountConnections">REST API Reference for ListEnvironmentAccountConnections Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         IAsyncResult BeginListEnvironmentAccountConnections(ListEnvironmentAccountConnectionsRequest request, AsyncCallback callback, object state);
 
 
@@ -3617,6 +3775,7 @@ namespace Amazon.Proton
         /// 
         /// <returns>Returns a  ListEnvironmentAccountConnectionsResult from Proton.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListEnvironmentAccountConnections">REST API Reference for ListEnvironmentAccountConnections Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         ListEnvironmentAccountConnectionsResponse EndListEnvironmentAccountConnections(IAsyncResult asyncResult);
 
         #endregion
@@ -3646,6 +3805,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListEnvironmentOutputs">REST API Reference for ListEnvironmentOutputs Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         ListEnvironmentOutputsResponse ListEnvironmentOutputs(ListEnvironmentOutputsRequest request);
 
         /// <summary>
@@ -3660,6 +3820,7 @@ namespace Amazon.Proton
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListEnvironmentOutputs
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListEnvironmentOutputs">REST API Reference for ListEnvironmentOutputs Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         IAsyncResult BeginListEnvironmentOutputs(ListEnvironmentOutputsRequest request, AsyncCallback callback, object state);
 
 
@@ -3672,6 +3833,7 @@ namespace Amazon.Proton
         /// 
         /// <returns>Returns a  ListEnvironmentOutputsResult from Proton.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListEnvironmentOutputs">REST API Reference for ListEnvironmentOutputs Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         ListEnvironmentOutputsResponse EndListEnvironmentOutputs(IAsyncResult asyncResult);
 
         #endregion
@@ -3701,6 +3863,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListEnvironmentProvisionedResources">REST API Reference for ListEnvironmentProvisionedResources Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         ListEnvironmentProvisionedResourcesResponse ListEnvironmentProvisionedResources(ListEnvironmentProvisionedResourcesRequest request);
 
         /// <summary>
@@ -3715,6 +3878,7 @@ namespace Amazon.Proton
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListEnvironmentProvisionedResources
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListEnvironmentProvisionedResources">REST API Reference for ListEnvironmentProvisionedResources Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         IAsyncResult BeginListEnvironmentProvisionedResources(ListEnvironmentProvisionedResourcesRequest request, AsyncCallback callback, object state);
 
 
@@ -3727,6 +3891,7 @@ namespace Amazon.Proton
         /// 
         /// <returns>Returns a  ListEnvironmentProvisionedResourcesResult from Proton.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListEnvironmentProvisionedResources">REST API Reference for ListEnvironmentProvisionedResources Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         ListEnvironmentProvisionedResourcesResponse EndListEnvironmentProvisionedResources(IAsyncResult asyncResult);
 
         #endregion
@@ -3756,6 +3921,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListEnvironments">REST API Reference for ListEnvironments Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         ListEnvironmentsResponse ListEnvironments(ListEnvironmentsRequest request);
 
         /// <summary>
@@ -3770,6 +3936,7 @@ namespace Amazon.Proton
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListEnvironments
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListEnvironments">REST API Reference for ListEnvironments Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         IAsyncResult BeginListEnvironments(ListEnvironmentsRequest request, AsyncCallback callback, object state);
 
 
@@ -3782,6 +3949,7 @@ namespace Amazon.Proton
         /// 
         /// <returns>Returns a  ListEnvironmentsResult from Proton.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListEnvironments">REST API Reference for ListEnvironments Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         ListEnvironmentsResponse EndListEnvironments(IAsyncResult asyncResult);
 
         #endregion
@@ -3808,6 +3976,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListEnvironmentTemplates">REST API Reference for ListEnvironmentTemplates Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         ListEnvironmentTemplatesResponse ListEnvironmentTemplates(ListEnvironmentTemplatesRequest request);
 
         /// <summary>
@@ -3822,6 +3991,7 @@ namespace Amazon.Proton
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListEnvironmentTemplates
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListEnvironmentTemplates">REST API Reference for ListEnvironmentTemplates Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         IAsyncResult BeginListEnvironmentTemplates(ListEnvironmentTemplatesRequest request, AsyncCallback callback, object state);
 
 
@@ -3834,6 +4004,7 @@ namespace Amazon.Proton
         /// 
         /// <returns>Returns a  ListEnvironmentTemplatesResult from Proton.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListEnvironmentTemplates">REST API Reference for ListEnvironmentTemplates Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         ListEnvironmentTemplatesResponse EndListEnvironmentTemplates(IAsyncResult asyncResult);
 
         #endregion
@@ -3863,6 +4034,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListEnvironmentTemplateVersions">REST API Reference for ListEnvironmentTemplateVersions Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         ListEnvironmentTemplateVersionsResponse ListEnvironmentTemplateVersions(ListEnvironmentTemplateVersionsRequest request);
 
         /// <summary>
@@ -3877,6 +4049,7 @@ namespace Amazon.Proton
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListEnvironmentTemplateVersions
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListEnvironmentTemplateVersions">REST API Reference for ListEnvironmentTemplateVersions Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         IAsyncResult BeginListEnvironmentTemplateVersions(ListEnvironmentTemplateVersionsRequest request, AsyncCallback callback, object state);
 
 
@@ -3889,6 +4062,7 @@ namespace Amazon.Proton
         /// 
         /// <returns>Returns a  ListEnvironmentTemplateVersionsResult from Proton.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListEnvironmentTemplateVersions">REST API Reference for ListEnvironmentTemplateVersions Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         ListEnvironmentTemplateVersionsResponse EndListEnvironmentTemplateVersions(IAsyncResult asyncResult);
 
         #endregion
@@ -3918,6 +4092,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListRepositories">REST API Reference for ListRepositories Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         ListRepositoriesResponse ListRepositories(ListRepositoriesRequest request);
 
         /// <summary>
@@ -3932,6 +4107,7 @@ namespace Amazon.Proton
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListRepositories
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListRepositories">REST API Reference for ListRepositories Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         IAsyncResult BeginListRepositories(ListRepositoriesRequest request, AsyncCallback callback, object state);
 
 
@@ -3944,6 +4120,7 @@ namespace Amazon.Proton
         /// 
         /// <returns>Returns a  ListRepositoriesResult from Proton.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListRepositories">REST API Reference for ListRepositories Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         ListRepositoriesResponse EndListRepositories(IAsyncResult asyncResult);
 
         #endregion
@@ -3970,6 +4147,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListRepositorySyncDefinitions">REST API Reference for ListRepositorySyncDefinitions Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         ListRepositorySyncDefinitionsResponse ListRepositorySyncDefinitions(ListRepositorySyncDefinitionsRequest request);
 
         /// <summary>
@@ -3984,6 +4162,7 @@ namespace Amazon.Proton
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListRepositorySyncDefinitions
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListRepositorySyncDefinitions">REST API Reference for ListRepositorySyncDefinitions Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         IAsyncResult BeginListRepositorySyncDefinitions(ListRepositorySyncDefinitionsRequest request, AsyncCallback callback, object state);
 
 
@@ -3996,6 +4175,7 @@ namespace Amazon.Proton
         /// 
         /// <returns>Returns a  ListRepositorySyncDefinitionsResult from Proton.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListRepositorySyncDefinitions">REST API Reference for ListRepositorySyncDefinitions Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         ListRepositorySyncDefinitionsResponse EndListRepositorySyncDefinitions(IAsyncResult asyncResult);
 
         #endregion
@@ -4025,6 +4205,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListServiceInstanceOutputs">REST API Reference for ListServiceInstanceOutputs Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         ListServiceInstanceOutputsResponse ListServiceInstanceOutputs(ListServiceInstanceOutputsRequest request);
 
         /// <summary>
@@ -4039,6 +4220,7 @@ namespace Amazon.Proton
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListServiceInstanceOutputs
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListServiceInstanceOutputs">REST API Reference for ListServiceInstanceOutputs Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         IAsyncResult BeginListServiceInstanceOutputs(ListServiceInstanceOutputsRequest request, AsyncCallback callback, object state);
 
 
@@ -4051,6 +4233,7 @@ namespace Amazon.Proton
         /// 
         /// <returns>Returns a  ListServiceInstanceOutputsResult from Proton.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListServiceInstanceOutputs">REST API Reference for ListServiceInstanceOutputs Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         ListServiceInstanceOutputsResponse EndListServiceInstanceOutputs(IAsyncResult asyncResult);
 
         #endregion
@@ -4080,6 +4263,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListServiceInstanceProvisionedResources">REST API Reference for ListServiceInstanceProvisionedResources Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         ListServiceInstanceProvisionedResourcesResponse ListServiceInstanceProvisionedResources(ListServiceInstanceProvisionedResourcesRequest request);
 
         /// <summary>
@@ -4094,6 +4278,7 @@ namespace Amazon.Proton
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListServiceInstanceProvisionedResources
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListServiceInstanceProvisionedResources">REST API Reference for ListServiceInstanceProvisionedResources Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         IAsyncResult BeginListServiceInstanceProvisionedResources(ListServiceInstanceProvisionedResourcesRequest request, AsyncCallback callback, object state);
 
 
@@ -4106,6 +4291,7 @@ namespace Amazon.Proton
         /// 
         /// <returns>Returns a  ListServiceInstanceProvisionedResourcesResult from Proton.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListServiceInstanceProvisionedResources">REST API Reference for ListServiceInstanceProvisionedResources Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         ListServiceInstanceProvisionedResourcesResponse EndListServiceInstanceProvisionedResources(IAsyncResult asyncResult);
 
         #endregion
@@ -4136,6 +4322,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListServiceInstances">REST API Reference for ListServiceInstances Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         ListServiceInstancesResponse ListServiceInstances(ListServiceInstancesRequest request);
 
         /// <summary>
@@ -4150,6 +4337,7 @@ namespace Amazon.Proton
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListServiceInstances
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListServiceInstances">REST API Reference for ListServiceInstances Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         IAsyncResult BeginListServiceInstances(ListServiceInstancesRequest request, AsyncCallback callback, object state);
 
 
@@ -4162,6 +4350,7 @@ namespace Amazon.Proton
         /// 
         /// <returns>Returns a  ListServiceInstancesResult from Proton.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListServiceInstances">REST API Reference for ListServiceInstances Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         ListServiceInstancesResponse EndListServiceInstances(IAsyncResult asyncResult);
 
         #endregion
@@ -4191,6 +4380,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListServicePipelineOutputs">REST API Reference for ListServicePipelineOutputs Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         ListServicePipelineOutputsResponse ListServicePipelineOutputs(ListServicePipelineOutputsRequest request);
 
         /// <summary>
@@ -4205,6 +4395,7 @@ namespace Amazon.Proton
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListServicePipelineOutputs
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListServicePipelineOutputs">REST API Reference for ListServicePipelineOutputs Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         IAsyncResult BeginListServicePipelineOutputs(ListServicePipelineOutputsRequest request, AsyncCallback callback, object state);
 
 
@@ -4217,6 +4408,7 @@ namespace Amazon.Proton
         /// 
         /// <returns>Returns a  ListServicePipelineOutputsResult from Proton.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListServicePipelineOutputs">REST API Reference for ListServicePipelineOutputs Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         ListServicePipelineOutputsResponse EndListServicePipelineOutputs(IAsyncResult asyncResult);
 
         #endregion
@@ -4246,6 +4438,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListServicePipelineProvisionedResources">REST API Reference for ListServicePipelineProvisionedResources Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         ListServicePipelineProvisionedResourcesResponse ListServicePipelineProvisionedResources(ListServicePipelineProvisionedResourcesRequest request);
 
         /// <summary>
@@ -4260,6 +4453,7 @@ namespace Amazon.Proton
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListServicePipelineProvisionedResources
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListServicePipelineProvisionedResources">REST API Reference for ListServicePipelineProvisionedResources Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         IAsyncResult BeginListServicePipelineProvisionedResources(ListServicePipelineProvisionedResourcesRequest request, AsyncCallback callback, object state);
 
 
@@ -4272,6 +4466,7 @@ namespace Amazon.Proton
         /// 
         /// <returns>Returns a  ListServicePipelineProvisionedResourcesResult from Proton.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListServicePipelineProvisionedResources">REST API Reference for ListServicePipelineProvisionedResources Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         ListServicePipelineProvisionedResourcesResponse EndListServicePipelineProvisionedResources(IAsyncResult asyncResult);
 
         #endregion
@@ -4298,6 +4493,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListServices">REST API Reference for ListServices Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         ListServicesResponse ListServices(ListServicesRequest request);
 
         /// <summary>
@@ -4312,6 +4508,7 @@ namespace Amazon.Proton
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListServices
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListServices">REST API Reference for ListServices Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         IAsyncResult BeginListServices(ListServicesRequest request, AsyncCallback callback, object state);
 
 
@@ -4324,6 +4521,7 @@ namespace Amazon.Proton
         /// 
         /// <returns>Returns a  ListServicesResult from Proton.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListServices">REST API Reference for ListServices Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         ListServicesResponse EndListServices(IAsyncResult asyncResult);
 
         #endregion
@@ -4350,6 +4548,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListServiceTemplates">REST API Reference for ListServiceTemplates Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         ListServiceTemplatesResponse ListServiceTemplates(ListServiceTemplatesRequest request);
 
         /// <summary>
@@ -4364,6 +4563,7 @@ namespace Amazon.Proton
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListServiceTemplates
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListServiceTemplates">REST API Reference for ListServiceTemplates Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         IAsyncResult BeginListServiceTemplates(ListServiceTemplatesRequest request, AsyncCallback callback, object state);
 
 
@@ -4376,6 +4576,7 @@ namespace Amazon.Proton
         /// 
         /// <returns>Returns a  ListServiceTemplatesResult from Proton.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListServiceTemplates">REST API Reference for ListServiceTemplates Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         ListServiceTemplatesResponse EndListServiceTemplates(IAsyncResult asyncResult);
 
         #endregion
@@ -4405,6 +4606,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListServiceTemplateVersions">REST API Reference for ListServiceTemplateVersions Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         ListServiceTemplateVersionsResponse ListServiceTemplateVersions(ListServiceTemplateVersionsRequest request);
 
         /// <summary>
@@ -4419,6 +4621,7 @@ namespace Amazon.Proton
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListServiceTemplateVersions
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListServiceTemplateVersions">REST API Reference for ListServiceTemplateVersions Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         IAsyncResult BeginListServiceTemplateVersions(ListServiceTemplateVersionsRequest request, AsyncCallback callback, object state);
 
 
@@ -4431,6 +4634,7 @@ namespace Amazon.Proton
         /// 
         /// <returns>Returns a  ListServiceTemplateVersionsResult from Proton.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListServiceTemplateVersions">REST API Reference for ListServiceTemplateVersions Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         ListServiceTemplateVersionsResponse EndListServiceTemplateVersions(IAsyncResult asyncResult);
 
         #endregion
@@ -4461,6 +4665,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request);
 
         /// <summary>
@@ -4475,6 +4680,7 @@ namespace Amazon.Proton
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTagsForResource
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state);
 
 
@@ -4487,6 +4693,7 @@ namespace Amazon.Proton
         /// 
         /// <returns>Returns a  ListTagsForResourceResult from Proton.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         ListTagsForResourceResponse EndListTagsForResource(IAsyncResult asyncResult);
 
         #endregion
@@ -4530,6 +4737,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/NotifyResourceDeploymentStatusChange">REST API Reference for NotifyResourceDeploymentStatusChange Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         NotifyResourceDeploymentStatusChangeResponse NotifyResourceDeploymentStatusChange(NotifyResourceDeploymentStatusChangeRequest request);
 
         /// <summary>
@@ -4544,6 +4752,7 @@ namespace Amazon.Proton
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndNotifyResourceDeploymentStatusChange
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/NotifyResourceDeploymentStatusChange">REST API Reference for NotifyResourceDeploymentStatusChange Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         IAsyncResult BeginNotifyResourceDeploymentStatusChange(NotifyResourceDeploymentStatusChangeRequest request, AsyncCallback callback, object state);
 
 
@@ -4556,6 +4765,7 @@ namespace Amazon.Proton
         /// 
         /// <returns>Returns a  NotifyResourceDeploymentStatusChangeResult from Proton.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/NotifyResourceDeploymentStatusChange">REST API Reference for NotifyResourceDeploymentStatusChange Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         NotifyResourceDeploymentStatusChangeResponse EndNotifyResourceDeploymentStatusChange(IAsyncResult asyncResult);
 
         #endregion
@@ -4604,6 +4814,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/RejectEnvironmentAccountConnection">REST API Reference for RejectEnvironmentAccountConnection Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         RejectEnvironmentAccountConnectionResponse RejectEnvironmentAccountConnection(RejectEnvironmentAccountConnectionRequest request);
 
         /// <summary>
@@ -4618,6 +4829,7 @@ namespace Amazon.Proton
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRejectEnvironmentAccountConnection
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/RejectEnvironmentAccountConnection">REST API Reference for RejectEnvironmentAccountConnection Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         IAsyncResult BeginRejectEnvironmentAccountConnection(RejectEnvironmentAccountConnectionRequest request, AsyncCallback callback, object state);
 
 
@@ -4630,6 +4842,7 @@ namespace Amazon.Proton
         /// 
         /// <returns>Returns a  RejectEnvironmentAccountConnectionResult from Proton.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/RejectEnvironmentAccountConnection">REST API Reference for RejectEnvironmentAccountConnection Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         RejectEnvironmentAccountConnectionResponse EndRejectEnvironmentAccountConnection(IAsyncResult asyncResult);
 
         #endregion
@@ -4669,6 +4882,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/TagResource">REST API Reference for TagResource Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         TagResourceResponse TagResource(TagResourceRequest request);
 
         /// <summary>
@@ -4683,6 +4897,7 @@ namespace Amazon.Proton
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTagResource
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/TagResource">REST API Reference for TagResource Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state);
 
 
@@ -4695,6 +4910,7 @@ namespace Amazon.Proton
         /// 
         /// <returns>Returns a  TagResourceResult from Proton.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/TagResource">REST API Reference for TagResource Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         TagResourceResponse EndTagResource(IAsyncResult asyncResult);
 
         #endregion
@@ -4734,6 +4950,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         UntagResourceResponse UntagResource(UntagResourceRequest request);
 
         /// <summary>
@@ -4748,6 +4965,7 @@ namespace Amazon.Proton
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUntagResource
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state);
 
 
@@ -4760,6 +4978,7 @@ namespace Amazon.Proton
         /// 
         /// <returns>Returns a  UntagResourceResult from Proton.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         UntagResourceResponse EndUntagResource(IAsyncResult asyncResult);
 
         #endregion
@@ -4790,6 +5009,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateAccountSettings">REST API Reference for UpdateAccountSettings Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         UpdateAccountSettingsResponse UpdateAccountSettings(UpdateAccountSettingsRequest request);
 
         /// <summary>
@@ -4804,6 +5024,7 @@ namespace Amazon.Proton
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateAccountSettings
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateAccountSettings">REST API Reference for UpdateAccountSettings Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         IAsyncResult BeginUpdateAccountSettings(UpdateAccountSettingsRequest request, AsyncCallback callback, object state);
 
 
@@ -4816,6 +5037,7 @@ namespace Amazon.Proton
         /// 
         /// <returns>Returns a  UpdateAccountSettingsResult from Proton.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateAccountSettings">REST API Reference for UpdateAccountSettings Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         UpdateAccountSettingsResponse EndUpdateAccountSettings(IAsyncResult asyncResult);
 
         #endregion
@@ -4868,6 +5090,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateComponent">REST API Reference for UpdateComponent Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         UpdateComponentResponse UpdateComponent(UpdateComponentRequest request);
 
         /// <summary>
@@ -4882,6 +5105,7 @@ namespace Amazon.Proton
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateComponent
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateComponent">REST API Reference for UpdateComponent Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         IAsyncResult BeginUpdateComponent(UpdateComponentRequest request, AsyncCallback callback, object state);
 
 
@@ -4894,6 +5118,7 @@ namespace Amazon.Proton
         /// 
         /// <returns>Returns a  UpdateComponentResult from Proton.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateComponent">REST API Reference for UpdateComponent Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         UpdateComponentResponse EndUpdateComponent(IAsyncResult asyncResult);
 
         #endregion
@@ -5014,6 +5239,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateEnvironment">REST API Reference for UpdateEnvironment Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         UpdateEnvironmentResponse UpdateEnvironment(UpdateEnvironmentRequest request);
 
         /// <summary>
@@ -5028,6 +5254,7 @@ namespace Amazon.Proton
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateEnvironment
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateEnvironment">REST API Reference for UpdateEnvironment Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         IAsyncResult BeginUpdateEnvironment(UpdateEnvironmentRequest request, AsyncCallback callback, object state);
 
 
@@ -5040,6 +5267,7 @@ namespace Amazon.Proton
         /// 
         /// <returns>Returns a  UpdateEnvironmentResult from Proton.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateEnvironment">REST API Reference for UpdateEnvironment Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         UpdateEnvironmentResponse EndUpdateEnvironment(IAsyncResult asyncResult);
 
         #endregion
@@ -5079,6 +5307,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateEnvironmentAccountConnection">REST API Reference for UpdateEnvironmentAccountConnection Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         UpdateEnvironmentAccountConnectionResponse UpdateEnvironmentAccountConnection(UpdateEnvironmentAccountConnectionRequest request);
 
         /// <summary>
@@ -5093,6 +5322,7 @@ namespace Amazon.Proton
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateEnvironmentAccountConnection
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateEnvironmentAccountConnection">REST API Reference for UpdateEnvironmentAccountConnection Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         IAsyncResult BeginUpdateEnvironmentAccountConnection(UpdateEnvironmentAccountConnectionRequest request, AsyncCallback callback, object state);
 
 
@@ -5105,6 +5335,7 @@ namespace Amazon.Proton
         /// 
         /// <returns>Returns a  UpdateEnvironmentAccountConnectionResult from Proton.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateEnvironmentAccountConnection">REST API Reference for UpdateEnvironmentAccountConnection Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         UpdateEnvironmentAccountConnectionResponse EndUpdateEnvironmentAccountConnection(IAsyncResult asyncResult);
 
         #endregion
@@ -5137,6 +5368,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateEnvironmentTemplate">REST API Reference for UpdateEnvironmentTemplate Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         UpdateEnvironmentTemplateResponse UpdateEnvironmentTemplate(UpdateEnvironmentTemplateRequest request);
 
         /// <summary>
@@ -5151,6 +5383,7 @@ namespace Amazon.Proton
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateEnvironmentTemplate
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateEnvironmentTemplate">REST API Reference for UpdateEnvironmentTemplate Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         IAsyncResult BeginUpdateEnvironmentTemplate(UpdateEnvironmentTemplateRequest request, AsyncCallback callback, object state);
 
 
@@ -5163,6 +5396,7 @@ namespace Amazon.Proton
         /// 
         /// <returns>Returns a  UpdateEnvironmentTemplateResult from Proton.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateEnvironmentTemplate">REST API Reference for UpdateEnvironmentTemplate Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         UpdateEnvironmentTemplateResponse EndUpdateEnvironmentTemplate(IAsyncResult asyncResult);
 
         #endregion
@@ -5195,6 +5429,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateEnvironmentTemplateVersion">REST API Reference for UpdateEnvironmentTemplateVersion Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         UpdateEnvironmentTemplateVersionResponse UpdateEnvironmentTemplateVersion(UpdateEnvironmentTemplateVersionRequest request);
 
         /// <summary>
@@ -5209,6 +5444,7 @@ namespace Amazon.Proton
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateEnvironmentTemplateVersion
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateEnvironmentTemplateVersion">REST API Reference for UpdateEnvironmentTemplateVersion Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         IAsyncResult BeginUpdateEnvironmentTemplateVersion(UpdateEnvironmentTemplateVersionRequest request, AsyncCallback callback, object state);
 
 
@@ -5221,6 +5457,7 @@ namespace Amazon.Proton
         /// 
         /// <returns>Returns a  UpdateEnvironmentTemplateVersionResult from Proton.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateEnvironmentTemplateVersion">REST API Reference for UpdateEnvironmentTemplateVersion Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         UpdateEnvironmentTemplateVersionResponse EndUpdateEnvironmentTemplateVersion(IAsyncResult asyncResult);
 
         #endregion
@@ -5282,6 +5519,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateService">REST API Reference for UpdateService Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         UpdateServiceResponse UpdateService(UpdateServiceRequest request);
 
         /// <summary>
@@ -5296,6 +5534,7 @@ namespace Amazon.Proton
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateService
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateService">REST API Reference for UpdateService Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         IAsyncResult BeginUpdateService(UpdateServiceRequest request, AsyncCallback callback, object state);
 
 
@@ -5308,6 +5547,7 @@ namespace Amazon.Proton
         /// 
         /// <returns>Returns a  UpdateServiceResult from Proton.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateService">REST API Reference for UpdateService Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         UpdateServiceResponse EndUpdateService(IAsyncResult asyncResult);
 
         #endregion
@@ -5357,6 +5597,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateServiceInstance">REST API Reference for UpdateServiceInstance Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         UpdateServiceInstanceResponse UpdateServiceInstance(UpdateServiceInstanceRequest request);
 
         /// <summary>
@@ -5371,6 +5612,7 @@ namespace Amazon.Proton
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateServiceInstance
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateServiceInstance">REST API Reference for UpdateServiceInstance Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         IAsyncResult BeginUpdateServiceInstance(UpdateServiceInstanceRequest request, AsyncCallback callback, object state);
 
 
@@ -5383,6 +5625,7 @@ namespace Amazon.Proton
         /// 
         /// <returns>Returns a  UpdateServiceInstanceResult from Proton.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateServiceInstance">REST API Reference for UpdateServiceInstance Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         UpdateServiceInstanceResponse EndUpdateServiceInstance(IAsyncResult asyncResult);
 
         #endregion
@@ -5462,6 +5705,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateServicePipeline">REST API Reference for UpdateServicePipeline Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         UpdateServicePipelineResponse UpdateServicePipeline(UpdateServicePipelineRequest request);
 
         /// <summary>
@@ -5476,6 +5720,7 @@ namespace Amazon.Proton
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateServicePipeline
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateServicePipeline">REST API Reference for UpdateServicePipeline Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         IAsyncResult BeginUpdateServicePipeline(UpdateServicePipelineRequest request, AsyncCallback callback, object state);
 
 
@@ -5488,6 +5733,7 @@ namespace Amazon.Proton
         /// 
         /// <returns>Returns a  UpdateServicePipelineResult from Proton.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateServicePipeline">REST API Reference for UpdateServicePipeline Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         UpdateServicePipelineResponse EndUpdateServicePipeline(IAsyncResult asyncResult);
 
         #endregion
@@ -5520,6 +5766,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateServiceSyncBlocker">REST API Reference for UpdateServiceSyncBlocker Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         UpdateServiceSyncBlockerResponse UpdateServiceSyncBlocker(UpdateServiceSyncBlockerRequest request);
 
         /// <summary>
@@ -5534,6 +5781,7 @@ namespace Amazon.Proton
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateServiceSyncBlocker
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateServiceSyncBlocker">REST API Reference for UpdateServiceSyncBlocker Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         IAsyncResult BeginUpdateServiceSyncBlocker(UpdateServiceSyncBlockerRequest request, AsyncCallback callback, object state);
 
 
@@ -5546,6 +5794,7 @@ namespace Amazon.Proton
         /// 
         /// <returns>Returns a  UpdateServiceSyncBlockerResult from Proton.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateServiceSyncBlocker">REST API Reference for UpdateServiceSyncBlocker Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         UpdateServiceSyncBlockerResponse EndUpdateServiceSyncBlocker(IAsyncResult asyncResult);
 
         #endregion
@@ -5578,6 +5827,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateServiceSyncConfig">REST API Reference for UpdateServiceSyncConfig Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         UpdateServiceSyncConfigResponse UpdateServiceSyncConfig(UpdateServiceSyncConfigRequest request);
 
         /// <summary>
@@ -5592,6 +5842,7 @@ namespace Amazon.Proton
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateServiceSyncConfig
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateServiceSyncConfig">REST API Reference for UpdateServiceSyncConfig Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         IAsyncResult BeginUpdateServiceSyncConfig(UpdateServiceSyncConfigRequest request, AsyncCallback callback, object state);
 
 
@@ -5604,6 +5855,7 @@ namespace Amazon.Proton
         /// 
         /// <returns>Returns a  UpdateServiceSyncConfigResult from Proton.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateServiceSyncConfig">REST API Reference for UpdateServiceSyncConfig Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         UpdateServiceSyncConfigResponse EndUpdateServiceSyncConfig(IAsyncResult asyncResult);
 
         #endregion
@@ -5636,6 +5888,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateServiceTemplate">REST API Reference for UpdateServiceTemplate Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         UpdateServiceTemplateResponse UpdateServiceTemplate(UpdateServiceTemplateRequest request);
 
         /// <summary>
@@ -5650,6 +5903,7 @@ namespace Amazon.Proton
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateServiceTemplate
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateServiceTemplate">REST API Reference for UpdateServiceTemplate Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         IAsyncResult BeginUpdateServiceTemplate(UpdateServiceTemplateRequest request, AsyncCallback callback, object state);
 
 
@@ -5662,6 +5916,7 @@ namespace Amazon.Proton
         /// 
         /// <returns>Returns a  UpdateServiceTemplateResult from Proton.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateServiceTemplate">REST API Reference for UpdateServiceTemplate Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         UpdateServiceTemplateResponse EndUpdateServiceTemplate(IAsyncResult asyncResult);
 
         #endregion
@@ -5694,6 +5949,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateServiceTemplateVersion">REST API Reference for UpdateServiceTemplateVersion Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         UpdateServiceTemplateVersionResponse UpdateServiceTemplateVersion(UpdateServiceTemplateVersionRequest request);
 
         /// <summary>
@@ -5708,6 +5964,7 @@ namespace Amazon.Proton
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateServiceTemplateVersion
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateServiceTemplateVersion">REST API Reference for UpdateServiceTemplateVersion Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         IAsyncResult BeginUpdateServiceTemplateVersion(UpdateServiceTemplateVersionRequest request, AsyncCallback callback, object state);
 
 
@@ -5720,6 +5977,7 @@ namespace Amazon.Proton
         /// 
         /// <returns>Returns a  UpdateServiceTemplateVersionResult from Proton.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateServiceTemplateVersion">REST API Reference for UpdateServiceTemplateVersion Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         UpdateServiceTemplateVersionResponse EndUpdateServiceTemplateVersion(IAsyncResult asyncResult);
 
         #endregion
@@ -5755,6 +6013,7 @@ namespace Amazon.Proton
         /// The input is invalid or an out-of-range value was supplied for the input parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateTemplateSyncConfig">REST API Reference for UpdateTemplateSyncConfig Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         UpdateTemplateSyncConfigResponse UpdateTemplateSyncConfig(UpdateTemplateSyncConfigRequest request);
 
         /// <summary>
@@ -5769,6 +6028,7 @@ namespace Amazon.Proton
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateTemplateSyncConfig
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateTemplateSyncConfig">REST API Reference for UpdateTemplateSyncConfig Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         IAsyncResult BeginUpdateTemplateSyncConfig(UpdateTemplateSyncConfigRequest request, AsyncCallback callback, object state);
 
 
@@ -5781,6 +6041,7 @@ namespace Amazon.Proton
         /// 
         /// <returns>Returns a  UpdateTemplateSyncConfigResult from Proton.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateTemplateSyncConfig">REST API Reference for UpdateTemplateSyncConfig Operation</seealso>
+        [Obsolete("AWS Proton is not accepting new customers.")]
         UpdateTemplateSyncConfigResponse EndUpdateTemplateSyncConfig(IAsyncResult asyncResult);
 
         #endregion
