@@ -1,3 +1,7 @@
+### 4.0.107.0 (2025-10-07 18:14 UTC)
+* Proton (4.0.2.0)
+	* Deprecating APIs in AWS Proton namespace.
+
 ### 4.0.106.0 (2025-10-06 19:23 UTC)
 * Backup (4.0.4.0)
 	* Adds optional MaxScheduledRunsPreview input to GetBackupPlan API to provide a preview of up to 10 next scheduled backup plan runs in the GetBackupPlan response.
