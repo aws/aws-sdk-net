@@ -1,3 +1,10 @@
+### 3.7.1139.0 (2025-10-07 18:16 UTC)
+* Proton (3.7.502.0)
+	* Deprecating APIs in AWS Proton namespace.
+* Core 3.7.500.28
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.1138.0 (2025-10-06 19:29 UTC)
 * Backup (3.7.502.0)
 	* Adds optional MaxScheduledRunsPreview input to GetBackupPlan API to provide a preview of up to 10 next scheduled backup plan runs in the GetBackupPlan response.
