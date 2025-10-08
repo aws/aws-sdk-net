@@ -37,6 +37,7 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model
     {
         private CredentialsProvider _domainCredentialsProvider;
         private List<string> _domainIpv4List = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _domainIpv6List = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _domainName;
         private DomainNetworkSettings _domainNetworkSettings;
 
@@ -81,6 +82,30 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model
         internal bool IsSetDomainIpv4List()
         {
             return this._domainIpv4List != null && (this._domainIpv4List.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DomainIpv6List. 
+        /// <para>
+        /// A list of domain IPv6 addresses that are used for the Active Directory.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=2)]
+        public List<string> DomainIpv6List
+        {
+            get { return this._domainIpv6List; }
+            set { this._domainIpv6List = value; }
+        }
+
+        // Check to see if DomainIpv6List property is set
+        internal bool IsSetDomainIpv6List()
+        {
+            return this._domainIpv6List != null && (this._domainIpv6List.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

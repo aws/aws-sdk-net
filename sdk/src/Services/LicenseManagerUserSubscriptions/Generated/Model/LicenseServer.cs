@@ -36,6 +36,7 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model
     {
         private LicenseServerHealthStatus _healthStatus;
         private string _ipv4Address;
+        private string _ipv6Address;
         private LicenseServerEndpointProvisioningStatus _provisioningStatus;
 
         /// <summary>
@@ -72,6 +73,24 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model
         internal bool IsSetIpv4Address()
         {
             return this._ipv4Address != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Ipv6Address. 
+        /// <para>
+        /// A list of domain IPv6 addresses that are used for the RDS license server.
+        /// </para>
+        /// </summary>
+        public string Ipv6Address
+        {
+            get { return this._ipv6Address; }
+            set { this._ipv6Address = value; }
+        }
+
+        // Check to see if Ipv6Address property is set
+        internal bool IsSetIpv6Address()
+        {
+            return this._ipv6Address != null;
         }
 
         /// <summary>
