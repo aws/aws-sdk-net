@@ -1,3 +1,15 @@
+### 4.0.108.0 (2025-10-08 18:18 UTC)
+* BedrockAgentCoreControl (4.0.5.0)
+	* Adding support for authorizer type AWS_IAM to AgentCore Control Gateway.
+* LicenseManagerUserSubscriptions (4.0.3.0)
+	* Released support for IPv6 and dual-stack active directories
+* Outposts (4.0.3.0)
+	* This release adds the new StartOutpostDecommission API, which starts the decommission process to return Outposts racks or servers.
+* ServiceQuotas (4.0.3.0)
+	* introduces Service Quotas Automatic Management. Users can opt-in to monitoring and managing service quotas, receive notifications when quota usage reaches thresholds, configure notification channels, subscribe to EventBridge events for automation, and view notifications in the AWS Health dashboard.
+* Extensions.Bedrock.MEAI (4.0.3.6)
+	* Tweak BedrockChatClient to compensate for missing content
+
 ### 4.0.107.0 (2025-10-07 18:14 UTC)
 * Proton (4.0.2.0)
 	* Deprecating APIs in AWS Proton namespace.
