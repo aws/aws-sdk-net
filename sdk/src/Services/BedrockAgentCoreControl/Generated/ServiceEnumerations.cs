@@ -213,6 +213,10 @@ namespace Amazon.BedrockAgentCoreControl
     {
 
         /// <summary>
+        /// Constant AWS_IAM for AuthorizerType
+        /// </summary>
+        public static readonly AuthorizerType AWS_IAM = new AuthorizerType("AWS_IAM");
+        /// <summary>
         /// Constant CUSTOM_JWT for AuthorizerType
         /// </summary>
         public static readonly AuthorizerType CUSTOM_JWT = new AuthorizerType("CUSTOM_JWT");

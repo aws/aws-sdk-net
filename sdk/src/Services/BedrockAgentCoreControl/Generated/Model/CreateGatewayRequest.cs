@@ -60,7 +60,6 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// The authorizer configuration for the gateway.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public AuthorizerConfiguration AuthorizerConfiguration
         {
             get { return this._authorizerConfiguration; }
