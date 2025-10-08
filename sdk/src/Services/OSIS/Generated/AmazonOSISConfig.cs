@@ -32,7 +32,7 @@ namespace Amazon.OSIS
     public partial class AmazonOSISConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("OSIS", "3.7.502.8");
+            InternalSDKUtils.BuildUserAgentString("OSIS", "3.7.502.9");
 
         private string _userAgent = UserAgentString;
         ///<summary>

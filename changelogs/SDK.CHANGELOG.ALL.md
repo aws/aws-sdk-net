@@ -1,3 +1,16 @@
+### 3.7.1140.0 (2025-10-08 18:19 UTC)
+* BedrockAgentCoreControl (3.7.505.0)
+	* Adding support for authorizer type AWS_IAM to AgentCore Control Gateway.
+* LicenseManagerUserSubscriptions (3.7.503.0)
+	* Released support for IPv6 and dual-stack active directories
+* Outposts (3.7.501.0)
+	* This release adds the new StartOutpostDecommission API, which starts the decommission process to return Outposts racks or servers.
+* ServiceQuotas (3.7.502.0)
+	* introduces Service Quotas Automatic Management. Users can opt-in to monitoring and managing service quotas, receive notifications when quota usage reaches thresholds, configure notification channels, subscribe to EventBridge events for automation, and view notifications in the AWS Health dashboard.
+* Core 3.7.500.29
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.1139.0 (2025-10-07 18:16 UTC)
 * Proton (3.7.502.0)
 	* Deprecating APIs in AWS Proton namespace.

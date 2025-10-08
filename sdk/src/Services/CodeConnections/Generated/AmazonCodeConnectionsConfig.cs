@@ -32,7 +32,7 @@ namespace Amazon.CodeConnections
     public partial class AmazonCodeConnectionsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("CodeConnections", "3.7.502.17");
+            InternalSDKUtils.BuildUserAgentString("CodeConnections", "3.7.502.18");
 
         private string _userAgent = UserAgentString;
         ///<summary>
