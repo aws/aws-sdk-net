@@ -46,7 +46,7 @@ namespace Amazon.Outposts.Model
         /// The line items that make up the order.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=20)]
+        [AWSProperty(Min=1, Max=20)]
         public List<LineItemRequest> LineItems
         {
             get { return this._lineItems; }

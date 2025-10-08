@@ -1603,6 +1603,61 @@ namespace Amazon.Outposts
 
         #endregion
         
+        #region  StartOutpostDecommission
+
+
+        /// <summary>
+        /// Starts the decommission process to return the Outposts racks or servers.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartOutpostDecommission service method.</param>
+        /// 
+        /// <returns>The response from the StartOutpostDecommission service method, as returned by Outposts.</returns>
+        /// <exception cref="Amazon.Outposts.Model.AccessDeniedException">
+        /// You do not have permission to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.ConflictException">
+        /// Updating or deleting this resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.InternalServerException">
+        /// An internal error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.NotFoundException">
+        /// The specified request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.ValidationException">
+        /// A parameter is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/StartOutpostDecommission">REST API Reference for StartOutpostDecommission Operation</seealso>
+        StartOutpostDecommissionResponse StartOutpostDecommission(StartOutpostDecommissionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartOutpostDecommission operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartOutpostDecommission operation on AmazonOutpostsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartOutpostDecommission
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/StartOutpostDecommission">REST API Reference for StartOutpostDecommission Operation</seealso>
+        IAsyncResult BeginStartOutpostDecommission(StartOutpostDecommissionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartOutpostDecommission operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartOutpostDecommission.</param>
+        /// 
+        /// <returns>Returns a  StartOutpostDecommissionResult from Outposts.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/StartOutpostDecommission">REST API Reference for StartOutpostDecommission Operation</seealso>
+        StartOutpostDecommissionResponse EndStartOutpostDecommission(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  TagResource
 
 
