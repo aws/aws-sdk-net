@@ -396,6 +396,64 @@ namespace Amazon.ServiceQuotas
 
         #endregion
         
+        #region  GetAutoManagementConfiguration
+
+
+        /// <summary>
+        /// Retrieves information about your <a href="https://docs.aws.amazon.com/servicequotas/latest/userguide/automatic-management.html">Service
+        /// Quotas Automatic Management</a> configuration. Automatic Management monitors your
+        /// Service Quotas utilization and notifies you before you run out of your allocated quotas.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAutoManagementConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the GetAutoManagementConfiguration service method, as returned by ServiceQuotas.</returns>
+        /// <exception cref="Amazon.ServiceQuotas.Model.AccessDeniedException">
+        /// You do not have sufficient permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceQuotas.Model.IllegalArgumentException">
+        /// Invalid input was provided.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceQuotas.Model.NoSuchResourceException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceQuotas.Model.ServiceException">
+        /// Something went wrong.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceQuotas.Model.TooManyRequestsException">
+        /// Due to throttling, the request was denied. Slow down the rate of request calls, or
+        /// request an increase for this quota.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/GetAutoManagementConfiguration">REST API Reference for GetAutoManagementConfiguration Operation</seealso>
+        GetAutoManagementConfigurationResponse GetAutoManagementConfiguration(GetAutoManagementConfigurationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAutoManagementConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAutoManagementConfiguration operation on AmazonServiceQuotasClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAutoManagementConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/GetAutoManagementConfiguration">REST API Reference for GetAutoManagementConfiguration Operation</seealso>
+        IAsyncResult BeginGetAutoManagementConfiguration(GetAutoManagementConfigurationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetAutoManagementConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAutoManagementConfiguration.</param>
+        /// 
+        /// <returns>Returns a  GetAutoManagementConfigurationResult from ServiceQuotas.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/GetAutoManagementConfiguration">REST API Reference for GetAutoManagementConfiguration Operation</seealso>
+        GetAutoManagementConfigurationResponse EndGetAutoManagementConfiguration(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetAWSDefaultServiceQuota
 
 
@@ -1202,6 +1260,124 @@ namespace Amazon.ServiceQuotas
 
         #endregion
         
+        #region  StartAutoManagement
+
+
+        /// <summary>
+        /// Starts <a href="https://docs.aws.amazon.com/servicequotas/latest/userguide/automatic-management.html">Service
+        /// Quotas Automatic Management</a> for an Amazon Web Services account, including notification
+        /// preferences and excluded quotas configurations. Automatic Management monitors your
+        /// Service Quotas utilization and notifies you before you run out of your allocated quotas.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartAutoManagement service method.</param>
+        /// 
+        /// <returns>The response from the StartAutoManagement service method, as returned by ServiceQuotas.</returns>
+        /// <exception cref="Amazon.ServiceQuotas.Model.AccessDeniedException">
+        /// You do not have sufficient permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceQuotas.Model.IllegalArgumentException">
+        /// Invalid input was provided.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceQuotas.Model.NoSuchResourceException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceQuotas.Model.ServiceException">
+        /// Something went wrong.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceQuotas.Model.TooManyRequestsException">
+        /// Due to throttling, the request was denied. Slow down the rate of request calls, or
+        /// request an increase for this quota.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/StartAutoManagement">REST API Reference for StartAutoManagement Operation</seealso>
+        StartAutoManagementResponse StartAutoManagement(StartAutoManagementRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartAutoManagement operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartAutoManagement operation on AmazonServiceQuotasClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartAutoManagement
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/StartAutoManagement">REST API Reference for StartAutoManagement Operation</seealso>
+        IAsyncResult BeginStartAutoManagement(StartAutoManagementRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartAutoManagement operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartAutoManagement.</param>
+        /// 
+        /// <returns>Returns a  StartAutoManagementResult from ServiceQuotas.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/StartAutoManagement">REST API Reference for StartAutoManagement Operation</seealso>
+        StartAutoManagementResponse EndStartAutoManagement(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  StopAutoManagement
+
+
+        /// <summary>
+        /// Stops <a href="https://docs.aws.amazon.com/servicequotas/latest/userguide/automatic-management.html">Service
+        /// Quotas Automatic Management</a> for an Amazon Web Services account and removes all
+        /// associated configurations. Automatic Management monitors your Service Quotas utilization
+        /// and notifies you before you run out of your allocated quotas.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopAutoManagement service method.</param>
+        /// 
+        /// <returns>The response from the StopAutoManagement service method, as returned by ServiceQuotas.</returns>
+        /// <exception cref="Amazon.ServiceQuotas.Model.AccessDeniedException">
+        /// You do not have sufficient permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceQuotas.Model.IllegalArgumentException">
+        /// Invalid input was provided.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceQuotas.Model.NoSuchResourceException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceQuotas.Model.ServiceException">
+        /// Something went wrong.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceQuotas.Model.TooManyRequestsException">
+        /// Due to throttling, the request was denied. Slow down the rate of request calls, or
+        /// request an increase for this quota.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/StopAutoManagement">REST API Reference for StopAutoManagement Operation</seealso>
+        StopAutoManagementResponse StopAutoManagement(StopAutoManagementRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopAutoManagement operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopAutoManagement operation on AmazonServiceQuotasClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStopAutoManagement
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/StopAutoManagement">REST API Reference for StopAutoManagement Operation</seealso>
+        IAsyncResult BeginStopAutoManagement(StopAutoManagementRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StopAutoManagement operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStopAutoManagement.</param>
+        /// 
+        /// <returns>Returns a  StopAutoManagementResult from ServiceQuotas.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/StopAutoManagement">REST API Reference for StopAutoManagement Operation</seealso>
+        StopAutoManagementResponse EndStopAutoManagement(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  TagResource
 
 
@@ -1321,6 +1497,65 @@ namespace Amazon.ServiceQuotas
         /// <returns>Returns a  UntagResourceResult from ServiceQuotas.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/UntagResource">REST API Reference for UntagResource Operation</seealso>
         UntagResourceResponse EndUntagResource(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateAutoManagement
+
+
+        /// <summary>
+        /// Updates your <a href="https://docs.aws.amazon.com/servicequotas/latest/userguide/automatic-management.html">Service
+        /// Quotas Automatic Management</a> configuration, including notification preferences
+        /// and excluded quotas. Automatic Management monitors your Service Quotas utilization
+        /// and notifies you before you run out of your allocated quotas.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAutoManagement service method.</param>
+        /// 
+        /// <returns>The response from the UpdateAutoManagement service method, as returned by ServiceQuotas.</returns>
+        /// <exception cref="Amazon.ServiceQuotas.Model.AccessDeniedException">
+        /// You do not have sufficient permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceQuotas.Model.IllegalArgumentException">
+        /// Invalid input was provided.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceQuotas.Model.NoSuchResourceException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceQuotas.Model.ServiceException">
+        /// Something went wrong.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceQuotas.Model.TooManyRequestsException">
+        /// Due to throttling, the request was denied. Slow down the rate of request calls, or
+        /// request an increase for this quota.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/UpdateAutoManagement">REST API Reference for UpdateAutoManagement Operation</seealso>
+        UpdateAutoManagementResponse UpdateAutoManagement(UpdateAutoManagementRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateAutoManagement operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAutoManagement operation on AmazonServiceQuotasClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateAutoManagement
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/UpdateAutoManagement">REST API Reference for UpdateAutoManagement Operation</seealso>
+        IAsyncResult BeginUpdateAutoManagement(UpdateAutoManagementRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateAutoManagement operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateAutoManagement.</param>
+        /// 
+        /// <returns>Returns a  UpdateAutoManagementResult from ServiceQuotas.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/UpdateAutoManagement">REST API Reference for UpdateAutoManagement Operation</seealso>
+        UpdateAutoManagementResponse EndUpdateAutoManagement(IAsyncResult asyncResult);
 
         #endregion
                 

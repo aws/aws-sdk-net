@@ -475,6 +475,70 @@ namespace Amazon.ServiceQuotas
 
         #endregion
         
+        #region  GetAutoManagementConfiguration
+
+
+        /// <summary>
+        /// Retrieves information about your <a href="https://docs.aws.amazon.com/servicequotas/latest/userguide/automatic-management.html">Service
+        /// Quotas Automatic Management</a> configuration. Automatic Management monitors your
+        /// Service Quotas utilization and notifies you before you run out of your allocated quotas.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAutoManagementConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the GetAutoManagementConfiguration service method, as returned by ServiceQuotas.</returns>
+        /// <exception cref="Amazon.ServiceQuotas.Model.AccessDeniedException">
+        /// You do not have sufficient permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceQuotas.Model.IllegalArgumentException">
+        /// Invalid input was provided.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceQuotas.Model.NoSuchResourceException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceQuotas.Model.ServiceException">
+        /// Something went wrong.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceQuotas.Model.TooManyRequestsException">
+        /// Due to throttling, the request was denied. Slow down the rate of request calls, or
+        /// request an increase for this quota.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/GetAutoManagementConfiguration">REST API Reference for GetAutoManagementConfiguration Operation</seealso>
+        GetAutoManagementConfigurationResponse GetAutoManagementConfiguration(GetAutoManagementConfigurationRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves information about your <a href="https://docs.aws.amazon.com/servicequotas/latest/userguide/automatic-management.html">Service
+        /// Quotas Automatic Management</a> configuration. Automatic Management monitors your
+        /// Service Quotas utilization and notifies you before you run out of your allocated quotas.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAutoManagementConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetAutoManagementConfiguration service method, as returned by ServiceQuotas.</returns>
+        /// <exception cref="Amazon.ServiceQuotas.Model.AccessDeniedException">
+        /// You do not have sufficient permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceQuotas.Model.IllegalArgumentException">
+        /// Invalid input was provided.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceQuotas.Model.NoSuchResourceException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceQuotas.Model.ServiceException">
+        /// Something went wrong.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceQuotas.Model.TooManyRequestsException">
+        /// Due to throttling, the request was denied. Slow down the rate of request calls, or
+        /// request an increase for this quota.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/GetAutoManagementConfiguration">REST API Reference for GetAutoManagementConfiguration Operation</seealso>
+        Task<GetAutoManagementConfigurationResponse> GetAutoManagementConfigurationAsync(GetAutoManagementConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetAWSDefaultServiceQuota
 
 
@@ -1411,6 +1475,138 @@ namespace Amazon.ServiceQuotas
 
         #endregion
         
+        #region  StartAutoManagement
+
+
+        /// <summary>
+        /// Starts <a href="https://docs.aws.amazon.com/servicequotas/latest/userguide/automatic-management.html">Service
+        /// Quotas Automatic Management</a> for an Amazon Web Services account, including notification
+        /// preferences and excluded quotas configurations. Automatic Management monitors your
+        /// Service Quotas utilization and notifies you before you run out of your allocated quotas.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartAutoManagement service method.</param>
+        /// 
+        /// <returns>The response from the StartAutoManagement service method, as returned by ServiceQuotas.</returns>
+        /// <exception cref="Amazon.ServiceQuotas.Model.AccessDeniedException">
+        /// You do not have sufficient permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceQuotas.Model.IllegalArgumentException">
+        /// Invalid input was provided.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceQuotas.Model.NoSuchResourceException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceQuotas.Model.ServiceException">
+        /// Something went wrong.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceQuotas.Model.TooManyRequestsException">
+        /// Due to throttling, the request was denied. Slow down the rate of request calls, or
+        /// request an increase for this quota.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/StartAutoManagement">REST API Reference for StartAutoManagement Operation</seealso>
+        StartAutoManagementResponse StartAutoManagement(StartAutoManagementRequest request);
+
+
+
+        /// <summary>
+        /// Starts <a href="https://docs.aws.amazon.com/servicequotas/latest/userguide/automatic-management.html">Service
+        /// Quotas Automatic Management</a> for an Amazon Web Services account, including notification
+        /// preferences and excluded quotas configurations. Automatic Management monitors your
+        /// Service Quotas utilization and notifies you before you run out of your allocated quotas.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartAutoManagement service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartAutoManagement service method, as returned by ServiceQuotas.</returns>
+        /// <exception cref="Amazon.ServiceQuotas.Model.AccessDeniedException">
+        /// You do not have sufficient permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceQuotas.Model.IllegalArgumentException">
+        /// Invalid input was provided.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceQuotas.Model.NoSuchResourceException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceQuotas.Model.ServiceException">
+        /// Something went wrong.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceQuotas.Model.TooManyRequestsException">
+        /// Due to throttling, the request was denied. Slow down the rate of request calls, or
+        /// request an increase for this quota.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/StartAutoManagement">REST API Reference for StartAutoManagement Operation</seealso>
+        Task<StartAutoManagementResponse> StartAutoManagementAsync(StartAutoManagementRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  StopAutoManagement
+
+
+        /// <summary>
+        /// Stops <a href="https://docs.aws.amazon.com/servicequotas/latest/userguide/automatic-management.html">Service
+        /// Quotas Automatic Management</a> for an Amazon Web Services account and removes all
+        /// associated configurations. Automatic Management monitors your Service Quotas utilization
+        /// and notifies you before you run out of your allocated quotas.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopAutoManagement service method.</param>
+        /// 
+        /// <returns>The response from the StopAutoManagement service method, as returned by ServiceQuotas.</returns>
+        /// <exception cref="Amazon.ServiceQuotas.Model.AccessDeniedException">
+        /// You do not have sufficient permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceQuotas.Model.IllegalArgumentException">
+        /// Invalid input was provided.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceQuotas.Model.NoSuchResourceException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceQuotas.Model.ServiceException">
+        /// Something went wrong.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceQuotas.Model.TooManyRequestsException">
+        /// Due to throttling, the request was denied. Slow down the rate of request calls, or
+        /// request an increase for this quota.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/StopAutoManagement">REST API Reference for StopAutoManagement Operation</seealso>
+        StopAutoManagementResponse StopAutoManagement(StopAutoManagementRequest request);
+
+
+
+        /// <summary>
+        /// Stops <a href="https://docs.aws.amazon.com/servicequotas/latest/userguide/automatic-management.html">Service
+        /// Quotas Automatic Management</a> for an Amazon Web Services account and removes all
+        /// associated configurations. Automatic Management monitors your Service Quotas utilization
+        /// and notifies you before you run out of your allocated quotas.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopAutoManagement service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StopAutoManagement service method, as returned by ServiceQuotas.</returns>
+        /// <exception cref="Amazon.ServiceQuotas.Model.AccessDeniedException">
+        /// You do not have sufficient permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceQuotas.Model.IllegalArgumentException">
+        /// Invalid input was provided.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceQuotas.Model.NoSuchResourceException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceQuotas.Model.ServiceException">
+        /// Something went wrong.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceQuotas.Model.TooManyRequestsException">
+        /// Due to throttling, the request was denied. Slow down the rate of request calls, or
+        /// request an increase for this quota.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/StopAutoManagement">REST API Reference for StopAutoManagement Operation</seealso>
+        Task<StopAutoManagementResponse> StopAutoManagementAsync(StopAutoManagementRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  TagResource
 
 
@@ -1548,6 +1744,72 @@ namespace Amazon.ServiceQuotas
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/UntagResource">REST API Reference for UntagResource Operation</seealso>
         Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateAutoManagement
+
+
+        /// <summary>
+        /// Updates your <a href="https://docs.aws.amazon.com/servicequotas/latest/userguide/automatic-management.html">Service
+        /// Quotas Automatic Management</a> configuration, including notification preferences
+        /// and excluded quotas. Automatic Management monitors your Service Quotas utilization
+        /// and notifies you before you run out of your allocated quotas.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAutoManagement service method.</param>
+        /// 
+        /// <returns>The response from the UpdateAutoManagement service method, as returned by ServiceQuotas.</returns>
+        /// <exception cref="Amazon.ServiceQuotas.Model.AccessDeniedException">
+        /// You do not have sufficient permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceQuotas.Model.IllegalArgumentException">
+        /// Invalid input was provided.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceQuotas.Model.NoSuchResourceException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceQuotas.Model.ServiceException">
+        /// Something went wrong.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceQuotas.Model.TooManyRequestsException">
+        /// Due to throttling, the request was denied. Slow down the rate of request calls, or
+        /// request an increase for this quota.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/UpdateAutoManagement">REST API Reference for UpdateAutoManagement Operation</seealso>
+        UpdateAutoManagementResponse UpdateAutoManagement(UpdateAutoManagementRequest request);
+
+
+
+        /// <summary>
+        /// Updates your <a href="https://docs.aws.amazon.com/servicequotas/latest/userguide/automatic-management.html">Service
+        /// Quotas Automatic Management</a> configuration, including notification preferences
+        /// and excluded quotas. Automatic Management monitors your Service Quotas utilization
+        /// and notifies you before you run out of your allocated quotas.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAutoManagement service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateAutoManagement service method, as returned by ServiceQuotas.</returns>
+        /// <exception cref="Amazon.ServiceQuotas.Model.AccessDeniedException">
+        /// You do not have sufficient permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceQuotas.Model.IllegalArgumentException">
+        /// Invalid input was provided.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceQuotas.Model.NoSuchResourceException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceQuotas.Model.ServiceException">
+        /// Something went wrong.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceQuotas.Model.TooManyRequestsException">
+        /// Due to throttling, the request was denied. Slow down the rate of request calls, or
+        /// request an increase for this quota.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/UpdateAutoManagement">REST API Reference for UpdateAutoManagement Operation</seealso>
+        Task<UpdateAutoManagementResponse> UpdateAutoManagementAsync(UpdateAutoManagementRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

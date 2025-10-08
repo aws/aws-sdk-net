@@ -25,6 +25,12 @@
     <pattern>[a-zA-Z][a-zA-Z0-9-]{1,63}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ServiceQuotas.Model.GetAutoManagementConfigurationResponse.NotificationArn</property>
+    <min>1</min>
+    <max>1011</max>
+    <pattern>arn:aws(-[\w]+)*:*:.+:[0-9]{12}:.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ServiceQuotas.Model.GetAWSDefaultServiceQuotaRequest.QuotaCode</property>
     <min>1</min>
     <max>128</max>
@@ -257,6 +263,12 @@
     <pattern>[a-zA-Z][a-zA-Z0-9-]{1,63}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ServiceQuotas.Model.StartAutoManagementRequest.NotificationArn</property>
+    <min>1</min>
+    <max>1011</max>
+    <pattern>arn:aws(-[\w]+)*:*:.+:[0-9]{12}:.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ServiceQuotas.Model.TagResourceRequest.ResourceARN</property>
     <min>1</min>
     <max>1011</max>
@@ -269,10 +281,22 @@
     <pattern>arn:aws(-[\w]+)*:*:.+:[0-9]{12}:.+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ServiceQuotas.Model.UpdateAutoManagementRequest.NotificationArn</property>
+    <min>1</min>
+    <max>1011</max>
+    <pattern>arn:aws(-[\w]+)*:*:.+:[0-9]{12}:.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ServiceQuotas.Model.MetricInfo.MetricStatisticRecommendation</property>
     <min>1</min>
     <max>256</max>
     <pattern>(Sum|Maximum)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceQuotas.Model.QuotaInfo.QuotaCode</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z][a-zA-Z0-9-]{1,128}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceQuotas.Model.RequestedServiceQuotaChange.DesiredValue</property>
