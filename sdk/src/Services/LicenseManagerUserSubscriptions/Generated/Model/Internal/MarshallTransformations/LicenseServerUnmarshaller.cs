@@ -78,6 +78,12 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model.Internal.MarshallTransfor
                     unmarshalledObject.Ipv4Address = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Ipv6Address", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Ipv6Address = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ProvisioningStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

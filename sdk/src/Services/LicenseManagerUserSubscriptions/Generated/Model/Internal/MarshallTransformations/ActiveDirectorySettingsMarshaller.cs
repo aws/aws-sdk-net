@@ -70,6 +70,17 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model.Internal.MarshallTransfor
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetDomainIpv6List())
+            {
+                context.Writer.WritePropertyName("DomainIpv6List");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectDomainIpv6ListListValue in requestObject.DomainIpv6List)
+                {
+                        context.Writer.Write(requestObjectDomainIpv6ListListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetDomainName())
             {
                 context.Writer.WritePropertyName("DomainName");
