@@ -1,3 +1,12 @@
+### 3.7.1141.0 (2025-10-09 18:19 UTC)
+* QuickSight (3.7.504.0)
+	* This release adds support for ActionConnector and Flow, which are new resources associated with Amazon Quick Suite. Additional updates include expanded Data Source options, further branding customization, and new capabilities that can be restricted by Admins.
+* WAFV2 (3.7.502.0)
+	* This release adds the ability to throw WafLimitsExceededException when the maximum number of Application Load Balancer (ALB) associations per AWS WAF v2 WebACL is exceeded.
+* Core 3.7.500.30
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.1140.0 (2025-10-08 18:19 UTC)
 * BedrockAgentCoreControl (3.7.505.0)
 	* Adding support for authorizer type AWS_IAM to AgentCore Control Gateway.

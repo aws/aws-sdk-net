@@ -32,7 +32,7 @@ namespace Amazon.Batch
     public partial class AmazonBatchConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Batch", "3.7.500.32");
+            InternalSDKUtils.BuildUserAgentString("Batch", "3.7.500.33");
 
         private string _userAgent = UserAgentString;
         ///<summary>
