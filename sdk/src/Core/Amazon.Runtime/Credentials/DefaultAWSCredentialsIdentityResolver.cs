@@ -101,7 +101,7 @@ namespace Amazon.Runtime.Credentials
         public AWSCredentials ResolveIdentity(IClientConfig clientConfig)
         {
             var profile = clientConfig?.Profile;
-            if (profile != null)
+            if (!string.IsNullOrEmpty(profile?.Name))
             {
                 var source = new CredentialProfileStoreChain(profile.Location);
                 if (source.TryGetProfile(profile.Name, out CredentialProfile storedProfile))
