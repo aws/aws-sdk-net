@@ -36,6 +36,7 @@ namespace Amazon.QuickSight.Model
     {
         private BrandColorPalette _brandColorPalette;
         private BrandElementStyle _brandElementStyle;
+        private ContextualAccentPalette _contextualAccentPalette;
 
         /// <summary>
         /// Gets and sets the property BrandColorPalette. 
@@ -71,6 +72,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetBrandElementStyle()
         {
             return this._brandElementStyle != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ContextualAccentPalette. 
+        /// <para>
+        /// The contextual accent palette.
+        /// </para>
+        /// </summary>
+        public ContextualAccentPalette ContextualAccentPalette
+        {
+            get { return this._contextualAccentPalette; }
+            set { this._contextualAccentPalette = value; }
+        }
+
+        // Check to see if ContextualAccentPalette property is set
+        internal bool IsSetContextualAccentPalette()
+        {
+            return this._contextualAccentPalette != null;
         }
 
     }

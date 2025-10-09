@@ -42,7 +42,7 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property ColumnId. 
         /// <para>
         /// A unique ID to identify a calculated column. During a dataset update, if the column
-        /// ID of a calculated column matches that of an existing calculated column, Amazon QuickSight
+        /// ID of a calculated column matches that of an existing calculated column, Quick Sight
         /// preserves the existing calculated column.
         /// </para>
         /// </summary>

@@ -125,6 +125,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetConfluenceParameters())
+            {
+                context.Writer.WritePropertyName("ConfluenceParameters");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ConfluenceParametersMarshaller.Instance;
+                marshaller.Marshall(requestObject.ConfluenceParameters, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetCustomConnectionParameters())
             {
                 context.Writer.WritePropertyName("CustomConnectionParameters");
@@ -235,6 +246,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetQBusinessParameters())
+            {
+                context.Writer.WritePropertyName("QBusinessParameters");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = QBusinessParametersMarshaller.Instance;
+                marshaller.Marshall(requestObject.QBusinessParameters, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetRdsParameters())
             {
                 context.Writer.WritePropertyName("RdsParameters");
@@ -253,6 +275,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 
                 var marshaller = RedshiftParametersMarshaller.Instance;
                 marshaller.Marshall(requestObject.RedshiftParameters, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetS3KnowledgeBaseParameters())
+            {
+                context.Writer.WritePropertyName("S3KnowledgeBaseParameters");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = S3KnowledgeBaseParametersMarshaller.Instance;
+                marshaller.Marshall(requestObject.S3KnowledgeBaseParameters, context);
 
                 context.Writer.WriteObjectEnd();
             }
@@ -352,6 +385,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 
                 var marshaller = TwitterParametersMarshaller.Instance;
                 marshaller.Marshall(requestObject.TwitterParameters, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetWebCrawlerParameters())
+            {
+                context.Writer.WritePropertyName("WebCrawlerParameters");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = WebCrawlerParametersMarshaller.Instance;
+                marshaller.Marshall(requestObject.WebCrawlerParameters, context);
 
                 context.Writer.WriteObjectEnd();
             }

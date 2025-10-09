@@ -35,7 +35,7 @@ namespace Amazon.QuickSight.Model
     ///  
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/box-plots.html">Using
-    /// box plots</a> in the <i>Amazon QuickSight User Guide</i>.
+    /// box plots</a> in the <i>Amazon Quick Suite User Guide</i>.
     /// </para>
     /// </summary>
     public partial class BoxPlotVisual

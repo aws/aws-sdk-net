@@ -38,10 +38,10 @@ namespace Amazon.QuickSight
     ///
     /// Amazon QuickSight API Reference 
     /// <para>
-    /// Amazon QuickSight is a fully managed, serverless business intelligence service for
+    /// Amazon Quick Sight is a fully managed, serverless business intelligence service for
     /// the Amazon Web Services Cloud that makes it easy to extend data and insights to every
     /// user in your organization. This API reference contains documentation for a programming
-    /// interface that you can use to manage Amazon QuickSight. 
+    /// interface that you can use to manage Amazon Quick Sight. 
     /// </para>
     /// </summary>
     public partial class AmazonQuickSightClient : AmazonServiceClient, IAmazonQuickSight
@@ -281,7 +281,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
@@ -353,7 +353,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConflictException">
@@ -428,7 +428,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
@@ -495,16 +495,16 @@ namespace Amazon.QuickSight
         #region  CreateAccountCustomization
 
         /// <summary>
-        /// Creates Amazon QuickSight customizations. Currently, you can add a custom default
+        /// Creates Amazon Quick Sight customizations. Currently, you can add a custom default
         /// theme by using the <c>CreateAccountCustomization</c> or <c>UpdateAccountCustomization</c>
-        /// API operation. To further customize QuickSight by removing QuickSight sample assets
-        /// and videos for all new users, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/customizing-quicksight.html">Customizing
-        /// QuickSight</a> in the <i>Amazon QuickSight User Guide.</i> 
+        /// API operation. To further customize Amazon Quick Sight by removing Amazon Quick Sight
+        /// sample assets and videos for all new users, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/customizing-quicksight.html">Customizing
+        /// Quick Sight</a> in the <i>Amazon Quick Sight User Guide.</i> 
         /// 
         ///  
         /// <para>
         /// You can create customizations for your Amazon Web Services account or, if you specify
-        /// a namespace, for a QuickSight namespace instead. Customizations that apply to a namespace
+        /// a namespace, for a Quick Sight namespace instead. Customizations that apply to a namespace
         /// always override customizations that apply to an Amazon Web Services account. To find
         /// out which customizations apply, use the <c>DescribeAccountCustomization</c> API operation.
         /// </para>
@@ -525,7 +525,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConflictException">
@@ -598,7 +598,7 @@ namespace Amazon.QuickSight
         #region  CreateAccountSubscription
 
         /// <summary>
-        /// Creates an QuickSight account, or subscribes to QuickSight Q.
+        /// Creates an Amazon Quick Sight account, or subscribes to Amazon Quick Sight Q.
         /// 
         ///  
         /// <para>
@@ -609,10 +609,10 @@ namespace Amazon.QuickSight
         /// <para>
         /// Before you use this operation, make sure that you can connect to an existing Amazon
         /// Web Services account. If you don't have an Amazon Web Services account, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/setting-up-aws-sign-up.html">Sign
-        /// up for Amazon Web Services</a> in the <i>Amazon QuickSight User Guide</i>. The person
-        /// who signs up for QuickSight needs to have the correct Identity and Access Management
-        /// (IAM) permissions. For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/iam-policy-examples.html">IAM
-        /// Policy Examples for QuickSight</a> in the <i>QuickSight User Guide</i>.
+        /// up for Amazon Web Services</a> in the <i>Amazon Quick Sight User Guide</i>. The person
+        /// who signs up for Amazon Quick Sight needs to have the correct Identity and Access
+        /// Management (IAM) permissions. For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/iam-policy-examples.html">IAM
+        /// Policy Examples for Amazon Quick Sight</a> in the <i>Amazon Quick Sight User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -623,16 +623,17 @@ namespace Amazon.QuickSight
         ///  
         /// <para>
         /// You can't pass an existing IAM role to access other Amazon Web Services services using
-        /// this API operation. To pass your existing IAM role to QuickSight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/security_iam_service-with-iam.html#security-create-iam-role">Passing
-        /// IAM roles to QuickSight</a> in the <i>QuickSight User Guide</i>.
+        /// this API operation. To pass your existing IAM role to Amazon Quick Sight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/security_iam_service-with-iam.html#security-create-iam-role">Passing
+        /// IAM roles to Amazon Quick Sight</a> in the <i>Amazon Quick Sight User Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// You can't set default resource access on the new account from the QuickSight API.
-        /// Instead, add default resource access from the QuickSight console. For more information
-        /// about setting default resource access to Amazon Web Services services, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/scoping-policies-defaults.html">Setting
-        /// default resource access to Amazon Web Services services</a> in the <i>QuickSight User
-        /// Guide</i>.
+        /// You can't set default resource access on the new account from the Amazon Quick Sight
+        /// API. Instead, add default resource access from the Amazon Quick Sight console. For
+        /// more information about setting default resource access to Amazon Web Services services,
+        /// see <a href="https://docs.aws.amazon.com/quicksight/latest/user/scoping-policies-defaults.html">Setting
+        /// default resource access to Amazon Web Services services</a> in the <i>Amazon Quick
+        /// Sight User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAccountSubscription service method.</param>
@@ -641,7 +642,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConflictException">
@@ -714,10 +715,88 @@ namespace Amazon.QuickSight
 
         #endregion
         
+        #region  CreateActionConnector
+
+        /// <summary>
+        /// Creates an action connector that enables Amazon Quick Sight to connect to external
+        /// services and perform actions. Action connectors support various authentication methods
+        /// and can be configured with specific actions from supported connector types like Amazon
+        /// S3, Salesforce, JIRA.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateActionConnector service method.</param>
+        /// 
+        /// <returns>The response from the CreateActionConnector service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceExistsException">
+        /// The resource specified already exists.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateActionConnector">REST API Reference for CreateActionConnector Operation</seealso>
+        public virtual CreateActionConnectorResponse CreateActionConnector(CreateActionConnectorRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateActionConnectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateActionConnectorResponseUnmarshaller.Instance;
+
+            return Invoke<CreateActionConnectorResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateActionConnector operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateActionConnector operation on AmazonQuickSightClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateActionConnector
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateActionConnector">REST API Reference for CreateActionConnector Operation</seealso>
+        public virtual IAsyncResult BeginCreateActionConnector(CreateActionConnectorRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateActionConnectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateActionConnectorResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateActionConnector operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateActionConnector.</param>
+        /// 
+        /// <returns>Returns a  CreateActionConnectorResult from QuickSight.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateActionConnector">REST API Reference for CreateActionConnector Operation</seealso>
+        public virtual CreateActionConnectorResponse EndCreateActionConnector(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateActionConnectorResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateAnalysis
 
         /// <summary>
-        /// Creates an analysis in Amazon QuickSight. Analyses can be created either from a template
+        /// Creates an analysis in Amazon Quick Sight. Analyses can be created either from a template
         /// or from an <c>AnalysisDefinition</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAnalysis service method.</param>
@@ -745,8 +824,8 @@ namespace Amazon.QuickSight
         /// Access is throttled.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
-        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// This error indicates that you are calling an operation on an Amazon Quick Suite subscription
+        /// where the edition doesn't include support for that operation. Amazon Quick Suite currently
         /// has Standard Edition and Enterprise Edition. Not every operation and capability is
         /// available in every edition.
         /// </exception>
@@ -799,7 +878,7 @@ namespace Amazon.QuickSight
         #region  CreateBrand
 
         /// <summary>
-        /// Creates an QuickSight brand.
+        /// Creates an Quick Sight brand.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateBrand service method.</param>
         /// 
@@ -807,7 +886,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConflictException">
@@ -883,7 +962,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConflictException">
@@ -968,11 +1047,11 @@ namespace Amazon.QuickSight
         /// 
         ///  
         /// <para>
-        /// A dashboard is an entity in QuickSight that identifies QuickSight reports, created
-        /// from analyses. You can share QuickSight dashboards. With the right permissions, you
-        /// can create scheduled email reports from them. If you have the correct permissions,
-        /// you can create a dashboard from a template that exists in a different Amazon Web Services
-        /// account.
+        /// A dashboard is an entity in Amazon Quick Sight that identifies Amazon Quick Sight
+        /// reports, created from analyses. You can share Amazon Quick Sight dashboards. With
+        /// the right permissions, you can create scheduled email reports from them. If you have
+        /// the correct permissions, you can create a dashboard from a template that exists in
+        /// a different Amazon Web Services account.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDashboard service method.</param>
@@ -1000,8 +1079,8 @@ namespace Amazon.QuickSight
         /// Access is throttled.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
-        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// This error indicates that you are calling an operation on an Amazon Quick Suite subscription
+        /// where the edition doesn't include support for that operation. Amazon Quick Suite currently
         /// has Standard Edition and Enterprise Edition. Not every operation and capability is
         /// available in every edition.
         /// </exception>
@@ -1063,7 +1142,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConflictException">
@@ -1088,8 +1167,8 @@ namespace Amazon.QuickSight
         /// Access is throttled.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
-        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// This error indicates that you are calling an operation on an Amazon Quick Suite subscription
+        /// where the edition doesn't include support for that operation. Amazon Quick Suite currently
         /// has Standard Edition and Enterprise Edition. Not every operation and capability is
         /// available in every edition.
         /// </exception>
@@ -1150,14 +1229,15 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConflictException">
         /// Updating or deleting a resource can cause an inconsistent state.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.CustomerManagedKeyUnavailableException">
-        /// The customer managed key that is registered to your QuickSight account is unavailable.
+        /// The customer managed key that is registered to your Amazon Quick Sight account is
+        /// unavailable.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -1234,7 +1314,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConflictException">
@@ -1259,8 +1339,8 @@ namespace Amazon.QuickSight
         /// Access is throttled.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
-        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// This error indicates that you are calling an operation on an Amazon Quick Suite subscription
+        /// where the edition doesn't include support for that operation. Amazon Quick Suite currently
         /// has Standard Edition and Enterprise Edition. Not every operation and capability is
         /// available in every edition.
         /// </exception>
@@ -1321,7 +1401,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
@@ -1343,8 +1423,8 @@ namespace Amazon.QuickSight
         /// Access is throttled.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
-        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// This error indicates that you are calling an operation on an Amazon Quick Suite subscription
+        /// where the edition doesn't include support for that operation. Amazon Quick Suite currently
         /// has Standard Edition and Enterprise Edition. Not every operation and capability is
         /// available in every edition.
         /// </exception>
@@ -1397,7 +1477,7 @@ namespace Amazon.QuickSight
         #region  CreateGroup
 
         /// <summary>
-        /// Use the <c>CreateGroup</c> operation to create a group in QuickSight. You can create
+        /// Use the <c>CreateGroup</c> operation to create a group in Quick Sight. You can create
         /// up to 10,000 groups in a namespace. If you want to create more than 10,000 groups
         /// in a namespace, contact Amazon Web Services Support.
         /// 
@@ -1417,7 +1497,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
@@ -1493,7 +1573,7 @@ namespace Amazon.QuickSight
         #region  CreateGroupMembership
 
         /// <summary>
-        /// Adds an Amazon QuickSight user to an Amazon QuickSight group.
+        /// Adds an Amazon Quick Sight user to an Amazon Quick Sight group.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateGroupMembership service method.</param>
         /// 
@@ -1501,7 +1581,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
@@ -1573,7 +1653,7 @@ namespace Amazon.QuickSight
         /// <summary>
         /// Creates an assignment with one specified IAM policy, identified by its Amazon Resource
         /// Name (ARN). This policy assignment is attached to the specified groups or users of
-        /// Amazon QuickSight. Assignment names are unique per Amazon Web Services account. To
+        /// Amazon Quick Sight. Assignment names are unique per Amazon Web Services account. To
         /// avoid overwriting rules in other namespaces, use assignment names that are unique.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateIAMPolicyAssignment service method.</param>
@@ -1582,7 +1662,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConcurrentUpdatingException">
@@ -1673,7 +1753,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
@@ -1743,17 +1823,18 @@ namespace Amazon.QuickSight
         #region  CreateNamespace
 
         /// <summary>
-        /// (Enterprise edition only) Creates a new namespace for you to use with Amazon QuickSight.
+        /// (Enterprise edition only) Creates a new namespace for you to use with Amazon Quick
+        /// Sight.
         /// 
         ///  
         /// <para>
-        /// A namespace allows you to isolate the QuickSight users and groups that are registered
+        /// A namespace allows you to isolate the Quick Sight users and groups that are registered
         /// for that namespace. Users that access the namespace can share assets only with other
         /// users or groups in the same namespace. They can't see users and groups in other namespaces.
         /// You can create a namespace after your Amazon Web Services account is subscribed to
-        /// QuickSight. The namespace must be unique within the Amazon Web Services account. By
-        /// default, there is a limit of 100 namespaces per Amazon Web Services account. To increase
-        /// your limit, create a ticket with Amazon Web Services Support. 
+        /// Quick Sight. The namespace must be unique within the Amazon Web Services account.
+        /// By default, there is a limit of 100 namespaces per Amazon Web Services account. To
+        /// increase your limit, create a ticket with Amazon Web Services Support. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateNamespace service method.</param>
@@ -1762,7 +1843,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConflictException">
@@ -1850,7 +1931,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
@@ -1923,7 +2004,7 @@ namespace Amazon.QuickSight
         #region  CreateRoleMembership
 
         /// <summary>
-        /// Use <c>CreateRoleMembership</c> to add an existing QuickSight group to an existing
+        /// Use <c>CreateRoleMembership</c> to add an existing Quick Sight group to an existing
         /// role.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateRoleMembership service method.</param>
@@ -1932,7 +2013,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
@@ -2002,13 +2083,13 @@ namespace Amazon.QuickSight
         #region  CreateTemplate
 
         /// <summary>
-        /// Creates a template either from a <c>TemplateDefinition</c> or from an existing QuickSight
-        /// analysis or template. You can use the resulting template to create additional dashboards,
-        /// templates, or analyses.
+        /// Creates a template either from a <c>TemplateDefinition</c> or from an existing Quick
+        /// Sight analysis or template. You can use the resulting template to create additional
+        /// dashboards, templates, or analyses.
         /// 
         ///  
         /// <para>
-        /// A <i>template</i> is an entity in QuickSight that encapsulates the metadata required
+        /// A <i>template</i> is an entity in Quick Sight that encapsulates the metadata required
         /// to create an analysis and that you can use to create s dashboard. A template adds
         /// a layer of abstraction by using placeholders to replace the dataset associated with
         /// the analysis. You can use templates to create dashboards by replacing dataset placeholders
@@ -2022,7 +2103,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConflictException">
@@ -2047,8 +2128,8 @@ namespace Amazon.QuickSight
         /// Access is throttled.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
-        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// This error indicates that you are calling an operation on an Amazon Quick Suite subscription
+        /// where the edition doesn't include support for that operation. Amazon Quick Suite currently
         /// has Standard Edition and Enterprise Edition. Not every operation and capability is
         /// available in every edition.
         /// </exception>
@@ -2125,8 +2206,8 @@ namespace Amazon.QuickSight
         /// Access is throttled.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
-        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// This error indicates that you are calling an operation on an Amazon Quick Suite subscription
+        /// where the edition doesn't include support for that operation. Amazon Quick Suite currently
         /// has Standard Edition and Enterprise Edition. Not every operation and capability is
         /// available in every edition.
         /// </exception>
@@ -2185,7 +2266,7 @@ namespace Amazon.QuickSight
         /// <para>
         /// A <i>theme</i> is set of configuration options for color and layout. Themes apply
         /// to analyses and dashboards. For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/themes-in-quicksight.html">Using
-        /// Themes in Amazon QuickSight</a> in the <i>Amazon QuickSight User Guide</i>.
+        /// Themes in Amazon Quick Sight</a> in the <i>Amazon Quick Sight User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateTheme service method.</param>
@@ -2194,7 +2275,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
@@ -2216,8 +2297,8 @@ namespace Amazon.QuickSight
         /// Access is throttled.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
-        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// This error indicates that you are calling an operation on an Amazon Quick Suite subscription
+        /// where the edition doesn't include support for that operation. Amazon Quick Suite currently
         /// has Standard Edition and Enterprise Edition. Not every operation and capability is
         /// available in every edition.
         /// </exception>
@@ -2297,8 +2378,8 @@ namespace Amazon.QuickSight
         /// Access is throttled.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
-        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// This error indicates that you are calling an operation on an Amazon Quick Suite subscription
+        /// where the edition doesn't include support for that operation. Amazon Quick Suite currently
         /// has Standard Edition and Enterprise Edition. Not every operation and capability is
         /// available in every edition.
         /// </exception>
@@ -2359,7 +2440,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConflictException">
@@ -2440,7 +2521,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConflictException">
@@ -2521,7 +2602,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConflictException">
@@ -2543,8 +2624,8 @@ namespace Amazon.QuickSight
         /// Access is throttled.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
-        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// This error indicates that you are calling an operation on an Amazon Quick Suite subscription
+        /// where the edition doesn't include support for that operation. Amazon Quick Suite currently
         /// has Standard Edition and Enterprise Edition. Not every operation and capability is
         /// available in every edition.
         /// </exception>
@@ -2599,7 +2680,7 @@ namespace Amazon.QuickSight
         /// <summary>
         /// <important> 
         /// <para>
-        /// This API permanently deletes all QuickSight customizations for the specified Amazon
+        /// This API permanently deletes all Quick Sight customizations for the specified Amazon
         /// Web Services account and namespace. When you delete account customizations:
         /// </para>
         ///  <ul> <li> 
@@ -2612,7 +2693,7 @@ namespace Amazon.QuickSight
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Users will see default QuickSight styling after customizations are deleted
+        /// Users will see default Quick Sight styling after customizations are deleted
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -2621,8 +2702,8 @@ namespace Amazon.QuickSight
         /// </para>
         ///  </important> 
         /// <para>
-        /// Deletes all Amazon QuickSight customizations for the specified Amazon Web Services
-        /// account and QuickSight namespace.
+        /// Deletes all Amazon Quick Sight customizations for the specified Amazon Web Services
+        /// account and Quick Sight namespace.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAccountCustomization service method.</param>
@@ -2631,7 +2712,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConflictException">
@@ -2715,7 +2796,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
@@ -2781,14 +2862,14 @@ namespace Amazon.QuickSight
         /// <summary>
         /// <important> 
         /// <para>
-        /// Deleting your QuickSight account subscription has permanent, irreversible consequences
+        /// Deleting your Quick Sight account subscription has permanent, irreversible consequences
         /// across all Amazon Web Services regions:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Global deletion – Running this operation from any single region will delete your QuickSight
-        /// account and all data in every Amazon Web Services region where you have QuickSight
-        /// resources.
+        /// Global deletion – Running this operation from any single region will delete your Quick
+        /// Sight account and all data in every Amazon Web Services region where you have Quick
+        /// Sight resources.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2807,12 +2888,12 @@ namespace Amazon.QuickSight
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// User access terminated – All QuickSight users in your account will lose access immediately,
+        /// User access terminated – All Quick Sight users in your account will lose access immediately,
         /// including authors, readers, and administrators.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>No recovery possible</b> – Once deleted, your QuickSight account and all associated
+        ///  <b>No recovery possible</b> – Once deleted, your Quick Sight account and all associated
         /// data cannot be restored.
         /// </para>
         ///  </li> </ul> 
@@ -2821,7 +2902,7 @@ namespace Amazon.QuickSight
         /// </para>
         ///  </important> 
         /// <para>
-        /// Use the <c>DeleteAccountSubscription</c> operation to delete an QuickSight account.
+        /// Use the <c>DeleteAccountSubscription</c> operation to delete an Quick Sight account.
         /// This operation will result in an error message if you have configured your account
         /// termination protection settings to <c>True</c>. To change this setting and delete
         /// your account, call the <c>UpdateAccountSettings</c> API and set the value of the <c>TerminationProtectionEnabled</c>
@@ -2835,7 +2916,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
@@ -2902,14 +2983,88 @@ namespace Amazon.QuickSight
 
         #endregion
         
+        #region  DeleteActionConnector
+
+        /// <summary>
+        /// Hard deletes an action connector, making it unrecoverable. This operation removes
+        /// the connector and all its associated configurations. Any resources currently using
+        /// this action connector will no longer be able to perform actions through it.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteActionConnector service method.</param>
+        /// 
+        /// <returns>The response from the DeleteActionConnector service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteActionConnector">REST API Reference for DeleteActionConnector Operation</seealso>
+        public virtual DeleteActionConnectorResponse DeleteActionConnector(DeleteActionConnectorRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteActionConnectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteActionConnectorResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteActionConnectorResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteActionConnector operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteActionConnector operation on AmazonQuickSightClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteActionConnector
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteActionConnector">REST API Reference for DeleteActionConnector Operation</seealso>
+        public virtual IAsyncResult BeginDeleteActionConnector(DeleteActionConnectorRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteActionConnectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteActionConnectorResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteActionConnector operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteActionConnector.</param>
+        /// 
+        /// <returns>Returns a  DeleteActionConnectorResult from QuickSight.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteActionConnector">REST API Reference for DeleteActionConnector Operation</seealso>
+        public virtual DeleteActionConnectorResponse EndDeleteActionConnector(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteActionConnectorResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteAnalysis
 
         /// <summary>
-        /// Deletes an analysis from Amazon QuickSight. You can optionally include a recovery
+        /// Deletes an analysis from Amazon Quick Sight. You can optionally include a recovery
         /// window during which you can restore the analysis. If you don't specify a recovery
-        /// window value, the operation defaults to 30 days. QuickSight attaches a <c>DeletionTime</c>
+        /// window value, the operation defaults to 30 days. Amazon Quick Sight attaches a <c>DeletionTime</c>
         /// stamp to the response that specifies the end of the recovery window. At the end of
-        /// the recovery window, QuickSight deletes the analysis permanently.
+        /// the recovery window, Amazon Quick Sight deletes the analysis permanently.
         /// 
         ///  
         /// <para>
@@ -2920,9 +3075,9 @@ namespace Amazon.QuickSight
         /// </para>
         ///  
         /// <para>
-        /// An analysis that's scheduled for deletion isn't accessible in the QuickSight console.
-        /// To access it in the console, restore it. Deleting an analysis doesn't delete the dashboards
-        /// that you publish from it.
+        /// An analysis that's scheduled for deletion isn't accessible in the Amazon Quick Sight
+        /// console. To access it in the console, restore it. Deleting an analysis doesn't delete
+        /// the dashboards that you publish from it.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAnalysis service method.</param>
@@ -2944,8 +3099,8 @@ namespace Amazon.QuickSight
         /// Access is throttled.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
-        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// This error indicates that you are calling an operation on an Amazon Quick Suite subscription
+        /// where the edition doesn't include support for that operation. Amazon Quick Suite currently
         /// has Standard Edition and Enterprise Edition. Not every operation and capability is
         /// available in every edition.
         /// </exception>
@@ -3000,7 +3155,7 @@ namespace Amazon.QuickSight
         /// <summary>
         /// <important> 
         /// <para>
-        /// This API permanently deletes the specified QuickSight brand. When you delete a brand:
+        /// This API permanently deletes the specified Quick Sight brand. When you delete a brand:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -3021,7 +3176,7 @@ namespace Amazon.QuickSight
         /// </para>
         ///  </important> 
         /// <para>
-        /// Deletes an QuickSight brand.
+        /// Deletes an Quick Sight brand.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteBrand service method.</param>
@@ -3030,7 +3185,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConflictException">
@@ -3106,7 +3261,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConflictException">
@@ -3182,7 +3337,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConflictException">
@@ -3279,8 +3434,8 @@ namespace Amazon.QuickSight
         /// Access is throttled.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
-        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// This error indicates that you are calling an operation on an Amazon Quick Suite subscription
+        /// where the edition doesn't include support for that operation. Amazon Quick Suite currently
         /// has Standard Edition and Enterprise Edition. Not every operation and capability is
         /// available in every edition.
         /// </exception>
@@ -3341,7 +3496,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
@@ -3413,7 +3568,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConflictException">
@@ -3492,7 +3647,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
@@ -3556,7 +3711,7 @@ namespace Amazon.QuickSight
         #region  DeleteDefaultQBusinessApplication
 
         /// <summary>
-        /// Deletes a linked Amazon Q Business application from an QuickSight account
+        /// Deletes a linked Amazon Q Business application from an Quick Sight account
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDefaultQBusinessApplication service method.</param>
         /// 
@@ -3564,7 +3719,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConflictException">
@@ -3636,7 +3791,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConflictException">
@@ -3658,8 +3813,8 @@ namespace Amazon.QuickSight
         /// Access is throttled.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
-        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// This error indicates that you are calling an operation on an Amazon Quick Suite subscription
+        /// where the edition doesn't include support for that operation. Amazon Quick Suite currently
         /// has Standard Edition and Enterprise Edition. Not every operation and capability is
         /// available in every edition.
         /// </exception>
@@ -3720,7 +3875,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
@@ -3736,8 +3891,8 @@ namespace Amazon.QuickSight
         /// Access is throttled.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
-        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// This error indicates that you are calling an operation on an Amazon Quick Suite subscription
+        /// where the edition doesn't include support for that operation. Amazon Quick Suite currently
         /// has Standard Edition and Enterprise Edition. Not every operation and capability is
         /// available in every edition.
         /// </exception>
@@ -3790,7 +3945,7 @@ namespace Amazon.QuickSight
         #region  DeleteGroup
 
         /// <summary>
-        /// Removes a user group from Amazon QuickSight.
+        /// Removes a user group from Amazon Quick Sight.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteGroup service method.</param>
         /// 
@@ -3798,7 +3953,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
@@ -3876,7 +4031,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
@@ -3954,7 +4109,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConcurrentUpdatingException">
@@ -4026,11 +4181,11 @@ namespace Amazon.QuickSight
 
         /// <summary>
         /// Deletes all access scopes and authorized targets that are associated with a service
-        /// from the QuickSight IAM Identity Center application.
+        /// from the Quick Sight IAM Identity Center application.
         /// 
         ///  
         /// <para>
-        /// This operation is only supported for QuickSight accounts that use IAM Identity Center.
+        /// This operation is only supported for Quick Sight accounts that use IAM Identity Center.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteIdentityPropagationConfig service method.</param>
@@ -4039,7 +4194,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
@@ -4114,7 +4269,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
@@ -4192,7 +4347,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
@@ -4267,7 +4422,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
@@ -4345,7 +4500,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
@@ -4439,8 +4594,8 @@ namespace Amazon.QuickSight
         /// Access is throttled.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
-        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// This error indicates that you are calling an operation on an Amazon Quick Suite subscription
+        /// where the edition doesn't include support for that operation. Amazon Quick Suite currently
         /// has Standard Edition and Enterprise Edition. Not every operation and capability is
         /// available in every edition.
         /// </exception>
@@ -4512,8 +4667,8 @@ namespace Amazon.QuickSight
         /// Access is throttled.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
-        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// This error indicates that you are calling an operation on an Amazon Quick Suite subscription
+        /// where the edition doesn't include support for that operation. Amazon Quick Suite currently
         /// has Standard Edition and Enterprise Edition. Not every operation and capability is
         /// available in every edition.
         /// </exception>
@@ -4574,7 +4729,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConflictException">
@@ -4593,8 +4748,8 @@ namespace Amazon.QuickSight
         /// Access is throttled.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
-        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// This error indicates that you are calling an operation on an Amazon Quick Suite subscription
+        /// where the edition doesn't include support for that operation. Amazon Quick Suite currently
         /// has Standard Edition and Enterprise Edition. Not every operation and capability is
         /// available in every edition.
         /// </exception>
@@ -4670,8 +4825,8 @@ namespace Amazon.QuickSight
         /// Access is throttled.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
-        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// This error indicates that you are calling an operation on an Amazon Quick Suite subscription
+        /// where the edition doesn't include support for that operation. Amazon Quick Suite currently
         /// has Standard Edition and Enterprise Edition. Not every operation and capability is
         /// available in every edition.
         /// </exception>
@@ -4732,7 +4887,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConflictException">
@@ -4807,7 +4962,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConflictException">
@@ -4880,7 +5035,7 @@ namespace Amazon.QuickSight
         #region  DeleteUser
 
         /// <summary>
-        /// Deletes the Amazon QuickSight user that is associated with the identity of the IAM
+        /// Deletes the Amazon Quick Sight user that is associated with the identity of the IAM
         /// user or role that's making the call. The IAM user isn't deleted as a result of this
         /// call.
         /// </summary>
@@ -4890,7 +5045,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
@@ -4968,7 +5123,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
@@ -5046,7 +5201,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConflictException">
@@ -5127,7 +5282,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConflictException">
@@ -5146,8 +5301,8 @@ namespace Amazon.QuickSight
         /// Access is throttled.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
-        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// This error indicates that you are calling an operation on an Amazon Quick Suite subscription
+        /// where the edition doesn't include support for that operation. Amazon Quick Suite currently
         /// has Standard Edition and Enterprise Edition. Not every operation and capability is
         /// available in every edition.
         /// </exception>
@@ -5201,7 +5356,7 @@ namespace Amazon.QuickSight
 
         /// <summary>
         /// Describes the customizations associated with the provided Amazon Web Services account
-        /// and Amazon QuickSight namespace. The QuickSight console evaluates which customizations
+        /// and Amazon Quick Sight namespace. The Quick Sight console evaluates which customizations
         /// to apply by running this API operation with the <c>Resolved</c> flag included. 
         /// 
         ///  
@@ -5213,17 +5368,17 @@ namespace Amazon.QuickSight
         /// <para>
         ///  <c>Amazon Web Services account</c> - The Amazon Web Services account exists at the
         /// top of the hierarchy. It has the potential to use all of the Amazon Web Services Regions
-        /// and Amazon Web Services Services. When you subscribe to QuickSight, you choose one
+        /// and Amazon Web Services Services. When you subscribe to Quick Sight, you choose one
         /// Amazon Web Services Region to use as your home Region. That's where your free SPICE
-        /// capacity is located. You can use QuickSight in any supported Amazon Web Services Region.
-        /// 
+        /// capacity is located. You can use Quick Sight in any supported Amazon Web Services
+        /// Region. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>Amazon Web Services Region</c> - You can sign in to QuickSight in any Amazon Web
-        /// Services Region. If you have a user directory, it resides in us-east-1, which is US
-        /// East (N. Virginia). Generally speaking, these users have access to QuickSight in any
-        /// Amazon Web Services Region, unless they are constrained to a namespace. 
+        ///  <c>Amazon Web Services Region</c> - You can sign in to Quick Sight in any Amazon
+        /// Web Services Region. If you have a user directory, it resides in us-east-1, which
+        /// is US East (N. Virginia). Generally speaking, these users have access to Quick Sight
+        /// in any Amazon Web Services Region, unless they are constrained to a namespace. 
         /// </para>
         ///  
         /// <para>
@@ -5248,7 +5403,7 @@ namespace Amazon.QuickSight
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        ///  <c>Namespace</c> - A QuickSight namespace is a partition that contains users and
+        ///  <c>Namespace</c> - A Quick Sight namespace is a partition that contains users and
         /// assets (data sources, datasets, dashboards, and so on). To access assets that are
         /// in a specific namespace, users and groups must also be part of the same namespace.
         /// People who share a namespace are completely isolated from users and assets in other
@@ -5257,7 +5412,7 @@ namespace Amazon.QuickSight
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>Applied customizations</c> - QuickSight customizations can apply to an Amazon
+        ///  <c>Applied customizations</c> - Quick Sight customizations can apply to an Amazon
         /// Web Services account or to a namespace. Settings that you apply to a namespace override
         /// settings that you apply to an Amazon Web Services account.
         /// </para>
@@ -5269,7 +5424,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
@@ -5344,7 +5499,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
@@ -5408,7 +5563,7 @@ namespace Amazon.QuickSight
         #region  DescribeAccountSettings
 
         /// <summary>
-        /// Describes the settings that were used when your QuickSight subscription was first
+        /// Describes the settings that were used when your Quick Sight subscription was first
         /// created in this Amazon Web Services account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAccountSettings service method.</param>
@@ -5417,7 +5572,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
@@ -5484,10 +5639,10 @@ namespace Amazon.QuickSight
         #region  DescribeAccountSubscription
 
         /// <summary>
-        /// Use the DescribeAccountSubscription operation to receive a description of an QuickSight
-        /// account's subscription. A successful API call returns an <c>AccountInfo</c> object
-        /// that includes an account's name, subscription status, authentication type, edition,
-        /// and notification email address.
+        /// Use the DescribeAccountSubscription operation to receive a description of an Quick
+        /// Sight account's subscription. A successful API call returns an <c>AccountInfo</c>
+        /// object that includes an account's name, subscription status, authentication type,
+        /// edition, and notification email address.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAccountSubscription service method.</param>
         /// 
@@ -5495,7 +5650,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
@@ -5559,6 +5714,152 @@ namespace Amazon.QuickSight
 
         #endregion
         
+        #region  DescribeActionConnector
+
+        /// <summary>
+        /// Retrieves detailed information about an action connector, including its configuration,
+        /// authentication settings, enabled actions, and current status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeActionConnector service method.</param>
+        /// 
+        /// <returns>The response from the DescribeActionConnector service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeActionConnector">REST API Reference for DescribeActionConnector Operation</seealso>
+        public virtual DescribeActionConnectorResponse DescribeActionConnector(DescribeActionConnectorRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeActionConnectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeActionConnectorResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeActionConnectorResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeActionConnector operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeActionConnector operation on AmazonQuickSightClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeActionConnector
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeActionConnector">REST API Reference for DescribeActionConnector Operation</seealso>
+        public virtual IAsyncResult BeginDescribeActionConnector(DescribeActionConnectorRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeActionConnectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeActionConnectorResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeActionConnector operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeActionConnector.</param>
+        /// 
+        /// <returns>Returns a  DescribeActionConnectorResult from QuickSight.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeActionConnector">REST API Reference for DescribeActionConnector Operation</seealso>
+        public virtual DescribeActionConnectorResponse EndDescribeActionConnector(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeActionConnectorResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeActionConnectorPermissions
+
+        /// <summary>
+        /// Retrieves the permissions configuration for an action connector, showing which users,
+        /// groups, and namespaces have access and what operations they can perform.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeActionConnectorPermissions service method.</param>
+        /// 
+        /// <returns>The response from the DescribeActionConnectorPermissions service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeActionConnectorPermissions">REST API Reference for DescribeActionConnectorPermissions Operation</seealso>
+        public virtual DescribeActionConnectorPermissionsResponse DescribeActionConnectorPermissions(DescribeActionConnectorPermissionsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeActionConnectorPermissionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeActionConnectorPermissionsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeActionConnectorPermissionsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeActionConnectorPermissions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeActionConnectorPermissions operation on AmazonQuickSightClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeActionConnectorPermissions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeActionConnectorPermissions">REST API Reference for DescribeActionConnectorPermissions Operation</seealso>
+        public virtual IAsyncResult BeginDescribeActionConnectorPermissions(DescribeActionConnectorPermissionsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeActionConnectorPermissionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeActionConnectorPermissionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeActionConnectorPermissions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeActionConnectorPermissions.</param>
+        /// 
+        /// <returns>Returns a  DescribeActionConnectorPermissionsResult from QuickSight.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeActionConnectorPermissions">REST API Reference for DescribeActionConnectorPermissions Operation</seealso>
+        public virtual DescribeActionConnectorPermissionsResponse EndDescribeActionConnectorPermissions(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeActionConnectorPermissionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeAnalysis
 
         /// <summary>
@@ -5570,7 +5871,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
@@ -5586,8 +5887,8 @@ namespace Amazon.QuickSight
         /// Access is throttled.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
-        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// This error indicates that you are calling an operation on an Amazon Quick Suite subscription
+        /// where the edition doesn't include support for that operation. Amazon Quick Suite currently
         /// has Standard Edition and Enterprise Edition. Not every operation and capability is
         /// available in every edition.
         /// </exception>
@@ -5657,7 +5958,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConflictException">
@@ -5679,8 +5980,8 @@ namespace Amazon.QuickSight
         /// Access is throttled.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
-        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// This error indicates that you are calling an operation on an Amazon Quick Suite subscription
+        /// where the edition doesn't include support for that operation. Amazon Quick Suite currently
         /// has Standard Edition and Enterprise Edition. Not every operation and capability is
         /// available in every edition.
         /// </exception>
@@ -5751,8 +6052,8 @@ namespace Amazon.QuickSight
         /// Access is throttled.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
-        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// This error indicates that you are calling an operation on an Amazon Quick Suite subscription
+        /// where the edition doesn't include support for that operation. Amazon Quick Suite currently
         /// has Standard Edition and Enterprise Edition. Not every operation and capability is
         /// available in every edition.
         /// </exception>
@@ -5829,8 +6130,8 @@ namespace Amazon.QuickSight
         /// Access is throttled.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
-        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// This error indicates that you are calling an operation on an Amazon Quick Suite subscription
+        /// where the edition doesn't include support for that operation. Amazon Quick Suite currently
         /// has Standard Edition and Enterprise Edition. Not every operation and capability is
         /// available in every edition.
         /// </exception>
@@ -5901,8 +6202,8 @@ namespace Amazon.QuickSight
         /// Access is throttled.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
-        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// This error indicates that you are calling an operation on an Amazon Quick Suite subscription
+        /// where the edition doesn't include support for that operation. Amazon Quick Suite currently
         /// has Standard Edition and Enterprise Edition. Not every operation and capability is
         /// available in every edition.
         /// </exception>
@@ -5963,7 +6264,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConflictException">
@@ -6039,7 +6340,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConflictException">
@@ -6115,7 +6416,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConflictException">
@@ -6191,7 +6492,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
@@ -6269,7 +6570,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
@@ -6285,8 +6586,8 @@ namespace Amazon.QuickSight
         /// Access is throttled.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
-        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// This error indicates that you are calling an operation on an Amazon Quick Suite subscription
+        /// where the edition doesn't include support for that operation. Amazon Quick Suite currently
         /// has Standard Edition and Enterprise Edition. Not every operation and capability is
         /// available in every edition.
         /// </exception>
@@ -6356,7 +6657,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConflictException">
@@ -6378,8 +6679,8 @@ namespace Amazon.QuickSight
         /// Access is throttled.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
-        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// This error indicates that you are calling an operation on an Amazon Quick Suite subscription
+        /// where the edition doesn't include support for that operation. Amazon Quick Suite currently
         /// has Standard Edition and Enterprise Edition. Not every operation and capability is
         /// available in every edition.
         /// </exception>
@@ -6450,8 +6751,8 @@ namespace Amazon.QuickSight
         /// Access is throttled.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
-        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// This error indicates that you are calling an operation on an Amazon Quick Suite subscription
+        /// where the edition doesn't include support for that operation. Amazon Quick Suite currently
         /// has Standard Edition and Enterprise Edition. Not every operation and capability is
         /// available in every edition.
         /// </exception>
@@ -6518,7 +6819,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
@@ -6531,8 +6832,8 @@ namespace Amazon.QuickSight
         /// Access is throttled.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
-        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// This error indicates that you are calling an operation on an Amazon Quick Suite subscription
+        /// where the edition doesn't include support for that operation. Amazon Quick Suite currently
         /// has Standard Edition and Enterprise Edition. Not every operation and capability is
         /// available in every edition.
         /// </exception>
@@ -6604,7 +6905,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
@@ -6623,8 +6924,8 @@ namespace Amazon.QuickSight
         /// Access is throttled.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
-        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// This error indicates that you are calling an operation on an Amazon Quick Suite subscription
+        /// where the edition doesn't include support for that operation. Amazon Quick Suite currently
         /// has Standard Edition and Enterprise Edition. Not every operation and capability is
         /// available in every edition.
         /// </exception>
@@ -6685,7 +6986,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConflictException">
@@ -6761,7 +7062,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
@@ -6838,7 +7139,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
@@ -6910,7 +7211,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
@@ -6988,7 +7289,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
@@ -7060,7 +7361,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
@@ -7124,7 +7425,7 @@ namespace Amazon.QuickSight
         #region  DescribeDefaultQBusinessApplication
 
         /// <summary>
-        /// Describes a Amazon Q Business application that is linked to an QuickSight account.
+        /// Describes a Amazon Q Business application that is linked to an Quick Sight account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDefaultQBusinessApplication service method.</param>
         /// 
@@ -7132,7 +7433,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
@@ -7204,7 +7505,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
@@ -7220,8 +7521,8 @@ namespace Amazon.QuickSight
         /// Access is throttled.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
-        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// This error indicates that you are calling an operation on an Amazon Quick Suite subscription
+        /// where the edition doesn't include support for that operation. Amazon Quick Suite currently
         /// has Standard Edition and Enterprise Edition. Not every operation and capability is
         /// available in every edition.
         /// </exception>
@@ -7282,7 +7583,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
@@ -7301,8 +7602,8 @@ namespace Amazon.QuickSight
         /// Access is throttled.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
-        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// This error indicates that you are calling an operation on an Amazon Quick Suite subscription
+        /// where the edition doesn't include support for that operation. Amazon Quick Suite currently
         /// has Standard Edition and Enterprise Edition. Not every operation and capability is
         /// available in every edition.
         /// </exception>
@@ -7364,7 +7665,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
@@ -7383,8 +7684,8 @@ namespace Amazon.QuickSight
         /// Access is throttled.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
-        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// This error indicates that you are calling an operation on an Amazon Quick Suite subscription
+        /// where the edition doesn't include support for that operation. Amazon Quick Suite currently
         /// has Standard Edition and Enterprise Edition. Not every operation and capability is
         /// available in every edition.
         /// </exception>
@@ -7437,7 +7738,7 @@ namespace Amazon.QuickSight
         #region  DescribeGroup
 
         /// <summary>
-        /// Returns an Amazon QuickSight group's description and Amazon Resource Name (ARN).
+        /// Returns an Amazon Quick Sight group's description and Amazon Resource Name (ARN).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeGroup service method.</param>
         /// 
@@ -7445,7 +7746,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
@@ -7525,7 +7826,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
@@ -7603,7 +7904,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
@@ -7678,7 +7979,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
@@ -7753,7 +8054,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
@@ -7817,7 +8118,7 @@ namespace Amazon.QuickSight
         #region  DescribeKeyRegistration
 
         /// <summary>
-        /// Describes all customer managed key registrations in a QuickSight account.
+        /// Describes all customer managed key registrations in a Quick Sight account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeKeyRegistration service method.</param>
         /// 
@@ -7825,7 +8126,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
@@ -7894,7 +8195,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
@@ -7969,7 +8270,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConflictException">
@@ -8036,7 +8337,7 @@ namespace Amazon.QuickSight
         #region  DescribeQuickSightQSearchConfiguration
 
         /// <summary>
-        /// Describes the state of a QuickSight Q Search configuration.
+        /// Describes the state of a Quick Sight Q Search configuration.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeQuickSightQSearchConfiguration service method.</param>
         /// 
@@ -8044,7 +8345,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConflictException">
@@ -8119,7 +8420,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
@@ -8194,7 +8495,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
@@ -8272,7 +8573,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConflictException">
@@ -8294,8 +8595,8 @@ namespace Amazon.QuickSight
         /// Access is throttled.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
-        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// This error indicates that you are calling an operation on an Amazon Quick Suite subscription
+        /// where the edition doesn't include support for that operation. Amazon Quick Suite currently
         /// has Standard Edition and Enterprise Edition. Not every operation and capability is
         /// available in every edition.
         /// </exception>
@@ -8363,8 +8664,8 @@ namespace Amazon.QuickSight
         /// Access is throttled.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
-        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// This error indicates that you are calling an operation on an Amazon Quick Suite subscription
+        /// where the edition doesn't include support for that operation. Amazon Quick Suite currently
         /// has Standard Edition and Enterprise Edition. Not every operation and capability is
         /// available in every edition.
         /// </exception>
@@ -8434,7 +8735,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConflictException">
@@ -8456,8 +8757,8 @@ namespace Amazon.QuickSight
         /// Access is throttled.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
-        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// This error indicates that you are calling an operation on an Amazon Quick Suite subscription
+        /// where the edition doesn't include support for that operation. Amazon Quick Suite currently
         /// has Standard Edition and Enterprise Edition. Not every operation and capability is
         /// available in every edition.
         /// </exception>
@@ -8531,8 +8832,8 @@ namespace Amazon.QuickSight
         /// Access is throttled.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
-        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// This error indicates that you are calling an operation on an Amazon Quick Suite subscription
+        /// where the edition doesn't include support for that operation. Amazon Quick Suite currently
         /// has Standard Edition and Enterprise Edition. Not every operation and capability is
         /// available in every edition.
         /// </exception>
@@ -8593,7 +8894,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
@@ -8612,8 +8913,8 @@ namespace Amazon.QuickSight
         /// Access is throttled.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
-        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// This error indicates that you are calling an operation on an Amazon Quick Suite subscription
+        /// where the edition doesn't include support for that operation. Amazon Quick Suite currently
         /// has Standard Edition and Enterprise Edition. Not every operation and capability is
         /// available in every edition.
         /// </exception>
@@ -8687,8 +8988,8 @@ namespace Amazon.QuickSight
         /// Access is throttled.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
-        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// This error indicates that you are calling an operation on an Amazon Quick Suite subscription
+        /// where the edition doesn't include support for that operation. Amazon Quick Suite currently
         /// has Standard Edition and Enterprise Edition. Not every operation and capability is
         /// available in every edition.
         /// </exception>
@@ -8749,7 +9050,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
@@ -8765,8 +9066,8 @@ namespace Amazon.QuickSight
         /// Access is throttled.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
-        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// This error indicates that you are calling an operation on an Amazon Quick Suite subscription
+        /// where the edition doesn't include support for that operation. Amazon Quick Suite currently
         /// has Standard Edition and Enterprise Edition. Not every operation and capability is
         /// available in every edition.
         /// </exception>
@@ -8827,7 +9128,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
@@ -8899,7 +9200,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
@@ -8971,7 +9272,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
@@ -9043,7 +9344,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConflictException">
@@ -9124,7 +9425,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
@@ -9202,7 +9503,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
@@ -9218,8 +9519,8 @@ namespace Amazon.QuickSight
         /// Access is throttled.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
-        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// This error indicates that you are calling an operation on an Amazon Quick Suite subscription
+        /// where the edition doesn't include support for that operation. Amazon Quick Suite currently
         /// has Standard Edition and Enterprise Edition. Not every operation and capability is
         /// available in every edition.
         /// </exception>
@@ -9314,7 +9615,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
@@ -9334,10 +9635,10 @@ namespace Amazon.QuickSight
         /// Access is throttled.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedPricingPlanException">
-        /// This error indicates that you are calling an embedding operation in Amazon QuickSight
+        /// This error indicates that you are calling an embedding operation in Amazon Quick Sight
         /// without the required pricing plan on your Amazon Web Services account. Before you
-        /// can use embedding for anonymous users, a QuickSight administrator needs to add capacity
-        /// pricing to QuickSight. You can do this on the <b>Manage QuickSight</b> page. 
+        /// can use embedding for anonymous users, a Quick Suite administrator needs to add capacity
+        /// pricing to Quick Sight. You can do this on the <b>Manage Quick Suite</b> page. 
         /// 
         ///  
         /// <para>
@@ -9346,8 +9647,8 @@ namespace Amazon.QuickSight
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
-        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// This error indicates that you are calling an operation on an Amazon Quick Suite subscription
+        /// where the edition doesn't include support for that operation. Amazon Quick Suite currently
         /// has Standard Edition and Enterprise Edition. Not every operation and capability is
         /// available in every edition.
         /// </exception>
@@ -9447,7 +9748,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
@@ -9472,10 +9773,10 @@ namespace Amazon.QuickSight
         /// Access is throttled.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedPricingPlanException">
-        /// This error indicates that you are calling an embedding operation in Amazon QuickSight
+        /// This error indicates that you are calling an embedding operation in Amazon Quick Sight
         /// without the required pricing plan on your Amazon Web Services account. Before you
-        /// can use embedding for anonymous users, a QuickSight administrator needs to add capacity
-        /// pricing to QuickSight. You can do this on the <b>Manage QuickSight</b> page. 
+        /// can use embedding for anonymous users, a Quick Suite administrator needs to add capacity
+        /// pricing to Quick Sight. You can do this on the <b>Manage Quick Suite</b> page. 
         /// 
         ///  
         /// <para>
@@ -9484,8 +9785,8 @@ namespace Amazon.QuickSight
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
-        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// This error indicates that you are calling an operation on an Amazon Quick Suite subscription
+        /// where the edition doesn't include support for that operation. Amazon Quick Suite currently
         /// has Standard Edition and Enterprise Edition. Not every operation and capability is
         /// available in every edition.
         /// </exception>
@@ -9538,9 +9839,10 @@ namespace Amazon.QuickSight
         #region  GenerateEmbedUrlForRegisteredUserWithIdentity
 
         /// <summary>
-        /// Generates an embed URL that you can use to embed an QuickSight experience in your
-        /// website. This action can be used for any type of user that is registered in an QuickSight
-        /// account that uses IAM Identity Center for authentication. This API requires <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/trustedidentitypropagation-overview.html#types-identity-enhanced-iam-role-sessions">identity-enhanced
+        /// Generates an embed URL that you can use to embed an Amazon Quick Sight experience
+        /// in your website. This action can be used for any type of user that is registered in
+        /// an Amazon Quick Sight account that uses IAM Identity Center for authentication. This
+        /// API requires <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/trustedidentitypropagation-overview.html#types-identity-enhanced-iam-role-sessions">identity-enhanced
         /// IAM Role sessions</a> for the authenticated user that the API call is being made for.
         /// 
         ///  
@@ -9549,9 +9851,9 @@ namespace Amazon.QuickSight
         /// identity propagation</a> to ensure that an end user is authenticated and receives
         /// the embed URL that is specific to that user. The IAM Identity Center application that
         /// the user has logged into needs to have <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/trustedidentitypropagation-using-customermanagedapps-specify-trusted-apps.html">trusted
-        /// Identity Propagation enabled for QuickSight</a> with the scope value set to <c>quicksight:read</c>.
-        /// Before you use this action, make sure that you have configured the relevant QuickSight
-        /// resource and permissions.
+        /// Identity Propagation enabled for Amazon Quick Sight</a> with the scope value set to
+        /// <c>quicksight:read</c>. Before you use this action, make sure that you have configured
+        /// the relevant Amazon Quick Sight resource and permissions.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GenerateEmbedUrlForRegisteredUserWithIdentity service method.</param>
@@ -9560,7 +9862,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
@@ -9585,10 +9887,10 @@ namespace Amazon.QuickSight
         /// Access is throttled.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedPricingPlanException">
-        /// This error indicates that you are calling an embedding operation in Amazon QuickSight
+        /// This error indicates that you are calling an embedding operation in Amazon Quick Sight
         /// without the required pricing plan on your Amazon Web Services account. Before you
-        /// can use embedding for anonymous users, a QuickSight administrator needs to add capacity
-        /// pricing to QuickSight. You can do this on the <b>Manage QuickSight</b> page. 
+        /// can use embedding for anonymous users, a Quick Suite administrator needs to add capacity
+        /// pricing to Quick Sight. You can do this on the <b>Manage Quick Suite</b> page. 
         /// 
         ///  
         /// <para>
@@ -9597,8 +9899,8 @@ namespace Amazon.QuickSight
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
-        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// This error indicates that you are calling an operation on an Amazon Quick Suite subscription
+        /// where the edition doesn't include support for that operation. Amazon Quick Suite currently
         /// has Standard Edition and Enterprise Edition. Not every operation and capability is
         /// available in every edition.
         /// </exception>
@@ -9652,9 +9954,9 @@ namespace Amazon.QuickSight
 
         /// <summary>
         /// Generates a temporary session URL and authorization code(bearer token) that you can
-        /// use to embed an QuickSight read-only dashboard in your website or application. Before
-        /// you use this command, make sure that you have configured the dashboards and permissions.
-        /// 
+        /// use to embed an Amazon Quick Sight read-only dashboard in your website or application.
+        /// Before you use this command, make sure that you have configured the dashboards and
+        /// permissions. 
         /// 
         ///  
         /// <para>
@@ -9701,12 +10003,12 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.DomainNotWhitelistedException">
         /// The domain specified isn't on the allow list. All domains for embedded dashboards
-        /// must be added to the approved list by an Amazon QuickSight admin.
+        /// must be added to the approved list by an Amazon Quick Suite admin.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.IdentityTypeNotSupportedException">
         /// The identity type specified isn't supported. Supported identity types include <c>IAM</c>
@@ -9737,10 +10039,10 @@ namespace Amazon.QuickSight
         /// Access is throttled.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedPricingPlanException">
-        /// This error indicates that you are calling an embedding operation in Amazon QuickSight
+        /// This error indicates that you are calling an embedding operation in Amazon Quick Sight
         /// without the required pricing plan on your Amazon Web Services account. Before you
-        /// can use embedding for anonymous users, a QuickSight administrator needs to add capacity
-        /// pricing to QuickSight. You can do this on the <b>Manage QuickSight</b> page. 
+        /// can use embedding for anonymous users, a Quick Suite administrator needs to add capacity
+        /// pricing to Quick Sight. You can do this on the <b>Manage Quick Suite</b> page. 
         /// 
         ///  
         /// <para>
@@ -9749,8 +10051,8 @@ namespace Amazon.QuickSight
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
-        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// This error indicates that you are calling an operation on an Amazon Quick Suite subscription
+        /// where the edition doesn't include support for that operation. Amazon Quick Suite currently
         /// has Standard Edition and Enterprise Edition. Not every operation and capability is
         /// available in every edition.
         /// </exception>
@@ -9800,16 +10102,154 @@ namespace Amazon.QuickSight
 
         #endregion
         
+        #region  GetFlowMetadata
+
+        /// <summary>
+        /// Retrieves the metadata of a flow, not including its definition specifying the steps.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetFlowMetadata service method.</param>
+        /// 
+        /// <returns>The response from the GetFlowMetadata service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/GetFlowMetadata">REST API Reference for GetFlowMetadata Operation</seealso>
+        public virtual GetFlowMetadataResponse GetFlowMetadata(GetFlowMetadataRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetFlowMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetFlowMetadataResponseUnmarshaller.Instance;
+
+            return Invoke<GetFlowMetadataResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetFlowMetadata operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetFlowMetadata operation on AmazonQuickSightClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetFlowMetadata
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/GetFlowMetadata">REST API Reference for GetFlowMetadata Operation</seealso>
+        public virtual IAsyncResult BeginGetFlowMetadata(GetFlowMetadataRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetFlowMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetFlowMetadataResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetFlowMetadata operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetFlowMetadata.</param>
+        /// 
+        /// <returns>Returns a  GetFlowMetadataResult from QuickSight.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/GetFlowMetadata">REST API Reference for GetFlowMetadata Operation</seealso>
+        public virtual GetFlowMetadataResponse EndGetFlowMetadata(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetFlowMetadataResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetFlowPermissions
+
+        /// <summary>
+        /// Get permissions for a flow.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetFlowPermissions service method.</param>
+        /// 
+        /// <returns>The response from the GetFlowPermissions service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/GetFlowPermissions">REST API Reference for GetFlowPermissions Operation</seealso>
+        public virtual GetFlowPermissionsResponse GetFlowPermissions(GetFlowPermissionsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetFlowPermissionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetFlowPermissionsResponseUnmarshaller.Instance;
+
+            return Invoke<GetFlowPermissionsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetFlowPermissions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetFlowPermissions operation on AmazonQuickSightClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetFlowPermissions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/GetFlowPermissions">REST API Reference for GetFlowPermissions Operation</seealso>
+        public virtual IAsyncResult BeginGetFlowPermissions(GetFlowPermissionsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetFlowPermissionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetFlowPermissionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetFlowPermissions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetFlowPermissions.</param>
+        /// 
+        /// <returns>Returns a  GetFlowPermissionsResult from QuickSight.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/GetFlowPermissions">REST API Reference for GetFlowPermissions Operation</seealso>
+        public virtual GetFlowPermissionsResponse EndGetFlowPermissions(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetFlowPermissionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetSessionEmbedUrl
 
         /// <summary>
         /// Generates a session URL and authorization code that you can use to embed the Amazon
-        /// QuickSight console in your web server code. Use <c>GetSessionEmbedUrl</c> where you
-        /// want to provide an authoring portal that allows users to create data sources, datasets,
-        /// analyses, and dashboards. The users who access an embedded QuickSight console need
-        /// belong to the author or admin security cohort. If you want to restrict permissions
-        /// to some of these features, add a custom permissions profile to the user with the <c>
-        /// <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateUser.html">UpdateUser</a>
+        /// Amazon Quick Sight console in your web server code. Use <c>GetSessionEmbedUrl</c>
+        /// where you want to provide an authoring portal that allows users to create data sources,
+        /// datasets, analyses, and dashboards. The users who access an embedded Amazon Quick
+        /// Sight console need belong to the author or admin security cohort. If you want to restrict
+        /// permissions to some of these features, add a custom permissions profile to the user
+        /// with the <c> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateUser.html">UpdateUser</a>
         /// </c> API operation. Use <c> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_RegisterUser.html">RegisterUser</a>
         /// </c> API operation to add a new user with a custom permission profile attached. For
         /// more information, see the following sections in the <i>Amazon QuickSight User Guide</i>:
@@ -9832,7 +10272,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
@@ -9860,8 +10300,8 @@ namespace Amazon.QuickSight
         /// Access is throttled.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
-        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// This error indicates that you are calling an operation on an Amazon Quick Suite subscription
+        /// where the edition doesn't include support for that operation. Amazon Quick Suite currently
         /// has Standard Edition and Enterprise Edition. Not every operation and capability is
         /// available in every edition.
         /// </exception>
@@ -9911,10 +10351,85 @@ namespace Amazon.QuickSight
 
         #endregion
         
+        #region  ListActionConnectors
+
+        /// <summary>
+        /// Lists all action connectors in the specified Amazon Web Services account. Returns
+        /// summary information for each connector including its name, type, creation time, and
+        /// status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListActionConnectors service method.</param>
+        /// 
+        /// <returns>The response from the ListActionConnectors service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidNextTokenException">
+        /// The <c>NextToken</c> value isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListActionConnectors">REST API Reference for ListActionConnectors Operation</seealso>
+        public virtual ListActionConnectorsResponse ListActionConnectors(ListActionConnectorsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListActionConnectorsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListActionConnectorsResponseUnmarshaller.Instance;
+
+            return Invoke<ListActionConnectorsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListActionConnectors operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListActionConnectors operation on AmazonQuickSightClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListActionConnectors
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListActionConnectors">REST API Reference for ListActionConnectors Operation</seealso>
+        public virtual IAsyncResult BeginListActionConnectors(ListActionConnectorsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListActionConnectorsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListActionConnectorsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListActionConnectors operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListActionConnectors.</param>
+        /// 
+        /// <returns>Returns a  ListActionConnectorsResult from QuickSight.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListActionConnectors">REST API Reference for ListActionConnectors Operation</seealso>
+        public virtual ListActionConnectorsResponse EndListActionConnectors(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListActionConnectorsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListAnalyses
 
         /// <summary>
-        /// Lists Amazon QuickSight analyses that exist in the specified Amazon Web Services account.
+        /// Lists Amazon Quick Sight analyses that exist in the specified Amazon Web Services
+        /// account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAnalyses service method.</param>
         /// 
@@ -9929,8 +10444,8 @@ namespace Amazon.QuickSight
         /// Access is throttled.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
-        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// This error indicates that you are calling an operation on an Amazon Quick Suite subscription
+        /// where the edition doesn't include support for that operation. Amazon Quick Suite currently
         /// has Standard Edition and Enterprise Edition. Not every operation and capability is
         /// available in every edition.
         /// </exception>
@@ -9994,7 +10509,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidNextTokenException">
@@ -10007,8 +10522,8 @@ namespace Amazon.QuickSight
         /// Access is throttled.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
-        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// This error indicates that you are calling an operation on an Amazon Quick Suite subscription
+        /// where the edition doesn't include support for that operation. Amazon Quick Suite currently
         /// has Standard Edition and Enterprise Edition. Not every operation and capability is
         /// available in every edition.
         /// </exception>
@@ -10072,7 +10587,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidNextTokenException">
@@ -10085,8 +10600,8 @@ namespace Amazon.QuickSight
         /// Access is throttled.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
-        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// This error indicates that you are calling an operation on an Amazon Quick Suite subscription
+        /// where the edition doesn't include support for that operation. Amazon Quick Suite currently
         /// has Standard Edition and Enterprise Edition. Not every operation and capability is
         /// available in every edition.
         /// </exception>
@@ -10139,7 +10654,7 @@ namespace Amazon.QuickSight
         #region  ListBrands
 
         /// <summary>
-        /// Lists all brands in an QuickSight account.
+        /// Lists all brands in an Quick Sight account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListBrands service method.</param>
         /// 
@@ -10147,7 +10662,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalServerException">
@@ -10217,7 +10732,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
@@ -10302,8 +10817,8 @@ namespace Amazon.QuickSight
         /// Access is throttled.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
-        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// This error indicates that you are calling an operation on an Amazon Quick Suite subscription
+        /// where the edition doesn't include support for that operation. Amazon Quick Suite currently
         /// has Standard Edition and Enterprise Edition. Not every operation and capability is
         /// available in every edition.
         /// </exception>
@@ -10356,7 +10871,7 @@ namespace Amazon.QuickSight
         #region  ListDashboardVersions
 
         /// <summary>
-        /// Lists all the versions of the dashboards in the QuickSight subscription.
+        /// Lists all the versions of the dashboards in the Amazon Quick Sight subscription.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDashboardVersions service method.</param>
         /// 
@@ -10377,8 +10892,8 @@ namespace Amazon.QuickSight
         /// Access is throttled.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
-        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// This error indicates that you are calling an operation on an Amazon Quick Suite subscription
+        /// where the edition doesn't include support for that operation. Amazon Quick Suite currently
         /// has Standard Edition and Enterprise Edition. Not every operation and capability is
         /// available in every edition.
         /// </exception>
@@ -10445,7 +10960,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
@@ -10518,7 +11033,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
@@ -10579,6 +11094,75 @@ namespace Amazon.QuickSight
 
         #endregion
         
+        #region  ListFlows
+
+        /// <summary>
+        /// Lists flows in an Amazon Web Services account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListFlows service method.</param>
+        /// 
+        /// <returns>The response from the ListFlows service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListFlows">REST API Reference for ListFlows Operation</seealso>
+        public virtual ListFlowsResponse ListFlows(ListFlowsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListFlowsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListFlowsResponseUnmarshaller.Instance;
+
+            return Invoke<ListFlowsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListFlows operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListFlows operation on AmazonQuickSightClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListFlows
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListFlows">REST API Reference for ListFlows Operation</seealso>
+        public virtual IAsyncResult BeginListFlows(ListFlowsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListFlowsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListFlowsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListFlows operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListFlows.</param>
+        /// 
+        /// <returns>Returns a  ListFlowsResult from QuickSight.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListFlows">REST API Reference for ListFlows Operation</seealso>
+        public virtual ListFlowsResponse EndListFlows(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListFlowsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListFolderMembers
 
         /// <summary>
@@ -10590,7 +11174,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
@@ -10609,8 +11193,8 @@ namespace Amazon.QuickSight
         /// Access is throttled.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
-        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// This error indicates that you are calling an operation on an Amazon Quick Suite subscription
+        /// where the edition doesn't include support for that operation. Amazon Quick Suite currently
         /// has Standard Edition and Enterprise Edition. Not every operation and capability is
         /// available in every edition.
         /// </exception>
@@ -10671,7 +11255,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
@@ -10690,8 +11274,8 @@ namespace Amazon.QuickSight
         /// Access is throttled.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
-        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// This error indicates that you are calling an operation on an Amazon Quick Suite subscription
+        /// where the edition doesn't include support for that operation. Amazon Quick Suite currently
         /// has Standard Edition and Enterprise Edition. Not every operation and capability is
         /// available in every edition.
         /// </exception>
@@ -10752,7 +11336,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
@@ -10771,8 +11355,8 @@ namespace Amazon.QuickSight
         /// Access is throttled.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
-        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// This error indicates that you are calling an operation on an Amazon Quick Suite subscription
+        /// where the edition doesn't include support for that operation. Amazon Quick Suite currently
         /// has Standard Edition and Enterprise Edition. Not every operation and capability is
         /// available in every edition.
         /// </exception>
@@ -10833,7 +11417,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
@@ -10906,7 +11490,7 @@ namespace Amazon.QuickSight
         #region  ListGroups
 
         /// <summary>
-        /// Lists all user groups in Amazon QuickSight.
+        /// Lists all user groups in Amazon Quick Sight.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListGroups service method.</param>
         /// 
@@ -10914,7 +11498,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
@@ -10987,7 +11571,7 @@ namespace Amazon.QuickSight
         #region  ListIAMPolicyAssignments
 
         /// <summary>
-        /// Lists the IAM policy assignments in the current Amazon QuickSight account.
+        /// Lists the IAM policy assignments in the current Amazon Quick Sight account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListIAMPolicyAssignments service method.</param>
         /// 
@@ -10995,7 +11579,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
@@ -11072,7 +11656,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConcurrentUpdatingException">
@@ -11143,12 +11727,12 @@ namespace Amazon.QuickSight
         #region  ListIdentityPropagationConfigs
 
         /// <summary>
-        /// Lists all services and authorized targets that the QuickSight IAM Identity Center
+        /// Lists all services and authorized targets that the Quick Sight IAM Identity Center
         /// application can access.
         /// 
         ///  
         /// <para>
-        /// This operation is only supported for QuickSight accounts that use IAM Identity Center.
+        /// This operation is only supported for Quick Sight accounts that use IAM Identity Center.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListIdentityPropagationConfigs service method.</param>
@@ -11157,7 +11741,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
@@ -11230,7 +11814,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
@@ -11309,7 +11893,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
@@ -11390,7 +11974,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
@@ -11465,7 +12049,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
@@ -11549,7 +12133,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
@@ -11631,8 +12215,8 @@ namespace Amazon.QuickSight
         /// Access is throttled.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
-        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// This error indicates that you are calling an operation on an Amazon Quick Suite subscription
+        /// where the edition doesn't include support for that operation. Amazon Quick Suite currently
         /// has Standard Edition and Enterprise Edition. Not every operation and capability is
         /// available in every edition.
         /// </exception>
@@ -11685,7 +12269,7 @@ namespace Amazon.QuickSight
         #region  ListTemplates
 
         /// <summary>
-        /// Lists all the templates in the current Amazon QuickSight account.
+        /// Lists all the templates in the current Amazon Quick Sight account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTemplates service method.</param>
         /// 
@@ -11706,8 +12290,8 @@ namespace Amazon.QuickSight
         /// Access is throttled.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
-        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// This error indicates that you are calling an operation on an Amazon Quick Suite subscription
+        /// where the edition doesn't include support for that operation. Amazon Quick Suite currently
         /// has Standard Edition and Enterprise Edition. Not every operation and capability is
         /// available in every edition.
         /// </exception>
@@ -11760,7 +12344,7 @@ namespace Amazon.QuickSight
         #region  ListTemplateVersions
 
         /// <summary>
-        /// Lists all the versions of the templates in the current Amazon QuickSight account.
+        /// Lists all the versions of the templates in the current Amazon Quick Sight account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTemplateVersions service method.</param>
         /// 
@@ -11781,8 +12365,8 @@ namespace Amazon.QuickSight
         /// Access is throttled.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
-        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// This error indicates that you are calling an operation on an Amazon Quick Suite subscription
+        /// where the edition doesn't include support for that operation. Amazon Quick Suite currently
         /// has Standard Edition and Enterprise Edition. Not every operation and capability is
         /// available in every edition.
         /// </exception>
@@ -11859,8 +12443,8 @@ namespace Amazon.QuickSight
         /// Access is throttled.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
-        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// This error indicates that you are calling an operation on an Amazon Quick Suite subscription
+        /// where the edition doesn't include support for that operation. Amazon Quick Suite currently
         /// has Standard Edition and Enterprise Edition. Not every operation and capability is
         /// available in every edition.
         /// </exception>
@@ -11921,7 +12505,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
@@ -11940,8 +12524,8 @@ namespace Amazon.QuickSight
         /// Access is throttled.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
-        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// This error indicates that you are calling an operation on an Amazon Quick Suite subscription
+        /// where the edition doesn't include support for that operation. Amazon Quick Suite currently
         /// has Standard Edition and Enterprise Edition. Not every operation and capability is
         /// available in every edition.
         /// </exception>
@@ -12002,7 +12586,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
@@ -12021,8 +12605,8 @@ namespace Amazon.QuickSight
         /// Access is throttled.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
-        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// This error indicates that you are calling an operation on an Amazon Quick Suite subscription
+        /// where the edition doesn't include support for that operation. Amazon Quick Suite currently
         /// has Standard Edition and Enterprise Edition. Not every operation and capability is
         /// available in every edition.
         /// </exception>
@@ -12083,7 +12667,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConflictException">
@@ -12164,7 +12748,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
@@ -12236,7 +12820,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
@@ -12300,7 +12884,7 @@ namespace Amazon.QuickSight
         #region  ListUserGroups
 
         /// <summary>
-        /// Lists the Amazon QuickSight groups that an Amazon QuickSight user is a member of.
+        /// Lists the Amazon Quick Sight groups that an Amazon Quick Sight user is a member of.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListUserGroups service method.</param>
         /// 
@@ -12308,7 +12892,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
@@ -12378,7 +12962,7 @@ namespace Amazon.QuickSight
         #region  ListUsers
 
         /// <summary>
-        /// Returns a list of all of the Amazon QuickSight users belonging to this account.
+        /// Returns a list of all of the Amazon Quick Sight users belonging to this account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListUsers service method.</param>
         /// 
@@ -12386,7 +12970,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
@@ -12468,7 +13052,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
@@ -12484,8 +13068,8 @@ namespace Amazon.QuickSight
         /// Access is throttled.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
-        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// This error indicates that you are calling an operation on an Amazon Quick Suite subscription
+        /// where the edition doesn't include support for that operation. Amazon Quick Suite currently
         /// has Standard Edition and Enterprise Edition. Not every operation and capability is
         /// available in every edition.
         /// </exception>
@@ -12565,7 +13149,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
@@ -12634,7 +13218,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConflictException">
@@ -12707,15 +13291,15 @@ namespace Amazon.QuickSight
         #region  RegisterUser
 
         /// <summary>
-        /// Creates an Amazon QuickSight user whose identity is associated with the Identity and
-        /// Access Management (IAM) identity or role specified in the request. When you register
-        /// a new user from the QuickSight API, QuickSight generates a registration URL. The user
-        /// accesses this registration URL to create their account. QuickSight doesn't send a
-        /// registration email to users who are registered from the QuickSight API. If you want
-        /// new users to receive a registration email, then add those users in the QuickSight
-        /// console. For more information on registering a new user in the QuickSight console,
+        /// Creates an Amazon Quick Sight user whose identity is associated with the Identity
+        /// and Access Management (IAM) identity or role specified in the request. When you register
+        /// a new user from the Quick Sight API, Quick Sight generates a registration URL. The
+        /// user accesses this registration URL to create their account. Quick Sight doesn't send
+        /// a registration email to users who are registered from the Quick Sight API. If you
+        /// want new users to receive a registration email, then add those users in the Quick
+        /// Sight console. For more information on registering a new user in the Quick Sight console,
         /// see <a href="https://docs.aws.amazon.com/quicksight/latest/user/managing-users.html#inviting-users">
-        /// Inviting users to access QuickSight</a>.
+        /// Inviting users to access Quick Sight</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RegisterUser service method.</param>
         /// 
@@ -12723,7 +13307,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
@@ -12826,8 +13410,8 @@ namespace Amazon.QuickSight
         /// Access is throttled.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
-        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// This error indicates that you are calling an operation on an Amazon Quick Suite subscription
+        /// where the edition doesn't include support for that operation. Amazon Quick Suite currently
         /// has Standard Edition and Enterprise Edition. Not every operation and capability is
         /// available in every edition.
         /// </exception>
@@ -12877,6 +13461,76 @@ namespace Amazon.QuickSight
 
         #endregion
         
+        #region  SearchActionConnectors
+
+        /// <summary>
+        /// Searches for action connectors in the specified Amazon Web Services account using
+        /// filters. You can search by connector name, type, or user permissions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchActionConnectors service method.</param>
+        /// 
+        /// <returns>The response from the SearchActionConnectors service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidNextTokenException">
+        /// The <c>NextToken</c> value isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/SearchActionConnectors">REST API Reference for SearchActionConnectors Operation</seealso>
+        public virtual SearchActionConnectorsResponse SearchActionConnectors(SearchActionConnectorsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SearchActionConnectorsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchActionConnectorsResponseUnmarshaller.Instance;
+
+            return Invoke<SearchActionConnectorsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SearchActionConnectors operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SearchActionConnectors operation on AmazonQuickSightClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSearchActionConnectors
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/SearchActionConnectors">REST API Reference for SearchActionConnectors Operation</seealso>
+        public virtual IAsyncResult BeginSearchActionConnectors(SearchActionConnectorsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SearchActionConnectorsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchActionConnectorsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  SearchActionConnectors operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSearchActionConnectors.</param>
+        /// 
+        /// <returns>Returns a  SearchActionConnectorsResult from QuickSight.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/SearchActionConnectors">REST API Reference for SearchActionConnectors Operation</seealso>
+        public virtual SearchActionConnectorsResponse EndSearchActionConnectors(IAsyncResult asyncResult)
+        {
+            return EndInvoke<SearchActionConnectorsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  SearchAnalyses
 
         /// <summary>
@@ -12908,8 +13562,8 @@ namespace Amazon.QuickSight
         /// Access is throttled.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
-        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// This error indicates that you are calling an operation on an Amazon Quick Suite subscription
+        /// where the edition doesn't include support for that operation. Amazon Quick Suite currently
         /// has Standard Edition and Enterprise Edition. Not every operation and capability is
         /// available in every edition.
         /// </exception>
@@ -12990,8 +13644,8 @@ namespace Amazon.QuickSight
         /// Access is throttled.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
-        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// This error indicates that you are calling an operation on an Amazon Quick Suite subscription
+        /// where the edition doesn't include support for that operation. Amazon Quick Suite currently
         /// has Standard Edition and Enterprise Edition. Not every operation and capability is
         /// available in every edition.
         /// </exception>
@@ -13052,7 +13706,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
@@ -13128,7 +13782,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
@@ -13192,6 +13846,75 @@ namespace Amazon.QuickSight
 
         #endregion
         
+        #region  SearchFlows
+
+        /// <summary>
+        /// Search for the flows in an Amazon Web Services account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchFlows service method.</param>
+        /// 
+        /// <returns>The response from the SearchFlows service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/SearchFlows">REST API Reference for SearchFlows Operation</seealso>
+        public virtual SearchFlowsResponse SearchFlows(SearchFlowsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SearchFlowsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchFlowsResponseUnmarshaller.Instance;
+
+            return Invoke<SearchFlowsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SearchFlows operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SearchFlows operation on AmazonQuickSightClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSearchFlows
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/SearchFlows">REST API Reference for SearchFlows Operation</seealso>
+        public virtual IAsyncResult BeginSearchFlows(SearchFlowsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SearchFlowsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchFlowsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  SearchFlows operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSearchFlows.</param>
+        /// 
+        /// <returns>Returns a  SearchFlowsResult from QuickSight.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/SearchFlows">REST API Reference for SearchFlows Operation</seealso>
+        public virtual SearchFlowsResponse EndSearchFlows(IAsyncResult asyncResult)
+        {
+            return EndInvoke<SearchFlowsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  SearchFolders
 
         /// <summary>
@@ -13203,7 +13926,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
@@ -13226,8 +13949,8 @@ namespace Amazon.QuickSight
         /// Access is throttled.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
-        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// This error indicates that you are calling an operation on an Amazon Quick Suite subscription
+        /// where the edition doesn't include support for that operation. Amazon Quick Suite currently
         /// has Standard Edition and Enterprise Edition. Not every operation and capability is
         /// available in every edition.
         /// </exception>
@@ -13280,8 +14003,8 @@ namespace Amazon.QuickSight
         #region  SearchGroups
 
         /// <summary>
-        /// Use the <c>SearchGroups</c> operation to search groups in a specified QuickSight namespace
-        /// using the supplied filters.
+        /// Use the <c>SearchGroups</c> operation to search groups in a specified Quick Sight
+        /// namespace using the supplied filters.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchGroups service method.</param>
         /// 
@@ -13289,7 +14012,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
@@ -13383,8 +14106,8 @@ namespace Amazon.QuickSight
         /// Access is throttled.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
-        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// This error indicates that you are calling an operation on an Amazon Quick Suite subscription
+        /// where the edition doesn't include support for that operation. Amazon Quick Suite currently
         /// has Standard Edition and Enterprise Edition. Not every operation and capability is
         /// available in every edition.
         /// </exception>
@@ -13441,12 +14164,12 @@ namespace Amazon.QuickSight
         /// 
         ///  
         /// <para>
-        /// An Asset Bundle export job exports specified QuickSight assets. You can also choose
-        /// to export any asset dependencies in the same job. Export jobs run asynchronously and
-        /// can be polled with a <c>DescribeAssetBundleExportJob</c> API call. When a job is successfully
-        /// completed, a download URL that contains the exported assets is returned. The URL is
-        /// valid for 5 minutes and can be refreshed with a <c>DescribeAssetBundleExportJob</c>
-        /// API call. Each QuickSight account can run up to 5 export jobs concurrently.
+        /// An Asset Bundle export job exports specified Amazon Quick Sight assets. You can also
+        /// choose to export any asset dependencies in the same job. Export jobs run asynchronously
+        /// and can be polled with a <c>DescribeAssetBundleExportJob</c> API call. When a job
+        /// is successfully completed, a download URL that contains the exported assets is returned.
+        /// The URL is valid for 5 minutes and can be refreshed with a <c>DescribeAssetBundleExportJob</c>
+        /// API call. Each Amazon Quick Sight account can run up to 5 export jobs concurrently.
         /// </para>
         ///  
         /// <para>
@@ -13460,7 +14183,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConflictException">
@@ -13479,8 +14202,8 @@ namespace Amazon.QuickSight
         /// Access is throttled.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
-        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// This error indicates that you are calling an operation on an Amazon Quick Suite subscription
+        /// where the edition doesn't include support for that operation. Amazon Quick Suite currently
         /// has Standard Edition and Enterprise Edition. Not every operation and capability is
         /// available in every edition.
         /// </exception>
@@ -13537,11 +14260,11 @@ namespace Amazon.QuickSight
         /// 
         ///  
         /// <para>
-        /// An Asset Bundle import job imports specified QuickSight assets into an QuickSight
-        /// account. You can also choose to import a naming prefix and specified configuration
+        /// An Asset Bundle import job imports specified Amazon Quick Sight assets into an Amazon
+        /// Quick Sight account. You can also choose to import a naming prefix and specified configuration
         /// overrides. The assets that are contained in the bundle file that you provide are used
-        /// to create or update a new or existing asset in your QuickSight account. Each QuickSight
-        /// account can run up to 5 import jobs concurrently.
+        /// to create or update a new or existing asset in your Amazon Quick Sight account. Each
+        /// Amazon Quick Sight account can run up to 5 import jobs concurrently.
         /// </para>
         ///  
         /// <para>
@@ -13556,7 +14279,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConflictException">
@@ -13575,8 +14298,8 @@ namespace Amazon.QuickSight
         /// Access is throttled.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
-        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// This error indicates that you are calling an operation on an Amazon Quick Suite subscription
+        /// where the edition doesn't include support for that operation. Amazon Quick Suite currently
         /// has Standard Edition and Enterprise Edition. Not every operation and capability is
         /// available in every edition.
         /// </exception>
@@ -13659,13 +14382,13 @@ namespace Amazon.QuickSight
         /// </para>
         ///  
         /// <para>
-        /// QuickSight utilizes API throttling to create a more consistent user experience within
+        /// Quick Sight utilizes API throttling to create a more consistent user experience within
         /// a time span for customers when they call the <c>StartDashboardSnapshotJob</c>. By
         /// default, 12 jobs can run simlutaneously in one Amazon Web Services account and users
         /// can submit up 10 API requests per second before an account is throttled. If an overwhelming
-        /// number of API requests are made by the same user in a short period of time, QuickSight
-        /// throttles the API calls to maintin an optimal experience and reliability for all QuickSight
-        /// users.
+        /// number of API requests are made by the same user in a short period of time, Quick
+        /// Sight throttles the API calls to maintin an optimal experience and reliability for
+        /// all Quick Sight users.
         /// </para>
         ///  
         /// <para>
@@ -13687,7 +14410,7 @@ namespace Amazon.QuickSight
         ///  </li> <li> 
         /// <para>
         ///  <b>A large number of API requests are submitted on an Amazon Web Services account.</b>
-        /// When a user makes more than 10 API calls to the QuickSight API in one second, a <c>ThrottlingException</c>
+        /// When a user makes more than 10 API calls to the Quick Sight API in one second, a <c>ThrottlingException</c>
         /// is returned.
         /// </para>
         ///  </li> </ul> 
@@ -13705,10 +14428,10 @@ namespace Amazon.QuickSight
         /// If your use case projects high levels of API traffic, try to reduce the degree of
         /// frequency and parallelism of API calls as much as you can to avoid throttling. You
         /// can also perform a timing test to calculate an estimate for the total processing time
-        /// of your projected load that stays within the throttling limits of the QuickSight APIs.
-        /// For example, if your projected traffic is 100 snapshot jobs before 12:00 PM per day,
-        /// start 12 jobs in parallel and measure the amount of time it takes to proccess all
-        /// 12 jobs. Once you obtain the result, multiply the duration by 9, for example <c>(12
+        /// of your projected load that stays within the throttling limits of the Quick Sight
+        /// APIs. For example, if your projected traffic is 100 snapshot jobs before 12:00 PM
+        /// per day, start 12 jobs in parallel and measure the amount of time it takes to proccess
+        /// all 12 jobs. Once you obtain the result, multiply the duration by 9, for example <c>(12
         /// minutes * 9 = 108 minutes)</c>. Use the new result to determine the latest time at
         /// which the jobs need to be started to meet your target deadline.
         /// </para>
@@ -13752,7 +14475,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
@@ -13774,10 +14497,10 @@ namespace Amazon.QuickSight
         /// Access is throttled.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedPricingPlanException">
-        /// This error indicates that you are calling an embedding operation in Amazon QuickSight
+        /// This error indicates that you are calling an embedding operation in Amazon Quick Sight
         /// without the required pricing plan on your Amazon Web Services account. Before you
-        /// can use embedding for anonymous users, a QuickSight administrator needs to add capacity
-        /// pricing to QuickSight. You can do this on the <b>Manage QuickSight</b> page. 
+        /// can use embedding for anonymous users, a Quick Suite administrator needs to add capacity
+        /// pricing to Quick Sight. You can do this on the <b>Manage Quick Suite</b> page. 
         /// 
         ///  
         /// <para>
@@ -13786,8 +14509,8 @@ namespace Amazon.QuickSight
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
-        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// This error indicates that you are calling an operation on an Amazon Quick Suite subscription
+        /// where the edition doesn't include support for that operation. Amazon Quick Suite currently
         /// has Standard Edition and Enterprise Edition. Not every operation and capability is
         /// available in every edition.
         /// </exception>
@@ -13851,9 +14574,9 @@ namespace Amazon.QuickSight
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/sending-reports.html">Scheduling
-        /// and sending QuickSight reports by email</a> and <a href="https://docs.aws.amazon.com/quicksight/latest/user/email-reports-from-dashboard.html">Configuring
-        /// email report settings for a QuickSight dashboard</a> in the <i>Amazon QuickSight User
-        /// Guide</i>.
+        /// and sending Amazon Quick Sight reports by email</a> and <a href="https://docs.aws.amazon.com/quicksight/latest/user/email-reports-from-dashboard.html">Configuring
+        /// email report settings for a Amazon Quick Sight dashboard</a> in the <i>Amazon Quick
+        /// Sight User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartDashboardSnapshotJobSchedule service method.</param>
@@ -13862,7 +14585,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
@@ -13881,8 +14604,8 @@ namespace Amazon.QuickSight
         /// Access is throttled.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
-        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// This error indicates that you are calling an operation on an Amazon Quick Suite subscription
+        /// where the edition doesn't include support for that operation. Amazon Quick Suite currently
         /// has Standard Edition and Enterprise Edition. Not every operation and capability is
         /// available in every edition.
         /// </exception>
@@ -13935,7 +14658,8 @@ namespace Amazon.QuickSight
         #region  TagResource
 
         /// <summary>
-        /// Assigns one or more tags (key-value pairs) to the specified QuickSight resource. 
+        /// Assigns one or more tags (key-value pairs) to the specified Amazon Quick Sight resource.
+        /// 
         /// 
         ///  
         /// <para>
@@ -13949,23 +14673,23 @@ namespace Amazon.QuickSight
         /// </para>
         ///  
         /// <para>
-        /// You can associate as many as 50 tags with a resource. QuickSight supports tagging
-        /// on data set, data source, dashboard, template, topic, and user. 
+        /// You can associate as many as 50 tags with a resource. Amazon Quick Sight supports
+        /// tagging on data set, data source, dashboard, template, topic, and user. 
         /// </para>
         ///  
         /// <para>
-        /// Tagging for QuickSight works in a similar way to tagging for other Amazon Web Services
-        /// services, except for the following:
+        /// Tagging for Amazon Quick Sight works in a similar way to tagging for other Amazon
+        /// Web Services services, except for the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Tags are used to track costs for users in QuickSight. You can't tag other resources
-        /// that QuickSight costs are based on, such as storage capacoty (SPICE), session usage,
-        /// alert consumption, or reporting units.
+        /// Tags are used to track costs for users in Amazon Quick Sight. You can't tag other
+        /// resources that Amazon Quick Sight costs are based on, such as storage capacoty (SPICE),
+        /// session usage, alert consumption, or reporting units.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// QuickSight doesn't currently support the tag editor for Resource Groups.
+        /// Amazon Quick Sight doesn't currently support the tag editor for Resource Groups.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -13975,7 +14699,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
@@ -14050,7 +14774,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
@@ -14114,13 +14838,13 @@ namespace Amazon.QuickSight
         #region  UpdateAccountCustomization
 
         /// <summary>
-        /// Updates Amazon QuickSight customizations. Currently, the only customization that you
-        /// can use is a theme.
+        /// Updates Amazon Quick Sight customizations. Currently, the only customization that
+        /// you can use is a theme.
         /// 
         ///  
         /// <para>
         /// You can use customizations for your Amazon Web Services account or, if you specify
-        /// a namespace, for a QuickSight namespace instead. Customizations that apply to a namespace
+        /// a namespace, for a Quick Sight namespace instead. Customizations that apply to a namespace
         /// override customizations that apply to an Amazon Web Services account. To find out
         /// which customizations apply, use the <c>DescribeAccountCustomization</c> API operation.
         /// 
@@ -14132,7 +14856,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConflictException">
@@ -14210,7 +14934,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
@@ -14274,7 +14998,7 @@ namespace Amazon.QuickSight
         #region  UpdateAccountSettings
 
         /// <summary>
-        /// Updates the Amazon QuickSight settings in your Amazon Web Services account.
+        /// Updates the Amazon Quick Sight settings in your Amazon Web Services account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAccountSettings service method.</param>
         /// 
@@ -14282,7 +15006,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
@@ -14346,10 +15070,173 @@ namespace Amazon.QuickSight
 
         #endregion
         
+        #region  UpdateActionConnector
+
+        /// <summary>
+        /// Updates an existing action connector with new configuration details, authentication
+        /// settings, or enabled actions. You can modify the connector's name, description, authentication
+        /// configuration, and which actions are enabled. For more information, <a href="https://docs.aws.amazon.com/quicksuite/latest/userguide/quick-action-auth.html">https://docs.aws.amazon.com/quicksuite/latest/userguide/quick-action-auth.html</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateActionConnector service method.</param>
+        /// 
+        /// <returns>The response from the UpdateActionConnector service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateActionConnector">REST API Reference for UpdateActionConnector Operation</seealso>
+        public virtual UpdateActionConnectorResponse UpdateActionConnector(UpdateActionConnectorRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateActionConnectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateActionConnectorResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateActionConnectorResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateActionConnector operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateActionConnector operation on AmazonQuickSightClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateActionConnector
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateActionConnector">REST API Reference for UpdateActionConnector Operation</seealso>
+        public virtual IAsyncResult BeginUpdateActionConnector(UpdateActionConnectorRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateActionConnectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateActionConnectorResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateActionConnector operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateActionConnector.</param>
+        /// 
+        /// <returns>Returns a  UpdateActionConnectorResult from QuickSight.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateActionConnector">REST API Reference for UpdateActionConnector Operation</seealso>
+        public virtual UpdateActionConnectorResponse EndUpdateActionConnector(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateActionConnectorResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateActionConnectorPermissions
+
+        /// <summary>
+        /// Updates the permissions for an action connector by granting or revoking access for
+        /// specific users and groups. You can control who can view, use, or manage the action
+        /// connector.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateActionConnectorPermissions service method.</param>
+        /// 
+        /// <returns>The response from the UpdateActionConnectorPermissions service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.LimitExceededException">
+        /// A limit is exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
+        /// This error indicates that you are calling an operation on an Amazon Quick Suite subscription
+        /// where the edition doesn't include support for that operation. Amazon Quick Suite currently
+        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
+        /// available in every edition.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateActionConnectorPermissions">REST API Reference for UpdateActionConnectorPermissions Operation</seealso>
+        public virtual UpdateActionConnectorPermissionsResponse UpdateActionConnectorPermissions(UpdateActionConnectorPermissionsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateActionConnectorPermissionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateActionConnectorPermissionsResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateActionConnectorPermissionsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateActionConnectorPermissions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateActionConnectorPermissions operation on AmazonQuickSightClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateActionConnectorPermissions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateActionConnectorPermissions">REST API Reference for UpdateActionConnectorPermissions Operation</seealso>
+        public virtual IAsyncResult BeginUpdateActionConnectorPermissions(UpdateActionConnectorPermissionsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateActionConnectorPermissionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateActionConnectorPermissionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateActionConnectorPermissions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateActionConnectorPermissions.</param>
+        /// 
+        /// <returns>Returns a  UpdateActionConnectorPermissionsResult from QuickSight.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateActionConnectorPermissions">REST API Reference for UpdateActionConnectorPermissions Operation</seealso>
+        public virtual UpdateActionConnectorPermissionsResponse EndUpdateActionConnectorPermissions(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateActionConnectorPermissionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  UpdateAnalysis
 
         /// <summary>
-        /// Updates an analysis in Amazon QuickSight
+        /// Updates an analysis in Amazon Quick Sight
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAnalysis service method.</param>
         /// 
@@ -14373,8 +15260,8 @@ namespace Amazon.QuickSight
         /// Access is throttled.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
-        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// This error indicates that you are calling an operation on an Amazon Quick Suite subscription
+        /// where the edition doesn't include support for that operation. Amazon Quick Suite currently
         /// has Standard Edition and Enterprise Edition. Not every operation and capability is
         /// available in every edition.
         /// </exception>
@@ -14451,8 +15338,8 @@ namespace Amazon.QuickSight
         /// Access is throttled.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
-        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// This error indicates that you are calling an operation on an Amazon Quick Suite subscription
+        /// where the edition doesn't include support for that operation. Amazon Quick Suite currently
         /// has Standard Edition and Enterprise Edition. Not every operation and capability is
         /// available in every edition.
         /// </exception>
@@ -14514,7 +15401,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
@@ -14593,7 +15480,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConflictException">
@@ -14669,7 +15556,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConflictException">
@@ -14745,7 +15632,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConflictException">
@@ -14821,7 +15708,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConflictException">
@@ -14927,8 +15814,8 @@ namespace Amazon.QuickSight
         /// Access is throttled.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
-        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// This error indicates that you are calling an operation on an Amazon Quick Suite subscription
+        /// where the edition doesn't include support for that operation. Amazon Quick Suite currently
         /// has Standard Edition and Enterprise Edition. Not every operation and capability is
         /// available in every edition.
         /// </exception>
@@ -14989,7 +15876,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConflictException">
@@ -15008,8 +15895,8 @@ namespace Amazon.QuickSight
         /// Access is throttled.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
-        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// This error indicates that you are calling an operation on an Amazon Quick Suite subscription
+        /// where the edition doesn't include support for that operation. Amazon Quick Suite currently
         /// has Standard Edition and Enterprise Edition. Not every operation and capability is
         /// available in every edition.
         /// </exception>
@@ -15086,8 +15973,8 @@ namespace Amazon.QuickSight
         /// Access is throttled.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
-        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// This error indicates that you are calling an operation on an Amazon Quick Suite subscription
+        /// where the edition doesn't include support for that operation. Amazon Quick Suite currently
         /// has Standard Edition and Enterprise Edition. Not every operation and capability is
         /// available in every edition.
         /// </exception>
@@ -15161,8 +16048,8 @@ namespace Amazon.QuickSight
         /// Access is throttled.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
-        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// This error indicates that you are calling an operation on an Amazon Quick Suite subscription
+        /// where the edition doesn't include support for that operation. Amazon Quick Suite currently
         /// has Standard Edition and Enterprise Edition. Not every operation and capability is
         /// available in every edition.
         /// </exception>
@@ -15223,7 +16110,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConflictException">
@@ -15299,7 +16186,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConflictException">
@@ -15321,8 +16208,8 @@ namespace Amazon.QuickSight
         /// Access is throttled.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
-        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// This error indicates that you are calling an operation on an Amazon Quick Suite subscription
+        /// where the edition doesn't include support for that operation. Amazon Quick Suite currently
         /// has Standard Edition and Enterprise Edition. Not every operation and capability is
         /// available in every edition.
         /// </exception>
@@ -15388,7 +16275,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConflictException">
@@ -15463,14 +16350,15 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConflictException">
         /// Updating or deleting a resource can cause an inconsistent state.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.CustomerManagedKeyUnavailableException">
-        /// The customer managed key that is registered to your QuickSight account is unavailable.
+        /// The customer managed key that is registered to your Amazon Quick Sight account is
+        /// unavailable.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -15541,7 +16429,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConflictException">
@@ -15608,7 +16496,7 @@ namespace Amazon.QuickSight
         #region  UpdateDefaultQBusinessApplication
 
         /// <summary>
-        /// Updates a Amazon Q Business application that is linked to a QuickSight account.
+        /// Updates a Amazon Q Business application that is linked to a Quick Sight account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateDefaultQBusinessApplication service method.</param>
         /// 
@@ -15616,7 +16504,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConflictException">
@@ -15680,6 +16568,75 @@ namespace Amazon.QuickSight
 
         #endregion
         
+        #region  UpdateFlowPermissions
+
+        /// <summary>
+        /// Updates permissions against principals on a flow.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateFlowPermissions service method.</param>
+        /// 
+        /// <returns>The response from the UpdateFlowPermissions service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateFlowPermissions">REST API Reference for UpdateFlowPermissions Operation</seealso>
+        public virtual UpdateFlowPermissionsResponse UpdateFlowPermissions(UpdateFlowPermissionsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateFlowPermissionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateFlowPermissionsResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateFlowPermissionsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateFlowPermissions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateFlowPermissions operation on AmazonQuickSightClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateFlowPermissions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateFlowPermissions">REST API Reference for UpdateFlowPermissions Operation</seealso>
+        public virtual IAsyncResult BeginUpdateFlowPermissions(UpdateFlowPermissionsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateFlowPermissionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateFlowPermissionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateFlowPermissions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateFlowPermissions.</param>
+        /// 
+        /// <returns>Returns a  UpdateFlowPermissionsResult from QuickSight.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateFlowPermissions">REST API Reference for UpdateFlowPermissions Operation</seealso>
+        public virtual UpdateFlowPermissionsResponse EndUpdateFlowPermissions(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateFlowPermissionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  UpdateFolder
 
         /// <summary>
@@ -15691,7 +16648,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConflictException">
@@ -15713,8 +16670,8 @@ namespace Amazon.QuickSight
         /// Access is throttled.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
-        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// This error indicates that you are calling an operation on an Amazon Quick Suite subscription
+        /// where the edition doesn't include support for that operation. Amazon Quick Suite currently
         /// has Standard Edition and Enterprise Edition. Not every operation and capability is
         /// available in every edition.
         /// </exception>
@@ -15775,7 +16732,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
@@ -15794,8 +16751,8 @@ namespace Amazon.QuickSight
         /// Access is throttled.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
-        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// This error indicates that you are calling an operation on an Amazon Quick Suite subscription
+        /// where the edition doesn't include support for that operation. Amazon Quick Suite currently
         /// has Standard Edition and Enterprise Edition. Not every operation and capability is
         /// available in every edition.
         /// </exception>
@@ -15856,7 +16813,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
@@ -15936,7 +16893,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConcurrentUpdatingException">
@@ -16007,12 +16964,12 @@ namespace Amazon.QuickSight
         #region  UpdateIdentityPropagationConfig
 
         /// <summary>
-        /// Adds or updates services and authorized targets to configure what the QuickSight IAM
-        /// Identity Center application can access.
+        /// Adds or updates services and authorized targets to configure what the Quick Sight
+        /// IAM Identity Center application can access.
         /// 
         ///  
         /// <para>
-        /// This operation is only supported for QuickSight accounts using IAM Identity Center
+        /// This operation is only supported for Quick Sight accounts using IAM Identity Center
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateIdentityPropagationConfig service method.</param>
@@ -16021,7 +16978,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
@@ -16097,7 +17054,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
@@ -16164,7 +17121,7 @@ namespace Amazon.QuickSight
         #region  UpdateKeyRegistration
 
         /// <summary>
-        /// Updates a customer managed key in a QuickSight account.
+        /// Updates a customer managed key in a Quick Sight account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateKeyRegistration service method.</param>
         /// 
@@ -16172,7 +17129,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
@@ -16235,7 +17192,7 @@ namespace Amazon.QuickSight
         /// <summary>
         /// <important> 
         /// <para>
-        /// This API controls public sharing settings for your entire QuickSight account, affecting
+        /// This API controls public sharing settings for your entire Quick Sight account, affecting
         /// data security and access. When you enable public sharing:
         /// </para>
         ///  <ul> <li> 
@@ -16244,7 +17201,7 @@ namespace Amazon.QuickSight
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// This setting affects your entire Amazon Web Services account and all QuickSight users
+        /// This setting affects your entire Amazon Web Services account and all Quick Sight users
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -16254,18 +17211,19 @@ namespace Amazon.QuickSight
         ///  </important> 
         /// <para>
         /// Use the <c>UpdatePublicSharingSettings</c> operation to turn on or turn off the public
-        /// sharing settings of an QuickSight dashboard.
+        /// sharing settings of an Amazon Quick Sight dashboard.
         /// </para>
         ///  
         /// <para>
-        /// To use this operation, turn on session capacity pricing for your QuickSight account.
+        /// To use this operation, turn on session capacity pricing for your Amazon Quick Sight
+        /// account.
         /// </para>
         ///  
         /// <para>
         /// Before you can turn on public sharing on your account, make sure to give public sharing
         /// permissions to an administrative user in the Identity and Access Management (IAM)
-        /// console. For more information on using IAM with QuickSight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/security_iam_service-with-iam.html">Using
-        /// QuickSight with IAM</a> in the <i>QuickSight User Guide</i>.
+        /// console. For more information on using IAM with Amazon Quick Sight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/security_iam_service-with-iam.html">Using
+        /// QuickSight with IAM</a> in the <i>Amazon Quick Sight User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdatePublicSharingSettings service method.</param>
@@ -16274,7 +17232,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
@@ -16290,10 +17248,10 @@ namespace Amazon.QuickSight
         /// Access is throttled.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedPricingPlanException">
-        /// This error indicates that you are calling an embedding operation in Amazon QuickSight
+        /// This error indicates that you are calling an embedding operation in Amazon Quick Sight
         /// without the required pricing plan on your Amazon Web Services account. Before you
-        /// can use embedding for anonymous users, a QuickSight administrator needs to add capacity
-        /// pricing to QuickSight. You can do this on the <b>Manage QuickSight</b> page. 
+        /// can use embedding for anonymous users, a Quick Suite administrator needs to add capacity
+        /// pricing to Quick Sight. You can do this on the <b>Manage Quick Suite</b> page. 
         /// 
         ///  
         /// <para>
@@ -16358,7 +17316,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConflictException">
@@ -16428,7 +17386,7 @@ namespace Amazon.QuickSight
         #region  UpdateQuickSightQSearchConfiguration
 
         /// <summary>
-        /// Updates the state of a QuickSight Q Search configuration.
+        /// Updates the state of a Quick Sight Q Search configuration.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateQuickSightQSearchConfiguration service method.</param>
         /// 
@@ -16436,7 +17394,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConflictException">
@@ -16511,7 +17469,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
@@ -16589,7 +17547,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
@@ -16659,7 +17617,7 @@ namespace Amazon.QuickSight
         #region  UpdateSPICECapacityConfiguration
 
         /// <summary>
-        /// Updates the SPICE capacity configuration for a QuickSight account.
+        /// Updates the SPICE capacity configuration for a Quick Sight account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateSPICECapacityConfiguration service method.</param>
         /// 
@@ -16667,7 +17625,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
@@ -16731,7 +17689,7 @@ namespace Amazon.QuickSight
         #region  UpdateTemplate
 
         /// <summary>
-        /// Updates a template from an existing Amazon QuickSight analysis or another template.
+        /// Updates a template from an existing Amazon Quick Sight analysis or another template.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateTemplate service method.</param>
         /// 
@@ -16758,8 +17716,8 @@ namespace Amazon.QuickSight
         /// Access is throttled.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
-        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// This error indicates that you are calling an operation on an Amazon Quick Suite subscription
+        /// where the edition doesn't include support for that operation. Amazon Quick Suite currently
         /// has Standard Edition and Enterprise Edition. Not every operation and capability is
         /// available in every edition.
         /// </exception>
@@ -16830,8 +17788,8 @@ namespace Amazon.QuickSight
         /// Access is throttled.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
-        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// This error indicates that you are calling an operation on an Amazon Quick Suite subscription
+        /// where the edition doesn't include support for that operation. Amazon Quick Suite currently
         /// has Standard Edition and Enterprise Edition. Not every operation and capability is
         /// available in every edition.
         /// </exception>
@@ -16908,8 +17866,8 @@ namespace Amazon.QuickSight
         /// Access is throttled.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
-        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// This error indicates that you are calling an operation on an Amazon Quick Suite subscription
+        /// where the edition doesn't include support for that operation. Amazon Quick Suite currently
         /// has Standard Edition and Enterprise Edition. Not every operation and capability is
         /// available in every edition.
         /// </exception>
@@ -16970,7 +17928,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
@@ -16992,8 +17950,8 @@ namespace Amazon.QuickSight
         /// Access is throttled.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
-        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// This error indicates that you are calling an operation on an Amazon Quick Suite subscription
+        /// where the edition doesn't include support for that operation. Amazon Quick Suite currently
         /// has Standard Edition and Enterprise Edition. Not every operation and capability is
         /// available in every edition.
         /// </exception>
@@ -17070,8 +18028,8 @@ namespace Amazon.QuickSight
         /// Access is throttled.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
-        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// This error indicates that you are calling an operation on an Amazon Quick Suite subscription
+        /// where the edition doesn't include support for that operation. Amazon Quick Suite currently
         /// has Standard Edition and Enterprise Edition. Not every operation and capability is
         /// available in every edition.
         /// </exception>
@@ -17212,7 +18170,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
@@ -17231,8 +18189,8 @@ namespace Amazon.QuickSight
         /// Access is throttled.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
-        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// This error indicates that you are calling an operation on an Amazon Quick Suite subscription
+        /// where the edition doesn't include support for that operation. Amazon Quick Suite currently
         /// has Standard Edition and Enterprise Edition. Not every operation and capability is
         /// available in every edition.
         /// </exception>
@@ -17293,7 +18251,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConflictException">
@@ -17374,7 +18332,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConflictException">
@@ -17396,8 +18354,8 @@ namespace Amazon.QuickSight
         /// Access is throttled.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
-        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// This error indicates that you are calling an operation on an Amazon Quick Suite subscription
+        /// where the edition doesn't include support for that operation. Amazon Quick Suite currently
         /// has Standard Edition and Enterprise Edition. Not every operation and capability is
         /// available in every edition.
         /// </exception>
@@ -17458,7 +18416,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConflictException">
@@ -17531,7 +18489,7 @@ namespace Amazon.QuickSight
         #region  UpdateUser
 
         /// <summary>
-        /// Updates an Amazon QuickSight user.
+        /// Updates an Amazon Quick Sight user.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateUser service method.</param>
         /// 
@@ -17539,7 +18497,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
@@ -17617,7 +18575,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConflictException">
@@ -17698,7 +18656,7 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
-        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConflictException">
@@ -17720,8 +18678,8 @@ namespace Amazon.QuickSight
         /// Access is throttled.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
-        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// This error indicates that you are calling an operation on an Amazon Quick Suite subscription
+        /// where the edition doesn't include support for that operation. Amazon Quick Suite currently
         /// has Standard Edition and Enterprise Edition. Not every operation and capability is
         /// available in every edition.
         /// </exception>

@@ -31,7 +31,7 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the ListDashboardVersions operation.
-    /// Lists all the versions of the dashboards in the QuickSight subscription.
+    /// Lists all the versions of the dashboards in the Amazon Quick Sight subscription.
     /// </summary>
     public partial class ListDashboardVersionsRequest : AmazonQuickSightRequest
     {

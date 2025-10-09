@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// An entry that appears when a <c>KeyRegistration</c> update to QuickSight fails.
+    /// An entry that appears when a <c>KeyRegistration</c> update to Quick Sight fails.
     /// </summary>
     public partial class FailedKeyRegistrationEntry
     {

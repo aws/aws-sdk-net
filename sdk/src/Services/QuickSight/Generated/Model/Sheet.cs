@@ -31,9 +31,9 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// A <i>sheet</i>, which is an object that contains a set of visuals that are viewed
-    /// together on one page in Amazon QuickSight. Every analysis and dashboard contains at
-    /// least one sheet. Each sheet contains at least one visualization widget, for example
-    /// a chart, pivot table, or narrative insight. Sheets can be associated with other components,
+    /// together on one page in Quick Sight. Every analysis and dashboard contains at least
+    /// one sheet. Each sheet contains at least one visualization widget, for example a chart,
+    /// pivot table, or narrative insight. Sheets can be associated with other components,
     /// such as controls, filters, and so on.
     /// </summary>
     public partial class Sheet
@@ -64,7 +64,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of a sheet. This name is displayed on the sheet's tab in the QuickSight console.
+        /// The name of a sheet. This name is displayed on the sheet's tab in the Quick Sight
+        /// console.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

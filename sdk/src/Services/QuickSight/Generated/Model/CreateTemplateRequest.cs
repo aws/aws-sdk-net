@@ -31,13 +31,13 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateTemplate operation.
-    /// Creates a template either from a <c>TemplateDefinition</c> or from an existing QuickSight
-    /// analysis or template. You can use the resulting template to create additional dashboards,
-    /// templates, or analyses.
+    /// Creates a template either from a <c>TemplateDefinition</c> or from an existing Quick
+    /// Sight analysis or template. You can use the resulting template to create additional
+    /// dashboards, templates, or analyses.
     /// 
     ///  
     /// <para>
-    /// A <i>template</i> is an entity in QuickSight that encapsulates the metadata required
+    /// A <i>template</i> is an entity in Quick Sight that encapsulates the metadata required
     /// to create an analysis and that you can use to create s dashboard. A template adds
     /// a layer of abstraction by using placeholders to replace the dataset associated with
     /// the analysis. You can use templates to create dashboards by replacing dataset placeholders
@@ -61,7 +61,7 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property AwsAccountId. 
         /// <para>
         /// The ID for the Amazon Web Services account that the group is in. You use the ID for
-        /// the Amazon Web Services account that contains your Amazon QuickSight account.
+        /// the Amazon Web Services account that contains your Amazon Quick Sight account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]
@@ -150,7 +150,7 @@ namespace Amazon.QuickSight.Model
         /// template or <c>SourceAnalysis</c> for an analysis. Both of these require an Amazon
         /// Resource Name (ARN). For <c>SourceTemplate</c>, specify the ARN of the source template.
         /// For <c>SourceAnalysis</c>, specify the ARN of the source analysis. The <c>SourceTemplate</c>
-        /// ARN can contain any Amazon Web Services account and any QuickSight-supported Amazon
+        /// ARN can contain any Amazon Web Services account and any Quick Sight-supported Amazon
         /// Web Services Region. 
         /// </para>
         ///  

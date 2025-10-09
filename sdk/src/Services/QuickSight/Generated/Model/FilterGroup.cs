@@ -35,8 +35,8 @@ namespace Amazon.QuickSight.Model
     ///  
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/add-a-compound-filter.html">Adding
-    /// filter conditions (group filters) with AND and OR operators</a> in the <i>Amazon QuickSight
-    /// User Guide</i>.
+    /// filter conditions (group filters) with AND and OR operators</a> in the <i>Amazon Quick
+    /// Suite User Guide</i>.
     /// </para>
     /// </summary>
     public partial class FilterGroup

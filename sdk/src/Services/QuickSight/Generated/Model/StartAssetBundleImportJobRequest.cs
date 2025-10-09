@@ -35,11 +35,11 @@ namespace Amazon.QuickSight.Model
     /// 
     ///  
     /// <para>
-    /// An Asset Bundle import job imports specified QuickSight assets into an QuickSight
-    /// account. You can also choose to import a naming prefix and specified configuration
+    /// An Asset Bundle import job imports specified Amazon Quick Sight assets into an Amazon
+    /// Quick Sight account. You can also choose to import a naming prefix and specified configuration
     /// overrides. The assets that are contained in the bundle file that you provide are used
-    /// to create or update a new or existing asset in your QuickSight account. Each QuickSight
-    /// account can run up to 5 import jobs concurrently.
+    /// to create or update a new or existing asset in your Amazon Quick Sight account. Each
+    /// Amazon Quick Sight account can run up to 5 import jobs concurrently.
     /// </para>
     ///  
     /// <para>
@@ -131,8 +131,8 @@ namespace Amazon.QuickSight.Model
         ///  
         /// <para>
         /// If you choose <c>DO_NOTHING</c>, failed import jobs will not attempt to roll back
-        /// any asset changes caused by the failed job, possibly keeping the QuickSight account
-        /// in an inconsistent state.
+        /// any asset changes caused by the failed job, possibly keeping the Amazon Quick Sight
+        /// account in an inconsistent state.
         /// </para>
         /// </summary>
         public AssetBundleImportFailureAction FailureAction

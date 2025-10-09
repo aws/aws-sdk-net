@@ -31,7 +31,7 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateGroupMembership operation.
-    /// Adds an Amazon QuickSight user to an Amazon QuickSight group.
+    /// Adds an Amazon Quick Sight user to an Amazon Quick Sight group.
     /// </summary>
     public partial class CreateGroupMembershipRequest : AmazonQuickSightRequest
     {
@@ -44,7 +44,7 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property AwsAccountId. 
         /// <para>
         /// The ID for the Amazon Web Services account that the group is in. Currently, you use
-        /// the ID for the Amazon Web Services account that contains your Amazon QuickSight account.
+        /// the ID for the Amazon Web Services account that contains your Amazon Quick Sight account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]

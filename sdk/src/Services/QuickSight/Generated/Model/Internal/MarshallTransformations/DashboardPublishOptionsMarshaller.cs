@@ -147,6 +147,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetQuickSuiteActionsOption())
+            {
+                context.Writer.WritePropertyName("QuickSuiteActionsOption");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = QuickSuiteActionsOptionMarshaller.Instance;
+                marshaller.Marshall(requestObject.QuickSuiteActionsOption, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetSheetControlsOption())
             {
                 context.Writer.WritePropertyName("SheetControlsOption");

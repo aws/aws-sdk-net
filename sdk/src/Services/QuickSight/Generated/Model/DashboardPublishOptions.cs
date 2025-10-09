@@ -43,6 +43,7 @@ namespace Amazon.QuickSight.Model
         private ExecutiveSummaryOption _executiveSummaryOption;
         private ExportToCSVOption _exportToCSVOption;
         private ExportWithHiddenFieldsOption _exportWithHiddenFieldsOption;
+        private QuickSuiteActionsOption _quickSuiteActionsOption;
         private SheetControlsOption _sheetControlsOption;
         private SheetLayoutElementMaximizationOption _sheetLayoutElementMaximizationOption;
         private VisualAxisSortOption _visualAxisSortOption;
@@ -124,7 +125,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property DataQAEnabledOption. 
         /// <para>
-        /// Adds Q&amp;A capabilities to an QuickSight dashboard. If no topic is linked, Dashboard
+        /// Adds Q&amp;A capabilities to an Quick Sight dashboard. If no topic is linked, Dashboard
         /// Q&amp;A uses the data values that are rendered on the dashboard. End users can use
         /// Dashboard Q&amp;A to ask for different slices of the data that they see on the dashboard.
         /// If a topic is linked, Topic Q&amp;A is used.
@@ -212,6 +213,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetExportWithHiddenFieldsOption()
         {
             return this._exportWithHiddenFieldsOption != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property QuickSuiteActionsOption. 
+        /// <para>
+        /// Determines if Actions in Amazon Quick Suite are enabled in a dashboard.
+        /// </para>
+        /// </summary>
+        public QuickSuiteActionsOption QuickSuiteActionsOption
+        {
+            get { return this._quickSuiteActionsOption; }
+            set { this._quickSuiteActionsOption = value; }
+        }
+
+        // Check to see if QuickSuiteActionsOption property is set
+        internal bool IsSetQuickSuiteActionsOption()
+        {
+            return this._quickSuiteActionsOption != null;
         }
 
         /// <summary>

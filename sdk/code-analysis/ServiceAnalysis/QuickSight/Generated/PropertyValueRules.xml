@@ -85,6 +85,30 @@
     <pattern>^[0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.CreateActionConnectorRequest.ActionConnectorId</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>[\w\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.CreateActionConnectorRequest.AwsAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.CreateActionConnectorRequest.Description</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>[A-Za-z0-9 _.,!?-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.CreateActionConnectorRequest.Name</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[A-Za-z0-9](?:[\w- ]*[A-Za-z0-9])?</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.CreateAnalysisRequest.AnalysisId</property>
     <min>1</min>
     <max>512</max>
@@ -530,6 +554,24 @@
     <min>12</min>
     <max>12</max>
     <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.DeleteActionConnectorRequest.ActionConnectorId</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>[\w\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.DeleteActionConnectorRequest.AwsAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.DeleteActionConnectorResponse.ActionConnectorId</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>[\w\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.DeleteAnalysisRequest.AnalysisId</property>
@@ -1020,6 +1062,36 @@
     <min>12</min>
     <max>12</max>
     <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.DescribeActionConnectorRequest.ActionConnectorId</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>[\w\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.DescribeActionConnectorRequest.AwsAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.DescribeActionConnectorPermissionsRequest.ActionConnectorId</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>[\w\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.DescribeActionConnectorPermissionsRequest.AwsAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.DescribeActionConnectorPermissionsResponse.ActionConnectorId</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>[\w\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.DescribeAnalysisRequest.AnalysisId</property>
@@ -1866,6 +1938,44 @@
     <max>600</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.GetFlowMetadataRequest.AwsAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>[0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.GetFlowMetadataRequest.FlowId</property>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.GetFlowMetadataResponse.Description</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.GetFlowMetadataResponse.FlowId</property>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.GetFlowMetadataResponse.Name</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.GetFlowPermissionsRequest.AwsAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>[0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.GetFlowPermissionsRequest.FlowId</property>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.GetFlowPermissionsResponse.FlowId</property>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.GetSessionEmbedUrlRequest.AwsAccountId</property>
     <min>12</min>
     <max>12</max>
@@ -1880,6 +1990,17 @@
     <property>Amazon.QuickSight.Model.GetSessionEmbedUrlRequest.SessionLifetimeInMinutes</property>
     <min>15</min>
     <max>600</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.ListActionConnectorsRequest.AwsAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.ListActionConnectorsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.ListAnalysesRequest.AwsAccountId</property>
@@ -1991,6 +2112,17 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.ListDataSourcesRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.ListFlowsRequest.AwsAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>[0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.ListFlowsRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
   </property-value-rule>
@@ -2412,6 +2544,17 @@
     <pattern>[\w\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.SearchActionConnectorsRequest.AwsAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.SearchActionConnectorsRequest.MaxResults</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.SearchAnalysesRequest.AwsAccountId</property>
     <min>12</min>
     <max>12</max>
@@ -2452,6 +2595,17 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.SearchDataSourcesRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.SearchFlowsRequest.AwsAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>[0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.SearchFlowsRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
   </property-value-rule>
@@ -2631,6 +2785,54 @@
     <property>Amazon.QuickSight.Model.UpdateAccountSettingsRequest.DefaultNamespace</property>
     <max>64</max>
     <pattern>^[a-zA-Z0-9._-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.UpdateActionConnectorRequest.ActionConnectorId</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>[\w\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.UpdateActionConnectorRequest.AwsAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.UpdateActionConnectorRequest.Description</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>[A-Za-z0-9 _.,!?-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.UpdateActionConnectorRequest.Name</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[A-Za-z0-9](?:[\w- ]*[A-Za-z0-9])?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.UpdateActionConnectorResponse.ActionConnectorId</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>[\w\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.UpdateActionConnectorPermissionsRequest.ActionConnectorId</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>[\w\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.UpdateActionConnectorPermissionsRequest.AwsAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.UpdateActionConnectorPermissionsResponse.ActionConnectorId</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>[\w\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.UpdateAnalysisRequest.AnalysisId</property>
@@ -2872,6 +3074,20 @@
     <property>Amazon.QuickSight.Model.UpdateDefaultQBusinessApplicationRequest.Namespace</property>
     <max>64</max>
     <pattern>^[a-zA-Z0-9._-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.UpdateFlowPermissionsRequest.AwsAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>[0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.UpdateFlowPermissionsRequest.FlowId</property>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.UpdateFlowPermissionsResponse.FlowId</property>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.UpdateFolderRequest.AwsAccountId</property>
@@ -3297,6 +3513,40 @@
     <pattern>^[a-zA-Z0-9._-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.ActionConnector.ActionConnectorId</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>[\w\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.ActionConnector.Description</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>[A-Za-z0-9 _.,!?-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.ActionConnector.Name</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[A-Za-z0-9](?:[\w- ]*[A-Za-z0-9])?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.ActionConnectorSearchFilter.Name</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.ActionConnectorSummary.ActionConnectorId</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>[\w\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.ActionConnectorSummary.Name</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[A-Za-z0-9](?:[\w- ]*[A-Za-z0-9])?</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.ActiveIAMPolicyAssignment.AssignmentName</property>
     <min>1</min>
     <pattern>(?=^.{2,256}$)(?!.*\s)[0-9a-zA-Z-_.:=+@]*$</pattern>
@@ -3368,6 +3618,16 @@
     <min>1</min>
     <max>2048</max>
     <pattern>[\w\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.APIKeyConnectionMetadata.BaseEndpoint</property>
+    <min>1</min>
+    <max>8192</max>
+    <pattern>https://.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.APIKeyConnectionMetadata.Email</property>
+    <pattern>[\w.%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.AssetBundleExportJobError.Message</property>
@@ -3524,6 +3784,40 @@
     <max>65535</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.AuthorizationCodeGrantDetails.AuthorizationEndpoint</property>
+    <min>1</min>
+    <max>8192</max>
+    <pattern>https://.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.AuthorizationCodeGrantDetails.ClientId</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.AuthorizationCodeGrantDetails.ClientSecret</property>
+    <min>0</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.AuthorizationCodeGrantDetails.TokenEndpoint</property>
+    <min>1</min>
+    <max>8192</max>
+    <pattern>https://.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.AuthorizationCodeGrantMetadata.BaseEndpoint</property>
+    <min>1</min>
+    <max>8192</max>
+    <pattern>https://.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.AuthorizationCodeGrantMetadata.RedirectUrl</property>
+    <min>1</min>
+    <max>8192</max>
+    <pattern>https://.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.AwsIotAnalyticsParameters.DataSetName</property>
     <min>1</min>
     <max>128</max>
@@ -3543,6 +3837,12 @@
     <min>1</min>
     <max>512</max>
     <pattern>[\w\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.BasicAuthConnectionMetadata.BaseEndpoint</property>
+    <min>1</min>
+    <max>8192</max>
+    <pattern>https://.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.BigQueryParameters.DataSetRegion</property>
@@ -3711,6 +4011,28 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.ClientCredentialsGrantDetails.ClientId</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.ClientCredentialsGrantDetails.ClientSecret</property>
+    <min>0</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.ClientCredentialsGrantDetails.TokenEndpoint</property>
+    <min>1</min>
+    <max>8192</max>
+    <pattern>https://.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.ClientCredentialsGrantMetadata.BaseEndpoint</property>
+    <min>1</min>
+    <max>8192</max>
+    <pattern>https://.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.CollectiveConstantEntry.Value</property>
     <max>1024</max>
   </property-value-rule>
@@ -3771,6 +4093,11 @@
     <property>Amazon.QuickSight.Model.ConditionalFormattingSolidColor.Expression</property>
     <min>1</min>
     <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.ConfluenceParameters.ConfluenceUrl</property>
+    <min>1</min>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.ContributionAnalysisDefault.MeasureFieldId</property>
@@ -4450,6 +4777,20 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.FlowSummary.Description</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.FlowSummary.FlowId</property>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.FlowSummary.Name</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.Folder.FolderId</property>
     <min>1</min>
     <max>2048</max>
@@ -4761,6 +5102,11 @@
     <min>1</min>
     <max>512</max>
     <pattern>[\w\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.IAMConnectionMetadata.RoleArn</property>
+    <min>20</min>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.IAMPolicyAssignment.AssignmentName</property>
@@ -5101,6 +5447,12 @@
     <pattern>^subnet-[0-9a-z]*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.NoneConnectionMetadata.BaseEndpoint</property>
+    <min>1</min>
+    <max>8192</max>
+    <pattern>https://.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.NullValueFormatConfiguration.NullString</property>
     <min>1</min>
     <max>128</max>
@@ -5371,6 +5723,11 @@
     <pattern>[\w\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.Permission.Principal</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.PieChartVisual.VisualContentAltText</property>
     <min>1</min>
     <max>1024</max>
@@ -5468,6 +5825,12 @@
     <max>65535</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.QBusinessParameters.ApplicationArn</property>
+    <min>1</min>
+    <max>1284</max>
+    <pattern>^arn:[-a-z0-9]*:qbusiness:[-a-z0-9]*:[0-9]{12}:application/.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.RadarChartConfiguration.AlternateBandEvenColor</property>
     <pattern>^#[A-F0-9]{6}$</pattern>
   </property-value-rule>
@@ -5508,6 +5871,79 @@
     <property>Amazon.QuickSight.Model.RdsParameters.InstanceId</property>
     <min>1</min>
     <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.ReadAPIKeyConnectionMetadata.BaseEndpoint</property>
+    <min>1</min>
+    <max>8192</max>
+    <pattern>https://.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.ReadAPIKeyConnectionMetadata.Email</property>
+    <pattern>[\w.%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.ReadAuthorizationCodeGrantDetails.AuthorizationEndpoint</property>
+    <min>1</min>
+    <max>8192</max>
+    <pattern>https://.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.ReadAuthorizationCodeGrantDetails.ClientId</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.ReadAuthorizationCodeGrantDetails.TokenEndpoint</property>
+    <min>1</min>
+    <max>8192</max>
+    <pattern>https://.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.ReadAuthorizationCodeGrantMetadata.BaseEndpoint</property>
+    <min>1</min>
+    <max>8192</max>
+    <pattern>https://.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.ReadAuthorizationCodeGrantMetadata.RedirectUrl</property>
+    <min>1</min>
+    <max>8192</max>
+    <pattern>https://.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.ReadBasicAuthConnectionMetadata.BaseEndpoint</property>
+    <min>1</min>
+    <max>8192</max>
+    <pattern>https://.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.ReadClientCredentialsGrantDetails.ClientId</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.ReadClientCredentialsGrantDetails.TokenEndpoint</property>
+    <min>1</min>
+    <max>8192</max>
+    <pattern>https://.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.ReadClientCredentialsGrantMetadata.BaseEndpoint</property>
+    <min>1</min>
+    <max>8192</max>
+    <pattern>https://.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.ReadIamConnectionMetadata.RoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.ReadNoneConnectionMetadata.BaseEndpoint</property>
+    <min>1</min>
+    <max>8192</max>
+    <pattern>https://.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.RedshiftIAMParameters.DatabaseUser</property>
@@ -5659,6 +6095,21 @@
   <property-value-rule>
     <property>Amazon.QuickSight.Model.S3BucketConfiguration.BucketRegion</property>
     <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.S3KnowledgeBaseParameters.BucketUrl</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.S3KnowledgeBaseParameters.MetadataFilesLocation</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.S3KnowledgeBaseParameters.RoleArn</property>
+    <min>20</min>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.S3Parameters.RoleArn</property>
@@ -6553,6 +7004,51 @@
     <min>1</min>
     <max>512</max>
     <pattern>[\w\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.WebCrawlerParameters.LoginPageUrl</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.WebCrawlerParameters.PasswordButtonXpath</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.WebCrawlerParameters.PasswordFieldXpath</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.WebCrawlerParameters.UsernameButtonXpath</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.WebCrawlerParameters.UsernameFieldXpath</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.WebCrawlerParameters.WebProxyHostName</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.WebCrawlerParameters.WebProxyPortNumber</property>
+    <min>0</min>
+    <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.WebProxyCredentials.WebProxyPassword</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.WebProxyCredentials.WebProxyUsername</property>
+    <min>1</min>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.WordCloudOptions.MaximumStringLength</property>

@@ -133,8 +133,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property DataSourceParameters. 
         /// <para>
-        /// The parameters that Amazon QuickSight uses to connect to your underlying source. This
-        /// is a variant type structure. For this structure to be valid, only one of the attributes
+        /// The parameters that Quick Sight uses to connect to your underlying source. This is
+        /// a variant type structure. For this structure to be valid, only one of the attributes
         /// can be non-null.
         /// </para>
         /// </summary>
@@ -228,8 +228,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property SslProperties. 
         /// <para>
-        /// Secure Socket Layer (SSL) properties that apply when QuickSight connects to your underlying
-        /// source.
+        /// Secure Socket Layer (SSL) properties that apply when Quick Sight connects to your
+        /// underlying source.
         /// </para>
         /// </summary>
         public SslProperties SslProperties
@@ -285,7 +285,7 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property VpcConnectionProperties. 
         /// <para>
         /// The VPC connection information. You need to use this parameter only when you want
-        /// QuickSight to use a VPC connection when connecting to your underlying source.
+        /// Quick Sight to use a VPC connection when connecting to your underlying source.
         /// </para>
         /// </summary>
         public VpcConnectionProperties VpcConnectionProperties

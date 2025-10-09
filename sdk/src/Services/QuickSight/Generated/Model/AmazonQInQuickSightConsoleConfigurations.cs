@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// A collection of Amazon Q feature configurations in an embedded QuickSight console.
+    /// A collection of Amazon Q feature configurations in an embedded Quick Sight console.
     /// </summary>
     public partial class AmazonQInQuickSightConsoleConfigurations
     {
@@ -42,7 +42,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property DataQnA. 
         /// <para>
-        /// Adds generative Q&amp;A capabilitiees to an embedded QuickSight console.
+        /// Adds generative Q&amp;A capabilitiees to an embedded Quick Sight console.
         /// </para>
         /// </summary>
         public DataQnAConfigurations DataQnA
@@ -60,7 +60,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property DataStories. 
         /// <para>
-        /// Adds the data stories feature to an embedded QuickSight console.
+        /// Adds the data stories feature to an embedded Quick Sight console.
         /// </para>
         /// </summary>
         public DataStoriesConfigurations DataStories
@@ -78,7 +78,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property ExecutiveSummary. 
         /// <para>
-        /// Adds the executive summaries feature to an embedded QuickSight console.
+        /// Adds the executive summaries feature to an embedded Quick Sight console.
         /// </para>
         /// </summary>
         public ExecutiveSummaryConfigurations ExecutiveSummary
@@ -96,7 +96,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property GenerativeAuthoring. 
         /// <para>
-        /// Adds the generative BI authoring experience to an embedded QuickSight console.
+        /// Adds the generative BI authoring experience to an embedded Quick Sight console.
         /// </para>
         /// </summary>
         public GenerativeAuthoringConfigurations GenerativeAuthoring

@@ -108,6 +108,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.BigQueryParameters = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ConfluenceParameters", targetDepth))
+                {
+                    var unmarshaller = ConfluenceParametersUnmarshaller.Instance;
+                    unmarshalledObject.ConfluenceParameters = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CustomConnectionParameters", targetDepth))
                 {
                     var unmarshaller = CustomConnectionParametersUnmarshaller.Instance;
@@ -168,6 +174,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.PrestoParameters = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("QBusinessParameters", targetDepth))
+                {
+                    var unmarshaller = QBusinessParametersUnmarshaller.Instance;
+                    unmarshalledObject.QBusinessParameters = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("RdsParameters", targetDepth))
                 {
                     var unmarshaller = RdsParametersUnmarshaller.Instance;
@@ -178,6 +190,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = RedshiftParametersUnmarshaller.Instance;
                     unmarshalledObject.RedshiftParameters = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("S3KnowledgeBaseParameters", targetDepth))
+                {
+                    var unmarshaller = S3KnowledgeBaseParametersUnmarshaller.Instance;
+                    unmarshalledObject.S3KnowledgeBaseParameters = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("S3Parameters", targetDepth))
@@ -232,6 +250,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = TwitterParametersUnmarshaller.Instance;
                     unmarshalledObject.TwitterParameters = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("WebCrawlerParameters", targetDepth))
+                {
+                    var unmarshaller = WebCrawlerParametersUnmarshaller.Instance;
+                    unmarshalledObject.WebCrawlerParameters = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

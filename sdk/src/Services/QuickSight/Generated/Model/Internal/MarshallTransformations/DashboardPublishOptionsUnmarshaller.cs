@@ -120,6 +120,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.ExportWithHiddenFieldsOption = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("QuickSuiteActionsOption", targetDepth))
+                {
+                    var unmarshaller = QuickSuiteActionsOptionUnmarshaller.Instance;
+                    unmarshalledObject.QuickSuiteActionsOption = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SheetControlsOption", targetDepth))
                 {
                     var unmarshaller = SheetControlsOptionUnmarshaller.Instance;

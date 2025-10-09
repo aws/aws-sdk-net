@@ -103,8 +103,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property IAMParameters. 
         /// <para>
-        /// An optional parameter that uses IAM authentication to grant QuickSight access to your
-        /// cluster. This parameter can be used instead of <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DataSourceCredentials.html">DataSourceCredentials</a>.
+        /// An optional parameter that uses IAM authentication to grant Quick Sight access to
+        /// your cluster. This parameter can be used instead of <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DataSourceCredentials.html">DataSourceCredentials</a>.
         /// </para>
         /// </summary>
         public RedshiftIAMParameters IAMParameters
@@ -123,11 +123,11 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property IdentityCenterConfiguration. 
         /// <para>
         /// An optional parameter that configures IAM Identity Center authentication to grant
-        /// QuickSight access to your cluster.
+        /// Quick Sight access to your cluster.
         /// </para>
         ///  
         /// <para>
-        /// This parameter can only be specified if your QuickSight account is configured with
+        /// This parameter can only be specified if your Quick Sight account is configured with
         /// IAM Identity Center.
         /// </para>
         /// </summary>

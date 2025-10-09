@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// A member of an Amazon QuickSight group. Currently, group members must be users. Groups
-    /// can't be members of another group. .
+    /// A member of an Quick Sight group. Currently, group members must be users. Groups can't
+    /// be members of another group. .
     /// </summary>
     public partial class GroupMember
     {

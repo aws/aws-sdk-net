@@ -52,12 +52,12 @@ namespace Amazon.QuickSight.Model
     ///  </li> </ul> 
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/pie-chart.html">Using
-    /// pie charts</a> in the <i>Amazon QuickSight User Guide</i>.
+    /// pie charts</a> in the <i>Amazon Quick Suite User Guide</i>.
     /// </para>
     ///  
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/donut-chart.html">Using
-    /// donut charts</a> in the <i>Amazon QuickSight User Guide</i>.
+    /// donut charts</a> in the <i>Amazon Quick Suite User Guide</i>.
     /// </para>
     /// </summary>
     public partial class PieChartVisual

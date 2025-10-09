@@ -31,7 +31,7 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the ListUserGroups operation.
-    /// Lists the Amazon QuickSight groups that an Amazon QuickSight user is a member of.
+    /// Lists the Amazon Quick Sight groups that an Amazon Quick Sight user is a member of.
     /// </summary>
     public partial class ListUserGroupsRequest : AmazonQuickSightRequest
     {
@@ -45,7 +45,7 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property AwsAccountId. 
         /// <para>
         /// The Amazon Web Services account ID that the user is in. Currently, you use the ID
-        /// for the Amazon Web Services account that contains your Amazon QuickSight account.
+        /// for the Amazon Web Services account that contains your Amazon Quick Sight account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]
@@ -120,7 +120,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property UserName. 
         /// <para>
-        /// The Amazon QuickSight user name that you want to list group memberships for.
+        /// The Amazon Quick Sight user name that you want to list group memberships for.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]

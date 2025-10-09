@@ -31,13 +31,13 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateAccountCustomization operation.
-    /// Updates Amazon QuickSight customizations. Currently, the only customization that you
-    /// can use is a theme.
+    /// Updates Amazon Quick Sight customizations. Currently, the only customization that
+    /// you can use is a theme.
     /// 
     ///  
     /// <para>
     /// You can use customizations for your Amazon Web Services account or, if you specify
-    /// a namespace, for a QuickSight namespace instead. Customizations that apply to a namespace
+    /// a namespace, for a Quick Sight namespace instead. Customizations that apply to a namespace
     /// override customizations that apply to an Amazon Web Services account. To find out
     /// which customizations apply, use the <c>DescribeAccountCustomization</c> API operation.
     /// 
@@ -52,7 +52,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AccountCustomization. 
         /// <para>
-        /// The QuickSight customizations you're updating. 
+        /// The Quick Sight customizations you're updating. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -71,7 +71,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// The ID for the Amazon Web Services account that you want to update QuickSight customizations
+        /// The ID for the Amazon Web Services account that you want to update Quick Sight customizations
         /// for.
         /// </para>
         /// </summary>
@@ -91,7 +91,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Namespace. 
         /// <para>
-        /// The namespace that you want to update QuickSight customizations for.
+        /// The namespace that you want to update Quick Sight customizations for.
         /// </para>
         /// </summary>
         [AWSProperty(Max=64)]

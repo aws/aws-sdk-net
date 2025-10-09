@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// A list of QuickSight parameters and the list's override values.
+    /// A list of Quick Sight parameters and the list's override values.
     /// </summary>
     public partial class Parameters
     {

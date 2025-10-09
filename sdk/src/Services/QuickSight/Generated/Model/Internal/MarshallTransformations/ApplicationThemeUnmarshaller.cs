@@ -78,6 +78,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.BrandElementStyle = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ContextualAccentPalette", targetDepth))
+                {
+                    var unmarshaller = ContextualAccentPaletteUnmarshaller.Instance;
+                    unmarshalledObject.ContextualAccentPalette = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

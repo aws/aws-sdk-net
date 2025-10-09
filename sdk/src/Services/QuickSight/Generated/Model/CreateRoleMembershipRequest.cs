@@ -31,7 +31,7 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateRoleMembership operation.
-    /// Use <c>CreateRoleMembership</c> to add an existing QuickSight group to an existing
+    /// Use <c>CreateRoleMembership</c> to add an existing Quick Sight group to an existing
     /// role.
     /// </summary>
     public partial class CreateRoleMembershipRequest : AmazonQuickSightRequest
@@ -46,7 +46,7 @@ namespace Amazon.QuickSight.Model
         /// <para>
         /// The ID for the Amazon Web Services account that you want to create a group in. The
         /// Amazon Web Services account ID that you provide must be the same Amazon Web Services
-        /// account that contains your Amazon QuickSight account.
+        /// account that contains your Amazon Quick Sight account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]

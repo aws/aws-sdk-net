@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// A registered user of Amazon QuickSight.
+    /// A registered user of Quick Sight.
     /// </summary>
     public partial class User
     {
@@ -49,9 +49,9 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Active. 
         /// <para>
-        /// The active status of user. When you create an Amazon QuickSight user that's not an
-        /// IAM user or an Active Directory user, that user is inactive until they sign in and
-        /// provide a password.
+        /// The active status of user. When you create an Quick Sight user that's not an IAM user
+        /// or an Active Directory user, that user is inactive until they sign in and provide
+        /// a password.
         /// </para>
         /// </summary>
         public bool Active
@@ -125,8 +125,8 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property ExternalLoginFederationProviderType. 
         /// <para>
         /// The type of supported external login provider that provides identity to let the user
-        /// federate into Amazon QuickSight with an associated IAM role. The type can be one of
-        /// the following.
+        /// federate into Quick Sight with an associated IAM role. The type can be one of the
+        /// following.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -225,7 +225,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Role. 
         /// <para>
-        /// The Amazon QuickSight role for the user. The user role can be one of the following:.
+        /// The Quick Sight role for the user. The user role can be one of the following:.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -237,13 +237,13 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>ADMIN</c>: A user who is an author, who can also manage Amazon QuickSight settings.
+        ///  <c>ADMIN</c>: A user who is an author, who can also manage Amazon Quick Sight settings.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <c>READER_PRO</c>: Reader Pro adds Generative BI capabilities to the Reader role.
-        /// Reader Pros have access to Amazon Q in QuickSight, can build stories with Amazon Q,
-        /// and can generate executive summaries from dashboards.
+        /// Reader Pros have access to Amazon Q in Quick Sight, can build stories with Amazon
+        /// Q, and can generate executive summaries from dashboards.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -253,8 +253,8 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>ADMIN_PRO</c>: Admin Pros are Author Pros who can also manage Amazon QuickSight
-        /// administrative settings. Admin Pro users are billed at Author Pro pricing.
+        ///  <c>ADMIN_PRO</c>: Admin Pros are Author Pros who can also manage Quick Sight administrative
+        /// settings. Admin Pro users are billed at Author Pro pricing.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -282,7 +282,7 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property UserName. 
         /// <para>
         /// The user's user name. This value is required if you are registering a user that will
-        /// be managed in QuickSight. In the output, the value for <c>UserName</c> is <c>N/A</c>
+        /// be managed in Quick Sight. In the output, the value for <c>UserName</c> is <c>N/A</c>
         /// when the value for <c>IdentityType</c> is <c>IAM</c> and the corresponding IAM user
         /// is deleted.
         /// </para>

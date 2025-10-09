@@ -70,6 +70,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetContextualAccentPalette())
+            {
+                context.Writer.WritePropertyName("ContextualAccentPalette");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ContextualAccentPaletteMarshaller.Instance;
+                marshaller.Marshall(requestObject.ContextualAccentPalette, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-    /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+    /// This error indicates that you are calling an operation on an Amazon Quick Suite subscription
+    /// where the edition doesn't include support for that operation. Amazon Quick Suite currently
     /// has Standard Edition and Enterprise Edition. Not every operation and capability is
     /// available in every edition.
     /// </summary>

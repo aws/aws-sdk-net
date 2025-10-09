@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// The schedules configuration for an embedded QuickSight dashboard.
+    /// The schedules configuration for an embedded Quick Sight dashboard.
     /// </summary>
     public partial class SchedulesConfigurations
     {
@@ -39,7 +39,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Enabled. 
         /// <para>
-        /// The schedules configuration for an embedded QuickSight dashboard.
+        /// The schedules configuration for an embedded Quick Sight dashboard.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

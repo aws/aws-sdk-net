@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// An asset in a QuickSight folder, such as a dashboard, analysis, or dataset.
+    /// An asset in a Quick Sight folder, such as a dashboard, analysis, or dataset.
     /// </summary>
     public partial class FolderMember
     {

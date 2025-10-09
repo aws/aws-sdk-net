@@ -77,7 +77,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property User. 
         /// <para>
-        /// The Amazon QuickSight user.
+        /// The Amazon Quick Sight user.
         /// </para>
         /// </summary>
         public User User

@@ -31,7 +31,7 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeQuickSightQSearchConfiguration operation.
-    /// Describes the state of a QuickSight Q Search configuration.
+    /// Describes the state of a Quick Sight Q Search configuration.
     /// </summary>
     public partial class DescribeQuickSightQSearchConfigurationRequest : AmazonQuickSightRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// The ID of the Amazon Web Services account that contains the QuickSight Q Search configuration
+        /// The ID of the Amazon Web Services account that contains the Quick Sight Q Search configuration
         /// that the user wants described.
         /// </para>
         /// </summary>

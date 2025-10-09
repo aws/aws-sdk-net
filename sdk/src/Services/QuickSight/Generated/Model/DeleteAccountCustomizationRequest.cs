@@ -33,7 +33,7 @@ namespace Amazon.QuickSight.Model
     /// Container for the parameters to the DeleteAccountCustomization operation.
     /// <important> 
     /// <para>
-    /// This API permanently deletes all QuickSight customizations for the specified Amazon
+    /// This API permanently deletes all Quick Sight customizations for the specified Amazon
     /// Web Services account and namespace. When you delete account customizations:
     /// </para>
     ///  <ul> <li> 
@@ -46,7 +46,7 @@ namespace Amazon.QuickSight.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Users will see default QuickSight styling after customizations are deleted
+    /// Users will see default Quick Sight styling after customizations are deleted
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -55,8 +55,8 @@ namespace Amazon.QuickSight.Model
     /// </para>
     ///  </important> 
     /// <para>
-    /// Deletes all Amazon QuickSight customizations for the specified Amazon Web Services
-    /// account and QuickSight namespace.
+    /// Deletes all Amazon Quick Sight customizations for the specified Amazon Web Services
+    /// account and Quick Sight namespace.
     /// </para>
     /// </summary>
     public partial class DeleteAccountCustomizationRequest : AmazonQuickSightRequest
@@ -67,7 +67,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// The ID for the Amazon Web Services account that you want to delete QuickSight customizations
+        /// The ID for the Amazon Web Services account that you want to delete Quick Sight customizations
         /// from.
         /// </para>
         /// </summary>
@@ -87,7 +87,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Namespace. 
         /// <para>
-        /// The QuickSight namespace that you're deleting the customizations from.
+        /// The Quick Sight namespace that you're deleting the customizations from.
         /// </para>
         /// </summary>
         [AWSProperty(Max=64)]

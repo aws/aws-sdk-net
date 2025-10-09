@@ -31,7 +31,7 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteDefaultQBusinessApplication operation.
-    /// Deletes a linked Amazon Q Business application from an QuickSight account
+    /// Deletes a linked Amazon Q Business application from an Quick Sight account
     /// </summary>
     public partial class DeleteDefaultQBusinessApplicationRequest : AmazonQuickSightRequest
     {
@@ -41,7 +41,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// The ID of the QuickSight account that you want to disconnect from a Amazon Q Business
+        /// The ID of the Quick Sight account that you want to disconnect from a Amazon Q Business
         /// application.
         /// </para>
         /// </summary>
@@ -61,7 +61,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Namespace. 
         /// <para>
-        /// The QuickSight namespace that you want to delete a linked Amazon Q Business application
+        /// The Quick Sight namespace that you want to delete a linked Amazon Q Business application
         /// from. If this field is left blank, the Amazon Q Business application is deleted from
         /// the default namespace. Currently, the default namespace is the only valid value for
         /// this parameter.

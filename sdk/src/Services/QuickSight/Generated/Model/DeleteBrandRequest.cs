@@ -33,7 +33,7 @@ namespace Amazon.QuickSight.Model
     /// Container for the parameters to the DeleteBrand operation.
     /// <important> 
     /// <para>
-    /// This API permanently deletes the specified QuickSight brand. When you delete a brand:
+    /// This API permanently deletes the specified Quick Sight brand. When you delete a brand:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -54,7 +54,7 @@ namespace Amazon.QuickSight.Model
     /// </para>
     ///  </important> 
     /// <para>
-    /// Deletes an QuickSight brand.
+    /// Deletes an Quick Sight brand.
     /// </para>
     /// </summary>
     public partial class DeleteBrandRequest : AmazonQuickSightRequest
