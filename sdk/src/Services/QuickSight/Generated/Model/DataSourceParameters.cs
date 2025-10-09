@@ -30,9 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// The parameters that Amazon QuickSight uses to connect to your underlying data source.
-    /// This is a variant type structure. For this structure to be valid, only one of the
-    /// attributes can be non-null.
+    /// The parameters that Quick Sight uses to connect to your underlying data source. This
+    /// is a variant type structure. For this structure to be valid, only one of the attributes
+    /// can be non-null.
     /// </summary>
     public partial class DataSourceParameters
     {
@@ -43,6 +43,7 @@ namespace Amazon.QuickSight.Model
         private AuroraPostgreSqlParameters _auroraPostgreSqlParameters;
         private AwsIotAnalyticsParameters _awsIotAnalyticsParameters;
         private BigQueryParameters _bigQueryParameters;
+        private ConfluenceParameters _confluenceParameters;
         private CustomConnectionParameters _customConnectionParameters;
         private DatabricksParameters _databricksParameters;
         private ExasolParameters _exasolParameters;
@@ -53,8 +54,10 @@ namespace Amazon.QuickSight.Model
         private OracleParameters _oracleParameters;
         private PostgreSqlParameters _postgreSqlParameters;
         private PrestoParameters _prestoParameters;
+        private QBusinessParameters _qBusinessParameters;
         private RdsParameters _rdsParameters;
         private RedshiftParameters _redshiftParameters;
+        private S3KnowledgeBaseParameters _s3KnowledgeBaseParameters;
         private S3Parameters _s3Parameters;
         private ServiceNowParameters _serviceNowParameters;
         private SnowflakeParameters _snowflakeParameters;
@@ -64,6 +67,7 @@ namespace Amazon.QuickSight.Model
         private TeradataParameters _teradataParameters;
         private TrinoParameters _trinoParameters;
         private TwitterParameters _twitterParameters;
+        private WebCrawlerParameters _webCrawlerParameters;
 
         /// <summary>
         /// Gets and sets the property AmazonElasticsearchParameters. 
@@ -189,6 +193,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetBigQueryParameters()
         {
             return this._bigQueryParameters != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConfluenceParameters. 
+        /// <para>
+        /// The parameters for Confluence.
+        /// </para>
+        /// </summary>
+        public ConfluenceParameters ConfluenceParameters
+        {
+            get { return this._confluenceParameters; }
+            set { this._confluenceParameters = value; }
+        }
+
+        // Check to see if ConfluenceParameters property is set
+        internal bool IsSetConfluenceParameters()
+        {
+            return this._confluenceParameters != null;
         }
 
         /// <summary>
@@ -372,6 +394,24 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Gets and sets the property QBusinessParameters. 
+        /// <para>
+        /// The parameters for Amazon Q Business.
+        /// </para>
+        /// </summary>
+        public QBusinessParameters QBusinessParameters
+        {
+            get { return this._qBusinessParameters; }
+            set { this._qBusinessParameters = value; }
+        }
+
+        // Check to see if QBusinessParameters property is set
+        internal bool IsSetQBusinessParameters()
+        {
+            return this._qBusinessParameters != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property RdsParameters. 
         /// <para>
         /// The parameters for Amazon RDS.
@@ -405,6 +445,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetRedshiftParameters()
         {
             return this._redshiftParameters != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property S3KnowledgeBaseParameters. 
+        /// <para>
+        /// The parameters for S3 Knowledge Base.
+        /// </para>
+        /// </summary>
+        public S3KnowledgeBaseParameters S3KnowledgeBaseParameters
+        {
+            get { return this._s3KnowledgeBaseParameters; }
+            set { this._s3KnowledgeBaseParameters = value; }
+        }
+
+        // Check to see if S3KnowledgeBaseParameters property is set
+        internal bool IsSetS3KnowledgeBaseParameters()
+        {
+            return this._s3KnowledgeBaseParameters != null;
         }
 
         /// <summary>
@@ -567,6 +625,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetTwitterParameters()
         {
             return this._twitterParameters != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WebCrawlerParameters. 
+        /// <para>
+        /// The parameters for Web Crawler.
+        /// </para>
+        /// </summary>
+        public WebCrawlerParameters WebCrawlerParameters
+        {
+            get { return this._webCrawlerParameters; }
+            set { this._webCrawlerParameters = value; }
+        }
+
+        // Check to see if WebCrawlerParameters property is set
+        internal bool IsSetWebCrawlerParameters()
+        {
+            return this._webCrawlerParameters != null;
         }
 
     }

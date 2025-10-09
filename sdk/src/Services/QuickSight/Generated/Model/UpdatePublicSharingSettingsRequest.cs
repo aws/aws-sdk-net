@@ -33,7 +33,7 @@ namespace Amazon.QuickSight.Model
     /// Container for the parameters to the UpdatePublicSharingSettings operation.
     /// <important> 
     /// <para>
-    /// This API controls public sharing settings for your entire QuickSight account, affecting
+    /// This API controls public sharing settings for your entire Quick Sight account, affecting
     /// data security and access. When you enable public sharing:
     /// </para>
     ///  <ul> <li> 
@@ -42,7 +42,7 @@ namespace Amazon.QuickSight.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// This setting affects your entire Amazon Web Services account and all QuickSight users
+    /// This setting affects your entire Amazon Web Services account and all Quick Sight users
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -52,18 +52,19 @@ namespace Amazon.QuickSight.Model
     ///  </important> 
     /// <para>
     /// Use the <c>UpdatePublicSharingSettings</c> operation to turn on or turn off the public
-    /// sharing settings of an QuickSight dashboard.
+    /// sharing settings of an Amazon Quick Sight dashboard.
     /// </para>
     ///  
     /// <para>
-    /// To use this operation, turn on session capacity pricing for your QuickSight account.
+    /// To use this operation, turn on session capacity pricing for your Amazon Quick Sight
+    /// account.
     /// </para>
     ///  
     /// <para>
     /// Before you can turn on public sharing on your account, make sure to give public sharing
     /// permissions to an administrative user in the Identity and Access Management (IAM)
-    /// console. For more information on using IAM with QuickSight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/security_iam_service-with-iam.html">Using
-    /// QuickSight with IAM</a> in the <i>QuickSight User Guide</i>.
+    /// console. For more information on using IAM with Amazon Quick Sight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/security_iam_service-with-iam.html">Using
+    /// QuickSight with IAM</a> in the <i>Amazon Quick Sight User Guide</i>.
     /// </para>
     /// </summary>
     public partial class UpdatePublicSharingSettingsRequest : AmazonQuickSightRequest
@@ -74,7 +75,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// The Amazon Web Services account ID associated with your QuickSight subscription.
+        /// The Amazon Web Services account ID associated with your Amazon Quick Sight subscription.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]

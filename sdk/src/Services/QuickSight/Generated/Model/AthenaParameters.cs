@@ -42,11 +42,11 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property IdentityCenterConfiguration. 
         /// <para>
         /// An optional parameter that configures IAM Identity Center authentication to grant
-        /// QuickSight access to your workgroup.
+        /// Quick Sight access to your workgroup.
         /// </para>
         ///  
         /// <para>
-        /// This parameter can only be specified if your QuickSight account is configured with
+        /// This parameter can only be specified if your Quick Sight account is configured with
         /// IAM Identity Center.
         /// </para>
         /// </summary>

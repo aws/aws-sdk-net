@@ -31,7 +31,7 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateAccountSettings operation.
-    /// Updates the Amazon QuickSight settings in your Amazon Web Services account.
+    /// Updates the Amazon Quick Sight settings in your Amazon Web Services account.
     /// </summary>
     public partial class UpdateAccountSettingsRequest : AmazonQuickSightRequest
     {
@@ -43,8 +43,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// The ID for the Amazon Web Services account that contains the QuickSight settings that
-        /// you want to list.
+        /// The ID for the Amazon Web Services account that contains the Quick Sight settings
+        /// that you want to list.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]
@@ -64,8 +64,8 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property DefaultNamespace. 
         /// <para>
         /// The default namespace for this Amazon Web Services account. Currently, the default
-        /// is <c>default</c>. IAM users that register for the first time with QuickSight provide
-        /// an email address that becomes associated with the default namespace. 
+        /// is <c>default</c>. IAM users that register for the first time with Amazon Quick Sight
+        /// provide an email address that becomes associated with the default namespace. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=64)]
@@ -84,8 +84,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property NotificationEmail. 
         /// <para>
-        /// The email address that you want QuickSight to send notifications to regarding your
-        /// Amazon Web Services account or QuickSight subscription.
+        /// The email address that you want Quick Sight to send notifications to regarding your
+        /// Amazon Web Services account or Quick Sight subscription.
         /// </para>
         /// </summary>
         public string NotificationEmail
@@ -103,7 +103,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property TerminationProtectionEnabled. 
         /// <para>
-        /// A boolean value that determines whether or not an QuickSight account can be deleted.
+        /// A boolean value that determines whether or not an Quick Sight account can be deleted.
         /// A <c>True</c> value doesn't allow the account to be deleted and results in an error
         /// message if a user tries to make a <c>DeleteAccountSubscription</c> request. A <c>False</c>
         /// value will allow the account to be deleted.

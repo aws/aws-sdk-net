@@ -30,10 +30,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// This error indicates that you are calling an embedding operation in Amazon QuickSight
+    /// This error indicates that you are calling an embedding operation in Amazon Quick Sight
     /// without the required pricing plan on your Amazon Web Services account. Before you
-    /// can use embedding for anonymous users, a QuickSight administrator needs to add capacity
-    /// pricing to QuickSight. You can do this on the <b>Manage QuickSight</b> page. 
+    /// can use embedding for anonymous users, a Quick Suite administrator needs to add capacity
+    /// pricing to Quick Sight. You can do this on the <b>Manage Quick Suite</b> page. 
     /// 
     ///  
     /// <para>

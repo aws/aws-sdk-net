@@ -37,11 +37,11 @@ namespace Amazon.QuickSight.Model
     /// 
     ///  
     /// <para>
-    /// A dashboard is an entity in QuickSight that identifies QuickSight reports, created
-    /// from analyses. You can share QuickSight dashboards. With the right permissions, you
-    /// can create scheduled email reports from them. If you have the correct permissions,
-    /// you can create a dashboard from a template that exists in a different Amazon Web Services
-    /// account.
+    /// A dashboard is an entity in Amazon Quick Sight that identifies Amazon Quick Sight
+    /// reports, created from analyses. You can share Amazon Quick Sight dashboards. With
+    /// the right permissions, you can create scheduled email reports from them. If you have
+    /// the correct permissions, you can create a dashboard from a template that exists in
+    /// a different Amazon Web Services account.
     /// </para>
     /// </summary>
     public partial class CreateDashboardRequest : AmazonQuickSightRequest
@@ -108,9 +108,9 @@ namespace Amazon.QuickSight.Model
         ///  <ul> <li> 
         /// <para>
         ///  <c>AvailabilityStatus</c> for <c>AdHocFilteringOption</c> - This status can be either
-        /// <c>ENABLED</c> or <c>DISABLED</c>. When this is set to <c>DISABLED</c>, QuickSight
-        /// disables the left filter pane on the published dashboard, which can be used for ad
-        /// hoc (one-time) filtering. This option is <c>ENABLED</c> by default. 
+        /// <c>ENABLED</c> or <c>DISABLED</c>. When this is set to <c>DISABLED</c>, Amazon Quick
+        /// Sight disables the left filter pane on the published dashboard, which can be used
+        /// for ad hoc (one-time) filtering. This option is <c>ENABLED</c> by default. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -124,6 +124,13 @@ namespace Amazon.QuickSight.Model
         ///  <c>VisibilityState</c> for <c>SheetControlsOption</c> - This visibility state can
         /// be either <c>COLLAPSED</c> or <c>EXPANDED</c>. This option is <c>COLLAPSED</c> by
         /// default. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AvailabilityStatus</c> for <c>QuickSuiteActionsOption</c> - This status can be
+        /// either <c>ENABLED</c> or <c>DISABLED</c>. Features related to Actions in Amazon Quick
+        /// Suite on dashboards are disabled when this is set to <c>DISABLED</c>. This option
+        /// is <c>DISABLED</c> by default.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -182,7 +189,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property FolderArns. 
         /// <para>
-        /// When you create the dashboard, QuickSight adds the dashboard to these folders.
+        /// When you create the dashboard, Amazon Quick Sight adds the dashboard to these folders.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -324,7 +331,7 @@ namespace Amazon.QuickSight.Model
         /// <c> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a>
         /// </c> API operation. For <c>SourceTemplate</c>, specify the Amazon Resource Name (ARN)
         /// of the source template. The <c>SourceTemplate</c>ARN can contain any Amazon Web Services
-        /// account and any QuickSight-supported Amazon Web Services Region. 
+        /// account and any Amazon Quick Sight-supported Amazon Web Services Region. 
         /// </para>
         ///  
         /// <para>

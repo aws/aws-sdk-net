@@ -31,7 +31,7 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateQuickSightQSearchConfiguration operation.
-    /// Updates the state of a QuickSight Q Search configuration.
+    /// Updates the state of a Quick Sight Q Search configuration.
     /// </summary>
     public partial class UpdateQuickSightQSearchConfigurationRequest : AmazonQuickSightRequest
     {
@@ -41,7 +41,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// The ID of the Amazon Web Services account that contains the QuickSight Q Search configuration
+        /// The ID of the Amazon Web Services account that contains the Quick Sight Q Search configuration
         /// that you want to update.
         /// </para>
         /// </summary>
@@ -61,7 +61,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property QSearchStatus. 
         /// <para>
-        /// The status of the QuickSight Q Search configuration that the user wants to update.
+        /// The status of the Quick Sight Q Search configuration that the user wants to update.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

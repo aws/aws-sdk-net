@@ -31,12 +31,12 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the ListIdentityPropagationConfigs operation.
-    /// Lists all services and authorized targets that the QuickSight IAM Identity Center
+    /// Lists all services and authorized targets that the Quick Sight IAM Identity Center
     /// application can access.
     /// 
     ///  
     /// <para>
-    /// This operation is only supported for QuickSight accounts that use IAM Identity Center.
+    /// This operation is only supported for Quick Sight accounts that use IAM Identity Center.
     /// </para>
     /// </summary>
     public partial class ListIdentityPropagationConfigsRequest : AmazonQuickSightRequest

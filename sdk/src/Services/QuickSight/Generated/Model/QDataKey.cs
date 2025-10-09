@@ -40,8 +40,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property QDataKeyArn. 
         /// <para>
-        /// The ARN of the KMS key that is registered to a QuickSight account for encryption and
-        /// decryption use as a <c>QDataKey</c>.
+        /// The ARN of the KMS key that is registered to a Quick Sight account for encryption
+        /// and decryption use as a <c>QDataKey</c>.
         /// </para>
         /// </summary>
         public string QDataKeyArn

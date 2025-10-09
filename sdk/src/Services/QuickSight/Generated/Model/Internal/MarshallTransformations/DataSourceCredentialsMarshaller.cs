@@ -69,6 +69,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.SecretArn);
             }
 
+            if(requestObject.IsSetWebProxyCredentials())
+            {
+                context.Writer.WritePropertyName("WebProxyCredentials");
+                context.Writer.WriteStartObject();
+
+                var marshaller = WebProxyCredentialsMarshaller.Instance;
+                marshaller.Marshall(requestObject.WebProxyCredentials, context);
+
+                context.Writer.WriteEndObject();
+            }
+
         }
 
         /// <summary>

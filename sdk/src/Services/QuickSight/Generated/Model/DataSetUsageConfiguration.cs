@@ -60,7 +60,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property DisableUseAsImportedSource. 
         /// <para>
-        /// An option that controls whether a child dataset that's stored in QuickSight can use
+        /// An option that controls whether a child dataset that's stored in Quick Sight can use
         /// this dataset as a source.
         /// </para>
         /// </summary>

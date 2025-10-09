@@ -31,7 +31,7 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateGroup operation.
-    /// Use the <c>CreateGroup</c> operation to create a group in QuickSight. You can create
+    /// Use the <c>CreateGroup</c> operation to create a group in Quick Sight. You can create
     /// up to 10,000 groups in a namespace. If you want to create more than 10,000 groups
     /// in a namespace, contact Amazon Web Services Support.
     /// 
@@ -56,7 +56,7 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property AwsAccountId. 
         /// <para>
         /// The ID for the Amazon Web Services account that the group is in. Currently, you use
-        /// the ID for the Amazon Web Services account that contains your Amazon QuickSight account.
+        /// the ID for the Amazon Web Services account that contains your Amazon Quick Sight account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]

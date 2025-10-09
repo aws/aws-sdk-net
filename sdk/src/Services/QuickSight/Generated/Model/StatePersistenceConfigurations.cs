@@ -39,7 +39,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Enabled. 
         /// <para>
-        /// Determines if a QuickSight dashboard's state persistence settings are turned on or
+        /// Determines if a Quick Sight dashboard's state persistence settings are turned on or
         /// off.
         /// </para>
         /// </summary>

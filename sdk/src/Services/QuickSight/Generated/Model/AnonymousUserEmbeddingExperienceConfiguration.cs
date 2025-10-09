@@ -43,7 +43,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Dashboard. 
         /// <para>
-        /// The type of embedding experience. In this case, QuickSight dashboards.
+        /// The type of embedding experience. In this case, Amazon Quick Sight dashboards.
         /// </para>
         /// </summary>
         public AnonymousUserDashboardEmbeddingConfiguration Dashboard
@@ -61,7 +61,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property DashboardVisual. 
         /// <para>
-        /// The type of embedding experience. In this case, QuickSight visuals.
+        /// The type of embedding experience. In this case, Amazon Quick Sight visuals.
         /// </para>
         /// </summary>
         public AnonymousUserDashboardVisualEmbeddingConfiguration DashboardVisual

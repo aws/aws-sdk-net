@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// Metadata structure for an analysis in Amazon QuickSight
+    /// Metadata structure for an analysis in Quick Sight
     /// </summary>
     public partial class Analysis
     {

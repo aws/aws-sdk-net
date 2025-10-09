@@ -107,11 +107,11 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>CUSTOM</c> - Display only the themes created by people using Amazon QuickSight.
+        ///  <c>CUSTOM</c> - Display only the themes created by people using Amazon Quick Sight.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>QUICKSIGHT</c> - Display only the starting themes defined by QuickSight.
+        ///  <c>QUICKSIGHT</c> - Display only the starting themes defined by Quick Sight.
         /// </para>
         ///  </li> </ul>
         /// </summary>

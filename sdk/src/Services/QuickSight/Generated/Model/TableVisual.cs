@@ -35,7 +35,7 @@ namespace Amazon.QuickSight.Model
     ///  
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/tabular.html">Using
-    /// tables as visuals</a> in the <i>Amazon QuickSight User Guide</i>.
+    /// tables as visuals</a> in the <i>Amazon Quick Suite User Guide</i>.
     /// </para>
     /// </summary>
     public partial class TableVisual

@@ -31,7 +31,8 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the TagResource operation.
-    /// Assigns one or more tags (key-value pairs) to the specified QuickSight resource. 
+    /// Assigns one or more tags (key-value pairs) to the specified Amazon Quick Sight resource.
+    /// 
     /// 
     ///  
     /// <para>
@@ -45,23 +46,23 @@ namespace Amazon.QuickSight.Model
     /// </para>
     ///  
     /// <para>
-    /// You can associate as many as 50 tags with a resource. QuickSight supports tagging
-    /// on data set, data source, dashboard, template, topic, and user. 
+    /// You can associate as many as 50 tags with a resource. Amazon Quick Sight supports
+    /// tagging on data set, data source, dashboard, template, topic, and user. 
     /// </para>
     ///  
     /// <para>
-    /// Tagging for QuickSight works in a similar way to tagging for other Amazon Web Services
-    /// services, except for the following:
+    /// Tagging for Amazon Quick Sight works in a similar way to tagging for other Amazon
+    /// Web Services services, except for the following:
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Tags are used to track costs for users in QuickSight. You can't tag other resources
-    /// that QuickSight costs are based on, such as storage capacoty (SPICE), session usage,
-    /// alert consumption, or reporting units.
+    /// Tags are used to track costs for users in Amazon Quick Sight. You can't tag other
+    /// resources that Amazon Quick Sight costs are based on, such as storage capacoty (SPICE),
+    /// session usage, alert consumption, or reporting units.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// QuickSight doesn't currently support the tag editor for Resource Groups.
+    /// Amazon Quick Sight doesn't currently support the tag editor for Resource Groups.
     /// </para>
     ///  </li> </ul>
     /// </summary>

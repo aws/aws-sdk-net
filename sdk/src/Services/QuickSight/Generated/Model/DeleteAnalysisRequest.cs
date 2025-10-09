@@ -31,11 +31,11 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteAnalysis operation.
-    /// Deletes an analysis from Amazon QuickSight. You can optionally include a recovery
+    /// Deletes an analysis from Amazon Quick Sight. You can optionally include a recovery
     /// window during which you can restore the analysis. If you don't specify a recovery
-    /// window value, the operation defaults to 30 days. QuickSight attaches a <c>DeletionTime</c>
+    /// window value, the operation defaults to 30 days. Amazon Quick Sight attaches a <c>DeletionTime</c>
     /// stamp to the response that specifies the end of the recovery window. At the end of
-    /// the recovery window, QuickSight deletes the analysis permanently.
+    /// the recovery window, Amazon Quick Sight deletes the analysis permanently.
     /// 
     ///  
     /// <para>
@@ -46,9 +46,9 @@ namespace Amazon.QuickSight.Model
     /// </para>
     ///  
     /// <para>
-    /// An analysis that's scheduled for deletion isn't accessible in the QuickSight console.
-    /// To access it in the console, restore it. Deleting an analysis doesn't delete the dashboards
-    /// that you publish from it.
+    /// An analysis that's scheduled for deletion isn't accessible in the Amazon Quick Sight
+    /// console. To access it in the console, restore it. Deleting an analysis doesn't delete
+    /// the dashboards that you publish from it.
     /// </para>
     /// </summary>
     public partial class DeleteAnalysisRequest : AmazonQuickSightRequest
@@ -119,8 +119,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property RecoveryWindowInDays. 
         /// <para>
-        /// A value that specifies the number of days that QuickSight waits before it deletes
-        /// the analysis. You can't use this parameter with the <c>ForceDeleteWithoutRecovery</c>
+        /// A value that specifies the number of days that Amazon Quick Sight waits before it
+        /// deletes the analysis. You can't use this parameter with the <c>ForceDeleteWithoutRecovery</c>
         /// option in the same API call. The default value is 30.
         /// </para>
         /// </summary>

@@ -68,19 +68,21 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The ARN of an Amazon QuickSight user or group associated with a data source or dataset.
+        /// The ARN of an Quick Sight user or group associated with a data source or dataset.
         /// (This is common.)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The ARN of an Amazon QuickSight user, group, or namespace associated with an analysis,
-        /// dashboard, template, or theme. (This is common.)
+        /// The ARN of an Quick Sight user, group, or namespace associated with an analysis, dashboard,
+        /// template, or theme. Namespace sharing is not supported for action connectors. (This
+        /// is common.)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The ARN of an Amazon Web Services account root: This is an IAM ARN rather than a QuickSight
-        /// ARN. Use this option only to share resources (templates) across Amazon Web Services
-        /// accounts. (This is less common.) 
+        /// The ARN of an Amazon Web Services account root: This is an IAM ARN rather than a Quick
+        /// Sight ARN. Use this option only to share resources (templates) across Amazon Web Services
+        /// accounts. Account root sharing is not supported for action connectors. (This is less
+        /// common.) 
         /// </para>
         ///  </li> </ul>
         /// </summary>

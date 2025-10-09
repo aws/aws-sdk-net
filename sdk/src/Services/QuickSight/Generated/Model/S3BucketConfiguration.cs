@@ -32,7 +32,7 @@ namespace Amazon.QuickSight.Model
     /// <summary>
     /// An optional structure that contains the Amazon S3 bucket configuration that the generated
     /// snapshots are stored in. If you don't provide this information, generated snapshots
-    /// are stored in the default QuickSight bucket.
+    /// are stored in the default Amazon Quick Sight bucket.
     /// </summary>
     public partial class S3BucketConfiguration
     {

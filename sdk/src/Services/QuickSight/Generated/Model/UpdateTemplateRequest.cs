@@ -31,7 +31,7 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateTemplate operation.
-    /// Updates a template from an existing Amazon QuickSight analysis or another template.
+    /// Updates a template from an existing Amazon Quick Sight analysis or another template.
     /// </summary>
     public partial class UpdateTemplateRequest : AmazonQuickSightRequest
     {
@@ -111,7 +111,7 @@ namespace Amazon.QuickSight.Model
         /// template or <c>SourceAnalysis</c> for an analysis. Both of these require an Amazon
         /// Resource Name (ARN). For <c>SourceTemplate</c>, specify the ARN of the source template.
         /// For <c>SourceAnalysis</c>, specify the ARN of the source analysis. The <c>SourceTemplate</c>
-        /// ARN can contain any Amazon Web Services account and any QuickSight-supported Amazon
+        /// ARN can contain any Amazon Web Services account and any Quick Sight-supported Amazon
         /// Web Services Region;. 
         /// </para>
         ///  

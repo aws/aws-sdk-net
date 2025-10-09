@@ -31,7 +31,7 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateBrand operation.
-    /// Creates an QuickSight brand.
+    /// Creates an Quick Sight brand.
     /// </summary>
     public partial class CreateBrandRequest : AmazonQuickSightRequest
     {

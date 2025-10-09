@@ -31,7 +31,7 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateDefaultQBusinessApplication operation.
-    /// Updates a Amazon Q Business application that is linked to a QuickSight account.
+    /// Updates a Amazon Q Business application that is linked to a Quick Sight account.
     /// </summary>
     public partial class UpdateDefaultQBusinessApplicationRequest : AmazonQuickSightRequest
     {
@@ -61,7 +61,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// The ID of the QuickSight account that is connected to the Amazon Q Business application
+        /// The ID of the Quick Sight account that is connected to the Amazon Q Business application
         /// that you want to update.
         /// </para>
         /// </summary>
@@ -81,9 +81,9 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Namespace. 
         /// <para>
-        /// The QuickSight namespace that contains the linked Amazon Q Business application. If
-        /// this field is left blank, the default namespace is used. Currently, the default namespace
-        /// is the only valid value for this parameter.
+        /// The Quick Sight namespace that contains the linked Amazon Q Business application.
+        /// If this field is left blank, the default namespace is used. Currently, the default
+        /// namespace is the only valid value for this parameter.
         /// </para>
         /// </summary>
         [AWSProperty(Max=64)]

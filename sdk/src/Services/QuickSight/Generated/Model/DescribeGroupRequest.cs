@@ -31,7 +31,7 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeGroup operation.
-    /// Returns an Amazon QuickSight group's description and Amazon Resource Name (ARN).
+    /// Returns an Amazon Quick Sight group's description and Amazon Resource Name (ARN).
     /// </summary>
     public partial class DescribeGroupRequest : AmazonQuickSightRequest
     {
@@ -43,7 +43,7 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property AwsAccountId. 
         /// <para>
         /// The ID for the Amazon Web Services account that the group is in. Currently, you use
-        /// the ID for the Amazon Web Services account that contains your Amazon QuickSight account.
+        /// the ID for the Amazon Web Services account that contains your Amazon Quick Sight account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]

@@ -45,7 +45,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AmazonQInQuickSight. 
         /// <para>
-        /// The Amazon Q configurations of an embedded QuickSight dashboard.
+        /// The Amazon Q configurations of an embedded Amazon Quick Sight dashboard.
         /// </para>
         /// </summary>
         public AmazonQInQuickSightDashboardConfigurations AmazonQInQuickSight
@@ -63,7 +63,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Bookmarks. 
         /// <para>
-        /// The bookmarks configuration for an embedded dashboard in QuickSight.
+        /// The bookmarks configuration for an embedded dashboard in Amazon Quick Sight.
         /// </para>
         /// </summary>
         public BookmarksConfigurations Bookmarks
@@ -81,7 +81,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property RecentSnapshots. 
         /// <para>
-        /// The recent snapshots configuration for an QuickSight embedded dashboard
+        /// The recent snapshots configuration for an Quick Sight embedded dashboard
         /// </para>
         /// </summary>
         public RecentSnapshotsConfigurations RecentSnapshots
@@ -99,7 +99,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Schedules. 
         /// <para>
-        /// The schedules configuration for an embedded QuickSight dashboard.
+        /// The schedules configuration for an embedded Quick Sight dashboard.
         /// </para>
         /// </summary>
         public SchedulesConfigurations Schedules
@@ -153,7 +153,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property ThresholdAlerts. 
         /// <para>
-        /// The threshold alerts configuration for an QuickSight embedded dashboard.
+        /// The threshold alerts configuration for an Quick Sight embedded dashboard.
         /// </para>
         /// </summary>
         public ThresholdAlertsConfigurations ThresholdAlerts

@@ -34,8 +34,8 @@ namespace Amazon.QuickSight.Model
     /// 
     ///  <ul> <li> 
     /// <para>
-    ///  <c>KeyArn</c> - The ARN of a KMS key that is registered to a QuickSight account for
-    /// encryption and decryption use.
+    ///  <c>KeyArn</c> - The ARN of a KMS key that is registered to a Quick Sight account
+    /// for encryption and decryption use.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -71,8 +71,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property KeyArn. 
         /// <para>
-        /// The ARN of the KMS key that is registered to a QuickSight account for encryption and
-        /// decryption use.
+        /// The ARN of the KMS key that is registered to a Quick Sight account for encryption
+        /// and decryption use.
         /// </para>
         /// </summary>
         public string KeyArn

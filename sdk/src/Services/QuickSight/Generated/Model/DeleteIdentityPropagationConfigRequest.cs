@@ -32,11 +32,11 @@ namespace Amazon.QuickSight.Model
     /// <summary>
     /// Container for the parameters to the DeleteIdentityPropagationConfig operation.
     /// Deletes all access scopes and authorized targets that are associated with a service
-    /// from the QuickSight IAM Identity Center application.
+    /// from the Quick Sight IAM Identity Center application.
     /// 
     ///  
     /// <para>
-    /// This operation is only supported for QuickSight accounts that use IAM Identity Center.
+    /// This operation is only supported for Quick Sight accounts that use IAM Identity Center.
     /// </para>
     /// </summary>
     public partial class DeleteIdentityPropagationConfigRequest : AmazonQuickSightRequest

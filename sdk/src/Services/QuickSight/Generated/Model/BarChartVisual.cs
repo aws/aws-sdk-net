@@ -64,7 +64,7 @@ namespace Amazon.QuickSight.Model
     ///  </li> </ul> 
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/bar-charts.html">Using
-    /// bar charts</a> in the <i>Amazon QuickSight User Guide</i>.
+    /// bar charts</a> in the <i>Amazon Quick Suite User Guide</i>.
     /// </para>
     /// </summary>
     public partial class BarChartVisual

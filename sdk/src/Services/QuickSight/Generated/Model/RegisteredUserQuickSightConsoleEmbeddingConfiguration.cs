@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// Information about the QuickSight console that you want to embed.
+    /// Information about the Amazon Quick Sight console that you want to embed.
     /// </summary>
     public partial class RegisteredUserQuickSightConsoleEmbeddingConfiguration
     {
@@ -40,7 +40,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property FeatureConfigurations. 
         /// <para>
-        /// The embedding configuration of an embedded QuickSight console.
+        /// The embedding configuration of an embedded Amazon Quick Sight console.
         /// </para>
         /// </summary>
         public RegisteredUserConsoleFeatureConfigurations FeatureConfigurations
@@ -58,7 +58,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property InitialPath. 
         /// <para>
-        /// The initial URL path for the QuickSight console. <c>InitialPath</c> is required.
+        /// The initial URL path for the Amazon Quick Sight console. <c>InitialPath</c> is required.
         /// </para>
         ///  
         /// <para>
@@ -83,12 +83,12 @@ namespace Amazon.QuickSight.Model
         ///  </li> <li> 
         /// <para>
         ///  <c>/dashboards/DashboardId</c>. <i>DashboardId</i> is the actual ID key from the
-        /// QuickSight console URL of the dashboard.
+        /// Amazon Quick Sight console URL of the dashboard.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>/analyses/AnalysisId</c>. <i>AnalysisId</i> is the actual ID key from the QuickSight
-        /// console URL of the analysis.
+        ///  <c>/analyses/AnalysisId</c>. <i>AnalysisId</i> is the actual ID key from the Amazon
+        /// Quick Sight console URL of the analysis.
         /// </para>
         ///  </li> </ul>
         /// </summary>

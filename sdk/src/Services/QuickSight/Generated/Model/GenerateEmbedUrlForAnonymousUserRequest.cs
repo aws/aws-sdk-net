@@ -82,9 +82,9 @@ namespace Amazon.QuickSight.Model
         /// <para>
         /// The domains that you want to add to the allow list for access to the generated URL
         /// that is then embedded. This optional parameter overrides the static domains that are
-        /// configured in the Manage QuickSight menu in the QuickSight console. Instead, it allows
-        /// only the domains that you include in this parameter. You can list up to three domains
-        /// or subdomains in each API call.
+        /// configured in the Manage Quick Sight menu in the Amazon Quick Sight console. Instead,
+        /// it allows only the domains that you include in this parameter. You can list up to
+        /// three domains or subdomains in each API call.
         /// </para>
         ///  
         /// <para>
@@ -112,7 +112,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AuthorizedResourceArns. 
         /// <para>
-        /// The Amazon Resource Names (ARNs) for the QuickSight resources that the user is authorized
+        /// The Amazon Resource Names (ARNs) for the Quick Sight resources that the user is authorized
         /// to access during the lifetime of the session.
         /// </para>
         ///  
@@ -190,8 +190,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Namespace. 
         /// <para>
-        /// The QuickSight namespace that the anonymous user virtually belongs to. If you are
-        /// not using an Amazon QuickSight custom namespace, set this to <c>default</c>.
+        /// The Amazon Quick Sight namespace that the anonymous user virtually belongs to. If
+        /// you are not using an Amazon QuickSight custom namespace, set this to <c>default</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=64)]
@@ -238,7 +238,7 @@ namespace Amazon.QuickSight.Model
         /// <para>
         /// These are not the tags used for the Amazon Web Services resource tagging feature.
         /// For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-rls-tags.html">Using
-        /// Row-Level Security (RLS) with Tags</a>in the <i>Amazon QuickSight User Guide</i>.
+        /// Row-Level Security (RLS) with Tags</a>in the <i>Amazon Quick Sight User Guide</i>.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

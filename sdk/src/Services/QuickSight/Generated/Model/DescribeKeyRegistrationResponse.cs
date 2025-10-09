@@ -63,7 +63,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property KeyRegistration. 
         /// <para>
-        /// A list of <c>RegisteredCustomerManagedKey</c> objects in a QuickSight account.
+        /// A list of <c>RegisteredCustomerManagedKey</c> objects in a Quick Sight account.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -86,7 +86,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property QDataKey. 
         /// <para>
-        /// A list of <c>QDataKey</c> objects in a QuickSight account.
+        /// A list of <c>QDataKey</c> objects in a Quick Sight account.
         /// </para>
         /// </summary>
         public QDataKey QDataKey
