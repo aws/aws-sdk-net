@@ -1,9 +1,0 @@
-{
-    "core": {
-        "changeLogMessages": [
-            "Fix regression in V4 where the credentials resolver would attempt to fetch a profile even when its name was empty or null (https://github.com/aws/aws-sdk-net/issues/4028)"
-        ],
-        "type": "patch",
-        "updateMinimum": true
-    }
-}

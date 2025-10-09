@@ -1,3 +1,12 @@
+### 4.0.109.0 (2025-10-09 18:18 UTC)
+* QuickSight (4.0.7.0)
+	* This release adds support for ActionConnector and Flow, which are new resources associated with Amazon Quick Suite. Additional updates include expanded Data Source options, further branding customization, and new capabilities that can be restricted by Admins.
+* WAFV2 (4.0.5.0)
+	* This release adds the ability to throw WafLimitsExceededException when the maximum number of Application Load Balancer (ALB) associations per AWS WAF v2 WebACL is exceeded.
+* Core 4.0.0.33
+	* Fix regression in V4 where the credentials resolver would attempt to fetch a profile even when its name was empty or null (https://github.com/aws/aws-sdk-net/issues/4028)
+	* All service and extension packages updated to require new Core
+
 ### 4.0.108.0 (2025-10-08 18:18 UTC)
 * BedrockAgentCoreControl (4.0.5.0)
 	* Adding support for authorizer type AWS_IAM to AgentCore Control Gateway.
