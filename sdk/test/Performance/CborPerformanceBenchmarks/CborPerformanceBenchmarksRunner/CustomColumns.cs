@@ -43,6 +43,9 @@ public class TestCaseColumn : ServiceColumn
         var benchmarkObject = (BaseBenchmarks)Activator.CreateInstance(benchmarkCase.Descriptor.Type);
         var testCase = benchmarkObject.TestCase;
 
+        if (benchmarkCase.Descriptor.WorkloadMethod.Name.EndsWith("2"))
+            testCase = ((BaseDoubleBenchmarks)benchmarkObject).TestCase2;
+
         return testCase;
     }
 }
