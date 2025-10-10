@@ -61,7 +61,10 @@ namespace Amazon.BedrockAgentCore.Model
     ///  
     /// <para>
     /// To use this operation, you must have the <c>bedrock-agentcore:InvokeAgentRuntime</c>
-    /// permission.
+    /// permission. If you are making a call to <c>InvokeAgentRuntime</c> on behalf of a user
+    /// ID with the <c>X-Amzn-Bedrock-AgentCore-Runtime-User-Id</c> header, You require permissions
+    /// to both actions (<c>bedrock-agentcore:InvokeAgentRuntime</c> and <c>bedrock-agentcore:InvokeAgentRuntimeForUser</c>).
+    /// 
     /// </para>
     /// </summary>
     public partial class InvokeAgentRuntimeRequest : AmazonBedrockAgentCoreRequest
