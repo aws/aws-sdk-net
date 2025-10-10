@@ -41,6 +41,7 @@ namespace Amazon.S3.Transfer.Internal
         IAmazonS3 _s3Client;
         TransferUtilityConfig _config;
         TransferUtilityUploadRequest _fileTransporterRequest;
+        long _totalTransferredBytes;
 
         internal SimpleUploadCommand(IAmazonS3 s3Client, TransferUtilityConfig config, TransferUtilityUploadRequest fileTransporterRequest)
         {
@@ -103,9 +104,48 @@ namespace Amazon.S3.Transfer.Internal
 
         private void PutObjectProgressEventCallback(object sender, UploadProgressArgs e)
         {
-            var progressArgs = new UploadProgressArgs(e.IncrementTransferred, e.TransferredBytes, e.TotalBytes, 
-                e.CompensationForRetry, _fileTransporterRequest.FilePath);
+            // Keep track of the total transferred bytes so that we can also return this value in case of failure
+            long transferredBytes = Interlocked.Add(ref _totalTransferredBytes, e.IncrementTransferred - e.CompensationForRetry);
+            
+            var progressArgs = new UploadProgressArgs(e.IncrementTransferred, transferredBytes, e.TotalBytes, 
+                e.CompensationForRetry, _fileTransporterRequest.FilePath, _fileTransporterRequest);
             this._fileTransporterRequest.OnRaiseProgressEvent(progressArgs);
+        }
+
+        private void FireTransferInitiatedEvent()
+        {
+            var initiatedArgs = new UploadInitiatedEventArgs(
+                request: _fileTransporterRequest,
+                filePath: _fileTransporterRequest.FilePath,
+                totalBytes: _fileTransporterRequest.ContentLength
+            );
+            
+            _fileTransporterRequest.OnRaiseTransferInitiatedEvent(initiatedArgs);
+        }
+
+        private void FireTransferCompletedEvent(TransferUtilityUploadResponse response)
+        {
+            var completedArgs = new UploadCompletedEventArgs(
+                request: _fileTransporterRequest,
+                response: response,
+                filePath: _fileTransporterRequest.FilePath,
+                transferredBytes: Interlocked.Read(ref _totalTransferredBytes),
+                totalBytes: _fileTransporterRequest.ContentLength
+            );
+            
+            _fileTransporterRequest.OnRaiseTransferCompletedEvent(completedArgs);
+        }
+
+        private void FireTransferFailedEvent()
+        {
+            var failedArgs = new UploadFailedEventArgs(
+                request: _fileTransporterRequest,
+                filePath: _fileTransporterRequest.FilePath,
+                transferredBytes: Interlocked.Read(ref _totalTransferredBytes),
+                totalBytes: _fileTransporterRequest.ContentLength
+            );
+            
+            _fileTransporterRequest.OnRaiseTransferFailedEvent(failedArgs);
         }
     }
 }
