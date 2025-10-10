@@ -413,48 +413,129 @@ namespace Amazon.S3.Transfer
         public event EventHandler<UploadProgressArgs> UploadProgressEvent;
 
         /// <summary>
-        /// The event for TransferInitiated notifications.
-        /// Fired exactly once when a transfer operation starts.
+        /// The event for UploadInitiatedEvent notifications. All
+        /// subscribers will be notified when a transfer operation
+        /// starts.
+        /// <para>
+        /// The UploadInitiatedEvent is fired exactly once when 
+        /// a transfer operation begins. The delegates attached to the event 
+        /// will be passed information about the upload request and 
+        /// total file size, but no progress information.
+        /// </para>
         /// </summary>
-        public event EventHandler<UploadProgressArgs> TransferInitiated;
+        /// <remarks>
+        /// Subscribe to this event if you want to receive
+        /// UploadInitiatedEvent notifications. Here is how:<br />
+        /// 1. Define a method with a signature similar to this one:
+        /// <code>
+        /// private void uploadStarted(object sender, UploadInitiatedArgs args)
+        /// {
+        ///     Console.WriteLine($"Upload started: {args.FilePath}");
+        ///     Console.WriteLine($"Total size: {args.TotalBytes} bytes");
+        ///     Console.WriteLine($"Bucket: {args.Request.BucketName}");
+        ///     Console.WriteLine($"Key: {args.Request.Key}");
+        /// }
+        /// </code>
+        /// 2. Add this method to the UploadInitiatedEvent delegate's invocation list
+        /// <code>
+        /// TransferUtilityUploadRequest request = new TransferUtilityUploadRequest();
+        /// request.UploadInitiatedEvent += uploadStarted;
+        /// </code>
+        /// </remarks>
+        public event EventHandler<UploadInitiatedArgs> UploadInitiatedEvent;
 
         /// <summary>
-        /// The event for TransferCompleted notifications.
-        /// Fired exactly once when a transfer operation completes successfully.
+        /// The event for UploadCompletedEvent notifications. All
+        /// subscribers will be notified when a transfer operation
+        /// completes successfully.
+        /// <para>
+        /// The UploadCompletedEvent is fired exactly once when 
+        /// a transfer operation completes successfully. The delegates attached to the event 
+        /// will be passed information about the completed upload including
+        /// the final response from S3 with ETag, VersionId, and other metadata.
+        /// </para>
         /// </summary>
-        public event EventHandler<UploadProgressArgs> TransferCompleted;
+        /// <remarks>
+        /// Subscribe to this event if you want to receive
+        /// UploadCompletedEvent notifications. Here is how:<br />
+        /// 1. Define a method with a signature similar to this one:
+        /// <code>
+        /// private void uploadCompleted(object sender, UploadCompletedArgs args)
+        /// {
+        ///     Console.WriteLine($"Upload completed: {args.FilePath}");
+        ///     Console.WriteLine($"Transferred: {args.TransferredBytes} bytes");
+        ///     Console.WriteLine($"ETag: {args.Response.ETag}");
+        ///     Console.WriteLine($"S3 Key: {args.Response.Key}");
+        ///     Console.WriteLine($"Version ID: {args.Response.VersionId}");
+        /// }
+        /// </code>
+        /// 2. Add this method to the UploadCompletedEvent delegate's invocation list
+        /// <code>
+        /// TransferUtilityUploadRequest request = new TransferUtilityUploadRequest();
+        /// request.UploadCompletedEvent += uploadCompleted;
+        /// </code>
+        /// </remarks>
+        public event EventHandler<UploadCompletedArgs> UploadCompletedEvent;
 
         /// <summary>
-        /// The event for TransferFailed notifications.
-        /// Fired exactly once when a transfer operation fails.
+        /// The event for UploadFailedEvent notifications. All
+        /// subscribers will be notified when a transfer operation
+        /// fails.
+        /// <para>
+        /// The UploadFailedEvent is fired exactly once when 
+        /// a transfer operation fails. The delegates attached to the event 
+        /// will be passed information about the failed upload including
+        /// partial progress information, but no response data since the upload failed.
+        /// </para>
         /// </summary>
-        public event EventHandler<UploadProgressArgs> TransferFailed;
+        /// <remarks>
+        /// Subscribe to this event if you want to receive
+        /// UploadFailedEvent notifications. Here is how:<br />
+        /// 1. Define a method with a signature similar to this one:
+        /// <code>
+        /// private void uploadFailed(object sender, UploadFailedArgs args)
+        /// {
+        ///     Console.WriteLine($"Upload failed: {args.FilePath}");
+        ///     Console.WriteLine($"Partial progress: {args.TransferredBytes} / {args.TotalBytes} bytes");
+        ///     var percent = (double)args.TransferredBytes / args.TotalBytes * 100;
+        ///     Console.WriteLine($"Completion: {percent:F1}%");
+        ///     Console.WriteLine($"Bucket: {args.Request.BucketName}");
+        ///     Console.WriteLine($"Key: {args.Request.Key}");
+        /// }
+        /// </code>
+        /// 2. Add this method to the UploadFailedEvent delegate's invocation list
+        /// <code>
+        /// TransferUtilityUploadRequest request = new TransferUtilityUploadRequest();
+        /// request.UploadFailedEvent += uploadFailed;
+        /// </code>
+        /// </remarks>
+        public event EventHandler<UploadFailedArgs> UploadFailedEvent;
 
         /// <summary>
-        /// Causes the TransferInitiated event to be fired.
+        /// Causes the UploadInitiatedEvent event to be fired.
         /// </summary>
-        /// <param name="args">Event arguments containing request and progress snapshot</param>
-        internal void OnRaiseTransferInitiatedEvent(UploadProgressArgs args)
+        /// <param name="args">Event arguments containing request and total size</param>
+        internal void OnRaiseTransferInitiatedEvent(UploadInitiatedArgs args)
         {
-            AWSSDKUtils.InvokeInBackground(TransferInitiated, args, this);
+            AWSSDKUtils.InvokeInBackground(UploadInitiatedEvent, args, this);
         }
 
         /// <summary>
-        /// Causes the TransferCompleted event to be fired.
+        /// Causes the UploadCompletedEvent event to be fired.
         /// </summary>
         /// <param name="args">Event arguments containing request, response, and final progress</param>
-        internal void OnRaiseTransferCompletedEvent(UploadProgressArgs args)
+        internal void OnRaiseTransferCompletedEvent(UploadCompletedArgs args)
         {
-            AWSSDKUtils.InvokeInBackground(TransferCompleted, args, this);
+            AWSSDKUtils.InvokeInBackground(UploadCompletedEvent, args, this);
         }
 
         /// <summary>
-        /// Causes the TransferFailed event to be fired.
+        /// Causes the UploadFailedEvent event to be fired.
         /// </summary>
         /// <param name="args">Event arguments containing request and partial progress</param>
-        internal void OnRaiseTransferFailedEvent(UploadProgressArgs args)
+        internal void OnRaiseTransferFailedEvent(UploadFailedArgs args)
         {
-            AWSSDKUtils.InvokeInBackground(TransferFailed, args, this);
+            AWSSDKUtils.InvokeInBackground(UploadFailedEvent, args, this);
         }
 
 
@@ -922,5 +1003,135 @@ namespace Amazon.S3.Transfer
         /// Required for SEP compliance.
         /// </summary>
         public TransferUtilityUploadResponse Response { get; internal set; }
+    }
+
+    /// <summary>
+    /// Encapsulates the information needed when a transfer operation is initiated.
+    /// Provides access to the original request and total file size without any progress information.
+    /// </summary>
+    public class UploadInitiatedArgs : EventArgs
+    {
+        /// <summary>
+        /// Initializes a new instance of the UploadInitiatedArgs class.
+        /// </summary>
+        /// <param name="request">The original TransferUtilityUploadRequest created by the user</param>
+        /// <param name="filePath">The file being uploaded</param>
+        /// <param name="totalBytes">The total number of bytes to be transferred</param>
+        internal UploadInitiatedArgs(TransferUtilityUploadRequest request, string filePath, long totalBytes)
+        {
+            Request = request;
+            FilePath = filePath;
+            TotalBytes = totalBytes;
+        }
+
+        /// <summary>
+        /// The original TransferUtilityUploadRequest created by the user.
+        /// Contains all the upload parameters and configuration.
+        /// </summary>
+        public TransferUtilityUploadRequest Request { get; private set; }
+
+        /// <summary>
+        /// Gets the file path being uploaded.
+        /// </summary>
+        public string FilePath { get; private set; }
+
+        /// <summary>
+        /// Gets the total number of bytes to be transferred.
+        /// </summary>
+        public long TotalBytes { get; private set; }
+    }
+
+    /// <summary>
+    /// Encapsulates the information needed when a transfer operation completes successfully.
+    /// Provides access to the original request, final response, and completion details.
+    /// </summary>
+    public class UploadCompletedArgs : EventArgs
+    {
+        /// <summary>
+        /// Initializes a new instance of the UploadCompletedArgs class.
+        /// </summary>
+        /// <param name="request">The original TransferUtilityUploadRequest created by the user</param>
+        /// <param name="response">The unified response from Transfer Utility</param>
+        /// <param name="filePath">The file that was uploaded</param>
+        /// <param name="transferredBytes">The total number of bytes transferred</param>
+        /// <param name="totalBytes">The total number of bytes that were transferred</param>
+        internal UploadCompletedArgs(TransferUtilityUploadRequest request, TransferUtilityUploadResponse response, string filePath, long transferredBytes, long totalBytes)
+        {
+            Request = request;
+            Response = response; 
+            FilePath = filePath;
+            TransferredBytes = transferredBytes;
+            TotalBytes = totalBytes;
+        }
+
+        /// <summary>
+        /// The original TransferUtilityUploadRequest created by the user.
+        /// Contains all the upload parameters and configuration.
+        /// </summary>
+        public TransferUtilityUploadRequest Request { get; private set; }
+
+        /// <summary>
+        /// The unified response from Transfer Utility after successful upload completion.
+        /// Contains mapped fields from either PutObjectResponse (simple uploads) or CompleteMultipartUploadResponse (multipart uploads).
+        /// </summary>
+        public TransferUtilityUploadResponse Response { get; private set; }
+
+        /// <summary>
+        /// Gets the file path that was uploaded.
+        /// </summary>
+        public string FilePath { get; private set; }
+
+        /// <summary>
+        /// Gets the total number of bytes that were successfully transferred.
+        /// </summary>
+        public long TransferredBytes { get; private set; }
+
+        /// <summary>
+        /// Gets the total number of bytes that were transferred (should equal TransferredBytes for successful uploads).
+        /// </summary>
+        public long TotalBytes { get; private set; }
+    }
+
+    /// <summary>
+    /// Encapsulates the information needed when a transfer operation fails.
+    /// Provides access to the original request and partial progress information.
+    /// </summary>
+    public class UploadFailedArgs : EventArgs
+    {
+        /// <summary>
+        /// Initializes a new instance of the UploadFailedArgs class.
+        /// </summary>
+        /// <param name="request">The original TransferUtilityUploadRequest created by the user</param>
+        /// <param name="filePath">The file that was being uploaded</param>
+        /// <param name="transferredBytes">The number of bytes transferred before failure</param>
+        /// <param name="totalBytes">The total number of bytes that should have been transferred</param>
+        internal UploadFailedArgs(TransferUtilityUploadRequest request, string filePath, long transferredBytes, long totalBytes)
+        {
+            Request = request;
+            FilePath = filePath;
+            TransferredBytes = transferredBytes;
+            TotalBytes = totalBytes;
+        }
+
+        /// <summary>
+        /// The original TransferUtilityUploadRequest created by the user.
+        /// Contains all the upload parameters and configuration.
+        /// </summary>
+        public TransferUtilityUploadRequest Request { get; private set; }
+
+        /// <summary>
+        /// Gets the file path that was being uploaded.
+        /// </summary>
+        public string FilePath { get; private set; }
+
+        /// <summary>
+        /// Gets the number of bytes that were transferred before the failure occurred.
+        /// </summary>
+        public long TransferredBytes { get; private set; }
+
+        /// <summary>
+        /// Gets the total number of bytes that should have been transferred.
+        /// </summary>
+        public long TotalBytes { get; private set; }
     }
 }

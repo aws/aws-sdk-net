@@ -43,7 +43,6 @@ namespace Amazon.S3.Transfer.Internal
         TransferUtilityConfig _config;
         TransferUtilityUploadRequest _fileTransporterRequest;
         
-        // Track total transferred bytes (same pattern as MultipartUploadCommand)
         long _totalTransferredBytes;
 
         internal SimpleUploadCommand(IAmazonS3 s3Client, TransferUtilityConfig config, TransferUtilityUploadRequest fileTransporterRequest)
@@ -120,17 +119,13 @@ namespace Amazon.S3.Transfer.Internal
         /// </summary>
         private void FireTransferInitiatedEvent()
         {
-            var progressArgs = new UploadProgressArgs(
-                incrementTransferred: 0,
-                transferred: 0,
-                total: _fileTransporterRequest.ContentLength,
-                compensationForRetry: 0,
-                filePath: _fileTransporterRequest.FilePath,
+            var initiatedArgs = new UploadInitiatedArgs(
                 request: _fileTransporterRequest,
-                response: null  // Not available at initiation
+                filePath: _fileTransporterRequest.FilePath,
+                totalBytes: _fileTransporterRequest.ContentLength
             );
             
-            _fileTransporterRequest.OnRaiseTransferInitiatedEvent(progressArgs);
+            _fileTransporterRequest.OnRaiseTransferInitiatedEvent(initiatedArgs);
         }
 
         /// <summary>
@@ -138,17 +133,15 @@ namespace Amazon.S3.Transfer.Internal
         /// </summary>
         private void FireTransferCompletedEvent(TransferUtilityUploadResponse response)
         {
-            var progressArgs = new UploadProgressArgs(
-                incrementTransferred: 0, // No delta at completion
-                transferred: _fileTransporterRequest.ContentLength,
-                total: _fileTransporterRequest.ContentLength,
-                compensationForRetry: 0,
-                filePath: _fileTransporterRequest.FilePath,
+            var completedArgs = new UploadCompletedArgs(
                 request: _fileTransporterRequest,
-                response: response
+                response: response,
+                filePath: _fileTransporterRequest.FilePath,
+                transferredBytes: _fileTransporterRequest.ContentLength,
+                totalBytes: _fileTransporterRequest.ContentLength
             );
             
-            _fileTransporterRequest.OnRaiseTransferCompletedEvent(progressArgs);
+            _fileTransporterRequest.OnRaiseTransferCompletedEvent(completedArgs);
         }
 
         /// <summary>
@@ -156,18 +149,14 @@ namespace Amazon.S3.Transfer.Internal
         /// </summary>
         private void FireTransferFailedEvent()
         {
-            // Use actual transferred bytes from progress tracking
-            var progressArgs = new UploadProgressArgs(
-                incrementTransferred: 0,
-                transferred: _totalTransferredBytes, // Real progress data available!
-                total: _fileTransporterRequest.ContentLength,
-                compensationForRetry: 0,
-                filePath: _fileTransporterRequest.FilePath,
+            var failedArgs = new UploadFailedArgs(
                 request: _fileTransporterRequest,
-                response: null  // Not available on failure
+                filePath: _fileTransporterRequest.FilePath,
+                transferredBytes: _totalTransferredBytes,
+                totalBytes: _fileTransporterRequest.ContentLength
             );
             
-            _fileTransporterRequest.OnRaiseTransferFailedEvent(progressArgs);
+            _fileTransporterRequest.OnRaiseTransferFailedEvent(failedArgs);
         }
     }
 }
