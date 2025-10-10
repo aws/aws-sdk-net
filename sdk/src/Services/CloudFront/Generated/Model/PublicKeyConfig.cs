@@ -33,6 +33,12 @@ namespace Amazon.CloudFront.Model
     /// Configuration information about a public key that you can use with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">signed
     /// URLs and signed cookies</a>, or with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/field-level-encryption.html">field-level
     /// encryption</a>.
+    /// 
+    ///  
+    /// <para>
+    /// CloudFront supports signed URLs and signed cookies with RSA 2048 or ECDSA 256 key
+    /// signatures. Field-level encryption is only compatible with RSA 2048 key signatures.
+    /// </para>
     /// </summary>
     public partial class PublicKeyConfig
     {
