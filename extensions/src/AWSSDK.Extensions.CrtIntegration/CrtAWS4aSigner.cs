@@ -24,6 +24,7 @@ using Aws.Crt.Http;
 using AWSSDK.Extensions.CrtIntegration;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -34,6 +35,7 @@ namespace Amazon.Extensions.CrtIntegration
     /// <summary>
     /// Asymmetric Sigv4 (SigV4a) protocol signer using the implementation provided by Aws.Crt.Auth
     /// </summary>
+    [Obsolete("Use Amazon.Runtime.Internal.Auth.AWS4aSigner instead."), EditorBrowsable(EditorBrowsableState.Never)]
     public class CrtAWS4aSigner : IAWSSigV4aProvider
     {
         /// <summary>

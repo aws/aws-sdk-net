@@ -70,6 +70,7 @@
 
   <ItemGroup>
     <PackageReference Include="System.Buffers" Version="4.5.1" />
+    <PackageReference Include="System.Formats.Asn1" Version="6.0.1" />
     <PackageReference Include="System.Memory" Version="4.5.5" />
       <!-- Powershell (pwsh) will have a preloaded version of System.Text.Json that is older than
       the version we will ship in core nuget packages and dlls, so we compile with an  older version of STJ

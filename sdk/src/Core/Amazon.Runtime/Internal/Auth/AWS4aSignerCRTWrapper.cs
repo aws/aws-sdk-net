@@ -19,6 +19,7 @@ using Amazon.RuntimeDependencies;
 using Amazon.Util.Internal;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.IO;
@@ -29,6 +30,7 @@ namespace Amazon.Runtime.Internal.Auth
     /// <summary>
     /// Asymmetric SigV4 signer using a the AWS Common Runtime implementation of SigV4a via AWSSDK.Extensions.CrtIntegration 
     /// </summary>
+    [Obsolete("Use AWS4aSigner instead."), EditorBrowsable(EditorBrowsableState.Never)]
     public class AWS4aSignerCRTWrapper : AbstractAWSSigner
     {
         internal const string CRT_WRAPPER_ASSEMBLY_NAME = "AWSSDK.Extensions.CrtIntegration";

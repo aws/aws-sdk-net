@@ -15,6 +15,8 @@
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 using AWSSDK.Runtime.Internal.Util;
+using System;
+using System.ComponentModel;
 
 namespace Amazon.RuntimeDependencies
 {
@@ -60,10 +62,11 @@ namespace Amazon.RuntimeDependencies
         /// GlobalRuntimeDependencyRegistry.Instance.RegisterSigV4aProvider((context) =>
         /// {
         ///     return new Amazon.Extensions.CrtIntegration.CrtAWS4aSigner(context.SigV4aCrtSignerContextData.Payload);
-        /// }
+        /// });
         /// </code>
         /// </summary>
         /// <param name="factory"></param>
+        [Obsolete("SigV4a provider is now built-in; this method is no longer necessary to call."), EditorBrowsable(EditorBrowsableState.Never)]
         public void RegisterSigV4aProvider(RuntimeDependencyFactory factory)
         {
             RegisterInstance(AWS4aSignerCRTWrapper.CRT_WRAPPER_ASSEMBLY_NAME, AWS4aSignerCRTWrapper.CRT_WRAPPER_CLASS_NAME, factory);
