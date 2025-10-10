@@ -98,6 +98,16 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
 
+        
+            if (publicRequest.IsSetTraceId()) 
+            {
+                request.Headers["X-Amzn-Trace-Id"] = publicRequest.TraceId;
+            }
+        
+            if (publicRequest.IsSetTraceParent()) 
+            {
+                request.Headers["traceparent"] = publicRequest.TraceParent;
+            }
 
             return request;
         }

@@ -97,6 +97,16 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
             {
                 request.Headers["x-amzn-code-interpreter-session-id"] = publicRequest.SessionId;
             }
+        
+            if (publicRequest.IsSetTraceId()) 
+            {
+                request.Headers["X-Amzn-Trace-Id"] = publicRequest.TraceId;
+            }
+        
+            if (publicRequest.IsSetTraceParent()) 
+            {
+                request.Headers["traceparent"] = publicRequest.TraceParent;
+            }
 
             return request;
         }
