@@ -80,6 +80,17 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetAuditContext())
+                {
+                    context.Writer.WritePropertyName("AuditContext");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = AuditContextMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.AuditContext, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetCatalogId())
                 {
                     context.Writer.WritePropertyName("CatalogId");

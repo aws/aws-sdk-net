@@ -69,6 +69,17 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAuditContext())
+                {
+                    context.Writer.WritePropertyName("AuditContext");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = AuditContextMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.AuditContext, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetCatalogId())
                 {
                     context.Writer.WritePropertyName("CatalogId");

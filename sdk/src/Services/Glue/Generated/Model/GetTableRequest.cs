@@ -35,12 +35,32 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class GetTableRequest : AmazonGlueRequest
     {
+        private AuditContext _auditContext;
         private string _catalogId;
         private string _databaseName;
         private bool? _includeStatusDetails;
         private string _name;
         private DateTime? _queryAsOfTime;
         private string _transactionId;
+
+        /// <summary>
+        /// Gets and sets the property AuditContext. 
+        /// <para>
+        /// A structure containing the Lake Formation <a href="https://docs.aws.amazon.com/glue/latest/webapi/API_AuditContext.html">audit
+        /// context</a>.
+        /// </para>
+        /// </summary>
+        public AuditContext AuditContext
+        {
+            get { return this._auditContext; }
+            set { this._auditContext = value; }
+        }
+
+        // Check to see if AuditContext property is set
+        internal bool IsSetAuditContext()
+        {
+            return this._auditContext != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CatalogId. 
