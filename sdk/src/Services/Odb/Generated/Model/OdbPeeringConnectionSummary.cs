@@ -41,6 +41,7 @@ namespace Amazon.Odb.Model
         private string _odbPeeringConnectionId;
         private string _odbPeeringConnectionType;
         private string _peerNetworkArn;
+        private List<string> _peerNetworkCidrs = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private float? _percentProgress;
         private ResourceStatus _status;
         private string _statusReason;
@@ -174,6 +175,25 @@ namespace Amazon.Odb.Model
         internal bool IsSetPeerNetworkArn()
         {
             return this._peerNetworkArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PeerNetworkCidrs. 
+        /// <para>
+        /// The CIDR blocks associated with the peering connection. These CIDR blocks define the
+        /// IP address ranges that can communicate through the peering connection.
+        /// </para>
+        /// </summary>
+        public List<string> PeerNetworkCidrs
+        {
+            get { return this._peerNetworkCidrs; }
+            set { this._peerNetworkCidrs = value; }
+        }
+
+        // Check to see if PeerNetworkCidrs property is set
+        internal bool IsSetPeerNetworkCidrs()
+        {
+            return this._peerNetworkCidrs != null && (this._peerNetworkCidrs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Odb.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateOdbPeeringConnection Request Marshaller
+    /// UpdateOdbPeeringConnection Request Marshaller
     /// </summary>       
-    public class CreateOdbPeeringConnectionRequestMarshaller : IMarshaller<IRequest, CreateOdbPeeringConnectionRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class UpdateOdbPeeringConnectionRequestMarshaller : IMarshaller<IRequest, UpdateOdbPeeringConnectionRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -45,7 +45,7 @@ namespace Amazon.Odb.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateOdbPeeringConnectionRequest)input);
+            return this.Marshall((UpdateOdbPeeringConnectionRequest)input);
         }
 
         /// <summary>
@@ -53,10 +53,10 @@ namespace Amazon.Odb.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateOdbPeeringConnectionRequest publicRequest)
+        public IRequest Marshall(UpdateOdbPeeringConnectionRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Odb");
-            string target = "Odb.CreateOdbPeeringConnection";
+            string target = "Odb.UpdateOdbPeeringConnection";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.0";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2024-08-20";
@@ -69,27 +69,16 @@ namespace Amazon.Odb.Model.Internal.MarshallTransformations
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientToken())
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
                 if(publicRequest.IsSetDisplayName())
                 {
                     context.Writer.WritePropertyName("displayName");
                     context.Writer.Write(publicRequest.DisplayName);
                 }
 
-                if(publicRequest.IsSetOdbNetworkId())
+                if(publicRequest.IsSetOdbPeeringConnectionId())
                 {
-                    context.Writer.WritePropertyName("odbNetworkId");
-                    context.Writer.Write(publicRequest.OdbNetworkId);
+                    context.Writer.WritePropertyName("odbPeeringConnectionId");
+                    context.Writer.Write(publicRequest.OdbPeeringConnectionId);
                 }
 
                 if(publicRequest.IsSetPeerNetworkCidrsToBeAdded())
@@ -103,24 +92,15 @@ namespace Amazon.Odb.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
-                if(publicRequest.IsSetPeerNetworkId())
+                if(publicRequest.IsSetPeerNetworkCidrsToBeRemoved())
                 {
-                    context.Writer.WritePropertyName("peerNetworkId");
-                    context.Writer.Write(publicRequest.PeerNetworkId);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                    context.Writer.WritePropertyName("peerNetworkCidrsToBeRemoved");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestPeerNetworkCidrsToBeRemovedListValue in publicRequest.PeerNetworkCidrsToBeRemoved)
                     {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
+                            context.Writer.Write(publicRequestPeerNetworkCidrsToBeRemovedListValue);
                     }
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteArrayEnd();
                 }
 
                 writer.WriteObjectEnd();
@@ -131,9 +111,9 @@ namespace Amazon.Odb.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateOdbPeeringConnectionRequestMarshaller _instance = new CreateOdbPeeringConnectionRequestMarshaller();        
+        private static UpdateOdbPeeringConnectionRequestMarshaller _instance = new UpdateOdbPeeringConnectionRequestMarshaller();        
 
-        internal static CreateOdbPeeringConnectionRequestMarshaller GetInstance()
+        internal static UpdateOdbPeeringConnectionRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -141,7 +121,7 @@ namespace Amazon.Odb.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateOdbPeeringConnectionRequestMarshaller Instance
+        public static UpdateOdbPeeringConnectionRequestMarshaller Instance
         {
             get
             {

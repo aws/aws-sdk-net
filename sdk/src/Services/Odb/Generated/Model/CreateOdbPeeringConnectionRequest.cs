@@ -31,8 +31,7 @@ namespace Amazon.Odb.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateOdbPeeringConnection operation.
-    /// Creates a peering connection between an ODB network and either another ODB network
-    /// or a customer-owned VPC.
+    /// Creates a peering connection between an ODB network and a VPC.
     /// 
     ///  
     /// <para>
@@ -45,6 +44,7 @@ namespace Amazon.Odb.Model
         private string _clientToken;
         private string _displayName;
         private string _odbNetworkId;
+        private List<string> _peerNetworkCidrsToBeAdded = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _peerNetworkId;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
@@ -112,6 +112,25 @@ namespace Amazon.Odb.Model
         internal bool IsSetOdbNetworkId()
         {
             return this._odbNetworkId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PeerNetworkCidrsToBeAdded. 
+        /// <para>
+        /// A list of CIDR blocks to add to the peering connection. These CIDR blocks define the
+        /// IP address ranges that can communicate through the peering connection.
+        /// </para>
+        /// </summary>
+        public List<string> PeerNetworkCidrsToBeAdded
+        {
+            get { return this._peerNetworkCidrsToBeAdded; }
+            set { this._peerNetworkCidrsToBeAdded = value; }
+        }
+
+        // Check to see if PeerNetworkCidrsToBeAdded property is set
+        internal bool IsSetPeerNetworkCidrsToBeAdded()
+        {
+            return this._peerNetworkCidrsToBeAdded != null && (this._peerNetworkCidrsToBeAdded.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -35,7 +35,7 @@ namespace Amazon.Odb
     /// Web Services data centers. You can migrate your Oracle Exadata workloads, establish
     /// low-latency connectivity with applications running on Amazon Web Services, and integrate
     /// with Amazon Web Services services. For example, you can run application servers in
-    /// a virtual private cloud (VPC) and access an Oracle Exadata system running in Oracle
+    /// a Virtual Private Cloud (VPC) and access an Oracle Exadata system running in Oracle
     /// Database@Amazon Web Services. You can get started with Oracle Database@Amazon Web
     /// Services by using the familiar Amazon Web Services Management Console, APIs, or CLI.
     /// 
@@ -47,30 +47,29 @@ namespace Amazon.Odb
     /// some interfaces might require techniques such as polling or callback functions to
     /// determine when a command has been applied. The reference structure is as follows.
     /// </para>
-    ///  <note> 
-    /// <para>
-    /// In this preview release documentation, the links in the "See Also" sections do not
-    /// work.
-    /// </para>
-    ///  </note> 
+    ///  
     /// <para>
     ///  <b>Oracle Database@Amazon Web Services API Reference</b> 
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// For the alphabetical list of API actions, see .
+    /// For the alphabetical list of API actions, see <a href="https://docs.aws.amazon.com/odb/latest/APIReference/API_Operations.html">API
+    /// Actions</a>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// For the alphabetical list of data types, see .
+    /// For the alphabetical list of data types, see <a href="https://docs.aws.amazon.com/odb/latest/APIReference/API_Types.html">Data
+    /// Types</a>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// For a list of common parameters, see <a>CommonParameters</a>.
+    /// For a list of common query parameters, see <a href="https://docs.aws.amazon.com/odb/latest/APIReference/CommonParameters.html">Common
+    /// Parameters</a>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// For descriptions of the error codes, see <a>CommonErrors</a>.
+    /// For descriptions of the error codes, see <a href="https://docs.aws.amazon.com/odb/latest/APIReference/CommonErrors.html">Common
+    /// Errors</a>.
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -407,8 +406,7 @@ namespace Amazon.Odb
 
 
         /// <summary>
-        /// Creates a peering connection between an ODB network and either another ODB network
-        /// or a customer-owned VPC.
+        /// Creates a peering connection between an ODB network and a VPC.
         /// 
         ///  
         /// <para>
@@ -2437,6 +2435,70 @@ namespace Amazon.Odb
         /// <returns>Returns a  UpdateOdbNetworkResult from Odb.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/UpdateOdbNetwork">REST API Reference for UpdateOdbNetwork Operation</seealso>
         UpdateOdbNetworkResponse EndUpdateOdbNetwork(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateOdbPeeringConnection
+
+
+        /// <summary>
+        /// Modifies the settings of an Oracle Database@Amazon Web Services peering connection.
+        /// You can update the display name and add or remove CIDR blocks from the peering connection.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateOdbPeeringConnection service method.</param>
+        /// 
+        /// <returns>The response from the UpdateOdbPeeringConnection service method, as returned by Odb.</returns>
+        /// <exception cref="Amazon.Odb.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action. Make sure you have the required
+        /// permissions and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ConflictException">
+        /// Occurs when a conflict with the current status of your resource. Fix any inconsistencies
+        /// with your resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.InternalServerException">
+        /// Occurs when there is an internal failure in the Oracle Database@Amazon Web Services
+        /// service. Wait and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ResourceNotFoundException">
+        /// The operation tried to access a resource that doesn't exist. Make sure you provided
+        /// the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ValidationException">
+        /// The request has failed validation because it is missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/UpdateOdbPeeringConnection">REST API Reference for UpdateOdbPeeringConnection Operation</seealso>
+        UpdateOdbPeeringConnectionResponse UpdateOdbPeeringConnection(UpdateOdbPeeringConnectionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateOdbPeeringConnection operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateOdbPeeringConnection operation on AmazonOdbClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateOdbPeeringConnection
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/UpdateOdbPeeringConnection">REST API Reference for UpdateOdbPeeringConnection Operation</seealso>
+        IAsyncResult BeginUpdateOdbPeeringConnection(UpdateOdbPeeringConnectionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateOdbPeeringConnection operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateOdbPeeringConnection.</param>
+        /// 
+        /// <returns>Returns a  UpdateOdbPeeringConnectionResult from Odb.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/UpdateOdbPeeringConnection">REST API Reference for UpdateOdbPeeringConnection Operation</seealso>
+        UpdateOdbPeeringConnectionResponse EndUpdateOdbPeeringConnection(IAsyncResult asyncResult);
 
         #endregion
                 

@@ -123,7 +123,7 @@ namespace Amazon.Odb.Model
         /// The number of CPU cores to enable on the VM cluster.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=368)]
+        [AWSProperty(Required=true, Min=0, Max=10000)]
         public int CpuCoreCount
         {
             get { return this._cpuCoreCount.GetValueOrDefault(); }

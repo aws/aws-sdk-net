@@ -108,6 +108,12 @@ namespace Amazon.Odb.Model.Internal.MarshallTransformations
                     unmarshalledObject.PeerNetworkArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("peerNetworkCidrs", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.PeerNetworkCidrs = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("percentProgress", targetDepth))
                 {
                     var unmarshaller = FloatUnmarshaller.Instance;
