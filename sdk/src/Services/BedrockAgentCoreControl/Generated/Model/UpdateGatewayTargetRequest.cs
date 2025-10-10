@@ -48,7 +48,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// The updated credential provider configurations for the gateway target.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1)]
+        [AWSProperty(Min=1, Max=1)]
         public List<CredentialProviderConfiguration> CredentialProviderConfigurations
         {
             get { return this._credentialProviderConfigurations; }

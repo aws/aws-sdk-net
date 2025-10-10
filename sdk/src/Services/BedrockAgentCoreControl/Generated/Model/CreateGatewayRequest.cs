@@ -36,8 +36,8 @@ namespace Amazon.BedrockAgentCoreControl.Model
     /// 
     ///  
     /// <para>
-    /// To create a gateway, you must specify a name, protocol type, and IAM role. The role
-    /// grants the gateway permission to access Amazon Web Services services and resources.
+    /// If you specify <c>CUSTOM_JWT</c> as the <c>authorizerType</c>, you must provide an
+    /// <c>authorizerConfiguration</c>.
     /// </para>
     /// </summary>
     public partial class CreateGatewayRequest : AmazonBedrockAgentCoreControlRequest
@@ -57,7 +57,8 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property AuthorizerConfiguration. 
         /// <para>
-        /// The authorizer configuration for the gateway.
+        /// The authorizer configuration for the gateway. Required if <c>authorizerType</c> is
+        /// <c>CUSTOM_JWT</c>.
         /// </para>
         /// </summary>
         public AuthorizerConfiguration AuthorizerConfiguration
@@ -77,6 +78,15 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <para>
         /// The type of authorizer to use for the gateway.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>CUSTOM_JWT</c> - Authorize with a bearer token.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AWS_IAM</c> - Authorize with your Amazon Web Services IAM credentials.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public AuthorizerType AuthorizerType
@@ -95,8 +105,9 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// Gets and sets the property ClientToken. 
         /// <para>
         /// A unique, case-sensitive identifier to ensure that the API request completes no more
-        /// than one time. If this token matches a previous request, the service ignores the request,
-        /// but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+        /// than one time. If you don't specify this field, a value is randomly generated for
+        /// you. If this token matches a previous request, the service ignores the request, but
+        /// doesn't return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
         /// idempotency</a>.
         /// </para>
         /// </summary>

@@ -34,9 +34,28 @@ namespace Amazon.BedrockAgentCoreControl.Model
     /// </summary>
     public partial class CustomConfigurationInput
     {
+        private SelfManagedConfigurationInput _selfManagedConfiguration;
         private SemanticOverrideConfigurationInput _semanticOverride;
         private SummaryOverrideConfigurationInput _summaryOverride;
         private UserPreferenceOverrideConfigurationInput _userPreferenceOverride;
+
+        /// <summary>
+        /// Gets and sets the property SelfManagedConfiguration. 
+        /// <para>
+        /// The self managed configuration for a custom memory strategy.
+        /// </para>
+        /// </summary>
+        public SelfManagedConfigurationInput SelfManagedConfiguration
+        {
+            get { return this._selfManagedConfiguration; }
+            set { this._selfManagedConfiguration = value; }
+        }
+
+        // Check to see if SelfManagedConfiguration property is set
+        internal bool IsSetSelfManagedConfiguration()
+        {
+            return this._selfManagedConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property SemanticOverride. 

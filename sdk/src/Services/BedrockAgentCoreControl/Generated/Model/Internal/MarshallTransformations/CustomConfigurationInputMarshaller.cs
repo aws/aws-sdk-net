@@ -48,6 +48,17 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetSelfManagedConfiguration())
+            {
+                context.Writer.WritePropertyName("selfManagedConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = SelfManagedConfigurationInputMarshaller.Instance;
+                marshaller.Marshall(requestObject.SelfManagedConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetSemanticOverride())
             {
                 context.Writer.WritePropertyName("semanticOverride");

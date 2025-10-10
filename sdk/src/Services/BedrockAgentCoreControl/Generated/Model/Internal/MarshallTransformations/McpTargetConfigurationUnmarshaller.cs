@@ -72,6 +72,12 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                     unmarshalledObject.Lambda = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("mcpServer", targetDepth))
+                {
+                    var unmarshaller = McpServerTargetConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.McpServer = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("openApiSchema", targetDepth))
                 {
                     var unmarshaller = ApiSchemaConfigurationUnmarshaller.Instance;
