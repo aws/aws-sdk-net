@@ -1,3 +1,25 @@
+### 4.0.110.0 (2025-10-10 19:05 UTC)
+* BedrockAgentCore (4.0.4.0)
+	* Bedrock AgentCore release for Runtime, and Memory.
+* BedrockAgentCoreControl (4.0.6.0)
+	* Bedrock AgentCore release for Gateway, and Memory including Self-Managed Strategies support for Memory.
+* CloudFront (4.0.6.0)
+	* Added new viewer security policy, TLSv1.2_2025, for CloudFront.
+* Glue (4.0.19.0)
+	* Addition of AuditContext in GetTable/GetTables Request
+* Lambda (4.0.3.0)
+	* Add InvokedViaFunctionUrl context key to limit invocations to only FURL invokes.
+* Odb (4.0.1.0)
+	* This release adds APIs that allow you to specify CIDR ranges in your ODB peering connection.
+* RDS (4.0.10.4)
+	* Updated the text in the Important section of the ModifyDBClusterParameterGroup page.
+* Extensions.CborProtocol (4.0.0.8)
+	* Improve performance of CBOR deserialization for large strings by preemptively expanding the buffer to fit the string.
+* Core 4.0.1.0
+	* Added ability to configure authentication scheme preferences (e.g., to prioritize SigV4a over SigV4 when both are supported): https://docs.aws.amazon.com/sdkref/latest/guide/feature-auth-scheme.html
+	* Fix issue #4027. Pass in proxy settings when generating new token for SSO.
+	* All service and extension packages updated to require new Core
+
 ### 4.0.109.0 (2025-10-09 18:18 UTC)
 * QuickSight (4.0.7.0)
 	* This release adds support for ActionConnector and Flow, which are new resources associated with Amazon Quick Suite. Additional updates include expanded Data Source options, further branding customization, and new capabilities that can be restricted by Admins.

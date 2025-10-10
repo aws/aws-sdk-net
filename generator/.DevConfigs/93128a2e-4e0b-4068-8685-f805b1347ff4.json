@@ -1,9 +1,0 @@
-{
-  "core": {
-    "updateMinimum": true,
-    "type": "patch",
-    "changeLogMessages": [
-      "Fix issue #4027. Pass in proxy settings when generating new token for SSO."
-    ]
-  }
-}
