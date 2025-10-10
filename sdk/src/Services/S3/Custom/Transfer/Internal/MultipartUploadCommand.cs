@@ -81,11 +81,12 @@ namespace Amazon.S3.Transfer.Internal
             this._s3Client = s3Client;
             this._fileTransporterRequest = fileTransporterRequest;
             this._contentLength = this._fileTransporterRequest.ContentLength;
+            
+            long targetPartSize = fileTransporterRequest.IsSetPartSize() 
+                ? fileTransporterRequest.PartSize 
+                : 8 * 1024 * 1024; // 8MB default (SEP compliant)
 
-            if (fileTransporterRequest.IsSetPartSize())
-                this._partSize = fileTransporterRequest.PartSize;
-            else
-                this._partSize = calculatePartSize(this._contentLength);
+            this._partSize = calculatePartSize(this._contentLength, targetPartSize);
 
             if (fileTransporterRequest.InputStream != null)
             {
@@ -98,15 +99,13 @@ namespace Amazon.S3.Transfer.Internal
             Logger.DebugFormat("Upload part size {0}.", this._partSize);
         }
 
-        private static long calculatePartSize(long fileSize)
+        private static long calculatePartSize(long contentLength, long targetPartSize)
         {
-            double partSize = Math.Ceiling((double)fileSize / S3Constants.MaxNumberOfParts);
-            if (partSize < S3Constants.MinPartSize)
-            {
-                partSize = S3Constants.MinPartSize;
-            }
+            // SEP Formula: Math.Max(targetPartSize, contentLength / 10_000)
+            long calculatedSize = Math.Max(targetPartSize, contentLength / 10_000);
 
-            return (long)partSize;
+            // Ensure we don't go below S3's minimum part size (5MB)
+            return Math.Max(calculatedSize, S3Constants.MinPartSize);
         }
 
         private string determineContentType()
