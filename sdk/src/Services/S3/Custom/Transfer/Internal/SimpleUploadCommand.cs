@@ -106,7 +106,6 @@ namespace Amazon.S3.Transfer.Internal
 
         private void PutObjectProgressEventCallback(object sender, UploadProgressArgs e)
         {
-            // Use same pattern as MultipartUploadCommand for consistency
             long transferredBytes = Interlocked.Add(ref _totalTransferredBytes, e.IncrementTransferred - e.CompensationForRetry);
             
             var progressArgs = new UploadProgressArgs(e.IncrementTransferred, transferredBytes, e.TotalBytes, 
@@ -114,9 +113,6 @@ namespace Amazon.S3.Transfer.Internal
             this._fileTransporterRequest.OnRaiseProgressEvent(progressArgs);
         }
 
-        /// <summary>
-        /// Fires the TransferInitiated event with current request state
-        /// </summary>
         private void FireTransferInitiatedEvent()
         {
             var initiatedArgs = new UploadInitiatedArgs(
@@ -128,9 +124,6 @@ namespace Amazon.S3.Transfer.Internal
             _fileTransporterRequest.OnRaiseTransferInitiatedEvent(initiatedArgs);
         }
 
-        /// <summary>
-        /// Fires the TransferCompleted event with final response
-        /// </summary>
         private void FireTransferCompletedEvent(TransferUtilityUploadResponse response)
         {
             var completedArgs = new UploadCompletedArgs(
@@ -144,9 +137,6 @@ namespace Amazon.S3.Transfer.Internal
             _fileTransporterRequest.OnRaiseTransferCompletedEvent(completedArgs);
         }
 
-        /// <summary>
-        /// Fires the TransferFailed event with actual partial progress
-        /// </summary>
         private void FireTransferFailedEvent()
         {
             var failedArgs = new UploadFailedArgs(
