@@ -38,9 +38,20 @@ namespace Amazon.S3.Transfer.Internal
                         .ConfigureAwait(continueOnCapturedContext: false);
                 }
 
+                FireTransferInitiatedEvent();
+
                 var putRequest = ConstructRequest();
-                await _s3Client.PutObjectAsync(putRequest, cancellationToken)
+                var response = await _s3Client.PutObjectAsync(putRequest, cancellationToken)
                     .ConfigureAwait(continueOnCapturedContext: false);
+
+                var mappedResponse = ResponseMapper.MapPutObjectResponse(response);
+
+                FireTransferCompletedEvent(mappedResponse);
+            }
+            catch (Exception)
+            {
+                FireTransferFailedEvent();
+                throw;
             }
             finally
             {
