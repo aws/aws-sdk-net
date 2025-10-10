@@ -30,56 +30,21 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Odb.Model
 {
     /// <summary>
-    /// Container for the parameters to the CreateOdbPeeringConnection operation.
-    /// Creates a peering connection between an ODB network and a VPC.
-    /// 
-    ///  
-    /// <para>
-    /// A peering connection enables private connectivity between the networks for application-tier
-    /// communication.
-    /// </para>
+    /// Container for the parameters to the UpdateOdbPeeringConnection operation.
+    /// Modifies the settings of an Oracle Database@Amazon Web Services peering connection.
+    /// You can update the display name and add or remove CIDR blocks from the peering connection.
     /// </summary>
-    public partial class CreateOdbPeeringConnectionRequest : AmazonOdbRequest
+    public partial class UpdateOdbPeeringConnectionRequest : AmazonOdbRequest
     {
-        private string _clientToken;
         private string _displayName;
-        private string _odbNetworkId;
+        private string _odbPeeringConnectionId;
         private List<string> _peerNetworkCidrsToBeAdded = AWSConfigs.InitializeCollections ? new List<string>() : null;
-        private string _peerNetworkId;
-        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
-
-        /// <summary>
-        /// Gets and sets the property ClientToken. 
-        /// <para>
-        /// The client token for the ODB peering connection request.
-        /// </para>
-        ///  
-        /// <para>
-        /// Constraints:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Must be unique for each request.
-        /// </para>
-        ///  </li> </ul>
-        /// </summary>
-        [AWSProperty(Min=8, Max=64)]
-        public string ClientToken
-        {
-            get { return this._clientToken; }
-            set { this._clientToken = value; }
-        }
-
-        // Check to see if ClientToken property is set
-        internal bool IsSetClientToken()
-        {
-            return this._clientToken != null;
-        }
+        private List<string> _peerNetworkCidrsToBeRemoved = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property DisplayName. 
         /// <para>
-        /// The display name for the ODB peering connection.
+        /// A new display name for the peering connection.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -96,29 +61,31 @@ namespace Amazon.Odb.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OdbNetworkId. 
+        /// Gets and sets the property OdbPeeringConnectionId. 
         /// <para>
-        /// The unique identifier of the ODB network that initiates the peering connection.
+        /// The identifier of the Oracle Database@Amazon Web Services peering connection to update.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=6, Max=2048)]
-        public string OdbNetworkId
+        public string OdbPeeringConnectionId
         {
-            get { return this._odbNetworkId; }
-            set { this._odbNetworkId = value; }
+            get { return this._odbPeeringConnectionId; }
+            set { this._odbPeeringConnectionId = value; }
         }
 
-        // Check to see if OdbNetworkId property is set
-        internal bool IsSetOdbNetworkId()
+        // Check to see if OdbPeeringConnectionId property is set
+        internal bool IsSetOdbPeeringConnectionId()
         {
-            return this._odbNetworkId != null;
+            return this._odbPeeringConnectionId != null;
         }
 
         /// <summary>
         /// Gets and sets the property PeerNetworkCidrsToBeAdded. 
         /// <para>
         /// A list of CIDR blocks to add to the peering connection. These CIDR blocks define the
-        /// IP address ranges that can communicate through the peering connection.
+        /// IP address ranges that can communicate through the peering connection. The CIDR blocks
+        /// must not overlap with existing CIDR blocks in the Oracle Database@Amazon Web Services
+        /// network.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -139,29 +106,10 @@ namespace Amazon.Odb.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PeerNetworkId. 
+        /// Gets and sets the property PeerNetworkCidrsToBeRemoved. 
         /// <para>
-        /// The unique identifier of the peer network. This can be either a VPC ID or another
-        /// ODB network ID.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Min=6, Max=2048)]
-        public string PeerNetworkId
-        {
-            get { return this._peerNetworkId; }
-            set { this._peerNetworkId = value; }
-        }
-
-        // Check to see if PeerNetworkId property is set
-        internal bool IsSetPeerNetworkId()
-        {
-            return this._peerNetworkId != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Tags. 
-        /// <para>
-        /// The tags to assign to the ODB peering connection.
+        /// A list of CIDR blocks to remove from the peering connection. The CIDR blocks must
+        /// currently exist in the peering connection.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -169,17 +117,16 @@ namespace Amazon.Odb.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Min=1, Max=200)]
-        public Dictionary<string, string> Tags
+        public List<string> PeerNetworkCidrsToBeRemoved
         {
-            get { return this._tags; }
-            set { this._tags = value; }
+            get { return this._peerNetworkCidrsToBeRemoved; }
+            set { this._peerNetworkCidrsToBeRemoved = value; }
         }
 
-        // Check to see if Tags property is set
-        internal bool IsSetTags()
+        // Check to see if PeerNetworkCidrsToBeRemoved property is set
+        internal bool IsSetPeerNetworkCidrsToBeRemoved()
         {
-            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._peerNetworkCidrsToBeRemoved != null && (this._peerNetworkCidrsToBeRemoved.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }
