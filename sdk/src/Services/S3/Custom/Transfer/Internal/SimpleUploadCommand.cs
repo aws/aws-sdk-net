@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Util;
 using Amazon.S3.Model;
 using Amazon.S3.Util;
 using Amazon.Runtime;
+using Amazon.S3.Transfer.Internal;
 
 namespace Amazon.S3.Transfer.Internal
 {
@@ -41,6 +42,9 @@ namespace Amazon.S3.Transfer.Internal
         IAmazonS3 _s3Client;
         TransferUtilityConfig _config;
         TransferUtilityUploadRequest _fileTransporterRequest;
+        
+        // Track total transferred bytes (same pattern as MultipartUploadCommand)
+        long _totalTransferredBytes;
 
         internal SimpleUploadCommand(IAmazonS3 s3Client, TransferUtilityConfig config, TransferUtilityUploadRequest fileTransporterRequest)
         {
@@ -103,9 +107,67 @@ namespace Amazon.S3.Transfer.Internal
 
         private void PutObjectProgressEventCallback(object sender, UploadProgressArgs e)
         {
-            var progressArgs = new UploadProgressArgs(e.IncrementTransferred, e.TransferredBytes, e.TotalBytes, 
-                e.CompensationForRetry, _fileTransporterRequest.FilePath);
+            // Use same pattern as MultipartUploadCommand for consistency
+            long transferredBytes = Interlocked.Add(ref _totalTransferredBytes, e.IncrementTransferred - e.CompensationForRetry);
+            
+            var progressArgs = new UploadProgressArgs(e.IncrementTransferred, transferredBytes, e.TotalBytes, 
+                e.CompensationForRetry, _fileTransporterRequest.FilePath, _fileTransporterRequest, null);
             this._fileTransporterRequest.OnRaiseProgressEvent(progressArgs);
+        }
+
+        /// <summary>
+        /// Fires the TransferInitiated event with current request state
+        /// </summary>
+        private void FireTransferInitiatedEvent()
+        {
+            var progressArgs = new UploadProgressArgs(
+                incrementTransferred: 0,
+                transferred: 0,
+                total: _fileTransporterRequest.ContentLength,
+                compensationForRetry: 0,
+                filePath: _fileTransporterRequest.FilePath,
+                request: _fileTransporterRequest,
+                response: null  // Not available at initiation
+            );
+            
+            _fileTransporterRequest.OnRaiseTransferInitiatedEvent(progressArgs);
+        }
+
+        /// <summary>
+        /// Fires the TransferCompleted event with final response
+        /// </summary>
+        private void FireTransferCompletedEvent(TransferUtilityUploadResponse response)
+        {
+            var progressArgs = new UploadProgressArgs(
+                incrementTransferred: 0, // No delta at completion
+                transferred: _fileTransporterRequest.ContentLength,
+                total: _fileTransporterRequest.ContentLength,
+                compensationForRetry: 0,
+                filePath: _fileTransporterRequest.FilePath,
+                request: _fileTransporterRequest,
+                response: response
+            );
+            
+            _fileTransporterRequest.OnRaiseTransferCompletedEvent(progressArgs);
+        }
+
+        /// <summary>
+        /// Fires the TransferFailed event with actual partial progress
+        /// </summary>
+        private void FireTransferFailedEvent()
+        {
+            // Use actual transferred bytes from progress tracking
+            var progressArgs = new UploadProgressArgs(
+                incrementTransferred: 0,
+                transferred: _totalTransferredBytes, // Real progress data available!
+                total: _fileTransporterRequest.ContentLength,
+                compensationForRetry: 0,
+                filePath: _fileTransporterRequest.FilePath,
+                request: _fileTransporterRequest,
+                response: null  // Not available on failure
+            );
+            
+            _fileTransporterRequest.OnRaiseTransferFailedEvent(progressArgs);
         }
     }
 }
