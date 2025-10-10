@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ModifyStrategyConfiguration Marshaller
+    /// McpServerTargetConfiguration Marshaller
     /// </summary>
-    public class ModifyStrategyConfigurationMarshaller : IRequestMarshaller<ModifyStrategyConfiguration, JsonMarshallerContext> 
+    public class McpServerTargetConfigurationMarshaller : IRequestMarshaller<McpServerTargetConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,41 +42,14 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ModifyStrategyConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(McpServerTargetConfiguration requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetConsolidation())
+            if(requestObject.IsSetEndpoint())
             {
-                context.Writer.WritePropertyName("consolidation");
-                context.Writer.WriteStartObject();
-
-                var marshaller = ModifyConsolidationConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.Consolidation, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(requestObject.IsSetExtraction())
-            {
-                context.Writer.WritePropertyName("extraction");
-                context.Writer.WriteStartObject();
-
-                var marshaller = ModifyExtractionConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.Extraction, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(requestObject.IsSetSelfManagedConfiguration())
-            {
-                context.Writer.WritePropertyName("selfManagedConfiguration");
-                context.Writer.WriteStartObject();
-
-                var marshaller = ModifySelfManagedConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.SelfManagedConfiguration, context);
-
-                context.Writer.WriteEndObject();
+                context.Writer.WritePropertyName("endpoint");
+                context.Writer.WriteStringValue(requestObject.Endpoint);
             }
 
         }
@@ -84,7 +57,7 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static ModifyStrategyConfigurationMarshaller Instance = new ModifyStrategyConfigurationMarshaller();
+        public readonly static McpServerTargetConfigurationMarshaller Instance = new McpServerTargetConfigurationMarshaller();
 
     }
 }

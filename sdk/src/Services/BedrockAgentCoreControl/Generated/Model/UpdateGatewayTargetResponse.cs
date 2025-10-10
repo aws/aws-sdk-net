@@ -38,6 +38,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         private List<CredentialProviderConfiguration> _credentialProviderConfigurations = AWSConfigs.InitializeCollections ? new List<CredentialProviderConfiguration>() : null;
         private string _description;
         private string _gatewayArn;
+        private DateTime? _lastSynchronizedAt;
         private string _name;
         private TargetStatus _status;
         private List<string> _statusReasons = AWSConfigs.InitializeCollections ? new List<string>() : null;
@@ -124,6 +125,24 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetGatewayArn()
         {
             return this._gatewayArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastSynchronizedAt. 
+        /// <para>
+        /// The date and time at which the targets were last synchronized.
+        /// </para>
+        /// </summary>
+        public DateTime? LastSynchronizedAt
+        {
+            get { return this._lastSynchronizedAt; }
+            set { this._lastSynchronizedAt = value; }
+        }
+
+        // Check to see if LastSynchronizedAt property is set
+        internal bool IsSetLastSynchronizedAt()
+        {
+            return this._lastSynchronizedAt.HasValue; 
         }
 
         /// <summary>

@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ModifyStrategyConfiguration Marshaller
+    /// ModifySelfManagedConfiguration Marshaller
     /// </summary>
-    public class ModifyStrategyConfigurationMarshaller : IRequestMarshaller<ModifyStrategyConfiguration, JsonMarshallerContext> 
+    public class ModifySelfManagedConfigurationMarshaller : IRequestMarshaller<ModifySelfManagedConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,41 +42,41 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ModifyStrategyConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(ModifySelfManagedConfiguration requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetConsolidation())
+            if(requestObject.IsSetHistoricalContextWindowSize())
             {
-                context.Writer.WritePropertyName("consolidation");
+                context.Writer.WritePropertyName("historicalContextWindowSize");
+                context.Writer.WriteNumberValue(requestObject.HistoricalContextWindowSize.Value);
+            }
+
+            if(requestObject.IsSetInvocationConfiguration())
+            {
+                context.Writer.WritePropertyName("invocationConfiguration");
                 context.Writer.WriteStartObject();
 
-                var marshaller = ModifyConsolidationConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.Consolidation, context);
+                var marshaller = ModifyInvocationConfigurationInputMarshaller.Instance;
+                marshaller.Marshall(requestObject.InvocationConfiguration, context);
 
                 context.Writer.WriteEndObject();
             }
 
-            if(requestObject.IsSetExtraction())
+            if(requestObject.IsSetTriggerConditions())
             {
-                context.Writer.WritePropertyName("extraction");
-                context.Writer.WriteStartObject();
+                context.Writer.WritePropertyName("triggerConditions");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectTriggerConditionsListValue in requestObject.TriggerConditions)
+                {
+                    context.Writer.WriteStartObject();
 
-                var marshaller = ModifyExtractionConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.Extraction, context);
+                    var marshaller = TriggerConditionInputMarshaller.Instance;
+                    marshaller.Marshall(requestObjectTriggerConditionsListValue, context);
 
-                context.Writer.WriteEndObject();
-            }
-
-            if(requestObject.IsSetSelfManagedConfiguration())
-            {
-                context.Writer.WritePropertyName("selfManagedConfiguration");
-                context.Writer.WriteStartObject();
-
-                var marshaller = ModifySelfManagedConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.SelfManagedConfiguration, context);
-
-                context.Writer.WriteEndObject();
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
             }
 
         }
@@ -84,7 +84,7 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static ModifyStrategyConfigurationMarshaller Instance = new ModifyStrategyConfigurationMarshaller();
+        public readonly static ModifySelfManagedConfigurationMarshaller Instance = new ModifySelfManagedConfigurationMarshaller();
 
     }
 }

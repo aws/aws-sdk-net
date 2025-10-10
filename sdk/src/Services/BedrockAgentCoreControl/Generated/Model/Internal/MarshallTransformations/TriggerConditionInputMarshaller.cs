@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CustomConfigurationInput Marshaller
+    /// TriggerConditionInput Marshaller
     /// </summary>
-    public class CustomConfigurationInputMarshaller : IRequestMarshaller<CustomConfigurationInput, JsonMarshallerContext> 
+    public class TriggerConditionInputMarshaller : IRequestMarshaller<TriggerConditionInput, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,50 +42,39 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(CustomConfigurationInput requestObject, JsonMarshallerContext context)
+        public void Marshall(TriggerConditionInput requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetSelfManagedConfiguration())
+            if(requestObject.IsSetMessageBasedTrigger())
             {
-                context.Writer.WritePropertyName("selfManagedConfiguration");
+                context.Writer.WritePropertyName("messageBasedTrigger");
                 context.Writer.WriteStartObject();
 
-                var marshaller = SelfManagedConfigurationInputMarshaller.Instance;
-                marshaller.Marshall(requestObject.SelfManagedConfiguration, context);
+                var marshaller = MessageBasedTriggerInputMarshaller.Instance;
+                marshaller.Marshall(requestObject.MessageBasedTrigger, context);
 
                 context.Writer.WriteEndObject();
             }
 
-            if(requestObject.IsSetSemanticOverride())
+            if(requestObject.IsSetTimeBasedTrigger())
             {
-                context.Writer.WritePropertyName("semanticOverride");
+                context.Writer.WritePropertyName("timeBasedTrigger");
                 context.Writer.WriteStartObject();
 
-                var marshaller = SemanticOverrideConfigurationInputMarshaller.Instance;
-                marshaller.Marshall(requestObject.SemanticOverride, context);
+                var marshaller = TimeBasedTriggerInputMarshaller.Instance;
+                marshaller.Marshall(requestObject.TimeBasedTrigger, context);
 
                 context.Writer.WriteEndObject();
             }
 
-            if(requestObject.IsSetSummaryOverride())
+            if(requestObject.IsSetTokenBasedTrigger())
             {
-                context.Writer.WritePropertyName("summaryOverride");
+                context.Writer.WritePropertyName("tokenBasedTrigger");
                 context.Writer.WriteStartObject();
 
-                var marshaller = SummaryOverrideConfigurationInputMarshaller.Instance;
-                marshaller.Marshall(requestObject.SummaryOverride, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(requestObject.IsSetUserPreferenceOverride())
-            {
-                context.Writer.WritePropertyName("userPreferenceOverride");
-                context.Writer.WriteStartObject();
-
-                var marshaller = UserPreferenceOverrideConfigurationInputMarshaller.Instance;
-                marshaller.Marshall(requestObject.UserPreferenceOverride, context);
+                var marshaller = TokenBasedTriggerInputMarshaller.Instance;
+                marshaller.Marshall(requestObject.TokenBasedTrigger, context);
 
                 context.Writer.WriteEndObject();
             }
@@ -95,7 +84,7 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static CustomConfigurationInputMarshaller Instance = new CustomConfigurationInputMarshaller();
+        public readonly static TriggerConditionInputMarshaller Instance = new TriggerConditionInputMarshaller();
 
     }
 }

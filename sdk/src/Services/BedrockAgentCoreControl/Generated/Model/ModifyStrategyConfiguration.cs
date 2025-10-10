@@ -36,6 +36,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
     {
         private ModifyConsolidationConfiguration _consolidation;
         private ModifyExtractionConfiguration _extraction;
+        private ModifySelfManagedConfiguration _selfManagedConfiguration;
 
         /// <summary>
         /// Gets and sets the property Consolidation. 
@@ -71,6 +72,24 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetExtraction()
         {
             return this._extraction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SelfManagedConfiguration. 
+        /// <para>
+        /// The updated self-managed configuration.
+        /// </para>
+        /// </summary>
+        public ModifySelfManagedConfiguration SelfManagedConfiguration
+        {
+            get { return this._selfManagedConfiguration; }
+            set { this._selfManagedConfiguration = value; }
+        }
+
+        // Check to see if SelfManagedConfiguration property is set
+        internal bool IsSetSelfManagedConfiguration()
+        {
+            return this._selfManagedConfiguration != null;
         }
 
     }

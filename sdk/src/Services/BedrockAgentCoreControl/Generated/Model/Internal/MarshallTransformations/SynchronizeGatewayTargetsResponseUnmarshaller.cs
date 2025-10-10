@@ -35,9 +35,9 @@ using Amazon.Util;
 namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CreateGatewayTarget operation
+    /// Response Unmarshaller for SynchronizeGatewayTargets operation
     /// </summary>  
-    public class CreateGatewayTargetResponseUnmarshaller : JsonResponseUnmarshaller
+    public class SynchronizeGatewayTargetsResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,76 +46,16 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            CreateGatewayTargetResponse response = new CreateGatewayTargetResponse();
+            SynchronizeGatewayTargetsResponse response = new SynchronizeGatewayTargetsResponse();
             StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
             context.Read(ref reader);
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("createdAt", targetDepth))
+                if (context.TestExpression("targets", targetDepth))
                 {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    response.CreatedAt = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("credentialProviderConfigurations", targetDepth))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<CredentialProviderConfiguration, CredentialProviderConfigurationUnmarshaller>(CredentialProviderConfigurationUnmarshaller.Instance);
-                    response.CredentialProviderConfigurations = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("description", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Description = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("gatewayArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.GatewayArn = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("lastSynchronizedAt", targetDepth))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    response.LastSynchronizedAt = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("name", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Name = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("status", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Status = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("statusReasons", targetDepth))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    response.StatusReasons = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("targetConfiguration", targetDepth))
-                {
-                    var unmarshaller = TargetConfigurationUnmarshaller.Instance;
-                    response.TargetConfiguration = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("targetId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.TargetId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("updatedAt", targetDepth))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    response.UpdatedAt = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = new JsonListUnmarshaller<GatewayTarget, GatewayTargetUnmarshaller>(GatewayTargetUnmarshaller.Instance);
+                    response.Targets = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -175,9 +115,9 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
             return new AmazonBedrockAgentCoreControlException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static CreateGatewayTargetResponseUnmarshaller _instance = new CreateGatewayTargetResponseUnmarshaller();        
+        private static SynchronizeGatewayTargetsResponseUnmarshaller _instance = new SynchronizeGatewayTargetsResponseUnmarshaller();        
 
-        internal static CreateGatewayTargetResponseUnmarshaller GetInstance()
+        internal static SynchronizeGatewayTargetsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -185,7 +125,7 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateGatewayTargetResponseUnmarshaller Instance
+        public static SynchronizeGatewayTargetsResponseUnmarshaller Instance
         {
             get
             {

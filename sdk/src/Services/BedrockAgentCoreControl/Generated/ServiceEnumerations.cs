@@ -1051,6 +1051,10 @@ namespace Amazon.BedrockAgentCoreControl
     {
 
         /// <summary>
+        /// Constant SELF_MANAGED for OverrideType
+        /// </summary>
+        public static readonly OverrideType SELF_MANAGED = new OverrideType("SELF_MANAGED");
+        /// <summary>
         /// Constant SEMANTIC_OVERRIDE for OverrideType
         /// </summary>
         public static readonly OverrideType SEMANTIC_OVERRIDE = new OverrideType("SEMANTIC_OVERRIDE");
@@ -1336,6 +1340,14 @@ namespace Amazon.BedrockAgentCoreControl
         /// Constant READY for TargetStatus
         /// </summary>
         public static readonly TargetStatus READY = new TargetStatus("READY");
+        /// <summary>
+        /// Constant SYNCHRONIZE_UNSUCCESSFUL for TargetStatus
+        /// </summary>
+        public static readonly TargetStatus SYNCHRONIZE_UNSUCCESSFUL = new TargetStatus("SYNCHRONIZE_UNSUCCESSFUL");
+        /// <summary>
+        /// Constant SYNCHRONIZING for TargetStatus
+        /// </summary>
+        public static readonly TargetStatus SYNCHRONIZING = new TargetStatus("SYNCHRONIZING");
         /// <summary>
         /// Constant UPDATE_UNSUCCESSFUL for TargetStatus
         /// </summary>

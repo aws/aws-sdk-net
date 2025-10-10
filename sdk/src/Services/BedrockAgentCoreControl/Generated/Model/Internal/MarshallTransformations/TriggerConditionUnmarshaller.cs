@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for StrategyConfiguration Object
+    /// Response Unmarshaller for TriggerCondition Object
     /// </summary>  
-    public class StrategyConfigurationUnmarshaller : IJsonUnmarshaller<StrategyConfiguration, JsonUnmarshallerContext>
+    public class TriggerConditionUnmarshaller : IJsonUnmarshaller<TriggerCondition, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public StrategyConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public TriggerCondition Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            StrategyConfiguration unmarshalledObject = new StrategyConfiguration();
+            TriggerCondition unmarshalledObject = new TriggerCondition();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,28 +56,22 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("consolidation", targetDepth))
+                if (context.TestExpression("messageBasedTrigger", targetDepth))
                 {
-                    var unmarshaller = ConsolidationConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.Consolidation = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = MessageBasedTriggerUnmarshaller.Instance;
+                    unmarshalledObject.MessageBasedTrigger = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("extraction", targetDepth))
+                if (context.TestExpression("timeBasedTrigger", targetDepth))
                 {
-                    var unmarshaller = ExtractionConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.Extraction = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = TimeBasedTriggerUnmarshaller.Instance;
+                    unmarshalledObject.TimeBasedTrigger = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("selfManagedConfiguration", targetDepth))
+                if (context.TestExpression("tokenBasedTrigger", targetDepth))
                 {
-                    var unmarshaller = SelfManagedConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.SelfManagedConfiguration = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("type", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = TokenBasedTriggerUnmarshaller.Instance;
+                    unmarshalledObject.TokenBasedTrigger = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -85,12 +79,12 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         }
 
 
-        private static StrategyConfigurationUnmarshaller _instance = new StrategyConfigurationUnmarshaller();        
+        private static TriggerConditionUnmarshaller _instance = new TriggerConditionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static StrategyConfigurationUnmarshaller Instance
+        public static TriggerConditionUnmarshaller Instance
         {
             get
             {

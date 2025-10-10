@@ -30,9 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentCoreControl.Model
 {
     /// <summary>
-    /// This is the response object from the GetGatewayTarget operation.
+    /// The gateway target.
     /// </summary>
-    public partial class GetGatewayTargetResponse : AmazonWebServiceResponse
+    public partial class GatewayTarget
     {
         private DateTime? _createdAt;
         private List<CredentialProviderConfiguration> _credentialProviderConfigurations = AWSConfigs.InitializeCollections ? new List<CredentialProviderConfiguration>() : null;
@@ -49,7 +49,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The timestamp when the gateway target was created.
+        /// The date and time at which the target was created.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -68,7 +68,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property CredentialProviderConfigurations. 
         /// <para>
-        /// The credential provider configurations for the gateway target.
+        /// The provider configurations.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -92,7 +92,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description of the gateway target.
+        /// The description for the gateway target.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=200)]
@@ -111,7 +111,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property GatewayArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the gateway.
+        /// The Amazon Resource Name (ARN) of the gateway target.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -130,7 +130,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property LastSynchronizedAt. 
         /// <para>
-        /// The last synchronization of the target.
+        /// The last synchronization time.
         /// </para>
         /// </summary>
         public DateTime? LastSynchronizedAt
@@ -167,7 +167,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The current status of the gateway target.
+        /// The status of the gateway target.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -186,7 +186,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property StatusReasons. 
         /// <para>
-        /// The reasons for the current status of the gateway target.
+        /// The status reasons for the target status.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -226,7 +226,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property TargetId. 
         /// <para>
-        /// The unique identifier of the gateway target.
+        /// The target ID.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -245,7 +245,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property UpdatedAt. 
         /// <para>
-        /// The timestamp when the gateway target was last updated.
+        /// The date and time at which the target was updated.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
