@@ -346,19 +346,50 @@ public class CborStreamReaderTests : IClassFixture<BufferSizeConfigFixture>
         reader.ReadEndArray();
     }
 
-    [Fact]
-    public void Unmarshall_ByteString_CrossingBuffer()
+    [Theory]
+    [InlineData(10)]
+    [InlineData(50)]
+    [InlineData(ushort.MaxValue / 2)]
+    [InlineData(ushort.MaxValue * 2)]
+    public void Unmarshall_ByteString_CrossingBuffer(int length)
     {
         var writer = new CborWriter();
-        byte[] largeByteArray = new byte[150]; // Larger than buffer size
+        byte[] largeByteArray = new byte[length];
         new Random().NextBytes(largeByteArray);
 
+        writer.WriteStartArray(1);
         writer.WriteByteString(largeByteArray);
+        writer.WriteEndArray();
 
         using var reader = new CborStreamReader(new MemoryStream(writer.Encode()));
+
+        reader.ReadStartArray();
         byte[] result = reader.ReadByteString();
+        reader.ReadEndArray();
 
         Assert.Equal(largeByteArray, result);
+    }
+
+    [Theory]
+    [InlineData(10)]
+    [InlineData(50)]
+    [InlineData(ushort.MaxValue / 2)]
+    [InlineData(ushort.MaxValue * 2)]
+    public void Unmarshall_TextString_CrossingBuffer(int length)
+    {
+        var writer = new CborWriter();
+        var textString = new string('X', length);
+
+        writer.WriteStartArray(1);
+        writer.WriteTextString(textString);
+        writer.WriteEndArray();
+
+        using var reader = new CborStreamReader(new MemoryStream(writer.Encode()));
+        reader.ReadStartArray();
+        var result = reader.ReadTextString();
+        reader.ReadEndArray();
+
+        Assert.Equal(textString, result);
     }
 
     [Fact]
