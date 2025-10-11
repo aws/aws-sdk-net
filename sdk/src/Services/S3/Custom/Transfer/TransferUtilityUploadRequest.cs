@@ -428,7 +428,7 @@ namespace Amazon.S3.Transfer
         /// UploadInitiatedEvent notifications. Here is how:<br />
         /// 1. Define a method with a signature similar to this one:
         /// <code>
-        /// private void uploadStarted(object sender, UploadInitiatedArgs args)
+        /// private void uploadStarted(object sender, UploadInitiatedEventArgs args)
         /// {
         ///     Console.WriteLine($"Upload started: {args.FilePath}");
         ///     Console.WriteLine($"Total size: {args.TotalBytes} bytes");
@@ -442,7 +442,7 @@ namespace Amazon.S3.Transfer
         /// request.UploadInitiatedEvent += uploadStarted;
         /// </code>
         /// </remarks>
-        public event EventHandler<UploadInitiatedArgs> UploadInitiatedEvent;
+        public event EventHandler<UploadInitiatedEventArgs> UploadInitiatedEvent;
 
         /// <summary>
         /// The event for UploadCompletedEvent notifications. All
@@ -460,7 +460,7 @@ namespace Amazon.S3.Transfer
         /// UploadCompletedEvent notifications. Here is how:<br />
         /// 1. Define a method with a signature similar to this one:
         /// <code>
-        /// private void uploadCompleted(object sender, UploadCompletedArgs args)
+        /// private void uploadCompleted(object sender, UploadCompletedEventArgs args)
         /// {
         ///     Console.WriteLine($"Upload completed: {args.FilePath}");
         ///     Console.WriteLine($"Transferred: {args.TransferredBytes} bytes");
@@ -475,7 +475,7 @@ namespace Amazon.S3.Transfer
         /// request.UploadCompletedEvent += uploadCompleted;
         /// </code>
         /// </remarks>
-        public event EventHandler<UploadCompletedArgs> UploadCompletedEvent;
+        public event EventHandler<UploadCompletedEventArgs> UploadCompletedEvent;
 
         /// <summary>
         /// The event for UploadFailedEvent notifications. All
@@ -493,7 +493,7 @@ namespace Amazon.S3.Transfer
         /// UploadFailedEvent notifications. Here is how:<br />
         /// 1. Define a method with a signature similar to this one:
         /// <code>
-        /// private void uploadFailed(object sender, UploadFailedArgs args)
+        /// private void uploadFailed(object sender, UploadFailedEventArgs args)
         /// {
         ///     Console.WriteLine($"Upload failed: {args.FilePath}");
         ///     Console.WriteLine($"Partial progress: {args.TransferredBytes} / {args.TotalBytes} bytes");
@@ -509,13 +509,13 @@ namespace Amazon.S3.Transfer
         /// request.UploadFailedEvent += uploadFailed;
         /// </code>
         /// </remarks>
-        public event EventHandler<UploadFailedArgs> UploadFailedEvent;
+        public event EventHandler<UploadFailedEventArgs> UploadFailedEvent;
 
         /// <summary>
         /// Causes the UploadInitiatedEvent event to be fired.
         /// </summary>
         /// <param name="args">Event arguments containing request and total size</param>
-        internal void OnRaiseTransferInitiatedEvent(UploadInitiatedArgs args)
+        internal void OnRaiseTransferInitiatedEvent(UploadInitiatedEventArgs args)
         {
             AWSSDKUtils.InvokeInBackground(UploadInitiatedEvent, args, this);
         }
@@ -524,7 +524,7 @@ namespace Amazon.S3.Transfer
         /// Causes the UploadCompletedEvent event to be fired.
         /// </summary>
         /// <param name="args">Event arguments containing request, response, and final progress</param>
-        internal void OnRaiseTransferCompletedEvent(UploadCompletedArgs args)
+        internal void OnRaiseTransferCompletedEvent(UploadCompletedEventArgs args)
         {
             AWSSDKUtils.InvokeInBackground(UploadCompletedEvent, args, this);
         }
@@ -533,7 +533,7 @@ namespace Amazon.S3.Transfer
         /// Causes the UploadFailedEvent event to be fired.
         /// </summary>
         /// <param name="args">Event arguments containing request and partial progress</param>
-        internal void OnRaiseTransferFailedEvent(UploadFailedArgs args)
+        internal void OnRaiseTransferFailedEvent(UploadFailedEventArgs args)
         {
             AWSSDKUtils.InvokeInBackground(UploadFailedEvent, args, this);
         }
@@ -1009,15 +1009,15 @@ namespace Amazon.S3.Transfer
     /// Encapsulates the information needed when a transfer operation is initiated.
     /// Provides access to the original request and total file size without any progress information.
     /// </summary>
-    public class UploadInitiatedArgs : EventArgs
+    public class UploadInitiatedEventArgs : EventArgs
     {
         /// <summary>
-        /// Initializes a new instance of the UploadInitiatedArgs class.
+        /// Initializes a new instance of the UploadInitiatedEventArgs class.
         /// </summary>
         /// <param name="request">The original TransferUtilityUploadRequest created by the user</param>
         /// <param name="filePath">The file being uploaded</param>
         /// <param name="totalBytes">The total number of bytes to be transferred</param>
-        internal UploadInitiatedArgs(TransferUtilityUploadRequest request, string filePath, long totalBytes)
+        internal UploadInitiatedEventArgs(TransferUtilityUploadRequest request, string filePath, long totalBytes)
         {
             Request = request;
             FilePath = filePath;
@@ -1045,17 +1045,17 @@ namespace Amazon.S3.Transfer
     /// Encapsulates the information needed when a transfer operation completes successfully.
     /// Provides access to the original request, final response, and completion details.
     /// </summary>
-    public class UploadCompletedArgs : EventArgs
+    public class UploadCompletedEventArgs : EventArgs
     {
         /// <summary>
-        /// Initializes a new instance of the UploadCompletedArgs class.
+        /// Initializes a new instance of the UploadCompletedEventArgs class.
         /// </summary>
         /// <param name="request">The original TransferUtilityUploadRequest created by the user</param>
         /// <param name="response">The unified response from Transfer Utility</param>
         /// <param name="filePath">The file that was uploaded</param>
         /// <param name="transferredBytes">The total number of bytes transferred</param>
         /// <param name="totalBytes">The total number of bytes that were transferred</param>
-        internal UploadCompletedArgs(TransferUtilityUploadRequest request, TransferUtilityUploadResponse response, string filePath, long transferredBytes, long totalBytes)
+        internal UploadCompletedEventArgs(TransferUtilityUploadRequest request, TransferUtilityUploadResponse response, string filePath, long transferredBytes, long totalBytes)
         {
             Request = request;
             Response = response; 
@@ -1096,16 +1096,16 @@ namespace Amazon.S3.Transfer
     /// Encapsulates the information needed when a transfer operation fails.
     /// Provides access to the original request and partial progress information.
     /// </summary>
-    public class UploadFailedArgs : EventArgs
+    public class UploadFailedEventArgs : EventArgs
     {
         /// <summary>
-        /// Initializes a new instance of the UploadFailedArgs class.
+        /// Initializes a new instance of the UploadFailedEventArgs class.
         /// </summary>
         /// <param name="request">The original TransferUtilityUploadRequest created by the user</param>
         /// <param name="filePath">The file that was being uploaded</param>
         /// <param name="transferredBytes">The number of bytes transferred before failure</param>
         /// <param name="totalBytes">The total number of bytes that should have been transferred</param>
-        internal UploadFailedArgs(TransferUtilityUploadRequest request, string filePath, long transferredBytes, long totalBytes)
+        internal UploadFailedEventArgs(TransferUtilityUploadRequest request, string filePath, long transferredBytes, long totalBytes)
         {
             Request = request;
             FilePath = filePath;

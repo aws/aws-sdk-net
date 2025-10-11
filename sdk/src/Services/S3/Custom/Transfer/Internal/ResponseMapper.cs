@@ -28,8 +28,7 @@ namespace Amazon.S3.Transfer.Internal
     /// Utility class for mapping S3 response objects to TransferUtilityUploadResponse.
     /// Maps fields based on the mapping.json configuration used by the Transfer Utility.
     /// </summary>
-    /// TODO make internal
-    public static class ResponseMapper
+    internal static class ResponseMapper
     {
         /// <summary>
         /// Maps a PutObjectResponse to TransferUtilityUploadResponse.
@@ -37,8 +36,7 @@ namespace Amazon.S3.Transfer.Internal
         /// </summary>
         /// <param name="source">The PutObjectResponse to map from</param>
         /// <returns>A new TransferUtilityUploadResponse with mapped fields</returns>
-        /// // TODO make internal
-        public static TransferUtilityUploadResponse MapPutObjectResponse(PutObjectResponse source)
+        internal static TransferUtilityUploadResponse MapPutObjectResponse(PutObjectResponse source)
         {
             if (source == null)
                 return null;

@@ -115,7 +115,7 @@ namespace Amazon.S3.Transfer.Internal
 
         private void FireTransferInitiatedEvent()
         {
-            var initiatedArgs = new UploadInitiatedArgs(
+            var initiatedArgs = new UploadInitiatedEventArgs(
                 request: _fileTransporterRequest,
                 filePath: _fileTransporterRequest.FilePath,
                 totalBytes: _fileTransporterRequest.ContentLength
@@ -126,7 +126,7 @@ namespace Amazon.S3.Transfer.Internal
 
         private void FireTransferCompletedEvent(TransferUtilityUploadResponse response)
         {
-            var completedArgs = new UploadCompletedArgs(
+            var completedArgs = new UploadCompletedEventArgs(
                 request: _fileTransporterRequest,
                 response: response,
                 filePath: _fileTransporterRequest.FilePath,
@@ -139,7 +139,7 @@ namespace Amazon.S3.Transfer.Internal
 
         private void FireTransferFailedEvent()
         {
-            var failedArgs = new UploadFailedArgs(
+            var failedArgs = new UploadFailedEventArgs(
                 request: _fileTransporterRequest,
                 filePath: _fileTransporterRequest.FilePath,
                 transferredBytes: _totalTransferredBytes,
