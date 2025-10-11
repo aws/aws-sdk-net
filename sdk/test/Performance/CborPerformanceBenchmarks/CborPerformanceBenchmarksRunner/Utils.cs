@@ -9,6 +9,8 @@ using BenchmarkDotNet.Configs;
 using BenchmarkDotNet.Jobs;
 using BenchmarkDotNet.Reports;
 using BenchmarkDotNet.Toolchains.InProcess.Emit;
+using System;
+using System.Collections.Generic;
 using System.Globalization;
 using System.Reflection;
 using System.Text;
@@ -100,16 +102,17 @@ public static class Utils
                     existingContent = "[]";
                 }
 
-                var list = JsonSerializer.Deserialize<List<JsonElement>>(existingContent, JsonOptions)
-                           ?? new List<JsonElement>();
+                var allRecords = JsonSerializer.Deserialize<List<BenchmarkRecord>>(existingContent, JsonOptions);
+                allRecords.AddRange(records);
 
-                foreach (var record in records)
-                {
-                    var recordJson = JsonSerializer.SerializeToElement(record, JsonOptions);
-                    list.Add(recordJson);
-                }
+                allRecords = allRecords
+                    .OrderBy(r => r.service)
+                    .ThenBy(r => r.test_case)
+                    .ThenBy(r => r.dimension_value)
+                    .ThenBy(r => r.metric)
+                    .ThenBy(r => r.protocol).ToList();
 
-                var newContent = JsonSerializer.Serialize(list, JsonOptions);
+                var newContent = JsonSerializer.Serialize(allRecords, JsonOptions);
                 File.WriteAllText(filePath, newContent, Encoding.UTF8);
 
                 Console.WriteLine($"Stored benchmark results at:{filePath}");
@@ -139,55 +142,45 @@ public static class Utils
     {
         var list = new List<BenchmarkRecord>();
 
-        // Group reports by Job (OldProtocol vs RPCv2CborProtocol)
-        var byJob = summary.Reports.GroupBy(r => r.BenchmarkCase.Job.Id);
-
-        foreach (var jobGroup in byJob)
+        foreach (var benchmarkReport in summary.Reports)
         {
-            // All cases share the same DimensionValue in this sample; read from parameters
-            int dimensionValue = int.Parse(jobGroup.First().BenchmarkCase.Parameters["DimensionValue"].ToString());
-            var benchmarkObject = (BaseBenchmarks)Activator.CreateInstance(jobGroup.First().BenchmarkCase.Descriptor.Type)!;
+            var benchmarkObject = (BaseBenchmarks)Activator.CreateInstance(benchmarkReport.BenchmarkCase.Descriptor.Type)!;
+            list.Add(ToBenchmarkRecord(benchmarkReport, benchmarkObject));
+        }
+        return list;
+    }
 
-            AddMetric("TotalRequest");
-            AddMetric("Marshall");
-            AddMetric("Unmarshall");
 
-            if (benchmarkObject is BaseDoubleBenchmarks benchmark2)
-            {
-                AddMetric("TotalRequest2");
-                AddMetric("Marshall2");
-                AddMetric("Unmarshall2");
-            }
+    private static BenchmarkRecord ToBenchmarkRecord(BenchmarkReport report, BaseBenchmarks benchmarkObject)
+    {
+        var protocol = report.BenchmarkCase.Job.Id == "RPCv2CborProtocol" ? "CBOR" : "JSON";
 
-            void AddMetric(string metricName)
-            {
-                var report = jobGroup.FirstOrDefault(report =>
-                {
-                    var method = report.BenchmarkCase.Descriptor.WorkloadMethod;
-                    return method.Name == metricName;
-                });
+        if (benchmarkObject.Service == "CloudWatch" && protocol == "JSON")
+            protocol = "Query";
 
-                if (report == null)
-                    return;
+        var description = report.BenchmarkCase.Descriptor.WorkloadMethod.GetCustomAttribute<BenchmarkAttribute>().Description;
+        var dimensionValue = int.Parse(report.BenchmarkCase.Parameters["DimensionValue"].ToString());
 
-                var description = report.BenchmarkCase.Descriptor.WorkloadMethod.GetCustomAttribute<BenchmarkAttribute>().Description;
+        var stats = report.ResultStatistics!; // ns
 
-                var stats = report.ResultStatistics!; // ns
-                double ToMs(double ns) => ns / 1_000_000.0;
+        var testCase = benchmarkObject.TestCase;
 
-                list.Add(new BenchmarkRecord(
-                    service: benchmarkObject.Service,
-                    test_case: benchmarkObject.TestCase,
-                    protocol: benchmarkObject.Protocol,
-                    dimension_value: dimensionValue,
-                    metric: description,
-                    p50: ToMs(stats.Percentiles.P50),
-                    p90: ToMs(stats.Percentiles.P90),
-                    max: ToMs(stats.Max)));
-            }
+        if (report.BenchmarkCase.Descriptor.WorkloadMethod.Name.EndsWith("2") && benchmarkObject is BaseDoubleBenchmarks benchmarkObject2)
+        {
+            testCase = benchmarkObject2.TestCase2;
         }
 
-        return list;
+        double ToMs(double ns) => ns / 1_000_000.0;
+
+        return new BenchmarkRecord(
+            service: benchmarkObject.Service,
+            test_case: testCase,
+            protocol: protocol,
+            dimension_value: dimensionValue,
+            metric: description,
+            p50: ToMs(stats.Percentiles.P50),
+            p90: ToMs(stats.Percentiles.P90),
+            max: ToMs(stats.Max));
     }
 
     public static string GetParametersAsString(ParameterCollection parameterCollection)

@@ -42,6 +42,10 @@ public class PutAndGetMetricDataBenchmarks : BaseDoubleBenchmarks
     public override byte[] Marshall()
     {
         var iRequest = PutMetricDataRequestMarshaller.Instance.Marshall(request);
+#if !USE_CBOR
+        string queryString = Utils.GetParametersAsString(iRequest.ParameterCollection);
+        iRequest.Content = System.Text.Encoding.UTF8.GetBytes(queryString);
+#endif
         MarshalledRequest = iRequest;
 
         return iRequest.Content;
@@ -96,6 +100,10 @@ public class PutAndGetMetricDataBenchmarks : BaseDoubleBenchmarks
     public override byte[] Marshall2()
     {
         var iRequest = GetMetricDataRequestMarshaller.Instance.Marshall(request2);
+#if !USE_CBOR
+        string queryString = Utils.GetParametersAsString(iRequest.ParameterCollection);
+        iRequest.Content = System.Text.Encoding.UTF8.GetBytes(queryString);
+#endif
         MarshalledRequest2 = iRequest;
 
         return iRequest.Content;
