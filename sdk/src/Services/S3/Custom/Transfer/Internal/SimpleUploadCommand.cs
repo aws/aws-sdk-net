@@ -42,7 +42,6 @@ namespace Amazon.S3.Transfer.Internal
         IAmazonS3 _s3Client;
         TransferUtilityConfig _config;
         TransferUtilityUploadRequest _fileTransporterRequest;
-        
         long _totalTransferredBytes;
 
         internal SimpleUploadCommand(IAmazonS3 s3Client, TransferUtilityConfig config, TransferUtilityUploadRequest fileTransporterRequest)
@@ -106,10 +105,11 @@ namespace Amazon.S3.Transfer.Internal
 
         private void PutObjectProgressEventCallback(object sender, UploadProgressArgs e)
         {
+            // Keep track of the total transferred bytes so that we can also return this value in case of failure
             long transferredBytes = Interlocked.Add(ref _totalTransferredBytes, e.IncrementTransferred - e.CompensationForRetry);
             
             var progressArgs = new UploadProgressArgs(e.IncrementTransferred, transferredBytes, e.TotalBytes, 
-                e.CompensationForRetry, _fileTransporterRequest.FilePath, _fileTransporterRequest, null);
+                e.CompensationForRetry, _fileTransporterRequest.FilePath, _fileTransporterRequest);
             this._fileTransporterRequest.OnRaiseProgressEvent(progressArgs);
         }
 

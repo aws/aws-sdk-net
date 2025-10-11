@@ -514,7 +514,7 @@ namespace Amazon.S3.Transfer
         /// <summary>
         /// Causes the UploadInitiatedEvent event to be fired.
         /// </summary>
-        /// <param name="args">Event arguments containing request and total size</param>
+        /// <param name="args">UploadInitiatedEventArgs args</param>
         internal void OnRaiseTransferInitiatedEvent(UploadInitiatedEventArgs args)
         {
             AWSSDKUtils.InvokeInBackground(UploadInitiatedEvent, args, this);
@@ -523,7 +523,7 @@ namespace Amazon.S3.Transfer
         /// <summary>
         /// Causes the UploadCompletedEvent event to be fired.
         /// </summary>
-        /// <param name="args">Event arguments containing request, response, and final progress</param>
+        /// <param name="args">UploadCompletedEventArgs args</param>
         internal void OnRaiseTransferCompletedEvent(UploadCompletedEventArgs args)
         {
             AWSSDKUtils.InvokeInBackground(UploadCompletedEvent, args, this);
@@ -532,7 +532,7 @@ namespace Amazon.S3.Transfer
         /// <summary>
         /// Causes the UploadFailedEvent event to be fired.
         /// </summary>
-        /// <param name="args">Event arguments containing request and partial progress</param>
+        /// <param name="args">UploadFailedEventArgs args</param>
         internal void OnRaiseTransferFailedEvent(UploadFailedEventArgs args)
         {
             AWSSDKUtils.InvokeInBackground(UploadFailedEvent, args, this);
@@ -972,14 +972,12 @@ namespace Amazon.S3.Transfer
         /// in case the underlying request is retried.</param>
         /// <param name="filePath">The file being uploaded</param>
         /// <param name="request">The original TransferUtilityUploadRequest created by the user</param>
-        /// <param name="response">The unified response from Transfer Utility containing mapped fields from either PutObjectResponse or CompleteMultipartUploadResponse (null except for completion events)</param>
-        internal UploadProgressArgs(long incrementTransferred, long transferred, long total, long compensationForRetry, string filePath, TransferUtilityUploadRequest request, TransferUtilityUploadResponse response)
+        internal UploadProgressArgs(long incrementTransferred, long transferred, long total, long compensationForRetry, string filePath, TransferUtilityUploadRequest request)
             : base(incrementTransferred, transferred, total)
         {
             this.FilePath = filePath;
             this.CompensationForRetry = compensationForRetry;
             this.Request = request;
-            this.Response = response;
         }
 
         /// <summary>
@@ -994,15 +992,6 @@ namespace Amazon.S3.Transfer
         /// Required for SEP compliance - all events need request context.
         /// </summary>
         public TransferUtilityUploadRequest Request { get; internal set; }
-
-        /// <summary>
-        /// The unified response from Transfer Utility after successful upload completion.
-        /// Contains mapped fields from either PutObjectResponse (simple uploads) or CompleteMultipartUploadResponse (multipart uploads).
-        /// Null during initiation, progress, and failure.
-        /// Populated only after successful completion.
-        /// Required for SEP compliance.
-        /// </summary>
-        public TransferUtilityUploadResponse Response { get; internal set; }
     }
 
     /// <summary>
