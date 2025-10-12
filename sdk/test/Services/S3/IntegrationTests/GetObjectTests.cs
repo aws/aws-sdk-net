@@ -110,5 +110,175 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             Assert.AreNotEqual(getObjectAttributesResponse.LastModified, DateTime.MinValue);
             Assert.AreEqual(getObjectAttributesResponse.LastModified, getObjectMetadataResponse.LastModified);
         }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public void TestServerSideEncryptionCustomerProvidedKeyMD5()
+        {
+            var key = "TestServerSideEncryptionCustomerProvidedKeyMD5";
+            
+            // Generate a 256-bit (32 byte) encryption key
+            var encryptionKey = "12345678901234567890123456789012";
+            var encryptionKeyBytes = Encoding.UTF8.GetBytes(encryptionKey);
+            var encryptionKeyBase64 = Convert.ToBase64String(encryptionKeyBytes);
+            
+            // Calculate MD5 of the encryption key
+            using (var md5 = System.Security.Cryptography.MD5.Create())
+            {
+                var keyMD5 = Convert.ToBase64String(md5.ComputeHash(encryptionKeyBytes));
+                
+                // Put object with SSE-C
+                Client.PutObject(new PutObjectRequest
+                {
+                    BucketName = bucketName,
+                    Key = key,
+                    ContentBody = "Test content for SSE-C",
+                    ServerSideEncryptionCustomerMethod = ServerSideEncryptionCustomerMethod.AES256,
+                    ServerSideEncryptionCustomerProvidedKey = encryptionKeyBase64,
+                    ServerSideEncryptionCustomerProvidedKeyMD5 = keyMD5
+                });
+
+                try
+                {
+                    // Get object with SSE-C
+                    var response = Client.GetObject(new GetObjectRequest
+                    {
+                        BucketName = bucketName,
+                        Key = key,
+                        ServerSideEncryptionCustomerMethod = ServerSideEncryptionCustomerMethod.AES256,
+                        ServerSideEncryptionCustomerProvidedKey = encryptionKeyBase64,
+                        ServerSideEncryptionCustomerProvidedKeyMD5 = keyMD5
+                    });
+
+                    using (response)
+                    {
+                        // Verify the ServerSideEncryptionCustomerProvidedKeyMD5 property is populated
+                        Assert.IsNotNull(response.ServerSideEncryptionCustomerProvidedKeyMD5, 
+                            "ServerSideEncryptionCustomerProvidedKeyMD5 should not be null");
+                        Assert.AreEqual(keyMD5, response.ServerSideEncryptionCustomerProvidedKeyMD5,
+                            "ServerSideEncryptionCustomerProvidedKeyMD5 should match the provided MD5");
+                    }
+                }
+                finally
+                {
+                    // Clean up test object
+                    try
+                    {
+                        Client.DeleteObject(bucketName, key);
+                    }
+                    catch { }
+                }
+            }
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public void TestContentLanguageHeader()
+        {
+            var key = "TestContentLanguageHeader";
+            var expectedLanguage = "en-US";
+
+            // Put object with Content-Language header
+            var putRequest = new PutObjectRequest
+            {
+                BucketName = bucketName,
+                Key = key,
+                ContentBody = "Test content for Content-Language"
+            };
+            putRequest.Headers.ContentLanguage = expectedLanguage;
+
+            Client.PutObject(putRequest);
+
+            try
+            {
+                // Get object and verify Content-Language header
+                var response = Client.GetObject(new GetObjectRequest
+                {
+                    BucketName = bucketName,
+                    Key = key
+                });
+
+                using (response)
+                {
+                    Assert.IsNotNull(response.Headers.ContentLanguage, 
+                        "ContentLanguage should not be null");
+                    Assert.AreEqual(expectedLanguage, response.Headers.ContentLanguage,
+                        "ContentLanguage should match the value set during PutObject");
+                }
+            }
+            finally
+            {
+                // Clean up test object
+                try
+                {
+                    Client.DeleteObject(bucketName, key);
+                }
+                catch { }
+            }
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public void TestContentLanguageResponseHeaderOverride()
+        {
+            var key = "TestContentLanguageResponseHeaderOverride";
+            var originalLanguage = "fr-FR";
+            var overrideLanguage = "es-ES";
+
+            // Put object with original Content-Language
+            var putRequest = new PutObjectRequest
+            {
+                BucketName = bucketName,
+                Key = key,
+                ContentBody = "Test content for Content-Language override"
+            };
+            putRequest.Headers.ContentLanguage = originalLanguage;
+
+            Client.PutObject(putRequest);
+
+            try
+            {
+                // Get object with response header override
+                var response = Client.GetObject(new GetObjectRequest
+                {
+                    BucketName = bucketName,
+                    Key = key,
+                    ResponseHeaderOverrides = new ResponseHeaderOverrides
+                    {
+                        ContentLanguage = overrideLanguage
+                    }
+                });
+
+                using (response)
+                {
+                    Assert.IsNotNull(response.Headers.ContentLanguage, 
+                        "ContentLanguage should not be null");
+                    Assert.AreEqual(overrideLanguage, response.Headers.ContentLanguage,
+                        "ContentLanguage should match the override value, not the original stored value");
+                }
+
+                // Verify original value is still stored by getting without override
+                var responseWithoutOverride = Client.GetObject(new GetObjectRequest
+                {
+                    BucketName = bucketName,
+                    Key = key
+                });
+
+                using (responseWithoutOverride)
+                {
+                    Assert.AreEqual(originalLanguage, responseWithoutOverride.Headers.ContentLanguage,
+                        "Original ContentLanguage should still be stored when no override is specified");
+                }
+            }
+            finally
+            {
+                // Clean up test object
+                try
+                {
+                    Client.DeleteObject(bucketName, key);
+                }
+                catch { }
+            }
+        }
     }
 }
