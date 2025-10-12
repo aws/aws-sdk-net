@@ -117,9 +117,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         {
             var key = "TestServerSideEncryptionCustomerProvidedKeyMD5";
             
-            // Generate a 256-bit (32 byte) encryption key
-            var encryptionKey = "12345678901234567890123456789012";
-            var encryptionKeyBytes = Encoding.UTF8.GetBytes(encryptionKey);
+            // Generate a cryptographically secure 256-bit (32 byte) encryption key
+            var encryptionKeyBytes = new byte[32];
+            using (var rng = System.Security.Cryptography.RandomNumberGenerator.Create())
+            {
+                rng.GetBytes(encryptionKeyBytes);
+            }
             var encryptionKeyBase64 = Convert.ToBase64String(encryptionKeyBytes);
             
             // Calculate MD5 of the encryption key
@@ -166,7 +169,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     {
                         Client.DeleteObject(bucketName, key);
                     }
-                    catch { }
+                    catch(Exception ex)
+                    {
+                         Console.WriteLine($"Failed to delete test object '{key}' from bucket '{bucketName}': {ex}");
+                    }
                 }
             }
         }
@@ -213,7 +219,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 {
                     Client.DeleteObject(bucketName, key);
                 }
-                catch { }
+                catch(Exception ex)
+                {
+                     Console.WriteLine($"Failed to delete test object '{key}' from bucket '{bucketName}': {ex}");
+                }
             }
         }
 
@@ -277,7 +286,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 {
                     Client.DeleteObject(bucketName, key);
                 }
-                catch { }
+                catch(Exception ex)
+                {
+                    Console.WriteLine($"Failed to delete test object '{key}' from bucket '{bucketName}': {ex}");
+                }
             }
         }
     }
