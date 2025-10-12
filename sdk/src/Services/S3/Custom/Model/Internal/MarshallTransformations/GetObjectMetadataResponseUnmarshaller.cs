@@ -61,6 +61,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 response.Headers.ContentDisposition = S3Transforms.ToString(responseData.GetHeaderValue("Content-Disposition"));
             if (responseData.IsHeaderPresent("Content-Encoding"))
                 response.Headers.ContentEncoding = S3Transforms.ToString(responseData.GetHeaderValue("Content-Encoding"));
+            if (responseData.IsHeaderPresent("Content-Language"))
+                response.Headers.ContentLanguage = S3Transforms.ToString(responseData.GetHeaderValue("Content-Language"));
             if (responseData.IsHeaderPresent("Content-Length"))
                 response.Headers.ContentLength = long.Parse(responseData.GetHeaderValue("Content-Length"), CultureInfo.InvariantCulture);
             if (responseData.IsHeaderPresent("Content-Type"))
@@ -74,4 +76,3 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         }
     }
 }
-    

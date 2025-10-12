@@ -106,6 +106,18 @@ namespace Amazon.S3.Model
 
         /// <summary>
         /// <para>
+        /// Describes the natural language(s) of the intended audience for the enclosed content.
+        /// For more information, see <a href="https://www.rfc-editor.org/rfc/rfc9110.html#name-content-language">https://www.rfc-editor.org/rfc/rfc9110.html#name-content-language</a>.
+        /// </para>
+        /// </summary>
+        public string ContentLanguage
+        {
+            get { return this["Content-Language"]; }
+            set { this["Content-Language"] = value; }
+        }
+
+        /// <summary>
+        /// <para>
         /// Size of the body in bytes. This parameter is useful when the size of the body cannot
         /// be determined automatically. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc9110.html#name-content-length">https://www.rfc-editor.org/rfc/rfc9110.html#name-content-length</a>.
         /// </para>

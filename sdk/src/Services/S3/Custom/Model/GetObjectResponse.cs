@@ -49,6 +49,7 @@ namespace Amazon.S3.Model
         private string websiteRedirectLocation;
         private ServerSideEncryptionMethod serverSideEncryption;
         private ServerSideEncryptionCustomerMethod serverSideEncryptionCustomerMethod;
+        private string serverSideEncryptionCustomerProvidedKeyMD5;
         private string serverSideEncryptionKeyManagementServiceKeyId;
         private HeadersCollection headersCollection = new HeadersCollection();
         private MetadataCollection metadataCollection = new MetadataCollection();
@@ -540,6 +541,21 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
+        /// The MD5 of the customer encryption key specified in the ServerSideEncryptionCustomerProvidedKey property. The MD5 is
+        /// base 64 encoded. This field is optional, the SDK will calculate the MD5 if this is not set.
+        ///  <note> 
+        /// <para>
+        /// This functionality is not supported for directory buckets.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public string ServerSideEncryptionCustomerProvidedKeyMD5
+        {
+            get { return this.serverSideEncryptionCustomerProvidedKeyMD5; }
+            set { this.serverSideEncryptionCustomerProvidedKeyMD5 = value; }
+        }
+
+        /// <summary>
         /// If present, indicates that the requester was successfully charged for the request.
         /// </summary>
         public RequestCharged RequestCharged
@@ -1009,4 +1025,3 @@ namespace Amazon.S3.Model
         public bool IsCompleted { get; private set; }
     }  
 }
-    
