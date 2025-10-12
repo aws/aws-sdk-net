@@ -169,7 +169,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     {
                         Client.DeleteObject(bucketName, key);
                     }
-                    catch(Exception ex)
+                    catch (Exception ex)
                     {
                          Console.WriteLine($"Failed to delete test object '{key}' from bucket '{bucketName}': {ex}");
                     }
@@ -219,7 +219,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 {
                     Client.DeleteObject(bucketName, key);
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                      Console.WriteLine($"Failed to delete test object '{key}' from bucket '{bucketName}': {ex}");
                 }
@@ -286,7 +286,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 {
                     Client.DeleteObject(bucketName, key);
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     Console.WriteLine($"Failed to delete test object '{key}' from bucket '{bucketName}': {ex}");
                 }
