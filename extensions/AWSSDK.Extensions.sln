@@ -80,6 +80,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.Extensions.CborProto
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CborProtocol.Tests.NetFramework", "test\CborProtocol.Tests\CborProtocol.Tests.NetFramework.csproj", "{9FFDECAB-94D6-7EB1-1A5B-487492600755}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BedrockMEAITests.NetStandard", "test\BedrockMEAITests\BedrockMEAITests.NetStandard.csproj", "{B4A8EC7D-5EEC-48DE-AB46-A3F9BA5D0340}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -222,6 +224,10 @@ Global
 		{9FFDECAB-94D6-7EB1-1A5B-487492600755}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9FFDECAB-94D6-7EB1-1A5B-487492600755}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9FFDECAB-94D6-7EB1-1A5B-487492600755}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4A8EC7D-5EEC-48DE-AB46-A3F9BA5D0340}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4A8EC7D-5EEC-48DE-AB46-A3F9BA5D0340}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4A8EC7D-5EEC-48DE-AB46-A3F9BA5D0340}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4A8EC7D-5EEC-48DE-AB46-A3F9BA5D0340}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -261,6 +267,7 @@ Global
 		{4FCCBD72-8E9B-D74B-6538-D8684D181230} = {3D822DC2-ED2E-4434-BC4F-CE7FCD846B02}
 		{24CBBC97-409E-BAC8-0553-D260AB0B8C6A} = {3D822DC2-ED2E-4434-BC4F-CE7FCD846B02}
 		{9FFDECAB-94D6-7EB1-1A5B-487492600755} = {A960D001-40B3-4B1A-A890-D1049FB7586E}
+		{B4A8EC7D-5EEC-48DE-AB46-A3F9BA5D0340} = {A960D001-40B3-4B1A-A890-D1049FB7586E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {949367A4-5683-4FD3-93F4-A2CEA6EECB21}
