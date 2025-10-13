@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GoogleOauth2ProviderConfigOutput Object
+    /// Response Unmarshaller for IncludedOauth2ProviderConfigOutput Object
     /// </summary>  
-    public class GoogleOauth2ProviderConfigOutputUnmarshaller : IUnmarshaller<GoogleOauth2ProviderConfigOutput, XmlUnmarshallerContext>, IUnmarshaller<GoogleOauth2ProviderConfigOutput, JsonUnmarshallerContext>
+    public class IncludedOauth2ProviderConfigOutputUnmarshaller : IUnmarshaller<IncludedOauth2ProviderConfigOutput, XmlUnmarshallerContext>, IUnmarshaller<IncludedOauth2ProviderConfigOutput, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        GoogleOauth2ProviderConfigOutput IUnmarshaller<GoogleOauth2ProviderConfigOutput, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        IncludedOauth2ProviderConfigOutput IUnmarshaller<IncludedOauth2ProviderConfigOutput, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public GoogleOauth2ProviderConfigOutput Unmarshall(JsonUnmarshallerContext context)
+        public IncludedOauth2ProviderConfigOutput Unmarshall(JsonUnmarshallerContext context)
         {
-            GoogleOauth2ProviderConfigOutput unmarshalledObject = new GoogleOauth2ProviderConfigOutput();
+            IncludedOauth2ProviderConfigOutput unmarshalledObject = new IncludedOauth2ProviderConfigOutput();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -83,12 +83,12 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         }
 
 
-        private static GoogleOauth2ProviderConfigOutputUnmarshaller _instance = new GoogleOauth2ProviderConfigOutputUnmarshaller();        
+        private static IncludedOauth2ProviderConfigOutputUnmarshaller _instance = new IncludedOauth2ProviderConfigOutputUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GoogleOauth2ProviderConfigOutputUnmarshaller Instance
+        public static IncludedOauth2ProviderConfigOutputUnmarshaller Instance
         {
             get
             {

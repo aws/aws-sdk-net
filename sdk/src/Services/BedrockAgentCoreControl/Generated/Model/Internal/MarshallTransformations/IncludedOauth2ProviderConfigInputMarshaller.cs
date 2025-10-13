@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// MicrosoftOauth2ProviderConfigInput Marshaller
+    /// IncludedOauth2ProviderConfigInput Marshaller
     /// </summary>
-    public class MicrosoftOauth2ProviderConfigInputMarshaller : IRequestMarshaller<MicrosoftOauth2ProviderConfigInput, JsonMarshallerContext> 
+    public class IncludedOauth2ProviderConfigInputMarshaller : IRequestMarshaller<IncludedOauth2ProviderConfigInput, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,10 +44,16 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(MicrosoftOauth2ProviderConfigInput requestObject, JsonMarshallerContext context)
+        public void Marshall(IncludedOauth2ProviderConfigInput requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAuthorizationEndpoint())
+            {
+                context.Writer.WritePropertyName("authorizationEndpoint");
+                context.Writer.Write(requestObject.AuthorizationEndpoint);
+            }
+
             if(requestObject.IsSetClientId())
             {
                 context.Writer.WritePropertyName("clientId");
@@ -60,10 +66,16 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ClientSecret);
             }
 
-            if(requestObject.IsSetTenantId())
+            if(requestObject.IsSetIssuer())
             {
-                context.Writer.WritePropertyName("tenantId");
-                context.Writer.Write(requestObject.TenantId);
+                context.Writer.WritePropertyName("issuer");
+                context.Writer.Write(requestObject.Issuer);
+            }
+
+            if(requestObject.IsSetTokenEndpoint())
+            {
+                context.Writer.WritePropertyName("tokenEndpoint");
+                context.Writer.Write(requestObject.TokenEndpoint);
             }
 
         }
@@ -71,7 +83,7 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static MicrosoftOauth2ProviderConfigInputMarshaller Instance = new MicrosoftOauth2ProviderConfigInputMarshaller();
+        public readonly static IncludedOauth2ProviderConfigInputMarshaller Instance = new IncludedOauth2ProviderConfigInputMarshaller();
 
     }
 }

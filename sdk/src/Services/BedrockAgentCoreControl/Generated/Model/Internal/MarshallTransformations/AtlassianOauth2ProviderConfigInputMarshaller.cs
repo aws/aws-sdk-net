@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// MicrosoftOauth2ProviderConfigInput Marshaller
+    /// AtlassianOauth2ProviderConfigInput Marshaller
     /// </summary>
-    public class MicrosoftOauth2ProviderConfigInputMarshaller : IRequestMarshaller<MicrosoftOauth2ProviderConfigInput, JsonMarshallerContext> 
+    public class AtlassianOauth2ProviderConfigInputMarshaller : IRequestMarshaller<AtlassianOauth2ProviderConfigInput, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,7 +44,7 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(MicrosoftOauth2ProviderConfigInput requestObject, JsonMarshallerContext context)
+        public void Marshall(AtlassianOauth2ProviderConfigInput requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
@@ -60,18 +60,12 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ClientSecret);
             }
 
-            if(requestObject.IsSetTenantId())
-            {
-                context.Writer.WritePropertyName("tenantId");
-                context.Writer.Write(requestObject.TenantId);
-            }
-
         }
 
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static MicrosoftOauth2ProviderConfigInputMarshaller Instance = new MicrosoftOauth2ProviderConfigInputMarshaller();
+        public readonly static AtlassianOauth2ProviderConfigInputMarshaller Instance = new AtlassianOauth2ProviderConfigInputMarshaller();
 
     }
 }

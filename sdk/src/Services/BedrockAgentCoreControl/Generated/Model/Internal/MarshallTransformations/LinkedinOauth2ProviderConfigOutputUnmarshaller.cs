@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GoogleOauth2ProviderConfigOutput Object
+    /// Response Unmarshaller for LinkedinOauth2ProviderConfigOutput Object
     /// </summary>  
-    public class GoogleOauth2ProviderConfigOutputUnmarshaller : IUnmarshaller<GoogleOauth2ProviderConfigOutput, XmlUnmarshallerContext>, IUnmarshaller<GoogleOauth2ProviderConfigOutput, JsonUnmarshallerContext>
+    public class LinkedinOauth2ProviderConfigOutputUnmarshaller : IUnmarshaller<LinkedinOauth2ProviderConfigOutput, XmlUnmarshallerContext>, IUnmarshaller<LinkedinOauth2ProviderConfigOutput, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        GoogleOauth2ProviderConfigOutput IUnmarshaller<GoogleOauth2ProviderConfigOutput, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        LinkedinOauth2ProviderConfigOutput IUnmarshaller<LinkedinOauth2ProviderConfigOutput, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public GoogleOauth2ProviderConfigOutput Unmarshall(JsonUnmarshallerContext context)
+        public LinkedinOauth2ProviderConfigOutput Unmarshall(JsonUnmarshallerContext context)
         {
-            GoogleOauth2ProviderConfigOutput unmarshalledObject = new GoogleOauth2ProviderConfigOutput();
+            LinkedinOauth2ProviderConfigOutput unmarshalledObject = new LinkedinOauth2ProviderConfigOutput();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -83,12 +83,12 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         }
 
 
-        private static GoogleOauth2ProviderConfigOutputUnmarshaller _instance = new GoogleOauth2ProviderConfigOutputUnmarshaller();        
+        private static LinkedinOauth2ProviderConfigOutputUnmarshaller _instance = new LinkedinOauth2ProviderConfigOutputUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GoogleOauth2ProviderConfigOutputUnmarshaller Instance
+        public static LinkedinOauth2ProviderConfigOutputUnmarshaller Instance
         {
             get
             {

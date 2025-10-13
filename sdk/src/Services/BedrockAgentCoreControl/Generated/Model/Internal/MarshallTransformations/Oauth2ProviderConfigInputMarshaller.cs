@@ -48,6 +48,17 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAtlassianOauth2ProviderConfig())
+            {
+                context.Writer.WritePropertyName("atlassianOauth2ProviderConfig");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AtlassianOauth2ProviderConfigInputMarshaller.Instance;
+                marshaller.Marshall(requestObject.AtlassianOauth2ProviderConfig, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetCustomOauth2ProviderConfig())
             {
                 context.Writer.WritePropertyName("customOauth2ProviderConfig");
@@ -77,6 +88,28 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
 
                 var marshaller = GoogleOauth2ProviderConfigInputMarshaller.Instance;
                 marshaller.Marshall(requestObject.GoogleOauth2ProviderConfig, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetIncludedOauth2ProviderConfig())
+            {
+                context.Writer.WritePropertyName("includedOauth2ProviderConfig");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = IncludedOauth2ProviderConfigInputMarshaller.Instance;
+                marshaller.Marshall(requestObject.IncludedOauth2ProviderConfig, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetLinkedinOauth2ProviderConfig())
+            {
+                context.Writer.WritePropertyName("linkedinOauth2ProviderConfig");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = LinkedinOauth2ProviderConfigInputMarshaller.Instance;
+                marshaller.Marshall(requestObject.LinkedinOauth2ProviderConfig, context);
 
                 context.Writer.WriteObjectEnd();
             }

@@ -77,6 +77,17 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.TokenEndpoint);
             }
 
+            if(requestObject.IsSetTokenEndpointAuthMethods())
+            {
+                context.Writer.WritePropertyName("tokenEndpointAuthMethods");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectTokenEndpointAuthMethodsListValue in requestObject.TokenEndpointAuthMethods)
+                {
+                        context.Writer.Write(requestObjectTokenEndpointAuthMethodsListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
         }
 
         /// <summary>

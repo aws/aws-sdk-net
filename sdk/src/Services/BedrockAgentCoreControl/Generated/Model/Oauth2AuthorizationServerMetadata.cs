@@ -38,6 +38,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         private string _issuer;
         private List<string> _responseTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _tokenEndpoint;
+        private List<string> _tokenEndpointAuthMethods = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AuthorizationEndpoint. 
@@ -112,6 +113,26 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetTokenEndpoint()
         {
             return this._tokenEndpoint != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TokenEndpointAuthMethods. 
+        /// <para>
+        /// The authentication methods supported by the token endpoint. This specifies how clients
+        /// can authenticate when requesting tokens from the authorization server.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2)]
+        public List<string> TokenEndpointAuthMethods
+        {
+            get { return this._tokenEndpointAuthMethods; }
+            set { this._tokenEndpointAuthMethods = value; }
+        }
+
+        // Check to see if TokenEndpointAuthMethods property is set
+        internal bool IsSetTokenEndpointAuthMethods()
+        {
+            return this._tokenEndpointAuthMethods != null && (this._tokenEndpointAuthMethods.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

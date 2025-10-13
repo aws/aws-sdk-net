@@ -44,7 +44,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// The updated number of historical messages to include in processing context.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=3, Max=20)]
+        [AWSProperty(Min=0, Max=50)]
         public int HistoricalContextWindowSize
         {
             get { return this._historicalContextWindowSize.GetValueOrDefault(); }

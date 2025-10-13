@@ -90,6 +90,12 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                     unmarshalledObject.TokenEndpoint = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("tokenEndpointAuthMethods", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.TokenEndpointAuthMethods = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

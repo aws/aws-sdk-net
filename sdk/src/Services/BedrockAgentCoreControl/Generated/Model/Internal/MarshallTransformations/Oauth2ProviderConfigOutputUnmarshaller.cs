@@ -66,6 +66,12 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("atlassianOauth2ProviderConfig", targetDepth))
+                {
+                    var unmarshaller = AtlassianOauth2ProviderConfigOutputUnmarshaller.Instance;
+                    unmarshalledObject.AtlassianOauth2ProviderConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("customOauth2ProviderConfig", targetDepth))
                 {
                     var unmarshaller = CustomOauth2ProviderConfigOutputUnmarshaller.Instance;
@@ -82,6 +88,18 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = GoogleOauth2ProviderConfigOutputUnmarshaller.Instance;
                     unmarshalledObject.GoogleOauth2ProviderConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("includedOauth2ProviderConfig", targetDepth))
+                {
+                    var unmarshaller = IncludedOauth2ProviderConfigOutputUnmarshaller.Instance;
+                    unmarshalledObject.IncludedOauth2ProviderConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("linkedinOauth2ProviderConfig", targetDepth))
+                {
+                    var unmarshaller = LinkedinOauth2ProviderConfigOutputUnmarshaller.Instance;
+                    unmarshalledObject.LinkedinOauth2ProviderConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("microsoftOauth2ProviderConfig", targetDepth))

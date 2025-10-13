@@ -52,6 +52,18 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("agentRuntimeId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.AgentRuntimeId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("endpointName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.EndpointName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -52,6 +52,12 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("callbackUrl", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.CallbackUrl = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("clientSecretArn", targetDepth))
                 {
                     var unmarshaller = SecretUnmarshaller.Instance;
@@ -68,6 +74,12 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Name = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("oauth2ProviderConfigOutput", targetDepth))
+                {
+                    var unmarshaller = Oauth2ProviderConfigOutputUnmarshaller.Instance;
+                    response.Oauth2ProviderConfigOutput = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
