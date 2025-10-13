@@ -12,13 +12,21 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the s3-2006-03-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.S3.Model
 {
     /// <summary>
@@ -26,50 +34,51 @@ namespace Amazon.S3.Model
     /// the metrics configuration ID) from an Amazon S3 bucket. If you're updating an existing
     /// metrics configuration, note that this is a full replacement of the existing metrics
     /// configuration. If you don't include the elements you want to keep, they are erased.
-    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTMetricConfiguration.html">
-    /// PutBucketMetricsConfiguration</a>.
+    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTMetricConfiguration.html">PutBucketMetricsConfiguration</a>.
     /// </summary>
-    public class MetricsConfiguration
+    public partial class MetricsConfiguration
     {
-        private MetricsFilter metricsFilter;
-        private string metricsId;
+        private MetricsFilter _metricsFilter;
+        private string _metricsId;
 
         /// <summary>
         /// Gets and sets the property MetricsFilter. 
         /// <para>
         /// Specifies a metrics configuration filter. The metrics configuration will only include
-        /// objects that meet the filter's criteria. A filter must be a prefix, a tag, an access
-        /// point arn, or a conjunction (MetricsAndOperator).
+        /// objects that meet the filter's criteria. A filter must be a prefix, an object tag,
+        /// an access point ARN, or a conjunction (MetricsAndOperator).
         /// </para>
         /// </summary>
         public MetricsFilter MetricsFilter
         {
-            get { return this.metricsFilter; }
-            set { this.metricsFilter = value; }
+            get { return this._metricsFilter; }
+            set { this._metricsFilter = value; }
         }
 
         // Check to see if MetricsFilter property is set
         internal bool IsSetMetricsFilter()
         {
-            return this.metricsFilter != null;
+            return this._metricsFilter != null;
         }
 
         /// <summary>
+        /// Gets and sets the property MetricsId. 
         /// <para>
-        /// The ID used to identify the metrics configuration. 
-        /// The ID has a 64 character limit and can only contain letters, numbers, periods, dashes, and underscores.
+        /// The ID used to identify the metrics configuration. The ID has a 64 character limit
+        /// and can only contain letters, numbers, periods, dashes, and underscores.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string MetricsId
         {
-            get { return this.metricsId; }
-            set { this.metricsId = value; }
+            get { return this._metricsId; }
+            set { this._metricsId = value; }
         }
 
         // Check to see if MetricsId property is set
         internal bool IsSetMetricsId()
         {
-            return this.metricsId != null;
+            return this._metricsId != null;
         }
 
     }
