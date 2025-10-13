@@ -82,15 +82,7 @@ namespace Amazon.S3
 
         Task ICoreAmazonS3.UploadObjectFromStreamAsync(string bucketName, string objectKey, Stream stream, IDictionary<string, object> additionalProperties, CancellationToken cancellationToken)
         {
-            var transfer = new Amazon.S3.Transfer.TransferUtility(this);
-            var request = new Amazon.S3.Transfer.TransferUtilityUploadRequest
-            {
-                BucketName = bucketName,
-                Key = objectKey,
-                InputStream = stream
-            };
-            InternalSDKUtils.ApplyValuesV2(request, additionalProperties);
-            return transfer.UploadAsync(request, cancellationToken);
+            return UploadObjectFromStreamInternalAsync(bucketName, objectKey, stream, additionalProperties, cancellationToken);
         }
 
         async Task<Stream> ICoreAmazonS3.GetObjectStreamAsync(string bucketName, string objectKey, IDictionary<string, object> additionalProperties, CancellationToken cancellationToken)
@@ -107,16 +99,7 @@ namespace Amazon.S3
 
         Task ICoreAmazonS3.UploadObjectFromFilePathAsync(string bucketName, string objectKey, string filepath, IDictionary<string, object> additionalProperties, CancellationToken cancellationToken)
         {
-            var transfer = new Amazon.S3.Transfer.TransferUtility(this);
-            var request = new Amazon.S3.Transfer.TransferUtilityUploadRequest
-            {
-                BucketName = bucketName,
-                Key = objectKey,
-                FilePath = filepath
-            };
-            InternalSDKUtils.ApplyValuesV2(request, additionalProperties);
-
-            return transfer.UploadAsync(request, cancellationToken);
+            return UploadObjectFromFilePathInternalAsync(bucketName, objectKey, filepath, additionalProperties, cancellationToken);
         }
 
         Task ICoreAmazonS3.DownloadToFilePathAsync(string bucketName, string objectKey, string filepath, IDictionary<string, object> additionalProperties, CancellationToken cancellationToken)
@@ -156,6 +139,35 @@ namespace Amazon.S3
             }
         }
         #endregion
+
+        #region Internal Helper Methods
+
+        private async Task UploadObjectFromStreamInternalAsync(string bucketName, string objectKey, Stream stream, IDictionary<string, object> additionalProperties, CancellationToken cancellationToken)
+        {
+            var transfer = new Amazon.S3.Transfer.TransferUtility(this);
+            var request = new Amazon.S3.Transfer.TransferUtilityUploadRequest
+            {
+                BucketName = bucketName,
+                Key = objectKey,
+                InputStream = stream
+            };
+            InternalSDKUtils.ApplyValuesV2(request, additionalProperties);
+            await transfer.UploadWithResponseAsync(request, cancellationToken).ConfigureAwait(false);
+        }
+
+        private async Task UploadObjectFromFilePathInternalAsync(string bucketName, string objectKey, string filepath, IDictionary<string, object> additionalProperties, CancellationToken cancellationToken)
+        {
+            var transfer = new Amazon.S3.Transfer.TransferUtility(this);
+            var request = new Amazon.S3.Transfer.TransferUtilityUploadRequest
+            {
+                BucketName = bucketName,
+                Key = objectKey,
+                FilePath = filepath
+            };
+            InternalSDKUtils.ApplyValuesV2(request, additionalProperties);
+            await transfer.UploadWithResponseAsync(request, cancellationToken).ConfigureAwait(false);
+        }
+
+        #endregion
     }
 }
-

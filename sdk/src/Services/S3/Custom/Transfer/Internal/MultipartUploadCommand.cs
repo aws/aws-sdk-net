@@ -37,7 +37,7 @@ namespace Amazon.S3.Transfer.Internal
     /// <summary>
     /// The command to manage an upload using the S3 multipart API.
     /// </summary>
-    internal partial class MultipartUploadCommand : BaseCommand
+    internal partial class MultipartUploadCommand : BaseCommand<TransferUtilityUploadResponse>
     {
         IAmazonS3 _s3Client;
         long _partSize;
