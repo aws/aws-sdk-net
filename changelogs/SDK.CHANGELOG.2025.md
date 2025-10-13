@@ -1,3 +1,13 @@
+### 4.0.111.0 (2025-10-13 18:18 UTC)
+* BedrockAgentCore (4.0.5.0)
+	* Updated InvokeAgentRuntime API to accept account id optionally and added CompleteResourceTokenAuth API.
+* BedrockAgentCoreControl (4.0.7.0)
+	* Updated http status code in control plane apis of agentcore runtime, tools and identity. Additional included provider types for AgentCore Identity
+* EC2 (4.0.41.0)
+	* Release Amazon EC2 c8i, c8i-flex, m8a, and r8gb
+* ObservabilityAdmin (4.0.4.0)
+	* CloudWatch Observability Admin adds the ability to enable Resource tags for telemetry in a customer account. The release introduces new APIs to enable, disable and describe the status of Resource tags for telemetry feature. This new capability simplifies monitoring AWS resources using tags.
+
 ### 4.0.110.0 (2025-10-10 19:05 UTC)
 * BedrockAgentCore (4.0.4.0)
 	* Bedrock AgentCore release for Runtime, and Memory.
