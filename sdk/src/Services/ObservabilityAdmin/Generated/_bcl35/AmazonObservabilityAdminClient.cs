@@ -815,6 +815,78 @@ namespace Amazon.ObservabilityAdmin
 
         #endregion
         
+        #region  GetTelemetryEnrichmentStatus
+
+        /// <summary>
+        /// Returns the current status of the resource tags for telemetry feature, which enhances
+        /// telemetry data with additional resource metadata from Amazon Web Services Resource
+        /// Explorer.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTelemetryEnrichmentStatus service method.</param>
+        /// 
+        /// <returns>The response from the GetTelemetryEnrichmentStatus service method, as returned by ObservabilityAdmin.</returns>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.AccessDeniedException">
+        /// Indicates you don't have permissions to perform the requested operation. The user
+        /// or role that is making the request must have at least one IAM permissions policy attached
+        /// that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// management for Amazon Web Services resources</a> in the IAM user guide.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.InternalServerException">
+        /// Indicates the request has failed to process because of an unknown server error, exception,
+        /// or failure.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ResourceNotFoundException">
+        /// The specified resource (such as a telemetry rule) could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/GetTelemetryEnrichmentStatus">REST API Reference for GetTelemetryEnrichmentStatus Operation</seealso>
+        public virtual GetTelemetryEnrichmentStatusResponse GetTelemetryEnrichmentStatus(GetTelemetryEnrichmentStatusRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetTelemetryEnrichmentStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTelemetryEnrichmentStatusResponseUnmarshaller.Instance;
+
+            return Invoke<GetTelemetryEnrichmentStatusResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetTelemetryEnrichmentStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetTelemetryEnrichmentStatus operation on AmazonObservabilityAdminClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetTelemetryEnrichmentStatus
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/GetTelemetryEnrichmentStatus">REST API Reference for GetTelemetryEnrichmentStatus Operation</seealso>
+        public virtual IAsyncResult BeginGetTelemetryEnrichmentStatus(GetTelemetryEnrichmentStatusRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetTelemetryEnrichmentStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTelemetryEnrichmentStatusResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetTelemetryEnrichmentStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetTelemetryEnrichmentStatus.</param>
+        /// 
+        /// <returns>Returns a  GetTelemetryEnrichmentStatusResult from ObservabilityAdmin.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/GetTelemetryEnrichmentStatus">REST API Reference for GetTelemetryEnrichmentStatus Operation</seealso>
+        public virtual GetTelemetryEnrichmentStatusResponse EndGetTelemetryEnrichmentStatus(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetTelemetryEnrichmentStatusResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetTelemetryEvaluationStatus
 
         /// <summary>
@@ -1533,6 +1605,79 @@ namespace Amazon.ObservabilityAdmin
 
         #endregion
         
+        #region  StartTelemetryEnrichment
+
+        /// <summary>
+        /// Enables the resource tags for telemetry feature for your account, which enhances
+        /// telemetry data with additional resource metadata from Amazon Web Services Resource
+        /// Explorer to provide richer context for monitoring and observability.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartTelemetryEnrichment service method.</param>
+        /// 
+        /// <returns>The response from the StartTelemetryEnrichment service method, as returned by ObservabilityAdmin.</returns>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.AccessDeniedException">
+        /// Indicates you don't have permissions to perform the requested operation. The user
+        /// or role that is making the request must have at least one IAM permissions policy attached
+        /// that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// management for Amazon Web Services resources</a> in the IAM user guide.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ConflictException">
+        /// The requested operation conflicts with the current state of the specified resource
+        /// or with another request.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.InternalServerException">
+        /// Indicates the request has failed to process because of an unknown server error, exception,
+        /// or failure.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/StartTelemetryEnrichment">REST API Reference for StartTelemetryEnrichment Operation</seealso>
+        public virtual StartTelemetryEnrichmentResponse StartTelemetryEnrichment(StartTelemetryEnrichmentRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartTelemetryEnrichmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartTelemetryEnrichmentResponseUnmarshaller.Instance;
+
+            return Invoke<StartTelemetryEnrichmentResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartTelemetryEnrichment operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartTelemetryEnrichment operation on AmazonObservabilityAdminClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartTelemetryEnrichment
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/StartTelemetryEnrichment">REST API Reference for StartTelemetryEnrichment Operation</seealso>
+        public virtual IAsyncResult BeginStartTelemetryEnrichment(StartTelemetryEnrichmentRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartTelemetryEnrichmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartTelemetryEnrichmentResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartTelemetryEnrichment operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartTelemetryEnrichment.</param>
+        /// 
+        /// <returns>Returns a  StartTelemetryEnrichmentResult from ObservabilityAdmin.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/StartTelemetryEnrichment">REST API Reference for StartTelemetryEnrichment Operation</seealso>
+        public virtual StartTelemetryEnrichmentResponse EndStartTelemetryEnrichment(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartTelemetryEnrichmentResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  StartTelemetryEvaluation
 
         /// <summary>
@@ -1671,6 +1816,78 @@ namespace Amazon.ObservabilityAdmin
         public virtual StartTelemetryEvaluationForOrganizationResponse EndStartTelemetryEvaluationForOrganization(IAsyncResult asyncResult)
         {
             return EndInvoke<StartTelemetryEvaluationForOrganizationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StopTelemetryEnrichment
+
+        /// <summary>
+        /// Disables the resource tags for telemetry feature for your account, stopping the enhancement
+        /// of telemetry data with additional resource metadata.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopTelemetryEnrichment service method.</param>
+        /// 
+        /// <returns>The response from the StopTelemetryEnrichment service method, as returned by ObservabilityAdmin.</returns>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.AccessDeniedException">
+        /// Indicates you don't have permissions to perform the requested operation. The user
+        /// or role that is making the request must have at least one IAM permissions policy attached
+        /// that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// management for Amazon Web Services resources</a> in the IAM user guide.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ConflictException">
+        /// The requested operation conflicts with the current state of the specified resource
+        /// or with another request.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.InternalServerException">
+        /// Indicates the request has failed to process because of an unknown server error, exception,
+        /// or failure.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/StopTelemetryEnrichment">REST API Reference for StopTelemetryEnrichment Operation</seealso>
+        public virtual StopTelemetryEnrichmentResponse StopTelemetryEnrichment(StopTelemetryEnrichmentRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StopTelemetryEnrichmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopTelemetryEnrichmentResponseUnmarshaller.Instance;
+
+            return Invoke<StopTelemetryEnrichmentResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopTelemetryEnrichment operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopTelemetryEnrichment operation on AmazonObservabilityAdminClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStopTelemetryEnrichment
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/StopTelemetryEnrichment">REST API Reference for StopTelemetryEnrichment Operation</seealso>
+        public virtual IAsyncResult BeginStopTelemetryEnrichment(StopTelemetryEnrichmentRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StopTelemetryEnrichmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopTelemetryEnrichmentResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StopTelemetryEnrichment operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStopTelemetryEnrichment.</param>
+        /// 
+        /// <returns>Returns a  StopTelemetryEnrichmentResult from ObservabilityAdmin.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/StopTelemetryEnrichment">REST API Reference for StopTelemetryEnrichment Operation</seealso>
+        public virtual StopTelemetryEnrichmentResponse EndStopTelemetryEnrichment(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StopTelemetryEnrichmentResponse>(asyncResult);
         }
 
         #endregion

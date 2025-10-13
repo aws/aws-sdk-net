@@ -73,6 +73,12 @@
     <pattern>[0-9A-Za-z-_.#/]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ObservabilityAdmin.Model.GetTelemetryEnrichmentStatusResponse.AwsResourceExplorerManagedViewArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:aws([a-z0-9\-]+)?:resource-explorer-2:([a-z0-9\-]+)?:([0-9]{12})?:managed-view/(.+)</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ObservabilityAdmin.Model.GetTelemetryRuleRequest.RuleIdentifier</property>
     <min>1</min>
     <max>1011</max>
@@ -151,6 +157,12 @@
     <property>Amazon.ObservabilityAdmin.Model.ListTelemetryRulesForOrganizationRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ObservabilityAdmin.Model.StartTelemetryEnrichmentResponse.AwsResourceExplorerManagedViewArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:aws([a-z0-9\-]+)?:resource-explorer-2:([a-z0-9\-]+)?:([0-9]{12})?:managed-view/(.+)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ObservabilityAdmin.Model.TagResourceRequest.ResourceARN</property>
