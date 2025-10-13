@@ -35,9 +35,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetResourceOauth2Token operation
+    /// Response Unmarshaller for CompleteResourceTokenAuth operation
     /// </summary>  
-    public class GetResourceOauth2TokenResponseUnmarshaller : JsonResponseUnmarshaller
+    public class CompleteResourceTokenAuthResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,37 +46,8 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            GetResourceOauth2TokenResponse response = new GetResourceOauth2TokenResponse();
+            CompleteResourceTokenAuthResponse response = new CompleteResourceTokenAuthResponse();
 
-            context.Read();
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
-            {
-                if (context.TestExpression("accessToken", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.AccessToken = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("authorizationUrl", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.AuthorizationUrl = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("sessionStatus", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.SessionStatus = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("sessionUri", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.SessionUri = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-            }
 
             return response;
         }
@@ -127,9 +98,9 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
             return new AmazonBedrockAgentCoreException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static GetResourceOauth2TokenResponseUnmarshaller _instance = new GetResourceOauth2TokenResponseUnmarshaller();        
+        private static CompleteResourceTokenAuthResponseUnmarshaller _instance = new CompleteResourceTokenAuthResponseUnmarshaller();        
 
-        internal static GetResourceOauth2TokenResponseUnmarshaller GetInstance()
+        internal static CompleteResourceTokenAuthResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -137,7 +108,7 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetResourceOauth2TokenResponseUnmarshaller Instance
+        public static CompleteResourceTokenAuthResponseUnmarshaller Instance
         {
             get
             {

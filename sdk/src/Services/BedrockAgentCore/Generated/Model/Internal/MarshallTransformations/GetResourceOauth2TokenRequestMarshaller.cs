@@ -81,6 +81,12 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetCustomState())
+                {
+                    context.Writer.WritePropertyName("customState");
+                    context.Writer.Write(publicRequest.CustomState);
+                }
+
                 if(publicRequest.IsSetForceAuthentication())
                 {
                     context.Writer.WritePropertyName("forceAuthentication");
@@ -114,6 +120,12 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
                             context.Writer.Write(publicRequestScopesListValue);
                     }
                     context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetSessionUri())
+                {
+                    context.Writer.WritePropertyName("sessionUri");
+                    context.Writer.Write(publicRequest.SessionUri);
                 }
 
                 if(publicRequest.IsSetWorkloadIdentityToken())

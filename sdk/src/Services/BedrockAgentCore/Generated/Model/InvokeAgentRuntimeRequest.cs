@@ -70,6 +70,7 @@ namespace Amazon.BedrockAgentCore.Model
     public partial class InvokeAgentRuntimeRequest : AmazonBedrockAgentCoreRequest
     {
         private string _accept;
+        private string _accountId;
         private string _agentRuntimeArn;
         private string _baggage;
         private string _contentType;
@@ -102,6 +103,24 @@ namespace Amazon.BedrockAgentCore.Model
         internal bool IsSetAccept()
         {
             return !string.IsNullOrEmpty(this._accept);
+        }
+
+        /// <summary>
+        /// Gets and sets the property AccountId. 
+        /// <para>
+        /// The identifier of the Amazon Web Services account for the agent runtime resource.
+        /// </para>
+        /// </summary>
+        public string AccountId
+        {
+            get { return this._accountId; }
+            set { this._accountId = value; }
+        }
+
+        // Check to see if AccountId property is set
+        internal bool IsSetAccountId()
+        {
+            return this._accountId != null;
         }
 
         /// <summary>
