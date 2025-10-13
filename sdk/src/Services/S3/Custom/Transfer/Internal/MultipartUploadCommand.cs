@@ -84,7 +84,7 @@ namespace Amazon.S3.Transfer.Internal
             
             long targetPartSize = fileTransporterRequest.IsSetPartSize() 
                 ? fileTransporterRequest.PartSize 
-                : 8 * 1024 * 1024; // 8MB default (SEP compliant)
+                : S3Constants.DefaultPartSize;
 
             this._partSize = calculatePartSize(this._contentLength, targetPartSize);
 
@@ -101,7 +101,6 @@ namespace Amazon.S3.Transfer.Internal
 
         private static long calculatePartSize(long contentLength, long targetPartSize)
         {
-            // SEP Formula: Math.Max(targetPartSize, contentLength / 10_000)
             return Math.Max(targetPartSize, contentLength / S3Constants.MaxNumberOfParts);
         }
 
