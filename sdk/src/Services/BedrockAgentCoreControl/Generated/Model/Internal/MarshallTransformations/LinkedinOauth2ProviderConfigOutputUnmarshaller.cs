@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for SalesforceOauth2ProviderConfigOutput Object
+    /// Response Unmarshaller for LinkedinOauth2ProviderConfigOutput Object
     /// </summary>  
-    public class SalesforceOauth2ProviderConfigOutputUnmarshaller : IJsonUnmarshaller<SalesforceOauth2ProviderConfigOutput, JsonUnmarshallerContext>
+    public class LinkedinOauth2ProviderConfigOutputUnmarshaller : IJsonUnmarshaller<LinkedinOauth2ProviderConfigOutput, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public SalesforceOauth2ProviderConfigOutput Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public LinkedinOauth2ProviderConfigOutput Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            SalesforceOauth2ProviderConfigOutput unmarshalledObject = new SalesforceOauth2ProviderConfigOutput();
+            LinkedinOauth2ProviderConfigOutput unmarshalledObject = new LinkedinOauth2ProviderConfigOutput();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -73,12 +73,12 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         }
 
 
-        private static SalesforceOauth2ProviderConfigOutputUnmarshaller _instance = new SalesforceOauth2ProviderConfigOutputUnmarshaller();        
+        private static LinkedinOauth2ProviderConfigOutputUnmarshaller _instance = new LinkedinOauth2ProviderConfigOutputUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SalesforceOauth2ProviderConfigOutputUnmarshaller Instance
+        public static LinkedinOauth2ProviderConfigOutputUnmarshaller Instance
         {
             get
             {

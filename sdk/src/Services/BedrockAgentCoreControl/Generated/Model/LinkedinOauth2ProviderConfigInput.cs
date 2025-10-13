@@ -30,20 +30,23 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentCoreControl.Model
 {
     /// <summary>
-    /// Output configuration for a Salesforce OAuth2 provider.
+    /// Configuration settings for connecting to LinkedIn services using OAuth2 authentication.
+    /// This includes the client credentials required to authenticate with LinkedIn's OAuth2
+    /// authorization server.
     /// </summary>
-    public partial class SalesforceOauth2ProviderConfigOutput
+    public partial class LinkedinOauth2ProviderConfigInput
     {
         private string _clientId;
-        private Oauth2Discovery _oauthDiscovery;
+        private string _clientSecret;
 
         /// <summary>
         /// Gets and sets the property ClientId. 
         /// <para>
-        /// The client ID for the Salesforce OAuth2 provider.
+        /// The client ID for the LinkedIn OAuth2 provider. This identifier is assigned by LinkedIn
+        /// when you register your application.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=256)]
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string ClientId
         {
             get { return this._clientId; }
@@ -57,22 +60,23 @@ namespace Amazon.BedrockAgentCoreControl.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OauthDiscovery. 
+        /// Gets and sets the property ClientSecret. 
         /// <para>
-        /// The OAuth2 discovery information for the Salesforce provider.
+        /// The client secret for the LinkedIn OAuth2 provider. This secret is assigned by LinkedIn
+        /// and used along with the client ID to authenticate your application.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public Oauth2Discovery OauthDiscovery
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=2048)]
+        public string ClientSecret
         {
-            get { return this._oauthDiscovery; }
-            set { this._oauthDiscovery = value; }
+            get { return this._clientSecret; }
+            set { this._clientSecret = value; }
         }
 
-        // Check to see if OauthDiscovery property is set
-        internal bool IsSetOauthDiscovery()
+        // Check to see if ClientSecret property is set
+        internal bool IsSetClientSecret()
         {
-            return this._oauthDiscovery != null;
+            return this._clientSecret != null;
         }
 
     }

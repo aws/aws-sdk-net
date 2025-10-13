@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// MicrosoftOauth2ProviderConfigInput Marshaller
+    /// LinkedinOauth2ProviderConfigInput Marshaller
     /// </summary>
-    public class MicrosoftOauth2ProviderConfigInputMarshaller : IRequestMarshaller<MicrosoftOauth2ProviderConfigInput, JsonMarshallerContext> 
+    public class LinkedinOauth2ProviderConfigInputMarshaller : IRequestMarshaller<LinkedinOauth2ProviderConfigInput, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,7 +42,7 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(MicrosoftOauth2ProviderConfigInput requestObject, JsonMarshallerContext context)
+        public void Marshall(LinkedinOauth2ProviderConfigInput requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
@@ -58,18 +58,12 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.ClientSecret);
             }
 
-            if(requestObject.IsSetTenantId())
-            {
-                context.Writer.WritePropertyName("tenantId");
-                context.Writer.WriteStringValue(requestObject.TenantId);
-            }
-
         }
 
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static MicrosoftOauth2ProviderConfigInputMarshaller Instance = new MicrosoftOauth2ProviderConfigInputMarshaller();
+        public readonly static LinkedinOauth2ProviderConfigInputMarshaller Instance = new LinkedinOauth2ProviderConfigInputMarshaller();
 
     }
 }

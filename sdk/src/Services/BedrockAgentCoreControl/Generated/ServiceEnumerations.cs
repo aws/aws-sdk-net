@@ -553,9 +553,37 @@ namespace Amazon.BedrockAgentCoreControl
     {
 
         /// <summary>
+        /// Constant AtlassianOauth2 for CredentialProviderVendorType
+        /// </summary>
+        public static readonly CredentialProviderVendorType AtlassianOauth2 = new CredentialProviderVendorType("AtlassianOauth2");
+        /// <summary>
+        /// Constant Auth0Oauth2 for CredentialProviderVendorType
+        /// </summary>
+        public static readonly CredentialProviderVendorType Auth0Oauth2 = new CredentialProviderVendorType("Auth0Oauth2");
+        /// <summary>
+        /// Constant CognitoOauth2 for CredentialProviderVendorType
+        /// </summary>
+        public static readonly CredentialProviderVendorType CognitoOauth2 = new CredentialProviderVendorType("CognitoOauth2");
+        /// <summary>
         /// Constant CustomOauth2 for CredentialProviderVendorType
         /// </summary>
         public static readonly CredentialProviderVendorType CustomOauth2 = new CredentialProviderVendorType("CustomOauth2");
+        /// <summary>
+        /// Constant CyberArkOauth2 for CredentialProviderVendorType
+        /// </summary>
+        public static readonly CredentialProviderVendorType CyberArkOauth2 = new CredentialProviderVendorType("CyberArkOauth2");
+        /// <summary>
+        /// Constant DropboxOauth2 for CredentialProviderVendorType
+        /// </summary>
+        public static readonly CredentialProviderVendorType DropboxOauth2 = new CredentialProviderVendorType("DropboxOauth2");
+        /// <summary>
+        /// Constant FacebookOauth2 for CredentialProviderVendorType
+        /// </summary>
+        public static readonly CredentialProviderVendorType FacebookOauth2 = new CredentialProviderVendorType("FacebookOauth2");
+        /// <summary>
+        /// Constant FusionAuthOauth2 for CredentialProviderVendorType
+        /// </summary>
+        public static readonly CredentialProviderVendorType FusionAuthOauth2 = new CredentialProviderVendorType("FusionAuthOauth2");
         /// <summary>
         /// Constant GithubOauth2 for CredentialProviderVendorType
         /// </summary>
@@ -565,9 +593,37 @@ namespace Amazon.BedrockAgentCoreControl
         /// </summary>
         public static readonly CredentialProviderVendorType GoogleOauth2 = new CredentialProviderVendorType("GoogleOauth2");
         /// <summary>
+        /// Constant HubspotOauth2 for CredentialProviderVendorType
+        /// </summary>
+        public static readonly CredentialProviderVendorType HubspotOauth2 = new CredentialProviderVendorType("HubspotOauth2");
+        /// <summary>
+        /// Constant LinkedinOauth2 for CredentialProviderVendorType
+        /// </summary>
+        public static readonly CredentialProviderVendorType LinkedinOauth2 = new CredentialProviderVendorType("LinkedinOauth2");
+        /// <summary>
         /// Constant MicrosoftOauth2 for CredentialProviderVendorType
         /// </summary>
         public static readonly CredentialProviderVendorType MicrosoftOauth2 = new CredentialProviderVendorType("MicrosoftOauth2");
+        /// <summary>
+        /// Constant NotionOauth2 for CredentialProviderVendorType
+        /// </summary>
+        public static readonly CredentialProviderVendorType NotionOauth2 = new CredentialProviderVendorType("NotionOauth2");
+        /// <summary>
+        /// Constant OktaOauth2 for CredentialProviderVendorType
+        /// </summary>
+        public static readonly CredentialProviderVendorType OktaOauth2 = new CredentialProviderVendorType("OktaOauth2");
+        /// <summary>
+        /// Constant OneLoginOauth2 for CredentialProviderVendorType
+        /// </summary>
+        public static readonly CredentialProviderVendorType OneLoginOauth2 = new CredentialProviderVendorType("OneLoginOauth2");
+        /// <summary>
+        /// Constant PingOneOauth2 for CredentialProviderVendorType
+        /// </summary>
+        public static readonly CredentialProviderVendorType PingOneOauth2 = new CredentialProviderVendorType("PingOneOauth2");
+        /// <summary>
+        /// Constant RedditOauth2 for CredentialProviderVendorType
+        /// </summary>
+        public static readonly CredentialProviderVendorType RedditOauth2 = new CredentialProviderVendorType("RedditOauth2");
         /// <summary>
         /// Constant SalesforceOauth2 for CredentialProviderVendorType
         /// </summary>
@@ -576,6 +632,26 @@ namespace Amazon.BedrockAgentCoreControl
         /// Constant SlackOauth2 for CredentialProviderVendorType
         /// </summary>
         public static readonly CredentialProviderVendorType SlackOauth2 = new CredentialProviderVendorType("SlackOauth2");
+        /// <summary>
+        /// Constant SpotifyOauth2 for CredentialProviderVendorType
+        /// </summary>
+        public static readonly CredentialProviderVendorType SpotifyOauth2 = new CredentialProviderVendorType("SpotifyOauth2");
+        /// <summary>
+        /// Constant TwitchOauth2 for CredentialProviderVendorType
+        /// </summary>
+        public static readonly CredentialProviderVendorType TwitchOauth2 = new CredentialProviderVendorType("TwitchOauth2");
+        /// <summary>
+        /// Constant XOauth2 for CredentialProviderVendorType
+        /// </summary>
+        public static readonly CredentialProviderVendorType XOauth2 = new CredentialProviderVendorType("XOauth2");
+        /// <summary>
+        /// Constant YandexOauth2 for CredentialProviderVendorType
+        /// </summary>
+        public static readonly CredentialProviderVendorType YandexOauth2 = new CredentialProviderVendorType("YandexOauth2");
+        /// <summary>
+        /// Constant ZoomOauth2 for CredentialProviderVendorType
+        /// </summary>
+        public static readonly CredentialProviderVendorType ZoomOauth2 = new CredentialProviderVendorType("ZoomOauth2");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

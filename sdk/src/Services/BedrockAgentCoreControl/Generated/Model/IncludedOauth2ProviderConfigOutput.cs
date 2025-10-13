@@ -30,9 +30,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentCoreControl.Model
 {
     /// <summary>
-    /// Output configuration for a Salesforce OAuth2 provider.
+    /// The configuration details returned for a supported OAuth2 provider, including client
+    /// credentials and OAuth2 discovery information.
     /// </summary>
-    public partial class SalesforceOauth2ProviderConfigOutput
+    public partial class IncludedOauth2ProviderConfigOutput
     {
         private string _clientId;
         private Oauth2Discovery _oauthDiscovery;
@@ -40,7 +41,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property ClientId. 
         /// <para>
-        /// The client ID for the Salesforce OAuth2 provider.
+        /// The client ID for the supported OAuth2 provider.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -57,10 +58,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OauthDiscovery. 
-        /// <para>
-        /// The OAuth2 discovery information for the Salesforce provider.
-        /// </para>
+        /// Gets and sets the property OauthDiscovery.
         /// </summary>
         [AWSProperty(Required=true)]
         public Oauth2Discovery OauthDiscovery
