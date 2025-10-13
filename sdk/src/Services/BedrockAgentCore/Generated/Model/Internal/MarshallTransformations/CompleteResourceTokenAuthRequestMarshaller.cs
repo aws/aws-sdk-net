@@ -37,9 +37,9 @@ using ThirdParty.RuntimeBackports;
 namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// GetResourceOauth2Token Request Marshaller
+    /// CompleteResourceTokenAuth Request Marshaller
     /// </summary>       
-    public class GetResourceOauth2TokenRequestMarshaller : IMarshaller<IRequest, GetResourceOauth2TokenRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class CompleteResourceTokenAuthRequestMarshaller : IMarshaller<IRequest, CompleteResourceTokenAuthRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -48,7 +48,7 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((GetResourceOauth2TokenRequest)input);
+            return this.Marshall((CompleteResourceTokenAuthRequest)input);
         }
 
         /// <summary>
@@ -56,14 +56,14 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(GetResourceOauth2TokenRequest publicRequest)
+        public IRequest Marshall(CompleteResourceTokenAuthRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.BedrockAgentCore");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2024-02-28";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/identities/oauth2/token";
+            request.ResourcePath = "/identities/CompleteResourceTokenAuth";
 #if !NETFRAMEWORK
             using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
             using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
@@ -73,71 +73,21 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
-            if(publicRequest.IsSetCustomParameters())
-            {
-                context.Writer.WritePropertyName("customParameters");
-                context.Writer.WriteStartObject();
-                foreach (var publicRequestCustomParametersKvp in publicRequest.CustomParameters)
-                {
-                    context.Writer.WritePropertyName(publicRequestCustomParametersKvp.Key);
-                    var publicRequestCustomParametersValue = publicRequestCustomParametersKvp.Value;
-
-                        context.Writer.WriteStringValue(publicRequestCustomParametersValue);
-                }
-                context.Writer.WriteEndObject();
-            }
-
-            if(publicRequest.IsSetCustomState())
-            {
-                context.Writer.WritePropertyName("customState");
-                context.Writer.WriteStringValue(publicRequest.CustomState);
-            }
-
-            if(publicRequest.IsSetForceAuthentication())
-            {
-                context.Writer.WritePropertyName("forceAuthentication");
-                context.Writer.WriteBooleanValue(publicRequest.ForceAuthentication.Value);
-            }
-
-            if(publicRequest.IsSetOauth2Flow())
-            {
-                context.Writer.WritePropertyName("oauth2Flow");
-                context.Writer.WriteStringValue(publicRequest.Oauth2Flow);
-            }
-
-            if(publicRequest.IsSetResourceCredentialProviderName())
-            {
-                context.Writer.WritePropertyName("resourceCredentialProviderName");
-                context.Writer.WriteStringValue(publicRequest.ResourceCredentialProviderName);
-            }
-
-            if(publicRequest.IsSetResourceOauth2ReturnUrl())
-            {
-                context.Writer.WritePropertyName("resourceOauth2ReturnUrl");
-                context.Writer.WriteStringValue(publicRequest.ResourceOauth2ReturnUrl);
-            }
-
-            if(publicRequest.IsSetScopes())
-            {
-                context.Writer.WritePropertyName("scopes");
-                context.Writer.WriteStartArray();
-                foreach(var publicRequestScopesListValue in publicRequest.Scopes)
-                {
-                        context.Writer.WriteStringValue(publicRequestScopesListValue);
-                }
-                context.Writer.WriteEndArray();
-            }
-
             if(publicRequest.IsSetSessionUri())
             {
                 context.Writer.WritePropertyName("sessionUri");
                 context.Writer.WriteStringValue(publicRequest.SessionUri);
             }
 
-            if(publicRequest.IsSetWorkloadIdentityToken())
+            if(publicRequest.IsSetUserIdentifier())
             {
-                context.Writer.WritePropertyName("workloadIdentityToken");
-                context.Writer.WriteStringValue(publicRequest.WorkloadIdentityToken);
+                context.Writer.WritePropertyName("userIdentifier");
+                context.Writer.WriteStartObject();
+
+                var marshaller = UserIdentifierMarshaller.Instance;
+                marshaller.Marshall(publicRequest.UserIdentifier, context);
+
+                context.Writer.WriteEndObject();
             }
 
             writer.WriteEndObject();
@@ -153,9 +103,9 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static GetResourceOauth2TokenRequestMarshaller _instance = new GetResourceOauth2TokenRequestMarshaller();        
+        private static CompleteResourceTokenAuthRequestMarshaller _instance = new CompleteResourceTokenAuthRequestMarshaller();        
 
-        internal static GetResourceOauth2TokenRequestMarshaller GetInstance()
+        internal static CompleteResourceTokenAuthRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -163,7 +113,7 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetResourceOauth2TokenRequestMarshaller Instance
+        public static CompleteResourceTokenAuthRequestMarshaller Instance
         {
             get
             {

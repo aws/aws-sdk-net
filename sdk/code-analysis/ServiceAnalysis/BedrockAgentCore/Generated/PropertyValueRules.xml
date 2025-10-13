@@ -16,6 +16,12 @@
     <pattern>[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BedrockAgentCore.Model.CompleteResourceTokenAuthRequest.SessionUri</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>urn:ietf:params:oauth:request_uri:[a-zA-Z0-9-._~]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.CreateEventRequest.ActorId</property>
     <min>1</min>
     <max>255</max>
@@ -170,6 +176,11 @@
     <max>65536</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BedrockAgentCore.Model.GetResourceOauth2TokenRequest.CustomState</property>
+    <min>1</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.GetResourceOauth2TokenRequest.ResourceCredentialProviderName</property>
     <min>1</min>
     <max>128</max>
@@ -182,6 +193,12 @@
     <pattern>\w+:(\/?\/?)[^\s]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BedrockAgentCore.Model.GetResourceOauth2TokenRequest.SessionUri</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>urn:ietf:params:oauth:request_uri:[a-zA-Z0-9-._~]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.GetResourceOauth2TokenRequest.WorkloadIdentityToken</property>
     <min>1</min>
     <max>131072</max>
@@ -190,6 +207,16 @@
     <property>Amazon.BedrockAgentCore.Model.GetResourceOauth2TokenResponse.AccessToken</property>
     <min>1</min>
     <max>131072</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCore.Model.GetResourceOauth2TokenResponse.AuthorizationUrl</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCore.Model.GetResourceOauth2TokenResponse.SessionUri</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>urn:ietf:params:oauth:request_uri:[a-zA-Z0-9-._~]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.GetWorkloadAccessTokenRequest.WorkloadName</property>
@@ -239,6 +266,10 @@
     <property>Amazon.BedrockAgentCore.Model.InvokeAgentRuntimeRequest.Accept</property>
     <min>1</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCore.Model.InvokeAgentRuntimeRequest.AccountId</property>
+    <pattern>[0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.InvokeAgentRuntimeRequest.Baggage</property>
@@ -805,6 +836,17 @@
     <property>Amazon.BedrockAgentCore.Model.ToolArguments.TaskId</property>
     <min>0</min>
     <max>100000000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCore.Model.UserIdentifier.UserId</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCore.Model.UserIdentifier.UserToken</property>
+    <min>1</min>
+    <max>131072</max>
+    <pattern>[A-Za-z0-9-_=]+.[A-Za-z0-9-_=]+.[A-Za-z0-9-_=]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.ViewPort.Height</property>

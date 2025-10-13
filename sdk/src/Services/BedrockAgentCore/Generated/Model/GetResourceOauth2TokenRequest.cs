@@ -36,11 +36,13 @@ namespace Amazon.BedrockAgentCore.Model
     public partial class GetResourceOauth2TokenRequest : AmazonBedrockAgentCoreRequest
     {
         private Dictionary<string, string> _customParameters = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private string _customState;
         private bool? _forceAuthentication;
         private Oauth2FlowType _oauth2Flow;
         private string _resourceCredentialProviderName;
         private string _resourceOauth2ReturnUrl;
         private List<string> _scopes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private string _sessionUri;
         private string _workloadIdentityToken;
 
         /// <summary>
@@ -66,6 +68,27 @@ namespace Amazon.BedrockAgentCore.Model
         internal bool IsSetCustomParameters()
         {
             return this._customParameters != null && (this._customParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomState. 
+        /// <para>
+        /// An opaque string that will be sent back to the callback URL provided in resourceOauth2ReturnUrl.
+        /// This state should be used to protect the callback URL of your application against
+        /// CSRF attacks by ensuring the response corresponds to the original request.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Min=1, Max=4096)]
+        public string CustomState
+        {
+            get { return this._customState; }
+            set { this._customState = value; }
+        }
+
+        // Check to see if CustomState property is set
+        internal bool IsSetCustomState()
+        {
+            return this._customState != null;
         }
 
         /// <summary>
@@ -167,6 +190,27 @@ namespace Amazon.BedrockAgentCore.Model
         internal bool IsSetScopes()
         {
             return this._scopes != null && (this._scopes.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SessionUri. 
+        /// <para>
+        /// Unique identifier for the user's authentication session for retrieving OAuth2 tokens.
+        /// This ID tracks the authorization flow state across multiple requests and responses
+        /// during the OAuth2 authentication process.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
+        public string SessionUri
+        {
+            get { return this._sessionUri; }
+            set { this._sessionUri = value; }
+        }
+
+        // Check to see if SessionUri property is set
+        internal bool IsSetSessionUri()
+        {
+            return this._sessionUri != null;
         }
 
         /// <summary>

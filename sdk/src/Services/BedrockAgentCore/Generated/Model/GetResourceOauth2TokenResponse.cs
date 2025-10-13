@@ -36,6 +36,8 @@ namespace Amazon.BedrockAgentCore.Model
     {
         private string _accessToken;
         private string _authorizationUrl;
+        private SessionStatus _sessionStatus;
+        private string _sessionUri;
 
         /// <summary>
         /// Gets and sets the property AccessToken. 
@@ -63,6 +65,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// user authorization.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true, Min=1)]
         public string AuthorizationUrl
         {
             get { return this._authorizationUrl; }
@@ -73,6 +76,45 @@ namespace Amazon.BedrockAgentCore.Model
         internal bool IsSetAuthorizationUrl()
         {
             return this._authorizationUrl != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SessionStatus. 
+        /// <para>
+        /// Status indicating whether the user's authorization session is in progress or has failed.
+        /// This helps determine the next steps in the OAuth2 authentication flow.
+        /// </para>
+        /// </summary>
+        public SessionStatus SessionStatus
+        {
+            get { return this._sessionStatus; }
+            set { this._sessionStatus = value; }
+        }
+
+        // Check to see if SessionStatus property is set
+        internal bool IsSetSessionStatus()
+        {
+            return this._sessionStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SessionUri. 
+        /// <para>
+        /// Unique identifier for the user's authorization session for retrieving OAuth2 tokens.
+        /// This matches the sessionId from the request and can be used to track the session state.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
+        public string SessionUri
+        {
+            get { return this._sessionUri; }
+            set { this._sessionUri = value; }
+        }
+
+        // Check to see if SessionUri property is set
+        internal bool IsSetSessionUri()
+        {
+            return this._sessionUri != null;
         }
 
     }
