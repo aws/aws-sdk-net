@@ -453,6 +453,60 @@ namespace Amazon.ObservabilityAdmin
 
 
     /// <summary>
+    /// Constants used for properties of type TelemetryEnrichmentStatus.
+    /// </summary>
+    public class TelemetryEnrichmentStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Impaired for TelemetryEnrichmentStatus
+        /// </summary>
+        public static readonly TelemetryEnrichmentStatus Impaired = new TelemetryEnrichmentStatus("Impaired");
+        /// <summary>
+        /// Constant Running for TelemetryEnrichmentStatus
+        /// </summary>
+        public static readonly TelemetryEnrichmentStatus Running = new TelemetryEnrichmentStatus("Running");
+        /// <summary>
+        /// Constant Stopped for TelemetryEnrichmentStatus
+        /// </summary>
+        public static readonly TelemetryEnrichmentStatus Stopped = new TelemetryEnrichmentStatus("Stopped");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TelemetryEnrichmentStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TelemetryEnrichmentStatus FindValue(string value)
+        {
+            return FindValue<TelemetryEnrichmentStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TelemetryEnrichmentStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type TelemetryState.
     /// </summary>
     public class TelemetryState : ConstantClass
