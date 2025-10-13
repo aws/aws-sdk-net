@@ -794,7 +794,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 UploadWithLifecycleEventsAndBucket(fileName, 22 * MEG_SIZE, invalidBucketName, null, null, eventValidator);
                 Assert.Fail("Expected an exception to be thrown for invalid bucket");
             }
-            catch (AmazonS3Exception e)
+            catch (AmazonS3Exception)
             {
                 // Expected exception - the failed event should have been fired
                 eventValidator.AssertEventFired();
@@ -831,6 +831,115 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
             // Use 30MB to trigger multipart upload
             UploadWithLifecycleEvents(fileName, 30 * MEG_SIZE, initiatedValidator, completedValidator, null);
+            
+            initiatedValidator.AssertEventFired();
+            completedValidator.AssertEventFired();
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public void MultipartUploadUnseekableStreamInitiatedEventTest()
+        {
+            var fileName = UtilityMethods.GenerateName(@"MultipartUploadTest\UnseekableStreamInitiatedEvent");
+            var eventValidator = new TransferLifecycleEventValidator<UploadInitiatedEventArgs>
+            {
+                Validate = (args) =>
+                {
+                    Assert.IsNotNull(args.Request);
+                    Assert.IsNull(args.FilePath); // No file path for stream uploads
+                    Assert.AreEqual(-1, args.TotalBytes); // Unseekable streams have unknown length
+                }
+            };
+            // Use 10MB to trigger multipart upload with unseekable stream
+            UploadUnseekableStreamWithLifecycleEvents(10 * MEG_SIZE, eventValidator, null, null);
+            eventValidator.AssertEventFired();
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public void MultipartUploadUnseekableStreamCompletedEventTest()
+        {
+            var fileName = UtilityMethods.GenerateName(@"MultipartUploadTest\UnseekableStreamCompletedEvent");
+            var eventValidator = new TransferLifecycleEventValidator<UploadCompletedEventArgs>
+            {
+                Validate = (args) =>
+                {
+                    Assert.IsNotNull(args.Request);
+                    Assert.IsNotNull(args.Response);
+                    Assert.IsNull(args.FilePath); // No file path for stream uploads
+                    Assert.AreEqual(-1, args.TotalBytes); // Unseekable streams have unknown length
+                    Assert.AreEqual(15 * MEG_SIZE, args.TransferredBytes); // since we know the actual length via testing it, we can check the transferredbytes size
+                    Assert.IsTrue(!string.IsNullOrEmpty(args.Response.ETag));
+                }
+            };
+            // Use 15MB to trigger multipart upload with unseekable stream
+            UploadUnseekableStreamWithLifecycleEvents(15 * MEG_SIZE, null, eventValidator, null);
+            eventValidator.AssertEventFired();
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public void MultipartUploadUnseekableStreamFailedEventTest()
+        {
+            var fileName = UtilityMethods.GenerateName(@"MultipartUploadTest\UnseekableStreamFailedEvent");
+            var eventValidator = new TransferLifecycleEventValidator<UploadFailedEventArgs>
+            {
+                Validate = (args) =>
+                {
+                    Assert.IsNotNull(args.Request);
+                    Assert.IsNull(args.FilePath); // No file path for stream uploads
+                    Assert.AreEqual(-1, args.TotalBytes); // Unseekable streams have unknown length
+                    // For failed uploads with unseekable streams, transferred bytes should be >= 0
+                    Assert.IsTrue(args.TransferredBytes >= 0);
+                }
+            };
+            
+            // Use invalid bucket name to force failure with multipart upload size
+            var invalidBucketName = "invalid-bucket-name-" + Guid.NewGuid().ToString();
+            
+            try
+            {
+                // Use 12MB to trigger multipart upload with unseekable stream
+                UploadUnseekableStreamWithLifecycleEventsAndBucket(12 * MEG_SIZE, invalidBucketName, null, null, eventValidator);
+                Assert.Fail("Expected an exception to be thrown for invalid bucket");
+            }
+            catch (AmazonS3Exception)
+            {
+                // Expected exception - the failed event should have been fired
+                eventValidator.AssertEventFired();
+            }
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public void MultipartUploadUnseekableStreamCompleteLifecycleTest()
+        {
+            var fileName = UtilityMethods.GenerateName(@"MultipartUploadTest\UnseekableStreamCompleteLifecycle");
+            
+            var initiatedValidator = new TransferLifecycleEventValidator<UploadInitiatedEventArgs>
+            {
+                Validate = (args) =>
+                {
+                    Assert.IsNotNull(args.Request);
+                    Assert.IsNull(args.FilePath); // No file path for stream uploads
+                    Assert.AreEqual(-1, args.TotalBytes); // Unseekable streams have unknown length
+                }
+            };
+            
+            var completedValidator = new TransferLifecycleEventValidator<UploadCompletedEventArgs>
+            {
+                Validate = (args) =>
+                {
+                    Assert.IsNotNull(args.Request);
+                    Assert.IsNotNull(args.Response);
+                    Assert.IsNull(args.FilePath); // No file path for stream uploads
+                    Assert.AreEqual(-1, args.TotalBytes); // Unseekable streams have unknown length
+                    Assert.AreEqual(18 * MEG_SIZE, args.TransferredBytes); // Should have transferred all bytes
+                }
+            };
+
+            // Use 18MB to trigger multipart upload with unseekable stream
+            UploadUnseekableStreamWithLifecycleEvents(18 * MEG_SIZE, initiatedValidator, completedValidator, null);
             
             initiatedValidator.AssertEventFired();
             completedValidator.AssertEventFired();
@@ -1650,6 +1759,55 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             {
                 BucketName = targetBucketName,
                 FilePath = path,
+                Key = key,
+                ContentType = octetStreamContentType
+            };
+
+            if (initiatedValidator != null)
+            {
+                request.UploadInitiatedEvent += initiatedValidator.OnEventFired;
+            }
+
+            if (completedValidator != null)
+            {
+                request.UploadCompletedEvent += completedValidator.OnEventFired;
+            }
+
+            if (failedValidator != null)
+            {
+                request.UploadFailedEvent += failedValidator.OnEventFired;
+            }
+
+            transferUtility.Upload(request);
+        }
+
+        void UploadUnseekableStreamWithLifecycleEvents(long size,
+            TransferLifecycleEventValidator<UploadInitiatedEventArgs> initiatedValidator,
+            TransferLifecycleEventValidator<UploadCompletedEventArgs> completedValidator,
+            TransferLifecycleEventValidator<UploadFailedEventArgs> failedValidator)
+        {
+            UploadUnseekableStreamWithLifecycleEventsAndBucket(size, bucketName, initiatedValidator, completedValidator, failedValidator);
+        }
+
+        void UploadUnseekableStreamWithLifecycleEventsAndBucket(long size, string targetBucketName,
+            TransferLifecycleEventValidator<UploadInitiatedEventArgs> initiatedValidator,
+            TransferLifecycleEventValidator<UploadCompletedEventArgs> completedValidator,
+            TransferLifecycleEventValidator<UploadFailedEventArgs> failedValidator)
+        {
+            var fileName = UtilityMethods.GenerateName(@"UnseekableStreamUpload\File");
+            var key = fileName;
+            var path = Path.Combine(BasePath, fileName);
+            UtilityMethods.GenerateFile(path, size);
+            
+            // Convert file to unseekable stream
+            var stream = GenerateUnseekableStreamFromFile(path);
+            
+            var config = new TransferUtilityConfig();
+            var transferUtility = new TransferUtility(Client, config);
+            var request = new TransferUtilityUploadRequest
+            {
+                BucketName = targetBucketName,
+                InputStream = stream,
                 Key = key,
                 ContentType = octetStreamContentType
             };
