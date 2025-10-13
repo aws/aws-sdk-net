@@ -569,35 +569,6 @@ namespace ServiceClientGenerator
             }
         }
 
-        private List<string> _s3AddParametersList;
-        /// <summary>
-        /// Some s3 operations add query string parameters to the Subresources collection instead of the Parameters collection, but we are inconsistent with it across the board.
-        /// This list will contain those operations which add to the parameters instead of subresources
-        /// </summary>
-        public List<string> S3AddParametersList
-        {
-            get
-            {
-                if (_s3AddParametersList == null)
-                {
-                    _s3AddParametersList = new List<string>
-                    {
-                        "ListBuckets",
-                        "ListDirectoryBuckets",
-                        "GetObjectLegalHold",
-                        "GetObjectRetention",
-                        "PutObjectRetention",
-                        "PutObjectAcl",
-                        "GetObjectAcl",
-                        "ListObjectsV2",
-                        "ListVersions"
-                    };
-                }
-                return _s3AddParametersList;
-            }
-        }
-
-
         private List<string> _s3RequestMarshallerThrowAmazonS3ExceptionList;
         
         /// <summary>

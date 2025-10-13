@@ -89,13 +89,13 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             request.AddPathResource("{Key+}", StringUtils.FromString(publicRequest.Key));
             
             if (publicRequest.IsSetMaxParts())
-                request.AddSubResource("max-parts", StringUtils.FromInt(publicRequest.MaxParts));
+                request.Parameters.Add("max-parts", StringUtils.FromInt(publicRequest.MaxParts));
             
             if (publicRequest.IsSetPartNumberMarker())
-                request.AddSubResource("part-number-marker", StringUtils.FromString(publicRequest.PartNumberMarker));
+                request.Parameters.Add("part-number-marker", StringUtils.FromString(publicRequest.PartNumberMarker));
             
             if (publicRequest.IsSetUploadId())
-                request.AddSubResource("uploadId", StringUtils.FromString(publicRequest.UploadId));
+                request.Parameters.Add("uploadId", StringUtils.FromString(publicRequest.UploadId));
             request.ResourcePath = "/{Key+}";
 
             PostMarshallCustomization(request, publicRequest);

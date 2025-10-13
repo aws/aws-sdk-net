@@ -106,10 +106,10 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 throw new System.ArgumentException("DestinationBucket is a required property and must be set before making this call.", "CopyPartRequest.DestinationBucket");
             
             if (publicRequest.IsSetPartNumber())
-                request.AddSubResource("partNumber", StringUtils.FromInt(publicRequest.PartNumber));
+                request.Parameters.Add("partNumber", StringUtils.FromInt(publicRequest.PartNumber));
             
             if (publicRequest.IsSetUploadId())
-                request.AddSubResource("uploadId", StringUtils.FromString(publicRequest.UploadId));
+                request.Parameters.Add("uploadId", StringUtils.FromString(publicRequest.UploadId));
             request.ResourcePath = "/{Key+}";
 
             PostMarshallCustomization(request, publicRequest);

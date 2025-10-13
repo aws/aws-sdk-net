@@ -79,7 +79,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             request.AddPathResource("{Key+}", StringUtils.FromString(publicRequest.Key));
             
             if (publicRequest.IsSetUploadId())
-                request.AddSubResource("uploadId", StringUtils.FromString(publicRequest.UploadId));
+                request.Parameters.Add("uploadId", StringUtils.FromString(publicRequest.UploadId));
             request.ResourcePath = "/{Key+}";
 
             PostMarshallCustomization(request, publicRequest);

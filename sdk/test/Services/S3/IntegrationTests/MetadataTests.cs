@@ -59,6 +59,14 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         public static void Initialize(TestContext a)
         {
             bucketName = S3TestUtils.CreateBucketWithWait(Client);
+            Client.PutBucketVersioning(new PutBucketVersioningRequest 
+            {
+                BucketName = bucketName ,
+                VersioningConfig = new S3BucketVersioningConfig
+                {
+                    Status = VersionStatus.Enabled
+                }
+            });
         }
 
         [ClassCleanup]
@@ -241,6 +249,34 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             }
         }
 
+        [TestMethod]
+        [TestCategory("S3")]
+        public void GetObjectMetadataTest()
+        {
+            string key = Guid.NewGuid().ToString() + ".txt";
+            var putObjectResponse = Client.PutObject(new PutObjectRequest
+            {
+                BucketName = bucketName,
+                Key = key,
+                ContentBody = "Hello world!",
+            });
+            var utcNow = DateTime.UtcNow;
+            var responseExpires = utcNow.AddDays(2);
+            var getObjectMetadataResponse = Client.GetObjectMetadata(new GetObjectMetadataRequest
+            {
+                BucketName = bucketName,
+                Key = key,
+                ResponseExpires = responseExpires,
+                ResponseContentType = "text/plain",
+                VersionId = putObjectResponse.VersionId,
+            });
+            Assert.AreEqual<HttpStatusCode>(HttpStatusCode.OK, getObjectMetadataResponse.HttpStatusCode);
+            Assert.IsFalse(String.IsNullOrEmpty(getObjectMetadataResponse.ExpiresString));
+            var actualExpires = DateTime.Parse(getObjectMetadataResponse.ExpiresString).ToUniversalTime();
+            Assert.AreEqual<DateTime>(responseExpires.Date, actualExpires.Date);
+            Assert.IsFalse(string.IsNullOrEmpty(getObjectMetadataResponse.VersionId));
+        }
+        
         void UploadDirectory(long size,
             TransferUtilityTests.DirectoryProgressValidator<UploadDirectoryProgressArgs> progressValidator, bool validate = true)
         {
