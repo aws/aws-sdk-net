@@ -33,21 +33,33 @@ namespace Amazon.S3.Transfer.Internal
 
         public override async Task ExecuteAsync(CancellationToken cancellationToken)
         {
+            // Fire transfer initiated event FIRST, before choosing path
+            FireTransferInitiatedEvent();
+
             if ( (this._fileTransporterRequest.InputStream != null && !this._fileTransporterRequest.InputStream.CanSeek) || this._fileTransporterRequest.ContentLength == -1)
             {
                 await UploadUnseekableStreamAsync(this._fileTransporterRequest, cancellationToken).ConfigureAwait(false);
             }
             else
             {
-                var initRequest = ConstructInitiateMultipartUploadRequest();
-                var initResponse = await _s3Client.InitiateMultipartUploadAsync(initRequest, cancellationToken)
+                InitiateMultipartUploadResponse initResponse = null;
+                try
+                {
+                    var initRequest = ConstructInitiateMultipartUploadRequest();
+                    initResponse = await _s3Client.InitiateMultipartUploadAsync(initRequest, cancellationToken)
                     .ConfigureAwait(continueOnCapturedContext: false);
-                Logger.DebugFormat("Initiated upload: {0}", initResponse.UploadId);
+                    Logger.DebugFormat("Initiated upload: {0}", initResponse.UploadId);
+                }
+                catch (Exception)
+                {
+                    FireTransferFailedEvent();
+                    throw;
+                }
 
                 var pendingUploadPartTasks = new List<Task<UploadPartResponse>>();
-
                 SemaphoreSlim localThrottler = null;
                 CancellationTokenSource internalCts = null;
+                
                 try
                 {
                     Logger.DebugFormat("Queue up the UploadPartRequests to be executed");
@@ -101,14 +113,19 @@ namespace Amazon.S3.Transfer.Internal
 
                     Logger.DebugFormat("Beginning completing multipart. ({0})", initResponse.UploadId);
                     var compRequest = ConstructCompleteMultipartUploadRequest(initResponse);
-                    await this._s3Client.CompleteMultipartUploadAsync(compRequest, cancellationToken)
+                    var completeResponse = await this._s3Client.CompleteMultipartUploadAsync(compRequest, cancellationToken)
                         .ConfigureAwait(continueOnCapturedContext: false);
                     Logger.DebugFormat("Done completing multipart. ({0})", initResponse.UploadId);
 
+                    var mappedResponse = ResponseMapper.MapCompleteMultipartUploadResponse(completeResponse);
+                    FireTransferCompletedEvent(mappedResponse);
                 }
                 catch (Exception e)
                 {
-                    Logger.Error(e, "Exception while uploading. ({0})", initResponse.UploadId);
+                    Logger.Error(e, "Exception while uploading. ({0})", initResponse?.UploadId ?? "unknown");
+
+                    FireTransferFailedEvent();
+                    
                     // Can't do async invocation in the catch block, doing cleanup synchronously.
                     Cleanup(initResponse.UploadId, pendingUploadPartTasks);
                     throw;
@@ -207,8 +224,19 @@ namespace Amazon.S3.Transfer.Internal
                 }
             };
 
-            var initiateRequest = ConstructInitiateMultipartUploadRequest(requestEventHandler);
-            var initiateResponse = await _s3Client.InitiateMultipartUploadAsync(initiateRequest, cancellationToken).ConfigureAwait(false);
+            InitiateMultipartUploadResponse initiateResponse = null;
+            
+            try
+            {
+                var initiateRequest = ConstructInitiateMultipartUploadRequest(requestEventHandler);
+                initiateResponse = await _s3Client.InitiateMultipartUploadAsync(initiateRequest, cancellationToken).ConfigureAwait(false);
+            }
+            catch (Exception ex)
+            {
+                FireTransferFailedEvent();
+                Logger.Error(ex, "Failed to initiate multipart upload for unseekable stream");
+                throw;
+            }
 
             try
             {
@@ -276,12 +304,17 @@ namespace Amazon.S3.Transfer.Internal
 
                     this._uploadResponses = uploadPartResponses;
                     CompleteMultipartUploadRequest compRequest = ConstructCompleteMultipartUploadRequest(initiateResponse, true, requestEventHandler);
-                    await _s3Client.CompleteMultipartUploadAsync(compRequest, cancellationToken).ConfigureAwait(false);
+                    var completeResponse = await _s3Client.CompleteMultipartUploadAsync(compRequest, cancellationToken).ConfigureAwait(false);
                     Logger.DebugFormat("Completed multi part upload. (Part count: {0}, Upload Id: {1})", uploadPartResponses.Count, initiateResponse.UploadId);
+
+                    var mappedResponse = ResponseMapper.MapCompleteMultipartUploadResponse(completeResponse);
+                    FireTransferCompletedEvent(mappedResponse);
                 }
             }
             catch (Exception ex)
             {
+                FireTransferFailedEvent();
+
                 await _s3Client.AbortMultipartUploadAsync(new AbortMultipartUploadRequest()
                 {
                     BucketName = request.BucketName,
