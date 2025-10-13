@@ -2,7 +2,7 @@
   "services": [
     {
       "serviceName": "S3",
-      "type": "patch",
+      "type": "minor",
       "changeLogMessages": [
         "Increasing the default part size for S3 multipart upload from 5MB to 8MB when no part size is specified. This will reduce the number of API calls for multipart uploads."
       ]

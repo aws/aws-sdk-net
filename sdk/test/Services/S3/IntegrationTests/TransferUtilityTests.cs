@@ -663,6 +663,36 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             }
         }
 
+        [TestMethod]
+        [TestCategory("S3")]
+        public void MultipartValidatePartSize8MbTest()
+        {
+            string key = "MultipartValidatePartSizeTest";
+
+            Upload(key, 20 * MEG_SIZE, null, Client);
+
+            try
+            {
+                var objectMetadataResponse = Client.GetObjectMetadata(new GetObjectMetadataRequest
+                {
+                    BucketName = bucketName,
+                    Key = key,
+                    PartNumber = 1,
+                });
+
+                Assert.AreEqual(2, objectMetadataResponse.PartsCount);
+                Assert.AreEqual(8 * MEG_SIZE, objectMetadataResponse.ContentLength);
+            }
+            finally
+            {
+                Client.DeleteObject(new DeleteObjectRequest
+                {
+                    BucketName = bucketName,
+                    Key = key
+                });
+            }
+        }
+
         void Upload(string fileName, long size,
             TransferProgressValidator<UploadProgressArgs> progressValidator, AmazonS3Client client = null)
         {

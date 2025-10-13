@@ -102,10 +102,7 @@ namespace Amazon.S3.Transfer.Internal
         private static long calculatePartSize(long contentLength, long targetPartSize)
         {
             // SEP Formula: Math.Max(targetPartSize, contentLength / 10_000)
-            long calculatedSize = Math.Max(targetPartSize, contentLength / 10_000);
-
-            // Ensure we don't go below S3's minimum part size (5MB)
-            return Math.Max(calculatedSize, S3Constants.MinPartSize);
+            return Math.Max(targetPartSize, contentLength / S3Constants.MaxNumberOfParts);
         }
 
         private string determineContentType()
