@@ -50,6 +50,7 @@ namespace Amazon.Transfer.Model
     {
         private string _accessRole;
         private As2ConnectorConfig _as2Config;
+        private ConnectorEgressConfig _egressConfig;
         private string _loggingRole;
         private string _securityPolicyName;
         private SftpConnectorConfig _sftpConfig;
@@ -128,6 +129,26 @@ namespace Amazon.Transfer.Model
         internal bool IsSetAs2Config()
         {
             return this._as2Config != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EgressConfig. 
+        /// <para>
+        /// Specifies the egress configuration for the connector, which determines how traffic
+        /// is routed from the connector to the SFTP server. When set to VPC, enables routing
+        /// through customer VPCs using VPC_LATTICE for private connectivity.
+        /// </para>
+        /// </summary>
+        public ConnectorEgressConfig EgressConfig
+        {
+            get { return this._egressConfig; }
+            set { this._egressConfig = value; }
+        }
+
+        // Check to see if EgressConfig property is set
+        internal bool IsSetEgressConfig()
+        {
+            return this._egressConfig != null;
         }
 
         /// <summary>
@@ -213,8 +234,14 @@ namespace Amazon.Transfer.Model
         /// <para>
         /// The URL of the partner's AS2 or SFTP endpoint.
         /// </para>
+        ///  
+        /// <para>
+        /// When creating AS2 connectors or service-managed SFTP connectors (connectors without
+        /// egress configuration), you must provide a URL to specify the remote server endpoint.
+        /// For VPC Lattice type connectors, the URL must be null.
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=255)]
+        [AWSProperty(Min=0, Max=255)]
         public string Url
         {
             get { return this._url; }

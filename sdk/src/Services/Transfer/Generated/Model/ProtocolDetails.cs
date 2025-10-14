@@ -81,6 +81,18 @@ namespace Amazon.Transfer.Model
         /// in a NAT environment, see <a href="http://aws.amazon.com/blogs/storage/configuring-your-ftps-server-behind-a-firewall-or-nat-with-aws-transfer-family/">Configuring
         /// your FTPS server behind a firewall or NAT with Transfer Family</a>. 
         /// </para>
+        ///  
+        /// <para>
+        /// Additionally, avoid placing Network Load Balancers (NLBs) or NAT gateways in front
+        /// of Transfer Family servers. This configuration increases costs and can cause performance
+        /// issues. When NLBs or NATs are in the communication path, Transfer Family cannot accurately
+        /// recognize client IP addresses, which impacts connection sharding and limits FTPS servers
+        /// to only 300 simultaneous connections instead of 10,000. If you must use an NLB, use
+        /// port 21 for health checks and enable TLS session resumption by setting <c>TlsSessionResumptionMode
+        /// = ENFORCED</c>. For optimal performance, migrate to VPC endpoints with Elastic IP
+        /// addresses instead of using NLBs. For more details, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/infrastructure-security.html#nlb-considerations">
+        /// Avoid placing NLBs and NATs in front of Transfer Family</a>. 
+        /// </para>
         ///  </note> 
         /// <para>
         ///  <i>Special values</i> 
