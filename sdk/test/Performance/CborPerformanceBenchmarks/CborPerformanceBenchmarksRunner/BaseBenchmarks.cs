@@ -43,25 +43,8 @@ public abstract class BaseBenchmarks
     [GlobalCleanup(Target = nameof(Marshall))]
     public virtual void AfterMarshall()
     {
-#if USE_CBOR
         RequestSizeBytes = Math.Max(RequestSizeBytes, MarshalledRequest.Content.Length);
-#else
-        if (Protocol == "Query")
-        {
-            string queryString = Utils.GetParametersAsString(MarshalledRequest.ParameterCollection);
-            var content = Encoding.UTF8.GetBytes(queryString);
 
-            RequestSizeBytes = Math.Max(RequestSizeBytes, content.Length);
-        }
-        else if (Protocol == "JSON")
-        {
-            RequestSizeBytes = Math.Max(RequestSizeBytes, MarshalledRequest.Content.Length);
-        }
-        else
-        {
-            throw new NotImplementedException();
-        }
-#endif
         var record = new BenchmarkRecord(Service, TestCase, Protocol, DimensionValue, "Request payload size (bytes)", RequestSizeBytes, RequestSizeBytes, RequestSizeBytes);
         Utils.StoreBenchmarkRecords(new List<BenchmarkRecord> { record });
         RequestSizeBytes = 0;
