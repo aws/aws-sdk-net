@@ -1,0 +1,12 @@
+{
+  "services": [
+    {
+      "serviceName": "S3",
+      "type": "patch",
+      "changeLogMessages": [
+        "Added ServerSideEncryptionCustomerProvidedKeyMD5 property to GetObjectResponse",
+        "Added ContentLanguage support to GetObjectResponse"
+      ]
+    }
+  ]
+}
