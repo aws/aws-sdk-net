@@ -43,7 +43,11 @@ namespace Amazon.Backup.Model
         private RecoveryPointCreator _createdBy;
         private DateTime? _creationDate;
         private string _destinationBackupVaultArn;
+        private string _destinationEncryptionKeyArn;
         private string _destinationRecoveryPointArn;
+        private Lifecycle _destinationRecoveryPointLifecycle;
+        private string _destinationVaultLockState;
+        private string _destinationVaultType;
         private string _iamRoleArn;
         private bool? _isParent;
         private string _messageCategory;
@@ -224,6 +228,26 @@ namespace Amazon.Backup.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DestinationEncryptionKeyArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the KMS key used to encrypt the copied backup in
+        /// the destination vault. This can be a customer-managed key or an Amazon Web Services
+        /// managed key.
+        /// </para>
+        /// </summary>
+        public string DestinationEncryptionKeyArn
+        {
+            get { return this._destinationEncryptionKeyArn; }
+            set { this._destinationEncryptionKeyArn = value; }
+        }
+
+        // Check to see if DestinationEncryptionKeyArn property is set
+        internal bool IsSetDestinationEncryptionKeyArn()
+        {
+            return this._destinationEncryptionKeyArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property DestinationRecoveryPointArn. 
         /// <para>
         /// An ARN that uniquely identifies a destination recovery point; for example, <c>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</c>.
@@ -239,6 +263,61 @@ namespace Amazon.Backup.Model
         internal bool IsSetDestinationRecoveryPointArn()
         {
             return this._destinationRecoveryPointArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DestinationRecoveryPointLifecycle.
+        /// </summary>
+        public Lifecycle DestinationRecoveryPointLifecycle
+        {
+            get { return this._destinationRecoveryPointLifecycle; }
+            set { this._destinationRecoveryPointLifecycle = value; }
+        }
+
+        // Check to see if DestinationRecoveryPointLifecycle property is set
+        internal bool IsSetDestinationRecoveryPointLifecycle()
+        {
+            return this._destinationRecoveryPointLifecycle != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DestinationVaultLockState. 
+        /// <para>
+        /// The lock state of the destination backup vault. For logically air-gapped vaults, this
+        /// indicates whether the vault is locked in compliance mode. Valid values include <c>LOCKED</c>
+        /// and <c>UNLOCKED</c>.
+        /// </para>
+        /// </summary>
+        public string DestinationVaultLockState
+        {
+            get { return this._destinationVaultLockState; }
+            set { this._destinationVaultLockState = value; }
+        }
+
+        // Check to see if DestinationVaultLockState property is set
+        internal bool IsSetDestinationVaultLockState()
+        {
+            return this._destinationVaultLockState != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DestinationVaultType. 
+        /// <para>
+        /// The type of destination backup vault where the copied recovery point is stored. Valid
+        /// values are <c>BACKUP_VAULT</c> for standard backup vaults and <c>LOGICALLY_AIR_GAPPED_BACKUP_VAULT</c>
+        /// for logically air-gapped vaults.
+        /// </para>
+        /// </summary>
+        public string DestinationVaultType
+        {
+            get { return this._destinationVaultType; }
+            set { this._destinationVaultType = value; }
+        }
+
+        // Check to see if DestinationVaultType property is set
+        internal bool IsSetDestinationVaultType()
+        {
+            return this._destinationVaultType != null;
         }
 
         /// <summary>

@@ -46,21 +46,26 @@ namespace Amazon.Backup.Model
         private DateTime? _completionDate;
         private RecoveryPointCreator _createdBy;
         private DateTime? _creationDate;
+        private string _encryptionKeyArn;
         private DateTime? _expectedCompletionDate;
         private string _iamRoleArn;
         private DateTime? _initiationDate;
+        private bool? _isEncrypted;
         private bool? _isParent;
         private string _messageCategory;
         private long? _numberOfChildJobs;
         private string _parentJobId;
         private string _percentDone;
         private string _recoveryPointArn;
+        private Lifecycle _recoveryPointLifecycle;
         private string _resourceArn;
         private string _resourceName;
         private string _resourceType;
         private DateTime? _startBy;
         private BackupJobState _state;
         private string _statusMessage;
+        private string _vaultLockState;
+        private string _vaultType;
 
         /// <summary>
         /// Gets and sets the property AccountId. 
@@ -339,6 +344,26 @@ namespace Amazon.Backup.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EncryptionKeyArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the KMS key used to encrypt the backup. This can
+        /// be a customer-managed key or an Amazon Web Services managed key, depending on the
+        /// vault configuration.
+        /// </para>
+        /// </summary>
+        public string EncryptionKeyArn
+        {
+            get { return this._encryptionKeyArn; }
+            set { this._encryptionKeyArn = value; }
+        }
+
+        // Check to see if EncryptionKeyArn property is set
+        internal bool IsSetEncryptionKeyArn()
+        {
+            return this._encryptionKeyArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ExpectedCompletionDate. 
         /// <para>
         /// The date and time that a job to back up resources is expected to be completed, in
@@ -394,6 +419,25 @@ namespace Amazon.Backup.Model
         internal bool IsSetInitiationDate()
         {
             return this._initiationDate.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IsEncrypted. 
+        /// <para>
+        /// A boolean value indicating whether the backup is encrypted. All backups in Backup
+        /// are encrypted, but this field indicates the encryption status for transparency.
+        /// </para>
+        /// </summary>
+        public bool IsEncrypted
+        {
+            get { return this._isEncrypted.GetValueOrDefault(); }
+            set { this._isEncrypted = value; }
+        }
+
+        // Check to see if IsEncrypted property is set
+        internal bool IsSetIsEncrypted()
+        {
+            return this._isEncrypted.HasValue; 
         }
 
         /// <summary>
@@ -512,6 +556,21 @@ namespace Amazon.Backup.Model
         }
 
         /// <summary>
+        /// Gets and sets the property RecoveryPointLifecycle.
+        /// </summary>
+        public Lifecycle RecoveryPointLifecycle
+        {
+            get { return this._recoveryPointLifecycle; }
+            set { this._recoveryPointLifecycle = value; }
+        }
+
+        // Check to see if RecoveryPointLifecycle property is set
+        internal bool IsSetRecoveryPointLifecycle()
+        {
+            return this._recoveryPointLifecycle != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
         /// An ARN that uniquely identifies a saved resource. The format of the ARN depends on
@@ -625,6 +684,46 @@ namespace Amazon.Backup.Model
         internal bool IsSetStatusMessage()
         {
             return this._statusMessage != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VaultLockState. 
+        /// <para>
+        /// The lock state of the backup vault. For logically air-gapped vaults, this indicates
+        /// whether the vault is locked in compliance mode. Valid values include <c>LOCKED</c>
+        /// and <c>UNLOCKED</c>.
+        /// </para>
+        /// </summary>
+        public string VaultLockState
+        {
+            get { return this._vaultLockState; }
+            set { this._vaultLockState = value; }
+        }
+
+        // Check to see if VaultLockState property is set
+        internal bool IsSetVaultLockState()
+        {
+            return this._vaultLockState != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VaultType. 
+        /// <para>
+        /// The type of backup vault where the recovery point is stored. Valid values are <c>BACKUP_VAULT</c>
+        /// for standard backup vaults and <c>LOGICALLY_AIR_GAPPED_BACKUP_VAULT</c> for logically
+        /// air-gapped vaults.
+        /// </para>
+        /// </summary>
+        public string VaultType
+        {
+            get { return this._vaultType; }
+            set { this._vaultType = value; }
+        }
+
+        // Check to see if VaultType property is set
+        internal bool IsSetVaultType()
+        {
+            return this._vaultType != null;
         }
 
     }

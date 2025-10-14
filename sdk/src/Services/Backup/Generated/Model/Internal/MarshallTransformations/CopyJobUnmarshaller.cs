@@ -120,10 +120,34 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                     unmarshalledObject.DestinationBackupVaultArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DestinationEncryptionKeyArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DestinationEncryptionKeyArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DestinationRecoveryPointArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DestinationRecoveryPointArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("DestinationRecoveryPointLifecycle", targetDepth))
+                {
+                    var unmarshaller = LifecycleUnmarshaller.Instance;
+                    unmarshalledObject.DestinationRecoveryPointLifecycle = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("DestinationVaultLockState", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DestinationVaultLockState = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("DestinationVaultType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DestinationVaultType = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("IamRoleArn", targetDepth))

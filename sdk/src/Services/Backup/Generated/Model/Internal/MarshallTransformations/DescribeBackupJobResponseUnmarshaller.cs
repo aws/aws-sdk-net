@@ -124,6 +124,12 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                     response.CreationDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("EncryptionKeyArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.EncryptionKeyArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ExpectedCompletionDate", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
@@ -140,6 +146,12 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
                     response.InitiationDate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("IsEncrypted", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    response.IsEncrypted = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("IsParent", targetDepth))
@@ -178,6 +190,12 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                     response.RecoveryPointArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("RecoveryPointLifecycle", targetDepth))
+                {
+                    var unmarshaller = LifecycleUnmarshaller.Instance;
+                    response.RecoveryPointLifecycle = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ResourceArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -212,6 +230,18 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.StatusMessage = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("VaultLockState", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.VaultLockState = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("VaultType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.VaultType = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

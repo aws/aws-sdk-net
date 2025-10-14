@@ -78,16 +78,40 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                     unmarshalledObject.BackupPlanId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("BackupPlanName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.BackupPlanName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("BackupPlanVersion", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.BackupPlanVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("BackupRuleCron", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.BackupRuleCron = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("BackupRuleId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.BackupRuleId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("BackupRuleName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.BackupRuleName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("BackupRuleTimezone", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.BackupRuleTimezone = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
