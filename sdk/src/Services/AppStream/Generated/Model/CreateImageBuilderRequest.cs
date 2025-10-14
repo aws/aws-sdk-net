@@ -53,6 +53,8 @@ namespace Amazon.AppStream.Model
         private string _imageName;
         private string _instanceType;
         private string _name;
+        private List<string> _softwaresToInstall = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _softwaresToUninstall = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private VpcConfig _vpcConfig;
 
@@ -495,6 +497,255 @@ namespace Amazon.AppStream.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SoftwaresToInstall. 
+        /// <para>
+        /// The list of license included applications to install on the image builder during creation.
+        /// </para>
+        ///  
+        /// <para>
+        /// Possible values include the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Microsoft_Office_2021_LTSC_Professional_Plus_32Bit
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Microsoft_Office_2021_LTSC_Professional_Plus_64Bit
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Microsoft_Office_2024_LTSC_Professional_Plus_32Bit
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Microsoft_Office_2024_LTSC_Professional_Plus_64Bit
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Microsoft_Visio_2021_LTSC_Professional_32Bit
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Microsoft_Visio_2021_LTSC_Professional_64Bit
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Microsoft_Visio_2024_LTSC_Professional_32Bit
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Microsoft_Visio_2024_LTSC_Professional_64Bit
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Microsoft_Project_2021_Professional_32Bit
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Microsoft_Project_2021_Professional_64Bit
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Microsoft_Project_2024_Professional_32Bit
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Microsoft_Project_2024_Professional_64Bit
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Microsoft_Office_2021_LTSC_Standard_32Bit
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Microsoft_Office_2021_LTSC_Standard_64Bit
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Microsoft_Office_2024_LTSC_Standard_32Bit
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Microsoft_Office_2024_LTSC_Standard_64Bit
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Microsoft_Visio_2021_LTSC_Standard_32Bit
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Microsoft_Visio_2021_LTSC_Standard_64Bit
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Microsoft_Visio_2024_LTSC_Standard_32Bit
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Microsoft_Visio_2024_LTSC_Standard_64Bit
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Microsoft_Project_2021_Standard_32Bit
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Microsoft_Project_2021_Standard_64Bit
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Microsoft_Project_2024_Standard_32Bit
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Microsoft_Project_2024_Standard_64Bit
+        /// </para>
+        ///  </li> </ul>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<string> SoftwaresToInstall
+        {
+            get { return this._softwaresToInstall; }
+            set { this._softwaresToInstall = value; }
+        }
+
+        // Check to see if SoftwaresToInstall property is set
+        internal bool IsSetSoftwaresToInstall()
+        {
+            return this._softwaresToInstall != null && (this._softwaresToInstall.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SoftwaresToUninstall. 
+        /// <para>
+        /// The list of license included applications to uninstall from the image builder during
+        /// creation.
+        /// </para>
+        ///  
+        /// <para>
+        /// Possible values include the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Microsoft_Office_2021_LTSC_Professional_Plus_32Bit
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Microsoft_Office_2021_LTSC_Professional_Plus_64Bit
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Microsoft_Office_2024_LTSC_Professional_Plus_32Bit
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Microsoft_Office_2024_LTSC_Professional_Plus_64Bit
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Microsoft_Visio_2021_LTSC_Professional_32Bit
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Microsoft_Visio_2021_LTSC_Professional_64Bit
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Microsoft_Visio_2024_LTSC_Professional_32Bit
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Microsoft_Visio_2024_LTSC_Professional_64Bit
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Microsoft_Project_2021_Professional_32Bit
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Microsoft_Project_2021_Professional_64Bit
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Microsoft_Project_2024_Professional_32Bit
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Microsoft_Project_2024_Professional_64Bit
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Microsoft_Office_2021_LTSC_Standard_32Bit
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Microsoft_Office_2021_LTSC_Standard_64Bit
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Microsoft_Office_2024_LTSC_Standard_32Bit
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Microsoft_Office_2024_LTSC_Standard_64Bit
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Microsoft_Visio_2021_LTSC_Standard_32Bit
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Microsoft_Visio_2021_LTSC_Standard_64Bit
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Microsoft_Visio_2024_LTSC_Standard_32Bit
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Microsoft_Visio_2024_LTSC_Standard_64Bit
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Microsoft_Project_2021_Standard_32Bit
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Microsoft_Project_2021_Standard_64Bit
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Microsoft_Project_2024_Standard_32Bit
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Microsoft_Project_2024_Standard_64Bit
+        /// </para>
+        ///  </li> </ul>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<string> SoftwaresToUninstall
+        {
+            get { return this._softwaresToUninstall; }
+            set { this._softwaresToUninstall = value; }
+        }
+
+        // Check to see if SoftwaresToUninstall property is set
+        internal bool IsSetSoftwaresToUninstall()
+        {
+            return this._softwaresToUninstall != null && (this._softwaresToUninstall.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

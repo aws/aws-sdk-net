@@ -577,6 +577,77 @@ namespace Amazon.AppStream
 
         #endregion
         
+        #region  AssociateSoftwareToImageBuilder
+
+
+        /// <summary>
+        /// Associates license included application(s) with an existing image builder instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateSoftwareToImageBuilder service method.</param>
+        /// 
+        /// <returns>The response from the AssociateSoftwareToImageBuilder service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.ConcurrentModificationException">
+        /// An API error occurred. Wait a few minutes and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.IncompatibleImageException">
+        /// The image can't be updated because it's not compatible for updates.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.InvalidParameterCombinationException">
+        /// Indicates an incorrect combination of parameters, or a missing parameter.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/AssociateSoftwareToImageBuilder">REST API Reference for AssociateSoftwareToImageBuilder Operation</seealso>
+        public virtual AssociateSoftwareToImageBuilderResponse AssociateSoftwareToImageBuilder(AssociateSoftwareToImageBuilderRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AssociateSoftwareToImageBuilderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateSoftwareToImageBuilderResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateSoftwareToImageBuilderResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Associates license included application(s) with an existing image builder instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateSoftwareToImageBuilder service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateSoftwareToImageBuilder service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.ConcurrentModificationException">
+        /// An API error occurred. Wait a few minutes and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.IncompatibleImageException">
+        /// The image can't be updated because it's not compatible for updates.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.InvalidParameterCombinationException">
+        /// Indicates an incorrect combination of parameters, or a missing parameter.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/AssociateSoftwareToImageBuilder">REST API Reference for AssociateSoftwareToImageBuilder Operation</seealso>
+        public virtual Task<AssociateSoftwareToImageBuilderResponse> AssociateSoftwareToImageBuilderAsync(AssociateSoftwareToImageBuilderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AssociateSoftwareToImageBuilderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateSoftwareToImageBuilderResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<AssociateSoftwareToImageBuilderResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  BatchAssociateUserStack
 
 
@@ -3095,6 +3166,65 @@ namespace Amazon.AppStream
 
         #endregion
         
+        #region  DescribeAppLicenseUsage
+
+
+        /// <summary>
+        /// Retrieves license included application usage information.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAppLicenseUsage service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAppLicenseUsage service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.InvalidParameterCombinationException">
+        /// Indicates an incorrect combination of parameters, or a missing parameter.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeAppLicenseUsage">REST API Reference for DescribeAppLicenseUsage Operation</seealso>
+        public virtual DescribeAppLicenseUsageResponse DescribeAppLicenseUsage(DescribeAppLicenseUsageRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeAppLicenseUsageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAppLicenseUsageResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeAppLicenseUsageResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves license included application usage information.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAppLicenseUsage service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeAppLicenseUsage service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.InvalidParameterCombinationException">
+        /// Indicates an incorrect combination of parameters, or a missing parameter.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeAppLicenseUsage">REST API Reference for DescribeAppLicenseUsage Operation</seealso>
+        public virtual Task<DescribeAppLicenseUsageResponse> DescribeAppLicenseUsageAsync(DescribeAppLicenseUsageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeAppLicenseUsageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAppLicenseUsageResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeAppLicenseUsageResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeDirectoryConfigs
 
 
@@ -3472,6 +3602,59 @@ namespace Amazon.AppStream
             options.ResponseUnmarshaller = DescribeSessionsResponseUnmarshaller.Instance;
             
             return InvokeAsync<DescribeSessionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeSoftwareAssociations
+
+
+        /// <summary>
+        /// Retrieves license included application associations for a specified resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSoftwareAssociations service method.</param>
+        /// 
+        /// <returns>The response from the DescribeSoftwareAssociations service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeSoftwareAssociations">REST API Reference for DescribeSoftwareAssociations Operation</seealso>
+        public virtual DescribeSoftwareAssociationsResponse DescribeSoftwareAssociations(DescribeSoftwareAssociationsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeSoftwareAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeSoftwareAssociationsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeSoftwareAssociationsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves license included application associations for a specified resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSoftwareAssociations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeSoftwareAssociations service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeSoftwareAssociations">REST API Reference for DescribeSoftwareAssociations Operation</seealso>
+        public virtual Task<DescribeSoftwareAssociationsResponse> DescribeSoftwareAssociationsAsync(DescribeSoftwareAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeSoftwareAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeSoftwareAssociationsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeSoftwareAssociationsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4068,6 +4251,71 @@ namespace Amazon.AppStream
 
         #endregion
         
+        #region  DisassociateSoftwareFromImageBuilder
+
+
+        /// <summary>
+        /// Removes license included application(s) association(s) from an image builder instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateSoftwareFromImageBuilder service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateSoftwareFromImageBuilder service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.ConcurrentModificationException">
+        /// An API error occurred. Wait a few minutes and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.InvalidParameterCombinationException">
+        /// Indicates an incorrect combination of parameters, or a missing parameter.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DisassociateSoftwareFromImageBuilder">REST API Reference for DisassociateSoftwareFromImageBuilder Operation</seealso>
+        public virtual DisassociateSoftwareFromImageBuilderResponse DisassociateSoftwareFromImageBuilder(DisassociateSoftwareFromImageBuilderRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DisassociateSoftwareFromImageBuilderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateSoftwareFromImageBuilderResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateSoftwareFromImageBuilderResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Removes license included application(s) association(s) from an image builder instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateSoftwareFromImageBuilder service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociateSoftwareFromImageBuilder service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.ConcurrentModificationException">
+        /// An API error occurred. Wait a few minutes and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.InvalidParameterCombinationException">
+        /// Indicates an incorrect combination of parameters, or a missing parameter.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DisassociateSoftwareFromImageBuilder">REST API Reference for DisassociateSoftwareFromImageBuilder Operation</seealso>
+        public virtual Task<DisassociateSoftwareFromImageBuilderResponse> DisassociateSoftwareFromImageBuilderAsync(DisassociateSoftwareFromImageBuilderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DisassociateSoftwareFromImageBuilderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateSoftwareFromImageBuilderResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DisassociateSoftwareFromImageBuilderResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  EnableUser
 
 
@@ -4637,6 +4885,65 @@ namespace Amazon.AppStream
             options.ResponseUnmarshaller = StartImageBuilderResponseUnmarshaller.Instance;
             
             return InvokeAsync<StartImageBuilderResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartSoftwareDeploymentToImageBuilder
+
+
+        /// <summary>
+        /// Initiates license included applications deployment to an image builder instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartSoftwareDeploymentToImageBuilder service method.</param>
+        /// 
+        /// <returns>The response from the StartSoftwareDeploymentToImageBuilder service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.ConcurrentModificationException">
+        /// An API error occurred. Wait a few minutes and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StartSoftwareDeploymentToImageBuilder">REST API Reference for StartSoftwareDeploymentToImageBuilder Operation</seealso>
+        public virtual StartSoftwareDeploymentToImageBuilderResponse StartSoftwareDeploymentToImageBuilder(StartSoftwareDeploymentToImageBuilderRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartSoftwareDeploymentToImageBuilderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartSoftwareDeploymentToImageBuilderResponseUnmarshaller.Instance;
+
+            return Invoke<StartSoftwareDeploymentToImageBuilderResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates license included applications deployment to an image builder instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartSoftwareDeploymentToImageBuilder service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartSoftwareDeploymentToImageBuilder service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.ConcurrentModificationException">
+        /// An API error occurred. Wait a few minutes and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StartSoftwareDeploymentToImageBuilder">REST API Reference for StartSoftwareDeploymentToImageBuilder Operation</seealso>
+        public virtual Task<StartSoftwareDeploymentToImageBuilderResponse> StartSoftwareDeploymentToImageBuilderAsync(StartSoftwareDeploymentToImageBuilderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartSoftwareDeploymentToImageBuilderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartSoftwareDeploymentToImageBuilderResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StartSoftwareDeploymentToImageBuilderResponse>(request, options, cancellationToken);
         }
 
         #endregion
