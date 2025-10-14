@@ -85,6 +85,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 response.Headers.ContentDisposition = S3Transforms.ToString(responseData.GetHeaderValue("Content-Disposition"));
             if (responseData.IsHeaderPresent("Content-Encoding"))
                 response.Headers.ContentEncoding = S3Transforms.ToString(responseData.GetHeaderValue("Content-Encoding"));
+            if (responseData.IsHeaderPresent("Content-Language"))
+                response.ContentLanguage = S3Transforms.ToString(responseData.GetHeaderValue("Content-Language"));
             if (responseData.IsHeaderPresent("Content-Length"))
                 response.Headers.ContentLength = long.Parse(responseData.GetHeaderValue("Content-Length"), CultureInfo.InvariantCulture);
             if (responseData.IsHeaderPresent("x-amz-object-lock-legal-hold"))
@@ -103,6 +105,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 response.ServerSideEncryptionMethod = S3Transforms.ToString(responseData.GetHeaderValue("x-amz-server-side-encryption"));
             if (responseData.IsHeaderPresent("x-amz-server-side-encryption-customer-algorithm"))
                 response.ServerSideEncryptionCustomerMethod = ServerSideEncryptionCustomerMethod.FindValue(responseData.GetHeaderValue("x-amz-server-side-encryption-customer-algorithm"));
+            if (responseData.IsHeaderPresent("x-amz-server-side-encryption-customer-key-MD5"))
+                response.ServerSideEncryptionCustomerProvidedKeyMD5 = S3Transforms.ToString(responseData.GetHeaderValue("x-amz-server-side-encryption-customer-key-MD5"));
             if (responseData.IsHeaderPresent(HeaderKeys.XAmzServerSideEncryptionAwsKmsKeyIdHeader))
                 response.ServerSideEncryptionKeyManagementServiceKeyId = S3Transforms.ToString(responseData.GetHeaderValue(HeaderKeys.XAmzServerSideEncryptionAwsKmsKeyIdHeader));
             if (responseData.IsHeaderPresent("x-amz-replication-status"))
@@ -165,4 +169,3 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         }
     }
 }
-    
