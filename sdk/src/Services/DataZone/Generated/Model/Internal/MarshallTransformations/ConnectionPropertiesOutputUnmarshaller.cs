@@ -66,6 +66,12 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("amazonQProperties", targetDepth))
+                {
+                    var unmarshaller = AmazonQPropertiesOutputUnmarshaller.Instance;
+                    unmarshalledObject.AmazonQProperties = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("athenaProperties", targetDepth))
                 {
                     var unmarshaller = AthenaPropertiesOutputUnmarshaller.Instance;

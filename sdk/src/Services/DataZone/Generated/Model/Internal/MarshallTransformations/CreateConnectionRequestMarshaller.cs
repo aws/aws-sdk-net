@@ -98,6 +98,12 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Description);
                 }
 
+                if(publicRequest.IsSetEnableTrustedIdentityPropagation())
+                {
+                    context.Writer.WritePropertyName("enableTrustedIdentityPropagation");
+                    context.Writer.Write(publicRequest.EnableTrustedIdentityPropagation);
+                }
+
                 if(publicRequest.IsSetEnvironmentIdentifier())
                 {
                     context.Writer.WritePropertyName("environmentIdentifier");
@@ -119,6 +125,12 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                     marshaller.Marshall(publicRequest.Props, context);
 
                     context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetScope())
+                {
+                    context.Writer.WritePropertyName("scope");
+                    context.Writer.Write(publicRequest.Scope);
                 }
 
                 writer.WriteObjectEnd();

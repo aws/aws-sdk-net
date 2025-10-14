@@ -106,6 +106,12 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                     response.Props = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("scope", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Scope = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("type", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

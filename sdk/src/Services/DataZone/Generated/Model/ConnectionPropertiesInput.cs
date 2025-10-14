@@ -34,6 +34,7 @@ namespace Amazon.DataZone.Model
     /// </summary>
     public partial class ConnectionPropertiesInput
     {
+        private AmazonQPropertiesInput _amazonqProperties;
         private AthenaPropertiesInput _athenaProperties;
         private GluePropertiesInput _glueProperties;
         private HyperPodPropertiesInput _hyperPodProperties;
@@ -42,6 +43,24 @@ namespace Amazon.DataZone.Model
         private S3PropertiesInput _s3Properties;
         private SparkEmrPropertiesInput _sparkEmrProperties;
         private SparkGluePropertiesInput _sparkGlueProperties;
+
+        /// <summary>
+        /// Gets and sets the property AmazonQProperties. 
+        /// <para>
+        /// The Amazon Q properties of the connection.
+        /// </para>
+        /// </summary>
+        public AmazonQPropertiesInput AmazonQProperties
+        {
+            get { return this._amazonqProperties; }
+            set { this._amazonqProperties = value; }
+        }
+
+        // Check to see if AmazonQProperties property is set
+        internal bool IsSetAmazonQProperties()
+        {
+            return this._amazonqProperties != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AthenaProperties. 

@@ -42,6 +42,7 @@ namespace Amazon.DataZone.Model
         private string _name;
         private string _nextToken;
         private string _projectIdentifier;
+        private ConnectionScope _scope;
         private SortFieldConnection _sortBy;
         private SortOrder _sortOrder;
         private ConnectionType _type;
@@ -153,7 +154,6 @@ namespace Amazon.DataZone.Model
         /// The ID of the project where you want to list connections.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string ProjectIdentifier
         {
             get { return this._projectIdentifier; }
@@ -164,6 +164,24 @@ namespace Amazon.DataZone.Model
         internal bool IsSetProjectIdentifier()
         {
             return this._projectIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Scope. 
+        /// <para>
+        /// The scope of the connection.
+        /// </para>
+        /// </summary>
+        public ConnectionScope Scope
+        {
+            get { return this._scope; }
+            set { this._scope = value; }
+        }
+
+        // Check to see if Scope property is set
+        internal bool IsSetScope()
+        {
+            return this._scope != null;
         }
 
         /// <summary>

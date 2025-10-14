@@ -48,6 +48,17 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAmazonQProperties())
+            {
+                context.Writer.WritePropertyName("amazonQProperties");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AmazonQPropertiesPatchMarshaller.Instance;
+                marshaller.Marshall(requestObject.AmazonQProperties, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetAthenaProperties())
             {
                 context.Writer.WritePropertyName("athenaProperties");

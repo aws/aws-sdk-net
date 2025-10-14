@@ -35,6 +35,7 @@ namespace Amazon.DataZone.Model
     public partial class PhysicalEndpoint
     {
         private AwsLocation _awsLocation;
+        private bool? _enableTrustedIdentityPropagation;
         private GlueConnection _glueConnection;
         private string _glueConnectionName;
         private string _host;
@@ -58,6 +59,24 @@ namespace Amazon.DataZone.Model
         internal bool IsSetAwsLocation()
         {
             return this._awsLocation != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnableTrustedIdentityPropagation. 
+        /// <para>
+        /// Specified whether trusted identity propagation for the connection is enabled.
+        /// </para>
+        /// </summary>
+        public bool EnableTrustedIdentityPropagation
+        {
+            get { return this._enableTrustedIdentityPropagation.GetValueOrDefault(); }
+            set { this._enableTrustedIdentityPropagation = value; }
+        }
+
+        // Check to see if EnableTrustedIdentityPropagation property is set
+        internal bool IsSetEnableTrustedIdentityPropagation()
+        {
+            return this._enableTrustedIdentityPropagation.HasValue; 
         }
 
         /// <summary>
