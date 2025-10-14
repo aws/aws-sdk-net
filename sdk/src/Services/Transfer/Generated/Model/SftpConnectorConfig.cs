@@ -85,6 +85,13 @@ namespace Amazon.Transfer.Model
         /// </para>
         ///  </note> 
         /// <para>
+        /// When creating connectors with egress config (VPC_LATTICE type connectors), since host
+        /// name is not something we can verify, the only accepted trusted host key format is
+        /// <c>key-type key-body</c> without the host name. For example: <c>ssh-rsa AAAAB3Nza...&lt;long-string-for-public-key&gt;</c>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
         /// The three standard SSH public key format elements are <c>&lt;key type&gt;</c>, <c>&lt;body
         /// base64&gt;</c>, and an optional <c>&lt;comment&gt;</c>, with spaces between each element.
         /// Specify only the <c>&lt;key type&gt;</c> and <c>&lt;body base64&gt;</c>: do not enter
@@ -119,12 +126,18 @@ namespace Amazon.Transfer.Model
         /// </para>
         ///  
         /// <para>
-        ///  <c>ftp.host.com ssh-rsa AAAAB3Nza...&lt;long-string-for-public-key</c> 
+        ///  <c>ftp.host.com ssh-rsa AAAAB3Nza...&lt;long-string-for-public-key&gt;</c> 
         /// </para>
         ///  
         /// <para>
         /// Copy and paste this string into the <c>TrustedHostKeys</c> field for the <c>create-connector</c>
         /// command or into the <b>Trusted host keys</b> field in the console.
+        /// </para>
+        ///  
+        /// <para>
+        /// For VPC Lattice type connectors (VPC_LATTICE), remove the hostname from the key and
+        /// use only the <c>key-type key-body</c> format. In this example, it should be: <c>ssh-rsa
+        /// AAAAB3Nza...&lt;long-string-for-public-key&gt;</c> 
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
