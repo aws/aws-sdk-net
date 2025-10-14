@@ -81,11 +81,12 @@ namespace Amazon.S3.Transfer.Internal
             this._s3Client = s3Client;
             this._fileTransporterRequest = fileTransporterRequest;
             this._contentLength = this._fileTransporterRequest.ContentLength;
+            
+            long targetPartSize = fileTransporterRequest.IsSetPartSize() 
+                ? fileTransporterRequest.PartSize 
+                : S3Constants.DefaultPartSize;
 
-            if (fileTransporterRequest.IsSetPartSize())
-                this._partSize = fileTransporterRequest.PartSize;
-            else
-                this._partSize = calculatePartSize(this._contentLength);
+            this._partSize = calculatePartSize(this._contentLength, targetPartSize);
 
             if (fileTransporterRequest.InputStream != null)
             {
@@ -98,15 +99,9 @@ namespace Amazon.S3.Transfer.Internal
             Logger.DebugFormat("Upload part size {0}.", this._partSize);
         }
 
-        private static long calculatePartSize(long fileSize)
+        private static long calculatePartSize(long contentLength, long targetPartSize)
         {
-            double partSize = Math.Ceiling((double)fileSize / S3Constants.MaxNumberOfParts);
-            if (partSize < S3Constants.MinPartSize)
-            {
-                partSize = S3Constants.MinPartSize;
-            }
-
-            return (long)partSize;
+            return Math.Max(targetPartSize, contentLength / S3Constants.MaxNumberOfParts);
         }
 
         private string determineContentType()
