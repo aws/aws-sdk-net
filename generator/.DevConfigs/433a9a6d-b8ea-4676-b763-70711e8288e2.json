@@ -4,8 +4,7 @@
       "serviceName": "S3",
       "type": "patch",
       "changeLogMessages": [
-        "Added progress tracking events to simple upload",
-        "Added PutObjectResponse to TransferUtilityUploadResponse mapping"
+        "Added progress tracking events to simple upload"
       ]
     }
   ]
