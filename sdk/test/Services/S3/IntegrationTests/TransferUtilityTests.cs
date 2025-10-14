@@ -670,27 +670,16 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             string key = "MultipartValidatePartSizeTest";
 
             Upload(key, 20 * MEG_SIZE, null, Client);
-
-            try
+            
+            var objectMetadataResponse = Client.GetObjectMetadata(new GetObjectMetadataRequest
             {
-                var objectMetadataResponse = Client.GetObjectMetadata(new GetObjectMetadataRequest
-                {
-                    BucketName = bucketName,
-                    Key = key,
-                    PartNumber = 1,
-                });
+                BucketName = bucketName,
+                Key = key,
+                PartNumber = 1,
+            });
 
-                Assert.AreEqual(2, objectMetadataResponse.PartsCount);
-                Assert.AreEqual(8 * MEG_SIZE, objectMetadataResponse.ContentLength);
-            }
-            finally
-            {
-                Client.DeleteObject(new DeleteObjectRequest
-                {
-                    BucketName = bucketName,
-                    Key = key
-                });
-            }
+            Assert.AreEqual(3, objectMetadataResponse.PartsCount);
+            Assert.AreEqual(8 * MEG_SIZE, objectMetadataResponse.ContentLength);
         }
 
         void Upload(string fileName, long size,
