@@ -34,12 +34,31 @@ namespace Amazon.DataZone.Model
     /// </summary>
     public partial class ConnectionPropertiesPatch
     {
+        private AmazonQPropertiesPatch _amazonqProperties;
         private AthenaPropertiesPatch _athenaProperties;
         private GluePropertiesPatch _glueProperties;
         private IamPropertiesPatch _iamProperties;
         private RedshiftPropertiesPatch _redshiftProperties;
         private S3PropertiesPatch _s3Properties;
         private SparkEmrPropertiesPatch _sparkEmrProperties;
+
+        /// <summary>
+        /// Gets and sets the property AmazonQProperties. 
+        /// <para>
+        /// The Amazon Q properties of the connection.
+        /// </para>
+        /// </summary>
+        public AmazonQPropertiesPatch AmazonQProperties
+        {
+            get { return this._amazonqProperties; }
+            set { this._amazonqProperties = value; }
+        }
+
+        // Check to see if AmazonQProperties property is set
+        internal bool IsSetAmazonQProperties()
+        {
+            return this._amazonqProperties != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AthenaProperties. 

@@ -40,9 +40,11 @@ namespace Amazon.DataZone.Model
         private string _clientToken;
         private string _description;
         private string _domainIdentifier;
+        private bool? _enableTrustedIdentityPropagation;
         private string _environmentIdentifier;
         private string _name;
         private ConnectionPropertiesInput _props;
+        private ConnectionScope _scope;
 
         /// <summary>
         /// Gets and sets the property AwsLocation. 
@@ -120,12 +122,29 @@ namespace Amazon.DataZone.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EnableTrustedIdentityPropagation. 
+        /// <para>
+        /// Specifies whether the trusted identity propagation is enabled.
+        /// </para>
+        /// </summary>
+        public bool? EnableTrustedIdentityPropagation
+        {
+            get { return this._enableTrustedIdentityPropagation; }
+            set { this._enableTrustedIdentityPropagation = value; }
+        }
+
+        // Check to see if EnableTrustedIdentityPropagation property is set
+        internal bool IsSetEnableTrustedIdentityPropagation()
+        {
+            return this._enableTrustedIdentityPropagation.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property EnvironmentIdentifier. 
         /// <para>
         /// The ID of the environment where the connection is created.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string EnvironmentIdentifier
         {
             get { return this._environmentIdentifier; }
@@ -173,6 +192,24 @@ namespace Amazon.DataZone.Model
         internal bool IsSetProps()
         {
             return this._props != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Scope. 
+        /// <para>
+        /// The scope of the connection.
+        /// </para>
+        /// </summary>
+        public ConnectionScope Scope
+        {
+            get { return this._scope; }
+            set { this._scope = value; }
+        }
+
+        // Check to see if Scope property is set
+        internal bool IsSetScope()
+        {
+            return this._scope != null;
         }
 
     }
