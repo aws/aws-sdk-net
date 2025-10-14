@@ -74,6 +74,7 @@ namespace Amazon.Connect.Model
         private Dictionary<string, SegmentAttributeValue> _segmentAttributes = AWSConfigs.InitializeCollections ? new Dictionary<string, SegmentAttributeValue>() : null;
         private EndpointInfo _systemEndpoint;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private TaskTemplateInfoV2 _taskTemplateInfo;
         private int? _totalPauseCount;
         private int? _totalPauseDurationInSeconds;
         private WisdomInfo _wisdomInfo;
@@ -836,6 +837,25 @@ namespace Amazon.Connect.Model
         internal bool IsSetTags()
         {
             return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TaskTemplateInfo. 
+        /// <para>
+        /// If this contact was created using a task template, this contains information about
+        /// the task template.
+        /// </para>
+        /// </summary>
+        public TaskTemplateInfoV2 TaskTemplateInfo
+        {
+            get { return this._taskTemplateInfo; }
+            set { this._taskTemplateInfo = value; }
+        }
+
+        // Check to see if TaskTemplateInfo property is set
+        internal bool IsSetTaskTemplateInfo()
+        {
+            return this._taskTemplateInfo != null;
         }
 
         /// <summary>

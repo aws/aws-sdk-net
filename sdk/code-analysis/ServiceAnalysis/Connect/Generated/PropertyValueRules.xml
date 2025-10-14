@@ -5624,6 +5624,11 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.TaskTemplateInfoV2.Name</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.TaskTemplateMetadata.Arn</property>
     <min>1</min>
     <max>500</max>

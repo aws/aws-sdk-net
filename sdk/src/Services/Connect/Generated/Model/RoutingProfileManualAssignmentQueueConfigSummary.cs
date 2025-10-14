@@ -44,6 +44,12 @@ namespace Amazon.Connect.Model
         /// <para>
         /// The channels this queue supports. Valid Values: CHAT | TASK | EMAIL 
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// VOICE is not supported. The information shown below is incorrect. We're working to
+        /// correct it. 
+        /// </para>
+        ///  </important>
         /// </summary>
         [AWSProperty(Required=true)]
         public Channel Channel

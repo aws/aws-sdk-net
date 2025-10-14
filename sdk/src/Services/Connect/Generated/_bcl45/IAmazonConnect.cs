@@ -374,22 +374,12 @@ namespace Amazon.Connect
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Custom contact routing. You can build custom contact routing mechanisms beyond the
-        /// default system routing in Amazon Connect. You can create tailored contact distribution
-        /// logic that offers queued contacts directly to specific agents.
+        /// Programmatically assign queued contacts to available users.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Manual contact assignment. You can programmatically assign queued contacts to available
-        /// users. This provides flexibility to contact centers that require manual oversight
-        /// or specialized routing workflows outside of standard queue management.
-        /// </para>
-        ///  
-        /// <para>
-        /// For information about how manual contact assignment works in the agent workspace,
-        /// see the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/worklist-app.html">Access
-        /// the Worklist app in the Amazon Connect agent workspace</a> in the <i>Amazon Connect
-        /// Administrator Guide</i>. 
+        /// Leverage the IAM context key <c>connect:PreferredUserArn</c> to restrict contact association
+        /// to specific preferred user.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -397,7 +387,7 @@ namespace Amazon.Connect
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Use this API chat/SMS, email, and task contacts. It does not support voice contacts.
+        /// Use this API with chat, email, and task contacts. It does not support voice contacts.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -415,6 +405,12 @@ namespace Amazon.Connect
         /// It respects the IAM context key <c>connect:PreferredUserArn</c> to enforce authorization
         /// controls and prevent unauthorized contact associations. Verify that your IAM policies
         /// are properly configured to support your intended use cases.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The service quota <i>Queues per routing profile per instance</i> applies to manually
+        /// assigned queues, too. For more information about this quota, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#connect-quotas">Amazon
+        /// Connect quotas</a> in the <i>Amazon Connect Administrator Guide</i>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -461,22 +457,12 @@ namespace Amazon.Connect
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Custom contact routing. You can build custom contact routing mechanisms beyond the
-        /// default system routing in Amazon Connect. You can create tailored contact distribution
-        /// logic that offers queued contacts directly to specific agents.
+        /// Programmatically assign queued contacts to available users.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Manual contact assignment. You can programmatically assign queued contacts to available
-        /// users. This provides flexibility to contact centers that require manual oversight
-        /// or specialized routing workflows outside of standard queue management.
-        /// </para>
-        ///  
-        /// <para>
-        /// For information about how manual contact assignment works in the agent workspace,
-        /// see the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/worklist-app.html">Access
-        /// the Worklist app in the Amazon Connect agent workspace</a> in the <i>Amazon Connect
-        /// Administrator Guide</i>. 
+        /// Leverage the IAM context key <c>connect:PreferredUserArn</c> to restrict contact association
+        /// to specific preferred user.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -484,7 +470,7 @@ namespace Amazon.Connect
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Use this API chat/SMS, email, and task contacts. It does not support voice contacts.
+        /// Use this API with chat, email, and task contacts. It does not support voice contacts.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -502,6 +488,12 @@ namespace Amazon.Connect
         /// It respects the IAM context key <c>connect:PreferredUserArn</c> to enforce authorization
         /// controls and prevent unauthorized contact associations. Verify that your IAM policies
         /// are properly configured to support your intended use cases.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The service quota <i>Queues per routing profile per instance</i> applies to manually
+        /// assigned queues, too. For more information about this quota, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#connect-quotas">Amazon
+        /// Connect quotas</a> in the <i>Amazon Connect Administrator Guide</i>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -6396,7 +6388,36 @@ namespace Amazon.Connect
         /// <para>
         /// Describes the specified contact. 
         /// </para>
-        ///  <important> <ul> <li> 
+        ///  
+        /// <para>
+        ///  <b>Use cases</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Following are common uses cases for this API:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Retrieve contact information such as the caller's phone number and the specific number
+        /// the caller dialed to integrate into custom monitoring or custom agent experience solutions.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Detect when a customer chat session disconnects due to a network issue on the agent's
+        /// end. Use the DisconnectReason field in the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/ctr-data-model.html#ctr-ContactTraceRecord">ContactTraceRecord</a>
+        /// to detect this event and then re-queue the chat for followup.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Identify after contact work (ACW) duration and call recordings information when a
+        /// COMPLETED event is received by using the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-events.html">contact
+        /// event stream</a>. 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Important things to know</b> 
+        /// </para>
+        ///  <ul> <li> 
         /// <para>
         ///  <c>SystemEndpoint</c> is not populated for contacts with initiation method of MONITOR,
         /// QUEUE_TRANSFER, or CALLBACK
@@ -6407,7 +6428,11 @@ namespace Amazon.Connect
         /// and then it is deleted. Only contact information that is available in Amazon Connect
         /// is returned by this API.
         /// </para>
-        ///  </li> </ul> </important>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
+        /// Connect endpoints and quotas</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeContact service method.</param>
         /// 
@@ -6439,7 +6464,36 @@ namespace Amazon.Connect
         /// <para>
         /// Describes the specified contact. 
         /// </para>
-        ///  <important> <ul> <li> 
+        ///  
+        /// <para>
+        ///  <b>Use cases</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Following are common uses cases for this API:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Retrieve contact information such as the caller's phone number and the specific number
+        /// the caller dialed to integrate into custom monitoring or custom agent experience solutions.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Detect when a customer chat session disconnects due to a network issue on the agent's
+        /// end. Use the DisconnectReason field in the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/ctr-data-model.html#ctr-ContactTraceRecord">ContactTraceRecord</a>
+        /// to detect this event and then re-queue the chat for followup.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Identify after contact work (ACW) duration and call recordings information when a
+        /// COMPLETED event is received by using the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-events.html">contact
+        /// event stream</a>. 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Important things to know</b> 
+        /// </para>
+        ///  <ul> <li> 
         /// <para>
         ///  <c>SystemEndpoint</c> is not populated for contacts with initiation method of MONITOR,
         /// QUEUE_TRANSFER, or CALLBACK
@@ -6450,7 +6504,11 @@ namespace Amazon.Connect
         /// and then it is deleted. Only contact information that is available in Amazon Connect
         /// is returned by this API.
         /// </para>
-        ///  </li> </ul> </important>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
+        /// Connect endpoints and quotas</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeContact service method.</param>
         /// <param name="cancellationToken">
@@ -12522,9 +12580,10 @@ namespace Amazon.Connect
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// This API returns list of queues where contacts can be manually assigned or picked.
-        /// The user can additionally filter on queues, if they have access to those queues (otherwise
-        /// a invalid request exception will be thrown).
+        /// This API returns list of queues where contacts can be manually assigned or picked
+        /// by an agent who has access to the Worklist app. The user can additionally filter on
+        /// queues, if they have access to those queues (otherwise a invalid request exception
+        /// will be thrown).
         /// </para>
         ///  
         /// <para>
@@ -12585,9 +12644,10 @@ namespace Amazon.Connect
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// This API returns list of queues where contacts can be manually assigned or picked.
-        /// The user can additionally filter on queues, if they have access to those queues (otherwise
-        /// a invalid request exception will be thrown).
+        /// This API returns list of queues where contacts can be manually assigned or picked
+        /// by an agent who has access to the Worklist app. The user can additionally filter on
+        /// queues, if they have access to those queues (otherwise a invalid request exception
+        /// will be thrown).
         /// </para>
         ///  
         /// <para>
