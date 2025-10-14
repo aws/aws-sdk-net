@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
    <RunAnalyzersDuringBuild Condition="'$(RunAnalyzersDuringBuild)'==''">true</RunAnalyzersDuringBuild>
     <TargetFramework>net472</TargetFramework>
@@ -48,31 +48,31 @@
   </Choose>
 
   <ItemGroup>
-    <Compile Remove="**/obj/**" />
+    <Compile Remove="**/obj/**"/>
     <None Remove="**/obj/**" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="../../../../src/Core/AWSSDK.Core.NetFramework.csproj" />
-    <ProjectReference Include="../../../Common/AWSSDK.CommonTest.csproj" />
-    <ProjectReference Include="../../../UnitTests/Custom/AWSSDK.UnitTestUtilities.NetFramework.csproj" />
-    <ProjectReference Include="../../../../../extensions/src/AWSSDK.Extensions.CrtIntegration/AWSSDK.Extensions.CrtIntegration.NetFramework.csproj" />
-    <ProjectReference Include="../../../../src/Services/DynamoDBv2/AWSSDK.DynamoDBv2.NetFramework.csproj" />
+    <ProjectReference Include="../../../../src/Core/AWSSDK.Core.NetFramework.csproj"/>
+    <ProjectReference Include="../../../Common/AWSSDK.CommonTest.csproj"/>
+    <ProjectReference Include="../../../UnitTests/Custom/AWSSDK.UnitTestUtilities.NetFramework.csproj"/>
+    <ProjectReference Include="../../../../../extensions/src/AWSSDK.Extensions.CrtIntegration/AWSSDK.Extensions.CrtIntegration.NetFramework.csproj"/>
+    <ProjectReference Include="../../../../src/Services/DynamoDBv2/AWSSDK.DynamoDBv2.NetFramework.csproj"/>
   </ItemGroup>
 
   <ItemGroup Condition="$(RunAnalyzersDuringBuild)">
   </ItemGroup>
   <ItemGroup>
-        <PackageReference Include="Moq" Version="4.8.3" />
-        <PackageReference Include="MSTest.TestAdapter" Version="1.4.0" />
-        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.9.0" />
-        <PackageReference Include="MSTest.TestFramework" Version="1.4.0" />
-        <PackageReference Include="AutoFixture" Version="3.51.0" />
-        <PackageReference Include="AutoFixture.AutoMoq" Version="3.51.0" />
+        <PackageReference Include="Moq" Version="4.8.3"/>
+        <PackageReference Include="MSTest.TestAdapter" Version="1.4.0"/>
+        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.9.0"/>
+        <PackageReference Include="MSTest.TestFramework" Version="1.4.0"/>
+        <PackageReference Include="AutoFixture" Version="3.51.0"/>
+        <PackageReference Include="AutoFixture.AutoMoq" Version="3.51.0"/>
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration"/>
   </ItemGroup>
 
 
