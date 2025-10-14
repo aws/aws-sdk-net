@@ -392,12 +392,31 @@ internal sealed partial class BedrockChatClient : IChatClient
 
         if (options?.Instructions is { } instructions)
         {
-            system.Add(new SystemContentBlock() { Text = instructions });
+            system.Add(new SystemContentBlock()
+            {
+                Text = instructions,
+            });
         }
 
-        system.AddRange(messages
-            .Where(m => m.Role == ChatRole.System && m.Contents.Any(c => c is TextContent))
-            .Select(m => new SystemContentBlock() { Text = string.Concat(m.Contents.OfType<TextContent>()) }));
+        foreach (var message in messages
+                     .Where(m => m.Role == ChatRole.System && m.Contents.Any(c => c is TextContent)))
+        {
+            system.Add(new SystemContentBlock()
+            {
+                Text = string.Concat(message.Contents.OfType<TextContent>()),
+            });
+
+            if (message.AdditionalProperties?.TryGetValue(nameof(ContentBlock.CachePoint), out var maybeCachePoint) == true)
+            {
+                if (maybeCachePoint is CachePointBlock cachePointBlock)
+                {
+                    system.Add(new SystemContentBlock()
+                    {
+                        CachePoint = cachePointBlock,
+                    });
+                }
+            }
+        }
 
         return system;
     }
@@ -437,6 +456,17 @@ internal sealed partial class BedrockChatClient : IChatClient
                     if (c.Text is { } s && string.IsNullOrWhiteSpace(s))
                     {
                         c.Text = "\u200b"; // zero-width space
+                    }
+                }
+
+                if (chatMessage.AdditionalProperties?.TryGetValue(nameof(ContentBlock.CachePoint), out var maybeCachePoint) == true)
+                {
+                    if (maybeCachePoint is CachePointBlock cachePointBlock)
+                    {
+                        contents.Add(new()
+                        {
+                            CachePoint = cachePointBlock
+                        });
                     }
                 }
 
@@ -572,6 +602,18 @@ internal sealed partial class BedrockChatClient : IChatClient
                         },
                     });
                     break;
+            }
+
+
+            if (content.AdditionalProperties?.TryGetValue(nameof(ContentBlock.CachePoint), out var maybeCachePoint) == true)
+            {
+                if (maybeCachePoint is CachePointBlock cachePointBlock)
+                {
+                    contents.Add(new()
+                    {
+                        CachePoint = cachePointBlock
+                    });
+                }
             }
         }
 
