@@ -12,15 +12,20 @@ This document provides a comprehensive guideline for how to review S3 generation
 
 It isn't always possible to fully generate the s3 code so in some cases the logic will be split between a custom marshaller and a generated marshaller:
 
-Here is an example of s3 marshaller logic split between two files
+Here is an example of s3 marshaller logic split between two files:
+
 * `sdk/src/Services/S3/Custom/Model/Internal/MarshallTransformations/GetObjectMetadataRequestMarshaller.cs` 
 * `sdk/src/Services/S3/Generated/Model/Internal/MarshallTransformations/GetObjectMetadataRequestMarshaller.cs`
+
+In the example above, the logic that can't be generated has been moved to a custom partial method inside of the custom file called `PostMarshallCustomization`, which the generated marshaller then calls.
 
 When a custom file is split between two files (custom and generated) the custom and generated should be looked as a whole when analyzing the logic.
 
 The same can be said about unmarshallers. Here is an example of S3 unmarshaller logic that is split between two files:
 * `sdk/src/Services/S3/Generated/Model/Internal/MarshallTransformations/ListObjectsV2ResponseUnmarshaller.cs`
 * `sdk/src/Services/S3/Custom/Model/Internal/MarshallTransformations/ListObjectsV2ResponseUnmarshaller.cs`
+
+In the example above, the logic that can't be generated has been moved to a custom method called `CustomContentsUnmarshall` that is called from within the generated unmarshaller. The name of the custom method will differ depending on what the custom method is doing, but the pattern of the generated unmarshaller calling a custom method will be commonly found within S3 generation pull requests.
 
 Similarly to the s3 marshallers, when the custom file is split between two files (custom and generator) the custom and generated should be looked as a whole when analyzing the logic.
 
