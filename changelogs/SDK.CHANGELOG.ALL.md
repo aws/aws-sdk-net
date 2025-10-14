@@ -1,3 +1,19 @@
+### 3.7.1144.0 (2025-10-14 18:31 UTC)
+* AppStream (3.7.502.0)
+	* This release introduces support for Microsoft license included applications streaming.
+* Backup (3.7.503.0)
+	* The AWS Backup job attribute extension enhancement helps customers better understand the plan that initiated each job, and the properties of the resource each job creates.
+* Connect (3.7.509.0)
+	* SDK release for TaskTemplateInfo in Contact for DescribeContact response.
+* DataZone (3.7.507.0)
+	* Support creating scoped and trustedIdentityPropagation enabled connections.
+* EC2 (3.7.516.0)
+	* This release adds support for creating instant, point-in-time copies of EBS volumes within the same Availability Zone
+* TranscribeService (3.7.502.0)
+	* Move UntagResource API body member to query parameter
+* Transfer (3.7.503.0)
+	* SFTP connectors now support routing connections via customers' VPC. This enables connections to remote servers that are only accessible in a customer's VPC environment, and to servers that are accessible over the internet but need connections coming from an IP address in a customer VPC's CIDR range.
+
 ### 3.7.1143.0 (2025-10-13 18:21 UTC)
 * BedrockAgentCore (3.7.505.0)
 	* Updated InvokeAgentRuntime API to accept account id optionally and added CompleteResourceTokenAuth API.
