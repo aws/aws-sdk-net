@@ -3243,6 +3243,49 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  CopyVolumes
+
+
+        /// <summary>
+        /// Creates a crash-consistent, point-in-time copy of an existing Amazon EBS volume within
+        /// the same Availability Zone. The volume copy can be attached to an Amazon EC2 instance
+        /// once it reaches the <c>available</c> state. For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-copying-volume.html">Copy
+        /// an Amazon EBS volume</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CopyVolumes service method.</param>
+        /// 
+        /// <returns>The response from the CopyVolumes service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CopyVolumes">REST API Reference for CopyVolumes Operation</seealso>
+        CopyVolumesResponse CopyVolumes(CopyVolumesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CopyVolumes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CopyVolumes operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCopyVolumes
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CopyVolumes">REST API Reference for CopyVolumes Operation</seealso>
+        IAsyncResult BeginCopyVolumes(CopyVolumesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CopyVolumes operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCopyVolumes.</param>
+        /// 
+        /// <returns>Returns a  CopyVolumesResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CopyVolumes">REST API Reference for CopyVolumes Operation</seealso>
+        CopyVolumesResponse EndCopyVolumes(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateCapacityReservation
 
 

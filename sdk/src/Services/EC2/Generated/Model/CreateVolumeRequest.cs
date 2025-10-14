@@ -84,7 +84,7 @@ namespace Amazon.EC2.Model
         /// Instantiates CreateVolumeRequest with the parameterized properties
         /// </summary>
         /// <param name="availabilityZone">The ID of the Availability Zone in which to create the volume. For example, <c>us-east-1a</c>. Either <c>AvailabilityZone</c> or <c>AvailabilityZoneId</c> must be specified, but not both.</param>
-        /// <param name="size">The size of the volume, in GiBs. You must specify either a snapshot ID or a volume size. If you specify a snapshot, the default is the snapshot size. You can specify a volume size that is equal to or larger than the snapshot size. The following are the supported volumes sizes for each volume type: <ul> <li>  <c>gp2</c>: 1 - 16,384 GiB </li> <li>  <c>gp3</c>: 1 - 65,536 GiB </li> <li>  <c>io1</c>: 4 - 16,384 GiB </li> <li>  <c>io2</c>: 4 - 65,536 GiB </li> <li>  <c>st1</c> and <c>sc1</c>: 125 - 16,384 GiB </li> <li>  <c>standard</c>: 1 - 1024 GiB </li> </ul></param>
+        /// <param name="size">The size of the volume, in GiBs. You must specify either a snapshot ID or a volume size. If you specify a snapshot, the default is the snapshot size, and you can specify a volume size that is equal to or larger than the snapshot size. Valid sizes: <ul> <li> gp2: <c>1 - 16,384</c> GiB </li> <li> gp3: <c>1 - 65,536</c> GiB </li> <li> io1: <c>4 - 16,384</c> GiB </li> <li> io2: <c>4 - 65,536</c> GiB </li> <li> st1 and sc1: <c>125 - 16,384</c> GiB </li> <li> standard: <c>1 - 1024</c> GiB </li> </ul></param>
         public CreateVolumeRequest(string availabilityZone, int size)
         {
             _availabilityZone = availabilityZone;
@@ -199,39 +199,33 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Iops. 
         /// <para>
-        /// The number of I/O operations per second (IOPS). For <c>gp3</c>, <c>io1</c>, and <c>io2</c>
-        /// volumes, this represents the number of IOPS that are provisioned for the volume. For
-        /// <c>gp2</c> volumes, this represents the baseline performance of the volume and the
-        /// rate at which the volume accumulates I/O credits for bursting.
+        /// The number of I/O operations per second (IOPS) to provision for the volume. Required
+        /// for <c>io1</c> and <c>io2</c> volumes. Optional for <c>gp3</c> volumes. Omit for all
+        /// other volume types. 
         /// </para>
         ///  
         /// <para>
-        /// The following are the supported values for each volume type:
+        /// Valid ranges:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>gp3</c>: 3,000 - 80,000 IOPS
+        /// gp3: <c>3,000 </c>(<i>default</i>)<c> - 80,000</c> IOPS
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>io1</c>: 100 - 64,000 IOPS
+        /// io1: <c>100 - 64,000</c> IOPS
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>io2</c>: 100 - 256,000 IOPS
+        /// io2: <c>100 - 256,000</c> IOPS
         /// </para>
-        ///  </li> </ul> 
+        ///  </li> </ul> <note> 
         /// <para>
-        /// For <c>io2</c> volumes, you can achieve up to 256,000 IOPS on <a href="https://docs.aws.amazon.com/ec2/latest/instancetypes/ec2-nitro-instances.html">instances
-        /// built on the Nitro System</a>. On other instances, you can achieve performance up
-        /// to 32,000 IOPS.
+        ///  <a href="https://docs.aws.amazon.com/ec2/latest/instancetypes/ec2-nitro-instances.html">
+        /// Instances built on the Nitro System</a> can support up to 256,000 IOPS. Other instances
+        /// can support up to 32,000 IOPS.
         /// </para>
-        ///  
-        /// <para>
-        /// This parameter is required for <c>io1</c> and <c>io2</c> volumes. The default for
-        /// <c>gp3</c> volumes is 3,000 IOPS. This parameter is not supported for <c>gp2</c>,
-        /// <c>st1</c>, <c>sc1</c>, or <c>standard</c> volumes.
-        /// </para>
+        ///  </note>
         /// </summary>
         public int Iops
         {
@@ -360,36 +354,36 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property Size. 
         /// <para>
         /// The size of the volume, in GiBs. You must specify either a snapshot ID or a volume
-        /// size. If you specify a snapshot, the default is the snapshot size. You can specify
+        /// size. If you specify a snapshot, the default is the snapshot size, and you can specify
         /// a volume size that is equal to or larger than the snapshot size.
         /// </para>
         ///  
         /// <para>
-        /// The following are the supported volumes sizes for each volume type:
+        /// Valid sizes:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>gp2</c>: 1 - 16,384 GiB
+        /// gp2: <c>1 - 16,384</c> GiB
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>gp3</c>: 1 - 65,536 GiB
+        /// gp3: <c>1 - 65,536</c> GiB
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>io1</c>: 4 - 16,384 GiB
+        /// io1: <c>4 - 16,384</c> GiB
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>io2</c>: 4 - 65,536 GiB
+        /// io2: <c>4 - 65,536</c> GiB
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>st1</c> and <c>sc1</c>: 125 - 16,384 GiB
+        /// st1 and sc1: <c>125 - 16,384</c> GiB
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>standard</c>: 1 - 1024 GiB
+        /// standard: <c>1 - 1024</c> GiB
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -445,15 +439,12 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Throughput. 
         /// <para>
-        /// The throughput to provision for a volume, with a maximum of 2,000 MiB/s.
+        /// The throughput to provision for the volume, in MiB/s. Supported for <c>gp3</c> volumes
+        /// only. Omit for all other volume types.
         /// </para>
         ///  
         /// <para>
-        /// This parameter is valid only for <c>gp3</c> volumes.
-        /// </para>
-        ///  
-        /// <para>
-        /// Valid Range: Minimum value of 125. Maximum value of 2,000.
+        /// Valid Range: <c>125 - 2000</c> MiB/s
         /// </para>
         /// </summary>
         public int Throughput
