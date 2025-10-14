@@ -112,6 +112,10 @@
     },
     "AbortMultipartUploadRequest": {
       "Bucket": "BucketName"
+    },
+    "CompleteMultipartUploadResponse": {
+      "ServerSideEncryption": "ServerSideEncryptionMethod",
+      "SSEKMSKeyId": "ServerSideEncryptionKeyManagementServiceKeyId"
     }
   }
 }
