@@ -256,6 +256,117 @@ namespace AWSSDK.UnitTests
 
         [TestMethod]
         [TestCategory("S3")]
+        public void MapCompleteMultipartUploadResponse_AllMappedProperties_WorkCorrectly()
+        {
+            // Get the expected mappings from JSON
+            var completeMultipartMappings = _mappingJson.RootElement
+                .GetProperty("Conversion")
+                .GetProperty("CompleteMultipartResponse")
+                .GetProperty("UploadResponse")
+                .EnumerateArray()
+                .Select(prop => prop.GetString())
+                .ToList();
+
+            // Create source object with dynamically generated test data
+            var sourceResponse = new CompleteMultipartUploadResponse();
+            var sourceType = typeof(CompleteMultipartUploadResponse);
+            var testDataValues = new Dictionary<string, object>();
+
+            // Generate test data for each mapped property
+            foreach (var propertyName in completeMultipartMappings)
+            {
+                // Resolve alias to actual property name
+                var resolvedPropertyName = ResolvePropertyName(propertyName);
+                var sourceProperty = sourceType.GetProperty(resolvedPropertyName);
+                if (sourceProperty?.CanWrite == true)
+                {
+                    var testValue = GenerateTestValue(sourceProperty.PropertyType, propertyName);
+                    sourceProperty.SetValue(sourceResponse, testValue);
+                    testDataValues[propertyName] = testValue;
+                }
+            }
+
+            // Add inherited properties for comprehensive testing
+            sourceResponse.HttpStatusCode = HttpStatusCode.OK;
+            sourceResponse.ContentLength = 2048;
+
+            // Map the response
+            var mappedResponse = ResponseMapper.MapCompleteMultipartUploadResponse(sourceResponse);
+            Assert.IsNotNull(mappedResponse, "Mapped response should not be null");
+
+            // Verify all mapped properties using reflection
+            var targetType = typeof(TransferUtilityUploadResponse);
+            var failedAssertions = new List<string>();
+
+            foreach (var propertyName in completeMultipartMappings)
+            {
+                // Resolve alias to actual property name for reflection lookups
+                var resolvedPropertyName = ResolvePropertyName(propertyName);
+                var sourceProperty = sourceType.GetProperty(resolvedPropertyName);
+                var targetProperty = targetType.GetProperty(resolvedPropertyName);
+
+                if (sourceProperty == null)
+                {
+                    failedAssertions.Add($"Source property '{propertyName}' (resolved to: {resolvedPropertyName}) not found in CompleteMultipartUploadResponse");
+                    continue;
+                }
+
+                if (targetProperty == null)
+                {
+                    failedAssertions.Add($"Target property '{propertyName}' (resolved to: {resolvedPropertyName}) not found in TransferUtilityUploadResponse");
+                    continue;
+                }
+
+                var sourceValue = sourceProperty.GetValue(sourceResponse);
+                var targetValue = targetProperty.GetValue(mappedResponse);
+
+                // Special handling for complex object comparisons
+                if (!AreValuesEqual(sourceValue, targetValue))
+                {
+                    failedAssertions.Add($"{propertyName}: Expected '{sourceValue ?? "null"}', got '{targetValue ?? "null"}'");
+                }
+            }
+
+            // Test inherited properties
+            Assert.AreEqual(sourceResponse.HttpStatusCode, mappedResponse.HttpStatusCode, "HttpStatusCode should match");
+            Assert.AreEqual(sourceResponse.ContentLength, mappedResponse.ContentLength, "ContentLength should match");
+
+            // Report any failures
+            if (failedAssertions.Any())
+            {
+                Assert.Fail($"Property mapping failures:\n{string.Join("\n", failedAssertions)}");
+            }
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public void MapCompleteMultipartUploadResponse_NullValues_HandledCorrectly()
+        {
+            // Test null handling scenarios
+            var testCases = new[]
+            {
+                // Test null Expiration
+                new CompleteMultipartUploadResponse { Expiration = null },
+                
+                // Test null enum conversions
+                new CompleteMultipartUploadResponse { ChecksumType = null, RequestCharged = null, ServerSideEncryption = null }
+            };
+
+            foreach (var testCase in testCases)
+            {
+                var mapped = ResponseMapper.MapCompleteMultipartUploadResponse(testCase);
+                Assert.IsNotNull(mapped, "Response should always be mappable");
+
+                // Test null handling
+                if (testCase.Expiration == null)
+                {
+                    Assert.IsNull(mapped.Expiration, "Null Expiration should map to null");
+                }
+            }
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
         public void ValidateCompleteMultipartUploadResponseConversionCompleteness()
         {
             ValidateResponseDefinitionCompleteness<TransferUtilityUploadResponse>(
