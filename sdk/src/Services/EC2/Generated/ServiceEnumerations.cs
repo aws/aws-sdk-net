@@ -7938,6 +7938,10 @@ namespace Amazon.EC2
         /// Constant ProvisionedRate for InitializationType
         /// </summary>
         public static readonly InitializationType ProvisionedRate = new InitializationType("provisioned-rate");
+        /// <summary>
+        /// Constant VolumeCopy for InitializationType
+        /// </summary>
+        public static readonly InitializationType VolumeCopy = new InitializationType("volume-copy");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

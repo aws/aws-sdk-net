@@ -3319,6 +3319,40 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  CopyVolumes
+
+
+        /// <summary>
+        /// Creates a crash-consistent, point-in-time copy of an existing Amazon EBS volume within
+        /// the same Availability Zone. The volume copy can be attached to an Amazon EC2 instance
+        /// once it reaches the <c>available</c> state. For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-copying-volume.html">Copy
+        /// an Amazon EBS volume</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CopyVolumes service method.</param>
+        /// 
+        /// <returns>The response from the CopyVolumes service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CopyVolumes">REST API Reference for CopyVolumes Operation</seealso>
+        CopyVolumesResponse CopyVolumes(CopyVolumesRequest request);
+
+
+
+        /// <summary>
+        /// Creates a crash-consistent, point-in-time copy of an existing Amazon EBS volume within
+        /// the same Availability Zone. The volume copy can be attached to an Amazon EC2 instance
+        /// once it reaches the <c>available</c> state. For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-copying-volume.html">Copy
+        /// an Amazon EBS volume</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CopyVolumes service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CopyVolumes service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CopyVolumes">REST API Reference for CopyVolumes Operation</seealso>
+        Task<CopyVolumesResponse> CopyVolumesAsync(CopyVolumesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  CreateCapacityReservation
 
 

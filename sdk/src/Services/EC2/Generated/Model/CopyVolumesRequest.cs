@@ -30,47 +30,43 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Container for the parameters to the ModifyVolume operation.
-    /// You can modify several parameters of an existing EBS volume, including volume size,
-    /// volume type, and IOPS capacity. If your EBS volume is attached to a current-generation
-    /// EC2 instance type, you might be able to apply these changes without stopping the instance
-    /// or detaching the volume from it. For more information about modifying EBS volumes,
-    /// see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-modify-volume.html">Amazon
-    /// EBS Elastic Volumes</a> in the <i>Amazon EBS User Guide</i>.
-    /// 
-    ///  
-    /// <para>
-    /// When you complete a resize operation on your volume, you need to extend the volume's
-    /// file-system size to take advantage of the new storage capacity. For more information,
-    /// see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/recognize-expanded-volume-linux.html">Extend
-    /// the file system</a>.
-    /// </para>
-    ///  
-    /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/monitoring-volume-modifications.html">Monitor
-    /// the progress of volume modifications</a> in the <i>Amazon EBS User Guide</i>.
-    /// </para>
-    ///  
-    /// <para>
-    /// With previous-generation instance types, resizing an EBS volume might require detaching
-    /// and reattaching the volume or stopping and restarting the instance.
-    /// </para>
-    ///  
-    /// <para>
-    /// After modifying a volume, you must wait at least six hours and ensure that the volume
-    /// is in the <c>in-use</c> or <c>available</c> state before you can modify the same volume.
-    /// This is sometimes referred to as a cooldown period.
-    /// </para>
+    /// Container for the parameters to the CopyVolumes operation.
+    /// Creates a crash-consistent, point-in-time copy of an existing Amazon EBS volume within
+    /// the same Availability Zone. The volume copy can be attached to an Amazon EC2 instance
+    /// once it reaches the <c>available</c> state. For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-copying-volume.html">Copy
+    /// an Amazon EBS volume</a>.
     /// </summary>
-    public partial class ModifyVolumeRequest : AmazonEC2Request
+    public partial class CopyVolumesRequest : AmazonEC2Request
     {
+        private string _clientToken;
         private bool? _dryRun;
         private int? _iops;
         private bool? _multiAttachEnabled;
         private int? _size;
+        private string _sourceVolumeId;
+        private List<TagSpecification> _tagSpecifications = AWSConfigs.InitializeCollections ? new List<TagSpecification>() : null;
         private int? _throughput;
-        private string _volumeId;
         private VolumeType _volumeType;
+
+        /// <summary>
+        /// Gets and sets the property ClientToken. 
+        /// <para>
+        /// Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. For more information, see <a href="https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html">
+        /// Ensure Idempotency</a>.
+        /// </para>
+        /// </summary>
+        public string ClientToken
+        {
+            get { return this._clientToken; }
+            set { this._clientToken = value; }
+        }
+
+        // Check to see if ClientToken property is set
+        internal bool IsSetClientToken()
+        {
+            return this._clientToken != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DryRun. 
@@ -95,24 +91,26 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Iops. 
         /// <para>
-        /// The target IOPS rate of the volume. This parameter is valid only for <c>gp3</c>, <c>io1</c>,
-        /// and <c>io2</c> volumes.
+        /// The number of I/O operations per second (IOPS) to provision for the volume copy. Required
+        /// for <c>io1</c> and <c>io2</c> volumes. Optional for <c>gp3</c> volumes. Omit for all
+        /// other volume types. Full provisioned IOPS performance can be achieved only once the
+        /// volume copy is fully initialized. 
         /// </para>
         ///  
         /// <para>
-        /// The following are the supported values for each volume type:
+        /// Valid ranges:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>gp3</c>: 3,000 - 80,000 IOPS
+        /// gp3: <c>3,000 </c>(<i>default</i>)<c> - 80,000</c> IOPS
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>io1</c>: 100 - 64,000 IOPS
+        /// io1: <c>100 - 64,000</c> IOPS
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>io2</c>: 100 - 256,000 IOPS
+        /// io2: <c>100 - 256,000</c> IOPS
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
@@ -120,11 +118,7 @@ namespace Amazon.EC2.Model
         /// Instances built on the Nitro System</a> can support up to 256,000 IOPS. Other instances
         /// can support up to 32,000 IOPS.
         /// </para>
-        ///  </note> 
-        /// <para>
-        /// Default: The existing value is retained if you keep the same volume type. If you change
-        /// the volume type to <c>io1</c>, <c>io2</c>, or <c>gp3</c>, the default is 3,000.
-        /// </para>
+        ///  </note>
         /// </summary>
         public int? Iops
         {
@@ -141,11 +135,11 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property MultiAttachEnabled. 
         /// <para>
-        /// Specifies whether to enable Amazon EBS Multi-Attach. If you enable Multi-Attach, you
-        /// can attach the volume to up to 16 <a href="https://docs.aws.amazon.com/ec2/latest/instancetypes/ec2-nitro-instances.html">
-        /// Nitro-based instances</a> in the same Availability Zone. This parameter is supported
-        /// with <c>io1</c> and <c>io2</c> volumes only. For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volumes-multi.html">
-        /// Amazon EBS Multi-Attach</a> in the <i>Amazon EBS User Guide</i>.
+        /// Indicates whether to enable Amazon EBS Multi-Attach for the volume copy. If you enable
+        /// Multi-Attach, you can attach the volume to up to 16 Nitro instances in the same Availability
+        /// Zone simultaneously. Supported with <c>io1</c> and <c>io2</c> volumes only. For more
+        /// information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volumes-multi.html">
+        /// Amazon EBS Multi-Attach</a>.
         /// </para>
         /// </summary>
         public bool? MultiAttachEnabled
@@ -163,41 +157,39 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Size. 
         /// <para>
-        /// The target size of the volume, in GiB. The target volume size must be greater than
-        /// or equal to the existing size of the volume.
+        /// The size of the volume copy, in GiBs. The size must be equal to or greater than the
+        /// size of the source volume. If not specified, the size defaults to the size of the
+        /// source volume.
         /// </para>
         ///  
         /// <para>
-        /// The following are the supported volumes sizes for each volume type:
+        /// Maximum supported sizes:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>gp2</c>: 1 - 16,384 GiB
+        /// gp2: <c>16,384</c> GiB
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>gp3</c>: 1 - 65,536 GiB
+        /// gp3: <c>65,536</c> GiB
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>io1</c>: 4 - 16,384 GiB
+        /// io1: <c>16,384</c> GiB
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>io2</c>: 4 - 65,536 GiB
+        /// io2: <c>65,536</c> GiB
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>st1</c> and <c>sc1</c>: 125 - 16,384 GiB
+        /// st1 and sc1: <c>16,384</c> GiB
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>standard</c>: 1 - 1024 GiB
+        /// standard: <c>1024</c> GiB
         /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// Default: The existing size is retained.
-        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public int? Size
         {
@@ -212,19 +204,57 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SourceVolumeId. 
+        /// <para>
+        /// The ID of the source EBS volume to copy.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public string SourceVolumeId
+        {
+            get { return this._sourceVolumeId; }
+            set { this._sourceVolumeId = value; }
+        }
+
+        // Check to see if SourceVolumeId property is set
+        internal bool IsSetSourceVolumeId()
+        {
+            return this._sourceVolumeId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TagSpecifications. 
+        /// <para>
+        /// The tags to apply to the volume copy during creation.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<TagSpecification> TagSpecifications
+        {
+            get { return this._tagSpecifications; }
+            set { this._tagSpecifications = value; }
+        }
+
+        // Check to see if TagSpecifications property is set
+        internal bool IsSetTagSpecifications()
+        {
+            return this._tagSpecifications != null && (this._tagSpecifications.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
         /// Gets and sets the property Throughput. 
         /// <para>
-        /// The target throughput of the volume, in MiB/s. This parameter is valid only for <c>gp3</c>
-        /// volumes. The maximum value is 2,000.
+        /// The throughput to provision for the volume copy, in MiB/s. Supported for <c>gp3</c>
+        /// volumes only. Omit for all other volume types. Full provisioned throughput performance
+        /// can be achieved only once the volume copy is fully initialized.
         /// </para>
         ///  
         /// <para>
-        /// Default: The existing value is retained if the source and target volume type is <c>gp3</c>.
-        /// Otherwise, the default value is 125.
-        /// </para>
-        ///  
-        /// <para>
-        /// Valid Range: Minimum value of 125. Maximum value of 2,000.
+        /// Valid Range: <c>125 - 2000</c> MiB/s
         /// </para>
         /// </summary>
         public int? Throughput
@@ -240,33 +270,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VolumeId. 
-        /// <para>
-        /// The ID of the volume.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public string VolumeId
-        {
-            get { return this._volumeId; }
-            set { this._volumeId = value; }
-        }
-
-        // Check to see if VolumeId property is set
-        internal bool IsSetVolumeId()
-        {
-            return this._volumeId != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property VolumeType. 
         /// <para>
-        /// The target EBS volume type of the volume. For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volume-types.html">Amazon
-        /// EBS volume types</a> in the <i>Amazon EBS User Guide</i>.
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: The existing type is retained.
+        /// The volume type for the volume copy. If not specified, the volume type defaults to
+        /// <c>gp2</c>.
         /// </para>
         /// </summary>
         public VolumeType VolumeType
