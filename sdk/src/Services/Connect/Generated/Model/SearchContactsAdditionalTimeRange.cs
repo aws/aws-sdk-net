@@ -30,7 +30,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// Time range that you additionally want to filter on.
+    /// Time range that you <b>additionally</b> want to filter on.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// This is different from the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_SearchContactsTimeRange.html">SearchContactsTimeRange</a>
+    /// data type.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class SearchContactsAdditionalTimeRange
     {

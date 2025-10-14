@@ -296,6 +296,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     unmarshalledObject.Tags = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("TaskTemplateInfo", targetDepth))
+                {
+                    var unmarshaller = TaskTemplateInfoV2Unmarshaller.Instance;
+                    unmarshalledObject.TaskTemplateInfo = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("TotalPauseCount", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;

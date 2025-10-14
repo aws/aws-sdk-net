@@ -30,50 +30,48 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// The timestamp condition indicating which contact timestamp should be used and how
-    /// it should be filtered. It is not an actual timestamp value.
+    /// Information about the task template used to create this contact.
     /// </summary>
-    public partial class SearchContactsTimestampCondition
+    public partial class TaskTemplateInfoV2
     {
-        private SearchContactsTimeRangeConditionType _conditionType;
-        private SearchContactsTimeRangeType _type;
+        private string _arn;
+        private string _name;
 
         /// <summary>
-        /// Gets and sets the property ConditionType. 
+        /// Gets and sets the property Arn. 
         /// <para>
-        /// Condition of the timestamp on the contact.
+        /// The Amazon Resource Name (ARN) of the task template used to create this contact.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public SearchContactsTimeRangeConditionType ConditionType
+        public string Arn
         {
-            get { return this._conditionType; }
-            set { this._conditionType = value; }
+            get { return this._arn; }
+            set { this._arn = value; }
         }
 
-        // Check to see if ConditionType property is set
-        internal bool IsSetConditionType()
+        // Check to see if Arn property is set
+        internal bool IsSetArn()
         {
-            return this._conditionType != null;
+            return this._arn != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Type. 
+        /// Gets and sets the property Name. 
         /// <para>
-        /// Type of the timestamps to use for the filter.
+        /// The name of the task template used to create this contact.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public SearchContactsTimeRangeType Type
+        [AWSProperty(Min=1, Max=100)]
+        public string Name
         {
-            get { return this._type; }
-            set { this._type = value; }
+            get { return this._name; }
+            set { this._name = value; }
         }
 
-        // Check to see if Type property is set
-        internal bool IsSetType()
+        // Check to see if Name property is set
+        internal bool IsSetName()
         {
-            return this._type != null;
+            return this._name != null;
         }
 
     }
