@@ -150,6 +150,12 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                     unmarshalledObject.LatestAppstreamAgentVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ManagedSoftwareIncluded", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.ManagedSoftwareIncluded = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

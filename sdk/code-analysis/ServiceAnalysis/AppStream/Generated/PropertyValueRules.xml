@@ -37,6 +37,10 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AppStream.Model.AssociateSoftwareToImageBuilderRequest.ImageBuilderName</property>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_.-]{0,100}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AppStream.Model.CopyImageRequest.DestinationImageDescription</property>
     <max>256</max>
   </property-value-rule>
@@ -409,6 +413,18 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AppStream.Model.DescribeAppLicenseUsageRequest.BillingPeriod</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.DescribeAppLicenseUsageRequest.NextToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.DescribeAppLicenseUsageResponse.NextToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AppStream.Model.DescribeDirectoryConfigsRequest.NextToken</property>
     <min>1</min>
   </property-value-rule>
@@ -508,6 +524,22 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AppStream.Model.DescribeSoftwareAssociationsRequest.AssociatedResource</property>
+    <pattern>^arn:aws(?:\-cn|\-iso\-b|\-iso|\-us\-gov)?:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.\\-]{0,1023}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.DescribeSoftwareAssociationsRequest.NextToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.DescribeSoftwareAssociationsResponse.AssociatedResource</property>
+    <pattern>^arn:aws(?:\-cn|\-iso\-b|\-iso|\-us\-gov)?:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.\\-]{0,1023}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.DescribeSoftwareAssociationsResponse.NextToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AppStream.Model.DescribeStacksRequest.NextToken</property>
     <min>1</min>
   </property-value-rule>
@@ -601,6 +633,10 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AppStream.Model.DisassociateSoftwareFromImageBuilderRequest.ImageBuilderName</property>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_.-]{0,100}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AppStream.Model.EnableUserRequest.UserName</property>
     <min>1</min>
     <max>128</max>
@@ -670,6 +706,10 @@
   <property-value-rule>
     <property>Amazon.AppStream.Model.StartImageBuilderRequest.Name</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.StartSoftwareDeploymentToImageBuilderRequest.ImageBuilderName</property>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_.-]{0,100}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppStream.Model.StopAppBlockBuilderRequest.Name</property>
@@ -819,6 +859,26 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppStream.Model.AccessEndpoint.VpceId</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.AdminAppLicenseUsageRecord.BillingPeriod</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.AdminAppLicenseUsageRecord.LicenseType</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.AdminAppLicenseUsageRecord.OwnerAWSAccountId</property>
+    <pattern>^\d+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.AdminAppLicenseUsageRecord.UserArn</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.AdminAppLicenseUsageRecord.UserId</property>
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
@@ -1143,6 +1203,10 @@
   <property-value-rule>
     <property>Amazon.AppStream.Model.SharedImagePermissions.SharedAccountId</property>
     <pattern>^\d+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.SoftwareAssociations.SoftwareName</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppStream.Model.Stack.Arn</property>

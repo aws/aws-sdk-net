@@ -150,6 +150,28 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Name);
                 }
 
+                if(publicRequest.IsSetSoftwaresToInstall())
+                {
+                    context.Writer.WritePropertyName("SoftwaresToInstall");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestSoftwaresToInstallListValue in publicRequest.SoftwaresToInstall)
+                    {
+                            context.Writer.Write(publicRequestSoftwaresToInstallListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetSoftwaresToUninstall())
+                {
+                    context.Writer.WritePropertyName("SoftwaresToUninstall");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestSoftwaresToUninstallListValue in publicRequest.SoftwaresToUninstall)
+                    {
+                            context.Writer.Write(publicRequestSoftwaresToUninstallListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("Tags");

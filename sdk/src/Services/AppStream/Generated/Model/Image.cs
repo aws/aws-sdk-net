@@ -48,6 +48,7 @@ namespace Amazon.AppStream.Model
         private ImagePermissions _imagePermissions;
         private ImageSharedWithOthers _imageSharedWithOthers;
         private LatestAppstreamAgentVersion _latestAppstreamAgentVersion;
+        private bool? _managedSoftwareIncluded;
         private string _name;
         private PlatformType _platform;
         private DateTime? _publicBaseImageReleasedDate;
@@ -313,6 +314,24 @@ namespace Amazon.AppStream.Model
         internal bool IsSetLatestAppstreamAgentVersion()
         {
             return this._latestAppstreamAgentVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ManagedSoftwareIncluded. 
+        /// <para>
+        /// Indicates whether the image includes license-included applications.
+        /// </para>
+        /// </summary>
+        public bool ManagedSoftwareIncluded
+        {
+            get { return this._managedSoftwareIncluded.GetValueOrDefault(); }
+            set { this._managedSoftwareIncluded = value; }
+        }
+
+        // Check to see if ManagedSoftwareIncluded property is set
+        internal bool IsSetManagedSoftwareIncluded()
+        {
+            return this._managedSoftwareIncluded.HasValue; 
         }
 
         /// <summary>

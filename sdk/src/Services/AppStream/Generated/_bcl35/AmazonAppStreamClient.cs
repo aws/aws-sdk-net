@@ -572,6 +572,75 @@ namespace Amazon.AppStream
 
         #endregion
         
+        #region  AssociateSoftwareToImageBuilder
+
+        /// <summary>
+        /// Associates license included application(s) with an existing image builder instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateSoftwareToImageBuilder service method.</param>
+        /// 
+        /// <returns>The response from the AssociateSoftwareToImageBuilder service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.ConcurrentModificationException">
+        /// An API error occurred. Wait a few minutes and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.IncompatibleImageException">
+        /// The image can't be updated because it's not compatible for updates.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.InvalidParameterCombinationException">
+        /// Indicates an incorrect combination of parameters, or a missing parameter.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/AssociateSoftwareToImageBuilder">REST API Reference for AssociateSoftwareToImageBuilder Operation</seealso>
+        public virtual AssociateSoftwareToImageBuilderResponse AssociateSoftwareToImageBuilder(AssociateSoftwareToImageBuilderRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AssociateSoftwareToImageBuilderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateSoftwareToImageBuilderResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateSoftwareToImageBuilderResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateSoftwareToImageBuilder operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateSoftwareToImageBuilder operation on AmazonAppStreamClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateSoftwareToImageBuilder
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/AssociateSoftwareToImageBuilder">REST API Reference for AssociateSoftwareToImageBuilder Operation</seealso>
+        public virtual IAsyncResult BeginAssociateSoftwareToImageBuilder(AssociateSoftwareToImageBuilderRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AssociateSoftwareToImageBuilderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateSoftwareToImageBuilderResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AssociateSoftwareToImageBuilder operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssociateSoftwareToImageBuilder.</param>
+        /// 
+        /// <returns>Returns a  AssociateSoftwareToImageBuilderResult from AppStream.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/AssociateSoftwareToImageBuilder">REST API Reference for AssociateSoftwareToImageBuilder Operation</seealso>
+        public virtual AssociateSoftwareToImageBuilderResponse EndAssociateSoftwareToImageBuilder(IAsyncResult asyncResult)
+        {
+            return EndInvoke<AssociateSoftwareToImageBuilderResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  BatchAssociateUserStack
 
         /// <summary>
@@ -3037,6 +3106,69 @@ namespace Amazon.AppStream
 
         #endregion
         
+        #region  DescribeAppLicenseUsage
+
+        /// <summary>
+        /// Retrieves license included application usage information.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAppLicenseUsage service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAppLicenseUsage service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.InvalidParameterCombinationException">
+        /// Indicates an incorrect combination of parameters, or a missing parameter.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeAppLicenseUsage">REST API Reference for DescribeAppLicenseUsage Operation</seealso>
+        public virtual DescribeAppLicenseUsageResponse DescribeAppLicenseUsage(DescribeAppLicenseUsageRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeAppLicenseUsageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAppLicenseUsageResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeAppLicenseUsageResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeAppLicenseUsage operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAppLicenseUsage operation on AmazonAppStreamClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeAppLicenseUsage
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeAppLicenseUsage">REST API Reference for DescribeAppLicenseUsage Operation</seealso>
+        public virtual IAsyncResult BeginDescribeAppLicenseUsage(DescribeAppLicenseUsageRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeAppLicenseUsageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAppLicenseUsageResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeAppLicenseUsage operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeAppLicenseUsage.</param>
+        /// 
+        /// <returns>Returns a  DescribeAppLicenseUsageResult from AppStream.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeAppLicenseUsage">REST API Reference for DescribeAppLicenseUsage Operation</seealso>
+        public virtual DescribeAppLicenseUsageResponse EndDescribeAppLicenseUsage(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeAppLicenseUsageResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeDirectoryConfigs
 
         /// <summary>
@@ -3458,6 +3590,66 @@ namespace Amazon.AppStream
         public virtual DescribeSessionsResponse EndDescribeSessions(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeSessionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeSoftwareAssociations
+
+        /// <summary>
+        /// Retrieves license included application associations for a specified resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSoftwareAssociations service method.</param>
+        /// 
+        /// <returns>The response from the DescribeSoftwareAssociations service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeSoftwareAssociations">REST API Reference for DescribeSoftwareAssociations Operation</seealso>
+        public virtual DescribeSoftwareAssociationsResponse DescribeSoftwareAssociations(DescribeSoftwareAssociationsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeSoftwareAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeSoftwareAssociationsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeSoftwareAssociationsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeSoftwareAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSoftwareAssociations operation on AmazonAppStreamClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeSoftwareAssociations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeSoftwareAssociations">REST API Reference for DescribeSoftwareAssociations Operation</seealso>
+        public virtual IAsyncResult BeginDescribeSoftwareAssociations(DescribeSoftwareAssociationsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeSoftwareAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeSoftwareAssociationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeSoftwareAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeSoftwareAssociations.</param>
+        /// 
+        /// <returns>Returns a  DescribeSoftwareAssociationsResult from AppStream.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeSoftwareAssociations">REST API Reference for DescribeSoftwareAssociations Operation</seealso>
+        public virtual DescribeSoftwareAssociationsResponse EndDescribeSoftwareAssociations(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeSoftwareAssociationsResponse>(asyncResult);
         }
 
         #endregion
@@ -4093,6 +4285,72 @@ namespace Amazon.AppStream
 
         #endregion
         
+        #region  DisassociateSoftwareFromImageBuilder
+
+        /// <summary>
+        /// Removes license included application(s) association(s) from an image builder instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateSoftwareFromImageBuilder service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateSoftwareFromImageBuilder service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.ConcurrentModificationException">
+        /// An API error occurred. Wait a few minutes and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.InvalidParameterCombinationException">
+        /// Indicates an incorrect combination of parameters, or a missing parameter.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DisassociateSoftwareFromImageBuilder">REST API Reference for DisassociateSoftwareFromImageBuilder Operation</seealso>
+        public virtual DisassociateSoftwareFromImageBuilderResponse DisassociateSoftwareFromImageBuilder(DisassociateSoftwareFromImageBuilderRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DisassociateSoftwareFromImageBuilderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateSoftwareFromImageBuilderResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateSoftwareFromImageBuilderResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateSoftwareFromImageBuilder operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateSoftwareFromImageBuilder operation on AmazonAppStreamClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateSoftwareFromImageBuilder
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DisassociateSoftwareFromImageBuilder">REST API Reference for DisassociateSoftwareFromImageBuilder Operation</seealso>
+        public virtual IAsyncResult BeginDisassociateSoftwareFromImageBuilder(DisassociateSoftwareFromImageBuilderRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DisassociateSoftwareFromImageBuilderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateSoftwareFromImageBuilderResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisassociateSoftwareFromImageBuilder operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisassociateSoftwareFromImageBuilder.</param>
+        /// 
+        /// <returns>Returns a  DisassociateSoftwareFromImageBuilderResult from AppStream.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DisassociateSoftwareFromImageBuilder">REST API Reference for DisassociateSoftwareFromImageBuilder Operation</seealso>
+        public virtual DisassociateSoftwareFromImageBuilderResponse EndDisassociateSoftwareFromImageBuilder(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DisassociateSoftwareFromImageBuilderResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  EnableUser
 
         /// <summary>
@@ -4677,6 +4935,69 @@ namespace Amazon.AppStream
         public virtual StartImageBuilderResponse EndStartImageBuilder(IAsyncResult asyncResult)
         {
             return EndInvoke<StartImageBuilderResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StartSoftwareDeploymentToImageBuilder
+
+        /// <summary>
+        /// Initiates license included applications deployment to an image builder instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartSoftwareDeploymentToImageBuilder service method.</param>
+        /// 
+        /// <returns>The response from the StartSoftwareDeploymentToImageBuilder service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.ConcurrentModificationException">
+        /// An API error occurred. Wait a few minutes and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StartSoftwareDeploymentToImageBuilder">REST API Reference for StartSoftwareDeploymentToImageBuilder Operation</seealso>
+        public virtual StartSoftwareDeploymentToImageBuilderResponse StartSoftwareDeploymentToImageBuilder(StartSoftwareDeploymentToImageBuilderRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartSoftwareDeploymentToImageBuilderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartSoftwareDeploymentToImageBuilderResponseUnmarshaller.Instance;
+
+            return Invoke<StartSoftwareDeploymentToImageBuilderResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartSoftwareDeploymentToImageBuilder operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartSoftwareDeploymentToImageBuilder operation on AmazonAppStreamClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartSoftwareDeploymentToImageBuilder
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StartSoftwareDeploymentToImageBuilder">REST API Reference for StartSoftwareDeploymentToImageBuilder Operation</seealso>
+        public virtual IAsyncResult BeginStartSoftwareDeploymentToImageBuilder(StartSoftwareDeploymentToImageBuilderRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartSoftwareDeploymentToImageBuilderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartSoftwareDeploymentToImageBuilderResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartSoftwareDeploymentToImageBuilder operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartSoftwareDeploymentToImageBuilder.</param>
+        /// 
+        /// <returns>Returns a  StartSoftwareDeploymentToImageBuilderResult from AppStream.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StartSoftwareDeploymentToImageBuilder">REST API Reference for StartSoftwareDeploymentToImageBuilder Operation</seealso>
+        public virtual StartSoftwareDeploymentToImageBuilderResponse EndStartSoftwareDeploymentToImageBuilder(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartSoftwareDeploymentToImageBuilderResponse>(asyncResult);
         }
 
         #endregion
