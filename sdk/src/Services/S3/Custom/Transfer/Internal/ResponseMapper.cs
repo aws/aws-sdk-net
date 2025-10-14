@@ -99,6 +99,67 @@ namespace Amazon.S3.Transfer.Internal
 
             return response;
         }
+
+        /// <summary>
+        /// Maps a CompleteMultipartUploadResponse to TransferUtilityUploadResponse.
+        /// Uses the field mappings defined in mapping.json "Conversion" -> "CompleteMultipartResponse" -> "UploadResponse".
+        /// </summary>
+        /// <param name="source">The CompleteMultipartUploadResponse to map from</param>
+        /// <returns>A new TransferUtilityUploadResponse with mapped fields</returns>
+        internal static TransferUtilityUploadResponse MapCompleteMultipartUploadResponse(CompleteMultipartUploadResponse source)
+        {
+            if (source == null)
+                return null;
+
+            var response = new TransferUtilityUploadResponse();
+
+            // Map all fields as defined in mapping.json "Conversion" -> "CompleteMultipartResponse" -> "UploadResponse"
+            if (source.IsSetBucketKeyEnabled())
+                response.BucketKeyEnabled = source.BucketKeyEnabled.GetValueOrDefault();
+
+            if (source.IsSetChecksumCRC32())
+                response.ChecksumCRC32 = source.ChecksumCRC32;
+
+            if (source.IsSetChecksumCRC32C())
+                response.ChecksumCRC32C = source.ChecksumCRC32C;
+
+            if (source.IsSetChecksumCRC64NVME())
+                response.ChecksumCRC64NVME = source.ChecksumCRC64NVME;
+
+            if (source.IsSetChecksumSHA1())
+                response.ChecksumSHA1 = source.ChecksumSHA1;
+
+            if (source.IsSetChecksumSHA256())
+                response.ChecksumSHA256 = source.ChecksumSHA256;
+
+            if (source.ChecksumType != null)
+                response.ChecksumType = source.ChecksumType;
+
+            if (source.IsSetETag())
+                response.ETag = source.ETag;
+
+            if (source.Expiration != null)
+                response.Expiration = source.Expiration;
+
+            if (source.IsSetRequestCharged())
+                response.RequestCharged = source.RequestCharged;
+
+            if (source.ServerSideEncryptionMethod != null)
+                response.ServerSideEncryptionMethod = source.ServerSideEncryptionMethod;
+
+            if (source.IsSetServerSideEncryptionKeyManagementServiceKeyId())
+                response.ServerSideEncryptionKeyManagementServiceKeyId = source.ServerSideEncryptionKeyManagementServiceKeyId;
+
+            if (source.IsSetVersionId())
+                response.VersionId = source.VersionId;
+
+            // Copy response metadata
+            response.ResponseMetadata = source.ResponseMetadata;
+            response.ContentLength = source.ContentLength;
+            response.HttpStatusCode = source.HttpStatusCode;
+
+            return response;
+        }
         
     }
 }
