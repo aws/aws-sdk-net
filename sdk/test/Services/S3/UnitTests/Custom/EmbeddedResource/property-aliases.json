@@ -1,0 +1,10 @@
+{
+  "PropertyAliases": {
+    "SSECustomerAlgorithm": "ServerSideEncryptionCustomerMethod",
+    "SSECustomerKeyMD5": "ServerSideEncryptionCustomerProvidedKeyMD5", 
+    "SSEKMSKeyId": "ServerSideEncryptionKeyManagementServiceKeyId",
+    "ServerSideEncryption": "ServerSideEncryptionMethod",
+    "SSEKMSEncryptionContext": "ServerSideEncryptionKeyManagementServiceEncryptionContext",
+    "Restore": "RestoreExpiration"
+  }
+}
