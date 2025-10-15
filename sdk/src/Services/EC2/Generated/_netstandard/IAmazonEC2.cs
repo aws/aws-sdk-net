@@ -262,11 +262,32 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// You can allocate an Elastic IP address from an address pool owned by Amazon Web Services
-        /// or from an address pool created from a public IPv4 address range that you have brought
-        /// to Amazon Web Services for use with your Amazon Web Services resources using bring
-        /// your own IP addresses (BYOIP). For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html">Bring
-        /// Your Own IP Addresses (BYOIP)</a> in the <i>Amazon EC2 User Guide</i>.
+        /// You can allocate an Elastic IP address from one of the following address pools:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Amazon's pool of IPv4 addresses
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Public IPv4 address range that you own and bring to your Amazon Web Services account
+        /// using <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html">Bring
+        /// Your Own IP Addresses (BYOIP)</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// An IPv4 IPAM pool with an Amazon-provided or BYOIP public IPv4 address range
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// IPv4 addresses from your on-premises network made available for use with an Outpost
+        /// using a <a href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">customer-owned
+        /// IP address pool</a> (CoIP pool)
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
+        /// IP Addresses</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -274,11 +295,6 @@ namespace Amazon.EC2
         /// recover an Elastic IP address that you released after it is allocated to another Amazon
         /// Web Services account. To attempt to recover an Elastic IP address that you released,
         /// specify it in this operation.
-        /// </para>
-        ///  
-        /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
-        /// IP Addresses</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -305,11 +321,32 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// You can allocate an Elastic IP address from an address pool owned by Amazon Web Services
-        /// or from an address pool created from a public IPv4 address range that you have brought
-        /// to Amazon Web Services for use with your Amazon Web Services resources using bring
-        /// your own IP addresses (BYOIP). For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html">Bring
-        /// Your Own IP Addresses (BYOIP)</a> in the <i>Amazon EC2 User Guide</i>.
+        /// You can allocate an Elastic IP address from one of the following address pools:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Amazon's pool of IPv4 addresses
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Public IPv4 address range that you own and bring to your Amazon Web Services account
+        /// using <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html">Bring
+        /// Your Own IP Addresses (BYOIP)</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// An IPv4 IPAM pool with an Amazon-provided or BYOIP public IPv4 address range
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// IPv4 addresses from your on-premises network made available for use with an Outpost
+        /// using a <a href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">customer-owned
+        /// IP address pool</a> (CoIP pool)
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
+        /// IP Addresses</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -317,11 +354,6 @@ namespace Amazon.EC2
         /// recover an Elastic IP address that you released after it is allocated to another Amazon
         /// Web Services account. To attempt to recover an Elastic IP address that you released,
         /// specify it in this operation.
-        /// </para>
-        ///  
-        /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
-        /// IP Addresses</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -1943,6 +1975,27 @@ namespace Amazon.EC2
         /// <returns>The response from the CopyVolumes service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CopyVolumes">REST API Reference for CopyVolumes Operation</seealso>
         Task<CopyVolumesResponse> CopyVolumesAsync(CopyVolumesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CreateCapacityManagerDataExport
+
+
+
+        /// <summary>
+        /// Creates a new data export configuration for EC2 Capacity Manager. This allows you
+        /// to automatically export capacity usage data to an S3 bucket on a scheduled basis.
+        /// The exported data includes metrics for On-Demand, Spot, and Capacity Reservations
+        /// usage across your organization.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCapacityManagerDataExport service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateCapacityManagerDataExport service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCapacityManagerDataExport">REST API Reference for CreateCapacityManagerDataExport Operation</seealso>
+        Task<CreateCapacityManagerDataExportResponse> CreateCapacityManagerDataExportAsync(CreateCapacityManagerDataExportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -4829,6 +4882,25 @@ namespace Amazon.EC2
 
         #endregion
                 
+        #region  DeleteCapacityManagerDataExport
+
+
+
+        /// <summary>
+        /// Deletes an existing Capacity Manager data export configuration. This stops future
+        /// scheduled exports but does not delete previously exported files from S3.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCapacityManagerDataExport service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteCapacityManagerDataExport service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteCapacityManagerDataExport">REST API Reference for DeleteCapacityManagerDataExport Operation</seealso>
+        Task<DeleteCapacityManagerDataExportResponse> DeleteCapacityManagerDataExportAsync(DeleteCapacityManagerDataExportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DeleteCarrierGateway
 
 
@@ -7312,6 +7384,25 @@ namespace Amazon.EC2
         /// <returns>The response from the DescribeCapacityBlockStatus service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCapacityBlockStatus">REST API Reference for DescribeCapacityBlockStatus Operation</seealso>
         Task<DescribeCapacityBlockStatusResponse> DescribeCapacityBlockStatusAsync(DescribeCapacityBlockStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribeCapacityManagerDataExports
+
+
+
+        /// <summary>
+        /// Describes one or more Capacity Manager data export configurations. Returns information
+        /// about export settings, delivery status, and recent export activity.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCapacityManagerDataExports service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeCapacityManagerDataExports service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCapacityManagerDataExports">REST API Reference for DescribeCapacityManagerDataExports Operation</seealso>
+        Task<DescribeCapacityManagerDataExportsResponse> DescribeCapacityManagerDataExportsAsync(DescribeCapacityManagerDataExportsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -12366,6 +12457,26 @@ namespace Amazon.EC2
 
         #endregion
                 
+        #region  DisableCapacityManager
+
+
+
+        /// <summary>
+        /// Disables EC2 Capacity Manager for your account. This stops data ingestion and removes
+        /// access to capacity analytics and optimization recommendations. Previously collected
+        /// data is retained but no new data will be processed.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableCapacityManager service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisableCapacityManager service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableCapacityManager">REST API Reference for DisableCapacityManager Operation</seealso>
+        Task<DisableCapacityManagerResponse> DisableCapacityManagerAsync(DisableCapacityManagerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DisableEbsEncryptionByDefault
 
 
@@ -13335,6 +13446,26 @@ namespace Amazon.EC2
 
         #endregion
                 
+        #region  EnableCapacityManager
+
+
+
+        /// <summary>
+        /// Enables EC2 Capacity Manager for your account. This starts data ingestion for your
+        /// EC2 capacity usage across On-Demand, Spot, and Capacity Reservations. Initial data
+        /// processing may take several hours to complete.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableCapacityManager service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the EnableCapacityManager service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableCapacityManager">REST API Reference for EnableCapacityManager Operation</seealso>
+        Task<EnableCapacityManagerResponse> EnableCapacityManagerAsync(EnableCapacityManagerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  EnableEbsEncryptionByDefault
 
 
@@ -14017,6 +14148,66 @@ namespace Amazon.EC2
         /// <returns>The response from the GetAwsNetworkPerformanceData service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetAwsNetworkPerformanceData">REST API Reference for GetAwsNetworkPerformanceData Operation</seealso>
         Task<GetAwsNetworkPerformanceDataResponse> GetAwsNetworkPerformanceDataAsync(GetAwsNetworkPerformanceDataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetCapacityManagerAttributes
+
+
+
+        /// <summary>
+        /// Retrieves the current configuration and status of EC2 Capacity Manager for your account,
+        /// including enablement status, Organizations access settings, and data ingestion status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCapacityManagerAttributes service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetCapacityManagerAttributes service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetCapacityManagerAttributes">REST API Reference for GetCapacityManagerAttributes Operation</seealso>
+        Task<GetCapacityManagerAttributesResponse> GetCapacityManagerAttributesAsync(GetCapacityManagerAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetCapacityManagerMetricData
+
+
+
+        /// <summary>
+        /// Retrieves capacity usage metrics for your EC2 resources. Returns time-series data
+        /// for metrics like unused capacity, utilization rates, and costs across On-Demand, Spot,
+        /// and Capacity Reservations. Data can be grouped and filtered by various dimensions
+        /// such as region, account, and instance family.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCapacityManagerMetricData service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetCapacityManagerMetricData service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetCapacityManagerMetricData">REST API Reference for GetCapacityManagerMetricData Operation</seealso>
+        Task<GetCapacityManagerMetricDataResponse> GetCapacityManagerMetricDataAsync(GetCapacityManagerMetricDataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetCapacityManagerMetricDimensions
+
+
+
+        /// <summary>
+        /// Retrieves the available dimension values for capacity metrics within a specified
+        /// time range. This is useful for discovering what accounts, regions, instance families,
+        /// and other dimensions have data available for filtering and grouping.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCapacityManagerMetricDimensions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetCapacityManagerMetricDimensions service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetCapacityManagerMetricDimensions">REST API Reference for GetCapacityManagerMetricDimensions Operation</seealso>
+        Task<GetCapacityManagerMetricDimensionsResponse> GetCapacityManagerMetricDimensionsAsync(GetCapacityManagerMetricDimensionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -19740,6 +19931,26 @@ namespace Amazon.EC2
         /// <returns>The response from the UnmonitorInstances service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UnmonitorInstances">REST API Reference for UnmonitorInstances Operation</seealso>
         Task<UnmonitorInstancesResponse> UnmonitorInstancesAsync(UnmonitorInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateCapacityManagerOrganizationsAccess
+
+
+
+        /// <summary>
+        /// Updates the Organizations access setting for EC2 Capacity Manager. This controls
+        /// whether Capacity Manager can aggregate data from all accounts in your Amazon Web Services
+        /// Organization or only from the current account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCapacityManagerOrganizationsAccess service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateCapacityManagerOrganizationsAccess service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UpdateCapacityManagerOrganizationsAccess">REST API Reference for UpdateCapacityManagerOrganizationsAccess Operation</seealso>
+        Task<UpdateCapacityManagerOrganizationsAccessResponse> UpdateCapacityManagerOrganizationsAccessAsync(UpdateCapacityManagerOrganizationsAccessRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

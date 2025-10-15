@@ -351,7 +351,8 @@ namespace Amazon.EC2.Model
         /// rate), in MiB/s, at which to download the snapshot blocks from Amazon S3 to the volume.
         /// This is also known as <i>volume initialization</i>. Specifying a volume initialization
         /// rate ensures that the volume is initialized at a predictable and consistent rate after
-        /// creation.
+        /// creation. For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/initalize-volume.html">Initialize
+        /// Amazon EBS volumes</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -376,12 +377,8 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/initalize-volume.html">
-        /// Initialize Amazon EBS volumes</a> in the <i>Amazon EC2 User Guide</i>.
-        /// </para>
-        ///  
-        /// <para>
-        /// This parameter is not supported when using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>.
+        /// This parameter is not supported when using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>
+        /// and <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeImages.html">DescribeImages</a>.
         /// </para>
         ///  
         /// <para>

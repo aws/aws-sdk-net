@@ -2691,6 +2691,114 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type CapacityManagerDataExportStatus.
+    /// </summary>
+    public class CapacityManagerDataExportStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Delivered for CapacityManagerDataExportStatus
+        /// </summary>
+        public static readonly CapacityManagerDataExportStatus Delivered = new CapacityManagerDataExportStatus("delivered");
+        /// <summary>
+        /// Constant Failed for CapacityManagerDataExportStatus
+        /// </summary>
+        public static readonly CapacityManagerDataExportStatus Failed = new CapacityManagerDataExportStatus("failed");
+        /// <summary>
+        /// Constant InProgress for CapacityManagerDataExportStatus
+        /// </summary>
+        public static readonly CapacityManagerDataExportStatus InProgress = new CapacityManagerDataExportStatus("in-progress");
+        /// <summary>
+        /// Constant Pending for CapacityManagerDataExportStatus
+        /// </summary>
+        public static readonly CapacityManagerDataExportStatus Pending = new CapacityManagerDataExportStatus("pending");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CapacityManagerDataExportStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CapacityManagerDataExportStatus FindValue(string value)
+        {
+            return FindValue<CapacityManagerDataExportStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CapacityManagerDataExportStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CapacityManagerStatus.
+    /// </summary>
+    public class CapacityManagerStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Disabled for CapacityManagerStatus
+        /// </summary>
+        public static readonly CapacityManagerStatus Disabled = new CapacityManagerStatus("disabled");
+        /// <summary>
+        /// Constant Enabled for CapacityManagerStatus
+        /// </summary>
+        public static readonly CapacityManagerStatus Enabled = new CapacityManagerStatus("enabled");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CapacityManagerStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CapacityManagerStatus FindValue(string value)
+        {
+            return FindValue<CapacityManagerStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CapacityManagerStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type CapacityReservationBillingRequestStatus.
     /// </summary>
     public class CapacityReservationBillingRequestStatus : ConstantClass
@@ -3243,6 +3351,56 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type CapacityTenancy.
+    /// </summary>
+    public class CapacityTenancy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Dedicated for CapacityTenancy
+        /// </summary>
+        public static readonly CapacityTenancy Dedicated = new CapacityTenancy("dedicated");
+        /// <summary>
+        /// Constant Default for CapacityTenancy
+        /// </summary>
+        public static readonly CapacityTenancy Default = new CapacityTenancy("default");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CapacityTenancy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CapacityTenancy FindValue(string value)
+        {
+            return FindValue<CapacityTenancy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CapacityTenancy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type CarrierGatewayState.
     /// </summary>
     public class CarrierGatewayState : ConstantClass
@@ -3680,6 +3838,56 @@ namespace Amazon.EC2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ClientVpnRouteStatusCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Comparison.
+    /// </summary>
+    public class Comparison : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Equals for Comparison
+        /// </summary>
+        public new static readonly Comparison Equals = new Comparison("equals");
+        /// <summary>
+        /// Constant In for Comparison
+        /// </summary>
+        public static readonly Comparison In = new Comparison("in");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Comparison(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Comparison FindValue(string value)
+        {
+            return FindValue<Comparison>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Comparison(string value)
         {
             return FindValue(value);
         }
@@ -6131,6 +6339,116 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type FilterByDimension.
+    /// </summary>
+    public class FilterByDimension : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AccountId for FilterByDimension
+        /// </summary>
+        public static readonly FilterByDimension AccountId = new FilterByDimension("account-id");
+        /// <summary>
+        /// Constant AvailabilityZoneId for FilterByDimension
+        /// </summary>
+        public static readonly FilterByDimension AvailabilityZoneId = new FilterByDimension("availability-zone-id");
+        /// <summary>
+        /// Constant InstanceFamily for FilterByDimension
+        /// </summary>
+        public static readonly FilterByDimension InstanceFamily = new FilterByDimension("instance-family");
+        /// <summary>
+        /// Constant InstancePlatform for FilterByDimension
+        /// </summary>
+        public static readonly FilterByDimension InstancePlatform = new FilterByDimension("instance-platform");
+        /// <summary>
+        /// Constant InstanceType for FilterByDimension
+        /// </summary>
+        public static readonly FilterByDimension InstanceType = new FilterByDimension("instance-type");
+        /// <summary>
+        /// Constant ReservationArn for FilterByDimension
+        /// </summary>
+        public static readonly FilterByDimension ReservationArn = new FilterByDimension("reservation-arn");
+        /// <summary>
+        /// Constant ReservationCreateTimestamp for FilterByDimension
+        /// </summary>
+        public static readonly FilterByDimension ReservationCreateTimestamp = new FilterByDimension("reservation-create-timestamp");
+        /// <summary>
+        /// Constant ReservationEndDateType for FilterByDimension
+        /// </summary>
+        public static readonly FilterByDimension ReservationEndDateType = new FilterByDimension("reservation-end-date-type");
+        /// <summary>
+        /// Constant ReservationEndTimestamp for FilterByDimension
+        /// </summary>
+        public static readonly FilterByDimension ReservationEndTimestamp = new FilterByDimension("reservation-end-timestamp");
+        /// <summary>
+        /// Constant ReservationId for FilterByDimension
+        /// </summary>
+        public static readonly FilterByDimension ReservationId = new FilterByDimension("reservation-id");
+        /// <summary>
+        /// Constant ReservationInstanceMatchCriteria for FilterByDimension
+        /// </summary>
+        public static readonly FilterByDimension ReservationInstanceMatchCriteria = new FilterByDimension("reservation-instance-match-criteria");
+        /// <summary>
+        /// Constant ReservationStartTimestamp for FilterByDimension
+        /// </summary>
+        public static readonly FilterByDimension ReservationStartTimestamp = new FilterByDimension("reservation-start-timestamp");
+        /// <summary>
+        /// Constant ReservationState for FilterByDimension
+        /// </summary>
+        public static readonly FilterByDimension ReservationState = new FilterByDimension("reservation-state");
+        /// <summary>
+        /// Constant ReservationType for FilterByDimension
+        /// </summary>
+        public static readonly FilterByDimension ReservationType = new FilterByDimension("reservation-type");
+        /// <summary>
+        /// Constant ReservationUnusedFinancialOwner for FilterByDimension
+        /// </summary>
+        public static readonly FilterByDimension ReservationUnusedFinancialOwner = new FilterByDimension("reservation-unused-financial-owner");
+        /// <summary>
+        /// Constant ResourceRegion for FilterByDimension
+        /// </summary>
+        public static readonly FilterByDimension ResourceRegion = new FilterByDimension("resource-region");
+        /// <summary>
+        /// Constant Tenancy for FilterByDimension
+        /// </summary>
+        public static readonly FilterByDimension Tenancy = new FilterByDimension("tenancy");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FilterByDimension(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FilterByDimension FindValue(string value)
+        {
+            return FindValue<FilterByDimension>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FilterByDimension(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type FindingsFound.
     /// </summary>
     public class FindingsFound : ConstantClass
@@ -7041,6 +7359,116 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type GroupBy.
+    /// </summary>
+    public class GroupBy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AccountId for GroupBy
+        /// </summary>
+        public static readonly GroupBy AccountId = new GroupBy("account-id");
+        /// <summary>
+        /// Constant AvailabilityZoneId for GroupBy
+        /// </summary>
+        public static readonly GroupBy AvailabilityZoneId = new GroupBy("availability-zone-id");
+        /// <summary>
+        /// Constant InstanceFamily for GroupBy
+        /// </summary>
+        public static readonly GroupBy InstanceFamily = new GroupBy("instance-family");
+        /// <summary>
+        /// Constant InstancePlatform for GroupBy
+        /// </summary>
+        public static readonly GroupBy InstancePlatform = new GroupBy("instance-platform");
+        /// <summary>
+        /// Constant InstanceType for GroupBy
+        /// </summary>
+        public static readonly GroupBy InstanceType = new GroupBy("instance-type");
+        /// <summary>
+        /// Constant ReservationArn for GroupBy
+        /// </summary>
+        public static readonly GroupBy ReservationArn = new GroupBy("reservation-arn");
+        /// <summary>
+        /// Constant ReservationCreateTimestamp for GroupBy
+        /// </summary>
+        public static readonly GroupBy ReservationCreateTimestamp = new GroupBy("reservation-create-timestamp");
+        /// <summary>
+        /// Constant ReservationEndDateType for GroupBy
+        /// </summary>
+        public static readonly GroupBy ReservationEndDateType = new GroupBy("reservation-end-date-type");
+        /// <summary>
+        /// Constant ReservationEndTimestamp for GroupBy
+        /// </summary>
+        public static readonly GroupBy ReservationEndTimestamp = new GroupBy("reservation-end-timestamp");
+        /// <summary>
+        /// Constant ReservationId for GroupBy
+        /// </summary>
+        public static readonly GroupBy ReservationId = new GroupBy("reservation-id");
+        /// <summary>
+        /// Constant ReservationInstanceMatchCriteria for GroupBy
+        /// </summary>
+        public static readonly GroupBy ReservationInstanceMatchCriteria = new GroupBy("reservation-instance-match-criteria");
+        /// <summary>
+        /// Constant ReservationStartTimestamp for GroupBy
+        /// </summary>
+        public static readonly GroupBy ReservationStartTimestamp = new GroupBy("reservation-start-timestamp");
+        /// <summary>
+        /// Constant ReservationState for GroupBy
+        /// </summary>
+        public static readonly GroupBy ReservationState = new GroupBy("reservation-state");
+        /// <summary>
+        /// Constant ReservationType for GroupBy
+        /// </summary>
+        public static readonly GroupBy ReservationType = new GroupBy("reservation-type");
+        /// <summary>
+        /// Constant ReservationUnusedFinancialOwner for GroupBy
+        /// </summary>
+        public static readonly GroupBy ReservationUnusedFinancialOwner = new GroupBy("reservation-unused-financial-owner");
+        /// <summary>
+        /// Constant ResourceRegion for GroupBy
+        /// </summary>
+        public static readonly GroupBy ResourceRegion = new GroupBy("resource-region");
+        /// <summary>
+        /// Constant Tenancy for GroupBy
+        /// </summary>
+        public static readonly GroupBy Tenancy = new GroupBy("tenancy");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GroupBy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GroupBy FindValue(string value)
+        {
+            return FindValue<GroupBy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GroupBy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type HostMaintenance.
     /// </summary>
     public class HostMaintenance : ConstantClass
@@ -7918,6 +8346,60 @@ namespace Amazon.EC2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ImdsSupportValues(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type IngestionStatus.
+    /// </summary>
+    public class IngestionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant IngestionComplete for IngestionStatus
+        /// </summary>
+        public static readonly IngestionStatus IngestionComplete = new IngestionStatus("ingestion-complete");
+        /// <summary>
+        /// Constant IngestionFailed for IngestionStatus
+        /// </summary>
+        public static readonly IngestionStatus IngestionFailed = new IngestionStatus("ingestion-failed");
+        /// <summary>
+        /// Constant InitialIngestionInProgress for IngestionStatus
+        /// </summary>
+        public static readonly IngestionStatus InitialIngestionInProgress = new IngestionStatus("initial-ingestion-in-progress");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IngestionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IngestionStatus FindValue(string value)
+        {
+            return FindValue<IngestionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IngestionStatus(string value)
         {
             return FindValue(value);
         }
@@ -16995,6 +17477,220 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type Metric.
+    /// </summary>
+    public class Metric : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ReservationAvgCommittedSizeInst for Metric
+        /// </summary>
+        public static readonly Metric ReservationAvgCommittedSizeInst = new Metric("reservation-avg-committed-size-inst");
+        /// <summary>
+        /// Constant ReservationAvgCommittedSizeVcpu for Metric
+        /// </summary>
+        public static readonly Metric ReservationAvgCommittedSizeVcpu = new Metric("reservation-avg-committed-size-vcpu");
+        /// <summary>
+        /// Constant ReservationAvgFutureSizeInst for Metric
+        /// </summary>
+        public static readonly Metric ReservationAvgFutureSizeInst = new Metric("reservation-avg-future-size-inst");
+        /// <summary>
+        /// Constant ReservationAvgFutureSizeVcpu for Metric
+        /// </summary>
+        public static readonly Metric ReservationAvgFutureSizeVcpu = new Metric("reservation-avg-future-size-vcpu");
+        /// <summary>
+        /// Constant ReservationAvgUtilizationInst for Metric
+        /// </summary>
+        public static readonly Metric ReservationAvgUtilizationInst = new Metric("reservation-avg-utilization-inst");
+        /// <summary>
+        /// Constant ReservationAvgUtilizationVcpu for Metric
+        /// </summary>
+        public static readonly Metric ReservationAvgUtilizationVcpu = new Metric("reservation-avg-utilization-vcpu");
+        /// <summary>
+        /// Constant ReservationMaxCommittedSizeInst for Metric
+        /// </summary>
+        public static readonly Metric ReservationMaxCommittedSizeInst = new Metric("reservation-max-committed-size-inst");
+        /// <summary>
+        /// Constant ReservationMaxCommittedSizeVcpu for Metric
+        /// </summary>
+        public static readonly Metric ReservationMaxCommittedSizeVcpu = new Metric("reservation-max-committed-size-vcpu");
+        /// <summary>
+        /// Constant ReservationMaxFutureSizeInst for Metric
+        /// </summary>
+        public static readonly Metric ReservationMaxFutureSizeInst = new Metric("reservation-max-future-size-inst");
+        /// <summary>
+        /// Constant ReservationMaxFutureSizeVcpu for Metric
+        /// </summary>
+        public static readonly Metric ReservationMaxFutureSizeVcpu = new Metric("reservation-max-future-size-vcpu");
+        /// <summary>
+        /// Constant ReservationMaxSizeInst for Metric
+        /// </summary>
+        public static readonly Metric ReservationMaxSizeInst = new Metric("reservation-max-size-inst");
+        /// <summary>
+        /// Constant ReservationMaxSizeVcpu for Metric
+        /// </summary>
+        public static readonly Metric ReservationMaxSizeVcpu = new Metric("reservation-max-size-vcpu");
+        /// <summary>
+        /// Constant ReservationMaxUnusedSizeInst for Metric
+        /// </summary>
+        public static readonly Metric ReservationMaxUnusedSizeInst = new Metric("reservation-max-unused-size-inst");
+        /// <summary>
+        /// Constant ReservationMaxUnusedSizeVcpu for Metric
+        /// </summary>
+        public static readonly Metric ReservationMaxUnusedSizeVcpu = new Metric("reservation-max-unused-size-vcpu");
+        /// <summary>
+        /// Constant ReservationMaxUtilization for Metric
+        /// </summary>
+        public static readonly Metric ReservationMaxUtilization = new Metric("reservation-max-utilization");
+        /// <summary>
+        /// Constant ReservationMinCommittedSizeInst for Metric
+        /// </summary>
+        public static readonly Metric ReservationMinCommittedSizeInst = new Metric("reservation-min-committed-size-inst");
+        /// <summary>
+        /// Constant ReservationMinCommittedSizeVcpu for Metric
+        /// </summary>
+        public static readonly Metric ReservationMinCommittedSizeVcpu = new Metric("reservation-min-committed-size-vcpu");
+        /// <summary>
+        /// Constant ReservationMinFutureSizeInst for Metric
+        /// </summary>
+        public static readonly Metric ReservationMinFutureSizeInst = new Metric("reservation-min-future-size-inst");
+        /// <summary>
+        /// Constant ReservationMinFutureSizeVcpu for Metric
+        /// </summary>
+        public static readonly Metric ReservationMinFutureSizeVcpu = new Metric("reservation-min-future-size-vcpu");
+        /// <summary>
+        /// Constant ReservationMinSizeInst for Metric
+        /// </summary>
+        public static readonly Metric ReservationMinSizeInst = new Metric("reservation-min-size-inst");
+        /// <summary>
+        /// Constant ReservationMinSizeVcpu for Metric
+        /// </summary>
+        public static readonly Metric ReservationMinSizeVcpu = new Metric("reservation-min-size-vcpu");
+        /// <summary>
+        /// Constant ReservationMinUnusedSizeInst for Metric
+        /// </summary>
+        public static readonly Metric ReservationMinUnusedSizeInst = new Metric("reservation-min-unused-size-inst");
+        /// <summary>
+        /// Constant ReservationMinUnusedSizeVcpu for Metric
+        /// </summary>
+        public static readonly Metric ReservationMinUnusedSizeVcpu = new Metric("reservation-min-unused-size-vcpu");
+        /// <summary>
+        /// Constant ReservationMinUtilization for Metric
+        /// </summary>
+        public static readonly Metric ReservationMinUtilization = new Metric("reservation-min-utilization");
+        /// <summary>
+        /// Constant ReservationTotalCapacityHrsInst for Metric
+        /// </summary>
+        public static readonly Metric ReservationTotalCapacityHrsInst = new Metric("reservation-total-capacity-hrs-inst");
+        /// <summary>
+        /// Constant ReservationTotalCapacityHrsVcpu for Metric
+        /// </summary>
+        public static readonly Metric ReservationTotalCapacityHrsVcpu = new Metric("reservation-total-capacity-hrs-vcpu");
+        /// <summary>
+        /// Constant ReservationTotalCount for Metric
+        /// </summary>
+        public static readonly Metric ReservationTotalCount = new Metric("reservation-total-count");
+        /// <summary>
+        /// Constant ReservationTotalEstimatedCost for Metric
+        /// </summary>
+        public static readonly Metric ReservationTotalEstimatedCost = new Metric("reservation-total-estimated-cost");
+        /// <summary>
+        /// Constant ReservationUnusedTotalCapacityHrsInst for Metric
+        /// </summary>
+        public static readonly Metric ReservationUnusedTotalCapacityHrsInst = new Metric("reservation-unused-total-capacity-hrs-inst");
+        /// <summary>
+        /// Constant ReservationUnusedTotalCapacityHrsVcpu for Metric
+        /// </summary>
+        public static readonly Metric ReservationUnusedTotalCapacityHrsVcpu = new Metric("reservation-unused-total-capacity-hrs-vcpu");
+        /// <summary>
+        /// Constant ReservationUnusedTotalEstimatedCost for Metric
+        /// </summary>
+        public static readonly Metric ReservationUnusedTotalEstimatedCost = new Metric("reservation-unused-total-estimated-cost");
+        /// <summary>
+        /// Constant ReservedTotalEstimatedCost for Metric
+        /// </summary>
+        public static readonly Metric ReservedTotalEstimatedCost = new Metric("reserved-total-estimated-cost");
+        /// <summary>
+        /// Constant ReservedTotalUsageHrsInst for Metric
+        /// </summary>
+        public static readonly Metric ReservedTotalUsageHrsInst = new Metric("reserved-total-usage-hrs-inst");
+        /// <summary>
+        /// Constant ReservedTotalUsageHrsVcpu for Metric
+        /// </summary>
+        public static readonly Metric ReservedTotalUsageHrsVcpu = new Metric("reserved-total-usage-hrs-vcpu");
+        /// <summary>
+        /// Constant SpotAvgRunTimeBeforeInterruptionInst for Metric
+        /// </summary>
+        public static readonly Metric SpotAvgRunTimeBeforeInterruptionInst = new Metric("spot-avg-run-time-before-interruption-inst");
+        /// <summary>
+        /// Constant SpotMaxRunTimeBeforeInterruptionInst for Metric
+        /// </summary>
+        public static readonly Metric SpotMaxRunTimeBeforeInterruptionInst = new Metric("spot-max-run-time-before-interruption-inst");
+        /// <summary>
+        /// Constant SpotMinRunTimeBeforeInterruptionInst for Metric
+        /// </summary>
+        public static readonly Metric SpotMinRunTimeBeforeInterruptionInst = new Metric("spot-min-run-time-before-interruption-inst");
+        /// <summary>
+        /// Constant SpotTotalEstimatedCost for Metric
+        /// </summary>
+        public static readonly Metric SpotTotalEstimatedCost = new Metric("spot-total-estimated-cost");
+        /// <summary>
+        /// Constant SpotTotalUsageHrsInst for Metric
+        /// </summary>
+        public static readonly Metric SpotTotalUsageHrsInst = new Metric("spot-total-usage-hrs-inst");
+        /// <summary>
+        /// Constant SpotTotalUsageHrsVcpu for Metric
+        /// </summary>
+        public static readonly Metric SpotTotalUsageHrsVcpu = new Metric("spot-total-usage-hrs-vcpu");
+        /// <summary>
+        /// Constant UnreservedTotalEstimatedCost for Metric
+        /// </summary>
+        public static readonly Metric UnreservedTotalEstimatedCost = new Metric("unreserved-total-estimated-cost");
+        /// <summary>
+        /// Constant UnreservedTotalUsageHrsInst for Metric
+        /// </summary>
+        public static readonly Metric UnreservedTotalUsageHrsInst = new Metric("unreserved-total-usage-hrs-inst");
+        /// <summary>
+        /// Constant UnreservedTotalUsageHrsVcpu for Metric
+        /// </summary>
+        public static readonly Metric UnreservedTotalUsageHrsVcpu = new Metric("unreserved-total-usage-hrs-vcpu");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Metric(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Metric FindValue(string value)
+        {
+            return FindValue<Metric>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Metric(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type MetricType.
     /// </summary>
     public class MetricType : ConstantClass
@@ -18040,6 +18736,56 @@ namespace Amazon.EC2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator OperationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type OutputFormat.
+    /// </summary>
+    public class OutputFormat : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Csv for OutputFormat
+        /// </summary>
+        public static readonly OutputFormat Csv = new OutputFormat("csv");
+        /// <summary>
+        /// Constant Parquet for OutputFormat
+        /// </summary>
+        public static readonly OutputFormat Parquet = new OutputFormat("parquet");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OutputFormat(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OutputFormat FindValue(string value)
+        {
+            return FindValue<OutputFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OutputFormat(string value)
         {
             return FindValue(value);
         }
@@ -19333,6 +20079,56 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type ReservationEndDateType.
+    /// </summary>
+    public class ReservationEndDateType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Limited for ReservationEndDateType
+        /// </summary>
+        public static readonly ReservationEndDateType Limited = new ReservationEndDateType("limited");
+        /// <summary>
+        /// Constant Unlimited for ReservationEndDateType
+        /// </summary>
+        public static readonly ReservationEndDateType Unlimited = new ReservationEndDateType("unlimited");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ReservationEndDateType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ReservationEndDateType FindValue(string value)
+        {
+            return FindValue<ReservationEndDateType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ReservationEndDateType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ReservationState.
     /// </summary>
     public class ReservationState : ConstantClass
@@ -19343,6 +20139,22 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly ReservationState Active = new ReservationState("active");
         /// <summary>
+        /// Constant Cancelled for ReservationState
+        /// </summary>
+        public static readonly ReservationState Cancelled = new ReservationState("cancelled");
+        /// <summary>
+        /// Constant Delayed for ReservationState
+        /// </summary>
+        public static readonly ReservationState Delayed = new ReservationState("delayed");
+        /// <summary>
+        /// Constant Expired for ReservationState
+        /// </summary>
+        public static readonly ReservationState Expired = new ReservationState("expired");
+        /// <summary>
+        /// Constant Failed for ReservationState
+        /// </summary>
+        public static readonly ReservationState Failed = new ReservationState("failed");
+        /// <summary>
         /// Constant PaymentFailed for ReservationState
         /// </summary>
         public static readonly ReservationState PaymentFailed = new ReservationState("payment-failed");
@@ -19351,9 +20163,21 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly ReservationState PaymentPending = new ReservationState("payment-pending");
         /// <summary>
+        /// Constant Pending for ReservationState
+        /// </summary>
+        public static readonly ReservationState Pending = new ReservationState("pending");
+        /// <summary>
         /// Constant Retired for ReservationState
         /// </summary>
         public static readonly ReservationState Retired = new ReservationState("retired");
+        /// <summary>
+        /// Constant Scheduled for ReservationState
+        /// </summary>
+        public static readonly ReservationState Scheduled = new ReservationState("scheduled");
+        /// <summary>
+        /// Constant Unsupported for ReservationState
+        /// </summary>
+        public static readonly ReservationState Unsupported = new ReservationState("unsupported");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -19384,6 +20208,56 @@ namespace Amazon.EC2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ReservationState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ReservationType.
+    /// </summary>
+    public class ReservationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CapacityBlock for ReservationType
+        /// </summary>
+        public static readonly ReservationType CapacityBlock = new ReservationType("capacity-block");
+        /// <summary>
+        /// Constant Odcr for ReservationType
+        /// </summary>
+        public static readonly ReservationType Odcr = new ReservationType("odcr");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ReservationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ReservationType FindValue(string value)
+        {
+            return FindValue<ReservationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ReservationType(string value)
         {
             return FindValue(value);
         }
@@ -19558,6 +20432,10 @@ namespace Amazon.EC2
         /// Constant CapacityBlock for ResourceType
         /// </summary>
         public static readonly ResourceType CapacityBlock = new ResourceType("capacity-block");
+        /// <summary>
+        /// Constant CapacityManagerDataExport for ResourceType
+        /// </summary>
+        public static readonly ResourceType CapacityManagerDataExport = new ResourceType("capacity-manager-data-export");
         /// <summary>
         /// Constant CapacityReservation for ResourceType
         /// </summary>
@@ -20980,6 +21858,52 @@ namespace Amazon.EC2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator RuleAction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Schedule.
+    /// </summary>
+    public class Schedule : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Hourly for Schedule
+        /// </summary>
+        public static readonly Schedule Hourly = new Schedule("hourly");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Schedule(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Schedule FindValue(string value)
+        {
+            return FindValue<Schedule>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Schedule(string value)
         {
             return FindValue(value);
         }

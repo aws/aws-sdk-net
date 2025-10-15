@@ -821,11 +821,32 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// You can allocate an Elastic IP address from an address pool owned by Amazon Web Services
-        /// or from an address pool created from a public IPv4 address range that you have brought
-        /// to Amazon Web Services for use with your Amazon Web Services resources using bring
-        /// your own IP addresses (BYOIP). For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html">Bring
-        /// Your Own IP Addresses (BYOIP)</a> in the <i>Amazon EC2 User Guide</i>.
+        /// You can allocate an Elastic IP address from one of the following address pools:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Amazon's pool of IPv4 addresses
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Public IPv4 address range that you own and bring to your Amazon Web Services account
+        /// using <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html">Bring
+        /// Your Own IP Addresses (BYOIP)</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// An IPv4 IPAM pool with an Amazon-provided or BYOIP public IPv4 address range
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// IPv4 addresses from your on-premises network made available for use with an Outpost
+        /// using a <a href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">customer-owned
+        /// IP address pool</a> (CoIP pool)
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
+        /// IP Addresses</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -833,11 +854,6 @@ namespace Amazon.EC2
         /// recover an Elastic IP address that you released after it is allocated to another Amazon
         /// Web Services account. To attempt to recover an Elastic IP address that you released,
         /// specify it in this operation.
-        /// </para>
-        ///  
-        /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
-        /// IP Addresses</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -862,11 +878,32 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// You can allocate an Elastic IP address from an address pool owned by Amazon Web Services
-        /// or from an address pool created from a public IPv4 address range that you have brought
-        /// to Amazon Web Services for use with your Amazon Web Services resources using bring
-        /// your own IP addresses (BYOIP). For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html">Bring
-        /// Your Own IP Addresses (BYOIP)</a> in the <i>Amazon EC2 User Guide</i>.
+        /// You can allocate an Elastic IP address from one of the following address pools:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Amazon's pool of IPv4 addresses
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Public IPv4 address range that you own and bring to your Amazon Web Services account
+        /// using <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html">Bring
+        /// Your Own IP Addresses (BYOIP)</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// An IPv4 IPAM pool with an Amazon-provided or BYOIP public IPv4 address range
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// IPv4 addresses from your on-premises network made available for use with an Outpost
+        /// using a <a href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">customer-owned
+        /// IP address pool</a> (CoIP pool)
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
+        /// IP Addresses</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -874,11 +911,6 @@ namespace Amazon.EC2
         /// recover an Elastic IP address that you released after it is allocated to another Amazon
         /// Web Services account. To attempt to recover an Elastic IP address that you released,
         /// specify it in this operation.
-        /// </para>
-        ///  
-        /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
-        /// IP Addresses</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -4373,6 +4405,63 @@ namespace Amazon.EC2
         public virtual CopyVolumesResponse EndCopyVolumes(IAsyncResult asyncResult)
         {
             return EndInvoke<CopyVolumesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateCapacityManagerDataExport
+
+        /// <summary>
+        /// Creates a new data export configuration for EC2 Capacity Manager. This allows you
+        /// to automatically export capacity usage data to an S3 bucket on a scheduled basis.
+        /// The exported data includes metrics for On-Demand, Spot, and Capacity Reservations
+        /// usage across your organization.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCapacityManagerDataExport service method.</param>
+        /// 
+        /// <returns>The response from the CreateCapacityManagerDataExport service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCapacityManagerDataExport">REST API Reference for CreateCapacityManagerDataExport Operation</seealso>
+        public virtual CreateCapacityManagerDataExportResponse CreateCapacityManagerDataExport(CreateCapacityManagerDataExportRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateCapacityManagerDataExportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateCapacityManagerDataExportResponseUnmarshaller.Instance;
+
+            return Invoke<CreateCapacityManagerDataExportResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateCapacityManagerDataExport operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateCapacityManagerDataExport operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateCapacityManagerDataExport
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCapacityManagerDataExport">REST API Reference for CreateCapacityManagerDataExport Operation</seealso>
+        public virtual IAsyncResult BeginCreateCapacityManagerDataExport(CreateCapacityManagerDataExportRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateCapacityManagerDataExportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateCapacityManagerDataExportResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateCapacityManagerDataExport operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateCapacityManagerDataExport.</param>
+        /// 
+        /// <returns>Returns a  CreateCapacityManagerDataExportResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCapacityManagerDataExport">REST API Reference for CreateCapacityManagerDataExport Operation</seealso>
+        public virtual CreateCapacityManagerDataExportResponse EndCreateCapacityManagerDataExport(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateCapacityManagerDataExportResponse>(asyncResult);
         }
 
         #endregion
@@ -10607,6 +10696,61 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DeleteCapacityManagerDataExport
+
+        /// <summary>
+        /// Deletes an existing Capacity Manager data export configuration. This stops future
+        /// scheduled exports but does not delete previously exported files from S3.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCapacityManagerDataExport service method.</param>
+        /// 
+        /// <returns>The response from the DeleteCapacityManagerDataExport service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteCapacityManagerDataExport">REST API Reference for DeleteCapacityManagerDataExport Operation</seealso>
+        public virtual DeleteCapacityManagerDataExportResponse DeleteCapacityManagerDataExport(DeleteCapacityManagerDataExportRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteCapacityManagerDataExportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCapacityManagerDataExportResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteCapacityManagerDataExportResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteCapacityManagerDataExport operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCapacityManagerDataExport operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteCapacityManagerDataExport
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteCapacityManagerDataExport">REST API Reference for DeleteCapacityManagerDataExport Operation</seealso>
+        public virtual IAsyncResult BeginDeleteCapacityManagerDataExport(DeleteCapacityManagerDataExportRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteCapacityManagerDataExportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCapacityManagerDataExportResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteCapacityManagerDataExport operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteCapacityManagerDataExport.</param>
+        /// 
+        /// <returns>Returns a  DeleteCapacityManagerDataExportResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteCapacityManagerDataExport">REST API Reference for DeleteCapacityManagerDataExport Operation</seealso>
+        public virtual DeleteCapacityManagerDataExportResponse EndDeleteCapacityManagerDataExport(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteCapacityManagerDataExportResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteCarrierGateway
 
         /// <summary>
@@ -16828,6 +16972,61 @@ namespace Amazon.EC2
         public virtual DescribeCapacityBlockStatusResponse EndDescribeCapacityBlockStatus(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeCapacityBlockStatusResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeCapacityManagerDataExports
+
+        /// <summary>
+        /// Describes one or more Capacity Manager data export configurations. Returns information
+        /// about export settings, delivery status, and recent export activity.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCapacityManagerDataExports service method.</param>
+        /// 
+        /// <returns>The response from the DescribeCapacityManagerDataExports service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCapacityManagerDataExports">REST API Reference for DescribeCapacityManagerDataExports Operation</seealso>
+        public virtual DescribeCapacityManagerDataExportsResponse DescribeCapacityManagerDataExports(DescribeCapacityManagerDataExportsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeCapacityManagerDataExportsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeCapacityManagerDataExportsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeCapacityManagerDataExportsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeCapacityManagerDataExports operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCapacityManagerDataExports operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeCapacityManagerDataExports
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCapacityManagerDataExports">REST API Reference for DescribeCapacityManagerDataExports Operation</seealso>
+        public virtual IAsyncResult BeginDescribeCapacityManagerDataExports(DescribeCapacityManagerDataExportsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeCapacityManagerDataExportsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeCapacityManagerDataExportsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeCapacityManagerDataExports operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeCapacityManagerDataExports.</param>
+        /// 
+        /// <returns>Returns a  DescribeCapacityManagerDataExportsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCapacityManagerDataExports">REST API Reference for DescribeCapacityManagerDataExports Operation</seealso>
+        public virtual DescribeCapacityManagerDataExportsResponse EndDescribeCapacityManagerDataExports(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeCapacityManagerDataExportsResponse>(asyncResult);
         }
 
         #endregion
@@ -27864,6 +28063,62 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DisableCapacityManager
+
+        /// <summary>
+        /// Disables EC2 Capacity Manager for your account. This stops data ingestion and removes
+        /// access to capacity analytics and optimization recommendations. Previously collected
+        /// data is retained but no new data will be processed.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableCapacityManager service method.</param>
+        /// 
+        /// <returns>The response from the DisableCapacityManager service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableCapacityManager">REST API Reference for DisableCapacityManager Operation</seealso>
+        public virtual DisableCapacityManagerResponse DisableCapacityManager(DisableCapacityManagerRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DisableCapacityManagerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisableCapacityManagerResponseUnmarshaller.Instance;
+
+            return Invoke<DisableCapacityManagerResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisableCapacityManager operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisableCapacityManager operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisableCapacityManager
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableCapacityManager">REST API Reference for DisableCapacityManager Operation</seealso>
+        public virtual IAsyncResult BeginDisableCapacityManager(DisableCapacityManagerRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DisableCapacityManagerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisableCapacityManagerResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisableCapacityManager operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisableCapacityManager.</param>
+        /// 
+        /// <returns>Returns a  DisableCapacityManagerResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableCapacityManager">REST API Reference for DisableCapacityManager Operation</seealso>
+        public virtual DisableCapacityManagerResponse EndDisableCapacityManager(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DisableCapacityManagerResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DisableEbsEncryptionByDefault
 
         /// <summary>
@@ -30129,6 +30384,62 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  EnableCapacityManager
+
+        /// <summary>
+        /// Enables EC2 Capacity Manager for your account. This starts data ingestion for your
+        /// EC2 capacity usage across On-Demand, Spot, and Capacity Reservations. Initial data
+        /// processing may take several hours to complete.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableCapacityManager service method.</param>
+        /// 
+        /// <returns>The response from the EnableCapacityManager service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableCapacityManager">REST API Reference for EnableCapacityManager Operation</seealso>
+        public virtual EnableCapacityManagerResponse EnableCapacityManager(EnableCapacityManagerRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = EnableCapacityManagerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EnableCapacityManagerResponseUnmarshaller.Instance;
+
+            return Invoke<EnableCapacityManagerResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the EnableCapacityManager operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the EnableCapacityManager operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndEnableCapacityManager
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableCapacityManager">REST API Reference for EnableCapacityManager Operation</seealso>
+        public virtual IAsyncResult BeginEnableCapacityManager(EnableCapacityManagerRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = EnableCapacityManagerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EnableCapacityManagerResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  EnableCapacityManager operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginEnableCapacityManager.</param>
+        /// 
+        /// <returns>Returns a  EnableCapacityManagerResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableCapacityManager">REST API Reference for EnableCapacityManager Operation</seealso>
+        public virtual EnableCapacityManagerResponse EndEnableCapacityManager(IAsyncResult asyncResult)
+        {
+            return EndInvoke<EnableCapacityManagerResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  EnableEbsEncryptionByDefault
 
         /// <summary>
@@ -31782,6 +32093,174 @@ namespace Amazon.EC2
         public virtual GetAwsNetworkPerformanceDataResponse EndGetAwsNetworkPerformanceData(IAsyncResult asyncResult)
         {
             return EndInvoke<GetAwsNetworkPerformanceDataResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetCapacityManagerAttributes
+
+        /// <summary>
+        /// Retrieves the current configuration and status of EC2 Capacity Manager for your account,
+        /// including enablement status, Organizations access settings, and data ingestion status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCapacityManagerAttributes service method.</param>
+        /// 
+        /// <returns>The response from the GetCapacityManagerAttributes service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetCapacityManagerAttributes">REST API Reference for GetCapacityManagerAttributes Operation</seealso>
+        public virtual GetCapacityManagerAttributesResponse GetCapacityManagerAttributes(GetCapacityManagerAttributesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetCapacityManagerAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCapacityManagerAttributesResponseUnmarshaller.Instance;
+
+            return Invoke<GetCapacityManagerAttributesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetCapacityManagerAttributes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetCapacityManagerAttributes operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetCapacityManagerAttributes
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetCapacityManagerAttributes">REST API Reference for GetCapacityManagerAttributes Operation</seealso>
+        public virtual IAsyncResult BeginGetCapacityManagerAttributes(GetCapacityManagerAttributesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetCapacityManagerAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCapacityManagerAttributesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetCapacityManagerAttributes operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetCapacityManagerAttributes.</param>
+        /// 
+        /// <returns>Returns a  GetCapacityManagerAttributesResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetCapacityManagerAttributes">REST API Reference for GetCapacityManagerAttributes Operation</seealso>
+        public virtual GetCapacityManagerAttributesResponse EndGetCapacityManagerAttributes(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetCapacityManagerAttributesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetCapacityManagerMetricData
+
+        /// <summary>
+        /// Retrieves capacity usage metrics for your EC2 resources. Returns time-series data
+        /// for metrics like unused capacity, utilization rates, and costs across On-Demand, Spot,
+        /// and Capacity Reservations. Data can be grouped and filtered by various dimensions
+        /// such as region, account, and instance family.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCapacityManagerMetricData service method.</param>
+        /// 
+        /// <returns>The response from the GetCapacityManagerMetricData service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetCapacityManagerMetricData">REST API Reference for GetCapacityManagerMetricData Operation</seealso>
+        public virtual GetCapacityManagerMetricDataResponse GetCapacityManagerMetricData(GetCapacityManagerMetricDataRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetCapacityManagerMetricDataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCapacityManagerMetricDataResponseUnmarshaller.Instance;
+
+            return Invoke<GetCapacityManagerMetricDataResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetCapacityManagerMetricData operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetCapacityManagerMetricData operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetCapacityManagerMetricData
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetCapacityManagerMetricData">REST API Reference for GetCapacityManagerMetricData Operation</seealso>
+        public virtual IAsyncResult BeginGetCapacityManagerMetricData(GetCapacityManagerMetricDataRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetCapacityManagerMetricDataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCapacityManagerMetricDataResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetCapacityManagerMetricData operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetCapacityManagerMetricData.</param>
+        /// 
+        /// <returns>Returns a  GetCapacityManagerMetricDataResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetCapacityManagerMetricData">REST API Reference for GetCapacityManagerMetricData Operation</seealso>
+        public virtual GetCapacityManagerMetricDataResponse EndGetCapacityManagerMetricData(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetCapacityManagerMetricDataResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetCapacityManagerMetricDimensions
+
+        /// <summary>
+        /// Retrieves the available dimension values for capacity metrics within a specified
+        /// time range. This is useful for discovering what accounts, regions, instance families,
+        /// and other dimensions have data available for filtering and grouping.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCapacityManagerMetricDimensions service method.</param>
+        /// 
+        /// <returns>The response from the GetCapacityManagerMetricDimensions service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetCapacityManagerMetricDimensions">REST API Reference for GetCapacityManagerMetricDimensions Operation</seealso>
+        public virtual GetCapacityManagerMetricDimensionsResponse GetCapacityManagerMetricDimensions(GetCapacityManagerMetricDimensionsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetCapacityManagerMetricDimensionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCapacityManagerMetricDimensionsResponseUnmarshaller.Instance;
+
+            return Invoke<GetCapacityManagerMetricDimensionsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetCapacityManagerMetricDimensions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetCapacityManagerMetricDimensions operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetCapacityManagerMetricDimensions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetCapacityManagerMetricDimensions">REST API Reference for GetCapacityManagerMetricDimensions Operation</seealso>
+        public virtual IAsyncResult BeginGetCapacityManagerMetricDimensions(GetCapacityManagerMetricDimensionsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetCapacityManagerMetricDimensionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCapacityManagerMetricDimensionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetCapacityManagerMetricDimensions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetCapacityManagerMetricDimensions.</param>
+        /// 
+        /// <returns>Returns a  GetCapacityManagerMetricDimensionsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetCapacityManagerMetricDimensions">REST API Reference for GetCapacityManagerMetricDimensions Operation</seealso>
+        public virtual GetCapacityManagerMetricDimensionsResponse EndGetCapacityManagerMetricDimensions(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetCapacityManagerMetricDimensionsResponse>(asyncResult);
         }
 
         #endregion
@@ -44849,6 +45328,62 @@ namespace Amazon.EC2
         public virtual UnmonitorInstancesResponse EndUnmonitorInstances(IAsyncResult asyncResult)
         {
             return EndInvoke<UnmonitorInstancesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateCapacityManagerOrganizationsAccess
+
+        /// <summary>
+        /// Updates the Organizations access setting for EC2 Capacity Manager. This controls
+        /// whether Capacity Manager can aggregate data from all accounts in your Amazon Web Services
+        /// Organization or only from the current account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCapacityManagerOrganizationsAccess service method.</param>
+        /// 
+        /// <returns>The response from the UpdateCapacityManagerOrganizationsAccess service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UpdateCapacityManagerOrganizationsAccess">REST API Reference for UpdateCapacityManagerOrganizationsAccess Operation</seealso>
+        public virtual UpdateCapacityManagerOrganizationsAccessResponse UpdateCapacityManagerOrganizationsAccess(UpdateCapacityManagerOrganizationsAccessRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateCapacityManagerOrganizationsAccessRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateCapacityManagerOrganizationsAccessResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateCapacityManagerOrganizationsAccessResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateCapacityManagerOrganizationsAccess operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCapacityManagerOrganizationsAccess operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateCapacityManagerOrganizationsAccess
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UpdateCapacityManagerOrganizationsAccess">REST API Reference for UpdateCapacityManagerOrganizationsAccess Operation</seealso>
+        public virtual IAsyncResult BeginUpdateCapacityManagerOrganizationsAccess(UpdateCapacityManagerOrganizationsAccessRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateCapacityManagerOrganizationsAccessRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateCapacityManagerOrganizationsAccessResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateCapacityManagerOrganizationsAccess operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateCapacityManagerOrganizationsAccess.</param>
+        /// 
+        /// <returns>Returns a  UpdateCapacityManagerOrganizationsAccessResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UpdateCapacityManagerOrganizationsAccess">REST API Reference for UpdateCapacityManagerOrganizationsAccess Operation</seealso>
+        public virtual UpdateCapacityManagerOrganizationsAccessResponse EndUpdateCapacityManagerOrganizationsAccess(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateCapacityManagerOrganizationsAccessResponse>(asyncResult);
         }
 
         #endregion

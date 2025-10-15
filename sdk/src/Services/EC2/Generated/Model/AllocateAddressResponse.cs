@@ -64,8 +64,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property CarrierIp. 
         /// <para>
-        /// The carrier IP address. This option is only available for network interfaces that
-        /// reside in a subnet in a Wavelength Zone.
+        /// The carrier IP address. Available only for network interfaces that reside in a subnet
+        /// in a Wavelength Zone.
         /// </para>
         /// </summary>
         public string CarrierIp
@@ -156,7 +156,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property PublicIp. 
         /// <para>
-        /// The Elastic IP address.
+        /// The Amazon-owned IP address. Not available when using an address pool that you own.
         /// </para>
         /// </summary>
         public string PublicIp
@@ -174,7 +174,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property PublicIpv4Pool. 
         /// <para>
-        /// The ID of an address pool.
+        /// The ID of an address pool that you own.
         /// </para>
         /// </summary>
         public string PublicIpv4Pool
