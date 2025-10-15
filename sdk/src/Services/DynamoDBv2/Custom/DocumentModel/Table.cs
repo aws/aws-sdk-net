@@ -1,17 +1,17 @@
 ﻿/*
- * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- * 
- *  http://aws.amazon.com/apache2.0
- * 
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
- */
+* Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* 
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+* 
+*  http://aws.amazon.com/apache2.0
+* 
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
 
 using System;
 
@@ -537,7 +537,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         }
 
 
-        private void ValidateConditional(IConditionalOperationConfig config, Expression updateExpression)
+        private void ValidateConditional(IConditionalOperationConfig config, Expression updateExpression, List<string> createOnlyAttributes)
         {
 
             if (config == null)
@@ -546,8 +546,11 @@ namespace Amazon.DynamoDBv2.DocumentModel
             int conditionsSet = 0;
             conditionsSet += config.Expected != null ? 1 : 0;
             conditionsSet += config.ExpectedState != null ? 1 : 0;
-            conditionsSet += 
-                (config.ConditionalExpression is { ExpressionStatement: not null } || updateExpression is { ExpressionStatement: not null }) ? 1 : 0;
+            conditionsSet +=
+                (config.ConditionalExpression is { ExpressionStatement: not null } ||
+                 updateExpression is { ExpressionStatement: not null } ||
+                 (createOnlyAttributes != null && createOnlyAttributes.Any())) ?
+                    1 : 0;
 
             if (conditionsSet > 1)
                 throw new InvalidOperationException("Only one of the conditional properties Expected, ExpectedState and ConditionalExpression or UpdateExpression can be set.");
@@ -1353,16 +1356,11 @@ namespace Amazon.DynamoDBv2.DocumentModel
         internal Document UpdateHelper(Document doc, Primitive hashKey, Primitive rangeKey, UpdateItemOperationConfig config)
         {
             Key key = (hashKey != null || rangeKey != null) ? MakeKey(hashKey, rangeKey) : MakeKey(doc);
-            return UpdateHelper(doc, key, config,null);
+            return UpdateHelper(doc, key, config, null);
         }
 
-        internal Task<Document> UpdateHelperAsync(Document doc, Primitive hashKey, Primitive rangeKey, UpdateItemOperationConfig config, Expression expression, CancellationToken cancellationToken)
-        {
-            Key key = (hashKey != null || rangeKey != null) ? MakeKey(hashKey, rangeKey) : MakeKey(doc);
-            return UpdateHelperAsync(doc, key, config, expression, cancellationToken);
-        }
-
-        internal Document UpdateHelper(Document doc, Key key, UpdateItemOperationConfig config, Expression updateExpression)
+        internal Document UpdateHelper(Document doc, Key key, UpdateItemOperationConfig config, Expression updateExpression,
+            List<string> ifNotExistAttributeNames = null)
         {
             var currentConfig = config ?? new UpdateItemOperationConfig();
 
@@ -1386,7 +1384,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
             this.UpdateRequestUserAgentDetails(req, isAsync: false);
 
-            ValidateConditional(currentConfig, updateExpression);
+            ValidateConditional(currentConfig, updateExpression, ifNotExistAttributeNames);
 
             if (currentConfig.Expected != null)
             {
@@ -1400,15 +1398,17 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 if (req.Expected.Count > 1)
                     req.ConditionalOperator = EnumMapper.Convert(currentConfig.ExpectedState.ConditionalOperator);
             }
-            else if (currentConfig.ConditionalExpression is { IsSet: true } || updateExpression is { IsSet: true })
+            else if (currentConfig.ConditionalExpression is { IsSet: true } || updateExpression is { IsSet: true } ||
+                     (ifNotExistAttributeNames != null && ifNotExistAttributeNames.Any()))
             {
-                currentConfig.ConditionalExpression.ApplyExpression(req, this);
+                currentConfig.ConditionalExpression?.ApplyExpression(req, this);
 
                 string statement;
                 Dictionary<string, AttributeValue> expressionAttributeValues;
                 Dictionary<string, string> expressionAttributeNames;
 
-                Common.ConvertAttributeUpdatesToUpdateExpression(attributeUpdates, updateExpression, this, out statement, out expressionAttributeValues, out expressionAttributeNames);
+                Common.ConvertAttributeUpdatesToUpdateExpression(attributeUpdates, ifNotExistAttributeNames, updateExpression, this,
+                    out statement, out expressionAttributeValues, out expressionAttributeNames);
 
                 req.AttributeUpdates = null;
                 req.UpdateExpression = statement;
@@ -1453,7 +1453,14 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return ret;
         }
 
-        internal async Task<Document> UpdateHelperAsync(Document doc, Key key, UpdateItemOperationConfig config, Expression updateExpression, CancellationToken cancellationToken)
+        internal Task<Document> UpdateHelperAsync(Document doc, Primitive hashKey, Primitive rangeKey, UpdateItemOperationConfig config, Expression expression, CancellationToken cancellationToken)
+        {
+            Key key = (hashKey != null || rangeKey != null) ? MakeKey(hashKey, rangeKey) : MakeKey(doc);
+            return UpdateHelperAsync(doc, key, config, expression, cancellationToken);
+        }
+
+        internal async Task<Document> UpdateHelperAsync(Document doc, Key key, UpdateItemOperationConfig config, Expression updateExpression,
+            CancellationToken cancellationToken, List<string> ifNotExistAttributeNames = null)
         {
             var currentConfig = config ?? new UpdateItemOperationConfig();
 
@@ -1477,7 +1484,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
             this.UpdateRequestUserAgentDetails(req, isAsync: true);
 
-            ValidateConditional(currentConfig, updateExpression);
+            ValidateConditional(currentConfig, updateExpression, ifNotExistAttributeNames);
 
             if (currentConfig.Expected != null)
             {
@@ -1491,7 +1498,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 if (req.Expected.Count > 1)
                     req.ConditionalOperator = EnumMapper.Convert(currentConfig.ExpectedState.ConditionalOperator);
             }
-            else if (currentConfig.ConditionalExpression is { IsSet: true } || updateExpression is { IsSet: true })
+            else if (currentConfig.ConditionalExpression is { IsSet: true } || updateExpression is { IsSet: true } ||
+                     (ifNotExistAttributeNames != null && ifNotExistAttributeNames.Any()))
             {
                 currentConfig.ConditionalExpression?.ApplyExpression(req, this);
 
@@ -1499,7 +1507,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 Dictionary<string, AttributeValue> expressionAttributeValues;
                 Dictionary<string, string> expressionAttributeNames;
 
-                Common.ConvertAttributeUpdatesToUpdateExpression(attributeUpdates, updateExpression,this, out statement, out expressionAttributeValues, out expressionAttributeNames);
+                Common.ConvertAttributeUpdatesToUpdateExpression(attributeUpdates, ifNotExistAttributeNames, updateExpression, this,
+                    out statement, out expressionAttributeValues, out expressionAttributeNames);
 
                 req.AttributeUpdates = null;
                 req.UpdateExpression = statement;

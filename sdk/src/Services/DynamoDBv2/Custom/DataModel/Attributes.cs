@@ -733,4 +733,62 @@ namespace Amazon.DynamoDBv2.DataModel
         {
         }
     }
+
+    /// <summary>
+    /// Specifies the update behavior for a property when performing DynamoDB update operations.
+    /// This attribute can be used to control whether a property is always updated, only updated if not null.
+    /// </summary>
+    [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property, Inherited = true, AllowMultiple = false)]
+    public sealed class DynamoDbUpdateBehaviorAttribute : DynamoDBPropertyAttribute
+    {
+        /// <summary>
+        /// Gets the update behavior for the property.
+        /// </summary>
+        public UpdateBehavior Behavior { get; }
+
+        /// <summary>
+        /// Default constructor. Sets behavior to Always.
+        /// </summary>
+        public DynamoDbUpdateBehaviorAttribute()
+            : base()
+        {
+            Behavior = UpdateBehavior.Always;
+        }
+
+        /// <summary>
+        /// Constructor that specifies the update behavior.
+        /// </summary>
+        /// <param name="behavior">The update behavior to apply.</param>
+        public DynamoDbUpdateBehaviorAttribute(UpdateBehavior behavior)
+            : base()
+        {
+            Behavior = behavior;
+        }
+
+        /// <summary>
+        /// Constructor that specifies an alternate attribute name and update behavior.
+        /// </summary>
+        /// <param name="attributeName">Name of attribute to be associated with property or field.</param>
+        /// <param name="behavior">The update behavior to apply.</param>
+        public DynamoDbUpdateBehaviorAttribute(string attributeName, UpdateBehavior behavior)
+            : base(attributeName)
+        {
+            Behavior = behavior;
+        }
+    }
+
+    /// <summary>
+    /// Specifies when a property value should be set.
+    /// </summary>
+    public enum UpdateBehavior
+    {
+        /// <summary>
+        /// Set the value on both create and update.
+        /// </summary>
+        Always,
+        /// <summary>
+        /// Set the value only when the item is created.
+        /// </summary>
+        IfNotExists
+    }
 }
