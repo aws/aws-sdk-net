@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.TimestreamInfluxDB.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Parameters Object
+    /// Response Unmarshaller for PercentOrAbsoluteLong Object
     /// </summary>  
-    public class ParametersUnmarshaller : IJsonUnmarshaller<Parameters, JsonUnmarshallerContext>
+    public class PercentOrAbsoluteLongUnmarshaller : IJsonUnmarshaller<PercentOrAbsoluteLong, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.TimestreamInfluxDB.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public Parameters Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public PercentOrAbsoluteLong Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            Parameters unmarshalledObject = new Parameters();
+            PercentOrAbsoluteLong unmarshalledObject = new PercentOrAbsoluteLong();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,22 +56,16 @@ namespace Amazon.TimestreamInfluxDB.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("InfluxDBv2", targetDepth))
+                if (context.TestExpression("absolute", targetDepth))
                 {
-                    var unmarshaller = InfluxDBv2ParametersUnmarshaller.Instance;
-                    unmarshalledObject.InfluxDBv2 = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
+                    unmarshalledObject.Absolute = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InfluxDBv3Core", targetDepth))
+                if (context.TestExpression("percent", targetDepth))
                 {
-                    var unmarshaller = InfluxDBv3CoreParametersUnmarshaller.Instance;
-                    unmarshalledObject.InfluxDBv3Core = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("InfluxDBv3Enterprise", targetDepth))
-                {
-                    var unmarshaller = InfluxDBv3EnterpriseParametersUnmarshaller.Instance;
-                    unmarshalledObject.InfluxDBv3Enterprise = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Percent = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -79,12 +73,12 @@ namespace Amazon.TimestreamInfluxDB.Model.Internal.MarshallTransformations
         }
 
 
-        private static ParametersUnmarshaller _instance = new ParametersUnmarshaller();        
+        private static PercentOrAbsoluteLongUnmarshaller _instance = new PercentOrAbsoluteLongUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ParametersUnmarshaller Instance
+        public static PercentOrAbsoluteLongUnmarshaller Instance
         {
             get
             {
