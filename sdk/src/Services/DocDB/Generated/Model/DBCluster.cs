@@ -52,11 +52,13 @@ namespace Amazon.DocDB.Model
         private string _engine;
         private string _engineVersion;
         private string _hostedZoneId;
+        private DateTime? _ioOptimizedNextAllowedModificationTime;
         private string _kmsKeyId;
         private DateTime? _latestRestorableTime;
         private string _masterUsername;
         private ClusterMasterUserSecret _masterUserSecret;
         private bool? _multiAZ;
+        private string _networkType;
         private string _percentProgress;
         private int? _port;
         private string _preferredBackupWindow;
@@ -425,6 +427,25 @@ namespace Amazon.DocDB.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IOOptimizedNextAllowedModificationTime. 
+        /// <para>
+        /// The next time you can modify the Amazon DocumentDB cluster to use the iopt1 storage
+        /// type.
+        /// </para>
+        /// </summary>
+        public DateTime? IOOptimizedNextAllowedModificationTime
+        {
+            get { return this._ioOptimizedNextAllowedModificationTime; }
+            set { this._ioOptimizedNextAllowedModificationTime = value; }
+        }
+
+        // Check to see if IOOptimizedNextAllowedModificationTime property is set
+        internal bool IsSetIOOptimizedNextAllowedModificationTime()
+        {
+            return this._ioOptimizedNextAllowedModificationTime.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
         /// If <c>StorageEncrypted</c> is <c>true</c>, the KMS key identifier for the encrypted
@@ -514,6 +535,39 @@ namespace Amazon.DocDB.Model
         internal bool IsSetMultiAZ()
         {
             return this._multiAZ.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkType. 
+        /// <para>
+        /// The network type of the cluster.
+        /// </para>
+        ///  
+        /// <para>
+        /// The network type is determined by the <c>DBSubnetGroup</c> specified for the cluster.
+        /// A <c>DBSubnetGroup</c> can support only the IPv4 protocol or the IPv4 and the IPv6
+        /// protocols (<c>DUAL</c>).
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/vpc-clusters.html">DocumentDB
+        /// clusters in a VPC</a> in the Amazon DocumentDB Developer Guide.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid Values: <c>IPV4</c> | <c>DUAL</c> 
+        /// </para>
+        /// </summary>
+        public string NetworkType
+        {
+            get { return this._networkType; }
+            set { this._networkType = value; }
+        }
+
+        // Check to see if NetworkType property is set
+        internal bool IsSetNetworkType()
+        {
+            return this._networkType != null;
         }
 
         /// <summary>
