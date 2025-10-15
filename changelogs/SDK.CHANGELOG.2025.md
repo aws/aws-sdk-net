@@ -1,3 +1,22 @@
+### 3.7.1145.0 (2025-10-15 18:29 UTC)
+* Bedrock (3.7.505.0)
+	* Amazon Bedrock Automated Reasoning Policy now offers enhanced AWS KMS integration. The CreateAutomatedReasoningPolicy API includes a new kmsKeyId field, allowing customers to specify their preferred KMS key for encryption, improving control and compliance with AWS encryption mandates.
+* DocDB (3.7.502.0)
+	* Add support for NetworkType field in CreateDbCluster, ModifyDbCluster, RestoreDbClusterFromSnapshot and RestoreDbClusterToPointInTime for DocumentDB.
+* EC2 (3.7.517.0)
+	* Introducing EC2 Capacity Manager for monitoring and analyzing capacity usage across On-Demand Instances, Spot Instances, and Capacity Reservations.
+* ElasticLoadBalancingV2 (3.7.502.0)
+	* This release expands Listener Rule Conditions to support RegexValues and adds support for a new Transforms field in Listener Rules.
+* GuardDuty (3.7.505.0)
+	* Added default pagination value for ListMalwareProtectionPlans API and updated UpdateFindingsFeedback API
+* Lightsail (3.7.504.0)
+	* Add support for manage Lightsail Bucket CORS configuration
+* TimestreamInfluxDB (3.7.503.0)
+	* This release adds support for creating and managing InfluxDB 3 Core and Enterprise DbClusters.
+* Core 3.7.500.32
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.1144.0 (2025-10-14 18:31 UTC)
 * AppStream (3.7.502.0)
 	* This release introduces support for Microsoft license included applications streaming.
