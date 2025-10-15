@@ -34,13 +34,6 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     /// Enables the Availability Zones for the specified public subnets for the specified
     /// Application Load Balancer, Network Load Balancer or Gateway Load Balancer. The specified
     /// subnets replace the previously enabled subnets.
-    /// 
-    ///  
-    /// <para>
-    /// When you specify subnets for a Network Load Balancer, or Gateway Load Balancer you
-    /// must include all subnets that were enabled previously, with their existing configurations,
-    /// plus any additional subnets.
-    /// </para>
     /// </summary>
     public partial class SetSubnetsRequest : AmazonElasticLoadBalancingV2Request
     {
@@ -185,8 +178,13 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// </para>
         ///  
         /// <para>
-        /// [Network Load Balancers and Gateway Load Balancers] You can specify subnets from one
-        /// or more Availability Zones.
+        /// [Network Load Balancers] You can specify subnets from one or more Availability Zones.
+        /// </para>
+        ///  
+        /// <para>
+        /// [Gateway Load Balancers] You can specify subnets from one or more Availability Zones.
+        /// You must include all subnets that were enabled previously, with their existing configurations,
+        /// plus any additional subnets.
         /// </para>
         /// </summary>
         public List<string> Subnets

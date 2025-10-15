@@ -33,18 +33,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for HostHeaderConditionConfig Object
+    /// Response Unmarshaller for RuleTransform Object
     /// </summary>  
-    public class HostHeaderConditionConfigUnmarshaller : IUnmarshaller<HostHeaderConditionConfig, XmlUnmarshallerContext>, IUnmarshaller<HostHeaderConditionConfig, JsonUnmarshallerContext>
+    public class RuleTransformUnmarshaller : IUnmarshaller<RuleTransform, XmlUnmarshallerContext>, IUnmarshaller<RuleTransform, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public HostHeaderConditionConfig Unmarshall(XmlUnmarshallerContext context)
+        public RuleTransform Unmarshall(XmlUnmarshallerContext context)
         {
-            HostHeaderConditionConfig unmarshalledObject = new HostHeaderConditionConfig();
+            RuleTransform unmarshalledObject = new RuleTransform();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -55,26 +55,22 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("RegexValues/member", targetDepth))
+                    if (context.TestExpression("HostHeaderRewriteConfig", targetDepth))
                     {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        if (unmarshalledObject.RegexValues == null)
-                        {
-                            unmarshalledObject.RegexValues = new List<string>();
-                        }
-                        var item = unmarshaller.Unmarshall(context);
-                        unmarshalledObject.RegexValues.Add(item);
+                        var unmarshaller = HostHeaderRewriteConfigUnmarshaller.Instance;
+                        unmarshalledObject.HostHeaderRewriteConfig = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("Values/member", targetDepth))
+                    if (context.TestExpression("Type", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        if (unmarshalledObject.Values == null)
-                        {
-                            unmarshalledObject.Values = new List<string>();
-                        }
-                        var item = unmarshaller.Unmarshall(context);
-                        unmarshalledObject.Values.Add(item);
+                        unmarshalledObject.Type = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("UrlRewriteConfig", targetDepth))
+                    {
+                        var unmarshaller = UrlRewriteConfigUnmarshaller.Instance;
+                        unmarshalledObject.UrlRewriteConfig = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
@@ -92,18 +88,18 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public HostHeaderConditionConfig Unmarshall(JsonUnmarshallerContext context)
+        public RuleTransform Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
 
-        private static HostHeaderConditionConfigUnmarshaller _instance = new HostHeaderConditionConfigUnmarshaller();        
+        private static RuleTransformUnmarshaller _instance = new RuleTransformUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static HostHeaderConditionConfigUnmarshaller Instance
+        public static RuleTransformUnmarshaller Instance
         {
             get
             {

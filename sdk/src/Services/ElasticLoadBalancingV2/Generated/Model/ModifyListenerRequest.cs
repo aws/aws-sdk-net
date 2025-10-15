@@ -163,7 +163,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property MutualAuthentication. 
         /// <para>
-        /// The mutual authentication configuration information.
+        /// [HTTPS listeners] The mutual authentication configuration information.
         /// </para>
         /// </summary>
         public MutualAuthenticationAttributes MutualAuthentication

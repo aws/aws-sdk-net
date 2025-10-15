@@ -184,10 +184,12 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        ///  <c>routing.http2.enabled</c> - Indicates whether HTTP/2 is enabled. The possible
-        /// values are <c>true</c> and <c>false</c>. The default is <c>true</c>. Elastic Load
-        /// Balancing requires that message header names contain only alphanumeric characters
-        /// and hyphens.
+        ///  <c>routing.http2.enabled</c> - Indicates whether clients can connect to the load
+        /// balancer using HTTP/2. If <c>true</c>, clients can connect using HTTP/2 or HTTP/1.1.
+        /// However, all client requests are subject to the stricter HTTP/2 header validation
+        /// rules. For example, message header names must contain only alphanumeric characters
+        /// and hyphens. If <c>false</c>, clients must connect using HTTP/1.1. The default is
+        /// <c>true</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>

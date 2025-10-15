@@ -34,12 +34,32 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     /// </summary>
     public partial class PathPatternConditionConfig
     {
+        private List<string> _regexValues = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _values = AWSConfigs.InitializeCollections ? new List<string>() : null;
+
+        /// <summary>
+        /// Gets and sets the property RegexValues. 
+        /// <para>
+        /// The regular expressions to compare against the request URL. The maximum length of
+        /// each string is 128 characters.
+        /// </para>
+        /// </summary>
+        public List<string> RegexValues
+        {
+            get { return this._regexValues; }
+            set { this._regexValues = value; }
+        }
+
+        // Check to see if RegexValues property is set
+        internal bool IsSetRegexValues()
+        {
+            return this._regexValues != null && (this._regexValues.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property Values. 
         /// <para>
-        /// The path patterns to compare against the request URL. The maximum size of each string
+        /// The path patterns to compare against the request URL. The maximum length of each string
         /// is 128 characters. The comparison is case sensitive. The following wildcard characters
         /// are supported: * (matches 0 or more characters) and ? (matches exactly 1 character).
         /// </para>

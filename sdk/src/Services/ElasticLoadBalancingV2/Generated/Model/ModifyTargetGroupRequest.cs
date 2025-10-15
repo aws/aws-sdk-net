@@ -50,7 +50,9 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property HealthCheckEnabled. 
         /// <para>
-        /// Indicates whether health checks are enabled.
+        /// Indicates whether health checks are enabled. If the target type is <c>lambda</c>,
+        /// health checks are disabled by default but can be enabled. If the target type is <c>instance</c>,
+        /// <c>ip</c>, or <c>alb</c>, health checks are always enabled and can't be disabled.
         /// </para>
         /// </summary>
         public bool HealthCheckEnabled

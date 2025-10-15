@@ -45,7 +45,9 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     {
         private List<Action> _actions = AWSConfigs.InitializeCollections ? new List<Action>() : null;
         private List<RuleCondition> _conditions = AWSConfigs.InitializeCollections ? new List<RuleCondition>() : null;
+        private bool? _resetTransforms;
         private string _ruleArn;
+        private List<RuleTransform> _transforms = AWSConfigs.InitializeCollections ? new List<RuleTransform>() : null;
 
         /// <summary>
         /// Gets and sets the property Actions. 
@@ -84,6 +86,25 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ResetTransforms. 
+        /// <para>
+        /// Indicates whether to remove all transforms from the rule. If you specify <c>ResetTransforms</c>,
+        /// you can't specify <c>Transforms</c>.
+        /// </para>
+        /// </summary>
+        public bool ResetTransforms
+        {
+            get { return this._resetTransforms.GetValueOrDefault(); }
+            set { this._resetTransforms = value; }
+        }
+
+        // Check to see if ResetTransforms property is set
+        internal bool IsSetResetTransforms()
+        {
+            return this._resetTransforms.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property RuleArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the rule.
@@ -100,6 +121,26 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         internal bool IsSetRuleArn()
         {
             return this._ruleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Transforms. 
+        /// <para>
+        /// The transforms to apply to requests that match this rule. You can add one host header
+        /// rewrite transform and one URL rewrite transform. If you specify <c>Transforms</c>,
+        /// you can't specify <c>ResetTransforms</c>.
+        /// </para>
+        /// </summary>
+        public List<RuleTransform> Transforms
+        {
+            get { return this._transforms; }
+            set { this._transforms = value; }
+        }
+
+        // Check to see if Transforms property is set
+        internal bool IsSetTransforms()
+        {
+            return this._transforms != null && (this._transforms.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }
