@@ -109,6 +109,14 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeCapacityManagerDataExports operation
+        ///</summary>
+        public IDescribeCapacityManagerDataExportsPaginator DescribeCapacityManagerDataExports(DescribeCapacityManagerDataExportsRequest request) 
+        {
+            return new DescribeCapacityManagerDataExportsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeCapacityReservationBillingRequests operation
         ///</summary>
         public IDescribeCapacityReservationBillingRequestsPaginator DescribeCapacityReservationBillingRequests(DescribeCapacityReservationBillingRequestsRequest request) 
@@ -1074,6 +1082,22 @@ namespace Amazon.EC2.Model
         public IGetAwsNetworkPerformanceDataPaginator GetAwsNetworkPerformanceData(GetAwsNetworkPerformanceDataRequest request) 
         {
             return new GetAwsNetworkPerformanceDataPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for GetCapacityManagerMetricData operation
+        ///</summary>
+        public IGetCapacityManagerMetricDataPaginator GetCapacityManagerMetricData(GetCapacityManagerMetricDataRequest request) 
+        {
+            return new GetCapacityManagerMetricDataPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for GetCapacityManagerMetricDimensions operation
+        ///</summary>
+        public IGetCapacityManagerMetricDimensionsPaginator GetCapacityManagerMetricDimensions(GetCapacityManagerMetricDimensionsRequest request) 
+        {
+            return new GetCapacityManagerMetricDimensionsPaginator(this.client, request);
         }
 
         /// <summary>

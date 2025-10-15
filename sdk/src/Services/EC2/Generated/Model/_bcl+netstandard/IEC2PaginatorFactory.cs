@@ -118,6 +118,16 @@ namespace Amazon.EC2.Model
         IDescribeCapacityBlockStatusPaginator DescribeCapacityBlockStatus(DescribeCapacityBlockStatusRequest request);
 
         /// <summary>
+        /// Paginator for DescribeCapacityManagerDataExports operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IDescribeCapacityManagerDataExportsPaginator DescribeCapacityManagerDataExports(DescribeCapacityManagerDataExportsRequest request);
+
+        /// <summary>
         /// Paginator for DescribeCapacityReservationBillingRequests operation
         ///</summary>
         [AWSPaginator(
@@ -1326,6 +1336,26 @@ namespace Amazon.EC2.Model
             OutputToken = new[] { "NextToken" }
         )]
         IGetAwsNetworkPerformanceDataPaginator GetAwsNetworkPerformanceData(GetAwsNetworkPerformanceDataRequest request);
+
+        /// <summary>
+        /// Paginator for GetCapacityManagerMetricData operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IGetCapacityManagerMetricDataPaginator GetCapacityManagerMetricData(GetCapacityManagerMetricDataRequest request);
+
+        /// <summary>
+        /// Paginator for GetCapacityManagerMetricDimensions operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IGetCapacityManagerMetricDimensionsPaginator GetCapacityManagerMetricDimensions(GetCapacityManagerMetricDimensionsRequest request);
 
         /// <summary>
         /// Paginator for GetGroupsForCapacityReservation operation

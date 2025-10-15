@@ -39,8 +39,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Return. 
         /// <para>
-        /// The return value of the request. Returns <c>true</c> if the specified product code
-        /// is owned by the requester and associated with the specified instance.
+        /// Is <c>true</c> if the request succeeds and an error otherwise.
         /// </para>
         /// </summary>
         public bool? Return

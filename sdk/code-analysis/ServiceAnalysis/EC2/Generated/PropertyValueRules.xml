@@ -146,6 +146,11 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeCapacityManagerDataExportsRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EC2.Model.DescribeCapacityReservationBillingRequestsRequest.MaxResults</property>
     <min>1</min>
     <max>1000</max>
@@ -693,6 +698,11 @@
     <property>Amazon.EC2.Model.GetAssociatedIpv6PoolCidrsRequest.MaxResults</property>
     <min>1</min>
     <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.GetCapacityManagerMetricDataRequest.Period</property>
+    <min>3600</min>
+    <max>86400</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.GetCapacityReservationUsageRequest.MaxResults</property>

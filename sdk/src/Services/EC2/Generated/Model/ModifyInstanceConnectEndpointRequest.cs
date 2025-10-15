@@ -113,28 +113,18 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property PreserveClientIp. 
         /// <para>
-        /// Indicates whether the client IP address is preserved as the source. The following
-        /// are the possible values.
+        /// Indicates whether the client IP address is preserved as the source when you connect
+        /// to a resource. The following are the possible values.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>true</c> - Use the client IP address as the source.
+        ///  <c>true</c> - Use the IP address of the client. Your instance must have an IPv4 address.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>false</c> - Use the network interface IP address as the source.
+        ///  <c>false</c> - Use the IP address of the network interface.
         /// </para>
-        ///  </li> </ul> <note> 
-        /// <para>
-        ///  <c>PreserveClientIp=true</c> is only supported on IPv4 EC2 Instance Connect Endpoints.
-        /// If modifying <c>PreserveClientIp</c> to <c>true</c>, either the endpoint's existing
-        /// <c>IpAddressType</c> must be <c>ipv4</c>, or if modifying <c>IpAddressType</c> in
-        /// the same request, the new value must be <c>ipv4</c>.
-        /// </para>
-        ///  </note> 
-        /// <para>
-        /// Default: <c>false</c> 
-        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public bool? PreserveClientIp
         {

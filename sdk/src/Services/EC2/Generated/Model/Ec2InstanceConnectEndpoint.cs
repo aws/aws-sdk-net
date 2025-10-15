@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// The EC2 Instance Connect Endpoint.
+    /// Describes an EC2 Instance Connect Endpoint.
     /// </summary>
     public partial class Ec2InstanceConnectEndpoint
     {
@@ -225,21 +225,20 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property PreserveClientIp. 
         /// <para>
-        /// Indicates whether your client's IP address is preserved as the source. The value is
-        /// <c>true</c> or <c>false</c>.
+        /// Indicates whether your client's IP address is preserved as the source when you connect
+        /// to a resource. The following are the possible values.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If <c>true</c>, your client's IP address is used when you connect to a resource.
+        ///  <c>true</c> - Use the IP address of the client. Your instance must have an IPv4 address.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If <c>false</c>, the elastic network interface IP address is used when you connect
-        /// to a resource.
+        ///  <c>false</c> - Use the IP address of the network interface.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Default: <c>true</c> 
+        /// Default: <c>false</c> 
         /// </para>
         /// </summary>
         public bool? PreserveClientIp
