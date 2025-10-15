@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.TimestreamInfluxDB.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Parameters Object
+    /// Response Unmarshaller for PercentOrAbsoluteLong Object
     /// </summary>  
-    public class ParametersUnmarshaller : IUnmarshaller<Parameters, XmlUnmarshallerContext>, IUnmarshaller<Parameters, JsonUnmarshallerContext>
+    public class PercentOrAbsoluteLongUnmarshaller : IUnmarshaller<PercentOrAbsoluteLong, XmlUnmarshallerContext>, IUnmarshaller<PercentOrAbsoluteLong, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Parameters IUnmarshaller<Parameters, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        PercentOrAbsoluteLong IUnmarshaller<PercentOrAbsoluteLong, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.TimestreamInfluxDB.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public Parameters Unmarshall(JsonUnmarshallerContext context)
+        public PercentOrAbsoluteLong Unmarshall(JsonUnmarshallerContext context)
         {
-            Parameters unmarshalledObject = new Parameters();
+            PercentOrAbsoluteLong unmarshalledObject = new PercentOrAbsoluteLong();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,22 +66,16 @@ namespace Amazon.TimestreamInfluxDB.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("InfluxDBv2", targetDepth))
+                if (context.TestExpression("absolute", targetDepth))
                 {
-                    var unmarshaller = InfluxDBv2ParametersUnmarshaller.Instance;
-                    unmarshalledObject.InfluxDBv2 = unmarshaller.Unmarshall(context);
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.Absolute = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("InfluxDBv3Core", targetDepth))
+                if (context.TestExpression("percent", targetDepth))
                 {
-                    var unmarshaller = InfluxDBv3CoreParametersUnmarshaller.Instance;
-                    unmarshalledObject.InfluxDBv3Core = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("InfluxDBv3Enterprise", targetDepth))
-                {
-                    var unmarshaller = InfluxDBv3EnterpriseParametersUnmarshaller.Instance;
-                    unmarshalledObject.InfluxDBv3Enterprise = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Percent = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -89,12 +83,12 @@ namespace Amazon.TimestreamInfluxDB.Model.Internal.MarshallTransformations
         }
 
 
-        private static ParametersUnmarshaller _instance = new ParametersUnmarshaller();        
+        private static PercentOrAbsoluteLongUnmarshaller _instance = new PercentOrAbsoluteLongUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ParametersUnmarshaller Instance
+        public static PercentOrAbsoluteLongUnmarshaller Instance
         {
             get
             {

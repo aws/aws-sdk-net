@@ -46,6 +46,7 @@ namespace Amazon.TimestreamInfluxDB.Model
         private string _id;
         private string _influxAuthParametersSecretArn;
         private InstanceMode _instanceMode;
+        private List<string> _instanceModes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private LogDeliveryConfiguration _logDeliveryConfiguration;
         private string _name;
         private NetworkType _networkType;
@@ -278,6 +279,24 @@ namespace Amazon.TimestreamInfluxDB.Model
         internal bool IsSetInstanceMode()
         {
             return this._instanceMode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstanceModes. 
+        /// <para>
+        /// Specifies the DbInstance's roles in the cluster.
+        /// </para>
+        /// </summary>
+        public List<string> InstanceModes
+        {
+            get { return this._instanceModes; }
+            set { this._instanceModes = value; }
+        }
+
+        // Check to see if InstanceModes property is set
+        internal bool IsSetInstanceModes()
+        {
+            return this._instanceModes != null && (this._instanceModes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

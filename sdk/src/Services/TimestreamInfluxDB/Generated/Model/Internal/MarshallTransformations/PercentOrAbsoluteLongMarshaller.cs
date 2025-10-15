@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.TimestreamInfluxDB.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Parameters Marshaller
+    /// PercentOrAbsoluteLong Marshaller
     /// </summary>
-    public class ParametersMarshaller : IRequestMarshaller<Parameters, JsonMarshallerContext> 
+    public class PercentOrAbsoluteLongMarshaller : IRequestMarshaller<PercentOrAbsoluteLong, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,41 +44,20 @@ namespace Amazon.TimestreamInfluxDB.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(Parameters requestObject, JsonMarshallerContext context)
+        public void Marshall(PercentOrAbsoluteLong requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetInfluxDBv2())
+            if(requestObject.IsSetAbsolute())
             {
-                context.Writer.WritePropertyName("InfluxDBv2");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = InfluxDBv2ParametersMarshaller.Instance;
-                marshaller.Marshall(requestObject.InfluxDBv2, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("absolute");
+                context.Writer.Write(requestObject.Absolute);
             }
 
-            if(requestObject.IsSetInfluxDBv3Core())
+            if(requestObject.IsSetPercent())
             {
-                context.Writer.WritePropertyName("InfluxDBv3Core");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = InfluxDBv3CoreParametersMarshaller.Instance;
-                marshaller.Marshall(requestObject.InfluxDBv3Core, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetInfluxDBv3Enterprise())
-            {
-                context.Writer.WritePropertyName("InfluxDBv3Enterprise");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = InfluxDBv3EnterpriseParametersMarshaller.Instance;
-                marshaller.Marshall(requestObject.InfluxDBv3Enterprise, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("percent");
+                context.Writer.Write(requestObject.Percent);
             }
 
         }
@@ -86,7 +65,7 @@ namespace Amazon.TimestreamInfluxDB.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static ParametersMarshaller Instance = new ParametersMarshaller();
+        public readonly static PercentOrAbsoluteLongMarshaller Instance = new PercentOrAbsoluteLongMarshaller();
 
     }
 }

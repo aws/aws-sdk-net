@@ -124,6 +124,12 @@ namespace Amazon.TimestreamInfluxDB.Model.Internal.MarshallTransformations
                     response.InstanceMode = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("instanceModes", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    response.InstanceModes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("logDeliveryConfiguration", targetDepth))
                 {
                     var unmarshaller = LogDeliveryConfigurationUnmarshaller.Instance;

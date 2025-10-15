@@ -60,7 +60,7 @@ namespace Amazon.TimestreamInfluxDB.Model
         /// The amount of storage to allocate for your DB storage type in GiB (gibibytes).
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=20, Max=15360)]
+        [AWSProperty(Min=20, Max=15360)]
         public int AllocatedStorage
         {
             get { return this._allocatedStorage.GetValueOrDefault(); }
@@ -176,7 +176,6 @@ namespace Amazon.TimestreamInfluxDB.Model
         /// Specifies the type of cluster to create.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public ClusterDeploymentType DeploymentType
         {
             get { return this._deploymentType; }
@@ -295,7 +294,7 @@ namespace Amazon.TimestreamInfluxDB.Model
         /// secret created in Secrets Manager in your account.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true, Min=8, Max=64)]
+        [AWSProperty(Sensitive=true, Min=8, Max=64)]
         public string Password
         {
             get { return this._password; }
@@ -319,7 +318,7 @@ namespace Amazon.TimestreamInfluxDB.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: 8086
+        /// Default: 8086 for InfluxDB v2, 8181 for InfluxDB v3
         /// </para>
         ///  
         /// <para>
