@@ -97,6 +97,17 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.BucketName);
                 }
 
+                if(publicRequest.IsSetCors())
+                {
+                    context.Writer.WritePropertyName("cors");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = BucketCorsConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Cors, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetReadonlyAccessAccounts())
                 {
                     context.Writer.WritePropertyName("readonlyAccessAccounts");

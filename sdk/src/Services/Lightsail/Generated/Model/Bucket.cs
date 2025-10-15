@@ -39,6 +39,7 @@ namespace Amazon.Lightsail.Model
         private AccessRules _accessRules;
         private string _arn;
         private string _bundleId;
+        private BucketCorsConfig _cors;
         private DateTime? _createdAt;
         private ResourceLocation _location;
         private string _name;
@@ -160,6 +161,28 @@ namespace Amazon.Lightsail.Model
         internal bool IsSetBundleId()
         {
             return this._bundleId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Cors. 
+        /// <para>
+        /// An array of cross-origin resource sharing (CORS) rules that identify origins and the
+        /// HTTP methods that can be executed on your bucket. This field is only included in the
+        /// response when CORS configuration is requested or when updating CORS configuration.
+        /// For more information, see <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/configure-cors.html">Configuring
+        /// cross-origin resource sharing (CORS)</a>.
+        /// </para>
+        /// </summary>
+        public BucketCorsConfig Cors
+        {
+            get { return this._cors; }
+            set { this._cors = value; }
+        }
+
+        // Check to see if Cors property is set
+        internal bool IsSetCors()
+        {
+            return this._cors != null;
         }
 
         /// <summary>

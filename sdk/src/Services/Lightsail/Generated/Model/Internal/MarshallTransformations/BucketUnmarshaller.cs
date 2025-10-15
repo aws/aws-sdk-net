@@ -96,6 +96,12 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                     unmarshalledObject.BundleId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("cors", targetDepth))
+                {
+                    var unmarshaller = BucketCorsConfigUnmarshaller.Instance;
+                    unmarshalledObject.Cors = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("createdAt", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
