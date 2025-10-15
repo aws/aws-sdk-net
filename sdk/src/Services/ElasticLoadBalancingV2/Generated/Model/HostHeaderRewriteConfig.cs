@@ -30,31 +30,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticLoadBalancingV2.Model
 {
     /// <summary>
-    /// Information about an HTTP method condition.
-    /// 
-    ///  
-    /// <para>
-    /// HTTP defines a set of request methods, also referred to as HTTP verbs. For more information,
-    /// see the <a href="https://www.iana.org/assignments/http-methods/http-methods.xhtml">HTTP
-    /// Method Registry</a>. You can also define custom HTTP methods.
-    /// </para>
+    /// Information about a host header rewrite transform. This transform matches a pattern
+    /// in the host header in an HTTP request and replaces it with the specified string.
     /// </summary>
-    public partial class HttpRequestMethodConditionConfig
+    public partial class HostHeaderRewriteConfig
     {
-        private List<string> _values = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<RewriteConfig> _rewrites = AWSConfigs.InitializeCollections ? new List<RewriteConfig>() : null;
 
         /// <summary>
-        /// Gets and sets the property Values. 
+        /// Gets and sets the property Rewrites. 
         /// <para>
-        /// The name of the request method. The maximum length is 40 characters. The allowed characters
-        /// are A-Z, hyphen (-), and underscore (_). The comparison is case sensitive. Wildcards
-        /// are not supported; therefore, the method name must be an exact match.
-        /// </para>
-        ///  
-        /// <para>
-        /// If you specify multiple strings, the condition is satisfied if one of the strings
-        /// matches the HTTP request method. We recommend that you route GET and HEAD requests
-        /// in the same way, because the response to a HEAD request may be cached.
+        /// The host header rewrite transform. Each transform consists of a regular expression
+        /// to match and a replacement string.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -62,16 +49,16 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        public List<string> Values
+        public List<RewriteConfig> Rewrites
         {
-            get { return this._values; }
-            set { this._values = value; }
+            get { return this._rewrites; }
+            set { this._rewrites = value; }
         }
 
-        // Check to see if Values property is set
-        internal bool IsSetValues()
+        // Check to see if Rewrites property is set
+        internal bool IsSetRewrites()
         {
-            return this._values != null && (this._values.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._rewrites != null && (this._rewrites.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -284,6 +284,20 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                             }
                             if(publicRequestlistValue.IsSetHostHeaderConfig())
                             {
+                                if(publicRequestlistValue.HostHeaderConfig.IsSetRegexValues())
+                                {
+                                    if (publicRequestlistValue.HostHeaderConfig.RegexValues.Count == 0)
+                                        request.Parameters.Add("Conditions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "HostHeaderConfig" + "." + "RegexValues", "");
+                                    else
+                                    {
+                                         int publicRequestlistValueHostHeaderConfiglistValueIndex = 1;
+                                         foreach(var publicRequestlistValueHostHeaderConfiglistValue in publicRequestlistValue.HostHeaderConfig.RegexValues)
+                                         {
+                                             request.Parameters.Add("Conditions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "HostHeaderConfig" + "." + "RegexValues" + "." + "member" + "." + publicRequestlistValueHostHeaderConfiglistValueIndex, StringUtils.FromString(publicRequestlistValueHostHeaderConfiglistValue));
+                                             publicRequestlistValueHostHeaderConfiglistValueIndex++;
+                                         }
+                                    }
+                                }
                                 if(publicRequestlistValue.HostHeaderConfig.IsSetValues())
                                 {
                                     if (publicRequestlistValue.HostHeaderConfig.Values.Count == 0)
@@ -304,6 +318,20 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                                 if(publicRequestlistValue.HttpHeaderConfig.IsSetHttpHeaderName())
                                 {
                                     request.Parameters.Add("Conditions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "HttpHeaderConfig" + "." + "HttpHeaderName", StringUtils.FromString(publicRequestlistValue.HttpHeaderConfig.HttpHeaderName));
+                                }
+                                if(publicRequestlistValue.HttpHeaderConfig.IsSetRegexValues())
+                                {
+                                    if (publicRequestlistValue.HttpHeaderConfig.RegexValues.Count == 0)
+                                        request.Parameters.Add("Conditions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "HttpHeaderConfig" + "." + "RegexValues", "");
+                                    else
+                                    {
+                                         int publicRequestlistValueHttpHeaderConfiglistValueIndex = 1;
+                                         foreach(var publicRequestlistValueHttpHeaderConfiglistValue in publicRequestlistValue.HttpHeaderConfig.RegexValues)
+                                         {
+                                             request.Parameters.Add("Conditions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "HttpHeaderConfig" + "." + "RegexValues" + "." + "member" + "." + publicRequestlistValueHttpHeaderConfiglistValueIndex, StringUtils.FromString(publicRequestlistValueHttpHeaderConfiglistValue));
+                                             publicRequestlistValueHttpHeaderConfiglistValueIndex++;
+                                         }
+                                    }
                                 }
                                 if(publicRequestlistValue.HttpHeaderConfig.IsSetValues())
                                 {
@@ -339,6 +367,20 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                             }
                             if(publicRequestlistValue.IsSetPathPatternConfig())
                             {
+                                if(publicRequestlistValue.PathPatternConfig.IsSetRegexValues())
+                                {
+                                    if (publicRequestlistValue.PathPatternConfig.RegexValues.Count == 0)
+                                        request.Parameters.Add("Conditions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "PathPatternConfig" + "." + "RegexValues", "");
+                                    else
+                                    {
+                                         int publicRequestlistValuePathPatternConfiglistValueIndex = 1;
+                                         foreach(var publicRequestlistValuePathPatternConfiglistValue in publicRequestlistValue.PathPatternConfig.RegexValues)
+                                         {
+                                             request.Parameters.Add("Conditions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "PathPatternConfig" + "." + "RegexValues" + "." + "member" + "." + publicRequestlistValuePathPatternConfiglistValueIndex, StringUtils.FromString(publicRequestlistValuePathPatternConfiglistValue));
+                                             publicRequestlistValuePathPatternConfiglistValueIndex++;
+                                         }
+                                    }
+                                }
                                 if(publicRequestlistValue.PathPatternConfig.IsSetValues())
                                 {
                                     if (publicRequestlistValue.PathPatternConfig.Values.Count == 0)
@@ -378,6 +420,20 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                                     }
                                 }
                             }
+                            if(publicRequestlistValue.IsSetRegexValues())
+                            {
+                                if (publicRequestlistValue.RegexValues.Count == 0)
+                                    request.Parameters.Add("Conditions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "RegexValues", "");
+                                else
+                                {
+                                     int publicRequestlistValuelistValueIndex = 1;
+                                     foreach(var publicRequestlistValuelistValue in publicRequestlistValue.RegexValues)
+                                     {
+                                         request.Parameters.Add("Conditions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "RegexValues" + "." + "member" + "." + publicRequestlistValuelistValueIndex, StringUtils.FromString(publicRequestlistValuelistValue));
+                                         publicRequestlistValuelistValueIndex++;
+                                     }
+                                }
+                            }
                             if(publicRequestlistValue.IsSetSourceIpConfig())
                             {
                                 if(publicRequestlistValue.SourceIpConfig.IsSetValues())
@@ -413,9 +469,78 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                          }
                     }
                 }
+                if(publicRequest.IsSetResetTransforms())
+                {
+                    request.Parameters.Add("ResetTransforms", StringUtils.FromBool(publicRequest.ResetTransforms));
+                }
                 if(publicRequest.IsSetRuleArn())
                 {
                     request.Parameters.Add("RuleArn", StringUtils.FromString(publicRequest.RuleArn));
+                }
+                if(publicRequest.IsSetTransforms())
+                {
+                    if (publicRequest.Transforms.Count == 0)
+                        request.Parameters.Add("Transforms", "");
+                    else
+                    {
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.Transforms)
+                         {
+                            if(publicRequestlistValue.IsSetHostHeaderRewriteConfig())
+                            {
+                                if(publicRequestlistValue.HostHeaderRewriteConfig.IsSetRewrites())
+                                {
+                                    if (publicRequestlistValue.HostHeaderRewriteConfig.Rewrites.Count == 0)
+                                        request.Parameters.Add("Transforms" + "." + "member" + "." + publicRequestlistValueIndex + "." + "HostHeaderRewriteConfig" + "." + "Rewrites", "");
+                                    else
+                                    {
+                                         int publicRequestlistValueHostHeaderRewriteConfiglistValueIndex = 1;
+                                         foreach(var publicRequestlistValueHostHeaderRewriteConfiglistValue in publicRequestlistValue.HostHeaderRewriteConfig.Rewrites)
+                                         {
+                                            if(publicRequestlistValueHostHeaderRewriteConfiglistValue.IsSetRegex())
+                                            {
+                                                request.Parameters.Add("Transforms" + "." + "member" + "." + publicRequestlistValueIndex + "." + "HostHeaderRewriteConfig" + "." + "Rewrites" + "." + "member" + "." + publicRequestlistValueHostHeaderRewriteConfiglistValueIndex + "." + "Regex", StringUtils.FromString(publicRequestlistValueHostHeaderRewriteConfiglistValue.Regex));
+                                            }
+                                            if(publicRequestlistValueHostHeaderRewriteConfiglistValue.IsSetReplace())
+                                            {
+                                                request.Parameters.Add("Transforms" + "." + "member" + "." + publicRequestlistValueIndex + "." + "HostHeaderRewriteConfig" + "." + "Rewrites" + "." + "member" + "." + publicRequestlistValueHostHeaderRewriteConfiglistValueIndex + "." + "Replace", StringUtils.FromString(publicRequestlistValueHostHeaderRewriteConfiglistValue.Replace));
+                                            }
+                                             publicRequestlistValueHostHeaderRewriteConfiglistValueIndex++;
+                                         }
+                                    }
+                                }
+                            }
+                            if(publicRequestlistValue.IsSetType())
+                            {
+                                request.Parameters.Add("Transforms" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Type", StringUtils.FromString(publicRequestlistValue.Type));
+                            }
+                            if(publicRequestlistValue.IsSetUrlRewriteConfig())
+                            {
+                                if(publicRequestlistValue.UrlRewriteConfig.IsSetRewrites())
+                                {
+                                    if (publicRequestlistValue.UrlRewriteConfig.Rewrites.Count == 0)
+                                        request.Parameters.Add("Transforms" + "." + "member" + "." + publicRequestlistValueIndex + "." + "UrlRewriteConfig" + "." + "Rewrites", "");
+                                    else
+                                    {
+                                         int publicRequestlistValueUrlRewriteConfiglistValueIndex = 1;
+                                         foreach(var publicRequestlistValueUrlRewriteConfiglistValue in publicRequestlistValue.UrlRewriteConfig.Rewrites)
+                                         {
+                                            if(publicRequestlistValueUrlRewriteConfiglistValue.IsSetRegex())
+                                            {
+                                                request.Parameters.Add("Transforms" + "." + "member" + "." + publicRequestlistValueIndex + "." + "UrlRewriteConfig" + "." + "Rewrites" + "." + "member" + "." + publicRequestlistValueUrlRewriteConfiglistValueIndex + "." + "Regex", StringUtils.FromString(publicRequestlistValueUrlRewriteConfiglistValue.Regex));
+                                            }
+                                            if(publicRequestlistValueUrlRewriteConfiglistValue.IsSetReplace())
+                                            {
+                                                request.Parameters.Add("Transforms" + "." + "member" + "." + publicRequestlistValueIndex + "." + "UrlRewriteConfig" + "." + "Rewrites" + "." + "member" + "." + publicRequestlistValueUrlRewriteConfiglistValueIndex + "." + "Replace", StringUtils.FromString(publicRequestlistValueUrlRewriteConfiglistValue.Replace));
+                                            }
+                                             publicRequestlistValueUrlRewriteConfiglistValueIndex++;
+                                         }
+                                    }
+                                }
+                            }
+                             publicRequestlistValueIndex++;
+                         }
+                    }
                 }
             }
             return request;

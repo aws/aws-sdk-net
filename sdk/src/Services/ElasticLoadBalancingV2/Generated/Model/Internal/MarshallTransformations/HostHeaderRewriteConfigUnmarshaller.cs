@@ -33,18 +33,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for HostHeaderConditionConfig Object
+    /// Response Unmarshaller for HostHeaderRewriteConfig Object
     /// </summary>  
-    public class HostHeaderConditionConfigUnmarshaller : IXmlUnmarshaller<HostHeaderConditionConfig, XmlUnmarshallerContext>
+    public class HostHeaderRewriteConfigUnmarshaller : IXmlUnmarshaller<HostHeaderRewriteConfig, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public HostHeaderConditionConfig Unmarshall(XmlUnmarshallerContext context)
+        public HostHeaderRewriteConfig Unmarshall(XmlUnmarshallerContext context)
         {
-            HostHeaderConditionConfig unmarshalledObject = new HostHeaderConditionConfig();
+            HostHeaderRewriteConfig unmarshalledObject = new HostHeaderRewriteConfig();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -55,26 +55,15 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("RegexValues/member", targetDepth))
+                    if (context.TestExpression("Rewrites/member", targetDepth))
                     {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        if (unmarshalledObject.RegexValues == null)
+                        var unmarshaller = RewriteConfigUnmarshaller.Instance;
+                        if (unmarshalledObject.Rewrites == null)
                         {
-                            unmarshalledObject.RegexValues = new List<string>();
+                            unmarshalledObject.Rewrites = new List<RewriteConfig>();
                         }
                         var item = unmarshaller.Unmarshall(context);
-                        unmarshalledObject.RegexValues.Add(item);
-                        continue;
-                    }
-                    if (context.TestExpression("Values/member", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        if (unmarshalledObject.Values == null)
-                        {
-                            unmarshalledObject.Values = new List<string>();
-                        }
-                        var item = unmarshaller.Unmarshall(context);
-                        unmarshalledObject.Values.Add(item);
+                        unmarshalledObject.Rewrites.Add(item);
                         continue;
                     }
                 }
@@ -87,12 +76,12 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
-        private static HostHeaderConditionConfigUnmarshaller _instance = new HostHeaderConditionConfigUnmarshaller();        
+        private static HostHeaderRewriteConfigUnmarshaller _instance = new HostHeaderRewriteConfigUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static HostHeaderConditionConfigUnmarshaller Instance
+        public static HostHeaderRewriteConfigUnmarshaller Instance
         {
             get
             {
