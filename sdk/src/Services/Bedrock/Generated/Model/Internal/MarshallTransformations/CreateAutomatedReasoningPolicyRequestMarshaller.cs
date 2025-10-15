@@ -84,6 +84,12 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Description);
                 }
 
+                if(publicRequest.IsSetKmsKeyId())
+                {
+                    context.Writer.WritePropertyName("kmsKeyId");
+                    context.Writer.Write(publicRequest.KmsKeyId);
+                }
+
                 if(publicRequest.IsSetName())
                 {
                     context.Writer.WritePropertyName("name");

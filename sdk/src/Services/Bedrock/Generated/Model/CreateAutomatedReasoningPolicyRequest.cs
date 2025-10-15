@@ -46,6 +46,7 @@ namespace Amazon.Bedrock.Model
     {
         private string _clientRequestToken;
         private string _description;
+        private string _kmsKeyId;
         private string _name;
         private AutomatedReasoningPolicyDefinition _policyDefinition;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
@@ -89,6 +90,28 @@ namespace Amazon.Bedrock.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KmsKeyId. 
+        /// <para>
+        /// The identifier of the KMS key to use for encrypting the automated reasoning policy
+        /// and its associated artifacts. If you don't specify a KMS key, Amazon Bedrock uses
+        /// an KMS managed key for encryption. For enhanced security and control, you can specify
+        /// a customer managed KMS key.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string KmsKeyId
+        {
+            get { return this._kmsKeyId; }
+            set { this._kmsKeyId = value; }
+        }
+
+        // Check to see if KmsKeyId property is set
+        internal bool IsSetKmsKeyId()
+        {
+            return this._kmsKeyId != null;
         }
 
         /// <summary>

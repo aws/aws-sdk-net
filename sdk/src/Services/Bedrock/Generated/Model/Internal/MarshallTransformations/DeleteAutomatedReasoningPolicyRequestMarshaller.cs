@@ -62,7 +62,11 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetPolicyArn())
                 throw new AmazonBedrockException("Request object does not have required field PolicyArn set");
             request.AddPathResource("{policyArn}", StringUtils.FromString(publicRequest.PolicyArn));
+            
+            if (publicRequest.IsSetForce())
+                request.Parameters.Add("force", StringUtils.FromBool(publicRequest.Force));
             request.ResourcePath = "/automated-reasoning-policies/{policyArn}";
+            request.UseQueryString = true;
 
             return request;
         }

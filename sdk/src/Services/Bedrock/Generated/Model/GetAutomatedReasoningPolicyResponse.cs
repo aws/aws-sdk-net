@@ -37,6 +37,7 @@ namespace Amazon.Bedrock.Model
         private DateTime? _createdAt;
         private string _definitionHash;
         private string _description;
+        private string _kmsKeyArn;
         private string _name;
         private string _policyArn;
         private string _policyId;
@@ -97,6 +98,28 @@ namespace Amazon.Bedrock.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KmsKeyArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the KMS key used to encrypt the automated reasoning
+        /// policy and its associated artifacts. If a KMS key is not provided during the initial
+        /// CreateAutomatedReasoningPolicyRequest, the kmsKeyArn won't be included in the GetAutomatedReasoningPolicyResponse.
+        /// 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string KmsKeyArn
+        {
+            get { return this._kmsKeyArn; }
+            set { this._kmsKeyArn = value; }
+        }
+
+        // Check to see if KmsKeyArn property is set
+        internal bool IsSetKmsKeyArn()
+        {
+            return this._kmsKeyArn != null;
         }
 
         /// <summary>
