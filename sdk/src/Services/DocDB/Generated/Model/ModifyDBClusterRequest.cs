@@ -48,6 +48,7 @@ namespace Amazon.DocDB.Model
         private bool? _manageMasterUserPassword;
         private string _masterUserPassword;
         private string _masterUserSecretKmsKeyId;
+        private string _networkType;
         private string _newDBClusterIdentifier;
         private int? _port;
         private string _preferredBackupWindow;
@@ -64,10 +65,39 @@ namespace Amazon.DocDB.Model
         /// </para>
         ///  
         /// <para>
-        /// Constraints: You must allow major version upgrades when specifying a value for the
-        /// <c>EngineVersion</c> parameter that is a different major version than the DB cluster's
-        /// current version.
+        /// Constraints:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You must allow major version upgrades when specifying a value for the <c>EngineVersion</c>
+        /// parameter that is a different major version than the cluster's current version.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Since some parameters are version specific, changing them requires executing a new
+        /// <c>ModifyDBCluster</c> API call after the in-place MVU completes.
+        /// </para>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// Performing an MVU directly impacts the following parameters:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>MasterUserPassword</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>NewDBClusterIdentifier</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>VpcSecurityGroupIds</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>Port</c> 
+        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
         public bool AllowMajorVersionUpgrade
         {
@@ -358,6 +388,39 @@ namespace Amazon.DocDB.Model
         internal bool IsSetMasterUserSecretKmsKeyId()
         {
             return this._masterUserSecretKmsKeyId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkType. 
+        /// <para>
+        /// The network type of the cluster.
+        /// </para>
+        ///  
+        /// <para>
+        /// The network type is determined by the <c>DBSubnetGroup</c> specified for the cluster.
+        /// A <c>DBSubnetGroup</c> can support only the IPv4 protocol or the IPv4 and the IPv6
+        /// protocols (<c>DUAL</c>).
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/vpc-clusters.html">DocumentDB
+        /// clusters in a VPC</a> in the Amazon DocumentDB Developer Guide.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid Values: <c>IPV4</c> | <c>DUAL</c> 
+        /// </para>
+        /// </summary>
+        public string NetworkType
+        {
+            get { return this._networkType; }
+            set { this._networkType = value; }
+        }
+
+        // Check to see if NetworkType property is set
+        internal bool IsSetNetworkType()
+        {
+            return this._networkType != null;
         }
 
         /// <summary>

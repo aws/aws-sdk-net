@@ -675,6 +675,10 @@ namespace Amazon.DocDB
         /// <exception cref="Amazon.DocDB.Model.KMSKeyNotAccessibleException">
         /// An error occurred when accessing an KMS key.
         /// </exception>
+        /// <exception cref="Amazon.DocDB.Model.NetworkTypeNotSupportedException">
+        /// The network type is not supported by either <c>DBSubnetGroup</c> or the DB engine
+        /// version.
+        /// </exception>
         /// <exception cref="Amazon.DocDB.Model.StorageQuotaExceededException">
         /// The request would cause you to exceed the allowed amount of storage available across
         /// all instances.
@@ -753,6 +757,10 @@ namespace Amazon.DocDB
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.KMSKeyNotAccessibleException">
         /// An error occurred when accessing an KMS key.
+        /// </exception>
+        /// <exception cref="Amazon.DocDB.Model.NetworkTypeNotSupportedException">
+        /// The network type is not supported by either <c>DBSubnetGroup</c> or the DB engine
+        /// version.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.StorageQuotaExceededException">
         /// The request would cause you to exceed the allowed amount of storage available across
@@ -1299,7 +1307,7 @@ namespace Amazon.DocDB
         /// <summary>
         /// Creates an Amazon DocumentDB global cluster that can span multiple multiple Amazon
         /// Web Services Regions. The global cluster contains one primary cluster with read-write
-        /// capability, and up-to give read-only secondary clusters. Global clusters uses storage-based
+        /// capability, and up-to 10 read-only secondary clusters. Global clusters uses storage-based
         /// fast replication across regions with latencies less than one second, using dedicated
         /// infrastructure with no impact to your workload’s performance.
         /// 
@@ -1345,7 +1353,7 @@ namespace Amazon.DocDB
         /// <summary>
         /// Creates an Amazon DocumentDB global cluster that can span multiple multiple Amazon
         /// Web Services Regions. The global cluster contains one primary cluster with read-write
-        /// capability, and up-to give read-only secondary clusters. Global clusters uses storage-based
+        /// capability, and up-to 10 read-only secondary clusters. Global clusters uses storage-based
         /// fast replication across regions with latencies less than one second, using dedicated
         /// infrastructure with no impact to your workload’s performance.
         /// 
@@ -2928,6 +2936,10 @@ namespace Amazon.DocDB
         /// The subnet group doesn't cover all Availability Zones after it is created because
         /// of changes that were made.
         /// </exception>
+        /// <exception cref="Amazon.DocDB.Model.NetworkTypeNotSupportedException">
+        /// The network type is not supported by either <c>DBSubnetGroup</c> or the DB engine
+        /// version.
+        /// </exception>
         /// <exception cref="Amazon.DocDB.Model.StorageQuotaExceededException">
         /// The request would cause you to exceed the allowed amount of storage available across
         /// all instances.
@@ -2986,6 +2998,10 @@ namespace Amazon.DocDB
         /// <exception cref="Amazon.DocDB.Model.InvalidVPCNetworkStateException">
         /// The subnet group doesn't cover all Availability Zones after it is created because
         /// of changes that were made.
+        /// </exception>
+        /// <exception cref="Amazon.DocDB.Model.NetworkTypeNotSupportedException">
+        /// The network type is not supported by either <c>DBSubnetGroup</c> or the DB engine
+        /// version.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.StorageQuotaExceededException">
         /// The request would cause you to exceed the allowed amount of storage available across
@@ -3955,6 +3971,10 @@ namespace Amazon.DocDB
         /// <exception cref="Amazon.DocDB.Model.KMSKeyNotAccessibleException">
         /// An error occurred when accessing an KMS key.
         /// </exception>
+        /// <exception cref="Amazon.DocDB.Model.NetworkTypeNotSupportedException">
+        /// The network type is not supported by either <c>DBSubnetGroup</c> or the DB engine
+        /// version.
+        /// </exception>
         /// <exception cref="Amazon.DocDB.Model.StorageQuotaExceededException">
         /// The request would cause you to exceed the allowed amount of storage available across
         /// all instances.
@@ -4035,6 +4055,10 @@ namespace Amazon.DocDB
         /// <exception cref="Amazon.DocDB.Model.KMSKeyNotAccessibleException">
         /// An error occurred when accessing an KMS key.
         /// </exception>
+        /// <exception cref="Amazon.DocDB.Model.NetworkTypeNotSupportedException">
+        /// The network type is not supported by either <c>DBSubnetGroup</c> or the DB engine
+        /// version.
+        /// </exception>
         /// <exception cref="Amazon.DocDB.Model.StorageQuotaExceededException">
         /// The request would cause you to exceed the allowed amount of storage available across
         /// all instances.
@@ -4111,6 +4135,10 @@ namespace Amazon.DocDB
         /// <exception cref="Amazon.DocDB.Model.KMSKeyNotAccessibleException">
         /// An error occurred when accessing an KMS key.
         /// </exception>
+        /// <exception cref="Amazon.DocDB.Model.NetworkTypeNotSupportedException">
+        /// The network type is not supported by either <c>DBSubnetGroup</c> or the DB engine
+        /// version.
+        /// </exception>
         /// <exception cref="Amazon.DocDB.Model.StorageQuotaExceededException">
         /// The request would cause you to exceed the allowed amount of storage available across
         /// all instances.
@@ -4185,6 +4213,10 @@ namespace Amazon.DocDB
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.KMSKeyNotAccessibleException">
         /// An error occurred when accessing an KMS key.
+        /// </exception>
+        /// <exception cref="Amazon.DocDB.Model.NetworkTypeNotSupportedException">
+        /// The network type is not supported by either <c>DBSubnetGroup</c> or the DB engine
+        /// version.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.StorageQuotaExceededException">
         /// The request would cause you to exceed the allowed amount of storage available across

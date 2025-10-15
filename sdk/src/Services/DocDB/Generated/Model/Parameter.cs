@@ -194,8 +194,42 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property ParameterValue. 
         /// <para>
-        /// Specifies the value of the parameter.
+        /// Specifies the value of the parameter. Must be one or more of the cluster parameter's
+        /// <c>AllowedValues</c> in CSV format:
         /// </para>
+        ///  
+        /// <para>
+        /// Valid values are:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>enabled</c>: The cluster accepts secure connections using TLS version 1.0 through
+        /// 1.3. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>disabled</c>: The cluster does not accept secure connections using TLS. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>fips-140-3</c>: The cluster only accepts secure connections per the requirements
+        /// of the Federal Information Processing Standards (FIPS) publication 140-3. Only supported
+        /// starting with Amazon DocumentDB 5.0 (engine version 3.0.3727) clusters in these regions:
+        /// ca-central-1, us-west-2, us-east-1, us-east-2, us-gov-east-1, us-gov-west-1.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>tls1.2+</c>: The cluster accepts secure connections using TLS version 1.2 and
+        /// above. Only supported starting with Amazon DocumentDB 4.0 (engine version 2.0.10980)
+        /// and Amazon DocumentDB 5.0 (engine version 3.0.11051).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>tls1.3+</c>: The cluster accepts secure connections using TLS version 1.3 and
+        /// above. Only supported starting with Amazon DocumentDB 4.0 (engine version 2.0.10980)
+        /// and Amazon DocumentDB 5.0 (engine version 3.0.11051).
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string ParameterValue
         {
