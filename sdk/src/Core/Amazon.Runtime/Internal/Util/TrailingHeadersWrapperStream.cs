@@ -44,6 +44,7 @@ namespace Amazon.Runtime.Internal.Util
         private HashAlgorithm _hashAlgorithm;
         private IDictionary<string, string> _trailingHeaders;
         private CoreChecksumAlgorithm _checksumAlgorithm;
+        private readonly CachedChecksum _cachedChecksum;
         string _prefix;
         string _suffix;
         bool _haveFinishedPrefix;
@@ -53,7 +54,7 @@ namespace Amazon.Runtime.Internal.Util
         int _suffixPosition;
 
         /// <summary>
-        /// Initiates a stream wrapper to append trailing headers to an unsigned payload
+        /// Initiates a stream wrapper to append trailing headers to an unsigned payload.
         /// </summary>
         /// <param name="baseStream">Stream to wrap</param>
         /// <param name="trailingHeaders">Trailing headers to append after the wrapped stream</param>
@@ -70,11 +71,12 @@ namespace Amazon.Runtime.Internal.Util
 
         /// <summary>
         /// Initiates a stream wrapper to append trailing headers to an unsigned payload,
-        /// with a trailing checksum
+        /// with a trailing checksum.
         /// </summary>
         /// <param name="baseStream">Stream to wrap</param>
-        /// <param name="trailingHeaders">Header keys and values to append after the stream's conent</param>
+        /// <param name="trailingHeaders">Header keys and values to append after the stream's content</param>
         /// <param name="checksumAlgorithm">Algorithm to use to calculate the stream's checksum</param>
+        [Obsolete("Use the constructor that takes a CachedChecksum object.")]
         public TrailingHeadersWrapperStream(
             Stream baseStream, 
             IDictionary<string, string> trailingHeaders,
@@ -84,7 +86,48 @@ namespace Amazon.Runtime.Internal.Util
             {
                 _checksumAlgorithm = checksumAlgorithm;
                 _hashAlgorithm = CryptoUtilFactory.GetChecksumInstance(checksumAlgorithm);
+                 
+                // The constructor is obsolete but still requires the _cachedChecksum object allocation because
+                // it is used when setting the checksum.
+                _cachedChecksum = new CachedChecksum
+                {
+                    Value = null,
+                    OnComplete = ((string value) => { })
+                };
             }
+        }
+
+        /// <summary>
+        /// Initiates a stream wrapper to append trailing headers to an unsigned payload,
+        /// with a trailing checksum.
+        /// </summary>
+        /// <param name="baseStream">Stream to wrap</param>
+        /// <param name="trailingHeaders">Header keys and values to append after the stream's content</param>
+        /// <param name="checksumAlgorithm">Algorithm to use to calculate the stream's checksum</param>
+        /// <param name="cachedChecksum">Instance of the cachedChecksum object containing any cached checksum value and checksum OnComplete callback.</param>
+        public TrailingHeadersWrapperStream(
+            Stream baseStream,
+            IDictionary<string, string> trailingHeaders,
+            CoreChecksumAlgorithm checksumAlgorithm,
+            CachedChecksum cachedChecksum) : this(baseStream, trailingHeaders)
+        {
+            if (checksumAlgorithm != CoreChecksumAlgorithm.NONE)
+            {
+                _checksumAlgorithm = checksumAlgorithm;
+                
+                if (cachedChecksum == null || cachedChecksum.OnComplete == null)
+                {
+                    throw new AmazonClientException($"{nameof(TrailingHeadersWrapperStream)} was initialized without cachedChecksum being allocated or cachedChecksum.OnComplete is null.");
+                }
+
+                // Only construct the HashAlgorithm object if we don't already have a cached checksum.
+                if (string.IsNullOrEmpty(cachedChecksum.Value))
+                {
+                    _hashAlgorithm = CryptoUtilFactory.GetChecksumInstance(checksumAlgorithm);
+                }
+            }
+
+            _cachedChecksum = cachedChecksum;
         }
 
         /// <summary>
@@ -249,8 +292,13 @@ namespace Amazon.Runtime.Internal.Util
             {
                 if (_checksumAlgorithm != CoreChecksumAlgorithm.NONE && ChecksumUtils.GetChecksumHeaderKey(_checksumAlgorithm) == kvp.Key)
                 {
-                    // Use the calculated checksum, since it likely wasn't set in advance
-                    trailer.Append($"{kvp.Key}:{Convert.ToBase64String(_hashAlgorithm.Hash)}{STREAM_NEWLINE}");
+                    if (string.IsNullOrEmpty(_cachedChecksum.Value))
+                    {
+                        _cachedChecksum.Value = Convert.ToBase64String(_hashAlgorithm.Hash);
+                        _cachedChecksum.OnComplete(_cachedChecksum.Value);
+                    }
+                    
+                    trailer.Append($"{kvp.Key}:{_cachedChecksum.Value}{STREAM_NEWLINE}");
                 }
                 else
                 {

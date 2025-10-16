@@ -60,6 +60,7 @@ namespace Amazon.Runtime.Internal.Util
 
         private CoreChecksumAlgorithm _trailingChecksum;
         private HashAlgorithm _hashAlgorithm;
+        private readonly CachedChecksum _cachedChecksum;
 
         private IDictionary<string, string> _trailingHeaders;
         private string _trailingHeaderChunk;
@@ -132,6 +133,7 @@ namespace Amazon.Runtime.Internal.Util
         /// <param name="headerSigningResult">SigV4 or SigV4a signing result for the request's headers</param>
         /// <param name="trailingChecksum">Algorithm to use to calculate the stream's checksum</param>
         /// <param name="trailingHeaders">Trailing headers to append after the wrapped stream</param>
+        [Obsolete("Use the constructor that takes a CachedChecksum object.")]
         public ChunkedUploadWrapperStream(Stream stream,
             int wrappedStreamBufferSize,
             AWSSigningResultBase headerSigningResult,
@@ -143,10 +145,57 @@ namespace Amazon.Runtime.Internal.Util
             {
                 _trailingChecksum = trailingChecksum;
                 _hashAlgorithm = CryptoUtilFactory.GetChecksumInstance(trailingChecksum);
+
+                // The constructor is obsolete but still requires the _cachedChecksum object allocation because
+                // it is used when setting the checksum.
+                _cachedChecksum = new CachedChecksum
+                {
+                    Value = null,
+                    OnComplete = ((string value) => { })
+                };
             }
 
             _trailingHeadersConsumed = false;
             _trailingHeaders = trailingHeaders;
+        }
+
+        /// <summary>
+        /// Initializes a chunked upload stream with one or more trailing headers,
+        /// which may include a trailing checksum header.
+        /// </summary>
+        /// <param name="stream">Stream to wrap</param>
+        /// <param name="wrappedStreamBufferSize">Size of buffer used for reading from stream</param>
+        /// <param name="headerSigningResult">SigV4 or SigV4a signing result for the request's headers</param>
+        /// <param name="trailingChecksum">Algorithm to use to calculate the stream's checksum</param>
+        /// <param name="trailingHeaders">Trailing headers to append after the wrapped stream</param>
+        /// <param name="cachedChecksum">Instance of the cachedChecksum object containing any cached checksum value and checksum OnComplete callback.</param>
+        public ChunkedUploadWrapperStream(Stream stream,
+            int wrappedStreamBufferSize,
+            AWSSigningResultBase headerSigningResult,
+            CoreChecksumAlgorithm trailingChecksum,
+            IDictionary<string, string> trailingHeaders,
+            CachedChecksum cachedChecksum)
+            : this(stream, wrappedStreamBufferSize, headerSigningResult)
+        {
+            if (trailingChecksum != CoreChecksumAlgorithm.NONE)
+            {
+                _trailingChecksum = trailingChecksum;
+
+                if (cachedChecksum == null || cachedChecksum.OnComplete == null)
+                {
+                    throw new AmazonClientException($"{nameof(ChunkedUploadWrapperStream)} was initialized without cachedChecksum being allocated or cachedChecksum.OnComplete is null.");
+                }
+
+                // Only construct the HashAlgorithm object if we don't already have a cached checksum.
+                if (string.IsNullOrEmpty(cachedChecksum.Value))
+                {
+                    _hashAlgorithm = CryptoUtilFactory.GetChecksumInstance(trailingChecksum);
+                }
+            }
+
+            _trailingHeadersConsumed = false;
+            _trailingHeaders = trailingHeaders;
+            _cachedChecksum = cachedChecksum;
         }
 
         /// <summary>
@@ -409,7 +458,13 @@ namespace Amazon.Runtime.Internal.Util
             if (_hashAlgorithm != null)
             {
                 _hashAlgorithm.TransformFinalBlock(ArrayEx.Empty<byte>(), 0, 0);
-                _trailingHeaders[ChecksumUtils.GetChecksumHeaderKey(_trailingChecksum)] = Convert.ToBase64String(_hashAlgorithm.Hash);
+                _cachedChecksum.Value = Convert.ToBase64String(_hashAlgorithm.Hash);
+                _cachedChecksum.OnComplete(_cachedChecksum.Value);
+                _trailingHeaders[ChecksumUtils.GetChecksumHeaderKey(_trailingChecksum)] = _cachedChecksum.Value;                
+            }
+            else if (_trailingChecksum != CoreChecksumAlgorithm.NONE && !string.IsNullOrEmpty(_cachedChecksum.Value))
+            {
+                _trailingHeaders[ChecksumUtils.GetChecksumHeaderKey(_trailingChecksum)] = _cachedChecksum.Value;
             }
 
             string chunkSignature;

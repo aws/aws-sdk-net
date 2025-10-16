@@ -24,7 +24,6 @@ using Amazon.Util.Internal;
 using System;
 using System.Globalization;
 using System.Net;
-using System.Reflection;
 using System.Text;
 
 namespace Amazon.Runtime.Internal
@@ -38,6 +37,7 @@ namespace Amazon.Runtime.Internal
     {
         private bool _disposed;
         private IHttpRequestFactory<TRequestContent> _requestFactory;
+        private const string CachedChecksumKey = "ConsumedCachedChecksum";
 
         /// <summary>
         /// The sender parameter used in any events raised by this handler.
@@ -625,11 +625,21 @@ namespace Amazon.Runtime.Internal
                 {
                     if (hasTrailingHeaders)
                     {
+                        var cachedChecksum = new CachedChecksum
+                        {
+                            Value = requestContext.ContextAttributes.ContainsKey(CachedChecksumKey) ? (string)requestContext.ContextAttributes[CachedChecksumKey] : null,
+                            OnComplete = ((string value) =>
+                            {
+                                // Cache the checksum for future request retries in the ContextAttributes.
+                                requestContext.ContextAttributes.Add(CachedChecksumKey, value);
+                            })
+                        };
+
                         return new ChunkedUploadWrapperStream(originalStream,
                                                      requestContext.ClientConfig.BufferSize,
                                                      signingResult,
                                                      wrappedRequest.SelectedChecksum,
-                                                     wrappedRequest.TrailingHeaders);
+                                                     wrappedRequest.TrailingHeaders, cachedChecksum);
                     }
                     else // no trailing headers
                     {
@@ -643,7 +653,17 @@ namespace Amazon.Runtime.Internal
             {
                 if (wrappedRequest.SelectedChecksum != CoreChecksumAlgorithm.NONE)
                 {
-                    return new TrailingHeadersWrapperStream(originalStream, wrappedRequest.TrailingHeaders, wrappedRequest.SelectedChecksum);
+                    var cachedChecksum = new CachedChecksum
+                    {
+                        Value = requestContext.ContextAttributes.ContainsKey(CachedChecksumKey) ? (string)requestContext.ContextAttributes[CachedChecksumKey] : null,
+                        OnComplete = ((string value) =>
+                        {
+                            // Cache the checksum for future request retries in the ContextAttributes.
+                            requestContext.ContextAttributes.Add(CachedChecksumKey, value);
+                        })
+                    };
+
+                    return new TrailingHeadersWrapperStream(originalStream, wrappedRequest.TrailingHeaders, wrappedRequest.SelectedChecksum, cachedChecksum);
                 }
                 else
                 {
