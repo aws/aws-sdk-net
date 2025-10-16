@@ -1,0 +1,9 @@
+{
+    "core": {
+      "changeLogMessages": [
+        "Added checksum caching support for trailing and header checksums."
+      ],
+      "type": "patch",
+      "updateMinimum": true
+    }
+}
