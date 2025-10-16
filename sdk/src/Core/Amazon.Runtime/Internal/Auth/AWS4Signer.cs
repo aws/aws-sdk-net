@@ -64,7 +64,9 @@ namespace Amazon.Runtime.Internal.Auth
             HeaderKeys.XAmznTraceIdHeader,
             HeaderKeys.TransferEncodingHeader,
             HeaderKeys.AmzSdkInvocationId,
-            HeaderKeys.AmzSdkRequest
+            HeaderKeys.AmzSdkRequest,
+            HeaderKeys.UserAgentHeader,
+            HeaderKeys.XAmzUserAgentHeader
         };
 
         public AWS4Signer()
