@@ -137,6 +137,52 @@ namespace Amazon.BillingConductor
 
 
     /// <summary>
+    /// Constants used for properties of type ComputationRuleEnum.
+    /// </summary>
+    public class ComputationRuleEnum : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CONSOLIDATED for ComputationRuleEnum
+        /// </summary>
+        public static readonly ComputationRuleEnum CONSOLIDATED = new ComputationRuleEnum("CONSOLIDATED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ComputationRuleEnum(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ComputationRuleEnum FindValue(string value)
+        {
+            return FindValue<ComputationRuleEnum>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ComputationRuleEnum(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ConflictExceptionReason.
     /// </summary>
     public class ConflictExceptionReason : ConstantClass
@@ -663,6 +709,10 @@ namespace Amazon.BillingConductor
         /// </summary>
         public static readonly ValidationExceptionReason ACCOUNTS_NOT_ASSOCIATED = new ValidationExceptionReason("ACCOUNTS_NOT_ASSOCIATED");
         /// <summary>
+        /// Constant BILLING_GROUP_ALREADY_EXIST_IN_CURRENT_BILLING_PERIOD for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason BILLING_GROUP_ALREADY_EXIST_IN_CURRENT_BILLING_PERIOD = new ValidationExceptionReason("BILLING_GROUP_ALREADY_EXIST_IN_CURRENT_BILLING_PERIOD");
+        /// <summary>
         /// Constant CANNOT_DELETE_AUTO_ASSOCIATE_BILLING_GROUP for ValidationExceptionReason
         /// </summary>
         public static readonly ValidationExceptionReason CANNOT_DELETE_AUTO_ASSOCIATE_BILLING_GROUP = new ValidationExceptionReason("CANNOT_DELETE_AUTO_ASSOCIATE_BILLING_GROUP");
@@ -715,6 +765,10 @@ namespace Amazon.BillingConductor
         /// </summary>
         public static readonly ValidationExceptionReason ILLEGAL_CHILD_ASSOCIATE_RESOURCE = new ValidationExceptionReason("ILLEGAL_CHILD_ASSOCIATE_RESOURCE");
         /// <summary>
+        /// Constant ILLEGAL_COMPUTATION_RULE for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason ILLEGAL_COMPUTATION_RULE = new ValidationExceptionReason("ILLEGAL_COMPUTATION_RULE");
+        /// <summary>
         /// Constant ILLEGAL_CUSTOMLINEITEM for ValidationExceptionReason
         /// </summary>
         public static readonly ValidationExceptionReason ILLEGAL_CUSTOMLINEITEM = new ValidationExceptionReason("ILLEGAL_CUSTOMLINEITEM");
@@ -734,6 +788,10 @@ namespace Amazon.BillingConductor
         /// Constant ILLEGAL_EXPRESSION for ValidationExceptionReason
         /// </summary>
         public static readonly ValidationExceptionReason ILLEGAL_EXPRESSION = new ValidationExceptionReason("ILLEGAL_EXPRESSION");
+        /// <summary>
+        /// Constant ILLEGAL_LINE_ITEM_FILTER for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason ILLEGAL_LINE_ITEM_FILTER = new ValidationExceptionReason("ILLEGAL_LINE_ITEM_FILTER");
         /// <summary>
         /// Constant ILLEGAL_MODIFIER_PERCENTAGE for ValidationExceptionReason
         /// </summary>
@@ -830,6 +888,10 @@ namespace Amazon.BillingConductor
         /// Constant MISSING_BILLINGGROUP for ValidationExceptionReason
         /// </summary>
         public static readonly ValidationExceptionReason MISSING_BILLINGGROUP = new ValidationExceptionReason("MISSING_BILLINGGROUP");
+        /// <summary>
+        /// Constant MISSING_COSTCATEGORY for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason MISSING_COSTCATEGORY = new ValidationExceptionReason("MISSING_COSTCATEGORY");
         /// <summary>
         /// Constant MISSING_CUSTOMLINEITEM for ValidationExceptionReason
         /// </summary>
