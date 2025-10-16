@@ -233,6 +233,43 @@ namespace AWSSDK.UnitTests
         }
 
         [TestMethod]
+        public void Test_AddsCustomUserAgentAddition_SkipDuplicates()
+        {
+            var userAgentAddition = "custom-feature/1.0";
+            var userAgentAddition2 = "custom-feature/2.0";
+
+            var putObjectRequest = new PutObjectRequest
+            {
+                BucketName = "test-bucket",
+                Key = "test-key",
+                ContentBody = "test-content",
+            };
+
+            var userAgentDetails = ((IAmazonWebServiceRequest)putObjectRequest).UserAgentDetails;
+
+            userAgentDetails.AddUserAgentComponent(userAgentAddition);
+            userAgentDetails.AddUserAgentComponent(userAgentAddition);
+
+            userAgentDetails.AddUserAgentComponent(userAgentAddition2);
+            userAgentDetails.AddUserAgentComponent(userAgentAddition2);
+            userAgentDetails.AddUserAgentComponent(userAgentAddition2);
+
+            var config = new AmazonS3Config();
+            var request = RunMockRequest(putObjectRequest, config, new PutObjectRequestMarshaller(), new PutObjectResponseUnmarshaller());
+
+            request.Headers.TryGetValue(HeaderKeys.UserAgentHeader, out string userAgentHeader);
+            Assert.IsNotNull(userAgentHeader);
+
+            var userAgentParts = userAgentHeader.Split(' ');
+
+            Assert.IsTrue(userAgentParts.Contains(userAgentAddition));
+            Assert.AreEqual(1, userAgentParts.Count(e => e == userAgentAddition));
+
+            Assert.IsTrue(userAgentParts.Contains(userAgentAddition2));
+            Assert.AreEqual(1, userAgentParts.Count(e => e == userAgentAddition2));
+        }
+
+        [TestMethod]
         public void ObservabilityFeatureIds_NoInUserAgentByDefault()
         {
             var config = new AmazonS3Config();

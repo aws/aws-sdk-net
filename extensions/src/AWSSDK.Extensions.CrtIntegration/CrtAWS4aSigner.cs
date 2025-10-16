@@ -346,7 +346,9 @@ namespace Amazon.Extensions.CrtIntegration
             Encoding.ASCII.GetBytes(HeaderKeys.XAmznTraceIdHeader),
             Encoding.ASCII.GetBytes(HeaderKeys.TransferEncodingHeader),
             Encoding.ASCII.GetBytes(HeaderKeys.AmzSdkInvocationId),
-            Encoding.ASCII.GetBytes(HeaderKeys.AmzSdkRequest)
+            Encoding.ASCII.GetBytes(HeaderKeys.AmzSdkRequest),
+            Encoding.ASCII.GetBytes(HeaderKeys.UserAgentHeader),
+            Encoding.ASCII.GetBytes(HeaderKeys.XAmzUserAgentHeader)
         };
 
         /// <summary>
