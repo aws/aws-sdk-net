@@ -33,7 +33,7 @@ namespace Amazon.S3Control
     public partial class AmazonS3ControlConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("S3 Control", "4.0.6.7");
+            InternalSDKUtils.BuildUserAgentString("S3 Control", "4.0.6.8");
 
         private static readonly AmazonS3ControlEndpointResolver EndpointResolver =
             new AmazonS3ControlEndpointResolver();

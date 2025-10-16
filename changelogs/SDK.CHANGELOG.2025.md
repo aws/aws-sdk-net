@@ -1,3 +1,112 @@
+### 4.0.114.0 (2025-10-16 19:34 UTC)
+* ACMPCA (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* Amplify (4.0.3.0)
+	* Update endpoint ruleset parameters casing
+* ApiGatewayManagementApi (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* AppRunner (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* AppTest (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* AutoScalingPlans (4.0.2.0)
+	* Updated FIPS endpoints for US GovCloud regions
+* Batch (4.0.3.0)
+	* Update endpoint ruleset parameters casing
+* BCMDataExports (4.0.1.0)
+	* Update endpoint ruleset parameters casing
+* BillingConductor (4.0.2.0)
+	* New feature: service flat CLI and first AWS managed pricing plan (BasicPricingPlan)
+* CustomerProfiles (4.0.6.0)
+	* Update endpoint ruleset parameters casing
+* DataExchange (4.0.4.0)
+	* Update endpoint ruleset parameters casing
+* DLM (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* FreeTier (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* GameLift (4.0.3.0)
+	* Update endpoint ruleset parameters casing
+* GeoRoutes (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* GlobalAccelerator (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* GlueDataBrew (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* IdentityStore (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* IVS (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* IVSRealTime (4.0.4.0)
+	* Update endpoint ruleset parameters casing
+* Kafka (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* KeyManagementService (4.0.5.0)
+	* Update endpoint ruleset parameters casing
+* Keyspaces (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* LexModelBuildingService (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* LexRuntimeV2 (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* LookoutEquipment (4.0.1.0)
+	* Update endpoint ruleset parameters casing
+* MachineLearning (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* MainframeModernization (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* ManagedGrafana (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* MarketplaceEntitlementService (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* MediaPackageV2 (4.0.7.0)
+	* Update endpoint ruleset parameters casing
+* MedicalImaging (4.0.4.0)
+	* Update endpoint ruleset parameters casing
+* MemoryDB (4.0.3.0)
+	* Update endpoint ruleset parameters casing
+* MigrationHubConfig (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* NetworkFlowMonitor (4.0.5.0)
+	* Update endpoint ruleset parameters casing
+* OSIS (4.0.4.0)
+	* Update endpoint ruleset parameters casing
+* Personalize (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* PersonalizeRuntime (4.0.1.0)
+	* Update endpoint ruleset parameters casing
+* PinpointSMSVoice (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* Polly (4.0.3.0)
+	* Update endpoint ruleset parameters casing
+* Pricing (4.0.3.0)
+	* Update endpoint ruleset parameters casing
+* QLDB (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* QLDBSession (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* Route53RecoveryControlConfig (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* SimpleSystemsManagement (4.0.5.0)
+	* Update endpoint ruleset parameters casing
+* SSMContacts (4.0.1.0)
+	* Update endpoint ruleset parameters casing
+* SSMGuiConnect (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* TimestreamQuery (4.0.3.0)
+	* Update endpoint ruleset parameters casing
+* VoiceID (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* WorkSpacesWeb (4.0.3.0)
+	* Update endpoint ruleset parameters casing
+* Extensions.CrtIntegration (4.0.0.8)
+	* Fix issue with signature mismatch during retries
+* Core 4.0.1.1
+	* Added checksum caching support for trailing and header checksums.
+	* Fix issue with signature mismatch during retries
+	* Prevent duplicate entries in User Agent custom components
+	* All service and extension packages updated to require new Core
+
 ### 4.0.113.0 (2025-10-15 18:28 UTC)
 * Bedrock (4.0.13.0)
 	* Amazon Bedrock Automated Reasoning Policy now offers enhanced AWS KMS integration. The CreateAutomatedReasoningPolicy API includes a new kmsKeyId field, allowing customers to specify their preferred KMS key for encryption, improving control and compliance with AWS encryption mandates.

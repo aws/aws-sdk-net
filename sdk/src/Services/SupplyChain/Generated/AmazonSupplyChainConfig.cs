@@ -33,7 +33,7 @@ namespace Amazon.SupplyChain
     public partial class AmazonSupplyChainConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("SupplyChain", "4.0.2.8");
+            InternalSDKUtils.BuildUserAgentString("SupplyChain", "4.0.2.9");
 
         private static readonly AmazonSupplyChainEndpointResolver EndpointResolver =
             new AmazonSupplyChainEndpointResolver();

@@ -33,7 +33,7 @@ namespace Amazon.SecurityIR
     public partial class AmazonSecurityIRConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Security IR", "4.0.3.10");
+            InternalSDKUtils.BuildUserAgentString("Security IR", "4.0.3.11");
 
         private static readonly AmazonSecurityIREndpointResolver EndpointResolver =
             new AmazonSecurityIREndpointResolver();
