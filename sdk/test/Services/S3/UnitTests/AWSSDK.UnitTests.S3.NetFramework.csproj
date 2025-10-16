@@ -76,8 +76,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Custom/TestData/mapping.json" />
-    <EmbeddedResource Include="Custom/TestData/property-aliases.json" />
+    <EmbeddedResource Include="Custom/EmbeddedResource/*"/>
   </ItemGroup>
 
 </Project>

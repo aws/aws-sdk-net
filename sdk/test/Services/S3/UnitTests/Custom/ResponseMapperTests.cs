@@ -39,66 +39,29 @@ namespace AWSSDK.UnitTests
         [ClassInitialize]
         public static void ClassInitialize(TestContext context)
         {
-            // Load mapping.json from embedded resource
-            var assembly = Assembly.GetExecutingAssembly();
-            var assemblyName = assembly.GetName().Name;
-            
-            // DEBUG: Print assembly and resource information
-            Console.WriteLine($"[DEBUG] Assembly Name: {assemblyName}");
-            Console.WriteLine($"[DEBUG] Assembly Location: {assembly.Location}");
-            Console.WriteLine($"[DEBUG] Assembly Full Name: {assembly.FullName}");
-            
-            // Build resource names dynamically based on current assembly
-            var mappingResourceName = $"{assemblyName}.Custom.TestData.mapping.json";
-            var aliasesResourceName = $"{assemblyName}.Custom.TestData.property-aliases.json";
-            
-            Console.WriteLine($"[DEBUG] Looking for mapping resource: {mappingResourceName}");
-            Console.WriteLine($"[DEBUG] Looking for aliases resource: {aliasesResourceName}");
-            
-            // DEBUG: List all available embedded resources
-            Console.WriteLine("[DEBUG] Available embedded resources in assembly:");
-            var resourceNames = assembly.GetManifestResourceNames();
-            if (resourceNames.Length == 0)
-            {
-                Console.WriteLine("[DEBUG]   No embedded resources found!");
-            }
-            else
-            {
-                foreach (var resourceName in resourceNames.OrderBy(r => r))
-                {
-                    Console.WriteLine($"[DEBUG]   - {resourceName}");
-                }
-            }
-            
-            // Read mapping.json
-            using (var stream = assembly.GetManifestResourceStream(mappingResourceName))
+            // Read mapping.json using robust resource loading (same pattern as Utils.cs)
+            using (var stream = GetResourceStream("mapping.json"))
             {
                 if (stream == null)
                 {
-                    Console.WriteLine($"[ERROR] Could not find embedded resource: {mappingResourceName}");
-                    Console.WriteLine($"[ERROR] This suggests the embedded resources are not properly included in the assembly build.");
-                    throw new FileNotFoundException($"Could not find embedded resource: {mappingResourceName}");
+                    throw new FileNotFoundException("Could not find embedded resource: mapping.json");
                 }
                     
-                Console.WriteLine($"[DEBUG] Successfully found mapping resource: {mappingResourceName}");
                 using (var reader = new StreamReader(stream))
                 {
                     var jsonContent = reader.ReadToEnd();
-                    Console.WriteLine($"[DEBUG] Mapping resource content length: {jsonContent.Length} characters");
                     _mappingJson = JsonDocument.Parse(jsonContent);
                 }
             }
             
-            // Read property-aliases.json
-            using (var stream = assembly.GetManifestResourceStream(aliasesResourceName))
+            // Read property-aliases.json using robust resource loading
+            using (var stream = GetResourceStream("property-aliases.json"))
             {
                 if (stream != null)
                 {
-                    Console.WriteLine($"[DEBUG] Successfully found aliases resource: {aliasesResourceName}");
                     using (var reader = new StreamReader(stream))
                     {
                         var aliasContent = reader.ReadToEnd();
-                        Console.WriteLine($"[DEBUG] Aliases resource content length: {aliasContent.Length} characters");
                         _propertyAliasesJson = JsonDocument.Parse(aliasContent);
                         
                         // Convert to dictionary for fast lookup
@@ -108,17 +71,51 @@ namespace AWSSDK.UnitTests
                         {
                             _propertyAliases[alias.Name] = alias.Value.GetString();
                         }
-                        Console.WriteLine($"[DEBUG] Loaded {_propertyAliases.Count} property aliases");
                     }
                 }
                 else
                 {
-                    Console.WriteLine($"[DEBUG] Property aliases resource not found: {aliasesResourceName} (this is optional)");
                     _propertyAliases = new Dictionary<string, string>();
                 }
             }
-            
-            Console.WriteLine("[DEBUG] ClassInitialize completed successfully");
+        }
+
+        /// <summary>
+        /// Gets embedded resource stream using partial name matching (same pattern as Utils.cs)
+        /// </summary>
+        private static Stream GetResourceStream(string resourceName)
+        {
+            Assembly assembly = Assembly.GetExecutingAssembly();
+            var resource = FindResourceName(assembly, resourceName);
+            if(resource == null)
+            {
+                assembly = Assembly.GetCallingAssembly();
+                resource = FindResourceName(assembly, resourceName);
+            }
+
+            return resource != null ? assembly.GetManifestResourceStream(resource) : null;
+        }
+
+        /// <summary>
+        /// Finds resource name using case-insensitive partial matching (same pattern as Utils.cs) 
+        /// </summary>
+        private static string FindResourceName(Assembly assembly, string partialName)
+        {
+            var resources = FindResourceName(assembly, s => s.IndexOf(partialName, StringComparison.OrdinalIgnoreCase) >= 0);
+            return resources.FirstOrDefault();
+        }
+
+        /// <summary>
+        /// Finds resource names matching predicate (same pattern as Utils.cs)
+        /// </summary>
+        private static IEnumerable<string> FindResourceName(Assembly assembly, Predicate<string> match)
+        {    
+            var allResources = assembly.GetManifestResourceNames();
+            foreach (var resource in allResources)
+            {
+                if (match(resource))
+                    yield return resource;
+            }
         }
 
         [ClassCleanup]
