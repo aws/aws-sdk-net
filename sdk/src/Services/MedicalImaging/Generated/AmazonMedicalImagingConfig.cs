@@ -32,7 +32,7 @@ namespace Amazon.MedicalImaging
     public partial class AmazonMedicalImagingConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Medical Imaging", "3.7.502.13");
+            InternalSDKUtils.BuildUserAgentString("Medical Imaging", "3.7.503.0");
 
         private string _userAgent = UserAgentString;
         ///<summary>

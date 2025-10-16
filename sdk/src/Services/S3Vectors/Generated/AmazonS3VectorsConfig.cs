@@ -32,7 +32,7 @@ namespace Amazon.S3Vectors
     public partial class AmazonS3VectorsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("S3Vectors", "3.7.501.27");
+            InternalSDKUtils.BuildUserAgentString("S3Vectors", "3.7.501.28");
 
         private string _userAgent = UserAgentString;
         ///<summary>

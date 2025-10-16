@@ -1,3 +1,108 @@
+### 3.7.1146.0 (2025-10-16 19:22 UTC)
+* ACMPCA (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* Amplify (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* ApiGatewayManagementApi (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* AppRunner (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* AppTest (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* AutoScalingPlans (3.7.502.0)
+	* Updated FIPS endpoints for US GovCloud regions
+* Batch (3.7.501.0)
+	* Update endpoint ruleset parameters casing
+* BCMDataExports (3.7.501.0)
+	* Update endpoint ruleset parameters casing
+* BillingConductor (3.7.502.0)
+	* New feature: service flat CLI and first AWS managed pricing plan (BasicPricingPlan)
+* CustomerProfiles (3.7.503.0)
+	* Update endpoint ruleset parameters casing
+* DataExchange (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* DLM (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* FreeTier (3.7.501.0)
+	* Update endpoint ruleset parameters casing
+* GameLift (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* GeoRoutes (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* GlobalAccelerator (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* GlueDataBrew (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* IdentityStore (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* IVS (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* IVSRealTime (3.7.503.0)
+	* Update endpoint ruleset parameters casing
+* Kafka (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* KeyManagementService (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* Keyspaces (3.7.501.0)
+	* Update endpoint ruleset parameters casing
+* LexModelBuildingService (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* LexRuntimeV2 (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* LookoutEquipment (3.7.501.0)
+	* Update endpoint ruleset parameters casing
+* MachineLearning (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* MainframeModernization (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* ManagedGrafana (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* MarketplaceEntitlementService (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* MediaPackageV2 (3.7.503.0)
+	* Update endpoint ruleset parameters casing
+* MedicalImaging (3.7.503.0)
+	* Update endpoint ruleset parameters casing
+* MemoryDB (3.7.503.0)
+	* Update endpoint ruleset parameters casing
+* MigrationHubConfig (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* NetworkFlowMonitor (3.7.503.0)
+	* Update endpoint ruleset parameters casing
+* OSIS (3.7.503.0)
+	* Update endpoint ruleset parameters casing
+* Personalize (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* PersonalizeRuntime (3.7.501.0)
+	* Update endpoint ruleset parameters casing
+* PinpointSMSVoice (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* Polly (3.7.503.0)
+	* Update endpoint ruleset parameters casing
+* Pricing (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* QLDB (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* QLDBSession (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* Route53RecoveryControlConfig (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* SimpleSystemsManagement (3.7.503.0)
+	* Update endpoint ruleset parameters casing
+* SSMContacts (3.7.501.0)
+	* Update endpoint ruleset parameters casing
+* SSMGuiConnect (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* TimestreamQuery (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* VoiceID (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* WorkSpacesWeb (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* Core 3.7.500.33
+	* Added checksum caching support for trailing and header checksums.
+	* All services packages updated to require new Core
+
 ### 3.7.1145.0 (2025-10-15 18:29 UTC)
 * Bedrock (3.7.505.0)
 	* Amazon Bedrock Automated Reasoning Policy now offers enhanced AWS KMS integration. The CreateAutomatedReasoningPolicy API includes a new kmsKeyId field, allowing customers to specify their preferred KMS key for encryption, improving control and compliance with AWS encryption mandates.
