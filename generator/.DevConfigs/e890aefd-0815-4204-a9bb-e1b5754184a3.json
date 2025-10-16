@@ -1,0 +1,9 @@
+{
+  "core": {
+    "changeLogMessages": [
+      "Prevent duplicate entries in User Agent custom components"
+    ],
+    "type": "patch",
+    "updateMinimum": true
+  }
+}
