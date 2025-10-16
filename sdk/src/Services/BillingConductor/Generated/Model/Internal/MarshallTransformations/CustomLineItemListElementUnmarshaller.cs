@@ -96,6 +96,12 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
                     unmarshalledObject.ChargeDetails = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ComputationRule", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ComputationRule = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CreationTime", targetDepth))
                 {
                     var unmarshaller = LongUnmarshaller.Instance;
@@ -124,6 +130,12 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("PresentationDetails", targetDepth))
+                {
+                    var unmarshaller = PresentationObjectUnmarshaller.Instance;
+                    unmarshalledObject.PresentationDetails = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ProductCode", targetDepth))

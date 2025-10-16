@@ -70,8 +70,10 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        ///  The token that's needed to support idempotency. Idempotency isn't currently supported,
-        /// but will be implemented in a future update. 
+        /// A unique, case-sensitive identifier that you specify to ensure idempotency of the
+        /// request. Idempotency ensures that an API request completes no more than one time.
+        /// With an idempotent request, if the original request completes successfully, any subsequent
+        /// retries complete successfully without performing any further actions.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -109,7 +111,8 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property ModifierPercentage. 
         /// <para>
-        ///  A percentage modifier that's applied on the public pricing rates. 
+        /// A percentage modifier that's applied on the public pricing rates. Your entry will
+        /// be rounded to the nearest 2 decimal places.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -278,7 +281,8 @@ namespace Amazon.BillingConductor.Model
         /// If the <c>Scope</c> attribute is set to <c>SKU</c>, this attribute indicates which
         /// usage type the <c>PricingRule</c> is modifying. For example, <c>USW2-BoxUsage:m2.2xlarge</c>
         /// describes an<c> M2 High Memory Double Extra Large</c> instance in the US West (Oregon)
-        /// Region. <pre><c>&lt;/p&gt; </c></pre>
+        /// Region. 
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
         public string UsageType

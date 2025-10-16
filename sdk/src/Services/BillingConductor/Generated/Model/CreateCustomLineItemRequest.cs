@@ -42,8 +42,10 @@ namespace Amazon.BillingConductor.Model
         private CustomLineItemBillingPeriodRange _billingPeriodRange;
         private CustomLineItemChargeDetails _chargeDetails;
         private string _clientToken;
+        private ComputationRuleEnum _computationRule;
         private string _description;
         private string _name;
+        private PresentationObject _presentationDetails;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
@@ -125,8 +127,10 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        ///  The token that is needed to support idempotency. Idempotency isn't currently supported,
-        /// but will be implemented in a future update. 
+        /// A unique, case-sensitive identifier that you specify to ensure idempotency of the
+        /// request. Idempotency ensures that an API request completes no more than one time.
+        /// With an idempotent request, if the original request completes successfully, any subsequent
+        /// retries complete successfully without performing any further actions.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -140,6 +144,21 @@ namespace Amazon.BillingConductor.Model
         internal bool IsSetClientToken()
         {
             return !string.IsNullOrEmpty(this._clientToken);
+        }
+
+        /// <summary>
+        /// Gets and sets the property ComputationRule.
+        /// </summary>
+        public ComputationRuleEnum ComputationRule
+        {
+            get { return this._computationRule; }
+            set { this._computationRule = value; }
+        }
+
+        // Check to see if ComputationRule property is set
+        internal bool IsSetComputationRule()
+        {
+            return this._computationRule != null;
         }
 
         /// <summary>
@@ -179,6 +198,21 @@ namespace Amazon.BillingConductor.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PresentationDetails.
+        /// </summary>
+        public PresentationObject PresentationDetails
+        {
+            get { return this._presentationDetails; }
+            set { this._presentationDetails = value; }
+        }
+
+        // Check to see if PresentationDetails property is set
+        internal bool IsSetPresentationDetails()
+        {
+            return this._presentationDetails != null;
         }
 
         /// <summary>

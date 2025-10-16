@@ -39,25 +39,23 @@ namespace Amazon.BillingConductor
     /// <summary>
     /// <para>Implementation for accessing BillingConductor</para>
     ///
-    /// Amazon Web Services Billing Conductor is a fully managed service that you can use
-    /// to customize a <a href="https://docs.aws.amazon.com/billingconductor/latest/userguide/understanding-eb.html#eb-other-definitions">proforma</a>
-    /// version of your billing data each month, to accurately show or chargeback your end
-    /// customers. Amazon Web Services Billing Conductor doesn't change the way you're billed
-    /// by Amazon Web Services each month by design. Instead, it provides you with a mechanism
-    /// to configure, generate, and display rates to certain customers over a given billing
-    /// period. You can also analyze the difference between the rates you apply to your accounting
-    /// groupings relative to your actual rates from Amazon Web Services. As a result of your
-    /// Amazon Web Services Billing Conductor configuration, the payer account can also see
-    /// the custom rate applied on the billing details page of the <a href="https://console.aws.amazon.com/billing">Amazon
-    /// Web Services Billing console</a>, or configure a cost and usage report per billing
-    /// group.
+    /// Billing Conductor is a fully managed service that you can use to customize a <a href="https://docs.aws.amazon.com/billingconductor/latest/userguide/understanding-eb.html#eb-other-definitions">pro
+    /// forma</a> version of your billing data each month, to accurately show or chargeback
+    /// your end customers. Billing Conductor doesn't change the way you're billed by Amazon
+    /// Web Services each month by design. Instead, it provides you with a mechanism to configure,
+    /// generate, and display rates to certain customers over a given billing period. You
+    /// can also analyze the difference between the rates you apply to your accounting groupings
+    /// relative to your actual rates from Amazon Web Services. As a result of your Billing
+    /// Conductor configuration, the payer account can also see the custom rate applied on
+    /// the billing details page of the <a href="https://console.aws.amazon.com/billing">Billing
+    /// console</a>, or configure a cost and usage report per billing group.
     /// 
     ///  
     /// <para>
-    /// This documentation shows how you can configure Amazon Web Services Billing Conductor
-    /// using its API. For more information about using the <a href="https://console.aws.amazon.com/billingconductor/">Amazon
-    /// Web Services Billing Conductor</a> user interface, see the <a href="https://docs.aws.amazon.com/billingconductor/latest/userguide/what-is-billingconductor.html">
-    /// Amazon Web Services Billing Conductor User Guide</a>.
+    /// This documentation shows how you can configure Billing Conductor by using its API.
+    /// For more information about using the <a href="https://console.aws.amazon.com/billingconductor/">Billing
+    /// Conductor</a> user interface, see the <a href="https://docs.aws.amazon.com/billingconductor/latest/userguide/what-is-billingconductor.html">
+    /// Billing Conductor User Guide</a>.
     /// </para>
     /// </summary>
     public partial class AmazonBillingConductorClient : AmazonServiceClient, IAmazonBillingConductor
@@ -314,7 +312,7 @@ namespace Amazon.BillingConductor
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.BillingConductor.Model.ValidationException">
-        /// The input doesn't match with the constraints specified by Amazon Web Services.
+        /// The input doesn't match with the constraints specified by Amazon Web Services services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/AssociateAccounts">REST API Reference for AssociateAccounts Operation</seealso>
         public virtual AssociateAccountsResponse AssociateAccounts(AssociateAccountsRequest request)
@@ -358,7 +356,7 @@ namespace Amazon.BillingConductor
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.BillingConductor.Model.ValidationException">
-        /// The input doesn't match with the constraints specified by Amazon Web Services.
+        /// The input doesn't match with the constraints specified by Amazon Web Services services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/AssociateAccounts">REST API Reference for AssociateAccounts Operation</seealso>
         public virtual Task<AssociateAccountsResponse> AssociateAccountsAsync(AssociateAccountsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -401,7 +399,7 @@ namespace Amazon.BillingConductor
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.BillingConductor.Model.ValidationException">
-        /// The input doesn't match with the constraints specified by Amazon Web Services.
+        /// The input doesn't match with the constraints specified by Amazon Web Services services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/AssociatePricingRules">REST API Reference for AssociatePricingRules Operation</seealso>
         public virtual AssociatePricingRulesResponse AssociatePricingRules(AssociatePricingRulesRequest request)
@@ -443,7 +441,7 @@ namespace Amazon.BillingConductor
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.BillingConductor.Model.ValidationException">
-        /// The input doesn't match with the constraints specified by Amazon Web Services.
+        /// The input doesn't match with the constraints specified by Amazon Web Services services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/AssociatePricingRules">REST API Reference for AssociatePricingRules Operation</seealso>
         public virtual Task<AssociatePricingRulesResponse> AssociatePricingRulesAsync(AssociatePricingRulesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -485,7 +483,7 @@ namespace Amazon.BillingConductor
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.BillingConductor.Model.ValidationException">
-        /// The input doesn't match with the constraints specified by Amazon Web Services.
+        /// The input doesn't match with the constraints specified by Amazon Web Services services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/BatchAssociateResourcesToCustomLineItem">REST API Reference for BatchAssociateResourcesToCustomLineItem Operation</seealso>
         public virtual BatchAssociateResourcesToCustomLineItemResponse BatchAssociateResourcesToCustomLineItem(BatchAssociateResourcesToCustomLineItemRequest request)
@@ -526,7 +524,7 @@ namespace Amazon.BillingConductor
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.BillingConductor.Model.ValidationException">
-        /// The input doesn't match with the constraints specified by Amazon Web Services.
+        /// The input doesn't match with the constraints specified by Amazon Web Services services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/BatchAssociateResourcesToCustomLineItem">REST API Reference for BatchAssociateResourcesToCustomLineItem Operation</seealso>
         public virtual Task<BatchAssociateResourcesToCustomLineItemResponse> BatchAssociateResourcesToCustomLineItemAsync(BatchAssociateResourcesToCustomLineItemRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -565,7 +563,7 @@ namespace Amazon.BillingConductor
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.BillingConductor.Model.ValidationException">
-        /// The input doesn't match with the constraints specified by Amazon Web Services.
+        /// The input doesn't match with the constraints specified by Amazon Web Services services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/BatchDisassociateResourcesFromCustomLineItem">REST API Reference for BatchDisassociateResourcesFromCustomLineItem Operation</seealso>
         public virtual BatchDisassociateResourcesFromCustomLineItemResponse BatchDisassociateResourcesFromCustomLineItem(BatchDisassociateResourcesFromCustomLineItemRequest request)
@@ -603,7 +601,7 @@ namespace Amazon.BillingConductor
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.BillingConductor.Model.ValidationException">
-        /// The input doesn't match with the constraints specified by Amazon Web Services.
+        /// The input doesn't match with the constraints specified by Amazon Web Services services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/BatchDisassociateResourcesFromCustomLineItem">REST API Reference for BatchDisassociateResourcesFromCustomLineItem Operation</seealso>
         public virtual Task<BatchDisassociateResourcesFromCustomLineItemResponse> BatchDisassociateResourcesFromCustomLineItemAsync(BatchDisassociateResourcesFromCustomLineItemRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -643,7 +641,7 @@ namespace Amazon.BillingConductor
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.BillingConductor.Model.ValidationException">
-        /// The input doesn't match with the constraints specified by Amazon Web Services.
+        /// The input doesn't match with the constraints specified by Amazon Web Services services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/CreateBillingGroup">REST API Reference for CreateBillingGroup Operation</seealso>
         public virtual CreateBillingGroupResponse CreateBillingGroup(CreateBillingGroupRequest request)
@@ -682,7 +680,7 @@ namespace Amazon.BillingConductor
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.BillingConductor.Model.ValidationException">
-        /// The input doesn't match with the constraints specified by Amazon Web Services.
+        /// The input doesn't match with the constraints specified by Amazon Web Services services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/CreateBillingGroup">REST API Reference for CreateBillingGroup Operation</seealso>
         public virtual Task<CreateBillingGroupResponse> CreateBillingGroupAsync(CreateBillingGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -723,7 +721,7 @@ namespace Amazon.BillingConductor
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.BillingConductor.Model.ValidationException">
-        /// The input doesn't match with the constraints specified by Amazon Web Services.
+        /// The input doesn't match with the constraints specified by Amazon Web Services services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/CreateCustomLineItem">REST API Reference for CreateCustomLineItem Operation</seealso>
         public virtual CreateCustomLineItemResponse CreateCustomLineItem(CreateCustomLineItemRequest request)
@@ -763,7 +761,7 @@ namespace Amazon.BillingConductor
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.BillingConductor.Model.ValidationException">
-        /// The input doesn't match with the constraints specified by Amazon Web Services.
+        /// The input doesn't match with the constraints specified by Amazon Web Services services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/CreateCustomLineItem">REST API Reference for CreateCustomLineItem Operation</seealso>
         public virtual Task<CreateCustomLineItemResponse> CreateCustomLineItemAsync(CreateCustomLineItemRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -806,7 +804,7 @@ namespace Amazon.BillingConductor
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.BillingConductor.Model.ValidationException">
-        /// The input doesn't match with the constraints specified by Amazon Web Services.
+        /// The input doesn't match with the constraints specified by Amazon Web Services services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/CreatePricingPlan">REST API Reference for CreatePricingPlan Operation</seealso>
         public virtual CreatePricingPlanResponse CreatePricingPlan(CreatePricingPlanRequest request)
@@ -848,7 +846,7 @@ namespace Amazon.BillingConductor
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.BillingConductor.Model.ValidationException">
-        /// The input doesn't match with the constraints specified by Amazon Web Services.
+        /// The input doesn't match with the constraints specified by Amazon Web Services services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/CreatePricingPlan">REST API Reference for CreatePricingPlan Operation</seealso>
         public virtual Task<CreatePricingPlanResponse> CreatePricingPlanAsync(CreatePricingPlanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -887,7 +885,7 @@ namespace Amazon.BillingConductor
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.BillingConductor.Model.ValidationException">
-        /// The input doesn't match with the constraints specified by Amazon Web Services.
+        /// The input doesn't match with the constraints specified by Amazon Web Services services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/CreatePricingRule">REST API Reference for CreatePricingRule Operation</seealso>
         public virtual CreatePricingRuleResponse CreatePricingRule(CreatePricingRuleRequest request)
@@ -925,7 +923,7 @@ namespace Amazon.BillingConductor
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.BillingConductor.Model.ValidationException">
-        /// The input doesn't match with the constraints specified by Amazon Web Services.
+        /// The input doesn't match with the constraints specified by Amazon Web Services services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/CreatePricingRule">REST API Reference for CreatePricingRule Operation</seealso>
         public virtual Task<CreatePricingRuleResponse> CreatePricingRuleAsync(CreatePricingRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -958,7 +956,7 @@ namespace Amazon.BillingConductor
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.BillingConductor.Model.ValidationException">
-        /// The input doesn't match with the constraints specified by Amazon Web Services.
+        /// The input doesn't match with the constraints specified by Amazon Web Services services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/DeleteBillingGroup">REST API Reference for DeleteBillingGroup Operation</seealso>
         public virtual DeleteBillingGroupResponse DeleteBillingGroup(DeleteBillingGroupRequest request)
@@ -990,7 +988,7 @@ namespace Amazon.BillingConductor
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.BillingConductor.Model.ValidationException">
-        /// The input doesn't match with the constraints specified by Amazon Web Services.
+        /// The input doesn't match with the constraints specified by Amazon Web Services services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/DeleteBillingGroup">REST API Reference for DeleteBillingGroup Operation</seealso>
         public virtual Task<DeleteBillingGroupResponse> DeleteBillingGroupAsync(DeleteBillingGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1027,7 +1025,7 @@ namespace Amazon.BillingConductor
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.BillingConductor.Model.ValidationException">
-        /// The input doesn't match with the constraints specified by Amazon Web Services.
+        /// The input doesn't match with the constraints specified by Amazon Web Services services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/DeleteCustomLineItem">REST API Reference for DeleteCustomLineItem Operation</seealso>
         public virtual DeleteCustomLineItemResponse DeleteCustomLineItem(DeleteCustomLineItemRequest request)
@@ -1063,7 +1061,7 @@ namespace Amazon.BillingConductor
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.BillingConductor.Model.ValidationException">
-        /// The input doesn't match with the constraints specified by Amazon Web Services.
+        /// The input doesn't match with the constraints specified by Amazon Web Services services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/DeleteCustomLineItem">REST API Reference for DeleteCustomLineItem Operation</seealso>
         public virtual Task<DeleteCustomLineItemResponse> DeleteCustomLineItemAsync(DeleteCustomLineItemRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1100,7 +1098,7 @@ namespace Amazon.BillingConductor
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.BillingConductor.Model.ValidationException">
-        /// The input doesn't match with the constraints specified by Amazon Web Services.
+        /// The input doesn't match with the constraints specified by Amazon Web Services services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/DeletePricingPlan">REST API Reference for DeletePricingPlan Operation</seealso>
         public virtual DeletePricingPlanResponse DeletePricingPlan(DeletePricingPlanRequest request)
@@ -1136,7 +1134,7 @@ namespace Amazon.BillingConductor
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.BillingConductor.Model.ValidationException">
-        /// The input doesn't match with the constraints specified by Amazon Web Services.
+        /// The input doesn't match with the constraints specified by Amazon Web Services services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/DeletePricingPlan">REST API Reference for DeletePricingPlan Operation</seealso>
         public virtual Task<DeletePricingPlanResponse> DeletePricingPlanAsync(DeletePricingPlanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1172,7 +1170,7 @@ namespace Amazon.BillingConductor
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.BillingConductor.Model.ValidationException">
-        /// The input doesn't match with the constraints specified by Amazon Web Services.
+        /// The input doesn't match with the constraints specified by Amazon Web Services services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/DeletePricingRule">REST API Reference for DeletePricingRule Operation</seealso>
         public virtual DeletePricingRuleResponse DeletePricingRule(DeletePricingRuleRequest request)
@@ -1207,7 +1205,7 @@ namespace Amazon.BillingConductor
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.BillingConductor.Model.ValidationException">
-        /// The input doesn't match with the constraints specified by Amazon Web Services.
+        /// The input doesn't match with the constraints specified by Amazon Web Services services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/DeletePricingRule">REST API Reference for DeletePricingRule Operation</seealso>
         public virtual Task<DeletePricingRuleResponse> DeletePricingRuleAsync(DeletePricingRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1246,7 +1244,7 @@ namespace Amazon.BillingConductor
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.BillingConductor.Model.ValidationException">
-        /// The input doesn't match with the constraints specified by Amazon Web Services.
+        /// The input doesn't match with the constraints specified by Amazon Web Services services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/DisassociateAccounts">REST API Reference for DisassociateAccounts Operation</seealso>
         public virtual DisassociateAccountsResponse DisassociateAccounts(DisassociateAccountsRequest request)
@@ -1284,7 +1282,7 @@ namespace Amazon.BillingConductor
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.BillingConductor.Model.ValidationException">
-        /// The input doesn't match with the constraints specified by Amazon Web Services.
+        /// The input doesn't match with the constraints specified by Amazon Web Services services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/DisassociateAccounts">REST API Reference for DisassociateAccounts Operation</seealso>
         public virtual Task<DisassociateAccountsResponse> DisassociateAccountsAsync(DisassociateAccountsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1323,7 +1321,7 @@ namespace Amazon.BillingConductor
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.BillingConductor.Model.ValidationException">
-        /// The input doesn't match with the constraints specified by Amazon Web Services.
+        /// The input doesn't match with the constraints specified by Amazon Web Services services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/DisassociatePricingRules">REST API Reference for DisassociatePricingRules Operation</seealso>
         public virtual DisassociatePricingRulesResponse DisassociatePricingRules(DisassociatePricingRulesRequest request)
@@ -1361,7 +1359,7 @@ namespace Amazon.BillingConductor
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.BillingConductor.Model.ValidationException">
-        /// The input doesn't match with the constraints specified by Amazon Web Services.
+        /// The input doesn't match with the constraints specified by Amazon Web Services services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/DisassociatePricingRules">REST API Reference for DisassociatePricingRules Operation</seealso>
         public virtual Task<DisassociatePricingRulesResponse> DisassociatePricingRulesAsync(DisassociatePricingRulesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1380,7 +1378,8 @@ namespace Amazon.BillingConductor
 
         /// <summary>
         /// Retrieves the margin summary report, which includes the Amazon Web Services cost and
-        /// charged amount (pro forma cost) by Amazon Web Service for a specific billing group.
+        /// charged amount (pro forma cost) by Amazon Web Services service for a specific billing
+        /// group.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBillingGroupCostReport service method.</param>
         /// 
@@ -1398,7 +1397,7 @@ namespace Amazon.BillingConductor
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.BillingConductor.Model.ValidationException">
-        /// The input doesn't match with the constraints specified by Amazon Web Services.
+        /// The input doesn't match with the constraints specified by Amazon Web Services services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/GetBillingGroupCostReport">REST API Reference for GetBillingGroupCostReport Operation</seealso>
         public virtual GetBillingGroupCostReportResponse GetBillingGroupCostReport(GetBillingGroupCostReportRequest request)
@@ -1413,7 +1412,8 @@ namespace Amazon.BillingConductor
 
         /// <summary>
         /// Retrieves the margin summary report, which includes the Amazon Web Services cost and
-        /// charged amount (pro forma cost) by Amazon Web Service for a specific billing group.
+        /// charged amount (pro forma cost) by Amazon Web Services service for a specific billing
+        /// group.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBillingGroupCostReport service method.</param>
         /// <param name="cancellationToken">
@@ -1434,7 +1434,7 @@ namespace Amazon.BillingConductor
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.BillingConductor.Model.ValidationException">
-        /// The input doesn't match with the constraints specified by Amazon Web Services.
+        /// The input doesn't match with the constraints specified by Amazon Web Services services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/GetBillingGroupCostReport">REST API Reference for GetBillingGroupCostReport Operation</seealso>
         public virtual Task<GetBillingGroupCostReportResponse> GetBillingGroupCostReportAsync(GetBillingGroupCostReportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1473,7 +1473,7 @@ namespace Amazon.BillingConductor
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.BillingConductor.Model.ValidationException">
-        /// The input doesn't match with the constraints specified by Amazon Web Services.
+        /// The input doesn't match with the constraints specified by Amazon Web Services services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/ListAccountAssociations">REST API Reference for ListAccountAssociations Operation</seealso>
         public virtual ListAccountAssociationsResponse ListAccountAssociations(ListAccountAssociationsRequest request)
@@ -1511,7 +1511,7 @@ namespace Amazon.BillingConductor
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.BillingConductor.Model.ValidationException">
-        /// The input doesn't match with the constraints specified by Amazon Web Services.
+        /// The input doesn't match with the constraints specified by Amazon Web Services services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/ListAccountAssociations">REST API Reference for ListAccountAssociations Operation</seealso>
         public virtual Task<ListAccountAssociationsResponse> ListAccountAssociationsAsync(ListAccountAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1549,7 +1549,7 @@ namespace Amazon.BillingConductor
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.BillingConductor.Model.ValidationException">
-        /// The input doesn't match with the constraints specified by Amazon Web Services.
+        /// The input doesn't match with the constraints specified by Amazon Web Services services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/ListBillingGroupCostReports">REST API Reference for ListBillingGroupCostReports Operation</seealso>
         public virtual ListBillingGroupCostReportsResponse ListBillingGroupCostReports(ListBillingGroupCostReportsRequest request)
@@ -1586,7 +1586,7 @@ namespace Amazon.BillingConductor
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.BillingConductor.Model.ValidationException">
-        /// The input doesn't match with the constraints specified by Amazon Web Services.
+        /// The input doesn't match with the constraints specified by Amazon Web Services services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/ListBillingGroupCostReports">REST API Reference for ListBillingGroupCostReports Operation</seealso>
         public virtual Task<ListBillingGroupCostReportsResponse> ListBillingGroupCostReportsAsync(ListBillingGroupCostReportsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1623,7 +1623,7 @@ namespace Amazon.BillingConductor
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.BillingConductor.Model.ValidationException">
-        /// The input doesn't match with the constraints specified by Amazon Web Services.
+        /// The input doesn't match with the constraints specified by Amazon Web Services services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/ListBillingGroups">REST API Reference for ListBillingGroups Operation</seealso>
         public virtual ListBillingGroupsResponse ListBillingGroups(ListBillingGroupsRequest request)
@@ -1659,7 +1659,7 @@ namespace Amazon.BillingConductor
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.BillingConductor.Model.ValidationException">
-        /// The input doesn't match with the constraints specified by Amazon Web Services.
+        /// The input doesn't match with the constraints specified by Amazon Web Services services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/ListBillingGroups">REST API Reference for ListBillingGroups Operation</seealso>
         public virtual Task<ListBillingGroupsResponse> ListBillingGroupsAsync(ListBillingGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1696,7 +1696,7 @@ namespace Amazon.BillingConductor
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.BillingConductor.Model.ValidationException">
-        /// The input doesn't match with the constraints specified by Amazon Web Services.
+        /// The input doesn't match with the constraints specified by Amazon Web Services services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/ListCustomLineItems">REST API Reference for ListCustomLineItems Operation</seealso>
         public virtual ListCustomLineItemsResponse ListCustomLineItems(ListCustomLineItemsRequest request)
@@ -1732,7 +1732,7 @@ namespace Amazon.BillingConductor
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.BillingConductor.Model.ValidationException">
-        /// The input doesn't match with the constraints specified by Amazon Web Services.
+        /// The input doesn't match with the constraints specified by Amazon Web Services services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/ListCustomLineItems">REST API Reference for ListCustomLineItems Operation</seealso>
         public virtual Task<ListCustomLineItemsResponse> ListCustomLineItemsAsync(ListCustomLineItemsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1765,7 +1765,7 @@ namespace Amazon.BillingConductor
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.BillingConductor.Model.ValidationException">
-        /// The input doesn't match with the constraints specified by Amazon Web Services.
+        /// The input doesn't match with the constraints specified by Amazon Web Services services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/ListCustomLineItemVersions">REST API Reference for ListCustomLineItemVersions Operation</seealso>
         public virtual ListCustomLineItemVersionsResponse ListCustomLineItemVersions(ListCustomLineItemVersionsRequest request)
@@ -1797,7 +1797,7 @@ namespace Amazon.BillingConductor
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.BillingConductor.Model.ValidationException">
-        /// The input doesn't match with the constraints specified by Amazon Web Services.
+        /// The input doesn't match with the constraints specified by Amazon Web Services services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/ListCustomLineItemVersions">REST API Reference for ListCustomLineItemVersions Operation</seealso>
         public virtual Task<ListCustomLineItemVersionsResponse> ListCustomLineItemVersionsAsync(ListCustomLineItemVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1831,7 +1831,7 @@ namespace Amazon.BillingConductor
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.BillingConductor.Model.ValidationException">
-        /// The input doesn't match with the constraints specified by Amazon Web Services.
+        /// The input doesn't match with the constraints specified by Amazon Web Services services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/ListPricingPlans">REST API Reference for ListPricingPlans Operation</seealso>
         public virtual ListPricingPlansResponse ListPricingPlans(ListPricingPlansRequest request)
@@ -1864,7 +1864,7 @@ namespace Amazon.BillingConductor
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.BillingConductor.Model.ValidationException">
-        /// The input doesn't match with the constraints specified by Amazon Web Services.
+        /// The input doesn't match with the constraints specified by Amazon Web Services services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/ListPricingPlans">REST API Reference for ListPricingPlans Operation</seealso>
         public virtual Task<ListPricingPlansResponse> ListPricingPlansAsync(ListPricingPlansRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1900,7 +1900,7 @@ namespace Amazon.BillingConductor
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.BillingConductor.Model.ValidationException">
-        /// The input doesn't match with the constraints specified by Amazon Web Services.
+        /// The input doesn't match with the constraints specified by Amazon Web Services services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/ListPricingPlansAssociatedWithPricingRule">REST API Reference for ListPricingPlansAssociatedWithPricingRule Operation</seealso>
         public virtual ListPricingPlansAssociatedWithPricingRuleResponse ListPricingPlansAssociatedWithPricingRule(ListPricingPlansAssociatedWithPricingRuleRequest request)
@@ -1935,7 +1935,7 @@ namespace Amazon.BillingConductor
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.BillingConductor.Model.ValidationException">
-        /// The input doesn't match with the constraints specified by Amazon Web Services.
+        /// The input doesn't match with the constraints specified by Amazon Web Services services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/ListPricingPlansAssociatedWithPricingRule">REST API Reference for ListPricingPlansAssociatedWithPricingRule Operation</seealso>
         public virtual Task<ListPricingPlansAssociatedWithPricingRuleResponse> ListPricingPlansAssociatedWithPricingRuleAsync(ListPricingPlansAssociatedWithPricingRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1969,7 +1969,7 @@ namespace Amazon.BillingConductor
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.BillingConductor.Model.ValidationException">
-        /// The input doesn't match with the constraints specified by Amazon Web Services.
+        /// The input doesn't match with the constraints specified by Amazon Web Services services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/ListPricingRules">REST API Reference for ListPricingRules Operation</seealso>
         public virtual ListPricingRulesResponse ListPricingRules(ListPricingRulesRequest request)
@@ -2002,7 +2002,7 @@ namespace Amazon.BillingConductor
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.BillingConductor.Model.ValidationException">
-        /// The input doesn't match with the constraints specified by Amazon Web Services.
+        /// The input doesn't match with the constraints specified by Amazon Web Services services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/ListPricingRules">REST API Reference for ListPricingRules Operation</seealso>
         public virtual Task<ListPricingRulesResponse> ListPricingRulesAsync(ListPricingRulesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2038,7 +2038,7 @@ namespace Amazon.BillingConductor
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.BillingConductor.Model.ValidationException">
-        /// The input doesn't match with the constraints specified by Amazon Web Services.
+        /// The input doesn't match with the constraints specified by Amazon Web Services services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/ListPricingRulesAssociatedToPricingPlan">REST API Reference for ListPricingRulesAssociatedToPricingPlan Operation</seealso>
         public virtual ListPricingRulesAssociatedToPricingPlanResponse ListPricingRulesAssociatedToPricingPlan(ListPricingRulesAssociatedToPricingPlanRequest request)
@@ -2073,7 +2073,7 @@ namespace Amazon.BillingConductor
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.BillingConductor.Model.ValidationException">
-        /// The input doesn't match with the constraints specified by Amazon Web Services.
+        /// The input doesn't match with the constraints specified by Amazon Web Services services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/ListPricingRulesAssociatedToPricingPlan">REST API Reference for ListPricingRulesAssociatedToPricingPlan Operation</seealso>
         public virtual Task<ListPricingRulesAssociatedToPricingPlanResponse> ListPricingRulesAssociatedToPricingPlanAsync(ListPricingRulesAssociatedToPricingPlanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2109,7 +2109,7 @@ namespace Amazon.BillingConductor
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.BillingConductor.Model.ValidationException">
-        /// The input doesn't match with the constraints specified by Amazon Web Services.
+        /// The input doesn't match with the constraints specified by Amazon Web Services services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/ListResourcesAssociatedToCustomLineItem">REST API Reference for ListResourcesAssociatedToCustomLineItem Operation</seealso>
         public virtual ListResourcesAssociatedToCustomLineItemResponse ListResourcesAssociatedToCustomLineItem(ListResourcesAssociatedToCustomLineItemRequest request)
@@ -2144,7 +2144,7 @@ namespace Amazon.BillingConductor
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.BillingConductor.Model.ValidationException">
-        /// The input doesn't match with the constraints specified by Amazon Web Services.
+        /// The input doesn't match with the constraints specified by Amazon Web Services services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/ListResourcesAssociatedToCustomLineItem">REST API Reference for ListResourcesAssociatedToCustomLineItem Operation</seealso>
         public virtual Task<ListResourcesAssociatedToCustomLineItemResponse> ListResourcesAssociatedToCustomLineItemAsync(ListResourcesAssociatedToCustomLineItemRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2180,7 +2180,7 @@ namespace Amazon.BillingConductor
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.BillingConductor.Model.ValidationException">
-        /// The input doesn't match with the constraints specified by Amazon Web Services.
+        /// The input doesn't match with the constraints specified by Amazon Web Services services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
@@ -2215,7 +2215,7 @@ namespace Amazon.BillingConductor
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.BillingConductor.Model.ValidationException">
-        /// The input doesn't match with the constraints specified by Amazon Web Services.
+        /// The input doesn't match with the constraints specified by Amazon Web Services services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2253,7 +2253,7 @@ namespace Amazon.BillingConductor
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.BillingConductor.Model.ValidationException">
-        /// The input doesn't match with the constraints specified by Amazon Web Services.
+        /// The input doesn't match with the constraints specified by Amazon Web Services services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
@@ -2290,7 +2290,7 @@ namespace Amazon.BillingConductor
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.BillingConductor.Model.ValidationException">
-        /// The input doesn't match with the constraints specified by Amazon Web Services.
+        /// The input doesn't match with the constraints specified by Amazon Web Services services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2326,7 +2326,7 @@ namespace Amazon.BillingConductor
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.BillingConductor.Model.ValidationException">
-        /// The input doesn't match with the constraints specified by Amazon Web Services.
+        /// The input doesn't match with the constraints specified by Amazon Web Services services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
@@ -2361,7 +2361,7 @@ namespace Amazon.BillingConductor
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.BillingConductor.Model.ValidationException">
-        /// The input doesn't match with the constraints specified by Amazon Web Services.
+        /// The input doesn't match with the constraints specified by Amazon Web Services services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2400,7 +2400,7 @@ namespace Amazon.BillingConductor
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.BillingConductor.Model.ValidationException">
-        /// The input doesn't match with the constraints specified by Amazon Web Services.
+        /// The input doesn't match with the constraints specified by Amazon Web Services services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/UpdateBillingGroup">REST API Reference for UpdateBillingGroup Operation</seealso>
         public virtual UpdateBillingGroupResponse UpdateBillingGroup(UpdateBillingGroupRequest request)
@@ -2438,7 +2438,7 @@ namespace Amazon.BillingConductor
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.BillingConductor.Model.ValidationException">
-        /// The input doesn't match with the constraints specified by Amazon Web Services.
+        /// The input doesn't match with the constraints specified by Amazon Web Services services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/UpdateBillingGroup">REST API Reference for UpdateBillingGroup Operation</seealso>
         public virtual Task<UpdateBillingGroupResponse> UpdateBillingGroupAsync(UpdateBillingGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2474,7 +2474,7 @@ namespace Amazon.BillingConductor
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.BillingConductor.Model.ValidationException">
-        /// The input doesn't match with the constraints specified by Amazon Web Services.
+        /// The input doesn't match with the constraints specified by Amazon Web Services services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/UpdateCustomLineItem">REST API Reference for UpdateCustomLineItem Operation</seealso>
         public virtual UpdateCustomLineItemResponse UpdateCustomLineItem(UpdateCustomLineItemRequest request)
@@ -2509,7 +2509,7 @@ namespace Amazon.BillingConductor
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.BillingConductor.Model.ValidationException">
-        /// The input doesn't match with the constraints specified by Amazon Web Services.
+        /// The input doesn't match with the constraints specified by Amazon Web Services services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/UpdateCustomLineItem">REST API Reference for UpdateCustomLineItem Operation</seealso>
         public virtual Task<UpdateCustomLineItemResponse> UpdateCustomLineItemAsync(UpdateCustomLineItemRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2548,7 +2548,7 @@ namespace Amazon.BillingConductor
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.BillingConductor.Model.ValidationException">
-        /// The input doesn't match with the constraints specified by Amazon Web Services.
+        /// The input doesn't match with the constraints specified by Amazon Web Services services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/UpdatePricingPlan">REST API Reference for UpdatePricingPlan Operation</seealso>
         public virtual UpdatePricingPlanResponse UpdatePricingPlan(UpdatePricingPlanRequest request)
@@ -2586,7 +2586,7 @@ namespace Amazon.BillingConductor
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.BillingConductor.Model.ValidationException">
-        /// The input doesn't match with the constraints specified by Amazon Web Services.
+        /// The input doesn't match with the constraints specified by Amazon Web Services services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/UpdatePricingPlan">REST API Reference for UpdatePricingPlan Operation</seealso>
         public virtual Task<UpdatePricingPlanResponse> UpdatePricingPlanAsync(UpdatePricingPlanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2625,7 +2625,7 @@ namespace Amazon.BillingConductor
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.BillingConductor.Model.ValidationException">
-        /// The input doesn't match with the constraints specified by Amazon Web Services.
+        /// The input doesn't match with the constraints specified by Amazon Web Services services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/UpdatePricingRule">REST API Reference for UpdatePricingRule Operation</seealso>
         public virtual UpdatePricingRuleResponse UpdatePricingRule(UpdatePricingRuleRequest request)
@@ -2663,7 +2663,7 @@ namespace Amazon.BillingConductor
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.BillingConductor.Model.ValidationException">
-        /// The input doesn't match with the constraints specified by Amazon Web Services.
+        /// The input doesn't match with the constraints specified by Amazon Web Services services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/UpdatePricingRule">REST API Reference for UpdatePricingRule Operation</seealso>
         public virtual Task<UpdatePricingRuleResponse> UpdatePricingRuleAsync(UpdatePricingRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))

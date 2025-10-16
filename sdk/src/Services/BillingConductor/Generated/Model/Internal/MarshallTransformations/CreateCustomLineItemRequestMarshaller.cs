@@ -101,6 +101,12 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetComputationRule())
+                {
+                    context.Writer.WritePropertyName("ComputationRule");
+                    context.Writer.Write(publicRequest.ComputationRule);
+                }
+
                 if(publicRequest.IsSetDescription())
                 {
                     context.Writer.WritePropertyName("Description");
@@ -111,6 +117,17 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("Name");
                     context.Writer.Write(publicRequest.Name);
+                }
+
+                if(publicRequest.IsSetPresentationDetails())
+                {
+                    context.Writer.WritePropertyName("PresentationDetails");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = PresentationObjectMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.PresentationDetails, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
                 if(publicRequest.IsSetTags())
