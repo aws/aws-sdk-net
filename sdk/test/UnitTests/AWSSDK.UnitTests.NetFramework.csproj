@@ -84,6 +84,14 @@
     <EmbeddedResource Include="Custom\Runtime\EventStreams\test_vectors\*"/>
     <EmbeddedResource Include="Custom\Runtime\TestEndpoints\*.json"/>
     <EmbeddedResource Include="Custom\TestTools\ComparerTest.json"/>
+    
+    <!-- Add S3 test data as embedded resources -->
+    <EmbeddedResource Include="../Services/S3/UnitTests/Custom/TestData/mapping.json">
+      <Link>Custom/TestData/mapping.json</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="../Services/S3/UnitTests/Custom/TestData/property-aliases.json">
+      <Link>Custom/TestData/property-aliases.json</Link>
+    </EmbeddedResource>
   </ItemGroup>
 
 </Project>

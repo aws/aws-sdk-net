@@ -39,168 +39,51 @@ namespace AWSSDK.UnitTests
         [ClassInitialize]
         public static void ClassInitialize(TestContext context)
         {
-            // DEBUG: Log initial setup information
-            Console.WriteLine("=== DEBUG: ResponseMapperTests ClassInitialize ===");
-            Console.WriteLine($"Current Working Directory: {Directory.GetCurrentDirectory()}");
+            // Load mapping.json from embedded resource
+            var assembly = Assembly.GetExecutingAssembly();
+            var assemblyName = assembly.GetName().Name;
             
-            // Get the test assembly directory and navigate to the source directory
-            var assemblyLocation = Assembly.GetExecutingAssembly().Location;
-            Console.WriteLine($"Assembly Location: {assemblyLocation}");
+            // Build resource names dynamically based on current assembly
+            var mappingResourceName = $"{assemblyName}.Custom.TestData.mapping.json";
+            var aliasesResourceName = $"{assemblyName}.Custom.TestData.property-aliases.json";
             
-            var testProjectDirectory = Path.GetDirectoryName(assemblyLocation);
-            Console.WriteLine($"Initial Test Project Directory: {testProjectDirectory}");
-            
-            // DEBUG: Log directory contents at starting point
-            if (testProjectDirectory != null && Directory.Exists(testProjectDirectory))
+            // Read mapping.json
+            using (var stream = assembly.GetManifestResourceStream(mappingResourceName))
             {
-                Console.WriteLine($"Contents of starting directory '{testProjectDirectory}':");
-                try
-                {
-                    var files = Directory.GetFiles(testProjectDirectory);
-                    var dirs = Directory.GetDirectories(testProjectDirectory);
-                    Console.WriteLine($"  Files: {string.Join(", ", files.Select(Path.GetFileName))}");
-                    Console.WriteLine($"  Directories: {string.Join(", ", dirs.Select(Path.GetFileName))}");
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine($"  Error reading directory: {ex.Message}");
-                }
-            }
-            
-            // Navigate up from bin/Debug/net472 to the test project root
-            int searchDepth = 0;
-            const int maxSearchDepth = 10; // Prevent infinite loops
-            
-            while (testProjectDirectory != null && searchDepth < maxSearchDepth)
-            {
-                var targetPath = Path.Combine(testProjectDirectory, "Custom", "TestData", "mapping.json");
-                Console.WriteLine($"Search attempt {searchDepth + 1}: Checking for file at '{targetPath}'");
-                Console.WriteLine($"  Directory exists: {Directory.Exists(testProjectDirectory)}");
-                Console.WriteLine($"  File exists: {File.Exists(targetPath)}");
-                
-                // DEBUG: Log what's in the current directory
-                if (Directory.Exists(testProjectDirectory))
-                {
-                    try
-                    {
-                        var subdirs = Directory.GetDirectories(testProjectDirectory);
-                        Console.WriteLine($"  Subdirectories: {string.Join(", ", subdirs.Select(Path.GetFileName))}");
-                        
-                        // Check if Custom directory exists
-                        var customDir = Path.Combine(testProjectDirectory, "Custom");
-                        if (Directory.Exists(customDir))
-                        {
-                            Console.WriteLine($"  Custom directory found at: {customDir}");
-                            var customSubdirs = Directory.GetDirectories(customDir);
-                            Console.WriteLine($"  Custom subdirectories: {string.Join(", ", customSubdirs.Select(Path.GetFileName))}");
-                            
-                            // Check if TestData directory exists
-                            var testDataDir = Path.Combine(customDir, "TestData");
-                            if (Directory.Exists(testDataDir))
-                            {
-                                Console.WriteLine($"  TestData directory found at: {testDataDir}");
-                                var testDataFiles = Directory.GetFiles(testDataDir);
-                                Console.WriteLine($"  TestData files: {string.Join(", ", testDataFiles.Select(Path.GetFileName))}");
-                            }
-                            else
-                            {
-                                Console.WriteLine($"  TestData directory NOT found at: {testDataDir}");
-                            }
-                        }
-                        else
-                        {
-                            Console.WriteLine($"  Custom directory NOT found at: {customDir}");
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        Console.WriteLine($"  Error examining directory: {ex.Message}");
-                    }
-                }
-                
-                if (File.Exists(targetPath))
-                {
-                    Console.WriteLine($"SUCCESS: Found mapping.json at '{targetPath}'");
-                    break;
-                }
-                
-                var parentDir = Directory.GetParent(testProjectDirectory);
-                testProjectDirectory = parentDir?.FullName;
-                Console.WriteLine($"  Moving up to parent: {testProjectDirectory ?? "null"}");
-                searchDepth++;
-            }
-            
-            if (testProjectDirectory == null)
-            {
-                Console.WriteLine("ERROR: Exhausted directory search - testProjectDirectory is null");
-                Console.WriteLine($"Searched {searchDepth} levels up from assembly location: {assemblyLocation}");
-                throw new FileNotFoundException(
-                    $"Could not locate mapping.json file in test project directory structure. " +
-                    $"Started from: {assemblyLocation}, searched {searchDepth} levels up.");
-            }
-            
-            if (searchDepth >= maxSearchDepth)
-            {
-                Console.WriteLine($"ERROR: Reached maximum search depth of {maxSearchDepth}");
-                throw new FileNotFoundException(
-                    $"Could not locate mapping.json file within {maxSearchDepth} directory levels. " +
-                    $"Started from: {assemblyLocation}");
-            }
-            
-            var testDataPath = Path.Combine(testProjectDirectory, "Custom", "TestData", "mapping.json");
-            var aliasesPath = Path.Combine(testProjectDirectory, "Custom", "TestData", "property-aliases.json");
-            
-            Console.WriteLine($"Final resolved paths:");
-            Console.WriteLine($"  Mapping file: {testDataPath}");
-            Console.WriteLine($"  Aliases file: {aliasesPath}");
-            Console.WriteLine($"  Mapping file exists: {File.Exists(testDataPath)}");
-            Console.WriteLine($"  Aliases file exists: {File.Exists(aliasesPath)}");
-            
-            // Load the mapping configuration
-            try
-            {
-                var jsonContent = File.ReadAllText(testDataPath);
-                Console.WriteLine($"Successfully read mapping.json ({jsonContent.Length} characters)");
-                _mappingJson = JsonDocument.Parse(jsonContent);
-                Console.WriteLine("Successfully parsed mapping.json");
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"ERROR reading or parsing mapping.json: {ex.Message}");
-                throw;
-            }
-            
-            // Load property aliases if the file exists
-            if (File.Exists(aliasesPath))
-            {
-                try
-                {
-                    var aliasContent = File.ReadAllText(aliasesPath);
-                    Console.WriteLine($"Successfully read property-aliases.json ({aliasContent.Length} characters)");
-                    _propertyAliasesJson = JsonDocument.Parse(aliasContent);
+                if (stream == null)
+                    throw new FileNotFoundException($"Could not find embedded resource: {mappingResourceName}");
                     
-                    // Convert to dictionary for fast lookup
-                    _propertyAliases = new Dictionary<string, string>();
-                    var aliasesElement = _propertyAliasesJson.RootElement.GetProperty("PropertyAliases");
-                    foreach (var alias in aliasesElement.EnumerateObject())
-                    {
-                        _propertyAliases[alias.Name] = alias.Value.GetString();
-                    }
-                    Console.WriteLine($"Loaded {_propertyAliases.Count} property aliases");
-                }
-                catch (Exception ex)
+                using (var reader = new StreamReader(stream))
                 {
-                    Console.WriteLine($"ERROR reading or parsing property-aliases.json: {ex.Message}");
-                    throw;
+                    var jsonContent = reader.ReadToEnd();
+                    _mappingJson = JsonDocument.Parse(jsonContent);
                 }
-            }
-            else
-            {
-                Console.WriteLine("property-aliases.json not found, using empty aliases dictionary");
-                _propertyAliases = new Dictionary<string, string>();
             }
             
-            Console.WriteLine("=== END DEBUG: ClassInitialize completed successfully ===");
+            // Read property-aliases.json
+            using (var stream = assembly.GetManifestResourceStream(aliasesResourceName))
+            {
+                if (stream != null)
+                {
+                    using (var reader = new StreamReader(stream))
+                    {
+                        var aliasContent = reader.ReadToEnd();
+                        _propertyAliasesJson = JsonDocument.Parse(aliasContent);
+                        
+                        // Convert to dictionary for fast lookup
+                        _propertyAliases = new Dictionary<string, string>();
+                        var aliasesElement = _propertyAliasesJson.RootElement.GetProperty("PropertyAliases");
+                        foreach (var alias in aliasesElement.EnumerateObject())
+                        {
+                            _propertyAliases[alias.Name] = alias.Value.GetString();
+                        }
+                    }
+                }
+                else
+                {
+                    _propertyAliases = new Dictionary<string, string>();
+                }
+            }
         }
 
         [ClassCleanup]
