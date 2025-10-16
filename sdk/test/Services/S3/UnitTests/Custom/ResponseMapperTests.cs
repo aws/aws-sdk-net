@@ -43,19 +43,48 @@ namespace AWSSDK.UnitTests
             var assembly = Assembly.GetExecutingAssembly();
             var assemblyName = assembly.GetName().Name;
             
+            // DEBUG: Print assembly and resource information
+            Console.WriteLine($"[DEBUG] Assembly Name: {assemblyName}");
+            Console.WriteLine($"[DEBUG] Assembly Location: {assembly.Location}");
+            Console.WriteLine($"[DEBUG] Assembly Full Name: {assembly.FullName}");
+            
             // Build resource names dynamically based on current assembly
             var mappingResourceName = $"{assemblyName}.Custom.TestData.mapping.json";
             var aliasesResourceName = $"{assemblyName}.Custom.TestData.property-aliases.json";
+            
+            Console.WriteLine($"[DEBUG] Looking for mapping resource: {mappingResourceName}");
+            Console.WriteLine($"[DEBUG] Looking for aliases resource: {aliasesResourceName}");
+            
+            // DEBUG: List all available embedded resources
+            Console.WriteLine("[DEBUG] Available embedded resources in assembly:");
+            var resourceNames = assembly.GetManifestResourceNames();
+            if (resourceNames.Length == 0)
+            {
+                Console.WriteLine("[DEBUG]   No embedded resources found!");
+            }
+            else
+            {
+                foreach (var resourceName in resourceNames.OrderBy(r => r))
+                {
+                    Console.WriteLine($"[DEBUG]   - {resourceName}");
+                }
+            }
             
             // Read mapping.json
             using (var stream = assembly.GetManifestResourceStream(mappingResourceName))
             {
                 if (stream == null)
+                {
+                    Console.WriteLine($"[ERROR] Could not find embedded resource: {mappingResourceName}");
+                    Console.WriteLine($"[ERROR] This suggests the embedded resources are not properly included in the assembly build.");
                     throw new FileNotFoundException($"Could not find embedded resource: {mappingResourceName}");
+                }
                     
+                Console.WriteLine($"[DEBUG] Successfully found mapping resource: {mappingResourceName}");
                 using (var reader = new StreamReader(stream))
                 {
                     var jsonContent = reader.ReadToEnd();
+                    Console.WriteLine($"[DEBUG] Mapping resource content length: {jsonContent.Length} characters");
                     _mappingJson = JsonDocument.Parse(jsonContent);
                 }
             }
@@ -65,9 +94,11 @@ namespace AWSSDK.UnitTests
             {
                 if (stream != null)
                 {
+                    Console.WriteLine($"[DEBUG] Successfully found aliases resource: {aliasesResourceName}");
                     using (var reader = new StreamReader(stream))
                     {
                         var aliasContent = reader.ReadToEnd();
+                        Console.WriteLine($"[DEBUG] Aliases resource content length: {aliasContent.Length} characters");
                         _propertyAliasesJson = JsonDocument.Parse(aliasContent);
                         
                         // Convert to dictionary for fast lookup
@@ -77,13 +108,17 @@ namespace AWSSDK.UnitTests
                         {
                             _propertyAliases[alias.Name] = alias.Value.GetString();
                         }
+                        Console.WriteLine($"[DEBUG] Loaded {_propertyAliases.Count} property aliases");
                     }
                 }
                 else
                 {
+                    Console.WriteLine($"[DEBUG] Property aliases resource not found: {aliasesResourceName} (this is optional)");
                     _propertyAliases = new Dictionary<string, string>();
                 }
             }
+            
+            Console.WriteLine("[DEBUG] ClassInitialize completed successfully");
         }
 
         [ClassCleanup]
