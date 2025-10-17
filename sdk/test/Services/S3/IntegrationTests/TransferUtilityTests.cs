@@ -30,6 +30,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         private static string fullPath;
         private const string testContent = "This is the content body!";
         private const string testFile = "PutObjectFile.txt";
+        private static string testFilePath;
+        private const string testKey = "SimpleUploadProgressTotalBytesTestFile.txt";
 
         [ClassInitialize()]
         public static void ClassInitialize(TestContext a)
@@ -66,6 +68,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
             fullPath = Path.GetFullPath(testFile);
             File.WriteAllText(fullPath, testContent);
+            testFilePath = fullPath; // Use the same file for the TotalBytes test
         }
 
         [ClassCleanup]
@@ -444,41 +447,36 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         }
 
         [TestMethod]
-        [TestCategory("S3")]
-        public void UploadUnseekableStreamFileSizeBetweenMinPartSizeAndPartBufferSize()
+        public void SimpleUploadProgressTotalBytesTest()
         {
-            var client = Client;
-            var fileName = UtilityMethods.GenerateName(@"SimpleUploadTest\BetweenMinPartSizeAndPartBufferSize");
-            var path = Path.Combine(BasePath, fileName);
-            // there was a bug where the transfer utility was uploading 13MB file
-            // when the file size was between 5MB and (5MB + 8192). 8192 is the s3Client.Config.BufferSize
-            var fileSize = 5 * MEG_SIZE + 1;
-
-            UtilityMethods.GenerateFile(path, fileSize);
-            //take the generated file and turn it into an unseekable stream
-
-            var stream = GenerateUnseekableStreamFromFile(path);
-            using (var tu = new Amazon.S3.Transfer.TransferUtility(client))
+            var transferConfig = new TransferUtilityConfig()
             {
-                tu.Upload(stream, bucketName, fileName);
+                MinSizeBeforePartUpload = 20 * MEG_SIZE,
+            };
 
-                var metadata = Client.GetObjectMetadata(new GetObjectMetadataRequest
+            var progressValidator = new TransferProgressValidator<UploadProgressArgs>
+            {
+                Validate = (progress) =>
+                {
+                    Assert.IsTrue(progress.TotalBytes > 0, "TotalBytes should be greater than 0");
+                    Assert.AreEqual(testContent.Length, progress.TotalBytes, "TotalBytes should equal file length");
+                }
+            };
+
+            using (var fileTransferUtility = new TransferUtility(Client, transferConfig))
+            {
+                var request = new TransferUtilityUploadRequest()
                 {
                     BucketName = bucketName,
-                    Key = fileName
-                });
-                Assert.AreEqual(fileSize, metadata.ContentLength);
-
-                //Download the file and validate content of downloaded file is equal.
-                var downloadPath = path + ".download";
-                var downloadRequest = new TransferUtilityDownloadRequest
-                {
-                    BucketName = bucketName,
-                    Key = fileName,
-                    FilePath = downloadPath
+                    FilePath = testFilePath,
+                    Key = testKey
                 };
-                tu.Download(downloadRequest);
-                UtilityMethods.CompareFiles(path, downloadPath);
+
+                request.UploadProgressEvent += progressValidator.OnProgressEvent;
+
+                fileTransferUtility.Upload(request);
+
+                progressValidator.AssertOnCompletion();
             }
         }
 
