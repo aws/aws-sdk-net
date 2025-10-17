@@ -1,3 +1,105 @@
+### 4.0.115.0 (2025-10-17 20:18 UTC)
+* AmplifyBackend (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* AppConfigData (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* AppIntegrationsService (4.0.3.0)
+	* Update endpoint ruleset parameters casing
+* ApplicationInsights (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* ARCZonalShift (4.0.3.0)
+	* Update endpoint ruleset parameters casing
+* BCMRecommendedActions (4.0.1.0)
+	* Update endpoint ruleset parameters casing
+* BedrockDataAutomationRuntime (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* ChimeSDKMeetings (4.0.3.0)
+	* Update endpoint ruleset parameters casing
+* CloudFront (4.0.7.0)
+	* Update endpoint ruleset parameters casing
+* CloudFrontKeyValueStore (4.0.1.0)
+	* Update endpoint ruleset parameters casing
+* CloudWatchEvidently (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* CodeStarNotifications (4.0.1.0)
+	* Update endpoint ruleset parameters casing
+* ControlCatalog (4.0.3.0)
+	* Update endpoint ruleset parameters casing
+* DataSync (4.0.6.0)
+	* Update endpoint ruleset parameters casing
+* DirectoryService (4.0.5.0)
+	* Update endpoint ruleset parameters casing
+* DSQL (4.0.5.0)
+	* Update endpoint ruleset parameters casing
+* EC2 (4.0.43.2)
+	* Documentation updates for Amazon EC2.
+* Elasticsearch (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* EventBridge (4.0.5.0)
+	* Update endpoint ruleset parameters casing
+* Finspace (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* FinSpaceData (4.0.1.0)
+	* Update endpoint ruleset parameters casing
+* GameLiftStreams (4.0.2.10)
+	* Updates documentation to clarify valid application binaries for an Amazon GameLift Streams application and provide descriptions of stream session error status reasons
+* GeoMaps (4.0.2.0)
+	* Added support for optional style parameters in maps, including Terrain, ContourDensity, Traffic, and TravelModes.
+* IAMRolesAnywhere (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* Imagebuilder (4.0.4.0)
+	* Update endpoint ruleset parameters casing
+* IotData (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* IoTDeviceAdvisor (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* IoTThingsGraph (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* IoTTwinMaker (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* KendraRanking (4.0.1.0)
+	* Update endpoint ruleset parameters casing
+* KinesisVideoMedia (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* LakeFormation (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* LicenseManager (4.0.3.0)
+	* Update endpoint ruleset parameters casing
+* LicenseManagerUserSubscriptions (4.0.4.0)
+	* Update endpoint ruleset parameters casing
+* MarketplaceCatalog (4.0.2.0)
+	* The ListEntities API now supports two new CAPI filters: DeliveryOptionTypes for SaaS products and CompatibleAWSServices for Container products.
+* MediaConnect (4.0.4.0)
+	* Update endpoint ruleset parameters casing
+* MigrationHubRefactorSpaces (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* NetworkFirewall (4.0.8.0)
+	* Update endpoint ruleset parameters casing
+* NetworkManager (4.0.3.0)
+	* Update endpoint ruleset parameters casing
+* Organizations (4.0.5.0)
+	* Update endpoint ruleset parameters casing
+* PI (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* PrometheusService (4.0.5.0)
+	* Update endpoint ruleset parameters casing
+* QApps (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* Route53RecoveryReadiness (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* SageMakerGeospatial (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* Signer (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* SimpleWorkflow (4.0.2.0)
+	* Releasing minor endpoint updates.
+* TimestreamWrite (4.0.3.0)
+	* Update endpoint ruleset parameters casing
+* Tnb (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* WellArchitected (4.0.1.0)
+	* Update endpoint ruleset parameters casing
+
 ### 4.0.114.0 (2025-10-16 19:34 UTC)
 * ACMPCA (4.0.2.0)
 	* Update endpoint ruleset parameters casing
