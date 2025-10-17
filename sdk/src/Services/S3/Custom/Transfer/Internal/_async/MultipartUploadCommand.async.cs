@@ -123,9 +123,10 @@ namespace Amazon.S3.Transfer.Internal
                 catch (Exception e)
                 {
                     Logger.Error(e, "Exception while uploading. ({0})", initResponse?.UploadId ?? "unknown");
-                    
+
                     FireTransferFailedEvent();
                     
+                    // Can't do async invocation in the catch block, doing cleanup synchronously.
                     Cleanup(initResponse.UploadId, pendingUploadPartTasks);
                     throw;
                 }
