@@ -43,17 +43,26 @@ namespace Amazon.S3.Transfer.Internal
             else
             {
                 InitiateMultipartUploadResponse initResponse = null;
+                try
+                {
+                    var initRequest = ConstructInitiateMultipartUploadRequest();
+                    initResponse = await _s3Client.InitiateMultipartUploadAsync(initRequest, cancellationToken)
+                    .ConfigureAwait(continueOnCapturedContext: false);
+                    Logger.DebugFormat("Initiated upload: {0}", initResponse.UploadId);
+                }
+                catch (Exception e)
+                {
+                    Logger.Error(e, "Exception while uploading. ({0})", initResponse.UploadId);
+                    FireTransferFailedEvent();
+                    throw;
+                }
+
                 var pendingUploadPartTasks = new List<Task<UploadPartResponse>>();
                 SemaphoreSlim localThrottler = null;
                 CancellationTokenSource internalCts = null;
                 
                 try
                 {
-                    var initRequest = ConstructInitiateMultipartUploadRequest();
-                    initResponse = await _s3Client.InitiateMultipartUploadAsync(initRequest, cancellationToken)
-                        .ConfigureAwait(continueOnCapturedContext: false);
-                    Logger.DebugFormat("Initiated upload: {0}", initResponse.UploadId);
-
                     Logger.DebugFormat("Queue up the UploadPartRequests to be executed");
                     long filePosition = 0;
                     for (int i = 1; filePosition < this._contentLength; i++)
@@ -118,11 +127,7 @@ namespace Amazon.S3.Transfer.Internal
                     
                     FireTransferFailedEvent();
                     
-                    // Only cleanup if we successfully initiated
-                    if (initResponse != null)
-                    {
-                        Cleanup(initResponse.UploadId, pendingUploadPartTasks);
-                    }
+                    Cleanup(initResponse.UploadId, pendingUploadPartTasks);
                     throw;
                 }
                 finally
