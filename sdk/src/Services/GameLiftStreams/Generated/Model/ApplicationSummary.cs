@@ -215,8 +215,8 @@ namespace Amazon.GameLiftStreams.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>ERROR</c>: An error occurred when setting up the application. See <c>StatusReason</c>
-        /// for more information.
+        ///  <c>ERROR</c>: An error occurred when setting up the application. For more information
+        /// about the error, call <c>GetApplication</c> and refer to <c>StatusReason</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>

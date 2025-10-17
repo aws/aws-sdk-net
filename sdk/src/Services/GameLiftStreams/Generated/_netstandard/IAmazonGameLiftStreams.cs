@@ -253,8 +253,8 @@ namespace Amazon.GameLiftStreams
         /// <para>
         ///  <b>Always-on</b>: The streaming capacity that is allocated and ready to handle stream
         /// requests without delay. You pay for this capacity whether it's in use or not. Best
-        /// for quickest time from streaming request to streaming session. Default is 1 when creating
-        /// a stream group or adding a location. 
+        /// for quickest time from streaming request to streaming session. Default is 1 (2 for
+        /// high stream classes) when creating a stream group or adding a location. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -265,6 +265,11 @@ namespace Amazon.GameLiftStreams
         /// 
         /// </para>
         ///  </li> </ul> 
+        /// <para>
+        /// Values for capacity must be whole number multiples of the tenancy value of the stream
+        /// group's stream class.
+        /// </para>
+        ///  
         /// <para>
         ///  To adjust the capacity of any <c>ACTIVE</c> stream group, call <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_UpdateStreamGroup.html">UpdateStreamGroup</a>.
         /// 
@@ -1436,8 +1441,8 @@ namespace Amazon.GameLiftStreams
         /// <para>
         ///  <b>Always-on</b>: The streaming capacity that is allocated and ready to handle stream
         /// requests without delay. You pay for this capacity whether it's in use or not. Best
-        /// for quickest time from streaming request to streaming session. Default is 1 when creating
-        /// a stream group or adding a location. 
+        /// for quickest time from streaming request to streaming session. Default is 1 (2 for
+        /// high stream classes) when creating a stream group or adding a location. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1448,6 +1453,11 @@ namespace Amazon.GameLiftStreams
         /// 
         /// </para>
         ///  </li> </ul> 
+        /// <para>
+        /// Values for capacity must be whole number multiples of the tenancy value of the stream
+        /// group's stream class.
+        /// </para>
+        ///  
         /// <para>
         /// To update a stream group, specify the stream group's Amazon Resource Name (ARN) and
         /// provide the new values. If the request is successful, Amazon GameLift Streams returns

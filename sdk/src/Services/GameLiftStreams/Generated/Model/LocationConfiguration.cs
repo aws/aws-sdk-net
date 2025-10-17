@@ -47,8 +47,8 @@ namespace Amazon.GameLiftStreams.Model
         /// <para>
         /// The streaming capacity that is allocated and ready to handle stream requests without
         /// delay. You pay for this capacity whether it's in use or not. Best for quickest time
-        /// from streaming request to streaming session. Default is 1 when creating a stream group
-        /// or adding a location.
+        /// from streaming request to streaming session. Default is 1 (2 for high stream classes)
+        /// when creating a stream group or adding a location.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]

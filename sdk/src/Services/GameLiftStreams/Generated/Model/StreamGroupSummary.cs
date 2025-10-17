@@ -185,6 +185,7 @@ namespace Amazon.GameLiftStreams.Model
         ///  </li> <li> 
         /// <para>
         ///  <c>ERROR</c>: An error occurred when the stream group deployed. See <c>StatusReason</c>
+        /// (returned by <c>CreateStreamGroup</c>, <c>GetStreamGroup</c>, and <c>UpdateStreamGroup</c>)
         /// for more information. 
         /// </para>
         ///  </li> <li> 
