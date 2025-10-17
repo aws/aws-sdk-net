@@ -42,7 +42,7 @@ namespace Amazon.S3.Transfer.Internal
         TransferUtilityConfig _config;
         TransferUtilityUploadRequest _fileTransporterRequest;
         long _totalTransferredBytes;
-        private readonly long _cachedContentLength;
+        private readonly long _contentLength;
 
         internal SimpleUploadCommand(IAmazonS3 s3Client, TransferUtilityConfig config, TransferUtilityUploadRequest fileTransporterRequest)
         {
@@ -51,7 +51,7 @@ namespace Amazon.S3.Transfer.Internal
             this._fileTransporterRequest = fileTransporterRequest;
             
             // Cache content length immediately while stream is accessible to avoid ObjectDisposedException in failure scenarios
-            this._cachedContentLength = this._fileTransporterRequest.ContentLength;
+            this._contentLength = this._fileTransporterRequest.ContentLength;
             
             var fileName = fileTransporterRequest.FilePath;
         }
@@ -112,7 +112,7 @@ namespace Amazon.S3.Transfer.Internal
             // Keep track of the total transferred bytes so that we can also return this value in case of failure
             long transferredBytes = Interlocked.Add(ref _totalTransferredBytes, e.IncrementTransferred - e.CompensationForRetry);
             
-            var progressArgs = new UploadProgressArgs(e.IncrementTransferred, transferredBytes, _cachedContentLength, 
+            var progressArgs = new UploadProgressArgs(e.IncrementTransferred, transferredBytes, _contentLength, 
                 e.CompensationForRetry, _fileTransporterRequest.FilePath, _fileTransporterRequest);
             this._fileTransporterRequest.OnRaiseProgressEvent(progressArgs);
         }
@@ -122,7 +122,7 @@ namespace Amazon.S3.Transfer.Internal
             var initiatedArgs = new UploadInitiatedEventArgs(
                 request: _fileTransporterRequest,
                 filePath: _fileTransporterRequest.FilePath,
-                totalBytes: _cachedContentLength
+                totalBytes: _contentLength
             );
             
             _fileTransporterRequest.OnRaiseTransferInitiatedEvent(initiatedArgs);
@@ -135,7 +135,7 @@ namespace Amazon.S3.Transfer.Internal
                 response: response,
                 filePath: _fileTransporterRequest.FilePath,
                 transferredBytes: Interlocked.Read(ref _totalTransferredBytes),
-                totalBytes: _cachedContentLength
+                totalBytes: _contentLength
             );
             
             _fileTransporterRequest.OnRaiseTransferCompletedEvent(completedArgs);
@@ -147,7 +147,7 @@ namespace Amazon.S3.Transfer.Internal
                 request: _fileTransporterRequest,
                 filePath: _fileTransporterRequest.FilePath,
                 transferredBytes: Interlocked.Read(ref _totalTransferredBytes),
-                totalBytes: _cachedContentLength
+                totalBytes: _contentLength
             );
             
             _fileTransporterRequest.OnRaiseTransferFailedEvent(failedArgs);
