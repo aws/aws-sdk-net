@@ -210,7 +210,8 @@ namespace Amazon.GameLiftStreams.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>ERROR</c>: The stream session failed to activate.
+        ///  <c>ERROR</c>: The stream session failed to activate. See <c>StatusReason</c> (returned
+        /// by <c>GetStreamSession</c> and <c>StartStreamSession</c>) for more information.
         /// </para>
         ///  </li> <li> 
         /// <para>

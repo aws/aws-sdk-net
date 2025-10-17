@@ -45,9 +45,14 @@ namespace Amazon.GameLiftStreams.Model
         /// <summary>
         /// Gets and sets the property AllocatedCapacity. 
         /// <para>
-        /// This value is the number of compute resources that a stream group has provisioned
-        /// and is ready to stream. It includes resources that are currently streaming and resources
-        /// that are idle and ready to respond to stream requests.
+        /// This value is the stream capacity that Amazon GameLift Streams has provisioned in
+        /// a stream group that can respond immediately to stream requests. It includes resources
+        /// that are currently streaming and resources that are idle and ready to respond to stream
+        /// requests. You pay for this capacity whether it's in use or not. After making changes
+        /// to capacity, it can take a few minutes for the allocated capacity count to reflect
+        /// the change while compute resources are allocated or deallocated. Similarly, when allocated
+        /// on-demand capacity is no longer needed, it can take a few minutes for Amazon GameLift
+        /// Streams to spin down the allocated capacity.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -68,8 +73,8 @@ namespace Amazon.GameLiftStreams.Model
         /// <para>
         /// The streaming capacity that is allocated and ready to handle stream requests without
         /// delay. You pay for this capacity whether it's in use or not. Best for quickest time
-        /// from streaming request to streaming session. Default is 1 when creating a stream group
-        /// or adding a location.
+        /// from streaming request to streaming session. Default is 1 (2 for high stream classes)
+        /// when creating a stream group or adding a location.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -89,8 +94,8 @@ namespace Amazon.GameLiftStreams.Model
         /// Gets and sets the property IdleCapacity. 
         /// <para>
         /// This value is the amount of allocated capacity that is not currently streaming. It
-        /// represents the stream group's availability to respond to new stream requests, but
-        /// not including on-demand capacity.
+        /// represents the stream group's ability to respond immediately to new stream requests
+        /// with near-instant startup time.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -153,9 +158,12 @@ namespace Amazon.GameLiftStreams.Model
         /// <summary>
         /// Gets and sets the property RequestedCapacity. 
         /// <para>
-        /// This value is the total number of compute resources that you request for a stream
-        /// group. This includes resources that Amazon GameLift Streams has either already provisioned
-        /// or is working to provision. You request capacity for each location in a stream group.
+        /// This value is the always-on capacity that you most recently requested for a stream
+        /// group. You request capacity separately for each location in a stream group. In response
+        /// to an increase in requested capacity, Amazon GameLift Streams attempts to provision
+        /// compute resources to make the stream group's allocated capacity meet requested capacity.
+        /// When always-on capacity is decreased, it can take a few minutes to deprovision allocated
+        /// capacity to match the requested capacity.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]

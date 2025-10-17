@@ -412,7 +412,8 @@ namespace Amazon.GameLiftStreams.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>ERROR</c>: The stream session failed to activate.
+        ///  <c>ERROR</c>: The stream session failed to activate. See <c>StatusReason</c> (returned
+        /// by <c>GetStreamSession</c> and <c>StartStreamSession</c>) for more information.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -454,6 +455,30 @@ namespace Amazon.GameLiftStreams.Model
         /// <para>
         /// A short description of the reason the stream session is in <c>ERROR</c> status.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>internalError</c>: An internal service error occurred. Start a new stream session
+        /// to continue streaming.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>invalidSignalRequest</c>: The WebRTC signal request that was sent is not valid.
+        /// When starting or reconnecting to a stream session, use <c>generateSignalRequest</c>
+        /// in the Amazon GameLift Streams Web SDK to generate a new signal request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>placementTimeout</c>: Amazon GameLift Streams could not find available stream
+        /// capacity to start a stream session. Increase the stream capacity in the stream group
+        /// or wait until capacity becomes available.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>applicationLogS3DestinationError</c>: Could not write the application log to the
+        /// Amazon S3 bucket that is configured for the streaming application. Make sure the bucket
+        /// still exists.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public StreamSessionStatusReason StatusReason
         {

@@ -198,7 +198,8 @@ namespace Amazon.GameLiftStreams.Model
         /// <summary>
         /// Gets and sets the property ExecutablePath. 
         /// <para>
-        /// The path and file name of the executable file that launches the content for streaming.
+        /// The relative path and file name of the executable file that launches the content for
+        /// streaming.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
