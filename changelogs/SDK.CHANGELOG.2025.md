@@ -1,3 +1,108 @@
+### 3.7.1147.0 (2025-10-17 19:29 UTC)
+* AmplifyBackend (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* AppConfigData (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* AppIntegrationsService (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* ApplicationInsights (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* ARCZonalShift (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* BCMRecommendedActions (3.7.501.0)
+	* Update endpoint ruleset parameters casing
+* BedrockDataAutomationRuntime (3.7.501.0)
+	* Update endpoint ruleset parameters casing
+* ChimeSDKMeetings (3.7.503.0)
+	* Update endpoint ruleset parameters casing
+* CloudFront (3.7.505.0)
+	* Update endpoint ruleset parameters casing
+* CloudFrontKeyValueStore (3.7.501.0)
+	* Update endpoint ruleset parameters casing
+* CloudWatchEvidently (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* CodeStarNotifications (3.7.501.0)
+	* Update endpoint ruleset parameters casing
+* ControlCatalog (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* DataSync (3.7.503.0)
+	* Update endpoint ruleset parameters casing
+* DirectoryService (3.7.504.0)
+	* Update endpoint ruleset parameters casing
+* DSQL (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* EC2 (3.7.517.2)
+	* Documentation updates for Amazon EC2.
+* Elasticsearch (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* EventBridge (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* Finspace (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* FinSpaceData (3.7.501.0)
+	* Update endpoint ruleset parameters casing
+* GameLiftStreams (3.7.502.25)
+	* Updates documentation to clarify valid application binaries for an Amazon GameLift Streams application and provide descriptions of stream session error status reasons
+* GeoMaps (3.7.502.0)
+	* Added support for optional style parameters in maps, including Terrain, ContourDensity, Traffic, and TravelModes.
+* IAMRolesAnywhere (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* Imagebuilder (3.7.504.0)
+	* Update endpoint ruleset parameters casing
+* IotData (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* IoTDeviceAdvisor (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* IoTThingsGraph (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* IoTTwinMaker (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* KendraRanking (3.7.501.0)
+	* Update endpoint ruleset parameters casing
+* KinesisVideoMedia (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* LakeFormation (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* LicenseManager (3.7.501.0)
+	* Update endpoint ruleset parameters casing
+* LicenseManagerUserSubscriptions (3.7.504.0)
+	* Update endpoint ruleset parameters casing
+* MarketplaceCatalog (3.7.501.0)
+	* The ListEntities API now supports two new CAPI filters: DeliveryOptionTypes for SaaS products and CompatibleAWSServices for Container products.
+* MediaConnect (3.7.503.0)
+	* Update endpoint ruleset parameters casing
+* MigrationHubRefactorSpaces (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* NetworkFirewall (3.7.504.0)
+	* Update endpoint ruleset parameters casing
+* NetworkManager (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* Organizations (3.7.504.0)
+	* Update endpoint ruleset parameters casing
+* PI (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* PrometheusService (3.7.504.0)
+	* Update endpoint ruleset parameters casing
+* QApps (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* Route53RecoveryReadiness (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* SageMakerGeospatial (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* Signer (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* SimpleWorkflow (3.7.502.0)
+	* Releasing minor endpoint updates.
+* TimestreamWrite (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* Tnb (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* WellArchitected (3.7.501.0)
+	* Update endpoint ruleset parameters casing
+* Core 3.7.500.34
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.1146.0 (2025-10-16 19:22 UTC)
 * ACMPCA (3.7.502.0)
 	* Update endpoint ruleset parameters casing

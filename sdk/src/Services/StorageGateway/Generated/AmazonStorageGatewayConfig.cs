@@ -32,7 +32,7 @@ namespace Amazon.StorageGateway
     public partial class AmazonStorageGatewayConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Storage Gateway", "3.7.500.33");
+            InternalSDKUtils.BuildUserAgentString("Storage Gateway", "3.7.500.34");
 
         private string _userAgent = UserAgentString;
         ///<summary>
