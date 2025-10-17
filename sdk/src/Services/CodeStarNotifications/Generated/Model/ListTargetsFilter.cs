@@ -32,9 +32,9 @@ namespace Amazon.CodeStarNotifications.Model
     /// <summary>
     /// Information about a filter to apply to the list of returned targets. You can filter
     /// by target type, address, or status. For example, to filter results to notification
-    /// rules that have active Chatbot topics as targets, you could specify a ListTargetsFilter
-    /// Name as <c>TargetType</c> and a Value of <c>SNS</c>, and a Name of <c>TARGET_STATUS</c>
-    /// and a Value of <c>ACTIVE</c>.
+    /// rules that have active Amazon Q Developer in chat applications topics as targets,
+    /// you could specify a ListTargetsFilter Name as <c>TargetType</c> and a Value of <c>SNS</c>,
+    /// and a Name of <c>TARGET_STATUS</c> and a Value of <c>ACTIVE</c>.
     /// </summary>
     public partial class ListTargetsFilter
     {
