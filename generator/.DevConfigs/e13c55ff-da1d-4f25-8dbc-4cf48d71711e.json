@@ -1,9 +1,0 @@
-{
-  "core": {
-    "updateMinimum": false,
-    "type": "patch",
-    "changeLogMessages": [
-      "Updated generator to support TFM based conditions in ItemGroup while adding project package references defined for various targets in service model metadata.json."
-    ]
-  }
-}
