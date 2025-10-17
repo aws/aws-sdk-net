@@ -50,9 +50,8 @@ namespace Amazon.S3.Transfer.Internal
                     .ConfigureAwait(continueOnCapturedContext: false);
                     Logger.DebugFormat("Initiated upload: {0}", initResponse.UploadId);
                 }
-                catch (Exception e)
+                catch (Exception)
                 {
-                    Logger.Error(e, "Exception while uploading. ({0})", initResponse.UploadId);
                     FireTransferFailedEvent();
                     throw;
                 }
