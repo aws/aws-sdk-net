@@ -177,6 +177,7 @@ namespace Amazon.S3.Transfer.Internal
                 ChecksumCRC64NVME = this._fileTransporterRequest.ChecksumCRC64NVME,
                 ChecksumSHA1 = this._fileTransporterRequest.ChecksumSHA1,
                 ChecksumSHA256 = this._fileTransporterRequest.ChecksumSHA256,
+                ExpectedBucketOwner = this._fileTransporterRequest.ExpectedBucketOwner,
             };
 
             if(this._fileTransporterRequest.ServerSideEncryptionCustomerMethod != null 
@@ -254,7 +255,8 @@ namespace Amazon.S3.Transfer.Internal
                 DisableDefaultChecksumValidation = this._fileTransporterRequest.DisableDefaultChecksumValidation,
                 DisablePayloadSigning = this._fileTransporterRequest.DisablePayloadSigning,
                 ChecksumAlgorithm = this._fileTransporterRequest.ChecksumAlgorithm,
-                RequestPayer = this._fileTransporterRequest.RequestPayer
+                RequestPayer = this._fileTransporterRequest.RequestPayer,
+                ExpectedBucketOwner = this._fileTransporterRequest.ExpectedBucketOwner,
             };
 
             // If the InitiateMultipartUploadResponse indicates that this upload is using KMS, force SigV4 for each UploadPart request
@@ -308,7 +310,14 @@ namespace Amazon.S3.Transfer.Internal
                 ChecksumAlgorithm = this._fileTransporterRequest.ChecksumAlgorithm,
                 ObjectLockLegalHoldStatus = this._fileTransporterRequest.ObjectLockLegalHoldStatus,
                 ObjectLockMode = this._fileTransporterRequest.ObjectLockMode,
-                RequestPayer = this._fileTransporterRequest.RequestPayer
+                RequestPayer = this._fileTransporterRequest.RequestPayer,
+                Headers = this._fileTransporterRequest.Headers,
+                ExpectedBucketOwner = this._fileTransporterRequest.ExpectedBucketOwner,
+                Grants = this._fileTransporterRequest.Grants,
+                Metadata = this._fileTransporterRequest.Metadata,
+                ServerSideEncryptionKeyManagementServiceEncryptionContext = this._fileTransporterRequest.SSEKMSEncryptionContext,
+                WebsiteRedirectLocation = this._fileTransporterRequest.WebsiteRedirectLocation,
+                BucketKeyEnabled = this._fileTransporterRequest.BucketKeyEnabled,
             };
 
             if (this._fileTransporterRequest.IsSetObjectLockRetainUntilDate())

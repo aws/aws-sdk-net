@@ -79,6 +79,12 @@ namespace Amazon.S3.Transfer.Internal
                 RequestPayer = this._request.RequestPayer,
                 DisableDefaultChecksumValidation = this._request.DisableDefaultChecksumValidation,
                 ChecksumAlgorithm = this._request.ChecksumAlgorithm,
+                BucketKeyEnabled = this._request.BucketKeyEnabled,
+                ExpectedBucketOwner = this._request.ExpectedBucketOwner,
+                SSEKMSEncryptionContext = this._request.SSEKMSEncryptionContext,
+                WebsiteRedirectLocation = this._request.WebsiteRedirectLocation,
+                Headers = this._request.Headers,
+                Grants = this._request.Grants
             };
             
             if (this._request.IsSetObjectLockRetainUntilDate())
