@@ -32,13 +32,23 @@ namespace Amazon.GeoMaps.Model
     /// <summary>
     /// Container for the parameters to the GetStyleDescriptor operation.
     /// <c>GetStyleDescriptor</c> returns information about the style.
+    /// 
+    ///  
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/styling-dynamic-maps.html">Style
+    /// dynamic maps</a> in the <i>Amazon Location Service Developer Guide</i>.
+    /// </para>
     /// </summary>
     public partial class GetStyleDescriptorRequest : AmazonGeoMapsRequest
     {
         private ColorScheme _colorScheme;
+        private ContourDensity _contourDensity;
         private string _key;
         private string _politicalView;
         private MapStyle _style;
+        private Terrain _terrain;
+        private Traffic _traffic;
+        private List<string> _travelModes = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ColorScheme. 
@@ -70,6 +80,30 @@ namespace Amazon.GeoMaps.Model
         internal bool IsSetColorScheme()
         {
             return this._colorScheme != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ContourDensity. 
+        /// <para>
+        /// Displays the shape and steepness of terrain features using elevation lines. The density
+        /// value controls how densely the available contour line information is rendered on the
+        /// map.
+        /// </para>
+        ///  
+        /// <para>
+        /// This parameter is valid only for the <c>Standard</c> map style.
+        /// </para>
+        /// </summary>
+        public ContourDensity ContourDensity
+        {
+            get { return this._contourDensity; }
+            set { this._contourDensity = value; }
+        }
+
+        // Check to see if ContourDensity property is set
+        internal bool IsSetContourDensity()
+        {
+            return this._contourDensity != null;
         }
 
         /// <summary>
@@ -190,6 +224,84 @@ namespace Amazon.GeoMaps.Model
         internal bool IsSetStyle()
         {
             return this._style != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Terrain. 
+        /// <para>
+        /// Adjusts how physical terrain details are rendered on the map.
+        /// </para>
+        ///  
+        /// <para>
+        /// The following terrain styles are currently supported:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>Hillshade</c>: Displays the physical terrain details through shading and highlighting
+        /// of elevation change and geographic features.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// This parameter is valid only for the <c>Standard</c> map style.
+        /// </para>
+        /// </summary>
+        public Terrain Terrain
+        {
+            get { return this._terrain; }
+            set { this._terrain = value; }
+        }
+
+        // Check to see if Terrain property is set
+        internal bool IsSetTerrain()
+        {
+            return this._terrain != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Traffic. 
+        /// <para>
+        /// Displays real-time traffic information overlay on map, such as incident events and
+        /// flow events.
+        /// </para>
+        ///  
+        /// <para>
+        /// This parameter is valid only for the <c>Standard</c> map style.
+        /// </para>
+        /// </summary>
+        public Traffic Traffic
+        {
+            get { return this._traffic; }
+            set { this._traffic = value; }
+        }
+
+        // Check to see if Traffic property is set
+        internal bool IsSetTraffic()
+        {
+            return this._traffic != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TravelModes. 
+        /// <para>
+        /// Renders additional map information relevant to selected travel modes. Information
+        /// for multiple travel modes can be displayed simultaneously, although this increases
+        /// the overall information density rendered on the map.
+        /// </para>
+        ///  
+        /// <para>
+        /// This parameter is valid only for the <c>Standard</c> map style.
+        /// </para>
+        /// </summary>
+        public List<string> TravelModes
+        {
+            get { return this._travelModes; }
+            set { this._travelModes = value; }
+        }
+
+        // Check to see if TravelModes property is set
+        internal bool IsSetTravelModes()
+        {
+            return this._travelModes != null && (this._travelModes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }
