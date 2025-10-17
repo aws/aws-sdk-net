@@ -62,6 +62,7 @@ namespace Amazon.DynamoDBv2.DataModel
             }
             storage.Document[versionAttributeName] = version;
         }
+
         private static void IncrementVersion(Type memberType, ref Primitive version)
         {
             if (memberType.IsAssignableFrom(typeof(Byte))) version = version.AsByte() + 1;
@@ -140,7 +141,7 @@ namespace Amazon.DynamoDBv2.DataModel
         {
             var counterProperties = storage.Config.BaseTypeStorageConfig.Properties.
                 Where(propertyStorage => propertyStorage.IsCounter).ToArray();
-            var flatten= storage.Config.BaseTypeStorageConfig.Properties.
+            var flatten = storage.Config.BaseTypeStorageConfig.Properties.
                 Where(propertyStorage => propertyStorage.FlattenProperties.Any()).ToArray();
             while (flatten.Any())
             {
@@ -148,8 +149,7 @@ namespace Amazon.DynamoDBv2.DataModel
                 counterProperties = counterProperties.Concat(flattenCounters).ToArray();
                 flatten = flatten.SelectMany(p => p.FlattenProperties.Where(fp => fp.FlattenProperties.Any())).ToArray();
             }
-            
-            
+
             return counterProperties;
         }
 
@@ -175,11 +175,26 @@ namespace Amazon.DynamoDBv2.DataModel
                     propertyStorage.CounterStartValue - propertyStorage.CounterDelta;
             }
             updateExpression.ExpressionStatement = $"SET {asserts.Substring(0, asserts.Length - 2)}";
-
             return updateExpression;
         }
 
         #endregion
+
+        internal static List<string> GetUpdateIfNotExistsAttributeNames(ItemStorage storage)
+        {
+            var ifNotExistsProperties = storage.Config.BaseTypeStorageConfig.Properties.
+                Where(propertyStorage => propertyStorage.UpdateBehaviorMode == UpdateBehavior.IfNotExists).ToArray();
+            var flatten = storage.Config.BaseTypeStorageConfig.Properties.
+                Where(propertyStorage => propertyStorage.FlattenProperties.Any()).ToArray();
+            while (flatten.Any())
+            {
+                var flattenIfNotExists = flatten.SelectMany(p => p.FlattenProperties.Where(fp => fp.UpdateBehaviorMode == UpdateBehavior.IfNotExists)).ToArray();
+                ifNotExistsProperties = ifNotExistsProperties.Concat(flattenIfNotExists).ToArray();
+                flatten = flatten.SelectMany(p => p.FlattenProperties.Where(fp => fp.FlattenProperties.Any())).ToArray();
+            }
+            return ifNotExistsProperties.Select(p => p.AttributeName).ToList();
+        }
+
 
         #region Table methods
 
@@ -456,7 +471,7 @@ namespace Amazon.DynamoDBv2.DataModel
             {
                 foreach (PropertyStorage propertyStorage in storageConfig.AllPropertyStorage)
                 {
-                    if(propertyStorage.IsFlattened) continue;
+                    if (propertyStorage.IsFlattened) continue;
                     string attributeName = propertyStorage.AttributeName;
                     if (propertyStorage.ShouldFlattenChildProperties)
                     {
@@ -573,7 +588,6 @@ namespace Amazon.DynamoDBv2.DataModel
 
                         if (ShouldSave(dbe, ignoreNullValues))
                         {
-
                             if (propertyStorage.ShouldFlattenChildProperties)
                             {
                                 if (dbe == null) continue;
@@ -683,14 +697,14 @@ namespace Amazon.DynamoDBv2.DataModel
 
                 bool isAotRuntime = InternalSDKUtils.IsRunningNativeAot();
                 string errorMessage;
-                
+
                 if (isAotRuntime)
                 {
                     errorMessage = $"Unable to convert DynamoDB entry [{entry}] of type {entry.GetType().FullName} to property {propertyStorage.PropertyName} of type {targetType.FullName}. " +
-                        "Since the application is running in Native AOT mode the type could possibly be trimmed. " +
-                        "This can happen if the type being created is a nested type of a type being used for saving and loading DynamoDB items. " +
-                        $"This can be worked around by adding the \"[DynamicDependency(DynamicallyAccessedMemberTypes.All, typeof({targetType.FullName}))]\" attribute to the constructor of the parent type." + 
-                        " If the parent type can not be modified the attribute can also be used on the method invoking the DynamoDB sdk or some other method that you are sure is not being trimmed.";
+                                   "Since the application is running in Native AOT mode the type could possibly be trimmed. " +
+                                   "This can happen if the type being created is a nested type of a type being used for saving and loading DynamoDB items. " +
+                                   $"This can be worked around by adding the \"[DynamicDependency(DynamicallyAccessedMemberTypes.All, typeof({targetType.FullName}))]\" attribute to the constructor of the parent type." +
+                                   " If the parent type can not be modified the attribute can also be used on the method invoking the DynamoDB sdk or some other method that you are sure is not being trimmed.";
                 }
                 else
                 {
@@ -1514,7 +1528,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
             DynamoDBFlatConfig flatConfig = new DynamoDBFlatConfig(operationConfig, Config);
             ItemStorageConfig storageConfig = StorageConfigCache.GetConfig<T>(flatConfig);
-          
+
             ContextSearch query;
             if (operationConfig is { Expression: { Filter: not null } })
             {
@@ -1561,7 +1575,7 @@ namespace Amazon.DynamoDBv2.DataModel
             ContextSearch query;
             if (operationConfig is { Expression: { Filter: not null } })
             {
-                if(conditions!=null && conditions.Any())
+                if (conditions != null && conditions.Any())
                 {
                     throw new InvalidOperationException("Query conditions are not supported with filter expression. Use either Query conditions or filter expression, but not both.");
                 }
@@ -1848,7 +1862,7 @@ namespace Amazon.DynamoDBv2.DataModel
             {
                 var memberObj = ContextExpressionsUtils.GetMember(expr.Arguments[0]);
                 var typeExpr = ContextExpressionsUtils.GetConstant(expr.Arguments[1]);
-                if (memberObj!=null && typeExpr!=null)
+                if (memberObj != null && typeExpr != null)
                 {
                     SetExpressionNodeAttributes(storageConfig, memberObj, typeExpr, node, flatConfig);
                 }
@@ -1990,7 +2004,7 @@ namespace Amazon.DynamoDBv2.DataModel
             };
             if (expr.Object is MemberExpression memberObj && expr.Arguments[0] is ConstantExpression argConst)
             {
-                var constantValue=ContextExpressionsUtils.GetConstant(argConst);
+                var constantValue = ContextExpressionsUtils.GetConstant(argConst);
                 SetExpressionNodeAttributes(storageConfig, memberObj, constantValue, node, flatConfig);
             }
             else
