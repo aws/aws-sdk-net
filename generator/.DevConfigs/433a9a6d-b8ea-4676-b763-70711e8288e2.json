@@ -2,7 +2,7 @@
   "services": [
     {
       "serviceName": "S3",
-      "type": "patch",
+      "type": "minor",
       "changeLogMessages": [
         "Added progress tracking events to simple upload"
       ]
