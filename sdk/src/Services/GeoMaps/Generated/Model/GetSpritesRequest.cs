@@ -32,6 +32,12 @@ namespace Amazon.GeoMaps.Model
     /// <summary>
     /// Container for the parameters to the GetSprites operation.
     /// <c>GetSprites</c> returns the map's sprites.
+    /// 
+    ///  
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/styling-iconography-with-sprites.html">Style
+    /// iconography with sprites</a> in the <i>Amazon Location Service Developer Guide</i>.
+    /// </para>
     /// </summary>
     public partial class GetSpritesRequest : AmazonGeoMapsRequest
     {

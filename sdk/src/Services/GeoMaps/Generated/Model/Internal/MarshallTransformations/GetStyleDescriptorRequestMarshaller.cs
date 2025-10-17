@@ -69,11 +69,23 @@ namespace Amazon.GeoMaps.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetColorScheme())
                 request.Parameters.Add("color-scheme", StringUtils.FromString(publicRequest.ColorScheme));
             
+            if (publicRequest.IsSetContourDensity())
+                request.Parameters.Add("contour-density", StringUtils.FromString(publicRequest.ContourDensity));
+            
             if (publicRequest.IsSetKey())
                 request.Parameters.Add("key", StringUtils.FromString(publicRequest.Key));
             
             if (publicRequest.IsSetPoliticalView())
                 request.Parameters.Add("political-view", StringUtils.FromString(publicRequest.PoliticalView));
+            
+            if (publicRequest.IsSetTerrain())
+                request.Parameters.Add("terrain", StringUtils.FromString(publicRequest.Terrain));
+            
+            if (publicRequest.IsSetTraffic())
+                request.Parameters.Add("traffic", StringUtils.FromString(publicRequest.Traffic));
+            
+            if (publicRequest.IsSetTravelModes())
+                request.ParameterCollection.Add("travel-modes", publicRequest.TravelModes);
             request.ResourcePath = "/styles/{Style}/descriptor";
             request.UseQueryString = true;
 
