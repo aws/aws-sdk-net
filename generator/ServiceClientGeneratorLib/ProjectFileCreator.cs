@@ -302,7 +302,7 @@ namespace ServiceClientGenerator
 
             List<Dependency> dependencies;
             List<PackageReference> references = new List<PackageReference>();
-            if (serviceConfiguration.NugetDependencies != null &&
+            if (    serviceConfiguration.NugetDependencies != null &&
                     serviceConfiguration.NugetDependencies.TryGetValue(projectFileConfiguration.Name, out dependencies))
             {
                 foreach(var dependency in dependencies)
@@ -311,7 +311,6 @@ namespace ServiceClientGenerator
                     {
                         Include = dependency.Name,
                         Version = dependency.Version,
-                        Condition = (dependency.Targets?.Count > 0) ? string.Join(" Or ", dependency.Targets.Select(t => $"'$(TargetFramework)'=='{t}'")) : null
                     });
                 }
 
@@ -361,7 +360,7 @@ namespace ServiceClientGenerator
                 var childDirectoryAlt = Utils.ConvertPathAlt(childDirectory);
                 var folder = childDirectoryAlt.Substring(coreRootFolder.Length).TrimStart('/');
 
-                if (exclusionList.Any(e => folder.Equals(e, StringComparison.InvariantCulture) || 
+                if (exclusionList.Any(e => folder.Equals(e, StringComparison.InvariantCulture) ||                    
                     folder.StartsWith(e + "/", StringComparison.InvariantCulture)))
                     continue;
 
@@ -477,8 +476,6 @@ namespace ServiceClientGenerator
             public string IncludeAssets { get; set; }
             public bool IsAnalyzer { get; set; }
             public bool HasPrivateAssets => PrivateAssets != "" && PrivateAssets != "none";
-            public string Condition { get; set; }
-
             public static PackageReference ParseJson(Json.LitJson.JsonData data)
             {
                 return new PackageReference
@@ -487,8 +484,7 @@ namespace ServiceClientGenerator
                     Version = data.SafeGetString("version"),
                     PrivateAssets = data.SafeGetString("privateAssets"),
                     IncludeAssets = data.SafeGetString("includeAssets"),
-                    IsAnalyzer = data.SafeGet("analyzer") != null ? (bool)data.SafeGet("analyzer") : false,
-                    Condition = data.SafeGetString("condition")
+                    IsAnalyzer = data.SafeGet("analyzer") != null ? (bool) data.SafeGet("analyzer") : false
                 };
             }
         }
