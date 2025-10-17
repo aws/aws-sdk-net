@@ -213,8 +213,19 @@ namespace Amazon.S3.Transfer.Internal
                 }
             };
 
-            var initiateRequest = ConstructInitiateMultipartUploadRequest(requestEventHandler);
-            var initiateResponse = await _s3Client.InitiateMultipartUploadAsync(initiateRequest, cancellationToken).ConfigureAwait(false);
+            InitiateMultipartUploadResponse initiateResponse = null;
+            
+            try
+            {
+                var initiateRequest = ConstructInitiateMultipartUploadRequest(requestEventHandler);
+                initiateResponse = await _s3Client.InitiateMultipartUploadAsync(initiateRequest, cancellationToken).ConfigureAwait(false);
+            }
+            catch (Exception ex)
+            {
+                FireTransferFailedEvent();
+                Logger.Error(ex, "Failed to initiate multipart upload for unseekable stream");
+                throw;
+            }
 
             try
             {
