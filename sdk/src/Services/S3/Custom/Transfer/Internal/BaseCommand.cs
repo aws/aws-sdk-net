@@ -62,6 +62,21 @@ namespace Amazon.S3.Transfer.Internal
             getRequest.ChecksumMode = request.ChecksumMode;
             getRequest.RequestPayer = request.RequestPayer;
 
+            if (request.IsSetExpectedBucketOwner())
+            {
+                getRequest.ExpectedBucketOwner = request.ExpectedBucketOwner;
+            }
+            if (request.IsSetIfMatch())
+            {
+                getRequest.EtagToMatch = request.IfMatch;
+            }
+            if (request.IsSetIfNoneMatch())
+            {
+                getRequest.EtagToNotMatch = request.IfNoneMatch;
+            }
+            
+            getRequest.ResponseHeaderOverrides = request.ResponseHeaderOverrides;
+
             return getRequest;
         }
 
