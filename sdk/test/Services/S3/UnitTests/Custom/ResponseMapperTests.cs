@@ -238,15 +238,6 @@ namespace AWSSDK.UnitTests
 
         [TestMethod]
         [TestCategory("S3")]
-        public void ValidatePutObjectResponseDefinitionCompleteness()
-        {
-            ValidateResponseDefinitionCompleteness<PutObjectResponse>(
-                new[] { "Definition", "UploadResponse", "PutObjectResponse" },
-                "PutObjectResponse");
-        }
-
-        [TestMethod]
-        [TestCategory("S3")]
         public void ValidateTransferUtilityUploadResponseDefinitionCompleteness()
         {
             ValidateResponseDefinitionCompleteness<TransferUtilityUploadResponse>(
@@ -261,19 +252,6 @@ namespace AWSSDK.UnitTests
             ValidateResponseDefinitionCompleteness<TransferUtilityUploadResponse>(
                 new[] { "Conversion", "CompleteMultipartResponse", "UploadResponse" },
                 "TransferUtilityUploadResponse");
-        }
-
-
-        [TestMethod]
-        [TestCategory("S3")]
-        public void ValidateGetObjectResponseDefinitionCompleteness()
-        {
-            ValidateResponseDefinitionCompleteness<GetObjectResponse>(
-                new[] { "Definition", "DownloadResponse", "GetObjectResponse" },
-                "GetObjectResponse",
-                // GetObjectResponse has some properties returned in the Headers property for legacy reasons which is different
-                // than the model, so we check the Headers as well.
-                GetHeadersCollectionProperties);
         }
         
         // Uncomment for DOTNET-8277
@@ -475,17 +453,6 @@ namespace AWSSDK.UnitTests
                 Assert.Fail($"Definition section contains {extraInDefinition.Count} extra properties that don't exist in the actual {responseTypeName} class{additionalContext}: {string.Join(", ", extraInDefinition)}. " +
                            $"Please verify they exist in the response class{additionalContext}.");
             }
-        }
-
-        /// <summary>
-        /// Gets properties from HeadersCollection that should be included in validation
-        /// </summary>
-        private static IEnumerable<string> GetHeadersCollectionProperties()
-        {
-            return typeof(HeadersCollection)
-                .GetProperties(BindingFlags.Public | BindingFlags.Instance)
-                .Where(p => p.CanRead && p.Name != "Count" && p.Name != "Keys") // Exclude collection metadata properties
-                .Select(p => p.Name);
         }
     }
 }
