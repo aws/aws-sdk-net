@@ -28,9 +28,9 @@ using System.Threading.Tasks;
 
 namespace Amazon.S3.Transfer.Internal
 {
-    internal partial class DownloadCommand : BaseCommand
+    internal partial class DownloadCommand : BaseCommand<TransferUtilityDownloadResponse>
     {
-        public override async Task ExecuteAsync(CancellationToken cancellationToken)
+        public override async Task<TransferUtilityDownloadResponse> ExecuteAsync(CancellationToken cancellationToken)
         {
             ValidateRequest();
             GetObjectRequest getRequest = ConvertToGetObjectRequest(this._request);
@@ -130,6 +130,8 @@ namespace Amazon.S3.Transfer.Internal
                 }
                 WaitBeforeRetry(retries);
             } while (shouldRetry);
+
+            return new TransferUtilityDownloadResponse();
         }
 
         private static bool HandleExceptionForHttpClient(Exception exception, int retries, int maxRetries)

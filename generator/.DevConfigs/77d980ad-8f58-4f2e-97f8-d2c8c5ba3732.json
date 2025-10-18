@@ -1,0 +1,12 @@
+{
+  "services": [
+    {
+      "serviceName": "S3",
+      "type": "minor",
+      "changeLogMessages": [
+        "Added UploadWithResponseAsync methods to TransferUtility that return TransferUtilityUploadResponse with upload metadata",
+        "Enhanced upload commands to return response objects with ETag, encryption details, and version information"
+      ]
+    }
+  ]
+}
