@@ -147,12 +147,12 @@ namespace Amazon.S3.Transfer.Internal
             return threadCount;
         }
 
-        private CompleteMultipartUploadRequest ConstructCompleteMultipartUploadRequest(InitiateMultipartUploadResponse initResponse)
+        internal CompleteMultipartUploadRequest ConstructCompleteMultipartUploadRequest(InitiateMultipartUploadResponse initResponse)
         {
             return ConstructCompleteMultipartUploadRequest(initResponse, false, null);
         }
 
-        private CompleteMultipartUploadRequest ConstructCompleteMultipartUploadRequest(InitiateMultipartUploadResponse initResponse, bool skipPartValidation, RequestEventHandler requestEventHandler)
+        internal CompleteMultipartUploadRequest ConstructCompleteMultipartUploadRequest(InitiateMultipartUploadResponse initResponse, bool skipPartValidation, RequestEventHandler requestEventHandler)
         {
             if (!skipPartValidation)
             {
@@ -177,6 +177,7 @@ namespace Amazon.S3.Transfer.Internal
                 ChecksumCRC64NVME = this._fileTransporterRequest.ChecksumCRC64NVME,
                 ChecksumSHA1 = this._fileTransporterRequest.ChecksumSHA1,
                 ChecksumSHA256 = this._fileTransporterRequest.ChecksumSHA256,
+                ExpectedBucketOwner = this._fileTransporterRequest.ExpectedBucketOwner,
             };
 
             if(this._fileTransporterRequest.ServerSideEncryptionCustomerMethod != null 
@@ -210,7 +211,7 @@ namespace Amazon.S3.Transfer.Internal
             return compRequest;
         }
 
-        private UploadPartRequest ConstructUploadPartRequest(int partNumber, long filePosition, InitiateMultipartUploadResponse initiateResponse)
+        internal UploadPartRequest ConstructUploadPartRequest(int partNumber, long filePosition, InitiateMultipartUploadResponse initiateResponse)
         {
             UploadPartRequest uploadPartRequest = ConstructGenericUploadPartRequest(initiateResponse);
 
@@ -241,7 +242,7 @@ namespace Amazon.S3.Transfer.Internal
             return uploadPartRequest;
         }
 
-        private UploadPartRequest ConstructGenericUploadPartRequest(InitiateMultipartUploadResponse initiateResponse)
+        internal UploadPartRequest ConstructGenericUploadPartRequest(InitiateMultipartUploadResponse initiateResponse)
         {
             UploadPartRequest uploadPartRequest = new UploadPartRequest()
             {
@@ -254,7 +255,8 @@ namespace Amazon.S3.Transfer.Internal
                 DisableDefaultChecksumValidation = this._fileTransporterRequest.DisableDefaultChecksumValidation,
                 DisablePayloadSigning = this._fileTransporterRequest.DisablePayloadSigning,
                 ChecksumAlgorithm = this._fileTransporterRequest.ChecksumAlgorithm,
-                RequestPayer = this._fileTransporterRequest.RequestPayer
+                RequestPayer = this._fileTransporterRequest.RequestPayer,
+                ExpectedBucketOwner = this._fileTransporterRequest.ExpectedBucketOwner,
             };
 
             // If the InitiateMultipartUploadResponse indicates that this upload is using KMS, force SigV4 for each UploadPart request
@@ -265,7 +267,7 @@ namespace Amazon.S3.Transfer.Internal
             return uploadPartRequest;
         }
 
-        private UploadPartRequest ConstructUploadPartRequestForNonSeekableStream(Stream inputStream, int partNumber, long partSize, bool isLastPart, InitiateMultipartUploadResponse initiateResponse)
+        internal UploadPartRequest ConstructUploadPartRequestForNonSeekableStream(Stream inputStream, int partNumber, long partSize, bool isLastPart, InitiateMultipartUploadResponse initiateResponse)
         {
             UploadPartRequest uploadPartRequest = ConstructGenericUploadPartRequest(initiateResponse);
             
@@ -285,18 +287,19 @@ namespace Amazon.S3.Transfer.Internal
             return uploadPartRequest;
         }
 
-        private InitiateMultipartUploadRequest ConstructInitiateMultipartUploadRequest()
+        internal InitiateMultipartUploadRequest ConstructInitiateMultipartUploadRequest()
         {
             return this.ConstructInitiateMultipartUploadRequest(null);
         }
 
-        private InitiateMultipartUploadRequest ConstructInitiateMultipartUploadRequest(RequestEventHandler requestEventHandler)
+        internal InitiateMultipartUploadRequest ConstructInitiateMultipartUploadRequest(RequestEventHandler requestEventHandler)
         {
             var initRequest = new InitiateMultipartUploadRequest()
             {
                 BucketName = this._fileTransporterRequest.BucketName,
                 Key = this._fileTransporterRequest.Key,
                 CannedACL = this._fileTransporterRequest.CannedACL,
+                Headers = this._fileTransporterRequest.Headers,
                 ContentType = determineContentType(),
                 StorageClass = this._fileTransporterRequest.StorageClass,
                 ServerSideEncryptionMethod = this._fileTransporterRequest.ServerSideEncryptionMethod,
@@ -304,11 +307,17 @@ namespace Amazon.S3.Transfer.Internal
                 ServerSideEncryptionCustomerMethod = this._fileTransporterRequest.ServerSideEncryptionCustomerMethod,
                 ServerSideEncryptionCustomerProvidedKey = this._fileTransporterRequest.ServerSideEncryptionCustomerProvidedKey,
                 ServerSideEncryptionCustomerProvidedKeyMD5 = this._fileTransporterRequest.ServerSideEncryptionCustomerProvidedKeyMD5,
+                ServerSideEncryptionKeyManagementServiceEncryptionContext = this._fileTransporterRequest.SSEKMSEncryptionContext,
                 TagSet = this._fileTransporterRequest.TagSet,
                 ChecksumAlgorithm = this._fileTransporterRequest.ChecksumAlgorithm,
                 ObjectLockLegalHoldStatus = this._fileTransporterRequest.ObjectLockLegalHoldStatus,
                 ObjectLockMode = this._fileTransporterRequest.ObjectLockMode,
-                RequestPayer = this._fileTransporterRequest.RequestPayer
+                RequestPayer = this._fileTransporterRequest.RequestPayer,
+                ExpectedBucketOwner = this._fileTransporterRequest.ExpectedBucketOwner,
+                Grants = this._fileTransporterRequest.Grants,
+                Metadata = this._fileTransporterRequest.Metadata,
+                WebsiteRedirectLocation = this._fileTransporterRequest.WebsiteRedirectLocation,
+                BucketKeyEnabled = this._fileTransporterRequest.BucketKeyEnabled,
             };
 
             if (this._fileTransporterRequest.IsSetObjectLockRetainUntilDate())
