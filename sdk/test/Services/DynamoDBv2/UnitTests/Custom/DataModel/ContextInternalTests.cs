@@ -4,6 +4,7 @@ using Amazon.DynamoDBv2.Model;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using System;
+using System.Linq;
 using System.Linq.Expressions;
 using Amazon.DynamoDBv2.DocumentModel;
 using Amazon.Util;
@@ -473,7 +474,7 @@ namespace AWSSDK_DotNet.UnitTests
             var result = DynamoDBContext.GetUpdateIfNotExistsAttributeNames(itemStorage);
 
             Assert.AreEqual(1, result.Count);
-            Assert.AreEqual("Prop1", result[0]);
+            Assert.AreEqual("Prop1", result.FirstOrDefault());
         }
 
         [TestMethod]
@@ -488,7 +489,7 @@ namespace AWSSDK_DotNet.UnitTests
             var result = DynamoDBContext.GetUpdateIfNotExistsAttributeNames(itemStorage);
 
             Assert.AreEqual(1, result.Count);
-            Assert.AreEqual("Prop1", result[0]);
+            Assert.AreEqual("Prop1", result.FirstOrDefault());
         }
 
     }

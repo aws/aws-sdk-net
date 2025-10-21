@@ -180,7 +180,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
         #endregion
 
-        internal static List<string> GetUpdateIfNotExistsAttributeNames(ItemStorage storage)
+        internal static HashSet<string> GetUpdateIfNotExistsAttributeNames(ItemStorage storage)
         {
             var ifNotExistsProperties = storage.Config.BaseTypeStorageConfig.Properties.
                 Where(propertyStorage => propertyStorage.UpdateBehaviorMode == UpdateBehavior.IfNotExists).ToArray();
@@ -192,7 +192,7 @@ namespace Amazon.DynamoDBv2.DataModel
                 ifNotExistsProperties = ifNotExistsProperties.Concat(flattenIfNotExists).ToArray();
                 flatten = flatten.SelectMany(p => p.FlattenProperties.Where(fp => fp.FlattenProperties.Any())).ToArray();
             }
-            return ifNotExistsProperties.Select(p => p.AttributeName).ToList();
+            return new HashSet<string>(ifNotExistsProperties.Select(p => p.AttributeName).ToList());
         }
 
 

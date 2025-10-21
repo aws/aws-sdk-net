@@ -383,7 +383,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         #region Internal/private methods
 
-        internal void AddDocumentToUpdate(Document document, List<string> ifNotExistAttributeNames, TransactWriteItemOperationConfig operationConfig = null)
+        internal void AddDocumentToUpdate(Document document, HashSet<string> ifNotExistAttributeNames, TransactWriteItemOperationConfig operationConfig = null)
         {
             AddDocumentToUpdateHelper(document, TargetTable.MakeKey(document), ifNotExistAttributeNames, operationConfig);
         }
@@ -430,7 +430,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             });
         }
 
-        internal void AddDocumentToUpdateHelper(Document document, Key key, List<string> ifNotExistAttributeNames, TransactWriteItemOperationConfig operationConfig = null)
+        internal void AddDocumentToUpdateHelper(Document document, Key key, HashSet<string> ifNotExistAttributeNames, TransactWriteItemOperationConfig operationConfig = null)
         {
             Items.Add(new ToUpdateWithDocumentTransactWriteRequestItem
             {
@@ -936,7 +936,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         public Document Document { get; set; }
 
-        public List<string> IfNotExistAttributeNames { get; set; }
+        public HashSet<string> IfNotExistAttributeNames { get; set; }
 
         #endregion
 

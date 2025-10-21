@@ -112,5 +112,24 @@ namespace AWSSDK_DotNet.UnitTests
                 }
             });
         }
+
+        [TestMethod]
+        public void MergeUpdateExpressions_NoKeywords_ThrowsUnableToParse()
+        {
+            var left = new Expression
+            {
+                ExpressionStatement = "SOME_RANDOM_TEXT WITHOUT KEYWORDS"
+            };
+
+            var right = new Expression
+            {
+                ExpressionStatement = "SET #A = :a",
+                ExpressionAttributeNames = new Dictionary<string, string> { { "#A", "AttrA" } },
+                ExpressionAttributeValues = new Dictionary<string, DynamoDBEntry> { { ":a", new Primitive("1") } }
+            };
+
+            var ex = Assert.ThrowsException<InvalidOperationException>(() => Expression.MergeUpdateExpressions(right, left));
+            Assert.AreEqual("Unable to parse update expression 'SOME_RANDOM_TEXT WITHOUT KEYWORDS'", ex.Message);
+        }
     }
 }

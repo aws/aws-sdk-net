@@ -110,7 +110,7 @@ namespace AWSSDK_DotNet.UnitTests
             var doc = new Document { ["Id"] = "1", ["Score"] = 10 };
             var key = new Key { ["Id"] = new AttributeValue { S = "1" } };
             var config = new UpdateItemOperationConfig();
-            var ifNotExistAttrs = new List<string> { "Score" };
+            var ifNotExistAttrs = new HashSet<string> { "Score" };
 
             _ddbClientMock
                 .Setup(c => c.UpdateItem(It.Is<UpdateItemRequest>(r =>
@@ -144,7 +144,7 @@ namespace AWSSDK_DotNet.UnitTests
                     { ":val", 10 }
                 }
             };
-            var ifNotExistAttrs = new List<string> { "Score" };
+            var ifNotExistAttrs = new HashSet<string> { "Score" };
 
             _ddbClientMock
                 .Setup(c => c.UpdateItem(It.Is<UpdateItemRequest>(r =>

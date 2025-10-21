@@ -224,11 +224,11 @@ namespace Amazon.DynamoDBv2.DocumentModel
             if (left == null)
                 return right;
 
-            var leftSections = ParseSections(left.ExpressionStatement);
-            var rightSections = ParseSections(right.ExpressionStatement);
-
-            // Merge sections by keyword, combining with commas where needed
             var keywordsOrder = new[] { "SET", "REMOVE", "ADD", "DELETE" };
+
+            var leftSections = ParseSections(left.ExpressionStatement, keywordsOrder);
+            var rightSections = ParseSections(right.ExpressionStatement, keywordsOrder);
+
             var mergedSections = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
 
             foreach (var keyword in keywordsOrder)
@@ -254,7 +254,15 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 keywordsOrder.Where(k => mergedSections.ContainsKey(k))
                              .Select(k => $"{k} {mergedSections[k]}"));
 
-            var mergedNames = Common.Combine(left.ExpressionAttributeNames, right.ExpressionAttributeNames, StringComparer.Ordinal);
+            Dictionary<string, string> mergedNames;
+            try
+            {
+                mergedNames = Common.Combine(left.ExpressionAttributeNames, right.ExpressionAttributeNames, StringComparer.Ordinal);
+            }
+            catch (InvalidOperationException ex)
+            {
+                throw new InvalidOperationException("Failed to combine ExpressionAttributeNames due to duplicate keys with different values.", ex);
+            }
 
             var mergedValues = Common.Combine(left.ExpressionAttributeValues, right.ExpressionAttributeValues, null);
 
@@ -266,14 +274,12 @@ namespace Amazon.DynamoDBv2.DocumentModel
             };
 
 
-            static Dictionary<string, string> ParseSections(string expr)
+            static Dictionary<string, string> ParseSections(string expr, string[] keywords)
             {
                 var result = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
                 if (string.IsNullOrWhiteSpace(expr))
                     return result;
 
-                // Find all keywords and their positions
-                var keywords = new[] { "SET", "REMOVE", "ADD", "DELETE" };
                 var positions = new List<(string keyword, int index)>();
                 foreach (var keyword in keywords)
                 {
@@ -283,9 +289,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 }
                 if (positions.Count == 0)
                 {
-                    // No recognized keywords, treat as a single section
-                    result[string.Empty] = expr.Trim();
-                    return result;
+                    throw new InvalidOperationException($"Unable to parse update expression '{expr}'");
                 }
 
                 // Sort by position

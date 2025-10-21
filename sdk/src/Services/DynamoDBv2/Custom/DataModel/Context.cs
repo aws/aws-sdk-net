@@ -377,8 +377,10 @@ namespace Amazon.DynamoDBv2.DataModel
             Expression versionExpression = null;
 
             var updateIfNotExistsAttributeName = GetUpdateIfNotExistsAttributeNames(storage);
-
-            var returnValues = counterConditionExpression == null && !updateIfNotExistsAttributeName.Any()
+            
+            var updateIfNotExists = updateIfNotExistsAttributeName.Any();
+           
+            var returnValues = counterConditionExpression == null && !updateIfNotExists
                 ? ReturnValues.None
                 : ReturnValues.AllNewAttributes;
 
@@ -403,7 +405,7 @@ namespace Amazon.DynamoDBv2.DataModel
                 updateIfNotExistsAttributeName
             );
 
-            if (counterConditionExpression == null && versionExpression == null && !updateIfNotExistsAttributeName.Any()) return;
+            if (counterConditionExpression == null && versionExpression == null && !updateIfNotExists) return;
 
             if (returnValues == ReturnValues.AllNewAttributes)
             {

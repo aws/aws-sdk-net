@@ -329,7 +329,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         private const string AwsVariablePrefix = "awsavar";
 
         public static void ConvertAttributeUpdatesToUpdateExpression(
-            Dictionary<string, AttributeValueUpdate> attributesToUpdates, List<string> ifNotExistAttributeNames,
+            Dictionary<string, AttributeValueUpdate> attributesToUpdates, HashSet<string> ifNotExistAttributeNames,
             Expression updateExpression,
             Table table,
             out string statement,
@@ -358,7 +358,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 if (attributeNames.Contains(attribute)) continue;
 
                 var update = kvp.Value;
-
+              
                 var createOnly = ifNotExistAttributeNames?.Contains(attribute) ?? false;
 
                 string variableName = GetVariableName(ref attributeCount);
@@ -397,13 +397,22 @@ namespace Amazon.DynamoDBv2.DocumentModel
             StringBuilder statementBuilder = new StringBuilder();
             if (sets.Length > 0)
             {
-                var setStatement = updateExpression != null ? updateExpression.ExpressionStatement + "," : "SET";
+                // Use existing expression statement only if it is not null/whitespace; otherwise default to "SET"
+                string setStatement;
+                if (updateExpression != null && !string.IsNullOrWhiteSpace(updateExpression.ExpressionStatement))
+                    setStatement = updateExpression.ExpressionStatement + ",";
+                else
+                    setStatement = "SET";
+
                 statementBuilder.AppendFormat(CultureInfo.InvariantCulture, "{0} {1} ", setStatement, sets.ToString());
             }
             else
             {
-                var setStatement = updateExpression != null ? updateExpression.ExpressionStatement : "";
-                statementBuilder.AppendFormat(CultureInfo.InvariantCulture, "{0} ", setStatement);
+                // Only append existing expression statement when it contains non-whitespace content
+                if (updateExpression != null && !string.IsNullOrWhiteSpace(updateExpression.ExpressionStatement))
+                {
+                    statementBuilder.AppendFormat(CultureInfo.InvariantCulture, "{0} ", updateExpression.ExpressionStatement);
+                }
             }
             if (removes.Length > 0)
             {

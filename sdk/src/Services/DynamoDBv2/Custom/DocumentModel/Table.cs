@@ -537,7 +537,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         }
 
 
-        private void ValidateConditional(IConditionalOperationConfig config, Expression updateExpression, List<string> createOnlyAttributes)
+        private void ValidateConditional(IConditionalOperationConfig config, Expression updateExpression, HashSet<string> createOnlyAttributes)
         {
 
             if (config == null)
@@ -1360,7 +1360,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         }
 
         internal Document UpdateHelper(Document doc, Key key, UpdateItemOperationConfig config, Expression updateExpression,
-            List<string> ifNotExistAttributeNames = null)
+            HashSet<string> ifNotExistAttributeNames = null)
         {
             var currentConfig = config ?? new UpdateItemOperationConfig();
 
@@ -1460,7 +1460,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         }
 
         internal async Task<Document> UpdateHelperAsync(Document doc, Key key, UpdateItemOperationConfig config, Expression updateExpression,
-            CancellationToken cancellationToken, List<string> ifNotExistAttributeNames = null)
+            CancellationToken cancellationToken, HashSet<string> ifNotExistAttributeNames = null)
         {
             var currentConfig = config ?? new UpdateItemOperationConfig();
 
