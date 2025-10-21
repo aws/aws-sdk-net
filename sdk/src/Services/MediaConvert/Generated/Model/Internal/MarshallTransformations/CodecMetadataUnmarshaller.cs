@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for InputVideoGenerator Object
+    /// Response Unmarshaller for CodecMetadata Object
     /// </summary>  
-    public class InputVideoGeneratorUnmarshaller : IUnmarshaller<InputVideoGenerator, XmlUnmarshallerContext>, IUnmarshaller<InputVideoGenerator, JsonUnmarshallerContext>
+    public class CodecMetadataUnmarshaller : IUnmarshaller<CodecMetadata, XmlUnmarshallerContext>, IUnmarshaller<CodecMetadata, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        InputVideoGenerator IUnmarshaller<InputVideoGenerator, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        CodecMetadata IUnmarshaller<CodecMetadata, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public InputVideoGenerator Unmarshall(JsonUnmarshallerContext context)
+        public CodecMetadata Unmarshall(JsonUnmarshallerContext context)
         {
-            InputVideoGenerator unmarshalledObject = new InputVideoGenerator();
+            CodecMetadata unmarshalledObject = new CodecMetadata();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,28 +66,28 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("channels", targetDepth))
+                if (context.TestExpression("bitDepth", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.Channels = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BitDepth = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("duration", targetDepth))
+                if (context.TestExpression("chromaSubsampling", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.Duration = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ChromaSubsampling = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("framerateDenominator", targetDepth))
+                if (context.TestExpression("codedFrameRate", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.FramerateDenominator = unmarshaller.Unmarshall(context);
+                    var unmarshaller = FrameRateUnmarshaller.Instance;
+                    unmarshalledObject.CodedFrameRate = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("framerateNumerator", targetDepth))
+                if (context.TestExpression("colorPrimaries", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.FramerateNumerator = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ColorPrimaries = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("height", targetDepth))
@@ -96,10 +96,34 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.Height = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("sampleRate", targetDepth))
+                if (context.TestExpression("level", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.SampleRate = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Level = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("matrixCoefficients", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.MatrixCoefficients = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("profile", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Profile = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("scanType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ScanType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("transferCharacteristics", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TransferCharacteristics = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("width", targetDepth))
@@ -113,12 +137,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         }
 
 
-        private static InputVideoGeneratorUnmarshaller _instance = new InputVideoGeneratorUnmarshaller();        
+        private static CodecMetadataUnmarshaller _instance = new CodecMetadataUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static InputVideoGeneratorUnmarshaller Instance
+        public static CodecMetadataUnmarshaller Instance
         {
             get
             {

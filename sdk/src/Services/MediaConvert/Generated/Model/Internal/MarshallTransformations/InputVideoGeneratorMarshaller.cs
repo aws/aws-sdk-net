@@ -72,10 +72,22 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.FramerateNumerator);
             }
 
+            if(requestObject.IsSetHeight())
+            {
+                context.Writer.WritePropertyName("height");
+                context.Writer.Write(requestObject.Height);
+            }
+
             if(requestObject.IsSetSampleRate())
             {
                 context.Writer.WritePropertyName("sampleRate");
                 context.Writer.Write(requestObject.SampleRate);
+            }
+
+            if(requestObject.IsSetWidth())
+            {
+                context.Writer.WritePropertyName("width");
+                context.Writer.Write(requestObject.Width);
             }
 
         }

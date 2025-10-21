@@ -35,9 +35,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ListQueues operation
+    /// Response Unmarshaller for StartJobsQuery operation
     /// </summary>  
-    public class ListQueuesResponseUnmarshaller : JsonResponseUnmarshaller
+    public class StartJobsQueryResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,34 +46,16 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            ListQueuesResponse response = new ListQueuesResponse();
+            StartJobsQueryResponse response = new StartJobsQueryResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("id", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.NextToken = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("queues", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<Queue, QueueUnmarshaller>(QueueUnmarshaller.Instance);
-                    response.Queues = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("totalConcurrentJobs", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    response.TotalConcurrentJobs = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("unallocatedConcurrentJobs", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    response.UnallocatedConcurrentJobs = unmarshaller.Unmarshall(context);
+                    response.Id = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -131,9 +113,9 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             return new AmazonMediaConvertException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static ListQueuesResponseUnmarshaller _instance = new ListQueuesResponseUnmarshaller();        
+        private static StartJobsQueryResponseUnmarshaller _instance = new StartJobsQueryResponseUnmarshaller();        
 
-        internal static ListQueuesResponseUnmarshaller GetInstance()
+        internal static StartJobsQueryResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -141,7 +123,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ListQueuesResponseUnmarshaller Instance
+        public static StartJobsQueryResponseUnmarshaller Instance
         {
             get
             {

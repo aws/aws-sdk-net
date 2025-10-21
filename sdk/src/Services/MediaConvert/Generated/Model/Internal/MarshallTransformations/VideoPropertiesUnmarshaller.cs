@@ -78,6 +78,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.BitRate = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("codecMetadata", targetDepth))
+                {
+                    var unmarshaller = CodecMetadataUnmarshaller.Instance;
+                    unmarshalledObject.CodecMetadata = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("colorPrimaries", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

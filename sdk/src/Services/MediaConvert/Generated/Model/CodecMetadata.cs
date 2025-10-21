@@ -30,24 +30,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConvert.Model
 {
     /// <summary>
-    /// Details about the media file's video track.
+    /// Codec-specific parameters parsed from the video essence headers. This information
+    /// provides detailed technical specifications about how the video was encoded, including
+    /// profile settings, resolution details, and color space information that can help you
+    /// understand the source video characteristics and make informed encoding decisions.
     /// </summary>
-    public partial class VideoProperties
+    public partial class CodecMetadata
     {
         private int? _bitDepth;
-        private long? _bitRate;
-        private CodecMetadata _codecMetadata;
+        private string _chromaSubsampling;
+        private FrameRate _codedFrameRate;
         private ColorPrimaries _colorPrimaries;
-        private FrameRate _frameRate;
         private int? _height;
+        private string _level;
         private MatrixCoefficients _matrixCoefficients;
+        private string _profile;
+        private string _scanType;
         private TransferCharacteristics _transferCharacteristics;
         private int? _width;
 
         /// <summary>
-        /// Gets and sets the property BitDepth. The number of bits used per color component such
-        /// as 8, 10, or 12 bits. Standard range (SDR) video typically uses 8-bit, while 10-bit
-        /// is common for high dynamic range (HDR).
+        /// Gets and sets the property BitDepth. The number of bits used per color component in
+        /// the video essence such as 8, 10, or 12 bits. Standard range (SDR) video typically
+        /// uses 8-bit, while 10-bit is common for high dynamic range (HDR).
         /// </summary>
         public int BitDepth
         {
@@ -62,37 +67,38 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property BitRate. The bit rate of the video track, in bits per second.
+        /// Gets and sets the property ChromaSubsampling. The chroma subsampling format used in
+        /// the video encoding, such as "4:2:0" or "4:4:4". This describes how color information
+        /// is sampled relative to brightness information. Different subsampling ratios affect
+        /// video quality and file size, with "4:4:4" providing the highest color fidelity and
+        /// "4:2:0" being most common for standard video.
         /// </summary>
-        public long BitRate
+        public string ChromaSubsampling
         {
-            get { return this._bitRate.GetValueOrDefault(); }
-            set { this._bitRate = value; }
+            get { return this._chromaSubsampling; }
+            set { this._chromaSubsampling = value; }
         }
 
-        // Check to see if BitRate property is set
-        internal bool IsSetBitRate()
+        // Check to see if ChromaSubsampling property is set
+        internal bool IsSetChromaSubsampling()
         {
-            return this._bitRate.HasValue; 
+            return this._chromaSubsampling != null;
         }
 
         /// <summary>
-        /// Gets and sets the property CodecMetadata. Codec-specific parameters parsed from the
-        /// video essence headers. This information provides detailed technical specifications
-        /// about how the video was encoded, including profile settings, resolution details, and
-        /// color space information that can help you understand the source video characteristics
-        /// and make informed encoding decisions.
+        /// Gets and sets the property CodedFrameRate. The frame rate of the video or audio track,
+        /// expressed as a fraction with numerator and denominator values.
         /// </summary>
-        public CodecMetadata CodecMetadata
+        public FrameRate CodedFrameRate
         {
-            get { return this._codecMetadata; }
-            set { this._codecMetadata = value; }
+            get { return this._codedFrameRate; }
+            set { this._codedFrameRate = value; }
         }
 
-        // Check to see if CodecMetadata property is set
-        internal bool IsSetCodecMetadata()
+        // Check to see if CodedFrameRate property is set
+        internal bool IsSetCodedFrameRate()
         {
-            return this._codecMetadata != null;
+            return this._codedFrameRate != null;
         }
 
         /// <summary>
@@ -113,23 +119,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FrameRate. The frame rate of the video or audio track,
-        /// expressed as a fraction with numerator and denominator values.
-        /// </summary>
-        public FrameRate FrameRate
-        {
-            get { return this._frameRate; }
-            set { this._frameRate = value; }
-        }
-
-        // Check to see if FrameRate property is set
-        internal bool IsSetFrameRate()
-        {
-            return this._frameRate != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Height. The height of the video track, in pixels.
+        /// Gets and sets the property Height. The height in pixels as coded by the codec. This
+        /// represents the actual encoded video height as specified in the video stream headers.
         /// </summary>
         public int Height
         {
@@ -141,6 +132,23 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetHeight()
         {
             return this._height.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Level. The codec level or tier that specifies the maximum
+        /// processing requirements and capabilities. Levels define constraints such as maximum
+        /// bit rate, frame rate, and resolution.
+        /// </summary>
+        public string Level
+        {
+            get { return this._level; }
+            set { this._level = value; }
+        }
+
+        // Check to see if Level property is set
+        internal bool IsSetLevel()
+        {
+            return this._level != null;
         }
 
         /// <summary>
@@ -161,6 +169,40 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Profile. The codec profile used to encode the video. Profiles
+        /// define specific feature sets and capabilities within a codec standard. For example,
+        /// H.264 profiles include Baseline, Main, and High, each supporting different encoding
+        /// features and complexity levels.
+        /// </summary>
+        public string Profile
+        {
+            get { return this._profile; }
+            set { this._profile = value; }
+        }
+
+        // Check to see if Profile property is set
+        internal bool IsSetProfile()
+        {
+            return this._profile != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ScanType. The scanning method specified in the video essence,
+        /// indicating whether the video uses progressive or interlaced scanning.
+        /// </summary>
+        public string ScanType
+        {
+            get { return this._scanType; }
+            set { this._scanType = value; }
+        }
+
+        // Check to see if ScanType property is set
+        internal bool IsSetScanType()
+        {
+            return this._scanType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property TransferCharacteristics. The color space transfer characteristics
         /// of the video track, defining the relationship between linear light values and the
         /// encoded signal values. This affects brightness and contrast reproduction.
@@ -178,7 +220,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Width. The width of the video track, in pixels.
+        /// Gets and sets the property Width. The width in pixels as coded by the codec. This
+        /// represents the actual encoded video width as specified in the video stream headers.
         /// </summary>
         public int Width
         {

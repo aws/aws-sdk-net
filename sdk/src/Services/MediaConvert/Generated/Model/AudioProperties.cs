@@ -87,7 +87,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FrameRate. The frame rate of the video or audio track.
+        /// Gets and sets the property FrameRate. The frame rate of the video or audio track,
+        /// expressed as a fraction with numerator and denominator values.
         /// </summary>
         public FrameRate FrameRate
         {

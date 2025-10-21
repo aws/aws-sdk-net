@@ -537,7 +537,7 @@ namespace Amazon.MediaConvert.Model
         /// Index Measure * MS_SSIM: Multi-Scale Similarity Index Measure * PSNR_HVS: Peak Signal-to-Noise
         /// Ratio, Human Visual System * VMAF: Video Multi-Method Assessment Fusion * QVBR: Quality-Defined
         /// Variable Bitrate. This option is only available when your output uses the QVBR rate
-        /// control mode.
+        /// control mode. * SHOT_CHANGE: Shot Changes
         /// </summary>
         public List<string> PerFrameMetrics
         {
