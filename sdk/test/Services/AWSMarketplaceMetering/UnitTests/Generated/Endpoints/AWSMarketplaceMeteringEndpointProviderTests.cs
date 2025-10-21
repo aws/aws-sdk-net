@@ -195,60 +195,30 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("AWSMarketplaceMetering")]
-        [Description("For region us-gov-west-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_usgovwest1_with_FIPS_enabled_and_DualStack_enabled_Test()
+        [Description("For region eusc-de-east-1 with FIPS enabled and DualStack disabled")]
+        public void For_region_euscdeeast1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new AWSMarketplaceMeteringEndpointParameters();
-            parameters["Region"] = "us-gov-west-1";
-            parameters["UseFIPS"] = true;
-            parameters["UseDualStack"] = true;
-            var endpoint = new AmazonAWSMarketplaceMeteringEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://metering.marketplace-fips.us-gov-west-1.api.aws", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("AWSMarketplaceMetering")]
-        [Description("For region us-gov-west-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_usgovwest1_with_FIPS_enabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new AWSMarketplaceMeteringEndpointParameters();
-            parameters["Region"] = "us-gov-west-1";
+            parameters["Region"] = "eusc-de-east-1";
             parameters["UseFIPS"] = true;
             parameters["UseDualStack"] = false;
             var endpoint = new AmazonAWSMarketplaceMeteringEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://metering.marketplace-fips.us-gov-west-1.amazonaws.com", endpoint.URL);
+            Assert.AreEqual("https://metering.marketplace-fips.eusc-de-east-1.amazonaws.eu", endpoint.URL);
         }
 
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("AWSMarketplaceMetering")]
-        [Description("For region us-gov-west-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_usgovwest1_with_FIPS_disabled_and_DualStack_enabled_Test()
+        [Description("For region eusc-de-east-1 with FIPS disabled and DualStack disabled")]
+        public void For_region_euscdeeast1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new AWSMarketplaceMeteringEndpointParameters();
-            parameters["Region"] = "us-gov-west-1";
-            parameters["UseFIPS"] = false;
-            parameters["UseDualStack"] = true;
-            var endpoint = new AmazonAWSMarketplaceMeteringEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://metering-marketplace.us-gov-west-1.api.aws", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("AWSMarketplaceMetering")]
-        [Description("For region us-gov-west-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_usgovwest1_with_FIPS_disabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new AWSMarketplaceMeteringEndpointParameters();
-            parameters["Region"] = "us-gov-west-1";
+            parameters["Region"] = "eusc-de-east-1";
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
             var endpoint = new AmazonAWSMarketplaceMeteringEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://metering.marketplace.us-gov-west-1.amazonaws.com", endpoint.URL);
+            Assert.AreEqual("https://metering.marketplace.eusc-de-east-1.amazonaws.eu", endpoint.URL);
         }
 
         [TestMethod]
@@ -375,30 +345,60 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("AWSMarketplaceMetering")]
-        [Description("For region eusc-de-east-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_euscdeeast1_with_FIPS_enabled_and_DualStack_disabled_Test()
+        [Description("For region us-gov-west-1 with FIPS enabled and DualStack enabled")]
+        public void For_region_usgovwest1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new AWSMarketplaceMeteringEndpointParameters();
-            parameters["Region"] = "eusc-de-east-1";
+            parameters["Region"] = "us-gov-west-1";
             parameters["UseFIPS"] = true;
-            parameters["UseDualStack"] = false;
+            parameters["UseDualStack"] = true;
             var endpoint = new AmazonAWSMarketplaceMeteringEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://metering.marketplace-fips.eusc-de-east-1.amazonaws.eu", endpoint.URL);
+            Assert.AreEqual("https://metering.marketplace-fips.us-gov-west-1.api.aws", endpoint.URL);
         }
 
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("AWSMarketplaceMetering")]
-        [Description("For region eusc-de-east-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_euscdeeast1_with_FIPS_disabled_and_DualStack_disabled_Test()
+        [Description("For region us-gov-west-1 with FIPS enabled and DualStack disabled")]
+        public void For_region_usgovwest1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new AWSMarketplaceMeteringEndpointParameters();
-            parameters["Region"] = "eusc-de-east-1";
+            parameters["Region"] = "us-gov-west-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonAWSMarketplaceMeteringEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://metering.marketplace-fips.us-gov-west-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("AWSMarketplaceMetering")]
+        [Description("For region us-gov-west-1 with FIPS disabled and DualStack enabled")]
+        public void For_region_usgovwest1_with_FIPS_disabled_and_DualStack_enabled_Test()
+        {
+            var parameters = new AWSMarketplaceMeteringEndpointParameters();
+            parameters["Region"] = "us-gov-west-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
+            var endpoint = new AmazonAWSMarketplaceMeteringEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://metering-marketplace.us-gov-west-1.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("AWSMarketplaceMetering")]
+        [Description("For region us-gov-west-1 with FIPS disabled and DualStack disabled")]
+        public void For_region_usgovwest1_with_FIPS_disabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new AWSMarketplaceMeteringEndpointParameters();
+            parameters["Region"] = "us-gov-west-1";
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
             var endpoint = new AmazonAWSMarketplaceMeteringEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://metering.marketplace.eusc-de-east-1.amazonaws.eu", endpoint.URL);
+            Assert.AreEqual("https://metering.marketplace.us-gov-west-1.amazonaws.com", endpoint.URL);
         }
 
         [TestMethod]

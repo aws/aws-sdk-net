@@ -7,6 +7,11 @@
     <pattern>^[-a-zA-Z0-9/=:_.@]*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AWSMarketplaceMetering.Model.MeterUsageRequest.ClientToken</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AWSMarketplaceMetering.Model.MeterUsageRequest.ProductCode</property>
     <min>1</min>
     <max>255</max>

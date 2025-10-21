@@ -135,7 +135,7 @@ namespace Amazon.AWSMarketplaceMetering.Model
         /// </para>
         ///  
         /// <para>
-        /// Your application can meter usage for up to one hour in the past. Make sure the <c>timestamp</c>
+        /// Your application can meter usage for up to six hours in the past. Make sure the <c>timestamp</c>
         /// value is not before the start of the software usage.
         /// </para>
         /// </summary>
