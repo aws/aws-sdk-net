@@ -34,7 +34,7 @@ namespace Amazon.DynamoDBv2.Model
     /// about why the request was throttled and the ARN of the impacted resource, find the
     /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
     /// field in the returned exception. Contact <a href="https://aws.amazon.com/support">Amazon
-    /// Web Services Support</a> to request a quota increase.
+    /// Web ServicesSupport</a> to request a quota increase.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

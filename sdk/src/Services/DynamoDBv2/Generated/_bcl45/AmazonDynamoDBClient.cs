@@ -357,7 +357,7 @@ namespace Amazon.DynamoDBv2
         /// about why the request was throttled and the ARN of the impacted resource, find the
         /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
         /// field in the returned exception. Contact <a href="https://aws.amazon.com/support">Amazon
-        /// Web Services Support</a> to request a quota increase.
+        /// Web ServicesSupport</a> to request a quota increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ThrottlingException">
         /// The request was denied due to request throttling. For detailed information about why
@@ -409,7 +409,7 @@ namespace Amazon.DynamoDBv2
         /// about why the request was throttled and the ARN of the impacted resource, find the
         /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
         /// field in the returned exception. Contact <a href="https://aws.amazon.com/support">Amazon
-        /// Web Services Support</a> to request a quota increase.
+        /// Web ServicesSupport</a> to request a quota increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ThrottlingException">
         /// The request was denied due to request throttling. For detailed information about why
@@ -529,7 +529,7 @@ namespace Amazon.DynamoDBv2
         /// about why the request was throttled and the ARN of the impacted resource, find the
         /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
         /// field in the returned exception. Contact <a href="https://aws.amazon.com/support">Amazon
-        /// Web Services Support</a> to request a quota increase.
+        /// Web ServicesSupport</a> to request a quota increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -647,7 +647,7 @@ namespace Amazon.DynamoDBv2
         /// about why the request was throttled and the ARN of the impacted resource, find the
         /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
         /// field in the returned exception. Contact <a href="https://aws.amazon.com/support">Amazon
-        /// Web Services Support</a> to request a quota increase.
+        /// Web ServicesSupport</a> to request a quota increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -764,7 +764,7 @@ namespace Amazon.DynamoDBv2
         /// about why the request was throttled and the ARN of the impacted resource, find the
         /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
         /// field in the returned exception. Contact <a href="https://aws.amazon.com/support">Amazon
-        /// Web Services Support</a> to request a quota increase.
+        /// Web ServicesSupport</a> to request a quota increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -889,7 +889,7 @@ namespace Amazon.DynamoDBv2
         /// about why the request was throttled and the ARN of the impacted resource, find the
         /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
         /// field in the returned exception. Contact <a href="https://aws.amazon.com/support">Amazon
-        /// Web Services Support</a> to request a quota increase.
+        /// Web ServicesSupport</a> to request a quota increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -1010,7 +1010,7 @@ namespace Amazon.DynamoDBv2
         /// about why the request was throttled and the ARN of the impacted resource, find the
         /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
         /// field in the returned exception. Contact <a href="https://aws.amazon.com/support">Amazon
-        /// Web Services Support</a> to request a quota increase.
+        /// Web ServicesSupport</a> to request a quota increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -1130,7 +1130,7 @@ namespace Amazon.DynamoDBv2
         /// about why the request was throttled and the ARN of the impacted resource, find the
         /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
         /// field in the returned exception. Contact <a href="https://aws.amazon.com/support">Amazon
-        /// Web Services Support</a> to request a quota increase.
+        /// Web ServicesSupport</a> to request a quota increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -1303,7 +1303,7 @@ namespace Amazon.DynamoDBv2
         /// about why the request was throttled and the ARN of the impacted resource, find the
         /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
         /// field in the returned exception. Contact <a href="https://aws.amazon.com/support">Amazon
-        /// Web Services Support</a> to request a quota increase.
+        /// Web ServicesSupport</a> to request a quota increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -1468,7 +1468,7 @@ namespace Amazon.DynamoDBv2
         /// about why the request was throttled and the ARN of the impacted resource, find the
         /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
         /// field in the returned exception. Contact <a href="https://aws.amazon.com/support">Amazon
-        /// Web Services Support</a> to request a quota increase.
+        /// Web ServicesSupport</a> to request a quota increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -1640,7 +1640,7 @@ namespace Amazon.DynamoDBv2
         /// about why the request was throttled and the ARN of the impacted resource, find the
         /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
         /// field in the returned exception. Contact <a href="https://aws.amazon.com/support">Amazon
-        /// Web Services Support</a> to request a quota increase.
+        /// Web ServicesSupport</a> to request a quota increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -1808,7 +1808,7 @@ namespace Amazon.DynamoDBv2
         /// about why the request was throttled and the ARN of the impacted resource, find the
         /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
         /// field in the returned exception. Contact <a href="https://aws.amazon.com/support">Amazon
-        /// Web Services Support</a> to request a quota increase.
+        /// Web ServicesSupport</a> to request a quota increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -2983,7 +2983,7 @@ namespace Amazon.DynamoDBv2
         /// about why the request was throttled and the ARN of the impacted resource, find the
         /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
         /// field in the returned exception. Contact <a href="https://aws.amazon.com/support">Amazon
-        /// Web Services Support</a> to request a quota increase.
+        /// Web ServicesSupport</a> to request a quota increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -3062,7 +3062,7 @@ namespace Amazon.DynamoDBv2
         /// about why the request was throttled and the ARN of the impacted resource, find the
         /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
         /// field in the returned exception. Contact <a href="https://aws.amazon.com/support">Amazon
-        /// Web Services Support</a> to request a quota increase.
+        /// Web ServicesSupport</a> to request a quota increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -3140,7 +3140,7 @@ namespace Amazon.DynamoDBv2
         /// about why the request was throttled and the ARN of the impacted resource, find the
         /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
         /// field in the returned exception. Contact <a href="https://aws.amazon.com/support">Amazon
-        /// Web Services Support</a> to request a quota increase.
+        /// Web ServicesSupport</a> to request a quota increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -3224,7 +3224,7 @@ namespace Amazon.DynamoDBv2
         /// about why the request was throttled and the ARN of the impacted resource, find the
         /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
         /// field in the returned exception. Contact <a href="https://aws.amazon.com/support">Amazon
-        /// Web Services Support</a> to request a quota increase.
+        /// Web ServicesSupport</a> to request a quota increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -3306,7 +3306,7 @@ namespace Amazon.DynamoDBv2
         /// about why the request was throttled and the ARN of the impacted resource, find the
         /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
         /// field in the returned exception. Contact <a href="https://aws.amazon.com/support">Amazon
-        /// Web Services Support</a> to request a quota increase.
+        /// Web ServicesSupport</a> to request a quota increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -3387,7 +3387,7 @@ namespace Amazon.DynamoDBv2
         /// about why the request was throttled and the ARN of the impacted resource, find the
         /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
         /// field in the returned exception. Contact <a href="https://aws.amazon.com/support">Amazon
-        /// Web Services Support</a> to request a quota increase.
+        /// Web ServicesSupport</a> to request a quota increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -5690,7 +5690,7 @@ namespace Amazon.DynamoDBv2
         /// about why the request was throttled and the ARN of the impacted resource, find the
         /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
         /// field in the returned exception. Contact <a href="https://aws.amazon.com/support">Amazon
-        /// Web Services Support</a> to request a quota increase.
+        /// Web ServicesSupport</a> to request a quota increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -5770,7 +5770,7 @@ namespace Amazon.DynamoDBv2
         /// about why the request was throttled and the ARN of the impacted resource, find the
         /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
         /// field in the returned exception. Contact <a href="https://aws.amazon.com/support">Amazon
-        /// Web Services Support</a> to request a quota increase.
+        /// Web ServicesSupport</a> to request a quota increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -5837,7 +5837,7 @@ namespace Amazon.DynamoDBv2
         /// about why the request was throttled and the ARN of the impacted resource, find the
         /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
         /// field in the returned exception. Contact <a href="https://aws.amazon.com/support">Amazon
-        /// Web Services Support</a> to request a quota increase.
+        /// Web ServicesSupport</a> to request a quota increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -6219,7 +6219,7 @@ namespace Amazon.DynamoDBv2
         /// about why the request was throttled and the ARN of the impacted resource, find the
         /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
         /// field in the returned exception. Contact <a href="https://aws.amazon.com/support">Amazon
-        /// Web Services Support</a> to request a quota increase.
+        /// Web ServicesSupport</a> to request a quota increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -6743,7 +6743,7 @@ namespace Amazon.DynamoDBv2
         /// about why the request was throttled and the ARN of the impacted resource, find the
         /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
         /// field in the returned exception. Contact <a href="https://aws.amazon.com/support">Amazon
-        /// Web Services Support</a> to request a quota increase.
+        /// Web ServicesSupport</a> to request a quota increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -6799,7 +6799,7 @@ namespace Amazon.DynamoDBv2
         /// about why the request was throttled and the ARN of the impacted resource, find the
         /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
         /// field in the returned exception. Contact <a href="https://aws.amazon.com/support">Amazon
-        /// Web Services Support</a> to request a quota increase.
+        /// Web ServicesSupport</a> to request a quota increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -6854,7 +6854,7 @@ namespace Amazon.DynamoDBv2
         /// about why the request was throttled and the ARN of the impacted resource, find the
         /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
         /// field in the returned exception. Contact <a href="https://aws.amazon.com/support">Amazon
-        /// Web Services Support</a> to request a quota increase.
+        /// Web ServicesSupport</a> to request a quota increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -6915,7 +6915,7 @@ namespace Amazon.DynamoDBv2
         /// about why the request was throttled and the ARN of the impacted resource, find the
         /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
         /// field in the returned exception. Contact <a href="https://aws.amazon.com/support">Amazon
-        /// Web Services Support</a> to request a quota increase.
+        /// Web ServicesSupport</a> to request a quota increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -6974,7 +6974,7 @@ namespace Amazon.DynamoDBv2
         /// about why the request was throttled and the ARN of the impacted resource, find the
         /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
         /// field in the returned exception. Contact <a href="https://aws.amazon.com/support">Amazon
-        /// Web Services Support</a> to request a quota increase.
+        /// Web ServicesSupport</a> to request a quota increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -7032,7 +7032,7 @@ namespace Amazon.DynamoDBv2
         /// about why the request was throttled and the ARN of the impacted resource, find the
         /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
         /// field in the returned exception. Contact <a href="https://aws.amazon.com/support">Amazon
-        /// Web Services Support</a> to request a quota increase.
+        /// Web ServicesSupport</a> to request a quota increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -8200,7 +8200,7 @@ namespace Amazon.DynamoDBv2
         /// about why the request was throttled and the ARN of the impacted resource, find the
         /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
         /// field in the returned exception. Contact <a href="https://aws.amazon.com/support">Amazon
-        /// Web Services Support</a> to request a quota increase.
+        /// Web ServicesSupport</a> to request a quota increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -8295,7 +8295,7 @@ namespace Amazon.DynamoDBv2
         /// about why the request was throttled and the ARN of the impacted resource, find the
         /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
         /// field in the returned exception. Contact <a href="https://aws.amazon.com/support">Amazon
-        /// Web Services Support</a> to request a quota increase.
+        /// Web ServicesSupport</a> to request a quota increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -8389,7 +8389,7 @@ namespace Amazon.DynamoDBv2
         /// about why the request was throttled and the ARN of the impacted resource, find the
         /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
         /// field in the returned exception. Contact <a href="https://aws.amazon.com/support">Amazon
-        /// Web Services Support</a> to request a quota increase.
+        /// Web ServicesSupport</a> to request a quota increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -8489,7 +8489,7 @@ namespace Amazon.DynamoDBv2
         /// about why the request was throttled and the ARN of the impacted resource, find the
         /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
         /// field in the returned exception. Contact <a href="https://aws.amazon.com/support">Amazon
-        /// Web Services Support</a> to request a quota increase.
+        /// Web ServicesSupport</a> to request a quota increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -8587,7 +8587,7 @@ namespace Amazon.DynamoDBv2
         /// about why the request was throttled and the ARN of the impacted resource, find the
         /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
         /// field in the returned exception. Contact <a href="https://aws.amazon.com/support">Amazon
-        /// Web Services Support</a> to request a quota increase.
+        /// Web ServicesSupport</a> to request a quota increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -8684,7 +8684,7 @@ namespace Amazon.DynamoDBv2
         /// about why the request was throttled and the ARN of the impacted resource, find the
         /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
         /// field in the returned exception. Contact <a href="https://aws.amazon.com/support">Amazon
-        /// Web Services Support</a> to request a quota increase.
+        /// Web ServicesSupport</a> to request a quota increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -9032,7 +9032,7 @@ namespace Amazon.DynamoDBv2
         /// about why the request was throttled and the ARN of the impacted resource, find the
         /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
         /// field in the returned exception. Contact <a href="https://aws.amazon.com/support">Amazon
-        /// Web Services Support</a> to request a quota increase.
+        /// Web ServicesSupport</a> to request a quota increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -9147,7 +9147,7 @@ namespace Amazon.DynamoDBv2
         /// about why the request was throttled and the ARN of the impacted resource, find the
         /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
         /// field in the returned exception. Contact <a href="https://aws.amazon.com/support">Amazon
-        /// Web Services Support</a> to request a quota increase.
+        /// Web ServicesSupport</a> to request a quota increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -9763,7 +9763,7 @@ namespace Amazon.DynamoDBv2
         /// about why the request was throttled and the ARN of the impacted resource, find the
         /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
         /// field in the returned exception. Contact <a href="https://aws.amazon.com/support">Amazon
-        /// Web Services Support</a> to request a quota increase.
+        /// Web ServicesSupport</a> to request a quota increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -9862,7 +9862,7 @@ namespace Amazon.DynamoDBv2
         /// about why the request was throttled and the ARN of the impacted resource, find the
         /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
         /// field in the returned exception. Contact <a href="https://aws.amazon.com/support">Amazon
-        /// Web Services Support</a> to request a quota increase.
+        /// Web ServicesSupport</a> to request a quota increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -9962,7 +9962,7 @@ namespace Amazon.DynamoDBv2
         /// about why the request was throttled and the ARN of the impacted resource, find the
         /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
         /// field in the returned exception. Contact <a href="https://aws.amazon.com/support">Amazon
-        /// Web Services Support</a> to request a quota increase.
+        /// Web ServicesSupport</a> to request a quota increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -10061,7 +10061,7 @@ namespace Amazon.DynamoDBv2
         /// about why the request was throttled and the ARN of the impacted resource, find the
         /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
         /// field in the returned exception. Contact <a href="https://aws.amazon.com/support">Amazon
-        /// Web Services Support</a> to request a quota increase.
+        /// Web ServicesSupport</a> to request a quota increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -10166,7 +10166,7 @@ namespace Amazon.DynamoDBv2
         /// about why the request was throttled and the ARN of the impacted resource, find the
         /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
         /// field in the returned exception. Contact <a href="https://aws.amazon.com/support">Amazon
-        /// Web Services Support</a> to request a quota increase.
+        /// Web ServicesSupport</a> to request a quota increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -10268,7 +10268,7 @@ namespace Amazon.DynamoDBv2
         /// about why the request was throttled and the ARN of the impacted resource, find the
         /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
         /// field in the returned exception. Contact <a href="https://aws.amazon.com/support">Amazon
-        /// Web Services Support</a> to request a quota increase.
+        /// Web ServicesSupport</a> to request a quota increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -10371,7 +10371,7 @@ namespace Amazon.DynamoDBv2
         /// about why the request was throttled and the ARN of the impacted resource, find the
         /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
         /// field in the returned exception. Contact <a href="https://aws.amazon.com/support">Amazon
-        /// Web Services Support</a> to request a quota increase.
+        /// Web ServicesSupport</a> to request a quota increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -10473,7 +10473,7 @@ namespace Amazon.DynamoDBv2
         /// about why the request was throttled and the ARN of the impacted resource, find the
         /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
         /// field in the returned exception. Contact <a href="https://aws.amazon.com/support">Amazon
-        /// Web Services Support</a> to request a quota increase.
+        /// Web ServicesSupport</a> to request a quota increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -10770,7 +10770,7 @@ namespace Amazon.DynamoDBv2
         /// about why the request was throttled and the ARN of the impacted resource, find the
         /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
         /// field in the returned exception. Contact <a href="https://aws.amazon.com/support">Amazon
-        /// Web Services Support</a> to request a quota increase.
+        /// Web ServicesSupport</a> to request a quota increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -11091,7 +11091,7 @@ namespace Amazon.DynamoDBv2
         /// about why the request was throttled and the ARN of the impacted resource, find the
         /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
         /// field in the returned exception. Contact <a href="https://aws.amazon.com/support">Amazon
-        /// Web Services Support</a> to request a quota increase.
+        /// Web ServicesSupport</a> to request a quota increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -11463,7 +11463,7 @@ namespace Amazon.DynamoDBv2
         /// about why the request was throttled and the ARN of the impacted resource, find the
         /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
         /// field in the returned exception. Contact <a href="https://aws.amazon.com/support">Amazon
-        /// Web Services Support</a> to request a quota increase.
+        /// Web ServicesSupport</a> to request a quota increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -11911,7 +11911,7 @@ namespace Amazon.DynamoDBv2
         /// about why the request was throttled and the ARN of the impacted resource, find the
         /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
         /// field in the returned exception. Contact <a href="https://aws.amazon.com/support">Amazon
-        /// Web Services Support</a> to request a quota increase.
+        /// Web ServicesSupport</a> to request a quota increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -13075,7 +13075,7 @@ namespace Amazon.DynamoDBv2
         /// about why the request was throttled and the ARN of the impacted resource, find the
         /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
         /// field in the returned exception. Contact <a href="https://aws.amazon.com/support">Amazon
-        /// Web Services Support</a> to request a quota increase.
+        /// Web ServicesSupport</a> to request a quota increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -13147,7 +13147,7 @@ namespace Amazon.DynamoDBv2
         /// about why the request was throttled and the ARN of the impacted resource, find the
         /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
         /// field in the returned exception. Contact <a href="https://aws.amazon.com/support">Amazon
-        /// Web Services Support</a> to request a quota increase.
+        /// Web ServicesSupport</a> to request a quota increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -13217,7 +13217,7 @@ namespace Amazon.DynamoDBv2
         /// about why the request was throttled and the ARN of the impacted resource, find the
         /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
         /// field in the returned exception. Contact <a href="https://aws.amazon.com/support">Amazon
-        /// Web Services Support</a> to request a quota increase.
+        /// Web ServicesSupport</a> to request a quota increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -13293,7 +13293,7 @@ namespace Amazon.DynamoDBv2
         /// about why the request was throttled and the ARN of the impacted resource, find the
         /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
         /// field in the returned exception. Contact <a href="https://aws.amazon.com/support">Amazon
-        /// Web Services Support</a> to request a quota increase.
+        /// Web ServicesSupport</a> to request a quota increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -13368,7 +13368,7 @@ namespace Amazon.DynamoDBv2
         /// about why the request was throttled and the ARN of the impacted resource, find the
         /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
         /// field in the returned exception. Contact <a href="https://aws.amazon.com/support">Amazon
-        /// Web Services Support</a> to request a quota increase.
+        /// Web ServicesSupport</a> to request a quota increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -13441,7 +13441,7 @@ namespace Amazon.DynamoDBv2
         /// about why the request was throttled and the ARN of the impacted resource, find the
         /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
         /// field in the returned exception. Contact <a href="https://aws.amazon.com/support">Amazon
-        /// Web Services Support</a> to request a quota increase.
+        /// Web ServicesSupport</a> to request a quota increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
