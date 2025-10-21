@@ -299,7 +299,6 @@ namespace Amazon.S3.Transfer.Internal
                 BucketName = this._fileTransporterRequest.BucketName,
                 Key = this._fileTransporterRequest.Key,
                 CannedACL = this._fileTransporterRequest.CannedACL,
-                Headers = this._fileTransporterRequest.Headers,
                 ContentType = determineContentType(),
                 StorageClass = this._fileTransporterRequest.StorageClass,
                 ServerSideEncryptionMethod = this._fileTransporterRequest.ServerSideEncryptionMethod,

@@ -135,186 +135,182 @@ namespace AWSSDK.UnitTests
         [TestCategory("S3")]
         public void MapPutObjectResponse_AllMappedProperties_WorkCorrectly()
         {
-            // Get the expected mappings from JSON
-            var putObjectMappings = _mappingJson.RootElement
-                .GetProperty("Conversion")
-                .GetProperty("PutObjectResponse")
-                .GetProperty("UploadResponse")
-                .EnumerateArray()
-                .Select(prop => prop.GetString())
-                .ToList();
-
-            // Create source object with dynamically generated test data
-            var sourceResponse = new PutObjectResponse();
-            var sourceType = typeof(PutObjectResponse);
-            var testDataValues = new Dictionary<string, object>();
-
-            // Generate test data for each mapped property
-            foreach (var propertyName in putObjectMappings)
-            {
-                // Resolve alias to actual property name
-                var resolvedPropertyName = ResolvePropertyName(propertyName, sourceType.Name);
-                var sourceProperty = sourceType.GetProperty(resolvedPropertyName);
-                if (sourceProperty?.CanWrite == true)
+            ValidateMappingTransferUtilityAndSdkRequests<PutObjectResponse, TransferUtilityUploadResponse>(
+                new[] { "Conversion", "PutObjectResponse", "UploadResponse" },
+                (sourceResponse) =>
                 {
-                    var testValue = GenerateTestValue(sourceProperty.PropertyType, propertyName);
-                    sourceProperty.SetValue(sourceResponse, testValue);
-                    testDataValues[propertyName] = testValue;
-                }
-            }
-
-            // Add inherited properties for comprehensive testing
-            sourceResponse.HttpStatusCode = HttpStatusCode.OK;
-            sourceResponse.ContentLength = 1024;
-
-            // Map the response
-            var mappedResponse = ResponseMapper.MapPutObjectResponse(sourceResponse);
-            Assert.IsNotNull(mappedResponse, "Mapped response should not be null");
-
-            // Verify all mapped properties using reflection
-            var targetType = typeof(TransferUtilityUploadResponse);
-            var failedAssertions = new List<string>();
-
-            foreach (var propertyName in putObjectMappings)
-            {
-                // Resolve alias to actual property name for reflection lookups
-                var resolvedSourcePropertyName = ResolvePropertyName(propertyName, sourceType.Name);
-                var resolvedTargetPropertyName = ResolvePropertyName(propertyName, targetType.Name);
-                var sourceProperty = sourceType.GetProperty(resolvedSourcePropertyName);
-                var targetProperty = targetType.GetProperty(resolvedTargetPropertyName);
-
-                if (sourceProperty == null)
+                    return ResponseMapper.MapPutObjectResponse(sourceResponse);
+                },
+                usesHeadersCollection: false,
+                (sourceResponse) =>
                 {
-                    failedAssertions.Add($"Source property '{propertyName}' (resolved to: {resolvedSourcePropertyName}) not found in {sourceType.Name}");
-                    continue;
-                }
-
-                if (targetProperty == null)
+                    sourceResponse.HttpStatusCode = HttpStatusCode.OK;
+                    sourceResponse.ContentLength = 1024;
+                },
+                (sourceResponse, targetResponse) =>
                 {
-                    failedAssertions.Add($"Target property '{propertyName}' (resolved to: {resolvedTargetPropertyName}) not found in {targetType.Name}");
-                    continue;
-                }
-
-                var sourceValue = sourceProperty.GetValue(sourceResponse);
-                var targetValue = targetProperty.GetValue(mappedResponse);
-
-                // Special handling for complex object comparisons
-                if (!AreValuesEqual(sourceValue, targetValue))
-                {
-                    failedAssertions.Add($"{propertyName}: Expected '{sourceValue ?? "null"}', got '{targetValue ?? "null"}'");
-                }
-            }
-
-            // Test inherited properties
-            Assert.AreEqual(sourceResponse.HttpStatusCode, mappedResponse.HttpStatusCode, "HttpStatusCode should match");
-            Assert.AreEqual(sourceResponse.ContentLength, mappedResponse.ContentLength, "ContentLength should match");
-
-            // Report any failures
-            if (failedAssertions.Any())
-            {
-                Assert.Fail($"Property mapping failures:\n{string.Join("\n", failedAssertions)}");
-            }
+                    Assert.AreEqual(sourceResponse.HttpStatusCode, targetResponse.HttpStatusCode, "HttpStatusCode should match");
+                    Assert.AreEqual(sourceResponse.ContentLength, targetResponse.ContentLength, "ContentLength should match");
+                });
         }
 
         [TestMethod]
         [TestCategory("S3")]
         public void MapUploadRequest_PutObjectRequest_AllMappedProperties_WorkCorrectly()
         {
-            // Get the expected mappings from JSON
-            var putObjectMappings = _mappingJson.RootElement
-                .GetProperty("Conversion")
-                .GetProperty("UploadRequest")
-                .GetProperty("PutObjectRequest")
-                .EnumerateArray()
-                .Select(prop => prop.GetString())
-                .ToList();
-
-            // Create source object with dynamically generated test data
-            var sourceRequest = new TransferUtilityUploadRequest();
-            var sourceType = typeof(TransferUtilityUploadRequest);
-            var testDataValues = new Dictionary<string, object>();
-
-            // Generate test data for each mapped property
-            foreach (var propertyName in putObjectMappings)
-            {
-                // Resolve alias to actual property name
-                var resolvedPropertyName = ResolvePropertyName(propertyName, sourceType.Name);
-                var sourceProperty = sourceType.GetProperty(resolvedPropertyName);
-                if (sourceProperty?.CanWrite == true)
+            ValidateMappingTransferUtilityAndSdkRequests<TransferUtilityUploadRequest, PutObjectRequest>(
+                new[] { "Conversion", "UploadRequest", "PutObjectRequest" },
+                (sourceRequest) =>
                 {
-                    var testValue = GenerateTestValue(sourceProperty.PropertyType, propertyName);
-                    sourceProperty.SetValue(sourceRequest, testValue);
-                    testDataValues[propertyName] = testValue;
-                }
-            }
-
-            var simpleUploadCommand = new SimpleUploadCommand(null, null, sourceRequest);
-
-            // Map the response
-            var mappedRequest = simpleUploadCommand.ConstructRequest();
-            Assert.IsNotNull(mappedRequest, "Mapped request should not be null");
-
-            // Verify all mapped properties using reflection
-            var targetType = typeof(PutObjectRequest);
-            var failedAssertions = new List<string>();
-
-            foreach (var propertyName in putObjectMappings)
-            {
-                // Resolve alias to actual property name for reflection lookups
-                var resolvedSourcePropertyName = ResolvePropertyName(propertyName, sourceType.Name);
-                var resolvedTargetPropertyName = ResolvePropertyName(propertyName, targetType.Name);
-                var sourceProperty = sourceType.GetProperty(resolvedSourcePropertyName);
-                var targetProperty = targetType.GetProperty(resolvedTargetPropertyName);
-
-                if (sourceProperty == null)
-                {
-                    failedAssertions.Add($"Source property '{propertyName}' (resolved to: {resolvedSourcePropertyName}) not found in {sourceType.Name}");
-                    continue;
-                }
-
-                if (targetProperty == null)
-                {
-                    failedAssertions.Add($"Target property '{propertyName}' (resolved to: {resolvedTargetPropertyName}) not found in {targetType.Name}");
-                    continue;
-                }
-
-                var sourceValue = sourceProperty.GetValue(sourceRequest);
-                var targetValue = targetProperty.GetValue(mappedRequest);
-
-                // Special handling for complex object comparisons
-                if (!AreValuesEqual(sourceValue, targetValue))
-                {
-                    failedAssertions.Add($"{propertyName}: Expected '{sourceValue ?? "null"}', got '{targetValue ?? "null"}'");
-                }
-            }
-
-            // Report any failures
-            if (failedAssertions.Any())
-            {
-                Assert.Fail($"Property mapping failures:\n{string.Join("\n", failedAssertions)}");
-            }
+                    var simpleUploadCommand = new SimpleUploadCommand(null, null, sourceRequest);
+                    return simpleUploadCommand.ConstructRequest();
+                },
+                usesHeadersCollection: false);
         }
 
         [TestMethod]
         [TestCategory("S3")]
         public void MapUploadRequest_CreateMultipartRequest_AllMappedProperties_WorkCorrectly()
         {
+            ValidateMappingTransferUtilityAndSdkRequests<TransferUtilityUploadRequest, InitiateMultipartUploadRequest>(
+                new[] { "Conversion", "UploadRequest", "CreateMultipartRequest" },
+                (sourceRequest) =>
+                {
+                    var multipartUploadCommand = new MultipartUploadCommand(null, null, sourceRequest);
+                    return multipartUploadCommand.ConstructInitiateMultipartUploadRequest();
+                },
+                usesHeadersCollection: true,
+                (sourceRequest) =>
+                {
+                    sourceRequest.InputStream = new MemoryStream(1024);
+                });
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public void MapUploadRequest_UploadPartRequest_AllMappedProperties_WorkCorrectly()
+        {
+            ValidateMappingTransferUtilityAndSdkRequests<TransferUtilityUploadRequest, UploadPartRequest>(
+                new[] { "Conversion", "UploadRequest", "UploadPartRequest" },
+                (sourceRequest) =>
+                {
+                    var multipartUploadCommand = new MultipartUploadCommand(null, null, sourceRequest);
+
+                    var initiateResponse = new InitiateMultipartUploadResponse
+                    {
+                        UploadId = "test-upload-id"
+                    };
+
+                    return multipartUploadCommand.ConstructUploadPartRequest(1, 1024, initiateResponse);
+                },
+                usesHeadersCollection: false,
+                (sourceRequest) =>
+                {
+                    sourceRequest.InputStream = new MemoryStream(1024);
+                });
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public void MapUploadRequest_CompleteMultipartRequest_AllMappedProperties_WorkCorrectly()
+        {
+            ValidateMappingTransferUtilityAndSdkRequests<TransferUtilityUploadRequest, CompleteMultipartUploadRequest>(
+                new[] { "Conversion", "UploadRequest", "CompleteMultipartRequest" },
+                (sourceRequest) =>
+                {
+                    var multipartUploadCommand = new MultipartUploadCommand(null, null, sourceRequest);
+
+                    var initiateResponse = new InitiateMultipartUploadResponse
+                    {
+                        UploadId = "test-upload-id",
+                        ChecksumType = ChecksumType.FULL_OBJECT
+                    };
+
+                    return multipartUploadCommand.ConstructCompleteMultipartUploadRequest(initiateResponse);
+                },
+                usesHeadersCollection: false,
+                (sourceRequest) =>
+                {
+                    sourceRequest.InputStream = new MemoryStream(1024);
+                    sourceRequest.ServerSideEncryptionCustomerMethod = ServerSideEncryptionCustomerMethod.AES256;
+                });
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public void MapUploadRequest_AbortMultipartRequest_AllMappedProperties_WorkCorrectly()
+        {
+            ValidateMappingTransferUtilityAndSdkRequests<TransferUtilityUploadRequest, AbortMultipartUploadRequest>(
+                new[] { "Conversion", "UploadRequest", "AbortMultipartRequest" },
+                (sourceRequest) =>
+                {
+                    var multipartUploadCommand = new MultipartUploadCommand(null, null, sourceRequest);
+
+                    return multipartUploadCommand.ConstructAbortMultipartUploadRequest("test-upload-id");
+                },
+                usesHeadersCollection: false,
+                (sourceRequest) =>
+                {
+                    sourceRequest.InputStream = new MemoryStream(1024);
+                    sourceRequest.ServerSideEncryptionCustomerMethod = ServerSideEncryptionCustomerMethod.AES256;
+                });
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public void MapPutObjectResponse_NullValues_HandledCorrectly()
+        {
+            // Test null handling scenarios
+            var testCases = new[]
+            {
+                // Test null Expiration
+                new PutObjectResponse { Expiration = null },
+                
+                // Test null enum conversions
+                new PutObjectResponse { ChecksumType = null, RequestCharged = null, ServerSideEncryptionMethod = null }
+            };
+
+            foreach (var testCase in testCases)
+            {
+                var mapped = ResponseMapper.MapPutObjectResponse(testCase);
+                Assert.IsNotNull(mapped, "Response should always be mappable");
+
+                // Test null handling
+                if (testCase.Expiration == null)
+                {
+                    Assert.IsNull(mapped.Expiration, "Null Expiration should map to null");
+                }
+            }
+        }
+
+        private void ValidateMappingTransferUtilityAndSdkRequests<TSourceRequest, TTargetRequest>(
+            string[] mappingPath,
+            Func<TSourceRequest, TTargetRequest> fetchTargetRequest,
+            bool usesHeadersCollection = false,
+            Action<TSourceRequest> requestHook = null,
+            Action<TSourceRequest, TTargetRequest> additionalValidations = null)
+        {
             // Get the expected mappings from JSON
-            var createMultipartRequestMappings = _mappingJson.RootElement
-                .GetProperty("Conversion")
-                .GetProperty("UploadRequest")
-                .GetProperty("CreateMultipartRequest")
+            JsonElement mappingElement = _mappingJson.RootElement;
+
+            foreach (var path in mappingPath)
+            {
+                mappingElement = mappingElement.GetProperty(path);
+            }
+
+            // Get the expected mappings from JSON
+            var requestMappings = mappingElement
                 .EnumerateArray()
                 .Select(prop => prop.GetString())
                 .ToList();
 
             // Create source object with dynamically generated test data
-            var sourceRequest = new TransferUtilityUploadRequest();
-            var sourceType = typeof(TransferUtilityUploadRequest);
+            var sourceRequest = Activator.CreateInstance<TSourceRequest>();
+            var sourceType = typeof(TSourceRequest);
             var testDataValues = new Dictionary<string, object>();
 
             // Generate test data for each mapped property
-            foreach (var propertyName in createMultipartRequestMappings)
+            foreach (var propertyName in requestMappings)
             {
                 // Resolve alias to actual property name
                 var resolvedPropertyName = ResolvePropertyName(propertyName, sourceType.Name);
@@ -327,20 +323,17 @@ namespace AWSSDK.UnitTests
                 }
             }
 
-            // Add inherited properties for comprehensive testing
-            sourceRequest.InputStream = new MemoryStream(1024);
-
-            var multipartUploadCommand = new MultipartUploadCommand(null, null, sourceRequest);
+            requestHook?.Invoke(sourceRequest);
 
             // Map the response
-            var mappedRequest = multipartUploadCommand.ConstructInitiateMultipartUploadRequest();
+            var mappedRequest = fetchTargetRequest(sourceRequest);
             Assert.IsNotNull(mappedRequest, "Mapped request should not be null");
-            
+
             // Verify all mapped properties using reflection
-            var targetType = typeof(InitiateMultipartUploadRequest);
+            var targetType = typeof(TTargetRequest);
             var failedAssertions = new List<string>();
 
-            foreach (var propertyName in createMultipartRequestMappings)
+            foreach (var propertyName in requestMappings)
             {
                 // Resolve alias to actual property name for reflection lookups
                 var resolvedSourcePropertyName = ResolvePropertyName(propertyName, sourceType.Name);
@@ -357,6 +350,12 @@ namespace AWSSDK.UnitTests
                 }
                 else
                 {
+                    if (!usesHeadersCollection)
+                    {
+                        failedAssertions.Add($"Source property '{propertyName}' (resolved to: {resolvedSourcePropertyName}) not found in {sourceType.Name}");
+                        continue;
+                    }
+
                     // Check if source type has a Headers property of type HeadersCollection
                     var sourceHeadersProperty = sourceType.GetProperty("Headers");
                     if (sourceHeadersProperty != null && typeof(HeadersCollection).IsAssignableFrom(sourceHeadersProperty.PropertyType))
@@ -397,6 +396,12 @@ namespace AWSSDK.UnitTests
                 }
                 else
                 {
+                    if (!usesHeadersCollection)
+                    {
+                        failedAssertions.Add($"Target property '{propertyName}' (resolved to: {resolvedTargetPropertyName}) not found in {targetType.Name}");
+                        continue;
+                    }
+
                     // Check if target type has a Headers property of type HeadersCollection
                     var headersProperty = targetType.GetProperty("Headers");
                     if (headersProperty != null && typeof(HeadersCollection).IsAssignableFrom(headersProperty.PropertyType))
@@ -435,296 +440,12 @@ namespace AWSSDK.UnitTests
                 }
             }
 
-            // Report any failures
-            if (failedAssertions.Any())
-            {
-                Assert.Fail($"Property mapping failures:\n{string.Join("\n", failedAssertions)}");
-            }
-        }
-
-        [TestMethod]
-        [TestCategory("S3")]
-        public void MapUploadRequest_UploadPartRequest_AllMappedProperties_WorkCorrectly()
-        {
-            // Get the expected mappings from JSON
-            var uploadPartRequestMappings = _mappingJson.RootElement
-                .GetProperty("Conversion")
-                .GetProperty("UploadRequest")
-                .GetProperty("UploadPartRequest")
-                .EnumerateArray()
-                .Select(prop => prop.GetString())
-                .ToList();
-
-            // Create source object with dynamically generated test data
-            var sourceRequest = new TransferUtilityUploadRequest();
-            var sourceType = typeof(TransferUtilityUploadRequest);
-            var testDataValues = new Dictionary<string, object>();
-
-            // Generate test data for each mapped property
-            foreach (var propertyName in uploadPartRequestMappings)
-            {
-                // Resolve alias to actual property name
-                var resolvedPropertyName = ResolvePropertyName(propertyName, sourceType.Name);
-                var sourceProperty = sourceType.GetProperty(resolvedPropertyName);
-                if (sourceProperty?.CanWrite == true)
-                {
-                    var testValue = GenerateTestValue(sourceProperty.PropertyType, propertyName);
-                    sourceProperty.SetValue(sourceRequest, testValue);
-                    testDataValues[propertyName] = testValue;
-                }
-            }
-
-            // Add inherited properties for comprehensive testing
-            sourceRequest.InputStream = new MemoryStream(1024);
-
-            var multipartUploadCommand = new MultipartUploadCommand(null, null, sourceRequest);
-
-            // Map the response
-            var initiateResponse = new InitiateMultipartUploadResponse
-            {
-                UploadId = "test-upload-id"
-            };
-            var mappedRequest = multipartUploadCommand.ConstructUploadPartRequest(1, 1024, initiateResponse);
-            Assert.IsNotNull(mappedRequest, "Mapped request should not be null");
-
-            // Verify all mapped properties using reflection
-            var targetType = typeof(UploadPartRequest);
-            var failedAssertions = new List<string>();
-
-            foreach (var propertyName in uploadPartRequestMappings)
-            {
-                // Resolve alias to actual property name for reflection lookups
-                var resolvedSourcePropertyName = ResolvePropertyName(propertyName, sourceType.Name);
-                var resolvedTargetPropertyName = ResolvePropertyName(propertyName, targetType.Name);
-                var sourceProperty = sourceType.GetProperty(resolvedSourcePropertyName);
-                var targetProperty = targetType.GetProperty(resolvedTargetPropertyName);
-
-                if (sourceProperty == null)
-                {
-                    failedAssertions.Add($"Source property '{propertyName}' (resolved to: {resolvedSourcePropertyName}) not found in {sourceType.Name}");
-                    continue;
-                }
-
-                if (targetProperty == null)
-                {
-                    failedAssertions.Add($"Target property '{propertyName}' (resolved to: {resolvedTargetPropertyName}) not found in {targetType.Name}");
-                    continue;
-                }
-
-                var sourceValue = sourceProperty.GetValue(sourceRequest);
-                var targetValue = targetProperty.GetValue(mappedRequest);
-
-                // Special handling for complex object comparisons
-                if (!AreValuesEqual(sourceValue, targetValue))
-                {
-                    failedAssertions.Add($"{propertyName}: Expected '{sourceValue ?? "null"}', got '{targetValue ?? "null"}'");
-                }
-            }
+            additionalValidations?.Invoke(sourceRequest, mappedRequest);
 
             // Report any failures
             if (failedAssertions.Any())
             {
                 Assert.Fail($"Property mapping failures:\n{string.Join("\n", failedAssertions)}");
-            }
-        }
-
-        [TestMethod]
-        [TestCategory("S3")]
-        public void MapUploadRequest_CompleteMultipartRequest_AllMappedProperties_WorkCorrectly()
-        {
-            // Get the expected mappings from JSON
-            var completeMultipartRequestMappings = _mappingJson.RootElement
-                .GetProperty("Conversion")
-                .GetProperty("UploadRequest")
-                .GetProperty("CompleteMultipartRequest")
-                .EnumerateArray()
-                .Select(prop => prop.GetString())
-                .ToList();
-
-            // Create source object with dynamically generated test data
-            var sourceRequest = new TransferUtilityUploadRequest();
-            var sourceType = typeof(TransferUtilityUploadRequest);
-            var testDataValues = new Dictionary<string, object>();
-
-            // Generate test data for each mapped property
-            foreach (var propertyName in completeMultipartRequestMappings)
-            {
-                // Resolve alias to actual property name
-                var resolvedPropertyName = ResolvePropertyName(propertyName, sourceType.Name);
-                var sourceProperty = sourceType.GetProperty(resolvedPropertyName);
-                if (sourceProperty?.CanWrite == true)
-                {
-                    var testValue = GenerateTestValue(sourceProperty.PropertyType, propertyName);
-                    sourceProperty.SetValue(sourceRequest, testValue);
-                    testDataValues[propertyName] = testValue;
-                }
-            }
-
-            // Add inherited properties for comprehensive testing
-            sourceRequest.InputStream = new MemoryStream(1024);
-
-            sourceRequest.ServerSideEncryptionCustomerMethod = ServerSideEncryptionCustomerMethod.AES256;
-
-            var multipartUploadCommand = new MultipartUploadCommand(null, null, sourceRequest);
-
-            // Map the response
-            var initiateResponse = new InitiateMultipartUploadResponse
-            {
-                UploadId = "test-upload-id",
-                ChecksumType = ChecksumType.FULL_OBJECT
-            };
-            var mappedRequest = multipartUploadCommand.ConstructCompleteMultipartUploadRequest(initiateResponse);
-            Assert.IsNotNull(mappedRequest, "Mapped request should not be null");
-
-            // Verify all mapped properties using reflection
-            var targetType = typeof(CompleteMultipartUploadRequest);
-            var failedAssertions = new List<string>();
-
-            foreach (var propertyName in completeMultipartRequestMappings)
-            {
-                // Resolve alias to actual property name for reflection lookups
-                var resolvedSourcePropertyName = ResolvePropertyName(propertyName, sourceType.Name);
-                var resolvedTargetPropertyName = ResolvePropertyName(propertyName, targetType.Name);
-                var sourceProperty = sourceType.GetProperty(resolvedSourcePropertyName);
-                var targetProperty = targetType.GetProperty(resolvedTargetPropertyName);
-
-                if (sourceProperty == null)
-                {
-                    failedAssertions.Add($"Source property '{propertyName}' (resolved to: {resolvedSourcePropertyName}) not found in {sourceType.Name}");
-                    continue;
-                }
-
-                if (targetProperty == null)
-                {
-                    failedAssertions.Add($"Target property '{propertyName}' (resolved to: {resolvedTargetPropertyName}) not found in {targetType.Name}");
-                    continue;
-                }
-
-                var sourceValue = sourceProperty.GetValue(sourceRequest);
-                var targetValue = targetProperty.GetValue(mappedRequest);
-
-                // Special handling for complex object comparisons
-                if (!AreValuesEqual(sourceValue, targetValue))
-                {
-                    failedAssertions.Add($"{propertyName}: Expected '{sourceValue ?? "null"}', got '{targetValue ?? "null"}'");
-                }
-            }
-
-            // Report any failures
-            if (failedAssertions.Any())
-            {
-                Assert.Fail($"Property mapping failures:\n{string.Join("\n", failedAssertions)}");
-            }
-        }
-
-        [TestMethod]
-        [TestCategory("S3")]
-        public void MapUploadRequest_AbortMultipartRequest_AllMappedProperties_WorkCorrectly()
-        {
-            // Get the expected mappings from JSON
-            var abortMultipartRequestMappings = _mappingJson.RootElement
-                .GetProperty("Conversion")
-                .GetProperty("UploadRequest")
-                .GetProperty("AbortMultipartRequest")
-                .EnumerateArray()
-                .Select(prop => prop.GetString())
-                .ToList();
-
-            // Create source object with dynamically generated test data
-            var sourceRequest = new TransferUtilityUploadRequest();
-            var sourceType = typeof(TransferUtilityUploadRequest);
-            var testDataValues = new Dictionary<string, object>();
-
-            // Generate test data for each mapped property
-            foreach (var propertyName in abortMultipartRequestMappings)
-            {
-                // Resolve alias to actual property name
-                var resolvedPropertyName = ResolvePropertyName(propertyName, sourceType.Name);
-                var sourceProperty = sourceType.GetProperty(resolvedPropertyName);
-                if (sourceProperty?.CanWrite == true)
-                {
-                    var testValue = GenerateTestValue(sourceProperty.PropertyType, propertyName);
-                    sourceProperty.SetValue(sourceRequest, testValue);
-                    testDataValues[propertyName] = testValue;
-                }
-            }
-
-            // Add inherited properties for comprehensive testing
-            sourceRequest.InputStream = new MemoryStream(1024);
-
-            sourceRequest.ServerSideEncryptionCustomerMethod = ServerSideEncryptionCustomerMethod.AES256;
-
-            var multipartUploadCommand = new MultipartUploadCommand(null, null, sourceRequest);
-
-            // Map the response
-            var mappedRequest = multipartUploadCommand.ConstructAbortMultipartUploadRequest("test-upload-id");
-            Assert.IsNotNull(mappedRequest, "Mapped request should not be null");
-
-            // Verify all mapped properties using reflection
-            var targetType = typeof(AbortMultipartUploadRequest);
-            var failedAssertions = new List<string>();
-
-            foreach (var propertyName in abortMultipartRequestMappings)
-            {
-                // Resolve alias to actual property name for reflection lookups
-                var resolvedSourcePropertyName = ResolvePropertyName(propertyName, sourceType.Name);
-                var resolvedTargetPropertyName = ResolvePropertyName(propertyName, targetType.Name);
-                var sourceProperty = sourceType.GetProperty(resolvedSourcePropertyName);
-                var targetProperty = targetType.GetProperty(resolvedTargetPropertyName);
-
-                if (sourceProperty == null)
-                {
-                    failedAssertions.Add($"Source property '{propertyName}' (resolved to: {resolvedSourcePropertyName}) not found in {sourceType.Name}");
-                    continue;
-                }
-
-                if (targetProperty == null)
-                {
-                    failedAssertions.Add($"Target property '{propertyName}' (resolved to: {resolvedTargetPropertyName}) not found in {targetType.Name}");
-                    continue;
-                }
-
-                var sourceValue = sourceProperty.GetValue(sourceRequest);
-                var targetValue = targetProperty.GetValue(mappedRequest);
-
-                // Special handling for complex object comparisons
-                if (!AreValuesEqual(sourceValue, targetValue))
-                {
-                    failedAssertions.Add($"{propertyName}: Expected '{sourceValue ?? "null"}', got '{targetValue ?? "null"}'");
-                }
-            }
-
-            // Report any failures
-            if (failedAssertions.Any())
-            {
-                Assert.Fail($"Property mapping failures:\n{string.Join("\n", failedAssertions)}");
-            }
-        }
-
-        [TestMethod]
-        [TestCategory("S3")]
-        public void MapPutObjectResponse_NullValues_HandledCorrectly()
-        {
-            // Test null handling scenarios
-            var testCases = new[]
-            {
-                // Test null Expiration
-                new PutObjectResponse { Expiration = null },
-                
-                // Test null enum conversions
-                new PutObjectResponse { ChecksumType = null, RequestCharged = null, ServerSideEncryptionMethod = null }
-            };
-
-            foreach (var testCase in testCases)
-            {
-                var mapped = ResponseMapper.MapPutObjectResponse(testCase);
-                Assert.IsNotNull(mapped, "Response should always be mappable");
-
-                // Test null handling
-                if (testCase.Expiration == null)
-                {
-                    Assert.IsNull(mapped.Expiration, "Null Expiration should map to null");
-                }
             }
         }
 
