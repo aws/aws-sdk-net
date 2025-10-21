@@ -1,3 +1,17 @@
+### 4.0.116.0 (2025-10-21 19:25 UTC)
+* AWSMarketplaceMetering (4.0.2.0)
+	* Added ClientToken parameter to MeterUsage API for specifying idempotent requests.
+* DynamoDBv2 (4.0.9.0)
+	* Add AccountID based endpoint metric to endpoint rules.
+* ElasticMapReduce (4.0.4.0)
+	* Added RECONFIGURING to the InstanceFleetState convenience enum.
+* MediaConvert (4.0.9.0)
+	* This release adds the ability to set resolution for the black video generator and also adds the StartJobsQuery and GetJobsQueryResults APIs which allow asynchronous search of job history using new filters.
+* S3 (4.0.7.13)
+	* For PutBucket: Add back exact custom logic for bucket region and BucketRegionName handling in PutBucketRequestMarshaller, where BucketRegion took precedence over BucketRegionName if both are set.
+	* For PutBucketNotification: For configurations, any Filter's FilterRule's Name and Value can be empty/null and the SDK will send empty xml elements. The request will still fail but with a better exception message.
+	* For PutLifecycleConfiguration: Add back custom logic for LifecycleRules where even if the user explicitly sets the status to null the request will succeed by setting status to disabled.
+
 ### 4.0.115.0 (2025-10-17 20:18 UTC)
 * AmplifyBackend (4.0.2.0)
 	* Update endpoint ruleset parameters casing
