@@ -34,7 +34,8 @@ namespace AWSSDK.UnitTests
     {
         private static JsonDocument _mappingJson;
         private static JsonDocument _propertyAliasesJson;
-        private static Dictionary<string, string> _propertyAliases;
+        private static Dictionary<string, Dictionary<string, string>> _propertyAliases;
+        private static List<S3Grant> _s3Grants;
 
         [ClassInitialize]
         public static void ClassInitialize(TestContext context)
@@ -65,17 +66,22 @@ namespace AWSSDK.UnitTests
                         _propertyAliasesJson = JsonDocument.Parse(aliasContent);
                         
                         // Convert to dictionary for fast lookup
-                        _propertyAliases = new Dictionary<string, string>();
-                        var aliasesElement = _propertyAliasesJson.RootElement.GetProperty("PropertyAliases");
-                        foreach (var alias in aliasesElement.EnumerateObject())
+                        _propertyAliases = new Dictionary<string, Dictionary<string, string>>();
+                        var objectElement = _propertyAliasesJson.RootElement.GetProperty("PropertyAliases");
+                        foreach (var objectName in objectElement.EnumerateObject())
                         {
-                            _propertyAliases[alias.Name] = alias.Value.GetString();
+                            var aliases = new Dictionary<string, string>();
+                            foreach (var alias in objectName.Value.EnumerateObject())
+                            {
+                                aliases[alias.Name] = alias.Value.GetString();
+                            }
+                            _propertyAliases[objectName.Name] = aliases;
                         }
                     }
                 }
                 else
                 {
-                    _propertyAliases = new Dictionary<string, string>();
+                    _propertyAliases = new Dictionary<string, Dictionary<string, string>>();
                 }
             }
         }
@@ -129,84 +135,125 @@ namespace AWSSDK.UnitTests
         [TestCategory("S3")]
         public void MapPutObjectResponse_AllMappedProperties_WorkCorrectly()
         {
-            // Get the expected mappings from JSON
-            var putObjectMappings = _mappingJson.RootElement
-                .GetProperty("Conversion")
-                .GetProperty("PutObjectResponse")
-                .GetProperty("UploadResponse")
-                .EnumerateArray()
-                .Select(prop => prop.GetString())
-                .ToList();
-
-            // Create source object with dynamically generated test data
-            var sourceResponse = new PutObjectResponse();
-            var sourceType = typeof(PutObjectResponse);
-            var testDataValues = new Dictionary<string, object>();
-
-            // Generate test data for each mapped property
-            foreach (var propertyName in putObjectMappings)
-            {
-                // Resolve alias to actual property name
-                var resolvedPropertyName = ResolvePropertyName(propertyName);
-                var sourceProperty = sourceType.GetProperty(resolvedPropertyName);
-                if (sourceProperty?.CanWrite == true)
+            ValidateMappingTransferUtilityAndSdkRequests<PutObjectResponse, TransferUtilityUploadResponse>(
+                new[] { "Conversion", "PutObjectResponse", "UploadResponse" },
+                (sourceResponse) =>
                 {
-                    var testValue = GenerateTestValue(sourceProperty.PropertyType, propertyName);
-                    sourceProperty.SetValue(sourceResponse, testValue);
-                    testDataValues[propertyName] = testValue;
-                }
-            }
-
-            // Add inherited properties for comprehensive testing
-            sourceResponse.HttpStatusCode = HttpStatusCode.OK;
-            sourceResponse.ContentLength = 1024;
-
-            // Map the response
-            var mappedResponse = ResponseMapper.MapPutObjectResponse(sourceResponse);
-            Assert.IsNotNull(mappedResponse, "Mapped response should not be null");
-
-            // Verify all mapped properties using reflection
-            var targetType = typeof(TransferUtilityUploadResponse);
-            var failedAssertions = new List<string>();
-
-            foreach (var propertyName in putObjectMappings)
-            {
-                // Resolve alias to actual property name for reflection lookups
-                var resolvedPropertyName = ResolvePropertyName(propertyName);
-                var sourceProperty = sourceType.GetProperty(resolvedPropertyName);
-                var targetProperty = targetType.GetProperty(resolvedPropertyName);
-
-                if (sourceProperty == null)
+                    return ResponseMapper.MapPutObjectResponse(sourceResponse);
+                },
+                usesHeadersCollection: false,
+                (sourceResponse) =>
                 {
-                    failedAssertions.Add($"Source property '{propertyName}' (resolved to: {resolvedPropertyName}) not found in PutObjectResponse");
-                    continue;
-                }
-
-                if (targetProperty == null)
+                    sourceResponse.HttpStatusCode = HttpStatusCode.OK;
+                    sourceResponse.ContentLength = 1024;
+                },
+                (sourceResponse, targetResponse) =>
                 {
-                    failedAssertions.Add($"Target property '{propertyName}' (resolved to: {resolvedPropertyName}) not found in TransferUtilityUploadResponse");
-                    continue;
-                }
+                    Assert.AreEqual(sourceResponse.HttpStatusCode, targetResponse.HttpStatusCode, "HttpStatusCode should match");
+                    Assert.AreEqual(sourceResponse.ContentLength, targetResponse.ContentLength, "ContentLength should match");
+                });
+        }
 
-                var sourceValue = sourceProperty.GetValue(sourceResponse);
-                var targetValue = targetProperty.GetValue(mappedResponse);
-
-                // Special handling for complex object comparisons
-                if (!AreValuesEqual(sourceValue, targetValue))
+        [TestMethod]
+        [TestCategory("S3")]
+        public void MapUploadRequest_PutObjectRequest_AllMappedProperties_WorkCorrectly()
+        {
+            ValidateMappingTransferUtilityAndSdkRequests<TransferUtilityUploadRequest, PutObjectRequest>(
+                new[] { "Conversion", "UploadRequest", "PutObjectRequest" },
+                (sourceRequest) =>
                 {
-                    failedAssertions.Add($"{propertyName}: Expected '{sourceValue ?? "null"}', got '{targetValue ?? "null"}'");
-                }
-            }
+                    var simpleUploadCommand = new SimpleUploadCommand(null, null, sourceRequest);
+                    return simpleUploadCommand.ConstructRequest();
+                },
+                usesHeadersCollection: false);
+        }
 
-            // Test inherited properties
-            Assert.AreEqual(sourceResponse.HttpStatusCode, mappedResponse.HttpStatusCode, "HttpStatusCode should match");
-            Assert.AreEqual(sourceResponse.ContentLength, mappedResponse.ContentLength, "ContentLength should match");
+        [TestMethod]
+        [TestCategory("S3")]
+        public void MapUploadRequest_CreateMultipartRequest_AllMappedProperties_WorkCorrectly()
+        {
+            ValidateMappingTransferUtilityAndSdkRequests<TransferUtilityUploadRequest, InitiateMultipartUploadRequest>(
+                new[] { "Conversion", "UploadRequest", "CreateMultipartRequest" },
+                (sourceRequest) =>
+                {
+                    var multipartUploadCommand = new MultipartUploadCommand(null, null, sourceRequest);
+                    return multipartUploadCommand.ConstructInitiateMultipartUploadRequest();
+                },
+                usesHeadersCollection: true,
+                (sourceRequest) =>
+                {
+                    sourceRequest.InputStream = new MemoryStream(1024);
+                });
+        }
 
-            // Report any failures
-            if (failedAssertions.Any())
-            {
-                Assert.Fail($"Property mapping failures:\n{string.Join("\n", failedAssertions)}");
-            }
+        [TestMethod]
+        [TestCategory("S3")]
+        public void MapUploadRequest_UploadPartRequest_AllMappedProperties_WorkCorrectly()
+        {
+            ValidateMappingTransferUtilityAndSdkRequests<TransferUtilityUploadRequest, UploadPartRequest>(
+                new[] { "Conversion", "UploadRequest", "UploadPartRequest" },
+                (sourceRequest) =>
+                {
+                    var multipartUploadCommand = new MultipartUploadCommand(null, null, sourceRequest);
+
+                    var initiateResponse = new InitiateMultipartUploadResponse
+                    {
+                        UploadId = "test-upload-id"
+                    };
+
+                    return multipartUploadCommand.ConstructUploadPartRequest(1, 1024, initiateResponse);
+                },
+                usesHeadersCollection: false,
+                (sourceRequest) =>
+                {
+                    sourceRequest.InputStream = new MemoryStream(1024);
+                });
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public void MapUploadRequest_CompleteMultipartRequest_AllMappedProperties_WorkCorrectly()
+        {
+            ValidateMappingTransferUtilityAndSdkRequests<TransferUtilityUploadRequest, CompleteMultipartUploadRequest>(
+                new[] { "Conversion", "UploadRequest", "CompleteMultipartRequest" },
+                (sourceRequest) =>
+                {
+                    var multipartUploadCommand = new MultipartUploadCommand(null, null, sourceRequest);
+
+                    var initiateResponse = new InitiateMultipartUploadResponse
+                    {
+                        UploadId = "test-upload-id",
+                        ChecksumType = ChecksumType.FULL_OBJECT
+                    };
+
+                    return multipartUploadCommand.ConstructCompleteMultipartUploadRequest(initiateResponse);
+                },
+                usesHeadersCollection: false,
+                (sourceRequest) =>
+                {
+                    sourceRequest.InputStream = new MemoryStream(1024);
+                    sourceRequest.ServerSideEncryptionCustomerMethod = ServerSideEncryptionCustomerMethod.AES256;
+                });
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public void MapUploadRequest_AbortMultipartRequest_AllMappedProperties_WorkCorrectly()
+        {
+            ValidateMappingTransferUtilityAndSdkRequests<TransferUtilityUploadRequest, AbortMultipartUploadRequest>(
+                new[] { "Conversion", "UploadRequest", "AbortMultipartRequest" },
+                (sourceRequest) =>
+                {
+                    var multipartUploadCommand = new MultipartUploadCommand(null, null, sourceRequest);
+
+                    return multipartUploadCommand.ConstructAbortMultipartUploadRequest("test-upload-id");
+                },
+                usesHeadersCollection: false,
+                (sourceRequest) =>
+                {
+                    sourceRequest.InputStream = new MemoryStream(1024);
+                    sourceRequest.ServerSideEncryptionCustomerMethod = ServerSideEncryptionCustomerMethod.AES256;
+                });
         }
 
         [TestMethod]
@@ -236,6 +283,172 @@ namespace AWSSDK.UnitTests
             }
         }
 
+        private void ValidateMappingTransferUtilityAndSdkRequests<TSourceRequest, TTargetRequest>(
+            string[] mappingPath,
+            Func<TSourceRequest, TTargetRequest> fetchTargetRequest,
+            bool usesHeadersCollection = false,
+            Action<TSourceRequest> requestHook = null,
+            Action<TSourceRequest, TTargetRequest> additionalValidations = null)
+        {
+            // Get the expected mappings from JSON
+            JsonElement mappingElement = _mappingJson.RootElement;
+
+            foreach (var path in mappingPath)
+            {
+                mappingElement = mappingElement.GetProperty(path);
+            }
+
+            // Get the expected mappings from JSON
+            var requestMappings = mappingElement
+                .EnumerateArray()
+                .Select(prop => prop.GetString())
+                .ToList();
+
+            // Create source object with dynamically generated test data
+            var sourceRequest = Activator.CreateInstance<TSourceRequest>();
+            var sourceType = typeof(TSourceRequest);
+            var testDataValues = new Dictionary<string, object>();
+
+            // Generate test data for each mapped property
+            foreach (var propertyName in requestMappings)
+            {
+                // Resolve alias to actual property name
+                var resolvedPropertyName = ResolvePropertyName(propertyName, sourceType.Name);
+                var sourceProperty = sourceType.GetProperty(resolvedPropertyName);
+                if (sourceProperty?.CanWrite == true)
+                {
+                    var testValue = GenerateTestValue(sourceProperty.PropertyType, propertyName);
+                    sourceProperty.SetValue(sourceRequest, testValue);
+                    testDataValues[propertyName] = testValue;
+                }
+            }
+
+            requestHook?.Invoke(sourceRequest);
+
+            // Map the response
+            var mappedRequest = fetchTargetRequest(sourceRequest);
+            Assert.IsNotNull(mappedRequest, "Mapped request should not be null");
+
+            // Verify all mapped properties using reflection
+            var targetType = typeof(TTargetRequest);
+            var failedAssertions = new List<string>();
+
+            foreach (var propertyName in requestMappings)
+            {
+                // Resolve alias to actual property name for reflection lookups
+                var resolvedSourcePropertyName = ResolvePropertyName(propertyName, sourceType.Name);
+                var resolvedTargetPropertyName = ResolvePropertyName(propertyName, targetType.Name);
+                var sourceProperty = sourceType.GetProperty(resolvedSourcePropertyName);
+                var targetProperty = targetType.GetProperty(resolvedTargetPropertyName);
+
+                object sourceValue = null;
+
+                if (sourceProperty != null)
+                {
+                    // Property found directly on source type
+                    sourceValue = sourceProperty.GetValue(sourceRequest);
+                }
+                else
+                {
+                    if (!usesHeadersCollection)
+                    {
+                        failedAssertions.Add($"Source property '{propertyName}' (resolved to: {resolvedSourcePropertyName}) not found in {sourceType.Name}");
+                        continue;
+                    }
+
+                    // Check if source type has a Headers property of type HeadersCollection
+                    var sourceHeadersProperty = sourceType.GetProperty("Headers");
+                    if (sourceHeadersProperty != null && typeof(HeadersCollection).IsAssignableFrom(sourceHeadersProperty.PropertyType))
+                    {
+                        var sourceHeadersCollection = sourceHeadersProperty.GetValue(sourceRequest) as HeadersCollection;
+                        if (sourceHeadersCollection != null)
+                        {
+                            var sourceHeadersCollectionProperty = typeof(HeadersCollection).GetProperty(resolvedSourcePropertyName);
+                            if (sourceHeadersCollectionProperty != null)
+                            {
+                                sourceValue = sourceHeadersCollectionProperty.GetValue(sourceHeadersCollection);
+                            }
+                            else
+                            {
+                                failedAssertions.Add($"Source property '{propertyName}' (resolved to: {resolvedSourcePropertyName}) not found in {sourceType.Name} or HeadersCollection");
+                                continue;
+                            }
+                        }
+                        else
+                        {
+                            failedAssertions.Add($"Source Headers collection is null in {sourceType.Name}");
+                            continue;
+                        }
+                    }
+                    else
+                    {
+                        failedAssertions.Add($"Source property '{propertyName}' (resolved to: {resolvedSourcePropertyName}) not found in {sourceType.Name}");
+                        continue;
+                    }
+                }
+
+                object targetValue = null;
+
+                if (targetProperty != null)
+                {
+                    // Property found directly on target type
+                    targetValue = targetProperty.GetValue(mappedRequest);
+                }
+                else
+                {
+                    if (!usesHeadersCollection)
+                    {
+                        failedAssertions.Add($"Target property '{propertyName}' (resolved to: {resolvedTargetPropertyName}) not found in {targetType.Name}");
+                        continue;
+                    }
+
+                    // Check if target type has a Headers property of type HeadersCollection
+                    var headersProperty = targetType.GetProperty("Headers");
+                    if (headersProperty != null && typeof(HeadersCollection).IsAssignableFrom(headersProperty.PropertyType))
+                    {
+                        var headersCollection = headersProperty.GetValue(mappedRequest) as HeadersCollection;
+                        if (headersCollection != null)
+                        {
+                            var headersCollectionProperty = typeof(HeadersCollection).GetProperty(resolvedTargetPropertyName);
+                            if (headersCollectionProperty != null)
+                            {
+                                targetValue = headersCollectionProperty.GetValue(headersCollection);
+                            }
+                            else
+                            {
+                                failedAssertions.Add($"Target property '{propertyName}' (resolved to: {resolvedTargetPropertyName}) not found in {targetType.Name} or HeadersCollection");
+                                continue;
+                            }
+                        }
+                        else
+                        {
+                            failedAssertions.Add($"Headers collection is null in {targetType.Name}");
+                            continue;
+                        }
+                    }
+                    else
+                    {
+                        failedAssertions.Add($"Target property '{propertyName}' (resolved to: {resolvedTargetPropertyName}) not found in {targetType.Name}");
+                        continue;
+                    }
+                }
+
+                // Special handling for complex object comparisons
+                if (!AreValuesEqual(sourceValue, targetValue))
+                {
+                    failedAssertions.Add($"{propertyName}: Expected '{sourceValue ?? "null"}', got '{targetValue ?? "null"}'");
+                }
+            }
+
+            additionalValidations?.Invoke(sourceRequest, mappedRequest);
+
+            // Report any failures
+            if (failedAssertions.Any())
+            {
+                Assert.Fail($"Property mapping failures:\n{string.Join("\n", failedAssertions)}");
+            }
+        }
+
         [TestMethod]
         [TestCategory("S3")]
         public void ValidateTransferUtilityUploadResponseDefinitionCompleteness()
@@ -253,35 +466,74 @@ namespace AWSSDK.UnitTests
                 new[] { "Conversion", "CompleteMultipartResponse", "UploadResponse" },
                 "TransferUtilityUploadResponse");
         }
-        
-        // Uncomment for DOTNET-8277
 
-        // [TestMethod]
-        // [TestCategory("S3")]
-        // public void ValidatePutObjectRequestDefinitionCompleteness()
-        // {
-        //     ValidateResponseDefinitionCompleteness<PutObjectRequest>(
-        //         new[] { "Definition", "UploadRequest", "PutObjectRequest" },
-        //         "PutObjectRequest");
-        // }
+        [TestMethod]
+        [TestCategory("S3")]
+        public void ValidatePutObjectRequestDefinitionCompleteness()
+        {
+            ValidateResponseDefinitionCompleteness<PutObjectRequest>(
+                new[] { "Definition", "UploadRequest", "PutObjectRequest" },
+                "PutObjectRequest",
+                () =>
+                {
+                    return typeof(HeadersCollection)
+                        .GetProperties(BindingFlags.Public | BindingFlags.Instance)
+                        .Where(p => p.CanRead)
+                        .Select(p => p.Name)
+                        .ToList();
+                });
+        }
 
-        // [TestMethod]
-        // [TestCategory("S3")]
-        // public void ValidateGetObjectRequestDefinitionCompleteness()
-        // {
-        //     ValidateResponseDefinitionCompleteness<GetObjectRequest>(
-        //         new[] { "Definition", "DownloadRequest", "GetObjectRequest" },
-        //         "GetObjectRequest");
-        // }
+        [TestMethod]
+        [TestCategory("S3")]
+        public void ValidateGetObjectRequestDefinitionCompleteness()
+        {
+            ValidateResponseDefinitionCompleteness<GetObjectRequest>(
+                new[] { "Definition", "DownloadRequest", "GetObjectRequest" },
+                "GetObjectRequest",
+                () =>
+                {
+                return typeof(ResponseHeaderOverrides)
+                    .GetProperties(BindingFlags.Public | BindingFlags.Instance)
+                    .Where(p => p.CanRead)
+                    .Select(p => p.Name)
+                    .ToList();
+            });
+        }
 
-        // [TestMethod]
-        // [TestCategory("S3")]
-        // public void ValidateGetObjectRequestDefinitionCompleteness()
-        // {
-        //     ValidateResponseDefinitionCompleteness<GetObjectRequest>(
-        //         new[] { "Definition", "DownloadRequest", "GetObjectRequest" },
-        //         "TransferUtilityDownloadRequest");
-        // }
+        [TestMethod]
+        [TestCategory("S3")]
+        public void ValidateTransferUtilityDownloadRequestDefinitionCompleteness()
+        {
+            ValidateResponseDefinitionCompleteness<TransferUtilityDownloadRequest>(
+                new[] { "Definition", "DownloadRequest", "GetObjectRequest" },
+                "TransferUtilityDownloadRequest",
+                () =>
+                {
+                    return typeof(ResponseHeaderOverrides)
+                        .GetProperties(BindingFlags.Public | BindingFlags.Instance)
+                        .Where(p => p.CanRead)
+                        .Select(p => p.Name)
+                        .ToList();
+                });
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public void ValidateTransferUtilityUploadRequestDefinitionCompleteness()
+        {
+            ValidateResponseDefinitionCompleteness<TransferUtilityUploadRequest>(
+                new[] { "Definition", "UploadRequest", "PutObjectRequest" },
+                "TransferUtilityUploadRequest",
+                () =>
+                {
+                    return typeof(HeadersCollection)
+                        .GetProperties(BindingFlags.Public | BindingFlags.Instance)
+                        .Where(p => p.CanRead)
+                        .Select(p => p.Name)
+                        .ToList();
+                });
+        }
 
         /// <summary>
         /// Generates appropriate test data for a given property type
@@ -344,6 +596,36 @@ namespace AWSSDK.UnitTests
                 return 1024;
             }
 
+            if (propertyType == typeof(List<S3Grant>))
+            {
+                if (_s3Grants is null)
+                {
+                    _s3Grants = new List<S3Grant> { new S3Grant { Grantee = new S3Grantee { DisplayName = "test-s3grantee"} } };
+                }
+
+                return _s3Grants;
+            }
+
+            if (propertyType == typeof(MetadataCollection))
+            {
+                var metadataCollection = new MetadataCollection();
+                metadataCollection.Add("x-amz-meta-testkey", "testvalue");
+                return metadataCollection;
+            }
+
+            if (propertyType == typeof(DateTime))
+            {
+                return DateTime.UtcNow;
+            }
+
+            if (propertyType == typeof(List<Tag>))
+            {
+                return new List<Tag>
+                {
+                    new Tag { Key = "test-key", Value = "test-value" }
+                };
+            }
+
             // For unknown types, throw an exception instead of returning null
             // If we've reached this point it means there is an unhandled scenario/missing mapping in our test code that we need to handle. 
             throw new NotSupportedException(
@@ -378,14 +660,17 @@ namespace AWSSDK.UnitTests
         /// <summary>
         /// Resolves a property name to its actual class property name, checking aliases if needed
         /// </summary>
-        private static string ResolvePropertyName(string propertyName)
+        private static string ResolvePropertyName(string propertyName, string responseTypeName)
         {
-            // Check if there's an alias for this property name
-            if (_propertyAliases.TryGetValue(propertyName, out var aliasedName))
+            if (_propertyAliases.TryGetValue(responseTypeName, out var objectAliases))
             {
-                return aliasedName;
+                // Check if there's an alias for this property name
+                if (objectAliases.TryGetValue(propertyName, out var aliasedName))
+                {
+                    return aliasedName;
+                }
             }
-            
+                        
             // Return the original name if no alias exists
             return propertyName;
         }
@@ -434,7 +719,7 @@ namespace AWSSDK.UnitTests
             
             foreach (var definitionProperty in definitionProperties)
             {
-                var resolvedPropertyName = ResolvePropertyName(definitionProperty);
+                var resolvedPropertyName = ResolvePropertyName(definitionProperty, responseTypeName);
                 
                 // Check if the resolved property name exists in the actual class
                 if (!actualProperties.Contains(resolvedPropertyName))
