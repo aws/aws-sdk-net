@@ -163,6 +163,123 @@ namespace Amazon.S3.Transfer.Internal
         }
 
         /// <summary>
+        /// Private helper method to populate the common properties from GetObjectResponse to the base response class.
+        /// Contains all the shared mapping logic for GetObjectResponse fields. 
+        /// </summary>
+        /// <param name="source">The GetObjectResponse to map from</param>
+        /// <param name="target">The TransferUtilityGetObjectResponseBase to populate</param>
+        private static void PopulateGetObjectResponseBase(GetObjectResponse source, TransferUtilityGetObjectResponseBase target)
+        {
+            if (source == null || target == null)
+                return;
+
+            // Map all fields as defined in mapping.json "Conversion" -> "GetObjectResponse" -> "DownloadResponse"
+            if (source.IsSetAcceptRanges())
+                target.AcceptRanges = source.AcceptRanges;
+
+            if (source.IsSetBucketKeyEnabled())
+                target.BucketKeyEnabled = source.BucketKeyEnabled.GetValueOrDefault();
+
+            if (source.IsSetChecksumCRC32())
+                target.ChecksumCRC32 = source.ChecksumCRC32;
+
+            if (source.IsSetChecksumCRC32C())
+                target.ChecksumCRC32C = source.ChecksumCRC32C;
+
+            if (source.IsSetChecksumCRC64NVME())
+                target.ChecksumCRC64NVME = source.ChecksumCRC64NVME;
+
+            if (source.IsSetChecksumSHA1())
+                target.ChecksumSHA1 = source.ChecksumSHA1;
+
+            if (source.IsSetChecksumSHA256())
+                target.ChecksumSHA256 = source.ChecksumSHA256;
+
+            if (source.IsSetChecksumType())
+                target.ChecksumType = source.ChecksumType;
+
+            target.ContentLength = source.ContentLength;
+
+            if (source.IsSetContentRange())
+                target.ContentRange = source.ContentRange;
+
+            target.Headers = source.Headers;
+
+            if (source.IsSetDeleteMarker())
+                target.DeleteMarker = source.DeleteMarker;
+
+            if (source.IsSetETag())
+                target.ETag = source.ETag;
+
+            if (source.Expiration != null)
+                target.Expiration = source.Expiration;
+
+            if (source.ExpiresString != null)
+                target.ExpiresString = source.ExpiresString;
+
+            if (source.IsSetLastModified())
+                target.LastModified = source.LastModified;
+
+            if (source.Metadata != null)
+                target.Metadata = source.Metadata;
+
+            if (source.IsSetMissingMeta())
+                target.MissingMeta = source.MissingMeta;
+
+            if (source.IsSetObjectLockLegalHoldStatus())
+                target.ObjectLockLegalHoldStatus = source.ObjectLockLegalHoldStatus;
+
+            if (source.IsSetObjectLockMode())
+                target.ObjectLockMode = source.ObjectLockMode;
+
+            if (source.IsSetObjectLockRetainUntilDate())
+                target.ObjectLockRetainUntilDate = source.ObjectLockRetainUntilDate;
+
+            if (source.IsSetPartsCount())
+                target.PartsCount = source.PartsCount;
+
+            if (source.IsSetReplicationStatus())
+                target.ReplicationStatus = source.ReplicationStatus;
+
+            if (source.IsSetRequestCharged())
+                target.RequestCharged = source.RequestCharged;
+
+            if (source.RestoreExpiration.HasValue)
+                target.RestoreExpiration = source.RestoreExpiration;
+
+            if (source.RestoreInProgress.HasValue)
+                target.RestoreInProgress = source.RestoreInProgress;
+
+            if (source.ServerSideEncryptionCustomerMethod != null)
+                target.ServerSideEncryptionCustomerMethod = source.ServerSideEncryptionCustomerMethod;
+
+            if (source.ServerSideEncryptionCustomerProvidedKeyMD5 != null)
+                target.ServerSideEncryptionCustomerProvidedKeyMD5 = source.ServerSideEncryptionCustomerProvidedKeyMD5;
+
+            if (source.IsSetServerSideEncryptionKeyManagementServiceKeyId())
+                target.ServerSideEncryptionKeyManagementServiceKeyId = source.ServerSideEncryptionKeyManagementServiceKeyId;
+
+            if (source.IsSetServerSideEncryptionMethod())
+                target.ServerSideEncryptionMethod = source.ServerSideEncryptionMethod;
+
+            if (source.IsSetStorageClass())
+                target.StorageClass = source.StorageClass;
+
+            target.TagCount = source.TagCount;
+
+            if (source.IsSetVersionId())
+                target.VersionId = source.VersionId;
+
+            if (source.IsSetWebsiteRedirectLocation())
+                target.WebsiteRedirectLocation = source.WebsiteRedirectLocation;
+
+            // Copy response metadata  
+            target.ResponseMetadata = source.ResponseMetadata;
+            target.ContentLength = source.ContentLength;
+            target.HttpStatusCode = source.HttpStatusCode;
+        }
+
+        /// <summary>
         /// Maps a GetObjectResponse to TransferUtilityDownloadResponse.
         /// Uses the field mappings defined in mapping.json "Conversion" -> "GetObjectResponse" -> "DownloadResponse".
         /// </summary>
@@ -174,114 +291,28 @@ namespace Amazon.S3.Transfer.Internal
                 return null;
 
             var response = new TransferUtilityDownloadResponse();
-
-            // Map all fields as defined in mapping.json "Conversion" -> "GetObjectResponse" -> "DownloadResponse"
-            if (source.IsSetAcceptRanges())
-                response.AcceptRanges = source.AcceptRanges;
-
-            if (source.IsSetBucketKeyEnabled())
-                response.BucketKeyEnabled = source.BucketKeyEnabled.GetValueOrDefault();
-
-            if (source.IsSetChecksumCRC32())
-                response.ChecksumCRC32 = source.ChecksumCRC32;
-
-            if (source.IsSetChecksumCRC32C())
-                response.ChecksumCRC32C = source.ChecksumCRC32C;
-
-            if (source.IsSetChecksumCRC64NVME())
-                response.ChecksumCRC64NVME = source.ChecksumCRC64NVME;
-
-            if (source.IsSetChecksumSHA1())
-                response.ChecksumSHA1 = source.ChecksumSHA1;
-
-            if (source.IsSetChecksumSHA256())
-                response.ChecksumSHA256 = source.ChecksumSHA256;
-
-            if (source.IsSetChecksumType())
-                response.ChecksumType = source.ChecksumType;
-
-            response.ContentLength = source.ContentLength;
-
-            if (source.IsSetContentRange())
-                response.ContentRange = source.ContentRange;
-
-            response.Headers = source.Headers;
-
-            if (source.IsSetDeleteMarker())
-                response.DeleteMarker = source.DeleteMarker;
-
-            if (source.IsSetETag())
-                response.ETag = source.ETag;
-
-            if (source.Expiration != null)
-                response.Expiration = source.Expiration;
-
-            if (source.ExpiresString != null)
-                response.ExpiresString = source.ExpiresString;
-
-            if (source.IsSetLastModified())
-                response.LastModified = source.LastModified;
-
-            if (source.Metadata != null)
-                response.Metadata = source.Metadata;
-
-            if (source.IsSetMissingMeta())
-                response.MissingMeta = source.MissingMeta;
-
-            if (source.IsSetObjectLockLegalHoldStatus())
-                response.ObjectLockLegalHoldStatus = source.ObjectLockLegalHoldStatus;
-
-            if (source.IsSetObjectLockMode())
-                response.ObjectLockMode = source.ObjectLockMode;
-
-            if (source.IsSetObjectLockRetainUntilDate())
-                response.ObjectLockRetainUntilDate = source.ObjectLockRetainUntilDate;
-
-            if (source.IsSetPartsCount())
-                response.PartsCount = source.PartsCount;
-
-            if (source.IsSetReplicationStatus())
-                response.ReplicationStatus = source.ReplicationStatus;
-
-            if (source.IsSetRequestCharged())
-                response.RequestCharged = source.RequestCharged;
-
-            if (source.RestoreExpiration.HasValue)
-                response.RestoreExpiration = source.RestoreExpiration;
-
-            if (source.RestoreInProgress.HasValue)
-                response.RestoreInProgress = source.RestoreInProgress;
-
-            if (source.ServerSideEncryptionCustomerMethod != null)
-                response.ServerSideEncryptionCustomerMethod = source.ServerSideEncryptionCustomerMethod;
-
-            if (source.ServerSideEncryptionCustomerProvidedKeyMD5 != null)
-                response.ServerSideEncryptionCustomerProvidedKeyMD5 = source.ServerSideEncryptionCustomerProvidedKeyMD5;
-
-            if (source.IsSetServerSideEncryptionKeyManagementServiceKeyId())
-                response.ServerSideEncryptionKeyManagementServiceKeyId = source.ServerSideEncryptionKeyManagementServiceKeyId;
-
-            if (source.IsSetServerSideEncryptionMethod())
-                response.ServerSideEncryptionMethod = source.ServerSideEncryptionMethod;
-
-            if (source.IsSetStorageClass())
-                response.StorageClass = source.StorageClass;
-
-            response.TagCount = source.TagCount;
-
-            if (source.IsSetVersionId())
-                response.VersionId = source.VersionId;
-
-            if (source.IsSetWebsiteRedirectLocation())
-                response.WebsiteRedirectLocation = source.WebsiteRedirectLocation;
-
-            // Copy response metadata
-            response.ResponseMetadata = source.ResponseMetadata;
-            response.ContentLength = source.ContentLength;
-            response.HttpStatusCode = source.HttpStatusCode;
-
+            PopulateGetObjectResponseBase(source, response);
             return response;
         }
+
+        /// <summary>
+        /// Maps a GetObjectResponse to TransferUtilityOpenStreamResponse.
+        /// Uses the same field mappings as DownloadResponse plus the ResponseStream property.
+        /// </summary>
+        /// <param name="source">The GetObjectResponse to map from</param>
+        /// <returns>A new TransferUtilityOpenStreamResponse with mapped fields</returns>
+        internal static TransferUtilityOpenStreamResponse MapGetObjectResponseToOpenStream(GetObjectResponse source)
+        {
+            if (source == null)
+                return null;
+
+            var response = new TransferUtilityOpenStreamResponse();
+            PopulateGetObjectResponseBase(source, response);
+            response.ResponseStream = source.ResponseStream;
+
+            return response;            
+        }
+
         
     }
 }

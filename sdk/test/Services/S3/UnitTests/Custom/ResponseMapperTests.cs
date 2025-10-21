@@ -687,6 +687,108 @@ namespace AWSSDK.UnitTests
                 });
         }
 
+        [TestMethod]
+        [TestCategory("S3")]
+        public void MapGetObjectResponseToOpenStream_AllMappedProperties_WorkCorrectly()
+        {
+            ValidateMappingTransferUtilityAndSdkRequests<GetObjectResponse, TransferUtilityOpenStreamResponse>(
+                new[] { "Conversion", "GetObjectResponse", "DownloadResponse" },
+                (sourceResponse) =>
+                {
+                    return ResponseMapper.MapGetObjectResponseToOpenStream(sourceResponse);
+                },
+                usesHeadersCollection: true,
+                (sourceResponse) =>
+                {
+                    sourceResponse.HttpStatusCode = HttpStatusCode.OK;
+                    sourceResponse.ContentLength = 2048;
+                    sourceResponse.ResponseStream = new MemoryStream(new byte[1024]);
+                },
+                (sourceResponse, targetResponse) =>
+                {
+                    Assert.AreEqual(sourceResponse.HttpStatusCode, targetResponse.HttpStatusCode, "HttpStatusCode should match");
+                    Assert.AreEqual(sourceResponse.ContentLength, targetResponse.ContentLength, "ContentLength should match");
+                    Assert.AreSame(sourceResponse.ResponseStream, targetResponse.ResponseStream, "ResponseStream should be the same instance");
+                });
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public void MapGetObjectResponseToOpenStream_NullValues_HandledCorrectly()
+        {
+            // Test null handling scenarios
+            var testCases = new[]
+            {
+                // Test null Expiration
+                new GetObjectResponse { Expiration = null },
+                
+                // Test null enum conversions
+                new GetObjectResponse { ChecksumType = null, RequestCharged = null, ServerSideEncryptionMethod = null },
+                
+                // Test null ResponseStream
+                new GetObjectResponse { ResponseStream = null }
+            };
+
+            foreach (var testCase in testCases)
+            {
+                var mapped = ResponseMapper.MapGetObjectResponseToOpenStream(testCase);
+                Assert.IsNotNull(mapped, "Response should always be mappable");
+
+                // Test null handling
+                if (testCase.Expiration == null)
+                {
+                    Assert.IsNull(mapped.Expiration, "Null Expiration should map to null");
+                }
+                
+                if (testCase.ResponseStream == null)
+                {
+                    Assert.IsNull(mapped.ResponseStream, "Null ResponseStream should map to null");
+                }
+            }
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public void MapGetObjectResponseToOpenStream_ResponseStream_HandledCorrectly()
+        {
+            // Test with actual stream
+            var testStream = new MemoryStream(new byte[] { 1, 2, 3, 4, 5 });
+            var sourceResponse = new GetObjectResponse
+            {
+                ResponseStream = testStream,
+                ETag = "test-etag",
+                ContentLength = 5
+            };
+
+            var mappedResponse = ResponseMapper.MapGetObjectResponseToOpenStream(sourceResponse);
+
+            Assert.IsNotNull(mappedResponse, "Mapped response should not be null");
+            Assert.AreSame(testStream, mappedResponse.ResponseStream, "ResponseStream should be the same instance");
+            Assert.AreEqual("test-etag", mappedResponse.ETag, "Other properties should also be mapped");
+            Assert.AreEqual(5, mappedResponse.ContentLength, "ContentLength should be mapped");
+
+            // Test with null stream
+            var sourceWithNullStream = new GetObjectResponse
+            {
+                ResponseStream = null,
+                ETag = "test-etag-2"
+            };
+
+            var mappedWithNullStream = ResponseMapper.MapGetObjectResponseToOpenStream(sourceWithNullStream);
+
+            Assert.IsNotNull(mappedWithNullStream, "Mapped response should not be null even with null stream");
+            Assert.IsNull(mappedWithNullStream.ResponseStream, "ResponseStream should be null when source is null");
+            Assert.AreEqual("test-etag-2", mappedWithNullStream.ETag, "Other properties should still be mapped");
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public void MapGetObjectResponseToOpenStream_NullSource_ReturnsNull()
+        {
+            var result = ResponseMapper.MapGetObjectResponseToOpenStream(null);
+            Assert.IsNull(result, "Mapping null source should return null");
+        }
+
         /// <summary>
         /// Generates appropriate test data for a given property type
         /// </summary>
