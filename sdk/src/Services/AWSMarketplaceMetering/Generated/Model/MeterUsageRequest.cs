@@ -48,8 +48,14 @@ namespace Amazon.AWSMarketplaceMetering.Model
     /// </para>
     ///  
     /// <para>
-    /// Usage records are expected to be submitted as quickly as possible after the event
-    /// that is being recorded, and are not accepted more than 6 hours after the event.
+    /// Submit usage records to report events from the previous hour. If you submit records
+    /// that are greater than six hours after events occur, the records won’t be accepted.
+    /// The timestamp in your request determines when an event is recorded. You can only report
+    /// usage once per hour for each dimension. For AMI-based products, this is per dimension
+    /// and per EC2 instance. For container products, this is per dimension and per ECS task
+    /// or EKS pod. You can’t modify values after they’re recorded. If you report usage before
+    /// the current hour ends, you will be unable to report additional usage until the next
+    /// hour begins.
     /// </para>
     ///  
     /// <para>
@@ -60,12 +66,47 @@ namespace Amazon.AWSMarketplaceMetering.Model
     /// </summary>
     public partial class MeterUsageRequest : AmazonAWSMarketplaceMeteringRequest
     {
+        private string _clientToken;
         private bool? _dryRun;
         private string _productCode;
         private DateTime? _timestamp;
         private List<UsageAllocation> _usageAllocations = AWSConfigs.InitializeCollections ? new List<UsageAllocation>() : null;
         private string _usageDimension;
         private int? _usageQuantity;
+
+        /// <summary>
+        /// Gets and sets the property ClientToken. 
+        /// <para>
+        /// Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency
+        /// of the request. This lets you safely retry the request without accidentally performing
+        /// the same operation a second time. Passing the same value to a later call to an operation
+        /// requires that you also pass the same value for all other parameters. We recommend
+        /// that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID
+        /// type of value</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you don't provide this value, then Amazon Web Services generates a random one for
+        /// you.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you retry the operation with the same <c>ClientToken</c>, but with different parameters,
+        /// the retry fails with an <c>IdempotencyConflictException</c> error.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string ClientToken
+        {
+            get { return this._clientToken; }
+            set { this._clientToken = value; }
+        }
+
+        // Check to see if ClientToken property is set
+        internal bool IsSetClientToken()
+        {
+            return this._clientToken != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DryRun. 

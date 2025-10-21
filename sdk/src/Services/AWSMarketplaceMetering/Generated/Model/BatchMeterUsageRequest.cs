@@ -33,8 +33,8 @@ namespace Amazon.AWSMarketplaceMetering.Model
     /// Container for the parameters to the BatchMeterUsage operation.
     /// <important> 
     /// <para>
-    ///  The <c>CustomerIdentifier</c> parameter is scheduled for deprecation. Use <c>CustomerAWSAccountID</c>
-    /// instead.
+    ///  The <c>CustomerIdentifier</c> parameter is scheduled for deprecation on March 31,
+    /// 2026. Use <c>CustomerAWSAccountID</c> instead.
     /// </para>
     ///  
     /// <para>
