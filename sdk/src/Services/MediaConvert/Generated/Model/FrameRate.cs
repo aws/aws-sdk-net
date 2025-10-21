@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConvert.Model
 {
     /// <summary>
-    /// The frame rate of the video or audio track.
+    /// The frame rate of the video or audio track, expressed as a fraction with numerator
+    /// and denominator values.
     /// </summary>
     public partial class FrameRate
     {

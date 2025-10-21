@@ -70,6 +70,9 @@ namespace Amazon.MediaConvert
         /// <exception cref="Amazon.MediaConvert.Model.NotFoundException">
         /// The resource you requested doesn't exist.
         /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.ServiceQuotaExceededException">
+        /// You attempted to create more resources than the service allows based on service quotas.
+        /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.TooManyRequestsException">
         /// Too many requests have been sent in too short of a time. The service limits the rate
         /// at which it will accept requests.
@@ -106,6 +109,9 @@ namespace Amazon.MediaConvert
         /// <exception cref="Amazon.MediaConvert.Model.NotFoundException">
         /// The resource you requested doesn't exist.
         /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.ServiceQuotaExceededException">
+        /// You attempted to create more resources than the service allows based on service quotas.
+        /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.TooManyRequestsException">
         /// Too many requests have been sent in too short of a time. The service limits the rate
         /// at which it will accept requests.
@@ -141,6 +147,9 @@ namespace Amazon.MediaConvert
         /// <exception cref="Amazon.MediaConvert.Model.NotFoundException">
         /// The resource you requested doesn't exist.
         /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.ServiceQuotaExceededException">
+        /// You attempted to create more resources than the service allows based on service quotas.
+        /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.TooManyRequestsException">
         /// Too many requests have been sent in too short of a time. The service limits the rate
         /// at which it will accept requests.
@@ -175,6 +184,9 @@ namespace Amazon.MediaConvert
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.NotFoundException">
         /// The resource you requested doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.ServiceQuotaExceededException">
+        /// You attempted to create more resources than the service allows based on service quotas.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.TooManyRequestsException">
         /// Too many requests have been sent in too short of a time. The service limits the rate
@@ -212,6 +224,9 @@ namespace Amazon.MediaConvert
         /// <exception cref="Amazon.MediaConvert.Model.NotFoundException">
         /// The resource you requested doesn't exist.
         /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.ServiceQuotaExceededException">
+        /// You attempted to create more resources than the service allows based on service quotas.
+        /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.TooManyRequestsException">
         /// Too many requests have been sent in too short of a time. The service limits the rate
         /// at which it will accept requests.
@@ -247,6 +262,9 @@ namespace Amazon.MediaConvert
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.NotFoundException">
         /// The resource you requested doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.ServiceQuotaExceededException">
+        /// You attempted to create more resources than the service allows based on service quotas.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.TooManyRequestsException">
         /// Too many requests have been sent in too short of a time. The service limits the rate
@@ -284,6 +302,9 @@ namespace Amazon.MediaConvert
         /// <exception cref="Amazon.MediaConvert.Model.NotFoundException">
         /// The resource you requested doesn't exist.
         /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.ServiceQuotaExceededException">
+        /// You attempted to create more resources than the service allows based on service quotas.
+        /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.TooManyRequestsException">
         /// Too many requests have been sent in too short of a time. The service limits the rate
         /// at which it will accept requests.
@@ -320,6 +341,9 @@ namespace Amazon.MediaConvert
         /// <exception cref="Amazon.MediaConvert.Model.NotFoundException">
         /// The resource you requested doesn't exist.
         /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.ServiceQuotaExceededException">
+        /// You attempted to create more resources than the service allows based on service quotas.
+        /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.TooManyRequestsException">
         /// Too many requests have been sent in too short of a time. The service limits the rate
         /// at which it will accept requests.
@@ -355,6 +379,9 @@ namespace Amazon.MediaConvert
         /// <exception cref="Amazon.MediaConvert.Model.NotFoundException">
         /// The resource you requested doesn't exist.
         /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.ServiceQuotaExceededException">
+        /// You attempted to create more resources than the service allows based on service quotas.
+        /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.TooManyRequestsException">
         /// Too many requests have been sent in too short of a time. The service limits the rate
         /// at which it will accept requests.
@@ -389,6 +416,9 @@ namespace Amazon.MediaConvert
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.NotFoundException">
         /// The resource you requested doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.ServiceQuotaExceededException">
+        /// You attempted to create more resources than the service allows based on service quotas.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.TooManyRequestsException">
         /// Too many requests have been sent in too short of a time. The service limits the rate
@@ -426,6 +456,9 @@ namespace Amazon.MediaConvert
         /// <exception cref="Amazon.MediaConvert.Model.NotFoundException">
         /// The resource you requested doesn't exist.
         /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.ServiceQuotaExceededException">
+        /// You attempted to create more resources than the service allows based on service quotas.
+        /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.TooManyRequestsException">
         /// Too many requests have been sent in too short of a time. The service limits the rate
         /// at which it will accept requests.
@@ -462,6 +495,9 @@ namespace Amazon.MediaConvert
         /// <exception cref="Amazon.MediaConvert.Model.NotFoundException">
         /// The resource you requested doesn't exist.
         /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.ServiceQuotaExceededException">
+        /// You attempted to create more resources than the service allows based on service quotas.
+        /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.TooManyRequestsException">
         /// Too many requests have been sent in too short of a time. The service limits the rate
         /// at which it will accept requests.
@@ -496,6 +532,9 @@ namespace Amazon.MediaConvert
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.NotFoundException">
         /// The resource you requested doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.ServiceQuotaExceededException">
+        /// You attempted to create more resources than the service allows based on service quotas.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.TooManyRequestsException">
         /// Too many requests have been sent in too short of a time. The service limits the rate
@@ -532,6 +571,9 @@ namespace Amazon.MediaConvert
         /// <exception cref="Amazon.MediaConvert.Model.NotFoundException">
         /// The resource you requested doesn't exist.
         /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.ServiceQuotaExceededException">
+        /// You attempted to create more resources than the service allows based on service quotas.
+        /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.TooManyRequestsException">
         /// Too many requests have been sent in too short of a time. The service limits the rate
         /// at which it will accept requests.
@@ -566,6 +608,9 @@ namespace Amazon.MediaConvert
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.NotFoundException">
         /// The resource you requested doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.ServiceQuotaExceededException">
+        /// You attempted to create more resources than the service allows based on service quotas.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.TooManyRequestsException">
         /// Too many requests have been sent in too short of a time. The service limits the rate
@@ -602,6 +647,9 @@ namespace Amazon.MediaConvert
         /// <exception cref="Amazon.MediaConvert.Model.NotFoundException">
         /// The resource you requested doesn't exist.
         /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.ServiceQuotaExceededException">
+        /// You attempted to create more resources than the service allows based on service quotas.
+        /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.TooManyRequestsException">
         /// Too many requests have been sent in too short of a time. The service limits the rate
         /// at which it will accept requests.
@@ -636,6 +684,9 @@ namespace Amazon.MediaConvert
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.NotFoundException">
         /// The resource you requested doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.ServiceQuotaExceededException">
+        /// You attempted to create more resources than the service allows based on service quotas.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.TooManyRequestsException">
         /// Too many requests have been sent in too short of a time. The service limits the rate
@@ -672,6 +723,9 @@ namespace Amazon.MediaConvert
         /// <exception cref="Amazon.MediaConvert.Model.NotFoundException">
         /// The resource you requested doesn't exist.
         /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.ServiceQuotaExceededException">
+        /// You attempted to create more resources than the service allows based on service quotas.
+        /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.TooManyRequestsException">
         /// Too many requests have been sent in too short of a time. The service limits the rate
         /// at which it will accept requests.
@@ -706,6 +760,9 @@ namespace Amazon.MediaConvert
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.NotFoundException">
         /// The resource you requested doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.ServiceQuotaExceededException">
+        /// You attempted to create more resources than the service allows based on service quotas.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.TooManyRequestsException">
         /// Too many requests have been sent in too short of a time. The service limits the rate
@@ -742,6 +799,9 @@ namespace Amazon.MediaConvert
         /// <exception cref="Amazon.MediaConvert.Model.NotFoundException">
         /// The resource you requested doesn't exist.
         /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.ServiceQuotaExceededException">
+        /// You attempted to create more resources than the service allows based on service quotas.
+        /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.TooManyRequestsException">
         /// Too many requests have been sent in too short of a time. The service limits the rate
         /// at which it will accept requests.
@@ -777,6 +837,9 @@ namespace Amazon.MediaConvert
         /// <exception cref="Amazon.MediaConvert.Model.NotFoundException">
         /// The resource you requested doesn't exist.
         /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.ServiceQuotaExceededException">
+        /// You attempted to create more resources than the service allows based on service quotas.
+        /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.TooManyRequestsException">
         /// Too many requests have been sent in too short of a time. The service limits the rate
         /// at which it will accept requests.
@@ -811,6 +874,9 @@ namespace Amazon.MediaConvert
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.NotFoundException">
         /// The resource you requested doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.ServiceQuotaExceededException">
+        /// You attempted to create more resources than the service allows based on service quotas.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.TooManyRequestsException">
         /// Too many requests have been sent in too short of a time. The service limits the rate
@@ -848,6 +914,9 @@ namespace Amazon.MediaConvert
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.NotFoundException">
         /// The resource you requested doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.ServiceQuotaExceededException">
+        /// You attempted to create more resources than the service allows based on service quotas.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.TooManyRequestsException">
         /// Too many requests have been sent in too short of a time. The service limits the rate
@@ -887,6 +956,9 @@ namespace Amazon.MediaConvert
         /// <exception cref="Amazon.MediaConvert.Model.NotFoundException">
         /// The resource you requested doesn't exist.
         /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.ServiceQuotaExceededException">
+        /// You attempted to create more resources than the service allows based on service quotas.
+        /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.TooManyRequestsException">
         /// Too many requests have been sent in too short of a time. The service limits the rate
         /// at which it will accept requests.
@@ -924,6 +996,9 @@ namespace Amazon.MediaConvert
         /// <exception cref="Amazon.MediaConvert.Model.NotFoundException">
         /// The resource you requested doesn't exist.
         /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.ServiceQuotaExceededException">
+        /// You attempted to create more resources than the service allows based on service quotas.
+        /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.TooManyRequestsException">
         /// Too many requests have been sent in too short of a time. The service limits the rate
         /// at which it will accept requests.
@@ -960,6 +1035,9 @@ namespace Amazon.MediaConvert
         /// <exception cref="Amazon.MediaConvert.Model.NotFoundException">
         /// The resource you requested doesn't exist.
         /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.ServiceQuotaExceededException">
+        /// You attempted to create more resources than the service allows based on service quotas.
+        /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.TooManyRequestsException">
         /// Too many requests have been sent in too short of a time. The service limits the rate
         /// at which it will accept requests.
@@ -994,6 +1072,9 @@ namespace Amazon.MediaConvert
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.NotFoundException">
         /// The resource you requested doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.ServiceQuotaExceededException">
+        /// You attempted to create more resources than the service allows based on service quotas.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.TooManyRequestsException">
         /// Too many requests have been sent in too short of a time. The service limits the rate
@@ -1030,12 +1111,91 @@ namespace Amazon.MediaConvert
         /// <exception cref="Amazon.MediaConvert.Model.NotFoundException">
         /// The resource you requested doesn't exist.
         /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.ServiceQuotaExceededException">
+        /// You attempted to create more resources than the service allows based on service quotas.
+        /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.TooManyRequestsException">
         /// Too many requests have been sent in too short of a time. The service limits the rate
         /// at which it will accept requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/GetJob">REST API Reference for GetJob Operation</seealso>
         Task<GetJobResponse> GetJobAsync(GetJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetJobsQueryResults
+
+
+        /// <summary>
+        /// Retrieve a JSON array of up to twenty of your most recent jobs matched by a jobs query.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetJobsQueryResults service method.</param>
+        /// 
+        /// <returns>The response from the GetJobsQueryResults service method, as returned by MediaConvert.</returns>
+        /// <exception cref="Amazon.MediaConvert.Model.BadRequestException">
+        /// The service can't process your request because of a problem in the request. Please
+        /// check your request form and syntax.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.ConflictException">
+        /// The service couldn't complete your request because there is a conflict with the current
+        /// state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.ForbiddenException">
+        /// You don't have permissions for this action with the credentials you sent.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.InternalServerErrorException">
+        /// The service encountered an unexpected condition and can't fulfill your request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.NotFoundException">
+        /// The resource you requested doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.ServiceQuotaExceededException">
+        /// You attempted to create more resources than the service allows based on service quotas.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.TooManyRequestsException">
+        /// Too many requests have been sent in too short of a time. The service limits the rate
+        /// at which it will accept requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/GetJobsQueryResults">REST API Reference for GetJobsQueryResults Operation</seealso>
+        GetJobsQueryResultsResponse GetJobsQueryResults(GetJobsQueryResultsRequest request);
+
+
+
+        /// <summary>
+        /// Retrieve a JSON array of up to twenty of your most recent jobs matched by a jobs query.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetJobsQueryResults service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetJobsQueryResults service method, as returned by MediaConvert.</returns>
+        /// <exception cref="Amazon.MediaConvert.Model.BadRequestException">
+        /// The service can't process your request because of a problem in the request. Please
+        /// check your request form and syntax.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.ConflictException">
+        /// The service couldn't complete your request because there is a conflict with the current
+        /// state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.ForbiddenException">
+        /// You don't have permissions for this action with the credentials you sent.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.InternalServerErrorException">
+        /// The service encountered an unexpected condition and can't fulfill your request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.NotFoundException">
+        /// The resource you requested doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.ServiceQuotaExceededException">
+        /// You attempted to create more resources than the service allows based on service quotas.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.TooManyRequestsException">
+        /// Too many requests have been sent in too short of a time. The service limits the rate
+        /// at which it will accept requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/GetJobsQueryResults">REST API Reference for GetJobsQueryResults Operation</seealso>
+        Task<GetJobsQueryResultsResponse> GetJobsQueryResultsAsync(GetJobsQueryResultsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1064,6 +1224,9 @@ namespace Amazon.MediaConvert
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.NotFoundException">
         /// The resource you requested doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.ServiceQuotaExceededException">
+        /// You attempted to create more resources than the service allows based on service quotas.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.TooManyRequestsException">
         /// Too many requests have been sent in too short of a time. The service limits the rate
@@ -1100,6 +1263,9 @@ namespace Amazon.MediaConvert
         /// <exception cref="Amazon.MediaConvert.Model.NotFoundException">
         /// The resource you requested doesn't exist.
         /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.ServiceQuotaExceededException">
+        /// You attempted to create more resources than the service allows based on service quotas.
+        /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.TooManyRequestsException">
         /// Too many requests have been sent in too short of a time. The service limits the rate
         /// at which it will accept requests.
@@ -1134,6 +1300,9 @@ namespace Amazon.MediaConvert
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.NotFoundException">
         /// The resource you requested doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.ServiceQuotaExceededException">
+        /// You attempted to create more resources than the service allows based on service quotas.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.TooManyRequestsException">
         /// Too many requests have been sent in too short of a time. The service limits the rate
@@ -1170,6 +1339,9 @@ namespace Amazon.MediaConvert
         /// <exception cref="Amazon.MediaConvert.Model.NotFoundException">
         /// The resource you requested doesn't exist.
         /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.ServiceQuotaExceededException">
+        /// You attempted to create more resources than the service allows based on service quotas.
+        /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.TooManyRequestsException">
         /// Too many requests have been sent in too short of a time. The service limits the rate
         /// at which it will accept requests.
@@ -1204,6 +1376,9 @@ namespace Amazon.MediaConvert
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.NotFoundException">
         /// The resource you requested doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.ServiceQuotaExceededException">
+        /// You attempted to create more resources than the service allows based on service quotas.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.TooManyRequestsException">
         /// Too many requests have been sent in too short of a time. The service limits the rate
@@ -1240,6 +1415,9 @@ namespace Amazon.MediaConvert
         /// <exception cref="Amazon.MediaConvert.Model.NotFoundException">
         /// The resource you requested doesn't exist.
         /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.ServiceQuotaExceededException">
+        /// You attempted to create more resources than the service allows based on service quotas.
+        /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.TooManyRequestsException">
         /// Too many requests have been sent in too short of a time. The service limits the rate
         /// at which it will accept requests.
@@ -1275,6 +1453,9 @@ namespace Amazon.MediaConvert
         /// <exception cref="Amazon.MediaConvert.Model.NotFoundException">
         /// The resource you requested doesn't exist.
         /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.ServiceQuotaExceededException">
+        /// You attempted to create more resources than the service allows based on service quotas.
+        /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.TooManyRequestsException">
         /// Too many requests have been sent in too short of a time. The service limits the rate
         /// at which it will accept requests.
@@ -1309,6 +1490,9 @@ namespace Amazon.MediaConvert
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.NotFoundException">
         /// The resource you requested doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.ServiceQuotaExceededException">
+        /// You attempted to create more resources than the service allows based on service quotas.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.TooManyRequestsException">
         /// Too many requests have been sent in too short of a time. The service limits the rate
@@ -1348,6 +1532,9 @@ namespace Amazon.MediaConvert
         /// <exception cref="Amazon.MediaConvert.Model.NotFoundException">
         /// The resource you requested doesn't exist.
         /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.ServiceQuotaExceededException">
+        /// You attempted to create more resources than the service allows based on service quotas.
+        /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.TooManyRequestsException">
         /// Too many requests have been sent in too short of a time. The service limits the rate
         /// at which it will accept requests.
@@ -1386,6 +1573,9 @@ namespace Amazon.MediaConvert
         /// <exception cref="Amazon.MediaConvert.Model.NotFoundException">
         /// The resource you requested doesn't exist.
         /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.ServiceQuotaExceededException">
+        /// You attempted to create more resources than the service allows based on service quotas.
+        /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.TooManyRequestsException">
         /// Too many requests have been sent in too short of a time. The service limits the rate
         /// at which it will accept requests.
@@ -1422,6 +1612,9 @@ namespace Amazon.MediaConvert
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.NotFoundException">
         /// The resource you requested doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.ServiceQuotaExceededException">
+        /// You attempted to create more resources than the service allows based on service quotas.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.TooManyRequestsException">
         /// Too many requests have been sent in too short of a time. The service limits the rate
@@ -1460,6 +1653,9 @@ namespace Amazon.MediaConvert
         /// <exception cref="Amazon.MediaConvert.Model.NotFoundException">
         /// The resource you requested doesn't exist.
         /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.ServiceQuotaExceededException">
+        /// You attempted to create more resources than the service allows based on service quotas.
+        /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.TooManyRequestsException">
         /// Too many requests have been sent in too short of a time. The service limits the rate
         /// at which it will accept requests.
@@ -1496,6 +1692,9 @@ namespace Amazon.MediaConvert
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.NotFoundException">
         /// The resource you requested doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.ServiceQuotaExceededException">
+        /// You attempted to create more resources than the service allows based on service quotas.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.TooManyRequestsException">
         /// Too many requests have been sent in too short of a time. The service limits the rate
@@ -1534,6 +1733,9 @@ namespace Amazon.MediaConvert
         /// <exception cref="Amazon.MediaConvert.Model.NotFoundException">
         /// The resource you requested doesn't exist.
         /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.ServiceQuotaExceededException">
+        /// You attempted to create more resources than the service allows based on service quotas.
+        /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.TooManyRequestsException">
         /// Too many requests have been sent in too short of a time. The service limits the rate
         /// at which it will accept requests.
@@ -1570,6 +1772,9 @@ namespace Amazon.MediaConvert
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.NotFoundException">
         /// The resource you requested doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.ServiceQuotaExceededException">
+        /// You attempted to create more resources than the service allows based on service quotas.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.TooManyRequestsException">
         /// Too many requests have been sent in too short of a time. The service limits the rate
@@ -1608,6 +1813,9 @@ namespace Amazon.MediaConvert
         /// <exception cref="Amazon.MediaConvert.Model.NotFoundException">
         /// The resource you requested doesn't exist.
         /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.ServiceQuotaExceededException">
+        /// You attempted to create more resources than the service allows based on service quotas.
+        /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.TooManyRequestsException">
         /// Too many requests have been sent in too short of a time. The service limits the rate
         /// at which it will accept requests.
@@ -1642,6 +1850,9 @@ namespace Amazon.MediaConvert
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.NotFoundException">
         /// The resource you requested doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.ServiceQuotaExceededException">
+        /// You attempted to create more resources than the service allows based on service quotas.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.TooManyRequestsException">
         /// Too many requests have been sent in too short of a time. The service limits the rate
@@ -1678,6 +1889,9 @@ namespace Amazon.MediaConvert
         /// <exception cref="Amazon.MediaConvert.Model.NotFoundException">
         /// The resource you requested doesn't exist.
         /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.ServiceQuotaExceededException">
+        /// You attempted to create more resources than the service allows based on service quotas.
+        /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.TooManyRequestsException">
         /// Too many requests have been sent in too short of a time. The service limits the rate
         /// at which it will accept requests.
@@ -1713,6 +1927,9 @@ namespace Amazon.MediaConvert
         /// <exception cref="Amazon.MediaConvert.Model.NotFoundException">
         /// The resource you requested doesn't exist.
         /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.ServiceQuotaExceededException">
+        /// You attempted to create more resources than the service allows based on service quotas.
+        /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.TooManyRequestsException">
         /// Too many requests have been sent in too short of a time. The service limits the rate
         /// at which it will accept requests.
@@ -1747,6 +1964,9 @@ namespace Amazon.MediaConvert
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.NotFoundException">
         /// The resource you requested doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.ServiceQuotaExceededException">
+        /// You attempted to create more resources than the service allows based on service quotas.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.TooManyRequestsException">
         /// Too many requests have been sent in too short of a time. The service limits the rate
@@ -1786,6 +2006,9 @@ namespace Amazon.MediaConvert
         /// <exception cref="Amazon.MediaConvert.Model.NotFoundException">
         /// The resource you requested doesn't exist.
         /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.ServiceQuotaExceededException">
+        /// You attempted to create more resources than the service allows based on service quotas.
+        /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.TooManyRequestsException">
         /// Too many requests have been sent in too short of a time. The service limits the rate
         /// at which it will accept requests.
@@ -1824,6 +2047,9 @@ namespace Amazon.MediaConvert
         /// <exception cref="Amazon.MediaConvert.Model.NotFoundException">
         /// The resource you requested doesn't exist.
         /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.ServiceQuotaExceededException">
+        /// You attempted to create more resources than the service allows based on service quotas.
+        /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.TooManyRequestsException">
         /// Too many requests have been sent in too short of a time. The service limits the rate
         /// at which it will accept requests.
@@ -1860,6 +2086,9 @@ namespace Amazon.MediaConvert
         /// <exception cref="Amazon.MediaConvert.Model.NotFoundException">
         /// The resource you requested doesn't exist.
         /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.ServiceQuotaExceededException">
+        /// You attempted to create more resources than the service allows based on service quotas.
+        /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.TooManyRequestsException">
         /// Too many requests have been sent in too short of a time. The service limits the rate
         /// at which it will accept requests.
@@ -1895,6 +2124,9 @@ namespace Amazon.MediaConvert
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.NotFoundException">
         /// The resource you requested doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.ServiceQuotaExceededException">
+        /// You attempted to create more resources than the service allows based on service quotas.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.TooManyRequestsException">
         /// Too many requests have been sent in too short of a time. The service limits the rate
@@ -1934,6 +2166,9 @@ namespace Amazon.MediaConvert
         /// <exception cref="Amazon.MediaConvert.Model.NotFoundException">
         /// The resource you requested doesn't exist.
         /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.ServiceQuotaExceededException">
+        /// You attempted to create more resources than the service allows based on service quotas.
+        /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.TooManyRequestsException">
         /// Too many requests have been sent in too short of a time. The service limits the rate
         /// at which it will accept requests.
@@ -1972,12 +2207,95 @@ namespace Amazon.MediaConvert
         /// <exception cref="Amazon.MediaConvert.Model.NotFoundException">
         /// The resource you requested doesn't exist.
         /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.ServiceQuotaExceededException">
+        /// You attempted to create more resources than the service allows based on service quotas.
+        /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.TooManyRequestsException">
         /// Too many requests have been sent in too short of a time. The service limits the rate
         /// at which it will accept requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/SearchJobs">REST API Reference for SearchJobs Operation</seealso>
         Task<SearchJobsResponse> SearchJobsAsync(SearchJobsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  StartJobsQuery
+
+
+        /// <summary>
+        /// Start an asynchronous jobs query using the provided filters. To receive the list of
+        /// jobs that match your query, call the GetJobsQueryResults API using the query ID returned
+        /// by this API.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartJobsQuery service method.</param>
+        /// 
+        /// <returns>The response from the StartJobsQuery service method, as returned by MediaConvert.</returns>
+        /// <exception cref="Amazon.MediaConvert.Model.BadRequestException">
+        /// The service can't process your request because of a problem in the request. Please
+        /// check your request form and syntax.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.ConflictException">
+        /// The service couldn't complete your request because there is a conflict with the current
+        /// state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.ForbiddenException">
+        /// You don't have permissions for this action with the credentials you sent.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.InternalServerErrorException">
+        /// The service encountered an unexpected condition and can't fulfill your request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.NotFoundException">
+        /// The resource you requested doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.ServiceQuotaExceededException">
+        /// You attempted to create more resources than the service allows based on service quotas.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.TooManyRequestsException">
+        /// Too many requests have been sent in too short of a time. The service limits the rate
+        /// at which it will accept requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/StartJobsQuery">REST API Reference for StartJobsQuery Operation</seealso>
+        StartJobsQueryResponse StartJobsQuery(StartJobsQueryRequest request);
+
+
+
+        /// <summary>
+        /// Start an asynchronous jobs query using the provided filters. To receive the list of
+        /// jobs that match your query, call the GetJobsQueryResults API using the query ID returned
+        /// by this API.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartJobsQuery service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartJobsQuery service method, as returned by MediaConvert.</returns>
+        /// <exception cref="Amazon.MediaConvert.Model.BadRequestException">
+        /// The service can't process your request because of a problem in the request. Please
+        /// check your request form and syntax.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.ConflictException">
+        /// The service couldn't complete your request because there is a conflict with the current
+        /// state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.ForbiddenException">
+        /// You don't have permissions for this action with the credentials you sent.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.InternalServerErrorException">
+        /// The service encountered an unexpected condition and can't fulfill your request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.NotFoundException">
+        /// The resource you requested doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.ServiceQuotaExceededException">
+        /// You attempted to create more resources than the service allows based on service quotas.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.TooManyRequestsException">
+        /// Too many requests have been sent in too short of a time. The service limits the rate
+        /// at which it will accept requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/StartJobsQuery">REST API Reference for StartJobsQuery Operation</seealso>
+        Task<StartJobsQueryResponse> StartJobsQueryAsync(StartJobsQueryRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -2007,6 +2325,9 @@ namespace Amazon.MediaConvert
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.NotFoundException">
         /// The resource you requested doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.ServiceQuotaExceededException">
+        /// You attempted to create more resources than the service allows based on service quotas.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.TooManyRequestsException">
         /// Too many requests have been sent in too short of a time. The service limits the rate
@@ -2044,6 +2365,9 @@ namespace Amazon.MediaConvert
         /// <exception cref="Amazon.MediaConvert.Model.NotFoundException">
         /// The resource you requested doesn't exist.
         /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.ServiceQuotaExceededException">
+        /// You attempted to create more resources than the service allows based on service quotas.
+        /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.TooManyRequestsException">
         /// Too many requests have been sent in too short of a time. The service limits the rate
         /// at which it will accept requests.
@@ -2079,6 +2403,9 @@ namespace Amazon.MediaConvert
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.NotFoundException">
         /// The resource you requested doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.ServiceQuotaExceededException">
+        /// You attempted to create more resources than the service allows based on service quotas.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.TooManyRequestsException">
         /// Too many requests have been sent in too short of a time. The service limits the rate
@@ -2116,6 +2443,9 @@ namespace Amazon.MediaConvert
         /// <exception cref="Amazon.MediaConvert.Model.NotFoundException">
         /// The resource you requested doesn't exist.
         /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.ServiceQuotaExceededException">
+        /// You attempted to create more resources than the service allows based on service quotas.
+        /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.TooManyRequestsException">
         /// Too many requests have been sent in too short of a time. The service limits the rate
         /// at which it will accept requests.
@@ -2150,6 +2480,9 @@ namespace Amazon.MediaConvert
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.NotFoundException">
         /// The resource you requested doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.ServiceQuotaExceededException">
+        /// You attempted to create more resources than the service allows based on service quotas.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.TooManyRequestsException">
         /// Too many requests have been sent in too short of a time. The service limits the rate
@@ -2186,6 +2519,9 @@ namespace Amazon.MediaConvert
         /// <exception cref="Amazon.MediaConvert.Model.NotFoundException">
         /// The resource you requested doesn't exist.
         /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.ServiceQuotaExceededException">
+        /// You attempted to create more resources than the service allows based on service quotas.
+        /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.TooManyRequestsException">
         /// Too many requests have been sent in too short of a time. The service limits the rate
         /// at which it will accept requests.
@@ -2220,6 +2556,9 @@ namespace Amazon.MediaConvert
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.NotFoundException">
         /// The resource you requested doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.ServiceQuotaExceededException">
+        /// You attempted to create more resources than the service allows based on service quotas.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.TooManyRequestsException">
         /// Too many requests have been sent in too short of a time. The service limits the rate
@@ -2256,6 +2595,9 @@ namespace Amazon.MediaConvert
         /// <exception cref="Amazon.MediaConvert.Model.NotFoundException">
         /// The resource you requested doesn't exist.
         /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.ServiceQuotaExceededException">
+        /// You attempted to create more resources than the service allows based on service quotas.
+        /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.TooManyRequestsException">
         /// Too many requests have been sent in too short of a time. The service limits the rate
         /// at which it will accept requests.
@@ -2291,6 +2633,9 @@ namespace Amazon.MediaConvert
         /// <exception cref="Amazon.MediaConvert.Model.NotFoundException">
         /// The resource you requested doesn't exist.
         /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.ServiceQuotaExceededException">
+        /// You attempted to create more resources than the service allows based on service quotas.
+        /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.TooManyRequestsException">
         /// Too many requests have been sent in too short of a time. The service limits the rate
         /// at which it will accept requests.
@@ -2325,6 +2670,9 @@ namespace Amazon.MediaConvert
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.NotFoundException">
         /// The resource you requested doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.ServiceQuotaExceededException">
+        /// You attempted to create more resources than the service allows based on service quotas.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.TooManyRequestsException">
         /// Too many requests have been sent in too short of a time. The service limits the rate

@@ -152,9 +152,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LanguageCode. Specify the language to select from your
-        /// audio input. In the MediaConvert console choose from a list of languages. In your
-        /// JSON job settings choose from an ISO 639-2 three-letter code listed at https://www.loc.gov/standards/iso639-2/php/code_list.php
+        /// Gets and sets the property LanguageCode. Specify the language, using an ISO 639-2
+        /// three-letter code in all capital letters. You can find a list of codes at: https://www.loc.gov/standards/iso639-2/php/code_list.php
         /// </summary>
         public LanguageCode LanguageCode
         {
@@ -252,13 +251,13 @@ namespace Amazon.MediaConvert.Model
         /// Identifier (PID) values for MPEG Transport Stream inputs. Use this when you know the
         /// exact PID values of your audio streams. Track: Default. Select audio by track number.
         /// This is the most common option and works with most input container formats. Language
-        /// code: Select audio by language using ISO 639-2 or ISO 639-3 three-letter language
-        /// codes. Use this when your source has embedded language metadata and you want to select
-        /// tracks based on their language. HLS rendition group: Select audio from an HLS rendition
-        /// group. Use this when your input is an HLS package with multiple audio renditions and
-        /// you want to select specific rendition groups. All PCM: Select all uncompressed PCM
-        /// audio tracks from your input automatically. This is useful when you want to include
-        /// all PCM audio tracks without specifying individual track numbers.
+        /// code: Select audio by language using an ISO 639-2 or ISO 639-3 three-letter code in
+        /// all capital letters. Use this when your source has embedded language metadata and
+        /// you want to select tracks based on their language. HLS rendition group: Select audio
+        /// from an HLS rendition group. Use this when your input is an HLS package with multiple
+        /// audio renditions and you want to select specific rendition groups. All PCM: Select
+        /// all uncompressed PCM audio tracks from your input automatically. This is useful when
+        /// you want to include all PCM audio tracks without specifying individual track numbers.
         /// </summary>
         public AudioSelectorType SelectorType
         {

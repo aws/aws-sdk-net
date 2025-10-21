@@ -35,9 +35,9 @@ using Amazon.Util;
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DeletePolicy operation
+    /// Response Unmarshaller for StartJobsQuery operation
     /// </summary>  
-    public class DeletePolicyResponseUnmarshaller : JsonResponseUnmarshaller
+    public class StartJobsQueryResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,7 +46,19 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DeletePolicyResponse response = new DeletePolicyResponse();
+            StartJobsQueryResponse response = new StartJobsQueryResponse();
+            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            context.Read(ref reader);
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth, ref reader))
+            {
+                if (context.TestExpression("id", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Id = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+            }
 
             return response;
         }
@@ -103,9 +115,9 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             return new AmazonMediaConvertException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static DeletePolicyResponseUnmarshaller _instance = new DeletePolicyResponseUnmarshaller();        
+        private static StartJobsQueryResponseUnmarshaller _instance = new StartJobsQueryResponseUnmarshaller();        
 
-        internal static DeletePolicyResponseUnmarshaller GetInstance()
+        internal static StartJobsQueryResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -113,7 +125,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DeletePolicyResponseUnmarshaller Instance
+        public static StartJobsQueryResponseUnmarshaller Instance
         {
             get
             {

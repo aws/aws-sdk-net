@@ -35,9 +35,9 @@ using Amazon.Util;
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DeletePolicy operation
+    /// Response Unmarshaller for GetJobsQueryResults operation
     /// </summary>  
-    public class DeletePolicyResponseUnmarshaller : JsonResponseUnmarshaller
+    public class GetJobsQueryResultsResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,7 +46,31 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DeletePolicyResponse response = new DeletePolicyResponse();
+            GetJobsQueryResultsResponse response = new GetJobsQueryResultsResponse();
+            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            context.Read(ref reader);
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth, ref reader))
+            {
+                if (context.TestExpression("jobs", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<Job, JobUnmarshaller>(JobUnmarshaller.Instance);
+                    response.Jobs = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("nextToken", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.NextToken = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("status", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Status = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+            }
 
             return response;
         }
@@ -103,9 +127,9 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             return new AmazonMediaConvertException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static DeletePolicyResponseUnmarshaller _instance = new DeletePolicyResponseUnmarshaller();        
+        private static GetJobsQueryResultsResponseUnmarshaller _instance = new GetJobsQueryResultsResponseUnmarshaller();        
 
-        internal static DeletePolicyResponseUnmarshaller GetInstance()
+        internal static GetJobsQueryResultsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -113,7 +137,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DeletePolicyResponseUnmarshaller Instance
+        public static GetJobsQueryResultsResponseUnmarshaller Instance
         {
             get
             {

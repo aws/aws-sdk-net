@@ -41,6 +41,11 @@
     <max>20</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaConvert.Model.StartJobsQueryRequest.MaxResults</property>
+    <min>1</min>
+    <max>20</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaConvert.Model.UpdateJobTemplateRequest.Priority</property>
     <min>-50</min>
     <max>50</max>
@@ -345,7 +350,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.CmafGroupSettings.Destination</property>
-    <pattern>^s3:\/\/</pattern>
+    <pattern>^s3:\/\/.*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.CmafGroupSettings.FragmentLength</property>
@@ -446,7 +451,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.DashIsoGroupSettings.Destination</property>
-    <pattern>^s3:\/\/</pattern>
+    <pattern>^s3:\/\/.*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.DashIsoGroupSettings.FragmentLength</property>
@@ -699,7 +704,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.FileGroupSettings.Destination</property>
-    <pattern>^s3:\/\/</pattern>
+    <pattern>^s3:\/\/.*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.FileSourceSettings.SourceFile</property>
@@ -1024,7 +1029,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.HlsGroupSettings.Destination</property>
-    <pattern>^s3:\/\/</pattern>
+    <pattern>^s3:\/\/.*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.HlsGroupSettings.MinSegmentLength</property>
@@ -1196,9 +1201,19 @@
     <max>60000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaConvert.Model.InputVideoGenerator.Height</property>
+    <min>32</min>
+    <max>8192</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaConvert.Model.InputVideoGenerator.SampleRate</property>
     <min>32000</min>
     <max>48000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.InputVideoGenerator.Width</property>
+    <min>32</min>
+    <max>8192</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.InsertableImage.Duration</property>
@@ -1312,7 +1327,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.KantarWatermarkSettings.LogDestination</property>
-    <pattern>^s3:\/\/</pattern>
+    <pattern>^s3:\/\/.*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.KantarWatermarkSettings.Metadata3</property>
@@ -1685,7 +1700,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.MsSmoothGroupSettings.Destination</property>
-    <pattern>^s3:\/\/</pattern>
+    <pattern>^s3:\/\/.*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.MsSmoothGroupSettings.FragmentLength</property>
@@ -1719,7 +1734,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.NielsenNonLinearWatermarkSettings.AdiFilename</property>
-    <pattern>^s3:\/\/</pattern>
+    <pattern>^s3:\/\/.*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.NielsenNonLinearWatermarkSettings.AssetId</property>
@@ -1742,7 +1757,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.NielsenNonLinearWatermarkSettings.MetadataDestination</property>
-    <pattern>^s3:\/\/</pattern>
+    <pattern>^s3:\/\/.*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.NielsenNonLinearWatermarkSettings.SourceId</property>
@@ -1751,7 +1766,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.NielsenNonLinearWatermarkSettings.TicServerUrl</property>
-    <pattern>^https:\/\/</pattern>
+    <pattern>^https:\/\/.*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.NoiseReducerFilterSettings.Strength</property>
@@ -1890,7 +1905,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.SpekeKeyProvider.CertificateArn</property>
-    <pattern>^arn:aws(-us-gov)?:acm:</pattern>
+    <pattern>^arn:aws(-us-gov)?:acm:.*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.SpekeKeyProvider.Url</property>
@@ -1898,7 +1913,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.SpekeKeyProviderCmaf.CertificateArn</property>
-    <pattern>^arn:aws(-us-gov)?:acm:</pattern>
+    <pattern>^arn:aws(-us-gov)?:acm:.*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.SpekeKeyProviderCmaf.ResourceId</property>

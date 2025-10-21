@@ -5589,6 +5589,10 @@ namespace Amazon.MediaConvert
         /// </summary>
         public static readonly Codec MP4V = new Codec("MP4V");
         /// <summary>
+        /// Constant MPEG1 for Codec
+        /// </summary>
+        public static readonly Codec MPEG1 = new Codec("MPEG1");
+        /// <summary>
         /// Constant MPEG2 for Codec
         /// </summary>
         public static readonly Codec MPEG2 = new Codec("MPEG2");
@@ -5605,6 +5609,10 @@ namespace Amazon.MediaConvert
         /// </summary>
         public static readonly Codec PRORES = new Codec("PRORES");
         /// <summary>
+        /// Constant QTRLE for Codec
+        /// </summary>
+        public static readonly Codec QTRLE = new Codec("QTRLE");
+        /// <summary>
         /// Constant THEORA for Codec
         /// </summary>
         public static readonly Codec THEORA = new Codec("THEORA");
@@ -5612,6 +5620,10 @@ namespace Amazon.MediaConvert
         /// Constant UNKNOWN for Codec
         /// </summary>
         public static readonly Codec UNKNOWN = new Codec("UNKNOWN");
+        /// <summary>
+        /// Constant VFW for Codec
+        /// </summary>
+        public static readonly Codec VFW = new Codec("VFW");
         /// <summary>
         /// Constant VORBIS for Codec
         /// </summary>
@@ -9802,6 +9814,10 @@ namespace Amazon.MediaConvert
         /// Constant QVBR for FrameMetricType
         /// </summary>
         public static readonly FrameMetricType QVBR = new FrameMetricType("QVBR");
+        /// <summary>
+        /// Constant SHOT_CHANGE for FrameMetricType
+        /// </summary>
+        public static readonly FrameMetricType SHOT_CHANGE = new FrameMetricType("SHOT_CHANGE");
         /// <summary>
         /// Constant SSIM for FrameMetricType
         /// </summary>
@@ -14976,6 +14992,134 @@ namespace Amazon.MediaConvert
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator JobPhase(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type JobsQueryFilterKey.
+    /// </summary>
+    public class JobsQueryFilterKey : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AudioCodec for JobsQueryFilterKey
+        /// </summary>
+        public static readonly JobsQueryFilterKey AudioCodec = new JobsQueryFilterKey("audioCodec");
+        /// <summary>
+        /// Constant FileInput for JobsQueryFilterKey
+        /// </summary>
+        public static readonly JobsQueryFilterKey FileInput = new JobsQueryFilterKey("fileInput");
+        /// <summary>
+        /// Constant JobEngineVersionRequested for JobsQueryFilterKey
+        /// </summary>
+        public static readonly JobsQueryFilterKey JobEngineVersionRequested = new JobsQueryFilterKey("jobEngineVersionRequested");
+        /// <summary>
+        /// Constant JobEngineVersionUsed for JobsQueryFilterKey
+        /// </summary>
+        public static readonly JobsQueryFilterKey JobEngineVersionUsed = new JobsQueryFilterKey("jobEngineVersionUsed");
+        /// <summary>
+        /// Constant Queue for JobsQueryFilterKey
+        /// </summary>
+        public static readonly JobsQueryFilterKey Queue = new JobsQueryFilterKey("queue");
+        /// <summary>
+        /// Constant Status for JobsQueryFilterKey
+        /// </summary>
+        public static readonly JobsQueryFilterKey Status = new JobsQueryFilterKey("status");
+        /// <summary>
+        /// Constant VideoCodec for JobsQueryFilterKey
+        /// </summary>
+        public static readonly JobsQueryFilterKey VideoCodec = new JobsQueryFilterKey("videoCodec");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public JobsQueryFilterKey(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static JobsQueryFilterKey FindValue(string value)
+        {
+            return FindValue<JobsQueryFilterKey>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator JobsQueryFilterKey(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type JobsQueryStatus.
+    /// </summary>
+    public class JobsQueryStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLETE for JobsQueryStatus
+        /// </summary>
+        public static readonly JobsQueryStatus COMPLETE = new JobsQueryStatus("COMPLETE");
+        /// <summary>
+        /// Constant ERROR for JobsQueryStatus
+        /// </summary>
+        public static readonly JobsQueryStatus ERROR = new JobsQueryStatus("ERROR");
+        /// <summary>
+        /// Constant PROGRESSING for JobsQueryStatus
+        /// </summary>
+        public static readonly JobsQueryStatus PROGRESSING = new JobsQueryStatus("PROGRESSING");
+        /// <summary>
+        /// Constant SUBMITTED for JobsQueryStatus
+        /// </summary>
+        public static readonly JobsQueryStatus SUBMITTED = new JobsQueryStatus("SUBMITTED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public JobsQueryStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static JobsQueryStatus FindValue(string value)
+        {
+            return FindValue<JobsQueryStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator JobsQueryStatus(string value)
         {
             return FindValue(value);
         }

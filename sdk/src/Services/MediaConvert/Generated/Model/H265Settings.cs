@@ -686,7 +686,7 @@ namespace Amazon.MediaConvert.Model
         /// Index Measure * MS_SSIM: Multi-Scale Similarity Index Measure * PSNR_HVS: Peak Signal-to-Noise
         /// Ratio, Human Visual System * VMAF: Video Multi-Method Assessment Fusion * QVBR: Quality-Defined
         /// Variable Bitrate. This option is only available when your output uses the QVBR rate
-        /// control mode.
+        /// control mode. * SHOT_CHANGE: Shot Changes
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
         /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
