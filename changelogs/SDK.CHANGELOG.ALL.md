@@ -1,3 +1,13 @@
+### 3.7.1148.0 (2025-10-21 19:25 UTC)
+* AWSMarketplaceMetering (3.7.502.0)
+	* Added ClientToken parameter to MeterUsage API for specifying idempotent requests.
+* DynamoDBv2 (3.7.507.0)
+	* Add AccountID based endpoint metric to endpoint rules.
+* ElasticMapReduce (3.7.502.0)
+	* Added RECONFIGURING to the InstanceFleetState convenience enum.
+* MediaConvert (3.7.503.0)
+	* This release adds the ability to set resolution for the black video generator and also adds the StartJobsQuery and GetJobsQueryResults APIs which allow asynchronous search of job history using new filters.
+
 ### 3.7.1147.0 (2025-10-17 19:29 UTC)
 * AmplifyBackend (3.7.502.0)
 	* Update endpoint ruleset parameters casing
