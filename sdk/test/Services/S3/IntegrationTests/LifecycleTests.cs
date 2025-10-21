@@ -114,6 +114,42 @@ namespace S3UnitTest
             Assert.AreEqual<int?>(configuration.Rules.First().Expiration.Days, 30);
         }
 
+        // even if a user explicitly sets status to null we should set it to disabled so the 
+        // request succeeds
+        [TestMethod]
+        [TestCategory("S3")]
+        public void LifecycleNullStatusTest()
+        {
+            var s3Configuration = new LifecycleConfiguration
+            {
+                Rules = new List<LifecycleRule>
+                    {
+                        new LifecycleRule
+                        {
+                            Id = "null-status-test",
+                            Filter = new LifecycleFilter{},
+                            Expiration = new LifecycleRuleExpiration
+                            {
+                                Days = 30
+                            },
+                            Status = null
+                        }
+                    }
+            };
+            Client.PutLifecycleConfiguration(new PutLifecycleConfigurationRequest
+            {
+                BucketName = bucketName,
+                Configuration = s3Configuration
+            });
+            var configuration = S3TestUtils.WaitForConsistency(() =>
+            {
+                var res = Client.GetLifecycleConfiguration(bucketName);
+                return res.Configuration?.Rules?.Count == s3Configuration.Rules.Count ? res.Configuration : null;
+            });
+
+            Assert.AreEqual<string>(configuration.Rules.First().Id, "null-status-test");
+            Assert.AreEqual<int?>(configuration.Rules.First().Expiration.Days, 30);
+        }
 
 
         [TestMethod]

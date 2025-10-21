@@ -86,6 +86,31 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             else if (publicRequest.Grants != null && publicRequest.Grants.Count > 0)
                 ConvertPutWithACLRequest(publicRequest, defaultRequest);
         }
+
+        // preserving original logic https://github.com/aws/aws-sdk-net/blob/1060dd16f60292a5c2f18b30c0d100b9c202e46b/sdk/src/Services/S3/Custom/Model/Internal/MarshallTransformations/PutBucketRequestMarshaller.cs#L67-L84
+        private string CustomRegionHandling(XmlWriter xmlWriter, PutBucketRequest putBucketRequest)
+        {
+            string regionCode = null;
+            var region = putBucketRequest.BucketRegion;
+            if (region != null && !string.IsNullOrEmpty(region.Value))
+            {
+                regionCode = region.Value;
+            }
+            else if (!string.IsNullOrEmpty(putBucketRequest.BucketRegionName))
+            {
+                if (putBucketRequest.BucketRegionName == "eu-west-1")
+                    regionCode = "EU";
+                else if (putBucketRequest.BucketRegionName != "us-east-1")
+                    regionCode = putBucketRequest.BucketRegionName;
+            }
+
+            if (regionCode != null)
+            {
+                xmlWriter.WriteStartElement("CreateBucketConfiguration", S3Constants.S3RequestXmlNamespace);
+                xmlWriter.WriteElementString("LocationConstraint", regionCode);
+            }
+            return regionCode;
+        }
     }
 }
 

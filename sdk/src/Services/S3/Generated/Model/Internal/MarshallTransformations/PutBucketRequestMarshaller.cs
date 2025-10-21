@@ -78,9 +78,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
+                string regionCode = CustomRegionHandling(xmlWriter, publicRequest);
                 if (publicRequest.IsSetPutBucketConfiguration())
                 {
-                    xmlWriter.WriteStartElement("CreateBucketConfiguration", "http://s3.amazonaws.com/doc/2006-03-01/");
+                    if (regionCode == null)
+                        xmlWriter.WriteStartElement("CreateBucketConfiguration", "http://s3.amazonaws.com/doc/2006-03-01/");
                     if (publicRequest.PutBucketConfiguration.BucketInfo != null)
                     {
                         xmlWriter.WriteStartElement("Bucket");

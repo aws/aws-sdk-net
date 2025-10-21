@@ -169,6 +169,9 @@
                     "Status":{
                           "injectXmlPrivateMemberAssignment" :[
                             "private LifecycleRuleStatus _status = LifecycleRuleStatus.Disabled;"
+                        ],
+                        "injectXmlMarshallCode":[
+                            "CustomStatusMarshalling(xmlWriter, publicRequestConfigurationRulesValue);"
                         ]
                     }
                 },
@@ -240,8 +243,22 @@
                     "ACL": {"emitPropertyName": "CannedACL"}
                 },
                 {
-                    "CreateBucketConfiguration" : {"emitPropertyName" : "PutBucketConfiguration"}
+                    "CreateBucketConfiguration" : {
+                        "emitPropertyName" : "PutBucketConfiguration"
+                    }
+
+                },
+                {
+                    "PutBucketConfiguration":{
+                        "injectXmlMarshallCode":[
+                            "if (regionCode == null)",
+                            "    xmlWriter.WriteStartElement(\"CreateBucketConfiguration\", \"http://s3.amazonaws.com/doc/2006-03-01/\");"
+                        ]
+                    }
                 }
+            ],
+            "injectXmlMarshallCodeInPayload":[
+                "string regionCode = CustomRegionHandling(xmlWriter, publicRequest);"
             ]
         },
         "CreateMultipartUploadRequest":{
@@ -735,6 +752,20 @@
                 },
                 {
                     "ServerSideEncryption" : {"emitPropertyName" : "ServerSideEncryptionMethod"}
+                }
+            ]
+        },
+        "FilterRule": {
+            "modify": [
+                {
+                    "Name": {
+                        "skipXmlIsSet" : true
+                    }
+                },
+                {
+                    "Value" : {
+                        "skipXmlIsSet" : true
+                    }
                 }
             ]
         }

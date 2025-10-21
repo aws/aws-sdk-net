@@ -1,0 +1,13 @@
+{
+  "services": [
+    {
+      "serviceName": "S3",
+      "type": "patch",
+      "changeLogMessages": [
+        "For PutBucket: Add back exact custom logic for bucket region and BucketRegionName handling in PutBucketRequestMarshaller, where BucketRegion took precedence over BucketRegionName if both are set.",
+        "For PutBucketNotification: For configurations, any Filter's FilterRule's Name and Value can be empty/null and the SDK will send empty xml elements. The request will still fail but with a better exception message.",
+        "For PutLifecycleConfiguration: Add back custom logic for LifecycleRules where even if the user explicitly sets the status to null the request will succeed by setting status to disabled."
+      ]
+    }
+  ]
+}

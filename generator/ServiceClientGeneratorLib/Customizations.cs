@@ -1035,6 +1035,7 @@ namespace ServiceClientGenerator
             public const string OriginalMemberIsOutsideContainingShapeKey = "originalMemberIsOutsideContainingShape";
             public const string PredicateListUnmarshallersKey = "predicateListUnmarshallers";
             public const string ExcludeFromUnmarshallingKey = "excludeFromUnmarshalling";
+            public const string InjectXmlMarshallCodeInPayloadKey = "injectXmlMarshallCodeInPayload";
 
             private readonly HashSet<string> _excludedProperties;
             private readonly Dictionary<string, JsonData> _modifiedProperties;
@@ -1046,6 +1047,7 @@ namespace ServiceClientGenerator
             private readonly string _shapeModifierXmlNamespace;
             private readonly Dictionary<string, JsonData> _predicateListUnmarshallers;
             private readonly HashSet<string> _excludedUnmarshallingProperties;
+            private readonly HashSet<string> _injectXmlMarshallCodeInPayload;
 
             public string DeprecationMessage { get; private set; }
 
@@ -1066,8 +1068,22 @@ namespace ServiceClientGenerator
                 _shapeModifierXmlNamespace = ParseXmlNamespace(data);
                 _predicateListUnmarshallers = ParsePredicateListUnmarshallers(data);
                 _excludedUnmarshallingProperties = ParseExcludedUnmarshallingProperties(data);
+                _injectXmlMarshallCodeInPayload = ParseInjectXmlMarshallCodeInPayload(data);
             }
 
+            private HashSet<string> ParseInjectXmlMarshallCodeInPayload(JsonData data)
+            {
+                var shapeModifierData = data[InjectXmlMarshallCodeInPayloadKey]?.Cast<object>()
+                    .Select(x => x.ToString());
+
+                return new HashSet<string>(shapeModifierData ?? new string[0]);
+            }
+
+            /// <summary>
+            /// Use this customization when you want to inject some code into the xml payload.
+            /// The code will be injected into the first line of the xml payload marshall logic.
+            /// </summary>
+            public HashSet<string> InjectXmlMarshallCodeInPayload { get { return _injectXmlMarshallCodeInPayload; } }
 
             //"exclude": [
             //    "CopySource",
@@ -1432,8 +1448,8 @@ namespace ServiceClientGenerator
             public const string InjectXmlPropertyGetterKey = "injectXmlPropertyGetter";
             public const string InjectXmlPropertySetterKey = "injectXmlPropertySetter";
             public const string SkipSetterKey = "skipSetter";
-
-
+            public const string InjectXmlMarshallCodeKey = "injectXmlMarshallCode";
+            public const string SkipXmlIsSetKey = "skipXmlIsSet";
 
             private readonly string _modelPropertyName;
             private readonly JsonData _modifierData;
@@ -1443,6 +1459,8 @@ namespace ServiceClientGenerator
             private readonly HashSet<string> _injectXmlPropertyGetter;
             private readonly HashSet<string> _injectedXmlPropertySetter;
             private readonly bool _skipSetter;
+            private readonly bool _skipXmlIsSet;
+            private readonly HashSet<string> _injectXmlMarshallCode;
 
             internal PropertyModifier(string modelPropertyName, JsonData modifierData)
             {
@@ -1454,7 +1472,50 @@ namespace ServiceClientGenerator
                 _injectXmlPropertyGetter = ParseInjectXmlGetter();
                 _injectedXmlPropertySetter = ParseInjectXmlPropertySetter();
                 _skipSetter = ParseXmlSkipSetter();
+                _skipXmlIsSet = ParseSkipXmlIsSet();
+                _injectXmlMarshallCode = ParseInjectXmlMarshallCode();
             }
+
+            private bool ParseSkipXmlIsSet()
+            {
+                var data = _modifierData[SkipXmlIsSetKey];
+                return data != null && data.IsBoolean ? (bool)data : false;
+            }
+
+            /// <summary>
+            /// This forces XML elements to be written even when the property value is null or empty.
+            /// 
+            /// This is needed when an API requires empty XML elements to be present in the structure,
+            /// rather than omitting them entirely (which is the default behavior).
+            /// 
+            /// Example: S3's FilterRule requires both Name and Value elements even when empty:
+            ///   <FilterRule>
+            ///     <Name></Name>    <!-- Must be present even if empty -->
+            ///     <Value></Value>  <!-- Must be present even if empty -->
+            ///   </FilterRule>
+            /// Use this customization when you want to skip the IsSet() checks for rest-xml marshalling
+            ///        "Name": {
+            ///            "skipXmlIsSet" : true
+            ///        }
+            /// </summary>
+            public bool SkipXmlIsSet { get { return _skipXmlIsSet; } }
+
+            private HashSet<string> ParseInjectXmlMarshallCode()
+            {
+                var data = _modifierData[InjectXmlMarshallCodeKey]?.Cast<object>()
+                    .Select(x => x.ToString());
+
+                return new HashSet<string>(data ?? new string[0]);
+            }
+
+            /// <summary>
+            /// Use this customization when you need to inject marshall code for a specific member (within the modify array)
+            /// "MetricsFilter":{
+            ///    "injectXmlMarshallCode": ["MetricsFilterCustomMarshall(publicRequest, xmlWriter);"]
+            /// }
+            /// 
+            /// </summary>
+            public HashSet<string> InjectXmlMarshallCode { get { return _injectXmlMarshallCode; } }
 
             private bool ParseXmlSkipSetter()
             {

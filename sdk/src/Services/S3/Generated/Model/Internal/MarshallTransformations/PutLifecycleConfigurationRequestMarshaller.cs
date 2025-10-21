@@ -199,8 +199,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                             }
                             if(publicRequestConfigurationRulesValue.IsSetPrefix())
                                 xmlWriter.WriteElementString("Prefix", StringUtils.FromString(publicRequestConfigurationRulesValue.Prefix));
-                            if(publicRequestConfigurationRulesValue.IsSetStatus())
-                                xmlWriter.WriteElementString("Status", StringUtils.FromString(publicRequestConfigurationRulesValue.Status));
+                            CustomStatusMarshalling(xmlWriter, publicRequestConfigurationRulesValue);
                             var publicRequestConfigurationRulesValueTransitions = publicRequestConfigurationRulesValue.Transitions;
                             if (publicRequestConfigurationRulesValueTransitions != null && (publicRequestConfigurationRulesValueTransitions.Count > 0 || !AWSConfigs.InitializeCollections)) 
                             {
