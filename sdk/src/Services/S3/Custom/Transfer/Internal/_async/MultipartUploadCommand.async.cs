@@ -168,17 +168,23 @@ namespace Amazon.S3.Transfer.Internal
             AbortMultipartUpload(uploadId);
         }
 
+        internal AbortMultipartUploadRequest ConstructAbortMultipartUploadRequest(string uploadId)
+        {
+            return new AbortMultipartUploadRequest()
+            {
+                BucketName = this._fileTransporterRequest.BucketName,
+                ExpectedBucketOwner = this._fileTransporterRequest.ExpectedBucketOwner,
+                Key = this._fileTransporterRequest.Key,
+                RequestPayer = this._fileTransporterRequest.RequestPayer,
+                UploadId = uploadId
+            };
+        }
+
         private void AbortMultipartUpload(string uploadId)
         {
             try
             {
-                this._s3Client.AbortMultipartUploadAsync(new AbortMultipartUploadRequest()
-                {
-                    BucketName = this._fileTransporterRequest.BucketName,
-                    Key = this._fileTransporterRequest.Key,
-                    RequestPayer = this._fileTransporterRequest.RequestPayer,
-                    UploadId = uploadId
-                }).Wait();
+                this._s3Client.AbortMultipartUploadAsync(ConstructAbortMultipartUploadRequest(uploadId)).Wait();
             }
             catch (Exception e)
             {
