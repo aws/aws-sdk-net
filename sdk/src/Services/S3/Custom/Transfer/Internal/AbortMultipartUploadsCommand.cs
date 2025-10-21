@@ -41,7 +41,7 @@ namespace Amazon.S3.Transfer.Internal
             this._initiatedDate = initiateDate;
         }
 
-        private ListMultipartUploadsRequest ConstructListMultipartUploadsRequest(ListMultipartUploadsResponse listResponse)
+        internal ListMultipartUploadsRequest ConstructListMultipartUploadsRequest(ListMultipartUploadsResponse listResponse)
             {
                 ListMultipartUploadsRequest listRequest = new ListMultipartUploadsRequest()
                 {
@@ -53,7 +53,7 @@ namespace Amazon.S3.Transfer.Internal
             return listRequest;
         }
 
-        private AbortMultipartUploadRequest ConstructAbortMultipartUploadRequest(MultipartUpload upload)
+        internal AbortMultipartUploadRequest ConstructAbortMultipartUploadRequest(MultipartUpload upload)
                     {
                         var abortRequest = new AbortMultipartUploadRequest()
                         {
