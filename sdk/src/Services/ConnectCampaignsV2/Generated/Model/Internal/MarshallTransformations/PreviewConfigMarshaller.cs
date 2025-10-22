@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// TelephonyOutboundMode Marshaller
+    /// PreviewConfig Marshaller
     /// </summary>
-    public class TelephonyOutboundModeMarshaller : IRequestMarshaller<TelephonyOutboundMode, JsonMarshallerContext> 
+    public class PreviewConfigMarshaller : IRequestMarshaller<PreviewConfig, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,50 +42,41 @@ namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(TelephonyOutboundMode requestObject, JsonMarshallerContext context)
+        public void Marshall(PreviewConfig requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetAgentless())
+            if(requestObject.IsSetAgentActions())
             {
-                context.Writer.WritePropertyName("agentless");
-                context.Writer.WriteStartObject();
-
-                var marshaller = AgentlessConfigMarshaller.Instance;
-                marshaller.Marshall(requestObject.Agentless, context);
-
-                context.Writer.WriteEndObject();
+                context.Writer.WritePropertyName("agentActions");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectAgentActionsListValue in requestObject.AgentActions)
+                {
+                        context.Writer.WriteStringValue(requestObjectAgentActionsListValue);
+                }
+                context.Writer.WriteEndArray();
             }
 
-            if(requestObject.IsSetPredictive())
+            if(requestObject.IsSetBandwidthAllocation())
             {
-                context.Writer.WritePropertyName("predictive");
-                context.Writer.WriteStartObject();
-
-                var marshaller = PredictiveConfigMarshaller.Instance;
-                marshaller.Marshall(requestObject.Predictive, context);
-
-                context.Writer.WriteEndObject();
+                context.Writer.WritePropertyName("bandwidthAllocation");
+                if(StringUtils.IsSpecialDoubleValue(requestObject.BandwidthAllocation.Value))
+                {
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.BandwidthAllocation.Value));
+                }
+                else
+                {
+                    context.Writer.WriteNumberValue(requestObject.BandwidthAllocation.Value);
+                }
             }
 
-            if(requestObject.IsSetPreview())
+            if(requestObject.IsSetTimeoutConfig())
             {
-                context.Writer.WritePropertyName("preview");
+                context.Writer.WritePropertyName("timeoutConfig");
                 context.Writer.WriteStartObject();
 
-                var marshaller = PreviewConfigMarshaller.Instance;
-                marshaller.Marshall(requestObject.Preview, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(requestObject.IsSetProgressive())
-            {
-                context.Writer.WritePropertyName("progressive");
-                context.Writer.WriteStartObject();
-
-                var marshaller = ProgressiveConfigMarshaller.Instance;
-                marshaller.Marshall(requestObject.Progressive, context);
+                var marshaller = TimeoutConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.TimeoutConfig, context);
 
                 context.Writer.WriteEndObject();
             }
@@ -95,7 +86,7 @@ namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static TelephonyOutboundModeMarshaller Instance = new TelephonyOutboundModeMarshaller();
+        public readonly static PreviewConfigMarshaller Instance = new PreviewConfigMarshaller();
 
     }
 }
