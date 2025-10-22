@@ -1,3 +1,106 @@
+### 3.7.1149.0 (2025-10-22 20:16 UTC)
+* AppFabric (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* AugmentedAIRuntime (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* AutoScaling (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* B2bi (3.7.503.0)
+	* Update endpoint ruleset parameters casing
+* BCMDashboards (3.7.501.0)
+	* Update endpoint ruleset parameters casing
+* Chatbot (3.7.501.0)
+	* Update endpoint ruleset parameters casing
+* CloudFormation (3.7.503.0)
+	* Update endpoint ruleset parameters casing
+* CloudHSM (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* CloudHSMV2 (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* CodeGuruReviewer (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* CognitoIdentity (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* ComprehendMedical (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* Connect (3.7.510.0)
+	* This release added support for email address alias configuration and outbound campaign preview mode.
+* ConnectCampaignsV2 (3.7.502.0)
+	* Updated Amazon Connect Outbound Campaigns V2 SDK to support Preview Outbound Mode
+* ConnectParticipant (3.7.503.0)
+	* Update endpoint ruleset parameters casing
+* CostExplorer (3.7.504.0)
+	* Update endpoint ruleset parameters casing
+* DeviceFarm (3.7.501.0)
+	* This release adds support for optionally including an app as part of a CreateRemoteAccessSession request
+* DirectConnect (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* DirectoryServiceData (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* EC2 (3.7.518.0)
+	* This release adds AvailabilityZoneId support for CreateNetworkInterface and DescribeNetworkInterfaces APIs.
+* EC2InstanceConnect (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* ForecastQueryService (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* IdentityManagement (3.7.502.0)
+	* Updated OIDC and SAML apis to reject multiple simultaneous requests to change a unique object.
+* Inspector2 (3.7.503.0)
+	* Update endpoint ruleset parameters casing
+* IoT (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* IoTAnalytics (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* IoTFleetWise (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* IoTSecureTunneling (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* IoTSiteWise (3.7.503.0)
+	* Update endpoint ruleset parameters casing
+* Ivschat (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* KinesisAnalyticsV2 (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* LexModelsV2 (3.7.501.0)
+	* Update endpoint ruleset parameters casing
+* MailManager (3.7.501.0)
+	* Update endpoint ruleset parameters casing
+* MarketplaceAgreement (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* MediaLive (3.7.506.0)
+	* Add 3 API operations for fetching alerts: ListAlerts (Channels), ListClusterAlerts (MediaLive Anywhere), and ListMultiplexAlerts
+* MWAA (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* NotificationsContacts (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* OAM (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* PCS (3.7.506.0)
+	* Update endpoint ruleset parameters casing
+* PinpointSMSVoiceV2 (3.7.503.0)
+	* Update endpoint ruleset parameters casing
+* RedshiftDataAPIService (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* Route53 (3.7.503.0)
+	* Amazon Route 53 now supports the ISOB West Region for private DNS for Amazon VPCs and cloudwatch healthchecks.
+* Route53RecoveryCluster (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* RTBFabric (3.7.500.0)
+	* Update for general availability of AWS RTB Fabric service.
+* SimpleNotificationService (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* SSMIncidents (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* WorkDocs (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* WorkMail (3.7.503.0)
+	* Update endpoint ruleset parameters casing
+* WorkSpaces (3.7.503.0)
+	* Update endpoint ruleset parameters casing
+* Core 3.7.500.35
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.1148.0 (2025-10-21 19:25 UTC)
 * AWSMarketplaceMetering (3.7.502.0)
 	* Added ClientToken parameter to MeterUsage API for specifying idempotent requests.
