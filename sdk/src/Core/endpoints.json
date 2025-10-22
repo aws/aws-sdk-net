@@ -17241,6 +17241,7 @@
           "endpoints": {
             "ap-south-1": {},
             "ap-southeast-2": {},
+            "ca-central-1": {},
             "eu-west-1": {},
             "eu-west-2": {},
             "us-east-1": {},
@@ -51577,6 +51578,9 @@
       "regions": {
         "us-isob-east-1": {
           "description": "US ISOB East (Ohio)"
+        },
+        "us-isob-west-1": {
+          "description": "US ISOB West"
         }
       },
       "services": {
@@ -51587,7 +51591,8 @@
                 "region": "us-isob-east-1"
               },
               "hostname": "api.ecr.us-isob-east-1.sc2s.sgov.gov"
-            }
+            },
+            "us-isob-west-1": {}
           }
         },
         "api.pricing": {
@@ -51612,12 +51617,14 @@
         },
         "appconfig": {
           "endpoints": {
-            "us-isob-east-1": {}
+            "us-isob-east-1": {},
+            "us-isob-west-1": {}
           }
         },
         "appconfigdata": {
           "endpoints": {
-            "us-isob-east-1": {}
+            "us-isob-east-1": {},
+            "us-isob-west-1": {}
           }
         },
         "application-autoscaling": {
@@ -51628,12 +51635,14 @@
             ]
           },
           "endpoints": {
-            "us-isob-east-1": {}
+            "us-isob-east-1": {},
+            "us-isob-west-1": {}
           }
         },
         "arc-zonal-shift": {
           "endpoints": {
-            "us-isob-east-1": {}
+            "us-isob-east-1": {},
+            "us-isob-west-1": {}
           }
         },
         "athena": {
@@ -51649,7 +51658,8 @@
             ]
           },
           "endpoints": {
-            "us-isob-east-1": {}
+            "us-isob-east-1": {},
+            "us-isob-west-1": {}
           }
         },
         "backup": {
@@ -51659,7 +51669,8 @@
         },
         "batch": {
           "endpoints": {
-            "us-isob-east-1": {}
+            "us-isob-east-1": {},
+            "us-isob-west-1": {}
           }
         },
         "budgets": {
@@ -51694,12 +51705,14 @@
         },
         "cloudcontrolapi": {
           "endpoints": {
-            "us-isob-east-1": {}
+            "us-isob-east-1": {},
+            "us-isob-west-1": {}
           }
         },
         "cloudformation": {
           "endpoints": {
-            "us-isob-east-1": {}
+            "us-isob-east-1": {},
+            "us-isob-west-1": {}
           }
         },
         "cloudtrail": {
@@ -51720,7 +51733,8 @@
                   ]
                 }
               ]
-            }
+            },
+            "us-isob-west-1": {}
           }
         },
         "codebuild": {
@@ -51730,7 +51744,8 @@
         },
         "codedeploy": {
           "endpoints": {
-            "us-isob-east-1": {}
+            "us-isob-east-1": {},
+            "us-isob-west-1": {}
           }
         },
         "config": {
@@ -51751,7 +51766,8 @@
                   ]
                 }
               ]
-            }
+            },
+            "us-isob-west-1": {}
           }
         },
         "datasync": {
@@ -51761,12 +51777,14 @@
         },
         "directconnect": {
           "endpoints": {
-            "us-isob-east-1": {}
+            "us-isob-east-1": {},
+            "us-isob-west-1": {}
           }
         },
         "dlm": {
           "endpoints": {
-            "us-isob-east-1": {}
+            "us-isob-east-1": {},
+            "us-isob-west-1": {}
           }
         },
         "dms": {
@@ -51818,7 +51836,8 @@
               },
               "deprecated": true,
               "hostname": "dms.us-isob-east-1.sc2s.sgov.gov"
-            }
+            },
+            "us-isob-west-1": {}
           }
         },
         "ds": {
@@ -51850,12 +51869,14 @@
             ]
           },
           "endpoints": {
-            "us-isob-east-1": {}
+            "us-isob-east-1": {},
+            "us-isob-west-1": {}
           }
         },
         "ebs": {
           "endpoints": {
-            "us-isob-east-1": {}
+            "us-isob-east-1": {},
+            "us-isob-west-1": {}
           }
         },
         "ec2": {
@@ -51866,12 +51887,14 @@
             ]
           },
           "endpoints": {
-            "us-isob-east-1": {}
+            "us-isob-east-1": {},
+            "us-isob-west-1": {}
           }
         },
         "ecs": {
           "endpoints": {
-            "us-isob-east-1": {}
+            "us-isob-east-1": {},
+            "us-isob-west-1": {}
           }
         },
         "eks": {
@@ -51882,12 +51905,14 @@
             ]
           },
           "endpoints": {
-            "us-isob-east-1": {}
+            "us-isob-east-1": {},
+            "us-isob-west-1": {}
           }
         },
         "elasticache": {
           "endpoints": {
-            "us-isob-east-1": {}
+            "us-isob-east-1": {},
+            "us-isob-west-1": {}
           }
         },
         "elasticfilesystem": {
@@ -51917,7 +51942,8 @@
               "protocols": [
                 "https"
               ]
-            }
+            },
+            "us-isob-west-1": {}
           }
         },
         "elasticmapreduce": {
@@ -51938,17 +51964,20 @@
                   ]
                 }
               ]
-            }
+            },
+            "us-isob-west-1": {}
           }
         },
         "es": {
           "endpoints": {
-            "us-isob-east-1": {}
+            "us-isob-east-1": {},
+            "us-isob-west-1": {}
           }
         },
         "events": {
           "endpoints": {
-            "us-isob-east-1": {}
+            "us-isob-east-1": {},
+            "us-isob-west-1": {}
           }
         },
         "firehose": {
@@ -52011,7 +52040,8 @@
         },
         "kinesis": {
           "endpoints": {
-            "us-isob-east-1": {}
+            "us-isob-east-1": {},
+            "us-isob-west-1": {}
           }
         },
         "kinesisanalytics": {
@@ -52044,7 +52074,8 @@
               },
               "deprecated": true,
               "hostname": "kms-fips.us-isob-east-1.sc2s.sgov.gov"
-            }
+            },
+            "us-isob-west-1": {}
           }
         },
         "lakeformation": {
@@ -52054,7 +52085,8 @@
         },
         "lambda": {
           "endpoints": {
-            "us-isob-east-1": {}
+            "us-isob-east-1": {},
+            "us-isob-west-1": {}
           }
         },
         "license-manager": {
@@ -52064,7 +52096,8 @@
         },
         "logs": {
           "endpoints": {
-            "us-isob-east-1": {}
+            "us-isob-east-1": {},
+            "us-isob-west-1": {}
           }
         },
         "medialive": {
@@ -52110,7 +52143,8 @@
         },
         "monitoring": {
           "endpoints": {
-            "us-isob-east-1": {}
+            "us-isob-east-1": {},
+            "us-isob-west-1": {}
           }
         },
         "network-firewall": {
@@ -52120,7 +52154,8 @@
         },
         "oam": {
           "endpoints": {
-            "us-isob-east-1": {}
+            "us-isob-east-1": {},
+            "us-isob-west-1": {}
           }
         },
         "organizations": {
@@ -52142,12 +52177,14 @@
         },
         "pi": {
           "endpoints": {
-            "us-isob-east-1": {}
+            "us-isob-east-1": {},
+            "us-isob-west-1": {}
           }
         },
         "ram": {
           "endpoints": {
-            "us-isob-east-1": {}
+            "us-isob-east-1": {},
+            "us-isob-west-1": {}
           }
         },
         "rbin": {
@@ -52168,7 +52205,8 @@
                   ]
                 }
               ]
-            }
+            },
+            "us-isob-west-1": {}
           }
         },
         "rds": {
@@ -52196,7 +52234,8 @@
               },
               "deprecated": true,
               "hostname": "rds.us-isob-east-1.sc2s.sgov.gov"
-            }
+            },
+            "us-isob-west-1": {}
           }
         },
         "redshift": {
@@ -52206,12 +52245,14 @@
                 "region": "us-isob-east-1"
               },
               "hostname": "redshift.us-isob-east-1.sc2s.sgov.gov"
-            }
+            },
+            "us-isob-west-1": {}
           }
         },
         "resource-groups": {
           "endpoints": {
-            "us-isob-east-1": {}
+            "us-isob-east-1": {},
+            "us-isob-west-1": {}
           }
         },
         "route53": {
@@ -52270,7 +52311,8 @@
                   ]
                 }
               ]
-            }
+            },
+            "us-isob-west-1": {}
           }
         },
         "s3-control": {
@@ -52359,7 +52401,8 @@
             },
             "us-isob-east-1-fips": {
               "deprecated": true
-            }
+            },
+            "us-isob-west-1": {}
           }
         },
         "securityhub": {
@@ -52369,12 +52412,14 @@
         },
         "servicediscovery": {
           "endpoints": {
-            "us-isob-east-1": {}
+            "us-isob-east-1": {},
+            "us-isob-west-1": {}
           }
         },
         "servicequotas": {
           "endpoints": {
-            "us-isob-east-1": {}
+            "us-isob-east-1": {},
+            "us-isob-west-1": {}
           }
         },
         "snowball": {
@@ -52390,7 +52435,8 @@
             ]
           },
           "endpoints": {
-            "us-isob-east-1": {}
+            "us-isob-east-1": {},
+            "us-isob-west-1": {}
           }
         },
         "sqs": {
@@ -52418,12 +52464,14 @@
                   ]
                 }
               ]
-            }
+            },
+            "us-isob-west-1": {}
           }
         },
         "ssm": {
           "endpoints": {
-            "us-isob-east-1": {}
+            "us-isob-east-1": {},
+            "us-isob-west-1": {}
           }
         },
         "states": {
@@ -52444,7 +52492,8 @@
                   ]
                 }
               ]
-            }
+            },
+            "us-isob-west-1": {}
           }
         },
         "storagegateway": {
@@ -52486,12 +52535,14 @@
             ]
           },
           "endpoints": {
-            "us-isob-east-1": {}
+            "us-isob-east-1": {},
+            "us-isob-west-1": {}
           }
         },
         "sts": {
           "endpoints": {
-            "us-isob-east-1": {}
+            "us-isob-east-1": {},
+            "us-isob-west-1": {}
           }
         },
         "support": {
@@ -52523,17 +52574,20 @@
                   ]
                 }
               ]
-            }
+            },
+            "us-isob-west-1": {}
           }
         },
         "synthetics": {
           "endpoints": {
-            "us-isob-east-1": {}
+            "us-isob-east-1": {},
+            "us-isob-west-1": {}
           }
         },
         "tagging": {
           "endpoints": {
-            "us-isob-east-1": {}
+            "us-isob-east-1": {},
+            "us-isob-west-1": {}
           }
         },
         "wafv2": {
@@ -52564,7 +52618,8 @@
         },
         "xray": {
           "endpoints": {
-            "us-isob-east-1": {}
+            "us-isob-east-1": {},
+            "us-isob-west-1": {}
           }
         }
       }
