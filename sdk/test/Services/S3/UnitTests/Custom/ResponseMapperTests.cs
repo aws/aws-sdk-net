@@ -265,11 +265,36 @@ namespace AWSSDK.UnitTests
                 // Resolve alias to actual property name
                 var resolvedPropertyName = ResolvePropertyName(propertyName, sourceType.Name);
                 var sourceProperty = sourceType.GetProperty(resolvedPropertyName);
-                if (sourceProperty?.CanWrite == true)
+
+                if (usesHeadersCollection && sourceProperty is null)
                 {
-                    var testValue = GenerateTestValue(sourceProperty.PropertyType, propertyName);
-                    sourceProperty.SetValue(sourceRequest, testValue);
-                    testDataValues[propertyName] = testValue;
+                    // Check if source type has a Headers property of type HeadersCollection
+                    var sourceHeadersProperty = sourceType.GetProperty("Headers");
+                    if (sourceHeadersProperty != null && typeof(HeadersCollection).IsAssignableFrom(sourceHeadersProperty.PropertyType))
+                    {
+                        var sourceHeadersCollection = sourceHeadersProperty.GetValue(sourceRequest) as HeadersCollection;
+                        var sourceHeadersCollectionProperty = typeof(HeadersCollection).GetProperty(resolvedPropertyName);
+
+                        Assert.IsNotNull(sourceHeadersCollectionProperty, $"Source property '{resolvedPropertyName}' in '{nameof(HeadersCollection)}' should not be null");
+
+                        if (sourceHeadersCollectionProperty.CanWrite == true)
+                        {
+                            var testValue = GenerateTestValue(sourceHeadersCollectionProperty.PropertyType, propertyName);
+                            sourceHeadersCollectionProperty.SetValue(sourceHeadersCollection, testValue);
+                            testDataValues[propertyName] = testValue;
+                        }
+                    }
+                }
+                else
+                {
+                    Assert.IsNotNull(sourceProperty, $"Source property '{propertyName}' should not be null");
+
+                    if (sourceProperty.CanWrite == true)
+                    {
+                        var testValue = GenerateTestValue(sourceProperty.PropertyType, propertyName);
+                        sourceProperty.SetValue(sourceRequest, testValue);
+                        testDataValues[propertyName] = testValue;
+                    }
                 }
             }
 
