@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for EmailAddressMetadata Object
+    /// Response Unmarshaller for AliasConfiguration Object
     /// </summary>  
-    public class EmailAddressMetadataUnmarshaller : IUnmarshaller<EmailAddressMetadata, XmlUnmarshallerContext>, IUnmarshaller<EmailAddressMetadata, JsonUnmarshallerContext>
+    public class AliasConfigurationUnmarshaller : IUnmarshaller<AliasConfiguration, XmlUnmarshallerContext>, IUnmarshaller<AliasConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        EmailAddressMetadata IUnmarshaller<EmailAddressMetadata, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AliasConfiguration IUnmarshaller<AliasConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public EmailAddressMetadata Unmarshall(JsonUnmarshallerContext context)
+        public AliasConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
-            EmailAddressMetadata unmarshalledObject = new EmailAddressMetadata();
+            AliasConfiguration unmarshalledObject = new AliasConfiguration();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,36 +66,6 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("AliasConfigurations", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<AliasConfiguration, AliasConfigurationUnmarshaller>(AliasConfigurationUnmarshaller.Instance);
-                    unmarshalledObject.AliasConfigurations = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Description", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Description = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("DisplayName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DisplayName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("EmailAddress", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EmailAddress = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("EmailAddressArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EmailAddressArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("EmailAddressId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -107,12 +77,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         }
 
 
-        private static EmailAddressMetadataUnmarshaller _instance = new EmailAddressMetadataUnmarshaller();        
+        private static AliasConfigurationUnmarshaller _instance = new AliasConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static EmailAddressMetadataUnmarshaller Instance
+        public static AliasConfigurationUnmarshaller Instance
         {
             get
             {

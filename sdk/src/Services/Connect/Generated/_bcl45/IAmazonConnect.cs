@@ -590,6 +590,288 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  AssociateEmailAddressAlias
+
+
+        /// <summary>
+        /// Associates an email address alias with an existing email address in an Amazon Connect
+        /// instance. This creates a forwarding relationship where emails sent to the alias email
+        /// address are automatically forwarded to the primary email address. 
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Use cases</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Following are common uses cases for this API:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>Unified customer support</b>: Create multiple entry points (for example, support@example.com,
+        /// help@example.com, customercare@example.com) that all forward to a single agent queue
+        /// for streamlined management.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Department consolidation</b>: Forward emails from legacy department addresses
+        /// (for example, sales@example.com, info@example.com) to a centralized customer service
+        /// email during organizational restructuring.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Brand management</b>: Enable you to use familiar brand-specific email addresses
+        /// that forward to the appropriate Amazon Connect instance email address.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Important things to know</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Each email address can have a maximum of one alias. You cannot create multiple aliases
+        /// for the same email address. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the alias email address already receives direct emails, it continues to receive
+        /// direct emails plus forwarded emails.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You cannot chain email aliases together (that is, create an alias of an alias).
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <c>AssociateEmailAddressAlias</c> does not return the following information:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// A confirmation of the alias relationship details (you must call <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeEmailAddress.html">DescribeEmailAddress</a>
+        /// to verify).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The timestamp of when the association occurred.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The status of the forwarding configuration.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
+        /// Connect endpoints and quotas</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Related operations</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DisassociateEmailAddressAlias.html">DisassociateEmailAddressAlias</a>:
+        /// Removes the alias association between two email addresses in an Amazon Connect instance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeEmailAddress.html">DescribeEmailAddress</a>:
+        /// View current alias configurations for an email address.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_SearchEmailAddresses.html">SearchEmailAddresses</a>:
+        /// Find email addresses and their alias relationships across an instance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateEmailAddress.html">CreateEmailAddress</a>:
+        /// Create new email addresses that can participate in alias relationships.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteEmailAddress.html">DeleteEmailAddress</a>:
+        /// Remove email addresses (automatically removes any alias relationships).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateEmailAddressMetadata.html">UpdateEmailAddressMetadata</a>:
+        /// Modify email address properties (does not affect alias relationships).
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateEmailAddressAlias service method.</param>
+        /// 
+        /// <returns>The response from the AssociateEmailAddressAlias service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.IdempotencyException">
+        /// An entity with the same name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceConflictException">
+        /// A resource already has that name.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateEmailAddressAlias">REST API Reference for AssociateEmailAddressAlias Operation</seealso>
+        AssociateEmailAddressAliasResponse AssociateEmailAddressAlias(AssociateEmailAddressAliasRequest request);
+
+
+
+        /// <summary>
+        /// Associates an email address alias with an existing email address in an Amazon Connect
+        /// instance. This creates a forwarding relationship where emails sent to the alias email
+        /// address are automatically forwarded to the primary email address. 
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Use cases</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Following are common uses cases for this API:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>Unified customer support</b>: Create multiple entry points (for example, support@example.com,
+        /// help@example.com, customercare@example.com) that all forward to a single agent queue
+        /// for streamlined management.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Department consolidation</b>: Forward emails from legacy department addresses
+        /// (for example, sales@example.com, info@example.com) to a centralized customer service
+        /// email during organizational restructuring.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Brand management</b>: Enable you to use familiar brand-specific email addresses
+        /// that forward to the appropriate Amazon Connect instance email address.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Important things to know</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Each email address can have a maximum of one alias. You cannot create multiple aliases
+        /// for the same email address. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the alias email address already receives direct emails, it continues to receive
+        /// direct emails plus forwarded emails.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You cannot chain email aliases together (that is, create an alias of an alias).
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <c>AssociateEmailAddressAlias</c> does not return the following information:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// A confirmation of the alias relationship details (you must call <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeEmailAddress.html">DescribeEmailAddress</a>
+        /// to verify).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The timestamp of when the association occurred.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The status of the forwarding configuration.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
+        /// Connect endpoints and quotas</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Related operations</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DisassociateEmailAddressAlias.html">DisassociateEmailAddressAlias</a>:
+        /// Removes the alias association between two email addresses in an Amazon Connect instance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeEmailAddress.html">DescribeEmailAddress</a>:
+        /// View current alias configurations for an email address.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_SearchEmailAddresses.html">SearchEmailAddresses</a>:
+        /// Find email addresses and their alias relationships across an instance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateEmailAddress.html">CreateEmailAddress</a>:
+        /// Create new email addresses that can participate in alias relationships.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteEmailAddress.html">DeleteEmailAddress</a>:
+        /// Remove email addresses (automatically removes any alias relationships).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateEmailAddressMetadata.html">UpdateEmailAddressMetadata</a>:
+        /// Modify email address properties (does not affect alias relationships).
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateEmailAddressAlias service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateEmailAddressAlias service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.IdempotencyException">
+        /// An entity with the same name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceConflictException">
+        /// A resource already has that name.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateEmailAddressAlias">REST API Reference for AssociateEmailAddressAlias Operation</seealso>
+        Task<AssociateEmailAddressAliasResponse> AssociateEmailAddressAliasAsync(AssociateEmailAddressAliasRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  AssociateFlow
 
 
@@ -6313,7 +6595,7 @@ namespace Amazon.Connect
 
         /// <summary>
         /// This API is in preview release for Amazon Connect and is subject to change. To request
-        /// access to this API, contact Amazon Web Services Support.
+        /// access to this API, contact Amazon Web ServicesSupport.
         /// 
         ///  
         /// <para>
@@ -6345,7 +6627,7 @@ namespace Amazon.Connect
 
         /// <summary>
         /// This API is in preview release for Amazon Connect and is subject to change. To request
-        /// access to this API, contact Amazon Web Services Support.
+        /// access to this API, contact Amazon Web ServicesSupport.
         /// 
         ///  
         /// <para>
@@ -8382,6 +8664,294 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  DisassociateEmailAddressAlias
+
+
+        /// <summary>
+        /// Removes the alias association between two email addresses in an Amazon Connect instance.
+        /// After disassociation, emails sent to the former alias email address are no longer
+        /// forwarded to the primary email address. Both email addresses continue to exist independently
+        /// and can receive emails directly.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Use cases</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Following are common uses cases for this API:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>Department separation</b>: Remove alias relationships when splitting a consolidated
+        /// support queue back into separate department-specific queues.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Email address retirement</b>: Cleanly remove forwarding relationships before decommissioning
+        /// old email addresses.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Organizational restructuring</b>: Reconfigure email routing when business processes
+        /// change and aliases are no longer needed.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Important things to know</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Concurrent operations: This API uses distributed locking, so concurrent operations
+        /// on the same email addresses may be temporarily blocked.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Emails sent to the former alias address are still delivered directly to that address
+        /// if it exists.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You do not need to delete the email addresses after disassociation. Both addresses
+        /// remain active independently.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// After a successful disassociation, you can immediately create a new alias relationship
+        /// with the same addresses.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// 200 status means alias was successfully disassociated.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <c>DisassociateEmailAddressAlias</c> does not return the following information:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Details in the response about the email that was disassociated. The response returns
+        /// an empty body.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The timestamp of when the disassociation occurred.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
+        /// Connect endpoints and quotas</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Related operations</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_AssociateEmailAddressAlias.html">AssociateEmailAddressAlias</a>:
+        /// Associates an email address alias with an existing email address in an Amazon Connect
+        /// instance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeEmailAddress.html">DescribeEmailAddress</a>:
+        /// View current alias configurations for an email address.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_SearchEmailAddresses.html">SearchEmailAddresses</a>:
+        /// Find email addresses and their alias relationships across an instance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateEmailAddress.html">CreateEmailAddress</a>:
+        /// Create new email addresses that can participate in alias relationships.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteEmailAddress.html">DeleteEmailAddress</a>:
+        /// Remove email addresses (automatically removes any alias relationships).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateEmailAddressMetadata.html">UpdateEmailAddressMetadata</a>:
+        /// Modify email address properties (does not affect alias relationships).
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateEmailAddressAlias service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateEmailAddressAlias service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceConflictException">
+        /// A resource already has that name.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateEmailAddressAlias">REST API Reference for DisassociateEmailAddressAlias Operation</seealso>
+        DisassociateEmailAddressAliasResponse DisassociateEmailAddressAlias(DisassociateEmailAddressAliasRequest request);
+
+
+
+        /// <summary>
+        /// Removes the alias association between two email addresses in an Amazon Connect instance.
+        /// After disassociation, emails sent to the former alias email address are no longer
+        /// forwarded to the primary email address. Both email addresses continue to exist independently
+        /// and can receive emails directly.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Use cases</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Following are common uses cases for this API:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>Department separation</b>: Remove alias relationships when splitting a consolidated
+        /// support queue back into separate department-specific queues.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Email address retirement</b>: Cleanly remove forwarding relationships before decommissioning
+        /// old email addresses.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Organizational restructuring</b>: Reconfigure email routing when business processes
+        /// change and aliases are no longer needed.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Important things to know</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Concurrent operations: This API uses distributed locking, so concurrent operations
+        /// on the same email addresses may be temporarily blocked.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Emails sent to the former alias address are still delivered directly to that address
+        /// if it exists.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You do not need to delete the email addresses after disassociation. Both addresses
+        /// remain active independently.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// After a successful disassociation, you can immediately create a new alias relationship
+        /// with the same addresses.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// 200 status means alias was successfully disassociated.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <c>DisassociateEmailAddressAlias</c> does not return the following information:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Details in the response about the email that was disassociated. The response returns
+        /// an empty body.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The timestamp of when the disassociation occurred.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
+        /// Connect endpoints and quotas</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Related operations</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_AssociateEmailAddressAlias.html">AssociateEmailAddressAlias</a>:
+        /// Associates an email address alias with an existing email address in an Amazon Connect
+        /// instance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeEmailAddress.html">DescribeEmailAddress</a>:
+        /// View current alias configurations for an email address.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_SearchEmailAddresses.html">SearchEmailAddresses</a>:
+        /// Find email addresses and their alias relationships across an instance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateEmailAddress.html">CreateEmailAddress</a>:
+        /// Create new email addresses that can participate in alias relationships.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteEmailAddress.html">DeleteEmailAddress</a>:
+        /// Remove email addresses (automatically removes any alias relationships).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateEmailAddressMetadata.html">UpdateEmailAddressMetadata</a>:
+        /// Modify email address properties (does not affect alias relationships).
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateEmailAddressAlias service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociateEmailAddressAlias service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceConflictException">
+        /// A resource already has that name.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateEmailAddressAlias">REST API Reference for DisassociateEmailAddressAlias Operation</seealso>
+        Task<DisassociateEmailAddressAliasResponse> DisassociateEmailAddressAliasAsync(DisassociateEmailAddressAliasRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DisassociateFlow
 
 
@@ -10301,7 +10871,7 @@ namespace Amazon.Connect
         /// For example, if you already have 99 claimed or imported numbers and a service level
         /// quota of 99 phone numbers, and in any 180 day period you release 99, claim 99, and
         /// then release 99, you will have exceeded the 200% limit. At that point you are blocked
-        /// from claiming any more numbers until you open an Amazon Web Services Support ticket.
+        /// from claiming any more numbers until you open an Amazon Web ServicesSupport ticket.
         /// 
         /// </para>
         /// </summary>
@@ -10361,7 +10931,7 @@ namespace Amazon.Connect
         /// For example, if you already have 99 claimed or imported numbers and a service level
         /// quota of 99 phone numbers, and in any 180 day period you release 99, claim 99, and
         /// then release 99, you will have exceeded the 200% limit. At that point you are blocked
-        /// from claiming any more numbers until you open an Amazon Web Services Support ticket.
+        /// from claiming any more numbers until you open an Amazon Web ServicesSupport ticket.
         /// 
         /// </para>
         /// </summary>
@@ -10703,7 +11273,7 @@ namespace Amazon.Connect
 
         /// <summary>
         /// This API is in preview release for Amazon Connect and is subject to change. To request
-        /// access to this API, contact Amazon Web Services Support.
+        /// access to this API, contact Amazon Web ServicesSupport.
         /// 
         ///  
         /// <para>
@@ -10736,7 +11306,7 @@ namespace Amazon.Connect
 
         /// <summary>
         /// This API is in preview release for Amazon Connect and is subject to change. To request
-        /// access to this API, contact Amazon Web Services Support.
+        /// access to this API, contact Amazon Web ServicesSupport.
         /// 
         ///  
         /// <para>
@@ -14041,7 +14611,7 @@ namespace Amazon.Connect
         /// <para>
         /// After releasing a phone number, the phone number enters into a cooldown period for
         /// up to 180 days. It cannot be searched for or claimed again until the period has ended.
-        /// If you accidentally release a phone number, contact Amazon Web Services Support.
+        /// If you accidentally release a phone number, contact Amazon Web ServicesSupport.
         /// </para>
         ///  </important> 
         /// <para>
@@ -14111,7 +14681,7 @@ namespace Amazon.Connect
         /// <para>
         /// After releasing a phone number, the phone number enters into a cooldown period for
         /// up to 180 days. It cannot be searched for or claimed again until the period has ended.
-        /// If you accidentally release a phone number, contact Amazon Web Services Support.
+        /// If you accidentally release a phone number, contact Amazon Web ServicesSupport.
         /// </para>
         ///  </important> 
         /// <para>
@@ -15864,7 +16434,7 @@ namespace Amazon.Connect
         /// <para>
         /// If you use the <c>ChatDurationInMinutes</c> parameter and receive a 400 error, your
         /// account may not support the ability to configure custom chat durations. For more information,
-        /// contact Amazon Web Services Support. 
+        /// contact Amazon Web ServicesSupport. 
         /// </para>
         ///  
         /// <para>
@@ -15935,7 +16505,7 @@ namespace Amazon.Connect
         /// <para>
         /// If you use the <c>ChatDurationInMinutes</c> parameter and receive a 400 error, your
         /// account may not support the ability to configure custom chat durations. For more information,
-        /// contact Amazon Web Services Support. 
+        /// contact Amazon Web ServicesSupport. 
         /// </para>
         ///  
         /// <para>
@@ -17020,7 +17590,7 @@ namespace Amazon.Connect
         /// 
         /// <returns>The response from the StopContact service method, as returned by Connect.</returns>
         /// <exception cref="Amazon.Connect.Model.ContactNotFoundException">
-        /// The contact with the specified ID is not active or does not exist.
+        /// The contact with the specified ID does not exist.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
         /// Request processing failed because of an error or failure with the service.
@@ -17075,7 +17645,7 @@ namespace Amazon.Connect
         /// 
         /// <returns>The response from the StopContact service method, as returned by Connect.</returns>
         /// <exception cref="Amazon.Connect.Model.ContactNotFoundException">
-        /// The contact with the specified ID is not active or does not exist.
+        /// The contact with the specified ID does not exist.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
         /// Request processing failed because of an error or failure with the service.
@@ -17845,7 +18415,7 @@ namespace Amazon.Connect
 
         /// <summary>
         /// This API is in preview release for Amazon Connect and is subject to change. To request
-        /// access to this API, contact Amazon Web Services Support.
+        /// access to this API, contact Amazon Web ServicesSupport.
         /// 
         ///  
         /// <para>
@@ -17877,7 +18447,7 @@ namespace Amazon.Connect
 
         /// <summary>
         /// This API is in preview release for Amazon Connect and is subject to change. To request
-        /// access to this API, contact Amazon Web Services Support.
+        /// access to this API, contact Amazon Web ServicesSupport.
         /// 
         ///  
         /// <para>

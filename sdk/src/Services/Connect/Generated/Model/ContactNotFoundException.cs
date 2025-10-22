@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// The contact with the specified ID is not active or does not exist.
+    /// The contact with the specified ID does not exist.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

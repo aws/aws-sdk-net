@@ -72,6 +72,7 @@ namespace Amazon.Connect.Model
         private string _destinationPhoneNumber;
         private string _instanceId;
         private string _name;
+        private OutboundStrategy _outboundStrategy;
         private string _queueId;
         private Dictionary<string, Reference> _references = AWSConfigs.InitializeCollections ? new Dictionary<string, Reference>() : null;
         private string _relatedContactId;
@@ -268,6 +269,24 @@ namespace Amazon.Connect.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OutboundStrategy. 
+        /// <para>
+        /// Information about the outbound strategy.
+        /// </para>
+        /// </summary>
+        public OutboundStrategy OutboundStrategy
+        {
+            get { return this._outboundStrategy; }
+            set { this._outboundStrategy = value; }
+        }
+
+        // Check to see if OutboundStrategy property is set
+        internal bool IsSetOutboundStrategy()
+        {
+            return this._outboundStrategy != null;
         }
 
         /// <summary>

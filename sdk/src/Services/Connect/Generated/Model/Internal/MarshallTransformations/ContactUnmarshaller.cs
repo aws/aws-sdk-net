@@ -234,6 +234,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("OutboundStrategy", targetDepth))
+                {
+                    var unmarshaller = OutboundStrategyUnmarshaller.Instance;
+                    unmarshalledObject.OutboundStrategy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("PreviousContactId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

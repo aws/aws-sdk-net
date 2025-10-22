@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for EmailAddressMetadata Object
+    /// Response Unmarshaller for OutboundStrategy Object
     /// </summary>  
-    public class EmailAddressMetadataUnmarshaller : IUnmarshaller<EmailAddressMetadata, XmlUnmarshallerContext>, IUnmarshaller<EmailAddressMetadata, JsonUnmarshallerContext>
+    public class OutboundStrategyUnmarshaller : IUnmarshaller<OutboundStrategy, XmlUnmarshallerContext>, IUnmarshaller<OutboundStrategy, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        EmailAddressMetadata IUnmarshaller<EmailAddressMetadata, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        OutboundStrategy IUnmarshaller<OutboundStrategy, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public EmailAddressMetadata Unmarshall(JsonUnmarshallerContext context)
+        public OutboundStrategy Unmarshall(JsonUnmarshallerContext context)
         {
-            EmailAddressMetadata unmarshalledObject = new EmailAddressMetadata();
+            OutboundStrategy unmarshalledObject = new OutboundStrategy();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,40 +66,16 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("AliasConfigurations", targetDepth))
+                if (context.TestExpression("Config", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<AliasConfiguration, AliasConfigurationUnmarshaller>(AliasConfigurationUnmarshaller.Instance);
-                    unmarshalledObject.AliasConfigurations = unmarshaller.Unmarshall(context);
+                    var unmarshaller = OutboundStrategyConfigUnmarshaller.Instance;
+                    unmarshalledObject.Config = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Description", targetDepth))
+                if (context.TestExpression("Type", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Description = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("DisplayName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DisplayName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("EmailAddress", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EmailAddress = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("EmailAddressArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EmailAddressArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("EmailAddressId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EmailAddressId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -107,12 +83,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         }
 
 
-        private static EmailAddressMetadataUnmarshaller _instance = new EmailAddressMetadataUnmarshaller();        
+        private static OutboundStrategyUnmarshaller _instance = new OutboundStrategyUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static EmailAddressMetadataUnmarshaller Instance
+        public static OutboundStrategyUnmarshaller Instance
         {
             get
             {

@@ -86,6 +86,20 @@
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.AssociateEmailAddressAliasRequest.ClientToken</property>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.AssociateEmailAddressAliasRequest.EmailAddressId</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.AssociateEmailAddressAliasRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.AssociateFlowRequest.InstanceId</property>
     <min>1</min>
     <max>100</max>
@@ -1383,6 +1397,20 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.DisassociateBotRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.DisassociateEmailAddressAliasRequest.ClientToken</property>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.DisassociateEmailAddressAliasRequest.EmailAddressId</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.DisassociateEmailAddressAliasRequest.InstanceId</property>
     <min>1</min>
     <max>100</max>
   </property-value-rule>
@@ -4037,6 +4065,11 @@
     <max>127</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.AliasConfiguration.EmailAddressId</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.AnalyticsDataAssociationResult.DataSetId</property>
     <min>1</min>
     <max>255</max>
@@ -5088,6 +5121,10 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.PhoneNumberSummary.PhoneNumber</property>
     <pattern>\\+[1-9]\\d{1,14}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.PostAcceptTimeoutConfig.DurationInSeconds</property>
+    <min>0</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.PredefinedAttribute.LastModifiedRegion</property>

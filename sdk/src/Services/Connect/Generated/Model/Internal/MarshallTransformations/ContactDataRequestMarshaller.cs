@@ -84,6 +84,17 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetOutboundStrategy())
+            {
+                context.Writer.WritePropertyName("OutboundStrategy");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = OutboundStrategyMarshaller.Instance;
+                marshaller.Marshall(requestObject.OutboundStrategy, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetQueueId())
             {
                 context.Writer.WritePropertyName("QueueId");

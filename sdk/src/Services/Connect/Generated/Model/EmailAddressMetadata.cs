@@ -34,11 +34,33 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class EmailAddressMetadata
     {
+        private List<AliasConfiguration> _aliasConfigurations = AWSConfigs.InitializeCollections ? new List<AliasConfiguration>() : null;
         private string _description;
         private string _displayName;
         private string _emailAddress;
         private string _emailAddressArn;
         private string _emailAddressId;
+
+        /// <summary>
+        /// Gets and sets the property AliasConfigurations. 
+        /// <para>
+        /// A list of alias configurations for this email address, showing which email addresses
+        /// forward to this primary address. Each configuration contains the email address ID
+        /// of an alias that forwards emails to this address.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=1)]
+        public List<AliasConfiguration> AliasConfigurations
+        {
+            get { return this._aliasConfigurations; }
+            set { this._aliasConfigurations = value; }
+        }
+
+        // Check to see if AliasConfigurations property is set
+        internal bool IsSetAliasConfigurations()
+        {
+            return this._aliasConfigurations != null && (this._aliasConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property Description. 
