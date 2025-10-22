@@ -34,9 +34,30 @@ namespace Amazon.DeviceFarm.Model
     /// </summary>
     public partial class CreateRemoteAccessSessionConfiguration
     {
+        private List<string> _auxiliaryApps = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private BillingMethod _billingMethod;
         private DeviceProxy _deviceProxy;
         private List<string> _vpceConfigurationArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
+
+        /// <summary>
+        /// Gets and sets the property AuxiliaryApps. 
+        /// <para>
+        /// A list of upload ARNs for app packages to be installed onto your device. (Maximum
+        /// 3)
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=3)]
+        public List<string> AuxiliaryApps
+        {
+            get { return this._auxiliaryApps; }
+            set { this._auxiliaryApps = value; }
+        }
+
+        // Check to see if AuxiliaryApps property is set
+        internal bool IsSetAuxiliaryApps()
+        {
+            return this._auxiliaryApps != null && (this._auxiliaryApps.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property BillingMethod. 

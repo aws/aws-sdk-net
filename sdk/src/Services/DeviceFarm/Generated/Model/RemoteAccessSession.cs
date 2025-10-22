@@ -34,6 +34,7 @@ namespace Amazon.DeviceFarm.Model
     /// </summary>
     public partial class RemoteAccessSession
     {
+        private string _appUpload;
         private string _arn;
         private BillingMethod _billingMethod;
         private string _clientId;
@@ -57,6 +58,25 @@ namespace Amazon.DeviceFarm.Model
         private ExecutionStatus _status;
         private DateTime? _stopped;
         private VpcConfig _vpcConfig;
+
+        /// <summary>
+        /// Gets and sets the property AppUpload. 
+        /// <para>
+        /// The ARN for the app to be installed onto your device.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=32, Max=1011)]
+        public string AppUpload
+        {
+            get { return this._appUpload; }
+            set { this._appUpload = value; }
+        }
+
+        // Check to see if AppUpload property is set
+        internal bool IsSetAppUpload()
+        {
+            return this._appUpload != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Arn. 
