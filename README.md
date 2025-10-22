@@ -778,6 +778,8 @@ Protocol tests can be found in the `sdk/test/ProtocolTests` directory. Protocol 
 	* Amazon Route 53 Application Recovery Controller's readiness check capability continually monitors resource quotas, capacity, and network routing policies to ensure that the recovery environment is scaled and configured to take over when needed.
 * [AWSSDK.Route53Resolver](https://www.nuget.org/packages/AWSSDK.Route53Resolver/)
 	* This is the first release of the Amazon Route 53 Resolver API. Customers now have the ability to create and manage Amazon Route 53 Resolver endpoints and Amazon Route 53 Resolver rules.
+* [AWSSDK.RTBFabric](https://www.nuget.org/packages/AWSSDK.RTBFabric/)
+	* Update for general availability of AWS RTB Fabric service.
 * [AWSSDK.S3](https://www.nuget.org/packages/AWSSDK.S3/)
 	* Amazon Simple Storage Service (Amazon S3), provides developers and IT teams with secure, durable, highly-scalable object storage.
 * [AWSSDK.S3Control](https://www.nuget.org/packages/AWSSDK.S3Control/)
