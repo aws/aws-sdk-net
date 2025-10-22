@@ -30,27 +30,26 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConnectCampaignsV2.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetCampaignState operation.
-    /// Get state of a campaign for the specified Amazon Connect account.
+    /// Timeout Config for preview contacts.
     /// </summary>
-    public partial class GetCampaignStateRequest : AmazonConnectCampaignsV2Request
+    public partial class TimeoutConfig
     {
-        private string _id;
+        private int? _durationInSeconds;
 
         /// <summary>
-        /// Gets and sets the property Id.
+        /// Gets and sets the property DurationInSeconds.
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=256)]
-        public string Id
+        [AWSProperty(Required=true, Min=1, Max=300)]
+        public int DurationInSeconds
         {
-            get { return this._id; }
-            set { this._id = value; }
+            get { return this._durationInSeconds.GetValueOrDefault(); }
+            set { this._durationInSeconds = value; }
         }
 
-        // Check to see if Id property is set
-        internal bool IsSetId()
+        // Check to see if DurationInSeconds property is set
+        internal bool IsSetDurationInSeconds()
         {
-            return this._id != null;
+            return this._durationInSeconds.HasValue; 
         }
 
     }

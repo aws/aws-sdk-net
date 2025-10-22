@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for TelephonyOutboundMode Object
+    /// Response Unmarshaller for TimeoutConfig Object
     /// </summary>  
-    public class TelephonyOutboundModeUnmarshaller : IUnmarshaller<TelephonyOutboundMode, XmlUnmarshallerContext>, IUnmarshaller<TelephonyOutboundMode, JsonUnmarshallerContext>
+    public class TimeoutConfigUnmarshaller : IUnmarshaller<TimeoutConfig, XmlUnmarshallerContext>, IUnmarshaller<TimeoutConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        TelephonyOutboundMode IUnmarshaller<TelephonyOutboundMode, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        TimeoutConfig IUnmarshaller<TimeoutConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public TelephonyOutboundMode Unmarshall(JsonUnmarshallerContext context)
+        public TimeoutConfig Unmarshall(JsonUnmarshallerContext context)
         {
-            TelephonyOutboundMode unmarshalledObject = new TelephonyOutboundMode();
+            TimeoutConfig unmarshalledObject = new TimeoutConfig();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,28 +66,10 @@ namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("agentless", targetDepth))
+                if (context.TestExpression("durationInSeconds", targetDepth))
                 {
-                    var unmarshaller = AgentlessConfigUnmarshaller.Instance;
-                    unmarshalledObject.Agentless = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("predictive", targetDepth))
-                {
-                    var unmarshaller = PredictiveConfigUnmarshaller.Instance;
-                    unmarshalledObject.Predictive = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("preview", targetDepth))
-                {
-                    var unmarshaller = PreviewConfigUnmarshaller.Instance;
-                    unmarshalledObject.Preview = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("progressive", targetDepth))
-                {
-                    var unmarshaller = ProgressiveConfigUnmarshaller.Instance;
-                    unmarshalledObject.Progressive = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.DurationInSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -95,12 +77,12 @@ namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
         }
 
 
-        private static TelephonyOutboundModeUnmarshaller _instance = new TelephonyOutboundModeUnmarshaller();        
+        private static TimeoutConfigUnmarshaller _instance = new TimeoutConfigUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static TelephonyOutboundModeUnmarshaller Instance
+        public static TimeoutConfigUnmarshaller Instance
         {
             get
             {

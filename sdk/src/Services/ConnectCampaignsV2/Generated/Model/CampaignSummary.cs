@@ -93,7 +93,7 @@ namespace Amazon.ConnectCampaignsV2.Model
         /// <summary>
         /// Gets and sets the property ConnectInstanceId.
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=256)]
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string ConnectInstanceId
         {
             get { return this._connectInstanceId; }
@@ -109,7 +109,7 @@ namespace Amazon.ConnectCampaignsV2.Model
         /// <summary>
         /// Gets and sets the property Id.
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=256)]
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string Id
         {
             get { return this._id; }
