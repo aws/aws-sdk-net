@@ -53,24 +53,7 @@ namespace Amazon.EC2.Model
     /// 1000 or fewer. Then delete the fleet, and the remaining instances will be terminated
     /// automatically.
     /// </para>
-    ///  <important> 
-    /// <para>
-    ///  <b>Terminating an instance is permanent and irreversible.</b> 
-    /// </para>
     ///  
-    /// <para>
-    /// After you terminate an instance, you can no longer connect to it, and it can't be
-    /// recovered. All attached Amazon EBS volumes that are configured to be deleted on termination
-    /// are also permanently deleted and can't be recovered. All data stored on instance store
-    /// volumes is permanently lost. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-ec2-instance-termination-works.html">
-    /// How instance termination works</a>.
-    /// </para>
-    ///  
-    /// <para>
-    /// Before you terminate an instance, ensure that you have backed up all data that you
-    /// need to retain after the termination to persistent storage.
-    /// </para>
-    ///  </important> 
     /// <para>
     ///  <b>Restrictions</b> 
     /// </para>
