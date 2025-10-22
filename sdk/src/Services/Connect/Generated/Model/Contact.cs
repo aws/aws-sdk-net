@@ -62,6 +62,7 @@ namespace Amazon.Connect.Model
         private DateTime? _lastResumedTimestamp;
         private DateTime? _lastUpdateTimestamp;
         private string _name;
+        private OutboundStrategy _outboundStrategy;
         private string _previousContactId;
         private QualityMetrics _qualityMetrics;
         private QueueInfo _queueInfo;
@@ -424,7 +425,9 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property DisconnectReason. 
         /// <para>
-        /// The disconnect reason for the contact.
+        /// The disconnect reason for the contact. For a list and description of all the possible
+        /// disconnect reasons by channel, see DisconnectReason under <a href="https://docs.aws.amazon.com/connect/latest/adminguide/ctr-data-model.html#ctr-ContactTraceRecord">ContactTraceRecord</a>
+        /// in the <i>Amazon Connect Administrator Guide</i>. 
         /// </para>
         /// </summary>
         public string DisconnectReason
@@ -610,6 +613,24 @@ namespace Amazon.Connect.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OutboundStrategy. 
+        /// <para>
+        /// Information about the outbound strategy.
+        /// </para>
+        /// </summary>
+        public OutboundStrategy OutboundStrategy
+        {
+            get { return this._outboundStrategy; }
+            set { this._outboundStrategy = value; }
+        }
+
+        // Check to see if OutboundStrategy property is set
+        internal bool IsSetOutboundStrategy()
+        {
+            return this._outboundStrategy != null;
         }
 
         /// <summary>

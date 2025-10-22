@@ -140,7 +140,7 @@ namespace Amazon.Connect.Model
         ///  
         /// <para>
         /// The currently supported values for <c>FieldName</c> are <c>Username</c>, <c>FirstName</c>,
-        /// <c>LastName</c>, <c>RoutingProfileId</c>, <c>SecurityProfileId</c>, <c>ResourceId</c>.
+        /// <c>LastName</c>, <c>RoutingProfileId</c>, <c>SecurityProfileId</c>, <c>resourceId</c>.
         /// </para>
         /// </summary>
         public StringCondition StringCondition

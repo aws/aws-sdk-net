@@ -34,6 +34,7 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class AgentInfo
     {
+        private DateTime? _acceptedByAgentTimestamp;
         private int? _afterContactWorkDuration;
         private DateTime? _afterContactWorkEndTimestamp;
         private DateTime? _afterContactWorkStartTimestamp;
@@ -44,7 +45,26 @@ namespace Amazon.Connect.Model
         private DeviceInfo _deviceInfo;
         private HierarchyGroups _hierarchyGroups;
         private string _id;
+        private DateTime? _previewEndTimestamp;
         private List<StateTransition> _stateTransitions = AWSConfigs.InitializeCollections ? new List<StateTransition>() : null;
+
+        /// <summary>
+        /// Gets and sets the property AcceptedByAgentTimestamp. 
+        /// <para>
+        /// The timestamp when the contact was accepted by the agent.
+        /// </para>
+        /// </summary>
+        public DateTime? AcceptedByAgentTimestamp
+        {
+            get { return this._acceptedByAgentTimestamp; }
+            set { this._acceptedByAgentTimestamp = value; }
+        }
+
+        // Check to see if AcceptedByAgentTimestamp property is set
+        internal bool IsSetAcceptedByAgentTimestamp()
+        {
+            return this._acceptedByAgentTimestamp.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property AfterContactWorkDuration. 
@@ -230,6 +250,24 @@ namespace Amazon.Connect.Model
         internal bool IsSetId()
         {
             return this._id != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PreviewEndTimestamp. 
+        /// <para>
+        /// The timestamp when the agent finished previewing the contact.
+        /// </para>
+        /// </summary>
+        public DateTime? PreviewEndTimestamp
+        {
+            get { return this._previewEndTimestamp; }
+            set { this._previewEndTimestamp = value; }
+        }
+
+        // Check to see if PreviewEndTimestamp property is set
+        internal bool IsSetPreviewEndTimestamp()
+        {
+            return this._previewEndTimestamp.HasValue; 
         }
 
         /// <summary>

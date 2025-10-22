@@ -257,6 +257,56 @@ namespace Amazon.Connect
 
 
     /// <summary>
+    /// Constants used for properties of type AllowedUserAction.
+    /// </summary>
+    public class AllowedUserAction : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CALL for AllowedUserAction
+        /// </summary>
+        public static readonly AllowedUserAction CALL = new AllowedUserAction("CALL");
+        /// <summary>
+        /// Constant DISCARD for AllowedUserAction
+        /// </summary>
+        public static readonly AllowedUserAction DISCARD = new AllowedUserAction("DISCARD");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AllowedUserAction(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AllowedUserAction FindValue(string value)
+        {
+            return FindValue<AllowedUserAction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AllowedUserAction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AnsweringMachineDetectionStatus.
     /// </summary>
     public class AnsweringMachineDetectionStatus : ConstantClass
@@ -2121,6 +2171,10 @@ namespace Amazon.Connect
         /// </summary>
         public static readonly FailureReasonCode INVALID_CUSTOMER_ENDPOINT = new FailureReasonCode("INVALID_CUSTOMER_ENDPOINT");
         /// <summary>
+        /// Constant INVALID_OUTBOUND_STRATEGY for FailureReasonCode
+        /// </summary>
+        public static readonly FailureReasonCode INVALID_OUTBOUND_STRATEGY = new FailureReasonCode("INVALID_OUTBOUND_STRATEGY");
+        /// <summary>
         /// Constant INVALID_QUEUE for FailureReasonCode
         /// </summary>
         public static readonly FailureReasonCode INVALID_QUEUE = new FailureReasonCode("INVALID_QUEUE");
@@ -3826,6 +3880,52 @@ namespace Amazon.Connect
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator OutboundMessageSourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type OutboundStrategyType.
+    /// </summary>
+    public class OutboundStrategyType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AGENT_FIRST for OutboundStrategyType
+        /// </summary>
+        public static readonly OutboundStrategyType AGENT_FIRST = new OutboundStrategyType("AGENT_FIRST");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OutboundStrategyType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OutboundStrategyType FindValue(string value)
+        {
+            return FindValue<OutboundStrategyType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OutboundStrategyType(string value)
         {
             return FindValue(value);
         }

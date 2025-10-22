@@ -35,9 +35,9 @@ using Amazon.Util;
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DescribeEmailAddress operation
+    /// Response Unmarshaller for AssociateEmailAddressAlias operation
     /// </summary>  
-    public class DescribeEmailAddressResponseUnmarshaller : JsonResponseUnmarshaller
+    public class AssociateEmailAddressAliasResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,67 +46,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DescribeEmailAddressResponse response = new DescribeEmailAddressResponse();
-            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
-            context.Read(ref reader);
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
-            {
-                if (context.TestExpression("AliasConfigurations", targetDepth))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<AliasConfiguration, AliasConfigurationUnmarshaller>(AliasConfigurationUnmarshaller.Instance);
-                    response.AliasConfigurations = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("CreateTimestamp", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.CreateTimestamp = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Description", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Description = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("DisplayName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.DisplayName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("EmailAddress", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.EmailAddress = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("EmailAddressArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.EmailAddressArn = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("EmailAddressId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.EmailAddressId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("ModifiedTimestamp", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.ModifiedTimestamp = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Tags", targetDepth))
-                {
-                    var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    response.Tags = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-            }
+            AssociateEmailAddressAliasResponse response = new AssociateEmailAddressAliasResponse();
 
             return response;
         }
@@ -135,6 +75,10 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 {
                     return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("IdempotencyException"))
+                {
+                    return IdempotencyExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServiceException"))
                 {
                     return InternalServiceExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
@@ -146,6 +90,10 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidRequestException"))
                 {
                     return InvalidRequestExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceConflictException"))
+                {
+                    return ResourceConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
                 {
@@ -159,9 +107,9 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             return new AmazonConnectException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static DescribeEmailAddressResponseUnmarshaller _instance = new DescribeEmailAddressResponseUnmarshaller();        
+        private static AssociateEmailAddressAliasResponseUnmarshaller _instance = new AssociateEmailAddressAliasResponseUnmarshaller();        
 
-        internal static DescribeEmailAddressResponseUnmarshaller GetInstance()
+        internal static AssociateEmailAddressAliasResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -169,7 +117,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DescribeEmailAddressResponseUnmarshaller Instance
+        public static AssociateEmailAddressAliasResponseUnmarshaller Instance
         {
             get
             {

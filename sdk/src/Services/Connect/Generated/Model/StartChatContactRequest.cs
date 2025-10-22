@@ -59,7 +59,7 @@ namespace Amazon.Connect.Model
     /// <para>
     /// If you use the <c>ChatDurationInMinutes</c> parameter and receive a 400 error, your
     /// account may not support the ability to configure custom chat durations. For more information,
-    /// contact Amazon Web Services Support. 
+    /// contact Amazon Web ServicesSupport. 
     /// </para>
     ///  
     /// <para>
