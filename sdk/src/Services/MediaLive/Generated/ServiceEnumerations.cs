@@ -2479,6 +2479,56 @@ namespace Amazon.MediaLive
 
 
     /// <summary>
+    /// Constants used for properties of type ChannelAlertState.
+    /// </summary>
+    public class ChannelAlertState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CLEARED for ChannelAlertState
+        /// </summary>
+        public static readonly ChannelAlertState CLEARED = new ChannelAlertState("CLEARED");
+        /// <summary>
+        /// Constant SET for ChannelAlertState
+        /// </summary>
+        public static readonly ChannelAlertState SET = new ChannelAlertState("SET");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ChannelAlertState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ChannelAlertState FindValue(string value)
+        {
+            return FindValue<ChannelAlertState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ChannelAlertState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ChannelClass.
     /// </summary>
     public class ChannelClass : ConstantClass
@@ -2984,6 +3034,56 @@ namespace Amazon.MediaLive
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator CloudWatchAlarmTemplateTreatMissingData(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ClusterAlertState.
+    /// </summary>
+    public class ClusterAlertState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CLEARED for ClusterAlertState
+        /// </summary>
+        public static readonly ClusterAlertState CLEARED = new ClusterAlertState("CLEARED");
+        /// <summary>
+        /// Constant SET for ClusterAlertState
+        /// </summary>
+        public static readonly ClusterAlertState SET = new ClusterAlertState("SET");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ClusterAlertState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ClusterAlertState FindValue(string value)
+        {
+            return FindValue<ClusterAlertState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ClusterAlertState(string value)
         {
             return FindValue(value);
         }
@@ -13946,6 +14046,56 @@ namespace Amazon.MediaLive
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator MsSmoothH265PackagingType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MultiplexAlertState.
+    /// </summary>
+    public class MultiplexAlertState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CLEARED for MultiplexAlertState
+        /// </summary>
+        public static readonly MultiplexAlertState CLEARED = new MultiplexAlertState("CLEARED");
+        /// <summary>
+        /// Constant SET for MultiplexAlertState
+        /// </summary>
+        public static readonly MultiplexAlertState SET = new MultiplexAlertState("SET");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MultiplexAlertState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MultiplexAlertState FindValue(string value)
+        {
+            return FindValue<MultiplexAlertState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MultiplexAlertState(string value)
         {
             return FindValue(value);
         }
