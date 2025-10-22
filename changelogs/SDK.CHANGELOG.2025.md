@@ -1,3 +1,107 @@
+### 4.0.117.0 (2025-10-22 20:20 UTC)
+* AppFabric (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* AugmentedAIRuntime (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* AutoScaling (4.0.4.0)
+	* Update endpoint ruleset parameters casing
+* B2bi (4.0.4.0)
+	* Update endpoint ruleset parameters casing
+* BCMDashboards (4.0.1.0)
+	* Update endpoint ruleset parameters casing
+* Chatbot (4.0.1.0)
+	* Update endpoint ruleset parameters casing
+* CloudFormation (4.0.5.0)
+	* Update endpoint ruleset parameters casing
+* CloudHSM (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* CloudHSMV2 (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* CodeGuruReviewer (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* CognitoIdentity (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* ComprehendMedical (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* Connect (4.0.14.0)
+	* This release added support for email address alias configuration and outbound campaign preview mode.
+* ConnectCampaignsV2 (4.0.3.0)
+	* Updated Amazon Connect Outbound Campaigns V2 SDK to support Preview Outbound Mode
+* ConnectParticipant (4.0.3.0)
+	* Update endpoint ruleset parameters casing
+* CostExplorer (4.0.6.0)
+	* Update endpoint ruleset parameters casing
+* DeviceFarm (4.0.2.0)
+	* This release adds support for optionally including an app as part of a CreateRemoteAccessSession request
+* DirectConnect (4.0.3.0)
+	* Update endpoint ruleset parameters casing
+* DirectoryServiceData (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* EC2 (4.0.44.0)
+	* This release adds AvailabilityZoneId support for CreateNetworkInterface and DescribeNetworkInterfaces APIs.
+* EC2InstanceConnect (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* ForecastQueryService (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* IdentityManagement (4.0.4.0)
+	* Updated OIDC and SAML apis to reject multiple simultaneous requests to change a unique object.
+* Inspector2 (4.0.6.0)
+	* Update endpoint ruleset parameters casing
+* IoT (4.0.3.0)
+	* Update endpoint ruleset parameters casing
+* IoTAnalytics (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* IoTFleetWise (4.0.3.0)
+	* Update endpoint ruleset parameters casing
+* IoTSecureTunneling (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* IoTSiteWise (4.0.4.0)
+	* Update endpoint ruleset parameters casing
+* Ivschat (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* KinesisAnalyticsV2 (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* LexModelsV2 (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* MailManager (4.0.3.0)
+	* Update endpoint ruleset parameters casing
+* MarketplaceAgreement (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* MediaLive (4.0.8.0)
+	* Add 3 API operations for fetching alerts: ListAlerts (Channels), ListClusterAlerts (MediaLive Anywhere), and ListMultiplexAlerts
+* MWAA (4.0.3.0)
+	* Update endpoint ruleset parameters casing
+* NotificationsContacts (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* OAM (4.0.3.0)
+	* Update endpoint ruleset parameters casing
+* PCS (4.0.10.0)
+	* Update endpoint ruleset parameters casing
+* PinpointSMSVoiceV2 (4.0.4.0)
+	* Update endpoint ruleset parameters casing
+* RedshiftDataAPIService (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* Route53 (4.0.5.0)
+	* Amazon Route 53 now supports the ISOB West Region for private DNS for Amazon VPCs and cloudwatch healthchecks.
+* Route53RecoveryCluster (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* RTBFabric (4.0.0.0)
+	* Update for general availability of AWS RTB Fabric service.
+* SimpleNotificationService (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* SSMIncidents (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* WorkDocs (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* WorkMail (4.0.3.0)
+	* Update endpoint ruleset parameters casing
+* WorkSpaces (4.0.6.0)
+	* Update endpoint ruleset parameters casing
+* Extensions.CloudFront.Signers (4.0.0.9)
+	* Updated the version of BouncyCastle.Cryptography package dependency to version 2.6.2.
+* Extensions.EC2.DecryptPassword (4.0.0.9)
+	* Updated the version of BouncyCastle.Cryptography package dependency to version 2.6.2.
+
 ### 4.0.116.0 (2025-10-21 19:25 UTC)
 * AWSMarketplaceMetering (4.0.2.0)
 	* Added ClientToken parameter to MeterUsage API for specifying idempotent requests.

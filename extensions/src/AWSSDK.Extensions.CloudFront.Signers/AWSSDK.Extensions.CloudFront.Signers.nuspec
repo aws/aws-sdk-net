@@ -3,7 +3,7 @@
   <metadata>
     <id>AWSSDK.Extensions.CloudFront.Signers</id>
     <title>AWSSDK - Extensions for AWS CloudFront</title>
-    <version>4.0.0.8</version>
+    <version>4.0.0.9</version>
     <authors>Amazon Web Services</authors>
     <description>This package contains extension methods for creating signed URLs for Amazon CloudFront distributions and for creating signed cookies for Amazon CloudFront distributions using canned or custom policies.</description>
     <language>en-US</language>
