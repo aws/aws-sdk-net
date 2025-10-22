@@ -58,6 +58,12 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DeviceFarm.Model.CreateRemoteAccessSessionRequest.AppArn</property>
+    <min>32</min>
+    <max>1011</max>
+    <pattern>^arn:aws:devicefarm:.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DeviceFarm.Model.CreateRemoteAccessSessionRequest.ClientId</property>
     <min>0</min>
     <max>64</max>
@@ -1106,6 +1112,12 @@
     <property>Amazon.DeviceFarm.Model.Project.Name</property>
     <min>0</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DeviceFarm.Model.RemoteAccessSession.AppUpload</property>
+    <min>32</min>
+    <max>1011</max>
+    <pattern>^arn:aws:devicefarm:.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.RemoteAccessSession.Arn</property>

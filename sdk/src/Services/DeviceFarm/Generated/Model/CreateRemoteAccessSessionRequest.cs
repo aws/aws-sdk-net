@@ -35,6 +35,7 @@ namespace Amazon.DeviceFarm.Model
     /// </summary>
     public partial class CreateRemoteAccessSessionRequest : AmazonDeviceFarmRequest
     {
+        private string _appArn;
         private string _clientId;
         private CreateRemoteAccessSessionConfiguration _configuration;
         private string _deviceArn;
@@ -47,6 +48,25 @@ namespace Amazon.DeviceFarm.Model
         private bool? _remoteRecordEnabled;
         private bool? _skipAppResign;
         private string _sshPublicKey;
+
+        /// <summary>
+        /// Gets and sets the property AppArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the app to create the remote access session.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=32, Max=1011)]
+        public string AppArn
+        {
+            get { return this._appArn; }
+            set { this._appArn = value; }
+        }
+
+        // Check to see if AppArn property is set
+        internal bool IsSetAppArn()
+        {
+            return this._appArn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ClientId. 

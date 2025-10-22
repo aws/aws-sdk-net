@@ -75,6 +75,12 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAppArn())
+            {
+                context.Writer.WritePropertyName("appArn");
+                context.Writer.WriteStringValue(publicRequest.AppArn);
+            }
+
             if(publicRequest.IsSetClientId())
             {
                 context.Writer.WritePropertyName("clientId");
