@@ -5142,6 +5142,81 @@ namespace Amazon.MediaLive
 
         #endregion
         
+        #region  ListAlerts
+
+        /// <summary>
+        /// List the alerts for a channel with optional filtering based on alert state.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAlerts service method.</param>
+        /// 
+        /// <returns>The response from the ListAlerts service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadGatewayException">
+        /// Placeholder documentation for BadGatewayException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.GatewayTimeoutException">
+        /// Placeholder documentation for GatewayTimeoutException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.NotFoundException">
+        /// Placeholder documentation for NotFoundException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListAlerts">REST API Reference for ListAlerts Operation</seealso>
+        public virtual ListAlertsResponse ListAlerts(ListAlertsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListAlertsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAlertsResponseUnmarshaller.Instance;
+
+            return Invoke<ListAlertsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAlerts operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAlerts operation on AmazonMediaLiveClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAlerts
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListAlerts">REST API Reference for ListAlerts Operation</seealso>
+        public virtual IAsyncResult BeginListAlerts(ListAlertsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListAlertsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAlertsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListAlerts operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAlerts.</param>
+        /// 
+        /// <returns>Returns a  ListAlertsResult from MediaLive.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListAlerts">REST API Reference for ListAlerts Operation</seealso>
+        public virtual ListAlertsResponse EndListAlerts(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListAlertsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListChannelPlacementGroups
 
         /// <summary>
@@ -5420,6 +5495,81 @@ namespace Amazon.MediaLive
         public virtual ListCloudWatchAlarmTemplatesResponse EndListCloudWatchAlarmTemplates(IAsyncResult asyncResult)
         {
             return EndInvoke<ListCloudWatchAlarmTemplatesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListClusterAlerts
+
+        /// <summary>
+        /// List the alerts for a cluster with optional filtering based on alert state.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListClusterAlerts service method.</param>
+        /// 
+        /// <returns>The response from the ListClusterAlerts service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadGatewayException">
+        /// Placeholder documentation for BadGatewayException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.GatewayTimeoutException">
+        /// Placeholder documentation for GatewayTimeoutException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.NotFoundException">
+        /// Placeholder documentation for NotFoundException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListClusterAlerts">REST API Reference for ListClusterAlerts Operation</seealso>
+        public virtual ListClusterAlertsResponse ListClusterAlerts(ListClusterAlertsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListClusterAlertsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListClusterAlertsResponseUnmarshaller.Instance;
+
+            return Invoke<ListClusterAlertsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListClusterAlerts operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListClusterAlerts operation on AmazonMediaLiveClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListClusterAlerts
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListClusterAlerts">REST API Reference for ListClusterAlerts Operation</seealso>
+        public virtual IAsyncResult BeginListClusterAlerts(ListClusterAlertsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListClusterAlertsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListClusterAlertsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListClusterAlerts operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListClusterAlerts.</param>
+        /// 
+        /// <returns>Returns a  ListClusterAlertsResult from MediaLive.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListClusterAlerts">REST API Reference for ListClusterAlerts Operation</seealso>
+        public virtual ListClusterAlertsResponse EndListClusterAlerts(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListClusterAlertsResponse>(asyncResult);
         }
 
         #endregion
@@ -5923,6 +6073,81 @@ namespace Amazon.MediaLive
         public virtual ListInputSecurityGroupsResponse EndListInputSecurityGroups(IAsyncResult asyncResult)
         {
             return EndInvoke<ListInputSecurityGroupsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListMultiplexAlerts
+
+        /// <summary>
+        /// List the alerts for a multiplex with optional filtering based on alert state.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMultiplexAlerts service method.</param>
+        /// 
+        /// <returns>The response from the ListMultiplexAlerts service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadGatewayException">
+        /// Placeholder documentation for BadGatewayException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.GatewayTimeoutException">
+        /// Placeholder documentation for GatewayTimeoutException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.NotFoundException">
+        /// Placeholder documentation for NotFoundException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListMultiplexAlerts">REST API Reference for ListMultiplexAlerts Operation</seealso>
+        public virtual ListMultiplexAlertsResponse ListMultiplexAlerts(ListMultiplexAlertsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListMultiplexAlertsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMultiplexAlertsResponseUnmarshaller.Instance;
+
+            return Invoke<ListMultiplexAlertsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListMultiplexAlerts operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListMultiplexAlerts operation on AmazonMediaLiveClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListMultiplexAlerts
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListMultiplexAlerts">REST API Reference for ListMultiplexAlerts Operation</seealso>
+        public virtual IAsyncResult BeginListMultiplexAlerts(ListMultiplexAlertsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListMultiplexAlertsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMultiplexAlertsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListMultiplexAlerts operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListMultiplexAlerts.</param>
+        /// 
+        /// <returns>Returns a  ListMultiplexAlertsResult from MediaLive.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListMultiplexAlerts">REST API Reference for ListMultiplexAlerts Operation</seealso>
+        public virtual ListMultiplexAlertsResponse EndListMultiplexAlerts(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListMultiplexAlertsResponse>(asyncResult);
         }
 
         #endregion

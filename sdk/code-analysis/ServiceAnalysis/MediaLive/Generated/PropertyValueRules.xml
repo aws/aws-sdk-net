@@ -409,6 +409,11 @@
     <pattern>^[^\s]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaLive.Model.ListAlertsRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaLive.Model.ListChannelPlacementGroupsRequest.MaxResults</property>
     <min>1</min>
     <max>1000</max>
@@ -437,6 +442,11 @@
     <property>Amazon.MediaLive.Model.ListCloudWatchAlarmTemplatesResponse.NextToken</property>
     <min>1</min>
     <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.ListClusterAlertsRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaLive.Model.ListClustersRequest.MaxResults</property>
@@ -480,6 +490,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaLive.Model.ListInputSecurityGroupsRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.ListMultiplexAlertsRequest.MaxResults</property>
     <min>1</min>
     <max>1000</max>
   </property-value-rule>
