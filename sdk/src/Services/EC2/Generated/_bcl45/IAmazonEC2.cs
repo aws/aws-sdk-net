@@ -2861,24 +2861,7 @@ namespace Amazon.EC2
         /// and the instances continue to run until they are interrupted or you terminate them
         /// manually.
         /// </para>
-        ///  <important> 
-        /// <para>
-        ///  <b>Terminating an instance is permanent and irreversible.</b> 
-        /// </para>
         ///  
-        /// <para>
-        /// After you terminate an instance, you can no longer connect to it, and it can't be
-        /// recovered. All attached Amazon EBS volumes that are configured to be deleted on termination
-        /// are also permanently deleted and can't be recovered. All data stored on instance store
-        /// volumes is permanently lost. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-ec2-instance-termination-works.html">
-        /// How instance termination works</a>.
-        /// </para>
-        ///  
-        /// <para>
-        /// Before you terminate an instance, ensure that you have backed up all data that you
-        /// need to retain after the termination to persistent storage.
-        /// </para>
-        ///  </important> 
         /// <para>
         ///  <b>Restrictions</b> 
         /// </para>
@@ -2912,24 +2895,7 @@ namespace Amazon.EC2
         /// and the instances continue to run until they are interrupted or you terminate them
         /// manually.
         /// </para>
-        ///  <important> 
-        /// <para>
-        ///  <b>Terminating an instance is permanent and irreversible.</b> 
-        /// </para>
         ///  
-        /// <para>
-        /// After you terminate an instance, you can no longer connect to it, and it can't be
-        /// recovered. All attached Amazon EBS volumes that are configured to be deleted on termination
-        /// are also permanently deleted and can't be recovered. All data stored on instance store
-        /// volumes is permanently lost. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-ec2-instance-termination-works.html">
-        /// How instance termination works</a>.
-        /// </para>
-        ///  
-        /// <para>
-        /// Before you terminate an instance, ensure that you have backed up all data that you
-        /// need to retain after the termination to persistent storage.
-        /// </para>
-        ///  </important> 
         /// <para>
         ///  <b>Restrictions</b> 
         /// </para>
@@ -7984,16 +7950,14 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Creates a VPC with the specified CIDR blocks.
+        /// Creates a VPC with the specified CIDR blocks. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-ip-addressing.html">IP
+        /// addressing for your VPCs and subnets</a> in the <i>Amazon VPC User Guide</i>.
         /// 
         ///  
         /// <para>
-        /// A VPC must have an associated IPv4 CIDR block. You can choose an IPv4 CIDR block or
-        /// an IPAM-allocated IPv4 CIDR block. You can optionally associate an IPv6 CIDR block
-        /// with a VPC. You can choose an IPv6 CIDR block, an Amazon-provided IPv6 CIDR block,
-        /// an IPAM-allocated IPv6 CIDR block, or an IPv6 CIDR block that you brought to Amazon
-        /// Web Services. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-ip-addressing.html">IP
-        /// addressing for your VPCs and subnets</a> in the <i>Amazon VPC User Guide</i>.
+        /// You can optionally request an IPv6 CIDR block for the VPC. You can request an Amazon-provided
+        /// IPv6 CIDR block from Amazon's pool of IPv6 addresses or an IPv6 CIDR block from an
+        /// IPv6 address pool that you provisioned through bring your own IP addresses (<a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html">BYOIP</a>).
         /// </para>
         ///  
         /// <para>
@@ -8004,9 +7968,9 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// You can specify DNS options and tenancy for a VPC when you create it. You can't change
-        /// the tenancy of a VPC after you create it. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/create-vpc-options.html">VPC
-        /// configuration options</a> in the <i>Amazon VPC User Guide</i>.
+        /// You can specify the instance tenancy value for the VPC when you create it. You can't
+        /// change this value for the VPC after you create it. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-instance.html">Dedicated
+        /// Instances</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateVpc service method.</param>
@@ -8018,16 +7982,14 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Creates a VPC with the specified CIDR blocks.
+        /// Creates a VPC with the specified CIDR blocks. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-ip-addressing.html">IP
+        /// addressing for your VPCs and subnets</a> in the <i>Amazon VPC User Guide</i>.
         /// 
         ///  
         /// <para>
-        /// A VPC must have an associated IPv4 CIDR block. You can choose an IPv4 CIDR block or
-        /// an IPAM-allocated IPv4 CIDR block. You can optionally associate an IPv6 CIDR block
-        /// with a VPC. You can choose an IPv6 CIDR block, an Amazon-provided IPv6 CIDR block,
-        /// an IPAM-allocated IPv6 CIDR block, or an IPv6 CIDR block that you brought to Amazon
-        /// Web Services. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-ip-addressing.html">IP
-        /// addressing for your VPCs and subnets</a> in the <i>Amazon VPC User Guide</i>.
+        /// You can optionally request an IPv6 CIDR block for the VPC. You can request an Amazon-provided
+        /// IPv6 CIDR block from Amazon's pool of IPv6 addresses or an IPv6 CIDR block from an
+        /// IPv6 address pool that you provisioned through bring your own IP addresses (<a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html">BYOIP</a>).
         /// </para>
         ///  
         /// <para>
@@ -8038,9 +8000,9 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// You can specify DNS options and tenancy for a VPC when you create it. You can't change
-        /// the tenancy of a VPC after you create it. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/create-vpc-options.html">VPC
-        /// configuration options</a> in the <i>Amazon VPC User Guide</i>.
+        /// You can specify the instance tenancy value for the VPC when you create it. You can't
+        /// change this value for the VPC after you create it. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-instance.html">Dedicated
+        /// Instances</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateVpc service method.</param>
@@ -8816,24 +8778,7 @@ namespace Amazon.EC2
         /// 1000 or fewer. Then delete the fleet, and the remaining instances will be terminated
         /// automatically.
         /// </para>
-        ///  <important> 
-        /// <para>
-        ///  <b>Terminating an instance is permanent and irreversible.</b> 
-        /// </para>
         ///  
-        /// <para>
-        /// After you terminate an instance, you can no longer connect to it, and it can't be
-        /// recovered. All attached Amazon EBS volumes that are configured to be deleted on termination
-        /// are also permanently deleted and can't be recovered. All data stored on instance store
-        /// volumes is permanently lost. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-ec2-instance-termination-works.html">
-        /// How instance termination works</a>.
-        /// </para>
-        ///  
-        /// <para>
-        /// Before you terminate an instance, ensure that you have backed up all data that you
-        /// need to retain after the termination to persistent storage.
-        /// </para>
-        ///  </important> 
         /// <para>
         ///  <b>Restrictions</b> 
         /// </para>
@@ -8893,24 +8838,7 @@ namespace Amazon.EC2
         /// 1000 or fewer. Then delete the fleet, and the remaining instances will be terminated
         /// automatically.
         /// </para>
-        ///  <important> 
-        /// <para>
-        ///  <b>Terminating an instance is permanent and irreversible.</b> 
-        /// </para>
         ///  
-        /// <para>
-        /// After you terminate an instance, you can no longer connect to it, and it can't be
-        /// recovered. All attached Amazon EBS volumes that are configured to be deleted on termination
-        /// are also permanently deleted and can't be recovered. All data stored on instance store
-        /// volumes is permanently lost. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-ec2-instance-termination-works.html">
-        /// How instance termination works</a>.
-        /// </para>
-        ///  
-        /// <para>
-        /// Before you terminate an instance, ensure that you have backed up all data that you
-        /// need to retain after the termination to persistent storage.
-        /// </para>
-        ///  </important> 
         /// <para>
         ///  <b>Restrictions</b> 
         /// </para>
@@ -33782,27 +33710,10 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Terminates (deletes) the specified instances. This operation is <a href="https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html">idempotent</a>;
+        /// Shuts down the specified instances. This operation is <a href="https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html">idempotent</a>;
         /// if you terminate an instance more than once, each call succeeds.
         /// 
-        ///  <important> 
-        /// <para>
-        ///  <b>Terminating an instance is permanent and irreversible.</b> 
-        /// </para>
         ///  
-        /// <para>
-        /// After you terminate an instance, you can no longer connect to it, and it can't be
-        /// recovered. All attached Amazon EBS volumes that are configured to be deleted on termination
-        /// are also permanently deleted and can't be recovered. All data stored on instance store
-        /// volumes is permanently lost. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-ec2-instance-termination-works.html">
-        /// How instance termination works</a>.
-        /// </para>
-        ///  
-        /// <para>
-        /// Before you terminate an instance, ensure that you have backed up all data that you
-        /// need to retain after the termination to persistent storage.
-        /// </para>
-        ///  </important> 
         /// <para>
         /// If you specify multiple instances and the request fails (for example, because of a
         /// single incorrect instance ID), none of the instances are terminated.
@@ -33903,27 +33814,10 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Terminates (deletes) the specified instances. This operation is <a href="https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html">idempotent</a>;
+        /// Shuts down the specified instances. This operation is <a href="https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html">idempotent</a>;
         /// if you terminate an instance more than once, each call succeeds.
         /// 
-        ///  <important> 
-        /// <para>
-        ///  <b>Terminating an instance is permanent and irreversible.</b> 
-        /// </para>
         ///  
-        /// <para>
-        /// After you terminate an instance, you can no longer connect to it, and it can't be
-        /// recovered. All attached Amazon EBS volumes that are configured to be deleted on termination
-        /// are also permanently deleted and can't be recovered. All data stored on instance store
-        /// volumes is permanently lost. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-ec2-instance-termination-works.html">
-        /// How instance termination works</a>.
-        /// </para>
-        ///  
-        /// <para>
-        /// Before you terminate an instance, ensure that you have backed up all data that you
-        /// need to retain after the termination to persistent storage.
-        /// </para>
-        ///  </important> 
         /// <para>
         /// If you specify multiple instances and the request fails (for example, because of a
         /// single incorrect instance ID), none of the instances are terminated.

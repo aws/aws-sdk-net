@@ -143,6 +143,10 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <c>availability-zone-id</c> - The ID of the Availability Zone of the network interface.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <c>description</c> - The description of the network interface.
         /// </para>
         ///  </li> <li> 
