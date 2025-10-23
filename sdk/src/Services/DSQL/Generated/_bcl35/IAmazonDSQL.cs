@@ -60,7 +60,7 @@ namespace Amazon.DSQL
 
 
         /// <summary>
-        /// The CreateCluster API allows you to create both single-region clusters and multi-Region
+        /// The CreateCluster API allows you to create both single-Region clusters and multi-Region
         /// clusters. With the addition of the <i>multiRegionProperties</i> parameter, you can
         /// create a cluster with witness Region support and establish peer relationships with
         /// clusters in other Regions during creation.
@@ -93,7 +93,7 @@ namespace Amazon.DSQL
         /// </para>
         ///  </dd> <dt>dsql:PutMultiRegionProperties</dt> <dd> 
         /// <para>
-        /// Permission to configure multi-region properties for a cluster.
+        /// Permission to configure multi-Region properties for a cluster.
         /// </para>
         ///  
         /// <para>
@@ -245,6 +245,65 @@ namespace Amazon.DSQL
 
         #endregion
         
+        #region  DeleteClusterPolicy
+
+
+        /// <summary>
+        /// Deletes the resource-based policy attached to a cluster. This removes all access permissions
+        /// defined by the policy, reverting to default access controls.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteClusterPolicy service method.</param>
+        /// 
+        /// <returns>The response from the DeleteClusterPolicy service method, as returned by DSQL.</returns>
+        /// <exception cref="Amazon.DSQL.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DSQL.Model.ConflictException">
+        /// The submitted action has conflicts.
+        /// </exception>
+        /// <exception cref="Amazon.DSQL.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DSQL.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DSQL.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DSQL.Model.ValidationException">
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dsql-2018-05-10/DeleteClusterPolicy">REST API Reference for DeleteClusterPolicy Operation</seealso>
+        DeleteClusterPolicyResponse DeleteClusterPolicy(DeleteClusterPolicyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteClusterPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteClusterPolicy operation on AmazonDSQLClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteClusterPolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dsql-2018-05-10/DeleteClusterPolicy">REST API Reference for DeleteClusterPolicy Operation</seealso>
+        IAsyncResult BeginDeleteClusterPolicy(DeleteClusterPolicyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteClusterPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteClusterPolicy.</param>
+        /// 
+        /// <returns>Returns a  DeleteClusterPolicyResult from DSQL.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dsql-2018-05-10/DeleteClusterPolicy">REST API Reference for DeleteClusterPolicy Operation</seealso>
+        DeleteClusterPolicyResponse EndDeleteClusterPolicy(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetCluster
 
 
@@ -297,6 +356,62 @@ namespace Amazon.DSQL
         /// <returns>Returns a  GetClusterResult from DSQL.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dsql-2018-05-10/GetCluster">REST API Reference for GetCluster Operation</seealso>
         GetClusterResponse EndGetCluster(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetClusterPolicy
+
+
+        /// <summary>
+        /// Retrieves the resource-based policy document attached to a cluster. This policy defines
+        /// the access permissions and conditions for the cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetClusterPolicy service method.</param>
+        /// 
+        /// <returns>The response from the GetClusterPolicy service method, as returned by DSQL.</returns>
+        /// <exception cref="Amazon.DSQL.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DSQL.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DSQL.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DSQL.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DSQL.Model.ValidationException">
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dsql-2018-05-10/GetClusterPolicy">REST API Reference for GetClusterPolicy Operation</seealso>
+        GetClusterPolicyResponse GetClusterPolicy(GetClusterPolicyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetClusterPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetClusterPolicy operation on AmazonDSQLClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetClusterPolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dsql-2018-05-10/GetClusterPolicy">REST API Reference for GetClusterPolicy Operation</seealso>
+        IAsyncResult BeginGetClusterPolicy(GetClusterPolicyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetClusterPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetClusterPolicy.</param>
+        /// 
+        /// <returns>Returns a  GetClusterPolicyResult from DSQL.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dsql-2018-05-10/GetClusterPolicy">REST API Reference for GetClusterPolicy Operation</seealso>
+        GetClusterPolicyResponse EndGetClusterPolicy(IAsyncResult asyncResult);
 
         #endregion
         
@@ -465,6 +580,66 @@ namespace Amazon.DSQL
 
         #endregion
         
+        #region  PutClusterPolicy
+
+
+        /// <summary>
+        /// Attaches a resource-based policy to a cluster. This policy defines access permissions
+        /// and conditions for the cluster, allowing you to control which principals can perform
+        /// actions on the cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutClusterPolicy service method.</param>
+        /// 
+        /// <returns>The response from the PutClusterPolicy service method, as returned by DSQL.</returns>
+        /// <exception cref="Amazon.DSQL.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DSQL.Model.ConflictException">
+        /// The submitted action has conflicts.
+        /// </exception>
+        /// <exception cref="Amazon.DSQL.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DSQL.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DSQL.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DSQL.Model.ValidationException">
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dsql-2018-05-10/PutClusterPolicy">REST API Reference for PutClusterPolicy Operation</seealso>
+        PutClusterPolicyResponse PutClusterPolicy(PutClusterPolicyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutClusterPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutClusterPolicy operation on AmazonDSQLClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutClusterPolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dsql-2018-05-10/PutClusterPolicy">REST API Reference for PutClusterPolicy Operation</seealso>
+        IAsyncResult BeginPutClusterPolicy(PutClusterPolicyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutClusterPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutClusterPolicy.</param>
+        /// 
+        /// <returns>Returns a  PutClusterPolicyResult from DSQL.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dsql-2018-05-10/PutClusterPolicy">REST API Reference for PutClusterPolicy Operation</seealso>
+        PutClusterPolicyResponse EndPutClusterPolicy(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  TagResource
 
 
@@ -589,7 +764,7 @@ namespace Amazon.DSQL
         /// 
         ///  <note> 
         /// <para>
-        /// Note that updating multi-region clusters requires additional IAM permissions beyond
+        /// Note that updating multi-Region clusters requires additional IAM permissions beyond
         /// those needed for standard cluster updates, as detailed in the Permissions section.
         /// </para>
         ///  </note> 

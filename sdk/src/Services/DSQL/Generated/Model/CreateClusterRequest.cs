@@ -31,7 +31,7 @@ namespace Amazon.DSQL.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateCluster operation.
-    /// The CreateCluster API allows you to create both single-region clusters and multi-Region
+    /// The CreateCluster API allows you to create both single-Region clusters and multi-Region
     /// clusters. With the addition of the <i>multiRegionProperties</i> parameter, you can
     /// create a cluster with witness Region support and establish peer relationships with
     /// clusters in other Regions during creation.
@@ -64,7 +64,7 @@ namespace Amazon.DSQL.Model
     /// </para>
     ///  </dd> <dt>dsql:PutMultiRegionProperties</dt> <dd> 
     /// <para>
-    /// Permission to configure multi-region properties for a cluster.
+    /// Permission to configure multi-Region properties for a cluster.
     /// </para>
     ///  
     /// <para>
@@ -108,11 +108,33 @@ namespace Amazon.DSQL.Model
     /// </summary>
     public partial class CreateClusterRequest : AmazonDSQLRequest
     {
+        private bool? _bypassPolicyLockoutSafetyCheck;
         private string _clientToken;
         private bool? _deletionProtectionEnabled;
         private string _kmsEncryptionKey;
         private MultiRegionProperties _multiRegionProperties;
+        private string _policy;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+
+        /// <summary>
+        /// Gets and sets the property BypassPolicyLockoutSafetyCheck. 
+        /// <para>
+        /// An optional field that controls whether to bypass the lockout prevention check. When
+        /// set to true, this parameter allows you to apply a policy that might lock you out of
+        /// the cluster. Use with caution.
+        /// </para>
+        /// </summary>
+        public bool BypassPolicyLockoutSafetyCheck
+        {
+            get { return this._bypassPolicyLockoutSafetyCheck.GetValueOrDefault(); }
+            set { this._bypassPolicyLockoutSafetyCheck = value; }
+        }
+
+        // Check to see if BypassPolicyLockoutSafetyCheck property is set
+        internal bool IsSetBypassPolicyLockoutSafetyCheck()
+        {
+            return this._bypassPolicyLockoutSafetyCheck.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
@@ -199,6 +221,26 @@ namespace Amazon.DSQL.Model
         internal bool IsSetMultiRegionProperties()
         {
             return this._multiRegionProperties != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Policy. 
+        /// <para>
+        /// An optional resource-based policy document in JSON format that defines access permissions
+        /// for the cluster.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=20480)]
+        public string Policy
+        {
+            get { return this._policy; }
+            set { this._policy = value; }
+        }
+
+        // Check to see if Policy property is set
+        internal bool IsSetPolicy()
+        {
+            return this._policy != null;
         }
 
         /// <summary>
