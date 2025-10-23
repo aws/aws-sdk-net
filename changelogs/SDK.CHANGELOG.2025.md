@@ -1,3 +1,109 @@
+### 3.7.1150.0 (2025-10-23 19:13 UTC)
+* Account (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* ApplicationAutoScaling (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* ApplicationDiscoveryService (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* AWSMarketplaceCommerceAnalytics (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* BedrockAgentCore (3.7.506.0)
+	* Fixing the service documentation name
+* BedrockAgentCoreControl (3.7.508.0)
+	* Fixing the service documentation name
+* ChimeSDKVoice (3.7.503.0)
+	* Update endpoint ruleset parameters casing
+* CloudTrailData (3.7.501.0)
+	* Update endpoint ruleset parameters casing
+* CloudWatchRUM (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* CodeBuild (3.7.504.0)
+	* Update endpoint ruleset parameters casing
+* CodeStarconnections (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* ConfigService (3.7.503.0)
+	* Update endpoint ruleset parameters casing
+* ConnectContactLens (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* CostAndUsageReport (3.7.501.0)
+	* Update endpoint ruleset parameters casing
+* DatabaseMigrationService (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* DocDBElastic (3.7.501.0)
+	* Update endpoint ruleset parameters casing
+* Drs (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* DSQL (3.7.503.0)
+	* Add support for resource-based policies for Aurora DSQL clusters. This will enable you to implement Block Public Access (BPA) which will help restrict access to your Aurora DSQL public or VPC endpoints.
+* EBS (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* ECR (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* ECRPublic (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* HealthLake (3.7.503.0)
+	* Update endpoint ruleset parameters casing
+* InternetMonitor (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* IoTEvents (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* IoTJobsDataPlane (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* KinesisVideoArchivedMedia (3.7.501.0)
+	* Update endpoint ruleset parameters casing
+* KinesisVideoWebRTCStorage (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* Lambda (3.7.502.0)
+	* Add NodeJs 24 (nodejs24.x) support to AWS Lambda.
+* Macie2 (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* ManagedBlockchainQuery (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* MediaTailor (3.7.503.0)
+	* Update endpoint ruleset parameters casing
+* Mgn (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* MigrationHub (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* MPA (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* Neptunedata (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* NetworkMonitor (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* Odb (3.7.501.5)
+	* Doc-only update that removes duplicate values from descriptions of ODB peering APIs.
+* Omics (3.7.503.0)
+	* Update endpoint ruleset parameters casing
+* OpenSearchServerless (3.7.503.0)
+	* Update endpoint ruleset parameters casing
+* PcaConnectorScep (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* PersonalizeEvents (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* PinpointEmail (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* ResilienceHub (3.7.501.0)
+	* Update endpoint ruleset parameters casing
+* SageMaker (3.7.512.0)
+	* Update endpoint ruleset parameters casing
+* SagemakerEdgeManager (3.7.501.0)
+	* Update endpoint ruleset parameters casing
+* SavingsPlans (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* SecurityLake (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* SimpleEmailV2 (3.7.503.0)
+	* Update endpoint ruleset parameters casing
+* StorageGateway (3.7.501.0)
+	* Update endpoint ruleset parameters casing
+* Synthetics (3.7.503.0)
+	* Update endpoint ruleset parameters casing
+* Core 3.7.500.36
+	* Updating endpoints.json file.
+	* Updating partitions.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.1149.0 (2025-10-22 20:16 UTC)
 * AppFabric (3.7.502.0)
 	* Update endpoint ruleset parameters casing

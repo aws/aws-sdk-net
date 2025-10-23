@@ -32,7 +32,7 @@ namespace Amazon.MigrationHubStrategyRecommendations
     public partial class AmazonMigrationHubStrategyRecommendationsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("MigrationHubStrategy", "3.7.500.35");
+            InternalSDKUtils.BuildUserAgentString("MigrationHubStrategy", "3.7.500.36");
 
         private string _userAgent = UserAgentString;
         ///<summary>
