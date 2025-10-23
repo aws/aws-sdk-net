@@ -219,10 +219,6 @@ namespace Amazon.Odb.Model
         /// <para>
         /// The status of the ODB peering connection.
         /// </para>
-        ///  
-        /// <para>
-        /// Valid Values: <c>provisioning | active | terminating | terminated | failed</c> 
-        /// </para>
         /// </summary>
         public ResourceStatus Status
         {

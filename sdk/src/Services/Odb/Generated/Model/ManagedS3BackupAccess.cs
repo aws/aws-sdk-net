@@ -61,10 +61,6 @@ namespace Amazon.Odb.Model
         /// <para>
         /// The status of the managed Amazon S3 backup access.
         /// </para>
-        ///  
-        /// <para>
-        /// Valid Values: <c>enabled | disabled</c> 
-        /// </para>
         /// </summary>
         public ManagedResourceStatus Status
         {
