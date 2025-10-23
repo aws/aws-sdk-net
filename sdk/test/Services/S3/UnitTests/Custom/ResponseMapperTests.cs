@@ -489,6 +489,56 @@ namespace AWSSDK.UnitTests
 
         [TestMethod]
         [TestCategory("S3")]
+        public void MapCompleteMultipartUploadResponse_AllMappedProperties_WorkCorrectly()
+        {
+            ValidateMappingTransferUtilityAndSdkRequests<CompleteMultipartUploadResponse, TransferUtilityUploadResponse>(
+                new[] { "Conversion", "CompleteMultipartResponse", "UploadResponse" },
+                (sourceResponse) =>
+                {
+                    return ResponseMapper.MapCompleteMultipartUploadResponse(sourceResponse);
+                },
+                usesHeadersCollection: false,
+                (sourceResponse) =>
+                {
+                    sourceResponse.HttpStatusCode = HttpStatusCode.OK;
+                    sourceResponse.ContentLength = 2048;
+                },
+                (sourceResponse, targetResponse) =>
+                {
+                    Assert.AreEqual(sourceResponse.HttpStatusCode, targetResponse.HttpStatusCode, "HttpStatusCode should match");
+                    Assert.AreEqual(sourceResponse.ContentLength, targetResponse.ContentLength, "ContentLength should match");
+                });
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public void MapCompleteMultipartUploadResponse_NullValues_HandledCorrectly()
+        {
+            // Test null handling scenarios
+            var testCases = new[]
+            {
+                // Test null Expiration
+                new CompleteMultipartUploadResponse { Expiration = null },
+                
+                // Test null enum conversions
+                new CompleteMultipartUploadResponse { ChecksumType = null, RequestCharged = null, ServerSideEncryptionMethod = null }
+            };
+
+            foreach (var testCase in testCases)
+            {
+                var mapped = ResponseMapper.MapCompleteMultipartUploadResponse(testCase);
+                Assert.IsNotNull(mapped, "Response should always be mappable");
+
+                // Test null handling
+                if (testCase.Expiration == null)
+                {
+                    Assert.IsNull(mapped.Expiration, "Null Expiration should map to null");
+                }
+            }
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
         public void ValidateCompleteMultipartUploadResponseConversionCompleteness()
         {
             ValidateResponseDefinitionCompleteness<TransferUtilityUploadResponse>(
