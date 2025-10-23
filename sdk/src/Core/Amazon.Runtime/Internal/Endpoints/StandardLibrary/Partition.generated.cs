@@ -126,6 +126,7 @@ namespace Amazon.Runtime.Internal.Endpoints.StandardLibrary
             _partitionsByRegex.Add(@"^us\-isob\-\w+\-\d+$", aws_iso_b);
             _partitionsByRegionName.Add("aws-iso-b-global", aws_iso_b);
             _partitionsByRegionName.Add("us-isob-east-1", aws_iso_b);
+            _partitionsByRegionName.Add("us-isob-west-1", aws_iso_b);
 
             var aws_iso_e = new PartitionAttributesShape
             {
