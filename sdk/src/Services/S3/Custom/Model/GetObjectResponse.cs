@@ -25,6 +25,7 @@ using System.Globalization;
 using Amazon.S3.Model.Internal.MarshallTransformations;
 using Amazon.S3;
 using Amazon.Runtime.Internal;
+using Amazon.S3.Transfer;
 
 namespace Amazon.S3.Model
 {
@@ -1042,5 +1043,10 @@ namespace Amazon.S3.Model
         /// True if writing is complete
         /// </summary>
         public bool IsCompleted { get; private set; }
+
+        /// <summary>
+        /// The original TransferUtilityDownloadRequest created by the user.
+        /// </summary>
+        public TransferUtilityDownloadRequest Request { get; internal set; }
     }  
 }
