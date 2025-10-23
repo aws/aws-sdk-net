@@ -20,18 +20,23 @@
  *
  */
 
-using System;
-using System.Collections.Generic;
+using System.IO;
 using Amazon.Runtime;
-using Amazon.S3.Model;
 
 namespace Amazon.S3.Transfer
 {
     /// <summary>
-    /// Response object for Transfer Utility download operations.
-    /// Contains response metadata from download operations.
+    /// Response object for Transfer Utility open stream operations.
+    /// Contains the stream and response metadata from open stream operations.
     /// </summary>
-    public class TransferUtilityDownloadResponse : TransferUtilityGetObjectResponseBase
+    public class TransferUtilityOpenStreamResponse : TransferUtilityGetObjectResponseBase
     {
+        /// <summary>
+        /// Gets and sets the ResponseStream property.
+        /// <para>
+        /// The stream containing the object data from S3.
+        /// </para>
+        /// </summary>
+        public Stream ResponseStream { get; set; }
     }
 }
