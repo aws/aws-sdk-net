@@ -1307,6 +1307,10 @@ namespace Amazon.Lambda
         /// </summary>
         public static readonly Runtime Nodejs22X = new Runtime("nodejs22.x");
         /// <summary>
+        /// Constant Nodejs24X for Runtime
+        /// </summary>
+        public static readonly Runtime Nodejs24X = new Runtime("nodejs24.x");
+        /// <summary>
         /// Constant Nodejs43 for Runtime
         /// </summary>
         public static readonly Runtime Nodejs43 = new Runtime("nodejs4.3");
