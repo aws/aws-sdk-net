@@ -288,7 +288,7 @@ namespace Amazon.DSQL
 
 
         /// <summary>
-        /// The CreateCluster API allows you to create both single-region clusters and multi-Region
+        /// The CreateCluster API allows you to create both single-Region clusters and multi-Region
         /// clusters. With the addition of the <i>multiRegionProperties</i> parameter, you can
         /// create a cluster with witness Region support and establish peer relationships with
         /// clusters in other Regions during creation.
@@ -321,7 +321,7 @@ namespace Amazon.DSQL
         /// </para>
         ///  </dd> <dt>dsql:PutMultiRegionProperties</dt> <dd> 
         /// <para>
-        /// Permission to configure multi-region properties for a cluster.
+        /// Permission to configure multi-Region properties for a cluster.
         /// </para>
         ///  
         /// <para>
@@ -449,6 +449,58 @@ namespace Amazon.DSQL
         }
         #endregion
         
+        #region  DeleteClusterPolicy
+
+        internal virtual DeleteClusterPolicyResponse DeleteClusterPolicy(DeleteClusterPolicyRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteClusterPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteClusterPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteClusterPolicyResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes the resource-based policy attached to a cluster. This removes all access permissions
+        /// defined by the policy, reverting to default access controls.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteClusterPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteClusterPolicy service method, as returned by DSQL.</returns>
+        /// <exception cref="Amazon.DSQL.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DSQL.Model.ConflictException">
+        /// The submitted action has conflicts.
+        /// </exception>
+        /// <exception cref="Amazon.DSQL.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DSQL.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DSQL.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DSQL.Model.ValidationException">
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dsql-2018-05-10/DeleteClusterPolicy">REST API Reference for DeleteClusterPolicy Operation</seealso>
+        public virtual Task<DeleteClusterPolicyResponse> DeleteClusterPolicyAsync(DeleteClusterPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteClusterPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteClusterPolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteClusterPolicyResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  GetCluster
 
         internal virtual GetClusterResponse GetCluster(GetClusterRequest request)
@@ -494,6 +546,55 @@ namespace Amazon.DSQL
             options.ResponseUnmarshaller = GetClusterResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetClusterResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  GetClusterPolicy
+
+        internal virtual GetClusterPolicyResponse GetClusterPolicy(GetClusterPolicyRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetClusterPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetClusterPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<GetClusterPolicyResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves the resource-based policy document attached to a cluster. This policy defines
+        /// the access permissions and conditions for the cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetClusterPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetClusterPolicy service method, as returned by DSQL.</returns>
+        /// <exception cref="Amazon.DSQL.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DSQL.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DSQL.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DSQL.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DSQL.Model.ValidationException">
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dsql-2018-05-10/GetClusterPolicy">REST API Reference for GetClusterPolicy Operation</seealso>
+        public virtual Task<GetClusterPolicyResponse> GetClusterPolicyAsync(GetClusterPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetClusterPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetClusterPolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetClusterPolicyResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -641,6 +742,59 @@ namespace Amazon.DSQL
         }
         #endregion
         
+        #region  PutClusterPolicy
+
+        internal virtual PutClusterPolicyResponse PutClusterPolicy(PutClusterPolicyRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = PutClusterPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutClusterPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<PutClusterPolicyResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Attaches a resource-based policy to a cluster. This policy defines access permissions
+        /// and conditions for the cluster, allowing you to control which principals can perform
+        /// actions on the cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutClusterPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutClusterPolicy service method, as returned by DSQL.</returns>
+        /// <exception cref="Amazon.DSQL.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DSQL.Model.ConflictException">
+        /// The submitted action has conflicts.
+        /// </exception>
+        /// <exception cref="Amazon.DSQL.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DSQL.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DSQL.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DSQL.Model.ValidationException">
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dsql-2018-05-10/PutClusterPolicy">REST API Reference for PutClusterPolicy Operation</seealso>
+        public virtual Task<PutClusterPolicyResponse> PutClusterPolicyAsync(PutClusterPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = PutClusterPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutClusterPolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutClusterPolicyResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  TagResource
 
         internal virtual TagResourceResponse TagResource(TagResourceRequest request)
@@ -761,7 +915,7 @@ namespace Amazon.DSQL
         /// 
         ///  <note> 
         /// <para>
-        /// Note that updating multi-region clusters requires additional IAM permissions beyond
+        /// Note that updating multi-Region clusters requires additional IAM permissions beyond
         /// those needed for standard cluster updates, as detailed in the Permissions section.
         /// </para>
         ///  </note> 
