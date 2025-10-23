@@ -107,6 +107,113 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
         [TestMethod]
         [TestCategory("S3")]
+        public void SimpleUploadInitiatedEventTest()
+        {
+            var fileName = UtilityMethods.GenerateName(@"SimpleUploadTest\InitiatedEvent");
+            var eventValidator = new TransferLifecycleEventValidator<UploadInitiatedEventArgs>
+            {
+                Validate = (args) =>
+                {
+                    Assert.IsNotNull(args.Request);
+                    Assert.IsTrue(args.TotalBytes > 0);
+                    Assert.AreEqual(10 * MEG_SIZE, args.TotalBytes);
+                    Assert.AreEqual(args.FilePath, Path.Combine(BasePath, fileName));
+                }
+            };
+            UploadWithLifecycleEvents(fileName, 10 * MEG_SIZE, eventValidator, null, null);
+            eventValidator.AssertEventFired();
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public void SimpleUploadCompletedEventTest()
+        {
+            var fileName = UtilityMethods.GenerateName(@"SimpleUploadTest\CompletedEvent");
+            var eventValidator = new TransferLifecycleEventValidator<UploadCompletedEventArgs>
+            {
+                Validate = (args) =>
+                {
+                    Assert.IsNotNull(args.Request);
+                    Assert.IsNotNull(args.Response);
+                    Assert.AreEqual(args.TransferredBytes, args.TotalBytes);
+                    Assert.AreEqual(10 * MEG_SIZE, args.TotalBytes);
+                    Assert.IsTrue(!string.IsNullOrEmpty(args.Response.ETag));
+                    Assert.AreEqual(args.FilePath, Path.Combine(BasePath, fileName));
+                }
+            };
+            UploadWithLifecycleEvents(fileName, 10 * MEG_SIZE, null, eventValidator, null);
+            eventValidator.AssertEventFired();
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public void SimpleUploadFailedEventTest()
+        {
+            var fileName = UtilityMethods.GenerateName(@"SimpleUploadTest\FailedEvent");
+            var eventValidator = new TransferLifecycleEventValidator<UploadFailedEventArgs>
+            {
+                Validate = (args) =>
+                {
+                    Assert.IsNotNull(args.Request);
+                    Assert.IsTrue(args.TotalBytes > 0);
+                    Assert.AreEqual(5 * MEG_SIZE, args.TotalBytes);
+                    Assert.AreEqual(args.FilePath, Path.Combine(BasePath, fileName));
+                    // For failed uploads, transferred bytes should be less than or equal to total bytes
+                    Assert.IsTrue(args.TransferredBytes <= args.TotalBytes);
+                }
+            };
+            
+            // Use invalid bucket name to force failure
+            var invalidBucketName = "invalid-bucket-name-" + Guid.NewGuid().ToString();
+            
+            try
+            {
+                UploadWithLifecycleEventsAndBucket(fileName, 5 * MEG_SIZE, invalidBucketName, null, null, eventValidator);
+                Assert.Fail("Expected an exception to be thrown for invalid bucket");
+            }
+            catch (AmazonS3Exception)
+            {
+                // Expected exception - the failed event should have been fired
+                eventValidator.AssertEventFired();
+            }
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public void SimpleUploadCompleteLifecycleTest()
+        {
+            var fileName = UtilityMethods.GenerateName(@"SimpleUploadTest\CompleteLifecycle");
+            
+            var initiatedValidator = new TransferLifecycleEventValidator<UploadInitiatedEventArgs>
+            {
+                Validate = (args) =>
+                {
+                    Assert.IsNotNull(args.Request);
+                    Assert.AreEqual(8 * MEG_SIZE, args.TotalBytes);
+                    Assert.AreEqual(args.FilePath, Path.Combine(BasePath, fileName));
+                }
+            };
+            
+            var completedValidator = new TransferLifecycleEventValidator<UploadCompletedEventArgs>
+            {
+                Validate = (args) =>
+                {
+                    Assert.IsNotNull(args.Request);
+                    Assert.IsNotNull(args.Response);
+                    Assert.AreEqual(args.TransferredBytes, args.TotalBytes);
+                    Assert.AreEqual(8 * MEG_SIZE, args.TotalBytes);
+                    Assert.AreEqual(args.FilePath, Path.Combine(BasePath, fileName));
+                }
+            };
+
+            UploadWithLifecycleEvents(fileName, 8 * MEG_SIZE, initiatedValidator, completedValidator, null);
+            
+            initiatedValidator.AssertEventFired();
+            completedValidator.AssertEventFired();
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
         public void SimpleUpload()
         {
             var client = Client;
@@ -372,6 +479,49 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 };
                 tu.Download(downloadRequest);
                 UtilityMethods.CompareFiles(path, downloadPath);
+            }
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public void SimpleUploadProgressTotalBytesTest()
+        {
+            var fileName = UtilityMethods.GenerateName(@"SimpleUploadProgressTotalBytes\TestFile");
+            var filePath = Path.Combine(BasePath, fileName);
+            var fileSize = 10 * MEG_SIZE;
+            
+            // Create test file
+            UtilityMethods.GenerateFile(filePath, fileSize);
+
+            var transferConfig = new TransferUtilityConfig()
+            {
+                MinSizeBeforePartUpload = 20 * MEG_SIZE,
+            };
+
+            var progressValidator = new TransferProgressValidator<UploadProgressArgs>
+            {
+                Validate = (progress) =>
+                {
+                    Assert.IsTrue(progress.TotalBytes > 0, "TotalBytes should be greater than 0");
+                    Assert.AreEqual(fileSize, progress.TotalBytes, "TotalBytes should equal file size");
+                    Assert.AreEqual(filePath, progress.FilePath, "FilePath should match expected path");
+                }
+            };
+
+            using (var fileTransferUtility = new TransferUtility(Client, transferConfig))
+            {
+                var request = new TransferUtilityUploadRequest()
+                {
+                    BucketName = bucketName,
+                    FilePath = filePath,
+                    Key = fileName
+                };
+
+                request.UploadProgressEvent += progressValidator.OnProgressEvent;
+
+                fileTransferUtility.Upload(request);
+
+                progressValidator.AssertOnCompletion();
             }
         }
 
@@ -1300,7 +1450,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 if (this.ProgressEventException != null)
                     throw this.ProgressEventException;
 
-                // Add some time for the background thread to finish before checking the complete
+                // Since  AWSSDKUtils.InvokeInBackground fires the event in the background it is possible that we check too early that the event has fired. In this case, we sleep and check again.
                 for (int retries = 1; retries < 5 && !this.IsProgressEventComplete; retries++)
                 {
                     Thread.Sleep(1000 * retries);
@@ -1392,6 +1542,87 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     this.LastProgressEventValue = progress;
                 }
             }
+        }
+
+        class TransferLifecycleEventValidator<T>
+        {
+            public Action<T> Validate { get; set; }
+            public bool EventFired { get; private set; }
+            public Exception EventException { get; private set; }
+
+            public void OnEventFired(object sender, T eventArgs)
+            {
+                try
+                {
+                    EventFired = true;
+                    Console.WriteLine("Lifecycle Event Fired: {0}", typeof(T).Name);
+                    Validate?.Invoke(eventArgs);
+                }
+                catch (Exception ex)
+                {
+                    EventException = ex;
+                    Console.WriteLine("Exception caught in lifecycle event: {0}", ex.Message);
+                    throw;
+                }
+            }
+
+            public void AssertEventFired()
+            {
+                if (EventException != null)
+                    throw EventException;
+
+                // Since  AWSSDKUtils.InvokeInBackground fires the event in the background it is possible that we check too early that the event has fired. In this case, we sleep and check again.
+                for (int retries = 1; retries < 5 && !EventFired; retries++)
+                {
+                    Thread.Sleep(1000 * retries);
+                }
+                Assert.IsTrue(EventFired, $"{typeof(T).Name} event was not fired");
+            }
+        }
+
+        void UploadWithLifecycleEvents(string fileName, long size,
+            TransferLifecycleEventValidator<UploadInitiatedEventArgs> initiatedValidator,
+            TransferLifecycleEventValidator<UploadCompletedEventArgs> completedValidator,
+            TransferLifecycleEventValidator<UploadFailedEventArgs> failedValidator)
+        {
+            UploadWithLifecycleEventsAndBucket(fileName, size, bucketName, initiatedValidator, completedValidator, failedValidator);
+        }
+
+        void UploadWithLifecycleEventsAndBucket(string fileName, long size, string targetBucketName,
+            TransferLifecycleEventValidator<UploadInitiatedEventArgs> initiatedValidator,
+            TransferLifecycleEventValidator<UploadCompletedEventArgs> completedValidator,
+            TransferLifecycleEventValidator<UploadFailedEventArgs> failedValidator)
+        {
+            var key = fileName;
+            var path = Path.Combine(BasePath, fileName);
+            UtilityMethods.GenerateFile(path, size);
+            
+            var config = new TransferUtilityConfig();
+            var transferUtility = new TransferUtility(Client, config);
+            var request = new TransferUtilityUploadRequest
+            {
+                BucketName = targetBucketName,
+                FilePath = path,
+                Key = key,
+                ContentType = octetStreamContentType
+            };
+
+            if (initiatedValidator != null)
+            {
+                request.UploadInitiatedEvent += initiatedValidator.OnEventFired;
+            }
+
+            if (completedValidator != null)
+            {
+                request.UploadCompletedEvent += completedValidator.OnEventFired;
+            }
+
+            if (failedValidator != null)
+            {
+                request.UploadFailedEvent += failedValidator.OnEventFired;
+            }
+
+            transferUtility.Upload(request);
         }
         private class UnseekableStream : MemoryStream
         {

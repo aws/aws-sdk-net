@@ -165,7 +165,11 @@ namespace AWSSDK.UnitTests
                     var simpleUploadCommand = new SimpleUploadCommand(null, null, sourceRequest);
                     return simpleUploadCommand.ConstructRequest();
                 },
-                usesHeadersCollection: false);
+                usesHeadersCollection: false,
+                (sourceRequest) =>
+                {
+                    sourceRequest.InputStream = new MemoryStream(1024);
+                });
         }
 
         [TestMethod]
