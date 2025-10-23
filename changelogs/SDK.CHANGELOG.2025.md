@@ -1,3 +1,108 @@
+### 4.0.118.0 (2025-10-23 19:18 UTC)
+* Account (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* ApplicationAutoScaling (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* ApplicationDiscoveryService (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* AWSMarketplaceCommerceAnalytics (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* BedrockAgentCore (4.0.6.0)
+	* Fixing the service documentation name
+* BedrockAgentCoreControl (4.0.8.0)
+	* Fixing the service documentation name
+* ChimeSDKVoice (4.0.3.0)
+	* Update endpoint ruleset parameters casing
+* CloudTrailData (4.0.1.0)
+	* Update endpoint ruleset parameters casing
+* CloudWatchRUM (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* CodeBuild (4.0.5.0)
+	* Update endpoint ruleset parameters casing
+* CodeStarconnections (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* ConfigService (4.0.4.0)
+	* Update endpoint ruleset parameters casing
+* ConnectContactLens (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* CostAndUsageReport (4.0.1.0)
+	* Update endpoint ruleset parameters casing
+* DatabaseMigrationService (4.0.4.0)
+	* Update endpoint ruleset parameters casing
+* DocDBElastic (4.0.1.0)
+	* Update endpoint ruleset parameters casing
+* Drs (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* DSQL (4.0.6.0)
+	* Add support for resource-based policies for Aurora DSQL clusters. This will enable you to implement Block Public Access (BPA) which will help restrict access to your Aurora DSQL public or VPC endpoints.
+* EBS (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* ECR (4.0.5.0)
+	* Update endpoint ruleset parameters casing
+* ECRPublic (4.0.3.0)
+	* Update endpoint ruleset parameters casing
+* HealthLake (4.0.3.0)
+	* Update endpoint ruleset parameters casing
+* InternetMonitor (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* IoTEvents (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* IoTJobsDataPlane (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* KinesisVideoArchivedMedia (4.0.1.0)
+	* Update endpoint ruleset parameters casing
+* KinesisVideoWebRTCStorage (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* Lambda (4.0.4.0)
+	* Add NodeJs 24 (nodejs24.x) support to AWS Lambda.
+* Macie2 (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* ManagedBlockchainQuery (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* MediaTailor (4.0.4.0)
+	* Update endpoint ruleset parameters casing
+* Mgn (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* MigrationHub (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* MPA (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* Neptunedata (4.0.3.0)
+	* Update endpoint ruleset parameters casing
+* NetworkMonitor (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* Odb (4.0.1.2)
+	* Doc-only update that removes duplicate values from descriptions of ODB peering APIs.
+* Omics (4.0.4.0)
+	* Update endpoint ruleset parameters casing
+* OpenSearchServerless (4.0.4.0)
+	* Update endpoint ruleset parameters casing
+* PcaConnectorScep (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* PersonalizeEvents (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* PinpointEmail (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* ResilienceHub (4.0.1.0)
+	* Update endpoint ruleset parameters casing
+* SageMaker (4.0.26.0)
+	* Update endpoint ruleset parameters casing
+* SagemakerEdgeManager (4.0.1.0)
+	* Update endpoint ruleset parameters casing
+* SavingsPlans (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* SecurityLake (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* SimpleEmailV2 (4.0.6.0)
+	* Update endpoint ruleset parameters casing
+* StorageGateway (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* Synthetics (4.0.8.0)
+	* Update endpoint ruleset parameters casing
+* Core 4.0.1.2
+	* Updating partitions.json file.
+	* All service and extension packages updated to require new Core
+
 ### 4.0.117.0 (2025-10-22 20:20 UTC)
 * AppFabric (4.0.2.0)
 	* Update endpoint ruleset parameters casing
