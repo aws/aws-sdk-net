@@ -375,8 +375,44 @@ namespace Amazon.S3.Transfer.Internal
             long transferredBytes = Interlocked.Add(ref _totalTransferredBytes, e.IncrementTransferred - e.CompensationForRetry);
 
             var progressArgs = new UploadProgressArgs(e.IncrementTransferred, transferredBytes, this._contentLength,
-                e.CompensationForRetry, this._fileTransporterRequest.FilePath);
+                e.CompensationForRetry, this._fileTransporterRequest.FilePath, this._fileTransporterRequest);
             this._fileTransporterRequest.OnRaiseProgressEvent(progressArgs);
+        }
+
+        private void FireTransferInitiatedEvent()
+        {
+            var initiatedArgs = new UploadInitiatedEventArgs(
+                request: _fileTransporterRequest,
+                totalBytes: _contentLength,
+                filePath: _fileTransporterRequest.FilePath
+            );
+            
+            _fileTransporterRequest.OnRaiseTransferInitiatedEvent(initiatedArgs);
+        }
+
+        private void FireTransferCompletedEvent(TransferUtilityUploadResponse response)
+        {
+            var completedArgs = new UploadCompletedEventArgs(
+                request: _fileTransporterRequest,
+                filePath: _fileTransporterRequest.FilePath,
+                response: response,
+                transferredBytes: Interlocked.Read(ref _totalTransferredBytes),
+                totalBytes: _contentLength
+            );
+            
+            _fileTransporterRequest.OnRaiseTransferCompletedEvent(completedArgs);
+        }
+
+        private void FireTransferFailedEvent()
+        {
+            var failedArgs = new UploadFailedEventArgs(
+                request: _fileTransporterRequest,
+                filePath: _fileTransporterRequest.FilePath,
+                transferredBytes: Interlocked.Read(ref _totalTransferredBytes),
+                totalBytes: _contentLength
+            );
+            
+            _fileTransporterRequest.OnRaiseTransferFailedEvent(failedArgs);
         }
 
         /// <summary>
