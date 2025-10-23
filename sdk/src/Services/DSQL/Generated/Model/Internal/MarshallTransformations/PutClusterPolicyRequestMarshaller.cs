@@ -37,9 +37,9 @@ using ThirdParty.RuntimeBackports;
 namespace Amazon.DSQL.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateCluster Request Marshaller
+    /// PutClusterPolicy Request Marshaller
     /// </summary>       
-    public class CreateClusterRequestMarshaller : IMarshaller<IRequest, CreateClusterRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class PutClusterPolicyRequestMarshaller : IMarshaller<IRequest, PutClusterPolicyRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -48,7 +48,7 @@ namespace Amazon.DSQL.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateClusterRequest)input);
+            return this.Marshall((PutClusterPolicyRequest)input);
         }
 
         /// <summary>
@@ -56,14 +56,17 @@ namespace Amazon.DSQL.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateClusterRequest publicRequest)
+        public IRequest Marshall(PutClusterPolicyRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.DSQL");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-05-10";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/cluster";
+            if (!publicRequest.IsSetIdentifier())
+                throw new AmazonDSQLException("Request object does not have required field Identifier set");
+            request.AddPathResource("{identifier}", StringUtils.FromString(publicRequest.Identifier));
+            request.ResourcePath = "/cluster/{identifier}/policy";
 #if !NETFRAMEWORK
             using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
             using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
@@ -90,47 +93,16 @@ namespace Amazon.DSQL.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("clientToken");
                 context.Writer.WriteStringValue(Guid.NewGuid().ToString());
             }
-            if(publicRequest.IsSetDeletionProtectionEnabled())
+            if(publicRequest.IsSetExpectedPolicyVersion())
             {
-                context.Writer.WritePropertyName("deletionProtectionEnabled");
-                context.Writer.WriteBooleanValue(publicRequest.DeletionProtectionEnabled.Value);
-            }
-
-            if(publicRequest.IsSetKmsEncryptionKey())
-            {
-                context.Writer.WritePropertyName("kmsEncryptionKey");
-                context.Writer.WriteStringValue(publicRequest.KmsEncryptionKey);
-            }
-
-            if(publicRequest.IsSetMultiRegionProperties())
-            {
-                context.Writer.WritePropertyName("multiRegionProperties");
-                context.Writer.WriteStartObject();
-
-                var marshaller = MultiRegionPropertiesMarshaller.Instance;
-                marshaller.Marshall(publicRequest.MultiRegionProperties, context);
-
-                context.Writer.WriteEndObject();
+                context.Writer.WritePropertyName("expectedPolicyVersion");
+                context.Writer.WriteStringValue(publicRequest.ExpectedPolicyVersion);
             }
 
             if(publicRequest.IsSetPolicy())
             {
                 context.Writer.WritePropertyName("policy");
                 context.Writer.WriteStringValue(publicRequest.Policy);
-            }
-
-            if(publicRequest.IsSetTags())
-            {
-                context.Writer.WritePropertyName("tags");
-                context.Writer.WriteStartObject();
-                foreach (var publicRequestTagsKvp in publicRequest.Tags)
-                {
-                    context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                    var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                        context.Writer.WriteStringValue(publicRequestTagsValue);
-                }
-                context.Writer.WriteEndObject();
             }
 
             writer.WriteEndObject();
@@ -146,9 +118,9 @@ namespace Amazon.DSQL.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateClusterRequestMarshaller _instance = new CreateClusterRequestMarshaller();        
+        private static PutClusterPolicyRequestMarshaller _instance = new PutClusterPolicyRequestMarshaller();        
 
-        internal static CreateClusterRequestMarshaller GetInstance()
+        internal static PutClusterPolicyRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -156,7 +128,7 @@ namespace Amazon.DSQL.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateClusterRequestMarshaller Instance
+        public static PutClusterPolicyRequestMarshaller Instance
         {
             get
             {
