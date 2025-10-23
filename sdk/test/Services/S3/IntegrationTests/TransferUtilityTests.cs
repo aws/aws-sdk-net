@@ -909,7 +909,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     Assert.IsNotNull(args.Request);
                     Assert.IsNotNull(args.Response);
                     Assert.AreEqual(-1, args.TotalBytes); // Unseekable streams have unknown length
-                    Assert.AreEqual(20 * MEG_SIZE, args.TransferredBytes); // since we know the actual length via testing it, we can check the transferredbytes size
+                    Assert.AreEqual(0, args.TransferredBytes); // unseekable streams we dont attach and progress listeners so we wont have transferredbytes.
                 }
             };
             UploadUnseekableStreamWithLifecycleEvents(20 * MEG_SIZE, null, eventValidator, null);
@@ -964,7 +964,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     Assert.IsNotNull(args.Request);
                     Assert.IsNotNull(args.Response);
                     Assert.AreEqual(-1, args.TotalBytes); // Unseekable streams have unknown length
-                    Assert.AreEqual(18 * MEG_SIZE, args.TransferredBytes); // Should have transferred all bytes
+                    Assert.AreEqual(0, args.TransferredBytes); // unseekable streams we dont attach and progress listeners so we wont have transferredbytes.
                 }
             };
 
@@ -1758,15 +1758,16 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             {
                 try
                 {
-                    EventFired = true;
                     Console.WriteLine("Lifecycle Event Fired: {0}", typeof(T).Name);
                     Validate?.Invoke(eventArgs);
+                    EventFired = true;  // Only set if validation passes
                 }
                 catch (Exception ex)
                 {
                     EventException = ex;
+                    EventFired = false;  // Ensure we don't mark as fired on failure
                     Console.WriteLine("Exception caught in lifecycle event: {0}", ex.Message);
-                    throw;
+                    // Don't re-throw, let AssertEventFired() handle it
                 }
             }
 
