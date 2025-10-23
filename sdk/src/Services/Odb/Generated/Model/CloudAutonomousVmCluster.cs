@@ -515,8 +515,7 @@ namespace Amazon.Odb.Model
         /// <summary>
         /// Gets and sets the property LicenseModel. 
         /// <para>
-        /// The Oracle license model that applies to the Autonomous VM cluster. Valid values are
-        /// <c>LICENSE_INCLUDED</c> or <c>BRING_YOUR_OWN_LICENSE</c>.
+        /// The Oracle license model that applies to the Autonomous VM cluster.
         /// </para>
         /// </summary>
         public LicenseModel LicenseModel

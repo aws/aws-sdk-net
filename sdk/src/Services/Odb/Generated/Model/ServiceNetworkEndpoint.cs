@@ -60,10 +60,6 @@ namespace Amazon.Odb.Model
         /// <para>
         /// The type of the VPC endpoint.
         /// </para>
-        ///  
-        /// <para>
-        /// Valid Values: <c>Interface | Gateway</c> 
-        /// </para>
         /// </summary>
         public VpcEndpointType VpcEndpointType
         {
