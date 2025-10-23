@@ -20,6 +20,7 @@
  *
  */
 
+using System;
 using System.Collections.Generic;
 using Amazon.S3.Model;
 
@@ -37,10 +38,11 @@ namespace Amazon.S3.Transfer.Internal
         /// </summary>
         /// <param name="source">The PutObjectResponse to map from</param>
         /// <returns>A new TransferUtilityUploadResponse with mapped fields</returns>
+        /// <exception cref="ArgumentNullException">Thrown when source is null</exception>
         internal static TransferUtilityUploadResponse MapPutObjectResponse(PutObjectResponse source)
         {
             if (source == null)
-                return null;
+                throw new ArgumentNullException(nameof(source));
 
             var response = new TransferUtilityUploadResponse();
 
@@ -76,10 +78,11 @@ namespace Amazon.S3.Transfer.Internal
         /// </summary>
         /// <param name="source">The CompleteMultipartUploadResponse to map from</param>
         /// <returns>A new TransferUtilityUploadResponse with mapped fields</returns>
+        /// <exception cref="ArgumentNullException">Thrown when source is null</exception>
         internal static TransferUtilityUploadResponse MapCompleteMultipartUploadResponse(CompleteMultipartUploadResponse source)
         {
             if (source == null)
-                return null;
+                throw new ArgumentNullException(nameof(source));
 
             var response = new TransferUtilityUploadResponse();
 
@@ -107,60 +110,96 @@ namespace Amazon.S3.Transfer.Internal
         }
 
         /// <summary>
+        /// Private helper method to populate the common properties from GetObjectResponse to the base response class.
+        /// Contains all the shared mapping logic for GetObjectResponse fields. 
+        /// </summary>
+        /// <param name="source">The GetObjectResponse to map from</param>
+        /// <param name="target">The TransferUtilityGetObjectResponseBase to populate</param>
+        /// <exception cref="ArgumentNullException">Thrown when source or target is null</exception>
+        private static void PopulateGetObjectResponseBase(GetObjectResponse source, TransferUtilityGetObjectResponseBase target)
+        {
+            if (source == null)
+                throw new ArgumentNullException(nameof(source));
+            if (target == null)
+                throw new ArgumentNullException(nameof(target));
+
+            // Map all fields as defined in mapping.json "Conversion" -> "GetObjectResponse" -> "DownloadResponse"
+            target.AcceptRanges = source.AcceptRanges;
+            target.BucketKeyEnabled = source.BucketKeyEnabled.GetValueOrDefault();
+            target.ChecksumCRC32 = source.ChecksumCRC32;
+            target.ChecksumCRC32C = source.ChecksumCRC32C;
+            target.ChecksumCRC64NVME = source.ChecksumCRC64NVME;
+            target.ChecksumSHA1 = source.ChecksumSHA1;
+            target.ChecksumSHA256 = source.ChecksumSHA256;
+            target.ChecksumType = source.ChecksumType;
+            target.ContentRange = source.ContentRange;
+            target.Headers = source.Headers;
+            target.DeleteMarker = source.DeleteMarker;
+            target.ETag = source.ETag;
+            target.Expiration = source.Expiration;
+            target.ExpiresString = source.ExpiresString;
+            target.LastModified = source.LastModified;
+            target.Metadata = source.Metadata;
+            target.MissingMeta = source.MissingMeta;
+            target.ObjectLockLegalHoldStatus = source.ObjectLockLegalHoldStatus;
+            target.ObjectLockMode = source.ObjectLockMode;
+            target.ObjectLockRetainUntilDate = source.ObjectLockRetainUntilDate;
+            target.PartsCount = source.PartsCount;
+            target.ReplicationStatus = source.ReplicationStatus;
+            target.RequestCharged = source.RequestCharged;
+            target.RestoreExpiration = source.RestoreExpiration;
+            target.RestoreInProgress = source.RestoreInProgress;
+            target.ServerSideEncryptionCustomerMethod = source.ServerSideEncryptionCustomerMethod;
+            target.ServerSideEncryptionCustomerProvidedKeyMD5 = source.ServerSideEncryptionCustomerProvidedKeyMD5;
+            target.ServerSideEncryptionKeyManagementServiceKeyId = source.ServerSideEncryptionKeyManagementServiceKeyId;
+            target.ServerSideEncryptionMethod = source.ServerSideEncryptionMethod;
+            target.StorageClass = source.StorageClass;
+            target.TagCount = source.TagCount;
+            target.VersionId = source.VersionId;
+            target.WebsiteRedirectLocation = source.WebsiteRedirectLocation;
+
+            // Copy response metadata  
+            target.ResponseMetadata = source.ResponseMetadata;
+            target.ContentLength = source.ContentLength;
+            target.HttpStatusCode = source.HttpStatusCode;
+        }
+
+        /// <summary>
         /// Maps a GetObjectResponse to TransferUtilityDownloadResponse.
         /// Uses the field mappings defined in mapping.json "Conversion" -> "GetObjectResponse" -> "DownloadResponse".
         /// </summary>
         /// <param name="source">The GetObjectResponse to map from</param>
         /// <returns>A new TransferUtilityDownloadResponse with mapped fields</returns>
+        /// <exception cref="ArgumentNullException">Thrown when source is null</exception>
         internal static TransferUtilityDownloadResponse MapGetObjectResponse(GetObjectResponse source)
         {
             if (source == null)
-                return null;
+                throw new ArgumentNullException(nameof(source));
 
             var response = new TransferUtilityDownloadResponse();
-
-            // Map all fields as defined in mapping.json "Conversion" -> "GetObjectResponse" -> "DownloadResponse"
-            response.AcceptRanges = source.AcceptRanges;
-            response.BucketKeyEnabled = source.BucketKeyEnabled.GetValueOrDefault();
-            response.ChecksumCRC32 = source.ChecksumCRC32;
-            response.ChecksumCRC32C = source.ChecksumCRC32C;
-            response.ChecksumCRC64NVME = source.ChecksumCRC64NVME;
-            response.ChecksumSHA1 = source.ChecksumSHA1;
-            response.ChecksumSHA256 = source.ChecksumSHA256;
-            response.ChecksumType = source.ChecksumType;
-            response.ContentRange = source.ContentRange;
-            response.Headers = source.Headers;
-            response.DeleteMarker = source.DeleteMarker;
-            response.ETag = source.ETag;
-            response.Expiration = source.Expiration;
-            response.ExpiresString = source.ExpiresString;
-            response.LastModified = source.LastModified;
-            response.Metadata = source.Metadata;
-            response.MissingMeta = source.MissingMeta;
-            response.ObjectLockLegalHoldStatus = source.ObjectLockLegalHoldStatus;
-            response.ObjectLockMode = source.ObjectLockMode;
-            response.ObjectLockRetainUntilDate = source.ObjectLockRetainUntilDate;
-            response.PartsCount = source.PartsCount;
-            response.ReplicationStatus = source.ReplicationStatus;
-            response.RequestCharged = source.RequestCharged;
-            response.RestoreExpiration = source.RestoreExpiration;
-            response.RestoreInProgress = source.RestoreInProgress;
-            response.ServerSideEncryptionCustomerMethod = source.ServerSideEncryptionCustomerMethod;
-            response.ServerSideEncryptionCustomerProvidedKeyMD5 = source.ServerSideEncryptionCustomerProvidedKeyMD5;
-            response.ServerSideEncryptionKeyManagementServiceKeyId = source.ServerSideEncryptionKeyManagementServiceKeyId;
-            response.ServerSideEncryptionMethod = source.ServerSideEncryptionMethod;
-            response.StorageClass = source.StorageClass;
-            response.TagCount = source.TagCount;
-            response.VersionId = source.VersionId;
-            response.WebsiteRedirectLocation = source.WebsiteRedirectLocation;
-
-            // Copy response metadata
-            response.ResponseMetadata = source.ResponseMetadata;
-            response.ContentLength = source.ContentLength;
-            response.HttpStatusCode = source.HttpStatusCode;
-
+            PopulateGetObjectResponseBase(source, response);
             return response;
         }
+
+        /// <summary>
+        /// Maps a GetObjectResponse to TransferUtilityOpenStreamResponse.
+        /// Uses the same field mappings as DownloadResponse plus the ResponseStream property.
+        /// </summary>
+        /// <param name="source">The GetObjectResponse to map from</param>
+        /// <returns>A new TransferUtilityOpenStreamResponse with mapped fields</returns>
+        /// <exception cref="ArgumentNullException">Thrown when source is null</exception>
+        internal static TransferUtilityOpenStreamResponse MapGetObjectResponseToOpenStream(GetObjectResponse source)
+        {
+            if (source == null)
+                throw new ArgumentNullException(nameof(source));
+
+            var response = new TransferUtilityOpenStreamResponse();
+            PopulateGetObjectResponseBase(source, response);
+            response.ResponseStream = source.ResponseStream;
+
+            return response;            
+        }
+
         
     }
 }
