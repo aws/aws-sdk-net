@@ -116,6 +116,20 @@
     "CompleteMultipartUploadResponse": {
       "ServerSideEncryption": "ServerSideEncryptionMethod",
       "SSEKMSKeyId": "ServerSideEncryptionKeyManagementServiceKeyId"
+    },
+    "GetObjectResponse": {
+      "SSECustomerAlgorithm": "ServerSideEncryptionCustomerMethod",
+      "SSECustomerKeyMD5": "ServerSideEncryptionCustomerProvidedKeyMD5", 
+      "SSEKMSKeyId": "ServerSideEncryptionKeyManagementServiceKeyId",
+      "ServerSideEncryption": "ServerSideEncryptionMethod",
+      "Restore": "RestoreExpiration"
+    },
+    "TransferUtilityDownloadResponse": {
+      "SSECustomerAlgorithm": "ServerSideEncryptionCustomerMethod",
+      "SSECustomerKeyMD5": "ServerSideEncryptionCustomerProvidedKeyMD5",
+      "SSEKMSKeyId": "ServerSideEncryptionKeyManagementServiceKeyId", 
+      "ServerSideEncryption": "ServerSideEncryptionMethod",
+      "Restore": "RestoreExpiration"
     }
   }
 }

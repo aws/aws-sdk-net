@@ -319,36 +319,59 @@ namespace AWSSDK.UnitTests
                 // Resolve alias to actual property name
                 var resolvedPropertyName = ResolvePropertyName(propertyName, sourceType.Name);
                 var sourceProperty = sourceType.GetProperty(resolvedPropertyName);
+                
+                // Determine the correct property type for test value generation
+                Type propertyTypeForTestValue = sourceProperty?.PropertyType;
 
-                if (usesHeadersCollection && sourceProperty is null)
+                // If direct property doesn't exist but we use headers collection, check Headers collection property type
+                PropertyInfo sourceHeadersCollectionProperty = null;
+                if (propertyTypeForTestValue == null && usesHeadersCollection)
+                {
+                    sourceHeadersCollectionProperty = typeof(HeadersCollection).GetProperty(resolvedPropertyName);
+                    propertyTypeForTestValue = sourceHeadersCollectionProperty?.PropertyType;
+                }
+
+                // Fallback to string if still null
+                propertyTypeForTestValue ??= typeof(string);
+
+                var testValue = GenerateTestValue(propertyTypeForTestValue, propertyName);
+                
+                // Set the direct property if it exists and is writable
+                if (sourceProperty != null && sourceProperty.CanWrite)
+                {
+                    sourceProperty.SetValue(sourceRequest, testValue);
+                    testDataValues[propertyName] = testValue;
+                }
+
+                // Additionally, if usesHeadersCollection is true, also set in Headers collection
+                if (usesHeadersCollection)
                 {
                     // Check if source type has a Headers property of type HeadersCollection
                     var sourceHeadersProperty = sourceType.GetProperty("Headers");
                     if (sourceHeadersProperty != null && typeof(HeadersCollection).IsAssignableFrom(sourceHeadersProperty.PropertyType))
                     {
                         var sourceHeadersCollection = sourceHeadersProperty.GetValue(sourceRequest) as HeadersCollection;
-                        var sourceHeadersCollectionProperty = typeof(HeadersCollection).GetProperty(resolvedPropertyName);
-
-                        Assert.IsNotNull(sourceHeadersCollectionProperty, $"Source property '{resolvedPropertyName}' in '{nameof(HeadersCollection)}' should not be null");
-
-                        if (sourceHeadersCollectionProperty.CanWrite == true)
+                        
+                        // Use the already resolved property if we found it above, otherwise look it up again
+                        if (sourceHeadersCollectionProperty == null)
                         {
-                            var testValue = GenerateTestValue(sourceHeadersCollectionProperty.PropertyType, propertyName);
+                            sourceHeadersCollectionProperty = typeof(HeadersCollection).GetProperty(resolvedPropertyName);
+                        }
+
+                        if (sourceHeadersCollectionProperty != null && sourceHeadersCollectionProperty.CanWrite)
+                        {
                             sourceHeadersCollectionProperty.SetValue(sourceHeadersCollection, testValue);
                             testDataValues[propertyName] = testValue;
                         }
                     }
                 }
-                else
-                {
-                    Assert.IsNotNull(sourceProperty, $"Source property '{propertyName}' should not be null");
 
-                    if (sourceProperty.CanWrite == true)
-                    {
-                        var testValue = GenerateTestValue(sourceProperty.PropertyType, propertyName);
-                        sourceProperty.SetValue(sourceRequest, testValue);
-                        testDataValues[propertyName] = testValue;
-                    }
+                // If neither direct property nor headers collection property exists, fail the test
+                if (sourceProperty == null && (!usesHeadersCollection || 
+                    sourceType.GetProperty("Headers") == null || 
+                    sourceHeadersCollectionProperty == null))
+                {
+                    Assert.Fail($"Source property '{propertyName}' (resolved to: {resolvedPropertyName}) not found in {sourceType.Name} or HeadersCollection");
                 }
             }
 
@@ -561,6 +584,56 @@ namespace AWSSDK.UnitTests
                         .Select(p => p.Name)
                         .ToList();
                 });
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public void MapGetObjectResponse_AllMappedProperties_WorkCorrectly()
+        {
+            ValidateMappingTransferUtilityAndSdkRequests<GetObjectResponse, TransferUtilityDownloadResponse>(
+                new[] { "Conversion", "GetObjectResponse", "DownloadResponse" },
+                (sourceResponse) =>
+                {
+                    return ResponseMapper.MapGetObjectResponse(sourceResponse);
+                },
+                usesHeadersCollection: true,
+                (sourceResponse) =>
+                {
+                    sourceResponse.HttpStatusCode = HttpStatusCode.OK;
+                    sourceResponse.ContentLength = 2048;
+                },
+                (sourceResponse, targetResponse) =>
+                {
+                    Assert.AreEqual(sourceResponse.HttpStatusCode, targetResponse.HttpStatusCode, "HttpStatusCode should match");
+                    Assert.AreEqual(sourceResponse.ContentLength, targetResponse.ContentLength, "ContentLength should match");
+                });
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public void MapGetObjectResponse_NullValues_HandledCorrectly()
+        {
+            // Test null handling scenarios
+            var testCases = new[]
+            {
+                // Test null Expiration
+                new GetObjectResponse { Expiration = null },
+                
+                // Test null enum conversions
+                new GetObjectResponse { ChecksumType = null, RequestCharged = null, ServerSideEncryptionMethod = null }
+            };
+
+            foreach (var testCase in testCases)
+            {
+                var mapped = ResponseMapper.MapGetObjectResponse(testCase);
+                Assert.IsNotNull(mapped, "Response should always be mappable");
+
+                // Test null handling
+                if (testCase.Expiration == null)
+                {
+                    Assert.IsNull(mapped.Expiration, "Null Expiration should map to null");
+                }
+            }
         }
 
         [TestMethod]
