@@ -1,3 +1,110 @@
+### 3.7.1151.0 (2025-10-24 19:14 UTC)
+* AmplifyUIBuilder (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* ApplicationSignals (3.7.503.0)
+	* Update endpoint ruleset parameters casing
+* Billing (3.7.504.0)
+	* Update endpoint ruleset parameters casing
+* Budgets (3.7.505.0)
+	* Update endpoint ruleset parameters casing
+* CertificateManager (3.7.501.0)
+	* Update endpoint ruleset parameters casing
+* ChimeSDKMessaging (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* CloudTrail (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* CodePipeline (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* ConnectWisdomService (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* DataPipeline (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* DataZone (3.7.508.0)
+	* This release adds support for MLflow connections Creation in DataZone
+* DocDB (3.7.503.0)
+	* Update endpoint ruleset parameters casing
+* DynamoDBv2 (3.7.508.0)
+	* Update endpoint ruleset parameters casing
+* EKS (3.7.505.0)
+	* Update endpoint ruleset parameters casing
+* ElasticLoadBalancing (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* Evs (3.7.504.0)
+	* Update endpoint ruleset parameters casing
+* FIS (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* GameLiftStreams (3.7.503.0)
+	* Add status reasons for TERMINATED stream sessions
+* GeoMaps (3.7.503.0)
+	* Added support for optional AdditionalFeatures parameter in the V2 GetTile API.
+* Inspector (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* IoTManagedIntegrations (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* IoTWireless (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* KinesisAnalytics (3.7.501.0)
+	* Update endpoint ruleset parameters casing
+* KinesisVideoSignalingChannels (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* LocationService (3.7.502.0)
+	* Added support for mobile app restrictions in Amazon Location API keys.
+* LookoutforVision (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* MediaPackage (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* MediaStore (3.7.501.0)
+	* Update endpoint ruleset parameters casing
+* MediaStoreData (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* MigrationHubStrategyRecommendations (3.7.501.0)
+	* Update endpoint ruleset parameters casing
+* MQ (3.7.503.0)
+	* Update endpoint ruleset parameters casing
+* Panorama (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* PaymentCryptography (3.7.504.0)
+	* Update endpoint ruleset parameters casing
+* PaymentCryptographyData (3.7.503.0)
+	* Update endpoint ruleset parameters casing
+* PcaConnectorAd (3.7.501.0)
+	* Update endpoint ruleset parameters casing
+* QBusiness (3.7.503.0)
+	* Update endpoint ruleset parameters casing
+* RoboMaker (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* Route53Domains (3.7.503.0)
+	* Update endpoint ruleset parameters casing
+* RTBFabric (3.7.501.0)
+	* Add support for custom rate limits.
+* S3Tables (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* SageMaker (3.7.513.0)
+	* Added inference components model data caching feature
+* SageMakerMetrics (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* SecurityHub (3.7.504.0)
+	* Release 3 layer filter support in GetFindingsV2, GetFindingStatisticsV2, GetResourcesV2,GetResourcesStatisticsV2, AutomationRule V2 APIs. Update filter casing in GetResourcesV2, GetResourcesStatisticsV2 APIs. Add new filters in GetFindingsV2, GetFindingStatisticsV2, AutomationRule V2 APIs.
+* ServiceDiscovery (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* SnowDeviceManagement (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* SSOOIDC (3.7.503.0)
+	* Update endpoint ruleset parameters casing
+* SupplyChain (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* Translate (3.7.501.0)
+	* Update endpoint ruleset parameters casing
+* VerifiedPermissions (3.7.503.0)
+	* Update endpoint ruleset parameters casing
+* VPCLattice (3.7.503.0)
+	* Update endpoint ruleset parameters casing
+* WorkSpacesThinClient (3.7.501.0)
+	* Update endpoint ruleset parameters casing
+* Core 3.7.500.37
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.1150.0 (2025-10-23 19:13 UTC)
 * Account (3.7.502.0)
 	* Update endpoint ruleset parameters casing
