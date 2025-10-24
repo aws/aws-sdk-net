@@ -23,11 +23,11 @@ using System.Threading.Tasks;
 
 namespace Amazon.S3.Transfer.Internal
 {
-    internal partial class UploadDirectoryCommand : BaseCommand
+    internal partial class UploadDirectoryCommand : BaseCommand<TransferUtilityUploadDirectoryResponse>
     {
         public bool UploadFilesConcurrently { get; set; }
 
-        public override async Task ExecuteAsync(CancellationToken cancellationToken)
+        public override async Task<TransferUtilityUploadDirectoryResponse> ExecuteAsync(CancellationToken cancellationToken)
         {
             string prefix = GetKeyPrefix();
 
@@ -87,6 +87,8 @@ namespace Amazon.S3.Transfer.Internal
                 if (asyncThrottler != null)
                     asyncThrottler.Dispose();
             }
+
+            return new TransferUtilityUploadDirectoryResponse();
         }
 
         private Task<string[]> GetFiles(string path, string searchPattern, SearchOption searchOption, CancellationToken cancellationToken)

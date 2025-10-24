@@ -13,6 +13,7 @@ using AWSSDK_DotNet.IntegrationTests.Utils;
 using Amazon.Util;
 using System.Net.Mime;
 using System.Runtime.InteropServices.ComTypes;
+using System.Threading.Tasks;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 {
@@ -1431,6 +1432,272 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             var downloadPath = path + ".download";
             var metadata = Client.GetObjectMetadata(new GetObjectMetadataRequest { BucketName = bucketName, Key = "test-content-type" });
             Assert.IsTrue(metadata.Headers.ContentType.Equals(MediaTypeNames.Text.Plain));
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public async Task UploadWithResponseAsyncSmallFileTest()
+        {
+            var fileName = UtilityMethods.GenerateName(@"UploadWithResponseTest\SmallFile");
+            var path = Path.Combine(BasePath, fileName);
+            var fileSize = 1 * MEG_SIZE; // Small file for single-part upload
+            UtilityMethods.GenerateFile(path, fileSize);
+
+            using (var transferUtility = new TransferUtility(Client))
+            {
+                var request = new TransferUtilityUploadRequest
+                {
+                    BucketName = bucketName,
+                    FilePath = path,
+                    Key = fileName,
+                    ContentType = octetStreamContentType
+                };
+
+                var response = await transferUtility.UploadWithResponseAsync(request);
+
+                // Validate response object is not null
+                Assert.IsNotNull(response, "Response should not be null");
+
+                // Validate essential response fields that should always be present
+                Assert.IsNotNull(response.ETag, "ETag should not be null");
+                Assert.IsTrue(response.ETag.Length > 0, "ETag should not be empty");
+
+                // Validate AWS service response metadata
+                Assert.IsNotNull(response.ResponseMetadata, "ResponseMetadata should not be null");
+                Assert.IsNotNull(response.ResponseMetadata.RequestId, "RequestId should not be null");
+
+                // For small files, we expect single-part upload behavior - ETag should be MD5 format (no quotes or dashes)
+                // ETag format varies, so we just ensure it's a valid non-empty string
+                Console.WriteLine($"ETag: {response.ETag}");
+                Console.WriteLine($"VersionId: {response.VersionId}");
+
+                // Validate file was actually uploaded by checking metadata
+                var metadata = await Client.GetObjectMetadataAsync(new GetObjectMetadataRequest
+                {
+                    BucketName = bucketName,
+                    Key = fileName
+                });
+                Assert.AreEqual(fileSize, metadata.ContentLength, "Uploaded file size should match original");
+                Assert.AreEqual(response.ETag, metadata.ETag, "ETag from response should match object metadata");
+            }
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public async Task UploadWithResponseAsyncLargeFileTest()
+        {
+            var fileName = UtilityMethods.GenerateName(@"UploadWithResponseTest\LargeFile");
+            var path = Path.Combine(BasePath, fileName);
+            var fileSize = 20 * MEG_SIZE; // Large file for multipart upload
+            UtilityMethods.GenerateFile(path, fileSize);
+
+            using (var transferUtility = new TransferUtility(Client))
+            {
+                var request = new TransferUtilityUploadRequest
+                {
+                    BucketName = bucketName,
+                    FilePath = path,
+                    Key = fileName,
+                    ContentType = octetStreamContentType
+                };
+
+                var response = await transferUtility.UploadWithResponseAsync(request);
+
+                // Validate response object is not null
+                Assert.IsNotNull(response, "Response should not be null");
+
+                // Validate essential response fields that should always be present
+                Assert.IsNotNull(response.ETag, "ETag should not be null");
+                Assert.IsTrue(response.ETag.Length > 0, "ETag should not be empty");
+
+                // Validate AWS service response metadata
+                Assert.IsNotNull(response.ResponseMetadata, "ResponseMetadata should not be null");
+                Assert.IsNotNull(response.ResponseMetadata.RequestId, "RequestId should not be null");
+
+                // For multipart uploads, ETag format is different (contains dashes)
+                // We just validate it's a valid string for now
+                Console.WriteLine($"ETag (multipart): {response.ETag}");
+                Console.WriteLine($"VersionId: {response.VersionId}");
+
+                // Validate file was actually uploaded by checking metadata
+                var metadata = await Client.GetObjectMetadataAsync(new GetObjectMetadataRequest
+                {
+                    BucketName = bucketName,
+                    Key = fileName
+                });
+                Assert.AreEqual(fileSize, metadata.ContentLength, "Uploaded file size should match original");
+                Assert.AreEqual(response.ETag, metadata.ETag, "ETag from response should match object metadata");
+            }
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public async Task UploadWithResponseAsyncStreamTest()
+        {
+            var fileName = UtilityMethods.GenerateName(@"UploadWithResponseTest\StreamFile");
+            var path = Path.Combine(BasePath, fileName);
+            var fileSize = 5 * MEG_SIZE;
+            UtilityMethods.GenerateFile(path, fileSize);
+
+            using (var transferUtility = new TransferUtility(Client))
+            using (var fileStream = File.OpenRead(path))
+            {
+                var request = new TransferUtilityUploadRequest
+                {
+                    BucketName = bucketName,
+                    InputStream = fileStream,
+                    Key = fileName,
+                    ContentType = octetStreamContentType
+                };
+
+                var response = await transferUtility.UploadWithResponseAsync(request);
+
+                // Validate response object is not null
+                Assert.IsNotNull(response, "Response should not be null");
+
+                // Validate essential response fields that should always be present
+                Assert.IsNotNull(response.ETag, "ETag should not be null");
+                Assert.IsTrue(response.ETag.Length > 0, "ETag should not be empty");
+
+                // Validate AWS service response metadata
+                Assert.IsNotNull(response.ResponseMetadata, "ResponseMetadata should not be null");
+                Assert.IsNotNull(response.ResponseMetadata.RequestId, "RequestId should not be null");
+
+                Console.WriteLine($"ETag (stream): {response.ETag}");
+                Console.WriteLine($"VersionId: {response.VersionId}");
+
+                // Validate file was actually streamed and uploaded correctly
+                var metadata = await Client.GetObjectMetadataAsync(new GetObjectMetadataRequest
+                {
+                    BucketName = bucketName,
+                    Key = fileName
+                });
+                Assert.AreEqual(fileSize, metadata.ContentLength, "Uploaded stream size should match original");
+                Assert.AreEqual(response.ETag, metadata.ETag, "ETag from response should match object metadata");
+
+                // Validate content by downloading and comparing
+                var downloadPath = path + ".download";
+                await transferUtility.DownloadAsync(new TransferUtilityDownloadRequest
+                {
+                    BucketName = bucketName,
+                    Key = fileName,
+                    FilePath = downloadPath
+                });
+                UtilityMethods.CompareFiles(path, downloadPath);
+            }
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public async Task UploadWithResponseAsyncWithChecksumTest()
+        {
+            var fileName = UtilityMethods.GenerateName(@"UploadWithResponseTest\ChecksumFile");
+            var path = Path.Combine(BasePath, fileName);
+            var fileSize = 2 * MEG_SIZE;
+            UtilityMethods.GenerateFile(path, fileSize);
+
+            // Calculate checksum for the file
+            var fileBytes = File.ReadAllBytes(path);
+            var precalculatedChecksum = CryptoUtilFactory.CryptoInstance.ComputeCRC32Hash(fileBytes);
+
+            using (var transferUtility = new TransferUtility(Client))
+            {
+                var request = new TransferUtilityUploadRequest
+                {
+                    BucketName = bucketName,
+                    FilePath = path,
+                    Key = fileName,
+                    ContentType = octetStreamContentType,
+                    ChecksumCRC32 = precalculatedChecksum
+                };
+
+                var response = await transferUtility.UploadWithResponseAsync(request);
+
+                // Validate response object is not null
+                Assert.IsNotNull(response, "Response should not be null");
+
+                // Validate essential response fields
+                Assert.IsNotNull(response.ETag, "ETag should not be null");
+                Assert.IsTrue(response.ETag.Length > 0, "ETag should not be empty");
+
+                // Validate checksum fields if they should be present
+                // Note: Checksum fields in response may not always be set depending on S3 behavior
+                Console.WriteLine($"ETag: {response.ETag}");
+                Console.WriteLine($"ChecksumCRC32: {response.ChecksumCRC32}");
+                Console.WriteLine($"ChecksumType: {response.ChecksumType}");
+
+                // Validate AWS service response metadata
+                Assert.IsNotNull(response.ResponseMetadata, "ResponseMetadata should not be null");
+                Assert.IsNotNull(response.ResponseMetadata.RequestId, "RequestId should not be null");
+
+                // Validate file was uploaded correctly
+                var metadata = await Client.GetObjectMetadataAsync(new GetObjectMetadataRequest
+                {
+                    BucketName = bucketName,
+                    Key = fileName
+                });
+                Assert.AreEqual(fileSize, metadata.ContentLength, "Uploaded file size should match original");
+            }
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public async Task UploadWithResponseAsyncCompareWithLegacyUploadTest()
+        {
+            var fileName = UtilityMethods.GenerateName(@"UploadWithResponseTest\CompareFile");
+            var path = Path.Combine(BasePath, fileName);
+            var fileSize = 8 * MEG_SIZE;
+            UtilityMethods.GenerateFile(path, fileSize);
+
+            using (var transferUtility = new TransferUtility(Client))
+            {
+                // Test the new UploadWithResponseAsync method
+                var responseRequest = new TransferUtilityUploadRequest
+                {
+                    BucketName = bucketName,
+                    FilePath = path,
+                    Key = fileName + "-with-response",
+                    ContentType = octetStreamContentType
+                };
+
+                var response = await transferUtility.UploadWithResponseAsync(responseRequest);
+
+                // Test the legacy Upload method for comparison
+                var legacyRequest = new TransferUtilityUploadRequest
+                {
+                    BucketName = bucketName,
+                    FilePath = path,
+                    Key = fileName + "-legacy",
+                    ContentType = octetStreamContentType
+                };
+
+                await transferUtility.UploadAsync(legacyRequest);
+
+                // Validate that both uploads resulted in the same file being uploaded
+                var responseMetadata = await Client.GetObjectMetadataAsync(new GetObjectMetadataRequest
+                {
+                    BucketName = bucketName,
+                    Key = fileName + "-with-response"
+                });
+
+                var legacyMetadata = await Client.GetObjectMetadataAsync(new GetObjectMetadataRequest
+                {
+                    BucketName = bucketName,
+                    Key = fileName + "-legacy"
+                });
+
+                // Both should have the same file size and content type
+                Assert.AreEqual(responseMetadata.ContentLength, legacyMetadata.ContentLength, "File sizes should match");
+                Assert.AreEqual(responseMetadata.Headers.ContentType, legacyMetadata.Headers.ContentType, "Content types should match");
+
+                // Validate the response contains the expected ETag
+                Assert.IsNotNull(response.ETag, "Response ETag should not be null");
+                Assert.AreEqual(response.ETag, responseMetadata.ETag, "Response ETag should match metadata ETag");
+
+                Console.WriteLine($"UploadWithResponseAsync ETag: {response.ETag}");
+                Console.WriteLine($"Legacy upload ETag: {legacyMetadata.ETag}");
+                Console.WriteLine($"File size: {fileSize}, Response metadata size: {responseMetadata.ContentLength}");
+            }
         }
 
 #if ASYNC_AWAIT
