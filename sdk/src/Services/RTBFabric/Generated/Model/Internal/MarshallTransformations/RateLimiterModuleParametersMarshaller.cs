@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.RTBFabric.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ModuleParameters Marshaller
+    /// RateLimiterModuleParameters Marshaller
     /// </summary>
-    public class ModuleParametersMarshaller : IRequestMarshaller<ModuleParameters, JsonMarshallerContext> 
+    public class RateLimiterModuleParametersMarshaller : IRequestMarshaller<RateLimiterModuleParameters, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,41 +42,21 @@ namespace Amazon.RTBFabric.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ModuleParameters requestObject, JsonMarshallerContext context)
+        public void Marshall(RateLimiterModuleParameters requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetNoBid())
+            if(requestObject.IsSetTps())
             {
-                context.Writer.WritePropertyName("noBid");
-                context.Writer.WriteStartObject();
-
-                var marshaller = NoBidModuleParametersMarshaller.Instance;
-                marshaller.Marshall(requestObject.NoBid, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(requestObject.IsSetOpenRtbAttribute())
-            {
-                context.Writer.WritePropertyName("openRtbAttribute");
-                context.Writer.WriteStartObject();
-
-                var marshaller = OpenRtbAttributeModuleParametersMarshaller.Instance;
-                marshaller.Marshall(requestObject.OpenRtbAttribute, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(requestObject.IsSetRateLimiter())
-            {
-                context.Writer.WritePropertyName("rateLimiter");
-                context.Writer.WriteStartObject();
-
-                var marshaller = RateLimiterModuleParametersMarshaller.Instance;
-                marshaller.Marshall(requestObject.RateLimiter, context);
-
-                context.Writer.WriteEndObject();
+                context.Writer.WritePropertyName("tps");
+                if(StringUtils.IsSpecialFloatValue(requestObject.Tps.Value))
+                {
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialFloatValue(requestObject.Tps.Value));
+                }
+                else
+                {
+                    context.Writer.WriteNumberValue(requestObject.Tps.Value);
+                }
             }
 
         }
@@ -84,7 +64,7 @@ namespace Amazon.RTBFabric.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static ModuleParametersMarshaller Instance = new ModuleParametersMarshaller();
+        public readonly static RateLimiterModuleParametersMarshaller Instance = new RateLimiterModuleParametersMarshaller();
 
     }
 }
