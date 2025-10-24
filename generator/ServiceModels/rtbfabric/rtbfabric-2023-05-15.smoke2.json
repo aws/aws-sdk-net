@@ -1,11 +1,202 @@
 {
   "version" : 2,
   "testCases" : [ {
-    "id" : "RejectLink",
-    "operationName" : "RejectLink",
+    "id" : "CreateRequesterGateway",
+    "operationName" : "CreateRequesterGateway",
+    "input" : {
+      "description" : "Test gateway",
+      "vpcId" : "vpc-12345678",
+      "subnetIds" : [ "subnet-12345678" ],
+      "securityGroupIds" : [ "sg-12345678" ],
+      "clientToken" : "ghi901jkl234"
+    },
+    "expectation" : {
+      "success" : { }
+    },
+    "config" : {
+      "region" : "us-east-1",
+      "useFips" : false,
+      "useDualstack" : false,
+      "useAccountIdRouting" : true
+    }
+  }, {
+    "id" : "GetResponderGateway",
+    "operationName" : "GetResponderGateway",
+    "input" : {
+      "gatewayId" : "rtb-gw-12345"
+    },
+    "expectation" : {
+      "success" : { }
+    },
+    "config" : {
+      "region" : "us-east-1",
+      "useFips" : false,
+      "useDualstack" : false,
+      "useAccountIdRouting" : true
+    }
+  }, {
+    "id" : "UpdateRequesterGateway",
+    "operationName" : "UpdateRequesterGateway",
+    "input" : {
+      "gatewayId" : "rtb-gw-12345",
+      "description" : "Updated test gateway",
+      "clientToken" : "xyz789uvw012"
+    },
+    "expectation" : {
+      "success" : { }
+    },
+    "config" : {
+      "region" : "us-east-1",
+      "useFips" : false,
+      "useDualstack" : false,
+      "useAccountIdRouting" : true
+    }
+  }, {
+    "id" : "DeleteResponderGateway",
+    "operationName" : "DeleteResponderGateway",
+    "input" : {
+      "gatewayId" : "rtb-gw-12345"
+    },
+    "expectation" : {
+      "success" : { }
+    },
+    "config" : {
+      "region" : "us-east-1",
+      "useFips" : false,
+      "useDualstack" : false,
+      "useAccountIdRouting" : true
+    }
+  }, {
+    "id" : "CreateLink",
+    "operationName" : "CreateLink",
+    "input" : {
+      "gatewayId" : "rtb-gw-12345",
+      "peerGatewayId" : "rtb-gw-67890",
+      "logSettings" : {
+        "applicationLogs" : {
+          "sampling" : {
+            "errorLog" : 100.0,
+            "filterLog" : 0.0
+          }
+        }
+      }
+    },
+    "expectation" : {
+      "success" : { }
+    },
+    "config" : {
+      "region" : "us-east-1",
+      "useFips" : false,
+      "useDualstack" : false,
+      "useAccountIdRouting" : true
+    }
+  }, {
+    "id" : "DeleteLink",
+    "operationName" : "DeleteLink",
     "input" : {
       "gatewayId" : "rtb-gw-12345",
       "linkId" : "link-12345"
+    },
+    "expectation" : {
+      "success" : { }
+    },
+    "config" : {
+      "region" : "us-east-1",
+      "useFips" : false,
+      "useDualstack" : false,
+      "useAccountIdRouting" : true
+    }
+  }, {
+    "id" : "UpdateLinkModuleFlow",
+    "operationName" : "UpdateLinkModuleFlow",
+    "input" : {
+      "linkId" : "link-12345",
+      "gatewayId" : "rtb-gw-12345",
+      "clientToken" : "xyz789uvw012",
+      "modules" : [ {
+        "name" : "module-name",
+        "version" : "version"
+      } ]
+    },
+    "expectation" : {
+      "success" : { }
+    },
+    "config" : {
+      "region" : "us-east-1",
+      "useFips" : false,
+      "useDualstack" : false,
+      "useAccountIdRouting" : true
+    }
+  }, {
+    "id" : "ListTagsForResource_GatewayOnly",
+    "operationName" : "ListTagsForResource",
+    "input" : {
+      "resourceArn" : "arn:aws:rtbfabric:us-west-2:123456789012:gateway/rtb-gw-123testapp"
+    },
+    "expectation" : {
+      "success" : { }
+    },
+    "config" : {
+      "region" : "us-east-1",
+      "useFips" : false,
+      "useDualstack" : false,
+      "useAccountIdRouting" : true
+    }
+  }, {
+    "id" : "ListTagsForResource_GatewayWithLink",
+    "operationName" : "ListTagsForResource",
+    "input" : {
+      "resourceArn" : "arn:aws:rtbfabric:us-west-2:123456789012:gateway/rtb-gw-123testapp/link/link-nonexistent"
+    },
+    "expectation" : {
+      "success" : { }
+    },
+    "config" : {
+      "region" : "us-east-1",
+      "useFips" : false,
+      "useDualstack" : false,
+      "useAccountIdRouting" : true
+    }
+  }, {
+    "id" : "DeleteRequesterGateway",
+    "operationName" : "DeleteRequesterGateway",
+    "input" : {
+      "gatewayId" : "rtb-gw-12345"
+    },
+    "expectation" : {
+      "success" : { }
+    },
+    "config" : {
+      "region" : "us-east-1",
+      "useFips" : false,
+      "useDualstack" : false,
+      "useAccountIdRouting" : true
+    }
+  }, {
+    "id" : "CreateInboundExternalLink",
+    "operationName" : "CreateInboundExternalLink",
+    "input" : {
+      "gatewayId" : "rtb-gw-12345",
+      "clientToken" : "abc123def456"
+    },
+    "expectation" : {
+      "success" : { }
+    },
+    "config" : {
+      "region" : "us-east-1",
+      "useFips" : false,
+      "useDualstack" : false,
+      "useAccountIdRouting" : true
+    }
+  }, {
+    "id" : "UpdateResponderGateway",
+    "operationName" : "UpdateResponderGateway",
+    "input" : {
+      "gatewayId" : "rtb-gw-12345",
+      "description" : "Updated test gateway",
+      "protocol" : "HTTPS",
+      "port" : 433,
+      "clientToken" : "xyz789uvw012"
     },
     "expectation" : {
       "success" : { }
@@ -33,8 +224,8 @@
       "useAccountIdRouting" : true
     }
   }, {
-    "id" : "ListLinks",
-    "operationName" : "ListLinks",
+    "id" : "GetRequesterGateway",
+    "operationName" : "GetRequesterGateway",
     "input" : {
       "gatewayId" : "rtb-gw-12345"
     },
@@ -48,8 +239,8 @@
       "useAccountIdRouting" : true
     }
   }, {
-    "id" : "GetRequesterGateway",
-    "operationName" : "GetRequesterGateway",
+    "id" : "ListLinks",
+    "operationName" : "ListLinks",
     "input" : {
       "gatewayId" : "rtb-gw-12345"
     },
@@ -73,6 +264,39 @@
       "port" : 443,
       "protocol" : "HTTPS",
       "clientToken" : "stu567vwx890"
+    },
+    "expectation" : {
+      "success" : { }
+    },
+    "config" : {
+      "region" : "us-east-1",
+      "useFips" : false,
+      "useDualstack" : false,
+      "useAccountIdRouting" : true
+    }
+  }, {
+    "id" : "CreateOutboundExternalLink",
+    "operationName" : "CreateOutboundExternalLink",
+    "input" : {
+      "gatewayId" : "rtb-gw-12345",
+      "publicEndpoint" : "https://example.com",
+      "clientToken" : "mno345pqr678"
+    },
+    "expectation" : {
+      "success" : { }
+    },
+    "config" : {
+      "region" : "us-east-1",
+      "useFips" : false,
+      "useDualstack" : false,
+      "useAccountIdRouting" : true
+    }
+  }, {
+    "id" : "RejectLink",
+    "operationName" : "RejectLink",
+    "input" : {
+      "gatewayId" : "rtb-gw-12345",
+      "linkId" : "link-12345"
     },
     "expectation" : {
       "success" : { }
@@ -122,78 +346,11 @@
       "useAccountIdRouting" : true
     }
   }, {
-    "id" : "AcceptLink",
-    "operationName" : "AcceptLink",
-    "input" : {
-      "gatewayId" : "rtb-gw-12345",
-      "linkId" : "link-12345",
-      "logSettings" : {
-        "applicationLogs" : {
-          "sampling" : {
-            "errorLog" : 100.0,
-            "filterLog" : 0.0
-          }
-        }
-      }
-    },
-    "expectation" : {
-      "success" : { }
-    },
-    "config" : {
-      "region" : "us-east-1",
-      "useFips" : false,
-      "useDualstack" : false,
-      "useAccountIdRouting" : true
-    }
-  }, {
-    "id" : "DeleteLink",
-    "operationName" : "DeleteLink",
+    "id" : "DeleteInboundExternalLink",
+    "operationName" : "DeleteInboundExternalLink",
     "input" : {
       "gatewayId" : "rtb-gw-12345",
       "linkId" : "link-12345"
-    },
-    "expectation" : {
-      "success" : { }
-    },
-    "config" : {
-      "region" : "us-east-1",
-      "useFips" : false,
-      "useDualstack" : false,
-      "useAccountIdRouting" : true
-    }
-  }, {
-    "id" : "CreateLink",
-    "operationName" : "CreateLink",
-    "input" : {
-      "gatewayId" : "rtb-gw-12345",
-      "peerGatewayId" : "rtb-gw-67890",
-      "logSettings" : {
-        "applicationLogs" : {
-          "sampling" : {
-            "errorLog" : 100.0,
-            "filterLog" : 0.0
-          }
-        }
-      }
-    },
-    "expectation" : {
-      "success" : { }
-    },
-    "config" : {
-      "region" : "us-east-1",
-      "useFips" : false,
-      "useDualstack" : false,
-      "useAccountIdRouting" : true
-    }
-  }, {
-    "id" : "UpdateResponderGateway",
-    "operationName" : "UpdateResponderGateway",
-    "input" : {
-      "gatewayId" : "rtb-gw-12345",
-      "description" : "Updated test gateway",
-      "protocol" : "HTTPS",
-      "port" : 433,
-      "clientToken" : "xyz789uvw012"
     },
     "expectation" : {
       "success" : { }
@@ -221,144 +378,35 @@
       "useAccountIdRouting" : true
     }
   }, {
-    "id" : "UpdateLinkModuleFlow",
-    "operationName" : "UpdateLinkModuleFlow",
-    "input" : {
-      "linkId" : "link-12345",
-      "gatewayId" : "rtb-gw-12345",
-      "clientToken" : "xyz789uvw012",
-      "modules" : [ {
-        "name" : "module-name",
-        "version" : "version"
-      } ]
-    },
-    "expectation" : {
-      "success" : { }
-    },
-    "config" : {
-      "region" : "us-east-1",
-      "useFips" : false,
-      "useDualstack" : false,
-      "useAccountIdRouting" : true
-    }
-  }, {
-    "id" : "DeleteResponderGateway",
-    "operationName" : "DeleteResponderGateway",
-    "input" : {
-      "gatewayId" : "rtb-gw-12345"
-    },
-    "expectation" : {
-      "success" : { }
-    },
-    "config" : {
-      "region" : "us-east-1",
-      "useFips" : false,
-      "useDualstack" : false,
-      "useAccountIdRouting" : true
-    }
-  }, {
-    "id" : "CreateRequesterGateway",
-    "operationName" : "CreateRequesterGateway",
-    "input" : {
-      "description" : "Test gateway",
-      "vpcId" : "vpc-12345678",
-      "subnetIds" : [ "subnet-12345678" ],
-      "securityGroupIds" : [ "sg-12345678" ],
-      "clientToken" : "ghi901jkl234"
-    },
-    "expectation" : {
-      "success" : { }
-    },
-    "config" : {
-      "region" : "us-east-1",
-      "useFips" : false,
-      "useDualstack" : false,
-      "useAccountIdRouting" : true
-    }
-  }, {
-    "id" : "ListTagsForResource_GatewayOnly",
-    "operationName" : "ListTagsForResource",
-    "input" : {
-      "resourceArn" : "arn:aws:rtbfabric:us-west-2:123456789012:gateway/rtb-gw-123testapp"
-    },
-    "expectation" : {
-      "success" : { }
-    },
-    "config" : {
-      "region" : "us-east-1",
-      "useFips" : false,
-      "useDualstack" : false,
-      "useAccountIdRouting" : true
-    }
-  }, {
-    "id" : "ListTagsForResource_GatewayWithLink",
-    "operationName" : "ListTagsForResource",
-    "input" : {
-      "resourceArn" : "arn:aws:rtbfabric:us-west-2:123456789012:gateway/rtb-gw-123testapp/link/link-nonexistent"
-    },
-    "expectation" : {
-      "success" : { }
-    },
-    "config" : {
-      "region" : "us-east-1",
-      "useFips" : false,
-      "useDualstack" : false,
-      "useAccountIdRouting" : true
-    }
-  }, {
-    "id" : "CreateInboundExternalLink",
-    "operationName" : "CreateInboundExternalLink",
-    "input" : {
-      "gatewayId" : "rtb-gw-12345",
-      "clientToken" : "abc123def456"
-    },
-    "expectation" : {
-      "success" : { }
-    },
-    "config" : {
-      "region" : "us-east-1",
-      "useFips" : false,
-      "useDualstack" : false,
-      "useAccountIdRouting" : true
-    }
-  }, {
-    "id" : "DeleteRequesterGateway",
-    "operationName" : "DeleteRequesterGateway",
-    "input" : {
-      "gatewayId" : "rtb-gw-12345"
-    },
-    "expectation" : {
-      "success" : { }
-    },
-    "config" : {
-      "region" : "us-east-1",
-      "useFips" : false,
-      "useDualstack" : false,
-      "useAccountIdRouting" : true
-    }
-  }, {
-    "id" : "UpdateRequesterGateway",
-    "operationName" : "UpdateRequesterGateway",
-    "input" : {
-      "gatewayId" : "rtb-gw-12345",
-      "description" : "Updated test gateway",
-      "clientToken" : "xyz789uvw012"
-    },
-    "expectation" : {
-      "success" : { }
-    },
-    "config" : {
-      "region" : "us-east-1",
-      "useFips" : false,
-      "useDualstack" : false,
-      "useAccountIdRouting" : true
-    }
-  }, {
-    "id" : "GetOutboundExternalLink",
-    "operationName" : "GetOutboundExternalLink",
+    "id" : "GetInboundExternalLink",
+    "operationName" : "GetInboundExternalLink",
     "input" : {
       "gatewayId" : "rtb-gw-12345",
       "linkId" : "link-12345"
+    },
+    "expectation" : {
+      "success" : { }
+    },
+    "config" : {
+      "region" : "us-east-1",
+      "useFips" : false,
+      "useDualstack" : false,
+      "useAccountIdRouting" : true
+    }
+  }, {
+    "id" : "AcceptLink",
+    "operationName" : "AcceptLink",
+    "input" : {
+      "gatewayId" : "rtb-gw-12345",
+      "linkId" : "link-12345",
+      "logSettings" : {
+        "applicationLogs" : {
+          "sampling" : {
+            "errorLog" : 100.0,
+            "filterLog" : 0.0
+          }
+        }
+      }
     },
     "expectation" : {
       "success" : { }
@@ -386,24 +434,8 @@
       "useAccountIdRouting" : true
     }
   }, {
-    "id" : "GetInboundExternalLink",
-    "operationName" : "GetInboundExternalLink",
-    "input" : {
-      "gatewayId" : "rtb-gw-12345",
-      "linkId" : "link-12345"
-    },
-    "expectation" : {
-      "success" : { }
-    },
-    "config" : {
-      "region" : "us-east-1",
-      "useFips" : false,
-      "useDualstack" : false,
-      "useAccountIdRouting" : true
-    }
-  }, {
-    "id" : "DeleteInboundExternalLink",
-    "operationName" : "DeleteInboundExternalLink",
+    "id" : "GetOutboundExternalLink",
+    "operationName" : "GetOutboundExternalLink",
     "input" : {
       "gatewayId" : "rtb-gw-12345",
       "linkId" : "link-12345"
@@ -439,38 +471,6 @@
     "input" : {
       "resourceArn" : "arn:aws:rtbfabric:us-west-2:123456789012:gateway/rtb-gw-123testapp/link/link-nonexistent",
       "tagKeys" : [ "Environment" ]
-    },
-    "expectation" : {
-      "success" : { }
-    },
-    "config" : {
-      "region" : "us-east-1",
-      "useFips" : false,
-      "useDualstack" : false,
-      "useAccountIdRouting" : true
-    }
-  }, {
-    "id" : "CreateOutboundExternalLink",
-    "operationName" : "CreateOutboundExternalLink",
-    "input" : {
-      "gatewayId" : "rtb-gw-12345",
-      "publicEndpoint" : "https://example.com",
-      "clientToken" : "mno345pqr678"
-    },
-    "expectation" : {
-      "success" : { }
-    },
-    "config" : {
-      "region" : "us-east-1",
-      "useFips" : false,
-      "useDualstack" : false,
-      "useAccountIdRouting" : true
-    }
-  }, {
-    "id" : "GetResponderGateway",
-    "operationName" : "GetResponderGateway",
-    "input" : {
-      "gatewayId" : "rtb-gw-12345"
     },
     "expectation" : {
       "success" : { }

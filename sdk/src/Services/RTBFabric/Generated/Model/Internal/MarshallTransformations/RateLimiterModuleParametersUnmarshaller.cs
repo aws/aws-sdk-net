@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.RTBFabric.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ModuleParameters Object
+    /// Response Unmarshaller for RateLimiterModuleParameters Object
     /// </summary>  
-    public class ModuleParametersUnmarshaller : IUnmarshaller<ModuleParameters, XmlUnmarshallerContext>, IUnmarshaller<ModuleParameters, JsonUnmarshallerContext>
+    public class RateLimiterModuleParametersUnmarshaller : IUnmarshaller<RateLimiterModuleParameters, XmlUnmarshallerContext>, IUnmarshaller<RateLimiterModuleParameters, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ModuleParameters IUnmarshaller<ModuleParameters, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        RateLimiterModuleParameters IUnmarshaller<RateLimiterModuleParameters, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.RTBFabric.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public ModuleParameters Unmarshall(JsonUnmarshallerContext context)
+        public RateLimiterModuleParameters Unmarshall(JsonUnmarshallerContext context)
         {
-            ModuleParameters unmarshalledObject = new ModuleParameters();
+            RateLimiterModuleParameters unmarshalledObject = new RateLimiterModuleParameters();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,22 +66,10 @@ namespace Amazon.RTBFabric.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("noBid", targetDepth))
+                if (context.TestExpression("tps", targetDepth))
                 {
-                    var unmarshaller = NoBidModuleParametersUnmarshaller.Instance;
-                    unmarshalledObject.NoBid = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("openRtbAttribute", targetDepth))
-                {
-                    var unmarshaller = OpenRtbAttributeModuleParametersUnmarshaller.Instance;
-                    unmarshalledObject.OpenRtbAttribute = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("rateLimiter", targetDepth))
-                {
-                    var unmarshaller = RateLimiterModuleParametersUnmarshaller.Instance;
-                    unmarshalledObject.RateLimiter = unmarshaller.Unmarshall(context);
+                    var unmarshaller = FloatUnmarshaller.Instance;
+                    unmarshalledObject.Tps = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -89,12 +77,12 @@ namespace Amazon.RTBFabric.Model.Internal.MarshallTransformations
         }
 
 
-        private static ModuleParametersUnmarshaller _instance = new ModuleParametersUnmarshaller();        
+        private static RateLimiterModuleParametersUnmarshaller _instance = new RateLimiterModuleParametersUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ModuleParametersUnmarshaller Instance
+        public static RateLimiterModuleParametersUnmarshaller Instance
         {
             get
             {
