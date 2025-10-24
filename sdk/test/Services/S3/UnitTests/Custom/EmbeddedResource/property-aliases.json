@@ -130,6 +130,13 @@
       "SSEKMSKeyId": "ServerSideEncryptionKeyManagementServiceKeyId", 
       "ServerSideEncryption": "ServerSideEncryptionMethod",
       "Restore": "RestoreExpiration"
+    },
+      "TransferUtilityOpenStreamResponse": {
+      "SSECustomerAlgorithm": "ServerSideEncryptionCustomerMethod",
+      "SSECustomerKeyMD5": "ServerSideEncryptionCustomerProvidedKeyMD5",
+      "SSEKMSKeyId": "ServerSideEncryptionKeyManagementServiceKeyId", 
+      "ServerSideEncryption": "ServerSideEncryptionMethod",
+      "Restore": "RestoreExpiration"
     }
   }
 }
