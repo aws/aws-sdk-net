@@ -62,6 +62,34 @@ namespace Amazon.S3.Transfer.Internal
 
         IAmazonS3 _s3Client;
         TransferUtilityDownloadRequest _request;
+        long _totalTransferredBytes;
+
+        #region Event Firing Methods
+
+        private void FireTransferInitiatedEvent()
+        {
+            var transferInitiatedEventArgs = new DownloadInitiatedEventArgs(_request, _request.FilePath);
+            _request.OnRaiseTransferInitiatedEvent(transferInitiatedEventArgs);
+        }
+
+        private void FireTransferCompletedEvent(TransferUtilityDownloadResponse response, string filePath, long transferredBytes, long totalBytes)
+        {
+            var transferCompletedEventArgs = new DownloadCompletedEventArgs(
+                _request, 
+                response, 
+                filePath, 
+                transferredBytes, 
+                totalBytes);
+            _request.OnRaiseTransferCompletedEvent(transferCompletedEventArgs);
+        }
+
+        private void FireTransferFailedEvent(string filePath, long transferredBytes, long totalBytes = -1)
+        {
+            var eventArgs = new DownloadFailedEventArgs(this._request, filePath, transferredBytes, totalBytes);
+            this._request.OnRaiseTransferFailedEvent(eventArgs);
+        }
+
+        #endregion
 
         internal DownloadCommand(IAmazonS3 s3Client, TransferUtilityDownloadRequest request)
         {
@@ -89,6 +117,12 @@ namespace Amazon.S3.Transfer.Internal
 
         void OnWriteObjectProgressEvent(object sender, WriteObjectProgressArgs e)
         {
+            // Keep track of the total transferred bytes so that we can also return this value in case of failure
+            Interlocked.Add(ref _totalTransferredBytes, e.IncrementTransferred);
+            
+            // Set the Request property to enable access to the original download request
+            e.Request = this._request;
+            
             this._request.OnRaiseProgressEvent(e);
         }
 
