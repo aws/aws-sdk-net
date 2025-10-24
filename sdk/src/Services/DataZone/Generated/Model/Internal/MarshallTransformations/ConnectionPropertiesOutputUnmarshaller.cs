@@ -96,6 +96,12 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                     unmarshalledObject.IamProperties = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("mlflowProperties", targetDepth))
+                {
+                    var unmarshaller = MlflowPropertiesOutputUnmarshaller.Instance;
+                    unmarshalledObject.MlflowProperties = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("redshiftProperties", targetDepth))
                 {
                     var unmarshaller = RedshiftPropertiesOutputUnmarshaller.Instance;
