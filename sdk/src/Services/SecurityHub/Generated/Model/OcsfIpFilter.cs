@@ -30,30 +30,44 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteAutomationRuleV2 operation.
-    /// Deletes a V2 automation rule. This API is in public preview and subject to change.
+    /// The structure for filtering findings based on IP address attributes.
     /// </summary>
-    public partial class DeleteAutomationRuleV2Request : AmazonSecurityHubRequest
+    public partial class OcsfIpFilter
     {
-        private string _identifier;
+        private OcsfIpField _fieldName;
+        private IpFilter _filter;
 
         /// <summary>
-        /// Gets and sets the property Identifier. 
+        /// Gets and sets the property FieldName. 
         /// <para>
-        /// The ARN of the V2 automation rule.
+        /// The name of the IP address field to filter on.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public string Identifier
+        public OcsfIpField FieldName
         {
-            get { return this._identifier; }
-            set { this._identifier = value; }
+            get { return this._fieldName; }
+            set { this._fieldName = value; }
         }
 
-        // Check to see if Identifier property is set
-        internal bool IsSetIdentifier()
+        // Check to see if FieldName property is set
+        internal bool IsSetFieldName()
         {
-            return this._identifier != null;
+            return this._fieldName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Filter.
+        /// </summary>
+        public IpFilter Filter
+        {
+            get { return this._filter; }
+            set { this._filter = value; }
+        }
+
+        // Check to see if Filter property is set
+        internal bool IsSetFilter()
+        {
+            return this._filter != null;
         }
 
     }

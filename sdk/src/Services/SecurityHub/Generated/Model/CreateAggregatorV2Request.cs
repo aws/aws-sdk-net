@@ -31,7 +31,7 @@ namespace Amazon.SecurityHub.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateAggregatorV2 operation.
-    /// Enables aggregation across Amazon Web Services Regions. This API is in private preview
+    /// Enables aggregation across Amazon Web Services Regions. This API is in public preview
     /// and subject to change.
     /// </summary>
     public partial class CreateAggregatorV2Request : AmazonSecurityHubRequest

@@ -31,7 +31,7 @@ namespace Amazon.SecurityHub.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateAutomationRuleV2 operation.
-    /// Updates a V2 automation rule. This API is in private preview and subject to change.
+    /// Updates a V2 automation rule. This API is in public preview and subject to change.
     /// </summary>
     public partial class UpdateAutomationRuleV2Request : AmazonSecurityHubRequest
     {

@@ -1446,7 +1446,7 @@ namespace Amazon.SecurityHub
         /// IAM policy statement. You must have permission to perform the <c>securityhub:BatchUpdateFindings</c>
         /// action. Updates from <c>BatchUpdateFindingsV2</c> don't affect the value of f<c>inding_info.modified_time</c>,
         /// <c>finding_info.modified_time_dt</c>, <c>time</c>, <c>time_dt for a finding</c>. This
-        /// API is in private preview and subject to change.
+        /// API is in public preview and subject to change.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchUpdateFindingsV2 service method.</param>
         /// 
@@ -1741,7 +1741,7 @@ namespace Amazon.SecurityHub
         #region  CreateAggregatorV2
 
         /// <summary>
-        /// Enables aggregation across Amazon Web Services Regions. This API is in private preview
+        /// Enables aggregation across Amazon Web Services Regions. This API is in public preview
         /// and subject to change.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAggregatorV2 service method.</param>
@@ -1887,7 +1887,7 @@ namespace Amazon.SecurityHub
         #region  CreateAutomationRuleV2
 
         /// <summary>
-        /// Creates a V2 automation rule. This API is in private preview and subject to change.
+        /// Creates a V2 automation rule. This API is in public preview and subject to change.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAutomationRuleV2 service method.</param>
         /// 
@@ -2643,7 +2643,7 @@ namespace Amazon.SecurityHub
         #region  DeleteAggregatorV2
 
         /// <summary>
-        /// Deletes the Aggregator V2. This API is in private preview and subject to change.
+        /// Deletes the Aggregator V2. This API is in public preview and subject to change.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAggregatorV2 service method.</param>
         /// 
@@ -2716,7 +2716,7 @@ namespace Amazon.SecurityHub
         #region  DeleteAutomationRuleV2
 
         /// <summary>
-        /// Deletes a V2 automation rule. This API is in private preview and subject to change.
+        /// Deletes a V2 automation rule. This API is in public preview and subject to change.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAutomationRuleV2 service method.</param>
         /// 
@@ -3567,7 +3567,7 @@ namespace Amazon.SecurityHub
         #region  DescribeProductsV2
 
         /// <summary>
-        /// Gets information about the product integration. This API is in private preview and
+        /// Gets information about the product integration. This API is in public preview and
         /// subject to change.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeProductsV2 service method.</param>
@@ -3638,7 +3638,7 @@ namespace Amazon.SecurityHub
         #region  DescribeSecurityHubV2
 
         /// <summary>
-        /// Returns details about the service resource in your account. This API is in private
+        /// Returns details about the service resource in your account. This API is in public
         /// preview and subject to change.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeSecurityHubV2 service method.</param>
@@ -4091,7 +4091,7 @@ namespace Amazon.SecurityHub
 
         /// <summary>
         /// Disable the service for the current Amazon Web Services Region or specified Amazon
-        /// Web Services Region. This API is in private preview and subject to change.
+        /// Web Services Region. This API is in public preview and subject to change.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisableSecurityHubV2 service method.</param>
         /// 
@@ -4675,7 +4675,7 @@ namespace Amazon.SecurityHub
 
         /// <summary>
         /// Enables the service in account for the current Amazon Web Services Region or specified
-        /// Amazon Web Services Region. This API is in private preview and subject to change.
+        /// Amazon Web Services Region. This API is in public preview and subject to change.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnableSecurityHubV2 service method.</param>
         /// 
@@ -4821,7 +4821,7 @@ namespace Amazon.SecurityHub
         #region  GetAggregatorV2
 
         /// <summary>
-        /// Returns the configuration of the specified Aggregator V2. This API is in private preview
+        /// Returns the configuration of the specified Aggregator V2. This API is in public preview
         /// and subject to change.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAggregatorV2 service method.</param>
@@ -4895,8 +4895,8 @@ namespace Amazon.SecurityHub
         #region  GetAutomationRuleV2
 
         /// <summary>
-        /// Returns an automation rule for the V2 service. This API is in private preview and
-        /// subject to change.
+        /// Returns an automation rule for the V2 service. This API is in public preview and subject
+        /// to change.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAutomationRuleV2 service method.</param>
         /// 
@@ -5511,7 +5511,7 @@ namespace Amazon.SecurityHub
         /// Returns aggregated statistical data about findings. <c>GetFindingStatisticsV2</c>
         /// use <c>securityhub:GetAdhocInsightResults</c> in the <c>Action</c> element of an IAM
         /// policy statement. You must have permission to perform the <c>s</c> action. This API
-        /// is in private preview and subject to change.
+        /// is in public preview and subject to change.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetFindingStatisticsV2 service method.</param>
         /// 
@@ -5584,7 +5584,7 @@ namespace Amazon.SecurityHub
         /// Return a list of findings that match the specified criteria. <c>GetFindings</c> and
         /// <c>GetFindingsV2</c> both use <c>securityhub:GetFindings</c> in the <c>Action</c>
         /// element of an IAM policy statement. You must have permission to perform the <c>securityhub:GetFindings</c>
-        /// action. This API is in private preview and subject to change.
+        /// action. This API is in public preview and subject to change.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetFindingsV2 service method.</param>
         /// 
@@ -6057,7 +6057,7 @@ namespace Amazon.SecurityHub
 
         /// <summary>
         /// Retrieves statistical information about Amazon Web Services resources and their associated
-        /// security findings. This API is in private preview and subject to change.
+        /// security findings. This API is in public preview and subject to change.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetResourcesStatisticsV2 service method.</param>
         /// 
@@ -6130,7 +6130,7 @@ namespace Amazon.SecurityHub
         #region  GetResourcesV2
 
         /// <summary>
-        /// Returns a list of resources. This API is in private preview and subject to change.
+        /// Returns a list of resources. This API is in public preview and subject to change.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetResourcesV2 service method.</param>
         /// 
@@ -6375,8 +6375,7 @@ namespace Amazon.SecurityHub
         #region  ListAggregatorsV2
 
         /// <summary>
-        /// Retrieves a list of V2 aggregators. This API is in private preview and subject to
-        /// change.
+        /// Retrieves a list of V2 aggregators. This API is in public preview and subject to change.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAggregatorsV2 service method.</param>
         /// 
@@ -6522,7 +6521,7 @@ namespace Amazon.SecurityHub
 
         /// <summary>
         /// Returns a list of automation rules and metadata for the calling account. This API
-        /// is in private preview and subject to change.
+        /// is in public preview and subject to change.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAutomationRulesV2 service method.</param>
         /// 
@@ -7746,7 +7745,7 @@ namespace Amazon.SecurityHub
         #region  UpdateAggregatorV2
 
         /// <summary>
-        /// Udpates the configuration for the Aggregator V2. This API is in private preview and
+        /// Udpates the configuration for the Aggregator V2. This API is in public preview and
         /// subject to change.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAggregatorV2 service method.</param>
@@ -7820,7 +7819,7 @@ namespace Amazon.SecurityHub
         #region  UpdateAutomationRuleV2
 
         /// <summary>
-        /// Updates a V2 automation rule. This API is in private preview and subject to change.
+        /// Updates a V2 automation rule. This API is in public preview and subject to change.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAutomationRuleV2 service method.</param>
         /// 
