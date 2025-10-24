@@ -292,6 +292,7 @@ namespace Amazon.GeoMaps.Model
         /// This parameter is valid only for the <c>Standard</c> map style.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=2)]
         public List<string> TravelModes
         {
             get { return this._travelModes; }

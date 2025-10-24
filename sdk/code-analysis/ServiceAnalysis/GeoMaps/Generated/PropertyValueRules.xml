@@ -7,6 +7,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GeoMaps.Model.GetGlyphsRequest.FontUnicodeRange</property>
+    <min>0</min>
+    <max>50</max>
     <pattern>[0-9]+-[0-9]+\.pbf</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -15,12 +17,14 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GeoMaps.Model.GetStaticMapRequest.BoundedPositions</property>
-    <min>7</min>
+    <min>0</min>
+    <max>2000</max>
     <pattern>(-?\d{1,3}(\.\d{1,14})?,-?\d{1,2}(\.\d{1,14})?)(,(-?\d{1,3}(\.\d{1,14})?,-?\d{1,2}(\.\d{1,14})?))*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GeoMaps.Model.GetStaticMapRequest.BoundingBox</property>
-    <min>7</min>
+    <min>0</min>
+    <max>100</max>
     <pattern>(-?\d{1,3}(\.\d{1,14})?,-?\d{1,2}(\.\d{1,14})?)(,(-?\d{1,3}(\.\d{1,14})?,-?\d{1,2}(\.\d{1,14})?))*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -57,6 +61,11 @@
     <property>Amazon.GeoMaps.Model.GetStaticMapRequest.Language</property>
     <min>2</min>
     <max>35</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GeoMaps.Model.GetStaticMapRequest.Padding</property>
+    <min>0</min>
+    <max>350</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GeoMaps.Model.GetStaticMapRequest.PoliticalView</property>
@@ -103,14 +112,20 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GeoMaps.Model.GetTileRequest.X</property>
+    <min>0</min>
+    <max>7</max>
     <pattern>.*\d+.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GeoMaps.Model.GetTileRequest.Y</property>
+    <min>0</min>
+    <max>7</max>
     <pattern>.*\d+.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GeoMaps.Model.GetTileRequest.Z</property>
+    <min>0</min>
+    <max>2</max>
     <pattern>.*\d+.*</pattern>
   </property-value-rule>
 </property-value-rules>

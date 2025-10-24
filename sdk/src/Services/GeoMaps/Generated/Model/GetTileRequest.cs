@@ -43,11 +43,32 @@ namespace Amazon.GeoMaps.Model
     /// </summary>
     public partial class GetTileRequest : AmazonGeoMapsRequest
     {
+        private List<string> _additionalFeatures = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _key;
         private string _tileset;
         private string _x;
         private string _y;
         private string _z;
+
+        /// <summary>
+        /// Gets and sets the property AdditionalFeatures. 
+        /// <para>
+        /// A list of optional additional parameters such as map styles that can be requested
+        /// for each result.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=4)]
+        public List<string> AdditionalFeatures
+        {
+            get { return this._additionalFeatures; }
+            set { this._additionalFeatures = value; }
+        }
+
+        // Check to see if AdditionalFeatures property is set
+        internal bool IsSetAdditionalFeatures()
+        {
+            return this._additionalFeatures != null && (this._additionalFeatures.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property Key. 
@@ -98,7 +119,7 @@ namespace Amazon.GeoMaps.Model
         /// The X axis value for the map tile. Must be between 0 and 19.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true)]
+        [AWSProperty(Required=true, Sensitive=true, Min=0, Max=7)]
         public string X
         {
             get { return this._x; }
@@ -117,7 +138,7 @@ namespace Amazon.GeoMaps.Model
         /// The Y axis value for the map tile.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true)]
+        [AWSProperty(Required=true, Sensitive=true, Min=0, Max=7)]
         public string Y
         {
             get { return this._y; }
@@ -136,7 +157,7 @@ namespace Amazon.GeoMaps.Model
         /// The zoom value for the map tile.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true)]
+        [AWSProperty(Required=true, Sensitive=true, Min=0, Max=2)]
         public string Z
         {
             get { return this._z; }
