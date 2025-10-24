@@ -1008,6 +1008,24 @@
     <pattern>[-._\p{L}\p{N}]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.LocationService.Model.AndroidApp.CertificateFingerprint</property>
+    <min>59</min>
+    <max>59</max>
+    <pattern>([A-Fa-f0-9]{2}:){19}[A-Fa-f0-9]{2}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LocationService.Model.AndroidApp.Package</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>([A-Za-z][A-Za-z\d_]*\.)+[A-Za-z][A-Za-z\d_]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LocationService.Model.AppleApp.BundleId</property>
+    <min>1</min>
+    <max>155</max>
+    <pattern>[A-Za-z0-9\-]+(\.[A-Za-z0-9\-]+)+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.LocationService.Model.BatchDeleteDevicePositionHistoryError.DeviceId</property>
     <min>1</min>
     <max>100</max>
