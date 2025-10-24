@@ -84,6 +84,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.Container = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DataCacheConfig", targetDepth))
+                {
+                    var unmarshaller = InferenceComponentDataCacheConfigSummaryUnmarshaller.Instance;
+                    unmarshalledObject.DataCacheConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ModelName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

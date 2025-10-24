@@ -330,7 +330,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property PlatformIdentifier. 
         /// <para>
-        /// The platform identifier of the notebook instance runtime environment.
+        /// The platform identifier of the notebook instance runtime environment. The default
+        /// value is <c>notebook-al2-v2</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=20)]

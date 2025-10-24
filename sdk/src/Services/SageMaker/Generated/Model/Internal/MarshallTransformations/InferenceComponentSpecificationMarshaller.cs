@@ -76,6 +76,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetDataCacheConfig())
+            {
+                context.Writer.WritePropertyName("DataCacheConfig");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = InferenceComponentDataCacheConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.DataCacheConfig, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetModelName())
             {
                 context.Writer.WritePropertyName("ModelName");
