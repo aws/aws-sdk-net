@@ -495,6 +495,10 @@ namespace Amazon.DataZone
         /// </summary>
         public static readonly ConnectionType IAM = new ConnectionType("IAM");
         /// <summary>
+        /// Constant MLFLOW for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType MLFLOW = new ConnectionType("MLFLOW");
+        /// <summary>
         /// Constant MYSQL for ConnectionType
         /// </summary>
         public static readonly ConnectionType MYSQL = new ConnectionType("MYSQL");
