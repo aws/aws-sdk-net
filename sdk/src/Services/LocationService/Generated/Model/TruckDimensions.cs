@@ -57,7 +57,7 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  </note>
         /// </summary>
-        [AWSProperty(Min=0)]
+        [AWSProperty(Sensitive=true, Min=0)]
         public double Height
         {
             get { return this._height.GetValueOrDefault(); }
@@ -86,7 +86,7 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  </note>
         /// </summary>
-        [AWSProperty(Min=0)]
+        [AWSProperty(Sensitive=true, Min=0)]
         public double Length
         {
             get { return this._length.GetValueOrDefault(); }
@@ -137,7 +137,7 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  </note>
         /// </summary>
-        [AWSProperty(Min=0)]
+        [AWSProperty(Sensitive=true, Min=0)]
         public double Width
         {
             get { return this._width.GetValueOrDefault(); }

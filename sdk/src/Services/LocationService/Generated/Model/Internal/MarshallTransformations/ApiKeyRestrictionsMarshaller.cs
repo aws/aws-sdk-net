@@ -59,6 +59,38 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetAllowAndroidApps())
+            {
+                context.Writer.WritePropertyName("AllowAndroidApps");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectAllowAndroidAppsListValue in requestObject.AllowAndroidApps)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = AndroidAppMarshaller.Instance;
+                    marshaller.Marshall(requestObjectAllowAndroidAppsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetAllowAppleApps())
+            {
+                context.Writer.WritePropertyName("AllowAppleApps");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectAllowAppleAppsListValue in requestObject.AllowAppleApps)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = AppleAppMarshaller.Instance;
+                    marshaller.Marshall(requestObjectAllowAppleAppsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetAllowReferers())
             {
                 context.Writer.WritePropertyName("AllowReferers");

@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.LocationService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ApiKeyRestrictions Object
+    /// Response Unmarshaller for AndroidApp Object
     /// </summary>  
-    public class ApiKeyRestrictionsUnmarshaller : IUnmarshaller<ApiKeyRestrictions, XmlUnmarshallerContext>, IUnmarshaller<ApiKeyRestrictions, JsonUnmarshallerContext>
+    public class AndroidAppUnmarshaller : IUnmarshaller<AndroidApp, XmlUnmarshallerContext>, IUnmarshaller<AndroidApp, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ApiKeyRestrictions IUnmarshaller<ApiKeyRestrictions, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AndroidApp IUnmarshaller<AndroidApp, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public ApiKeyRestrictions Unmarshall(JsonUnmarshallerContext context)
+        public AndroidApp Unmarshall(JsonUnmarshallerContext context)
         {
-            ApiKeyRestrictions unmarshalledObject = new ApiKeyRestrictions();
+            AndroidApp unmarshalledObject = new AndroidApp();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,34 +66,16 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("AllowActions", targetDepth))
+                if (context.TestExpression("CertificateFingerprint", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.AllowActions = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CertificateFingerprint = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("AllowAndroidApps", targetDepth))
+                if (context.TestExpression("Package", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<AndroidApp, AndroidAppUnmarshaller>(AndroidAppUnmarshaller.Instance);
-                    unmarshalledObject.AllowAndroidApps = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("AllowAppleApps", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<AppleApp, AppleAppUnmarshaller>(AppleAppUnmarshaller.Instance);
-                    unmarshalledObject.AllowAppleApps = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("AllowReferers", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.AllowReferers = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("AllowResources", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.AllowResources = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Package = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -101,12 +83,12 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
         }
 
 
-        private static ApiKeyRestrictionsUnmarshaller _instance = new ApiKeyRestrictionsUnmarshaller();        
+        private static AndroidAppUnmarshaller _instance = new AndroidAppUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ApiKeyRestrictionsUnmarshaller Instance
+        public static AndroidAppUnmarshaller Instance
         {
             get
             {

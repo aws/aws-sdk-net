@@ -31,11 +31,43 @@ namespace Amazon.LocationService.Model
 {
     /// <summary>
     /// Container for the parameters to the CalculateRoute operation.
-    /// <a href="https://docs.aws.amazon.com/location/previous/developerguide/calculate-route.html">Calculates
+    /// <important> 
+    /// <para>
+    /// This operation is no longer current and may be deprecated in the future. We recommend
+    /// you upgrade to <a href="/location/latest/APIReference/API_CalculateRoutes.html"> <c>CalculateRoutes</c>
+    /// </a> or <a href="/location/latest/APIReference/API_CalculateIsolines.html"> <c>CalculateIsolines</c>
+    /// </a> unless you require Grab data.
+    /// 
+    ///  <ul> <li> 
+    /// <para>
+    ///  <c>CalculateRoute</c> is part of a previous Amazon Location Service Routes API (version
+    /// 1) which has been superseded by a more intuitive, powerful, and complete API (version
+    /// 2).
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The version 2 <c>CalculateRoutes</c> operation gives better results for point-to-point
+    /// routing, while the version 2 <c>CalculateIsolines</c> operation adds support for calculating
+    /// service areas and travel time envelopes.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// If you are using an Amazon Web Services SDK or the Amazon Web Services CLI, note that
+    /// the Routes API version 2 is found under <c>geo-routes</c> or <c>geo_routes</c>, not
+    /// under <c>location</c>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Since Grab is not yet fully supported in Routes API version 2, we recommend you continue
+    /// using API version 1 when using Grab.
+    /// </para>
+    ///  </li> </ul> </important> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/location/previous/developerguide/calculate-route.html">Calculates
     /// a route</a> given the following required parameters: <c>DeparturePosition</c> and
     /// <c>DestinationPosition</c>. Requires that you first <a href="https://docs.aws.amazon.com/location-routes/latest/APIReference/API_CreateRouteCalculator.html">create
     /// a route calculator resource</a>.
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// By default, a request that doesn't specify a departure time uses the best time of
@@ -69,6 +101,7 @@ namespace Amazon.LocationService.Model
     /// the start and destination must be within 40km.
     /// </para>
     ///  </note> </li> </ul>
+    /// </para>
     /// </summary>
     public partial class CalculateRouteRequest : AmazonLocationServiceRequest
     {
@@ -172,6 +205,7 @@ namespace Amazon.LocationService.Model
         /// Valid Values: <c>false</c> | <c>true</c> 
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public bool DepartNow
         {
             get { return this._departNow.GetValueOrDefault(); }
@@ -317,6 +351,7 @@ namespace Amazon.LocationService.Model
         /// Valid Values: <c>false</c> | <c>true</c> 
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public bool IncludeLegGeometry
         {
             get { return this._includeLegGeometry.GetValueOrDefault(); }

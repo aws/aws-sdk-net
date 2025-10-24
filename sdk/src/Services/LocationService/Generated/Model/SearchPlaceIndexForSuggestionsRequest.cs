@@ -31,10 +31,42 @@ namespace Amazon.LocationService.Model
 {
     /// <summary>
     /// Container for the parameters to the SearchPlaceIndexForSuggestions operation.
+    /// <important> 
+    /// <para>
+    /// This operation is no longer current and may be deprecated in the future. We recommend
+    /// you upgrade to <a href="/location/latest/APIReference/API_geoplaces_Suggest.html">
+    /// <c>Suggest</c> </a> or <a href="/location/latest/APIReference/API_geoplaces_Autocomplete.html">
+    /// <c>Autocomplete</c> </a> unless you require Grab data.
+    /// 
+    ///  <ul> <li> 
+    /// <para>
+    ///  <c>SearchPlaceIndexForSuggestions</c> is part of a previous Amazon Location Service
+    /// Places API (version 1) which has been superseded by a more intuitive, powerful, and
+    /// complete API (version 2).
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The version 2 <c>Suggest</c> operation gives better results for typeahead place search
+    /// suggestions with fuzzy matching, while the version 2 <c>Autocomplete</c> operation
+    /// gives better results for address completion based on partial input.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// If you are using an Amazon Web Services SDK or the Amazon Web Services CLI, note that
+    /// the Places API version 2 is found under <c>geo-places</c> or <c>geo_places</c>, not
+    /// under <c>location</c>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Since Grab is not yet fully supported in Places API version 2, we recommend you continue
+    /// using API version 1 when using Grab.
+    /// </para>
+    ///  </li> </ul> </important> 
+    /// <para>
     /// Generates suggestions for addresses and points of interest based on partial or misspelled
     /// free-form text. This operation is also known as autocomplete, autosuggest, or fuzzy
     /// matching.
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// Optional parameters let you narrow your search results by bounding box or country,
@@ -48,6 +80,7 @@ namespace Amazon.LocationService.Model
     /// same command returns an error.
     /// </para>
     ///  </note>
+    /// </para>
     /// </summary>
     public partial class SearchPlaceIndexForSuggestionsRequest : AmazonLocationServiceRequest
     {

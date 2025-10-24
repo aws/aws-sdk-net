@@ -31,9 +31,41 @@ namespace Amazon.LocationService.Model
 {
     /// <summary>
     /// Container for the parameters to the SearchPlaceIndexForText operation.
+    /// <important> 
+    /// <para>
+    /// This operation is no longer current and may be deprecated in the future. We recommend
+    /// you upgrade to <a href="/location/latest/APIReference/API_geoplaces_Geocode.html">
+    /// <c>Geocode</c> </a> or <a href="/location/latest/APIReference/API_geoplaces_SearchText.html">
+    /// <c>SearchText</c> </a> unless you require Grab data.
+    /// 
+    ///  <ul> <li> 
+    /// <para>
+    ///  <c>SearchPlaceIndexForText</c> is part of a previous Amazon Location Service Places
+    /// API (version 1) which has been superseded by a more intuitive, powerful, and complete
+    /// API (version 2).
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The version 2 <c>Geocode</c> operation gives better results in the address geocoding
+    /// use case, while the version 2 <c>SearchText</c> operation gives better results when
+    /// searching for businesses and points of interest.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// If you are using an Amazon Web Services SDK or the Amazon Web Services CLI, note that
+    /// the Places API version 2 is found under <c>geo-places</c> or <c>geo_places</c>, not
+    /// under <c>location</c>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Since Grab is not yet fully supported in Places API version 2, we recommend you continue
+    /// using API version 1 when using Grab.
+    /// </para>
+    ///  </li> </ul> </important> 
+    /// <para>
     /// Geocodes free-form text, such as an address, name, city, or region to allow you to
     /// search for Places or points of interest. 
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// Optional parameters let you narrow your search results by bounding box or country,
@@ -48,6 +80,8 @@ namespace Amazon.LocationService.Model
     ///  </note> 
     /// <para>
     /// Search results are returned in order of highest to lowest relevance.
+    /// </para>
+    /// 
     /// </para>
     /// </summary>
     public partial class SearchPlaceIndexForTextRequest : AmazonLocationServiceRequest

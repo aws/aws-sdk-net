@@ -973,11 +973,43 @@ namespace Amazon.LocationService
 
 
         /// <summary>
-        /// <a href="https://docs.aws.amazon.com/location/previous/developerguide/calculate-route.html">Calculates
+        /// <important> 
+        /// <para>
+        /// This operation is no longer current and may be deprecated in the future. We recommend
+        /// you upgrade to <a href="/location/latest/APIReference/API_CalculateRoutes.html"> <c>CalculateRoutes</c>
+        /// </a> or <a href="/location/latest/APIReference/API_CalculateIsolines.html"> <c>CalculateIsolines</c>
+        /// </a> unless you require Grab data.
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>CalculateRoute</c> is part of a previous Amazon Location Service Routes API (version
+        /// 1) which has been superseded by a more intuitive, powerful, and complete API (version
+        /// 2).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The version 2 <c>CalculateRoutes</c> operation gives better results for point-to-point
+        /// routing, while the version 2 <c>CalculateIsolines</c> operation adds support for calculating
+        /// service areas and travel time envelopes.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you are using an Amazon Web Services SDK or the Amazon Web Services CLI, note that
+        /// the Routes API version 2 is found under <c>geo-routes</c> or <c>geo_routes</c>, not
+        /// under <c>location</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Since Grab is not yet fully supported in Routes API version 2, we recommend you continue
+        /// using API version 1 when using Grab.
+        /// </para>
+        ///  </li> </ul> </important> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/location/previous/developerguide/calculate-route.html">Calculates
         /// a route</a> given the following required parameters: <c>DeparturePosition</c> and
         /// <c>DestinationPosition</c>. Requires that you first <a href="https://docs.aws.amazon.com/location-routes/latest/APIReference/API_CreateRouteCalculator.html">create
         /// a route calculator resource</a>.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// By default, a request that doesn't specify a departure time uses the best time of
@@ -1011,6 +1043,7 @@ namespace Amazon.LocationService
         /// the start and destination must be within 40km.
         /// </para>
         ///  </note> </li> </ul>
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CalculateRoute service method.</param>
         /// 
@@ -1044,11 +1077,43 @@ namespace Amazon.LocationService
 
 
         /// <summary>
-        /// <a href="https://docs.aws.amazon.com/location/previous/developerguide/calculate-route.html">Calculates
+        /// <important> 
+        /// <para>
+        /// This operation is no longer current and may be deprecated in the future. We recommend
+        /// you upgrade to <a href="/location/latest/APIReference/API_CalculateRoutes.html"> <c>CalculateRoutes</c>
+        /// </a> or <a href="/location/latest/APIReference/API_CalculateIsolines.html"> <c>CalculateIsolines</c>
+        /// </a> unless you require Grab data.
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>CalculateRoute</c> is part of a previous Amazon Location Service Routes API (version
+        /// 1) which has been superseded by a more intuitive, powerful, and complete API (version
+        /// 2).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The version 2 <c>CalculateRoutes</c> operation gives better results for point-to-point
+        /// routing, while the version 2 <c>CalculateIsolines</c> operation adds support for calculating
+        /// service areas and travel time envelopes.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you are using an Amazon Web Services SDK or the Amazon Web Services CLI, note that
+        /// the Routes API version 2 is found under <c>geo-routes</c> or <c>geo_routes</c>, not
+        /// under <c>location</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Since Grab is not yet fully supported in Routes API version 2, we recommend you continue
+        /// using API version 1 when using Grab.
+        /// </para>
+        ///  </li> </ul> </important> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/location/previous/developerguide/calculate-route.html">Calculates
         /// a route</a> given the following required parameters: <c>DeparturePosition</c> and
         /// <c>DestinationPosition</c>. Requires that you first <a href="https://docs.aws.amazon.com/location-routes/latest/APIReference/API_CreateRouteCalculator.html">create
         /// a route calculator resource</a>.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// By default, a request that doesn't specify a departure time uses the best time of
@@ -1082,6 +1147,7 @@ namespace Amazon.LocationService
         /// the start and destination must be within 40km.
         /// </para>
         ///  </note> </li> </ul>
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CalculateRoute service method.</param>
         /// <param name="cancellationToken">
@@ -1122,7 +1188,43 @@ namespace Amazon.LocationService
 
 
         /// <summary>
-        /// <a href="https://docs.aws.amazon.com/location/previous/developerguide/calculate-route-matrix.html">
+        /// <important> 
+        /// <para>
+        /// This operation is no longer current and may be deprecated in the future. We recommend
+        /// you upgrade to the <a href="/location/latest/APIReference/API_CalculateRouteMatrix.html">V2
+        /// <c>CalculateRouteMatrix</c> </a> unless you require Grab data.
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// This version of <c>CalculateRouteMatrix</c> is part of a previous Amazon Location
+        /// Service Routes API (version 1) which has been superseded by a more intuitive, powerful,
+        /// and complete API (version 2).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The version 2 <c>CalculateRouteMatrix</c> operation gives better results for matrix
+        /// routing calculations.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you are using an Amazon Web Services SDK or the Amazon Web Services CLI, note that
+        /// the Routes API version 2 is found under <c>geo-routes</c> or <c>geo_routes</c>, not
+        /// under <c>location</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Since Grab is not yet fully supported in Routes API version 2, we recommend you continue
+        /// using API version 1 when using Grab.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Start your version 2 API journey with the Routes V2 <a href="/location/latest/APIReference/API_Operations_Amazon_Location_Service_Routes_V2.html">API
+        /// Reference</a> or the <a href="/location/latest/developerguide/routes.html">Developer
+        /// Guide</a>.
+        /// </para>
+        ///  </li> </ul> </important> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/location/previous/developerguide/calculate-route-matrix.html">
         /// Calculates a route matrix</a> given the following required parameters: <c>DeparturePositions</c>
         /// and <c>DestinationPositions</c>. <c>CalculateRouteMatrix</c> calculates routes and
         /// returns the travel time and travel distance from each departure position to each destination
@@ -1131,7 +1233,7 @@ namespace Amazon.LocationService
         /// from A to X, A to Y, B to X, and B to Y (in that order). The number of results returned
         /// (and routes calculated) will be the number of <c>DeparturePositions</c> times the
         /// number of <c>DestinationPositions</c>.
-        /// 
+        /// </para>
         ///  <note> 
         /// <para>
         /// Your account is charged for each route calculated, not the number of requests.
@@ -1169,6 +1271,7 @@ namespace Amazon.LocationService
         /// if traveling by <c>Car</c>, or <c>TruckModeOptions</c> if traveling by <c>Truck</c>.
         /// </para>
         ///  </li> </ul>
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CalculateRouteMatrix service method.</param>
         /// 
@@ -1202,7 +1305,43 @@ namespace Amazon.LocationService
 
 
         /// <summary>
-        /// <a href="https://docs.aws.amazon.com/location/previous/developerguide/calculate-route-matrix.html">
+        /// <important> 
+        /// <para>
+        /// This operation is no longer current and may be deprecated in the future. We recommend
+        /// you upgrade to the <a href="/location/latest/APIReference/API_CalculateRouteMatrix.html">V2
+        /// <c>CalculateRouteMatrix</c> </a> unless you require Grab data.
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// This version of <c>CalculateRouteMatrix</c> is part of a previous Amazon Location
+        /// Service Routes API (version 1) which has been superseded by a more intuitive, powerful,
+        /// and complete API (version 2).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The version 2 <c>CalculateRouteMatrix</c> operation gives better results for matrix
+        /// routing calculations.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you are using an Amazon Web Services SDK or the Amazon Web Services CLI, note that
+        /// the Routes API version 2 is found under <c>geo-routes</c> or <c>geo_routes</c>, not
+        /// under <c>location</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Since Grab is not yet fully supported in Routes API version 2, we recommend you continue
+        /// using API version 1 when using Grab.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Start your version 2 API journey with the Routes V2 <a href="/location/latest/APIReference/API_Operations_Amazon_Location_Service_Routes_V2.html">API
+        /// Reference</a> or the <a href="/location/latest/developerguide/routes.html">Developer
+        /// Guide</a>.
+        /// </para>
+        ///  </li> </ul> </important> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/location/previous/developerguide/calculate-route-matrix.html">
         /// Calculates a route matrix</a> given the following required parameters: <c>DeparturePositions</c>
         /// and <c>DestinationPositions</c>. <c>CalculateRouteMatrix</c> calculates routes and
         /// returns the travel time and travel distance from each departure position to each destination
@@ -1211,7 +1350,7 @@ namespace Amazon.LocationService
         /// from A to X, A to Y, B to X, and B to Y (in that order). The number of results returned
         /// (and routes calculated) will be the number of <c>DeparturePositions</c> times the
         /// number of <c>DestinationPositions</c>.
-        /// 
+        /// </para>
         ///  <note> 
         /// <para>
         /// Your account is charged for each route calculated, not the number of requests.
@@ -1249,6 +1388,7 @@ namespace Amazon.LocationService
         /// if traveling by <c>Car</c>, or <c>TruckModeOptions</c> if traveling by <c>Truck</c>.
         /// </para>
         ///  </li> </ul>
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CalculateRouteMatrix service method.</param>
         /// <param name="cancellationToken">
@@ -1375,12 +1515,11 @@ namespace Amazon.LocationService
         /// Creates an API key resource in your Amazon Web Services account, which lets you grant
         /// actions for Amazon Location resources to the API key bearer.
         /// 
-        ///  <note> 
+        ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/location/previous/developerguide/using-apikeys.html">Using
-        /// API keys</a>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">Use
+        /// API keys to authenticate</a> in the <i>Amazon Location Service Developer Guide</i>.
         /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateKey service method.</param>
         /// 
@@ -1421,12 +1560,11 @@ namespace Amazon.LocationService
         /// Creates an API key resource in your Amazon Web Services account, which lets you grant
         /// actions for Amazon Location resources to the API key bearer.
         /// 
-        ///  <note> 
+        ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/location/previous/developerguide/using-apikeys.html">Using
-        /// API keys</a>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">Use
+        /// API keys to authenticate</a> in the <i>Amazon Location Service Developer Guide</i>.
         /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateKey service method.</param>
         /// <param name="cancellationToken">
@@ -1471,9 +1609,43 @@ namespace Amazon.LocationService
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// This operation is no longer current and may be deprecated in the future. We recommend
+        /// upgrading to the Maps API V2 unless you require <c>Grab</c> data.
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>CreateMap</c> is part of a previous Amazon Location Service Maps API (version
+        /// 1) which has been superseded by a more intuitive, powerful, and complete API (version
+        /// 2).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The Maps API version 2 has a simplified interface that can be used without creating
+        /// or managing map resources.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you are using an AWS SDK or the AWS CLI, note that the Maps API version 2 is found
+        /// under <c>geo-maps</c> or <c>geo_maps</c>, not under <c>location</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Since <c>Grab</c> is not yet fully supported in Maps API version 2, we recommend you
+        /// continue using API version 1 when using <c>Grab</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Start your version 2 API journey with the <a href="https://docs.aws.amazon.com/location/latest/APIReference/API_Operations_Amazon_Location_Service_Maps_V2.html">Maps
+        /// V2 API Reference</a> or the <a href="https://docs.aws.amazon.com/location/latest/developerguide/maps.html">Developer
+        /// Guide</a>.
+        /// </para>
+        ///  </li> </ul> </important> 
+        /// <para>
         /// Creates a map resource in your Amazon Web Services account, which provides map tiles
         /// of different styles sourced from global location data providers.
-        /// 
+        /// </para>
         ///  <note> 
         /// <para>
         /// If your application is tracking or routing assets you use in your business, such as
@@ -1482,6 +1654,7 @@ namespace Amazon.LocationService
         /// service terms</a> for more details.
         /// </para>
         ///  </note>
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateMap service method.</param>
         /// 
@@ -1519,9 +1692,43 @@ namespace Amazon.LocationService
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// This operation is no longer current and may be deprecated in the future. We recommend
+        /// upgrading to the Maps API V2 unless you require <c>Grab</c> data.
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>CreateMap</c> is part of a previous Amazon Location Service Maps API (version
+        /// 1) which has been superseded by a more intuitive, powerful, and complete API (version
+        /// 2).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The Maps API version 2 has a simplified interface that can be used without creating
+        /// or managing map resources.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you are using an AWS SDK or the AWS CLI, note that the Maps API version 2 is found
+        /// under <c>geo-maps</c> or <c>geo_maps</c>, not under <c>location</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Since <c>Grab</c> is not yet fully supported in Maps API version 2, we recommend you
+        /// continue using API version 1 when using <c>Grab</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Start your version 2 API journey with the <a href="https://docs.aws.amazon.com/location/latest/APIReference/API_Operations_Amazon_Location_Service_Maps_V2.html">Maps
+        /// V2 API Reference</a> or the <a href="https://docs.aws.amazon.com/location/latest/developerguide/maps.html">Developer
+        /// Guide</a>.
+        /// </para>
+        ///  </li> </ul> </important> 
+        /// <para>
         /// Creates a map resource in your Amazon Web Services account, which provides map tiles
         /// of different styles sourced from global location data providers.
-        /// 
+        /// </para>
         ///  <note> 
         /// <para>
         /// If your application is tracking or routing assets you use in your business, such as
@@ -1530,6 +1737,7 @@ namespace Amazon.LocationService
         /// service terms</a> for more details.
         /// </para>
         ///  </note>
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateMap service method.</param>
         /// <param name="cancellationToken">
@@ -1574,12 +1782,47 @@ namespace Amazon.LocationService
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// This operation is no longer current and may be deprecated in the future. We recommend
+        /// you upgrade to the Places API V2 unless you require Grab data.
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>CreatePlaceIndex</c> is part of a previous Amazon Location Service Places API
+        /// (version 1) which has been superseded by a more intuitive, powerful, and complete
+        /// API (version 2).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The Places API version 2 has a simplified interface that can be used without creating
+        /// or managing place index resources.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you are using an Amazon Web Services SDK or the Amazon Web Services CLI, note that
+        /// the Places API version 2 is found under <c>geo-places</c> or <c>geo_places</c>, not
+        /// under <c>location</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Since Grab is not yet fully supported in Places API version 2, we recommend you continue
+        /// using API version 1 when using Grab.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Start your version 2 API journey with the Places V2 <a href="/location/latest/APIReference/API_Operations_Amazon_Location_Service_Places_V2.html">API
+        /// Reference</a> or the <a href="/location/latest/developerguide/places.html">Developer
+        /// Guide</a>.
+        /// </para>
+        ///  </li> </ul> </important> 
+        /// <para>
         /// Creates a place index resource in your Amazon Web Services account. Use a place index
         /// resource to geocode addresses and other text queries by using the <c>SearchPlaceIndexForText</c>
         /// operation, and reverse geocode coordinates by using the <c>SearchPlaceIndexForPosition</c>
         /// operation, and enable autosuggestions by using the <c>SearchPlaceIndexForSuggestions</c>
         /// operation.
-        /// 
+        /// </para>
         ///  <note> 
         /// <para>
         /// If your application is tracking or routing assets you use in your business, such as
@@ -1588,6 +1831,7 @@ namespace Amazon.LocationService
         /// service terms</a> for more details.
         /// </para>
         ///  </note>
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePlaceIndex service method.</param>
         /// 
@@ -1625,12 +1869,47 @@ namespace Amazon.LocationService
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// This operation is no longer current and may be deprecated in the future. We recommend
+        /// you upgrade to the Places API V2 unless you require Grab data.
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>CreatePlaceIndex</c> is part of a previous Amazon Location Service Places API
+        /// (version 1) which has been superseded by a more intuitive, powerful, and complete
+        /// API (version 2).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The Places API version 2 has a simplified interface that can be used without creating
+        /// or managing place index resources.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you are using an Amazon Web Services SDK or the Amazon Web Services CLI, note that
+        /// the Places API version 2 is found under <c>geo-places</c> or <c>geo_places</c>, not
+        /// under <c>location</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Since Grab is not yet fully supported in Places API version 2, we recommend you continue
+        /// using API version 1 when using Grab.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Start your version 2 API journey with the Places V2 <a href="/location/latest/APIReference/API_Operations_Amazon_Location_Service_Places_V2.html">API
+        /// Reference</a> or the <a href="/location/latest/developerguide/places.html">Developer
+        /// Guide</a>.
+        /// </para>
+        ///  </li> </ul> </important> 
+        /// <para>
         /// Creates a place index resource in your Amazon Web Services account. Use a place index
         /// resource to geocode addresses and other text queries by using the <c>SearchPlaceIndexForText</c>
         /// operation, and reverse geocode coordinates by using the <c>SearchPlaceIndexForPosition</c>
         /// operation, and enable autosuggestions by using the <c>SearchPlaceIndexForSuggestions</c>
         /// operation.
-        /// 
+        /// </para>
         ///  <note> 
         /// <para>
         /// If your application is tracking or routing assets you use in your business, such as
@@ -1639,6 +1918,7 @@ namespace Amazon.LocationService
         /// service terms</a> for more details.
         /// </para>
         ///  </note>
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePlaceIndex service method.</param>
         /// <param name="cancellationToken">
@@ -1683,8 +1963,43 @@ namespace Amazon.LocationService
 
 
         /// <summary>
-        /// Creates a route calculator resource in your Amazon Web Services account.
+        /// <important> 
+        /// <para>
+        /// This operation is no longer current and may be deprecated in the future. We recommend
+        /// you upgrade to the Routes API V2 unless you require Grab data.
         /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>CreateRouteCalculator</c> is part of a previous Amazon Location Service Routes
+        /// API (version 1) which has been superseded by a more intuitive, powerful, and complete
+        /// API (version 2).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The Routes API version 2 has a simplified interface that can be used without creating
+        /// or managing route calculator resources.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you are using an Amazon Web Services SDK or the Amazon Web Services CLI, note that
+        /// the Routes API version 2 is found under <c>geo-routes</c> or <c>geo_routes</c>, not
+        /// under <c>location</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Since Grab is not yet fully supported in Routes API version 2, we recommend you continue
+        /// using API version 1 when using Grab.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Start your version 2 API journey with the Routes V2 <a href="/location/latest/APIReference/API_Operations_Amazon_Location_Service_Routes_V2.html">API
+        /// Reference</a> or the <a href="/location/latest/developerguide/routes.html">Developer
+        /// Guide</a>.
+        /// </para>
+        ///  </li> </ul> </important> 
+        /// <para>
+        /// Creates a route calculator resource in your Amazon Web Services account.
+        /// </para>
         ///  
         /// <para>
         /// You can send requests to a route calculator resource to estimate travel time, distance,
@@ -1699,6 +2014,7 @@ namespace Amazon.LocationService
         /// service terms</a> for more details.
         /// </para>
         ///  </note>
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateRouteCalculator service method.</param>
         /// 
@@ -1736,8 +2052,43 @@ namespace Amazon.LocationService
 
 
         /// <summary>
-        /// Creates a route calculator resource in your Amazon Web Services account.
+        /// <important> 
+        /// <para>
+        /// This operation is no longer current and may be deprecated in the future. We recommend
+        /// you upgrade to the Routes API V2 unless you require Grab data.
         /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>CreateRouteCalculator</c> is part of a previous Amazon Location Service Routes
+        /// API (version 1) which has been superseded by a more intuitive, powerful, and complete
+        /// API (version 2).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The Routes API version 2 has a simplified interface that can be used without creating
+        /// or managing route calculator resources.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you are using an Amazon Web Services SDK or the Amazon Web Services CLI, note that
+        /// the Routes API version 2 is found under <c>geo-routes</c> or <c>geo_routes</c>, not
+        /// under <c>location</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Since Grab is not yet fully supported in Routes API version 2, we recommend you continue
+        /// using API version 1 when using Grab.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Start your version 2 API journey with the Routes V2 <a href="/location/latest/APIReference/API_Operations_Amazon_Location_Service_Routes_V2.html">API
+        /// Reference</a> or the <a href="/location/latest/developerguide/routes.html">Developer
+        /// Guide</a>.
+        /// </para>
+        ///  </li> </ul> </important> 
+        /// <para>
+        /// Creates a route calculator resource in your Amazon Web Services account.
+        /// </para>
         ///  
         /// <para>
         /// You can send requests to a route calculator resource to estimate travel time, distance,
@@ -1752,6 +2103,7 @@ namespace Amazon.LocationService
         /// service terms</a> for more details.
         /// </para>
         ///  </note>
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateRouteCalculator service method.</param>
         /// <param name="cancellationToken">
@@ -1972,6 +2324,12 @@ namespace Amazon.LocationService
         /// <summary>
         /// Deletes the specified API key. The API key must have been deactivated more than 90
         /// days previously.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">Use
+        /// API keys to authenticate</a> in the <i>Amazon Location Service Developer Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteKey service method.</param>
         /// 
@@ -2007,6 +2365,12 @@ namespace Amazon.LocationService
         /// <summary>
         /// Deletes the specified API key. The API key must have been deactivated more than 90
         /// days previously.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">Use
+        /// API keys to authenticate</a> in the <i>Amazon Location Service Developer Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteKey service method.</param>
         /// <param name="cancellationToken">
@@ -2047,14 +2411,49 @@ namespace Amazon.LocationService
 
 
         /// <summary>
-        /// Deletes a map resource from your Amazon Web Services account.
+        /// <important> 
+        /// <para>
+        /// This operation is no longer current and may be deprecated in the future. We recommend
+        /// upgrading to the Maps API V2 unless you require <c>Grab</c> data.
         /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>DeleteMap</c> is part of a previous Amazon Location Service Maps API (version
+        /// 1) which has been superseded by a more intuitive, powerful, and complete API (version
+        /// 2).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The Maps API version 2 has a simplified interface that can be used without creating
+        /// or managing map resources.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you are using an AWS SDK or the AWS CLI, note that the Maps API version 2 is found
+        /// under <c>geo-maps</c> or <c>geo_maps</c>, not under <c>location</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Since <c>Grab</c> is not yet fully supported in Maps API version 2, we recommend you
+        /// continue using API version 1 when using <c>Grab</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Start your version 2 API journey with the <a href="https://docs.aws.amazon.com/location/latest/APIReference/API_Operations_Amazon_Location_Service_Maps_V2.html">Maps
+        /// V2 API Reference</a> or the <a href="https://docs.aws.amazon.com/location/latest/developerguide/maps.html">Developer
+        /// Guide</a>.
+        /// </para>
+        ///  </li> </ul> </important> 
+        /// <para>
+        /// Deletes a map resource from your Amazon Web Services account.
+        /// </para>
         ///  <note> 
         /// <para>
         /// This operation deletes the resource permanently. If the map is being used in an application,
         /// the map may not render.
         /// </para>
         ///  </note>
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteMap service method.</param>
         /// 
@@ -2088,14 +2487,49 @@ namespace Amazon.LocationService
 
 
         /// <summary>
-        /// Deletes a map resource from your Amazon Web Services account.
+        /// <important> 
+        /// <para>
+        /// This operation is no longer current and may be deprecated in the future. We recommend
+        /// upgrading to the Maps API V2 unless you require <c>Grab</c> data.
         /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>DeleteMap</c> is part of a previous Amazon Location Service Maps API (version
+        /// 1) which has been superseded by a more intuitive, powerful, and complete API (version
+        /// 2).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The Maps API version 2 has a simplified interface that can be used without creating
+        /// or managing map resources.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you are using an AWS SDK or the AWS CLI, note that the Maps API version 2 is found
+        /// under <c>geo-maps</c> or <c>geo_maps</c>, not under <c>location</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Since <c>Grab</c> is not yet fully supported in Maps API version 2, we recommend you
+        /// continue using API version 1 when using <c>Grab</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Start your version 2 API journey with the <a href="https://docs.aws.amazon.com/location/latest/APIReference/API_Operations_Amazon_Location_Service_Maps_V2.html">Maps
+        /// V2 API Reference</a> or the <a href="https://docs.aws.amazon.com/location/latest/developerguide/maps.html">Developer
+        /// Guide</a>.
+        /// </para>
+        ///  </li> </ul> </important> 
+        /// <para>
+        /// Deletes a map resource from your Amazon Web Services account.
+        /// </para>
         ///  <note> 
         /// <para>
         /// This operation deletes the resource permanently. If the map is being used in an application,
         /// the map may not render.
         /// </para>
         ///  </note>
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteMap service method.</param>
         /// <param name="cancellationToken">
@@ -2136,13 +2570,49 @@ namespace Amazon.LocationService
 
 
         /// <summary>
-        /// Deletes a place index resource from your Amazon Web Services account.
+        /// <important> 
+        /// <para>
+        /// This operation is no longer current and may be deprecated in the future. We recommend
+        /// you upgrade to the Places API V2 unless you require Grab data.
         /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>DeletePlaceIndex</c> is part of a previous Amazon Location Service Places API
+        /// (version 1) which has been superseded by a more intuitive, powerful, and complete
+        /// API (version 2).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The Places API version 2 has a simplified interface that can be used without creating
+        /// or managing place index resources.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you are using an Amazon Web Services SDK or the Amazon Web Services CLI, note that
+        /// the Places API version 2 is found under <c>geo-places</c> or <c>geo_places</c>, not
+        /// under <c>location</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Since Grab is not yet fully supported in Places API version 2, we recommend you continue
+        /// using API version 1 when using Grab.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Start your version 2 API journey with the Places V2 <a href="/location/latest/APIReference/API_Operations_Amazon_Location_Service_Places_V2.html">API
+        /// Reference</a> or the <a href="/location/latest/developerguide/places.html">Developer
+        /// Guide</a>.
+        /// </para>
+        ///  </li> </ul> </important> 
+        /// <para>
+        /// Deletes a place index resource from your Amazon Web Services account.
+        /// </para>
         ///  <note> 
         /// <para>
         /// This operation deletes the resource permanently.
         /// </para>
         ///  </note>
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeletePlaceIndex service method.</param>
         /// 
@@ -2176,13 +2646,49 @@ namespace Amazon.LocationService
 
 
         /// <summary>
-        /// Deletes a place index resource from your Amazon Web Services account.
+        /// <important> 
+        /// <para>
+        /// This operation is no longer current and may be deprecated in the future. We recommend
+        /// you upgrade to the Places API V2 unless you require Grab data.
         /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>DeletePlaceIndex</c> is part of a previous Amazon Location Service Places API
+        /// (version 1) which has been superseded by a more intuitive, powerful, and complete
+        /// API (version 2).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The Places API version 2 has a simplified interface that can be used without creating
+        /// or managing place index resources.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you are using an Amazon Web Services SDK or the Amazon Web Services CLI, note that
+        /// the Places API version 2 is found under <c>geo-places</c> or <c>geo_places</c>, not
+        /// under <c>location</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Since Grab is not yet fully supported in Places API version 2, we recommend you continue
+        /// using API version 1 when using Grab.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Start your version 2 API journey with the Places V2 <a href="/location/latest/APIReference/API_Operations_Amazon_Location_Service_Places_V2.html">API
+        /// Reference</a> or the <a href="/location/latest/developerguide/places.html">Developer
+        /// Guide</a>.
+        /// </para>
+        ///  </li> </ul> </important> 
+        /// <para>
+        /// Deletes a place index resource from your Amazon Web Services account.
+        /// </para>
         ///  <note> 
         /// <para>
         /// This operation deletes the resource permanently.
         /// </para>
         ///  </note>
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeletePlaceIndex service method.</param>
         /// <param name="cancellationToken">
@@ -2223,13 +2729,49 @@ namespace Amazon.LocationService
 
 
         /// <summary>
-        /// Deletes a route calculator resource from your Amazon Web Services account.
+        /// <important> 
+        /// <para>
+        /// This operation is no longer current and may be deprecated in the future. We recommend
+        /// you upgrade to the Routes API V2 unless you require Grab data.
         /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>DeleteRouteCalculator</c> is part of a previous Amazon Location Service Routes
+        /// API (version 1) which has been superseded by a more intuitive, powerful, and complete
+        /// API (version 2).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The Routes API version 2 has a simplified interface that can be used without creating
+        /// or managing route calculator resources.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you are using an Amazon Web Services SDK or the Amazon Web Services CLI, note that
+        /// the Routes API version 2 is found under <c>geo-routes</c> or <c>geo_routes</c>, not
+        /// under <c>location</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Since Grab is not yet fully supported in Routes API version 2, we recommend you continue
+        /// using API version 1 when using Grab.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Start your version 2 API journey with the Routes V2 <a href="/location/latest/APIReference/API_Operations_Amazon_Location_Service_Routes_V2.html">API
+        /// Reference</a> or the <a href="/location/latest/developerguide/routes.html">Developer
+        /// Guide</a>.
+        /// </para>
+        ///  </li> </ul> </important> 
+        /// <para>
+        /// Deletes a route calculator resource from your Amazon Web Services account.
+        /// </para>
         ///  <note> 
         /// <para>
         /// This operation deletes the resource permanently.
         /// </para>
         ///  </note>
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteRouteCalculator service method.</param>
         /// 
@@ -2263,13 +2805,49 @@ namespace Amazon.LocationService
 
 
         /// <summary>
-        /// Deletes a route calculator resource from your Amazon Web Services account.
+        /// <important> 
+        /// <para>
+        /// This operation is no longer current and may be deprecated in the future. We recommend
+        /// you upgrade to the Routes API V2 unless you require Grab data.
         /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>DeleteRouteCalculator</c> is part of a previous Amazon Location Service Routes
+        /// API (version 1) which has been superseded by a more intuitive, powerful, and complete
+        /// API (version 2).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The Routes API version 2 has a simplified interface that can be used without creating
+        /// or managing route calculator resources.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you are using an Amazon Web Services SDK or the Amazon Web Services CLI, note that
+        /// the Routes API version 2 is found under <c>geo-routes</c> or <c>geo_routes</c>, not
+        /// under <c>location</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Since Grab is not yet fully supported in Routes API version 2, we recommend you continue
+        /// using API version 1 when using Grab.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Start your version 2 API journey with the Routes V2 <a href="/location/latest/APIReference/API_Operations_Amazon_Location_Service_Routes_V2.html">API
+        /// Reference</a> or the <a href="/location/latest/developerguide/routes.html">Developer
+        /// Guide</a>.
+        /// </para>
+        ///  </li> </ul> </important> 
+        /// <para>
+        /// Deletes a route calculator resource from your Amazon Web Services account.
+        /// </para>
         ///  <note> 
         /// <para>
         /// This operation deletes the resource permanently.
         /// </para>
         ///  </note>
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteRouteCalculator service method.</param>
         /// <param name="cancellationToken">
@@ -2477,6 +3055,12 @@ namespace Amazon.LocationService
 
         /// <summary>
         /// Retrieves the API key resource details.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">Use
+        /// API keys to authenticate</a> in the <i>Amazon Location Service Developer Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeKey service method.</param>
         /// 
@@ -2511,6 +3095,12 @@ namespace Amazon.LocationService
 
         /// <summary>
         /// Retrieves the API key resource details.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">Use
+        /// API keys to authenticate</a> in the <i>Amazon Location Service Developer Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeKey service method.</param>
         /// <param name="cancellationToken">
@@ -2551,7 +3141,44 @@ namespace Amazon.LocationService
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// This operation is no longer current and may be deprecated in the future. We recommend
+        /// upgrading to the Maps API V2 unless you require <c>Grab</c> data.
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>DescribeMap</c> is part of a previous Amazon Location Service Maps API (version
+        /// 1) which has been superseded by a more intuitive, powerful, and complete API (version
+        /// 2).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The Maps API version 2 has a simplified interface that can be used without creating
+        /// or managing map resources.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you are using an AWS SDK or the AWS CLI, note that the Maps API version 2 is found
+        /// under <c>geo-maps</c> or <c>geo_maps</c>, not under <c>location</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Since <c>Grab</c> is not yet fully supported in Maps API version 2, we recommend you
+        /// continue using API version 1 when using <c>Grab</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Start your version 2 API journey with the <a href="https://docs.aws.amazon.com/location/latest/APIReference/API_Operations_Amazon_Location_Service_Maps_V2.html">Maps
+        /// V2 API Reference</a> or the <a href="https://docs.aws.amazon.com/location/latest/developerguide/maps.html">Developer
+        /// Guide</a>.
+        /// </para>
+        ///  </li> </ul> </important> 
+        /// <para>
         /// Retrieves the map resource details.
+        /// </para>
+        /// 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeMap service method.</param>
         /// 
@@ -2585,7 +3212,44 @@ namespace Amazon.LocationService
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// This operation is no longer current and may be deprecated in the future. We recommend
+        /// upgrading to the Maps API V2 unless you require <c>Grab</c> data.
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>DescribeMap</c> is part of a previous Amazon Location Service Maps API (version
+        /// 1) which has been superseded by a more intuitive, powerful, and complete API (version
+        /// 2).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The Maps API version 2 has a simplified interface that can be used without creating
+        /// or managing map resources.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you are using an AWS SDK or the AWS CLI, note that the Maps API version 2 is found
+        /// under <c>geo-maps</c> or <c>geo_maps</c>, not under <c>location</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Since <c>Grab</c> is not yet fully supported in Maps API version 2, we recommend you
+        /// continue using API version 1 when using <c>Grab</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Start your version 2 API journey with the <a href="https://docs.aws.amazon.com/location/latest/APIReference/API_Operations_Amazon_Location_Service_Maps_V2.html">Maps
+        /// V2 API Reference</a> or the <a href="https://docs.aws.amazon.com/location/latest/developerguide/maps.html">Developer
+        /// Guide</a>.
+        /// </para>
+        ///  </li> </ul> </important> 
+        /// <para>
         /// Retrieves the map resource details.
+        /// </para>
+        /// 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeMap service method.</param>
         /// <param name="cancellationToken">
@@ -2626,7 +3290,45 @@ namespace Amazon.LocationService
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// This operation is no longer current and may be deprecated in the future. We recommend
+        /// you upgrade to the Places API V2 unless you require Grab data.
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>DescribePlaceIndex</c> is part of a previous Amazon Location Service Places API
+        /// (version 1) which has been superseded by a more intuitive, powerful, and complete
+        /// API (version 2).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The Places API version 2 has a simplified interface that can be used without creating
+        /// or managing place index resources.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you are using an Amazon Web Services SDK or the Amazon Web Services CLI, note that
+        /// the Places API version 2 is found under <c>geo-places</c> or <c>geo_places</c>, not
+        /// under <c>location</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Since Grab is not yet fully supported in Places API version 2, we recommend you continue
+        /// using API version 1 when using Grab.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Start your version 2 API journey with the Places V2 <a href="/location/latest/APIReference/API_Operations_Amazon_Location_Service_Places_V2.html">API
+        /// Reference</a> or the <a href="/location/latest/developerguide/places.html">Developer
+        /// Guide</a>.
+        /// </para>
+        ///  </li> </ul> </important> 
+        /// <para>
         /// Retrieves the place index resource details.
+        /// </para>
+        /// 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribePlaceIndex service method.</param>
         /// 
@@ -2660,7 +3362,45 @@ namespace Amazon.LocationService
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// This operation is no longer current and may be deprecated in the future. We recommend
+        /// you upgrade to the Places API V2 unless you require Grab data.
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>DescribePlaceIndex</c> is part of a previous Amazon Location Service Places API
+        /// (version 1) which has been superseded by a more intuitive, powerful, and complete
+        /// API (version 2).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The Places API version 2 has a simplified interface that can be used without creating
+        /// or managing place index resources.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you are using an Amazon Web Services SDK or the Amazon Web Services CLI, note that
+        /// the Places API version 2 is found under <c>geo-places</c> or <c>geo_places</c>, not
+        /// under <c>location</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Since Grab is not yet fully supported in Places API version 2, we recommend you continue
+        /// using API version 1 when using Grab.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Start your version 2 API journey with the Places V2 <a href="/location/latest/APIReference/API_Operations_Amazon_Location_Service_Places_V2.html">API
+        /// Reference</a> or the <a href="/location/latest/developerguide/places.html">Developer
+        /// Guide</a>.
+        /// </para>
+        ///  </li> </ul> </important> 
+        /// <para>
         /// Retrieves the place index resource details.
+        /// </para>
+        /// 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribePlaceIndex service method.</param>
         /// <param name="cancellationToken">
@@ -2701,7 +3441,45 @@ namespace Amazon.LocationService
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// This operation is no longer current and may be deprecated in the future. We recommend
+        /// you upgrade to the Routes API V2 unless you require Grab data.
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>DescribeRouteCalculator</c> is part of a previous Amazon Location Service Routes
+        /// API (version 1) which has been superseded by a more intuitive, powerful, and complete
+        /// API (version 2).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The Routes API version 2 has a simplified interface that can be used without creating
+        /// or managing route calculator resources.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you are using an Amazon Web Services SDK or the Amazon Web Services CLI, note that
+        /// the Routes API version 2 is found under <c>geo-routes</c> or <c>geo_routes</c>, not
+        /// under <c>location</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Since Grab is not yet fully supported in Routes API version 2, we recommend you continue
+        /// using API version 1 when using Grab.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Start your version 2 API journey with the Routes V2 <a href="/location/latest/APIReference/API_Operations_Amazon_Location_Service_Routes_V2.html">API
+        /// Reference</a> or the <a href="/location/latest/developerguide/routes.html">Developer
+        /// Guide</a>.
+        /// </para>
+        ///  </li> </ul> </important> 
+        /// <para>
         /// Retrieves the route calculator resource details.
+        /// </para>
+        /// 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeRouteCalculator service method.</param>
         /// 
@@ -2735,7 +3513,45 @@ namespace Amazon.LocationService
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// This operation is no longer current and may be deprecated in the future. We recommend
+        /// you upgrade to the Routes API V2 unless you require Grab data.
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>DescribeRouteCalculator</c> is part of a previous Amazon Location Service Routes
+        /// API (version 1) which has been superseded by a more intuitive, powerful, and complete
+        /// API (version 2).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The Routes API version 2 has a simplified interface that can be used without creating
+        /// or managing route calculator resources.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you are using an Amazon Web Services SDK or the Amazon Web Services CLI, note that
+        /// the Routes API version 2 is found under <c>geo-routes</c> or <c>geo_routes</c>, not
+        /// under <c>location</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Since Grab is not yet fully supported in Routes API version 2, we recommend you continue
+        /// using API version 1 when using Grab.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Start your version 2 API journey with the Routes V2 <a href="/location/latest/APIReference/API_Operations_Amazon_Location_Service_Routes_V2.html">API
+        /// Reference</a> or the <a href="/location/latest/developerguide/routes.html">Developer
+        /// Guide</a>.
+        /// </para>
+        ///  </li> </ul> </important> 
+        /// <para>
         /// Retrieves the route calculator resource details.
+        /// </para>
+        /// 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeRouteCalculator service method.</param>
         /// <param name="cancellationToken">
@@ -3334,7 +4150,45 @@ namespace Amazon.LocationService
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// This operation is no longer current and may be deprecated in the future. We recommend
+        /// upgrading to <a href="https://docs.aws.amazon.com/location/latest/APIReference/API_geomaps_GetGlyphs.html">
+        /// <c>GetGlyphs</c> </a> unless you require <c>Grab</c> data.
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>GetMapGlyphs</c> is part of a previous Amazon Location Service Maps API (version
+        /// 1) which has been superseded by a more intuitive, powerful, and complete API (version
+        /// 2).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The version 2 <c>GetGlyphs</c> operation gives a better user experience and is compatible
+        /// with the remainder of the V2 Maps API.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you are using an AWS SDK or the AWS CLI, note that the Maps API version 2 is found
+        /// under <c>geo-maps</c> or <c>geo_maps</c>, not under <c>location</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Since <c>Grab</c> is not yet fully supported in Maps API version 2, we recommend you
+        /// continue using API version 1 when using <c>Grab</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Start your version 2 API journey with the <a href="https://docs.aws.amazon.com/location/latest/APIReference/API_Operations_Amazon_Location_Service_Maps_V2.html">Maps
+        /// V2 API Reference</a> or the <a href="https://docs.aws.amazon.com/location/latest/developerguide/maps.html">Developer
+        /// Guide</a>.
+        /// </para>
+        ///  </li> </ul> </important> 
+        /// <para>
         /// Retrieves glyphs used to display labels on a map.
+        /// </para>
+        /// 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMapGlyphs service method.</param>
         /// 
@@ -3368,7 +4222,45 @@ namespace Amazon.LocationService
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// This operation is no longer current and may be deprecated in the future. We recommend
+        /// upgrading to <a href="https://docs.aws.amazon.com/location/latest/APIReference/API_geomaps_GetGlyphs.html">
+        /// <c>GetGlyphs</c> </a> unless you require <c>Grab</c> data.
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>GetMapGlyphs</c> is part of a previous Amazon Location Service Maps API (version
+        /// 1) which has been superseded by a more intuitive, powerful, and complete API (version
+        /// 2).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The version 2 <c>GetGlyphs</c> operation gives a better user experience and is compatible
+        /// with the remainder of the V2 Maps API.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you are using an AWS SDK or the AWS CLI, note that the Maps API version 2 is found
+        /// under <c>geo-maps</c> or <c>geo_maps</c>, not under <c>location</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Since <c>Grab</c> is not yet fully supported in Maps API version 2, we recommend you
+        /// continue using API version 1 when using <c>Grab</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Start your version 2 API journey with the <a href="https://docs.aws.amazon.com/location/latest/APIReference/API_Operations_Amazon_Location_Service_Maps_V2.html">Maps
+        /// V2 API Reference</a> or the <a href="https://docs.aws.amazon.com/location/latest/developerguide/maps.html">Developer
+        /// Guide</a>.
+        /// </para>
+        ///  </li> </ul> </important> 
+        /// <para>
         /// Retrieves glyphs used to display labels on a map.
+        /// </para>
+        /// 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMapGlyphs service method.</param>
         /// <param name="cancellationToken">
@@ -3409,9 +4301,47 @@ namespace Amazon.LocationService
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// This operation is no longer current and may be deprecated in the future. We recommend
+        /// upgrading to <a href="https://docs.aws.amazon.com/location/latest/APIReference/API_geomaps_GetSprites.html">
+        /// <c>GetSprites</c> </a> unless you require <c>Grab</c> data.
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>GetMapSprites</c> is part of a previous Amazon Location Service Maps API (version
+        /// 1) which has been superseded by a more intuitive, powerful, and complete API (version
+        /// 2).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The version 2 <c>GetSprites</c> operation gives a better user experience and is compatible
+        /// with the remainder of the V2 Maps API.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you are using an AWS SDK or the AWS CLI, note that the Maps API version 2 is found
+        /// under <c>geo-maps</c> or <c>geo_maps</c>, not under <c>location</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Since <c>Grab</c> is not yet fully supported in Maps API version 2, we recommend you
+        /// continue using API version 1 when using <c>Grab</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Start your version 2 API journey with the <a href="https://docs.aws.amazon.com/location/latest/APIReference/API_Operations_Amazon_Location_Service_Maps_V2.html">Maps
+        /// V2 API Reference</a> or the <a href="https://docs.aws.amazon.com/location/latest/developerguide/maps.html">Developer
+        /// Guide</a>.
+        /// </para>
+        ///  </li> </ul> </important> 
+        /// <para>
         /// Retrieves the sprite sheet corresponding to a map resource. The sprite sheet is a
         /// PNG image paired with a JSON document describing the offsets of individual icons that
         /// will be displayed on a rendered map.
+        /// </para>
+        /// 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMapSprites service method.</param>
         /// 
@@ -3445,9 +4375,47 @@ namespace Amazon.LocationService
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// This operation is no longer current and may be deprecated in the future. We recommend
+        /// upgrading to <a href="https://docs.aws.amazon.com/location/latest/APIReference/API_geomaps_GetSprites.html">
+        /// <c>GetSprites</c> </a> unless you require <c>Grab</c> data.
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>GetMapSprites</c> is part of a previous Amazon Location Service Maps API (version
+        /// 1) which has been superseded by a more intuitive, powerful, and complete API (version
+        /// 2).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The version 2 <c>GetSprites</c> operation gives a better user experience and is compatible
+        /// with the remainder of the V2 Maps API.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you are using an AWS SDK or the AWS CLI, note that the Maps API version 2 is found
+        /// under <c>geo-maps</c> or <c>geo_maps</c>, not under <c>location</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Since <c>Grab</c> is not yet fully supported in Maps API version 2, we recommend you
+        /// continue using API version 1 when using <c>Grab</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Start your version 2 API journey with the <a href="https://docs.aws.amazon.com/location/latest/APIReference/API_Operations_Amazon_Location_Service_Maps_V2.html">Maps
+        /// V2 API Reference</a> or the <a href="https://docs.aws.amazon.com/location/latest/developerguide/maps.html">Developer
+        /// Guide</a>.
+        /// </para>
+        ///  </li> </ul> </important> 
+        /// <para>
         /// Retrieves the sprite sheet corresponding to a map resource. The sprite sheet is a
         /// PNG image paired with a JSON document describing the offsets of individual icons that
         /// will be displayed on a rendered map.
+        /// </para>
+        /// 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMapSprites service method.</param>
         /// <param name="cancellationToken">
@@ -3488,13 +4456,50 @@ namespace Amazon.LocationService
 
 
         /// <summary>
-        /// Retrieves the map style descriptor from a map resource. 
+        /// <important> 
+        /// <para>
+        /// This operation is no longer current and may be deprecated in the future. We recommend
+        /// upgrading to <a href="https://docs.aws.amazon.com/location/latest/APIReference/API_geomaps_GetStyleDescriptor.html">
+        /// <c>GetStyleDescriptor</c> </a> unless you require <c>Grab</c> data.
         /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>GetMapStyleDescriptor</c> is part of a previous Amazon Location Service Maps API
+        /// (version 1) which has been superseded by a more intuitive, powerful, and complete
+        /// API (version 2).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The version 2 <c>GetStyleDescriptor</c> operation gives a better user experience and
+        /// is compatible with the remainder of the V2 Maps API.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you are using an AWS SDK or the AWS CLI, note that the Maps API version 2 is found
+        /// under <c>geo-maps</c> or <c>geo_maps</c>, not under <c>location</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Since <c>Grab</c> is not yet fully supported in Maps API version 2, we recommend you
+        /// continue using API version 1 when using <c>Grab</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Start your version 2 API journey with the <a href="https://docs.aws.amazon.com/location/latest/APIReference/API_Operations_Amazon_Location_Service_Maps_V2.html">Maps
+        /// V2 API Reference</a> or the <a href="https://docs.aws.amazon.com/location/latest/developerguide/maps.html">Developer
+        /// Guide</a>.
+        /// </para>
+        ///  </li> </ul> </important> 
+        /// <para>
+        /// Retrieves the map style descriptor from a map resource. 
+        /// </para>
         ///  
         /// <para>
         /// The style descriptor contains speciﬁcations on how features render on a map. For example,
         /// what data to display, what order to display the data in, and the style for the data.
         /// Style descriptors follow the Mapbox Style Specification.
+        /// </para>
+        /// 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMapStyleDescriptor service method.</param>
@@ -3529,13 +4534,50 @@ namespace Amazon.LocationService
 
 
         /// <summary>
-        /// Retrieves the map style descriptor from a map resource. 
+        /// <important> 
+        /// <para>
+        /// This operation is no longer current and may be deprecated in the future. We recommend
+        /// upgrading to <a href="https://docs.aws.amazon.com/location/latest/APIReference/API_geomaps_GetStyleDescriptor.html">
+        /// <c>GetStyleDescriptor</c> </a> unless you require <c>Grab</c> data.
         /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>GetMapStyleDescriptor</c> is part of a previous Amazon Location Service Maps API
+        /// (version 1) which has been superseded by a more intuitive, powerful, and complete
+        /// API (version 2).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The version 2 <c>GetStyleDescriptor</c> operation gives a better user experience and
+        /// is compatible with the remainder of the V2 Maps API.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you are using an AWS SDK or the AWS CLI, note that the Maps API version 2 is found
+        /// under <c>geo-maps</c> or <c>geo_maps</c>, not under <c>location</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Since <c>Grab</c> is not yet fully supported in Maps API version 2, we recommend you
+        /// continue using API version 1 when using <c>Grab</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Start your version 2 API journey with the <a href="https://docs.aws.amazon.com/location/latest/APIReference/API_Operations_Amazon_Location_Service_Maps_V2.html">Maps
+        /// V2 API Reference</a> or the <a href="https://docs.aws.amazon.com/location/latest/developerguide/maps.html">Developer
+        /// Guide</a>.
+        /// </para>
+        ///  </li> </ul> </important> 
+        /// <para>
+        /// Retrieves the map style descriptor from a map resource. 
+        /// </para>
         ///  
         /// <para>
         /// The style descriptor contains speciﬁcations on how features render on a map. For example,
         /// what data to display, what order to display the data in, and the style for the data.
         /// Style descriptors follow the Mapbox Style Specification.
+        /// </para>
+        /// 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMapStyleDescriptor service method.</param>
@@ -3577,15 +4619,52 @@ namespace Amazon.LocationService
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// This operation is no longer current and may be deprecated in the future. We recommend
+        /// upgrading to <a href="https://docs.aws.amazon.com/location/latest/APIReference/API_geomaps_GetTile.html">
+        /// <c>GetTile</c> </a> unless you require <c>Grab</c> data.
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>GetMapTile</c> is part of a previous Amazon Location Service Maps API (version
+        /// 1) which has been superseded by a more intuitive, powerful, and complete API (version
+        /// 2).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The version 2 <c>GetTile</c> operation gives a better user experience and is compatible
+        /// with the remainder of the V2 Maps API.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you are using an AWS SDK or the AWS CLI, note that the Maps API version 2 is found
+        /// under <c>geo-maps</c> or <c>geo_maps</c>, not under <c>location</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Since <c>Grab</c> is not yet fully supported in Maps API version 2, we recommend you
+        /// continue using API version 1 when using <c>Grab</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Start your version 2 API journey with the <a href="https://docs.aws.amazon.com/location/latest/APIReference/API_Operations_Amazon_Location_Service_Maps_V2.html">Maps
+        /// V2 API Reference</a> or the <a href="https://docs.aws.amazon.com/location/latest/developerguide/maps.html">Developer
+        /// Guide</a>.
+        /// </para>
+        ///  </li> </ul> </important> 
+        /// <para>
         /// Retrieves a vector data tile from the map resource. Map tiles are used by clients
         /// to render a map. they're addressed using a grid arrangement with an X coordinate,
         /// Y coordinate, and Z (zoom) level. 
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// The origin (0, 0) is the top left of the map. Increasing the zoom level by 1 doubles
         /// both the X and Y dimensions, so a tile containing data for the entire world at (0/0/0)
         /// will be split into 4 tiles at zoom 1 (1/0/0, 1/0/1, 1/1/0, 1/1/1).
+        /// </para>
+        /// 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMapTile service method.</param>
@@ -3620,15 +4699,52 @@ namespace Amazon.LocationService
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// This operation is no longer current and may be deprecated in the future. We recommend
+        /// upgrading to <a href="https://docs.aws.amazon.com/location/latest/APIReference/API_geomaps_GetTile.html">
+        /// <c>GetTile</c> </a> unless you require <c>Grab</c> data.
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>GetMapTile</c> is part of a previous Amazon Location Service Maps API (version
+        /// 1) which has been superseded by a more intuitive, powerful, and complete API (version
+        /// 2).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The version 2 <c>GetTile</c> operation gives a better user experience and is compatible
+        /// with the remainder of the V2 Maps API.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you are using an AWS SDK or the AWS CLI, note that the Maps API version 2 is found
+        /// under <c>geo-maps</c> or <c>geo_maps</c>, not under <c>location</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Since <c>Grab</c> is not yet fully supported in Maps API version 2, we recommend you
+        /// continue using API version 1 when using <c>Grab</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Start your version 2 API journey with the <a href="https://docs.aws.amazon.com/location/latest/APIReference/API_Operations_Amazon_Location_Service_Maps_V2.html">Maps
+        /// V2 API Reference</a> or the <a href="https://docs.aws.amazon.com/location/latest/developerguide/maps.html">Developer
+        /// Guide</a>.
+        /// </para>
+        ///  </li> </ul> </important> 
+        /// <para>
         /// Retrieves a vector data tile from the map resource. Map tiles are used by clients
         /// to render a map. they're addressed using a grid arrangement with an X coordinate,
         /// Y coordinate, and Z (zoom) level. 
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// The origin (0, 0) is the top left of the map. Increasing the zoom level by 1 doubles
         /// both the X and Y dimensions, so a tile containing data for the entire world at (0/0/0)
         /// will be split into 4 tiles at zoom 1 (1/0/0, 1/0/1, 1/1/0, 1/1/1).
+        /// </para>
+        /// 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMapTile service method.</param>
@@ -3670,8 +4786,44 @@ namespace Amazon.LocationService
 
 
         /// <summary>
-        /// Finds a place by its unique ID. A <c>PlaceId</c> is returned by other search operations.
+        /// <important> 
+        /// <para>
+        /// This operation is no longer current and may be deprecated in the future. We recommend
+        /// you upgrade to the <a href="/location/latest/APIReference/API_geoplaces_GetPlace.html">V2
+        /// <c>GetPlace</c> </a> operation unless you require Grab data.
         /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// This version of <c>GetPlace</c> is part of a previous Amazon Location Service Places
+        /// API (version 1) which has been superseded by a more intuitive, powerful, and complete
+        /// API (version 2).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Version 2 of the <c>GetPlace</c> operation interoperates with the rest of the Places
+        /// V2 API, while this version does not.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you are using an Amazon Web Services SDK or the Amazon Web Services CLI, note that
+        /// the Places API version 2 is found under <c>geo-places</c> or <c>geo_places</c>, not
+        /// under <c>location</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Since Grab is not yet fully supported in Places API version 2, we recommend you continue
+        /// using API version 1 when using Grab.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Start your version 2 API journey with the Places V2 <a href="/location/latest/APIReference/API_Operations_Amazon_Location_Service_Places_V2.html">API
+        /// Reference</a> or the <a href="/location/latest/developerguide/places.html">Developer
+        /// Guide</a>.
+        /// </para>
+        ///  </li> </ul> </important> 
+        /// <para>
+        /// Finds a place by its unique ID. A <c>PlaceId</c> is returned by other search operations.
+        /// </para>
         ///  <note> 
         /// <para>
         /// A PlaceId is valid only if all of the following are the same in the original search
@@ -3696,6 +4848,7 @@ namespace Amazon.LocationService
         /// see <a href="http://aws.amazon.com/service-terms">AWS service terms</a>.
         /// </para>
         ///  </note>
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetPlace service method.</param>
         /// 
@@ -3729,8 +4882,44 @@ namespace Amazon.LocationService
 
 
         /// <summary>
-        /// Finds a place by its unique ID. A <c>PlaceId</c> is returned by other search operations.
+        /// <important> 
+        /// <para>
+        /// This operation is no longer current and may be deprecated in the future. We recommend
+        /// you upgrade to the <a href="/location/latest/APIReference/API_geoplaces_GetPlace.html">V2
+        /// <c>GetPlace</c> </a> operation unless you require Grab data.
         /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// This version of <c>GetPlace</c> is part of a previous Amazon Location Service Places
+        /// API (version 1) which has been superseded by a more intuitive, powerful, and complete
+        /// API (version 2).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Version 2 of the <c>GetPlace</c> operation interoperates with the rest of the Places
+        /// V2 API, while this version does not.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you are using an Amazon Web Services SDK or the Amazon Web Services CLI, note that
+        /// the Places API version 2 is found under <c>geo-places</c> or <c>geo_places</c>, not
+        /// under <c>location</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Since Grab is not yet fully supported in Places API version 2, we recommend you continue
+        /// using API version 1 when using Grab.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Start your version 2 API journey with the Places V2 <a href="/location/latest/APIReference/API_Operations_Amazon_Location_Service_Places_V2.html">API
+        /// Reference</a> or the <a href="/location/latest/developerguide/places.html">Developer
+        /// Guide</a>.
+        /// </para>
+        ///  </li> </ul> </important> 
+        /// <para>
+        /// Finds a place by its unique ID. A <c>PlaceId</c> is returned by other search operations.
+        /// </para>
         ///  <note> 
         /// <para>
         /// A PlaceId is valid only if all of the following are the same in the original search
@@ -3755,6 +4944,7 @@ namespace Amazon.LocationService
         /// see <a href="http://aws.amazon.com/service-terms">AWS service terms</a>.
         /// </para>
         ///  </note>
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetPlace service method.</param>
         /// <param name="cancellationToken">
@@ -4009,6 +5199,12 @@ namespace Amazon.LocationService
 
         /// <summary>
         /// Lists API key resources in your Amazon Web Services account.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">Use
+        /// API keys to authenticate</a> in the <i>Amazon Location Service Developer Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListKeys service method.</param>
         /// 
@@ -4040,6 +5236,12 @@ namespace Amazon.LocationService
 
         /// <summary>
         /// Lists API key resources in your Amazon Web Services account.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">Use
+        /// API keys to authenticate</a> in the <i>Amazon Location Service Developer Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListKeys service method.</param>
         /// <param name="cancellationToken">
@@ -4077,7 +5279,44 @@ namespace Amazon.LocationService
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// This operation is no longer current and may be deprecated in the future. We recommend
+        /// upgrading to the Maps API V2 unless you require <c>Grab</c> data.
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>ListMaps</c> is part of a previous Amazon Location Service Maps API (version 1)
+        /// which has been superseded by a more intuitive, powerful, and complete API (version
+        /// 2).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The Maps API version 2 has a simplified interface that can be used without creating
+        /// or managing map resources.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you are using an AWS SDK or the AWS CLI, note that the Maps API version 2 is found
+        /// under <c>geo-maps</c> or <c>geo_maps</c>, not under <c>location</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Since <c>Grab</c> is not yet fully supported in Maps API version 2, we recommend you
+        /// continue using API version 1 when using <c>Grab</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Start your version 2 API journey with the <a href="https://docs.aws.amazon.com/location/latest/APIReference/API_Operations_Amazon_Location_Service_Maps_V2.html">Maps
+        /// V2 API Reference</a> or the <a href="https://docs.aws.amazon.com/location/latest/developerguide/maps.html">Developer
+        /// Guide</a>.
+        /// </para>
+        ///  </li> </ul> </important> 
+        /// <para>
         /// Lists map resources in your Amazon Web Services account.
+        /// </para>
+        /// 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListMaps service method.</param>
         /// 
@@ -4108,7 +5347,44 @@ namespace Amazon.LocationService
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// This operation is no longer current and may be deprecated in the future. We recommend
+        /// upgrading to the Maps API V2 unless you require <c>Grab</c> data.
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>ListMaps</c> is part of a previous Amazon Location Service Maps API (version 1)
+        /// which has been superseded by a more intuitive, powerful, and complete API (version
+        /// 2).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The Maps API version 2 has a simplified interface that can be used without creating
+        /// or managing map resources.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you are using an AWS SDK or the AWS CLI, note that the Maps API version 2 is found
+        /// under <c>geo-maps</c> or <c>geo_maps</c>, not under <c>location</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Since <c>Grab</c> is not yet fully supported in Maps API version 2, we recommend you
+        /// continue using API version 1 when using <c>Grab</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Start your version 2 API journey with the <a href="https://docs.aws.amazon.com/location/latest/APIReference/API_Operations_Amazon_Location_Service_Maps_V2.html">Maps
+        /// V2 API Reference</a> or the <a href="https://docs.aws.amazon.com/location/latest/developerguide/maps.html">Developer
+        /// Guide</a>.
+        /// </para>
+        ///  </li> </ul> </important> 
+        /// <para>
         /// Lists map resources in your Amazon Web Services account.
+        /// </para>
+        /// 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListMaps service method.</param>
         /// <param name="cancellationToken">
@@ -4146,7 +5422,45 @@ namespace Amazon.LocationService
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// This operation is no longer current and may be deprecated in the future. We recommend
+        /// you upgrade to the Places API V2 unless you require Grab data.
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>ListPlaceIndexes</c> is part of a previous Amazon Location Service Places API
+        /// (version 1) which has been superseded by a more intuitive, powerful, and complete
+        /// API (version 2).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The Places API version 2 has a simplified interface that can be used without creating
+        /// or managing place index resources.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you are using an Amazon Web Services SDK or the Amazon Web Services CLI, note that
+        /// the Places API version 2 is found under <c>geo-places</c> or <c>geo_places</c>, not
+        /// under <c>location</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Since Grab is not yet fully supported in Places API version 2, we recommend you continue
+        /// using API version 1 when using Grab.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Start your version 2 API journey with the Places V2 <a href="/location/latest/APIReference/API_Operations_Amazon_Location_Service_Places_V2.html">API
+        /// Reference</a> or the <a href="/location/latest/developerguide/places.html">Developer
+        /// Guide</a>.
+        /// </para>
+        ///  </li> </ul> </important> 
+        /// <para>
         /// Lists place index resources in your Amazon Web Services account.
+        /// </para>
+        /// 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPlaceIndexes service method.</param>
         /// 
@@ -4177,7 +5491,45 @@ namespace Amazon.LocationService
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// This operation is no longer current and may be deprecated in the future. We recommend
+        /// you upgrade to the Places API V2 unless you require Grab data.
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>ListPlaceIndexes</c> is part of a previous Amazon Location Service Places API
+        /// (version 1) which has been superseded by a more intuitive, powerful, and complete
+        /// API (version 2).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The Places API version 2 has a simplified interface that can be used without creating
+        /// or managing place index resources.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you are using an Amazon Web Services SDK or the Amazon Web Services CLI, note that
+        /// the Places API version 2 is found under <c>geo-places</c> or <c>geo_places</c>, not
+        /// under <c>location</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Since Grab is not yet fully supported in Places API version 2, we recommend you continue
+        /// using API version 1 when using Grab.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Start your version 2 API journey with the Places V2 <a href="/location/latest/APIReference/API_Operations_Amazon_Location_Service_Places_V2.html">API
+        /// Reference</a> or the <a href="/location/latest/developerguide/places.html">Developer
+        /// Guide</a>.
+        /// </para>
+        ///  </li> </ul> </important> 
+        /// <para>
         /// Lists place index resources in your Amazon Web Services account.
+        /// </para>
+        /// 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPlaceIndexes service method.</param>
         /// <param name="cancellationToken">
@@ -4215,7 +5567,45 @@ namespace Amazon.LocationService
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// This operation is no longer current and may be deprecated in the future. We recommend
+        /// you upgrade to the Routes API V2 unless you require Grab data.
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>ListRouteCalculators</c> is part of a previous Amazon Location Service Routes
+        /// API (version 1) which has been superseded by a more intuitive, powerful, and complete
+        /// API (version 2).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The Routes API version 2 has a simplified interface that can be used without creating
+        /// or managing route calculator resources.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you are using an Amazon Web Services SDK or the Amazon Web Services CLI, note that
+        /// the Routes API version 2 is found under <c>geo-routes</c> or <c>geo_routes</c>, not
+        /// under <c>location</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Since Grab is not yet fully supported in Routes API version 2, we recommend you continue
+        /// using API version 1 when using Grab.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Start your version 2 API journey with the Routes V2 <a href="/location/latest/APIReference/API_Operations_Amazon_Location_Service_Routes_V2.html">API
+        /// Reference</a> or the <a href="/location/latest/developerguide/routes.html">Developer
+        /// Guide</a>.
+        /// </para>
+        ///  </li> </ul> </important> 
+        /// <para>
         /// Lists route calculator resources in your Amazon Web Services account.
+        /// </para>
+        /// 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRouteCalculators service method.</param>
         /// 
@@ -4246,7 +5636,45 @@ namespace Amazon.LocationService
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// This operation is no longer current and may be deprecated in the future. We recommend
+        /// you upgrade to the Routes API V2 unless you require Grab data.
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>ListRouteCalculators</c> is part of a previous Amazon Location Service Routes
+        /// API (version 1) which has been superseded by a more intuitive, powerful, and complete
+        /// API (version 2).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The Routes API version 2 has a simplified interface that can be used without creating
+        /// or managing route calculator resources.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you are using an Amazon Web Services SDK or the Amazon Web Services CLI, note that
+        /// the Routes API version 2 is found under <c>geo-routes</c> or <c>geo_routes</c>, not
+        /// under <c>location</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Since Grab is not yet fully supported in Routes API version 2, we recommend you continue
+        /// using API version 1 when using Grab.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Start your version 2 API journey with the Routes V2 <a href="/location/latest/APIReference/API_Operations_Amazon_Location_Service_Routes_V2.html">API
+        /// Reference</a> or the <a href="/location/latest/developerguide/routes.html">Developer
+        /// Guide</a>.
+        /// </para>
+        ///  </li> </ul> </important> 
+        /// <para>
         /// Lists route calculator resources in your Amazon Web Services account.
+        /// </para>
+        /// 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRouteCalculators service method.</param>
         /// <param name="cancellationToken">
@@ -4586,8 +6014,44 @@ namespace Amazon.LocationService
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// This operation is no longer current and may be deprecated in the future. We recommend
+        /// you upgrade to <a href="/location/latest/APIReference/API_geoplaces_ReverseGeocode.html">
+        /// <c>ReverseGeocode</c> </a> or <a href="/location/latest/APIReference/API_geoplaces_SearchNearby.html">
+        /// <c>SearchNearby</c> </a> unless you require Grab data.
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>SearchPlaceIndexForPosition</c> is part of a previous Amazon Location Service
+        /// Places API (version 1) which has been superseded by a more intuitive, powerful, and
+        /// complete API (version 2).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The version 2 <c>ReverseGeocode</c> operation gives better results in the address
+        /// reverse-geocoding use case, while the version 2 <c>SearchNearby</c> operation gives
+        /// better results when searching for businesses and points of interest near a specific
+        /// location.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you are using an Amazon Web Services SDK or the Amazon Web Services CLI, note that
+        /// the Places API version 2 is found under <c>geo-places</c> or <c>geo_places</c>, not
+        /// under <c>location</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Since Grab is not yet fully supported in Places API version 2, we recommend you continue
+        /// using API version 1 when using Grab.
+        /// </para>
+        ///  </li> </ul> </important> 
+        /// <para>
         /// Reverse geocodes a given coordinate and returns a legible address. Allows you to search
         /// for Places or points of interest near a given position.
+        /// </para>
+        /// 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchPlaceIndexForPosition service method.</param>
         /// 
@@ -4621,8 +6085,44 @@ namespace Amazon.LocationService
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// This operation is no longer current and may be deprecated in the future. We recommend
+        /// you upgrade to <a href="/location/latest/APIReference/API_geoplaces_ReverseGeocode.html">
+        /// <c>ReverseGeocode</c> </a> or <a href="/location/latest/APIReference/API_geoplaces_SearchNearby.html">
+        /// <c>SearchNearby</c> </a> unless you require Grab data.
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>SearchPlaceIndexForPosition</c> is part of a previous Amazon Location Service
+        /// Places API (version 1) which has been superseded by a more intuitive, powerful, and
+        /// complete API (version 2).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The version 2 <c>ReverseGeocode</c> operation gives better results in the address
+        /// reverse-geocoding use case, while the version 2 <c>SearchNearby</c> operation gives
+        /// better results when searching for businesses and points of interest near a specific
+        /// location.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you are using an Amazon Web Services SDK or the Amazon Web Services CLI, note that
+        /// the Places API version 2 is found under <c>geo-places</c> or <c>geo_places</c>, not
+        /// under <c>location</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Since Grab is not yet fully supported in Places API version 2, we recommend you continue
+        /// using API version 1 when using Grab.
+        /// </para>
+        ///  </li> </ul> </important> 
+        /// <para>
         /// Reverse geocodes a given coordinate and returns a legible address. Allows you to search
         /// for Places or points of interest near a given position.
+        /// </para>
+        /// 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchPlaceIndexForPosition service method.</param>
         /// <param name="cancellationToken">
@@ -4663,10 +6163,42 @@ namespace Amazon.LocationService
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// This operation is no longer current and may be deprecated in the future. We recommend
+        /// you upgrade to <a href="/location/latest/APIReference/API_geoplaces_Suggest.html">
+        /// <c>Suggest</c> </a> or <a href="/location/latest/APIReference/API_geoplaces_Autocomplete.html">
+        /// <c>Autocomplete</c> </a> unless you require Grab data.
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>SearchPlaceIndexForSuggestions</c> is part of a previous Amazon Location Service
+        /// Places API (version 1) which has been superseded by a more intuitive, powerful, and
+        /// complete API (version 2).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The version 2 <c>Suggest</c> operation gives better results for typeahead place search
+        /// suggestions with fuzzy matching, while the version 2 <c>Autocomplete</c> operation
+        /// gives better results for address completion based on partial input.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you are using an Amazon Web Services SDK or the Amazon Web Services CLI, note that
+        /// the Places API version 2 is found under <c>geo-places</c> or <c>geo_places</c>, not
+        /// under <c>location</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Since Grab is not yet fully supported in Places API version 2, we recommend you continue
+        /// using API version 1 when using Grab.
+        /// </para>
+        ///  </li> </ul> </important> 
+        /// <para>
         /// Generates suggestions for addresses and points of interest based on partial or misspelled
         /// free-form text. This operation is also known as autocomplete, autosuggest, or fuzzy
         /// matching.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// Optional parameters let you narrow your search results by bounding box or country,
@@ -4680,6 +6212,7 @@ namespace Amazon.LocationService
         /// same command returns an error.
         /// </para>
         ///  </note>
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchPlaceIndexForSuggestions service method.</param>
         /// 
@@ -4713,10 +6246,42 @@ namespace Amazon.LocationService
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// This operation is no longer current and may be deprecated in the future. We recommend
+        /// you upgrade to <a href="/location/latest/APIReference/API_geoplaces_Suggest.html">
+        /// <c>Suggest</c> </a> or <a href="/location/latest/APIReference/API_geoplaces_Autocomplete.html">
+        /// <c>Autocomplete</c> </a> unless you require Grab data.
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>SearchPlaceIndexForSuggestions</c> is part of a previous Amazon Location Service
+        /// Places API (version 1) which has been superseded by a more intuitive, powerful, and
+        /// complete API (version 2).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The version 2 <c>Suggest</c> operation gives better results for typeahead place search
+        /// suggestions with fuzzy matching, while the version 2 <c>Autocomplete</c> operation
+        /// gives better results for address completion based on partial input.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you are using an Amazon Web Services SDK or the Amazon Web Services CLI, note that
+        /// the Places API version 2 is found under <c>geo-places</c> or <c>geo_places</c>, not
+        /// under <c>location</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Since Grab is not yet fully supported in Places API version 2, we recommend you continue
+        /// using API version 1 when using Grab.
+        /// </para>
+        ///  </li> </ul> </important> 
+        /// <para>
         /// Generates suggestions for addresses and points of interest based on partial or misspelled
         /// free-form text. This operation is also known as autocomplete, autosuggest, or fuzzy
         /// matching.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// Optional parameters let you narrow your search results by bounding box or country,
@@ -4730,6 +6295,7 @@ namespace Amazon.LocationService
         /// same command returns an error.
         /// </para>
         ///  </note>
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchPlaceIndexForSuggestions service method.</param>
         /// <param name="cancellationToken">
@@ -4770,9 +6336,41 @@ namespace Amazon.LocationService
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// This operation is no longer current and may be deprecated in the future. We recommend
+        /// you upgrade to <a href="/location/latest/APIReference/API_geoplaces_Geocode.html">
+        /// <c>Geocode</c> </a> or <a href="/location/latest/APIReference/API_geoplaces_SearchText.html">
+        /// <c>SearchText</c> </a> unless you require Grab data.
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>SearchPlaceIndexForText</c> is part of a previous Amazon Location Service Places
+        /// API (version 1) which has been superseded by a more intuitive, powerful, and complete
+        /// API (version 2).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The version 2 <c>Geocode</c> operation gives better results in the address geocoding
+        /// use case, while the version 2 <c>SearchText</c> operation gives better results when
+        /// searching for businesses and points of interest.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you are using an Amazon Web Services SDK or the Amazon Web Services CLI, note that
+        /// the Places API version 2 is found under <c>geo-places</c> or <c>geo_places</c>, not
+        /// under <c>location</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Since Grab is not yet fully supported in Places API version 2, we recommend you continue
+        /// using API version 1 when using Grab.
+        /// </para>
+        ///  </li> </ul> </important> 
+        /// <para>
         /// Geocodes free-form text, such as an address, name, city, or region to allow you to
         /// search for Places or points of interest. 
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// Optional parameters let you narrow your search results by bounding box or country,
@@ -4787,6 +6385,8 @@ namespace Amazon.LocationService
         ///  </note> 
         /// <para>
         /// Search results are returned in order of highest to lowest relevance.
+        /// </para>
+        /// 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchPlaceIndexForText service method.</param>
@@ -4821,9 +6421,41 @@ namespace Amazon.LocationService
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// This operation is no longer current and may be deprecated in the future. We recommend
+        /// you upgrade to <a href="/location/latest/APIReference/API_geoplaces_Geocode.html">
+        /// <c>Geocode</c> </a> or <a href="/location/latest/APIReference/API_geoplaces_SearchText.html">
+        /// <c>SearchText</c> </a> unless you require Grab data.
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>SearchPlaceIndexForText</c> is part of a previous Amazon Location Service Places
+        /// API (version 1) which has been superseded by a more intuitive, powerful, and complete
+        /// API (version 2).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The version 2 <c>Geocode</c> operation gives better results in the address geocoding
+        /// use case, while the version 2 <c>SearchText</c> operation gives better results when
+        /// searching for businesses and points of interest.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you are using an Amazon Web Services SDK or the Amazon Web Services CLI, note that
+        /// the Places API version 2 is found under <c>geo-places</c> or <c>geo_places</c>, not
+        /// under <c>location</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Since Grab is not yet fully supported in Places API version 2, we recommend you continue
+        /// using API version 1 when using Grab.
+        /// </para>
+        ///  </li> </ul> </important> 
+        /// <para>
         /// Geocodes free-form text, such as an address, name, city, or region to allow you to
         /// search for Places or points of interest. 
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// Optional parameters let you narrow your search results by bounding box or country,
@@ -4838,6 +6470,8 @@ namespace Amazon.LocationService
         ///  </note> 
         /// <para>
         /// Search results are returned in order of highest to lowest relevance.
+        /// </para>
+        /// 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchPlaceIndexForText service method.</param>
@@ -5219,7 +6853,44 @@ namespace Amazon.LocationService
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// This operation is no longer current and may be deprecated in the future. We recommend
+        /// upgrading to the Maps API V2 unless you require <c>Grab</c> data.
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>UpdateMap</c> is part of a previous Amazon Location Service Maps API (version
+        /// 1) which has been superseded by a more intuitive, powerful, and complete API (version
+        /// 2).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The Maps API version 2 has a simplified interface that can be used without creating
+        /// or managing map resources.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you are using an AWS SDK or the AWS CLI, note that the Maps API version 2 is found
+        /// under <c>geo-maps</c> or <c>geo_maps</c>, not under <c>location</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Since <c>Grab</c> is not yet fully supported in Maps API version 2, we recommend you
+        /// continue using API version 1 when using <c>Grab</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Start your version 2 API journey with the <a href="https://docs.aws.amazon.com/location/latest/APIReference/API_Operations_Amazon_Location_Service_Maps_V2.html">Maps
+        /// V2 API Reference</a> or the <a href="https://docs.aws.amazon.com/location/latest/developerguide/maps.html">Developer
+        /// Guide</a>.
+        /// </para>
+        ///  </li> </ul> </important> 
+        /// <para>
         /// Updates the specified properties of a given map resource.
+        /// </para>
+        /// 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateMap service method.</param>
         /// 
@@ -5253,7 +6924,44 @@ namespace Amazon.LocationService
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// This operation is no longer current and may be deprecated in the future. We recommend
+        /// upgrading to the Maps API V2 unless you require <c>Grab</c> data.
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>UpdateMap</c> is part of a previous Amazon Location Service Maps API (version
+        /// 1) which has been superseded by a more intuitive, powerful, and complete API (version
+        /// 2).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The Maps API version 2 has a simplified interface that can be used without creating
+        /// or managing map resources.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you are using an AWS SDK or the AWS CLI, note that the Maps API version 2 is found
+        /// under <c>geo-maps</c> or <c>geo_maps</c>, not under <c>location</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Since <c>Grab</c> is not yet fully supported in Maps API version 2, we recommend you
+        /// continue using API version 1 when using <c>Grab</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Start your version 2 API journey with the <a href="https://docs.aws.amazon.com/location/latest/APIReference/API_Operations_Amazon_Location_Service_Maps_V2.html">Maps
+        /// V2 API Reference</a> or the <a href="https://docs.aws.amazon.com/location/latest/developerguide/maps.html">Developer
+        /// Guide</a>.
+        /// </para>
+        ///  </li> </ul> </important> 
+        /// <para>
         /// Updates the specified properties of a given map resource.
+        /// </para>
+        /// 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateMap service method.</param>
         /// <param name="cancellationToken">
@@ -5294,7 +7002,45 @@ namespace Amazon.LocationService
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// This operation is no longer current and may be deprecated in the future. We recommend
+        /// you upgrade to the Places API V2 unless you require Grab data.
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>UpdatePlaceIndex</c> is part of a previous Amazon Location Service Places API
+        /// (version 1) which has been superseded by a more intuitive, powerful, and complete
+        /// API (version 2).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The Places API version 2 has a simplified interface that can be used without creating
+        /// or managing place index resources.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you are using an Amazon Web Services SDK or the Amazon Web Services CLI, note that
+        /// the Places API version 2 is found under <c>geo-places</c> or <c>geo_places</c>, not
+        /// under <c>location</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Since Grab is not yet fully supported in Places API version 2, we recommend you continue
+        /// using API version 1 when using Grab.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Start your version 2 API journey with the Places V2 <a href="/location/latest/APIReference/API_Operations_Amazon_Location_Service_Places_V2.html">API
+        /// Reference</a> or the <a href="/location/latest/developerguide/places.html">Developer
+        /// Guide</a>.
+        /// </para>
+        ///  </li> </ul> </important> 
+        /// <para>
         /// Updates the specified properties of a given place index resource.
+        /// </para>
+        /// 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdatePlaceIndex service method.</param>
         /// 
@@ -5328,7 +7074,45 @@ namespace Amazon.LocationService
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// This operation is no longer current and may be deprecated in the future. We recommend
+        /// you upgrade to the Places API V2 unless you require Grab data.
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>UpdatePlaceIndex</c> is part of a previous Amazon Location Service Places API
+        /// (version 1) which has been superseded by a more intuitive, powerful, and complete
+        /// API (version 2).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The Places API version 2 has a simplified interface that can be used without creating
+        /// or managing place index resources.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you are using an Amazon Web Services SDK or the Amazon Web Services CLI, note that
+        /// the Places API version 2 is found under <c>geo-places</c> or <c>geo_places</c>, not
+        /// under <c>location</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Since Grab is not yet fully supported in Places API version 2, we recommend you continue
+        /// using API version 1 when using Grab.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Start your version 2 API journey with the Places V2 <a href="/location/latest/APIReference/API_Operations_Amazon_Location_Service_Places_V2.html">API
+        /// Reference</a> or the <a href="/location/latest/developerguide/places.html">Developer
+        /// Guide</a>.
+        /// </para>
+        ///  </li> </ul> </important> 
+        /// <para>
         /// Updates the specified properties of a given place index resource.
+        /// </para>
+        /// 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdatePlaceIndex service method.</param>
         /// <param name="cancellationToken">
@@ -5369,7 +7153,45 @@ namespace Amazon.LocationService
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// This operation is no longer current and may be deprecated in the future. We recommend
+        /// you upgrade to the Routes API V2 unless you require Grab data.
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>UpdateRouteCalculator</c> is part of a previous Amazon Location Service Routes
+        /// API (version 1) which has been superseded by a more intuitive, powerful, and complete
+        /// API (version 2).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The Routes API version 2 has a simplified interface that can be used without creating
+        /// or managing route calculator resources.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you are using an Amazon Web Services SDK or the Amazon Web Services CLI, note that
+        /// the Routes API version 2 is found under <c>geo-routes</c> or <c>geo_routes</c>, not
+        /// under <c>location</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Since Grab is not yet fully supported in Routes API version 2, we recommend you continue
+        /// using API version 1 when using Grab.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Start your version 2 API journey with the Routes V2 <a href="/location/latest/APIReference/API_Operations_Amazon_Location_Service_Routes_V2.html">API
+        /// Reference</a> or the <a href="/location/latest/developerguide/routes.html">Developer
+        /// Guide</a>.
+        /// </para>
+        ///  </li> </ul> </important> 
+        /// <para>
         /// Updates the specified properties for a given route calculator resource.
+        /// </para>
+        /// 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateRouteCalculator service method.</param>
         /// 
@@ -5403,7 +7225,45 @@ namespace Amazon.LocationService
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// This operation is no longer current and may be deprecated in the future. We recommend
+        /// you upgrade to the Routes API V2 unless you require Grab data.
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>UpdateRouteCalculator</c> is part of a previous Amazon Location Service Routes
+        /// API (version 1) which has been superseded by a more intuitive, powerful, and complete
+        /// API (version 2).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The Routes API version 2 has a simplified interface that can be used without creating
+        /// or managing route calculator resources.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you are using an Amazon Web Services SDK or the Amazon Web Services CLI, note that
+        /// the Routes API version 2 is found under <c>geo-routes</c> or <c>geo_routes</c>, not
+        /// under <c>location</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Since Grab is not yet fully supported in Routes API version 2, we recommend you continue
+        /// using API version 1 when using Grab.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Start your version 2 API journey with the Routes V2 <a href="/location/latest/APIReference/API_Operations_Amazon_Location_Service_Routes_V2.html">API
+        /// Reference</a> or the <a href="/location/latest/developerguide/routes.html">Developer
+        /// Guide</a>.
+        /// </para>
+        ///  </li> </ul> </important> 
+        /// <para>
         /// Updates the specified properties for a given route calculator resource.
+        /// </para>
+        /// 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateRouteCalculator service method.</param>
         /// <param name="cancellationToken">

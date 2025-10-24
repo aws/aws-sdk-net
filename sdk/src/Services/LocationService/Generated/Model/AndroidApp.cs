@@ -30,51 +30,50 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LocationService.Model
 {
     /// <summary>
-    /// Information about a time zone. Includes the name of the time zone and the offset from
-    /// UTC in seconds.
+    /// Unique identifying information for an Android app. Consists of a package name and
+    /// a 20 byte SHA-1 certificate fingerprint.
     /// </summary>
-    public partial class TimeZone
+    public partial class AndroidApp
     {
-        private string _name;
-        private int? _offset;
+        private string _certificateFingerprint;
+        private string _package;
 
         /// <summary>
-        /// Gets and sets the property Name. 
+        /// Gets and sets the property CertificateFingerprint. 
         /// <para>
-        /// The name of the time zone, following the <a href="https://www.iana.org/time-zones">
-        /// IANA time zone standard</a>. For example, <c>America/Los_Angeles</c>.
+        /// 20 byte SHA-1 certificate fingerprint associated with the Android app signing certificate.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true)]
-        public string Name
+        [AWSProperty(Required=true, Min=59, Max=59)]
+        public string CertificateFingerprint
         {
-            get { return this._name; }
-            set { this._name = value; }
+            get { return this._certificateFingerprint; }
+            set { this._certificateFingerprint = value; }
         }
 
-        // Check to see if Name property is set
-        internal bool IsSetName()
+        // Check to see if CertificateFingerprint property is set
+        internal bool IsSetCertificateFingerprint()
         {
-            return this._name != null;
+            return this._certificateFingerprint != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Offset. 
+        /// Gets and sets the property Package. 
         /// <para>
-        /// The time zone's offset, in seconds, from UTC.
+        /// Unique package name for an Android app.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true)]
-        public int Offset
+        [AWSProperty(Required=true, Min=1, Max=255)]
+        public string Package
         {
-            get { return this._offset.GetValueOrDefault(); }
-            set { this._offset = value; }
+            get { return this._package; }
+            set { this._package = value; }
         }
 
-        // Check to see if Offset property is set
-        internal bool IsSetOffset()
+        // Check to see if Package property is set
+        internal bool IsSetPackage()
         {
-            return this._offset.HasValue; 
+            return this._package != null;
         }
 
     }

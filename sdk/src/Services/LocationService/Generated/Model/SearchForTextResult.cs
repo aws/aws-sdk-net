@@ -53,7 +53,7 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  </note>
         /// </summary>
-        [AWSProperty(Min=0)]
+        [AWSProperty(Sensitive=true, Min=0)]
         public double Distance
         {
             get { return this._distance.GetValueOrDefault(); }
@@ -98,6 +98,7 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string PlaceId
         {
             get { return this._placeId; }
@@ -122,7 +123,7 @@ namespace Amazon.LocationService.Model
         /// Returned only when the partner selected is Esri or Grab.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=1)]
+        [AWSProperty(Sensitive=true, Min=0, Max=1)]
         public double Relevance
         {
             get { return this._relevance.GetValueOrDefault(); }

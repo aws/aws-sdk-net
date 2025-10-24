@@ -52,6 +52,7 @@ namespace Amazon.LocationService.Model
         /// Valid Values: <c>false</c> | <c>true</c> 
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public bool AvoidFerries
         {
             get { return this._avoidFerries.GetValueOrDefault(); }
@@ -78,6 +79,7 @@ namespace Amazon.LocationService.Model
         /// Valid Values: <c>false</c> | <c>true</c> 
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public bool AvoidTolls
         {
             get { return this._avoidTolls.GetValueOrDefault(); }

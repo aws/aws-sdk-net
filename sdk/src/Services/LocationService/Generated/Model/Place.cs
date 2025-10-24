@@ -64,6 +64,7 @@ namespace Amazon.LocationService.Model
         /// The numerical portion of an address, such as a building number. 
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string AddressNumber
         {
             get { return this._addressNumber; }
@@ -108,6 +109,7 @@ namespace Amazon.LocationService.Model
         /// 3166</a> 3-digit country/region code. For example, <c>CAN</c>.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string Country
         {
             get { return this._country; }
@@ -156,6 +158,7 @@ namespace Amazon.LocationService.Model
         /// its location is calculated by interpolating between other known addresses. 
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public bool Interpolated
         {
             get { return this._interpolated.GetValueOrDefault(); }
@@ -175,6 +178,7 @@ namespace Amazon.LocationService.Model
         /// For example, <c>123 Any Street, Any Town, USA</c>.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string Label
         {
             get { return this._label; }
@@ -193,6 +197,7 @@ namespace Amazon.LocationService.Model
         /// A name for a local area, such as a city or town name. For example, <c>Toronto</c>.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string Municipality
         {
             get { return this._municipality; }
@@ -211,6 +216,7 @@ namespace Amazon.LocationService.Model
         /// The name of a community district. For example, <c>Downtown</c>.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string Neighborhood
         {
             get { return this._neighborhood; }
@@ -230,6 +236,7 @@ namespace Amazon.LocationService.Model
         /// address for the purpose of identifying a location. 
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string PostalCode
         {
             get { return this._postalCode; }
@@ -249,6 +256,7 @@ namespace Amazon.LocationService.Model
         /// example, <c>British Columbia</c>.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string Region
         {
             get { return this._region; }
@@ -267,6 +275,7 @@ namespace Amazon.LocationService.Model
         /// The name for a street or a road to identify a location. For example, <c>Main Street</c>.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string Street
         {
             get { return this._street; }
@@ -292,6 +301,7 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string SubMunicipality
         {
             get { return this._subMunicipality; }
@@ -310,6 +320,7 @@ namespace Amazon.LocationService.Model
         /// A county, or an area that's part of a larger region. For example, <c>Metro Vancouver</c>.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string SubRegion
         {
             get { return this._subRegion; }
@@ -374,6 +385,7 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string UnitNumber
         {
             get { return this._unitNumber; }
@@ -397,6 +409,7 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string UnitType
         {
             get { return this._unitType; }

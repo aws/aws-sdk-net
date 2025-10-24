@@ -31,15 +31,52 @@ namespace Amazon.LocationService.Model
 {
     /// <summary>
     /// Container for the parameters to the GetMapTile operation.
+    /// <important> 
+    /// <para>
+    /// This operation is no longer current and may be deprecated in the future. We recommend
+    /// upgrading to <a href="https://docs.aws.amazon.com/location/latest/APIReference/API_geomaps_GetTile.html">
+    /// <c>GetTile</c> </a> unless you require <c>Grab</c> data.
+    /// 
+    ///  <ul> <li> 
+    /// <para>
+    ///  <c>GetMapTile</c> is part of a previous Amazon Location Service Maps API (version
+    /// 1) which has been superseded by a more intuitive, powerful, and complete API (version
+    /// 2).
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The version 2 <c>GetTile</c> operation gives a better user experience and is compatible
+    /// with the remainder of the V2 Maps API.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// If you are using an AWS SDK or the AWS CLI, note that the Maps API version 2 is found
+    /// under <c>geo-maps</c> or <c>geo_maps</c>, not under <c>location</c>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Since <c>Grab</c> is not yet fully supported in Maps API version 2, we recommend you
+    /// continue using API version 1 when using <c>Grab</c>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Start your version 2 API journey with the <a href="https://docs.aws.amazon.com/location/latest/APIReference/API_Operations_Amazon_Location_Service_Maps_V2.html">Maps
+    /// V2 API Reference</a> or the <a href="https://docs.aws.amazon.com/location/latest/developerguide/maps.html">Developer
+    /// Guide</a>.
+    /// </para>
+    ///  </li> </ul> </important> 
+    /// <para>
     /// Retrieves a vector data tile from the map resource. Map tiles are used by clients
     /// to render a map. they're addressed using a grid arrangement with an X coordinate,
     /// Y coordinate, and Z (zoom) level. 
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// The origin (0, 0) is the top left of the map. Increasing the zoom level by 1 doubles
     /// both the X and Y dimensions, so a tile containing data for the entire world at (0/0/0)
     /// will be split into 4 tiles at zoom 1 (1/0/0, 1/0/1, 1/1/0, 1/1/1).
+    /// </para>
+    /// 
     /// </para>
     /// </summary>
     public partial class GetMapTileRequest : AmazonLocationServiceRequest
@@ -95,7 +132,7 @@ namespace Amazon.LocationService.Model
         /// The X axis value for the map tile.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public string X
         {
             get { return this._x; }
@@ -114,7 +151,7 @@ namespace Amazon.LocationService.Model
         /// The Y axis value for the map tile. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public string Y
         {
             get { return this._y; }
@@ -133,7 +170,7 @@ namespace Amazon.LocationService.Model
         /// The zoom value for the map tile.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public string Z
         {
             get { return this._z; }

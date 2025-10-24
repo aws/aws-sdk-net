@@ -30,36 +30,31 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LocationService.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeKey operation.
-    /// Retrieves the API key resource details.
-    /// 
-    ///  
-    /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">Use
-    /// API keys to authenticate</a> in the <i>Amazon Location Service Developer Guide</i>.
-    /// </para>
+    /// Unique identifying information for an Apple app (iOS, macOS, tvOS and watchOS). Consists
+    /// of an Apple Bundle ID.
     /// </summary>
-    public partial class DescribeKeyRequest : AmazonLocationServiceRequest
+    public partial class AppleApp
     {
-        private string _keyName;
+        private string _bundleId;
 
         /// <summary>
-        /// Gets and sets the property KeyName. 
+        /// Gets and sets the property BundleId. 
         /// <para>
-        /// The name of the API key resource.
+        /// The unique identifier of the app across all Apple platforms (iOS, macOS, tvOS, watchOS,
+        /// etc.)
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=100)]
-        public string KeyName
+        [AWSProperty(Required=true, Min=1, Max=155)]
+        public string BundleId
         {
-            get { return this._keyName; }
-            set { this._keyName = value; }
+            get { return this._bundleId; }
+            set { this._bundleId = value; }
         }
 
-        // Check to see if KeyName property is set
-        internal bool IsSetKeyName()
+        // Check to see if BundleId property is set
+        internal bool IsSetBundleId()
         {
-            return this._keyName != null;
+            return this._bundleId != null;
         }
 
     }

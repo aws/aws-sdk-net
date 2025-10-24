@@ -51,7 +51,7 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  </note>
         /// </summary>
-        [AWSProperty(Required=true, Min=0)]
+        [AWSProperty(Required=true, Sensitive=true, Min=0)]
         public double Distance
         {
             get { return this._distance.GetValueOrDefault(); }
@@ -96,6 +96,7 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string PlaceId
         {
             get { return this._placeId; }
