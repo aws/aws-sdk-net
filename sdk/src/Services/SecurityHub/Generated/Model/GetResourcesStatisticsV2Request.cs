@@ -32,7 +32,7 @@ namespace Amazon.SecurityHub.Model
     /// <summary>
     /// Container for the parameters to the GetResourcesStatisticsV2 operation.
     /// Retrieves statistical information about Amazon Web Services resources and their associated
-    /// security findings. This API is in private preview and subject to change.
+    /// security findings. This API is in public preview and subject to change.
     /// </summary>
     public partial class GetResourcesStatisticsV2Request : AmazonSecurityHubRequest
     {

@@ -1109,6 +1109,10 @@ namespace Amazon.SecurityHub
         /// </summary>
         public static readonly GroupByField Class_name = new GroupByField("class_name");
         /// <summary>
+        /// Constant CloudAccountName for GroupByField
+        /// </summary>
+        public static readonly GroupByField CloudAccountName = new GroupByField("cloud.account.name");
+        /// <summary>
         /// Constant CloudAccountUid for GroupByField
         /// </summary>
         public static readonly GroupByField CloudAccountUid = new GroupByField("cloud.account.uid");
@@ -1129,9 +1133,17 @@ namespace Amazon.SecurityHub
         /// </summary>
         public static readonly GroupByField ComplianceControl = new GroupByField("compliance.control");
         /// <summary>
+        /// Constant ComplianceStandards for GroupByField
+        /// </summary>
+        public static readonly GroupByField ComplianceStandards = new GroupByField("compliance.standards");
+        /// <summary>
         /// Constant ComplianceStatus for GroupByField
         /// </summary>
         public static readonly GroupByField ComplianceStatus = new GroupByField("compliance.status");
+        /// <summary>
+        /// Constant Finding_infoAnalyticName for GroupByField
+        /// </summary>
+        public static readonly GroupByField Finding_infoAnalyticName = new GroupByField("finding_info.analytic.name");
         /// <summary>
         /// Constant Finding_infoTitle for GroupByField
         /// </summary>
@@ -1164,6 +1176,10 @@ namespace Amazon.SecurityHub
         /// Constant Status for GroupByField
         /// </summary>
         public static readonly GroupByField Status = new GroupByField("status");
+        /// <summary>
+        /// Constant VulnerabilitiesAffected_packagesName for GroupByField
+        /// </summary>
+        public static readonly GroupByField VulnerabilitiesAffected_packagesName = new GroupByField("vulnerabilities.affected_packages.name");
         /// <summary>
         /// Constant VulnerabilitiesFix_coverage for GroupByField
         /// </summary>
@@ -1652,6 +1668,18 @@ namespace Amazon.SecurityHub
         /// Constant Finding_infoModified_time_dt for OcsfDateField
         /// </summary>
         public static readonly OcsfDateField Finding_infoModified_time_dt = new OcsfDateField("finding_info.modified_time_dt");
+        /// <summary>
+        /// Constant ResourcesImageCreated_time_dt for OcsfDateField
+        /// </summary>
+        public static readonly OcsfDateField ResourcesImageCreated_time_dt = new OcsfDateField("resources.image.created_time_dt");
+        /// <summary>
+        /// Constant ResourcesImageLast_used_time_dt for OcsfDateField
+        /// </summary>
+        public static readonly OcsfDateField ResourcesImageLast_used_time_dt = new OcsfDateField("resources.image.last_used_time_dt");
+        /// <summary>
+        /// Constant ResourcesModified_time_dt for OcsfDateField
+        /// </summary>
+        public static readonly OcsfDateField ResourcesModified_time_dt = new OcsfDateField("resources.modified_time_dt");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1689,11 +1717,73 @@ namespace Amazon.SecurityHub
 
 
     /// <summary>
+    /// Constants used for properties of type OcsfIpField.
+    /// </summary>
+    public class OcsfIpField : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EvidencesDst_endpointIp for OcsfIpField
+        /// </summary>
+        public static readonly OcsfIpField EvidencesDst_endpointIp = new OcsfIpField("evidences.dst_endpoint.ip");
+        /// <summary>
+        /// Constant EvidencesSrc_endpointIp for OcsfIpField
+        /// </summary>
+        public static readonly OcsfIpField EvidencesSrc_endpointIp = new OcsfIpField("evidences.src_endpoint.ip");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OcsfIpField(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OcsfIpField FindValue(string value)
+        {
+            return FindValue<OcsfIpField>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OcsfIpField(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type OcsfMapField.
     /// </summary>
     public class OcsfMapField : ConstantClass
     {
 
+        /// <summary>
+        /// Constant ComplianceControl_parameters for OcsfMapField
+        /// </summary>
+        public static readonly OcsfMapField ComplianceControl_parameters = new OcsfMapField("compliance.control_parameters");
+        /// <summary>
+        /// Constant DatabucketTags for OcsfMapField
+        /// </summary>
+        public static readonly OcsfMapField DatabucketTags = new OcsfMapField("databucket.tags");
+        /// <summary>
+        /// Constant Finding_infoTags for OcsfMapField
+        /// </summary>
+        public static readonly OcsfMapField Finding_infoTags = new OcsfMapField("finding_info.tags");
         /// <summary>
         /// Constant ResourcesTags for OcsfMapField
         /// </summary>
@@ -1753,9 +1843,33 @@ namespace Amazon.SecurityHub
         /// </summary>
         public static readonly OcsfNumberField Confidence_score = new OcsfNumberField("confidence_score");
         /// <summary>
+        /// Constant EvidencesApiResponseCode for OcsfNumberField
+        /// </summary>
+        public static readonly OcsfNumberField EvidencesApiResponseCode = new OcsfNumberField("evidences.api.response.code");
+        /// <summary>
+        /// Constant EvidencesDst_endpointAutonomous_systemNumber for OcsfNumberField
+        /// </summary>
+        public static readonly OcsfNumberField EvidencesDst_endpointAutonomous_systemNumber = new OcsfNumberField("evidences.dst_endpoint.autonomous_system.number");
+        /// <summary>
+        /// Constant EvidencesDst_endpointPort for OcsfNumberField
+        /// </summary>
+        public static readonly OcsfNumberField EvidencesDst_endpointPort = new OcsfNumberField("evidences.dst_endpoint.port");
+        /// <summary>
+        /// Constant EvidencesSrc_endpointAutonomous_systemNumber for OcsfNumberField
+        /// </summary>
+        public static readonly OcsfNumberField EvidencesSrc_endpointAutonomous_systemNumber = new OcsfNumberField("evidences.src_endpoint.autonomous_system.number");
+        /// <summary>
+        /// Constant EvidencesSrc_endpointPort for OcsfNumberField
+        /// </summary>
+        public static readonly OcsfNumberField EvidencesSrc_endpointPort = new OcsfNumberField("evidences.src_endpoint.port");
+        /// <summary>
         /// Constant Finding_infoRelated_events_count for OcsfNumberField
         /// </summary>
         public static readonly OcsfNumberField Finding_infoRelated_events_count = new OcsfNumberField("finding_info.related_events_count");
+        /// <summary>
+        /// Constant ResourcesImageIn_use_count for OcsfNumberField
+        /// </summary>
+        public static readonly OcsfNumberField ResourcesImageIn_use_count = new OcsfNumberField("resources.image.in_use_count");
         /// <summary>
         /// Constant Severity_id for OcsfNumberField
         /// </summary>
@@ -1815,6 +1929,10 @@ namespace Amazon.SecurityHub
         /// </summary>
         public static readonly OcsfStringField Class_name = new OcsfStringField("class_name");
         /// <summary>
+        /// Constant CloudAccountName for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField CloudAccountName = new OcsfStringField("cloud.account.name");
+        /// <summary>
         /// Constant CloudAccountUid for OcsfStringField
         /// </summary>
         public static readonly OcsfStringField CloudAccountUid = new OcsfStringField("cloud.account.uid");
@@ -1851,6 +1969,74 @@ namespace Amazon.SecurityHub
         /// </summary>
         public static readonly OcsfStringField ComplianceStatus = new OcsfStringField("compliance.status");
         /// <summary>
+        /// Constant DatabucketEncryption_detailsAlgorithm for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField DatabucketEncryption_detailsAlgorithm = new OcsfStringField("databucket.encryption_details.algorithm");
+        /// <summary>
+        /// Constant DatabucketEncryption_detailsKey_uid for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField DatabucketEncryption_detailsKey_uid = new OcsfStringField("databucket.encryption_details.key_uid");
+        /// <summary>
+        /// Constant DatabucketFileData_classificationsClassifier_detailsType for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField DatabucketFileData_classificationsClassifier_detailsType = new OcsfStringField("databucket.file.data_classifications.classifier_details.type");
+        /// <summary>
+        /// Constant EvidencesActorUserAccountUid for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField EvidencesActorUserAccountUid = new OcsfStringField("evidences.actor.user.account.uid");
+        /// <summary>
+        /// Constant EvidencesApiOperation for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField EvidencesApiOperation = new OcsfStringField("evidences.api.operation");
+        /// <summary>
+        /// Constant EvidencesApiResponseError_message for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField EvidencesApiResponseError_message = new OcsfStringField("evidences.api.response.error_message");
+        /// <summary>
+        /// Constant EvidencesApiServiceName for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField EvidencesApiServiceName = new OcsfStringField("evidences.api.service.name");
+        /// <summary>
+        /// Constant EvidencesConnection_infoDirection for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField EvidencesConnection_infoDirection = new OcsfStringField("evidences.connection_info.direction");
+        /// <summary>
+        /// Constant EvidencesConnection_infoProtocol_name for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField EvidencesConnection_infoProtocol_name = new OcsfStringField("evidences.connection_info.protocol_name");
+        /// <summary>
+        /// Constant EvidencesDst_endpointAutonomous_systemName for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField EvidencesDst_endpointAutonomous_systemName = new OcsfStringField("evidences.dst_endpoint.autonomous_system.name");
+        /// <summary>
+        /// Constant EvidencesDst_endpointLocationCity for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField EvidencesDst_endpointLocationCity = new OcsfStringField("evidences.dst_endpoint.location.city");
+        /// <summary>
+        /// Constant EvidencesDst_endpointLocationCountry for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField EvidencesDst_endpointLocationCountry = new OcsfStringField("evidences.dst_endpoint.location.country");
+        /// <summary>
+        /// Constant EvidencesSrc_endpointAutonomous_systemName for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField EvidencesSrc_endpointAutonomous_systemName = new OcsfStringField("evidences.src_endpoint.autonomous_system.name");
+        /// <summary>
+        /// Constant EvidencesSrc_endpointHostname for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField EvidencesSrc_endpointHostname = new OcsfStringField("evidences.src_endpoint.hostname");
+        /// <summary>
+        /// Constant EvidencesSrc_endpointLocationCity for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField EvidencesSrc_endpointLocationCity = new OcsfStringField("evidences.src_endpoint.location.city");
+        /// <summary>
+        /// Constant EvidencesSrc_endpointLocationCountry for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField EvidencesSrc_endpointLocationCountry = new OcsfStringField("evidences.src_endpoint.location.country");
+        /// <summary>
+        /// Constant Finding_infoAnalyticName for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField Finding_infoAnalyticName = new OcsfStringField("finding_info.analytic.name");
+        /// <summary>
         /// Constant Finding_infoDesc for OcsfStringField
         /// </summary>
         public static readonly OcsfStringField Finding_infoDesc = new OcsfStringField("finding_info.desc");
@@ -1883,6 +2069,18 @@ namespace Amazon.SecurityHub
         /// </summary>
         public static readonly OcsfStringField Finding_infoUid = new OcsfStringField("finding_info.uid");
         /// <summary>
+        /// Constant Malware_scan_infoUid for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField Malware_scan_infoUid = new OcsfStringField("malware_scan_info.uid");
+        /// <summary>
+        /// Constant MalwareName for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField MalwareName = new OcsfStringField("malware.name");
+        /// <summary>
+        /// Constant MalwareSeverity for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField MalwareSeverity = new OcsfStringField("malware.severity");
+        /// <summary>
         /// Constant MetadataProductName for OcsfStringField
         /// </summary>
         public static readonly OcsfStringField MetadataProductName = new OcsfStringField("metadata.product.name");
@@ -1907,13 +2105,53 @@ namespace Amazon.SecurityHub
         /// </summary>
         public static readonly OcsfStringField RemediationReferences = new OcsfStringField("remediation.references");
         /// <summary>
+        /// Constant ResourcesCloud_functionLayersUid_alt for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField ResourcesCloud_functionLayersUid_alt = new OcsfStringField("resources.cloud_function.layers.uid_alt");
+        /// <summary>
+        /// Constant ResourcesCloud_functionRuntime for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField ResourcesCloud_functionRuntime = new OcsfStringField("resources.cloud_function.runtime");
+        /// <summary>
+        /// Constant ResourcesCloud_functionUserUid for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField ResourcesCloud_functionUserUid = new OcsfStringField("resources.cloud_function.user.uid");
+        /// <summary>
         /// Constant ResourcesCloud_partition for OcsfStringField
         /// </summary>
         public static readonly OcsfStringField ResourcesCloud_partition = new OcsfStringField("resources.cloud_partition");
         /// <summary>
+        /// Constant ResourcesDeviceEncryption_detailsKey_uid for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField ResourcesDeviceEncryption_detailsKey_uid = new OcsfStringField("resources.device.encryption_details.key_uid");
+        /// <summary>
+        /// Constant ResourcesDeviceImageUid for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField ResourcesDeviceImageUid = new OcsfStringField("resources.device.image.uid");
+        /// <summary>
+        /// Constant ResourcesImageArchitecture for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField ResourcesImageArchitecture = new OcsfStringField("resources.image.architecture");
+        /// <summary>
+        /// Constant ResourcesImageRegistry_uid for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField ResourcesImageRegistry_uid = new OcsfStringField("resources.image.registry_uid");
+        /// <summary>
+        /// Constant ResourcesImageRepository_name for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField ResourcesImageRepository_name = new OcsfStringField("resources.image.repository_name");
+        /// <summary>
+        /// Constant ResourcesImageUid for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField ResourcesImageUid = new OcsfStringField("resources.image.uid");
+        /// <summary>
         /// Constant ResourcesRegion for OcsfStringField
         /// </summary>
         public static readonly OcsfStringField ResourcesRegion = new OcsfStringField("resources.region");
+        /// <summary>
+        /// Constant ResourcesSubnet_infoUid for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField ResourcesSubnet_infoUid = new OcsfStringField("resources.subnet_info.uid");
         /// <summary>
         /// Constant ResourcesType for OcsfStringField
         /// </summary>
@@ -1923,6 +2161,10 @@ namespace Amazon.SecurityHub
         /// </summary>
         public static readonly OcsfStringField ResourcesUid = new OcsfStringField("resources.uid");
         /// <summary>
+        /// Constant ResourcesVpc_uid for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField ResourcesVpc_uid = new OcsfStringField("resources.vpc_uid");
+        /// <summary>
         /// Constant Severity for OcsfStringField
         /// </summary>
         public static readonly OcsfStringField Severity = new OcsfStringField("severity");
@@ -1931,9 +2173,29 @@ namespace Amazon.SecurityHub
         /// </summary>
         public static readonly OcsfStringField Status = new OcsfStringField("status");
         /// <summary>
+        /// Constant VulnerabilitiesAffected_codeFilePath for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField VulnerabilitiesAffected_codeFilePath = new OcsfStringField("vulnerabilities.affected_code.file.path");
+        /// <summary>
+        /// Constant VulnerabilitiesAffected_packagesName for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField VulnerabilitiesAffected_packagesName = new OcsfStringField("vulnerabilities.affected_packages.name");
+        /// <summary>
+        /// Constant VulnerabilitiesCveEpssScore for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField VulnerabilitiesCveEpssScore = new OcsfStringField("vulnerabilities.cve.epss.score");
+        /// <summary>
+        /// Constant VulnerabilitiesCveUid for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField VulnerabilitiesCveUid = new OcsfStringField("vulnerabilities.cve.uid");
+        /// <summary>
         /// Constant VulnerabilitiesFix_coverage for OcsfStringField
         /// </summary>
         public static readonly OcsfStringField VulnerabilitiesFix_coverage = new OcsfStringField("vulnerabilities.fix_coverage");
+        /// <summary>
+        /// Constant VulnerabilitiesRelated_vulnerabilities for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField VulnerabilitiesRelated_vulnerabilities = new OcsfStringField("vulnerabilities.related_vulnerabilities");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -2359,29 +2621,29 @@ namespace Amazon.SecurityHub
     {
 
         /// <summary>
-        /// Constant Account_id for ResourceGroupByField
+        /// Constant AccountId for ResourceGroupByField
         /// </summary>
-        public static readonly ResourceGroupByField Account_id = new ResourceGroupByField("account_id");
+        public static readonly ResourceGroupByField AccountId = new ResourceGroupByField("AccountId");
         /// <summary>
-        /// Constant Findings_summaryFinding_type for ResourceGroupByField
+        /// Constant FindingsSummaryFindingType for ResourceGroupByField
         /// </summary>
-        public static readonly ResourceGroupByField Findings_summaryFinding_type = new ResourceGroupByField("findings_summary.finding_type");
+        public static readonly ResourceGroupByField FindingsSummaryFindingType = new ResourceGroupByField("FindingsSummary.FindingType");
         /// <summary>
         /// Constant Region for ResourceGroupByField
         /// </summary>
-        public static readonly ResourceGroupByField Region = new ResourceGroupByField("region");
+        public static readonly ResourceGroupByField Region = new ResourceGroupByField("Region");
         /// <summary>
-        /// Constant Resource_category for ResourceGroupByField
+        /// Constant ResourceCategory for ResourceGroupByField
         /// </summary>
-        public static readonly ResourceGroupByField Resource_category = new ResourceGroupByField("resource_category");
+        public static readonly ResourceGroupByField ResourceCategory = new ResourceGroupByField("ResourceCategory");
         /// <summary>
-        /// Constant Resource_name for ResourceGroupByField
+        /// Constant ResourceName for ResourceGroupByField
         /// </summary>
-        public static readonly ResourceGroupByField Resource_name = new ResourceGroupByField("resource_name");
+        public static readonly ResourceGroupByField ResourceName = new ResourceGroupByField("ResourceName");
         /// <summary>
-        /// Constant Resource_type for ResourceGroupByField
+        /// Constant ResourceType for ResourceGroupByField
         /// </summary>
-        public static readonly ResourceGroupByField Resource_type = new ResourceGroupByField("resource_type");
+        public static readonly ResourceGroupByField ResourceType = new ResourceGroupByField("ResourceType");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -2425,13 +2687,13 @@ namespace Amazon.SecurityHub
     {
 
         /// <summary>
-        /// Constant Resource_creation_time_dt for ResourcesDateField
+        /// Constant ResourceCreationTime for ResourcesDateField
         /// </summary>
-        public static readonly ResourcesDateField Resource_creation_time_dt = new ResourcesDateField("resource_creation_time_dt");
+        public static readonly ResourcesDateField ResourceCreationTime = new ResourcesDateField("ResourceCreationTime");
         /// <summary>
-        /// Constant Resource_detail_capture_time_dt for ResourcesDateField
+        /// Constant ResourceDetailCaptureTime for ResourcesDateField
         /// </summary>
-        public static readonly ResourcesDateField Resource_detail_capture_time_dt = new ResourcesDateField("resource_detail_capture_time_dt");
+        public static readonly ResourcesDateField ResourceDetailCaptureTime = new ResourcesDateField("ResourceDetailCaptureTime");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -2475,9 +2737,9 @@ namespace Amazon.SecurityHub
     {
 
         /// <summary>
-        /// Constant Tags for ResourcesMapField
+        /// Constant ResourceTags for ResourcesMapField
         /// </summary>
-        public static readonly ResourcesMapField Tags = new ResourcesMapField("tags");
+        public static readonly ResourcesMapField ResourceTags = new ResourcesMapField("ResourceTags");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -2521,41 +2783,41 @@ namespace Amazon.SecurityHub
     {
 
         /// <summary>
-        /// Constant Findings_summarySeveritiesCritical for ResourcesNumberField
+        /// Constant FindingsSummarySeveritiesCritical for ResourcesNumberField
         /// </summary>
-        public static readonly ResourcesNumberField Findings_summarySeveritiesCritical = new ResourcesNumberField("findings_summary.severities.critical");
+        public static readonly ResourcesNumberField FindingsSummarySeveritiesCritical = new ResourcesNumberField("FindingsSummary.Severities.Critical");
         /// <summary>
-        /// Constant Findings_summarySeveritiesFatal for ResourcesNumberField
+        /// Constant FindingsSummarySeveritiesFatal for ResourcesNumberField
         /// </summary>
-        public static readonly ResourcesNumberField Findings_summarySeveritiesFatal = new ResourcesNumberField("findings_summary.severities.fatal");
+        public static readonly ResourcesNumberField FindingsSummarySeveritiesFatal = new ResourcesNumberField("FindingsSummary.Severities.Fatal");
         /// <summary>
-        /// Constant Findings_summarySeveritiesHigh for ResourcesNumberField
+        /// Constant FindingsSummarySeveritiesHigh for ResourcesNumberField
         /// </summary>
-        public static readonly ResourcesNumberField Findings_summarySeveritiesHigh = new ResourcesNumberField("findings_summary.severities.high");
+        public static readonly ResourcesNumberField FindingsSummarySeveritiesHigh = new ResourcesNumberField("FindingsSummary.Severities.High");
         /// <summary>
-        /// Constant Findings_summarySeveritiesInformational for ResourcesNumberField
+        /// Constant FindingsSummarySeveritiesInformational for ResourcesNumberField
         /// </summary>
-        public static readonly ResourcesNumberField Findings_summarySeveritiesInformational = new ResourcesNumberField("findings_summary.severities.informational");
+        public static readonly ResourcesNumberField FindingsSummarySeveritiesInformational = new ResourcesNumberField("FindingsSummary.Severities.Informational");
         /// <summary>
-        /// Constant Findings_summarySeveritiesLow for ResourcesNumberField
+        /// Constant FindingsSummarySeveritiesLow for ResourcesNumberField
         /// </summary>
-        public static readonly ResourcesNumberField Findings_summarySeveritiesLow = new ResourcesNumberField("findings_summary.severities.low");
+        public static readonly ResourcesNumberField FindingsSummarySeveritiesLow = new ResourcesNumberField("FindingsSummary.Severities.Low");
         /// <summary>
-        /// Constant Findings_summarySeveritiesMedium for ResourcesNumberField
+        /// Constant FindingsSummarySeveritiesMedium for ResourcesNumberField
         /// </summary>
-        public static readonly ResourcesNumberField Findings_summarySeveritiesMedium = new ResourcesNumberField("findings_summary.severities.medium");
+        public static readonly ResourcesNumberField FindingsSummarySeveritiesMedium = new ResourcesNumberField("FindingsSummary.Severities.Medium");
         /// <summary>
-        /// Constant Findings_summarySeveritiesOther for ResourcesNumberField
+        /// Constant FindingsSummarySeveritiesOther for ResourcesNumberField
         /// </summary>
-        public static readonly ResourcesNumberField Findings_summarySeveritiesOther = new ResourcesNumberField("findings_summary.severities.other");
+        public static readonly ResourcesNumberField FindingsSummarySeveritiesOther = new ResourcesNumberField("FindingsSummary.Severities.Other");
         /// <summary>
-        /// Constant Findings_summarySeveritiesUnknown for ResourcesNumberField
+        /// Constant FindingsSummarySeveritiesUnknown for ResourcesNumberField
         /// </summary>
-        public static readonly ResourcesNumberField Findings_summarySeveritiesUnknown = new ResourcesNumberField("findings_summary.severities.unknown");
+        public static readonly ResourcesNumberField FindingsSummarySeveritiesUnknown = new ResourcesNumberField("FindingsSummary.Severities.Unknown");
         /// <summary>
-        /// Constant Findings_summaryTotal_findings for ResourcesNumberField
+        /// Constant FindingsSummaryTotalFindings for ResourcesNumberField
         /// </summary>
-        public static readonly ResourcesNumberField Findings_summaryTotal_findings = new ResourcesNumberField("findings_summary.total_findings");
+        public static readonly ResourcesNumberField FindingsSummaryTotalFindings = new ResourcesNumberField("FindingsSummary.TotalFindings");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -2599,41 +2861,41 @@ namespace Amazon.SecurityHub
     {
 
         /// <summary>
-        /// Constant Account_id for ResourcesStringField
+        /// Constant AccountId for ResourcesStringField
         /// </summary>
-        public static readonly ResourcesStringField Account_id = new ResourcesStringField("account_id");
+        public static readonly ResourcesStringField AccountId = new ResourcesStringField("AccountId");
         /// <summary>
-        /// Constant Findings_summaryFinding_type for ResourcesStringField
+        /// Constant FindingsSummaryFindingType for ResourcesStringField
         /// </summary>
-        public static readonly ResourcesStringField Findings_summaryFinding_type = new ResourcesStringField("findings_summary.finding_type");
+        public static readonly ResourcesStringField FindingsSummaryFindingType = new ResourcesStringField("FindingsSummary.FindingType");
         /// <summary>
-        /// Constant Findings_summaryProduct_name for ResourcesStringField
+        /// Constant FindingsSummaryProductName for ResourcesStringField
         /// </summary>
-        public static readonly ResourcesStringField Findings_summaryProduct_name = new ResourcesStringField("findings_summary.product_name");
+        public static readonly ResourcesStringField FindingsSummaryProductName = new ResourcesStringField("FindingsSummary.ProductName");
         /// <summary>
         /// Constant Region for ResourcesStringField
         /// </summary>
-        public static readonly ResourcesStringField Region = new ResourcesStringField("region");
+        public static readonly ResourcesStringField Region = new ResourcesStringField("Region");
         /// <summary>
-        /// Constant Resource_arn for ResourcesStringField
+        /// Constant ResourceCategory for ResourcesStringField
         /// </summary>
-        public static readonly ResourcesStringField Resource_arn = new ResourcesStringField("resource_arn");
+        public static readonly ResourcesStringField ResourceCategory = new ResourcesStringField("ResourceCategory");
         /// <summary>
-        /// Constant Resource_category for ResourcesStringField
+        /// Constant ResourceGuid for ResourcesStringField
         /// </summary>
-        public static readonly ResourcesStringField Resource_category = new ResourcesStringField("resource_category");
+        public static readonly ResourcesStringField ResourceGuid = new ResourcesStringField("ResourceGuid");
         /// <summary>
-        /// Constant Resource_id for ResourcesStringField
+        /// Constant ResourceId for ResourcesStringField
         /// </summary>
-        public static readonly ResourcesStringField Resource_id = new ResourcesStringField("resource_id");
+        public static readonly ResourcesStringField ResourceId = new ResourcesStringField("ResourceId");
         /// <summary>
-        /// Constant Resource_name for ResourcesStringField
+        /// Constant ResourceName for ResourcesStringField
         /// </summary>
-        public static readonly ResourcesStringField Resource_name = new ResourcesStringField("resource_name");
+        public static readonly ResourcesStringField ResourceName = new ResourcesStringField("ResourceName");
         /// <summary>
-        /// Constant Resource_type for ResourcesStringField
+        /// Constant ResourceType for ResourcesStringField
         /// </summary>
-        public static readonly ResourcesStringField Resource_type = new ResourcesStringField("resource_type");
+        public static readonly ResourcesStringField ResourceType = new ResourcesStringField("ResourceType");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
