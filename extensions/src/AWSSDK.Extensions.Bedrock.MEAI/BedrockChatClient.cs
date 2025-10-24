@@ -121,7 +121,7 @@ internal sealed partial class BedrockChatClient : IChatClient
 
                     if (reasoningContent.ReasoningText.Signature is string signature)
                     {
-                        (trc.AdditionalProperties ??= [])[nameof(reasoningContent.ReasoningText.Signature)] = signature;
+                        trc.ProtectedData = signature;
                     }
 
                     if (reasoningContent.RedactedContent is { } redactedContent)
@@ -249,13 +249,13 @@ internal sealed partial class BedrockChatClient : IChatClient
                         yield return textUpdate;
                     }
 
-                    if (contentBlockDelta.Delta.ReasoningContent is { Text: not null } reasoningContent)
+                    if (contentBlockDelta.Delta.ReasoningContent is { } reasoningContent)
                     {
                         TextReasoningContent trc = new(reasoningContent.Text);
 
                         if (reasoningContent.Signature is not null)
                         {
-                            (trc.AdditionalProperties ??= [])[nameof(reasoningContent.Signature)] = reasoningContent.Signature;
+                            trc.ProtectedData = reasoningContent.Signature;
                         }
 
                         if (reasoningContent.RedactedContent is { } redactedContent)
@@ -516,6 +516,8 @@ internal sealed partial class BedrockChatClient : IChatClient
                     break;
 
                 case TextReasoningContent trc:
+                    object? redactedContent = null;
+                    trc.AdditionalProperties?.TryGetValue(nameof(ReasoningContentBlock.RedactedContent), out redactedContent);
                     contents.Add(new()
                     {
                         ReasoningContent = new()
@@ -523,9 +525,9 @@ internal sealed partial class BedrockChatClient : IChatClient
                             ReasoningText = new()
                             {
                                 Text = trc.Text,
-                                Signature = trc.AdditionalProperties?[nameof(ReasoningContentBlock.ReasoningText.Signature)] as string,
+                                Signature = trc.ProtectedData,
                             },
-                            RedactedContent = trc.AdditionalProperties?[nameof(ReasoningContentBlock.RedactedContent)] is byte[] array ? new(array) : null,
+                            RedactedContent = redactedContent is byte[] array ? new(array) : null,
                         }
                     });
                     break;
