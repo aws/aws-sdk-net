@@ -1,3 +1,107 @@
+### 4.0.119.0 (2025-10-24 19:27 UTC)
+* AmplifyUIBuilder (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* ApplicationSignals (4.0.3.0)
+	* Update endpoint ruleset parameters casing
+* Billing (4.0.4.0)
+	* Update endpoint ruleset parameters casing
+* Budgets (4.0.6.0)
+	* Update endpoint ruleset parameters casing
+* CertificateManager (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* ChimeSDKMessaging (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* CloudTrail (4.0.3.0)
+	* Update endpoint ruleset parameters casing
+* CodePipeline (4.0.4.0)
+	* Update endpoint ruleset parameters casing
+* ConnectWisdomService (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* DataPipeline (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* DataZone (4.0.12.0)
+	* This release adds support for MLflow connections Creation in DataZone
+* DocDB (4.0.4.0)
+	* Update endpoint ruleset parameters casing
+* DynamoDBStreams (4.0.4.0)
+	* Update endpoint ruleset parameters casing
+* EKS (4.0.7.0)
+	* Update endpoint ruleset parameters casing
+* ElasticLoadBalancing (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* Evs (4.0.4.0)
+	* Update endpoint ruleset parameters casing
+* FIS (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* GameLiftStreams (4.0.3.0)
+	* Add status reasons for TERMINATED stream sessions
+* GeoMaps (4.0.3.0)
+	* Added support for optional AdditionalFeatures parameter in the V2 GetTile API.
+* Inspector (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* IoTManagedIntegrations (4.0.3.0)
+	* Update endpoint ruleset parameters casing
+* IoTWireless (4.0.4.0)
+	* Update endpoint ruleset parameters casing
+* KinesisAnalytics (4.0.1.0)
+	* Update endpoint ruleset parameters casing
+* KinesisVideoSignalingChannels (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* LocationService (4.0.3.0)
+	* Added support for mobile app restrictions in Amazon Location API keys.
+* LookoutforVision (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* MediaPackage (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* MediaStore (4.0.1.0)
+	* Update endpoint ruleset parameters casing
+* MediaStoreData (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* MigrationHubStrategyRecommendations (4.0.1.0)
+	* Update endpoint ruleset parameters casing
+* MQ (4.0.3.0)
+	* Update endpoint ruleset parameters casing
+* Panorama (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* PaymentCryptography (4.0.5.0)
+	* Update endpoint ruleset parameters casing
+* PaymentCryptographyData (4.0.5.0)
+	* Update endpoint ruleset parameters casing
+* PcaConnectorAd (4.0.1.0)
+	* Update endpoint ruleset parameters casing
+* QBusiness (4.0.6.0)
+	* Update endpoint ruleset parameters casing
+* RoboMaker (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* Route53Domains (4.0.3.0)
+	* Update endpoint ruleset parameters casing
+* RTBFabric (4.0.1.0)
+	* Add support for custom rate limits.
+* S3Tables (4.0.5.0)
+	* Update endpoint ruleset parameters casing
+* SageMaker (4.0.27.0)
+	* Added inference components model data caching feature
+* SageMakerMetrics (4.0.3.0)
+	* Update endpoint ruleset parameters casing
+* SecurityHub (4.0.5.0)
+	* Release 3 layer filter support in GetFindingsV2, GetFindingStatisticsV2, GetResourcesV2,GetResourcesStatisticsV2, AutomationRule V2 APIs. Update filter casing in GetResourcesV2, GetResourcesStatisticsV2 APIs. Add new filters in GetFindingsV2, GetFindingStatisticsV2, AutomationRule V2 APIs.
+* ServiceDiscovery (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* SnowDeviceManagement (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* SSOOIDC (4.0.3.0)
+	* Update endpoint ruleset parameters casing
+* SupplyChain (4.0.3.0)
+	* Update endpoint ruleset parameters casing
+* Translate (4.0.1.0)
+	* Update endpoint ruleset parameters casing
+* VerifiedPermissions (4.0.4.0)
+	* Update endpoint ruleset parameters casing
+* VPCLattice (4.0.3.0)
+	* Update endpoint ruleset parameters casing
+* WorkSpacesThinClient (4.0.4.0)
+	* Update endpoint ruleset parameters casing
+
 ### 4.0.118.0 (2025-10-23 19:18 UTC)
 * Account (4.0.2.0)
 	* Update endpoint ruleset parameters casing

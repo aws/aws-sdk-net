@@ -33,7 +33,7 @@ namespace Amazon.DataZone
     public partial class AmazonDataZoneConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("DataZone", "4.0.11.2");
+            InternalSDKUtils.BuildUserAgentString("DataZone", "4.0.12.0");
 
         private static readonly AmazonDataZoneEndpointResolver EndpointResolver =
             new AmazonDataZoneEndpointResolver();
