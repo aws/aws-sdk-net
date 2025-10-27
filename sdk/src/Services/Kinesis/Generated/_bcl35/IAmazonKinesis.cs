@@ -1992,7 +1992,7 @@ namespace Amazon.Kinesis
         /// Writes a single data record into an Amazon Kinesis data stream. Call <c>PutRecord</c>
         /// to send data into the stream for real-time ingestion and subsequent processing, one
         /// record at a time. Each shard can support writes up to 1,000 records per second, up
-        /// to a maximum data write total of 1 MiB per second.
+        /// to a maximum data write total of 10 MiB per second.
         /// 
         ///  <note> 
         /// <para>
@@ -2153,9 +2153,9 @@ namespace Amazon.Kinesis
         ///  </note> 
         /// <para>
         /// Each <c>PutRecords</c> request can support up to 500 records. Each record in the request
-        /// can be as large as 1 MiB, up to a limit of 5 MiB for the entire request, including
+        /// can be as large as 10 MiB, up to a limit of 10 MiB for the entire request, including
         /// partition keys. Each shard can support writes up to 1,000 records per second, up to
-        /// a maximum data write total of 1 MiB per second.
+        /// a maximum data write total of 1 MB per second.
         /// </para>
         ///  
         /// <para>
@@ -3002,6 +3002,70 @@ namespace Amazon.Kinesis
         /// <returns>Returns a  UntagResourceResult from Kinesis.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/UntagResource">REST API Reference for UntagResource Operation</seealso>
         UntagResourceResponse EndUntagResource(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateMaxRecordSize
+
+
+        /// <summary>
+        /// This allows you to update the <c>MaxRecordSize</c> of a single record that you can
+        /// write to, and read from a stream. You can ingest and digest single records up to 10240
+        /// KiB.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMaxRecordSize service method.</param>
+        /// 
+        /// <returns>The response from the UpdateMaxRecordSize service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
+        /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
+        /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
+        /// For more information, see the returned message.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.LimitExceededException">
+        /// The requested resource exceeds the maximum number allowed, or the number of concurrent
+        /// stream requests exceeds the maximum number allowed.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ResourceInUseException">
+        /// The resource is not available for this operation. For successful operation, the resource
+        /// must be in the <c>ACTIVE</c> state.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
+        /// The requested resource could not be found. The stream might not be specified correctly.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ValidationException">
+        /// Specifies that you tried to invoke this API for a data stream with the on-demand capacity
+        /// mode. This API is only supported for data streams with the provisioned capacity mode.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/UpdateMaxRecordSize">REST API Reference for UpdateMaxRecordSize Operation</seealso>
+        UpdateMaxRecordSizeResponse UpdateMaxRecordSize(UpdateMaxRecordSizeRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateMaxRecordSize operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMaxRecordSize operation on AmazonKinesisClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateMaxRecordSize
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/UpdateMaxRecordSize">REST API Reference for UpdateMaxRecordSize Operation</seealso>
+        IAsyncResult BeginUpdateMaxRecordSize(UpdateMaxRecordSizeRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateMaxRecordSize operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateMaxRecordSize.</param>
+        /// 
+        /// <returns>Returns a  UpdateMaxRecordSizeResult from Kinesis.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/UpdateMaxRecordSize">REST API Reference for UpdateMaxRecordSize Operation</seealso>
+        UpdateMaxRecordSizeResponse EndUpdateMaxRecordSize(IAsyncResult asyncResult);
 
         #endregion
         

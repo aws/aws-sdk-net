@@ -38,6 +38,7 @@ namespace Amazon.Kinesis.Model
         private EncryptionType _encryptionType;
         private List<EnhancedMetrics> _enhancedMonitoring = AWSConfigs.InitializeCollections ? new List<EnhancedMetrics>() : null;
         private string _keyId;
+        private int? _maxRecordSizeInKiB;
         private int? _openShardCount;
         private int? _retentionPeriodHours;
         private string _streamARN;
@@ -153,6 +154,26 @@ namespace Amazon.Kinesis.Model
         internal bool IsSetKeyId()
         {
             return this._keyId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxRecordSizeInKiB. 
+        /// <para>
+        /// The maximum record size of a single record in kibibyte (KiB) that you can write to,
+        /// and read from a stream.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1024, Max=10240)]
+        public int MaxRecordSizeInKiB
+        {
+            get { return this._maxRecordSizeInKiB.GetValueOrDefault(); }
+            set { this._maxRecordSizeInKiB = value; }
+        }
+
+        // Check to see if MaxRecordSizeInKiB property is set
+        internal bool IsSetMaxRecordSizeInKiB()
+        {
+            return this._maxRecordSizeInKiB.HasValue; 
         }
 
         /// <summary>
