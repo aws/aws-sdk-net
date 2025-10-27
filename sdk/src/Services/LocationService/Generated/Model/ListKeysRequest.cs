@@ -32,6 +32,12 @@ namespace Amazon.LocationService.Model
     /// <summary>
     /// Container for the parameters to the ListKeys operation.
     /// Lists API key resources in your Amazon Web Services account.
+    /// 
+    ///  
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">Use
+    /// API keys to authenticate</a> in the <i>Amazon Location Service Developer Guide</i>.
+    /// </para>
     /// </summary>
     public partial class ListKeysRequest : AmazonLocationServiceRequest
     {

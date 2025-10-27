@@ -96,7 +96,7 @@ namespace Amazon.GeoMaps.Model
         /// Example: 97.170451,78.039098,99.045536,27.176178
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=7)]
+        [AWSProperty(Sensitive=true, Min=0, Max=2000)]
         public string BoundedPositions
         {
             get { return this._boundedPositions; }
@@ -121,7 +121,7 @@ namespace Amazon.GeoMaps.Model
         /// Example: -123.17075,49.26959,-123.08125,49.31429
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=7)]
+        [AWSProperty(Sensitive=true, Min=0, Max=100)]
         public string BoundingBox
         {
             get { return this._boundingBox; }
@@ -674,7 +674,7 @@ namespace Amazon.GeoMaps.Model
         /// Example: <c>100</c> 
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true)]
+        [AWSProperty(Sensitive=true, Min=0, Max=350)]
         public int? Padding
         {
             get { return this._padding; }

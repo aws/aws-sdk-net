@@ -13,6 +13,11 @@
     <pattern>[a-zA-Z0-9_.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Kinesis.Model.CreateStreamRequest.MaxRecordSizeInKiB</property>
+    <min>1024</min>
+    <max>10240</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Kinesis.Model.CreateStreamRequest.ShardCount</property>
     <min>1</min>
   </property-value-rule>
@@ -391,7 +396,7 @@
   <property-value-rule>
     <property>Amazon.Kinesis.Model.PutRecordRequest.Data</property>
     <min>0</min>
-    <max>1048576</max>
+    <max>10485760</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Kinesis.Model.PutRecordRequest.ExplicitHashKey</property>
@@ -555,6 +560,17 @@
     <pattern>arn:aws.*:kinesis:.*:\d{12}:.*stream/\S+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Kinesis.Model.UpdateMaxRecordSizeRequest.MaxRecordSizeInKiB</property>
+    <min>1024</min>
+    <max>10240</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kinesis.Model.UpdateMaxRecordSizeRequest.StreamARN</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:aws.*:kinesis:.*:\d{12}:stream/\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Kinesis.Model.UpdateShardCountRequest.StreamARN</property>
     <min>1</min>
     <max>2048</max>
@@ -643,7 +659,7 @@
   <property-value-rule>
     <property>Amazon.Kinesis.Model.PutRecordsRequestEntry.Data</property>
     <min>0</min>
-    <max>1048576</max>
+    <max>10485760</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Kinesis.Model.PutRecordsRequestEntry.ExplicitHashKey</property>
@@ -667,7 +683,7 @@
   <property-value-rule>
     <property>Amazon.Kinesis.Model.Record.Data</property>
     <min>0</min>
-    <max>1048576</max>
+    <max>10485760</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Kinesis.Model.Record.PartitionKey</property>
@@ -740,6 +756,11 @@
     <property>Amazon.Kinesis.Model.StreamDescriptionSummary.KeyId</property>
     <min>1</min>
     <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kinesis.Model.StreamDescriptionSummary.MaxRecordSizeInKiB</property>
+    <min>1024</min>
+    <max>10240</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Kinesis.Model.StreamDescriptionSummary.OpenShardCount</property>

@@ -44,9 +44,9 @@ namespace Amazon.Kinesis.Model
     ///  </note> 
     /// <para>
     /// Each <c>PutRecords</c> request can support up to 500 records. Each record in the request
-    /// can be as large as 1 MiB, up to a limit of 5 MiB for the entire request, including
+    /// can be as large as 10 MiB, up to a limit of 10 MiB for the entire request, including
     /// partition keys. Each shard can support writes up to 1,000 records per second, up to
-    /// a maximum data write total of 1 MiB per second.
+    /// a maximum data write total of 1 MB per second.
     /// </para>
     ///  
     /// <para>

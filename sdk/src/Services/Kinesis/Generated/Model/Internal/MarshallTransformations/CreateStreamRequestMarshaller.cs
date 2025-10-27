@@ -75,6 +75,12 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetMaxRecordSizeInKiB())
+            {
+                context.Writer.WritePropertyName("MaxRecordSizeInKiB");
+                context.Writer.WriteNumberValue(publicRequest.MaxRecordSizeInKiB.Value);
+            }
+
             if(publicRequest.IsSetShardCount())
             {
                 context.Writer.WritePropertyName("ShardCount");

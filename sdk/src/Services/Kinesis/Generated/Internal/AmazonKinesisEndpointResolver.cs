@@ -268,6 +268,12 @@ namespace Amazon.Kinesis.Internal
                 result.ResourceARN = request.ResourceARN;
                 return result;
             }
+            if (requestContext.RequestName == "UpdateMaxRecordSizeRequest") {
+                result.OperationType = "control";
+                var request = (UpdateMaxRecordSizeRequest)requestContext.OriginalRequest;
+                result.StreamARN = request.StreamARN;
+                return result;
+            }
             if (requestContext.RequestName == "UpdateShardCountRequest") {
                 result.OperationType = "control";
                 var request = (UpdateShardCountRequest)requestContext.OriginalRequest;

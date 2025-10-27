@@ -38,6 +38,7 @@ namespace Amazon.DataZone.Model
         private AthenaPropertiesPatch _athenaProperties;
         private GluePropertiesPatch _glueProperties;
         private IamPropertiesPatch _iamProperties;
+        private MlflowPropertiesPatch _mlflowProperties;
         private RedshiftPropertiesPatch _redshiftProperties;
         private S3PropertiesPatch _s3Properties;
         private SparkEmrPropertiesPatch _sparkEmrProperties;
@@ -112,6 +113,24 @@ namespace Amazon.DataZone.Model
         internal bool IsSetIamProperties()
         {
             return this._iamProperties != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MlflowProperties. 
+        /// <para>
+        /// The MLflow properties of a connection.
+        /// </para>
+        /// </summary>
+        public MlflowPropertiesPatch MlflowProperties
+        {
+            get { return this._mlflowProperties; }
+            set { this._mlflowProperties = value; }
+        }
+
+        // Check to see if MlflowProperties property is set
+        internal bool IsSetMlflowProperties()
+        {
+            return this._mlflowProperties != null;
         }
 
         /// <summary>

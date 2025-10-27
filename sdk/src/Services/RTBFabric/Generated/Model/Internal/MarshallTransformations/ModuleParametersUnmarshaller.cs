@@ -68,6 +68,12 @@ namespace Amazon.RTBFabric.Model.Internal.MarshallTransformations
                     unmarshalledObject.OpenRtbAttribute = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("rateLimiter", targetDepth))
+                {
+                    var unmarshaller = RateLimiterModuleParametersUnmarshaller.Instance;
+                    unmarshalledObject.RateLimiter = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }
