@@ -1,3 +1,110 @@
+### 4.0.120.0 (2025-10-27 19:42 UTC)
+* AccessAnalyzer (4.0.3.0)
+	* Update endpoint ruleset parameters casing
+* AIOps (4.0.3.0)
+	* Update endpoint ruleset parameters casing
+* Athena (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* BackupGateway (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* BedrockDataAutomation (4.0.4.0)
+	* Update endpoint ruleset parameters casing
+* Braket (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* ChimeSDKIdentity (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* ChimeSDKMediaPipelines (4.0.1.0)
+	* Update endpoint ruleset parameters casing
+* CodeArtifact (4.0.1.0)
+	* Update endpoint ruleset parameters casing
+* CodeGuruProfiler (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* CognitoIdentityProvider (4.0.4.0)
+	* Update endpoint ruleset parameters casing
+* Comprehend (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* ConnectCampaignService (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* ControlTower (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* CostExplorer (4.0.7.0)
+	* Updated endpoint for eusc-de-east-1 region.
+* CostOptimizationHub (4.0.4.0)
+	* Update endpoint ruleset parameters casing
+* DAX (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* ElasticBeanstalk (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* EntityResolution (4.0.5.0)
+	* Update endpoint ruleset parameters casing
+* ForecastService (4.0.1.0)
+	* Update endpoint ruleset parameters casing
+* Greengrass (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* IdentityManagement (4.0.5.0)
+	* Fixed missing SummaryMap keys in GetAccountSummary response that were being filtered out during deserialization in AWS Java SDK v2
+* Invoicing (4.0.3.0)
+	* Update endpoint ruleset parameters casing
+* Kinesis (4.0.5.0)
+	* Adds support for record sizes up to 10MiB and introduces new UpdateMaxRecordSize API to modify stream record size limits. Adds record size parameters to existing CreateStream and DescribeStreamSummary APIs for request and response payloads respectively.
+* LaunchWizard (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* Lex (4.0.1.0)
+	* Update endpoint ruleset parameters casing
+* ManagedBlockchain (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* MTurk (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* NeptuneGraph (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* Outposts (4.0.4.0)
+	* Update endpoint ruleset parameters casing
+* Pinpoint (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* RDSDataService (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* RecycleBin (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* RedshiftServerless (4.0.1.0)
+	* Update endpoint ruleset parameters casing
+* Rekognition (4.0.3.0)
+	* Update endpoint ruleset parameters casing
+* Repostspace (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* Route53Profiles (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* Route53Resolver (4.0.3.0)
+	* Update endpoint ruleset parameters casing
+* S3 (4.0.8.0)
+	* Update `PutObject` and `UploadPart` requests to include the `Content-Encoding` header when the [request payload is transferred in multiple chunks](https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-streaming.html)
+* S3Vectors (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* Scheduler (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* SecretsManager (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* Shield (4.0.1.0)
+	* Update endpoint ruleset parameters casing
+* SimpleEmail (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* SimSpaceWeaver (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* SocialMessaging (4.0.3.0)
+	* Update endpoint ruleset parameters casing
+* SsmSap (4.0.3.0)
+	* Update endpoint ruleset parameters casing
+* SSOAdmin (4.0.4.0)
+	* Update endpoint ruleset parameters casing
+* StepFunctions (4.0.1.0)
+	* Update endpoint ruleset parameters casing
+* WAFRegional (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* WorkMailMessageFlow (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* Core 4.0.1.3
+	* Update SDK to include `aws-chunked` in the `Content-Encoding` header when the [request payload is transferred in multiple chunks](https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-streaming.html)
+	* All service and extension packages updated to require new Core
+
 ### 4.0.119.0 (2025-10-24 19:27 UTC)
 * AmplifyUIBuilder (4.0.2.0)
 	* Update endpoint ruleset parameters casing
