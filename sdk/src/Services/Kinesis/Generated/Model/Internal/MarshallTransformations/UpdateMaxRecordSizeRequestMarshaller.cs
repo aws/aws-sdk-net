@@ -37,9 +37,9 @@ using ThirdParty.RuntimeBackports;
 namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateStream Request Marshaller
+    /// UpdateMaxRecordSize Request Marshaller
     /// </summary>       
-    public class CreateStreamRequestMarshaller : IMarshaller<IRequest, CreateStreamRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class UpdateMaxRecordSizeRequestMarshaller : IMarshaller<IRequest, UpdateMaxRecordSizeRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -48,7 +48,7 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateStreamRequest)input);
+            return this.Marshall((UpdateMaxRecordSizeRequest)input);
         }
 
         /// <summary>
@@ -56,10 +56,10 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateStreamRequest publicRequest)
+        public IRequest Marshall(UpdateMaxRecordSizeRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Kinesis");
-            string target = "Kinesis_20131202.CreateStream";
+            string target = "Kinesis_20131202.UpdateMaxRecordSize";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2013-12-02";
@@ -81,41 +81,10 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
                 context.Writer.WriteNumberValue(publicRequest.MaxRecordSizeInKiB.Value);
             }
 
-            if(publicRequest.IsSetShardCount())
+            if(publicRequest.IsSetStreamARN())
             {
-                context.Writer.WritePropertyName("ShardCount");
-                context.Writer.WriteNumberValue(publicRequest.ShardCount.Value);
-            }
-
-            if(publicRequest.IsSetStreamModeDetails())
-            {
-                context.Writer.WritePropertyName("StreamModeDetails");
-                context.Writer.WriteStartObject();
-
-                var marshaller = StreamModeDetailsMarshaller.Instance;
-                marshaller.Marshall(publicRequest.StreamModeDetails, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(publicRequest.IsSetStreamName())
-            {
-                context.Writer.WritePropertyName("StreamName");
-                context.Writer.WriteStringValue(publicRequest.StreamName);
-            }
-
-            if(publicRequest.IsSetTags())
-            {
-                context.Writer.WritePropertyName("Tags");
-                context.Writer.WriteStartObject();
-                foreach (var publicRequestTagsKvp in publicRequest.Tags)
-                {
-                    context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                    var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                        context.Writer.WriteStringValue(publicRequestTagsValue);
-                }
-                context.Writer.WriteEndObject();
+                context.Writer.WritePropertyName("StreamARN");
+                context.Writer.WriteStringValue(publicRequest.StreamARN);
             }
 
             writer.WriteEndObject();
@@ -131,9 +100,9 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateStreamRequestMarshaller _instance = new CreateStreamRequestMarshaller();        
+        private static UpdateMaxRecordSizeRequestMarshaller _instance = new UpdateMaxRecordSizeRequestMarshaller();        
 
-        internal static CreateStreamRequestMarshaller GetInstance()
+        internal static UpdateMaxRecordSizeRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -141,7 +110,7 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateStreamRequestMarshaller Instance
+        public static UpdateMaxRecordSizeRequestMarshaller Instance
         {
             get
             {

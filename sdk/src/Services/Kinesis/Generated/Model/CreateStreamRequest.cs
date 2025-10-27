@@ -105,10 +105,31 @@ namespace Amazon.Kinesis.Model
     /// </summary>
     public partial class CreateStreamRequest : AmazonKinesisRequest
     {
+        private int? _maxRecordSizeInKiB;
         private int? _shardCount;
         private StreamModeDetails _streamModeDetails;
         private string _streamName;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+
+        /// <summary>
+        /// Gets and sets the property MaxRecordSizeInKiB. 
+        /// <para>
+        /// The maximum record size of a single record in kibibyte (KiB) that you can write to,
+        /// and read from a stream.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1024, Max=10240)]
+        public int? MaxRecordSizeInKiB
+        {
+            get { return this._maxRecordSizeInKiB; }
+            set { this._maxRecordSizeInKiB = value; }
+        }
+
+        // Check to see if MaxRecordSizeInKiB property is set
+        internal bool IsSetMaxRecordSizeInKiB()
+        {
+            return this._maxRecordSizeInKiB.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property ShardCount. 
