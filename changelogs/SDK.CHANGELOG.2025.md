@@ -1,3 +1,110 @@
+### 3.7.1152.0 (2025-10-27 19:24 UTC)
+* AccessAnalyzer (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* AIOps (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* Athena (3.7.501.0)
+	* Update endpoint ruleset parameters casing
+* BackupGateway (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* BedrockDataAutomation (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* Braket (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* ChimeSDKIdentity (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* ChimeSDKMediaPipelines (3.7.501.0)
+	* Update endpoint ruleset parameters casing
+* CodeArtifact (3.7.501.0)
+	* Update endpoint ruleset parameters casing
+* CodeGuruProfiler (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* CognitoIdentityProvider (3.7.503.0)
+	* Update endpoint ruleset parameters casing
+* Comprehend (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* ConnectCampaignService (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* ControlTower (3.7.501.0)
+	* Update endpoint ruleset parameters casing
+* CostExplorer (3.7.505.0)
+	* Updated endpoint for eusc-de-east-1 region.
+* CostOptimizationHub (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* DAX (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* ElasticBeanstalk (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* EntityResolution (3.7.503.0)
+	* Update endpoint ruleset parameters casing
+* ForecastService (3.7.501.0)
+	* Update endpoint ruleset parameters casing
+* Greengrass (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* IdentityManagement (3.7.503.0)
+	* Fixed missing SummaryMap keys in GetAccountSummary response that were being filtered out during deserialization in AWS Java SDK v2
+* Invoicing (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* Kinesis (3.7.503.0)
+	* Adds support for record sizes up to 10MiB and introduces new UpdateMaxRecordSize API to modify stream record size limits. Adds record size parameters to existing CreateStream and DescribeStreamSummary APIs for request and response payloads respectively.
+* LaunchWizard (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* Lex (3.7.501.0)
+	* Update endpoint ruleset parameters casing
+* ManagedBlockchain (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* MTurk (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* NeptuneGraph (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* Outposts (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* Pinpoint (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* RDSDataService (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* RecycleBin (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* RedshiftServerless (3.7.501.0)
+	* Update endpoint ruleset parameters casing
+* Rekognition (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* Repostspace (3.7.501.0)
+	* Update endpoint ruleset parameters casing
+* Route53Profiles (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* Route53Resolver (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* S3 (3.7.502.0)
+	* Update `PutObject` and `UploadPart` requests to include the `Content-Encoding` header when the [request payload is transferred in multiple chunks](https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-streaming.html)
+* S3Vectors (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* Scheduler (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* SecretsManager (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* Shield (3.7.501.0)
+	* Update endpoint ruleset parameters casing
+* SimpleEmail (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* SimSpaceWeaver (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* SocialMessaging (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* SsmSap (3.7.503.0)
+	* Update endpoint ruleset parameters casing
+* SSOAdmin (3.7.503.0)
+	* Update endpoint ruleset parameters casing
+* StepFunctions (3.7.501.0)
+	* Update endpoint ruleset parameters casing
+* WAFRegional (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* WorkMailMessageFlow (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* Core 3.7.500.38
+	* Update SDK to include `aws-chunked` in the `Content-Encoding` header when the [request payload is transferred in multiple chunks](https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-streaming.html)
+	* All services packages updated to require new Core
+
 ### 3.7.1151.0 (2025-10-24 19:14 UTC)
 * AmplifyUIBuilder (3.7.502.0)
 	* Update endpoint ruleset parameters casing
