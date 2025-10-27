@@ -1,0 +1,18 @@
+{
+    "core": {
+        "changeLogMessages": [
+            "Update SDK to include `aws-chunked` in the `Content-Encoding` header when the [request payload is transferred in multiple chunks](https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-streaming.html)"
+        ],
+        "type": "patch",
+        "updateMinimum": true
+    },
+    "services": [
+        {
+            "serviceName": "S3",
+            "type": "minor",
+            "changeLogMessages": [
+                "Update `PutObject` and `UploadPart` requests to include the `Content-Encoding` header when the [request payload is transferred in multiple chunks](https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-streaming.html)"
+            ]
+        }
+    ]
+}
