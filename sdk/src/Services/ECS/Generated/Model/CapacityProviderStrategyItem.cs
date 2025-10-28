@@ -93,11 +93,11 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Default value is <c>0</c> if not specified
+        /// The default value is <c>0</c> if not specified
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Valid range: 0 to 100,000
+        /// The valid range is 0 to 100,000
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -164,11 +164,11 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Default value is <c>0</c> if not specified
+        /// The default value is <c>0</c> if not specified
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Valid range: 0 to 1,000
+        /// The valid range is 0 to 1,000
         /// </para>
         ///  </li> <li> 
         /// <para>

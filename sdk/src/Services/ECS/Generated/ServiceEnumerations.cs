@@ -1477,6 +1477,14 @@ namespace Amazon.ECS
         /// </summary>
         public static readonly DeploymentStrategy BLUE_GREEN = new DeploymentStrategy("BLUE_GREEN");
         /// <summary>
+        /// Constant CANARY for DeploymentStrategy
+        /// </summary>
+        public static readonly DeploymentStrategy CANARY = new DeploymentStrategy("CANARY");
+        /// <summary>
+        /// Constant LINEAR for DeploymentStrategy
+        /// </summary>
+        public static readonly DeploymentStrategy LINEAR = new DeploymentStrategy("LINEAR");
+        /// <summary>
         /// Constant ROLLING for DeploymentStrategy
         /// </summary>
         public static readonly DeploymentStrategy ROLLING = new DeploymentStrategy("ROLLING");

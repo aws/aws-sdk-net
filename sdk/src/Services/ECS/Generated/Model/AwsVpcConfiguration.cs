@@ -49,7 +49,7 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// When you use <c>create-service</c> or <c>update-service</c>, the default is <c>DISABLED</c>.
+        /// When you use <c>create-service</c> or <c>update-service</c>, the The default is <c>DISABLED</c>.
         /// 
         /// </para>
         ///  </li> <li> 

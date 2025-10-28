@@ -679,6 +679,69 @@ namespace Amazon.ECS
         /// Load balancer requirement: When your service uses Application Load Balancer, Network
         /// Load Balancer, or Service Connect
         /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        ///  <c>LINEAR</c>: A <i>linear</i> deployment strategy (<c>LINEAR</c>) gradually shifts
+        /// traffic from the current production environment to a new environment in equal percentage
+        /// increments over a specified time period. With Amazon ECS linear deployments, you can
+        /// control the pace of traffic shifting and validate new service revisions with increasing
+        /// amounts of production traffic.
+        /// </para>
+        ///  
+        /// <para>
+        /// Linear deployments are best suited for the following scenarios:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Gradual validation: When you want to gradually validate your new service version with
+        /// increasing traffic
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Performance monitoring: When you need time to monitor metrics and performance during
+        /// the deployment
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Risk minimization: When you want to minimize risk by exposing the new version to production
+        /// traffic incrementally
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Load balancer requirement: When your service uses Application Load Balancer, Network
+        /// Load Balancer, or Service Connect
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        ///  <c>CANARY</c>: A <i>canary</i> deployment strategy (<c>CANARY</c>) shifts a small
+        /// percentage of traffic to the new service revision first, then shifts the remaining
+        /// traffic all at once after a specified time period. This allows you to test the new
+        /// version with a subset of users before full deployment.
+        /// </para>
+        ///  
+        /// <para>
+        /// Canary deployments are best suited for the following scenarios:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Feature testing: When you want to test new features with a small subset of users before
+        /// full rollout
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Production validation: When you need to validate performance and functionality with
+        /// real production traffic
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Blast radius control: When you want to minimize blast radius if issues are discovered
+        /// in the new version
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Load balancer requirement: When your service uses Application Load Balancer, Network
+        /// Load Balancer, or Service Connect
+        /// </para>
         ///  </li> </ul> </li> </ul> </li> <li> 
         /// <para>
         /// External
@@ -929,6 +992,69 @@ namespace Amazon.ECS
         ///  </li> <li> 
         /// <para>
         /// Instant roll back: When you need the ability to quickly roll back if issues are detected
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Load balancer requirement: When your service uses Application Load Balancer, Network
+        /// Load Balancer, or Service Connect
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        ///  <c>LINEAR</c>: A <i>linear</i> deployment strategy (<c>LINEAR</c>) gradually shifts
+        /// traffic from the current production environment to a new environment in equal percentage
+        /// increments over a specified time period. With Amazon ECS linear deployments, you can
+        /// control the pace of traffic shifting and validate new service revisions with increasing
+        /// amounts of production traffic.
+        /// </para>
+        ///  
+        /// <para>
+        /// Linear deployments are best suited for the following scenarios:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Gradual validation: When you want to gradually validate your new service version with
+        /// increasing traffic
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Performance monitoring: When you need time to monitor metrics and performance during
+        /// the deployment
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Risk minimization: When you want to minimize risk by exposing the new version to production
+        /// traffic incrementally
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Load balancer requirement: When your service uses Application Load Balancer, Network
+        /// Load Balancer, or Service Connect
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        ///  <c>CANARY</c>: A <i>canary</i> deployment strategy (<c>CANARY</c>) shifts a small
+        /// percentage of traffic to the new service revision first, then shifts the remaining
+        /// traffic all at once after a specified time period. This allows you to test the new
+        /// version with a subset of users before full deployment.
+        /// </para>
+        ///  
+        /// <para>
+        /// Canary deployments are best suited for the following scenarios:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Feature testing: When you want to test new features with a small subset of users before
+        /// full rollout
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Production validation: When you need to validate performance and functionality with
+        /// real production traffic
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Blast radius control: When you want to minimize blast radius if issues are discovered
+        /// in the new version
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5047,7 +5173,7 @@ namespace Amazon.ECS
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.BlockedException">
         /// Your Amazon Web Services account was blocked. For more information, contact <a href="http://aws.amazon.com/contact-us/">
-        /// Amazon Web Services Support</a>.
+        /// Amazon Web ServicesSupport</a>.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
@@ -5191,7 +5317,7 @@ namespace Amazon.ECS
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.BlockedException">
         /// Your Amazon Web Services account was blocked. For more information, contact <a href="http://aws.amazon.com/contact-us/">
-        /// Amazon Web Services Support</a>.
+        /// Amazon Web ServicesSupport</a>.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using

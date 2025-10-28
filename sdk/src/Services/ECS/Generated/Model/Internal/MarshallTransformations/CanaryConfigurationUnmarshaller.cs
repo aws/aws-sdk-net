@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ServiceRevisionSummary Object
+    /// Response Unmarshaller for CanaryConfiguration Object
     /// </summary>  
-    public class ServiceRevisionSummaryUnmarshaller : IJsonUnmarshaller<ServiceRevisionSummary, JsonUnmarshallerContext>
+    public class CanaryConfigurationUnmarshaller : IJsonUnmarshaller<CanaryConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ServiceRevisionSummary Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public CanaryConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            ServiceRevisionSummary unmarshalledObject = new ServiceRevisionSummary();
+            CanaryConfiguration unmarshalledObject = new CanaryConfiguration();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,40 +56,16 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("arn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Arn = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("pendingTaskCount", targetDepth))
+                if (context.TestExpression("canaryBakeTimeInMinutes", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.PendingTaskCount = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.CanaryBakeTimeInMinutes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("requestedProductionTrafficWeight", targetDepth))
+                if (context.TestExpression("canaryPercent", targetDepth))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.RequestedProductionTrafficWeight = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("requestedTaskCount", targetDepth))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.RequestedTaskCount = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("requestedTestTrafficWeight", targetDepth))
-                {
-                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.RequestedTestTrafficWeight = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("runningTaskCount", targetDepth))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.RunningTaskCount = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.CanaryPercent = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -97,12 +73,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         }
 
 
-        private static ServiceRevisionSummaryUnmarshaller _instance = new ServiceRevisionSummaryUnmarshaller();        
+        private static CanaryConfigurationUnmarshaller _instance = new CanaryConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ServiceRevisionSummaryUnmarshaller Instance
+        public static CanaryConfigurationUnmarshaller Instance
         {
             get
             {
