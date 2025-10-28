@@ -462,7 +462,7 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// If no value is specified, the default is a private namespace for each container.
+        /// If no value is specified, the The default is a private namespace for each container.
         /// </para>
         ///  
         /// <para>
@@ -612,8 +612,8 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property RequiresCompatibilities. 
         /// <para>
         /// The task launch types the task definition was validated against. The valid values
-        /// are <c>EC2</c>, <c>FARGATE</c>, and <c>EXTERNAL</c>. For more information, see <a
-        /// href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
+        /// are <c>MANAGED_INSTANCES</c>, <c>EC2</c>, <c>FARGATE</c>, and <c>EXTERNAL</c>. For
+        /// more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
         /// ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         /// </summary>

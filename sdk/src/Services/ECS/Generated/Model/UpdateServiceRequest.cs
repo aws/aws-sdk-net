@@ -264,7 +264,12 @@ namespace Amazon.ECS.Model
         /// The details of a capacity provider strategy. You can set a capacity provider when
         /// you create a cluster, run a task, or update a service.
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        /// If you want to use Amazon ECS Managed Instances, you must use the <c>capacityProviderStrategy</c>
+        /// request parameter.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// When you use Fargate, the capacity providers are <c>FARGATE</c> or <c>FARGATE_SPOT</c>.
         /// </para>

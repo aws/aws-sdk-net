@@ -37,8 +37,10 @@ namespace Amazon.ECS.Model
     {
         private DeploymentAlarms _alarms;
         private int? _bakeTimeInMinutes;
+        private CanaryConfiguration _canaryConfiguration;
         private DeploymentCircuitBreaker _deploymentCircuitBreaker;
         private List<DeploymentLifecycleHook> _lifecycleHooks = AWSConfigs.InitializeCollections ? new List<DeploymentLifecycleHook>() : null;
+        private LinearConfiguration _linearConfiguration;
         private int? _maximumPercent;
         private int? _minimumHealthyPercent;
         private DeploymentStrategy _strategy;
@@ -82,6 +84,26 @@ namespace Amazon.ECS.Model
         internal bool IsSetBakeTimeInMinutes()
         {
             return this._bakeTimeInMinutes.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CanaryConfiguration. 
+        /// <para>
+        /// Configuration for canary deployment strategy. Only valid when the deployment strategy
+        /// is <c>CANARY</c>. This configuration enables shifting a fixed percentage of traffic
+        /// for testing, followed by shifting the remaining traffic after a bake period.
+        /// </para>
+        /// </summary>
+        public CanaryConfiguration CanaryConfiguration
+        {
+            get { return this._canaryConfiguration; }
+            set { this._canaryConfiguration = value; }
+        }
+
+        // Check to see if CanaryConfiguration property is set
+        internal bool IsSetCanaryConfiguration()
+        {
+            return this._canaryConfiguration != null;
         }
 
         /// <summary>
@@ -130,6 +152,26 @@ namespace Amazon.ECS.Model
         internal bool IsSetLifecycleHooks()
         {
             return this._lifecycleHooks != null && (this._lifecycleHooks.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LinearConfiguration. 
+        /// <para>
+        /// Configuration for linear deployment strategy. Only valid when the deployment strategy
+        /// is <c>LINEAR</c>. This configuration enables progressive traffic shifting in equal
+        /// percentage increments with configurable bake times between each step.
+        /// </para>
+        /// </summary>
+        public LinearConfiguration LinearConfiguration
+        {
+            get { return this._linearConfiguration; }
+            set { this._linearConfiguration = value; }
+        }
+
+        // Check to see if LinearConfiguration property is set
+        internal bool IsSetLinearConfiguration()
+        {
+            return this._linearConfiguration != null;
         }
 
         /// <summary>

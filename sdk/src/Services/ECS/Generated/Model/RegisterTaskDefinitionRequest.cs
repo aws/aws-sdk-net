@@ -461,7 +461,7 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// If no value is specified, the default is a private namespace for each container.
+        /// If no value is specified, the The default is a private namespace for each container.
         /// </para>
         ///  
         /// <para>

@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ServiceRevisionSummary Object
+    /// Response Unmarshaller for LinearConfiguration Object
     /// </summary>  
-    public class ServiceRevisionSummaryUnmarshaller : IUnmarshaller<ServiceRevisionSummary, XmlUnmarshallerContext>, IUnmarshaller<ServiceRevisionSummary, JsonUnmarshallerContext>
+    public class LinearConfigurationUnmarshaller : IUnmarshaller<LinearConfiguration, XmlUnmarshallerContext>, IUnmarshaller<LinearConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ServiceRevisionSummary IUnmarshaller<ServiceRevisionSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        LinearConfiguration IUnmarshaller<LinearConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public ServiceRevisionSummary Unmarshall(JsonUnmarshallerContext context)
+        public LinearConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
-            ServiceRevisionSummary unmarshalledObject = new ServiceRevisionSummary();
+            LinearConfiguration unmarshalledObject = new LinearConfiguration();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,40 +66,16 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("arn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("pendingTaskCount", targetDepth))
+                if (context.TestExpression("stepBakeTimeInMinutes", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.PendingTaskCount = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StepBakeTimeInMinutes = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("requestedProductionTrafficWeight", targetDepth))
+                if (context.TestExpression("stepPercent", targetDepth))
                 {
                     var unmarshaller = DoubleUnmarshaller.Instance;
-                    unmarshalledObject.RequestedProductionTrafficWeight = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("requestedTaskCount", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.RequestedTaskCount = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("requestedTestTrafficWeight", targetDepth))
-                {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
-                    unmarshalledObject.RequestedTestTrafficWeight = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("runningTaskCount", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.RunningTaskCount = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StepPercent = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -107,12 +83,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         }
 
 
-        private static ServiceRevisionSummaryUnmarshaller _instance = new ServiceRevisionSummaryUnmarshaller();        
+        private static LinearConfigurationUnmarshaller _instance = new LinearConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ServiceRevisionSummaryUnmarshaller Instance
+        public static LinearConfigurationUnmarshaller Instance
         {
             get
             {
