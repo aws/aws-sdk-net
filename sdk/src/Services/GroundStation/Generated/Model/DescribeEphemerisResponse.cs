@@ -37,6 +37,7 @@ namespace Amazon.GroundStation.Model
         private DateTime? _creationTime;
         private bool? _enabled;
         private string _ephemerisId;
+        private List<EphemerisErrorReason> _errorReasons = AWSConfigs.InitializeCollections ? new List<EphemerisErrorReason>() : null;
         private EphemerisInvalidReason _invalidReason;
         private string _name;
         private int? _priority;
@@ -101,10 +102,32 @@ namespace Amazon.GroundStation.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ErrorReasons. 
+        /// <para>
+        /// Detailed error information for ephemerides with <c>INVALID</c> status.
+        /// </para>
+        ///  
+        /// <para>
+        /// Provides specific error codes and messages to help diagnose validation failures.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=50)]
+        public List<EphemerisErrorReason> ErrorReasons
+        {
+            get { return this._errorReasons; }
+            set { this._errorReasons = value; }
+        }
+
+        // Check to see if ErrorReasons property is set
+        internal bool IsSetErrorReasons()
+        {
+            return this._errorReasons != null && (this._errorReasons.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
         /// Gets and sets the property InvalidReason. 
         /// <para>
-        /// Reason that an ephemeris failed validation. Only provided for ephemerides with <c>INVALID</c>
-        /// status.
+        /// Reason that an ephemeris failed validation. Appears only when the status is <c>INVALID</c>.
         /// </para>
         /// </summary>
         public EphemerisInvalidReason InvalidReason
@@ -122,8 +145,7 @@ namespace Amazon.GroundStation.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// A name string associated with the ephemeris. Used as a human-readable identifier for
-        /// the ephemeris.
+        /// A name that you can use to identify the ephemeris.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -142,17 +164,12 @@ namespace Amazon.GroundStation.Model
         /// <summary>
         /// Gets and sets the property Priority. 
         /// <para>
-        /// Customer-provided priority score to establish the order in which overlapping ephemerides
-        /// should be used.
+        /// A priority score that determines which ephemeris to use when multiple ephemerides
+        /// overlap.
         /// </para>
         ///  
         /// <para>
-        /// The default for customer-provided ephemeris priority is 1, and higher numbers take
-        /// precedence.
-        /// </para>
-        ///  
-        /// <para>
-        /// Priority must be 1 or greater
+        /// Higher numbers take precedence. The default is 1. Must be 1 or greater.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=99999)]

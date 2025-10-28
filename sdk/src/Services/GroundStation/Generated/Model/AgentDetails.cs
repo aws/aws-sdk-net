@@ -137,13 +137,17 @@ namespace Amazon.GroundStation.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ReservedCpuCores. <note> 
+        /// Gets and sets the property ReservedCpuCores. 
+        /// <para>
+        /// <note> 
         /// <para>
         /// This field should not be used. Use agentCpuCores instead.
         /// </para>
         ///  </note> 
         /// <para>
         /// List of CPU cores reserved for processes other than the agent running on the EC2 instance.
+        /// </para>
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=256)]

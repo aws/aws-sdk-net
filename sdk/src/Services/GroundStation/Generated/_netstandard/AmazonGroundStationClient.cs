@@ -434,7 +434,7 @@ namespace Amazon.GroundStation
 
 
         /// <summary>
-        /// Creates an Ephemeris with the specified <c>EphemerisData</c>.
+        /// Create an ephemeris with your specified <a>EphemerisData</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateEphemeris service method.</param>
         /// <param name="cancellationToken">
@@ -612,7 +612,7 @@ namespace Amazon.GroundStation
 
 
         /// <summary>
-        /// Deletes an ephemeris
+        /// Delete an ephemeris.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteEphemeris service method.</param>
         /// <param name="cancellationToken">
@@ -625,6 +625,10 @@ namespace Amazon.GroundStation
         /// </exception>
         /// <exception cref="Amazon.GroundStation.Model.InvalidParameterException">
         /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.ResourceInUseException">
+        /// The specified resource is in use by non-terminal state contacts and cannot be modified
+        /// or deleted.
         /// </exception>
         /// <exception cref="Amazon.GroundStation.Model.ResourceNotFoundException">
         /// Resource was not found.
@@ -741,7 +745,7 @@ namespace Amazon.GroundStation
 
 
         /// <summary>
-        /// Describes an existing ephemeris.
+        /// Retrieve information about an existing ephemeris.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeEphemeris service method.</param>
         /// <param name="cancellationToken">
@@ -787,10 +791,12 @@ namespace Amazon.GroundStation
         /// <note> 
         /// <para>
         ///  For use by AWS Ground Station Agent and shouldn't be called directly.
-        /// </para>
+        /// 
         ///  </note> 
         /// <para>
         /// Gets the latest configuration information for a registered agent.
+        /// </para>
+        /// 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAgentConfiguration service method.</param>
@@ -1189,7 +1195,7 @@ namespace Amazon.GroundStation
 
 
         /// <summary>
-        /// List existing ephemerides.
+        /// List your existing ephemerides.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListEphemerides service method.</param>
         /// <param name="cancellationToken">
@@ -1407,10 +1413,12 @@ namespace Amazon.GroundStation
         /// <note> 
         /// <para>
         ///  For use by AWS Ground Station Agent and shouldn't be called directly.
-        /// </para>
+        /// 
         ///  </note> 
         /// <para>
         ///  Registers a new agent with AWS Ground Station. 
+        /// </para>
+        /// 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RegisterAgent service method.</param>
@@ -1467,6 +1475,9 @@ namespace Amazon.GroundStation
         /// </exception>
         /// <exception cref="Amazon.GroundStation.Model.InvalidParameterException">
         /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.ResourceLimitExceededException">
+        /// Account limits for this resource have been exceeded.
         /// </exception>
         /// <exception cref="Amazon.GroundStation.Model.ResourceNotFoundException">
         /// Resource was not found.
@@ -1586,10 +1597,12 @@ namespace Amazon.GroundStation
         /// <note> 
         /// <para>
         ///  For use by AWS Ground Station Agent and shouldn't be called directly.
-        /// </para>
+        /// 
         ///  </note> 
         /// <para>
         /// Update the status of the agent.
+        /// </para>
+        /// 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAgentStatus service method.</param>
@@ -1682,7 +1695,7 @@ namespace Amazon.GroundStation
 
 
         /// <summary>
-        /// Updates an existing ephemeris
+        /// Update an existing ephemeris.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateEphemeris service method.</param>
         /// <param name="cancellationToken">

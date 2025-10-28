@@ -111,6 +111,17 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetTrackingOverrides())
+                {
+                    context.Writer.WritePropertyName("trackingOverrides");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = TrackingOverridesMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.TrackingOverrides, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

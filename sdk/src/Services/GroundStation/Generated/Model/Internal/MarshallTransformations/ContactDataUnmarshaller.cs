@@ -84,6 +84,12 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
                     unmarshalledObject.EndTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ephemeris", targetDepth))
+                {
+                    var unmarshaller = EphemerisResponseDataUnmarshaller.Instance;
+                    unmarshalledObject.Ephemeris = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("errorMessage", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

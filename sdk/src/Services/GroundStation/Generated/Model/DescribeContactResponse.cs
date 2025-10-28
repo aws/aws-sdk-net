@@ -38,6 +38,7 @@ namespace Amazon.GroundStation.Model
         private ContactStatus _contactStatus;
         private List<DataflowDetail> _dataflowList = AWSConfigs.InitializeCollections ? new List<DataflowDetail>() : null;
         private DateTime? _endTime;
+        private EphemerisResponseData _ephemeris;
         private string _errorMessage;
         private string _groundStation;
         private Elevation _maximumElevation;
@@ -48,6 +49,7 @@ namespace Amazon.GroundStation.Model
         private string _satelliteArn;
         private DateTime? _startTime;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private TrackingOverrides _trackingOverrides;
         private DateTime? _visibilityEndTime;
         private DateTime? _visibilityStartTime;
 
@@ -122,6 +124,24 @@ namespace Amazon.GroundStation.Model
         internal bool IsSetEndTime()
         {
             return this._endTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Ephemeris. 
+        /// <para>
+        /// The ephemeris that determines antenna pointing directions for the contact.
+        /// </para>
+        /// </summary>
+        public EphemerisResponseData Ephemeris
+        {
+            get { return this._ephemeris; }
+            set { this._ephemeris = value; }
+        }
+
+        // Check to see if Ephemeris property is set
+        internal bool IsSetEphemeris()
+        {
+            return this._ephemeris != null;
         }
 
         /// <summary>
@@ -306,6 +326,24 @@ namespace Amazon.GroundStation.Model
         internal bool IsSetTags()
         {
             return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TrackingOverrides. 
+        /// <para>
+        /// Tracking configuration overrides specified when the contact was reserved.
+        /// </para>
+        /// </summary>
+        public TrackingOverrides TrackingOverrides
+        {
+            get { return this._trackingOverrides; }
+            set { this._trackingOverrides = value; }
+        }
+
+        // Check to see if TrackingOverrides property is set
+        internal bool IsSetTrackingOverrides()
+        {
+            return this._trackingOverrides != null;
         }
 
         /// <summary>

@@ -37,6 +37,7 @@ namespace Amazon.GroundStation.Model
         private DateTime? _creationTime;
         private bool? _enabled;
         private string _ephemerisId;
+        private EphemerisType _ephemerisType;
         private string _name;
         private int? _priority;
         private S3Object _sources3Object;
@@ -98,10 +99,27 @@ namespace Amazon.GroundStation.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EphemerisType. 
+        /// <para>
+        /// The type of ephemeris.
+        /// </para>
+        /// </summary>
+        public EphemerisType EphemerisType
+        {
+            get { return this._ephemerisType; }
+            set { this._ephemerisType = value; }
+        }
+
+        // Check to see if EphemerisType property is set
+        internal bool IsSetEphemerisType()
+        {
+            return this._ephemerisType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// A name string associated with the ephemeris. Used as a human-readable identifier for
-        /// the ephemeris.
+        /// A name that you can use to identify the ephemeris.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -120,17 +138,12 @@ namespace Amazon.GroundStation.Model
         /// <summary>
         /// Gets and sets the property Priority. 
         /// <para>
-        /// Customer-provided priority score to establish the order in which overlapping ephemerides
-        /// should be used.
+        /// A priority score that determines which ephemeris to use when multiple ephemerides
+        /// overlap.
         /// </para>
         ///  
         /// <para>
-        /// The default for customer-provided ephemeris priority is 1, and higher numbers take
-        /// precedence.
-        /// </para>
-        ///  
-        /// <para>
-        /// Priority must be 1 or greater
+        /// Higher numbers take precedence. The default is 1. Must be 1 or greater.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=99999)]
@@ -149,7 +162,7 @@ namespace Amazon.GroundStation.Model
         /// <summary>
         /// Gets and sets the property SourceS3Object. 
         /// <para>
-        /// Source S3 object used for the ephemeris.
+        /// Source Amazon S3 object used for the ephemeris.
         /// </para>
         /// </summary>
         public S3Object SourceS3Object
