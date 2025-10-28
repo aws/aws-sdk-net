@@ -276,7 +276,7 @@ namespace Amazon.Organizations.Model
     ///  </li> <li> 
     /// <para>
     /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, you must wait
-    /// until at least seven days after the account was created. Invited accounts aren't subject
+    /// until at least four days after the account was created. Invited accounts aren't subject
     /// to this waiting period.
     /// </para>
     ///  </li> </ul>
