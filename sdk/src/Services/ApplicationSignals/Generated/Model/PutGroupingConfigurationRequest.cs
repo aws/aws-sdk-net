@@ -31,11 +31,15 @@ namespace Amazon.ApplicationSignals.Model
 {
     /// <summary>
     /// Container for the parameters to the PutGroupingConfiguration operation.
-    /// Creates or updates the grouping configuration for this account. This operation allows
-    /// you to define custom grouping attributes that determine how services are logically
-    /// grouped based on telemetry attributes, Amazon Web Services tags, or predefined mappings.
-    /// These grouping attributes can then be used to organize and filter services in the
-    /// Application Signals console and APIs.
+    /// Creates or updates a grouping configuration that defines how services are organized
+    /// and grouped in Application Signals dashboards and service maps.
+    /// 
+    ///  
+    /// <para>
+    /// Grouping configurations allow you to logically organize services based on attributes
+    /// such as environment, team ownership, or business function, making it easier to monitor
+    /// and manage related services together.
+    /// </para>
     /// </summary>
     public partial class PutGroupingConfigurationRequest : AmazonApplicationSignalsRequest
     {
@@ -45,8 +49,7 @@ namespace Amazon.ApplicationSignals.Model
         /// Gets and sets the property GroupingAttributeDefinitions. 
         /// <para>
         /// An array of grouping attribute definitions that specify how services should be grouped.
-        /// Each definition includes a friendly name, source keys to derive the grouping value
-        /// from, and an optional default value.
+        /// Each definition includes the grouping name, source keys, and default values.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

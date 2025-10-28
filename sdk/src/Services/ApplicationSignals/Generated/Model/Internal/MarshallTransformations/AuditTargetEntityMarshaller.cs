@@ -46,6 +46,17 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetCanary())
+            {
+                context.Writer.WritePropertyName("Canary");
+                context.Writer.WriteStartObject();
+
+                var marshaller = CanaryEntityMarshaller.Instance;
+                marshaller.Marshall(requestObject.Canary, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetService())
             {
                 context.Writer.WritePropertyName("Service");

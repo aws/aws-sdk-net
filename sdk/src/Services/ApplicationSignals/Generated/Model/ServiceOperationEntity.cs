@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ApplicationSignals.Model
 {
     /// <summary>
-    /// A structure that contains identifying information for a service operation entity.
+    /// Represents a specific operation within a service that can be monitored and audited
+    /// independently.
     /// </summary>
     public partial class ServiceOperationEntity
     {
@@ -41,7 +42,8 @@ namespace Amazon.ApplicationSignals.Model
         /// <summary>
         /// Gets and sets the property MetricType. 
         /// <para>
-        /// The type of metric associated with this service operation.
+        /// The type of metric associated with this service operation, such as "Latency", "ErrorRate",
+        /// or "Throughput".
         /// </para>
         /// </summary>
         public string MetricType
@@ -59,7 +61,7 @@ namespace Amazon.ApplicationSignals.Model
         /// <summary>
         /// Gets and sets the property Operation. 
         /// <para>
-        /// The name of the operation.
+        /// The name of the specific operation within the service.
         /// </para>
         /// </summary>
         public string Operation

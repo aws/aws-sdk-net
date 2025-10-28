@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ApplicationSignals.Model
 {
     /// <summary>
-    /// A structure that contains the complete grouping configuration for an account, including
-    /// all defined grouping attributes and metadata about when it was last updated.
+    /// Contains the complete configuration for how services are grouped and organized in
+    /// Application Signals.
     /// </summary>
     public partial class GroupingConfiguration
     {
@@ -41,8 +41,8 @@ namespace Amazon.ApplicationSignals.Model
         /// <summary>
         /// Gets and sets the property GroupingAttributeDefinitions. 
         /// <para>
-        /// An array of grouping attribute definitions that specify how services should be grouped
-        /// based on various attributes and source keys.
+        /// An array of grouping attribute definitions that specify the rules for organizing services
+        /// into groups.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -66,8 +66,8 @@ namespace Amazon.ApplicationSignals.Model
         /// <summary>
         /// Gets and sets the property UpdatedAt. 
         /// <para>
-        /// The timestamp when this grouping configuration was last updated. When used in a raw
-        /// HTTP Query API, it is formatted as epoch time in seconds.
+        /// The timestamp when the grouping configuration was last updated, expressed as the number
+        /// of milliseconds since January 1, 1970, 00:00:00 UTC.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
