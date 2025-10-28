@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatchEvents.Model
 {
     /// <summary>
-    /// Name/Value pair of a parameter to start execution of a SageMaker Model Building Pipeline.
+    /// Name/Value pair of a parameter to start execution of a SageMaker AI Model Building
+    /// Pipeline.
     /// </summary>
     public partial class SageMakerPipelineParameter
     {
@@ -40,7 +41,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Name of parameter to start execution of a SageMaker Model Building Pipeline.
+        /// Name of parameter to start execution of a SageMaker AI Model Building Pipeline.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
@@ -59,7 +60,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// Value of parameter to start execution of a SageMaker Model Building Pipeline.
+        /// Value of parameter to start execution of a SageMaker AI Model Building Pipeline.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=1024)]
