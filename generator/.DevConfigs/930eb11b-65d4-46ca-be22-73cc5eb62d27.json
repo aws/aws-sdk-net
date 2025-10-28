@@ -1,0 +1,11 @@
+{
+  "services": [
+    {
+      "serviceName": "SecurityToken",
+      "type": "patch",
+      "changeLogMessages": [
+        "Security Fix for .NET Framework 4.5 and 4.5.1 disabling the XML resolver for SAML Assertions to prevent XML External Entity (XXE) injection vulnerability"
+      ]
+    }
+  ]
+}

@@ -140,7 +140,11 @@ namespace Amazon.SecurityToken.SAML
         /// <returns>Dictionary of friendly role names to role arn mappings.</returns>
         private IDictionary<string, string> ExtractRoleData()
         {
-            var doc = new XmlDocument();
+            var doc = new XmlDocument()
+            {
+                XmlResolver = null
+            };
+
             //var sw = new StringWriter(CultureInfo.InvariantCulture);
             var decoded = Convert.FromBase64String(AssertionDocument);
             var deflated = Encoding.UTF8.GetString(decoded);
