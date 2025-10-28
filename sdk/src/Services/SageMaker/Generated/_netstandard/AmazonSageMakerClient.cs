@@ -6132,6 +6132,50 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  DeleteProcessingJob
+
+        internal virtual DeleteProcessingJobResponse DeleteProcessingJob(DeleteProcessingJobRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteProcessingJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteProcessingJobResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteProcessingJobResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a processing job. After Amazon SageMaker deletes a processing job, all of
+        /// the metadata for the processing job is lost. You can delete only processing jobs that
+        /// are in a terminal state (<c>Stopped</c>, <c>Failed</c>, or <c>Completed</c>). You
+        /// cannot delete a job that is in the <c>InProgress</c> or <c>Stopping</c> state. After
+        /// deleting the job, you can reuse its name to create another processing job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteProcessingJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteProcessingJob service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteProcessingJob">REST API Reference for DeleteProcessingJob Operation</seealso>
+        public virtual Task<DeleteProcessingJobResponse> DeleteProcessingJobAsync(DeleteProcessingJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteProcessingJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteProcessingJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteProcessingJobResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteProject
 
         internal virtual DeleteProjectResponse DeleteProject(DeleteProjectRequest request)
@@ -6301,6 +6345,51 @@ namespace Amazon.SageMaker
             options.ResponseUnmarshaller = DeleteTagsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteTagsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteTrainingJob
+
+        internal virtual DeleteTrainingJobResponse DeleteTrainingJob(DeleteTrainingJobRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteTrainingJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTrainingJobResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteTrainingJobResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a training job. After SageMaker deletes a training job, all of the metadata
+        /// for the training job is lost. You can delete only training jobs that are in a terminal
+        /// state (<c>Stopped</c>, <c>Failed</c>, or <c>Completed</c>) and don't retain an <c>Available</c>
+        /// <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-warm-pools.html">managed
+        /// warm pool</a>. You cannot delete a job that is in the <c>InProgress</c> or <c>Stopping</c>
+        /// state. After deleting the job, you can reuse its name to create another training job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTrainingJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteTrainingJob service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteTrainingJob">REST API Reference for DeleteTrainingJob Operation</seealso>
+        public virtual Task<DeleteTrainingJobResponse> DeleteTrainingJobAsync(DeleteTrainingJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteTrainingJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTrainingJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteTrainingJobResponse>(request, options, cancellationToken);
         }
 
         #endregion

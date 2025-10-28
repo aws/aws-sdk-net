@@ -21159,6 +21159,10 @@ namespace Amazon.SageMaker
         /// </summary>
         public static readonly TrainingJobStatus Completed = new TrainingJobStatus("Completed");
         /// <summary>
+        /// Constant Deleting for TrainingJobStatus
+        /// </summary>
+        public static readonly TrainingJobStatus Deleting = new TrainingJobStatus("Deleting");
+        /// <summary>
         /// Constant Failed for TrainingJobStatus
         /// </summary>
         public static readonly TrainingJobStatus Failed = new TrainingJobStatus("Failed");

@@ -8508,6 +8508,70 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  DeleteProcessingJob
+
+        /// <summary>
+        /// Deletes a processing job. After Amazon SageMaker deletes a processing job, all of
+        /// the metadata for the processing job is lost. You can delete only processing jobs that
+        /// are in a terminal state (<c>Stopped</c>, <c>Failed</c>, or <c>Completed</c>). You
+        /// cannot delete a job that is in the <c>InProgress</c> or <c>Stopping</c> state. After
+        /// deleting the job, you can reuse its name to create another processing job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteProcessingJob service method.</param>
+        /// 
+        /// <returns>The response from the DeleteProcessingJob service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteProcessingJob">REST API Reference for DeleteProcessingJob Operation</seealso>
+        public virtual DeleteProcessingJobResponse DeleteProcessingJob(DeleteProcessingJobRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteProcessingJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteProcessingJobResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteProcessingJobResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteProcessingJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteProcessingJob operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteProcessingJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteProcessingJob">REST API Reference for DeleteProcessingJob Operation</seealso>
+        public virtual IAsyncResult BeginDeleteProcessingJob(DeleteProcessingJobRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteProcessingJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteProcessingJobResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteProcessingJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteProcessingJob.</param>
+        /// 
+        /// <returns>Returns a  DeleteProcessingJobResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteProcessingJob">REST API Reference for DeleteProcessingJob Operation</seealso>
+        public virtual DeleteProcessingJobResponse EndDeleteProcessingJob(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteProcessingJobResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteProject
 
         /// <summary>
@@ -8757,6 +8821,71 @@ namespace Amazon.SageMaker
         public virtual DeleteTagsResponse EndDeleteTags(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteTagsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteTrainingJob
+
+        /// <summary>
+        /// Deletes a training job. After SageMaker deletes a training job, all of the metadata
+        /// for the training job is lost. You can delete only training jobs that are in a terminal
+        /// state (<c>Stopped</c>, <c>Failed</c>, or <c>Completed</c>) and don't retain an <c>Available</c>
+        /// <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-warm-pools.html">managed
+        /// warm pool</a>. You cannot delete a job that is in the <c>InProgress</c> or <c>Stopping</c>
+        /// state. After deleting the job, you can reuse its name to create another training job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTrainingJob service method.</param>
+        /// 
+        /// <returns>The response from the DeleteTrainingJob service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteTrainingJob">REST API Reference for DeleteTrainingJob Operation</seealso>
+        public virtual DeleteTrainingJobResponse DeleteTrainingJob(DeleteTrainingJobRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteTrainingJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTrainingJobResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteTrainingJobResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteTrainingJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTrainingJob operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteTrainingJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteTrainingJob">REST API Reference for DeleteTrainingJob Operation</seealso>
+        public virtual IAsyncResult BeginDeleteTrainingJob(DeleteTrainingJobRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteTrainingJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTrainingJobResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteTrainingJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteTrainingJob.</param>
+        /// 
+        /// <returns>Returns a  DeleteTrainingJobResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteTrainingJob">REST API Reference for DeleteTrainingJob Operation</seealso>
+        public virtual DeleteTrainingJobResponse EndDeleteTrainingJob(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteTrainingJobResponse>(asyncResult);
         }
 
         #endregion
