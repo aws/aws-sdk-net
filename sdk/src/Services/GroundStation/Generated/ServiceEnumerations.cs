@@ -683,6 +683,200 @@ namespace Amazon.GroundStation
 
 
     /// <summary>
+    /// Constants used for properties of type EphemerisErrorCode.
+    /// </summary>
+    public class EphemerisErrorCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AZ_EL_SEGMENT_END_TIME_BEFORE_START_TIME for EphemerisErrorCode
+        /// </summary>
+        public static readonly EphemerisErrorCode AZ_EL_SEGMENT_END_TIME_BEFORE_START_TIME = new EphemerisErrorCode("AZ_EL_SEGMENT_END_TIME_BEFORE_START_TIME");
+        /// <summary>
+        /// Constant AZ_EL_SEGMENT_END_TIME_INVALID for EphemerisErrorCode
+        /// </summary>
+        public static readonly EphemerisErrorCode AZ_EL_SEGMENT_END_TIME_INVALID = new EphemerisErrorCode("AZ_EL_SEGMENT_END_TIME_INVALID");
+        /// <summary>
+        /// Constant AZ_EL_SEGMENT_END_TIME_TOO_LATE for EphemerisErrorCode
+        /// </summary>
+        public static readonly EphemerisErrorCode AZ_EL_SEGMENT_END_TIME_TOO_LATE = new EphemerisErrorCode("AZ_EL_SEGMENT_END_TIME_TOO_LATE");
+        /// <summary>
+        /// Constant AZ_EL_SEGMENT_LIST_MISSING for EphemerisErrorCode
+        /// </summary>
+        public static readonly EphemerisErrorCode AZ_EL_SEGMENT_LIST_MISSING = new EphemerisErrorCode("AZ_EL_SEGMENT_LIST_MISSING");
+        /// <summary>
+        /// Constant AZ_EL_SEGMENT_REFERENCE_EPOCH_INVALID for EphemerisErrorCode
+        /// </summary>
+        public static readonly EphemerisErrorCode AZ_EL_SEGMENT_REFERENCE_EPOCH_INVALID = new EphemerisErrorCode("AZ_EL_SEGMENT_REFERENCE_EPOCH_INVALID");
+        /// <summary>
+        /// Constant AZ_EL_SEGMENT_START_TIME_INVALID for EphemerisErrorCode
+        /// </summary>
+        public static readonly EphemerisErrorCode AZ_EL_SEGMENT_START_TIME_INVALID = new EphemerisErrorCode("AZ_EL_SEGMENT_START_TIME_INVALID");
+        /// <summary>
+        /// Constant AZ_EL_SEGMENT_TIMES_OVERLAP for EphemerisErrorCode
+        /// </summary>
+        public static readonly EphemerisErrorCode AZ_EL_SEGMENT_TIMES_OVERLAP = new EphemerisErrorCode("AZ_EL_SEGMENT_TIMES_OVERLAP");
+        /// <summary>
+        /// Constant AZ_EL_SEGMENT_VALID_TIME_RANGE_INVALID for EphemerisErrorCode
+        /// </summary>
+        public static readonly EphemerisErrorCode AZ_EL_SEGMENT_VALID_TIME_RANGE_INVALID = new EphemerisErrorCode("AZ_EL_SEGMENT_VALID_TIME_RANGE_INVALID");
+        /// <summary>
+        /// Constant AZ_EL_SEGMENTS_OUT_OF_ORDER for EphemerisErrorCode
+        /// </summary>
+        public static readonly EphemerisErrorCode AZ_EL_SEGMENTS_OUT_OF_ORDER = new EphemerisErrorCode("AZ_EL_SEGMENTS_OUT_OF_ORDER");
+        /// <summary>
+        /// Constant AZ_EL_TOTAL_DURATION_EXCEEDED for EphemerisErrorCode
+        /// </summary>
+        public static readonly EphemerisErrorCode AZ_EL_TOTAL_DURATION_EXCEEDED = new EphemerisErrorCode("AZ_EL_TOTAL_DURATION_EXCEEDED");
+        /// <summary>
+        /// Constant CENTER_BODY_UNSUPPORTED for EphemerisErrorCode
+        /// </summary>
+        public static readonly EphemerisErrorCode CENTER_BODY_UNSUPPORTED = new EphemerisErrorCode("CENTER_BODY_UNSUPPORTED");
+        /// <summary>
+        /// Constant CREATION_DATE_MISSING for EphemerisErrorCode
+        /// </summary>
+        public static readonly EphemerisErrorCode CREATION_DATE_MISSING = new EphemerisErrorCode("CREATION_DATE_MISSING");
+        /// <summary>
+        /// Constant END_TIME_IN_PAST for EphemerisErrorCode
+        /// </summary>
+        public static readonly EphemerisErrorCode END_TIME_IN_PAST = new EphemerisErrorCode("END_TIME_IN_PAST");
+        /// <summary>
+        /// Constant EXPIRATION_TIME_TOO_EARLY for EphemerisErrorCode
+        /// </summary>
+        public static readonly EphemerisErrorCode EXPIRATION_TIME_TOO_EARLY = new EphemerisErrorCode("EXPIRATION_TIME_TOO_EARLY");
+        /// <summary>
+        /// Constant FILE_FORMAT_INVALID for EphemerisErrorCode
+        /// </summary>
+        public static readonly EphemerisErrorCode FILE_FORMAT_INVALID = new EphemerisErrorCode("FILE_FORMAT_INVALID");
+        /// <summary>
+        /// Constant INSUFFICIENT_KMS_PERMISSIONS for EphemerisErrorCode
+        /// </summary>
+        public static readonly EphemerisErrorCode INSUFFICIENT_KMS_PERMISSIONS = new EphemerisErrorCode("INSUFFICIENT_KMS_PERMISSIONS");
+        /// <summary>
+        /// Constant INSUFFICIENT_TIME_AZ_EL for EphemerisErrorCode
+        /// </summary>
+        public static readonly EphemerisErrorCode INSUFFICIENT_TIME_AZ_EL = new EphemerisErrorCode("INSUFFICIENT_TIME_AZ_EL");
+        /// <summary>
+        /// Constant INTERNAL_ERROR for EphemerisErrorCode
+        /// </summary>
+        public static readonly EphemerisErrorCode INTERNAL_ERROR = new EphemerisErrorCode("INTERNAL_ERROR");
+        /// <summary>
+        /// Constant INTERPOLATION_DEGREE_INVALID for EphemerisErrorCode
+        /// </summary>
+        public static readonly EphemerisErrorCode INTERPOLATION_DEGREE_INVALID = new EphemerisErrorCode("INTERPOLATION_DEGREE_INVALID");
+        /// <summary>
+        /// Constant INTERPOLATION_MISSING for EphemerisErrorCode
+        /// </summary>
+        public static readonly EphemerisErrorCode INTERPOLATION_MISSING = new EphemerisErrorCode("INTERPOLATION_MISSING");
+        /// <summary>
+        /// Constant MEAN_MOTION_INVALID for EphemerisErrorCode
+        /// </summary>
+        public static readonly EphemerisErrorCode MEAN_MOTION_INVALID = new EphemerisErrorCode("MEAN_MOTION_INVALID");
+        /// <summary>
+        /// Constant MISMATCHED_SATCAT_ID for EphemerisErrorCode
+        /// </summary>
+        public static readonly EphemerisErrorCode MISMATCHED_SATCAT_ID = new EphemerisErrorCode("MISMATCHED_SATCAT_ID");
+        /// <summary>
+        /// Constant OBJECT_ID_MISSING for EphemerisErrorCode
+        /// </summary>
+        public static readonly EphemerisErrorCode OBJECT_ID_MISSING = new EphemerisErrorCode("OBJECT_ID_MISSING");
+        /// <summary>
+        /// Constant OBJECT_NAME_MISSING for EphemerisErrorCode
+        /// </summary>
+        public static readonly EphemerisErrorCode OBJECT_NAME_MISSING = new EphemerisErrorCode("OBJECT_NAME_MISSING");
+        /// <summary>
+        /// Constant OEM_VERSION_UNSUPPORTED for EphemerisErrorCode
+        /// </summary>
+        public static readonly EphemerisErrorCode OEM_VERSION_UNSUPPORTED = new EphemerisErrorCode("OEM_VERSION_UNSUPPORTED");
+        /// <summary>
+        /// Constant ORIGINATOR_MISSING for EphemerisErrorCode
+        /// </summary>
+        public static readonly EphemerisErrorCode ORIGINATOR_MISSING = new EphemerisErrorCode("ORIGINATOR_MISSING");
+        /// <summary>
+        /// Constant REF_FRAME_EPOCH_UNSUPPORTED for EphemerisErrorCode
+        /// </summary>
+        public static readonly EphemerisErrorCode REF_FRAME_EPOCH_UNSUPPORTED = new EphemerisErrorCode("REF_FRAME_EPOCH_UNSUPPORTED");
+        /// <summary>
+        /// Constant REF_FRAME_UNSUPPORTED for EphemerisErrorCode
+        /// </summary>
+        public static readonly EphemerisErrorCode REF_FRAME_UNSUPPORTED = new EphemerisErrorCode("REF_FRAME_UNSUPPORTED");
+        /// <summary>
+        /// Constant START_TIME_IN_FUTURE for EphemerisErrorCode
+        /// </summary>
+        public static readonly EphemerisErrorCode START_TIME_IN_FUTURE = new EphemerisErrorCode("START_TIME_IN_FUTURE");
+        /// <summary>
+        /// Constant START_TIME_METADATA_TOO_EARLY for EphemerisErrorCode
+        /// </summary>
+        public static readonly EphemerisErrorCode START_TIME_METADATA_TOO_EARLY = new EphemerisErrorCode("START_TIME_METADATA_TOO_EARLY");
+        /// <summary>
+        /// Constant STOP_TIME_METADATA_TOO_LATE for EphemerisErrorCode
+        /// </summary>
+        public static readonly EphemerisErrorCode STOP_TIME_METADATA_TOO_LATE = new EphemerisErrorCode("STOP_TIME_METADATA_TOO_LATE");
+        /// <summary>
+        /// Constant TIME_AZ_EL_ANGLE_UNITS_INVALID for EphemerisErrorCode
+        /// </summary>
+        public static readonly EphemerisErrorCode TIME_AZ_EL_ANGLE_UNITS_INVALID = new EphemerisErrorCode("TIME_AZ_EL_ANGLE_UNITS_INVALID");
+        /// <summary>
+        /// Constant TIME_AZ_EL_AZ_DEGREE_RANGE_INVALID for EphemerisErrorCode
+        /// </summary>
+        public static readonly EphemerisErrorCode TIME_AZ_EL_AZ_DEGREE_RANGE_INVALID = new EphemerisErrorCode("TIME_AZ_EL_AZ_DEGREE_RANGE_INVALID");
+        /// <summary>
+        /// Constant TIME_AZ_EL_AZ_RADIAN_RANGE_INVALID for EphemerisErrorCode
+        /// </summary>
+        public static readonly EphemerisErrorCode TIME_AZ_EL_AZ_RADIAN_RANGE_INVALID = new EphemerisErrorCode("TIME_AZ_EL_AZ_RADIAN_RANGE_INVALID");
+        /// <summary>
+        /// Constant TIME_AZ_EL_EL_DEGREE_RANGE_INVALID for EphemerisErrorCode
+        /// </summary>
+        public static readonly EphemerisErrorCode TIME_AZ_EL_EL_DEGREE_RANGE_INVALID = new EphemerisErrorCode("TIME_AZ_EL_EL_DEGREE_RANGE_INVALID");
+        /// <summary>
+        /// Constant TIME_AZ_EL_EL_RADIAN_RANGE_INVALID for EphemerisErrorCode
+        /// </summary>
+        public static readonly EphemerisErrorCode TIME_AZ_EL_EL_RADIAN_RANGE_INVALID = new EphemerisErrorCode("TIME_AZ_EL_EL_RADIAN_RANGE_INVALID");
+        /// <summary>
+        /// Constant TIME_AZ_EL_ITEMS_OUT_OF_ORDER for EphemerisErrorCode
+        /// </summary>
+        public static readonly EphemerisErrorCode TIME_AZ_EL_ITEMS_OUT_OF_ORDER = new EphemerisErrorCode("TIME_AZ_EL_ITEMS_OUT_OF_ORDER");
+        /// <summary>
+        /// Constant TIME_SYSTEM_UNSUPPORTED for EphemerisErrorCode
+        /// </summary>
+        public static readonly EphemerisErrorCode TIME_SYSTEM_UNSUPPORTED = new EphemerisErrorCode("TIME_SYSTEM_UNSUPPORTED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EphemerisErrorCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EphemerisErrorCode FindValue(string value)
+        {
+            return FindValue<EphemerisErrorCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EphemerisErrorCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type EphemerisInvalidReason.
     /// </summary>
     public class EphemerisInvalidReason : ConstantClass
@@ -854,6 +1048,64 @@ namespace Amazon.GroundStation
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator EphemerisStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type EphemerisType.
+    /// </summary>
+    public class EphemerisType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AZ_EL for EphemerisType
+        /// </summary>
+        public static readonly EphemerisType AZ_EL = new EphemerisType("AZ_EL");
+        /// <summary>
+        /// Constant OEM for EphemerisType
+        /// </summary>
+        public static readonly EphemerisType OEM = new EphemerisType("OEM");
+        /// <summary>
+        /// Constant SERVICE_MANAGED for EphemerisType
+        /// </summary>
+        public static readonly EphemerisType SERVICE_MANAGED = new EphemerisType("SERVICE_MANAGED");
+        /// <summary>
+        /// Constant TLE for EphemerisType
+        /// </summary>
+        public static readonly EphemerisType TLE = new EphemerisType("TLE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EphemerisType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EphemerisType FindValue(string value)
+        {
+            return FindValue<EphemerisType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EphemerisType(string value)
         {
             return FindValue(value);
         }
