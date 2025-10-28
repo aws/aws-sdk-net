@@ -120,7 +120,7 @@ namespace Amazon.S3.Util
             var algorithm = "AWS4-HMAC-SHA256";
             var dateStamp = Runtime.Internal.Auth.AWS4Signer.FormatDateTime(signedAt, AWSSDKUtils.ISO8601BasicDateFormat);
             var dateTimeStamp = Runtime.Internal.Auth.AWS4Signer.FormatDateTime(signedAt, AWSSDKUtils.ISO8601BasicDateTimeFormat);
-            var credentialString = string.Format(CultureInfo.InvariantCulture, "{0}/{1}/{2}/{3}/{4}/", iCreds.AccessKey, dateStamp, region, "s3", Runtime.Internal.Auth.AWS4Signer.Terminator);
+            var credentialString = string.Format(CultureInfo.InvariantCulture, "{0}/{1}/{2}/{3}/{4}", iCreds.AccessKey, dateStamp, region, "s3", Runtime.Internal.Auth.AWS4Signer.Terminator);
 
             Dictionary<string, string> extraConditions = new Dictionary<string, string> {
                 { S3Constants.PostFormDataXAmzCredential, credentialString },
