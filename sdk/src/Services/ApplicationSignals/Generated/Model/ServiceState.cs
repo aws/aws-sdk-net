@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ApplicationSignals.Model
 {
     /// <summary>
-    /// A structure that contains information about the current state of a service, including
-    /// its latest change events such as deployments and other state-changing activities.
+    /// Represents the current state and health information for a service monitored by Application
+    /// Signals.
     /// </summary>
     public partial class ServiceState
     {
@@ -42,7 +42,7 @@ namespace Amazon.ApplicationSignals.Model
         /// <summary>
         /// Gets and sets the property AttributeFilters. 
         /// <para>
-        /// The attribute filters that were applied when retrieving this service state information.
+        /// The attribute filters that were applied when retrieving this service state.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=20)]
@@ -61,8 +61,8 @@ namespace Amazon.ApplicationSignals.Model
         /// <summary>
         /// Gets and sets the property LatestChangeEvents. 
         /// <para>
-        /// An array containing the most recent change events for this service, such as deployments,
-        /// with information about when they occurred and who initiated them.
+        /// An array of the most recent change events that may have affected this service, such
+        /// as deployments or configuration changes.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1)]
@@ -81,8 +81,7 @@ namespace Amazon.ApplicationSignals.Model
         /// <summary>
         /// Gets and sets the property Service. 
         /// <para>
-        /// The key attributes that identify this service, including Type, Name, and Environment
-        /// information.
+        /// The service entity information for this service state.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=4)]

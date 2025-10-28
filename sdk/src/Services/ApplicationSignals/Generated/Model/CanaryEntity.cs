@@ -30,30 +30,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ApplicationSignals.Model
 {
     /// <summary>
-    /// This is the response object from the PutGroupingConfiguration operation.
+    /// Represents a CloudWatch Synthetics canary that can be audited for performance and
+    /// configuration issues.
     /// </summary>
-    public partial class PutGroupingConfigurationResponse : AmazonWebServiceResponse
+    public partial class CanaryEntity
     {
-        private GroupingConfiguration _groupingConfiguration;
+        private string _canaryName;
 
         /// <summary>
-        /// Gets and sets the property GroupingConfiguration. 
+        /// Gets and sets the property CanaryName. 
         /// <para>
-        /// The created or updated grouping configuration, including all attribute definitions
-        /// and metadata such as the update timestamp.
+        /// The name of the CloudWatch Synthetics canary.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public GroupingConfiguration GroupingConfiguration
+        public string CanaryName
         {
-            get { return this._groupingConfiguration; }
-            set { this._groupingConfiguration = value; }
+            get { return this._canaryName; }
+            set { this._canaryName = value; }
         }
 
-        // Check to see if GroupingConfiguration property is set
-        internal bool IsSetGroupingConfiguration()
+        // Check to see if CanaryName property is set
+        internal bool IsSetCanaryName()
         {
-            return this._groupingConfiguration != null;
+            return this._canaryName != null;
         }
 
     }

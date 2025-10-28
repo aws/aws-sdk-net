@@ -30,8 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ApplicationSignals.Model
 {
     /// <summary>
-    /// A structure that represents a logical grouping of services based on shared attributes
-    /// such as business unit, environment, or entry point.
+    /// Represents a logical grouping of services based on shared attributes or characteristics.
     /// </summary>
     public partial class ServiceGroup
     {
@@ -43,8 +42,7 @@ namespace Amazon.ApplicationSignals.Model
         /// <summary>
         /// Gets and sets the property GroupIdentifier. 
         /// <para>
-        /// A unique identifier for this grouping attribute value, used for filtering and API
-        /// operations.
+        /// A unique identifier for the group within the grouping configuration.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1024)]
@@ -63,7 +61,7 @@ namespace Amazon.ApplicationSignals.Model
         /// <summary>
         /// Gets and sets the property GroupName. 
         /// <para>
-        /// The name of the grouping attribute, such as <c>BusinessUnit</c> or <c>Environment</c>.
+        /// The name of the group, such as "Environment", "Team", or "Application".
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
@@ -82,7 +80,7 @@ namespace Amazon.ApplicationSignals.Model
         /// <summary>
         /// Gets and sets the property GroupSource. 
         /// <para>
-        /// The source of the grouping attribute, such as <c>TAG</c>, <c>OTEL</c>, or <c>DEFAULT</c>.
+        /// The source of the grouping information, such as "Tag", "Attribute", or "Manual".
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
@@ -101,7 +99,7 @@ namespace Amazon.ApplicationSignals.Model
         /// <summary>
         /// Gets and sets the property GroupValue. 
         /// <para>
-        /// The value of the grouping attribute for this service, such as <c>Payments</c> or <c>Production</c>.
+        /// The specific value for this group, such as "Production", "TeamA", or "WebApp".
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]

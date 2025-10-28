@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ApplicationSignals.Model
 {
     /// <summary>
-    /// A structure that represents a node in a dependency graph, containing information about
-    /// a service, resource, or other entity and its characteristics.
+    /// Represents a node in a dependency graph, typically corresponding to a service or component
+    /// in your application architecture.
     /// </summary>
     public partial class Node
     {
@@ -46,7 +46,7 @@ namespace Amazon.ApplicationSignals.Model
         /// <summary>
         /// Gets and sets the property Duration. 
         /// <para>
-        /// The duration or processing time associated with this node, if applicable.
+        /// The typical response time or processing duration for this node, measured in milliseconds.
         /// </para>
         /// </summary>
         public double Duration
@@ -64,8 +64,8 @@ namespace Amazon.ApplicationSignals.Model
         /// <summary>
         /// Gets and sets the property KeyAttributes. 
         /// <para>
-        /// The key attributes that identify this node, including Type, Name, and Environment
-        /// information.
+        /// A map of key attributes that identify and describe the node, such as service name,
+        /// environment, and other metadata.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=4)]
@@ -84,7 +84,7 @@ namespace Amazon.ApplicationSignals.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the entity represented by this node.
+        /// The display name of the node, typically the service or component name.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -103,7 +103,7 @@ namespace Amazon.ApplicationSignals.Model
         /// <summary>
         /// Gets and sets the property NodeId. 
         /// <para>
-        /// A unique identifier for this node within the dependency graph.
+        /// A unique identifier for the node within the dependency graph.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -122,7 +122,8 @@ namespace Amazon.ApplicationSignals.Model
         /// <summary>
         /// Gets and sets the property Operation. 
         /// <para>
-        /// The operation associated with this node, if applicable.
+        /// The specific operation or endpoint within the service that this node represents, if
+        /// applicable.
         /// </para>
         /// </summary>
         public string Operation
@@ -140,7 +141,7 @@ namespace Amazon.ApplicationSignals.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the entity represented by this node.
+        /// The current health status of the node, such as "Healthy", "Warning", or "Critical".
         /// </para>
         /// </summary>
         public string Status
@@ -158,7 +159,7 @@ namespace Amazon.ApplicationSignals.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of entity represented by this node, such as <c>Service</c> or <c>Resource</c>.
+        /// The type of node, such as "Service", "Database", "Queue", or "External".
         /// </para>
         /// </summary>
         public string Type

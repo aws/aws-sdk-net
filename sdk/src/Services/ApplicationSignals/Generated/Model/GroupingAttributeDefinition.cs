@@ -30,9 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ApplicationSignals.Model
 {
     /// <summary>
-    /// A structure that defines how services should be grouped based on specific attributes.
-    /// This includes the friendly name for the grouping, the source keys to derive values
-    /// from, and an optional default value.
+    /// Defines how services should be grouped based on specific attributes. This allows logical
+    /// organization of services in dashboards and service maps.
     /// </summary>
     public partial class GroupingAttributeDefinition
     {
@@ -43,9 +42,8 @@ namespace Amazon.ApplicationSignals.Model
         /// <summary>
         /// Gets and sets the property DefaultGroupingValue. 
         /// <para>
-        /// The default value to use for this grouping attribute when no value can be derived
-        /// from the source keys. This ensures all services have a grouping value even if the
-        /// source data is missing.
+        /// The default value to use for grouping when a service doesn't have any of the specified
+        /// source keys, such as "Unknown" or "Unassigned".
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -64,8 +62,7 @@ namespace Amazon.ApplicationSignals.Model
         /// <summary>
         /// Gets and sets the property GroupingName. 
         /// <para>
-        /// The friendly name for this grouping attribute, such as <c>BusinessUnit</c> or <c>Environment</c>.
-        /// This name is used to identify the grouping in the console and APIs.
+        /// The name of the grouping attribute, such as "Environment", "Team", or "Application".
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -84,9 +81,8 @@ namespace Amazon.ApplicationSignals.Model
         /// <summary>
         /// Gets and sets the property GroupingSourceKeys. 
         /// <para>
-        /// An array of source keys used to derive the grouping attribute value from telemetry
-        /// data, Amazon Web Services tags, or other sources. For example, ["business_unit", "team"]
-        /// would look for values in those fields.
+        /// An array of source attribute keys that will be used to determine the grouping value
+        /// for each service. These keys correspond to service metadata or tags.
         /// </para>
         /// </summary>
         public List<string> GroupingSourceKeys
