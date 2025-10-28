@@ -27,6 +27,20 @@ namespace Amazon.S3.Model
     /// Container for the parameters to the CopyObject operation.
     /// Creates a copy of an object that is already stored in Amazon S3.
     /// 
+    /// <important> 
+    /// <para>
+    /// End of support notice: As of October 1, 2025, Amazon S3 has discontinued support for
+    /// Email Grantee Access Control Lists (ACLs). If you attempt to use an Email Grantee
+    /// ACL in a request after October 1, 2025, the request will receive an <c>HTTP 405</c>
+    /// (Method Not Allowed) error.
+    /// </para>
+    ///  
+    /// <para>
+    /// This change affects the following Amazon Web Services Regions: US East (N. Virginia),
+    /// US West (N. California), US West (Oregon), Asia Pacific (Singapore), Asia Pacific
+    /// (Sydney), Asia Pacific (Tokyo), Europe (Ireland), and South America (São Paulo).
+    /// </para>
+    ///  </important>
     ///  <note> 
     /// <para>
     /// You can store individual objects of up to 5 TB in Amazon S3. You create a copy of
@@ -215,6 +229,8 @@ namespace Amazon.S3.Model
         private string expectedSourceBucketOwner;
         private ChecksumAlgorithm _checksumAlgorithm;
 
+        private string ifNoneMatch;
+        private string ifMatch;
         private string etagToMatch;
         private string etagToNotMatch;
         private DateTime? modifiedSinceDate;
@@ -1137,7 +1153,64 @@ namespace Amazon.S3.Model
         {
             return !System.String.IsNullOrEmpty(this.etagToNotMatch);
         }
-        
+
+        /// <summary>
+        /// <para>
+        /// Copies the object only if the object key name at the destination does not already exist in the bucket specified.
+        /// Otherwise, Amazon S3 returns a <c>412 Precondition Failed</c> error.</para>
+        /// <para>
+        /// If a concurrent operation occurs during the upload S3 returns a <c>409 ConditionalRequestConflict</c> response. 
+        /// On a 409 failure you should retry the upload.
+        /// </para>
+        /// <para>Expects the '*' (asterisk) character.</para>
+        /// <para>
+        /// For more information about conditional requests, see <a href="https://tools.ietf.org/html/rfc7232">RFC 7232</a>.
+        /// </para>
+        /// </summary>
+        public string IfNoneMatch
+        {
+            get { return this.ifNoneMatch; }
+            set { this.ifNoneMatch = value; }
+        }
+
+        /// <summary>
+        /// Checks to see if IfNoneMatch is set.
+        /// </summary>
+        /// <returns>true, if IfNoneMatch property is set.</returns>
+        internal bool IsSetIfNoneMatch()
+        {
+            return this.ifNoneMatch != null;
+        }
+
+        /// <summary>
+        /// <para>
+        /// Copies the object if the entity tag (ETag) of the destination object matches the specified tag.
+        /// If the ETag values do not match, the operation returns a <c>412 Precondition Failed</c> error.
+        /// </para>
+        /// <para>
+        /// If a concurrent operation occurs during the upload S3 returns a <c>409 ConditionalRequestConflict</c> response. 
+        /// On a 409 failure you should fetch the object's ETag and retry the upload.
+        /// </para>
+        /// <para>Expects the ETag value as a string.</para>
+        /// <para>
+        /// For more information about conditional requests see <a href="https://tools.ietf.org/html/rfc7232">RFC 7232</a>.
+        /// </para>
+        /// </summary>
+        public string IfMatch
+        {
+            get { return this.ifMatch; }
+            set { this.ifMatch = value; }
+        }
+
+        /// <summary>
+        /// Checks to see if IfMatch is set.
+        /// </summary>
+        /// <returns>true, if IfMatch property is set.</returns>
+        internal bool IsSetIfMatch()
+        {
+            return this.ifMatch != null;
+        }
+
         /// <summary>
         /// The collection of headers for the request.
         /// </summary>
