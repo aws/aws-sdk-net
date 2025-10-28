@@ -44,53 +44,22 @@ namespace Amazon.S3.Transfer.Internal
             var response = new TransferUtilityUploadResponse();
 
             // Map all fields as defined in mapping.json "Conversion" -> "PutObjectResponse" -> "UploadResponse"
-            if (source.IsSetBucketKeyEnabled())
-                response.BucketKeyEnabled = source.BucketKeyEnabled.GetValueOrDefault();
-
-            if (source.IsSetChecksumCRC32())
-                response.ChecksumCRC32 = source.ChecksumCRC32;
-
-            if (source.IsSetChecksumCRC32C())
-                response.ChecksumCRC32C = source.ChecksumCRC32C;
-
-            if (source.IsSetChecksumCRC64NVME())
-                response.ChecksumCRC64NVME = source.ChecksumCRC64NVME;
-
-            if (source.IsSetChecksumSHA1())
-                response.ChecksumSHA1 = source.ChecksumSHA1;
-
-            if (source.IsSetChecksumSHA256())
-                response.ChecksumSHA256 = source.ChecksumSHA256;
-
-            if (source.IsSetChecksumType())
-                response.ChecksumType = source.ChecksumType;
-
-            if (source.IsSetETag())
-                response.ETag = source.ETag;
-
-            if (source.Expiration != null)
-                response.Expiration = source.Expiration;
-
-            if (source.IsSetRequestCharged())
-                response.RequestCharged = source.RequestCharged;
-
-            if (source.ServerSideEncryptionCustomerMethod != null)
-                response.ServerSideEncryptionCustomerMethod = source.ServerSideEncryptionCustomerMethod;
-
-            if (source.ServerSideEncryptionCustomerProvidedKeyMD5 != null)
-                response.ServerSideEncryptionCustomerProvidedKeyMD5 = source.ServerSideEncryptionCustomerProvidedKeyMD5;
-
-            if (source.ServerSideEncryptionKeyManagementServiceEncryptionContext != null)
-                response.ServerSideEncryptionKeyManagementServiceEncryptionContext = source.ServerSideEncryptionKeyManagementServiceEncryptionContext;
-
-            if (source.IsSetServerSideEncryptionKeyManagementServiceKeyId())
-                response.ServerSideEncryptionKeyManagementServiceKeyId = source.ServerSideEncryptionKeyManagementServiceKeyId;
-
-            if (source.ServerSideEncryptionMethod != null)
-                response.ServerSideEncryptionMethod = source.ServerSideEncryptionMethod;
-
-            if (source.IsSetVersionId())
-                response.VersionId = source.VersionId;
+            response.BucketKeyEnabled = source.BucketKeyEnabled.GetValueOrDefault();
+            response.ChecksumCRC32 = source.ChecksumCRC32;
+            response.ChecksumCRC32C = source.ChecksumCRC32C;
+            response.ChecksumCRC64NVME = source.ChecksumCRC64NVME;
+            response.ChecksumSHA1 = source.ChecksumSHA1;
+            response.ChecksumSHA256 = source.ChecksumSHA256;
+            response.ChecksumType = source.ChecksumType;
+            response.ETag = source.ETag;
+            response.Expiration = source.Expiration;
+            response.RequestCharged = source.RequestCharged;
+            response.ServerSideEncryptionCustomerMethod = source.ServerSideEncryptionCustomerMethod;
+            response.ServerSideEncryptionCustomerProvidedKeyMD5 = source.ServerSideEncryptionCustomerProvidedKeyMD5;
+            response.ServerSideEncryptionKeyManagementServiceEncryptionContext = source.ServerSideEncryptionKeyManagementServiceEncryptionContext;
+            response.ServerSideEncryptionKeyManagementServiceKeyId = source.ServerSideEncryptionKeyManagementServiceKeyId;
+            response.ServerSideEncryptionMethod = source.ServerSideEncryptionMethod;
+            response.VersionId = source.VersionId;
 
             // Copy response metadata
             response.ResponseMetadata = source.ResponseMetadata;
@@ -114,44 +83,19 @@ namespace Amazon.S3.Transfer.Internal
             var response = new TransferUtilityUploadResponse();
 
             // Map all fields as defined in mapping.json "Conversion" -> "CompleteMultipartResponse" -> "UploadResponse"
-            if (source.IsSetBucketKeyEnabled())
-                response.BucketKeyEnabled = source.BucketKeyEnabled.GetValueOrDefault();
-
-            if (source.IsSetChecksumCRC32())
-                response.ChecksumCRC32 = source.ChecksumCRC32;
-
-            if (source.IsSetChecksumCRC32C())
-                response.ChecksumCRC32C = source.ChecksumCRC32C;
-
-            if (source.IsSetChecksumCRC64NVME())
-                response.ChecksumCRC64NVME = source.ChecksumCRC64NVME;
-
-            if (source.IsSetChecksumSHA1())
-                response.ChecksumSHA1 = source.ChecksumSHA1;
-
-            if (source.IsSetChecksumSHA256())
-                response.ChecksumSHA256 = source.ChecksumSHA256;
-
-            if (source.ChecksumType != null)
-                response.ChecksumType = source.ChecksumType;
-
-            if (source.IsSetETag())
-                response.ETag = source.ETag;
-
-            if (source.Expiration != null)
-                response.Expiration = source.Expiration;
-
-            if (source.IsSetRequestCharged())
-                response.RequestCharged = source.RequestCharged;
-
-            if (source.ServerSideEncryptionMethod != null)
-                response.ServerSideEncryptionMethod = source.ServerSideEncryptionMethod;
-
-            if (source.IsSetServerSideEncryptionKeyManagementServiceKeyId())
-                response.ServerSideEncryptionKeyManagementServiceKeyId = source.ServerSideEncryptionKeyManagementServiceKeyId;
-
-            if (source.IsSetVersionId())
-                response.VersionId = source.VersionId;
+            response.BucketKeyEnabled = source.BucketKeyEnabled.GetValueOrDefault();
+            response.ChecksumCRC32 = source.ChecksumCRC32;
+            response.ChecksumCRC32C = source.ChecksumCRC32C;
+            response.ChecksumCRC64NVME = source.ChecksumCRC64NVME;
+            response.ChecksumSHA1 = source.ChecksumSHA1;
+            response.ChecksumSHA256 = source.ChecksumSHA256;
+            response.ChecksumType = source.ChecksumType;
+            response.ETag = source.ETag;
+            response.Expiration = source.Expiration;
+            response.RequestCharged = source.RequestCharged;
+            response.ServerSideEncryptionMethod = source.ServerSideEncryptionMethod;
+            response.ServerSideEncryptionKeyManagementServiceKeyId = source.ServerSideEncryptionKeyManagementServiceKeyId;
+            response.VersionId = source.VersionId;
 
             // Copy response metadata
             response.ResponseMetadata = source.ResponseMetadata;
