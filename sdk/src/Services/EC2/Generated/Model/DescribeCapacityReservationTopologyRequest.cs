@@ -30,22 +30,23 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeInstanceTopology operation.
+    /// Container for the parameters to the DescribeCapacityReservationTopology operation.
     /// Describes a tree-based hierarchy that represents the physical host placement of your
-    /// EC2 instances within an Availability Zone or Local Zone. You can use this information
-    /// to determine the relative proximity of your EC2 instances within the Amazon Web Services
-    /// network to support your tightly coupled workloads.
+    /// pending or active Capacity Reservations within an Availability Zone or Local Zone.
+    /// You can use this information to determine the relative proximity of your capacity
+    /// within the Amazon Web Services network before it is launched and use this information
+    /// to allocate capacity together to support your tightly coupled workloads.
     /// 
     ///  
     /// <para>
-    /// Instance topology is supported for specific instance types only. For more information,
-    /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-topology-prerequisites.html">Prerequisites
+    /// Capacity Reservation topology is supported for specific instance types only. For more
+    /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-topology-prerequisites.html">Prerequisites
     /// for Amazon EC2 instance topology</a> in the <i>Amazon EC2 User Guide</i>.
     /// </para>
     ///  <note> 
     /// <para>
     /// The Amazon EC2 API follows an eventual consistency model due to the distributed nature
-    /// of the system supporting it. As a result, when you call the DescribeInstanceTopology
+    /// of the system supporting it. As a result, when you call the DescribeCapacityReservationTopology
     /// API command immediately after launching instances, the response might return a <c>null</c>
     /// value for <c>capacityBlockId</c> because the data might not have fully propagated
     /// across all subsystems. For more information, see <a href="https://docs.aws.amazon.com/ec2/latest/devguide/eventual-consistency.html">Eventual
@@ -57,13 +58,38 @@ namespace Amazon.EC2.Model
     /// EC2 topology</a> in the <i>Amazon EC2 User Guide</i>.
     /// </para>
     /// </summary>
-    public partial class DescribeInstanceTopologyRequest : AmazonEC2Request
+    public partial class DescribeCapacityReservationTopologyRequest : AmazonEC2Request
     {
+        private List<string> _capacityReservationIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<Filter> _filters = AWSConfigs.InitializeCollections ? new List<Filter>() : null;
-        private List<string> _groupNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
-        private List<string> _instanceIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _maxResults;
         private string _nextToken;
+
+        /// <summary>
+        /// Gets and sets the property CapacityReservationIds. 
+        /// <para>
+        /// The Capacity Reservation IDs.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: Describes all your Capacity Reservations.
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints: Maximum 100 explicitly specified Capacity Reservation IDs.
+        /// </para>
+        /// </summary>
+        public List<string> CapacityReservationIds
+        {
+            get { return this._capacityReservationIds; }
+            set { this._capacityReservationIds = value; }
+        }
+
+        // Check to see if CapacityReservationIds property is set
+        internal bool IsSetCapacityReservationIds()
+        {
+            return this._capacityReservationIds != null && (this._capacityReservationIds.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property Filters. 
@@ -73,18 +99,14 @@ namespace Amazon.EC2.Model
         ///  <ul> <li> 
         /// <para>
         ///  <c>availability-zone</c> - The name of the Availability Zone (for example, <c>us-west-2a</c>)
-        /// or Local Zone (for example, <c>us-west-2-lax-1b</c>) that the instance is in.
+        /// or Local Zone (for example, <c>us-west-2-lax-1b</c>) that the Capacity Reservation
+        /// is in.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <c>instance-type</c> - The instance type (for example, <c>p4d.24xlarge</c>) or instance
         /// family (for example, <c>p4d*</c>). You can use the <c>*</c> wildcard to match zero
         /// or more characters, or the <c>?</c> wildcard to match zero or one character.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>zone-id</c> - The ID of the Availability Zone (for example, <c>usw2-az2</c>) or
-        /// Local Zone (for example, <c>usw2-lax1-az1</c>) that the instance is in.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -101,54 +123,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property GroupNames. 
-        /// <para>
-        /// The name of the placement group that each instance is in.
-        /// </para>
-        ///  
-        /// <para>
-        /// Constraints: Maximum 100 explicitly specified placement group names.
-        /// </para>
-        /// </summary>
-        public List<string> GroupNames
-        {
-            get { return this._groupNames; }
-            set { this._groupNames = value; }
-        }
-
-        // Check to see if GroupNames property is set
-        internal bool IsSetGroupNames()
-        {
-            return this._groupNames != null && (this._groupNames.Count > 0 || !AWSConfigs.InitializeCollections); 
-        }
-
-        /// <summary>
-        /// Gets and sets the property InstanceIds. 
-        /// <para>
-        /// The instance IDs.
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: Describes all your instances.
-        /// </para>
-        ///  
-        /// <para>
-        /// Constraints: Maximum 100 explicitly specified instance IDs.
-        /// </para>
-        /// </summary>
-        public List<string> InstanceIds
-        {
-            get { return this._instanceIds; }
-            set { this._instanceIds = value; }
-        }
-
-        // Check to see if InstanceIds property is set
-        internal bool IsSetInstanceIds()
-        {
-            return this._instanceIds != null && (this._instanceIds.Count > 0 || !AWSConfigs.InitializeCollections); 
-        }
-
-        /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// The maximum number of items to return for this request. To get the next page of items,
@@ -157,14 +131,15 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// You can't specify this parameter and the instance IDs parameter in the same request.
+        /// You can't specify this parameter and the Capacity Reservation IDs parameter in the
+        /// same request.
         /// </para>
         ///  
         /// <para>
-        /// Default: <c>20</c> 
+        /// Default: <c>10</c> 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
+        [AWSProperty(Min=1, Max=10)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

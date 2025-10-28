@@ -17196,6 +17196,85 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DescribeCapacityReservationTopology
+
+        /// <summary>
+        /// Describes a tree-based hierarchy that represents the physical host placement of your
+        /// pending or active Capacity Reservations within an Availability Zone or Local Zone.
+        /// You can use this information to determine the relative proximity of your capacity
+        /// within the Amazon Web Services network before it is launched and use this information
+        /// to allocate capacity together to support your tightly coupled workloads.
+        /// 
+        ///  
+        /// <para>
+        /// Capacity Reservation topology is supported for specific instance types only. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-topology-prerequisites.html">Prerequisites
+        /// for Amazon EC2 instance topology</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The Amazon EC2 API follows an eventual consistency model due to the distributed nature
+        /// of the system supporting it. As a result, when you call the DescribeCapacityReservationTopology
+        /// API command immediately after launching instances, the response might return a <c>null</c>
+        /// value for <c>capacityBlockId</c> because the data might not have fully propagated
+        /// across all subsystems. For more information, see <a href="https://docs.aws.amazon.com/ec2/latest/devguide/eventual-consistency.html">Eventual
+        /// consistency in the Amazon EC2 API</a> in the <i>Amazon EC2 Developer Guide</i>.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-topology.html">Amazon
+        /// EC2 topology</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCapacityReservationTopology service method.</param>
+        /// 
+        /// <returns>The response from the DescribeCapacityReservationTopology service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCapacityReservationTopology">REST API Reference for DescribeCapacityReservationTopology Operation</seealso>
+        public virtual DescribeCapacityReservationTopologyResponse DescribeCapacityReservationTopology(DescribeCapacityReservationTopologyRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeCapacityReservationTopologyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeCapacityReservationTopologyResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeCapacityReservationTopologyResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeCapacityReservationTopology operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCapacityReservationTopology operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeCapacityReservationTopology
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCapacityReservationTopology">REST API Reference for DescribeCapacityReservationTopology Operation</seealso>
+        public virtual IAsyncResult BeginDescribeCapacityReservationTopology(DescribeCapacityReservationTopologyRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeCapacityReservationTopologyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeCapacityReservationTopologyResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeCapacityReservationTopology operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeCapacityReservationTopology.</param>
+        /// 
+        /// <returns>Returns a  DescribeCapacityReservationTopologyResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCapacityReservationTopology">REST API Reference for DescribeCapacityReservationTopology Operation</seealso>
+        public virtual DescribeCapacityReservationTopologyResponse EndDescribeCapacityReservationTopology(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeCapacityReservationTopologyResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeCarrierGateways
 
         /// <summary>
@@ -20279,8 +20358,8 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// Instance topology is supported for specific instance types only. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-topology-prerequisites.html">
-        /// Prerequisites for Amazon EC2 instance topology</a> in the <i>Amazon EC2 User Guide</i>.
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-topology-prerequisites.html">Prerequisites
+        /// for Amazon EC2 instance topology</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -20294,7 +20373,7 @@ namespace Amazon.EC2
         ///  </note> 
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-topology.html">Amazon
-        /// EC2 instance topology</a> in the <i>Amazon EC2 User Guide</i>.
+        /// EC2 topology</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeInstanceTopology service method.</param>
