@@ -30,22 +30,23 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Information about the instance topology.
+    /// Information about the Capacity Reservation topology.
     /// </summary>
-    public partial class InstanceTopology
+    public partial class CapacityReservationTopology
     {
         private string _availabilityZone;
+        private string _availabilityZoneId;
         private string _capacityBlockId;
+        private string _capacityReservationId;
         private string _groupName;
-        private string _instanceId;
         private string _instanceType;
         private List<string> _networkNodes = AWSConfigs.InitializeCollections ? new List<string>() : null;
-        private string _zoneId;
+        private string _state;
 
         /// <summary>
         /// Gets and sets the property AvailabilityZone. 
         /// <para>
-        /// The name of the Availability Zone or Local Zone that the instance is in.
+        /// The name of the Availability Zone or Local Zone that the Capacity Reservation is in.
         /// </para>
         /// </summary>
         public string AvailabilityZone
@@ -58,6 +59,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetAvailabilityZone()
         {
             return this._availabilityZone != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AvailabilityZoneId. 
+        /// <para>
+        /// The ID of the Availability Zone or Local Zone that the Capacity Reservation is in.
+        /// </para>
+        /// </summary>
+        public string AvailabilityZoneId
+        {
+            get { return this._availabilityZoneId; }
+            set { this._availabilityZoneId = value; }
+        }
+
+        // Check to see if AvailabilityZoneId property is set
+        internal bool IsSetAvailabilityZoneId()
+        {
+            return this._availabilityZoneId != null;
         }
 
         /// <summary>
@@ -80,9 +99,27 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CapacityReservationId. 
+        /// <para>
+        /// The ID of the Capacity Reservation.
+        /// </para>
+        /// </summary>
+        public string CapacityReservationId
+        {
+            get { return this._capacityReservationId; }
+            set { this._capacityReservationId = value; }
+        }
+
+        // Check to see if CapacityReservationId property is set
+        internal bool IsSetCapacityReservationId()
+        {
+            return this._capacityReservationId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property GroupName. 
         /// <para>
-        /// The name of the placement group that the instance is in.
+        /// The name of the placement group that the Capacity Reservation is in.
         /// </para>
         /// </summary>
         public string GroupName
@@ -95,24 +132,6 @@ namespace Amazon.EC2.Model
         internal bool IsSetGroupName()
         {
             return this._groupName != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property InstanceId. 
-        /// <para>
-        /// The instance ID.
-        /// </para>
-        /// </summary>
-        public string InstanceId
-        {
-            get { return this._instanceId; }
-            set { this._instanceId = value; }
-        }
-
-        // Check to see if InstanceId property is set
-        internal bool IsSetInstanceId()
-        {
-            return this._instanceId != null;
         }
 
         /// <summary>
@@ -136,8 +155,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property NetworkNodes. 
         /// <para>
-        /// The network nodes. The nodes are hashed based on your account. Instances from different
-        /// accounts running under the same server will return a different hashed list of strings.
+        /// The network nodes. The nodes are hashed based on your account. Capacity Reservations
+        /// from different accounts running under the same server will return a different hashed
+        /// list of strings.
         /// </para>
         ///  
         /// <para>
@@ -149,7 +169,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The instance is in a state other than <c>running</c>.
+        /// The Capacity Reservation is in a state other than <c>active</c> or <c>pending</c>.
         /// </para>
         ///  </li> </ul>
         /// <para />
@@ -171,21 +191,22 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ZoneId. 
+        /// Gets and sets the property State. 
         /// <para>
-        /// The ID of the Availability Zone or Local Zone that the instance is in.
+        /// The current state of the Capacity Reservation. For the list of possible states, see
+        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeCapacityReservations.html">DescribeCapacityReservations</a>.
         /// </para>
         /// </summary>
-        public string ZoneId
+        public string State
         {
-            get { return this._zoneId; }
-            set { this._zoneId = value; }
+            get { return this._state; }
+            set { this._state = value; }
         }
 
-        // Check to see if ZoneId property is set
-        internal bool IsSetZoneId()
+        // Check to see if State property is set
+        internal bool IsSetState()
         {
-            return this._zoneId != null;
+            return this._state != null;
         }
 
     }
