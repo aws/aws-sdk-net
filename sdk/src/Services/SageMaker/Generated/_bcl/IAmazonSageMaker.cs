@@ -6995,6 +6995,54 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  DeleteProcessingJob
+
+
+        /// <summary>
+        /// Deletes a processing job. After Amazon SageMaker deletes a processing job, all of
+        /// the metadata for the processing job is lost. You can delete only processing jobs that
+        /// are in a terminal state (<c>Stopped</c>, <c>Failed</c>, or <c>Completed</c>). You
+        /// cannot delete a job that is in the <c>InProgress</c> or <c>Stopping</c> state. After
+        /// deleting the job, you can reuse its name to create another processing job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteProcessingJob service method.</param>
+        /// 
+        /// <returns>The response from the DeleteProcessingJob service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteProcessingJob">REST API Reference for DeleteProcessingJob Operation</seealso>
+        DeleteProcessingJobResponse DeleteProcessingJob(DeleteProcessingJobRequest request);
+
+
+
+        /// <summary>
+        /// Deletes a processing job. After Amazon SageMaker deletes a processing job, all of
+        /// the metadata for the processing job is lost. You can delete only processing jobs that
+        /// are in a terminal state (<c>Stopped</c>, <c>Failed</c>, or <c>Completed</c>). You
+        /// cannot delete a job that is in the <c>InProgress</c> or <c>Stopping</c> state. After
+        /// deleting the job, you can reuse its name to create another processing job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteProcessingJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteProcessingJob service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteProcessingJob">REST API Reference for DeleteProcessingJob Operation</seealso>
+        Task<DeleteProcessingJobResponse> DeleteProcessingJobAsync(DeleteProcessingJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeleteProject
 
 
@@ -7178,6 +7226,56 @@ namespace Amazon.SageMaker
         /// <returns>The response from the DeleteTags service method, as returned by SageMaker.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteTags">REST API Reference for DeleteTags Operation</seealso>
         Task<DeleteTagsResponse> DeleteTagsAsync(DeleteTagsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteTrainingJob
+
+
+        /// <summary>
+        /// Deletes a training job. After SageMaker deletes a training job, all of the metadata
+        /// for the training job is lost. You can delete only training jobs that are in a terminal
+        /// state (<c>Stopped</c>, <c>Failed</c>, or <c>Completed</c>) and don't retain an <c>Available</c>
+        /// <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-warm-pools.html">managed
+        /// warm pool</a>. You cannot delete a job that is in the <c>InProgress</c> or <c>Stopping</c>
+        /// state. After deleting the job, you can reuse its name to create another training job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTrainingJob service method.</param>
+        /// 
+        /// <returns>The response from the DeleteTrainingJob service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteTrainingJob">REST API Reference for DeleteTrainingJob Operation</seealso>
+        DeleteTrainingJobResponse DeleteTrainingJob(DeleteTrainingJobRequest request);
+
+
+
+        /// <summary>
+        /// Deletes a training job. After SageMaker deletes a training job, all of the metadata
+        /// for the training job is lost. You can delete only training jobs that are in a terminal
+        /// state (<c>Stopped</c>, <c>Failed</c>, or <c>Completed</c>) and don't retain an <c>Available</c>
+        /// <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-warm-pools.html">managed
+        /// warm pool</a>. You cannot delete a job that is in the <c>InProgress</c> or <c>Stopping</c>
+        /// state. After deleting the job, you can reuse its name to create another training job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTrainingJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteTrainingJob service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteTrainingJob">REST API Reference for DeleteTrainingJob Operation</seealso>
+        Task<DeleteTrainingJobResponse> DeleteTrainingJobAsync(DeleteTrainingJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
