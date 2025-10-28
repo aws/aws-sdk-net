@@ -176,9 +176,9 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property InvokedViaFunctionUrl. 
         /// <para>
-        /// Restricts the <c>lambda:InvokeFunction</c> action to calls coming from a function
-        /// URL. When set to <c>true</c>, this prevents the principal from invoking the function
-        /// by any means other than the function URL. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Control
+        /// Restricts the <c>lambda:InvokeFunction</c> action to function URL calls. When set
+        /// to <c>true</c>, this prevents the principal from invoking the function by any means
+        /// other than the function URL. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Control
         /// access to Lambda function URLs</a>.
         /// </para>
         /// </summary>
