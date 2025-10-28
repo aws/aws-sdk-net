@@ -491,6 +491,10 @@ namespace Amazon.GameLiftStreams
         /// </summary>
         public static readonly StreamGroupStatus ERROR = new StreamGroupStatus("ERROR");
         /// <summary>
+        /// Constant EXPIRED for StreamGroupStatus
+        /// </summary>
+        public static readonly StreamGroupStatus EXPIRED = new StreamGroupStatus("EXPIRED");
+        /// <summary>
         /// Constant UPDATING_LOCATIONS for StreamGroupStatus
         /// </summary>
         public static readonly StreamGroupStatus UPDATING_LOCATIONS = new StreamGroupStatus("UPDATING_LOCATIONS");
