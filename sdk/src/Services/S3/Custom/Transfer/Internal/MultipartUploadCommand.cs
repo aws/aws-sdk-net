@@ -48,8 +48,6 @@ namespace Amazon.S3.Transfer.Internal
         List<UploadPartResponse> _uploadResponses = new List<UploadPartResponse>();
         long _totalTransferredBytes;
         Queue<UploadPartRequest> _partsToUpload = new Queue<UploadPartRequest>();
-        Dictionary<int, ExpectedUploadPart> _expectedUploadParts = new Dictionary<int, ExpectedUploadPart>();
-
 
         long _contentLength;
         private static Logger Logger
@@ -212,22 +210,27 @@ namespace Amazon.S3.Transfer.Internal
             return compRequest;
         }
 
+        private bool calculateIsLastPart(long remainingBytes)
+        {
+            var isLastPart = false;
+            if (remainingBytes <= this._partSize)
+                isLastPart = true;
+            return isLastPart;
+        }
+
         internal UploadPartRequest ConstructUploadPartRequest(int partNumber, long filePosition, InitiateMultipartUploadResponse initiateResponse)
         {
             UploadPartRequest uploadPartRequest = ConstructGenericUploadPartRequest(initiateResponse);
 
             var remainingBytes = this._contentLength - filePosition;
-            var isLastPart = false;
-            if (remainingBytes <= this._partSize)
-                isLastPart = true;
+            var isLastPart = calculateIsLastPart(remainingBytes);
             uploadPartRequest.PartNumber = partNumber;
             uploadPartRequest.PartSize = isLastPart ? remainingBytes : this._partSize;
             uploadPartRequest.IsLastPart = isLastPart;
 
-            if ((filePosition + this._partSize >= this._contentLength)
+            if (isLastPart
                 && _s3Client is Amazon.S3.Internal.IAmazonS3Encryption)
             {
-                uploadPartRequest.IsLastPart = true;
                 uploadPartRequest.PartSize = 0;
             }
 
@@ -518,13 +521,5 @@ namespace Amazon.S3.Transfer.Internal
 
             _lastProgressArgs = e;
         }
-    }
-
-    internal class ExpectedUploadPart
-    {
-        public int PartNumber { get; set; }
-        public long? ExpectedContentLength { get; set; }
-        public long? ExpectedFileOffset { get; set; }
-        public bool IsLastPart { get; set; }
     }
 }

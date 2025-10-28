@@ -81,7 +81,7 @@ namespace AWSSDK.UnitTests.S3.NetFramework.Custom
 
         [TestMethod]
         [TestCategory("S3")]
-        public async Task Validation_ConstructUploadPartRequest()
+        public void Validation_ConstructUploadPartRequest()
         {
             var initiateMultipartUploadResponse = new InitiateMultipartUploadResponse
             {

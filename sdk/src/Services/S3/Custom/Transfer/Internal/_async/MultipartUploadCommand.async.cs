@@ -31,6 +31,8 @@ namespace Amazon.S3.Transfer.Internal
     {
         public SemaphoreSlim AsyncThrottler { get; set; }
 
+        Dictionary<int, ExpectedUploadPart> _expectedUploadParts = new Dictionary<int, ExpectedUploadPart>();
+
         public override async Task ExecuteAsync(CancellationToken cancellationToken)
         {
             // Fire transfer initiated event FIRST, before choosing path
@@ -72,9 +74,12 @@ namespace Amazon.S3.Transfer.Internal
 
                         var expectedFileOffset = (i - 1) * this._partSize;
                         var remainingBytes = this._contentLength - expectedFileOffset;
-                        var isLastPart = false;
-                        if (remainingBytes <= this._partSize)
-                            isLastPart = true;
+                        var isLastPart = calculateIsLastPart(remainingBytes);
+                        if (isLastPart
+                            && _s3Client is Amazon.S3.Internal.IAmazonS3Encryption)
+                        {
+                            remainingBytes = 0;
+                        }
                         this._expectedUploadParts.Add(i, new ExpectedUploadPart {
                             PartNumber = i,
                             ExpectedContentLength =
@@ -382,6 +387,14 @@ namespace Amazon.S3.Transfer.Internal
                 Logger.Error(ex, ex.Message);
                 throw;
             }
+        }
+        
+        private class ExpectedUploadPart
+        {
+            public int PartNumber { get; set; }
+            public long? ExpectedContentLength { get; set; }
+            public long? ExpectedFileOffset { get; set; }
+            public bool IsLastPart { get; set; }
         }
     }
 }
