@@ -1,0 +1,53 @@
+{
+    "services": [
+        {
+            "serviceName": "QLDB",
+            "type": "removal",
+            "changeLogMessages": [
+                "AWS QLDB has been removed from the SDK because it has been discontinued."
+            ]
+        },
+        {
+            "serviceName": "QLDBSession",
+            "type": "removal",
+            "changeLogMessages": [
+                "AWS QLDBSession has been removed from the SDK because it has been discontinued."
+            ]
+        },
+        {
+            "serviceName": "RoboMaker",
+            "type": "removal",
+            "changeLogMessages": [
+                "AWS RoboMaker has been removed from the SDK because it has been discontinued."
+            ]
+        },
+        {
+            "serviceName": "LookoutMetrics",
+            "type": "removal",
+            "changeLogMessages": [
+                "AWS LookoutMetrics has been removed from the SDK because it has been discontinued."
+            ]
+        },
+        {
+            "serviceName": "LookoutforVision",
+            "type": "removal",
+            "changeLogMessages": [
+                "AWS LookoutforVision has been removed from the SDK because it has been discontinued."
+            ]
+        },
+        {
+            "serviceName": "IoTFleetHub",
+            "type": "removal",
+            "changeLogMessages": [
+                "AWS IoTFleetHub has been removed from the SDK because it has been discontinued."
+            ]
+        },
+        {
+            "serviceName": "AppTest",
+            "type": "removal",
+            "changeLogMessages": [
+                "AWS AppTest has been removed from the SDK because it has been discontinued."
+            ]
+        }
+    ]
+}
