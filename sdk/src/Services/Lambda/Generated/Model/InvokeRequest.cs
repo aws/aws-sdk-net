@@ -39,6 +39,11 @@ namespace Amazon.Lambda.Model
     /// 
     ///  
     /// <para>
+    /// For synchronous invocations, the maximum payload size is 6 MB. For asynchronous invocations,
+    /// the maximum payload size is 1 MB.
+    /// </para>
+    ///  
+    /// <para>
     /// For <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-sync.html">synchronous
     /// invocation</a>, details about the function response, including errors, are included
     /// in the response body and headers. For either invocation type, you can find more information
@@ -217,7 +222,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property PayloadStream. 
         /// <para>
-        /// The JSON that you want to provide to your Lambda function as input.
+        /// The JSON that you want to provide to your Lambda function as input. The maximum payload
+        /// size is 6 MB for synchronous invocations and 1 MB for asynchronous invocations.
         /// </para>
         ///  
         /// <para>
