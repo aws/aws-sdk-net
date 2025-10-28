@@ -48,6 +48,7 @@ namespace Amazon.S3.Transfer.Internal
         List<UploadPartResponse> _uploadResponses = new List<UploadPartResponse>();
         long _totalTransferredBytes;
         Queue<UploadPartRequest> _partsToUpload = new Queue<UploadPartRequest>();
+        Dictionary<int, ExpectedUploadPart> _expectedUploadParts = new Dictionary<int, ExpectedUploadPart>();
 
 
         long _contentLength;
@@ -215,8 +216,13 @@ namespace Amazon.S3.Transfer.Internal
         {
             UploadPartRequest uploadPartRequest = ConstructGenericUploadPartRequest(initiateResponse);
 
+            var remainingBytes = this._contentLength - filePosition;
+            var isLastPart = false;
+            if (remainingBytes <= this._partSize)
+                isLastPart = true;
             uploadPartRequest.PartNumber = partNumber;
-            uploadPartRequest.PartSize = this._partSize;
+            uploadPartRequest.PartSize = isLastPart ? remainingBytes : this._partSize;
+            uploadPartRequest.IsLastPart = isLastPart;
 
             if ((filePosition + this._partSize >= this._contentLength)
                 && _s3Client is Amazon.S3.Internal.IAmazonS3Encryption)
@@ -512,5 +518,13 @@ namespace Amazon.S3.Transfer.Internal
 
             _lastProgressArgs = e;
         }
+    }
+
+    internal class ExpectedUploadPart
+    {
+        public int PartNumber { get; set; }
+        public long? ExpectedContentLength { get; set; }
+        public long? ExpectedFileOffset { get; set; }
+        public bool IsLastPart { get; set; }
     }
 }

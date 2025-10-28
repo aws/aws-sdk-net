@@ -69,6 +69,21 @@ namespace Amazon.S3.Transfer.Internal
                         cancellationToken.ThrowIfCancellationRequested();
 
                         var uploadRequest = ConstructUploadPartRequest(i, filePosition, initResponse);
+
+                        var expectedFileOffset = (i - 1) * this._partSize;
+                        var remainingBytes = this._contentLength - expectedFileOffset;
+                        var isLastPart = false;
+                        if (remainingBytes <= this._partSize)
+                            isLastPart = true;
+                        this._expectedUploadParts.Add(i, new ExpectedUploadPart {
+                            PartNumber = i,
+                            ExpectedContentLength =
+                                isLastPart ?
+                                    remainingBytes : 
+                                    this._partSize,
+                            ExpectedFileOffset = expectedFileOffset,
+                            IsLastPart = isLastPart
+                        });
                         this._partsToUpload.Enqueue(uploadRequest);
                         filePosition += this._partSize;
                     }
@@ -150,8 +165,50 @@ namespace Amazon.S3.Transfer.Internal
         {
             try
             {
-                return await _s3Client.UploadPartAsync(uploadRequest, internalCts.Token)
+                var response = await _s3Client.UploadPartAsync(uploadRequest, internalCts.Token)
                     .ConfigureAwait(continueOnCapturedContext: false);
+
+                if (response.PartNumber is null)
+                {
+                    throw new ArgumentNullException(nameof(response.PartNumber));
+                }
+                else
+                {
+                    if (this._expectedUploadParts.TryGetValue((int) response.PartNumber, out var expectedUploadPart))
+                    {
+                        var actualContentLength = uploadRequest.PartSize;
+                        if (actualContentLength != expectedUploadPart.ExpectedContentLength)
+                        {
+                            throw new InvalidOperationException($"Cannot complete multipart upload request. The expected content length of part {expectedUploadPart.PartNumber} " +
+                                $"does not equal the actual content length.");
+                        }
+
+                        if (expectedUploadPart.IsLastPart)
+                        {
+                            if (actualContentLength <= 0 ||
+                                actualContentLength > expectedUploadPart.ExpectedContentLength)
+                            {
+                                throw new InvalidOperationException($"Cannot complete multipart upload request. The last part " +
+                                    $"has an invalid content length.");
+                            }
+                        }
+
+                        var actualFileOsset = uploadRequest.FilePosition;
+                        if (uploadRequest.IsSetFilePath() && 
+                            actualFileOsset != expectedUploadPart.ExpectedFileOffset)
+                        {
+                            throw new InvalidOperationException($"Cannot complete multipart upload request. The expected file offset of part {expectedUploadPart.PartNumber} " +
+                                $"does not equal the actual file offset.");
+                        }
+                    }
+                    else
+                    {
+                        throw new InvalidOperationException("Multipart upload request part was unexpected.");
+                    }
+                }
+
+
+                return response;
             }
             catch (Exception exception)
             {
