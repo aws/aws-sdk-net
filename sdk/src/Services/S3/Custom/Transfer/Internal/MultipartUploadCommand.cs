@@ -222,7 +222,10 @@ namespace Amazon.S3.Transfer.Internal
         {
             UploadPartRequest uploadPartRequest = ConstructGenericUploadPartRequest(initiateResponse);
 
+            // Calculating how many bytes are remaining to be uploaded from the current part.
+            // This is mainly used for the last part scenario.
             var remainingBytes = this._contentLength - filePosition;
+            // We then check based on the remaining bytes and the content length if this is the last part.
             var isLastPart = calculateIsLastPart(remainingBytes);
             uploadPartRequest.PartNumber = partNumber;
             uploadPartRequest.PartSize = isLastPart ? remainingBytes : this._partSize;

@@ -73,8 +73,13 @@ namespace Amazon.S3.Transfer.Internal
                         var uploadRequest = ConstructUploadPartRequest(i, filePosition, initResponse);
 
                         var expectedFileOffset = (i - 1) * this._partSize;
+                        // Calculating how many bytes are remaining to be uploaded from the current part.
+                        // This is mainly used for the last part scenario.
                         var remainingBytes = this._contentLength - expectedFileOffset;
+                        // We then check based on the remaining bytes and the content length if this is the last part.
                         var isLastPart = calculateIsLastPart(remainingBytes);
+                        // To maintain the same behavior as the ConstructUploadPartRequest.
+                        // We are setting the remainingBytes/partSize when using the IAmazonS3Encryption client to 0.
                         if (isLastPart
                             && _s3Client is Amazon.S3.Internal.IAmazonS3Encryption)
                         {
@@ -190,7 +195,7 @@ namespace Amazon.S3.Transfer.Internal
 
                         if (expectedUploadPart.IsLastPart)
                         {
-                            if (actualContentLength <= 0 ||
+                            if (actualContentLength < 0 ||
                                 actualContentLength > expectedUploadPart.ExpectedContentLength)
                             {
                                 throw new InvalidOperationException($"Cannot complete multipart upload request. The last part " +

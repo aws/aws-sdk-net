@@ -13,7 +13,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace AWSSDK.UnitTests.S3.NetFramework.Custom
+namespace AWSSDK.UnitTests
 {
     [TestClass]
     public class MultipartUploadValidationTests
