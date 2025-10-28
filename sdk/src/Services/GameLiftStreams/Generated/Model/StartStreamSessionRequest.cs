@@ -43,7 +43,7 @@ namespace Amazon.GameLiftStreams.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// You must have a stream group in <c>ACTIVE</c> state
+    /// You must have a stream group in <c>ACTIVE</c> status
     /// </para>
     ///  </li> <li> 
     /// <para>
