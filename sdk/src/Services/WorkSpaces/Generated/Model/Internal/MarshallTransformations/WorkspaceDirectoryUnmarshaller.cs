@@ -114,6 +114,12 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
                     unmarshalledObject.DnsIpAddresses = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DnsIpv6Addresses", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.DnsIpv6Addresses = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("EndpointEncryptionMode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
