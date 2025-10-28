@@ -1,3 +1,120 @@
+### 3.7.1153.0 (2025-10-28 19:23 UTC)
+* ApiGatewayV2 (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* ApplicationSignals (3.7.504.0)
+	* Added support for CloudWatch Synthetics Canary resources in ListAuditFindings API. This enhancement allows customers to retrieve audit findings specifically for CloudWatch Synthetics canaries and enables service-canary correlation analysis.
+* AppRegistry (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* AppTest (Removed)
+	* AWS AppTest has been removed from the SDK because it has been discontinued.
+* BackupSearch (3.7.503.0)
+	* Update endpoint ruleset parameters casing
+* BCMPricingCalculator (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* BedrockAgentRuntime (3.7.503.0)
+	* Update endpoint ruleset parameters casing
+* BedrockRuntime (3.7.506.0)
+	* Update endpoint ruleset parameters casing
+* CleanRoomsML (3.7.504.0)
+	* Update endpoint ruleset parameters casing
+* Cloud9 (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* CloudSearchDomain (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* CloudWatchEvents (3.7.501.0)
+	* Update endpoint ruleset parameters casing
+* CodeConnections (3.7.503.0)
+	* Update endpoint ruleset parameters casing
+* CodeGuruSecurity (3.7.501.0)
+	* Update endpoint ruleset parameters casing
+* Detective (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* EC2 (3.7.519.0)
+	* This released the DescribeCapacityReservationTopology API.
+* ECS (3.7.503.0)
+	* Amazon ECS supports native linear and canary service deployments, allowing you to shift traffic in increments for more control.
+* ElasticFileSystem (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* ElasticTranscoder (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* EMRContainers (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* GameLiftStreams (3.7.504.0)
+	* Add stream group expiration date and expired status
+* Glacier (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* GroundStation (3.7.501.0)
+	* Enable use of AzEl ephemerides
+* InspectorScan (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* IoTFleetHub (Removed)
+	* AWS IoTFleetHub has been removed from the SDK because it has been discontinued.
+* KafkaConnect (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* Kendra (3.7.501.0)
+	* Update endpoint ruleset parameters casing
+* KinesisVideo (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* Lambda (3.7.503.0)
+	* Added SerializedRequestEntityTooLargeException to Lambda Invoke API
+* LookoutforVision (Removed)
+	* AWS LookoutforVision has been removed from the SDK because it has been discontinued.
+* LookoutMetrics (Removed)
+	* AWS LookoutMetrics has been removed from the SDK because it has been discontinued.
+* MarketplaceDeployment (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* MediaPackageVod (3.7.501.0)
+	* Update endpoint ruleset parameters casing
+* MigrationHubOrchestrator (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* Notifications (3.7.503.0)
+	* Update endpoint ruleset parameters casing
+* OpenSearchService (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* Organizations (3.7.505.0)
+	* Added Account State field to the ListDelegatedAdministrators API response.
+* PartnerCentralSelling (3.7.503.0)
+	* Update endpoint ruleset parameters casing
+* Pipes (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* QLDB (Removed)
+	* AWS QLDB has been removed from the SDK because it has been discontinued.
+* QLDBSession (Removed)
+	* AWS QLDBSession has been removed from the SDK because it has been discontinued.
+* RAM (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* ResourceGroups (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* RoboMaker (Removed)
+	* AWS RoboMaker has been removed from the SDK because it has been discontinued.
+* S3 (3.7.503.0)
+	* Amazon Simple Storage Service / Features: Add conditional writes in CopyObject on destination key to prevent unintended object modifications.
+* S3Control (3.7.503.0)
+	* Update endpoint ruleset parameters casing
+* SageMaker (3.7.514.0)
+	* Amazon SageMaker now supports deleting training and processing jobs in a terminal status.
+* SageMakerFeatureStoreRuntime (3.7.501.0)
+	* Update endpoint ruleset parameters casing
+* SecurityIR (3.7.503.0)
+	* Update endpoint ruleset parameters casing
+* SQS (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* SupportApp (3.7.501.0)
+	* Update endpoint ruleset parameters casing
+* TaxSettings (3.7.501.0)
+	* Update endpoint ruleset parameters casing
+* TrustedAdvisor (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* WorkSpaces (3.7.504.0)
+	* Added IPv6 address support for WorkSpaces using Dual-Stack subnets
+* WorkspacesInstances (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* XRay (3.7.503.0)
+	* Update endpoint ruleset parameters casing
+* Core 3.7.500.39
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.1152.0 (2025-10-27 19:24 UTC)
 * AccessAnalyzer (3.7.502.0)
 	* Update endpoint ruleset parameters casing

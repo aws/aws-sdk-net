@@ -32,7 +32,7 @@ namespace Amazon.AWSHealth
     public partial class AmazonAWSHealthConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Health", "3.7.500.38");
+            InternalSDKUtils.BuildUserAgentString("Health", "3.7.500.39");
 
         private string _userAgent = UserAgentString;
         ///<summary>
