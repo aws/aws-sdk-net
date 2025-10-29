@@ -56,6 +56,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         public IRequest Marshall(CreateResponseHeadersPolicyRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.CloudFront");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "POST";
             request.ResourcePath = "/2020-05-31/response-headers-policy";
 
@@ -319,5 +320,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, CreateResponseHeadersPolicyRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, CreateResponseHeadersPolicyRequest publicRequest);
     }    
 }

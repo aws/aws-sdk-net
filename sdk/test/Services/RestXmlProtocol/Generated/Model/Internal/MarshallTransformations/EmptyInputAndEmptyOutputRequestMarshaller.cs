@@ -56,6 +56,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
         public IRequest Marshall(EmptyInputAndEmptyOutputRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.RestXmlProtocol");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "POST";
             request.ResourcePath = "/EmptyInputAndEmptyOutput";
 
@@ -82,5 +83,6 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, EmptyInputAndEmptyOutputRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, EmptyInputAndEmptyOutputRequest publicRequest);
     }    
 }

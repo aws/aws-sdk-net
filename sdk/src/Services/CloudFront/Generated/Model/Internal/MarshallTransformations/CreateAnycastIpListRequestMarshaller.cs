@@ -56,6 +56,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         public IRequest Marshall(CreateAnycastIpListRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.CloudFront");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "POST";
             request.ResourcePath = "/2020-05-31/anycast-ip-list";
 
@@ -128,5 +129,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, CreateAnycastIpListRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, CreateAnycastIpListRequest publicRequest);
     }    
 }

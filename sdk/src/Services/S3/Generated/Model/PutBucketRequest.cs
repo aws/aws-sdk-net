@@ -255,7 +255,7 @@ namespace Amazon.S3.Model
         // Check to see if CannedACL property is set
         internal bool IsSetCannedACL()
         {
-            return this._cannedACL != null;
+            return _cannedACL != null && _cannedACL != S3CannedACL.NoACL;
         }
 
         /// <summary>

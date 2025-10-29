@@ -56,6 +56,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         public IRequest Marshall(UpdateContinuousDeploymentPolicyRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.CloudFront");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "PUT";
         
             if (publicRequest.IsSetIfMatch()) 
@@ -164,5 +165,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, UpdateContinuousDeploymentPolicyRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, UpdateContinuousDeploymentPolicyRequest publicRequest);
     }    
 }

@@ -1,0 +1,33 @@
+{
+  "services": [
+    {
+      "serviceName": "S3",
+      "type": "patch",
+      "changeLogMessages": [
+        "Add PreMarshallCustomization custom partial method. Move postmarshall customization logic for PutBucket to PreMarshallCustomization partial method.",
+        "The IsSet method for CannedACL returns false if set to NoACL. This logic was in the marshaller but has been moved back to the setter."
+      ]
+    },
+    {
+      "serviceName": "CloudFront",
+      "type": "patch",
+      "changeLogMessages": [
+        "Add PreMarshallCustomization custom partial method."
+      ]
+    },
+    {
+      "serviceName": "Route53",
+      "type": "patch",
+      "changeLogMessages": [
+        "Add PreMarshallCustomization custom partial method."
+      ]
+    },
+    {
+      "serviceName": "S3Control",
+      "type": "patch",
+      "changeLogMessages": [
+        "Add PreMarshallCustomization custom partial method."
+      ]
+    }
+  ]
+}

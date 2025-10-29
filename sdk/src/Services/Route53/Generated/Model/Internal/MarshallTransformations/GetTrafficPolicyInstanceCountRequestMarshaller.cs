@@ -56,6 +56,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
         public IRequest Marshall(GetTrafficPolicyInstanceCountRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.Route53");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "GET";
             request.ResourcePath = "/2013-04-01/trafficpolicyinstancecount";
 
@@ -82,5 +83,6 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, GetTrafficPolicyInstanceCountRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, GetTrafficPolicyInstanceCountRequest publicRequest);
     }    
 }

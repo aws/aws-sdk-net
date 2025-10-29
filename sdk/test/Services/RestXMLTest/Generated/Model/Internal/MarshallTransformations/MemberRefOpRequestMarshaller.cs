@@ -56,6 +56,7 @@ namespace Amazon.RestXMLTest.Model.Internal.MarshallTransformations
         public IRequest Marshall(MemberRefOpRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.RestXMLTest");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "POST";
             request.ResourcePath = "/path";
 
@@ -112,5 +113,6 @@ namespace Amazon.RestXMLTest.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, MemberRefOpRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, MemberRefOpRequest publicRequest);
     }    
 }

@@ -56,6 +56,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListTrafficPolicyInstancesByPolicyRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.Route53");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "GET";
             
             if (publicRequest.IsSetTrafficPolicyId())
@@ -101,5 +102,6 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, ListTrafficPolicyInstancesByPolicyRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, ListTrafficPolicyInstancesByPolicyRequest publicRequest);
     }    
 }

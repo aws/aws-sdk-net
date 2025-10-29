@@ -56,6 +56,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         public IRequest Marshall(GetDistributionTenantByDomainRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.CloudFront");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "GET";
             
             if (publicRequest.IsSetDomain())
@@ -86,5 +87,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, GetDistributionTenantByDomainRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, GetDistributionTenantByDomainRequest publicRequest);
     }    
 }

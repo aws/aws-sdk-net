@@ -56,6 +56,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         public IRequest Marshall(GetObjectRetentionRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.S3");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "GET";
             request.AddSubResource("retention");
         
@@ -101,5 +102,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, GetObjectRetentionRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, GetObjectRetentionRequest publicRequest);
     }    
 }

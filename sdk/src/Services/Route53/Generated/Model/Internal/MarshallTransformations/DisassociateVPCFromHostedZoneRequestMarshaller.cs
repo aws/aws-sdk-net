@@ -56,6 +56,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
         public IRequest Marshall(DisassociateVPCFromHostedZoneRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.Route53");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "POST";
             if (!publicRequest.IsSetHostedZoneId())
                 throw new AmazonRoute53Exception("Request object does not have required field HostedZoneId set");
@@ -114,5 +115,6 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, DisassociateVPCFromHostedZoneRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, DisassociateVPCFromHostedZoneRequest publicRequest);
     }    
 }

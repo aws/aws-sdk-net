@@ -56,6 +56,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         public IRequest Marshall(GetObjectAttributesRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.S3");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "GET";
             request.AddSubResource("attributes");
         
@@ -131,5 +132,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, GetObjectAttributesRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, GetObjectAttributesRequest publicRequest);
     }    
 }
