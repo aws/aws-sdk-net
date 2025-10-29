@@ -20,6 +20,7 @@
  *
  */
 
+using System.Collections.Generic;
 using Amazon.S3.Model;
 
 namespace Amazon.S3.Transfer.Internal
@@ -96,6 +97,62 @@ namespace Amazon.S3.Transfer.Internal
             response.ServerSideEncryptionMethod = source.ServerSideEncryptionMethod;
             response.ServerSideEncryptionKeyManagementServiceKeyId = source.ServerSideEncryptionKeyManagementServiceKeyId;
             response.VersionId = source.VersionId;
+
+            // Copy response metadata
+            response.ResponseMetadata = source.ResponseMetadata;
+            response.ContentLength = source.ContentLength;
+            response.HttpStatusCode = source.HttpStatusCode;
+
+            return response;
+        }
+
+        /// <summary>
+        /// Maps a GetObjectResponse to TransferUtilityDownloadResponse.
+        /// Uses the field mappings defined in mapping.json "Conversion" -> "GetObjectResponse" -> "DownloadResponse".
+        /// </summary>
+        /// <param name="source">The GetObjectResponse to map from</param>
+        /// <returns>A new TransferUtilityDownloadResponse with mapped fields</returns>
+        internal static TransferUtilityDownloadResponse MapGetObjectResponse(GetObjectResponse source)
+        {
+            if (source == null)
+                return null;
+
+            var response = new TransferUtilityDownloadResponse();
+
+            // Map all fields as defined in mapping.json "Conversion" -> "GetObjectResponse" -> "DownloadResponse"
+            response.AcceptRanges = source.AcceptRanges;
+            response.BucketKeyEnabled = source.BucketKeyEnabled.GetValueOrDefault();
+            response.ChecksumCRC32 = source.ChecksumCRC32;
+            response.ChecksumCRC32C = source.ChecksumCRC32C;
+            response.ChecksumCRC64NVME = source.ChecksumCRC64NVME;
+            response.ChecksumSHA1 = source.ChecksumSHA1;
+            response.ChecksumSHA256 = source.ChecksumSHA256;
+            response.ChecksumType = source.ChecksumType;
+            response.ContentRange = source.ContentRange;
+            response.Headers = source.Headers;
+            response.DeleteMarker = source.DeleteMarker;
+            response.ETag = source.ETag;
+            response.Expiration = source.Expiration;
+            response.ExpiresString = source.ExpiresString;
+            response.LastModified = source.LastModified;
+            response.Metadata = source.Metadata;
+            response.MissingMeta = source.MissingMeta;
+            response.ObjectLockLegalHoldStatus = source.ObjectLockLegalHoldStatus;
+            response.ObjectLockMode = source.ObjectLockMode;
+            response.ObjectLockRetainUntilDate = source.ObjectLockRetainUntilDate;
+            response.PartsCount = source.PartsCount;
+            response.ReplicationStatus = source.ReplicationStatus;
+            response.RequestCharged = source.RequestCharged;
+            response.RestoreExpiration = source.RestoreExpiration;
+            response.RestoreInProgress = source.RestoreInProgress;
+            response.ServerSideEncryptionCustomerMethod = source.ServerSideEncryptionCustomerMethod;
+            response.ServerSideEncryptionCustomerProvidedKeyMD5 = source.ServerSideEncryptionCustomerProvidedKeyMD5;
+            response.ServerSideEncryptionKeyManagementServiceKeyId = source.ServerSideEncryptionKeyManagementServiceKeyId;
+            response.ServerSideEncryptionMethod = source.ServerSideEncryptionMethod;
+            response.StorageClass = source.StorageClass;
+            response.TagCount = source.TagCount;
+            response.VersionId = source.VersionId;
+            response.WebsiteRedirectLocation = source.WebsiteRedirectLocation;
 
             // Copy response metadata
             response.ResponseMetadata = source.ResponseMetadata;
