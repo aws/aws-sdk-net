@@ -1,3 +1,18 @@
+### 4.0.122.0 (2025-10-29 20:21 UTC)
+* BedrockRuntime (4.0.9.0)
+	* Add support for system tool and web citation response.
+* CloudFront (4.0.7.3)
+	* Add PreMarshallCustomization custom partial method.
+* DynamoDBv2 (4.0.9.3)
+	* Fixes issue #4071. Allow null expression attribute values for update and conditional expression for transact writes.
+* Route53 (4.0.5.3)
+	* Add PreMarshallCustomization custom partial method.
+* S3 (4.0.9.1)
+	* Add PreMarshallCustomization custom partial method. Move postmarshall customization logic for PutBucket to PreMarshallCustomization partial method.
+	* The IsSet method for CannedACL returns false if set to NoACL. This logic was in the marshaller but has been moved back to the setter.
+* S3Control (4.0.7.1)
+	* Add PreMarshallCustomization custom partial method.
+
 ### 4.0.121.0 (2025-10-28 19:32 UTC)
 * ApiGatewayV2 (4.0.3.0)
 	* Update endpoint ruleset parameters casing
