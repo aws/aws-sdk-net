@@ -49,7 +49,6 @@ namespace Amazon.S3.Transfer.Internal
         long _totalTransferredBytes;
         Queue<UploadPartRequest> _partsToUpload = new Queue<UploadPartRequest>();
 
-
         long _contentLength;
         private static Logger Logger
         {
@@ -211,17 +210,30 @@ namespace Amazon.S3.Transfer.Internal
             return compRequest;
         }
 
+        private bool calculateIsLastPart(long remainingBytes)
+        {
+            var isLastPart = false;
+            if (remainingBytes <= this._partSize)
+                isLastPart = true;
+            return isLastPart;
+        }
+
         internal UploadPartRequest ConstructUploadPartRequest(int partNumber, long filePosition, InitiateMultipartUploadResponse initiateResponse)
         {
             UploadPartRequest uploadPartRequest = ConstructGenericUploadPartRequest(initiateResponse);
 
+            // Calculating how many bytes are remaining to be uploaded from the current part.
+            // This is mainly used for the last part scenario.
+            var remainingBytes = this._contentLength - filePosition;
+            // We then check based on the remaining bytes and the content length if this is the last part.
+            var isLastPart = calculateIsLastPart(remainingBytes);
             uploadPartRequest.PartNumber = partNumber;
-            uploadPartRequest.PartSize = this._partSize;
+            uploadPartRequest.PartSize = isLastPart ? remainingBytes : this._partSize;
+            uploadPartRequest.IsLastPart = isLastPart;
 
-            if ((filePosition + this._partSize >= this._contentLength)
+            if (isLastPart
                 && _s3Client is Amazon.S3.Internal.IAmazonS3Encryption)
             {
-                uploadPartRequest.IsLastPart = true;
                 uploadPartRequest.PartSize = 0;
             }
 
