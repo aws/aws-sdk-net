@@ -1,0 +1,12 @@
+{
+  "services": [
+    {
+      "serviceName": "S3",
+      "type": "patch",
+      "changeLogMessages": [
+        "Fixed issue where PartSize and IsLastPart fields were not properly set on Transfer Utility Upload Part Request.",
+        "Add additional validations for Transfer Utility requests to ensure Upload Parts have the proper Content Length and File Offsets."
+      ]
+    }
+  ]
+}
