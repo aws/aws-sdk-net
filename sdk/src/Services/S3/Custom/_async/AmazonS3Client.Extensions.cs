@@ -82,7 +82,6 @@ namespace Amazon.S3
 
         Task ICoreAmazonS3.UploadObjectFromStreamAsync(string bucketName, string objectKey, Stream stream, IDictionary<string, object> additionalProperties, CancellationToken cancellationToken)
         {
-            var transfer = new Amazon.S3.Transfer.TransferUtility(this);
             var request = new Amazon.S3.Transfer.TransferUtilityUploadRequest
             {
                 BucketName = bucketName,
@@ -90,7 +89,7 @@ namespace Amazon.S3
                 InputStream = stream
             };
             InternalSDKUtils.ApplyValuesV2(request, additionalProperties);
-            return transfer.UploadAsync(request, cancellationToken);
+            return UploadObjectInternalAsync(request, cancellationToken);
         }
 
         async Task<Stream> ICoreAmazonS3.GetObjectStreamAsync(string bucketName, string objectKey, IDictionary<string, object> additionalProperties, CancellationToken cancellationToken)
@@ -107,7 +106,6 @@ namespace Amazon.S3
 
         Task ICoreAmazonS3.UploadObjectFromFilePathAsync(string bucketName, string objectKey, string filepath, IDictionary<string, object> additionalProperties, CancellationToken cancellationToken)
         {
-            var transfer = new Amazon.S3.Transfer.TransferUtility(this);
             var request = new Amazon.S3.Transfer.TransferUtilityUploadRequest
             {
                 BucketName = bucketName,
@@ -115,8 +113,7 @@ namespace Amazon.S3
                 FilePath = filepath
             };
             InternalSDKUtils.ApplyValuesV2(request, additionalProperties);
-
-            return transfer.UploadAsync(request, cancellationToken);
+            return UploadObjectInternalAsync(request, cancellationToken);
         }
 
         Task ICoreAmazonS3.DownloadToFilePathAsync(string bucketName, string objectKey, string filepath, IDictionary<string, object> additionalProperties, CancellationToken cancellationToken)
@@ -156,6 +153,15 @@ namespace Amazon.S3
             }
         }
         #endregion
+
+        #region Internal Helper Methods
+
+        private async Task UploadObjectInternalAsync(Amazon.S3.Transfer.TransferUtilityUploadRequest request, CancellationToken cancellationToken)
+        {
+            var transfer = new Amazon.S3.Transfer.TransferUtility(this);
+            await transfer.UploadWithResponseAsync(request, cancellationToken).ConfigureAwait(false);
+        }
+
+        #endregion
     }
 }
-

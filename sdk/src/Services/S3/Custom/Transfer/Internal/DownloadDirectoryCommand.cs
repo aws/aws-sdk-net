@@ -33,7 +33,7 @@ using Amazon.Runtime;
 
 namespace Amazon.S3.Transfer.Internal
 {
-    internal partial class DownloadDirectoryCommand : BaseCommand
+    internal partial class DownloadDirectoryCommand : BaseCommand<TransferUtilityDownloadDirectoryResponse>
     {
         private readonly IAmazonS3 _s3Client;
         private readonly TransferUtilityDownloadDirectoryRequest _request;
