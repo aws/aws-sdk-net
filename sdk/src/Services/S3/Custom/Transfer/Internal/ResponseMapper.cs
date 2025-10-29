@@ -61,12 +61,6 @@ namespace Amazon.S3.Transfer.Internal
             response.ServerSideEncryptionKeyManagementServiceKeyId = source.ServerSideEncryptionKeyManagementServiceKeyId;
             response.ServerSideEncryptionMethod = source.ServerSideEncryptionMethod;
             response.VersionId = source.VersionId;
-
-            // Copy response metadata
-            response.ResponseMetadata = source.ResponseMetadata;
-            response.ContentLength = source.ContentLength;
-            response.HttpStatusCode = source.HttpStatusCode;
-
             return response;
         }
 
@@ -97,12 +91,6 @@ namespace Amazon.S3.Transfer.Internal
             response.ServerSideEncryptionMethod = source.ServerSideEncryptionMethod;
             response.ServerSideEncryptionKeyManagementServiceKeyId = source.ServerSideEncryptionKeyManagementServiceKeyId;
             response.VersionId = source.VersionId;
-
-            // Copy response metadata
-            response.ResponseMetadata = source.ResponseMetadata;
-            response.ContentLength = source.ContentLength;
-            response.HttpStatusCode = source.HttpStatusCode;
-
             return response;
         }
 
@@ -153,12 +141,6 @@ namespace Amazon.S3.Transfer.Internal
             response.TagCount = source.TagCount;
             response.VersionId = source.VersionId;
             response.WebsiteRedirectLocation = source.WebsiteRedirectLocation;
-
-            // Copy response metadata
-            response.ResponseMetadata = source.ResponseMetadata;
-            response.ContentLength = source.ContentLength;
-            response.HttpStatusCode = source.HttpStatusCode;
-
             return response;
         }
         
