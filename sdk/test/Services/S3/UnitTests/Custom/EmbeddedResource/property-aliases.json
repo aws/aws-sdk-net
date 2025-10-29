@@ -8,6 +8,7 @@
       "SSEKMSKeyId": "ServerSideEncryptionKeyManagementServiceKeyId"
     },
     "TransferUtilityUploadResponse": {
+      "Bucket" : "BucketName",
       "ServerSideEncryption": "ServerSideEncryptionMethod",
       "SSECustomerAlgorithm": "ServerSideEncryptionCustomerMethod",
       "SSECustomerKeyMD5": "ServerSideEncryptionCustomerProvidedKeyMD5",
@@ -114,6 +115,7 @@
       "Bucket": "BucketName"
     },
     "CompleteMultipartUploadResponse": {
+      "Bucket" : "BucketName",
       "ServerSideEncryption": "ServerSideEncryptionMethod",
       "SSEKMSKeyId": "ServerSideEncryptionKeyManagementServiceKeyId"
     },

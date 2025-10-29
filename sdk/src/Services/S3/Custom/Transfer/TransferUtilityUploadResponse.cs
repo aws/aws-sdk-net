@@ -35,6 +35,7 @@ namespace Amazon.S3.Transfer
     public class TransferUtilityUploadResponse : AmazonWebServiceResponse
     {
         private bool? _bucketKeyEnabled;
+        private string _bucketName;
         private string _checksumCRC32;
         private string _checksumCRC32C;
         private string _checksumCRC64NVME;
@@ -43,8 +44,11 @@ namespace Amazon.S3.Transfer
         private ChecksumType _checksumType;
         private string _etag;
         private Expiration _expiration;
+        private string _key;
+        private string _location;
         private RequestCharged _requestCharged;
         private ServerSideEncryptionCustomerMethod _serverSideEncryptionCustomerMethod;
+        private long? _size;
         private string _sseCustomerKeyMD5;
         private string _sseKmsEncryptionContext;
         private string _sseKmsKeyId;
@@ -71,6 +75,110 @@ namespace Amazon.S3.Transfer
         internal bool IsSetBucketKeyEnabled()
         {
             return this._bucketKeyEnabled.HasValue;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BucketName. 
+        /// <para>
+        /// The name of the bucket that contains the newly created object. Does not return the
+        /// access point ARN or access point alias if used.
+        /// </para>
+        ///  
+        /// <para>
+        /// When using this action with an access point, you must direct requests to the access
+        /// point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
+        /// When using this action with an access point through the Amazon Web Services SDKs,
+        /// you provide the access point ARN in place of the bucket name. For more information
+        /// about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
+        /// access points</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you use this action with Amazon S3 on Outposts, you must direct requests to the
+        /// S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
+        /// When you use this action with S3 on Outposts through the Amazon Web Services SDKs,
+        /// you provide the Outposts access point ARN in place of the bucket name. For more information
+        /// about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
+        /// is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        /// </summary>
+        public string BucketName
+        {
+            get { return this._bucketName; }
+            set { this._bucketName = value; }
+        }
+
+        /// <summary>
+        /// Checks if BucketName property is set.
+        /// </summary>
+        /// <returns>true if BucketName property is set.</returns>
+        internal bool IsSetBucketName()
+        {
+            return !string.IsNullOrEmpty(this._bucketName);
+        }
+
+        /// <summary>
+        /// Gets and sets the property Key. 
+        /// <para>
+        /// The object key of the newly created object.
+        /// </para>
+        /// </summary>
+        public string Key
+        {
+            get { return this._key; }
+            set { this._key = value; }
+        }
+
+        /// <summary>
+        /// Checks if Key property is set.
+        /// </summary>
+        /// <returns>true if Key property is set.</returns>
+        internal bool IsSetKey()
+        {
+            return !string.IsNullOrEmpty(this._key);
+        }
+
+        /// <summary>
+        /// Gets and sets the property Location. 
+        /// <para>
+        /// The URI that identifies the newly created object.
+        /// </para>
+        /// </summary>
+        public string Location
+        {
+            get { return this._location; }
+            set { this._location = value; }
+        }
+
+        /// <summary>
+        /// Checks if Location property is set.
+        /// </summary>
+        /// <returns>true if Location property is set.</returns>
+        internal bool IsSetLocation()
+        {
+            return !string.IsNullOrEmpty(this._location);
+        }
+
+        /// <summary>
+        /// Gets and sets the property Size. 
+        /// <para>
+        /// The size of the object in bytes. This will only be present if you append to an object.
+        /// </para>
+        /// <note><para>This functionality is only supported for objects in the S3 Express One Zone storage class in directory buckets.</para></note>
+        /// </summary>
+        public long? Size
+        {
+            get { return this._size; }
+            set { this._size = value; }
+        }
+
+        /// <summary>
+        /// Checks if Size property is set.
+        /// </summary>
+        /// <returns>true if Size property is set.</returns>
+        internal bool IsSetSize()
+        {
+            return this._size.HasValue;
         }
 
         /// <summary>
