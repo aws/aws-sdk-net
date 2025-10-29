@@ -30,37 +30,48 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockRuntime.Model
 {
     /// <summary>
-    /// The model must request a specific tool. For example, <c>{"tool" : {"name" : "Your
-    /// tool name"}}</c>. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/tool-use.html">Call
-    /// a tool with the Converse API</a> in the Amazon Bedrock User Guide
-    /// 
-    ///  <note> 
-    /// <para>
-    /// This field is only supported by Anthropic Claude 3 models.
-    /// </para>
-    ///  </note>
+    /// Provides the URL and domain information for the website that was cited when performing
+    /// a web search.
     /// </summary>
-    public partial class SpecificToolChoice
+    public partial class WebLocation
     {
-        private string _name;
+        private string _domain;
+        private string _url;
 
         /// <summary>
-        /// Gets and sets the property Name. 
+        /// Gets and sets the property Domain. 
         /// <para>
-        /// The name of the tool that the model must request. 
+        /// The domain that was cited when performing a web search.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=64)]
-        public string Name
+        public string Domain
         {
-            get { return this._name; }
-            set { this._name = value; }
+            get { return this._domain; }
+            set { this._domain = value; }
         }
 
-        // Check to see if Name property is set
-        internal bool IsSetName()
+        // Check to see if Domain property is set
+        internal bool IsSetDomain()
         {
-            return this._name != null;
+            return this._domain != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Url. 
+        /// <para>
+        /// The URL that was cited when performing a web search.
+        /// </para>
+        /// </summary>
+        public string Url
+        {
+            get { return this._url; }
+            set { this._url = value; }
+        }
+
+        // Check to see if Url property is set
+        internal bool IsSetUrl()
+        {
+            return this._url != null;
         }
 
     }

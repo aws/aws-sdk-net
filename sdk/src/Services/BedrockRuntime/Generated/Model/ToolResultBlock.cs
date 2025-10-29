@@ -31,13 +31,15 @@ namespace Amazon.BedrockRuntime.Model
 {
     /// <summary>
     /// A tool result block that contains the results for a tool request that the model previously
-    /// made.
+    /// made. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/tool-use.html">Call
+    /// a tool with the Converse API</a> in the Amazon Bedrock User Guide.
     /// </summary>
     public partial class ToolResultBlock
     {
         private List<ToolResultContentBlock> _content = AWSConfigs.InitializeCollections ? new List<ToolResultContentBlock>() : null;
         private ToolResultStatus _status;
         private string _toolUseId;
+        private string _type;
 
         /// <summary>
         /// Gets and sets the property Content. 
@@ -65,7 +67,7 @@ namespace Amazon.BedrockRuntime.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// This field is only supported Anthropic Claude 3 models.
+        /// This field is only supported by Amazon Nova and Anthropic Claude 3 and 4 models.
         /// </para>
         ///  </note>
         /// </summary>
@@ -84,7 +86,7 @@ namespace Amazon.BedrockRuntime.Model
         /// <summary>
         /// Gets and sets the property ToolUseId. 
         /// <para>
-        /// The ID of the tool request that this is the result for.
+        /// The ID of the tool request that this is the result for. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]
@@ -98,6 +100,24 @@ namespace Amazon.BedrockRuntime.Model
         internal bool IsSetToolUseId()
         {
             return this._toolUseId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The type for the tool result content block.
+        /// </para>
+        /// </summary>
+        public string Type
+        {
+            get { return this._type; }
+            set { this._type = value; }
+        }
+
+        // Check to see if Type property is set
+        internal bool IsSetType()
+        {
+            return this._type != null;
         }
 
     }

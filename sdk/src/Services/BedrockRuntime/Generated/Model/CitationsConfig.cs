@@ -41,9 +41,9 @@ namespace Amazon.BedrockRuntime.Model
         /// <summary>
         /// Gets and sets the property Enabled. 
         /// <para>
-        /// Specifies whether document citations should be included in the model's response. When
-        /// set to true, the model can generate citations that reference the source documents
-        /// used to inform the response.
+        /// Specifies whether citations from the selected document should be used in the model's
+        /// response. When set to true, the model can generate citations that reference the source
+        /// documents used to inform the response.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

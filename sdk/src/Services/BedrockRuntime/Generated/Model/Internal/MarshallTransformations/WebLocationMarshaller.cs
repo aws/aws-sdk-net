@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Tool Marshaller
+    /// WebLocation Marshaller
     /// </summary>
-    public class ToolMarshaller : IRequestMarshaller<Tool, JsonMarshallerContext> 
+    public class WebLocationMarshaller : IRequestMarshaller<WebLocation, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,41 +44,20 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(Tool requestObject, JsonMarshallerContext context)
+        public void Marshall(WebLocation requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetCachePoint())
+            if(requestObject.IsSetDomain())
             {
-                context.Writer.WritePropertyName("cachePoint");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = CachePointBlockMarshaller.Instance;
-                marshaller.Marshall(requestObject.CachePoint, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("domain");
+                context.Writer.Write(requestObject.Domain);
             }
 
-            if(requestObject.IsSetSystemTool())
+            if(requestObject.IsSetUrl())
             {
-                context.Writer.WritePropertyName("systemTool");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = SystemToolMarshaller.Instance;
-                marshaller.Marshall(requestObject.SystemTool, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetToolSpec())
-            {
-                context.Writer.WritePropertyName("toolSpec");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = ToolSpecificationMarshaller.Instance;
-                marshaller.Marshall(requestObject.ToolSpec, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("url");
+                context.Writer.Write(requestObject.Url);
             }
 
         }
@@ -86,7 +65,7 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static ToolMarshaller Instance = new ToolMarshaller();
+        public readonly static WebLocationMarshaller Instance = new WebLocationMarshaller();
 
     }
 }

@@ -30,12 +30,31 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockRuntime.Model
 {
     /// <summary>
-    /// The model must request at least one tool (no text is generated). For example, <c>{"any"
-    /// : {}}</c>. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/tool-use.html">Call
-    /// a tool with the Converse API</a> in the Amazon Bedrock User Guide.
+    /// Specifies a system-defined tool for the model to use. <i>System-defined tools</i>
+    /// are tools that are created and provided by the model provider.
     /// </summary>
-    public partial class AnyToolChoice
+    public partial class SystemTool
     {
+        private string _name;
+
+        /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The name of the system-defined tool that you want to call. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
+        public string Name
+        {
+            get { return this._name; }
+            set { this._name = value; }
+        }
+
+        // Check to see if Name property is set
+        internal bool IsSetName()
+        {
+            return this._name != null;
+        }
 
     }
 }

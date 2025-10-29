@@ -392,6 +392,12 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BedrockRuntime.Model.SystemTool.Name</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BedrockRuntime.Model.Tag.Key</property>
     <min>1</min>
     <max>128</max>
@@ -425,6 +431,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockRuntime.Model.ToolResultBlock.ToolUseId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockRuntime.Model.ToolResultBlockStart.ToolUseId</property>
     <min>1</min>
     <max>64</max>
     <pattern>[a-zA-Z0-9_-]+</pattern>

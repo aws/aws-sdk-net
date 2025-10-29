@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ContentBlockStart Object
+    /// Response Unmarshaller for WebLocation Object
     /// </summary>  
-    public class ContentBlockStartUnmarshaller : IUnmarshaller<ContentBlockStart, XmlUnmarshallerContext>, IUnmarshaller<ContentBlockStart, JsonUnmarshallerContext>
+    public class WebLocationUnmarshaller : IUnmarshaller<WebLocation, XmlUnmarshallerContext>, IUnmarshaller<WebLocation, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ContentBlockStart IUnmarshaller<ContentBlockStart, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        WebLocation IUnmarshaller<WebLocation, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public ContentBlockStart Unmarshall(JsonUnmarshallerContext context)
+        public WebLocation Unmarshall(JsonUnmarshallerContext context)
         {
-            ContentBlockStart unmarshalledObject = new ContentBlockStart();
+            WebLocation unmarshalledObject = new WebLocation();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,16 +66,16 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("toolResult", targetDepth))
+                if (context.TestExpression("domain", targetDepth))
                 {
-                    var unmarshaller = ToolResultBlockStartUnmarshaller.Instance;
-                    unmarshalledObject.ToolResult = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Domain = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("toolUse", targetDepth))
+                if (context.TestExpression("url", targetDepth))
                 {
-                    var unmarshaller = ToolUseBlockStartUnmarshaller.Instance;
-                    unmarshalledObject.ToolUse = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Url = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -83,12 +83,12 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
         }
 
 
-        private static ContentBlockStartUnmarshaller _instance = new ContentBlockStartUnmarshaller();        
+        private static WebLocationUnmarshaller _instance = new WebLocationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ContentBlockStartUnmarshaller Instance
+        public static WebLocationUnmarshaller Instance
         {
             get
             {

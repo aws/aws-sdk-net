@@ -30,7 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockRuntime.Model
 {
     /// <summary>
-    /// A system content block.
+    /// Contains configurations for instructions to provide the model for how to handle input.
+    /// To learn more, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/conversation-inference-call.html">Using
+    /// the Converse API</a>.
     /// </summary>
     public partial class SystemContentBlock
     {

@@ -42,7 +42,7 @@ namespace Amazon.BedrockRuntime.Model
         /// <summary>
         /// Gets and sets the property ToolChoice. 
         /// <para>
-        /// If supported by model, forces the model to request a tool.
+        /// If supported by model, forces the model to request a tool. 
         /// </para>
         /// </summary>
         public ToolChoice ToolChoice
@@ -60,7 +60,7 @@ namespace Amazon.BedrockRuntime.Model
         /// <summary>
         /// Gets and sets the property Tools. 
         /// <para>
-        /// An array of tools that you want to pass to a model.
+        /// An array of tools that you want to pass to a model. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]

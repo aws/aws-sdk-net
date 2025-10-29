@@ -31,7 +31,7 @@ namespace Amazon.BedrockRuntime.Model
 {
     /// <summary>
     /// A text block that contains text that you want to assess with a guardrail. For more
-    /// information, see <a>GuardrailConverseContentBlock</a>.
+    /// information, see <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_GuardrailConverseContentBlock.html">GuardrailConverseContentBlock</a>.
     /// </summary>
     public partial class GuardrailConverseTextBlock
     {

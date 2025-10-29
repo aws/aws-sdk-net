@@ -34,7 +34,26 @@ namespace Amazon.BedrockRuntime.Model
     /// </summary>
     public partial class ContentBlockStart
     {
+        private ToolResultBlockStart _toolResult;
         private ToolUseBlockStart _toolUse;
+
+        /// <summary>
+        /// Gets and sets the property ToolResult. 
+        /// <para>
+        /// The 
+        /// </para>
+        /// </summary>
+        public ToolResultBlockStart ToolResult
+        {
+            get { return this._toolResult; }
+            set { this._toolResult = value; }
+        }
+
+        // Check to see if ToolResult property is set
+        internal bool IsSetToolResult()
+        {
+            return this._toolResult != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ToolUse. 
