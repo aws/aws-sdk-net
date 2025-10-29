@@ -27,20 +27,20 @@ using System.Buffers;
 
 namespace Amazon.S3.Transfer.Internal
 {
-    internal partial class MultipartUploadCommand : BaseCommand
+    internal partial class MultipartUploadCommand : BaseCommand<TransferUtilityUploadResponse>
     {
         public SemaphoreSlim AsyncThrottler { get; set; }
 
         Dictionary<int, ExpectedUploadPart> _expectedUploadParts = new Dictionary<int, ExpectedUploadPart>();
 
-        public override async Task ExecuteAsync(CancellationToken cancellationToken)
+        public override async Task<TransferUtilityUploadResponse> ExecuteAsync(CancellationToken cancellationToken)
         {
             // Fire transfer initiated event FIRST, before choosing path
             FireTransferInitiatedEvent();
 
             if ( (this._fileTransporterRequest.InputStream != null && !this._fileTransporterRequest.InputStream.CanSeek) || this._fileTransporterRequest.ContentLength == -1)
             {
-                await UploadUnseekableStreamAsync(this._fileTransporterRequest, cancellationToken).ConfigureAwait(false);
+                return await UploadUnseekableStreamAsync(this._fileTransporterRequest, cancellationToken).ConfigureAwait(false);
             }
             else
             {
@@ -144,6 +144,7 @@ namespace Amazon.S3.Transfer.Internal
 
                     var mappedResponse = ResponseMapper.MapCompleteMultipartUploadResponse(completeResponse);
                     FireTransferCompletedEvent(mappedResponse);
+                    return mappedResponse;
                 }
                 catch (Exception e)
                 {
@@ -275,7 +276,7 @@ namespace Amazon.S3.Transfer.Internal
                 Logger.InfoFormat("Error attempting to abort multipart for key {0}: {1}", this._fileTransporterRequest.Key, e.Message);
             }
         }
-        private async Task UploadUnseekableStreamAsync(TransferUtilityUploadRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        private async Task<TransferUtilityUploadResponse> UploadUnseekableStreamAsync(TransferUtilityUploadRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             cancellationToken.ThrowIfCancellationRequested();
 
@@ -376,6 +377,7 @@ namespace Amazon.S3.Transfer.Internal
 
                     var mappedResponse = ResponseMapper.MapCompleteMultipartUploadResponse(completeResponse);
                     FireTransferCompletedEvent(mappedResponse);
+                    return mappedResponse;
                 }
             }
             catch (Exception ex)

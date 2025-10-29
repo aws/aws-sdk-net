@@ -24,9 +24,12 @@ using System.Threading.Tasks;
 
 namespace Amazon.S3.Transfer.Internal
 {
-    internal abstract partial class BaseCommand
+    internal abstract partial class BaseCommand<TResponse> where TResponse : class
     {
-        public abstract Task ExecuteAsync(CancellationToken cancellationToken);
+        /// <summary>
+        /// Executes the command and returns a typed response
+        /// </summary>
+        public abstract Task<TResponse> ExecuteAsync(CancellationToken cancellationToken);
 
         /// <summary>
         ///  Waits for all of the tasks to complete or till any task fails or is canceled.
@@ -80,7 +83,7 @@ namespace Amazon.S3.Transfer.Internal
             }
         }
 
-        protected static async Task ExecuteCommandAsync(BaseCommand command, CancellationTokenSource internalCts, SemaphoreSlim throttler)
+        protected static async Task ExecuteCommandAsync<T>(BaseCommand<T> command, CancellationTokenSource internalCts, SemaphoreSlim throttler) where T : class
         {
             try
             {

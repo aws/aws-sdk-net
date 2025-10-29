@@ -36,7 +36,7 @@ namespace Amazon.S3.Transfer.Internal
     /// <summary>
     /// This command is for doing regular PutObject requests.
     /// </summary>
-    internal partial class SimpleUploadCommand : BaseCommand
+    internal partial class SimpleUploadCommand : BaseCommand<TransferUtilityUploadResponse>
     {
         IAmazonS3 _s3Client;
         TransferUtilityConfig _config;

@@ -89,7 +89,7 @@ namespace Amazon.S3
                 InputStream = stream
             };
             InternalSDKUtils.ApplyValuesV2(request, additionalProperties);
-            transfer.Upload(request);
+            transfer.UploadWithResponse(request);
         }
 
         void ICoreAmazonS3.UploadObjectFromFilePath(string bucketName, string objectKey, string filepath, IDictionary<string, object> additionalProperties)
@@ -102,7 +102,7 @@ namespace Amazon.S3
                 FilePath = filepath
             };
             InternalSDKUtils.ApplyValuesV2(request, additionalProperties);
-            transfer.Upload(request);
+            transfer.UploadWithResponse(request);
         }
 
         void ICoreAmazonS3.DownloadToFilePath(string bucketName, string objectKey, string filepath, IDictionary<string, object> additionalProperties)
