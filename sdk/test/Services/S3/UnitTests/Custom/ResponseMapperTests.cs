@@ -165,7 +165,7 @@ namespace AWSSDK.UnitTests
                     var simpleUploadCommand = new SimpleUploadCommand(null, null, sourceRequest);
                     return simpleUploadCommand.ConstructRequest();
                 },
-                usesHeadersCollection: false,
+                usesHeadersCollection: true,
                 (sourceRequest) =>
                 {
                     sourceRequest.InputStream = new MemoryStream(1024);
@@ -742,10 +742,14 @@ namespace AWSSDK.UnitTests
                 };
             }
 
-            // Integer types
-            if (propertyType == typeof(int) || propertyType == typeof(long))
+            if (propertyType == typeof(int))
             {
-                return 1024;
+            return 1024;
+            }
+
+            if (propertyType == typeof(long))
+            {
+            return 1024L;  // Return long literal
             }
 
             if (propertyType == typeof(List<S3Grant>))

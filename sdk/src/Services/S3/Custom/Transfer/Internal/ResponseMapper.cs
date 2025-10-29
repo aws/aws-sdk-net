@@ -61,6 +61,7 @@ namespace Amazon.S3.Transfer.Internal
             response.ServerSideEncryptionKeyManagementServiceKeyId = source.ServerSideEncryptionKeyManagementServiceKeyId;
             response.ServerSideEncryptionMethod = source.ServerSideEncryptionMethod;
             response.VersionId = source.VersionId;
+            response.Size = source.Size;
 
             // Copy response metadata
             response.ResponseMetadata = source.ResponseMetadata;
@@ -97,6 +98,9 @@ namespace Amazon.S3.Transfer.Internal
             response.ServerSideEncryptionMethod = source.ServerSideEncryptionMethod;
             response.ServerSideEncryptionKeyManagementServiceKeyId = source.ServerSideEncryptionKeyManagementServiceKeyId;
             response.VersionId = source.VersionId;
+            response.BucketName = source.BucketName;
+            response.Key = source.Key;
+            response.Location = source.Location;
 
             // Copy response metadata
             response.ResponseMetadata = source.ResponseMetadata;
