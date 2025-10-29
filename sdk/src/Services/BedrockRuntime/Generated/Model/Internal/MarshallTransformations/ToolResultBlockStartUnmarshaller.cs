@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CitationLocation Object
+    /// Response Unmarshaller for ToolResultBlockStart Object
     /// </summary>  
-    public class CitationLocationUnmarshaller : IJsonUnmarshaller<CitationLocation, JsonUnmarshallerContext>
+    public class ToolResultBlockStartUnmarshaller : IJsonUnmarshaller<ToolResultBlockStart, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public CitationLocation Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public ToolResultBlockStart Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            CitationLocation unmarshalledObject = new CitationLocation();
+            ToolResultBlockStart unmarshalledObject = new ToolResultBlockStart();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,28 +56,22 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("documentChar", targetDepth))
+                if (context.TestExpression("status", targetDepth))
                 {
-                    var unmarshaller = DocumentCharLocationUnmarshaller.Instance;
-                    unmarshalledObject.DocumentChar = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("documentChunk", targetDepth))
+                if (context.TestExpression("toolUseId", targetDepth))
                 {
-                    var unmarshaller = DocumentChunkLocationUnmarshaller.Instance;
-                    unmarshalledObject.DocumentChunk = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ToolUseId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("documentPage", targetDepth))
+                if (context.TestExpression("type", targetDepth))
                 {
-                    var unmarshaller = DocumentPageLocationUnmarshaller.Instance;
-                    unmarshalledObject.DocumentPage = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("web", targetDepth))
-                {
-                    var unmarshaller = WebLocationUnmarshaller.Instance;
-                    unmarshalledObject.Web = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -85,12 +79,12 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
         }
 
 
-        private static CitationLocationUnmarshaller _instance = new CitationLocationUnmarshaller();        
+        private static ToolResultBlockStartUnmarshaller _instance = new ToolResultBlockStartUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CitationLocationUnmarshaller Instance
+        public static ToolResultBlockStartUnmarshaller Instance
         {
             get
             {

@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ToolUseBlock Marshaller
+    /// SystemTool Marshaller
     /// </summary>
-    public class ToolUseBlockMarshaller : IRequestMarshaller<ToolUseBlock, JsonMarshallerContext> 
+    public class SystemToolMarshaller : IRequestMarshaller<SystemTool, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,32 +42,14 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ToolUseBlock requestObject, JsonMarshallerContext context)
+        public void Marshall(SystemTool requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetInput())
-            {
-                context.Writer.WritePropertyName("input");
-                Amazon.Runtime.Documents.Internal.Transform.DocumentMarshaller.Instance.Write(context.Writer, requestObject.Input);
-            }
-
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("name");
                 context.Writer.WriteStringValue(requestObject.Name);
-            }
-
-            if(requestObject.IsSetToolUseId())
-            {
-                context.Writer.WritePropertyName("toolUseId");
-                context.Writer.WriteStringValue(requestObject.ToolUseId);
-            }
-
-            if(requestObject.IsSetType())
-            {
-                context.Writer.WritePropertyName("type");
-                context.Writer.WriteStringValue(requestObject.Type);
             }
 
         }
@@ -75,7 +57,7 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static ToolUseBlockMarshaller Instance = new ToolUseBlockMarshaller();
+        public readonly static SystemToolMarshaller Instance = new SystemToolMarshaller();
 
     }
 }

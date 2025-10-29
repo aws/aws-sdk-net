@@ -30,68 +30,68 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockRuntime.Model
 {
     /// <summary>
-    /// Information about a tool that you can use with the Converse API. For more information,
-    /// see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/tool-use.html">Call
+    /// The start of a tool result block. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/tool-use.html">Call
     /// a tool with the Converse API</a> in the Amazon Bedrock User Guide.
     /// </summary>
-    public partial class Tool
+    public partial class ToolResultBlockStart
     {
-        private CachePointBlock _cachePoint;
-        private SystemTool _systemTool;
-        private ToolSpecification _toolSpec;
+        private ToolResultStatus _status;
+        private string _toolUseId;
+        private string _type;
 
         /// <summary>
-        /// Gets and sets the property CachePoint. 
+        /// Gets and sets the property Status. 
         /// <para>
-        /// CachePoint to include in the tool configuration.
+        /// The status of the tool result block.
         /// </para>
         /// </summary>
-        public CachePointBlock CachePoint
+        public ToolResultStatus Status
         {
-            get { return this._cachePoint; }
-            set { this._cachePoint = value; }
+            get { return this._status; }
+            set { this._status = value; }
         }
 
-        // Check to see if CachePoint property is set
-        internal bool IsSetCachePoint()
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
         {
-            return this._cachePoint != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property SystemTool. 
-        /// <para>
-        /// Specifies the system-defined tool that you want use.
-        /// </para>
-        /// </summary>
-        public SystemTool SystemTool
-        {
-            get { return this._systemTool; }
-            set { this._systemTool = value; }
-        }
-
-        // Check to see if SystemTool property is set
-        internal bool IsSetSystemTool()
-        {
-            return this._systemTool != null;
+            return this._status != null;
         }
 
         /// <summary>
-        /// Gets and sets the property ToolSpec. 
+        /// Gets and sets the property ToolUseId. 
         /// <para>
-        /// The specfication for the tool. 
+        /// The ID of the tool that was used to generate this tool result block.
         /// </para>
         /// </summary>
-        public ToolSpecification ToolSpec
+        [AWSProperty(Required=true, Min=1, Max=64)]
+        public string ToolUseId
         {
-            get { return this._toolSpec; }
-            set { this._toolSpec = value; }
+            get { return this._toolUseId; }
+            set { this._toolUseId = value; }
         }
 
-        // Check to see if ToolSpec property is set
-        internal bool IsSetToolSpec()
+        // Check to see if ToolUseId property is set
+        internal bool IsSetToolUseId()
         {
-            return this._toolSpec != null;
+            return this._toolUseId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The type for the tool that was used to generate this tool result block.
+        /// </para>
+        /// </summary>
+        public string Type
+        {
+            get { return this._type; }
+            set { this._type = value; }
+        }
+
+        // Check to see if Type property is set
+        internal bool IsSetType()
+        {
+            return this._type != null;
         }
 
     }

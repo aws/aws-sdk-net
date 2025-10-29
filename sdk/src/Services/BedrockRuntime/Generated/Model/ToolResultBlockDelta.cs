@@ -30,12 +30,31 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockRuntime.Model
 {
     /// <summary>
-    /// The model must request at least one tool (no text is generated). For example, <c>{"any"
-    /// : {}}</c>. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/tool-use.html">Call
-    /// a tool with the Converse API</a> in the Amazon Bedrock User Guide.
+    /// Contains incremental updates to tool results information during streaming responses.
+    /// This allows clients to build up tool results data progressively as the response is
+    /// generated.
     /// </summary>
-    public partial class AnyToolChoice
+    public partial class ToolResultBlockDelta
     {
+        private string _text;
+
+        /// <summary>
+        /// Gets and sets the property Text. 
+        /// <para>
+        /// The reasoning the model used to return the output.
+        /// </para>
+        /// </summary>
+        public string Text
+        {
+            get { return this._text; }
+            set { this._text = value; }
+        }
+
+        // Check to see if Text property is set
+        internal bool IsSetText()
+        {
+            return this._text != null;
+        }
 
     }
 }

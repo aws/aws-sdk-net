@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockRuntime.Model
 {
     /// <summary>
-    /// The tool result content block.
+    /// The tool result content block. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/tool-use.html">Call
+    /// a tool with the Converse API</a> in the Amazon Bedrock User Guide.
     /// </summary>
     public partial class ToolResultContentBlock
     {
@@ -61,11 +62,11 @@ namespace Amazon.BedrockRuntime.Model
         /// <summary>
         /// Gets and sets the property Image. 
         /// <para>
-        /// A tool result that is an image.
+        /// A tool result that is an image. 
         /// </para>
         ///  <note> 
         /// <para>
-        /// This field is only supported by Anthropic Claude 3 models.
+        /// This field is only supported by Amazon Nova and Anthropic Claude 3 and 4 models.
         /// </para>
         ///  </note>
         /// </summary>
@@ -84,7 +85,7 @@ namespace Amazon.BedrockRuntime.Model
         /// <summary>
         /// Gets and sets the property Json. 
         /// <para>
-        /// A tool result that is JSON format data.
+        /// A tool result that is JSON format data. 
         /// </para>
         /// </summary>
         public Amazon.Runtime.Documents.Document Json
@@ -102,7 +103,7 @@ namespace Amazon.BedrockRuntime.Model
         /// <summary>
         /// Gets and sets the property Text. 
         /// <para>
-        /// A tool result that is text.
+        /// A tool result that is text. 
         /// </para>
         /// </summary>
         public string Text

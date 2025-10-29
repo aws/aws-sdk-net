@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ToolUseBlock Marshaller
+    /// WebLocation Marshaller
     /// </summary>
-    public class ToolUseBlockMarshaller : IRequestMarshaller<ToolUseBlock, JsonMarshallerContext> 
+    public class WebLocationMarshaller : IRequestMarshaller<WebLocation, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,32 +42,20 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ToolUseBlock requestObject, JsonMarshallerContext context)
+        public void Marshall(WebLocation requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetInput())
+            if(requestObject.IsSetDomain())
             {
-                context.Writer.WritePropertyName("input");
-                Amazon.Runtime.Documents.Internal.Transform.DocumentMarshaller.Instance.Write(context.Writer, requestObject.Input);
+                context.Writer.WritePropertyName("domain");
+                context.Writer.WriteStringValue(requestObject.Domain);
             }
 
-            if(requestObject.IsSetName())
+            if(requestObject.IsSetUrl())
             {
-                context.Writer.WritePropertyName("name");
-                context.Writer.WriteStringValue(requestObject.Name);
-            }
-
-            if(requestObject.IsSetToolUseId())
-            {
-                context.Writer.WritePropertyName("toolUseId");
-                context.Writer.WriteStringValue(requestObject.ToolUseId);
-            }
-
-            if(requestObject.IsSetType())
-            {
-                context.Writer.WritePropertyName("type");
-                context.Writer.WriteStringValue(requestObject.Type);
+                context.Writer.WritePropertyName("url");
+                context.Writer.WriteStringValue(requestObject.Url);
             }
 
         }
@@ -75,7 +63,7 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static ToolUseBlockMarshaller Instance = new ToolUseBlockMarshaller();
+        public readonly static WebLocationMarshaller Instance = new WebLocationMarshaller();
 
     }
 }

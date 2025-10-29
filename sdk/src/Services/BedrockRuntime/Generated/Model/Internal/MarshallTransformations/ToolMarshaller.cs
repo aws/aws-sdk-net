@@ -57,6 +57,17 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetSystemTool())
+            {
+                context.Writer.WritePropertyName("systemTool");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SystemToolMarshaller.Instance;
+                marshaller.Marshall(requestObject.SystemTool, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetToolSpec())
             {
                 context.Writer.WritePropertyName("toolSpec");

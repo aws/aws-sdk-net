@@ -113,7 +113,7 @@ namespace Amazon.BedrockRuntime.Model
         ///  
         /// <para>
         /// For more information, see <i>Use a guardrail with the Converse API</i> in the <i>Amazon
-        /// Bedrock User Guide</i>. 
+        /// Bedrock User Guide</i>.
         /// </para>
         /// </summary>
         public GuardrailConverseContentBlock GuardContent
