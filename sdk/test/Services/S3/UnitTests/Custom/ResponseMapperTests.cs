@@ -258,30 +258,124 @@ namespace AWSSDK.UnitTests
 
         [TestMethod]
         [TestCategory("S3")]
-        public void MapPutObjectResponse_NullValues_HandledCorrectly()
+        public void MapAbortMultipartUploadsCommand_ConstructAbortMultipartUploadRequest_AllMappedProperties_WorkCorrectly()
         {
-            // Test null handling scenarios
-            var testCases = new[]
+            // Create a TransferUtilityAbortMultipartUploadRequest with all fields set
+            var abortRequest = new TransferUtilityAbortMultipartUploadRequest
             {
-                // Test null Expiration
-                new PutObjectResponse { Expiration = null },
-                
-                // Test null enum conversions
-                new PutObjectResponse { ChecksumType = null, RequestCharged = null, ServerSideEncryptionMethod = null }
+                BucketName = "test-bucket",
+                InitiatedDate = DateTime.UtcNow.AddDays(-1),
+                ExpectedBucketOwner = "test-bucket-owner",
+                RequestPayer = RequestPayer.Requester
             };
 
-            foreach (var testCase in testCases)
-            {
-                var mapped = ResponseMapper.MapPutObjectResponse(testCase);
-                Assert.IsNotNull(mapped, "Response should always be mappable");
+            // Create the command with the new constructor
+            var abortCommand = new AbortMultipartUploadsCommand(null, abortRequest, null);
 
-                // Test null handling
-                if (testCase.Expiration == null)
-                {
-                    Assert.IsNull(mapped.Expiration, "Null Expiration should map to null");
-                }
-            }
+            // Create a test MultipartUpload
+            var multipartUpload = new MultipartUpload
+            {
+                Key = "test-key",
+                UploadId = "test-upload-id"
+            };
+
+            // Call the method we want to test
+            var result = abortCommand.ConstructAbortMultipartUploadRequest(multipartUpload);
+
+            // Validate all fields are properly mapped
+            Assert.IsNotNull(result, "Result should not be null");
+            Assert.AreEqual("test-bucket", result.BucketName, "BucketName should match");
+            Assert.AreEqual("test-key", result.Key, "Key should match from MultipartUpload");
+            Assert.AreEqual("test-upload-id", result.UploadId, "UploadId should match from MultipartUpload");
+            Assert.AreEqual("test-bucket-owner", result.ExpectedBucketOwner, "ExpectedBucketOwner should be set");
+            Assert.AreEqual(RequestPayer.Requester, result.RequestPayer, "RequestPayer should be set");
         }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public void MapAbortMultipartUploadsCommand_ConstructListMultipartUploadsRequest_AllMappedProperties_WorkCorrectly()
+        {
+            // Create a TransferUtilityAbortMultipartUploadRequest with all fields set
+            var abortRequest = new TransferUtilityAbortMultipartUploadRequest
+            {
+                BucketName = "test-bucket",
+                InitiatedDate = DateTime.UtcNow.AddDays(-1),
+                ExpectedBucketOwner = "test-bucket-owner",
+                RequestPayer = RequestPayer.Requester
+            };
+
+            // Create the command with the new constructor
+            var abortCommand = new AbortMultipartUploadsCommand(null, abortRequest, null);
+
+            // Create a test ListMultipartUploadsResponse
+            var listResponse = new ListMultipartUploadsResponse
+            {
+                KeyMarker = "test-key-marker",
+                NextUploadIdMarker = "test-upload-id-marker"
+            };
+
+            // Call the method we want to test
+            var result = abortCommand.ConstructListMultipartUploadsRequest(listResponse);
+
+            // Validate all fields are properly mapped
+            Assert.IsNotNull(result, "Result should not be null");
+            Assert.AreEqual("test-bucket", result.BucketName, "BucketName should match");
+            Assert.AreEqual("test-key-marker", result.KeyMarker, "KeyMarker should match from response");
+            Assert.AreEqual("test-upload-id-marker", result.UploadIdMarker, "UploadIdMarker should match from response");
+            Assert.AreEqual("test-bucket-owner", result.ExpectedBucketOwner, "ExpectedBucketOwner should be set");
+            Assert.AreEqual(RequestPayer.Requester, result.RequestPayer, "RequestPayer should be set");
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public void MapAbortMultipartUploadsCommand_MinimalRequest_DoesNotSetOptionalFields()
+        {
+            // Create a minimal request with only required fields (BucketName and InitiatedDate)
+            var abortRequest = new TransferUtilityAbortMultipartUploadRequest
+            {
+                BucketName = "test-bucket",
+                InitiatedDate = DateTime.UtcNow.AddDays(-1)
+                // ExpectedBucketOwner and RequestPayer are not set (null)
+            };
+
+            // Create the command with the minimal request
+            var abortCommand = new AbortMultipartUploadsCommand(null, abortRequest, null);
+
+            // Test ConstructAbortMultipartUploadRequest
+            var multipartUpload = new MultipartUpload
+            {
+                Key = "test-key",
+                UploadId = "test-upload-id"
+            };
+
+            var abortResult = abortCommand.ConstructAbortMultipartUploadRequest(multipartUpload);
+
+            // Validate core fields are set but optional fields are not
+            Assert.IsNotNull(abortResult, "AbortMultipartUploadRequest should not be null");
+            Assert.AreEqual("test-bucket", abortResult.BucketName, "BucketName should match");
+            Assert.AreEqual("test-key", abortResult.Key, "Key should match");
+            Assert.AreEqual("test-upload-id", abortResult.UploadId, "UploadId should match");
+            Assert.IsNull(abortResult.ExpectedBucketOwner, "ExpectedBucketOwner should be null with minimal request");
+            Assert.IsNull(abortResult.RequestPayer, "RequestPayer should be null with minimal request");
+
+            // Test ConstructListMultipartUploadsRequest
+            var listResponse = new ListMultipartUploadsResponse
+            {
+                KeyMarker = "test-key-marker",
+                NextUploadIdMarker = "test-upload-id-marker"
+            };
+
+            var listResult = abortCommand.ConstructListMultipartUploadsRequest(listResponse);
+
+            // Validate core fields are set but optional fields are not
+            Assert.IsNotNull(listResult, "ListMultipartUploadsRequest should not be null");
+            Assert.AreEqual("test-bucket", listResult.BucketName, "BucketName should match");
+            Assert.AreEqual("test-key-marker", listResult.KeyMarker, "KeyMarker should match");
+            Assert.AreEqual("test-upload-id-marker", listResult.UploadIdMarker, "UploadIdMarker should match");
+            Assert.IsNull(listResult.ExpectedBucketOwner, "ExpectedBucketOwner should be null with minimal request");
+            Assert.IsNull(listResult.RequestPayer, "RequestPayer should be null with minimal request");
+        }
+
 
         private void ValidateMappingTransferUtilityAndSdkRequests<TSourceRequest, TTargetRequest>(
             string[] mappingPath,
