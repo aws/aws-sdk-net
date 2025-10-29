@@ -63,11 +63,6 @@ namespace Amazon.S3.Transfer.Internal
             response.VersionId = source.VersionId;
             response.Size = source.Size;
 
-            // Copy response metadata
-            response.ResponseMetadata = source.ResponseMetadata;
-            response.ContentLength = source.ContentLength;
-            response.HttpStatusCode = source.HttpStatusCode;
-
             return response;
         }
 
@@ -101,11 +96,6 @@ namespace Amazon.S3.Transfer.Internal
             response.BucketName = source.BucketName;
             response.Key = source.Key;
             response.Location = source.Location;
-
-            // Copy response metadata
-            response.ResponseMetadata = source.ResponseMetadata;
-            response.ContentLength = source.ContentLength;
-            response.HttpStatusCode = source.HttpStatusCode;
 
             return response;
         }
@@ -157,12 +147,6 @@ namespace Amazon.S3.Transfer.Internal
             response.TagCount = source.TagCount;
             response.VersionId = source.VersionId;
             response.WebsiteRedirectLocation = source.WebsiteRedirectLocation;
-
-            // Copy response metadata
-            response.ResponseMetadata = source.ResponseMetadata;
-            response.ContentLength = source.ContentLength;
-            response.HttpStatusCode = source.HttpStatusCode;
-
             return response;
         }
         
