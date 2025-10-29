@@ -386,7 +386,7 @@ namespace Amazon.S3.Transfer
             };
         }
 
-        internal BaseCommand GetUploadCommand(TransferUtilityUploadRequest request)
+        internal BaseCommand<TransferUtilityUploadResponse> GetUploadCommand(TransferUtilityUploadRequest request)
         {
             validate(request);
 

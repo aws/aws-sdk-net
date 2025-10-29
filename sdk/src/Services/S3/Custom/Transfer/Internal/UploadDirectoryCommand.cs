@@ -32,7 +32,7 @@ namespace Amazon.S3.Transfer.Internal
     /// This command files all the files that meets the criteria specified in the TransferUtilityUploadDirectoryRequest request
     /// and uploads them.
     /// </summary>
-    internal partial class UploadDirectoryCommand : BaseCommand
+    internal partial class UploadDirectoryCommand : BaseCommand<TransferUtilityUploadDirectoryResponse>
     {
         TransferUtilityUploadDirectoryRequest _request;
         TransferUtility _utility;
