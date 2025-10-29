@@ -31,7 +31,7 @@ namespace Amazon.S3.Transfer
     /// Response object for Transfer Utility download operations.
     /// Contains response metadata from download operations.
     /// </summary>
-    public class TransferUtilityDownloadResponse : AmazonWebServiceResponse
+    public class TransferUtilityDownloadResponse
     {
         /// <summary>
         /// Gets and sets the AcceptRanges property.
