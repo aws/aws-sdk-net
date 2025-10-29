@@ -1139,6 +1139,43 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 ["Garbage"] = "xcvb"
             };
 
+            var doc4 = new Document
+            {
+                ["Id"] = 7004,
+                ["Price"] = 1500,
+                ["Garbage"] = "qwer"
+            };
+
+            {
+                // null expression attribute values should be allowed for parity with CLI behavior
+                var transactWrite = hashTable.CreateTransactWrite();
+                transactWrite.AddDocumentToPut(doc4);
+                transactWrite.Execute();
+                var transactWrite2 = hashTable.CreateTransactWrite();
+                var updateExpression = new Expression
+                {
+                    ExpressionStatement = "SET #price = Price",
+                    ExpressionAttributeNames = new Dictionary<string, string> { ["#price"] = "Price" },
+                    ExpressionAttributeValues = null
+                };
+
+                var conditionalExpression = new Expression
+                {
+                    ExpressionStatement = "attribute_exists(#Id)",
+                    ExpressionAttributeNames = new Dictionary<string, string> { ["#Id"] = "Id" },
+                    ExpressionAttributeValues = null
+                };
+
+                var config = new TransactWriteItemOperationConfig
+                {
+                    ConditionalExpression = conditionalExpression
+                };
+
+
+                transactWrite2.AddDocumentToUpdate(doc4, updateExpression, config);
+                transactWrite2.Execute();
+            }
+
             {
                 var transactWrite = hashTable.CreateTransactWrite();
                 transactWrite.AddDocumentToPut(doc1, new TransactWriteItemOperationConfig
