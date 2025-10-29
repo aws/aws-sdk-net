@@ -1,3 +1,9 @@
+### 3.7.1154.0 (2025-10-29 20:22 UTC)
+* BedrockRuntime (3.7.507.0)
+	* Add support for system tool and web citation response.
+* SecurityToken (3.7.501.31)
+	* Security Fix for .NET Framework 4.5 and 4.5.1 disabling the XML resolver for SAML Assertions to prevent XML External Entity (XXE) injection vulnerability
+
 ### 3.7.1153.0 (2025-10-28 19:23 UTC)
 * ApiGatewayV2 (3.7.502.0)
 	* Update endpoint ruleset parameters casing
