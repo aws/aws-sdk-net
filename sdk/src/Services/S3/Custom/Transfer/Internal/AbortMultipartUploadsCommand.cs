@@ -31,24 +31,30 @@ namespace Amazon.S3.Transfer.Internal
     internal partial class AbortMultipartUploadsCommand : BaseCommand
     {
         IAmazonS3 _s3Client;
-        string _bucketName; 
-        DateTime _initiatedDate;
+        TransferUtilityAbortMultipartUploadRequest _request;
+        TransferUtilityConfig _config;
 
-        internal AbortMultipartUploadsCommand(IAmazonS3 s3Client, string bucketName, DateTime initiateDate)
+        internal AbortMultipartUploadsCommand(IAmazonS3 s3Client, TransferUtilityAbortMultipartUploadRequest request, TransferUtilityConfig config)
         {
             this._s3Client = s3Client;
-            this._bucketName = bucketName;
-            this._initiatedDate = initiateDate;
+            this._request = request;
+            this._config = config;
         }
 
         internal ListMultipartUploadsRequest ConstructListMultipartUploadsRequest(ListMultipartUploadsResponse listResponse)
             {
                 ListMultipartUploadsRequest listRequest = new ListMultipartUploadsRequest()
                 {
-                    BucketName = this._bucketName,
+                    BucketName = this._request.BucketName,
                     KeyMarker = listResponse.KeyMarker,
                     UploadIdMarker = listResponse.NextUploadIdMarker,
+                    ExpectedBucketOwner = this._request.ExpectedBucketOwner,
+                    RequestPayer = this._request.RequestPayer
                 };
+
+               
+                    
+
                 ((Amazon.Runtime.Internal.IAmazonWebServiceRequest)listRequest).AddBeforeRequestHandler(this.RequestEventHandler);
             return listRequest;
         }
@@ -57,10 +63,13 @@ namespace Amazon.S3.Transfer.Internal
                     {
                         var abortRequest = new AbortMultipartUploadRequest()
                         {
-                            BucketName = this._bucketName,
+                            BucketName = this._request.BucketName,
                             Key = upload.Key,
                             UploadId = upload.UploadId,
+                            ExpectedBucketOwner = this._request.ExpectedBucketOwner,
+                            RequestPayer = this._request.RequestPayer
                         };
+
                         ((Amazon.Runtime.Internal.IAmazonWebServiceRequest)abortRequest).AddBeforeRequestHandler(this.RequestEventHandler);
             return abortRequest;
         }
