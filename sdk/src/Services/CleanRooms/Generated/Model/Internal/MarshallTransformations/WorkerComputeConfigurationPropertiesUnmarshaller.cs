@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for WorkerComputeConfiguration Object
+    /// Response Unmarshaller for WorkerComputeConfigurationProperties Object
     /// </summary>  
-    public class WorkerComputeConfigurationUnmarshaller : IUnmarshaller<WorkerComputeConfiguration, XmlUnmarshallerContext>, IUnmarshaller<WorkerComputeConfiguration, JsonUnmarshallerContext>
+    public class WorkerComputeConfigurationPropertiesUnmarshaller : IUnmarshaller<WorkerComputeConfigurationProperties, XmlUnmarshallerContext>, IUnmarshaller<WorkerComputeConfigurationProperties, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        WorkerComputeConfiguration IUnmarshaller<WorkerComputeConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        WorkerComputeConfigurationProperties IUnmarshaller<WorkerComputeConfigurationProperties, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public WorkerComputeConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public WorkerComputeConfigurationProperties Unmarshall(JsonUnmarshallerContext context)
         {
-            WorkerComputeConfiguration unmarshalledObject = new WorkerComputeConfiguration();
+            WorkerComputeConfigurationProperties unmarshalledObject = new WorkerComputeConfigurationProperties();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,22 +66,10 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("number", targetDepth))
+                if (context.TestExpression("spark", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.Number = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("properties", targetDepth))
-                {
-                    var unmarshaller = WorkerComputeConfigurationPropertiesUnmarshaller.Instance;
-                    unmarshalledObject.Properties = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("type", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.Spark = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -89,12 +77,12 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         }
 
 
-        private static WorkerComputeConfigurationUnmarshaller _instance = new WorkerComputeConfigurationUnmarshaller();        
+        private static WorkerComputeConfigurationPropertiesUnmarshaller _instance = new WorkerComputeConfigurationPropertiesUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static WorkerComputeConfigurationUnmarshaller Instance
+        public static WorkerComputeConfigurationPropertiesUnmarshaller Instance
         {
             get
             {

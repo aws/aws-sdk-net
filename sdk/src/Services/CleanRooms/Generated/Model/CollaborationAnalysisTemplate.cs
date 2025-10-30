@@ -57,7 +57,7 @@ namespace Amazon.CleanRooms.Model
         /// The analysis parameters that have been specified in the analysis template.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=10)]
+        [AWSProperty(Min=0, Max=50)]
         public List<AnalysisParameter> AnalysisParameters
         {
             get { return this._analysisParameters; }

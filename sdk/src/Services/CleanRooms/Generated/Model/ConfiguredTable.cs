@@ -49,7 +49,7 @@ namespace Amazon.CleanRooms.Model
         /// <summary>
         /// Gets and sets the property AllowedColumns. 
         /// <para>
-        /// The columns within the underlying Glue table that can be utilized within collaborations.
+        /// The columns within the underlying Glue table that can be used within collaborations.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]

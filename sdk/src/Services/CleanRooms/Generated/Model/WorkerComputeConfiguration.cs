@@ -36,6 +36,7 @@ namespace Amazon.CleanRooms.Model
     public partial class WorkerComputeConfiguration
     {
         private int? _number;
+        private WorkerComputeConfigurationProperties _properties;
         private WorkerComputeType _type;
 
         /// <summary>
@@ -63,6 +64,25 @@ namespace Amazon.CleanRooms.Model
         internal bool IsSetNumber()
         {
             return this._number.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Properties. 
+        /// <para>
+        /// The configuration properties for the worker compute environment. These properties
+        /// allow you to customize the compute settings for your Clean Rooms workloads.
+        /// </para>
+        /// </summary>
+        public WorkerComputeConfigurationProperties Properties
+        {
+            get { return this._properties; }
+            set { this._properties = value; }
+        }
+
+        // Check to see if Properties property is set
+        internal bool IsSetProperties()
+        {
+            return this._properties != null;
         }
 
         /// <summary>
