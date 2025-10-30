@@ -39,7 +39,7 @@ namespace Amazon.SageMakerRuntime
     /// <summary>
     /// <para>Implementation for accessing SageMakerRuntime</para>
     ///
-    /// The Amazon SageMaker runtime API.
+    /// The Amazon SageMaker AI runtime API.
     /// </summary>
     public partial class AmazonSageMakerRuntimeClient : AmazonServiceClient, IAmazonSageMakerRuntime
     {
@@ -252,20 +252,20 @@ namespace Amazon.SageMakerRuntime
 
 
         /// <summary>
-        /// After you deploy a model into production using Amazon SageMaker hosting services,
+        /// After you deploy a model into production using Amazon SageMaker AI hosting services,
         /// your client applications use this API to get inferences from the model hosted at the
         /// specified endpoint. 
         /// 
         ///  
         /// <para>
-        /// For an overview of Amazon SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/how-it-works.html">How
+        /// For an overview of Amazon SageMaker AI, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/how-it-works.html">How
         /// It Works</a>. 
         /// </para>
         ///  
         /// <para>
-        /// Amazon SageMaker strips all POST headers except those supported by the API. Amazon
-        /// SageMaker might add additional headers. You should not rely on the behavior of headers
-        /// outside those enumerated in the request syntax. 
+        /// Amazon SageMaker AI strips all POST headers except those supported by the API. Amazon
+        /// SageMaker AI might add additional headers. You should not rely on the behavior of
+        /// headers outside those enumerated in the request syntax. 
         /// </para>
         ///  
         /// <para>
@@ -283,8 +283,8 @@ namespace Amazon.SageMakerRuntime
         ///  <note> 
         /// <para>
         /// Endpoints are scoped to an individual account, and are not public. The URL does not
-        /// contain the account ID, but Amazon SageMaker determines the account ID from the authentication
-        /// token that is supplied by the caller.
+        /// contain the account ID, but Amazon SageMaker AI determines the account ID from the
+        /// authentication token that is supplied by the caller.
         /// </para>
         ///  </note>
         /// </summary>
@@ -323,20 +323,20 @@ namespace Amazon.SageMakerRuntime
 
 
         /// <summary>
-        /// After you deploy a model into production using Amazon SageMaker hosting services,
+        /// After you deploy a model into production using Amazon SageMaker AI hosting services,
         /// your client applications use this API to get inferences from the model hosted at the
         /// specified endpoint. 
         /// 
         ///  
         /// <para>
-        /// For an overview of Amazon SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/how-it-works.html">How
+        /// For an overview of Amazon SageMaker AI, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/how-it-works.html">How
         /// It Works</a>. 
         /// </para>
         ///  
         /// <para>
-        /// Amazon SageMaker strips all POST headers except those supported by the API. Amazon
-        /// SageMaker might add additional headers. You should not rely on the behavior of headers
-        /// outside those enumerated in the request syntax. 
+        /// Amazon SageMaker AI strips all POST headers except those supported by the API. Amazon
+        /// SageMaker AI might add additional headers. You should not rely on the behavior of
+        /// headers outside those enumerated in the request syntax. 
         /// </para>
         ///  
         /// <para>
@@ -354,8 +354,8 @@ namespace Amazon.SageMakerRuntime
         ///  <note> 
         /// <para>
         /// Endpoints are scoped to an individual account, and are not public. The URL does not
-        /// contain the account ID, but Amazon SageMaker determines the account ID from the authentication
-        /// token that is supplied by the caller.
+        /// contain the account ID, but Amazon SageMaker AI determines the account ID from the
+        /// authentication token that is supplied by the caller.
         /// </para>
         ///  </note>
         /// </summary>
@@ -401,7 +401,7 @@ namespace Amazon.SageMakerRuntime
 
 
         /// <summary>
-        /// After you deploy a model into production using Amazon SageMaker hosting services,
+        /// After you deploy a model into production using Amazon SageMaker AI hosting services,
         /// your client applications use this API to get inferences from the model hosted at the
         /// specified endpoint in an asynchronous manner.
         /// 
@@ -414,9 +414,9 @@ namespace Amazon.SageMakerRuntime
         /// </para>
         ///  
         /// <para>
-        /// Amazon SageMaker strips all POST headers except those supported by the API. Amazon
-        /// SageMaker might add additional headers. You should not rely on the behavior of headers
-        /// outside those enumerated in the request syntax. 
+        /// Amazon SageMaker AI strips all POST headers except those supported by the API. Amazon
+        /// SageMaker AI might add additional headers. You should not rely on the behavior of
+        /// headers outside those enumerated in the request syntax. 
         /// </para>
         ///  
         /// <para>
@@ -449,7 +449,7 @@ namespace Amazon.SageMakerRuntime
 
 
         /// <summary>
-        /// After you deploy a model into production using Amazon SageMaker hosting services,
+        /// After you deploy a model into production using Amazon SageMaker AI hosting services,
         /// your client applications use this API to get inferences from the model hosted at the
         /// specified endpoint in an asynchronous manner.
         /// 
@@ -462,9 +462,9 @@ namespace Amazon.SageMakerRuntime
         /// </para>
         ///  
         /// <para>
-        /// Amazon SageMaker strips all POST headers except those supported by the API. Amazon
-        /// SageMaker might add additional headers. You should not rely on the behavior of headers
-        /// outside those enumerated in the request syntax. 
+        /// Amazon SageMaker AI strips all POST headers except those supported by the API. Amazon
+        /// SageMaker AI might add additional headers. You should not rely on the behavior of
+        /// headers outside those enumerated in the request syntax. 
         /// </para>
         ///  
         /// <para>
@@ -507,13 +507,13 @@ namespace Amazon.SageMakerRuntime
         /// Invokes a model at the specified endpoint to return the inference response as a stream.
         /// The inference stream provides the response payload incrementally as a series of parts.
         /// Before you can get an inference stream, you must have access to a model that's deployed
-        /// using Amazon SageMaker hosting services, and the container for that model must support
-        /// inference streaming.
+        /// using Amazon SageMaker AI hosting services, and the container for that model must
+        /// support inference streaming.
         /// 
         ///  
         /// <para>
         /// For more information that can help you use this API, see the following sections in
-        /// the <i>Amazon SageMaker Developer Guide</i>:
+        /// the <i>Amazon SageMaker AI Developer Guide</i>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -528,16 +528,16 @@ namespace Amazon.SageMakerRuntime
         ///  </li> </ul> 
         /// <para>
         /// Before you can use this operation, your IAM permissions must allow the <c>sagemaker:InvokeEndpoint</c>
-        /// action. For more information about Amazon SageMaker actions for IAM policies, see
+        /// action. For more information about Amazon SageMaker AI actions for IAM policies, see
         /// <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html">Actions,
-        /// resources, and condition keys for Amazon SageMaker</a> in the <i>IAM Service Authorization
+        /// resources, and condition keys for Amazon SageMaker AI</a> in the <i>IAM Service Authorization
         /// Reference</i>.
         /// </para>
         ///  
         /// <para>
-        /// Amazon SageMaker strips all POST headers except those supported by the API. Amazon
-        /// SageMaker might add additional headers. You should not rely on the behavior of headers
-        /// outside those enumerated in the request syntax. 
+        /// Amazon SageMaker AI strips all POST headers except those supported by the API. Amazon
+        /// SageMaker AI might add additional headers. You should not rely on the behavior of
+        /// headers outside those enumerated in the request syntax. 
         /// </para>
         ///  
         /// <para>
@@ -566,7 +566,7 @@ namespace Amazon.SageMakerRuntime
         ///  <dl> <dt>ModelInvocationTimeExceeded</dt> <dd> 
         /// <para>
         /// The model failed to finish sending the response within the timeout period allowed
-        /// by Amazon SageMaker.
+        /// by Amazon SageMaker AI.
         /// </para>
         ///  </dd> <dt>StreamBroken</dt> <dd> 
         /// <para>
@@ -596,13 +596,13 @@ namespace Amazon.SageMakerRuntime
         /// Invokes a model at the specified endpoint to return the inference response as a stream.
         /// The inference stream provides the response payload incrementally as a series of parts.
         /// Before you can get an inference stream, you must have access to a model that's deployed
-        /// using Amazon SageMaker hosting services, and the container for that model must support
-        /// inference streaming.
+        /// using Amazon SageMaker AI hosting services, and the container for that model must
+        /// support inference streaming.
         /// 
         ///  
         /// <para>
         /// For more information that can help you use this API, see the following sections in
-        /// the <i>Amazon SageMaker Developer Guide</i>:
+        /// the <i>Amazon SageMaker AI Developer Guide</i>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -617,16 +617,16 @@ namespace Amazon.SageMakerRuntime
         ///  </li> </ul> 
         /// <para>
         /// Before you can use this operation, your IAM permissions must allow the <c>sagemaker:InvokeEndpoint</c>
-        /// action. For more information about Amazon SageMaker actions for IAM policies, see
+        /// action. For more information about Amazon SageMaker AI actions for IAM policies, see
         /// <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html">Actions,
-        /// resources, and condition keys for Amazon SageMaker</a> in the <i>IAM Service Authorization
+        /// resources, and condition keys for Amazon SageMaker AI</a> in the <i>IAM Service Authorization
         /// Reference</i>.
         /// </para>
         ///  
         /// <para>
-        /// Amazon SageMaker strips all POST headers except those supported by the API. Amazon
-        /// SageMaker might add additional headers. You should not rely on the behavior of headers
-        /// outside those enumerated in the request syntax. 
+        /// Amazon SageMaker AI strips all POST headers except those supported by the API. Amazon
+        /// SageMaker AI might add additional headers. You should not rely on the behavior of
+        /// headers outside those enumerated in the request syntax. 
         /// </para>
         ///  
         /// <para>
@@ -658,7 +658,7 @@ namespace Amazon.SageMakerRuntime
         ///  <dl> <dt>ModelInvocationTimeExceeded</dt> <dd> 
         /// <para>
         /// The model failed to finish sending the response within the timeout period allowed
-        /// by Amazon SageMaker.
+        /// by Amazon SageMaker AI.
         /// </para>
         ///  </dd> <dt>StreamBroken</dt> <dd> 
         /// <para>

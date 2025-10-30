@@ -34,13 +34,13 @@ namespace Amazon.SageMakerRuntime.Model
     /// Invokes a model at the specified endpoint to return the inference response as a stream.
     /// The inference stream provides the response payload incrementally as a series of parts.
     /// Before you can get an inference stream, you must have access to a model that's deployed
-    /// using Amazon SageMaker hosting services, and the container for that model must support
-    /// inference streaming.
+    /// using Amazon SageMaker AI hosting services, and the container for that model must
+    /// support inference streaming.
     /// 
     ///  
     /// <para>
     /// For more information that can help you use this API, see the following sections in
-    /// the <i>Amazon SageMaker Developer Guide</i>:
+    /// the <i>Amazon SageMaker AI Developer Guide</i>:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -55,16 +55,16 @@ namespace Amazon.SageMakerRuntime.Model
     ///  </li> </ul> 
     /// <para>
     /// Before you can use this operation, your IAM permissions must allow the <c>sagemaker:InvokeEndpoint</c>
-    /// action. For more information about Amazon SageMaker actions for IAM policies, see
+    /// action. For more information about Amazon SageMaker AI actions for IAM policies, see
     /// <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html">Actions,
-    /// resources, and condition keys for Amazon SageMaker</a> in the <i>IAM Service Authorization
+    /// resources, and condition keys for Amazon SageMaker AI</a> in the <i>IAM Service Authorization
     /// Reference</i>.
     /// </para>
     ///  
     /// <para>
-    /// Amazon SageMaker strips all POST headers except those supported by the API. Amazon
-    /// SageMaker might add additional headers. You should not rely on the behavior of headers
-    /// outside those enumerated in the request syntax. 
+    /// Amazon SageMaker AI strips all POST headers except those supported by the API. Amazon
+    /// SageMaker AI might add additional headers. You should not rely on the behavior of
+    /// headers outside those enumerated in the request syntax. 
     /// </para>
     ///  
     /// <para>
@@ -109,7 +109,7 @@ namespace Amazon.SageMakerRuntime.Model
         /// Gets and sets the property Body. 
         /// <para>
         /// Provides input data, in the format specified in the <c>ContentType</c> request header.
-        /// Amazon SageMaker passes all of the data in the body to the model. 
+        /// Amazon SageMaker AI passes all of the data in the body to the model. 
         /// </para>
         ///  
         /// <para>
@@ -153,10 +153,10 @@ namespace Amazon.SageMakerRuntime.Model
         /// Gets and sets the property CustomAttributes. 
         /// <para>
         /// Provides additional information about a request for an inference submitted to a model
-        /// hosted at an Amazon SageMaker endpoint. The information is an opaque value that is
-        /// forwarded verbatim. You could use this value, for example, to provide an ID that you
-        /// can use to track a request or to provide other metadata that a service endpoint was
-        /// programmed to process. The value must consist of no more than 1024 visible US-ASCII
+        /// hosted at an Amazon SageMaker AI endpoint. The information is an opaque value that
+        /// is forwarded verbatim. You could use this value, for example, to provide an ID that
+        /// you can use to track a request or to provide other metadata that a service endpoint
+        /// was programmed to process. The value must consist of no more than 1024 visible US-ASCII
         /// characters as specified in <a href="https://datatracker.ietf.org/doc/html/rfc7230#section-3.2.6">Section
         /// 3.3.6. Field Value Components</a> of the Hypertext Transfer Protocol (HTTP/1.1). 
         /// </para>
@@ -171,7 +171,7 @@ namespace Amazon.SageMakerRuntime.Model
         ///  
         /// <para>
         /// This feature is currently supported in the Amazon Web Services SDKs but not in the
-        /// Amazon SageMaker Python SDK. 
+        /// Amazon SageMaker AI Python SDK. 
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Max=1024)]
