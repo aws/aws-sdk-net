@@ -75,6 +75,110 @@ namespace Amazon.DocDB
 
 
     /// <summary>
+    /// Constants used for properties of type FailoverStatus.
+    /// </summary>
+    public class FailoverStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Cancelling for FailoverStatus
+        /// </summary>
+        public static readonly FailoverStatus Cancelling = new FailoverStatus("cancelling");
+        /// <summary>
+        /// Constant FailingOver for FailoverStatus
+        /// </summary>
+        public static readonly FailoverStatus FailingOver = new FailoverStatus("failing-over");
+        /// <summary>
+        /// Constant Pending for FailoverStatus
+        /// </summary>
+        public static readonly FailoverStatus Pending = new FailoverStatus("pending");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FailoverStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FailoverStatus FindValue(string value)
+        {
+            return FindValue<FailoverStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FailoverStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type GlobalClusterMemberSynchronizationStatus.
+    /// </summary>
+    public class GlobalClusterMemberSynchronizationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Connected for GlobalClusterMemberSynchronizationStatus
+        /// </summary>
+        public static readonly GlobalClusterMemberSynchronizationStatus Connected = new GlobalClusterMemberSynchronizationStatus("connected");
+        /// <summary>
+        /// Constant PendingResync for GlobalClusterMemberSynchronizationStatus
+        /// </summary>
+        public static readonly GlobalClusterMemberSynchronizationStatus PendingResync = new GlobalClusterMemberSynchronizationStatus("pending-resync");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GlobalClusterMemberSynchronizationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GlobalClusterMemberSynchronizationStatus FindValue(string value)
+        {
+            return FindValue<GlobalClusterMemberSynchronizationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GlobalClusterMemberSynchronizationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type SourceType.
     /// </summary>
     public class SourceType : ConstantClass
