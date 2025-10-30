@@ -38,6 +38,7 @@ namespace Amazon.DocDB.Model
         private string _dbClusterArn;
         private bool? _isWriter;
         private List<string> _readers = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private GlobalClusterMemberSynchronizationStatus _synchronizationStatus;
 
         /// <summary>
         /// Gets and sets the property DBClusterArn. 
@@ -94,6 +95,24 @@ namespace Amazon.DocDB.Model
         internal bool IsSetReaders()
         {
             return this._readers != null && (this._readers.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SynchronizationStatus. 
+        /// <para>
+        /// The status of synchronization of each Amazon DocumentDB cluster in the global cluster.
+        /// </para>
+        /// </summary>
+        public GlobalClusterMemberSynchronizationStatus SynchronizationStatus
+        {
+            get { return this._synchronizationStatus; }
+            set { this._synchronizationStatus = value; }
+        }
+
+        // Check to see if SynchronizationStatus property is set
+        internal bool IsSetSynchronizationStatus()
+        {
+            return this._synchronizationStatus != null;
         }
 
     }

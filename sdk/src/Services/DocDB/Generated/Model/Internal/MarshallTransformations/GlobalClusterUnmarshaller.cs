@@ -79,6 +79,12 @@ namespace Amazon.DocDB.Model.Internal.MarshallTransformations
                         unmarshalledObject.EngineVersion = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("FailoverState", targetDepth))
+                    {
+                        var unmarshaller = FailoverStateUnmarshaller.Instance;
+                        unmarshalledObject.FailoverState = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("GlobalClusterArn", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -118,6 +124,17 @@ namespace Amazon.DocDB.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = BoolUnmarshaller.Instance;
                         unmarshalledObject.StorageEncrypted = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("TagList/Tag", targetDepth))
+                    {
+                        var unmarshaller = TagUnmarshaller.Instance;
+                        if (unmarshalledObject.TagList == null)
+                        {
+                            unmarshalledObject.TagList = new List<Tag>();
+                        }
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.TagList.Add(item);
                         continue;
                     }
                 }

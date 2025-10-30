@@ -38,12 +38,14 @@ namespace Amazon.DocDB.Model
         private bool? _deletionProtection;
         private string _engine;
         private string _engineVersion;
+        private FailoverState _failoverState;
         private string _globalClusterArn;
         private string _globalClusterIdentifier;
         private List<GlobalClusterMember> _globalClusterMembers = AWSConfigs.InitializeCollections ? new List<GlobalClusterMember>() : null;
         private string _globalClusterResourceId;
         private string _status;
         private bool? _storageEncrypted;
+        private List<Tag> _tagList = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property DatabaseName. 
@@ -115,6 +117,27 @@ namespace Amazon.DocDB.Model
         internal bool IsSetEngineVersion()
         {
             return this._engineVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FailoverState. 
+        /// <para>
+        /// A data object containing all properties for the current state of an in-process or
+        /// pending switchover or failover process for this global cluster. This object is empty
+        /// unless the <c>SwitchoverGlobalCluster</c> or <c>FailoverGlobalCluster</c> operation
+        /// was called on this global cluster.
+        /// </para>
+        /// </summary>
+        public FailoverState FailoverState
+        {
+            get { return this._failoverState; }
+            set { this._failoverState = value; }
+        }
+
+        // Check to see if FailoverState property is set
+        internal bool IsSetFailoverState()
+        {
+            return this._failoverState != null;
         }
 
         /// <summary>
@@ -228,6 +251,24 @@ namespace Amazon.DocDB.Model
         internal bool IsSetStorageEncrypted()
         {
             return this._storageEncrypted.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TagList. 
+        /// <para>
+        /// A list of global cluster tags.
+        /// </para>
+        /// </summary>
+        public List<Tag> TagList
+        {
+            get { return this._tagList; }
+            set { this._tagList = value; }
+        }
+
+        // Check to see if TagList property is set
+        internal bool IsSetTagList()
+        {
+            return this._tagList != null && (this._tagList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

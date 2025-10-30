@@ -33,18 +33,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.DocDB.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GlobalClusterMember Object
+    /// Response Unmarshaller for FailoverState Object
     /// </summary>  
-    public class GlobalClusterMemberUnmarshaller : IUnmarshaller<GlobalClusterMember, XmlUnmarshallerContext>, IUnmarshaller<GlobalClusterMember, JsonUnmarshallerContext>
+    public class FailoverStateUnmarshaller : IUnmarshaller<FailoverState, XmlUnmarshallerContext>, IUnmarshaller<FailoverState, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public GlobalClusterMember Unmarshall(XmlUnmarshallerContext context)
+        public FailoverState Unmarshall(XmlUnmarshallerContext context)
         {
-            GlobalClusterMember unmarshalledObject = new GlobalClusterMember();
+            FailoverState unmarshalledObject = new FailoverState();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -55,33 +55,28 @@ namespace Amazon.DocDB.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("DBClusterArn", targetDepth))
+                    if (context.TestExpression("FromDbClusterArn", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.DBClusterArn = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.FromDbClusterArn = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("IsWriter", targetDepth))
+                    if (context.TestExpression("IsDataLossAllowed", targetDepth))
                     {
                         var unmarshaller = BoolUnmarshaller.Instance;
-                        unmarshalledObject.IsWriter = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.IsDataLossAllowed = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("Readers/member", targetDepth))
+                    if (context.TestExpression("Status", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        if (unmarshalledObject.Readers == null)
-                        {
-                            unmarshalledObject.Readers = new List<string>();
-                        }
-                        var item = unmarshaller.Unmarshall(context);
-                        unmarshalledObject.Readers.Add(item);
+                        unmarshalledObject.Status = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("SynchronizationStatus", targetDepth))
+                    if (context.TestExpression("ToDbClusterArn", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.SynchronizationStatus = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.ToDbClusterArn = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
@@ -99,18 +94,18 @@ namespace Amazon.DocDB.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public GlobalClusterMember Unmarshall(JsonUnmarshallerContext context)
+        public FailoverState Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
 
-        private static GlobalClusterMemberUnmarshaller _instance = new GlobalClusterMemberUnmarshaller();        
+        private static FailoverStateUnmarshaller _instance = new FailoverStateUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GlobalClusterMemberUnmarshaller Instance
+        public static FailoverStateUnmarshaller Instance
         {
             get
             {
