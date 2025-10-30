@@ -54,6 +54,12 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.IdentityCenterInstanceArn);
             }
 
+            if(requestObject.IsSetUserBackgroundSessionsEnabled())
+            {
+                context.Writer.WritePropertyName("userBackgroundSessionsEnabled");
+                context.Writer.Write(requestObject.UserBackgroundSessionsEnabled);
+            }
+
         }
 
         /// <summary>

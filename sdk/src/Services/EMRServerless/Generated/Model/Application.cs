@@ -174,7 +174,6 @@ namespace Amazon.EMRServerless.Model
         /// Gets and sets the property IdentityCenterConfiguration. 
         /// <para>
         /// The IAM Identity Center configuration applied to enable trusted identity propagation.
-        /// 
         /// </para>
         /// </summary>
         public IdentityCenterConfiguration IdentityCenterConfiguration

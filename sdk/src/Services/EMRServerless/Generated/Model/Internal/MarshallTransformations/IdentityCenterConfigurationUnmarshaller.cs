@@ -78,6 +78,12 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
                     unmarshalledObject.IdentityCenterInstanceArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("userBackgroundSessionsEnabled", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.UserBackgroundSessionsEnabled = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }
