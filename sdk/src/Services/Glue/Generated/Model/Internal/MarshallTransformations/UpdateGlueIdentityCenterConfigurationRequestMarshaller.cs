@@ -80,6 +80,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetUserBackgroundSessionsEnabled())
+                {
+                    context.Writer.WritePropertyName("UserBackgroundSessionsEnabled");
+                    context.Writer.Write(publicRequest.UserBackgroundSessionsEnabled);
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

@@ -37,6 +37,7 @@ namespace Amazon.Glue.Model
         private string _applicationArn;
         private string _instanceArn;
         private List<string> _scopes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private bool? _userBackgroundSessionsEnabled;
 
         /// <summary>
         /// Gets and sets the property ApplicationArn. 
@@ -95,6 +96,25 @@ namespace Amazon.Glue.Model
         internal bool IsSetScopes()
         {
             return this._scopes != null && (this._scopes.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UserBackgroundSessionsEnabled. 
+        /// <para>
+        /// Indicates whether users can run background sessions when using Identity Center authentication
+        /// with Glue services.
+        /// </para>
+        /// </summary>
+        public bool UserBackgroundSessionsEnabled
+        {
+            get { return this._userBackgroundSessionsEnabled.GetValueOrDefault(); }
+            set { this._userBackgroundSessionsEnabled = value; }
+        }
+
+        // Check to see if UserBackgroundSessionsEnabled property is set
+        internal bool IsSetUserBackgroundSessionsEnabled()
+        {
+            return this._userBackgroundSessionsEnabled.HasValue; 
         }
 
     }
