@@ -819,7 +819,25 @@
                     "Id":{"emitPropertyName": "MetricsId"}
                 }
             ]
+        },
+        "ListBucketMetricsConfigurationsOutput":{
+            "modify":[
+                {
+                    "ContinuationToken":{"emitPropertyName":"Token"}
+                },
+                {
+                    "NextContinuationToken": {"emitPropertyName": "NextToken"}
+                }
+            ]
+        },
+        "ListBucketMetricsConfigurationsRequest":{
+            "modify":[
+                {
+                    "Token": {"emitPropertyName": "ContinuationToken"}
+                }
+            ]
         }
+
     },
     "operationModifiers": {
         "CreateBucket": {
