@@ -28,6 +28,16 @@ namespace Amazon.PrometheusService.Model
     {
 
         /// <summary>
+        /// Paginator for ListAnomalyDetectors operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListAnomalyDetectorsPaginator ListAnomalyDetectors(ListAnomalyDetectorsRequest request);
+
+        /// <summary>
         /// Paginator for ListRuleGroupsNamespaces operation
         ///</summary>
         [AWSPaginator(

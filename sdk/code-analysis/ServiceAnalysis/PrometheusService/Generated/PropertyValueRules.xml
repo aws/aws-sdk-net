@@ -13,6 +13,39 @@
     <pattern>.*[0-9A-Za-z][-.0-9A-Z_a-z]*.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.PrometheusService.Model.CreateAnomalyDetectorRequest.Alias</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[0-9A-Za-z][-.0-9A-Z_a-z]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PrometheusService.Model.CreateAnomalyDetectorRequest.ClientToken</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[!-~]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PrometheusService.Model.CreateAnomalyDetectorRequest.EvaluationIntervalInSeconds</property>
+    <min>30</min>
+    <max>86400</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PrometheusService.Model.CreateAnomalyDetectorRequest.WorkspaceId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>.*[0-9A-Za-z][-.0-9A-Z_a-z]*.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PrometheusService.Model.CreateAnomalyDetectorResponse.AnomalyDetectorId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>ad-[0-9A-Za-z][-.0-9A-Z_a-z]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PrometheusService.Model.CreateAnomalyDetectorResponse.Arn</property>
+    <pattern>arn:aws[-a-z]*:aps:[-a-z0-9]+:[0-9]{12}:anomalydetector/ws-.+/ad-.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.PrometheusService.Model.CreateLoggingConfigurationRequest.ClientToken</property>
     <min>1</min>
     <max>64</max>
@@ -127,6 +160,24 @@
     <pattern>.*[0-9A-Za-z][-.0-9A-Z_a-z]*.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.PrometheusService.Model.DeleteAnomalyDetectorRequest.AnomalyDetectorId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>ad-[0-9A-Za-z][-.0-9A-Z_a-z]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PrometheusService.Model.DeleteAnomalyDetectorRequest.ClientToken</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[!-~]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PrometheusService.Model.DeleteAnomalyDetectorRequest.WorkspaceId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>.*[0-9A-Za-z][-.0-9A-Z_a-z]*.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.PrometheusService.Model.DeleteLoggingConfigurationRequest.ClientToken</property>
     <min>1</min>
     <max>64</max>
@@ -229,6 +280,18 @@
     <pattern>.*[0-9A-Za-z][-.0-9A-Z_a-z]*.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.PrometheusService.Model.DescribeAnomalyDetectorRequest.AnomalyDetectorId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>ad-[0-9A-Za-z][-.0-9A-Z_a-z]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PrometheusService.Model.DescribeAnomalyDetectorRequest.WorkspaceId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>.*[0-9A-Za-z][-.0-9A-Z_a-z]*.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.PrometheusService.Model.DescribeLoggingConfigurationRequest.WorkspaceId</property>
     <min>1</min>
     <max>64</max>
@@ -287,6 +350,33 @@
     <min>1</min>
     <max>64</max>
     <pattern>.*[0-9A-Za-z][-.0-9A-Z_a-z]*.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PrometheusService.Model.ListAnomalyDetectorsRequest.Alias</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[0-9A-Za-z][-.0-9A-Z_a-z]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PrometheusService.Model.ListAnomalyDetectorsRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PrometheusService.Model.ListAnomalyDetectorsRequest.NextToken</property>
+    <min>0</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PrometheusService.Model.ListAnomalyDetectorsRequest.WorkspaceId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>.*[0-9A-Za-z][-.0-9A-Z_a-z]*.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PrometheusService.Model.ListAnomalyDetectorsResponse.NextToken</property>
+    <min>0</min>
+    <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PrometheusService.Model.ListRuleGroupsNamespacesRequest.MaxResults</property>
@@ -361,6 +451,39 @@
     <min>1</min>
     <max>64</max>
     <pattern>.*[0-9A-Za-z][-.0-9A-Z_a-z]*.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PrometheusService.Model.PutAnomalyDetectorRequest.AnomalyDetectorId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>ad-[0-9A-Za-z][-.0-9A-Z_a-z]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PrometheusService.Model.PutAnomalyDetectorRequest.ClientToken</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[!-~]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PrometheusService.Model.PutAnomalyDetectorRequest.EvaluationIntervalInSeconds</property>
+    <min>30</min>
+    <max>86400</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PrometheusService.Model.PutAnomalyDetectorRequest.WorkspaceId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>.*[0-9A-Za-z][-.0-9A-Z_a-z]*.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PrometheusService.Model.PutAnomalyDetectorResponse.AnomalyDetectorId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>ad-[0-9A-Za-z][-.0-9A-Z_a-z]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PrometheusService.Model.PutAnomalyDetectorResponse.Arn</property>
+    <pattern>arn:aws[-a-z]*:aps:[-a-z0-9]+:[0-9]{12}:anomalydetector/ws-.+/ad-.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PrometheusService.Model.PutResourcePolicyRequest.ClientToken</property>
@@ -493,11 +616,56 @@
     <pattern>arn:aws[-a-z]*:aps:[-a-z0-9]+:[0-9]{12}:workspace/.+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.PrometheusService.Model.AnomalyDetectorDescription.Alias</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[0-9A-Za-z][-.0-9A-Z_a-z]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PrometheusService.Model.AnomalyDetectorDescription.AnomalyDetectorId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>ad-[0-9A-Za-z][-.0-9A-Z_a-z]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PrometheusService.Model.AnomalyDetectorDescription.Arn</property>
+    <pattern>arn:aws[-a-z]*:aps:[-a-z0-9]+:[0-9]{12}:anomalydetector/ws-.+/ad-.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PrometheusService.Model.AnomalyDetectorDescription.EvaluationIntervalInSeconds</property>
+    <min>30</min>
+    <max>86400</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PrometheusService.Model.AnomalyDetectorSummary.Alias</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[0-9A-Za-z][-.0-9A-Z_a-z]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PrometheusService.Model.AnomalyDetectorSummary.AnomalyDetectorId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>ad-[0-9A-Za-z][-.0-9A-Z_a-z]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PrometheusService.Model.AnomalyDetectorSummary.Arn</property>
+    <pattern>arn:aws[-a-z]*:aps:[-a-z0-9]+:[0-9]{12}:anomalydetector/ws-.+/ad-.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.PrometheusService.Model.CloudWatchLogDestination.LogGroupArn</property>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PrometheusService.Model.EksConfiguration.ClusterArn</property>
     <pattern>arn:aws[-a-z]*:eks:[-a-z0-9]+:[0-9]{12}:cluster/.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PrometheusService.Model.IgnoreNearExpected.Amount</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PrometheusService.Model.IgnoreNearExpected.Ratio</property>
+    <min>0</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PrometheusService.Model.LimitsPerLabelSetEntry.MaxSeries</property>
@@ -521,6 +689,21 @@
     <min>1</min>
     <max>64</max>
     <pattern>.*[0-9A-Za-z][-.0-9A-Z_a-z]*.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PrometheusService.Model.RandomCutForestConfiguration.Query</property>
+    <min>1</min>
+    <max>8192</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PrometheusService.Model.RandomCutForestConfiguration.SampleSize</property>
+    <min>256</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PrometheusService.Model.RandomCutForestConfiguration.ShingleSize</property>
+    <min>2</min>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PrometheusService.Model.RoleConfiguration.SourceRoleArn</property>
