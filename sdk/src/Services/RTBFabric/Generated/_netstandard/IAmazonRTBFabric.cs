@@ -61,13 +61,12 @@ namespace Amazon.RTBFabric
 
 
         /// <summary>
-        /// Accepts a link request between RTB applications.
+        /// Accepts a link request between gateways.
         /// 
         ///  
         /// <para>
-        /// When a requester RTB application requests to link with a responder RTB application,
-        /// the responder can use this operation to accept the link request and establish the
-        /// connection.
+        /// When a requester gateway requests to link with a responder gateway, the responder
+        /// can use this operation to accept the link request and establish the connection.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AcceptLink service method.</param>
@@ -151,12 +150,12 @@ namespace Amazon.RTBFabric
 
 
         /// <summary>
-        /// Creates a new link between RTB applications.
+        /// Creates a new link between gateways.
         /// 
         ///  
         /// <para>
-        /// Establishes a connection that allows RTB applications to communicate and exchange
-        /// bid requests and responses.
+        /// Establishes a connection that allows gateways to communicate and exchange bid requests
+        /// and responses.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLink service method.</param>
@@ -279,6 +278,12 @@ namespace Amazon.RTBFabric
 
         /// <summary>
         /// Creates a responder gateway.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// A domain name or managed endpoint is required.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateResponderGateway service method.</param>
         /// <param name="cancellationToken">
@@ -357,12 +362,11 @@ namespace Amazon.RTBFabric
 
 
         /// <summary>
-        /// Deletes a link between RTB applications.
+        /// Deletes a link between gateways.
         /// 
         ///  
         /// <para>
-        /// Permanently removes the connection between RTB applications. This action cannot be
-        /// undone.
+        /// Permanently removes the connection between gateways. This action cannot be undone.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteLink service method.</param>
@@ -551,12 +555,12 @@ namespace Amazon.RTBFabric
 
 
         /// <summary>
-        /// Retrieves information about a link between RTB applications.
+        /// Retrieves information about a link between gateways.
         /// 
         ///  
         /// <para>
         /// Returns detailed information about the link configuration, status, and associated
-        /// RTB applications.
+        /// gateways.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetLink service method.</param>
@@ -705,12 +709,12 @@ namespace Amazon.RTBFabric
 
 
         /// <summary>
-        /// Lists links associated with an RTB application.
+        /// Lists links associated with gateways.
         /// 
         ///  
         /// <para>
-        /// Returns a list of all links for the specified RTB application, including their status
-        /// and configuration details.
+        /// Returns a list of all links for the specified gateways, including their status and
+        /// configuration details.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListLinks service method.</param>
@@ -835,12 +839,12 @@ namespace Amazon.RTBFabric
 
 
         /// <summary>
-        /// Rejects a link request between RTB applications.
+        /// Rejects a link request between gateways.
         /// 
         ///  
         /// <para>
-        /// When a requester RTB application requests to link with a responder RTB application,
-        /// the responder can use this operation to decline the link request.
+        /// When a requester gateway requests to link with a responder gateway, the responder
+        /// can use this operation to decline the link request.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RejectLink service method.</param>
@@ -953,7 +957,7 @@ namespace Amazon.RTBFabric
 
 
         /// <summary>
-        /// Updates the configuration of a link between RTB applications.
+        /// Updates the configuration of a link between gateways.
         /// 
         ///  
         /// <para>
