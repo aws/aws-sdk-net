@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for WorkerComputeConfiguration Object
+    /// Response Unmarshaller for WorkerComputeConfigurationProperties Object
     /// </summary>  
-    public class WorkerComputeConfigurationUnmarshaller : IJsonUnmarshaller<WorkerComputeConfiguration, JsonUnmarshallerContext>
+    public class WorkerComputeConfigurationPropertiesUnmarshaller : IJsonUnmarshaller<WorkerComputeConfigurationProperties, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public WorkerComputeConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public WorkerComputeConfigurationProperties Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            WorkerComputeConfiguration unmarshalledObject = new WorkerComputeConfiguration();
+            WorkerComputeConfigurationProperties unmarshalledObject = new WorkerComputeConfigurationProperties();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,22 +56,10 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("number", targetDepth))
+                if (context.TestExpression("spark", targetDepth))
                 {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.Number = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("properties", targetDepth))
-                {
-                    var unmarshaller = WorkerComputeConfigurationPropertiesUnmarshaller.Instance;
-                    unmarshalledObject.Properties = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("type", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.Spark = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -79,12 +67,12 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         }
 
 
-        private static WorkerComputeConfigurationUnmarshaller _instance = new WorkerComputeConfigurationUnmarshaller();        
+        private static WorkerComputeConfigurationPropertiesUnmarshaller _instance = new WorkerComputeConfigurationPropertiesUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static WorkerComputeConfigurationUnmarshaller Instance
+        public static WorkerComputeConfigurationPropertiesUnmarshaller Instance
         {
             get
             {
