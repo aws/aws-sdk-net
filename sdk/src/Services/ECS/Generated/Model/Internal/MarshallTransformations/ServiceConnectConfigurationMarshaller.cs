@@ -46,6 +46,17 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAccessLogConfiguration())
+            {
+                context.Writer.WritePropertyName("accessLogConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ServiceConnectAccessLogConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.AccessLogConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetEnabled())
             {
                 context.Writer.WritePropertyName("enabled");

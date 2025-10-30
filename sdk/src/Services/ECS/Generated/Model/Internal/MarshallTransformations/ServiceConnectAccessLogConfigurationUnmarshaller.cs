@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ServiceConnectConfiguration Object
+    /// Response Unmarshaller for ServiceConnectAccessLogConfiguration Object
     /// </summary>  
-    public class ServiceConnectConfigurationUnmarshaller : IJsonUnmarshaller<ServiceConnectConfiguration, JsonUnmarshallerContext>
+    public class ServiceConnectAccessLogConfigurationUnmarshaller : IJsonUnmarshaller<ServiceConnectAccessLogConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ServiceConnectConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public ServiceConnectAccessLogConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            ServiceConnectConfiguration unmarshalledObject = new ServiceConnectConfiguration();
+            ServiceConnectAccessLogConfiguration unmarshalledObject = new ServiceConnectAccessLogConfiguration();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,34 +56,16 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("accessLogConfiguration", targetDepth))
-                {
-                    var unmarshaller = ServiceConnectAccessLogConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.AccessLogConfiguration = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("enabled", targetDepth))
-                {
-                    var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.Enabled = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("logConfiguration", targetDepth))
-                {
-                    var unmarshaller = LogConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.LogConfiguration = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("namespace", targetDepth))
+                if (context.TestExpression("format", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Namespace = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.Format = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("services", targetDepth))
+                if (context.TestExpression("includeQueryParameters", targetDepth))
                 {
-                    var unmarshaller = new JsonListUnmarshaller<ServiceConnectService, ServiceConnectServiceUnmarshaller>(ServiceConnectServiceUnmarshaller.Instance);
-                    unmarshalledObject.Services = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.IncludeQueryParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -91,12 +73,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         }
 
 
-        private static ServiceConnectConfigurationUnmarshaller _instance = new ServiceConnectConfigurationUnmarshaller();        
+        private static ServiceConnectAccessLogConfigurationUnmarshaller _instance = new ServiceConnectAccessLogConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ServiceConnectConfigurationUnmarshaller Instance
+        public static ServiceConnectAccessLogConfigurationUnmarshaller Instance
         {
             get
             {
