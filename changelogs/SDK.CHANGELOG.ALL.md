@@ -1,3 +1,108 @@
+### 3.7.1155.0 (2025-10-30 19:24 UTC)
+* APIGateway (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* AppConfig (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* Appflow (3.7.501.0)
+	* Update endpoint ruleset parameters casing
+* ApplicationCostProfiler (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* AppMesh (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* AppSync (3.7.501.0)
+	* Update endpoint ruleset parameters casing
+* Artifact (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* AuditManager (3.7.503.0)
+	* Update endpoint ruleset parameters casing
+* BedrockAgent (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* BedrockAgentCoreControl (3.7.509.0)
+	* Web-Bot-Auth support for AgentCore Browser tool to help reduce captcha challenges.
+* Chime (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* CleanRooms (3.7.508.0)
+	* Added support for advanced Spark configurations to optimize SQL performance
+* CloudControlApi (3.7.501.0)
+	* Update endpoint ruleset parameters casing
+* CloudDirectory (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* CloudSearch (3.7.501.0)
+	* Update endpoint ruleset parameters casing
+* CloudWatch (3.7.504.0)
+	* Update endpoint ruleset parameters casing
+* CodeCatalyst (3.7.501.0)
+	* Update endpoint ruleset parameters casing
+* CodeCommit (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* CodeDeploy (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* CognitoSync (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* ComputeOptimizer (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* ConnectCases (3.7.504.0)
+	* Update endpoint ruleset parameters casing
+* Deadline (3.7.503.0)
+	* Update endpoint ruleset parameters casing
+* DevOpsGuru (3.7.501.0)
+	* Update endpoint ruleset parameters casing
+* DocDB (3.7.504.0)
+	* Adding FailoverState and TagList to GlobalCluster and SynchronizationStatus to GlobalClusterMember.
+* ECS (3.7.504.0)
+	* Amazon ECS Service Connect now supports Envoy access logs, providing deeper observability into request-level traffic patterns and service interactions.
+* EKSAuth (3.7.501.0)
+	* Update endpoint ruleset parameters casing
+* ElastiCache (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* EMRServerless (3.7.502.0)
+	* This release adds the capability to enable User Background Sessions for customers running Trusted Identity Propagation enabled Interactive Sessions on EMR Serverless Applications.
+* FraudDetector (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* GeoPlaces (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* Glue (3.7.509.0)
+	* This release adds the capability to enable User Background Sessions for customers running Trusted Identity Propagation enabled Interactive Sessions on AWS Glue.
+* GreengrassV2 (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* IoTEventsData (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* IoTManagedIntegrations (3.7.503.0)
+	* Add a new GetManagedThingCertificate API to expose Iot ManagedIntegrations (MI) device certificate, and add  "-"  support for name, properties, actions and events in the CapabilityReportCapability object.
+* KeyManagementService (3.7.503.0)
+	* Add cross account VPC endpoint service connectivity support to CustomKeyStore.
+* KeyspacesStreams (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* KinesisFirehose (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* LicenseManagerLinuxSubscriptions (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* MarketplaceReporting (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* Neptune (3.7.503.0)
+	* Update endpoint ruleset parameters casing
+* PrometheusService (3.7.505.0)
+	* Add Anomaly Detection APIs for Amazon Managed Prometheus
+* RTBFabric (3.7.501.3)
+	* RTB Fabric documentation update.
+* S3Outposts (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* SageMakerRuntime (3.7.501.0)
+	* Update endpoint ruleset parameters casing
+* Schemas (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* SecurityToken (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* ServerlessApplicationRepository (3.7.501.0)
+	* Update endpoint ruleset parameters casing
+* ServiceCatalog (3.7.501.0)
+	* Update endpoint ruleset parameters casing
+* SSO (3.7.502.0)
+	* Update endpoint ruleset parameters casing
+* Core 3.7.500.40
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.1154.0 (2025-10-29 20:22 UTC)
 * BedrockRuntime (3.7.507.0)
 	* Add support for system tool and web citation response.
