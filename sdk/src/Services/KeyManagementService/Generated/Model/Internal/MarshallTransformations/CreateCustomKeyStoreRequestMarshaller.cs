@@ -134,6 +134,12 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.XksProxyVpcEndpointServiceName);
                 }
 
+                if(publicRequest.IsSetXksProxyVpcEndpointServiceOwner())
+                {
+                    context.Writer.WritePropertyName("XksProxyVpcEndpointServiceOwner");
+                    context.Writer.Write(publicRequest.XksProxyVpcEndpointServiceOwner);
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

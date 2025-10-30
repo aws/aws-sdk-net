@@ -96,6 +96,12 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
                     unmarshalledObject.VpcEndpointServiceName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("VpcEndpointServiceOwner", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.VpcEndpointServiceOwner = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

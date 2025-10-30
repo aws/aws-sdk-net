@@ -42,6 +42,7 @@ namespace Amazon.KeyManagementService.Model
         private string _uriEndpoint;
         private string _uriPath;
         private string _vpcEndpointServiceName;
+        private string _vpcEndpointServiceOwner;
 
         /// <summary>
         /// Gets and sets the property AccessKeyId. 
@@ -148,6 +149,27 @@ namespace Amazon.KeyManagementService.Model
         internal bool IsSetVpcEndpointServiceName()
         {
             return this._vpcEndpointServiceName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcEndpointServiceOwner. 
+        /// <para>
+        /// The Amazon Web Services account ID that owns the Amazon VPC endpoint service used
+        /// to communicate with the external key store proxy (XKS). This field appears only when
+        /// the XKS uses an VPC endpoint service to communicate with KMS.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=12, Max=12)]
+        public string VpcEndpointServiceOwner
+        {
+            get { return this._vpcEndpointServiceOwner; }
+            set { this._vpcEndpointServiceOwner = value; }
+        }
+
+        // Check to see if VpcEndpointServiceOwner property is set
+        internal bool IsSetVpcEndpointServiceOwner()
+        {
+            return this._vpcEndpointServiceOwner != null;
         }
 
     }
