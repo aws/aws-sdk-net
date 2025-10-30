@@ -32,6 +32,12 @@ namespace Amazon.RTBFabric.Model
     /// <summary>
     /// Container for the parameters to the CreateResponderGateway operation.
     /// Creates a responder gateway.
+    /// 
+    ///  <important> 
+    /// <para>
+    /// A domain name or managed endpoint is required.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class CreateResponderGatewayRequest : AmazonRTBFabricRequest
     {

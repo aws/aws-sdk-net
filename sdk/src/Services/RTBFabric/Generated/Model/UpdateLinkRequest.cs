@@ -31,7 +31,7 @@ namespace Amazon.RTBFabric.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateLink operation.
-    /// Updates the configuration of a link between RTB applications.
+    /// Updates the configuration of a link between gateways.
     /// 
     ///  
     /// <para>
