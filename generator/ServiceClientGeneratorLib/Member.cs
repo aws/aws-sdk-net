@@ -253,6 +253,11 @@ namespace ServiceClientGenerator
                     }
                 }
 
+                var propertyNameOverride = GetPropertyNameOverride();
+                if (!string.IsNullOrEmpty(propertyNameOverride))
+                    return propertyNameOverride;
+
+
                 return _name.ToUpperFirstCharacter();
             }
         }
@@ -468,6 +473,22 @@ namespace ServiceClientGenerator
         public string DetermineType()
         {
             return DetermineType(this.data, false);
+        }
+
+        /// <summary>
+        /// Retrieves a property name override for specific member names that require special handling
+        /// during code generation to avoid naming conflicts or improve API consistency.
+        /// </summary>
+        /// <returns>
+        /// A string containing the overridden property name if a special case applies,
+        /// or null if the default property name should be used.
+        /// </returns>
+        private string GetPropertyNameOverride()
+        {
+            if (OwningShape.IsException && _name.ToUpperFirstCharacter() == "ErrorType")
+                return "RequestErrorType";
+
+            return null;
         }
 
         /// <summary>
