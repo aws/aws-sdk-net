@@ -1,3 +1,105 @@
+### 4.0.123.0 (2025-10-30 19:37 UTC)
+* APIGateway (4.0.3.0)
+	* Update endpoint ruleset parameters casing
+* AppConfig (4.0.3.0)
+	* Update endpoint ruleset parameters casing
+* Appflow (4.0.1.0)
+	* Update endpoint ruleset parameters casing
+* ApplicationCostProfiler (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* AppMesh (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* AppSync (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* Artifact (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* AuditManager (4.0.5.0)
+	* Update endpoint ruleset parameters casing
+* BedrockAgent (4.0.6.0)
+	* Update endpoint ruleset parameters casing
+* BedrockAgentCoreControl (4.0.9.0)
+	* Web-Bot-Auth support for AgentCore Browser tool to help reduce captcha challenges.
+* Chime (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* CleanRooms (4.0.10.0)
+	* Added support for advanced Spark configurations to optimize SQL performance
+* CloudControlApi (4.0.1.0)
+	* Update endpoint ruleset parameters casing
+* CloudDirectory (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* CloudSearch (4.0.1.0)
+	* Update endpoint ruleset parameters casing
+* CloudWatch (4.0.5.0)
+	* Update endpoint ruleset parameters casing
+* CodeCatalyst (4.0.1.0)
+	* Update endpoint ruleset parameters casing
+* CodeCommit (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* CodeDeploy (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* CognitoSync (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* ComputeOptimizer (4.0.3.0)
+	* Update endpoint ruleset parameters casing
+* ConnectCases (4.0.6.0)
+	* Update endpoint ruleset parameters casing
+* Deadline (4.0.10.0)
+	* Update endpoint ruleset parameters casing
+* DevOpsGuru (4.0.1.0)
+	* Update endpoint ruleset parameters casing
+* DocDB (4.0.5.0)
+	* Adding FailoverState and TagList to GlobalCluster and SynchronizationStatus to GlobalClusterMember.
+* ECS (4.0.8.0)
+	* Amazon ECS Service Connect now supports Envoy access logs, providing deeper observability into request-level traffic patterns and service interactions.
+* EKSAuth (4.0.1.0)
+	* Update endpoint ruleset parameters casing
+* ElastiCache (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* EMRServerless (4.0.6.0)
+	* This release adds the capability to enable User Background Sessions for customers running Trusted Identity Propagation enabled Interactive Sessions on EMR Serverless Applications.
+* FraudDetector (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* GeoPlaces (4.0.3.0)
+	* Update endpoint ruleset parameters casing
+* Glue (4.0.20.0)
+	* This release adds the capability to enable User Background Sessions for customers running Trusted Identity Propagation enabled Interactive Sessions on AWS Glue.
+* GreengrassV2 (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* IoTEventsData (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* IoTManagedIntegrations (4.0.4.0)
+	* Add a new GetManagedThingCertificate API to expose Iot ManagedIntegrations (MI) device certificate, and add  "-"  support for name, properties, actions and events in the CapabilityReportCapability object.
+* KeyManagementService (4.0.6.0)
+	* Add cross account VPC endpoint service connectivity support to CustomKeyStore.
+* KeyspacesStreams (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* KinesisFirehose (4.0.3.0)
+	* Update endpoint ruleset parameters casing
+* LicenseManagerLinuxSubscriptions (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* MarketplaceReporting (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* Neptune (4.0.4.0)
+	* Update endpoint ruleset parameters casing
+* PrometheusService (4.0.6.0)
+	* Add Anomaly Detection APIs for Amazon Managed Prometheus
+* RTBFabric (4.0.1.2)
+	* RTB Fabric documentation update.
+* S3Outposts (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* SageMakerRuntime (4.0.1.0)
+	* Update endpoint ruleset parameters casing
+* Schemas (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* SecurityToken (4.0.3.0)
+	* Update endpoint ruleset parameters casing
+* ServerlessApplicationRepository (4.0.1.0)
+	* Update endpoint ruleset parameters casing
+* ServiceCatalog (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* SSO (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+
 ### 4.0.122.0 (2025-10-29 20:21 UTC)
 * BedrockRuntime (4.0.9.0)
 	* Add support for system tool and web citation response.
