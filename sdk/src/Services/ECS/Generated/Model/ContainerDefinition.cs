@@ -102,7 +102,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property Cpu. 
         /// <para>
         /// The number of <c>cpu</c> units reserved for the container. This parameter maps to
-        /// <c>CpuShares</c> in the docker container create commandand the <c>--cpu-shares</c>
+        /// <c>CpuShares</c> in the docker container create command and the <c>--cpu-shares</c>
         /// option to docker run.
         /// </para>
         ///  

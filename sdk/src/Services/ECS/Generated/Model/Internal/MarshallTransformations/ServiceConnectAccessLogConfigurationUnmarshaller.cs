@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ServiceConnectConfiguration Object
+    /// Response Unmarshaller for ServiceConnectAccessLogConfiguration Object
     /// </summary>  
-    public class ServiceConnectConfigurationUnmarshaller : IUnmarshaller<ServiceConnectConfiguration, XmlUnmarshallerContext>, IUnmarshaller<ServiceConnectConfiguration, JsonUnmarshallerContext>
+    public class ServiceConnectAccessLogConfigurationUnmarshaller : IUnmarshaller<ServiceConnectAccessLogConfiguration, XmlUnmarshallerContext>, IUnmarshaller<ServiceConnectAccessLogConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ServiceConnectConfiguration IUnmarshaller<ServiceConnectConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ServiceConnectAccessLogConfiguration IUnmarshaller<ServiceConnectAccessLogConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public ServiceConnectConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public ServiceConnectAccessLogConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
-            ServiceConnectConfiguration unmarshalledObject = new ServiceConnectConfiguration();
+            ServiceConnectAccessLogConfiguration unmarshalledObject = new ServiceConnectAccessLogConfiguration();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,34 +66,16 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("accessLogConfiguration", targetDepth))
-                {
-                    var unmarshaller = ServiceConnectAccessLogConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.AccessLogConfiguration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("enabled", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.Enabled = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("logConfiguration", targetDepth))
-                {
-                    var unmarshaller = LogConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.LogConfiguration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("namespace", targetDepth))
+                if (context.TestExpression("format", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Namespace = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Format = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("services", targetDepth))
+                if (context.TestExpression("includeQueryParameters", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<ServiceConnectService, ServiceConnectServiceUnmarshaller>(ServiceConnectServiceUnmarshaller.Instance);
-                    unmarshalledObject.Services = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.IncludeQueryParameters = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -101,12 +83,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         }
 
 
-        private static ServiceConnectConfigurationUnmarshaller _instance = new ServiceConnectConfigurationUnmarshaller();        
+        private static ServiceConnectAccessLogConfigurationUnmarshaller _instance = new ServiceConnectAccessLogConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ServiceConnectConfigurationUnmarshaller Instance
+        public static ServiceConnectAccessLogConfigurationUnmarshaller Instance
         {
             get
             {
