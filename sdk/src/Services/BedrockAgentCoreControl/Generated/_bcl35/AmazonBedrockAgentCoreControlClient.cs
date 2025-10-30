@@ -36,17 +36,8 @@ namespace Amazon.BedrockAgentCoreControl
     /// <summary>
     /// <para>Implementation for accessing BedrockAgentCoreControl</para>
     ///
-    /// <note> 
-    /// <para>
-    ///  is in preview release and is subject to change.
-    /// 
-    ///  </note> 
-    /// <para>
     /// Welcome to the Amazon Bedrock AgentCore Control plane API reference. Control plane
     /// actions configure, create, modify, and monitor Amazon Web Services resources.
-    /// </para>
-    /// 
-    /// </para>
     /// </summary>
     public partial class AmazonBedrockAgentCoreControlClient : AmazonServiceClient, IAmazonBedrockAgentCoreControl
     {

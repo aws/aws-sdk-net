@@ -64,6 +64,12 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                     response.BrowserId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("browserSigning", targetDepth))
+                {
+                    var unmarshaller = BrowserSigningConfigOutputUnmarshaller.Instance;
+                    response.BrowserSigning = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("createdAt", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
