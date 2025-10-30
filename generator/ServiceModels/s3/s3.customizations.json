@@ -812,6 +812,13 @@
                     }
                 }
             ]
+        },
+        "GetBucketMetricsConfigurationRequest":{
+            "modify":[
+                {
+                    "Id":{"emitPropertyName": "MetricsId"}
+                }
+            ]
         }
     },
     "operationModifiers": {

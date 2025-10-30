@@ -433,7 +433,7 @@ WriteXmlAttributeString(level + 1, member, variableName, isPayload: true, operat
 				}
 				continue;
 			}
-			else if (this.Config.ServiceModel.Customizations.TryGetPropertyModifier(member.OwningShape.Name, member.ModeledName, out var propModifier) && propModifier.SkipXmlIsSet)
+			else if (this.Config.ServiceModel.Customizations.TryGetPropertyModifier(member.OwningShape.Name, member.ModeledName, out var propModifier2) && propModifier2.SkipXmlIsSet)
 			{
 				if (!member.IsXmlAttribute)
 				{

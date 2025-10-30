@@ -1463,7 +1463,6 @@ namespace ServiceClientGenerator
             private readonly HashSet<string> _injectXmlMarshallCode;
             private readonly bool _skipSetter;
             private readonly bool _skipXmlIsSet;
-            private readonly HashSet<string> _injectXmlMarshallCode;
 
             internal PropertyModifier(string modelPropertyName, JsonData modifierData)
             {

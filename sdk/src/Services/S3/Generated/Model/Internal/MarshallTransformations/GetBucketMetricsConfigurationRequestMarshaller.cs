@@ -34,9 +34,9 @@ using System.Xml;
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// PutBucketMetricsConfiguration Request Marshaller
+    /// GetBucketMetricsConfiguration Request Marshaller
     /// </summary>       
-    public partial class PutBucketMetricsConfigurationRequestMarshaller : IMarshaller<IRequest, PutBucketMetricsConfigurationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class GetBucketMetricsConfigurationRequestMarshaller : IMarshaller<IRequest, GetBucketMetricsConfigurationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -45,7 +45,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((PutBucketMetricsConfigurationRequest)input);
+            return this.Marshall((GetBucketMetricsConfigurationRequest)input);
         }
 
         /// <summary>
@@ -53,11 +53,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(PutBucketMetricsConfigurationRequest publicRequest)
+        public IRequest Marshall(GetBucketMetricsConfigurationRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.S3");
             PreMarshallCustomization(request, publicRequest);
-            request.HttpMethod = "PUT";
+            request.HttpMethod = "GET";
             request.AddSubResource("metrics");
         
             if (publicRequest.IsSetExpectedBucketOwner()) 
@@ -65,43 +65,19 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 request.Headers["x-amz-expected-bucket-owner"] = publicRequest.ExpectedBucketOwner;
             }
             if (string.IsNullOrEmpty(publicRequest.BucketName))
-                throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "PutBucketMetricsConfigurationRequest.BucketName");
+                throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "GetBucketMetricsConfigurationRequest.BucketName");
             
             if (publicRequest.IsSetMetricsId())
                 request.Parameters.Add("id", StringUtils.FromString(publicRequest.MetricsId));
             request.ResourcePath = "/";
-            var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
-            using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
-            {   
-                if (publicRequest.IsSetMetricsConfiguration())
-                {
-                    xmlWriter.WriteStartElement("MetricsConfiguration", "http://s3.amazonaws.com/doc/2006-03-01/");
-                    MetricsFilterCustomMarshall(publicRequest, xmlWriter);
-                    if(publicRequest.MetricsConfiguration.IsSetMetricsId())
-                        xmlWriter.WriteElementString("Id", StringUtils.FromString(publicRequest.MetricsConfiguration.MetricsId));
 
-
-                    xmlWriter.WriteEndElement();
-                }
-            }
             PostMarshallCustomization(request, publicRequest);
-            try 
-            {
-                string content = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(content);
-                request.Headers["Content-Type"] = "application/xml";
-                request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2006-03-01";            
-            } 
-            catch (EncoderFallbackException e) 
-            {
-                throw new AmazonServiceException("Unable to marshall request to XML", e);
-            }
             request.UseQueryString = true;
             return request;
         }
-        private static PutBucketMetricsConfigurationRequestMarshaller _instance = new PutBucketMetricsConfigurationRequestMarshaller();        
+        private static GetBucketMetricsConfigurationRequestMarshaller _instance = new GetBucketMetricsConfigurationRequestMarshaller();        
 
-        internal static PutBucketMetricsConfigurationRequestMarshaller GetInstance()
+        internal static GetBucketMetricsConfigurationRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -109,7 +85,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static PutBucketMetricsConfigurationRequestMarshaller Instance
+        public static GetBucketMetricsConfigurationRequestMarshaller Instance
         {
             get
             {
@@ -117,7 +93,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             }
         }
 
-        partial void PostMarshallCustomization(DefaultRequest defaultRequest, PutBucketMetricsConfigurationRequest publicRequest);
-        partial void PreMarshallCustomization(DefaultRequest defaultRequest, PutBucketMetricsConfigurationRequest publicRequest);
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, GetBucketMetricsConfigurationRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, GetBucketMetricsConfigurationRequest publicRequest);
     }    
 }
