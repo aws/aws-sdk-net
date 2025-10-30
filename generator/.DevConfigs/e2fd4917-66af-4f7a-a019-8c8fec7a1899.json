@@ -1,0 +1,13 @@
+
+
+{
+  "services": [
+    {
+      "serviceName": "Account",
+      "type": "patch",
+      "changeLogMessages": [
+        "Rename internal exception property to avoid hiding inherited AmazonServiceException member."
+      ]
+    }
+  ]
+}
