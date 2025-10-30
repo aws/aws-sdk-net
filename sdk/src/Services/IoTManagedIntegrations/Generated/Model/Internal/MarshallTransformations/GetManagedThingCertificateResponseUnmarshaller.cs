@@ -35,9 +35,9 @@ using Amazon.Util;
 namespace Amazon.IoTManagedIntegrations.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CreateConnectorDestination operation
+    /// Response Unmarshaller for GetManagedThingCertificate operation
     /// </summary>  
-    public class CreateConnectorDestinationResponseUnmarshaller : JsonResponseUnmarshaller
+    public class GetManagedThingCertificateResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,16 +46,22 @@ namespace Amazon.IoTManagedIntegrations.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            CreateConnectorDestinationResponse response = new CreateConnectorDestinationResponse();
+            GetManagedThingCertificateResponse response = new GetManagedThingCertificateResponse();
             StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
             context.Read(ref reader);
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Id", targetDepth))
+                if (context.TestExpression("CertificatePem", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.Id = unmarshaller.Unmarshall(context, ref reader);
+                    response.CertificatePem = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("ManagedThingId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ManagedThingId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -87,10 +93,6 @@ namespace Amazon.IoTManagedIntegrations.Model.Internal.MarshallTransformations
                 {
                     return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ConflictException"))
-                {
-                    return ConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerException"))
                 {
                     return InternalServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
@@ -98,6 +100,10 @@ namespace Amazon.IoTManagedIntegrations.Model.Internal.MarshallTransformations
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
                 {
                     return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceUnavailableException"))
+                {
+                    return ServiceUnavailableExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ThrottlingException"))
                 {
@@ -115,9 +121,9 @@ namespace Amazon.IoTManagedIntegrations.Model.Internal.MarshallTransformations
             return new AmazonIoTManagedIntegrationsException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static CreateConnectorDestinationResponseUnmarshaller _instance = new CreateConnectorDestinationResponseUnmarshaller();        
+        private static GetManagedThingCertificateResponseUnmarshaller _instance = new GetManagedThingCertificateResponseUnmarshaller();        
 
-        internal static CreateConnectorDestinationResponseUnmarshaller GetInstance()
+        internal static GetManagedThingCertificateResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -125,7 +131,7 @@ namespace Amazon.IoTManagedIntegrations.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateConnectorDestinationResponseUnmarshaller Instance
+        public static GetManagedThingCertificateResponseUnmarshaller Instance
         {
             get
             {

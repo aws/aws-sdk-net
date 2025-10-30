@@ -31,7 +31,7 @@ namespace Amazon.IoTManagedIntegrations.Model
 {
     /// <summary>
     /// Container for the parameters to the GetDestination operation.
-    /// Gets a destination by ID.
+    /// Gets a destination by name.
     /// </summary>
     public partial class GetDestinationRequest : AmazonIoTManagedIntegrationsRequest
     {

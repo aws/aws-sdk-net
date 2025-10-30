@@ -30,20 +30,39 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTManagedIntegrations.Model
 {
     /// <summary>
-    /// Container for the parameters to the ResetRuntimeLogConfiguration operation.
-    /// Reset a runtime log configuration for a specific managed thing.
+    /// This is the response object from the GetManagedThingCertificate operation.
     /// </summary>
-    public partial class ResetRuntimeLogConfigurationRequest : AmazonIoTManagedIntegrationsRequest
+    public partial class GetManagedThingCertificateResponse : AmazonWebServiceResponse
     {
+        private string _certificatePem;
         private string _managedThingId;
+
+        /// <summary>
+        /// Gets and sets the property CertificatePem. 
+        /// <para>
+        /// The PEM-encoded certificate for the managed thing.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=65536)]
+        public string CertificatePem
+        {
+            get { return this._certificatePem; }
+            set { this._certificatePem = value; }
+        }
+
+        // Check to see if CertificatePem property is set
+        internal bool IsSetCertificatePem()
+        {
+            return this._certificatePem != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ManagedThingId. 
         /// <para>
-        /// The id of a managed thing.
+        /// The identifier of the managed thing.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=64)]
+        [AWSProperty(Min=1, Max=64)]
         public string ManagedThingId
         {
             get { return this._managedThingId; }

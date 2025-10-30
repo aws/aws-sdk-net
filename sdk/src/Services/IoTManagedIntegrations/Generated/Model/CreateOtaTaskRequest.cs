@@ -31,7 +31,7 @@ namespace Amazon.IoTManagedIntegrations.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateOtaTask operation.
-    /// Create an over-the-air (OTA) task to update a device.
+    /// Create an over-the-air (OTA) task to target a device.
     /// </summary>
     public partial class CreateOtaTaskRequest : AmazonIoTManagedIntegrationsRequest
     {
