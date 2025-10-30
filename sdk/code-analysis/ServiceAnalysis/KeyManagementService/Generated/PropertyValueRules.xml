@@ -66,6 +66,12 @@
     <pattern>^com\.amazonaws\.vpce\.([a-z]+-){2,3}\d+\.vpce-svc-[0-9a-z]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.CreateCustomKeyStoreRequest.XksProxyVpcEndpointServiceOwner</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>[0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.KeyManagementService.Model.CreateCustomKeyStoreResponse.CustomKeyStoreId</property>
     <min>1</min>
     <max>64</max>
@@ -955,6 +961,12 @@
     <pattern>^com\.amazonaws\.vpce\.([a-z]+-){2,3}\d+\.vpce-svc-[0-9a-z]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.UpdateCustomKeyStoreRequest.XksProxyVpcEndpointServiceOwner</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>[0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.KeyManagementService.Model.UpdateKeyDescriptionRequest.Description</property>
     <min>0</min>
     <max>8192</max>
@@ -1217,5 +1229,11 @@
     <min>20</min>
     <max>64</max>
     <pattern>^com\.amazonaws\.vpce\.([a-z]+-){2,3}\d+\.vpce-svc-[0-9a-z]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.XksProxyConfigurationType.VpcEndpointServiceOwner</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>[0-9]{12}</pattern>
   </property-value-rule>
 </property-value-rules>
