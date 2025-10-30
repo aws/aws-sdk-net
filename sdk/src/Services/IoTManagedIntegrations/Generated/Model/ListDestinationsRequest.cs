@@ -31,7 +31,7 @@ namespace Amazon.IoTManagedIntegrations.Model
 {
     /// <summary>
     /// Container for the parameters to the ListDestinations operation.
-    /// List all destination names under one Amazon Web Services account.
+    /// List all notification destinations.
     /// </summary>
     public partial class ListDestinationsRequest : AmazonIoTManagedIntegrationsRequest
     {

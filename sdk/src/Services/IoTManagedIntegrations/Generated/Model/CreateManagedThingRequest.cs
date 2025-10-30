@@ -32,7 +32,8 @@ namespace Amazon.IoTManagedIntegrations.Model
     /// <summary>
     /// Container for the parameters to the CreateManagedThing operation.
     /// Creates a managed thing. A managed thing contains the device identifier, protocol
-    /// supported, and capabilities of the device in a protocol-specific format.
+    /// supported, and capabilities of the device in a data model format defined by Managed
+    /// integrations.
     /// </summary>
     public partial class CreateManagedThingRequest : AmazonIoTManagedIntegrationsRequest
     {

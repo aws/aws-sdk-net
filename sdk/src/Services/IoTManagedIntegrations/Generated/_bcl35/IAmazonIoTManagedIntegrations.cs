@@ -77,6 +77,9 @@ namespace Amazon.IoTManagedIntegrations
         /// <exception cref="Amazon.IoTManagedIntegrations.Model.ThrottlingException">
         /// The rate exceeds the limit.
         /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
         /// <exception cref="Amazon.IoTManagedIntegrations.Model.ValidationException">
         /// A validation error occurred when performing the API request.
         /// </exception>
@@ -187,8 +190,14 @@ namespace Amazon.IoTManagedIntegrations
         /// Internal error from the service that indicates an unexpected error or that the service
         /// is unavailable.
         /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
         /// <exception cref="Amazon.IoTManagedIntegrations.Model.ThrottlingException">
         /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
         /// </exception>
         /// <exception cref="Amazon.IoTManagedIntegrations.Model.ValidationException">
         /// A validation error occurred when performing the API request.
@@ -228,8 +237,13 @@ namespace Amazon.IoTManagedIntegrations
 
 
         /// <summary>
-        /// Create a product credential locker. This operation will trigger the creation of all
-        /// the manufacturing resources including the Wi-Fi setup key pair and device certificate.
+        /// Create a credential locker.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This operation will not trigger the creation of all the manufacturing resources.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCredentialLocker service method.</param>
         /// 
@@ -291,8 +305,9 @@ namespace Amazon.IoTManagedIntegrations
 
 
         /// <summary>
-        /// Create a destination. IoT managed integrations uses the destination to determine
-        /// where to deliver notifications for a device.
+        /// Create a notification destination such as Kinesis Data Streams that receive events
+        /// and notifications from Managed integrations. Managed integrations uses the destination
+        /// to determine where to deliver notifications.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDestination service method.</param>
         /// 
@@ -408,7 +423,8 @@ namespace Amazon.IoTManagedIntegrations
 
         /// <summary>
         /// Creates a managed thing. A managed thing contains the device identifier, protocol
-        /// supported, and capabilities of the device in a protocol-specific format.
+        /// supported, and capabilities of the device in a data model format defined by Managed
+        /// integrations.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateManagedThing service method.</param>
         /// 
@@ -530,7 +546,7 @@ namespace Amazon.IoTManagedIntegrations
 
 
         /// <summary>
-        /// Create an over-the-air (OTA) task to update a device.
+        /// Create an over-the-air (OTA) task to target a device.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateOtaTask service method.</param>
         /// 
@@ -715,7 +731,15 @@ namespace Amazon.IoTManagedIntegrations
 
 
         /// <summary>
-        /// Remove a third party account and related devices from an end user.
+        /// Remove a third-party account association for an end user.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// You must first call the <c>DeregisterAccountAssociation</c> to remove the connection
+        /// between the managed thing and the third-party account before calling the <c>DeleteAccountAssociation</c>
+        /// API.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAccountAssociation service method.</param>
         /// 
@@ -792,6 +816,9 @@ namespace Amazon.IoTManagedIntegrations
         /// <exception cref="Amazon.IoTManagedIntegrations.Model.ThrottlingException">
         /// The rate exceeds the limit.
         /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
         /// <exception cref="Amazon.IoTManagedIntegrations.Model.ValidationException">
         /// A validation error occurred when performing the API request.
         /// </exception>
@@ -830,8 +857,13 @@ namespace Amazon.IoTManagedIntegrations
 
 
         /// <summary>
-        /// Delete a connector destination for connecting a cloud-to-cloud (C2C) connector to
-        /// the customer's Amazon Web Services account.
+        /// Delete a connector destination linked to a cloud-to-cloud (C2C) connector.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Deletion can't be done if the account association has used this connector destination.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteConnectorDestination service method.</param>
         /// 
@@ -953,7 +985,7 @@ namespace Amazon.IoTManagedIntegrations
 
 
         /// <summary>
-        /// Deletes a customer-managed destination specified by id.
+        /// Deletes a notification destination specified by name.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDestination service method.</param>
         /// 
@@ -1065,9 +1097,10 @@ namespace Amazon.IoTManagedIntegrations
 
 
         /// <summary>
-        /// Delete a managed thing. If a controller is deleted, all of the devices connected to
-        /// it will have their status changed to <c>PENDING</c>. It is not possible to remove
-        /// a cloud device.
+        /// Delete a managed thing. For direct-connected and hub-connected devices connecting
+        /// with Managed integrations via a controller, all of the devices connected to it will
+        /// have their status changed to <c>PENDING</c>. It is not possible to remove a cloud-to-cloud
+        /// device.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteManagedThing service method.</param>
         /// 
@@ -1366,8 +1399,7 @@ namespace Amazon.IoTManagedIntegrations
 
 
         /// <summary>
-        /// Deregisters an account association, removing the connection between a managed thing
-        /// and a third-party account.
+        /// Deregister an account association from a managed thing.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeregisterAccountAssociation service method.</param>
         /// 
@@ -1483,7 +1515,7 @@ namespace Amazon.IoTManagedIntegrations
 
 
         /// <summary>
-        /// Gets all the information about a connector for a connector developer.
+        /// Get configuration details for a cloud connector.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetCloudConnector service method.</param>
         /// 
@@ -1539,8 +1571,7 @@ namespace Amazon.IoTManagedIntegrations
 
 
         /// <summary>
-        /// Get a connector destination of a cloud-to-cloud (C2C) connector connecting to a customer's
-        /// Amazon Web Services account.
+        /// Get connector destination details linked to a cloud-to-cloud (C2C) connector.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetConnectorDestination service method.</param>
         /// 
@@ -1781,7 +1812,7 @@ namespace Amazon.IoTManagedIntegrations
 
 
         /// <summary>
-        /// Gets a destination by ID.
+        /// Gets a destination by name.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDestination service method.</param>
         /// 
@@ -2014,7 +2045,7 @@ namespace Amazon.IoTManagedIntegrations
 
 
         /// <summary>
-        /// Get the attributes and capabilities associated with a managed thing.
+        /// Get details of a managed thing including its attributes and capabilities.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetManagedThing service method.</param>
         /// 
@@ -2131,6 +2162,68 @@ namespace Amazon.IoTManagedIntegrations
         /// <returns>Returns a  GetManagedThingCapabilitiesResult from IoTManagedIntegrations.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/GetManagedThingCapabilities">REST API Reference for GetManagedThingCapabilities Operation</seealso>
         GetManagedThingCapabilitiesResponse EndGetManagedThingCapabilities(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetManagedThingCertificate
+
+
+        /// <summary>
+        /// Retrieves the certificate PEM for a managed IoT thing.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetManagedThingCertificate service method.</param>
+        /// 
+        /// <returns>The response from the GetManagedThingCertificate service method, as returned by IoTManagedIntegrations.</returns>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.AccessDeniedException">
+        /// User is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.InternalServerException">
+        /// Internal error from the service that indicates an unexpected error or that the service
+        /// is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ValidationException">
+        /// A validation error occurred when performing the API request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/GetManagedThingCertificate">REST API Reference for GetManagedThingCertificate Operation</seealso>
+        GetManagedThingCertificateResponse GetManagedThingCertificate(GetManagedThingCertificateRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetManagedThingCertificate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetManagedThingCertificate operation on AmazonIoTManagedIntegrationsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetManagedThingCertificate
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/GetManagedThingCertificate">REST API Reference for GetManagedThingCertificate Operation</seealso>
+        IAsyncResult BeginGetManagedThingCertificate(GetManagedThingCertificateRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetManagedThingCertificate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetManagedThingCertificate.</param>
+        /// 
+        /// <returns>Returns a  GetManagedThingCertificateResult from IoTManagedIntegrations.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/GetManagedThingCertificate">REST API Reference for GetManagedThingCertificate Operation</seealso>
+        GetManagedThingCertificateResponse EndGetManagedThingCertificate(IAsyncResult asyncResult);
 
         #endregion
         
@@ -2332,7 +2425,7 @@ namespace Amazon.IoTManagedIntegrations
 
 
         /// <summary>
-        /// Get a notification configuration.
+        /// Get a notification configuration for a specified event type.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetNotificationConfiguration service method.</param>
         /// 
@@ -2388,7 +2481,7 @@ namespace Amazon.IoTManagedIntegrations
 
 
         /// <summary>
-        /// Get the over-the-air (OTA) task.
+        /// Get details of the over-the-air (OTA) task by its task id.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetOtaTask service method.</param>
         /// 
@@ -2562,8 +2655,7 @@ namespace Amazon.IoTManagedIntegrations
 
 
         /// <summary>
-        /// Get the runtime log configuration for a specific managed thing or for all managed
-        /// things as a group.
+        /// Get the runtime log configuration for a specific managed thing.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetRuntimeLogConfiguration service method.</param>
         /// 
@@ -2737,7 +2829,8 @@ namespace Amazon.IoTManagedIntegrations
 
 
         /// <summary>
-        /// Returns a list of connectors based on permissions.
+        /// Returns a list of connectors filtered by its Lambda Amazon Resource Name (ARN) and
+        /// <c>type</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListCloudConnectors service method.</param>
         /// 
@@ -2899,7 +2992,7 @@ namespace Amazon.IoTManagedIntegrations
 
 
         /// <summary>
-        /// List all destination names under one Amazon Web Services account.
+        /// List all notification destinations.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDestinations service method.</param>
         /// 
@@ -3991,8 +4084,7 @@ namespace Amazon.IoTManagedIntegrations
 
 
         /// <summary>
-        /// Reset a runtime log configuration for a specific managed thing or for all managed
-        /// things as a group.
+        /// Reset a runtime log configuration for a specific managed thing.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ResetRuntimeLogConfiguration service method.</param>
         /// 
@@ -4231,8 +4323,8 @@ namespace Amazon.IoTManagedIntegrations
 
         /// <summary>
         /// This API is used to start device discovery for hub-connected and third-party-connected
-        /// devices. The authentication material (install code) is passed as a message to the
-        /// controller telling it to start the discovery.
+        /// devices. The authentication material (install code) is delivered as a message to the
+        /// controller instructing it to start the discovery.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartDeviceDiscovery service method.</param>
         /// 
@@ -4487,6 +4579,9 @@ namespace Amazon.IoTManagedIntegrations
         /// <exception cref="Amazon.IoTManagedIntegrations.Model.ThrottlingException">
         /// The rate exceeds the limit.
         /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
         /// <exception cref="Amazon.IoTManagedIntegrations.Model.ValidationException">
         /// A validation error occurred when performing the API request.
         /// </exception>
@@ -4581,7 +4676,7 @@ namespace Amazon.IoTManagedIntegrations
 
 
         /// <summary>
-        /// Update a destination specified by id.
+        /// Update a destination specified by name.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateDestination service method.</param>
         /// 

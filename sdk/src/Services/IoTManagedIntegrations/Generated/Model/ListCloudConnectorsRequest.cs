@@ -31,7 +31,8 @@ namespace Amazon.IoTManagedIntegrations.Model
 {
     /// <summary>
     /// Container for the parameters to the ListCloudConnectors operation.
-    /// Returns a list of connectors based on permissions.
+    /// Returns a list of connectors filtered by its Lambda Amazon Resource Name (ARN) and
+    /// <c>type</c>.
     /// </summary>
     public partial class ListCloudConnectorsRequest : AmazonIoTManagedIntegrationsRequest
     {

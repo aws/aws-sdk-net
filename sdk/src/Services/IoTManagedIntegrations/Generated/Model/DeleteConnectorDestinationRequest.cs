@@ -31,8 +31,13 @@ namespace Amazon.IoTManagedIntegrations.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteConnectorDestination operation.
-    /// Delete a connector destination for connecting a cloud-to-cloud (C2C) connector to
-    /// the customer's Amazon Web Services account.
+    /// Delete a connector destination linked to a cloud-to-cloud (C2C) connector.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// Deletion can't be done if the account association has used this connector destination.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class DeleteConnectorDestinationRequest : AmazonIoTManagedIntegrationsRequest
     {

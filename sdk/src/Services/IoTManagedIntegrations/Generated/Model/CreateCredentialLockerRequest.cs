@@ -31,8 +31,13 @@ namespace Amazon.IoTManagedIntegrations.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateCredentialLocker operation.
-    /// Create a product credential locker. This operation will trigger the creation of all
-    /// the manufacturing resources including the Wi-Fi setup key pair and device certificate.
+    /// Create a credential locker.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// This operation will not trigger the creation of all the manufacturing resources.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class CreateCredentialLockerRequest : AmazonIoTManagedIntegrationsRequest
     {

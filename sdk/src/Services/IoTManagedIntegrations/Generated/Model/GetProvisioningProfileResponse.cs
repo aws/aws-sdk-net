@@ -83,7 +83,7 @@ namespace Amazon.IoTManagedIntegrations.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The provisioning profile id..
+        /// The provisioning profile id.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

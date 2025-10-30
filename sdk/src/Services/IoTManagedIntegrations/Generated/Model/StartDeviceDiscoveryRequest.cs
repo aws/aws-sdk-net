@@ -32,8 +32,8 @@ namespace Amazon.IoTManagedIntegrations.Model
     /// <summary>
     /// Container for the parameters to the StartDeviceDiscovery operation.
     /// This API is used to start device discovery for hub-connected and third-party-connected
-    /// devices. The authentication material (install code) is passed as a message to the
-    /// controller telling it to start the discovery.
+    /// devices. The authentication material (install code) is delivered as a message to the
+    /// controller instructing it to start the discovery.
     /// </summary>
     public partial class StartDeviceDiscoveryRequest : AmazonIoTManagedIntegrationsRequest
     {
