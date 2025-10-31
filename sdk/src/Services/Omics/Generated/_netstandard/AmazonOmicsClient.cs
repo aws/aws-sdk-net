@@ -457,7 +457,20 @@ namespace Amazon.Omics
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// Amazon Web Services HealthOmics variant stores and annotation stores will no longer
+        /// be open to new customers starting November 7, 2025. If you would like to use variant
+        /// stores or annotation stores, sign up prior to that date. Existing customers can continue
+        /// to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html">
+        /// Amazon Web Services HealthOmics variant store and annotation store availability change</a>.
+        /// 
+        ///  </important> 
+        /// <para>
         /// Cancels an annotation import job.
+        /// </para>
+        /// 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelAnnotationImportJob service method.</param>
         /// <param name="cancellationToken">
@@ -564,7 +577,20 @@ namespace Amazon.Omics
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// Amazon Web Services HealthOmics variant stores and annotation stores will no longer
+        /// be open to new customers starting November 7, 2025. If you would like to use variant
+        /// stores or annotation stores, sign up prior to that date. Existing customers can continue
+        /// to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html">
+        /// Amazon Web Services HealthOmics variant store and annotation store availability change</a>.
+        /// 
+        ///  </important> 
+        /// <para>
         /// Cancels a variant import job.
+        /// </para>
+        /// 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelVariantImportJob service method.</param>
         /// <param name="cancellationToken">
@@ -679,7 +705,20 @@ namespace Amazon.Omics
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// Amazon Web Services HealthOmics variant stores and annotation stores will no longer
+        /// be open to new customers starting November 7, 2025. If you would like to use variant
+        /// stores or annotation stores, sign up prior to that date. Existing customers can continue
+        /// to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html">
+        /// Amazon Web Services HealthOmics variant store and annotation store availability change</a>.
+        /// 
+        ///  </important> 
+        /// <para>
         /// Creates an annotation store.
+        /// </para>
+        /// 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAnnotationStore service method.</param>
         /// <param name="cancellationToken">
@@ -1223,7 +1262,20 @@ namespace Amazon.Omics
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// Amazon Web Services HealthOmics variant stores and annotation stores will no longer
+        /// be open to new customers starting November 7, 2025. If you would like to use variant
+        /// stores or annotation stores, sign up prior to that date. Existing customers can continue
+        /// to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html">
+        /// Amazon Web Services HealthOmics variant store and annotation store availability change</a>.
+        /// 
+        ///  </important> 
+        /// <para>
         /// Creates a variant store.
+        /// </para>
+        /// 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateVariantStore service method.</param>
         /// <param name="cancellationToken">
@@ -1282,28 +1334,37 @@ namespace Amazon.Omics
         /// 
         ///  <ul> <li> 
         /// <para>
-        ///  <i>Workflow definition files</i>: Define your workflow in one or more workflow definition
-        /// files, written in WDL, Nextflow, or CWL. The workflow definition specifies the inputs
-        /// and outputs for runs that use the workflow. It also includes specifications for the
-        /// runs and run tasks for your workflow, including compute and memory requirements. The
-        /// workflow definition file must be in .zip format.
+        ///  <i>Workflow definition file:</i> A workflow definition file written in WDL, Nextflow,
+        /// or CWL. The workflow definition specifies the inputs and outputs for runs that use
+        /// the workflow. It also includes specifications for the runs and run tasks for your
+        /// workflow, including compute and memory requirements. The workflow definition file
+        /// must be in <c>.zip</c> format. For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/workflow-definition-files.html">Workflow
+        /// definition files</a> in Amazon Web Services HealthOmics.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You can use Amazon Q CLI to build and validate your workflow definition files in WDL,
+        /// Nextflow, and CWL. For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/getting-started.html#omics-q-prompts">Example
+        /// prompts for Amazon Q CLI</a> and the <a href="https://github.com/aws-samples/aws-healthomics-tutorials/tree/main/generative-ai">Amazon
+        /// Web Services HealthOmics Agentic generative AI tutorial</a> on GitHub.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        ///  <i>(Optional) Parameter template file:</i> A parameter template file written in JSON.
+        /// Create the file to define the run parameters, or Amazon Web Services HealthOmics generates
+        /// the parameter template for you. For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/parameter-templates.html">Parameter
+        /// template files for HealthOmics workflows</a>. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// (Optional) <i>Parameter template</i>: You can create a parameter template file that
-        /// defines the run parameters, or Amazon Web Services HealthOmics can generate the parameter
-        /// template for you.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>ECR container images</i>: Create container images for the workflow in a private
+        ///  <i>ECR container images:</i> Create container images for the workflow in a private
         /// ECR repository, or synchronize images from a supported upstream registry with your
         /// Amazon ECR private repository.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// (Optional) <i>Sentieon licenses</i>: Request a Sentieon license if using the Sentieon
-        /// software in a private workflow.
+        ///  <i>(Optional) Sentieon licenses:</i> Request a Sentieon license to use the Sentieon
+        /// software in private workflows.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -1447,7 +1508,20 @@ namespace Amazon.Omics
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// Amazon Web Services HealthOmics variant stores and annotation stores will no longer
+        /// be open to new customers starting November 7, 2025. If you would like to use variant
+        /// stores or annotation stores, sign up prior to that date. Existing customers can continue
+        /// to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html">
+        /// Amazon Web Services HealthOmics variant store and annotation store availability change</a>.
+        /// 
+        ///  </important> 
+        /// <para>
         /// Deletes an annotation store.
+        /// </para>
+        /// 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAnnotationStore service method.</param>
         /// <param name="cancellationToken">
@@ -2067,7 +2141,20 @@ namespace Amazon.Omics
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// Amazon Web Services HealthOmics variant stores and annotation stores will no longer
+        /// be open to new customers starting November 7, 2025. If you would like to use variant
+        /// stores or annotation stores, sign up prior to that date. Existing customers can continue
+        /// to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html">
+        /// Amazon Web Services HealthOmics variant store and annotation store availability change</a>.
+        /// 
+        ///  </important> 
+        /// <para>
         /// Deletes a variant store.
+        /// </para>
+        /// 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteVariantStore service method.</param>
         /// <param name="cancellationToken">
@@ -2255,7 +2342,20 @@ namespace Amazon.Omics
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// Amazon Web Services HealthOmics variant stores and annotation stores will no longer
+        /// be open to new customers starting November 7, 2025. If you would like to use variant
+        /// stores or annotation stores, sign up prior to that date. Existing customers can continue
+        /// to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html">
+        /// Amazon Web Services HealthOmics variant store and annotation store availability change</a>.
+        /// 
+        ///  </important> 
+        /// <para>
         /// Gets information about an annotation import job.
+        /// </para>
+        /// 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAnnotationImportJob service method.</param>
         /// <param name="cancellationToken">
@@ -2303,7 +2403,20 @@ namespace Amazon.Omics
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// Amazon Web Services HealthOmics variant stores and annotation stores will no longer
+        /// be open to new customers starting November 7, 2025. If you would like to use variant
+        /// stores or annotation stores, sign up prior to that date. Existing customers can continue
+        /// to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html">
+        /// Amazon Web Services HealthOmics variant store and annotation store availability change</a>.
+        /// 
+        ///  </important> 
+        /// <para>
         /// Gets information about an annotation store.
+        /// </para>
+        /// 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAnnotationStore service method.</param>
         /// <param name="cancellationToken">
@@ -3290,7 +3403,20 @@ namespace Amazon.Omics
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// Amazon Web Services HealthOmics variant stores and annotation stores will no longer
+        /// be open to new customers starting November 7, 2025. If you would like to use variant
+        /// stores or annotation stores, sign up prior to that date. Existing customers can continue
+        /// to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html">
+        /// Amazon Web Services HealthOmics variant store and annotation store availability change</a>.
+        /// 
+        ///  </important> 
+        /// <para>
         /// Gets information about a variant import job.
+        /// </para>
+        /// 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetVariantImportJob service method.</param>
         /// <param name="cancellationToken">
@@ -3338,7 +3464,20 @@ namespace Amazon.Omics
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// Amazon Web Services HealthOmics variant stores and annotation stores will no longer
+        /// be open to new customers starting November 7, 2025. If you would like to use variant
+        /// stores or annotation stores, sign up prior to that date. Existing customers can continue
+        /// to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html">
+        /// Amazon Web Services HealthOmics variant store and annotation store availability change</a>.
+        /// 
+        ///  </important> 
+        /// <para>
         /// Gets information about a variant store.
+        /// </para>
+        /// 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetVariantStore service method.</param>
         /// <param name="cancellationToken">
@@ -3512,7 +3651,20 @@ namespace Amazon.Omics
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// Amazon Web Services HealthOmics variant stores and annotation stores will no longer
+        /// be open to new customers starting November 7, 2025. If you would like to use variant
+        /// stores or annotation stores, sign up prior to that date. Existing customers can continue
+        /// to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html">
+        /// Amazon Web Services HealthOmics variant store and annotation store availability change</a>.
+        /// 
+        ///  </important> 
+        /// <para>
         /// Retrieves a list of annotation import jobs.
+        /// </para>
+        /// 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAnnotationImportJobs service method.</param>
         /// <param name="cancellationToken">
@@ -3560,7 +3712,20 @@ namespace Amazon.Omics
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// Amazon Web Services HealthOmics variant stores and annotation stores will no longer
+        /// be open to new customers starting November 7, 2025. If you would like to use variant
+        /// stores or annotation stores, sign up prior to that date. Existing customers can continue
+        /// to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html">
+        /// Amazon Web Services HealthOmics variant store and annotation store availability change</a>.
+        /// 
+        ///  </important> 
+        /// <para>
         /// Retrieves a list of annotation stores.
+        /// </para>
+        /// 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAnnotationStores service method.</param>
         /// <param name="cancellationToken">
@@ -4549,7 +4714,20 @@ namespace Amazon.Omics
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// Amazon Web Services HealthOmics variant stores and annotation stores will no longer
+        /// be open to new customers starting November 7, 2025. If you would like to use variant
+        /// stores or annotation stores, sign up prior to that date. Existing customers can continue
+        /// to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html">
+        /// Amazon Web Services HealthOmics variant store and annotation store availability change</a>.
+        /// 
+        ///  </important> 
+        /// <para>
         /// Retrieves a list of variant import jobs.
+        /// </para>
+        /// 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListVariantImportJobs service method.</param>
         /// <param name="cancellationToken">
@@ -4597,7 +4775,20 @@ namespace Amazon.Omics
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// Amazon Web Services HealthOmics variant stores and annotation stores will no longer
+        /// be open to new customers starting November 7, 2025. If you would like to use variant
+        /// stores or annotation stores, sign up prior to that date. Existing customers can continue
+        /// to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html">
+        /// Amazon Web Services HealthOmics variant store and annotation store availability change</a>.
+        /// 
+        ///  </important> 
+        /// <para>
         /// Retrieves a list of variant stores.
+        /// </para>
+        /// 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListVariantStores service method.</param>
         /// <param name="cancellationToken">
@@ -4820,7 +5011,20 @@ namespace Amazon.Omics
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// Amazon Web Services HealthOmics variant stores and annotation stores will no longer
+        /// be open to new customers starting November 7, 2025. If you would like to use variant
+        /// stores or annotation stores, sign up prior to that date. Existing customers can continue
+        /// to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html">
+        /// Amazon Web Services HealthOmics variant store and annotation store availability change</a>.
+        /// 
+        ///  </important> 
+        /// <para>
         /// Starts an annotation import job.
+        /// </para>
+        /// 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartAnnotationImportJob service method.</param>
         /// <param name="cancellationToken">
@@ -5189,6 +5393,12 @@ namespace Amazon.Omics
         /// To learn more about the retention modes, see <a href="https://docs.aws.amazon.com/omics/latest/dev/run-retention.html">Run
         /// retention mode</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.
         /// </para>
+        ///  
+        /// <para>
+        /// You can use Amazon Q CLI to analyze run logs and make performance optimization recommendations.
+        /// To get started, see the <a href="https://github.com/awslabs/mcp/tree/main/src/aws-healthomics-mcp-server">Amazon
+        /// Web Services HealthOmics MCP server</a> on GitHub.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartRun service method.</param>
         /// <param name="cancellationToken">
@@ -5245,7 +5455,20 @@ namespace Amazon.Omics
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// Amazon Web Services HealthOmics variant stores and annotation stores will no longer
+        /// be open to new customers starting November 7, 2025. If you would like to use variant
+        /// stores or annotation stores, sign up prior to that date. Existing customers can continue
+        /// to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html">
+        /// Amazon Web Services HealthOmics variant store and annotation store availability change</a>.
+        /// 
+        ///  </important> 
+        /// <para>
         /// Starts a variant import job.
+        /// </para>
+        /// 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartVariantImportJob service method.</param>
         /// <param name="cancellationToken">
@@ -5410,7 +5633,20 @@ namespace Amazon.Omics
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// Amazon Web Services HealthOmics variant stores and annotation stores will no longer
+        /// be open to new customers starting November 7, 2025. If you would like to use variant
+        /// stores or annotation stores, sign up prior to that date. Existing customers can continue
+        /// to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html">
+        /// Amazon Web Services HealthOmics variant store and annotation store availability change</a>.
+        /// 
+        ///  </important> 
+        /// <para>
         /// Updates an annotation store.
+        /// </para>
+        /// 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAnnotationStore service method.</param>
         /// <param name="cancellationToken">
@@ -5716,7 +5952,20 @@ namespace Amazon.Omics
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// Amazon Web Services HealthOmics variant stores and annotation stores will no longer
+        /// be open to new customers starting November 7, 2025. If you would like to use variant
+        /// stores or annotation stores, sign up prior to that date. Existing customers can continue
+        /// to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html">
+        /// Amazon Web Services HealthOmics variant store and annotation store availability change</a>.
+        /// 
+        ///  </important> 
+        /// <para>
         /// Updates a variant store.
+        /// </para>
+        /// 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateVariantStore service method.</param>
         /// <param name="cancellationToken">
