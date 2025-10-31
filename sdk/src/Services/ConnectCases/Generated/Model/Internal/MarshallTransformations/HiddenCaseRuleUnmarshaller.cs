@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CaseRuleDetails Object
+    /// Response Unmarshaller for HiddenCaseRule Object
     /// </summary>  
-    public class CaseRuleDetailsUnmarshaller : IUnmarshaller<CaseRuleDetails, XmlUnmarshallerContext>, IUnmarshaller<CaseRuleDetails, JsonUnmarshallerContext>
+    public class HiddenCaseRuleUnmarshaller : IUnmarshaller<HiddenCaseRule, XmlUnmarshallerContext>, IUnmarshaller<HiddenCaseRule, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        CaseRuleDetails IUnmarshaller<CaseRuleDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        HiddenCaseRule IUnmarshaller<HiddenCaseRule, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public CaseRuleDetails Unmarshall(JsonUnmarshallerContext context)
+        public HiddenCaseRule Unmarshall(JsonUnmarshallerContext context)
         {
-            CaseRuleDetails unmarshalledObject = new CaseRuleDetails();
+            HiddenCaseRule unmarshalledObject = new HiddenCaseRule();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,22 +66,16 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("fieldOptions", targetDepth))
+                if (context.TestExpression("conditions", targetDepth))
                 {
-                    var unmarshaller = FieldOptionsCaseRuleUnmarshaller.Instance;
-                    unmarshalledObject.FieldOptions = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<BooleanCondition, BooleanConditionUnmarshaller>(BooleanConditionUnmarshaller.Instance);
+                    unmarshalledObject.Conditions = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("hidden", targetDepth))
+                if (context.TestExpression("defaultValue", targetDepth))
                 {
-                    var unmarshaller = HiddenCaseRuleUnmarshaller.Instance;
-                    unmarshalledObject.Hidden = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("required", targetDepth))
-                {
-                    var unmarshaller = RequiredCaseRuleUnmarshaller.Instance;
-                    unmarshalledObject.Required = unmarshaller.Unmarshall(context);
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.DefaultValue = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -89,12 +83,12 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
         }
 
 
-        private static CaseRuleDetailsUnmarshaller _instance = new CaseRuleDetailsUnmarshaller();        
+        private static HiddenCaseRuleUnmarshaller _instance = new HiddenCaseRuleUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CaseRuleDetailsUnmarshaller Instance
+        public static HiddenCaseRuleUnmarshaller Instance
         {
             get
             {

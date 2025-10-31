@@ -1083,7 +1083,56 @@ namespace Amazon.ConnectCases
         /// <summary>
         /// Creates a related item (comments, tasks, and contacts) and associates it with a case.
         /// 
-        ///  <note> <ul> <li> 
+        ///  
+        /// <para>
+        /// There's a quota for the number of fields allowed in a Custom type related item. See
+        /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#cases-quotas">Amazon
+        /// Connect Cases quotas</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Use cases</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Following are examples of related items that you may want to associate with a case:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Related contacts, such as calls, chats, emails tasks
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Comments, for agent notes
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// SLAs, to capture target resolution goals
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Cases, to capture related Amazon Connect Cases
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Files, such as policy documentation or customer-provided attachments
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Custom related items, which provide flexibility for you to define related items that
+        /// such as bookings, orders, products, notices, and more
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Important things to know</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If you are associating a contact to a case by passing in <c>Contact</c> for a <c>type</c>,
+        /// you must have <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeContact.html">DescribeContact</a>
+        /// permission on the ARN of the contact that you provide in <c>content.contact.contactArn</c>.
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         /// A Related Item is a resource that is associated with a case. It may or may not have
         /// an external identifier linking it to an external resource (for example, a <c>contactArn</c>).
@@ -1099,7 +1148,11 @@ namespace Amazon.ConnectCases
         /// <para>
         /// The <c>type</c> field is reserved for internal use only.
         /// </para>
-        ///  </li> </ul> </note>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
+        /// Connect endpoints and quotas</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateRelatedItem service method.</param>
         /// 
@@ -1139,7 +1192,56 @@ namespace Amazon.ConnectCases
         /// <summary>
         /// Creates a related item (comments, tasks, and contacts) and associates it with a case.
         /// 
-        ///  <note> <ul> <li> 
+        ///  
+        /// <para>
+        /// There's a quota for the number of fields allowed in a Custom type related item. See
+        /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#cases-quotas">Amazon
+        /// Connect Cases quotas</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Use cases</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Following are examples of related items that you may want to associate with a case:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Related contacts, such as calls, chats, emails tasks
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Comments, for agent notes
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// SLAs, to capture target resolution goals
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Cases, to capture related Amazon Connect Cases
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Files, such as policy documentation or customer-provided attachments
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Custom related items, which provide flexibility for you to define related items that
+        /// such as bookings, orders, products, notices, and more
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Important things to know</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If you are associating a contact to a case by passing in <c>Contact</c> for a <c>type</c>,
+        /// you must have <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeContact.html">DescribeContact</a>
+        /// permission on the ARN of the contact that you provide in <c>content.contact.contactArn</c>.
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         /// A Related Item is a resource that is associated with a case. It may or may not have
         /// an external identifier linking it to an external resource (for example, a <c>contactArn</c>).
@@ -1155,7 +1257,11 @@ namespace Amazon.ConnectCases
         /// <para>
         /// The <c>type</c> field is reserved for internal use only.
         /// </para>
-        ///  </li> </ul> </note>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
+        /// Connect endpoints and quotas</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateRelatedItem service method.</param>
         /// <param name="cancellationToken">
@@ -1675,12 +1781,12 @@ namespace Amazon.ConnectCases
         ///  </li> <li> 
         /// <para>
         /// Calling <c>CreateCase</c> with a deleted field throws a <c>ValidationException</c>
-        /// denoting which field IDs in the request have been deleted.
+        /// denoting which field identifiers in the request have been deleted.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Calling <c>GetCase</c> with a deleted field ID returns the deleted field's value if
-        /// one exists.
+        /// Calling <c>GetCase</c> with a deleted field identifier returns the deleted field's
+        /// value if one exists.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1779,12 +1885,12 @@ namespace Amazon.ConnectCases
         ///  </li> <li> 
         /// <para>
         /// Calling <c>CreateCase</c> with a deleted field throws a <c>ValidationException</c>
-        /// denoting which field IDs in the request have been deleted.
+        /// denoting which field identifiers in the request have been deleted.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Calling <c>GetCase</c> with a deleted field ID returns the deleted field's value if
-        /// one exists.
+        /// Calling <c>GetCase</c> with a deleted field identifier returns the deleted field's
+        /// value if one exists.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3481,8 +3587,8 @@ namespace Amazon.ConnectCases
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// This API returns case IDs, not complete case objects. To retrieve full case details,
-        /// you must make additional calls to the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_GetCase.html">GetCase</a>
+        /// This API returns case identifiers, not complete case objects. To retrieve full case
+        /// details, you must make additional calls to the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_GetCase.html">GetCase</a>
         /// API for each returned case ID. 
         /// </para>
         ///  </li> <li> 
@@ -3562,8 +3668,8 @@ namespace Amazon.ConnectCases
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// This API returns case IDs, not complete case objects. To retrieve full case details,
-        /// you must make additional calls to the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_GetCase.html">GetCase</a>
+        /// This API returns case identifiers, not complete case objects. To retrieve full case
+        /// details, you must make additional calls to the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_GetCase.html">GetCase</a>
         /// API for each returned case ID. 
         /// </para>
         ///  </li> <li> 
@@ -4077,6 +4183,10 @@ namespace Amazon.ConnectCases
         /// created in the same Amazon Web Services Region as your request, and try your request
         /// again.
         /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded. For a list of service quotas, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon
+        /// Connect Service Quotas</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// </exception>
         /// <exception cref="Amazon.ConnectCases.Model.ThrottlingException">
         /// The rate has been exceeded for this API. Please try again after a few minutes.
         /// </exception>
@@ -4121,6 +4231,10 @@ namespace Amazon.ConnectCases
         /// We couldn't find the requested resource. Check that your resources exists and were
         /// created in the same Amazon Web Services Region as your request, and try your request
         /// again.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded. For a list of service quotas, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon
+        /// Connect Service Quotas</a> in the <i>Amazon Connect Administrator Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.ConnectCases.Model.ThrottlingException">
         /// The rate has been exceeded for this API. Please try again after a few minutes.
@@ -4405,6 +4519,10 @@ namespace Amazon.ConnectCases
         /// created in the same Amazon Web Services Region as your request, and try your request
         /// again.
         /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded. For a list of service quotas, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon
+        /// Connect Service Quotas</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// </exception>
         /// <exception cref="Amazon.ConnectCases.Model.ThrottlingException">
         /// The rate has been exceeded for this API. Please try again after a few minutes.
         /// </exception>
@@ -4476,6 +4594,10 @@ namespace Amazon.ConnectCases
         /// We couldn't find the requested resource. Check that your resources exists and were
         /// created in the same Amazon Web Services Region as your request, and try your request
         /// again.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded. For a list of service quotas, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon
+        /// Connect Service Quotas</a> in the <i>Amazon Connect Administrator Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.ConnectCases.Model.ThrottlingException">
         /// The rate has been exceeded for this API. Please try again after a few minutes.

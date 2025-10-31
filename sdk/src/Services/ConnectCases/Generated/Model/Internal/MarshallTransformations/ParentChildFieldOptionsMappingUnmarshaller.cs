@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CaseRuleDetails Object
+    /// Response Unmarshaller for ParentChildFieldOptionsMapping Object
     /// </summary>  
-    public class CaseRuleDetailsUnmarshaller : IUnmarshaller<CaseRuleDetails, XmlUnmarshallerContext>, IUnmarshaller<CaseRuleDetails, JsonUnmarshallerContext>
+    public class ParentChildFieldOptionsMappingUnmarshaller : IUnmarshaller<ParentChildFieldOptionsMapping, XmlUnmarshallerContext>, IUnmarshaller<ParentChildFieldOptionsMapping, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        CaseRuleDetails IUnmarshaller<CaseRuleDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ParentChildFieldOptionsMapping IUnmarshaller<ParentChildFieldOptionsMapping, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public CaseRuleDetails Unmarshall(JsonUnmarshallerContext context)
+        public ParentChildFieldOptionsMapping Unmarshall(JsonUnmarshallerContext context)
         {
-            CaseRuleDetails unmarshalledObject = new CaseRuleDetails();
+            ParentChildFieldOptionsMapping unmarshalledObject = new ParentChildFieldOptionsMapping();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,22 +66,16 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("fieldOptions", targetDepth))
+                if (context.TestExpression("childFieldOptionValues", targetDepth))
                 {
-                    var unmarshaller = FieldOptionsCaseRuleUnmarshaller.Instance;
-                    unmarshalledObject.FieldOptions = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.ChildFieldOptionValues = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("hidden", targetDepth))
+                if (context.TestExpression("parentFieldOptionValue", targetDepth))
                 {
-                    var unmarshaller = HiddenCaseRuleUnmarshaller.Instance;
-                    unmarshalledObject.Hidden = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("required", targetDepth))
-                {
-                    var unmarshaller = RequiredCaseRuleUnmarshaller.Instance;
-                    unmarshalledObject.Required = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ParentFieldOptionValue = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -89,12 +83,12 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
         }
 
 
-        private static CaseRuleDetailsUnmarshaller _instance = new CaseRuleDetailsUnmarshaller();        
+        private static ParentChildFieldOptionsMappingUnmarshaller _instance = new ParentChildFieldOptionsMappingUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CaseRuleDetailsUnmarshaller Instance
+        public static ParentChildFieldOptionsMappingUnmarshaller Instance
         {
             get
             {

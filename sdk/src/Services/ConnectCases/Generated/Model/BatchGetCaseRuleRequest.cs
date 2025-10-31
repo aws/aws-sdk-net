@@ -44,7 +44,7 @@ namespace Amazon.ConnectCases.Model
         /// <summary>
         /// Gets and sets the property CaseRules. 
         /// <para>
-        /// List of case rule identifiers.
+        /// A list of case rule identifiers.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=50)]

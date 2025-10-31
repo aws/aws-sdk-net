@@ -36,11 +36,12 @@ namespace Amazon.ConnectCases.Model
     {
         private List<GetCaseRuleResponse> _caseRules = AWSConfigs.InitializeCollections ? new List<GetCaseRuleResponse>() : null;
         private List<CaseRuleError> _errors = AWSConfigs.InitializeCollections ? new List<CaseRuleError>() : null;
+        private List<string> _unprocessedCaseRules = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property CaseRules. 
         /// <para>
-        /// List of detailed case rule information.
+        /// A list of detailed case rule information.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=50)]
@@ -59,7 +60,7 @@ namespace Amazon.ConnectCases.Model
         /// <summary>
         /// Gets and sets the property Errors. 
         /// <para>
-        /// List of case rule errors.
+        /// A list of case rule errors.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=50)]
@@ -73,6 +74,25 @@ namespace Amazon.ConnectCases.Model
         internal bool IsSetErrors()
         {
             return this._errors != null && (this._errors.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UnprocessedCaseRules. 
+        /// <para>
+        /// A list of unprocessed case rule identifiers.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=50)]
+        public List<string> UnprocessedCaseRules
+        {
+            get { return this._unprocessedCaseRules; }
+            set { this._unprocessedCaseRules = value; }
+        }
+
+        // Check to see if UnprocessedCaseRules property is set
+        internal bool IsSetUnprocessedCaseRules()
+        {
+            return this._unprocessedCaseRules != null && (this._unprocessedCaseRules.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

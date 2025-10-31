@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CaseRuleDetails Marshaller
+    /// HiddenCaseRule Marshaller
     /// </summary>
-    public class CaseRuleDetailsMarshaller : IRequestMarshaller<CaseRuleDetails, JsonMarshallerContext> 
+    public class HiddenCaseRuleMarshaller : IRequestMarshaller<HiddenCaseRule, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,41 +44,30 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(CaseRuleDetails requestObject, JsonMarshallerContext context)
+        public void Marshall(HiddenCaseRule requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetFieldOptions())
+            if(requestObject.IsSetConditions())
             {
-                context.Writer.WritePropertyName("fieldOptions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("conditions");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectConditionsListValue in requestObject.Conditions)
+                {
+                    context.Writer.WriteObjectStart();
 
-                var marshaller = FieldOptionsCaseRuleMarshaller.Instance;
-                marshaller.Marshall(requestObject.FieldOptions, context);
+                    var marshaller = BooleanConditionMarshaller.Instance;
+                    marshaller.Marshall(requestObjectConditionsListValue, context);
 
-                context.Writer.WriteObjectEnd();
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
             }
 
-            if(requestObject.IsSetHidden())
+            if(requestObject.IsSetDefaultValue())
             {
-                context.Writer.WritePropertyName("hidden");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = HiddenCaseRuleMarshaller.Instance;
-                marshaller.Marshall(requestObject.Hidden, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetRequired())
-            {
-                context.Writer.WritePropertyName("required");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = RequiredCaseRuleMarshaller.Instance;
-                marshaller.Marshall(requestObject.Required, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("defaultValue");
+                context.Writer.Write(requestObject.DefaultValue);
             }
 
         }
@@ -86,7 +75,7 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static CaseRuleDetailsMarshaller Instance = new CaseRuleDetailsMarshaller();
+        public readonly static HiddenCaseRuleMarshaller Instance = new HiddenCaseRuleMarshaller();
 
     }
 }
