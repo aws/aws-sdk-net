@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// VideoOverlayPosition Marshaller
+    /// PassthroughSettings Marshaller
     /// </summary>
-    public class VideoOverlayPositionMarshaller : IRequestMarshaller<VideoOverlayPosition, JsonMarshallerContext> 
+    public class PassthroughSettingsMarshaller : IRequestMarshaller<PassthroughSettings, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,44 +42,14 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(VideoOverlayPosition requestObject, JsonMarshallerContext context)
+        public void Marshall(PassthroughSettings requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetHeight())
+            if(requestObject.IsSetVideoSelectorMode())
             {
-                context.Writer.WritePropertyName("height");
-                context.Writer.WriteNumberValue(requestObject.Height.Value);
-            }
-
-            if(requestObject.IsSetOpacity())
-            {
-                context.Writer.WritePropertyName("opacity");
-                context.Writer.WriteNumberValue(requestObject.Opacity.Value);
-            }
-
-            if(requestObject.IsSetUnit())
-            {
-                context.Writer.WritePropertyName("unit");
-                context.Writer.WriteStringValue(requestObject.Unit);
-            }
-
-            if(requestObject.IsSetWidth())
-            {
-                context.Writer.WritePropertyName("width");
-                context.Writer.WriteNumberValue(requestObject.Width.Value);
-            }
-
-            if(requestObject.IsSetXPosition())
-            {
-                context.Writer.WritePropertyName("xPosition");
-                context.Writer.WriteNumberValue(requestObject.XPosition.Value);
-            }
-
-            if(requestObject.IsSetYPosition())
-            {
-                context.Writer.WritePropertyName("yPosition");
-                context.Writer.WriteNumberValue(requestObject.YPosition.Value);
+                context.Writer.WritePropertyName("videoSelectorMode");
+                context.Writer.WriteStringValue(requestObject.VideoSelectorMode);
             }
 
         }
@@ -87,7 +57,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static VideoOverlayPositionMarshaller Instance = new VideoOverlayPositionMarshaller();
+        public readonly static PassthroughSettingsMarshaller Instance = new PassthroughSettingsMarshaller();
 
     }
 }

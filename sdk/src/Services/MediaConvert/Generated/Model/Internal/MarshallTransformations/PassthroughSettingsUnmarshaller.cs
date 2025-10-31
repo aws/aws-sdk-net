@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for TrackSourceSettings Object
+    /// Response Unmarshaller for PassthroughSettings Object
     /// </summary>  
-    public class TrackSourceSettingsUnmarshaller : IJsonUnmarshaller<TrackSourceSettings, JsonUnmarshallerContext>
+    public class PassthroughSettingsUnmarshaller : IJsonUnmarshaller<PassthroughSettings, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public TrackSourceSettings Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public PassthroughSettings Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            TrackSourceSettings unmarshalledObject = new TrackSourceSettings();
+            PassthroughSettings unmarshalledObject = new PassthroughSettings();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,16 +56,10 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("streamNumber", targetDepth))
+                if (context.TestExpression("videoSelectorMode", targetDepth))
                 {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.StreamNumber = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("trackNumber", targetDepth))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.TrackNumber = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.VideoSelectorMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -73,12 +67,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         }
 
 
-        private static TrackSourceSettingsUnmarshaller _instance = new TrackSourceSettingsUnmarshaller();        
+        private static PassthroughSettingsUnmarshaller _instance = new PassthroughSettingsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static TrackSourceSettingsUnmarshaller Instance
+        public static PassthroughSettingsUnmarshaller Instance
         {
             get
             {

@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for TrackSourceSettings Object
+    /// Response Unmarshaller for AudioPitchCorrectionSettings Object
     /// </summary>  
-    public class TrackSourceSettingsUnmarshaller : IJsonUnmarshaller<TrackSourceSettings, JsonUnmarshallerContext>
+    public class AudioPitchCorrectionSettingsUnmarshaller : IJsonUnmarshaller<AudioPitchCorrectionSettings, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public TrackSourceSettings Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public AudioPitchCorrectionSettings Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            TrackSourceSettings unmarshalledObject = new TrackSourceSettings();
+            AudioPitchCorrectionSettings unmarshalledObject = new AudioPitchCorrectionSettings();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,16 +56,10 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("streamNumber", targetDepth))
+                if (context.TestExpression("slowPalPitchCorrection", targetDepth))
                 {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.StreamNumber = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("trackNumber", targetDepth))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.TrackNumber = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SlowPalPitchCorrection = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -73,12 +67,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         }
 
 
-        private static TrackSourceSettingsUnmarshaller _instance = new TrackSourceSettingsUnmarshaller();        
+        private static AudioPitchCorrectionSettingsUnmarshaller _instance = new AudioPitchCorrectionSettingsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static TrackSourceSettingsUnmarshaller Instance
+        public static AudioPitchCorrectionSettingsUnmarshaller Instance
         {
             get
             {
