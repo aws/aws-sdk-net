@@ -104,7 +104,7 @@ namespace Amazon.Omics.Model
         /// <para>
         /// (Optional) Use a container registry map to specify mappings between the ECR private
         /// repository and one or more upstream registries. For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/workflows-ecr.html">Container
-        /// images</a> in the <i>Amazon Web Services HealthOmics User Guide</i>. 
+        /// images</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.
         /// </para>
         /// </summary>
         public ContainerRegistryMap ContainerRegistryMap
