@@ -33,7 +33,7 @@ namespace Amazon.WAF
     public partial class AmazonWAFConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("WAF", "4.0.1.11");
+            InternalSDKUtils.BuildUserAgentString("WAF", "4.0.2.0");
 
         private static readonly AmazonWAFEndpointResolver EndpointResolver =
             new AmazonWAFEndpointResolver();
