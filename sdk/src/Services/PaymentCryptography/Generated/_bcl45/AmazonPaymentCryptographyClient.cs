@@ -304,10 +304,11 @@ namespace Amazon.PaymentCryptography
         /// 
         ///  
         /// <para>
-        /// Multi-region keys allow you to use the same key material across multiple Amazon Web
-        /// Services Regions, providing lower latency for applications distributed across regions.
-        /// When you add Replication Regions, Amazon Web Services Payment Cryptography securely
-        /// replicates the key material to the specified Amazon Web Services Regions.
+        ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-multi-region-replication.html">Multi-Region
+        /// key replication</a> allow you to use the same key material across multiple Amazon
+        /// Web Services Regions, providing lower latency for applications distributed across
+        /// regions. When you add Replication Regions, Amazon Web Services Payment Cryptography
+        /// securely replicates the key material to the specified Amazon Web Services Regions.
         /// </para>
         ///  
         /// <para>
@@ -430,10 +431,11 @@ namespace Amazon.PaymentCryptography
         /// 
         ///  
         /// <para>
-        /// Multi-region keys allow you to use the same key material across multiple Amazon Web
-        /// Services Regions, providing lower latency for applications distributed across regions.
-        /// When you add Replication Regions, Amazon Web Services Payment Cryptography securely
-        /// replicates the key material to the specified Amazon Web Services Regions.
+        ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-multi-region-replication.html">Multi-Region
+        /// key replication</a> allow you to use the same key material across multiple Amazon
+        /// Web Services Regions, providing lower latency for applications distributed across
+        /// regions. When you add Replication Regions, Amazon Web Services Payment Cryptography
+        /// securely replicates the key material to the specified Amazon Web Services Regions.
         /// </para>
         ///  
         /// <para>
@@ -1705,15 +1707,16 @@ namespace Amazon.PaymentCryptography
 
 
         /// <summary>
-        /// Disables multi-region key replication settings for the specified Amazon Web Services
-        /// Regions in your account, preventing new keys from being automatically replicated to
-        /// those regions.
+        /// Disables <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-multi-region-replication.html">Multi-Region
+        /// key replication</a> settings for the specified Amazon Web Services Regions in your
+        /// Amazon Web Services account, preventing new keys from being automatically replicated
+        /// to those regions.
         /// 
         ///  
         /// <para>
-        /// After disabling default replication for specific regions, new keys created in your
-        /// account will not be automatically replicated to those regions. You can still manually
-        /// add replication to those regions for individual keys using the AddKeyReplicationRegions
+        /// After disabling Multi-Region key replication for specific regions, new keys created
+        /// in your account will not be automatically replicated to those regions. You can still
+        /// manually add replication to those regions for individual keys using the <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_AddKeyReplicationRegions.html">AddKeyReplicationRegions</a>
         /// operation.
         /// </para>
         ///  
@@ -1824,15 +1827,16 @@ namespace Amazon.PaymentCryptography
 
 
         /// <summary>
-        /// Disables multi-region key replication settings for the specified Amazon Web Services
-        /// Regions in your account, preventing new keys from being automatically replicated to
-        /// those regions.
+        /// Disables <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-multi-region-replication.html">Multi-Region
+        /// key replication</a> settings for the specified Amazon Web Services Regions in your
+        /// Amazon Web Services account, preventing new keys from being automatically replicated
+        /// to those regions.
         /// 
         ///  
         /// <para>
-        /// After disabling default replication for specific regions, new keys created in your
-        /// account will not be automatically replicated to those regions. You can still manually
-        /// add replication to those regions for individual keys using the AddKeyReplicationRegions
+        /// After disabling Multi-Region key replication for specific regions, new keys created
+        /// in your account will not be automatically replicated to those regions. You can still
+        /// manually add replication to those regions for individual keys using the <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_AddKeyReplicationRegions.html">AddKeyReplicationRegions</a>
         /// operation.
         /// </para>
         ///  
@@ -1950,12 +1954,13 @@ namespace Amazon.PaymentCryptography
 
 
         /// <summary>
-        /// Enables multi-region key replication settings for your account, causing new keys to
-        /// be automatically replicated to the specified Amazon Web Services Regions when created.
+        /// Enables <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-multi-region-replication.html">Multi-Region
+        /// key replication</a> settings for your Amazon Web Services account, causing new keys
+        /// to be automatically replicated to the specified Amazon Web Services Regions when created.
         /// 
         ///  
         /// <para>
-        /// When default Replication Regions are enabled, any new keys created in your account
+        /// When Multi-Region key replication are enabled, any new keys created in your account
         /// will automatically be replicated to these regions unless you explicitly override this
         /// behavior during key creation. This simplifies key management for applications that
         /// operate across multiple regions.
@@ -2069,12 +2074,13 @@ namespace Amazon.PaymentCryptography
 
 
         /// <summary>
-        /// Enables multi-region key replication settings for your account, causing new keys to
-        /// be automatically replicated to the specified Amazon Web Services Regions when created.
+        /// Enables <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-multi-region-replication.html">Multi-Region
+        /// key replication</a> settings for your Amazon Web Services account, causing new keys
+        /// to be automatically replicated to the specified Amazon Web Services Regions when created.
         /// 
         ///  
         /// <para>
-        /// When default Replication Regions are enabled, any new keys created in your account
+        /// When Multi-Region key replication are enabled, any new keys created in your account
         /// will automatically be replicated to these regions unless you explicitly override this
         /// behavior during key creation. This simplifies key management for applications that
         /// operate across multiple regions.
@@ -3131,7 +3137,7 @@ namespace Amazon.PaymentCryptography
 
 
         /// <summary>
-        /// Used to retrieve the public key for a keypair.
+        /// Creates a certificate signing request (CSR) from a key pair.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetCertificateSigningRequest service method.</param>
         /// 
@@ -3205,7 +3211,7 @@ namespace Amazon.PaymentCryptography
 
 
         /// <summary>
-        /// Used to retrieve the public key for a keypair.
+        /// Creates a certificate signing request (CSR) from a key pair.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetCertificateSigningRequest service method.</param>
         /// <param name="cancellationToken">
@@ -3286,12 +3292,12 @@ namespace Amazon.PaymentCryptography
 
 
         /// <summary>
-        /// Retrieves the list of regions where default key replication is currently enabled for
-        /// your account.
+        /// Retrieves the list of Amazon Web Services Regions where <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-multi-region-replication.html">Multi-Region
+        /// key replication</a> is currently enabled for your Amazon Web Services account.
         /// 
         ///  
         /// <para>
-        /// This operation returns the current configuration of default Replication Regions. New
+        /// This operation returns the current Multi-Region key replication configuration. New
         /// keys created in your account will be automatically replicated to these regions unless
         /// explicitly overridden during key creation.
         /// </para>
@@ -3399,12 +3405,12 @@ namespace Amazon.PaymentCryptography
 
 
         /// <summary>
-        /// Retrieves the list of regions where default key replication is currently enabled for
-        /// your account.
+        /// Retrieves the list of Amazon Web Services Regions where <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-multi-region-replication.html">Multi-Region
+        /// key replication</a> is currently enabled for your Amazon Web Services account.
         /// 
         ///  
         /// <para>
-        /// This operation returns the current configuration of default Replication Regions. New
+        /// This operation returns the current Multi-Region key replication configuration. New
         /// keys created in your account will be automatically replicated to these regions unless
         /// explicitly overridden during key creation.
         /// </para>
@@ -5849,14 +5855,16 @@ namespace Amazon.PaymentCryptography
         /// <para>
         /// When you remove Replication Regions, the key material is securely deleted from those
         /// regions and can no longer be used for cryptographic operations there. This operation
-        /// is irreversible for the specified Amazon Web Services Regions.
+        /// is irreversible for the specified Amazon Web Services Regions. For more information,
+        /// see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-multi-region-replication.html">Multi-Region
+        /// key replication</a>.
         /// </para>
-        ///  
+        ///  <important> 
         /// <para>
         /// Ensure that no active cryptographic operations or applications depend on the key in
         /// the regions you're removing before performing this operation.
         /// </para>
-        ///  
+        ///  </important> 
         /// <para>
         ///  <b>Cross-account use:</b> This operation can't be used across different Amazon Web
         /// Services accounts.
@@ -5968,14 +5976,16 @@ namespace Amazon.PaymentCryptography
         /// <para>
         /// When you remove Replication Regions, the key material is securely deleted from those
         /// regions and can no longer be used for cryptographic operations there. This operation
-        /// is irreversible for the specified Amazon Web Services Regions.
+        /// is irreversible for the specified Amazon Web Services Regions. For more information,
+        /// see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-multi-region-replication.html">Multi-Region
+        /// key replication</a>.
         /// </para>
-        ///  
+        ///  <important> 
         /// <para>
         /// Ensure that no active cryptographic operations or applications depend on the key in
         /// the regions you're removing before performing this operation.
         /// </para>
-        ///  
+        ///  </important> 
         /// <para>
         ///  <b>Cross-account use:</b> This operation can't be used across different Amazon Web
         /// Services accounts.

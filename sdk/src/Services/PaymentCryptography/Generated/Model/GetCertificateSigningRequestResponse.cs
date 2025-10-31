@@ -39,7 +39,8 @@ namespace Amazon.PaymentCryptography.Model
         /// <summary>
         /// Gets and sets the property CertificateSigningRequest. 
         /// <para>
-        /// Certificate signing request
+        /// The certificate signing request generated using the key pair associated with the key
+        /// identifier.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=1, Max=32768)]

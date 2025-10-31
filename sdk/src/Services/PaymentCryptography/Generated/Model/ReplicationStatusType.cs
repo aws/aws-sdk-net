@@ -30,7 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PaymentCryptography.Model
 {
     /// <summary>
-    /// Represents the replication status information for a key in a replication region.
+    /// Represents the replication status information for a key in a replication region for
+    /// <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-multi-region-replication.html">Multi-Region
+    /// key replication</a>.
     /// 
     ///  
     /// <para>
@@ -46,14 +48,14 @@ namespace Amazon.PaymentCryptography.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The current status of key replication in this region.
+        /// The current status of key replication in this Amazon Web Services Region.
         /// </para>
         ///  
         /// <para>
         /// This field indicates whether the key replication is in progress, completed successfully,
-        /// or has encountered an error. Possible values include states such as SYNCRHONIZED,
-        /// IN_PROGRESS, DELETE_IN_PROGRESS, or FAILED. This provides visibility into the replication
-        /// process for monitoring and troubleshooting purposes.
+        /// or has encountered an error. Possible values include states such as <c>SYNCRHONIZED</c>,
+        /// <c>IN_PROGRESS</c>, <c>DELETE_IN_PROGRESS</c>, or <c>FAILED</c>. This provides visibility
+        /// into the replication process for monitoring and troubleshooting purposes.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
