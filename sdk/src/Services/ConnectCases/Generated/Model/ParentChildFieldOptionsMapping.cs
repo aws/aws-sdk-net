@@ -30,21 +30,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConnectCases.Model
 {
     /// <summary>
-    /// Container for the parameters to the BatchGetCaseRule operation.
-    /// Gets a batch of case rules. In the Amazon Connect admin website, case rules are known
-    /// as <i>case field conditions</i>. For more information about case field conditions,
-    /// see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/case-field-conditions.html">Add
-    /// case field conditions to a case template</a>.
+    /// A mapping between a parent field option value and child field option values.
     /// </summary>
-    public partial class BatchGetCaseRuleRequest : AmazonConnectCasesRequest
+    public partial class ParentChildFieldOptionsMapping
     {
-        private List<CaseRuleIdentifier> _caseRules = AWSConfigs.InitializeCollections ? new List<CaseRuleIdentifier>() : null;
-        private string _domainId;
+        private List<string> _childFieldOptionValues = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private string _parentFieldOptionValue;
 
         /// <summary>
-        /// Gets and sets the property CaseRules. 
+        /// Gets and sets the property ChildFieldOptionValues. 
         /// <para>
-        /// A list of case rule identifiers.
+        /// A list of allowed values in the child field.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -52,36 +48,36 @@ namespace Amazon.ConnectCases.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=50)]
-        public List<CaseRuleIdentifier> CaseRules
+        [AWSProperty(Required=true, Min=0, Max=1500)]
+        public List<string> ChildFieldOptionValues
         {
-            get { return this._caseRules; }
-            set { this._caseRules = value; }
+            get { return this._childFieldOptionValues; }
+            set { this._childFieldOptionValues = value; }
         }
 
-        // Check to see if CaseRules property is set
-        internal bool IsSetCaseRules()
+        // Check to see if ChildFieldOptionValues property is set
+        internal bool IsSetChildFieldOptionValues()
         {
-            return this._caseRules != null && (this._caseRules.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._childFieldOptionValues != null && (this._childFieldOptionValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
-        /// Gets and sets the property DomainId. 
+        /// Gets and sets the property ParentFieldOptionValue. 
         /// <para>
-        /// Unique identifier of a Cases domain.
+        /// The value in the parent field.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=500)]
-        public string DomainId
+        [AWSProperty(Required=true, Min=0, Max=100)]
+        public string ParentFieldOptionValue
         {
-            get { return this._domainId; }
-            set { this._domainId = value; }
+            get { return this._parentFieldOptionValue; }
+            set { this._parentFieldOptionValue = value; }
         }
 
-        // Check to see if DomainId property is set
-        internal bool IsSetDomainId()
+        // Check to see if ParentFieldOptionValue property is set
+        internal bool IsSetParentFieldOptionValue()
         {
-            return this._domainId != null;
+            return this._parentFieldOptionValue != null;
         }
 
     }

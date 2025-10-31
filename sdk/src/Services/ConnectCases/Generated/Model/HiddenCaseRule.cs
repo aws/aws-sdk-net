@@ -30,21 +30,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConnectCases.Model
 {
     /// <summary>
-    /// Container for the parameters to the BatchGetCaseRule operation.
-    /// Gets a batch of case rules. In the Amazon Connect admin website, case rules are known
-    /// as <i>case field conditions</i>. For more information about case field conditions,
-    /// see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/case-field-conditions.html">Add
-    /// case field conditions to a case template</a>.
+    /// A rule that controls field visibility based on conditions. Fields can be shown or
+    /// hidden dynamically based on values in other fields.
     /// </summary>
-    public partial class BatchGetCaseRuleRequest : AmazonConnectCasesRequest
+    public partial class HiddenCaseRule
     {
-        private List<CaseRuleIdentifier> _caseRules = AWSConfigs.InitializeCollections ? new List<CaseRuleIdentifier>() : null;
-        private string _domainId;
+        private List<BooleanCondition> _conditions = AWSConfigs.InitializeCollections ? new List<BooleanCondition>() : null;
+        private bool? _defaultValue;
 
         /// <summary>
-        /// Gets and sets the property CaseRules. 
+        /// Gets and sets the property Conditions. 
         /// <para>
-        /// A list of case rule identifiers.
+        /// A list of conditions that determine field visibility.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -52,36 +49,36 @@ namespace Amazon.ConnectCases.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=50)]
-        public List<CaseRuleIdentifier> CaseRules
+        [AWSProperty(Required=true, Min=0, Max=100)]
+        public List<BooleanCondition> Conditions
         {
-            get { return this._caseRules; }
-            set { this._caseRules = value; }
+            get { return this._conditions; }
+            set { this._conditions = value; }
         }
 
-        // Check to see if CaseRules property is set
-        internal bool IsSetCaseRules()
+        // Check to see if Conditions property is set
+        internal bool IsSetConditions()
         {
-            return this._caseRules != null && (this._caseRules.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._conditions != null && (this._conditions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
-        /// Gets and sets the property DomainId. 
+        /// Gets and sets the property DefaultValue. 
         /// <para>
-        /// Unique identifier of a Cases domain.
+        /// Whether the field is hidden when no conditions match.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=500)]
-        public string DomainId
+        [AWSProperty(Required=true)]
+        public bool? DefaultValue
         {
-            get { return this._domainId; }
-            set { this._domainId = value; }
+            get { return this._defaultValue; }
+            set { this._defaultValue = value; }
         }
 
-        // Check to see if DomainId property is set
-        internal bool IsSetDomainId()
+        // Check to see if DefaultValue property is set
+        internal bool IsSetDefaultValue()
         {
-            return this._domainId != null;
+            return this._defaultValue.HasValue; 
         }
 
     }

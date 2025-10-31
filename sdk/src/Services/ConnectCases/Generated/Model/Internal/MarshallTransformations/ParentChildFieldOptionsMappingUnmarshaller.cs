@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CaseRuleDetails Object
+    /// Response Unmarshaller for ParentChildFieldOptionsMapping Object
     /// </summary>  
-    public class CaseRuleDetailsUnmarshaller : IJsonUnmarshaller<CaseRuleDetails, JsonUnmarshallerContext>
+    public class ParentChildFieldOptionsMappingUnmarshaller : IJsonUnmarshaller<ParentChildFieldOptionsMapping, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public CaseRuleDetails Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public ParentChildFieldOptionsMapping Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            CaseRuleDetails unmarshalledObject = new CaseRuleDetails();
+            ParentChildFieldOptionsMapping unmarshalledObject = new ParentChildFieldOptionsMapping();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,22 +56,16 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("fieldOptions", targetDepth))
+                if (context.TestExpression("childFieldOptionValues", targetDepth))
                 {
-                    var unmarshaller = FieldOptionsCaseRuleUnmarshaller.Instance;
-                    unmarshalledObject.FieldOptions = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.ChildFieldOptionValues = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("hidden", targetDepth))
+                if (context.TestExpression("parentFieldOptionValue", targetDepth))
                 {
-                    var unmarshaller = HiddenCaseRuleUnmarshaller.Instance;
-                    unmarshalledObject.Hidden = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("required", targetDepth))
-                {
-                    var unmarshaller = RequiredCaseRuleUnmarshaller.Instance;
-                    unmarshalledObject.Required = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ParentFieldOptionValue = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -79,12 +73,12 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
         }
 
 
-        private static CaseRuleDetailsUnmarshaller _instance = new CaseRuleDetailsUnmarshaller();        
+        private static ParentChildFieldOptionsMappingUnmarshaller _instance = new ParentChildFieldOptionsMappingUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CaseRuleDetailsUnmarshaller Instance
+        public static ParentChildFieldOptionsMappingUnmarshaller Instance
         {
             get
             {

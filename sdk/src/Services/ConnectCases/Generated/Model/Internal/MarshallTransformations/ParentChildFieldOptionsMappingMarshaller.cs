@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CaseRuleDetails Marshaller
+    /// ParentChildFieldOptionsMapping Marshaller
     /// </summary>
-    public class CaseRuleDetailsMarshaller : IRequestMarshaller<CaseRuleDetails, JsonMarshallerContext> 
+    public class ParentChildFieldOptionsMappingMarshaller : IRequestMarshaller<ParentChildFieldOptionsMapping, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,41 +42,25 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(CaseRuleDetails requestObject, JsonMarshallerContext context)
+        public void Marshall(ParentChildFieldOptionsMapping requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetFieldOptions())
+            if(requestObject.IsSetChildFieldOptionValues())
             {
-                context.Writer.WritePropertyName("fieldOptions");
-                context.Writer.WriteStartObject();
-
-                var marshaller = FieldOptionsCaseRuleMarshaller.Instance;
-                marshaller.Marshall(requestObject.FieldOptions, context);
-
-                context.Writer.WriteEndObject();
+                context.Writer.WritePropertyName("childFieldOptionValues");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectChildFieldOptionValuesListValue in requestObject.ChildFieldOptionValues)
+                {
+                        context.Writer.WriteStringValue(requestObjectChildFieldOptionValuesListValue);
+                }
+                context.Writer.WriteEndArray();
             }
 
-            if(requestObject.IsSetHidden())
+            if(requestObject.IsSetParentFieldOptionValue())
             {
-                context.Writer.WritePropertyName("hidden");
-                context.Writer.WriteStartObject();
-
-                var marshaller = HiddenCaseRuleMarshaller.Instance;
-                marshaller.Marshall(requestObject.Hidden, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(requestObject.IsSetRequired())
-            {
-                context.Writer.WritePropertyName("required");
-                context.Writer.WriteStartObject();
-
-                var marshaller = RequiredCaseRuleMarshaller.Instance;
-                marshaller.Marshall(requestObject.Required, context);
-
-                context.Writer.WriteEndObject();
+                context.Writer.WritePropertyName("parentFieldOptionValue");
+                context.Writer.WriteStringValue(requestObject.ParentFieldOptionValue);
             }
 
         }
@@ -84,7 +68,7 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static CaseRuleDetailsMarshaller Instance = new CaseRuleDetailsMarshaller();
+        public readonly static ParentChildFieldOptionsMappingMarshaller Instance = new ParentChildFieldOptionsMappingMarshaller();
 
     }
 }
