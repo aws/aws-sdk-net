@@ -12,35 +12,47 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the s3-2006-03-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
+using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// GetBucketMetricsConfiguration Response
+    /// This is the response object from the GetBucketMetricsConfiguration operation.
     /// </summary>
     public partial class GetBucketMetricsConfigurationResponse : AmazonWebServiceResponse
     {
-        private MetricsConfiguration metricsConfiguration;
+        private MetricsConfiguration _metricsConfiguration;
 
         /// <summary>
+        /// Gets and sets the property MetricsConfiguration. 
+        /// <para>
         /// Specifies the metrics configuration.
+        /// </para>
         /// </summary>
         public MetricsConfiguration MetricsConfiguration
         {
-            get { return this.metricsConfiguration; }
-            set { this.metricsConfiguration = value; }
+            get { return this._metricsConfiguration; }
+            set { this._metricsConfiguration = value; }
         }
 
         // Check to see if MetricsConfiguration property is set
         internal bool IsSetMetricsConfiguration()
         {
-            return this.metricsConfiguration != null;
+            return this._metricsConfiguration != null;
         }
+
     }
 }
