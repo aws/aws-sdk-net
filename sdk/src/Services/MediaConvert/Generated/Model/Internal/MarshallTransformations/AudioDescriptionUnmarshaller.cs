@@ -78,6 +78,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.AudioNormalizationSettings = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("audioPitchCorrectionSettings", targetDepth))
+                {
+                    var unmarshaller = AudioPitchCorrectionSettingsUnmarshaller.Instance;
+                    unmarshalledObject.AudioPitchCorrectionSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("audioSourceName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

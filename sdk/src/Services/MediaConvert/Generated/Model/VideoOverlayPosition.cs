@@ -35,6 +35,7 @@ namespace Amazon.MediaConvert.Model
     public partial class VideoOverlayPosition
     {
         private int? _height;
+        private int? _opacity;
         private VideoOverlayUnit _unit;
         private int? _width;
         private int? _xPosition;
@@ -61,6 +62,24 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetHeight()
         {
             return this._height.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Opacity. Use Opacity to specify how much of the underlying
+        /// video shows through the overlay video. 0 is transparent and 100 is fully opaque. Default
+        /// is 100.
+        /// </summary>
+        [AWSProperty(Min=0, Max=100)]
+        public int Opacity
+        {
+            get { return this._opacity.GetValueOrDefault(); }
+            set { this._opacity = value; }
+        }
+
+        // Check to see if Opacity property is set
+        internal bool IsSetOpacity()
+        {
+            return this._opacity.HasValue; 
         }
 
         /// <summary>

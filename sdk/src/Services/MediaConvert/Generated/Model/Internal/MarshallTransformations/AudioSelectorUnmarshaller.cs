@@ -132,6 +132,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.SelectorType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("streams", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<int, IntUnmarshaller>(IntUnmarshaller.Instance);
+                    unmarshalledObject.Streams = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("tracks", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<int, IntUnmarshaller>(IntUnmarshaller.Instance);

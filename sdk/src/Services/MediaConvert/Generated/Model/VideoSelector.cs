@@ -302,8 +302,13 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Streams. Specify a stream for MediaConvert to use from
-        /// your HLS input. Enter an integer corresponding to the stream order in your HLS manifest.
+        /// Gets and sets the property Streams. Specify one or more video streams for MediaConvert
+        /// to use from your HLS input. Enter an integer corresponding to the stream number, with
+        /// the first stream in your HLS multivariant playlist starting at 1.For re-encoding workflows,
+        /// MediaConvert uses the video stream that you select with the highest bitrate as the
+        /// input.For video passthrough workflows, you specify whether to passthrough a single
+        /// video stream or multiple video streams under Video selector source in the output video
+        /// encoding settings.
         /// </summary>
         public List<int> Streams
         {

@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for VideoOverlayPosition Object
+    /// Response Unmarshaller for PassthroughSettings Object
     /// </summary>  
-    public class VideoOverlayPositionUnmarshaller : IUnmarshaller<VideoOverlayPosition, XmlUnmarshallerContext>, IUnmarshaller<VideoOverlayPosition, JsonUnmarshallerContext>
+    public class PassthroughSettingsUnmarshaller : IUnmarshaller<PassthroughSettings, XmlUnmarshallerContext>, IUnmarshaller<PassthroughSettings, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        VideoOverlayPosition IUnmarshaller<VideoOverlayPosition, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        PassthroughSettings IUnmarshaller<PassthroughSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public VideoOverlayPosition Unmarshall(JsonUnmarshallerContext context)
+        public PassthroughSettings Unmarshall(JsonUnmarshallerContext context)
         {
-            VideoOverlayPosition unmarshalledObject = new VideoOverlayPosition();
+            PassthroughSettings unmarshalledObject = new PassthroughSettings();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,40 +66,10 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("height", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.Height = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("opacity", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.Opacity = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("unit", targetDepth))
+                if (context.TestExpression("videoSelectorMode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Unit = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("width", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.Width = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("xPosition", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.XPosition = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("yPosition", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.YPosition = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.VideoSelectorMode = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -107,12 +77,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         }
 
 
-        private static VideoOverlayPositionUnmarshaller _instance = new VideoOverlayPositionUnmarshaller();        
+        private static PassthroughSettingsUnmarshaller _instance = new PassthroughSettingsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static VideoOverlayPositionUnmarshaller Instance
+        public static PassthroughSettingsUnmarshaller Instance
         {
             get
             {

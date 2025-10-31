@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// VideoOverlayPosition Marshaller
+    /// AudioPitchCorrectionSettings Marshaller
     /// </summary>
-    public class VideoOverlayPositionMarshaller : IRequestMarshaller<VideoOverlayPosition, JsonMarshallerContext> 
+    public class AudioPitchCorrectionSettingsMarshaller : IRequestMarshaller<AudioPitchCorrectionSettings, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,44 +44,14 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(VideoOverlayPosition requestObject, JsonMarshallerContext context)
+        public void Marshall(AudioPitchCorrectionSettings requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetHeight())
+            if(requestObject.IsSetSlowPalPitchCorrection())
             {
-                context.Writer.WritePropertyName("height");
-                context.Writer.Write(requestObject.Height);
-            }
-
-            if(requestObject.IsSetOpacity())
-            {
-                context.Writer.WritePropertyName("opacity");
-                context.Writer.Write(requestObject.Opacity);
-            }
-
-            if(requestObject.IsSetUnit())
-            {
-                context.Writer.WritePropertyName("unit");
-                context.Writer.Write(requestObject.Unit);
-            }
-
-            if(requestObject.IsSetWidth())
-            {
-                context.Writer.WritePropertyName("width");
-                context.Writer.Write(requestObject.Width);
-            }
-
-            if(requestObject.IsSetXPosition())
-            {
-                context.Writer.WritePropertyName("xPosition");
-                context.Writer.Write(requestObject.XPosition);
-            }
-
-            if(requestObject.IsSetYPosition())
-            {
-                context.Writer.WritePropertyName("yPosition");
-                context.Writer.Write(requestObject.YPosition);
+                context.Writer.WritePropertyName("slowPalPitchCorrection");
+                context.Writer.Write(requestObject.SlowPalPitchCorrection);
             }
 
         }
@@ -89,7 +59,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static VideoOverlayPositionMarshaller Instance = new VideoOverlayPositionMarshaller();
+        public readonly static AudioPitchCorrectionSettingsMarshaller Instance = new AudioPitchCorrectionSettingsMarshaller();
 
     }
 }

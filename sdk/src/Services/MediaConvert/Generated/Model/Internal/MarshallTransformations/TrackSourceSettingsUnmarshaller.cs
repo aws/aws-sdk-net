@@ -66,6 +66,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("streamNumber", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.StreamNumber = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("trackNumber", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
