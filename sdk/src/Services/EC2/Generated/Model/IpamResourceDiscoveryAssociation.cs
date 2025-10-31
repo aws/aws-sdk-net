@@ -258,12 +258,12 @@ namespace Amazon.EC2.Model
         ///  </li> <li> 
         /// <para>
         ///  <c>isolate-in-progress</c> - Amazon Web Services account that created the resource
-        /// discovery association has been removed and the resource discovery associatation is
-        /// being isolated.
+        /// discovery association has been removed and the resource discovery association is being
+        /// isolated.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>isolate-complete</c> - Resource discovery isolation is complete..
+        ///  <c>isolate-complete</c> - Resource discovery isolation is complete.
         /// </para>
         ///  </li> <li> 
         /// <para>

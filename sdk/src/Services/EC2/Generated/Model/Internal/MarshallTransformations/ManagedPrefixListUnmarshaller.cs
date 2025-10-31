@@ -61,6 +61,18 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.AddressFamily = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("ipamPrefixListResolverSyncEnabled", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.IpamPrefixListResolverSyncEnabled = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ipamPrefixListResolverTargetId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.IpamPrefixListResolverTargetId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("maxEntries", targetDepth))
                     {
                         var unmarshaller = IntUnmarshaller.Instance;

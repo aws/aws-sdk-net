@@ -35,6 +35,8 @@ namespace Amazon.EC2.Model
     public partial class ManagedPrefixList
     {
         private string _addressFamily;
+        private bool? _ipamPrefixListResolverSyncEnabled;
+        private string _ipamPrefixListResolverTargetId;
         private int? _maxEntries;
         private string _ownerId;
         private string _prefixListArn;
@@ -61,6 +63,52 @@ namespace Amazon.EC2.Model
         internal bool IsSetAddressFamily()
         {
             return this._addressFamily != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IpamPrefixListResolverSyncEnabled. 
+        /// <para>
+        /// Indicates whether synchronization with an IPAM prefix list resolver is enabled for
+        /// this managed prefix list. When enabled, the prefix list CIDRs are automatically updated
+        /// based on the resolver's CIDR selection rules.
+        /// </para>
+        /// </summary>
+        public bool IpamPrefixListResolverSyncEnabled
+        {
+            get { return this._ipamPrefixListResolverSyncEnabled.GetValueOrDefault(); }
+            set { this._ipamPrefixListResolverSyncEnabled = value; }
+        }
+
+        // Check to see if IpamPrefixListResolverSyncEnabled property is set
+        internal bool IsSetIpamPrefixListResolverSyncEnabled()
+        {
+            return this._ipamPrefixListResolverSyncEnabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IpamPrefixListResolverTargetId. 
+        /// <para>
+        /// The ID of the IPAM prefix list resolver target associated with this managed prefix
+        /// list. When set, this prefix list becomes an IPAM managed prefix list.
+        /// </para>
+        ///  
+        /// <para>
+        /// An IPAM-managed prefix list is a customer-managed prefix list that has been associated
+        /// with an IPAM prefix list resolver target. When a prefix list becomes IPAM managed,
+        /// its CIDRs are automatically synchronized based on the IPAM prefix list resolver's
+        /// CIDR selection rules, and direct CIDR modifications are restricted.
+        /// </para>
+        /// </summary>
+        public string IpamPrefixListResolverTargetId
+        {
+            get { return this._ipamPrefixListResolverTargetId; }
+            set { this._ipamPrefixListResolverTargetId = value; }
+        }
+
+        // Check to see if IpamPrefixListResolverTargetId property is set
+        internal bool IsSetIpamPrefixListResolverTargetId()
+        {
+            return this._ipamPrefixListResolverTargetId != null;
         }
 
         /// <summary>
