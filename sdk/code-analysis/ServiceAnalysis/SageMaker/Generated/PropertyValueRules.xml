@@ -7991,6 +7991,12 @@
     <pattern>[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.UpdateNotebookInstanceRequest.PlatformIdentifier</property>
+    <min>0</min>
+    <max>20</max>
+    <pattern>(notebook-al1-v1|notebook-al2-v1|notebook-al2-v2|notebook-al2-v3|notebook-al2023-v1)</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.UpdateNotebookInstanceRequest.RoleArn</property>
     <min>20</min>
     <max>2048</max>

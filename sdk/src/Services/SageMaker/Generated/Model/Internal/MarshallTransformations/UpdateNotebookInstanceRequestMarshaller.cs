@@ -156,6 +156,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.NotebookInstanceName);
                 }
 
+                if(publicRequest.IsSetPlatformIdentifier())
+                {
+                    context.Writer.WritePropertyName("PlatformIdentifier");
+                    context.Writer.Write(publicRequest.PlatformIdentifier);
+                }
+
                 if(publicRequest.IsSetRoleArn())
                 {
                     context.Writer.WritePropertyName("RoleArn");

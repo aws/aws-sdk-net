@@ -49,6 +49,7 @@ namespace Amazon.SageMaker.Model
         private IPAddressType _ipAddressType;
         private string _lifecycleConfigName;
         private string _notebookInstanceName;
+        private string _platformIdentifier;
         private string _roleArn;
         private RootAccess _rootAccess;
         private int? _volumeSizeInGB;
@@ -306,6 +307,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetNotebookInstanceName()
         {
             return this._notebookInstanceName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PlatformIdentifier. 
+        /// <para>
+        /// The platform identifier of the notebook instance runtime environment.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=20)]
+        public string PlatformIdentifier
+        {
+            get { return this._platformIdentifier; }
+            set { this._platformIdentifier = value; }
+        }
+
+        // Check to see if PlatformIdentifier property is set
+        internal bool IsSetPlatformIdentifier()
+        {
+            return this._platformIdentifier != null;
         }
 
         /// <summary>
