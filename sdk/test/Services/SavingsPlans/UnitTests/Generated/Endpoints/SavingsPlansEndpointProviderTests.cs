@@ -77,21 +77,6 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("SavingsPlans")]
-        [Description("For region us-east-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_useast1_with_FIPS_disabled_and_DualStack_enabled_Test()
-        {
-            var parameters = new SavingsPlansEndpointParameters();
-            parameters["Region"] = "us-east-1";
-            parameters["UseFIPS"] = false;
-            parameters["UseDualStack"] = true;
-            var endpoint = new AmazonSavingsPlansEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://savingsplans.us-east-1.api.aws", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("SavingsPlans")]
         [Description("For region us-east-1 with FIPS disabled and DualStack disabled")]
         public void For_region_useast1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
@@ -334,15 +319,11 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("SavingsPlans")]
-        [Description("For custom endpoint with fips disabled and dualstack enabled")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: Dualstack and custom endpoint are not supported")]
-        public void For_custom_endpoint_with_fips_disabled_and_dualstack_enabled_Test()
+        [Description("Missing region")]
+        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: Missing Region")]
+        public void Missing_region_Test()
         {
             var parameters = new SavingsPlansEndpointParameters();
-            parameters["Region"] = "us-east-1";
-            parameters["UseFIPS"] = false;
-            parameters["UseDualStack"] = true;
-            parameters["Endpoint"] = "https://example.com";
             var endpoint = new AmazonSavingsPlansEndpointProvider().ResolveEndpoint(parameters);
         }
 
@@ -350,12 +331,60 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("SavingsPlans")]
-        [Description("Missing region")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: Missing Region")]
-        public void Missing_region_Test()
+        [Description("For region not set with FIPS disabled and DualStack enabled")]
+        public void For_region_not_set_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new SavingsPlansEndpointParameters();
+            parameters["UseDualStack"] = true;
+            parameters["UseFIPS"] = false;
             var endpoint = new AmazonSavingsPlansEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://savingsplans.global.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("SavingsPlans")]
+        [Description("For region us-east-1 with FIPS disabled and DualStack enabled")]
+        public void For_region_useast1_with_FIPS_disabled_and_DualStack_enabled_Test()
+        {
+            var parameters = new SavingsPlansEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseDualStack"] = true;
+            parameters["UseFIPS"] = false;
+            var endpoint = new AmazonSavingsPlansEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://savingsplans.global.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("SavingsPlans")]
+        [Description("For region us-west-1 with FIPS disabled and DualStack enabled")]
+        public void For_region_uswest1_with_FIPS_disabled_and_DualStack_enabled_Test()
+        {
+            var parameters = new SavingsPlansEndpointParameters();
+            parameters["Region"] = "us-west-1";
+            parameters["UseDualStack"] = true;
+            parameters["UseFIPS"] = false;
+            var endpoint = new AmazonSavingsPlansEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://savingsplans.global.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("SavingsPlans")]
+        [Description("Commercial region with custom SDK endpoint")]
+        public void Commercial_region_with_custom_SDK_endpoint_Test()
+        {
+            var parameters = new SavingsPlansEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = false;
+            parameters["Endpoint"] = "https://custom.example.com";
+            var endpoint = new AmazonSavingsPlansEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://custom.example.com", endpoint.URL);
         }
 
     }
