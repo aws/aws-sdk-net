@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// S3Location Marshaller
+    /// Code Marshaller
     /// </summary>
-    public class S3LocationMarshaller : IRequestMarshaller<S3Location, JsonMarshallerContext> 
+    public class CodeMarshaller : IRequestMarshaller<Code, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,26 +42,19 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(S3Location requestObject, JsonMarshallerContext context)
+        public void Marshall(Code requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetBucket())
+            if(requestObject.IsSetS3())
             {
-                context.Writer.WritePropertyName("bucket");
-                context.Writer.WriteStringValue(requestObject.Bucket);
-            }
+                context.Writer.WritePropertyName("s3");
+                context.Writer.WriteStartObject();
 
-            if(requestObject.IsSetPrefix())
-            {
-                context.Writer.WritePropertyName("prefix");
-                context.Writer.WriteStringValue(requestObject.Prefix);
-            }
+                var marshaller = S3LocationMarshaller.Instance;
+                marshaller.Marshall(requestObject.S3, context);
 
-            if(requestObject.IsSetVersionId())
-            {
-                context.Writer.WritePropertyName("versionId");
-                context.Writer.WriteStringValue(requestObject.VersionId);
+                context.Writer.WriteEndObject();
             }
 
         }
@@ -69,7 +62,7 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static S3LocationMarshaller Instance = new S3LocationMarshaller();
+        public readonly static CodeMarshaller Instance = new CodeMarshaller();
 
     }
 }

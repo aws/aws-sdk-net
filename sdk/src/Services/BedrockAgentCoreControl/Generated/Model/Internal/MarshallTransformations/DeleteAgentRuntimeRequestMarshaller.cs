@@ -65,7 +65,14 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetAgentRuntimeId())
                 throw new AmazonBedrockAgentCoreControlException("Request object does not have required field AgentRuntimeId set");
             request.AddPathResource("{agentRuntimeId}", StringUtils.FromString(publicRequest.AgentRuntimeId));
+            
+            if (publicRequest.IsSetClientToken())
+                request.Parameters.Add("clientToken", StringUtils.FromString(publicRequest.ClientToken));
+            else            
+                request.Parameters.Add("clientToken", System.Guid.NewGuid().ToString());
+                
             request.ResourcePath = "/runtimes/{agentRuntimeId}/";
+            request.UseQueryString = true;
 
             return request;
         }

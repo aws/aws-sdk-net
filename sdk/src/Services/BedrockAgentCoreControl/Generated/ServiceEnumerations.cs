@@ -25,6 +25,64 @@ namespace Amazon.BedrockAgentCoreControl
 {
 
     /// <summary>
+    /// Constants used for properties of type AgentManagedRuntimeType.
+    /// </summary>
+    public class AgentManagedRuntimeType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PYTHON_3_10 for AgentManagedRuntimeType
+        /// </summary>
+        public static readonly AgentManagedRuntimeType PYTHON_3_10 = new AgentManagedRuntimeType("PYTHON_3_10");
+        /// <summary>
+        /// Constant PYTHON_3_11 for AgentManagedRuntimeType
+        /// </summary>
+        public static readonly AgentManagedRuntimeType PYTHON_3_11 = new AgentManagedRuntimeType("PYTHON_3_11");
+        /// <summary>
+        /// Constant PYTHON_3_12 for AgentManagedRuntimeType
+        /// </summary>
+        public static readonly AgentManagedRuntimeType PYTHON_3_12 = new AgentManagedRuntimeType("PYTHON_3_12");
+        /// <summary>
+        /// Constant PYTHON_3_13 for AgentManagedRuntimeType
+        /// </summary>
+        public static readonly AgentManagedRuntimeType PYTHON_3_13 = new AgentManagedRuntimeType("PYTHON_3_13");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AgentManagedRuntimeType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AgentManagedRuntimeType FindValue(string value)
+        {
+            return FindValue<AgentManagedRuntimeType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AgentManagedRuntimeType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AgentRuntimeEndpointStatus.
     /// </summary>
     public class AgentRuntimeEndpointStatus : ConstantClass

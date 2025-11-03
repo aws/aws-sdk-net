@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// S3Location Marshaller
+    /// CodeConfiguration Marshaller
     /// </summary>
-    public class S3LocationMarshaller : IRequestMarshaller<S3Location, JsonMarshallerContext> 
+    public class CodeConfigurationMarshaller : IRequestMarshaller<CodeConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,26 +42,36 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(S3Location requestObject, JsonMarshallerContext context)
+        public void Marshall(CodeConfiguration requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetBucket())
+            if(requestObject.IsSetCode())
             {
-                context.Writer.WritePropertyName("bucket");
-                context.Writer.WriteStringValue(requestObject.Bucket);
+                context.Writer.WritePropertyName("code");
+                context.Writer.WriteStartObject();
+
+                var marshaller = CodeMarshaller.Instance;
+                marshaller.Marshall(requestObject.Code, context);
+
+                context.Writer.WriteEndObject();
             }
 
-            if(requestObject.IsSetPrefix())
+            if(requestObject.IsSetEntryPoint())
             {
-                context.Writer.WritePropertyName("prefix");
-                context.Writer.WriteStringValue(requestObject.Prefix);
+                context.Writer.WritePropertyName("entryPoint");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectEntryPointListValue in requestObject.EntryPoint)
+                {
+                        context.Writer.WriteStringValue(requestObjectEntryPointListValue);
+                }
+                context.Writer.WriteEndArray();
             }
 
-            if(requestObject.IsSetVersionId())
+            if(requestObject.IsSetRuntime())
             {
-                context.Writer.WritePropertyName("versionId");
-                context.Writer.WriteStringValue(requestObject.VersionId);
+                context.Writer.WritePropertyName("runtime");
+                context.Writer.WriteStringValue(requestObject.Runtime);
             }
 
         }
@@ -69,7 +79,7 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static S3LocationMarshaller Instance = new S3LocationMarshaller();
+        public readonly static CodeConfigurationMarshaller Instance = new CodeConfigurationMarshaller();
 
     }
 }

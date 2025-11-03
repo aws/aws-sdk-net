@@ -20,6 +20,7 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
+using System.Net;
 using System.Text;
 using System.Xml.Serialization;
 
@@ -28,48 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// S3Location Marshaller
-    /// </summary>
-    public class S3LocationMarshaller : IRequestMarshaller<S3Location, JsonMarshallerContext> 
+    /// Response Unmarshaller for Code Object
+    /// </summary>  
+    public class CodeUnmarshaller : IJsonUnmarshaller<Code, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
-        /// <param name="requestObject"></param>
         /// <param name="context"></param>
-        /// <returns></returns>
-        public void Marshall(S3Location requestObject, JsonMarshallerContext context)
+        /// <param name="reader"></param>
+        /// <returns>The unmarshalled object</returns>
+        public Code Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            if(requestObject == null)
-                return;
-            if(requestObject.IsSetBucket())
-            {
-                context.Writer.WritePropertyName("bucket");
-                context.Writer.WriteStringValue(requestObject.Bucket);
-            }
+            Code unmarshalledObject = new Code();
+            if (context.IsEmptyResponse)
+                return null;
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
+                return null;
 
-            if(requestObject.IsSetPrefix())
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                context.Writer.WritePropertyName("prefix");
-                context.Writer.WriteStringValue(requestObject.Prefix);
+                if (context.TestExpression("s3", targetDepth))
+                {
+                    var unmarshaller = S3LocationUnmarshaller.Instance;
+                    unmarshalledObject.S3 = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
-
-            if(requestObject.IsSetVersionId())
-            {
-                context.Writer.WritePropertyName("versionId");
-                context.Writer.WriteStringValue(requestObject.VersionId);
-            }
-
+            return unmarshalledObject;
         }
 
-        /// <summary>
-        /// Singleton Marshaller.
-        /// </summary>
-        public readonly static S3LocationMarshaller Instance = new S3LocationMarshaller();
 
+        private static CodeUnmarshaller _instance = new CodeUnmarshaller();        
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static CodeUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
     }
 }
