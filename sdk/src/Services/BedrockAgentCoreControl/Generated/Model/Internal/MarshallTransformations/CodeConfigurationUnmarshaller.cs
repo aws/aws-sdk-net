@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AgentRuntimeArtifact Object
+    /// Response Unmarshaller for CodeConfiguration Object
     /// </summary>  
-    public class AgentRuntimeArtifactUnmarshaller : IUnmarshaller<AgentRuntimeArtifact, XmlUnmarshallerContext>, IUnmarshaller<AgentRuntimeArtifact, JsonUnmarshallerContext>
+    public class CodeConfigurationUnmarshaller : IUnmarshaller<CodeConfiguration, XmlUnmarshallerContext>, IUnmarshaller<CodeConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        AgentRuntimeArtifact IUnmarshaller<AgentRuntimeArtifact, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        CodeConfiguration IUnmarshaller<CodeConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public AgentRuntimeArtifact Unmarshall(JsonUnmarshallerContext context)
+        public CodeConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
-            AgentRuntimeArtifact unmarshalledObject = new AgentRuntimeArtifact();
+            CodeConfiguration unmarshalledObject = new CodeConfiguration();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,16 +66,22 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("codeConfiguration", targetDepth))
+                if (context.TestExpression("code", targetDepth))
                 {
-                    var unmarshaller = CodeConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.CodeConfiguration = unmarshaller.Unmarshall(context);
+                    var unmarshaller = CodeUnmarshaller.Instance;
+                    unmarshalledObject.Code = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("containerConfiguration", targetDepth))
+                if (context.TestExpression("entryPoint", targetDepth))
                 {
-                    var unmarshaller = ContainerConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.ContainerConfiguration = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.EntryPoint = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("runtime", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Runtime = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -83,12 +89,12 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         }
 
 
-        private static AgentRuntimeArtifactUnmarshaller _instance = new AgentRuntimeArtifactUnmarshaller();        
+        private static CodeConfigurationUnmarshaller _instance = new CodeConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AgentRuntimeArtifactUnmarshaller Instance
+        public static CodeConfigurationUnmarshaller Instance
         {
             get
             {

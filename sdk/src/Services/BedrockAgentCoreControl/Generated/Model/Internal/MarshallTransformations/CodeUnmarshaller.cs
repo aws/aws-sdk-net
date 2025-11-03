@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AgentRuntimeArtifact Object
+    /// Response Unmarshaller for Code Object
     /// </summary>  
-    public class AgentRuntimeArtifactUnmarshaller : IUnmarshaller<AgentRuntimeArtifact, XmlUnmarshallerContext>, IUnmarshaller<AgentRuntimeArtifact, JsonUnmarshallerContext>
+    public class CodeUnmarshaller : IUnmarshaller<Code, XmlUnmarshallerContext>, IUnmarshaller<Code, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        AgentRuntimeArtifact IUnmarshaller<AgentRuntimeArtifact, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        Code IUnmarshaller<Code, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public AgentRuntimeArtifact Unmarshall(JsonUnmarshallerContext context)
+        public Code Unmarshall(JsonUnmarshallerContext context)
         {
-            AgentRuntimeArtifact unmarshalledObject = new AgentRuntimeArtifact();
+            Code unmarshalledObject = new Code();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,16 +66,10 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("codeConfiguration", targetDepth))
+                if (context.TestExpression("s3", targetDepth))
                 {
-                    var unmarshaller = CodeConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.CodeConfiguration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("containerConfiguration", targetDepth))
-                {
-                    var unmarshaller = ContainerConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.ContainerConfiguration = unmarshaller.Unmarshall(context);
+                    var unmarshaller = S3LocationUnmarshaller.Instance;
+                    unmarshalledObject.S3 = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -83,12 +77,12 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         }
 
 
-        private static AgentRuntimeArtifactUnmarshaller _instance = new AgentRuntimeArtifactUnmarshaller();        
+        private static CodeUnmarshaller _instance = new CodeUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AgentRuntimeArtifactUnmarshaller Instance
+        public static CodeUnmarshaller Instance
         {
             get
             {

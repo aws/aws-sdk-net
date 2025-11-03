@@ -48,6 +48,17 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetCodeConfiguration())
+            {
+                context.Writer.WritePropertyName("codeConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = CodeConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.CodeConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetContainerConfiguration())
             {
                 context.Writer.WritePropertyName("containerConfiguration");
