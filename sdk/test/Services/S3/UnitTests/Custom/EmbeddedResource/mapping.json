@@ -43,6 +43,7 @@
         },
         "UploadResponse": {
             "PutObjectResponse": [
+                "Bucket",
                 "BucketKeyEnabled",
                 "ChecksumCRC32",
                 "ChecksumCRC32C",
@@ -52,12 +53,15 @@
                 "ChecksumType",
                 "ETag",
                 "Expiration",
+                "Key",
+                "Location",
                 "RequestCharged",
                 "SSECustomerAlgorithm",
                 "SSECustomerKeyMD5",
                 "SSEKMSEncryptionContext",
                 "SSEKMSKeyId",
                 "ServerSideEncryption",
+                "Size",
                 "VersionId"
             ]
         },
@@ -129,19 +133,43 @@
     "Conversion": {
         "UploadRequest": {
             "PutObjectRequest": [
+                "ACL",
                 "Bucket",
+                "BucketKeyEnabled",
+                "CacheControl",
                 "ChecksumAlgorithm",
                 "ChecksumCRC32",
                 "ChecksumCRC32C",
                 "ChecksumCRC64NVME",
                 "ChecksumSHA1",
                 "ChecksumSHA256",
+                "ContentDisposition",
+                "ContentEncoding",
+                "ContentLanguage",
+                "ContentType",
                 "ExpectedBucketOwner",
+                "Expires",
+                "GrantFullControl",
+                "GrantRead",
+                "GrantReadACP",
+                "GrantWriteACP",
+                "IfMatch",
+                "IfNoneMatch",
                 "Key",
+                "Metadata",
+                "ObjectLockLegalHoldStatus",
+                "ObjectLockMode",
+                "ObjectLockRetainUntilDate",
                 "RequestPayer",
                 "SSECustomerAlgorithm",
                 "SSECustomerKey",
-                "SSECustomerKeyMD5"
+                "SSECustomerKeyMD5",
+                "SSEKMSEncryptionContext",
+                "SSEKMSKeyId",
+                "ServerSideEncryption",
+                "StorageClass",
+                "Tagging",
+                "WebsiteRedirectLocation"
             ],
             "CreateMultipartRequest": [
                 "ACL",
@@ -210,6 +238,7 @@
         },
         "CompleteMultipartResponse": {
             "UploadResponse": [
+                "Bucket",
                 "BucketKeyEnabled",
                 "ChecksumCRC32",
                 "ChecksumCRC32C",
@@ -219,6 +248,8 @@
                 "ChecksumType",
                 "ETag",
                 "Expiration",
+                "Key",
+                "Location",
                 "RequestCharged",
                 "SSEKMSKeyId",
                 "ServerSideEncryption",
@@ -242,6 +273,7 @@
                 "SSEKMSEncryptionContext",
                 "SSEKMSKeyId",
                 "ServerSideEncryption",
+                "Size",
                 "VersionId"
             ]
         },
