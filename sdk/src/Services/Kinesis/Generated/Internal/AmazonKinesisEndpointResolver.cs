@@ -280,6 +280,12 @@ namespace Amazon.Kinesis.Internal
                 result.StreamARN = request.StreamARN;
                 return result;
             }
+            if (requestContext.RequestName == "UpdateStreamWarmThroughputRequest") {
+                result.OperationType = "control";
+                var request = (UpdateStreamWarmThroughputRequest)requestContext.OriginalRequest;
+                result.StreamARN = request.StreamARN;
+                return result;
+            }
 
             return result;
         }

@@ -46,6 +46,7 @@ namespace Amazon.Kinesis.Model
         private StreamModeDetails _streamModeDetails;
         private string _streamName;
         private StreamStatus _streamStatus;
+        private WarmThroughputObject _warmThroughput;
 
         /// <summary>
         /// Gets and sets the property ConsumerCount. 
@@ -330,6 +331,25 @@ namespace Amazon.Kinesis.Model
         internal bool IsSetStreamStatus()
         {
             return this._streamStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WarmThroughput. 
+        /// <para>
+        /// The warm throughput in MB/s for the stream. This represents the throughput capacity
+        /// that will be immediately available for write operations.
+        /// </para>
+        /// </summary>
+        public WarmThroughputObject WarmThroughput
+        {
+            get { return this._warmThroughput; }
+            set { this._warmThroughput = value; }
+        }
+
+        // Check to see if WarmThroughput property is set
+        internal bool IsSetWarmThroughput()
+        {
+            return this._warmThroughput != null;
         }
 
     }

@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateStream Request Marshaller
+    /// UpdateStreamWarmThroughput Request Marshaller
     /// </summary>       
-    public class CreateStreamRequestMarshaller : IMarshaller<IRequest, CreateStreamRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class UpdateStreamWarmThroughputRequestMarshaller : IMarshaller<IRequest, UpdateStreamWarmThroughputRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -45,7 +45,7 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateStreamRequest)input);
+            return this.Marshall((UpdateStreamWarmThroughputRequest)input);
         }
 
         /// <summary>
@@ -53,10 +53,10 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateStreamRequest publicRequest)
+        public IRequest Marshall(UpdateStreamWarmThroughputRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Kinesis");
-            string target = "Kinesis_20131202.CreateStream";
+            string target = "Kinesis_20131202.UpdateStreamWarmThroughput";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2013-12-02";
@@ -69,47 +69,16 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetMaxRecordSizeInKiB())
+                if(publicRequest.IsSetStreamARN())
                 {
-                    context.Writer.WritePropertyName("MaxRecordSizeInKiB");
-                    context.Writer.Write(publicRequest.MaxRecordSizeInKiB);
-                }
-
-                if(publicRequest.IsSetShardCount())
-                {
-                    context.Writer.WritePropertyName("ShardCount");
-                    context.Writer.Write(publicRequest.ShardCount);
-                }
-
-                if(publicRequest.IsSetStreamModeDetails())
-                {
-                    context.Writer.WritePropertyName("StreamModeDetails");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = StreamModeDetailsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.StreamModeDetails, context);
-
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WritePropertyName("StreamARN");
+                    context.Writer.Write(publicRequest.StreamARN);
                 }
 
                 if(publicRequest.IsSetStreamName())
                 {
                     context.Writer.WritePropertyName("StreamName");
                     context.Writer.Write(publicRequest.StreamName);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
-                    {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
-                    }
-                    context.Writer.WriteObjectEnd();
                 }
 
                 if(publicRequest.IsSetWarmThroughputMiBps())
@@ -126,9 +95,9 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateStreamRequestMarshaller _instance = new CreateStreamRequestMarshaller();        
+        private static UpdateStreamWarmThroughputRequestMarshaller _instance = new UpdateStreamWarmThroughputRequestMarshaller();        
 
-        internal static CreateStreamRequestMarshaller GetInstance()
+        internal static UpdateStreamWarmThroughputRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -136,7 +105,7 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateStreamRequestMarshaller Instance
+        public static UpdateStreamWarmThroughputRequestMarshaller Instance
         {
             get
             {

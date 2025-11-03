@@ -33,12 +33,22 @@ namespace Amazon.Kinesis.Model
     /// Container for the parameters to the UpdateStreamMode operation.
     /// Updates the capacity mode of the data stream. Currently, in Kinesis Data Streams,
     /// you can choose between an <b>on-demand</b> capacity mode and a <b>provisioned</b>
-    /// capacity mode for your data stream.
+    /// capacity mode for your data stream. 
+    /// 
+    ///  
+    /// <para>
+    /// If you'd still like to proactively scale your on-demand data stream’s capacity, you
+    /// can unlock the warm throughput feature for on-demand data streams by enabling <c>MinimumThroughputBillingCommitment</c>
+    /// for your account. Once your account has <c>MinimumThroughputBillingCommitment</c>
+    /// enabled, you can specify the warm throughput in MiB per second that your stream can
+    /// support in writes.
+    /// </para>
     /// </summary>
     public partial class UpdateStreamModeRequest : AmazonKinesisRequest
     {
         private string _streamARN;
         private StreamModeDetails _streamModeDetails;
+        private int? _warmThroughputMiBps;
 
         /// <summary>
         /// Gets and sets the property StreamARN. 
@@ -78,6 +88,27 @@ namespace Amazon.Kinesis.Model
         internal bool IsSetStreamModeDetails()
         {
             return this._streamModeDetails != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WarmThroughputMiBps. 
+        /// <para>
+        /// The target warm throughput in MB/s that the stream should be scaled to handle. This
+        /// represents the throughput capacity that will be immediately available for write operations.
+        /// This field is only valid when the stream mode is being updated to on-demand.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0)]
+        public int WarmThroughputMiBps
+        {
+            get { return this._warmThroughputMiBps.GetValueOrDefault(); }
+            set { this._warmThroughputMiBps = value; }
+        }
+
+        // Check to see if WarmThroughputMiBps property is set
+        internal bool IsSetWarmThroughputMiBps()
+        {
+            return this._warmThroughputMiBps.HasValue; 
         }
 
     }

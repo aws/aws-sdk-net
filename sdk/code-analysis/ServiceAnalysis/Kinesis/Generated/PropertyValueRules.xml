@@ -28,6 +28,10 @@
     <pattern>[a-zA-Z0-9_.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Kinesis.Model.CreateStreamRequest.WarmThroughputMiBps</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Kinesis.Model.DecreaseStreamRetentionPeriodRequest.StreamARN</property>
     <min>1</min>
     <max>2048</max>
@@ -601,6 +605,38 @@
     <pattern>arn:aws.*:kinesis:.*:\d{12}:stream/\S+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Kinesis.Model.UpdateStreamModeRequest.WarmThroughputMiBps</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kinesis.Model.UpdateStreamWarmThroughputRequest.StreamARN</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:aws.*:kinesis:.*:\d{12}:stream/\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kinesis.Model.UpdateStreamWarmThroughputRequest.StreamName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9_.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kinesis.Model.UpdateStreamWarmThroughputRequest.WarmThroughputMiBps</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kinesis.Model.UpdateStreamWarmThroughputResponse.StreamARN</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:aws.*:kinesis:.*:\d{12}:stream/\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kinesis.Model.UpdateStreamWarmThroughputResponse.StreamName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9_.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Kinesis.Model.ChildShard.ShardId</property>
     <min>1</min>
     <max>128</max>
@@ -808,5 +844,13 @@
     <property>Amazon.Kinesis.Model.Tag.Value</property>
     <min>0</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kinesis.Model.WarmThroughputObject.CurrentMiBps</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kinesis.Model.WarmThroughputObject.TargetMiBps</property>
+    <min>0</min>
   </property-value-rule>
 </property-value-rules>

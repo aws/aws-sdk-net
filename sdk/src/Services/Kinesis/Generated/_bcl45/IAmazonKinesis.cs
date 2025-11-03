@@ -160,12 +160,23 @@ namespace Amazon.Kinesis
         /// Data streams with an on-demand mode require no capacity planning and automatically
         /// scale to handle gigabytes of write and read throughput per minute. With the on-demand
         /// mode, Kinesis Data Streams automatically manages the shards in order to provide the
-        /// necessary throughput. For the data streams with a provisioned mode, you must specify
-        /// the number of shards for the data stream. Each shard can support reads up to five
-        /// transactions per second, up to a maximum data read total of 2 MiB per second. Each
-        /// shard can support writes up to 1,000 records per second, up to a maximum data write
-        /// total of 1 MiB per second. If the amount of data input increases or decreases, you
-        /// can add or remove shards.
+        /// necessary throughput.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you'd still like to proactively scale your on-demand data stream’s capacity, you
+        /// can unlock the warm throughput feature for on-demand data streams by enabling <c>MinimumThroughputBillingCommitment</c>
+        /// for your account. Once your account has <c>MinimumThroughputBillingCommitment</c>
+        /// enabled, you can specify the warm throughput in MiB per second that your stream can
+        /// support in writes.
+        /// </para>
+        ///  
+        /// <para>
+        /// For the data streams with a provisioned mode, you must specify the number of shards
+        /// for the data stream. Each shard can support reads up to five transactions per second,
+        /// up to a maximum data read total of 2 MiB per second. Each shard can support writes
+        /// up to 1,000 records per second, up to a maximum data write total of 1 MiB per second.
+        /// If the amount of data input increases or decreases, you can add or remove shards.
         /// </para>
         ///  
         /// <para>
@@ -196,7 +207,8 @@ namespace Amazon.Kinesis
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For the default shard limit for an Amazon Web Services account, see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Amazon
+        /// For the default shard or on-demand throughput limits for an Amazon Web Services account,
+        /// see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Amazon
         /// Kinesis Data Streams Limits</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.
         /// To increase this limit, <a href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">contact
         /// Amazon Web Services Support</a>.
@@ -236,6 +248,10 @@ namespace Amazon.Kinesis
         /// The resource is not available for this operation. For successful operation, the resource
         /// must be in the <c>ACTIVE</c> state.
         /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ValidationException">
+        /// Specifies that you tried to invoke this API for a data stream with the on-demand capacity
+        /// mode. This API is only supported for data streams with the provisioned capacity mode.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/CreateStream">REST API Reference for CreateStream Operation</seealso>
         CreateStreamResponse CreateStream(CreateStreamRequest request);
 
@@ -253,12 +269,23 @@ namespace Amazon.Kinesis
         /// Data streams with an on-demand mode require no capacity planning and automatically
         /// scale to handle gigabytes of write and read throughput per minute. With the on-demand
         /// mode, Kinesis Data Streams automatically manages the shards in order to provide the
-        /// necessary throughput. For the data streams with a provisioned mode, you must specify
-        /// the number of shards for the data stream. Each shard can support reads up to five
-        /// transactions per second, up to a maximum data read total of 2 MiB per second. Each
-        /// shard can support writes up to 1,000 records per second, up to a maximum data write
-        /// total of 1 MiB per second. If the amount of data input increases or decreases, you
-        /// can add or remove shards.
+        /// necessary throughput.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you'd still like to proactively scale your on-demand data stream’s capacity, you
+        /// can unlock the warm throughput feature for on-demand data streams by enabling <c>MinimumThroughputBillingCommitment</c>
+        /// for your account. Once your account has <c>MinimumThroughputBillingCommitment</c>
+        /// enabled, you can specify the warm throughput in MiB per second that your stream can
+        /// support in writes.
+        /// </para>
+        ///  
+        /// <para>
+        /// For the data streams with a provisioned mode, you must specify the number of shards
+        /// for the data stream. Each shard can support reads up to five transactions per second,
+        /// up to a maximum data read total of 2 MiB per second. Each shard can support writes
+        /// up to 1,000 records per second, up to a maximum data write total of 1 MiB per second.
+        /// If the amount of data input increases or decreases, you can add or remove shards.
         /// </para>
         ///  
         /// <para>
@@ -289,7 +316,8 @@ namespace Amazon.Kinesis
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For the default shard limit for an Amazon Web Services account, see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Amazon
+        /// For the default shard or on-demand throughput limits for an Amazon Web Services account,
+        /// see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Amazon
         /// Kinesis Data Streams Limits</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.
         /// To increase this limit, <a href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">contact
         /// Amazon Web Services Support</a>.
@@ -331,6 +359,10 @@ namespace Amazon.Kinesis
         /// <exception cref="Amazon.Kinesis.Model.ResourceInUseException">
         /// The resource is not available for this operation. For successful operation, the resource
         /// must be in the <c>ACTIVE</c> state.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ValidationException">
+        /// Specifies that you tried to invoke this API for a data stream with the on-demand capacity
+        /// mode. This API is only supported for data streams with the provisioned capacity mode.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/CreateStream">REST API Reference for CreateStream Operation</seealso>
         Task<CreateStreamResponse> CreateStreamAsync(CreateStreamRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -811,6 +843,58 @@ namespace Amazon.Kinesis
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DeregisterStreamConsumer">REST API Reference for DeregisterStreamConsumer Operation</seealso>
         Task<DeregisterStreamConsumerResponse> DeregisterStreamConsumerAsync(DeregisterStreamConsumerRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeAccountSettings
+
+
+        /// <summary>
+        /// Describes the account-level settings for Amazon Kinesis Data Streams. This operation
+        /// returns information about the minimum throughput billing commitments and other account-level
+        /// configurations.
+        /// 
+        ///  
+        /// <para>
+        /// This API has a call limit of 5 transactions per second (TPS) for each Amazon Web Services
+        /// account. TPS over 5 will initiate the <c>LimitExceededException</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAccountSettings service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAccountSettings service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.LimitExceededException">
+        /// The requested resource exceeds the maximum number allowed, or the number of concurrent
+        /// stream requests exceeds the maximum number allowed.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DescribeAccountSettings">REST API Reference for DescribeAccountSettings Operation</seealso>
+        DescribeAccountSettingsResponse DescribeAccountSettings(DescribeAccountSettingsRequest request);
+
+
+
+        /// <summary>
+        /// Describes the account-level settings for Amazon Kinesis Data Streams. This operation
+        /// returns information about the minimum throughput billing commitments and other account-level
+        /// configurations.
+        /// 
+        ///  
+        /// <para>
+        /// This API has a call limit of 5 transactions per second (TPS) for each Amazon Web Services
+        /// account. TPS over 5 will initiate the <c>LimitExceededException</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAccountSettings service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeAccountSettings service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.LimitExceededException">
+        /// The requested resource exceeds the maximum number allowed, or the number of concurrent
+        /// stream requests exceeds the maximum number allowed.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DescribeAccountSettings">REST API Reference for DescribeAccountSettings Operation</seealso>
+        Task<DescribeAccountSettingsResponse> DescribeAccountSettingsAsync(DescribeAccountSettingsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -4306,6 +4390,102 @@ namespace Amazon.Kinesis
 
         #endregion
         
+        #region  UpdateAccountSettings
+
+
+        /// <summary>
+        /// Updates the account-level settings for Amazon Kinesis Data Streams.
+        /// 
+        ///  
+        /// <para>
+        /// Updating account settings is a synchronous operation. Upon receiving the request,
+        /// Kinesis Data Streams will return immediately with your account’s updated settings.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>API limits</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Certain account configurations have minimum commitment windows. Attempting to update
+        /// your settings prior to the end of the minimum commitment window might have certain
+        /// restrictions.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// This API has a call limit of 5 transactions per second (TPS) for each Amazon Web Services
+        /// account. TPS over 5 will initiate the <c>LimitExceededException</c>.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAccountSettings service method.</param>
+        /// 
+        /// <returns>The response from the UpdateAccountSettings service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
+        /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
+        /// For more information, see the returned message.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.LimitExceededException">
+        /// The requested resource exceeds the maximum number allowed, or the number of concurrent
+        /// stream requests exceeds the maximum number allowed.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ValidationException">
+        /// Specifies that you tried to invoke this API for a data stream with the on-demand capacity
+        /// mode. This API is only supported for data streams with the provisioned capacity mode.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/UpdateAccountSettings">REST API Reference for UpdateAccountSettings Operation</seealso>
+        UpdateAccountSettingsResponse UpdateAccountSettings(UpdateAccountSettingsRequest request);
+
+
+
+        /// <summary>
+        /// Updates the account-level settings for Amazon Kinesis Data Streams.
+        /// 
+        ///  
+        /// <para>
+        /// Updating account settings is a synchronous operation. Upon receiving the request,
+        /// Kinesis Data Streams will return immediately with your account’s updated settings.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>API limits</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Certain account configurations have minimum commitment windows. Attempting to update
+        /// your settings prior to the end of the minimum commitment window might have certain
+        /// restrictions.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// This API has a call limit of 5 transactions per second (TPS) for each Amazon Web Services
+        /// account. TPS over 5 will initiate the <c>LimitExceededException</c>.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAccountSettings service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateAccountSettings service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
+        /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
+        /// For more information, see the returned message.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.LimitExceededException">
+        /// The requested resource exceeds the maximum number allowed, or the number of concurrent
+        /// stream requests exceeds the maximum number allowed.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ValidationException">
+        /// Specifies that you tried to invoke this API for a data stream with the on-demand capacity
+        /// mode. This API is only supported for data streams with the provisioned capacity mode.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/UpdateAccountSettings">REST API Reference for UpdateAccountSettings Operation</seealso>
+        Task<UpdateAccountSettingsResponse> UpdateAccountSettingsAsync(UpdateAccountSettingsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  UpdateMaxRecordSize
 
 
@@ -4604,7 +4784,16 @@ namespace Amazon.Kinesis
         /// <summary>
         /// Updates the capacity mode of the data stream. Currently, in Kinesis Data Streams,
         /// you can choose between an <b>on-demand</b> capacity mode and a <b>provisioned</b>
-        /// capacity mode for your data stream.
+        /// capacity mode for your data stream. 
+        /// 
+        ///  
+        /// <para>
+        /// If you'd still like to proactively scale your on-demand data stream’s capacity, you
+        /// can unlock the warm throughput feature for on-demand data streams by enabling <c>MinimumThroughputBillingCommitment</c>
+        /// for your account. Once your account has <c>MinimumThroughputBillingCommitment</c>
+        /// enabled, you can specify the warm throughput in MiB per second that your stream can
+        /// support in writes.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateStreamMode service method.</param>
         /// 
@@ -4624,6 +4813,10 @@ namespace Amazon.Kinesis
         /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
         /// The requested resource could not be found. The stream might not be specified correctly.
         /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ValidationException">
+        /// Specifies that you tried to invoke this API for a data stream with the on-demand capacity
+        /// mode. This API is only supported for data streams with the provisioned capacity mode.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/UpdateStreamMode">REST API Reference for UpdateStreamMode Operation</seealso>
         UpdateStreamModeResponse UpdateStreamMode(UpdateStreamModeRequest request);
 
@@ -4632,7 +4825,16 @@ namespace Amazon.Kinesis
         /// <summary>
         /// Updates the capacity mode of the data stream. Currently, in Kinesis Data Streams,
         /// you can choose between an <b>on-demand</b> capacity mode and a <b>provisioned</b>
-        /// capacity mode for your data stream.
+        /// capacity mode for your data stream. 
+        /// 
+        ///  
+        /// <para>
+        /// If you'd still like to proactively scale your on-demand data stream’s capacity, you
+        /// can unlock the warm throughput feature for on-demand data streams by enabling <c>MinimumThroughputBillingCommitment</c>
+        /// for your account. Once your account has <c>MinimumThroughputBillingCommitment</c>
+        /// enabled, you can specify the warm throughput in MiB per second that your stream can
+        /// support in writes.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateStreamMode service method.</param>
         /// <param name="cancellationToken">
@@ -4655,8 +4857,176 @@ namespace Amazon.Kinesis
         /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
         /// The requested resource could not be found. The stream might not be specified correctly.
         /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ValidationException">
+        /// Specifies that you tried to invoke this API for a data stream with the on-demand capacity
+        /// mode. This API is only supported for data streams with the provisioned capacity mode.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/UpdateStreamMode">REST API Reference for UpdateStreamMode Operation</seealso>
         Task<UpdateStreamModeResponse> UpdateStreamModeAsync(UpdateStreamModeRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateStreamWarmThroughput
+
+
+        /// <summary>
+        /// Updates the warm throughput configuration for the specified Amazon Kinesis Data Streams
+        /// on-demand data stream. This operation allows you to proactively scale your on-demand
+        /// data stream to a specified throughput level, enabling better performance for sudden
+        /// traffic spikes. 
+        /// 
+        ///  <note> 
+        /// <para>
+        /// When invoking this API, you must use either the <c>StreamARN</c> or the <c>StreamName</c>
+        /// parameter, or both. It is recommended that you use the <c>StreamARN</c> input parameter
+        /// when you invoke this API.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Updating the warm throughput is an asynchronous operation. Upon receiving the request,
+        /// Kinesis Data Streams returns immediately and sets the status of the stream to <c>UPDATING</c>.
+        /// After the update is complete, Kinesis Data Streams sets the status of the stream back
+        /// to <c>ACTIVE</c>. Depending on the size of the stream, the scaling action could take
+        /// a few minutes to complete. You can continue to read and write data to your stream
+        /// while its status is <c>UPDATING</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation is only supported for data streams with the on-demand capacity mode
+        /// in accounts that have <c>MinimumThroughputBillingCommitment</c> enabled. Provisioned
+        /// capacity mode streams do not support warm throughput configuration.
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation has the following default limits. By default, you cannot do the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Scale to more than 10 GiBps for an on-demand stream.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// This API has a call limit of 5 transactions per second (TPS) for each Amazon Web Services
+        /// account. TPS over 5 will initiate the <c>LimitExceededException</c>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For the default limits for an Amazon Web Services account, see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Streams
+        /// Limits</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>. To request an
+        /// increase in the call rate limit, the shard limit for this API, or your overall shard
+        /// limit, use the <a href="https://console.aws.amazon.com/support/v1#/case/create?issueType=service-limit-increase&amp;limitType=service-code-kinesis">limits
+        /// form</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateStreamWarmThroughput service method.</param>
+        /// 
+        /// <returns>The response from the UpdateStreamWarmThroughput service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
+        /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
+        /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
+        /// For more information, see the returned message.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.LimitExceededException">
+        /// The requested resource exceeds the maximum number allowed, or the number of concurrent
+        /// stream requests exceeds the maximum number allowed.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ResourceInUseException">
+        /// The resource is not available for this operation. For successful operation, the resource
+        /// must be in the <c>ACTIVE</c> state.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
+        /// The requested resource could not be found. The stream might not be specified correctly.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ValidationException">
+        /// Specifies that you tried to invoke this API for a data stream with the on-demand capacity
+        /// mode. This API is only supported for data streams with the provisioned capacity mode.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/UpdateStreamWarmThroughput">REST API Reference for UpdateStreamWarmThroughput Operation</seealso>
+        UpdateStreamWarmThroughputResponse UpdateStreamWarmThroughput(UpdateStreamWarmThroughputRequest request);
+
+
+
+        /// <summary>
+        /// Updates the warm throughput configuration for the specified Amazon Kinesis Data Streams
+        /// on-demand data stream. This operation allows you to proactively scale your on-demand
+        /// data stream to a specified throughput level, enabling better performance for sudden
+        /// traffic spikes. 
+        /// 
+        ///  <note> 
+        /// <para>
+        /// When invoking this API, you must use either the <c>StreamARN</c> or the <c>StreamName</c>
+        /// parameter, or both. It is recommended that you use the <c>StreamARN</c> input parameter
+        /// when you invoke this API.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Updating the warm throughput is an asynchronous operation. Upon receiving the request,
+        /// Kinesis Data Streams returns immediately and sets the status of the stream to <c>UPDATING</c>.
+        /// After the update is complete, Kinesis Data Streams sets the status of the stream back
+        /// to <c>ACTIVE</c>. Depending on the size of the stream, the scaling action could take
+        /// a few minutes to complete. You can continue to read and write data to your stream
+        /// while its status is <c>UPDATING</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation is only supported for data streams with the on-demand capacity mode
+        /// in accounts that have <c>MinimumThroughputBillingCommitment</c> enabled. Provisioned
+        /// capacity mode streams do not support warm throughput configuration.
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation has the following default limits. By default, you cannot do the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Scale to more than 10 GiBps for an on-demand stream.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// This API has a call limit of 5 transactions per second (TPS) for each Amazon Web Services
+        /// account. TPS over 5 will initiate the <c>LimitExceededException</c>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For the default limits for an Amazon Web Services account, see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Streams
+        /// Limits</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>. To request an
+        /// increase in the call rate limit, the shard limit for this API, or your overall shard
+        /// limit, use the <a href="https://console.aws.amazon.com/support/v1#/case/create?issueType=service-limit-increase&amp;limitType=service-code-kinesis">limits
+        /// form</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateStreamWarmThroughput service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateStreamWarmThroughput service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
+        /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
+        /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
+        /// For more information, see the returned message.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.LimitExceededException">
+        /// The requested resource exceeds the maximum number allowed, or the number of concurrent
+        /// stream requests exceeds the maximum number allowed.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ResourceInUseException">
+        /// The resource is not available for this operation. For successful operation, the resource
+        /// must be in the <c>ACTIVE</c> state.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
+        /// The requested resource could not be found. The stream might not be specified correctly.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ValidationException">
+        /// Specifies that you tried to invoke this API for a data stream with the on-demand capacity
+        /// mode. This API is only supported for data streams with the provisioned capacity mode.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/UpdateStreamWarmThroughput">REST API Reference for UpdateStreamWarmThroughput Operation</seealso>
+        Task<UpdateStreamWarmThroughputResponse> UpdateStreamWarmThroughputAsync(UpdateStreamWarmThroughputRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

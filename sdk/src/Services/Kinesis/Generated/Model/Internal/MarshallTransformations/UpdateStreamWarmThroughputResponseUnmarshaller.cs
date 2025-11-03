@@ -35,9 +35,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CreateStream operation
+    /// Response Unmarshaller for UpdateStreamWarmThroughput operation
     /// </summary>  
-    public class CreateStreamResponseUnmarshaller : JsonResponseUnmarshaller
+    public class UpdateStreamWarmThroughputResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,8 +46,31 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            CreateStreamResponse response = new CreateStreamResponse();
+            UpdateStreamWarmThroughputResponse response = new UpdateStreamWarmThroughputResponse();
 
+            context.Read();
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
+            {
+                if (context.TestExpression("StreamARN", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.StreamARN = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("StreamName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.StreamName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("WarmThroughput", targetDepth))
+                {
+                    var unmarshaller = WarmThroughputObjectUnmarshaller.Instance;
+                    response.WarmThroughput = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+            }
 
             return response;
         }
@@ -70,6 +93,10 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
             using (var streamCopy = new MemoryStream(responseBodyBytes))
             using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
             {
+                if (errorResponse.Code != null && errorResponse.Code.Equals("AccessDeniedException"))
+                {
+                    return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidArgumentException"))
                 {
                     return InvalidArgumentExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
@@ -82,6 +109,10 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
                 {
                     return ResourceInUseExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
+                {
+                    return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ValidationException"))
                 {
                     return ValidationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
@@ -90,9 +121,9 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
             return new AmazonKinesisException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static CreateStreamResponseUnmarshaller _instance = new CreateStreamResponseUnmarshaller();        
+        private static UpdateStreamWarmThroughputResponseUnmarshaller _instance = new UpdateStreamWarmThroughputResponseUnmarshaller();        
 
-        internal static CreateStreamResponseUnmarshaller GetInstance()
+        internal static UpdateStreamWarmThroughputResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -100,7 +131,7 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateStreamResponseUnmarshaller Instance
+        public static UpdateStreamWarmThroughputResponseUnmarshaller Instance
         {
             get
             {
