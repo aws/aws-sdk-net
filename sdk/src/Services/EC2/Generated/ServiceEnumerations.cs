@@ -13435,6 +13435,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType Trn1n32xlarge = new InstanceType("trn1n.32xlarge");
         /// <summary>
+        /// Constant Trn23xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType Trn23xlarge = new InstanceType("trn2.3xlarge");
+        /// <summary>
         /// Constant Trn248xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType Trn248xlarge = new InstanceType("trn2.48xlarge");
