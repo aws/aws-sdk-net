@@ -1,3 +1,17 @@
+### 4.0.125.0 (2025-11-03 19:32 UTC)
+* Account (4.0.2.2)
+	* Rename internal exception property to avoid hiding inherited AmazonServiceException member.
+* BedrockAgentCoreControl (4.0.10.0)
+	* Adds support for direct code deploy with CreateAgentRuntime and UpdateAgentRuntime
+* Budgets (4.0.7.0)
+	* Fix the AWS Budgets endpoint for the aws-eusc partition.
+* EC2 (4.0.47.0)
+	* Add Amazon EC2 trn2.3xlarge instance type.
+* ECS (4.0.8.1)
+	* Documentation-only update for LINEAR and CANARY deployment strategies.
+* Kinesis (4.0.7.0)
+	* Adds support for MinimumThroughputBillingCommitment with new UpdateAccountSettings API. Adds support to configure warm throughput for on-demand streams in new UpdateStreamWarmThroughput API and existing CreateStream API and UpdateStreamMode API.
+
 ### 4.0.124.0 (2025-10-31 18:54 UTC)
 * AWSHealth (4.0.1.0)
 	* Update endpoint ruleset parameters casing
