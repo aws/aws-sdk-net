@@ -35,9 +35,9 @@ using Amazon.Util;
 namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CreateStream operation
+    /// Response Unmarshaller for UpdateAccountSettings operation
     /// </summary>  
-    public class CreateStreamResponseUnmarshaller : JsonResponseUnmarshaller
+    public class UpdateAccountSettingsResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,7 +46,19 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            CreateStreamResponse response = new CreateStreamResponse();
+            UpdateAccountSettingsResponse response = new UpdateAccountSettingsResponse();
+            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            context.Read(ref reader);
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth, ref reader))
+            {
+                if (context.TestExpression("MinimumThroughputBillingCommitment", targetDepth))
+                {
+                    var unmarshaller = MinimumThroughputBillingCommitmentOutputUnmarshaller.Instance;
+                    response.MinimumThroughputBillingCommitment = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+            }
 
             return response;
         }
@@ -79,10 +91,6 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
                 {
                     return LimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceInUseException"))
-                {
-                    return ResourceInUseExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ValidationException"))
                 {
                     return ValidationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
@@ -91,9 +99,9 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
             return new AmazonKinesisException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static CreateStreamResponseUnmarshaller _instance = new CreateStreamResponseUnmarshaller();        
+        private static UpdateAccountSettingsResponseUnmarshaller _instance = new UpdateAccountSettingsResponseUnmarshaller();        
 
-        internal static CreateStreamResponseUnmarshaller GetInstance()
+        internal static UpdateAccountSettingsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -101,7 +109,7 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateStreamResponseUnmarshaller Instance
+        public static UpdateAccountSettingsResponseUnmarshaller Instance
         {
             get
             {

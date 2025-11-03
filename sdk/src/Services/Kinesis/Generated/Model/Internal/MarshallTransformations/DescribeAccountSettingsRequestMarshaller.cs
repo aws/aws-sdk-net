@@ -37,9 +37,9 @@ using ThirdParty.RuntimeBackports;
 namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// UpdateStreamMode Request Marshaller
+    /// DescribeAccountSettings Request Marshaller
     /// </summary>       
-    public class UpdateStreamModeRequestMarshaller : IMarshaller<IRequest, UpdateStreamModeRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class DescribeAccountSettingsRequestMarshaller : IMarshaller<IRequest, DescribeAccountSettingsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -48,7 +48,7 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((UpdateStreamModeRequest)input);
+            return this.Marshall((DescribeAccountSettingsRequest)input);
         }
 
         /// <summary>
@@ -56,64 +56,24 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(UpdateStreamModeRequest publicRequest)
+        public IRequest Marshall(DescribeAccountSettingsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Kinesis");
-            string target = "Kinesis_20131202.UpdateStreamMode";
+            string target = "Kinesis_20131202.DescribeAccountSettings";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2013-12-02";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-#if !NETFRAMEWORK
-            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
-#else
-            using var memoryStream = new MemoryStream();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
-#endif
-            writer.WriteStartObject();
-            var context = new JsonMarshallerContext(request, writer);
-            if(publicRequest.IsSetStreamARN())
-            {
-                context.Writer.WritePropertyName("StreamARN");
-                context.Writer.WriteStringValue(publicRequest.StreamARN);
-            }
-
-            if(publicRequest.IsSetStreamModeDetails())
-            {
-                context.Writer.WritePropertyName("StreamModeDetails");
-                context.Writer.WriteStartObject();
-
-                var marshaller = StreamModeDetailsMarshaller.Instance;
-                marshaller.Marshall(publicRequest.StreamModeDetails, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(publicRequest.IsSetWarmThroughputMiBps())
-            {
-                context.Writer.WritePropertyName("WarmThroughputMiBps");
-                context.Writer.WriteNumberValue(publicRequest.WarmThroughputMiBps.Value);
-            }
-
-            writer.WriteEndObject();
-            writer.Flush();
-            // ToArray() must be called here because aspects of sigv4 signing require a byte array
-#if !NETFRAMEWORK
-            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
-#else
-            request.Content = memoryStream.ToArray();
-#endif
-            
-
+            var content = "{}";
+            request.Content = System.Text.Encoding.UTF8.GetBytes(content);
 
             return request;
         }
-        private static UpdateStreamModeRequestMarshaller _instance = new UpdateStreamModeRequestMarshaller();        
+        private static DescribeAccountSettingsRequestMarshaller _instance = new DescribeAccountSettingsRequestMarshaller();        
 
-        internal static UpdateStreamModeRequestMarshaller GetInstance()
+        internal static DescribeAccountSettingsRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -121,7 +81,7 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UpdateStreamModeRequestMarshaller Instance
+        public static DescribeAccountSettingsRequestMarshaller Instance
         {
             get
             {

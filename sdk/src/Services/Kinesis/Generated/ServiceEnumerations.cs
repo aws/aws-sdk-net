@@ -203,6 +203,110 @@ namespace Amazon.Kinesis
 
 
     /// <summary>
+    /// Constants used for properties of type MinimumThroughputBillingCommitmentInputStatus.
+    /// </summary>
+    public class MinimumThroughputBillingCommitmentInputStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for MinimumThroughputBillingCommitmentInputStatus
+        /// </summary>
+        public static readonly MinimumThroughputBillingCommitmentInputStatus DISABLED = new MinimumThroughputBillingCommitmentInputStatus("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for MinimumThroughputBillingCommitmentInputStatus
+        /// </summary>
+        public static readonly MinimumThroughputBillingCommitmentInputStatus ENABLED = new MinimumThroughputBillingCommitmentInputStatus("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MinimumThroughputBillingCommitmentInputStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MinimumThroughputBillingCommitmentInputStatus FindValue(string value)
+        {
+            return FindValue<MinimumThroughputBillingCommitmentInputStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MinimumThroughputBillingCommitmentInputStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MinimumThroughputBillingCommitmentOutputStatus.
+    /// </summary>
+    public class MinimumThroughputBillingCommitmentOutputStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for MinimumThroughputBillingCommitmentOutputStatus
+        /// </summary>
+        public static readonly MinimumThroughputBillingCommitmentOutputStatus DISABLED = new MinimumThroughputBillingCommitmentOutputStatus("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for MinimumThroughputBillingCommitmentOutputStatus
+        /// </summary>
+        public static readonly MinimumThroughputBillingCommitmentOutputStatus ENABLED = new MinimumThroughputBillingCommitmentOutputStatus("ENABLED");
+        /// <summary>
+        /// Constant ENABLED_UNTIL_EARLIEST_ALLOWED_END for MinimumThroughputBillingCommitmentOutputStatus
+        /// </summary>
+        public static readonly MinimumThroughputBillingCommitmentOutputStatus ENABLED_UNTIL_EARLIEST_ALLOWED_END = new MinimumThroughputBillingCommitmentOutputStatus("ENABLED_UNTIL_EARLIEST_ALLOWED_END");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MinimumThroughputBillingCommitmentOutputStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MinimumThroughputBillingCommitmentOutputStatus FindValue(string value)
+        {
+            return FindValue<MinimumThroughputBillingCommitmentOutputStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MinimumThroughputBillingCommitmentOutputStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ScalingType.
     /// </summary>
     public class ScalingType : ConstantClass
