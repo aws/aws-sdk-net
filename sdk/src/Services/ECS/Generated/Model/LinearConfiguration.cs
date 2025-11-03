@@ -46,7 +46,7 @@ namespace Amazon.ECS.Model
         /// <para>
         /// The amount of time in minutes to wait between each traffic shifting step during a
         /// linear deployment. Valid values are 0 to 1440 minutes (24 hours). The default value
-        /// is 6. This bake time is not applied after reaching 100% traffic.
+        /// is 6. This bake time is not applied after reaching 100 percent traffic.
         /// </para>
         /// </summary>
         public int StepBakeTimeInMinutes
@@ -65,7 +65,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property StepPercent. 
         /// <para>
         /// The percentage of production traffic to shift in each step during a linear deployment.
-        /// Valid values are 3.0 to 100.0. The default value is 10.0.
+        /// Valid values are multiples of 0.1 from 3.0 to 100.0. The default value is 10.0.
         /// </para>
         /// </summary>
         public double StepPercent
