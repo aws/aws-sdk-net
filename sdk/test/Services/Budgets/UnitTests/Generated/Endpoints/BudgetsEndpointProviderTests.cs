@@ -218,7 +218,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
             var endpoint = new AmazonBudgetsEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://budgets.amazonaws.eu", endpoint.URL);
+            Assert.AreEqual("https://budgets.eusc-de-east-1.api.amazonwebservices.eu", endpoint.URL);
         }
 
         [TestMethod]
