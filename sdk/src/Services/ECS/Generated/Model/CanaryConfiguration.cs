@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// Configuration for canary deployment strategy that shifts a fixed percentage of traffic
+    /// Configuration for a canary deployment strategy that shifts a fixed percentage of traffic
     /// to the new service revision, waits for a specified bake time, then shifts the remaining
     /// traffic. 
     /// 
@@ -70,7 +70,8 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property CanaryPercent. 
         /// <para>
         /// The percentage of production traffic to shift to the new service revision during the
-        /// canary phase. Valid values are 0.1 to 100.0. The default value is 5.0.
+        /// canary phase. Valid values are multiples of 0.1 from 0.1 to 100.0. The default value
+        /// is 5.0.
         /// </para>
         /// </summary>
         public double? CanaryPercent

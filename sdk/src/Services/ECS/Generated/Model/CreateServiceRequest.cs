@@ -203,9 +203,9 @@ namespace Amazon.ECS.Model
     /// <para>
     ///  <c>LINEAR</c>: A <i>linear</i> deployment strategy (<c>LINEAR</c>) gradually shifts
     /// traffic from the current production environment to a new environment in equal percentage
-    /// increments over a specified time period. With Amazon ECS linear deployments, you can
-    /// control the pace of traffic shifting and validate new service revisions with increasing
-    /// amounts of production traffic.
+    /// increments. With Amazon ECS linear deployments, you can control the pace of traffic
+    /// shifting and validate new service revisions with increasing amounts of production
+    /// traffic.
     /// </para>
     ///  
     /// <para>
@@ -228,8 +228,8 @@ namespace Amazon.ECS.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Load balancer requirement: When your service uses Application Load Balancer, Network
-    /// Load Balancer, or Service Connect
+    /// Load balancer requirement: When your service uses Application Load Balancer or Service
+    /// Connect
     /// </para>
     ///  </li> </ul> </li> <li> 
     /// <para>
@@ -259,8 +259,8 @@ namespace Amazon.ECS.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Load balancer requirement: When your service uses Application Load Balancer, Network
-    /// Load Balancer, or Service Connect
+    /// Load balancer requirement: When your service uses Application Load Balancer or Service
+    /// Connect
     /// </para>
     ///  </li> </ul> </li> </ul> </li> <li> 
     /// <para>
