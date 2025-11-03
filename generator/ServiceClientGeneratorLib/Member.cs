@@ -237,6 +237,10 @@ namespace ServiceClientGenerator
                     }
                 }
 
+                // Rename ErrorType exception properties to avoid hiding AmazonServiceException.ErrorType inherited member.
+                if (OwningShape.IsException && _name.ToUpperFirstCharacter() == "ErrorType")
+                    return "RequestErrorType";
+
                 return _name.ToUpperFirstCharacter();
             }
         }
