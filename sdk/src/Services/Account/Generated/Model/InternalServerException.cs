@@ -38,7 +38,7 @@ namespace Amazon.Account.Model
     #endif
     public partial class InternalServerException : AmazonAccountException
     {
-        private string _requestErrorType;
+        private string _errorType;
 
         private RetryableDetails _retryableDetails = new RetryableDetails(false);
 
@@ -135,14 +135,14 @@ namespace Amazon.Account.Model
         /// </summary>
         public string RequestErrorType
         {
-            get { return this._requestErrorType; }
-            set { this._requestErrorType = value; }
+            get { return this._errorType; }
+            set { this._errorType = value; }
         }
 
         // Check to see if RequestErrorType property is set
         internal bool IsSetRequestErrorType()
         {
-            return !string.IsNullOrEmpty(this._requestErrorType);
+            return !string.IsNullOrEmpty(this._errorType);
         }
 
         /// <summary>
