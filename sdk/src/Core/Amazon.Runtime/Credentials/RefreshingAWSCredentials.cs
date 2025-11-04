@@ -18,6 +18,7 @@ using Amazon.Util;
 using System;
 using System.Globalization;
 using System.Threading;
+using System.Threading.Tasks;
 
 namespace Amazon.Runtime
 {
@@ -74,19 +75,23 @@ namespace Amazon.Runtime
         /// Represents the current state of the Credentials.
         /// </summary>
         /// <remarks>This can be cleared without synchronization.</remarks>
-        protected CredentialsRefreshState currentState;
+        protected volatile CredentialsRefreshState currentState;
 
         #region Private members
 
         private TimeSpan _preemptExpiryTime = TimeSpan.FromMinutes(0);
+        private TimeSpan _expirationBuffer = TimeSpan.FromMinutes(1);
+
         private bool _disposed;
 
-        /// <summary>
-        /// Semaphore to control thread access to GetCredentialsAsync method.
-        /// The semaphore will allow only one thread to generate new credentials and
-        /// update the current state.
-        /// </summary>
         private readonly SemaphoreSlim _updateGeneratedCredentialsSemaphore = new SemaphoreSlim(1, 1);
+        private enum CredentialsLoadState
+        {
+            NotLoading,
+            Loading
+        }
+
+        private volatile CredentialsLoadState currentLoadState;
 
         #endregion
 
@@ -95,8 +100,8 @@ namespace Amazon.Runtime
         #region Properties
 
         /// <summary>
-        /// The time before actual expiration to expire the credentials.
-        /// Property cannot be set to a negative TimeSpan.
+        /// If credentials are still valid but the expiration is with the Expiration minus PreemptExpiryTime a
+        /// background refresh of the credentials will be triggered.
         /// </summary>
         public TimeSpan PreemptExpiryTime
         {
@@ -106,6 +111,22 @@ namespace Amazon.Runtime
                 if (value < TimeSpan.Zero)
                     throw new ArgumentOutOfRangeException("value", "PreemptExpiryTime cannot be negative");
                 _preemptExpiryTime = value;
+            }
+        }
+
+        /// <summary>
+        /// The time substracted from the expiration provided by the credentials provider and then used for determining 
+        /// if the credentials are expired. This provides a buffer to avoid corner case issues of processing time
+        /// on the client side before the credentials are actually used for signing and validation on the server side.
+        /// </summary>
+        protected TimeSpan ExpirationBuffer
+        {
+            get { return _expirationBuffer; }
+            set
+            {
+                if (value < TimeSpan.Zero)
+                    throw new ArgumentOutOfRangeException("value", "ExpirationBuffer cannot be negative");
+                _expirationBuffer = value;
             }
         }
 
@@ -119,51 +140,102 @@ namespace Amazon.Runtime
         /// <returns></returns>
         public override sealed ImmutableCredentials GetCredentials()
         {
-            _updateGeneratedCredentialsSemaphore.Wait();
+            // We save the currentState as it might be modified or cleared.
+            var tempState = currentState;
 
-            try
+            if (IsExpired(tempState) || (currentLoadState != CredentialsLoadState.Loading && IsPreemptExpiryWindow(tempState)))
             {
-                // We save the currentState as it might be modified or cleared.
-                var tempState = currentState;
-
-                // If credentials are expired or we don't have any state yet, update
-                if (ShouldUpdateState(tempState))
+                _updateGeneratedCredentialsSemaphore.Wait();
+                try
                 {
-                    tempState = GenerateNewCredentials();
-                    UpdateToGeneratedCredentials(tempState);
-                    currentState = tempState;
-                }
+                    // Update the local variable for credentials after acquiring the lock in case another thread got the lock first and updated the current state.
+                    tempState = currentState;
 
-                return tempState.Credentials;
+                    // If credentials are expired block for credential refresh.
+                    if (IsExpired(tempState))
+                    {
+                        tempState = GenerateNewCredentials();
+                        ValidateGeneratedCredentials(tempState);
+                        currentState = tempState;
+                        currentLoadState = CredentialsLoadState.NotLoading;
+                    }
+                    else if (currentLoadState != CredentialsLoadState.Loading && IsPreemptExpiryWindow(tempState))
+                    {
+                        currentLoadState = CredentialsLoadState.Loading;
+                        _ = BackgroundCredentialsRefreshAsync();
+                    }
+                }
+                finally
+                {
+                    _updateGeneratedCredentialsSemaphore.Release();
+                }
             }
-            finally
-            {
-                _updateGeneratedCredentialsSemaphore.Release();
-            }
+
+            return tempState.Credentials;
         }
 
-        public override sealed async System.Threading.Tasks.Task<ImmutableCredentials> GetCredentialsAsync()
+        public override sealed async Task<ImmutableCredentials> GetCredentialsAsync()
         {
-            await _updateGeneratedCredentialsSemaphore.WaitAsync().ConfigureAwait(false);
+            // We save the currentState as it might be modified or cleared.
+            var tempState = currentState;
 
+            if (IsExpired(tempState) || (currentLoadState != CredentialsLoadState.Loading && IsPreemptExpiryWindow(tempState)))
+            {
+                await _updateGeneratedCredentialsSemaphore.WaitAsync().ConfigureAwait(false);
+                try
+                {
+                    // Update the local variable for credentials after acquiring the lock in case another thread got the lock first and updated the current state.
+                    tempState = currentState;
+
+                    // If credentials are expired block for credential refresh.
+                    if (IsExpired(tempState))
+                    {
+                        tempState = await GenerateNewCredentialsAsync().ConfigureAwait(false);
+                        ValidateGeneratedCredentials(tempState);
+                        currentState = tempState;
+                        currentLoadState = CredentialsLoadState.NotLoading;
+                    }
+                    else if (currentLoadState != CredentialsLoadState.Loading && IsPreemptExpiryWindow(tempState))
+                    {
+                        currentLoadState = CredentialsLoadState.Loading;
+                        _ = BackgroundCredentialsRefreshAsync();
+                    }
+                }
+                finally
+                {
+                    _updateGeneratedCredentialsSemaphore.Release();
+                }
+            }
+
+            return tempState.Credentials;
+        }
+
+        private async Task BackgroundCredentialsRefreshAsync()
+        {
             try
             {
-                // We save the currentState as it might be modified or cleared.
-                var tempState = currentState;
+                var newState = await GenerateNewCredentialsAsync().ConfigureAwait(false);
+                ValidateGeneratedCredentials(newState);
 
-                // If credentials are expired, update
-                if (ShouldUpdateState(tempState))
+                // Acquire the lock to atomically update both currentState and currentLoadState
+                _updateGeneratedCredentialsSemaphore.Wait();
+                try
                 {
-                    tempState = await GenerateNewCredentialsAsync().ConfigureAwait(false);
-                    UpdateToGeneratedCredentials(tempState);
-                    currentState = tempState;
+                    currentState = newState;
+                    currentLoadState = CredentialsLoadState.NotLoading;
                 }
-
-                return tempState.Credentials;
+                finally
+                {
+                    _updateGeneratedCredentialsSemaphore.Release();
+                }
             }
-            finally
+            catch(Exception e)
             {
-                _updateGeneratedCredentialsSemaphore.Release();
+                _logger.Error(e, "Exception occurred performing background credentials refresh.");
+                // If any exceptions occur during background refresh, reset the state to NotLoading
+                // so that future GetCredentials calls can attempt to refresh again.
+                currentLoadState = CredentialsLoadState.NotLoading;
+                throw;
             }
         }
 
@@ -171,10 +243,10 @@ namespace Amazon.Runtime
 
         #region Private/protected credential update methods
 
-        private void UpdateToGeneratedCredentials(CredentialsRefreshState state)
+        private void ValidateGeneratedCredentials(CredentialsRefreshState state)
         {
             // Check if the new credentials are already expired
-            if (ShouldUpdateState(state))
+            if (IsExpired(state))
             {
                 string errorMessage;
                 if (state == null)
@@ -191,50 +263,30 @@ namespace Amazon.Runtime
                 throw new AmazonClientException(errorMessage);
             }
 
-            // Offset the Expiration by PreemptExpiryTime. This produces the expiration window 
-            // where the credentials should be updated before they actually expire.
-            state.Expiration -= PreemptExpiryTime;
-
-            if (ShouldUpdateState(state))
-            {
-                // This could happen if the default value of PreemptExpiryTime is
-                // overridden and set too high such that ShouldUpdate returns true.
-                _logger.InfoFormat(
-                    "The preempt expiry time is set too high: Current time = {0}, Credentials expiry time = {1}, Preempt expiry time = {2}.",
-                    AWSSDKUtils.CorrectedUtcNow,
-                    state.Expiration, PreemptExpiryTime);
-            }
+            state.Expiration -= ExpirationBuffer;
         }
 
         /// <summary>
-        /// Test credentials existence and expiration time
-        /// should update if:
-        /// credentials have not been loaded yet
-        /// it's past the expiration time. At this point currentState.Expiration may
-        /// have the PreemptExpiryTime baked into to the expiration from a call to
-        /// UpdateToGeneratedCredentials but it may not if this is new application load.
+        /// This property has been marked as Obsolete because it is no longer used for determining
+        /// if credentials should be updated. The boolean ShouldUpdate property did not provide 
+        /// enough information on whether credentials are expired or in the preempt expiry window.
         /// </summary>
+        [Obsolete("Property is no longer used for determining if credentials should be updated.")]
         protected bool ShouldUpdate
         {
             get
             {
-                return ShouldUpdateState(currentState);
+                return IsExpired(currentState);
             }
         }
 
-        // Test credentials existence and expiration time
-        // should update if:
-        //  credentials have not been loaded yet
-        // it's past the expiration time. At this point currentState.Expiration may 
-        // have the PreemptExpiryTime baked into to the expiration from a call to 
-        // UpdateToGeneratedCredentials but it may not if this is new application 
-        // load.
-        private bool ShouldUpdateState(CredentialsRefreshState state)
+        /// <summary>
+        /// Test if the credentials are expired currently expired.
+        /// </summary>
+        /// <param name="state"></param>
+        /// <returns></returns>
+        private bool IsExpired(CredentialsRefreshState state)
         {
-            // it's past the expiration time. At this point currentState.Expiration may 
-            // have the PreemptExpiryTime baked into to the expiration from a call to 
-            // UpdateToGeneratedCredentials but it may not if this is new application 
-            // load.
             var isExpired = state?.IsExpiredWithin(TimeSpan.Zero);
             if (isExpired == true)
             {
@@ -244,6 +296,28 @@ namespace Amazon.Runtime
             }
 
             return isExpired ?? true;
+        }
+
+        /// <summary>
+        /// Test if the credentials are in the preempt expiry window. That means the instance currently has credentials and they are not expired but that will expire
+        /// with in the window of expiration minus PreemptExpiryTime.
+        /// </summary>
+        /// <param name="state"></param>
+        /// <returns></returns>
+        private bool IsPreemptExpiryWindow(CredentialsRefreshState state)
+        {
+            if (state == null || IsExpired(state))
+                return false;
+
+            var isPreemptWindow = state.IsExpiredWithin(PreemptExpiryTime);
+            if (isPreemptWindow == true)
+            {
+                _logger.InfoFormat("Determined refreshing credentials are in window for preempt expiration. Preempt time: {0}, Current time: {1}",
+                                state.Expiration.Add(PreemptExpiryTime).ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.f ffffffK", CultureInfo.InvariantCulture),
+                                AWSSDKUtils.CorrectedUtcNow.ToString("yyyy-MM-ddTHH:mm:ss.fffffffK", CultureInfo.InvariantCulture));
+            }
+
+            return isPreemptWindow;
         }
 
         /// <summary>
@@ -263,9 +337,9 @@ namespace Amazon.Runtime
         /// Called on first credentials request and when expiration date is in the past.
         /// </summary>
         /// <returns></returns>
-        protected virtual System.Threading.Tasks.Task<CredentialsRefreshState> GenerateNewCredentialsAsync()
+        protected virtual Task<CredentialsRefreshState> GenerateNewCredentialsAsync()
         {
-            return System.Threading.Tasks.Task.Run(() => this.GenerateNewCredentials());
+            return Task.Run(() => this.GenerateNewCredentials());
         }
 
         protected virtual void Dispose(bool disposing)

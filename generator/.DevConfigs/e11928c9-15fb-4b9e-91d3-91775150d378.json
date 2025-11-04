@@ -1,0 +1,12 @@
+{
+  "core": {
+    "updateMinimum": true,
+    "type": "patch",
+    "changeLogMessages": [
+      "Rework the locking in the RefreshingAWSCredentials"
+    ],
+	"backwardIncompatibilitiesToIgnore": [ 
+      "Amazon.Runtime.RefreshingAWSCredentials/MethodAdded"
+    ]
+  }
+}
