@@ -1,3 +1,7 @@
+### 4.0.126.0 (2025-11-04 19:19 UTC)
+* PinpointSMSVoiceV2 (4.0.5.0)
+	* This release adds support for the CarrierLookup API, which returns information about a destination phone number including if the number is valid, the carrier, and more.
+
 ### 4.0.125.0 (2025-11-03 19:32 UTC)
 * Account (4.0.2.2)
 	* Rename internal exception property to avoid hiding inherited AmazonServiceException member.
