@@ -40,7 +40,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
     /// depends on the destination country of your messages, as well as the type of phone
     /// number (origination number) that you use to send the message. For more information
     /// about MPS, see <a href="https://docs.aws.amazon.com/sms-voice/latest/userguide/sms-limitations-mps.html">Message
-    /// Parts per Second (MPS) limits</a> in the <i>AWS End User Messaging SMS User Guide</i>.
+    /// Parts per Second (MPS) limits</a> in the <i>End User MessagingSMS User Guide</i>.
     /// </para>
     /// </summary>
     public partial class SendTextMessageRequest : AmazonPinpointSMSVoiceV2Request
@@ -168,7 +168,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// The Message Parts per Second (MPS) limit when using <c>DryRun</c> is five. If your
         /// origination identity has a lower MPS limit then the lower MPS limit is used. For more
         /// information about MPS limits, see <a href="https://docs.aws.amazon.com/sms-voice/latest/userguide/sms-limitations-mps.html">Message
-        /// Parts per Second (MPS) limits</a> in the <i>AWS End User Messaging SMS User Guide</i>..
+        /// Parts per Second (MPS) limits</a> in the <i>End User MessagingSMS User Guide</i>..
         /// </para>
         /// </summary>
         public bool DryRun
@@ -289,8 +289,8 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// </para>
         ///  <important> 
         /// <para>
-        /// If you are using a shared AWS End User Messaging SMS and Voice resource then you must
-        /// use the full Amazon Resource Name(ARN).
+        /// If you are using a shared End User MessagingSMS resource then you must use the full
+        /// Amazon Resource Name(ARN).
         /// </para>
         ///  </important>
         /// </summary>

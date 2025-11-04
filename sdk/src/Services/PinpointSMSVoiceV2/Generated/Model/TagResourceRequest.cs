@@ -35,7 +35,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
     /// an existing tag key, the value is overwritten with the new value. Each tag consists
     /// of a key and an optional value. Tag keys must be unique per resource. For more information
     /// about tags, see <a href="https://docs.aws.amazon.com/sms-voice/latest/userguide/phone-numbers-tags.html">Tags
-    /// </a> in the <i>AWS End User Messaging SMS User Guide</i>.
+    /// </a> in the <i>End User MessagingSMS User Guide</i>.
     /// </summary>
     public partial class TagResourceRequest : AmazonPinpointSMSVoiceV2Request
     {

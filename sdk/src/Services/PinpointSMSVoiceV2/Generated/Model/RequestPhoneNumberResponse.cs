@@ -319,11 +319,11 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// <summary>
         /// Gets and sets the property SelfManagedOptOutsEnabled. 
         /// <para>
-        /// By default this is set to false. When an end recipient sends a message that begins
-        /// with HELP or STOP to one of your dedicated numbers, AWS End User Messaging SMS and
-        /// Voice automatically replies with a customizable message and adds the end recipient
-        /// to the OptOutList. When set to true you're responsible for responding to HELP and
-        /// STOP requests. You're also responsible for tracking and honoring opt-out requests.
+        /// By default this is set to false. When set to false and an end recipient sends a message
+        /// that begins with HELP or STOP to one of your dedicated numbers, End User MessagingSMS
+        /// automatically replies with a customizable message and adds the end recipient to the
+        /// OptOutList. When set to true you're responsible for responding to HELP and STOP requests.
+        /// You're also responsible for tracking and honoring opt-out requests.
         /// </para>
         /// </summary>
         public bool SelfManagedOptOutsEnabled

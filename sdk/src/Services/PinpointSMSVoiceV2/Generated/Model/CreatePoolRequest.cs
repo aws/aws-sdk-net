@@ -82,7 +82,8 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// Gets and sets the property DeletionProtectionEnabled. 
         /// <para>
         /// By default this is set to false. When set to true the pool can't be deleted. You can
-        /// change this value using the <a>UpdatePool</a> action.
+        /// change this value using the <a href="https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_UpdatePool.html">UpdatePool</a>
+        /// action.
         /// </para>
         /// </summary>
         public bool DeletionProtectionEnabled
@@ -142,9 +143,9 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// Gets and sets the property OriginationIdentity. 
         /// <para>
         /// The origination identity to use such as a PhoneNumberId, PhoneNumberArn, SenderId
-        /// or SenderIdArn. You can use <a>DescribePhoneNumbers</a> to find the values for PhoneNumberId
-        /// and PhoneNumberArn while <a>DescribeSenderIds</a> can be used to get the values for
-        /// SenderId and SenderIdArn.
+        /// or SenderIdArn. You can use <a href="https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DescribePhoneNumbers.html">DescribePhoneNumbers</a>
+        /// to find the values for PhoneNumberId and PhoneNumberArn, and use <a href="https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DescribeSenderIds.html">DescribeSenderIds</a>
+        /// can be used to get the values for SenderId and SenderIdArn.
         /// </para>
         ///  
         /// <para>
@@ -153,8 +154,8 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// </para>
         ///  <important> 
         /// <para>
-        /// If you are using a shared AWS End User Messaging SMS and Voice resource then you must
-        /// use the full Amazon Resource Name(ARN).
+        /// If you are using a shared End User MessagingSMS resource then you must use the full
+        /// Amazon Resource Name(ARN).
         /// </para>
         ///  </important>
         /// </summary>

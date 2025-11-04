@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+    <doc>
+        <members>
+            <member name="M:Amazon.PinpointSMSVoiceV2.IAmazonPinpointSMSVoiceV2.CarrierLookup(Amazon.PinpointSMSVoiceV2.Model.CarrierLookupRequest)" />
+            <member name="M:Amazon.PinpointSMSVoiceV2.AmazonPinpointSMSVoiceV2Client.CarrierLookup(Amazon.PinpointSMSVoiceV2.Model.CarrierLookupRequest)" />
+            <member name="T:Amazon.PinpointSMSVoiceV2.Model.CarrierLookupRequest" />
+            <member name="T:Amazon.PinpointSMSVoiceV2.Model.CarrierLookupResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Call the CarrierLookup operation to get information about a customer provided phone number, including if the number is valid. The service accepts phone numbers with various formatting characters and returns the number in E164 format.
+                </para>
+                <code
+                    title="Use CarrierLookup"
+                    source=".\AWSSDKDocSamples\PinpointSMSVoiceV2\PinpointSMSVoiceV2.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+</docs>
