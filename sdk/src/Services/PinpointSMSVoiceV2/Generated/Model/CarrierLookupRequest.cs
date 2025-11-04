@@ -30,33 +30,34 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PinpointSMSVoiceV2.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetResourcePolicy operation.
-    /// Retrieves the JSON text of the resource-based policy document attached to the End
-    /// User MessagingSMS resource. A shared resource can be a Pool, Opt-out list, Sender
-    /// Id, or Phone number.
+    /// Container for the parameters to the CarrierLookup operation.
+    /// Returns information about a destination phone number, including whether the number
+    /// type and whether it is valid, the carrier, and more.
     /// </summary>
-    public partial class GetResourcePolicyRequest : AmazonPinpointSMSVoiceV2Request
+    public partial class CarrierLookupRequest : AmazonPinpointSMSVoiceV2Request
     {
-        private string _resourceArn;
+        private string _phoneNumber;
 
         /// <summary>
-        /// Gets and sets the property ResourceArn. 
+        /// Gets and sets the property PhoneNumber. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the End User MessagingSMS resource attached to the
-        /// resource-based policy.
+        /// The phone number that you want to retrieve information about. You can provide the
+        /// phone number in various formats including special characters such as parentheses,
+        /// brackets, spaces, hyphens, periods, and commas. The service automatically converts
+        /// the input to E164 format for processing.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=20, Max=256)]
-        public string ResourceArn
+        [AWSProperty(Required=true, Min=1, Max=40)]
+        public string PhoneNumber
         {
-            get { return this._resourceArn; }
-            set { this._resourceArn = value; }
+            get { return this._phoneNumber; }
+            set { this._phoneNumber = value; }
         }
 
-        // Check to see if ResourceArn property is set
-        internal bool IsSetResourceArn()
+        // Check to see if PhoneNumber property is set
+        internal bool IsSetPhoneNumber()
         {
-            return this._resourceArn != null;
+            return this._phoneNumber != null;
         }
 
     }
