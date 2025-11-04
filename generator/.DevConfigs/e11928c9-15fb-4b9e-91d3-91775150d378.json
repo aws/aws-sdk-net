@@ -6,7 +6,8 @@
       "Rework the locking in the RefreshingAWSCredentials"
     ],
 	"backwardIncompatibilitiesToIgnore": [ 
-      "Amazon.Runtime.RefreshingAWSCredentials/MethodAdded"
+      "Amazon.Runtime.RefreshingAWSCredentials/MethodAdded",
+	  "Amazon.Runtime.RefreshingAWSCredentials/FieldTypeChanged"
     ]
   }
 }
