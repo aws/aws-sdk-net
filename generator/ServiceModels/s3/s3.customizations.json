@@ -179,7 +179,8 @@
                     "Filter": 
                     {
                         "skipContextTestExpressionUnmarshallingLogic" : true,
-                        "injectXmlUnmarshallCode": ["FilterCustomUnmarshall(context, unmarshalledObject);"]
+                        "injectXmlUnmarshallCode": ["FilterCustomUnmarshall(context, unmarshalledObject);"],
+                        "injectXmlMarshallCode": ["FilterCustomMarshall(publicRequestConfigurationRulesValue, xmlWriter);"]
                     }
                 }
             ]
@@ -778,6 +779,31 @@
                     }
                 }
             ]
+        },
+        "PutBucketMetricsConfigurationRequest":{
+            "modify" : [
+                {
+                    "Id" :{"emitPropertyName" :"MetricsId"}
+                }
+            ]
+        },
+        "MetricsConfiguration":{
+            "modify":[
+                {
+                    "Filter" : 
+                    {
+                        "emitPropertyName" : "MetricsFilter"
+                    }
+                },
+                {
+                    "MetricsFilter":{
+                        "injectXmlMarshallCode": ["MetricsFilterCustomMarshall(publicRequest, xmlWriter);"]
+                    }
+                },
+                {
+                    "Id" : {"emitPropertyName" : "MetricsId"}
+                }
+            ]
         }
     },
     "operationModifiers": {
@@ -1141,13 +1167,8 @@
     },
     "excludeShapes":[
         "NotificationConfiguration",
-        "CopyPartResult"
-    ],
-    "implementsVisitorPattern":{
-        "LifecycleFilter":{
-            "predicateName": "LifecycleFilterPredicate",
-            "visitorName": "LifecycleFilterPredicateMarshallVisitor",
-            "visitorParam": "xmlWriter"
-        }
-    }
+        "CopyPartResult",
+        "MetricsFilter",
+        "MetricsAndOperator"
+    ]
 }
