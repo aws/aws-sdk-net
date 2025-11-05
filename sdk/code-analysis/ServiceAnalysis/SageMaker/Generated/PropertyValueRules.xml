@@ -9212,6 +9212,11 @@
     <max>6758</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.ClusterInstanceGroupDetails.TargetStateCount</property>
+    <min>0</min>
+    <max>6758</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.ClusterInstanceGroupDetails.ThreadsPerCore</property>
     <min>1</min>
     <max>2</max>

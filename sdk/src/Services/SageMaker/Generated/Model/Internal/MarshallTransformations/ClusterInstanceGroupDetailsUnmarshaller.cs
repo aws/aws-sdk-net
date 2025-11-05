@@ -66,6 +66,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("ActiveSoftwareUpdateConfig", targetDepth))
+                {
+                    var unmarshaller = DeploymentConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.ActiveSoftwareUpdateConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CurrentCount", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
@@ -132,6 +138,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.ScheduledUpdateConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SoftwareUpdateStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SoftwareUpdateStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -142,6 +154,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
                     unmarshalledObject.TargetCount = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("TargetStateCount", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.TargetStateCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ThreadsPerCore", targetDepth))
