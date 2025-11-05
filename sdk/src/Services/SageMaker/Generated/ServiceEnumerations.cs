@@ -18133,6 +18133,72 @@ namespace Amazon.SageMaker
 
 
     /// <summary>
+    /// Constants used for properties of type SoftwareUpdateStatus.
+    /// </summary>
+    public class SoftwareUpdateStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Failed for SoftwareUpdateStatus
+        /// </summary>
+        public static readonly SoftwareUpdateStatus Failed = new SoftwareUpdateStatus("Failed");
+        /// <summary>
+        /// Constant InProgress for SoftwareUpdateStatus
+        /// </summary>
+        public static readonly SoftwareUpdateStatus InProgress = new SoftwareUpdateStatus("InProgress");
+        /// <summary>
+        /// Constant Pending for SoftwareUpdateStatus
+        /// </summary>
+        public static readonly SoftwareUpdateStatus Pending = new SoftwareUpdateStatus("Pending");
+        /// <summary>
+        /// Constant RollbackComplete for SoftwareUpdateStatus
+        /// </summary>
+        public static readonly SoftwareUpdateStatus RollbackComplete = new SoftwareUpdateStatus("RollbackComplete");
+        /// <summary>
+        /// Constant RollbackInProgress for SoftwareUpdateStatus
+        /// </summary>
+        public static readonly SoftwareUpdateStatus RollbackInProgress = new SoftwareUpdateStatus("RollbackInProgress");
+        /// <summary>
+        /// Constant Succeeded for SoftwareUpdateStatus
+        /// </summary>
+        public static readonly SoftwareUpdateStatus Succeeded = new SoftwareUpdateStatus("Succeeded");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SoftwareUpdateStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SoftwareUpdateStatus FindValue(string value)
+        {
+            return FindValue<SoftwareUpdateStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SoftwareUpdateStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type SortActionsBy.
     /// </summary>
     public class SortActionsBy : ConstantClass
