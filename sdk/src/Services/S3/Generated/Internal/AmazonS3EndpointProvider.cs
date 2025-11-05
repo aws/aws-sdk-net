@@ -97,10 +97,6 @@ namespace Amazon.S3.Internal
                 }
                 if (IsSet(refs["Bucket"]) && (refs["bucketSuffix"] = Substring((string)refs["Bucket"], 0, 6, true)) != null && Equals(refs["bucketSuffix"], "--x-s3"))
                 {
-                    if (Equals(refs["UseDualStack"], true))
-                    {
-                        throw new AmazonClientException("S3Express does not support Dual-stack.");
-                    }
                     if (Equals(refs["Accelerate"], true))
                     {
                         throw new AmazonClientException("S3Express does not support S3 Accelerate.");
@@ -141,11 +137,22 @@ namespace Amazon.S3.Internal
                         {
                             if ((refs["uri_encoded_bucket"] = UriEncode((string)refs["Bucket"])) != null && !IsSet(refs["Endpoint"]))
                             {
-                                if (Equals(refs["UseFIPS"], true))
+                                if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], true))
+                                {
+                                    return new Endpoint(Interpolate(@"https://s3express-control-fips.dualstack.{Region}.{partitionResult#dnsSuffix}/{uri_encoded_bucket}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                                }
+                                if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], false))
                                 {
                                     return new Endpoint(Interpolate(@"https://s3express-control-fips.{Region}.{partitionResult#dnsSuffix}/{uri_encoded_bucket}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
                                 }
-                                return new Endpoint(Interpolate(@"https://s3express-control.{Region}.{partitionResult#dnsSuffix}/{uri_encoded_bucket}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                                if (Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], true))
+                                {
+                                    return new Endpoint(Interpolate(@"https://s3express-control.dualstack.{Region}.{partitionResult#dnsSuffix}/{uri_encoded_bucket}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                                }
+                                if (Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], false))
+                                {
+                                    return new Endpoint(Interpolate(@"https://s3express-control.{Region}.{partitionResult#dnsSuffix}/{uri_encoded_bucket}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                                }
                             }
                         }
                     }
@@ -157,85 +164,195 @@ namespace Amazon.S3.Internal
                             {
                                 if ((refs["s3expressAvailabilityZoneId"] = Substring((string)refs["Bucket"], 6, 14, true)) != null && (refs["s3expressAvailabilityZoneDelim"] = Substring((string)refs["Bucket"], 14, 16, true)) != null && Equals(refs["s3expressAvailabilityZoneDelim"], "--"))
                                 {
-                                    if (Equals(refs["UseFIPS"], true))
+                                    if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], true))
+                                    {
+                                        return new Endpoint(Interpolate(@"https://{Bucket}.s3express-fips-{s3expressAvailabilityZoneId}.dualstack.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                                    }
+                                    if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], false))
                                     {
                                         return new Endpoint(Interpolate(@"https://{Bucket}.s3express-fips-{s3expressAvailabilityZoneId}.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
                                     }
-                                    return new Endpoint(Interpolate(@"https://{Bucket}.s3express-{s3expressAvailabilityZoneId}.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                                    if (Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], true))
+                                    {
+                                        return new Endpoint(Interpolate(@"https://{Bucket}.s3express-{s3expressAvailabilityZoneId}.dualstack.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                                    }
+                                    if (Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], false))
+                                    {
+                                        return new Endpoint(Interpolate(@"https://{Bucket}.s3express-{s3expressAvailabilityZoneId}.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                                    }
                                 }
                                 if ((refs["s3expressAvailabilityZoneId"] = Substring((string)refs["Bucket"], 6, 15, true)) != null && (refs["s3expressAvailabilityZoneDelim"] = Substring((string)refs["Bucket"], 15, 17, true)) != null && Equals(refs["s3expressAvailabilityZoneDelim"], "--"))
                                 {
-                                    if (Equals(refs["UseFIPS"], true))
+                                    if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], true))
+                                    {
+                                        return new Endpoint(Interpolate(@"https://{Bucket}.s3express-fips-{s3expressAvailabilityZoneId}.dualstack.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                                    }
+                                    if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], false))
                                     {
                                         return new Endpoint(Interpolate(@"https://{Bucket}.s3express-fips-{s3expressAvailabilityZoneId}.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
                                     }
-                                    return new Endpoint(Interpolate(@"https://{Bucket}.s3express-{s3expressAvailabilityZoneId}.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                                    if (Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], true))
+                                    {
+                                        return new Endpoint(Interpolate(@"https://{Bucket}.s3express-{s3expressAvailabilityZoneId}.dualstack.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                                    }
+                                    if (Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], false))
+                                    {
+                                        return new Endpoint(Interpolate(@"https://{Bucket}.s3express-{s3expressAvailabilityZoneId}.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                                    }
                                 }
                                 if ((refs["s3expressAvailabilityZoneId"] = Substring((string)refs["Bucket"], 6, 19, true)) != null && (refs["s3expressAvailabilityZoneDelim"] = Substring((string)refs["Bucket"], 19, 21, true)) != null && Equals(refs["s3expressAvailabilityZoneDelim"], "--"))
                                 {
-                                    if (Equals(refs["UseFIPS"], true))
+                                    if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], true))
+                                    {
+                                        return new Endpoint(Interpolate(@"https://{Bucket}.s3express-fips-{s3expressAvailabilityZoneId}.dualstack.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                                    }
+                                    if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], false))
                                     {
                                         return new Endpoint(Interpolate(@"https://{Bucket}.s3express-fips-{s3expressAvailabilityZoneId}.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
                                     }
-                                    return new Endpoint(Interpolate(@"https://{Bucket}.s3express-{s3expressAvailabilityZoneId}.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                                    if (Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], true))
+                                    {
+                                        return new Endpoint(Interpolate(@"https://{Bucket}.s3express-{s3expressAvailabilityZoneId}.dualstack.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                                    }
+                                    if (Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], false))
+                                    {
+                                        return new Endpoint(Interpolate(@"https://{Bucket}.s3express-{s3expressAvailabilityZoneId}.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                                    }
                                 }
                                 if ((refs["s3expressAvailabilityZoneId"] = Substring((string)refs["Bucket"], 6, 20, true)) != null && (refs["s3expressAvailabilityZoneDelim"] = Substring((string)refs["Bucket"], 20, 22, true)) != null && Equals(refs["s3expressAvailabilityZoneDelim"], "--"))
                                 {
-                                    if (Equals(refs["UseFIPS"], true))
+                                    if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], true))
+                                    {
+                                        return new Endpoint(Interpolate(@"https://{Bucket}.s3express-fips-{s3expressAvailabilityZoneId}.dualstack.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                                    }
+                                    if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], false))
                                     {
                                         return new Endpoint(Interpolate(@"https://{Bucket}.s3express-fips-{s3expressAvailabilityZoneId}.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
                                     }
-                                    return new Endpoint(Interpolate(@"https://{Bucket}.s3express-{s3expressAvailabilityZoneId}.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                                    if (Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], true))
+                                    {
+                                        return new Endpoint(Interpolate(@"https://{Bucket}.s3express-{s3expressAvailabilityZoneId}.dualstack.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                                    }
+                                    if (Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], false))
+                                    {
+                                        return new Endpoint(Interpolate(@"https://{Bucket}.s3express-{s3expressAvailabilityZoneId}.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                                    }
                                 }
                                 if ((refs["s3expressAvailabilityZoneId"] = Substring((string)refs["Bucket"], 6, 26, true)) != null && (refs["s3expressAvailabilityZoneDelim"] = Substring((string)refs["Bucket"], 26, 28, true)) != null && Equals(refs["s3expressAvailabilityZoneDelim"], "--"))
                                 {
-                                    if (Equals(refs["UseFIPS"], true))
+                                    if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], true))
+                                    {
+                                        return new Endpoint(Interpolate(@"https://{Bucket}.s3express-fips-{s3expressAvailabilityZoneId}.dualstack.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                                    }
+                                    if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], false))
                                     {
                                         return new Endpoint(Interpolate(@"https://{Bucket}.s3express-fips-{s3expressAvailabilityZoneId}.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
                                     }
-                                    return new Endpoint(Interpolate(@"https://{Bucket}.s3express-{s3expressAvailabilityZoneId}.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                                    if (Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], true))
+                                    {
+                                        return new Endpoint(Interpolate(@"https://{Bucket}.s3express-{s3expressAvailabilityZoneId}.dualstack.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                                    }
+                                    if (Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], false))
+                                    {
+                                        return new Endpoint(Interpolate(@"https://{Bucket}.s3express-{s3expressAvailabilityZoneId}.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                                    }
                                 }
                                 throw new AmazonClientException("Unrecognized S3Express bucket name format.");
                             }
                             if ((refs["s3expressAvailabilityZoneId"] = Substring((string)refs["Bucket"], 6, 14, true)) != null && (refs["s3expressAvailabilityZoneDelim"] = Substring((string)refs["Bucket"], 14, 16, true)) != null && Equals(refs["s3expressAvailabilityZoneDelim"], "--"))
                             {
-                                if (Equals(refs["UseFIPS"], true))
+                                if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], true))
+                                {
+                                    return new Endpoint(Interpolate(@"https://{Bucket}.s3express-fips-{s3expressAvailabilityZoneId}.dualstack.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4-s3express"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                                }
+                                if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], false))
                                 {
                                     return new Endpoint(Interpolate(@"https://{Bucket}.s3express-fips-{s3expressAvailabilityZoneId}.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4-s3express"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
                                 }
-                                return new Endpoint(Interpolate(@"https://{Bucket}.s3express-{s3expressAvailabilityZoneId}.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4-s3express"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                                if (Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], true))
+                                {
+                                    return new Endpoint(Interpolate(@"https://{Bucket}.s3express-{s3expressAvailabilityZoneId}.dualstack.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4-s3express"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                                }
+                                if (Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], false))
+                                {
+                                    return new Endpoint(Interpolate(@"https://{Bucket}.s3express-{s3expressAvailabilityZoneId}.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4-s3express"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                                }
                             }
                             if ((refs["s3expressAvailabilityZoneId"] = Substring((string)refs["Bucket"], 6, 15, true)) != null && (refs["s3expressAvailabilityZoneDelim"] = Substring((string)refs["Bucket"], 15, 17, true)) != null && Equals(refs["s3expressAvailabilityZoneDelim"], "--"))
                             {
-                                if (Equals(refs["UseFIPS"], true))
+                                if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], true))
+                                {
+                                    return new Endpoint(Interpolate(@"https://{Bucket}.s3express-fips-{s3expressAvailabilityZoneId}.dualstack.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4-s3express"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                                }
+                                if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], false))
                                 {
                                     return new Endpoint(Interpolate(@"https://{Bucket}.s3express-fips-{s3expressAvailabilityZoneId}.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4-s3express"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
                                 }
-                                return new Endpoint(Interpolate(@"https://{Bucket}.s3express-{s3expressAvailabilityZoneId}.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4-s3express"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                                if (Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], true))
+                                {
+                                    return new Endpoint(Interpolate(@"https://{Bucket}.s3express-{s3expressAvailabilityZoneId}.dualstack.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4-s3express"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                                }
+                                if (Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], false))
+                                {
+                                    return new Endpoint(Interpolate(@"https://{Bucket}.s3express-{s3expressAvailabilityZoneId}.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4-s3express"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                                }
                             }
                             if ((refs["s3expressAvailabilityZoneId"] = Substring((string)refs["Bucket"], 6, 19, true)) != null && (refs["s3expressAvailabilityZoneDelim"] = Substring((string)refs["Bucket"], 19, 21, true)) != null && Equals(refs["s3expressAvailabilityZoneDelim"], "--"))
                             {
-                                if (Equals(refs["UseFIPS"], true))
+                                if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], true))
+                                {
+                                    return new Endpoint(Interpolate(@"https://{Bucket}.s3express-fips-{s3expressAvailabilityZoneId}.dualstack.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4-s3express"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                                }
+                                if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], false))
                                 {
                                     return new Endpoint(Interpolate(@"https://{Bucket}.s3express-fips-{s3expressAvailabilityZoneId}.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4-s3express"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
                                 }
-                                return new Endpoint(Interpolate(@"https://{Bucket}.s3express-{s3expressAvailabilityZoneId}.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4-s3express"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                                if (Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], true))
+                                {
+                                    return new Endpoint(Interpolate(@"https://{Bucket}.s3express-{s3expressAvailabilityZoneId}.dualstack.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4-s3express"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                                }
+                                if (Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], false))
+                                {
+                                    return new Endpoint(Interpolate(@"https://{Bucket}.s3express-{s3expressAvailabilityZoneId}.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4-s3express"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                                }
                             }
                             if ((refs["s3expressAvailabilityZoneId"] = Substring((string)refs["Bucket"], 6, 20, true)) != null && (refs["s3expressAvailabilityZoneDelim"] = Substring((string)refs["Bucket"], 20, 22, true)) != null && Equals(refs["s3expressAvailabilityZoneDelim"], "--"))
                             {
-                                if (Equals(refs["UseFIPS"], true))
+                                if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], true))
+                                {
+                                    return new Endpoint(Interpolate(@"https://{Bucket}.s3express-fips-{s3expressAvailabilityZoneId}.dualstack.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4-s3express"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                                }
+                                if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], false))
                                 {
                                     return new Endpoint(Interpolate(@"https://{Bucket}.s3express-fips-{s3expressAvailabilityZoneId}.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4-s3express"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
                                 }
-                                return new Endpoint(Interpolate(@"https://{Bucket}.s3express-{s3expressAvailabilityZoneId}.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4-s3express"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                                if (Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], true))
+                                {
+                                    return new Endpoint(Interpolate(@"https://{Bucket}.s3express-{s3expressAvailabilityZoneId}.dualstack.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4-s3express"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                                }
+                                if (Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], false))
+                                {
+                                    return new Endpoint(Interpolate(@"https://{Bucket}.s3express-{s3expressAvailabilityZoneId}.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4-s3express"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                                }
                             }
                             if ((refs["s3expressAvailabilityZoneId"] = Substring((string)refs["Bucket"], 6, 26, true)) != null && (refs["s3expressAvailabilityZoneDelim"] = Substring((string)refs["Bucket"], 26, 28, true)) != null && Equals(refs["s3expressAvailabilityZoneDelim"], "--"))
                             {
-                                if (Equals(refs["UseFIPS"], true))
+                                if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], true))
+                                {
+                                    return new Endpoint(Interpolate(@"https://{Bucket}.s3express-fips-{s3expressAvailabilityZoneId}.dualstack.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4-s3express"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                                }
+                                if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], false))
                                 {
                                     return new Endpoint(Interpolate(@"https://{Bucket}.s3express-fips-{s3expressAvailabilityZoneId}.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4-s3express"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
                                 }
-                                return new Endpoint(Interpolate(@"https://{Bucket}.s3express-{s3expressAvailabilityZoneId}.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4-s3express"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                                if (Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], true))
+                                {
+                                    return new Endpoint(Interpolate(@"https://{Bucket}.s3express-{s3expressAvailabilityZoneId}.dualstack.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4-s3express"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                                }
+                                if (Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], false))
+                                {
+                                    return new Endpoint(Interpolate(@"https://{Bucket}.s3express-{s3expressAvailabilityZoneId}.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4-s3express"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                                }
                             }
                             throw new AmazonClientException("Unrecognized S3Express bucket name format.");
                         }
@@ -244,10 +361,6 @@ namespace Amazon.S3.Internal
                 }
                 if (IsSet(refs["Bucket"]) && (refs["accessPointSuffix"] = Substring((string)refs["Bucket"], 0, 7, true)) != null && Equals(refs["accessPointSuffix"], "--xa-s3"))
                 {
-                    if (Equals(refs["UseDualStack"], true))
-                    {
-                        throw new AmazonClientException("S3Express does not support Dual-stack.");
-                    }
                     if (Equals(refs["Accelerate"], true))
                     {
                         throw new AmazonClientException("S3Express does not support S3 Accelerate.");
@@ -290,85 +403,195 @@ namespace Amazon.S3.Internal
                             {
                                 if ((refs["s3expressAvailabilityZoneId"] = Substring((string)refs["Bucket"], 7, 15, true)) != null && (refs["s3expressAvailabilityZoneDelim"] = Substring((string)refs["Bucket"], 15, 17, true)) != null && Equals(refs["s3expressAvailabilityZoneDelim"], "--"))
                                 {
-                                    if (Equals(refs["UseFIPS"], true))
+                                    if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], true))
+                                    {
+                                        return new Endpoint(Interpolate(@"https://{Bucket}.s3express-fips-{s3expressAvailabilityZoneId}.dualstack.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                                    }
+                                    if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], false))
                                     {
                                         return new Endpoint(Interpolate(@"https://{Bucket}.s3express-fips-{s3expressAvailabilityZoneId}.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
                                     }
-                                    return new Endpoint(Interpolate(@"https://{Bucket}.s3express-{s3expressAvailabilityZoneId}.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                                    if (Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], true))
+                                    {
+                                        return new Endpoint(Interpolate(@"https://{Bucket}.s3express-{s3expressAvailabilityZoneId}.dualstack.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                                    }
+                                    if (Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], false))
+                                    {
+                                        return new Endpoint(Interpolate(@"https://{Bucket}.s3express-{s3expressAvailabilityZoneId}.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                                    }
                                 }
                                 if ((refs["s3expressAvailabilityZoneId"] = Substring((string)refs["Bucket"], 7, 16, true)) != null && (refs["s3expressAvailabilityZoneDelim"] = Substring((string)refs["Bucket"], 16, 18, true)) != null && Equals(refs["s3expressAvailabilityZoneDelim"], "--"))
                                 {
-                                    if (Equals(refs["UseFIPS"], true))
+                                    if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], true))
+                                    {
+                                        return new Endpoint(Interpolate(@"https://{Bucket}.s3express-fips-{s3expressAvailabilityZoneId}.dualstack.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                                    }
+                                    if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], false))
                                     {
                                         return new Endpoint(Interpolate(@"https://{Bucket}.s3express-fips-{s3expressAvailabilityZoneId}.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
                                     }
-                                    return new Endpoint(Interpolate(@"https://{Bucket}.s3express-{s3expressAvailabilityZoneId}.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                                    if (Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], true))
+                                    {
+                                        return new Endpoint(Interpolate(@"https://{Bucket}.s3express-{s3expressAvailabilityZoneId}.dualstack.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                                    }
+                                    if (Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], false))
+                                    {
+                                        return new Endpoint(Interpolate(@"https://{Bucket}.s3express-{s3expressAvailabilityZoneId}.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                                    }
                                 }
                                 if ((refs["s3expressAvailabilityZoneId"] = Substring((string)refs["Bucket"], 7, 20, true)) != null && (refs["s3expressAvailabilityZoneDelim"] = Substring((string)refs["Bucket"], 20, 22, true)) != null && Equals(refs["s3expressAvailabilityZoneDelim"], "--"))
                                 {
-                                    if (Equals(refs["UseFIPS"], true))
+                                    if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], true))
+                                    {
+                                        return new Endpoint(Interpolate(@"https://{Bucket}.s3express-fips-{s3expressAvailabilityZoneId}.dualstack.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                                    }
+                                    if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], false))
                                     {
                                         return new Endpoint(Interpolate(@"https://{Bucket}.s3express-fips-{s3expressAvailabilityZoneId}.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
                                     }
-                                    return new Endpoint(Interpolate(@"https://{Bucket}.s3express-{s3expressAvailabilityZoneId}.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                                    if (Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], true))
+                                    {
+                                        return new Endpoint(Interpolate(@"https://{Bucket}.s3express-{s3expressAvailabilityZoneId}.dualstack.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                                    }
+                                    if (Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], false))
+                                    {
+                                        return new Endpoint(Interpolate(@"https://{Bucket}.s3express-{s3expressAvailabilityZoneId}.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                                    }
                                 }
                                 if ((refs["s3expressAvailabilityZoneId"] = Substring((string)refs["Bucket"], 7, 21, true)) != null && (refs["s3expressAvailabilityZoneDelim"] = Substring((string)refs["Bucket"], 21, 23, true)) != null && Equals(refs["s3expressAvailabilityZoneDelim"], "--"))
                                 {
-                                    if (Equals(refs["UseFIPS"], true))
+                                    if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], true))
+                                    {
+                                        return new Endpoint(Interpolate(@"https://{Bucket}.s3express-fips-{s3expressAvailabilityZoneId}.dualstack.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                                    }
+                                    if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], false))
                                     {
                                         return new Endpoint(Interpolate(@"https://{Bucket}.s3express-fips-{s3expressAvailabilityZoneId}.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
                                     }
-                                    return new Endpoint(Interpolate(@"https://{Bucket}.s3express-{s3expressAvailabilityZoneId}.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                                    if (Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], true))
+                                    {
+                                        return new Endpoint(Interpolate(@"https://{Bucket}.s3express-{s3expressAvailabilityZoneId}.dualstack.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                                    }
+                                    if (Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], false))
+                                    {
+                                        return new Endpoint(Interpolate(@"https://{Bucket}.s3express-{s3expressAvailabilityZoneId}.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                                    }
                                 }
                                 if ((refs["s3expressAvailabilityZoneId"] = Substring((string)refs["Bucket"], 7, 27, true)) != null && (refs["s3expressAvailabilityZoneDelim"] = Substring((string)refs["Bucket"], 27, 29, true)) != null && Equals(refs["s3expressAvailabilityZoneDelim"], "--"))
                                 {
-                                    if (Equals(refs["UseFIPS"], true))
+                                    if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], true))
+                                    {
+                                        return new Endpoint(Interpolate(@"https://{Bucket}.s3express-fips-{s3expressAvailabilityZoneId}.dualstack.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                                    }
+                                    if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], false))
                                     {
                                         return new Endpoint(Interpolate(@"https://{Bucket}.s3express-fips-{s3expressAvailabilityZoneId}.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
                                     }
-                                    return new Endpoint(Interpolate(@"https://{Bucket}.s3express-{s3expressAvailabilityZoneId}.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                                    if (Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], true))
+                                    {
+                                        return new Endpoint(Interpolate(@"https://{Bucket}.s3express-{s3expressAvailabilityZoneId}.dualstack.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                                    }
+                                    if (Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], false))
+                                    {
+                                        return new Endpoint(Interpolate(@"https://{Bucket}.s3express-{s3expressAvailabilityZoneId}.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                                    }
                                 }
                                 throw new AmazonClientException("Unrecognized S3Express bucket name format.");
                             }
                             if ((refs["s3expressAvailabilityZoneId"] = Substring((string)refs["Bucket"], 7, 15, true)) != null && (refs["s3expressAvailabilityZoneDelim"] = Substring((string)refs["Bucket"], 15, 17, true)) != null && Equals(refs["s3expressAvailabilityZoneDelim"], "--"))
                             {
-                                if (Equals(refs["UseFIPS"], true))
+                                if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], true))
+                                {
+                                    return new Endpoint(Interpolate(@"https://{Bucket}.s3express-fips-{s3expressAvailabilityZoneId}.dualstack.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4-s3express"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                                }
+                                if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], false))
                                 {
                                     return new Endpoint(Interpolate(@"https://{Bucket}.s3express-fips-{s3expressAvailabilityZoneId}.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4-s3express"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
                                 }
-                                return new Endpoint(Interpolate(@"https://{Bucket}.s3express-{s3expressAvailabilityZoneId}.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4-s3express"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                                if (Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], true))
+                                {
+                                    return new Endpoint(Interpolate(@"https://{Bucket}.s3express-{s3expressAvailabilityZoneId}.dualstack.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4-s3express"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                                }
+                                if (Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], false))
+                                {
+                                    return new Endpoint(Interpolate(@"https://{Bucket}.s3express-{s3expressAvailabilityZoneId}.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4-s3express"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                                }
                             }
                             if ((refs["s3expressAvailabilityZoneId"] = Substring((string)refs["Bucket"], 7, 16, true)) != null && (refs["s3expressAvailabilityZoneDelim"] = Substring((string)refs["Bucket"], 16, 18, true)) != null && Equals(refs["s3expressAvailabilityZoneDelim"], "--"))
                             {
-                                if (Equals(refs["UseFIPS"], true))
+                                if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], true))
+                                {
+                                    return new Endpoint(Interpolate(@"https://{Bucket}.s3express-fips-{s3expressAvailabilityZoneId}.dualstack.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4-s3express"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                                }
+                                if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], false))
                                 {
                                     return new Endpoint(Interpolate(@"https://{Bucket}.s3express-fips-{s3expressAvailabilityZoneId}.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4-s3express"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
                                 }
-                                return new Endpoint(Interpolate(@"https://{Bucket}.s3express-{s3expressAvailabilityZoneId}.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4-s3express"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                                if (Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], true))
+                                {
+                                    return new Endpoint(Interpolate(@"https://{Bucket}.s3express-{s3expressAvailabilityZoneId}.dualstack.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4-s3express"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                                }
+                                if (Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], false))
+                                {
+                                    return new Endpoint(Interpolate(@"https://{Bucket}.s3express-{s3expressAvailabilityZoneId}.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4-s3express"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                                }
                             }
                             if ((refs["s3expressAvailabilityZoneId"] = Substring((string)refs["Bucket"], 7, 20, true)) != null && (refs["s3expressAvailabilityZoneDelim"] = Substring((string)refs["Bucket"], 20, 22, true)) != null && Equals(refs["s3expressAvailabilityZoneDelim"], "--"))
                             {
-                                if (Equals(refs["UseFIPS"], true))
+                                if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], true))
+                                {
+                                    return new Endpoint(Interpolate(@"https://{Bucket}.s3express-fips-{s3expressAvailabilityZoneId}.dualstack.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4-s3express"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                                }
+                                if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], false))
                                 {
                                     return new Endpoint(Interpolate(@"https://{Bucket}.s3express-fips-{s3expressAvailabilityZoneId}.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4-s3express"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
                                 }
-                                return new Endpoint(Interpolate(@"https://{Bucket}.s3express-{s3expressAvailabilityZoneId}.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4-s3express"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                                if (Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], true))
+                                {
+                                    return new Endpoint(Interpolate(@"https://{Bucket}.s3express-{s3expressAvailabilityZoneId}.dualstack.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4-s3express"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                                }
+                                if (Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], false))
+                                {
+                                    return new Endpoint(Interpolate(@"https://{Bucket}.s3express-{s3expressAvailabilityZoneId}.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4-s3express"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                                }
                             }
                             if ((refs["s3expressAvailabilityZoneId"] = Substring((string)refs["Bucket"], 7, 21, true)) != null && (refs["s3expressAvailabilityZoneDelim"] = Substring((string)refs["Bucket"], 21, 23, true)) != null && Equals(refs["s3expressAvailabilityZoneDelim"], "--"))
                             {
-                                if (Equals(refs["UseFIPS"], true))
+                                if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], true))
+                                {
+                                    return new Endpoint(Interpolate(@"https://{Bucket}.s3express-fips-{s3expressAvailabilityZoneId}.dualstack.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4-s3express"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                                }
+                                if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], false))
                                 {
                                     return new Endpoint(Interpolate(@"https://{Bucket}.s3express-fips-{s3expressAvailabilityZoneId}.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4-s3express"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
                                 }
-                                return new Endpoint(Interpolate(@"https://{Bucket}.s3express-{s3expressAvailabilityZoneId}.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4-s3express"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                                if (Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], true))
+                                {
+                                    return new Endpoint(Interpolate(@"https://{Bucket}.s3express-{s3expressAvailabilityZoneId}.dualstack.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4-s3express"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                                }
+                                if (Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], false))
+                                {
+                                    return new Endpoint(Interpolate(@"https://{Bucket}.s3express-{s3expressAvailabilityZoneId}.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4-s3express"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                                }
                             }
                             if ((refs["s3expressAvailabilityZoneId"] = Substring((string)refs["Bucket"], 7, 27, true)) != null && (refs["s3expressAvailabilityZoneDelim"] = Substring((string)refs["Bucket"], 27, 29, true)) != null && Equals(refs["s3expressAvailabilityZoneDelim"], "--"))
                             {
-                                if (Equals(refs["UseFIPS"], true))
+                                if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], true))
+                                {
+                                    return new Endpoint(Interpolate(@"https://{Bucket}.s3express-fips-{s3expressAvailabilityZoneId}.dualstack.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4-s3express"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                                }
+                                if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], false))
                                 {
                                     return new Endpoint(Interpolate(@"https://{Bucket}.s3express-fips-{s3expressAvailabilityZoneId}.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4-s3express"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
                                 }
-                                return new Endpoint(Interpolate(@"https://{Bucket}.s3express-{s3expressAvailabilityZoneId}.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4-s3express"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                                if (Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], true))
+                                {
+                                    return new Endpoint(Interpolate(@"https://{Bucket}.s3express-{s3expressAvailabilityZoneId}.dualstack.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4-s3express"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                                }
+                                if (Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], false))
+                                {
+                                    return new Endpoint(Interpolate(@"https://{Bucket}.s3express-{s3expressAvailabilityZoneId}.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4-s3express"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                                }
                             }
                             throw new AmazonClientException("Unrecognized S3Express bucket name format.");
                         }
@@ -383,11 +606,22 @@ namespace Amazon.S3.Internal
                         {
                             return new Endpoint(Interpolate(@"{url#scheme}://{url#authority}{url#path}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
                         }
-                        if (Equals(refs["UseFIPS"], true))
+                        if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], true))
+                        {
+                            return new Endpoint(Interpolate(@"https://s3express-control-fips.dualstack.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                        }
+                        if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], false))
                         {
                             return new Endpoint(Interpolate(@"https://s3express-control-fips.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
                         }
-                        return new Endpoint(Interpolate(@"https://s3express-control.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                        if (Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], true))
+                        {
+                            return new Endpoint(Interpolate(@"https://s3express-control.dualstack.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                        }
+                        if (Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], false))
+                        {
+                            return new Endpoint(Interpolate(@"https://s3express-control.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                        }
                     }
                 }
                 if (IsSet(refs["Bucket"]) && (refs["hardwareType"] = Substring((string)refs["Bucket"], 49, 50, true)) != null && (refs["regionPrefix"] = Substring((string)refs["Bucket"], 8, 12, true)) != null && (refs["bucketAliasSuffix"] = Substring((string)refs["Bucket"], 0, 7, true)) != null && (refs["outpostId"] = Substring((string)refs["Bucket"], 32, 49, true)) != null && (refs["regionPartition"] = Partition((string)refs["Region"])) != null && Equals(refs["bucketAliasSuffix"], "--op-s3"))
