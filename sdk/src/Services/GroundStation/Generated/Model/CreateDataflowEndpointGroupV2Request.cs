@@ -30,15 +30,26 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GroundStation.Model
 {
     /// <summary>
+    /// Container for the parameters to the CreateDataflowEndpointGroupV2 operation.
+    /// Creates a <c>DataflowEndpointGroupV2</c> containing the specified list of <c>DataflowEndpoint</c>
+    /// objects.
     /// 
+    ///  
+    /// <para>
+    /// The <c>name</c> field in each endpoint is used in your mission profile <c>DataflowEndpointConfig</c>
+    /// to specify which endpoints to use during a contact.
+    /// </para>
+    ///  
+    /// <para>
+    /// When a contact uses multiple <c>DataflowEndpointConfig</c> objects, each <c>Config</c>
+    /// must match a <c>DataflowEndpoint</c> in the same group.
+    /// </para>
     /// </summary>
-    public partial class GetDataflowEndpointGroupResponse : AmazonWebServiceResponse
+    public partial class CreateDataflowEndpointGroupV2Request : AmazonGroundStationRequest
     {
         private int? _contactPostPassDurationSeconds;
         private int? _contactPrePassDurationSeconds;
-        private string _dataflowEndpointGroupArn;
-        private string _dataflowEndpointGroupId;
-        private List<EndpointDetails> _endpointsDetails = AWSConfigs.InitializeCollections ? new List<EndpointDetails>() : null;
+        private List<CreateEndpointDetails> _endpoints = AWSConfigs.InitializeCollections ? new List<CreateEndpointDetails>() : null;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
@@ -86,47 +97,9 @@ namespace Amazon.GroundStation.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DataflowEndpointGroupArn. 
+        /// Gets and sets the property Endpoints. 
         /// <para>
-        /// ARN of a dataflow endpoint group.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=97, Max=146)]
-        public string DataflowEndpointGroupArn
-        {
-            get { return this._dataflowEndpointGroupArn; }
-            set { this._dataflowEndpointGroupArn = value; }
-        }
-
-        // Check to see if DataflowEndpointGroupArn property is set
-        internal bool IsSetDataflowEndpointGroupArn()
-        {
-            return this._dataflowEndpointGroupArn != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property DataflowEndpointGroupId. 
-        /// <para>
-        /// UUID of a dataflow endpoint group.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=36, Max=36)]
-        public string DataflowEndpointGroupId
-        {
-            get { return this._dataflowEndpointGroupId; }
-            set { this._dataflowEndpointGroupId = value; }
-        }
-
-        // Check to see if DataflowEndpointGroupId property is set
-        internal bool IsSetDataflowEndpointGroupId()
-        {
-            return this._dataflowEndpointGroupId != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property EndpointsDetails. 
-        /// <para>
-        /// Details of a dataflow endpoint.
+        /// Dataflow endpoint group's endpoint definitions
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -134,23 +107,23 @@ namespace Amazon.GroundStation.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Min=0, Max=500)]
-        public List<EndpointDetails> EndpointsDetails
+        [AWSProperty(Required=true, Min=1, Max=12)]
+        public List<CreateEndpointDetails> Endpoints
         {
-            get { return this._endpointsDetails; }
-            set { this._endpointsDetails = value; }
+            get { return this._endpoints; }
+            set { this._endpoints = value; }
         }
 
-        // Check to see if EndpointsDetails property is set
-        internal bool IsSetEndpointsDetails()
+        // Check to see if Endpoints property is set
+        internal bool IsSetEndpoints()
         {
-            return this._endpointsDetails != null && (this._endpointsDetails.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._endpoints != null && (this._endpoints.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Tags assigned to a dataflow endpoint group.
+        /// Tags of a V2 dataflow endpoint group.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
