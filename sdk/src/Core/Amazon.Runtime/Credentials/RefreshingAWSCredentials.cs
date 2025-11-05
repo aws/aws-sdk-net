@@ -164,6 +164,8 @@ namespace Amazon.Runtime
                     // If credentials are expired block for credential refresh.
                     if (IsExpired(tempState))
                     {
+                        LogCredentialsExpired(tempState);
+
                         tempState = GenerateNewCredentials();
                         ValidateGeneratedCredentials(tempState);
                         currentState = tempState;
@@ -171,6 +173,8 @@ namespace Amazon.Runtime
                     }
                     else if (currentLoadState != CredentialsLoadState.Loading && IsPreemptExpiryWindow(tempState))
                     {
+                        LogCredentialsPreemptExpiry(tempState);
+
                         currentLoadState = CredentialsLoadState.Loading;
                         _ = BackgroundCredentialsRefreshAsync();
                     }
@@ -200,6 +204,8 @@ namespace Amazon.Runtime
                     // If credentials are expired block for credential refresh.
                     if (IsExpired(tempState))
                     {
+                        LogCredentialsExpired(tempState);
+
                         tempState = await GenerateNewCredentialsAsync().ConfigureAwait(false);
                         ValidateGeneratedCredentials(tempState);
                         currentState = tempState;
@@ -207,6 +213,8 @@ namespace Amazon.Runtime
                     }
                     else if (currentLoadState != CredentialsLoadState.Loading && IsPreemptExpiryWindow(tempState))
                     {
+                        LogCredentialsPreemptExpiry(tempState);
+
                         currentLoadState = CredentialsLoadState.Loading;
                         _ = BackgroundCredentialsRefreshAsync();
                     }
@@ -239,7 +247,7 @@ namespace Amazon.Runtime
                     _updateGeneratedCredentialsSemaphore.Release();
                 }
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 _logger.Error(e, "Exception occurred performing background credentials refresh.");
                 // If any exceptions occur during background refresh, reset the state to NotLoading
@@ -293,41 +301,55 @@ namespace Amazon.Runtime
         /// <summary>
         /// Test if the credentials are expired currently expired.
         /// </summary>
-        /// <param name="state"></param>
-        /// <returns></returns>
         private bool IsExpired(CredentialsRefreshState state)
         {
             var isExpired = state?.IsExpiredWithin(TimeSpan.Zero);
-            if (isExpired == true)
-            {
-                _logger.InfoFormat("Determined refreshing credentials should update. Expiration time: {0}, Current time: {1}",
-                                state.Expiration.Subtract(ExpirationBuffer).ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffK", CultureInfo.InvariantCulture),
-                                _timeProvider.CorrectedUtcNow.ToString("yyyy-MM-ddTHH:mm:ss.fffffffK", CultureInfo.InvariantCulture));
-            }
-
             return isExpired ?? true;
         }
 
+        private void LogCredentialsExpired(CredentialsRefreshState state)
+        {
+            if (state == null)
+            {
+                return;
+            }
+
+            _logger.InfoFormat(
+                "Determined refreshing credentials should update. Expiration time: {0}, Current time: {1}",
+                state.Expiration.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffK", CultureInfo.InvariantCulture),
+                _timeProvider.CorrectedUtcNow.ToString("yyyy-MM-ddTHH:mm:ss.fffffffK", CultureInfo.InvariantCulture)
+            );
+        }
+
         /// <summary>
-        /// Test if the credentials are in the preempt expiry window. That means the instance currently has credentials and they are not expired but that will expire
-        /// with in the window of expiration minus PreemptExpiryTime.
+        /// Test if the credentials are in the preempt expiry window.
+        /// <para />
+        /// That means the instance currently has credentials and they are not expired but that will expire 
+        /// within the window of expiration minus PreemptExpiryTime.
         /// </summary>
-        /// <param name="state"></param>
-        /// <returns></returns>
         private bool IsPreemptExpiryWindow(CredentialsRefreshState state)
         {
             if (state == null || IsExpired(state))
-                return false;
-
-            var isPreemptWindow = state.IsExpiredWithin(PreemptExpiryTime);
-            if (isPreemptWindow == true)
             {
-                _logger.InfoFormat("Determined refreshing credentials are in window for preempt expiration. Preempt time: {0}, Current time: {1}",
-                                state.Expiration.Add(PreemptExpiryTime).ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffK", CultureInfo.InvariantCulture),
-                                _timeProvider.CorrectedUtcNow.ToString("yyyy-MM-ddTHH:mm:ss.fffffffK", CultureInfo.InvariantCulture));
+                return false;
             }
 
+            var isPreemptWindow = state.IsExpiredWithin(PreemptExpiryTime);
             return isPreemptWindow;
+        }
+
+        private void LogCredentialsPreemptExpiry(CredentialsRefreshState state)
+        {
+            if (state == null)
+            {
+                return;
+            }
+
+            _logger.InfoFormat(
+                "Determined refreshing credentials are in window for preempt expiration. Preempt time: {0}, Current time: {1}",
+                state.Expiration.Subtract(PreemptExpiryTime).ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffK", CultureInfo.InvariantCulture),
+                _timeProvider.CorrectedUtcNow.ToString("yyyy-MM-ddTHH:mm:ss.fffffffK", CultureInfo.InvariantCulture)
+            );
         }
 
         /// <summary>
