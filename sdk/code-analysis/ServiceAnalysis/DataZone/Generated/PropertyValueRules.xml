@@ -1188,6 +1188,11 @@
     <pattern>^[\w -]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DataZone.Model.CreateProjectProfileRequest.ProjectResourceTagsDescription</property>
+    <min>0</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DataZone.Model.CreateProjectProfileResponse.Description</property>
     <min>0</min>
     <max>2048</max>
@@ -1211,6 +1216,11 @@
     <min>1</min>
     <max>64</max>
     <pattern>^[\w -]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.CreateProjectProfileResponse.ProjectResourceTagsDescription</property>
+    <min>0</min>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.CreateRuleRequest.ClientToken</property>
@@ -2530,6 +2540,11 @@
     <min>1</min>
     <max>64</max>
     <pattern>^[\w -]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.GetProjectProfileResponse.ProjectResourceTagsDescription</property>
+    <min>0</min>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.GetRuleRequest.DomainIdentifier</property>
@@ -4503,6 +4518,11 @@
     <pattern>^[\w -]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DataZone.Model.UpdateProjectProfileRequest.ProjectResourceTagsDescription</property>
+    <min>0</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DataZone.Model.UpdateProjectProfileResponse.Description</property>
     <min>0</min>
     <max>2048</max>
@@ -4526,6 +4546,11 @@
     <min>1</min>
     <max>64</max>
     <pattern>^[\w -]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.UpdateProjectProfileResponse.ProjectResourceTagsDescription</property>
+    <min>0</min>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.UpdateRuleRequest.Description</property>
@@ -6066,6 +6091,30 @@
     <property>Amazon.DataZone.Model.RelationalFilterConfiguration.SchemaName</property>
     <min>1</min>
     <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.ResourceTag.Key</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[\w \.:/=+@-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.ResourceTag.Value</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>^[\w \.:/=+@-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.ResourceTagParameter.Key</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[\w \.:/=+@-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.ResourceTagParameter.Value</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>^[\w \.:/=+@-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.RuleSummary.Identifier</property>
