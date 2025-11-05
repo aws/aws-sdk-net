@@ -215,6 +215,70 @@ namespace Amazon.GroundStation
 
         #endregion
         
+        #region  CreateDataflowEndpointGroupV2
+
+
+        /// <summary>
+        /// Creates a <c>DataflowEndpointGroupV2</c> containing the specified list of <c>DataflowEndpoint</c>
+        /// objects.
+        /// 
+        ///  
+        /// <para>
+        /// The <c>name</c> field in each endpoint is used in your mission profile <c>DataflowEndpointConfig</c>
+        /// to specify which endpoints to use during a contact.
+        /// </para>
+        ///  
+        /// <para>
+        /// When a contact uses multiple <c>DataflowEndpointConfig</c> objects, each <c>Config</c>
+        /// must match a <c>DataflowEndpoint</c> in the same group.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDataflowEndpointGroupV2 service method.</param>
+        /// 
+        /// <returns>The response from the CreateDataflowEndpointGroupV2 service method, as returned by GroundStation.</returns>
+        /// <exception cref="Amazon.GroundStation.Model.DependencyException">
+        /// Dependency encountered an error.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.ResourceNotFoundException">
+        /// Resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.ServiceQuotaExceededException">
+        /// Request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/CreateDataflowEndpointGroupV2">REST API Reference for CreateDataflowEndpointGroupV2 Operation</seealso>
+        CreateDataflowEndpointGroupV2Response CreateDataflowEndpointGroupV2(CreateDataflowEndpointGroupV2Request request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateDataflowEndpointGroupV2 operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateDataflowEndpointGroupV2 operation on AmazonGroundStationClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateDataflowEndpointGroupV2
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/CreateDataflowEndpointGroupV2">REST API Reference for CreateDataflowEndpointGroupV2 Operation</seealso>
+        IAsyncResult BeginCreateDataflowEndpointGroupV2(CreateDataflowEndpointGroupV2Request request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateDataflowEndpointGroupV2 operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateDataflowEndpointGroupV2.</param>
+        /// 
+        /// <returns>Returns a  CreateDataflowEndpointGroupV2Result from GroundStation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/CreateDataflowEndpointGroupV2">REST API Reference for CreateDataflowEndpointGroupV2 Operation</seealso>
+        CreateDataflowEndpointGroupV2Response EndCreateDataflowEndpointGroupV2(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateEphemeris
 
 
@@ -672,6 +736,64 @@ namespace Amazon.GroundStation
         /// <returns>Returns a  GetAgentConfigurationResult from GroundStation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/GetAgentConfiguration">REST API Reference for GetAgentConfiguration Operation</seealso>
         GetAgentConfigurationResponse EndGetAgentConfiguration(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetAgentTaskResponseUrl
+
+
+        /// <summary>
+        /// <note> 
+        /// <para>
+        ///  For use by AWS Ground Station Agent and shouldn't be called directly.
+        /// 
+        ///  </note> 
+        /// <para>
+        /// Gets a presigned URL for uploading agent task response logs.
+        /// </para>
+        /// 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAgentTaskResponseUrl service method.</param>
+        /// 
+        /// <returns>The response from the GetAgentTaskResponseUrl service method, as returned by GroundStation.</returns>
+        /// <exception cref="Amazon.GroundStation.Model.DependencyException">
+        /// Dependency encountered an error.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.ResourceNotFoundException">
+        /// Resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/GetAgentTaskResponseUrl">REST API Reference for GetAgentTaskResponseUrl Operation</seealso>
+        GetAgentTaskResponseUrlResponse GetAgentTaskResponseUrl(GetAgentTaskResponseUrlRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAgentTaskResponseUrl operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAgentTaskResponseUrl operation on AmazonGroundStationClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAgentTaskResponseUrl
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/GetAgentTaskResponseUrl">REST API Reference for GetAgentTaskResponseUrl Operation</seealso>
+        IAsyncResult BeginGetAgentTaskResponseUrl(GetAgentTaskResponseUrlRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetAgentTaskResponseUrl operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAgentTaskResponseUrl.</param>
+        /// 
+        /// <returns>Returns a  GetAgentTaskResponseUrlResult from GroundStation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/GetAgentTaskResponseUrl">REST API Reference for GetAgentTaskResponseUrl Operation</seealso>
+        GetAgentTaskResponseUrlResponse EndGetAgentTaskResponseUrl(IAsyncResult asyncResult);
 
         #endregion
         

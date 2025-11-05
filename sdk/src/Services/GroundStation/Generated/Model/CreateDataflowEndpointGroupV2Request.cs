@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GroundStation.Model
 {
     /// <summary>
-    /// Container for the parameters to the CreateDataflowEndpointGroup operation.
-    /// Creates a <c>DataflowEndpoint</c> group containing the specified list of <c>DataflowEndpoint</c>
+    /// Container for the parameters to the CreateDataflowEndpointGroupV2 operation.
+    /// Creates a <c>DataflowEndpointGroupV2</c> containing the specified list of <c>DataflowEndpoint</c>
     /// objects.
     /// 
     ///  
@@ -45,11 +45,11 @@ namespace Amazon.GroundStation.Model
     /// must match a <c>DataflowEndpoint</c> in the same group.
     /// </para>
     /// </summary>
-    public partial class CreateDataflowEndpointGroupRequest : AmazonGroundStationRequest
+    public partial class CreateDataflowEndpointGroupV2Request : AmazonGroundStationRequest
     {
         private int? _contactPostPassDurationSeconds;
         private int? _contactPrePassDurationSeconds;
-        private List<EndpointDetails> _endpointDetails = AWSConfigs.InitializeCollections ? new List<EndpointDetails>() : null;
+        private List<CreateEndpointDetails> _endpoints = AWSConfigs.InitializeCollections ? new List<CreateEndpointDetails>() : null;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
@@ -97,33 +97,28 @@ namespace Amazon.GroundStation.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EndpointDetails. 
+        /// Gets and sets the property Endpoints. 
         /// <para>
-        /// Endpoint details of each endpoint in the dataflow endpoint group. All dataflow endpoints
-        /// within a single dataflow endpoint group must be of the same type. You cannot mix <a
-        /// href="https://docs.aws.amazon.com/ground-station/latest/APIReference/API_AwsGroundStationAgentEndpoint.html">
-        /// AWS Ground Station Agent endpoints</a> with <a href="https://docs.aws.amazon.com/ground-station/latest/APIReference/API_DataflowEndpoint.html">Dataflow
-        /// endpoints</a> in the same group. If your use case requires both types of endpoints,
-        /// you must create separate dataflow endpoint groups for each type. 
+        /// Dataflow endpoint group's endpoint definitions
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=500)]
-        public List<EndpointDetails> EndpointDetails
+        [AWSProperty(Required=true, Min=1, Max=12)]
+        public List<CreateEndpointDetails> Endpoints
         {
-            get { return this._endpointDetails; }
-            set { this._endpointDetails = value; }
+            get { return this._endpoints; }
+            set { this._endpoints = value; }
         }
 
-        // Check to see if EndpointDetails property is set
-        internal bool IsSetEndpointDetails()
+        // Check to see if Endpoints property is set
+        internal bool IsSetEndpoints()
         {
-            return this._endpointDetails != null && (this._endpointDetails.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._endpoints != null && (this._endpoints.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Tags of a dataflow endpoint group.
+        /// Tags of a V2 dataflow endpoint group.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Tags

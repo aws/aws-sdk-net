@@ -35,10 +35,12 @@ namespace Amazon.GroundStation.Model
     public partial class EndpointDetails
     {
         private AwsGroundStationAgentEndpoint _awsGroundStationAgentEndpoint;
+        private DownlinkAwsGroundStationAgentEndpointDetails _downlinkAwsGroundStationAgentEndpoint;
         private DataflowEndpoint _endpoint;
         private List<string> _healthReasons = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private CapabilityHealth _healthStatus;
         private SecurityDetails _securityDetails;
+        private UplinkAwsGroundStationAgentEndpointDetails _uplinkAwsGroundStationAgentEndpoint;
 
         /// <summary>
         /// Gets and sets the property AwsGroundStationAgentEndpoint. 
@@ -56,6 +58,24 @@ namespace Amazon.GroundStation.Model
         internal bool IsSetAwsGroundStationAgentEndpoint()
         {
             return this._awsGroundStationAgentEndpoint != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DownlinkAwsGroundStationAgentEndpoint. 
+        /// <para>
+        /// Definition for a downlink agent endpoint
+        /// </para>
+        /// </summary>
+        public DownlinkAwsGroundStationAgentEndpointDetails DownlinkAwsGroundStationAgentEndpoint
+        {
+            get { return this._downlinkAwsGroundStationAgentEndpoint; }
+            set { this._downlinkAwsGroundStationAgentEndpoint = value; }
+        }
+
+        // Check to see if DownlinkAwsGroundStationAgentEndpoint property is set
+        internal bool IsSetDownlinkAwsGroundStationAgentEndpoint()
+        {
+            return this._downlinkAwsGroundStationAgentEndpoint != null;
         }
 
         /// <summary>
@@ -130,6 +150,24 @@ namespace Amazon.GroundStation.Model
         internal bool IsSetSecurityDetails()
         {
             return this._securityDetails != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UplinkAwsGroundStationAgentEndpoint. 
+        /// <para>
+        /// Definition for an uplink agent endpoint
+        /// </para>
+        /// </summary>
+        public UplinkAwsGroundStationAgentEndpointDetails UplinkAwsGroundStationAgentEndpoint
+        {
+            get { return this._uplinkAwsGroundStationAgentEndpoint; }
+            set { this._uplinkAwsGroundStationAgentEndpoint = value; }
+        }
+
+        // Check to see if UplinkAwsGroundStationAgentEndpoint property is set
+        internal bool IsSetUplinkAwsGroundStationAgentEndpoint()
+        {
+            return this._uplinkAwsGroundStationAgentEndpoint != null;
         }
 
     }

@@ -26,16 +26,32 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GroundStation.Model.CreateDataflowEndpointGroupRequest.ContactPostPassDurationSeconds</property>
-    <min>120</min>
+    <min>30</min>
     <max>480</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GroundStation.Model.CreateDataflowEndpointGroupRequest.ContactPrePassDurationSeconds</property>
-    <min>120</min>
+    <min>30</min>
     <max>480</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GroundStation.Model.CreateDataflowEndpointGroupResponse.DataflowEndpointGroupId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GroundStation.Model.CreateDataflowEndpointGroupV2Request.ContactPostPassDurationSeconds</property>
+    <min>30</min>
+    <max>480</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GroundStation.Model.CreateDataflowEndpointGroupV2Request.ContactPrePassDurationSeconds</property>
+    <min>30</min>
+    <max>480</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GroundStation.Model.CreateDataflowEndpointGroupV2Response.DataflowEndpointGroupId</property>
     <min>36</min>
     <max>36</max>
     <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
@@ -210,6 +226,30 @@
     <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GroundStation.Model.GetAgentTaskResponseUrlRequest.AgentId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GroundStation.Model.GetAgentTaskResponseUrlRequest.TaskId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GroundStation.Model.GetAgentTaskResponseUrlResponse.AgentId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GroundStation.Model.GetAgentTaskResponseUrlResponse.TaskId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GroundStation.Model.GetConfigRequest.ConfigId</property>
     <min>36</min>
     <max>36</max>
@@ -229,12 +269,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GroundStation.Model.GetDataflowEndpointGroupResponse.ContactPostPassDurationSeconds</property>
-    <min>120</min>
+    <min>30</min>
     <max>480</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GroundStation.Model.GetDataflowEndpointGroupResponse.ContactPrePassDurationSeconds</property>
-    <min>120</min>
+    <min>30</min>
     <max>480</max>
   </property-value-rule>
   <property-value-rule>
@@ -750,6 +790,18 @@
     <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GroundStation.Model.DownlinkAwsGroundStationAgentEndpoint.Name</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[ a-zA-Z0-9_:-]{1,256}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GroundStation.Model.DownlinkAwsGroundStationAgentEndpointDetails.Name</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[ a-zA-Z0-9_:-]{1,256}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GroundStation.Model.EphemerisDescription.EphemerisData</property>
     <min>1</min>
     <pattern>[\s\S]+</pattern>
@@ -916,6 +968,18 @@
     <min>69</min>
     <max>69</max>
     <pattern>2 [ 0-9]{5} [ 0-9]{3}[.][ 0-9]{4} [ 0-9]{3}[.][ 0-9]{4} [ 0-9]{7} [ 0-9]{3}[.][ 0-9]{4} [ 0-9]{3}[.][ 0-9]{4} [ 0-9]{2}[.][ 0-9]{13}[ 0-9]</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GroundStation.Model.UplinkAwsGroundStationAgentEndpoint.Name</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[ a-zA-Z0-9_:-]{1,256}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GroundStation.Model.UplinkAwsGroundStationAgentEndpointDetails.Name</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[ a-zA-Z0-9_:-]{1,256}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GroundStation.Model.UplinkEchoConfig.AntennaUplinkConfigArn</property>

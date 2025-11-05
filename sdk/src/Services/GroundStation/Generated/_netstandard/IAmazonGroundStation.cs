@@ -147,6 +147,48 @@ namespace Amazon.GroundStation
 
         #endregion
                 
+        #region  CreateDataflowEndpointGroupV2
+
+
+
+        /// <summary>
+        /// Creates a <c>DataflowEndpointGroupV2</c> containing the specified list of <c>DataflowEndpoint</c>
+        /// objects.
+        /// 
+        ///  
+        /// <para>
+        /// The <c>name</c> field in each endpoint is used in your mission profile <c>DataflowEndpointConfig</c>
+        /// to specify which endpoints to use during a contact.
+        /// </para>
+        ///  
+        /// <para>
+        /// When a contact uses multiple <c>DataflowEndpointConfig</c> objects, each <c>Config</c>
+        /// must match a <c>DataflowEndpoint</c> in the same group.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDataflowEndpointGroupV2 service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateDataflowEndpointGroupV2 service method, as returned by GroundStation.</returns>
+        /// <exception cref="Amazon.GroundStation.Model.DependencyException">
+        /// Dependency encountered an error.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.ResourceNotFoundException">
+        /// Resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.ServiceQuotaExceededException">
+        /// Request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/CreateDataflowEndpointGroupV2">REST API Reference for CreateDataflowEndpointGroupV2 Operation</seealso>
+        Task<CreateDataflowEndpointGroupV2Response> CreateDataflowEndpointGroupV2Async(CreateDataflowEndpointGroupV2Request request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreateEphemeris
 
 
@@ -406,6 +448,42 @@ namespace Amazon.GroundStation
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/GetAgentConfiguration">REST API Reference for GetAgentConfiguration Operation</seealso>
         Task<GetAgentConfigurationResponse> GetAgentConfigurationAsync(GetAgentConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetAgentTaskResponseUrl
+
+
+
+        /// <summary>
+        /// <note> 
+        /// <para>
+        ///  For use by AWS Ground Station Agent and shouldn't be called directly.
+        /// 
+        ///  </note> 
+        /// <para>
+        /// Gets a presigned URL for uploading agent task response logs.
+        /// </para>
+        /// 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAgentTaskResponseUrl service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetAgentTaskResponseUrl service method, as returned by GroundStation.</returns>
+        /// <exception cref="Amazon.GroundStation.Model.DependencyException">
+        /// Dependency encountered an error.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.ResourceNotFoundException">
+        /// Resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/GetAgentTaskResponseUrl">REST API Reference for GetAgentTaskResponseUrl Operation</seealso>
+        Task<GetAgentTaskResponseUrlResponse> GetAgentTaskResponseUrlAsync(GetAgentTaskResponseUrlRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

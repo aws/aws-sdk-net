@@ -59,6 +59,17 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetDownlinkAwsGroundStationAgentEndpoint())
+            {
+                context.Writer.WritePropertyName("downlinkAwsGroundStationAgentEndpoint");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = DownlinkAwsGroundStationAgentEndpointDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.DownlinkAwsGroundStationAgentEndpoint, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetEndpoint())
             {
                 context.Writer.WritePropertyName("endpoint");
@@ -94,6 +105,17 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
 
                 var marshaller = SecurityDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.SecurityDetails, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetUplinkAwsGroundStationAgentEndpoint())
+            {
+                context.Writer.WritePropertyName("uplinkAwsGroundStationAgentEndpoint");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = UplinkAwsGroundStationAgentEndpointDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.UplinkAwsGroundStationAgentEndpoint, context);
 
                 context.Writer.WriteObjectEnd();
             }
