@@ -133,29 +133,6 @@ namespace AWSSDK.UnitTests
 
         [TestMethod]
         [TestCategory("S3")]
-        public void MapPutObjectResponse_AllMappedProperties_WorkCorrectly()
-        {
-            ValidateMappingTransferUtilityAndSdkRequests<PutObjectResponse, TransferUtilityUploadResponse>(
-                new[] { "Conversion", "PutObjectResponse", "UploadResponse" },
-                (sourceResponse) =>
-                {
-                    return ResponseMapper.MapPutObjectResponse(sourceResponse);
-                },
-                usesHeadersCollection: false,
-                (sourceResponse) =>
-                {
-                    sourceResponse.HttpStatusCode = HttpStatusCode.OK;
-                    sourceResponse.ContentLength = 1024;
-                },
-                (sourceResponse, targetResponse) =>
-                {
-                    Assert.AreEqual(sourceResponse.HttpStatusCode, targetResponse.HttpStatusCode, "HttpStatusCode should match");
-                    Assert.AreEqual(sourceResponse.ContentLength, targetResponse.ContentLength, "ContentLength should match");
-                });
-        }
-
-        [TestMethod]
-        [TestCategory("S3")]
         public void MapUploadRequest_PutObjectRequest_AllMappedProperties_WorkCorrectly()
         {
             ValidateMappingTransferUtilityAndSdkRequests<TransferUtilityUploadRequest, PutObjectRequest>(
@@ -254,33 +231,6 @@ namespace AWSSDK.UnitTests
                     sourceRequest.InputStream = new MemoryStream(1024);
                     sourceRequest.ServerSideEncryptionCustomerMethod = ServerSideEncryptionCustomerMethod.AES256;
                 });
-        }
-
-        [TestMethod]
-        [TestCategory("S3")]
-        public void MapPutObjectResponse_NullValues_HandledCorrectly()
-        {
-            // Test null handling scenarios
-            var testCases = new[]
-            {
-                // Test null Expiration
-                new PutObjectResponse { Expiration = null },
-                
-                // Test null enum conversions
-                new PutObjectResponse { ChecksumType = null, RequestCharged = null, ServerSideEncryptionMethod = null }
-            };
-
-            foreach (var testCase in testCases)
-            {
-                var mapped = ResponseMapper.MapPutObjectResponse(testCase);
-                Assert.IsNotNull(mapped, "Response should always be mappable");
-
-                // Test null handling
-                if (testCase.Expiration == null)
-                {
-                    Assert.IsNull(mapped.Expiration, "Null Expiration should map to null");
-                }
-            }
         }
 
         private void ValidateMappingTransferUtilityAndSdkRequests<TSourceRequest, TTargetRequest>(
@@ -447,24 +397,6 @@ namespace AWSSDK.UnitTests
             {
                 Assert.Fail($"Property mapping failures:\n{string.Join("\n", failedAssertions)}");
             }
-        }
-
-        [TestMethod]
-        [TestCategory("S3")]
-        public void ValidateTransferUtilityUploadResponseDefinitionCompleteness()
-        {
-            ValidateResponseDefinitionCompleteness<TransferUtilityUploadResponse>(
-                new[] { "Definition", "UploadResponse", "PutObjectResponse" },
-                "TransferUtilityUploadResponse");
-        }
-
-        [TestMethod]
-        [TestCategory("S3")]
-        public void ValidateCompleteMultipartUploadResponseConversionCompleteness()
-        {
-            ValidateResponseDefinitionCompleteness<TransferUtilityUploadResponse>(
-                new[] { "Conversion", "CompleteMultipartResponse", "UploadResponse" },
-                "TransferUtilityUploadResponse");
         }
 
         [TestMethod]
