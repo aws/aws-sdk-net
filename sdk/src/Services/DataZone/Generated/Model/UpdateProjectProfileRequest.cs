@@ -35,13 +35,34 @@ namespace Amazon.DataZone.Model
     /// </summary>
     public partial class UpdateProjectProfileRequest : AmazonDataZoneRequest
     {
+        private bool? _allowCustomProjectResourceTags;
         private string _description;
         private string _domainIdentifier;
         private string _domainUnitIdentifier;
         private List<EnvironmentConfiguration> _environmentConfigurations = AWSConfigs.InitializeCollections ? new List<EnvironmentConfiguration>() : null;
         private string _identifier;
         private string _name;
+        private List<ResourceTagParameter> _projectResourceTags = AWSConfigs.InitializeCollections ? new List<ResourceTagParameter>() : null;
+        private string _projectResourceTagsDescription;
         private Status _status;
+
+        /// <summary>
+        /// Gets and sets the property AllowCustomProjectResourceTags. 
+        /// <para>
+        /// Specifies whether custom project resource tags are supported.
+        /// </para>
+        /// </summary>
+        public bool AllowCustomProjectResourceTags
+        {
+            get { return this._allowCustomProjectResourceTags.GetValueOrDefault(); }
+            set { this._allowCustomProjectResourceTags = value; }
+        }
+
+        // Check to see if AllowCustomProjectResourceTags property is set
+        internal bool IsSetAllowCustomProjectResourceTags()
+        {
+            return this._allowCustomProjectResourceTags.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -154,6 +175,45 @@ namespace Amazon.DataZone.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProjectResourceTags. 
+        /// <para>
+        /// The resource tags of the project profile.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=25)]
+        public List<ResourceTagParameter> ProjectResourceTags
+        {
+            get { return this._projectResourceTags; }
+            set { this._projectResourceTags = value; }
+        }
+
+        // Check to see if ProjectResourceTags property is set
+        internal bool IsSetProjectResourceTags()
+        {
+            return this._projectResourceTags != null && (this._projectResourceTags.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProjectResourceTagsDescription. 
+        /// <para>
+        /// Field viewable through the UI that provides a project user with the allowed resource
+        /// tag specifications.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Min=0, Max=2048)]
+        public string ProjectResourceTagsDescription
+        {
+            get { return this._projectResourceTagsDescription; }
+            set { this._projectResourceTagsDescription = value; }
+        }
+
+        // Check to see if ProjectResourceTagsDescription property is set
+        internal bool IsSetProjectResourceTagsDescription()
+        {
+            return this._projectResourceTagsDescription != null;
         }
 
         /// <summary>

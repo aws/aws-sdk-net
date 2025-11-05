@@ -130,6 +130,12 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                     response.ProjectStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("resourceTags", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ResourceTag, ResourceTagUnmarshaller>(ResourceTagUnmarshaller.Instance);
+                    response.ResourceTags = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("userParameters", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<EnvironmentConfigurationUserParameter, EnvironmentConfigurationUserParameterUnmarshaller>(EnvironmentConfigurationUserParameterUnmarshaller.Instance);

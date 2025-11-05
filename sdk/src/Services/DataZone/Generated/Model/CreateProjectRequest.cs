@@ -41,6 +41,7 @@ namespace Amazon.DataZone.Model
         private List<string> _glossaryTerms = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _name;
         private string _projectProfileId;
+        private Dictionary<string, string> _resourceTags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private List<EnvironmentConfigurationUserParameter> _userParameters = AWSConfigs.InitializeCollections ? new List<EnvironmentConfigurationUserParameter>() : null;
 
         /// <summary>
@@ -155,6 +156,25 @@ namespace Amazon.DataZone.Model
         internal bool IsSetProjectProfileId()
         {
             return this._projectProfileId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceTags. 
+        /// <para>
+        /// The resource tags of the project.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=25)]
+        public Dictionary<string, string> ResourceTags
+        {
+            get { return this._resourceTags; }
+            set { this._resourceTags = value; }
+        }
+
+        // Check to see if ResourceTags property is set
+        internal bool IsSetResourceTags()
+        {
+            return this._resourceTags != null && (this._resourceTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

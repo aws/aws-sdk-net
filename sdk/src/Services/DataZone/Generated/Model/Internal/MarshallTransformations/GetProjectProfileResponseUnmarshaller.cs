@@ -52,6 +52,12 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("allowCustomProjectResourceTags", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    response.AllowCustomProjectResourceTags = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("createdAt", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
@@ -104,6 +110,18 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Name = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("projectResourceTags", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ResourceTagParameter, ResourceTagParameterUnmarshaller>(ResourceTagParameterUnmarshaller.Instance);
+                    response.ProjectResourceTags = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("projectResourceTagsDescription", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ProjectResourceTagsDescription = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("status", targetDepth))

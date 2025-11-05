@@ -47,6 +47,7 @@ namespace Amazon.DataZone.Model
         private string _name;
         private string _projectProfileId;
         private ProjectStatus _projectStatus;
+        private List<ResourceTag> _resourceTags = AWSConfigs.InitializeCollections ? new List<ResourceTag>() : null;
         private List<EnvironmentConfigurationUserParameter> _userParameters = AWSConfigs.InitializeCollections ? new List<EnvironmentConfigurationUserParameter>() : null;
 
         /// <summary>
@@ -289,6 +290,25 @@ namespace Amazon.DataZone.Model
         internal bool IsSetProjectStatus()
         {
             return this._projectStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceTags. 
+        /// <para>
+        /// The resource tags of the project.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=25)]
+        public List<ResourceTag> ResourceTags
+        {
+            get { return this._resourceTags; }
+            set { this._resourceTags = value; }
+        }
+
+        // Check to see if ResourceTags property is set
+        internal bool IsSetResourceTags()
+        {
+            return this._resourceTags != null && (this._resourceTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
