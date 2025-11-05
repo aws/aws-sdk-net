@@ -46,7 +46,12 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>availability-zone</c>: The Availability Zone of the snapshot.
+        ///  <c>availability-zone</c>: The Availability Zone of the snapshot. For example, <c>us-east-2a</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>availability-zone-id</c>: The ID of the Availability Zone of the snapshot. For
+        /// example, <c>use2-az1</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>

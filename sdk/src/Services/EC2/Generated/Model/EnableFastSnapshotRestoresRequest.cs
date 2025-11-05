@@ -47,16 +47,44 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class EnableFastSnapshotRestoresRequest : AmazonEC2Request
     {
+        private List<string> _availabilityZoneIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _availabilityZones = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _sourceSnapshotIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+
+        /// <summary>
+        /// Gets and sets the property AvailabilityZoneIds. 
+        /// <para>
+        /// One or more Availability Zone IDs. For example, <c>use2-az1</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Either <c>AvailabilityZone</c> or <c>AvailabilityZoneId</c> must be specified in the
+        /// request, but not both.
+        /// </para>
+        /// </summary>
+        public List<string> AvailabilityZoneIds
+        {
+            get { return this._availabilityZoneIds; }
+            set { this._availabilityZoneIds = value; }
+        }
+
+        // Check to see if AvailabilityZoneIds property is set
+        internal bool IsSetAvailabilityZoneIds()
+        {
+            return this._availabilityZoneIds != null && (this._availabilityZoneIds.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property AvailabilityZones. 
         /// <para>
         /// One or more Availability Zones. For example, <c>us-east-2a</c>.
         /// </para>
+        ///  
+        /// <para>
+        /// Either <c>AvailabilityZone</c> or <c>AvailabilityZoneId</c> must be specified in the
+        /// request, but not both.
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public List<string> AvailabilityZones
         {
             get { return this._availabilityZones; }

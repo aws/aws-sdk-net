@@ -43,71 +43,80 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  
     /// <para>
-    /// There are three rule types:
+    /// There are three rule types. Only 2 of the 3 rule types support conditions - <b>IPAM
+    /// pool CIDR</b> and <b>Scope resource CIDR</b>. <b>Static CIDR</b> rules cannot have
+    /// conditions.
     /// </para>
     ///  <ul> <li> 
     /// <para>
     ///  <b>Static CIDR</b>: A fixed list of CIDRs that do not change (like a manual list
-    /// replicated across Regions).
+    /// replicated across Regions)
     /// </para>
     ///  </li> <li> 
     /// <para>
     ///  <b>IPAM pool CIDR</b>: CIDRs from specific IPAM pools (like all CIDRs from your IPAM
-    /// production pool).
+    /// production pool)
+    /// </para>
+    ///  
+    /// <para>
+    /// If you choose this option, choose the following:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <b>IPAM scope</b>: Select the IPAM scope to search for resources
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <b>Scope resource CIDR</b>: CIDRs for Amazon Web Services resources like VPCs, subnets,
-    /// and EIPs within a specific IPAM scope.
-    /// </para>
-    ///  </li> </ul> 
-    /// <para>
-    /// Condition availability by resource type:
+    ///  <b>Conditions:</b> 
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Only 2 of the 3 rule types support conditions - <b>IPAM pool CIDR</b> and <b>Scope
-    /// resource CIDR</b>. <b>Static CIDR</b> rules cannot have conditions.
+    ///  <b>Property</b> 
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Condition available for the <b>IPAM pool CIDR</b> resource type:
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    /// Property:
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    /// IPAM Pool ID
+    ///  <b>IPAM pool ID</b>: Select an IPAM pool that contains the resources
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// CIDR (like 10.24.34.0/23)
+    ///  <b>CIDR</b> (like 10.24.34.0/23)
     /// </para>
     ///  </li> </ul> </li> <li> 
     /// <para>
-    /// Operation: Equals/Not equals
+    ///  <b>Operation</b>: Equals/Not equals
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Value: The value on which to match the condition
+    ///  <b>Value</b>: The value on which to match the condition
     /// </para>
-    ///  </li> </ul> </li> <li> 
+    ///  </li> </ul> </li> </ul> </li> <li> 
     /// <para>
-    /// Conditions for the <b>Scope resource CIDR</b> resource type:
+    ///  <b>Scope resource CIDR</b>: CIDRs from Amazon Web Services resources like VPCs, subnets,
+    /// EIPs within an IPAM scope
+    /// </para>
+    ///  
+    /// <para>
+    /// If you choose this option, choose the following:
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Property:
+    ///  <b>IPAM scope</b>: Select the IPAM scope to search for resources
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <b>Resource type</b>: Select a resource, like a VPC or subnet.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <b>Conditions</b>:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <b>Property</b>:
     /// </para>
     ///  <ul> <li> 
     /// <para>
     /// Resource ID: The unique ID of a resource (like vpc-1234567890abcdef0)
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// Resource type (like VPC or Subnet)
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -127,17 +136,13 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  </li> </ul> </li> <li> 
     /// <para>
-    /// Operation: Equals/Not equals
+    ///  <b>Operation</b>: Equals/Not equals
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Value: The value on which to match the condition
+    ///  <b>Value</b>: The value on which to match the condition
     /// </para>
-    ///  </li> </ul> </li> <li> 
-    /// <para>
-    /// When setting conditions for a rule, one or more conditions is required.
-    /// </para>
-    ///  </li> </ul> </li> </ul>
+    ///  </li> </ul> </li> </ul> </li> </ul>
     /// </summary>
     public partial class IpamPrefixListResolverRuleCondition
     {

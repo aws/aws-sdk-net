@@ -59,6 +59,15 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             if(publicRequest != null)
             {
+                if(publicRequest.IsSetAvailabilityZoneIds())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.AvailabilityZoneIds)
+                    {
+                        request.Parameters.Add("AvailabilityZoneId" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
+                }
                 if(publicRequest.IsSetAvailabilityZones())
                 {
                     int publicRequestlistValueIndex = 1;
