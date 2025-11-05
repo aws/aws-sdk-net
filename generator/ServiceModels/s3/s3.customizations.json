@@ -179,7 +179,8 @@
                     "Filter": 
                     {
                         "skipContextTestExpressionUnmarshallingLogic" : true,
-                        "injectXmlUnmarshallCode": ["FilterCustomUnmarshall(context, unmarshalledObject);"]
+                        "injectXmlUnmarshallCode": ["FilterCustomUnmarshall(context, unmarshalledObject);"],
+                        "injectXmlMarshallCode": ["FilterCustomMarshall(publicRequestConfigurationRulesValue, xmlWriter);"]
                     }
                 }
             ]
@@ -213,6 +214,9 @@
             "modify": [
                 {
                     "CORSConfiguration": { "emitPropertyName": "Configuration" }
+                },
+                {
+                    "Configuration" : {"omitRequiredFieldCheck":true}
                 }
             ]
         },
@@ -227,6 +231,9 @@
             "modify": [
                 {
                     "ReplicationConfiguration" : {"emitPropertyName": "Configuration"}
+                },
+                {
+                    "Configuration": {"omitRequiredFieldCheck": true}
                 }
             ]
         },
@@ -467,6 +474,12 @@
                 },
                 {
                     "Bucket" : {"emitPropertyName" : "DestinationBucket"}
+                },
+                {
+                    "UploadId" :{"omitRequiredFieldCheck": true}
+                },
+                {
+                    "PartNumber":{"omitRequiredFieldCheck": true}
                 }
             ],
             "exclude": [
@@ -777,6 +790,86 @@
                         "skipXmlIsSet" : true
                     }
                 }
+            ]
+        },
+        "PutBucketMetricsConfigurationRequest":{
+            "modify" : [
+                {
+                    "Id" :{"emitPropertyName" :"MetricsId"}
+                },
+                {
+                    "MetricsConfiguration": {"omitRequiredFieldCheck" : true}
+                },
+                {
+                    "MetricsId": {"omitRequiredFieldCheck": true}
+                }
+            ]
+        },
+        "MetricsConfiguration":{
+            "modify":[
+                {
+                    "Filter" : 
+                    {
+                        "emitPropertyName" : "MetricsFilter"
+                    }
+                },
+                {
+                    "MetricsFilter":{
+                        "injectXmlMarshallCode": ["MetricsFilterCustomMarshall(publicRequest, xmlWriter);"]
+                    }
+                },
+                {
+                    "Id" : {"emitPropertyName" : "MetricsId"}
+                }
+            ],
+            "predicateListUnmarshallers": [
+                {
+                    "MetricsFilter" :{
+                        "predicateListUnmarshallerName" : "MetricsPredicateListFilterUnmarshaller",
+                        "filterPredicateName": "MetricsFilterPredicate"
+                    }
+                }
+            ]
+        },
+        "AbortMultipartUploadRequest": {
+            "modify": [
+                {
+                    "UploadId": {"omitRequiredFieldCheck": true}
+                }
+            ]
+        },
+        "ListPartsRequest":{
+            "modify": [
+                {
+                    "UploadId": {"omitRequiredFieldCheck": true}
+                }
+            ]
+        },
+        "CreateBucketMetadataTableConfigurationRequest": {
+            "modify":[
+                {
+                    "MetadataTableConfiguration": {"omitRequiredFieldCheck": true}
+                }
+            ]
+        },
+        "PutBucketEncryptionRequest":{
+            "modify" :[
+                {"ServerSideEncryptionConfiguration": {"omitRequiredFieldCheck": true}}
+            ]
+        },
+        "PutBucketNotificationConfigurationRequest":{
+            "modify": [
+                {"NotificationConfiguration": {"omitRequiredFieldCheck": true}}
+            ]
+        },
+        "PutObjectTaggingRequest" :{
+            "modify":[
+                {"Tagging": {"omitRequiredFieldCheck": true}}
+            ]
+        },
+        "PutPublicAccessBlockRequest":{
+            "modify":[
+                {"PublicAccessBlockConfiguration": {"omitRequiredFieldCheck": true}}
             ]
         }
     },
@@ -1141,13 +1234,8 @@
     },
     "excludeShapes":[
         "NotificationConfiguration",
-        "CopyPartResult"
-    ],
-    "implementsVisitorPattern":{
-        "LifecycleFilter":{
-            "predicateName": "LifecycleFilterPredicate",
-            "visitorName": "LifecycleFilterPredicateMarshallVisitor",
-            "visitorParam": "xmlWriter"
-        }
-    }
+        "CopyPartResult",
+        "MetricsFilter",
+        "MetricsAndOperator"
+    ]
 }

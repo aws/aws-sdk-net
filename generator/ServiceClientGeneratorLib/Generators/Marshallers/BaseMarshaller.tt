@@ -259,6 +259,25 @@ using Amazon.Runtime.Internal.Util;
 		{
 			foreach(var member in operation.RequestQueryStringMembers)
 			{
+                // in many cases (s3 specifically, even if the member is required we do not throw a System.ArgumentException)
+                if (member.IsRequired)
+                {
+                    bool omitIsRequiredCheck = this.Config.ServiceModel.Customizations.TryGetPropertyModifier(member.OwningShape.Name, member.ModeledName, out var modifier) && modifier.OmitRequiredFieldCheck;
+                    if (member.Shape.IsString && !omitIsRequiredCheck)
+                    {
+#>
+            if (string.IsNullOrEmpty(<#=variableName#>.<#=member.PropertyName#>))
+                throw new System.ArgumentException("<#=member.PropertyName#> is a required property and must be set before making this call.", "<#=operation.Name#>Request.<#=member.PropertyName#>");
+<#+
+                    }
+                    else if (!member.Shape.IsString && !omitIsRequiredCheck)
+                    {
+#>
+            if (<#=variableName#>.<#=member.PropertyName#> == null)
+                throw new System.ArgumentException("<#=member.PropertyName#> is a required property and must be set before making this call.", "<#=operation.Name#>Request.<#=member.PropertyName#>");
+<#+
+                    }
+                }
 #>			
 			if (<#=variableName#>.IsSet<#=member.PropertyName#>())
 <#+
