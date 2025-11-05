@@ -1,3 +1,22 @@
+### 4.0.127.0 (2025-11-05 19:35 UTC)
+* CloudFront (4.0.8.0)
+	* This release adds new and updated API operations. You can now use the IpAddressType field to specify either ipv4 or dualstack for your Anycast static IP list. You can also enable cross-account resource sharing to share your VPC origins with other AWS accounts
+* DataZone (4.0.13.0)
+	* Added support for Project Resource Tags
+* EC2 (4.0.48.0)
+	* This release adds AvailabilityZoneId support for DescribeFastSnapshotRestores, DisableFastSnapshotRestores, and EnableFastSnapshotRestores APIs.
+* FSx (4.0.7.0)
+	* Amazon FSx now enables secure management of Active Directory credentials through AWS Secrets Manager integration. Customers can use Secret ARNs instead of direct credentials when joining resources to Active Directory domains.
+* GroundStation (4.0.2.0)
+	* Introduce CreateDataflowEndpointGroupV2 action
+* S3 (4.0.10.0)
+	* Launch IPv6 dual-stack support for S3 Express
+* SageMaker (4.0.30.0)
+	* Add new fields in SageMaker Hyperpod DescribeCluster API response: TargetStateCount, SoftwareUpdateStatus and ActiveSoftwareDeploymentConfig to provide AMI update progress visibility .
+* Core 4.0.2.0
+	* Added support for Bedrock Environment Token Provider specification. Bedrock API keys user guide: https://docs.aws.amazon.com/bedrock/latest/userguide/api-keys.html
+	* All service and extension packages updated to require new Core
+
 ### 4.0.126.0 (2025-11-04 19:19 UTC)
 * PinpointSMSVoiceV2 (4.0.5.0)
 	* This release adds support for the CarrierLookup API, which returns information about a destination phone number including if the number is valid, the carrier, and more.

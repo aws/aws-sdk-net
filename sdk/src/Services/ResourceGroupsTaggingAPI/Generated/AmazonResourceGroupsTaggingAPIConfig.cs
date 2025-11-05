@@ -33,7 +33,7 @@ namespace Amazon.ResourceGroupsTaggingAPI
     public partial class AmazonResourceGroupsTaggingAPIConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Resource Groups Tagging API", "4.0.1.0");
+            InternalSDKUtils.BuildUserAgentString("Resource Groups Tagging API", "4.0.1.1");
 
         private static readonly AmazonResourceGroupsTaggingAPIEndpointResolver EndpointResolver =
             new AmazonResourceGroupsTaggingAPIEndpointResolver();

@@ -33,7 +33,7 @@ namespace Amazon.CostOptimizationHub
     public partial class AmazonCostOptimizationHubConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Cost Optimization Hub", "4.0.4.0");
+            InternalSDKUtils.BuildUserAgentString("Cost Optimization Hub", "4.0.4.1");
 
         private static readonly AmazonCostOptimizationHubEndpointResolver EndpointResolver =
             new AmazonCostOptimizationHubEndpointResolver();

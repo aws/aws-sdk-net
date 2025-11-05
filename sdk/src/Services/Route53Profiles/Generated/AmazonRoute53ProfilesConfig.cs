@@ -33,7 +33,7 @@ namespace Amazon.Route53Profiles
     public partial class AmazonRoute53ProfilesConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Route53Profiles", "4.0.2.0");
+            InternalSDKUtils.BuildUserAgentString("Route53Profiles", "4.0.2.1");
 
         private static readonly AmazonRoute53ProfilesEndpointResolver EndpointResolver =
             new AmazonRoute53ProfilesEndpointResolver();

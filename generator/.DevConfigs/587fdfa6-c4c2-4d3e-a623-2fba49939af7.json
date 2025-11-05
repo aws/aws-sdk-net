@@ -1,9 +1,0 @@
-{
-    "core": {
-      "changeLogMessages": [
-        "Added support for Bedrock Environment Token Provider specification. Bedrock API keys user guide: https://docs.aws.amazon.com/bedrock/latest/userguide/api-keys.html"
-      ],
-      "type": "minor",
-      "updateMinimum": true
-    }
-  }

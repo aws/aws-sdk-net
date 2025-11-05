@@ -33,7 +33,7 @@ namespace Amazon.IoTManagedIntegrations
     public partial class AmazonIoTManagedIntegrationsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("IoT Managed Integrations", "4.0.4.0");
+            InternalSDKUtils.BuildUserAgentString("IoT Managed Integrations", "4.0.4.1");
 
         private static readonly AmazonIoTManagedIntegrationsEndpointResolver EndpointResolver =
             new AmazonIoTManagedIntegrationsEndpointResolver();

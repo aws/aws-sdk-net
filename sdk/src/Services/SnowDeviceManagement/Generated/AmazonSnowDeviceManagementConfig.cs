@@ -33,7 +33,7 @@ namespace Amazon.SnowDeviceManagement
     public partial class AmazonSnowDeviceManagementConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Snow Device Management", "4.0.2.1");
+            InternalSDKUtils.BuildUserAgentString("Snow Device Management", "4.0.2.2");
 
         private static readonly AmazonSnowDeviceManagementEndpointResolver EndpointResolver =
             new AmazonSnowDeviceManagementEndpointResolver();
