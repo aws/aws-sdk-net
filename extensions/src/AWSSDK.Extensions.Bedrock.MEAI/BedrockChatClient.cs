@@ -18,8 +18,10 @@ using Amazon.Runtime.Documents;
 using Amazon.Runtime.Internal.Util;
 using Microsoft.Extensions.AI;
 using System;
+using System.Buffers;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -35,6 +37,13 @@ internal sealed partial class BedrockChatClient : IChatClient
     /// <summary>A default logger to use.</summary>
     private static readonly ILogger DefaultLogger = Logger.GetLogger(typeof(BedrockChatClient));
 
+    /// <summary>The name used for the synthetic tool that enforces response format.</summary>
+    private const string ResponseFormatToolName = "generate_response";
+    /// <summary>The description used for the synthetic tool that enforces response format.</summary>
+    private const string ResponseFormatToolDescription = "Generate response in specified format";
+    /// <summary>Maximum nesting depth for Document to JSON conversion to prevent stack overflow.</summary>
+    private const int MaxDocumentNestingDepth = 100;
+
     /// <summary>The wrapped <see cref="IAmazonBedrockRuntime"/> instance.</summary>
     private readonly IAmazonBedrockRuntime _runtime;
     /// <summary>Default model ID to use when no model is specified in the request.</summary>
@@ -42,11 +51,7 @@ internal sealed partial class BedrockChatClient : IChatClient
     /// <summary>Metadata describing the chat client.</summary>
     private readonly ChatClientMetadata _metadata;
 
-    /// <summary>
-    /// Initializes a new instance of the <see cref="BedrockChatClient"/> class.
-    /// </summary>
-    /// <param name="runtime">The <see cref="IAmazonBedrockRuntime"/> instance to wrap.</param>
-    /// <param name="defaultModelId">Model ID to use as the default when no model ID is specified in a request.</param>
+    /// <summary>Initializes a new instance of the <see cref="BedrockChatClient"/> class.</summary>
     public BedrockChatClient(IAmazonBedrockRuntime runtime, string? defaultModelId)
     {
         Debug.Assert(runtime is not null);
@@ -79,7 +84,34 @@ internal sealed partial class BedrockChatClient : IChatClient
         request.InferenceConfig = CreateInferenceConfiguration(request.InferenceConfig, options);
         request.AdditionalModelRequestFields = CreateAdditionalModelRequestFields(request.AdditionalModelRequestFields, options);
 
-        var response = await _runtime.ConverseAsync(request, cancellationToken).ConfigureAwait(false);
+        // Execute the request with proper error handling for ResponseFormat scenarios
+        ConverseResponse response;
+        try
+        {
+            response = await _runtime.ConverseAsync(request, cancellationToken).ConfigureAwait(false);
+        }
+        catch (AmazonBedrockRuntimeException ex) when (options?.ResponseFormat is ChatResponseFormatJson)
+        {
+            // Check if this is a ToolChoice validation error (model doesn't support it)
+            bool isToolChoiceNotSupported =
+                ex.ErrorCode == "ValidationException" &&
+                (ex.Message.IndexOf("toolChoice", StringComparison.OrdinalIgnoreCase) >= 0 ||
+                 ex.Message.IndexOf("tool_choice", StringComparison.OrdinalIgnoreCase) >= 0 ||
+                 ex.Message.IndexOf("ToolChoice", StringComparison.OrdinalIgnoreCase) >= 0);
+
+            if (isToolChoiceNotSupported)
+            {
+                // Provide a more helpful error message when ToolChoice fails due to model limitations
+                throw new NotSupportedException(
+                    $"The model '{request.ModelId}' does not support ResponseFormat. " +
+                    $"ResponseFormat requires ToolChoice support, which is only available in Claude 3+ and Mistral Large models. " +
+                    $"See: https://docs.aws.amazon.com/bedrock/latest/userguide/conversation-inference-supported-models-features.html",
+                    ex);
+            }
+
+            // Re-throw other exceptions as-is
+            throw;
+        }
 
         ChatMessage result = new()
         {
@@ -89,6 +121,50 @@ internal sealed partial class BedrockChatClient : IChatClient
             MessageId = Guid.NewGuid().ToString("N"),
         };
 
+        // Check if ResponseFormat was used and extract structured content
+        bool usingResponseFormat = options?.ResponseFormat is ChatResponseFormatJson;
+        if (usingResponseFormat)
+        {
+            var structuredContent = ExtractResponseFormatContent(response.Output?.Message);
+            if (structuredContent is not null)
+            {
+                // Replace the content with the extracted JSON as a TextContent
+                result.Contents.Add(new TextContent(structuredContent) { RawRepresentation = response.Output?.Message });
+
+                // Skip normal content processing since we've extracted the structured response
+                if (DocumentToDictionary(response.AdditionalModelResponseFields) is { } responseFieldsDict)
+                {
+                    result.AdditionalProperties = new(responseFieldsDict);
+                }
+
+                return new(result)
+                {
+                    CreatedAt = result.CreatedAt,
+                    FinishReason = response.StopReason is not null ? GetChatFinishReason(response.StopReason) : null,
+                    Usage = response.Usage is TokenUsage tokenUsage ? CreateUsageDetails(tokenUsage) : null,
+                    RawRepresentation = response,
+                };
+            }
+            else
+            {
+                // User requested structured output but didn't get it - this is a contract violation
+                var errorMessage = string.Format(
+                    "ResponseFormat was specified but model did not return expected tool use. ModelId: {0}, StopReason: {1}",
+                    request.ModelId,
+                    response.StopReason?.Value ?? "unknown");
+
+                DefaultLogger.Error(new InvalidOperationException(errorMessage), errorMessage);
+
+                // Always throw when ResponseFormat was requested but not fulfilled
+                throw new InvalidOperationException(
+                    $"Model '{request.ModelId}' did not return structured output as requested. " +
+                    $"This may indicate the model refused to follow the tool use instruction, " +
+                    $"the schema was too complex, or the prompt conflicted with the requirement. " +
+                    $"StopReason: {response.StopReason?.Value ?? "unknown"}");
+            }
+        }
+
+        // Normal content processing when not using ResponseFormat or extraction failed
         if (response.Output?.Message?.Content is { } contents)
         {
             foreach (var content in contents)
@@ -180,6 +256,14 @@ internal sealed partial class BedrockChatClient : IChatClient
         if (messages is null)
         {
             throw new ArgumentNullException(nameof(messages));
+        }
+
+        // Check if ResponseFormat is set - not supported for streaming yet
+        if (options?.ResponseFormat is ChatResponseFormatJson)
+        {
+            throw new NotSupportedException(
+                "ResponseFormat is not yet supported for streaming responses with Amazon Bedrock. " +
+                "Please use GetResponseAsync for structured output.");
         }
 
         ConverseStreamRequest request = options?.RawRepresentationFactory?.Invoke(this) as ConverseStreamRequest ?? new();
@@ -794,7 +878,11 @@ internal sealed partial class BedrockChatClient : IChatClient
         }
     }
 
-    /// <summary>Creates an <see cref="ToolConfiguration"/> from the specified options.</summary>
+    /// <summary>Creates a <see cref="ToolConfiguration"/> from the specified options.</summary>
+    /// <remarks>
+    /// When ResponseFormat is specified, creates a synthetic tool to enforce structured output.
+    /// This conflicts with user-provided tools as Bedrock only supports a single ToolChoice value.
+    /// </remarks>
     private static ToolConfiguration? CreateToolConfig(ToolConfiguration? toolConfig, ChatOptions? options)
     {
         if (options?.Tools is { Count: > 0 } tools)
@@ -857,6 +945,56 @@ internal sealed partial class BedrockChatClient : IChatClient
             }
         }
 
+        // Handle ResponseFormat by creating a synthetic tool
+        if (options?.ResponseFormat is ChatResponseFormatJson jsonFormat)
+        {
+            // Check for conflict with user-provided tools
+            if (toolConfig?.Tools?.Count > 0)
+            {
+                throw new ArgumentException(
+                    "ResponseFormat cannot be used with Tools in Amazon Bedrock. " +
+                    "ResponseFormat uses Bedrock's tool mechanism for structured output, " +
+                    "which conflicts with user-provided tools.");
+            }
+
+            // Create the synthetic tool with the schema from ResponseFormat
+            toolConfig ??= new();
+            toolConfig.Tools ??= [];
+
+            // Parse the schema if provided, otherwise create an empty object schema
+            Document schemaDoc;
+            if (jsonFormat.Schema.HasValue)
+            {
+                // Schema is already a JsonElement (parsed JSON), convert directly to Document
+                schemaDoc = ToDocument(jsonFormat.Schema.Value);
+            }
+            else
+            {
+                // For JSON mode without schema, create a generic object schema
+                schemaDoc = new Document(new Dictionary<string, Document>
+                {
+                    ["type"] = new Document("object"),
+                    ["additionalProperties"] = new Document(true)
+                });
+            }
+
+            toolConfig.Tools.Add(new Tool
+            {
+                ToolSpec = new ToolSpecification
+                {
+                    Name = ResponseFormatToolName,
+                    Description = jsonFormat.SchemaDescription ?? ResponseFormatToolDescription,
+                    InputSchema = new ToolInputSchema
+                    {
+                        Json = schemaDoc
+                    }
+                }
+            });
+
+            // Force the model to use the synthetic tool
+            toolConfig.ToolChoice = new ToolChoice { Tool = new() { Name = ResponseFormatToolName } };
+        }
+
         if (toolConfig?.Tools is { Count: > 0 } && toolConfig.ToolChoice is null)
         {
             switch (options!.ToolMode)
@@ -870,6 +1008,96 @@ internal sealed partial class BedrockChatClient : IChatClient
         }
 
         return toolConfig;
+    }
+
+    /// <summary>Extracts JSON content from the synthetic ResponseFormat tool use, if present.</summary>
+    private static string? ExtractResponseFormatContent(Message? message)
+    {
+        if (message?.Content is null)
+        {
+            return null;
+        }
+
+        foreach (var content in message.Content)
+        {
+            if (content.ToolUse is ToolUseBlock toolUse &&
+                toolUse.Name == ResponseFormatToolName &&
+                toolUse.Input != default)
+            {
+                // Convert the Document back to JSON string
+                return DocumentToJsonString(toolUse.Input);
+            }
+        }
+
+        return null;
+    }
+
+    /// <summary>Converts a <see cref="Document"/> to a JSON string.</summary>
+    private static string DocumentToJsonString(Document document)
+    {
+        using var stream = new MemoryStream();
+        using (var writer = new Utf8JsonWriter(stream, new JsonWriterOptions { Indented = false }))
+        {
+            WriteDocumentAsJson(writer, document);
+        } // Explicit scope to ensure writer is flushed before reading buffer
+
+        return Encoding.UTF8.GetString(stream.ToArray());
+    }
+
+    /// <summary>Recursively writes a <see cref="Document"/> as JSON.</summary>
+    private static void WriteDocumentAsJson(Utf8JsonWriter writer, Document document, int depth = 0)
+    {
+        // Check depth to prevent stack overflow from deeply nested or circular structures
+        if (depth > MaxDocumentNestingDepth)
+        {
+            throw new InvalidOperationException(
+                $"Document nesting depth exceeds maximum of {MaxDocumentNestingDepth}. " +
+                $"This may indicate a circular reference or excessively nested data structure.");
+        }
+
+        if (document.IsBool())
+        {
+            writer.WriteBooleanValue(document.AsBool());
+        }
+        else if (document.IsInt())
+        {
+            writer.WriteNumberValue(document.AsInt());
+        }
+        else if (document.IsLong())
+        {
+            writer.WriteNumberValue(document.AsLong());
+        }
+        else if (document.IsDouble())
+        {
+            writer.WriteNumberValue(document.AsDouble());
+        }
+        else if (document.IsString())
+        {
+            writer.WriteStringValue(document.AsString());
+        }
+        else if (document.IsDictionary())
+        {
+            writer.WriteStartObject();
+            foreach (var kvp in document.AsDictionary())
+            {
+                writer.WritePropertyName(kvp.Key);
+                WriteDocumentAsJson(writer, kvp.Value, depth + 1);
+            }
+            writer.WriteEndObject();
+        }
+        else if (document.IsList())
+        {
+            writer.WriteStartArray();
+            foreach (var item in document.AsList())
+            {
+                WriteDocumentAsJson(writer, item, depth + 1);
+            }
+            writer.WriteEndArray();
+        }
+        else
+        {
+            writer.WriteNullValue();
+        }
     }
 
     /// <summary>Creates an <see cref="InferenceConfiguration"/> from the specified options.</summary>
