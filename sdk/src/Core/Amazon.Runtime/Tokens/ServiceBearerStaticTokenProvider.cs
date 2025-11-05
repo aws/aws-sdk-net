@@ -16,7 +16,7 @@
 using System;
 using System.Threading;
 using System.Threading.Tasks;
-using Amazon.Util;
+using Amazon.Runtime.Internal.UserAgent;
 
 namespace Amazon.Runtime
 {
@@ -24,24 +24,22 @@ namespace Amazon.Runtime
     /// An <see cref="IAWSTokenProvider"/> implementation can be assigned to
     /// <see cref="IClientConfig.AWSTokenProvider"/> or added to a <see cref="AWSTokenProviderChain"/>.
     /// </summary>
-    public class StaticTokenProvider : IAWSTokenProvider
+    public class ServiceBearerStaticTokenProvider : IAWSTokenProvider
     {
         private readonly string _token;
         private readonly DateTime? _expiration;
 
         /// <summary>
-        /// Creates a new <see cref="StaticTokenProvider"/> that can be assigned to
+        /// Creates a new <see cref="ServiceBearerStaticTokenProvider"/> that can be assigned to
         /// <see cref="IClientConfig.AWSTokenProvider"/> or added to a <see cref="AWSTokenProviderChain"/>.
         /// </summary>
         /// <param name="token">
-        /// Bearer token to use to authorize AWS SDK requests.
+        /// Bearer token to use to authorize AWS SDK requests based off of the service environment variable tokens.
         /// </param>
-        /// <param name="expiration">
-        /// An optional <see cref="DateTime"/> in UTC for which <paramref name="token"/> will no longer be
-        /// valid.  Attempting to retrieve <paramref name="token"/> after <paramref name="expiration"/> will cause
-        /// a <see cref="AmazonClientException"/> to be thrown.
+        /// <param name="expiration">Expiration date should not be set for the token as the expiration date
+        /// is controlled by the service. The expiration date is reserved for future use.
         /// </param>
-        public StaticTokenProvider(string token, DateTime? expiration = null)
+        public ServiceBearerStaticTokenProvider(string token, DateTime? expiration = null)
         {
             _token = token;
             _expiration = expiration;
@@ -56,6 +54,7 @@ namespace Amazon.Runtime
                 { 
                     Token = _token,
                     Expiration = _expiration,
+                    FeatureIdSources = { UserAgentFeatureId.BEARER_SERVICE_ENV_VARS }
                 };
 
                 return true;
@@ -76,13 +75,19 @@ namespace Amazon.Runtime
                 new TryResponse<AWSToken>
                 {
                     Success = isTokenUnexpired,
-                    Value = isTokenUnexpired ? new AWSToken { Token = _token, Expiration = _expiration } : null
+                    Value = isTokenUnexpired ? new AWSToken { 
+                        Token = _token, 
+                        Expiration = _expiration,
+                        FeatureIdSources = { UserAgentFeatureId.BEARER_SERVICE_ENV_VARS }
+                    } : null
                 });
         }
 
         private bool IsTokenUnexpired()
         {
-            return (!_expiration.HasValue || _expiration.Value < AWSSDKUtils.CorrectedUtcNow);
+            // Service environment variable tokens do not expire per the SDK. The service will
+            // reject the request is the token is expired.
+            return true;
         }
     }
 }
