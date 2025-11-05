@@ -1,0 +1,11 @@
+{
+  "services": [
+    {
+      "serviceName": "S3",
+      "type": "patch",
+      "changeLogMessages": [
+        "Generate PutBucketMetricsConfiguration, and add check in marshallers for required query strings. If required members for query strings are not set, the SDK will throw the base service-level exception."
+      ]
+    }
+  ]
+}
