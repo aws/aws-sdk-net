@@ -110,7 +110,7 @@ namespace Amazon.Runtime
         #region Properties
 
         /// <summary>
-        /// If credentials are still valid but the expiration is with the Expiration minus PreemptExpiryTime a
+        /// If credentials are still valid but the expiration is within the Expiration minus PreemptExpiryTime a
         /// background refresh of the credentials will be triggered.
         /// </summary>
         public TimeSpan PreemptExpiryTime
@@ -125,7 +125,7 @@ namespace Amazon.Runtime
         }
 
         /// <summary>
-        /// The time substracted from the expiration provided by the credentials provider and then used for determining 
+        /// The time subtracted from the expiration provided by the credentials provider and then used for determining 
         /// if the credentials are expired. This provides a buffer to avoid corner case issues of processing time
         /// on the client side before the credentials are actually used for signing and validation on the server side.
         /// </summary>
@@ -236,7 +236,7 @@ namespace Amazon.Runtime
                 ValidateGeneratedCredentials(newState);
 
                 // Acquire the lock to atomically update both currentState and currentLoadState
-                _updateGeneratedCredentialsSemaphore.Wait();
+                await _updateGeneratedCredentialsSemaphore.WaitAsync().ConfigureAwait(false);
                 try
                 {
                     currentState = newState;
@@ -299,7 +299,7 @@ namespace Amazon.Runtime
         }
 
         /// <summary>
-        /// Test if the credentials are expired currently expired.
+        /// Test if the credentials are currently expired.
         /// </summary>
         private static bool IsExpired(CredentialsRefreshState state)
         {

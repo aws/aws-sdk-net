@@ -20,7 +20,7 @@ namespace UnitTests.NetStandard.Core.Credentials
         [InlineData(59.5)] // Credentials are not expired yet but just entered the expiration buffer
         [InlineData(60)] // Credentials have just expired
         [InlineData(75)] // Credentials are way past expiration
-        public void ConcurrentCallsToGetCrendentialsOnlyGeneratesNewCredentialsOnce(double instantInMinutes)
+        public void ConcurrentCallsToGetCredentialsOnlyGeneratesNewCredentialsOnce(double instantInMinutes)
         {
             var mockCredentials = new MockRefreshingAWSCredentials(_lifetime, _mockProvider)
             {
@@ -53,7 +53,7 @@ namespace UnitTests.NetStandard.Core.Credentials
         [InlineData(59.5)] // Credentials are not expired yet but just entered the expiration buffer
         [InlineData(60)] // Credentials have just expired
         [InlineData(75)] // Credentials are way past expiration
-        public async Task ConcurrentCallsToGetCrendentialsOnlyGeneratesNewCredentialsOnceAsync(double instantInMinutes)
+        public async Task ConcurrentCallsToGetCredentialsOnlyGeneratesNewCredentialsOnceAsync(double instantInMinutes)
         {
             var mockCredentials = new MockRefreshingAWSCredentials(_lifetime, _mockProvider)
             {
@@ -83,7 +83,7 @@ namespace UnitTests.NetStandard.Core.Credentials
         }
 
         [Fact]
-        public void CredentialsAreRefreshedInImmediatelyWhenExpired()
+        public void CredentialsAreRefreshedImmediatelyWhenExpired()
         {
             var mockCredentials = new MockRefreshingAWSCredentials(_lifetime, _mockProvider)
             {
@@ -100,7 +100,7 @@ namespace UnitTests.NetStandard.Core.Credentials
         }
 
         [Fact]
-        public async Task CredentialsAreRefreshedInImmediatelyWhenExpiredAsync()
+        public async Task CredentialsAreRefreshedImmediatelyWhenExpiredAsync()
         {
             var mockCredentials = new MockRefreshingAWSCredentials(_lifetime, _mockProvider)
             {
