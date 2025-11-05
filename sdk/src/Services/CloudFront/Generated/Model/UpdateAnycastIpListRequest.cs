@@ -30,41 +30,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteDistribution operation.
-    /// Delete a distribution.
-    /// 
-    ///  <important> 
-    /// <para>
-    /// Before you can delete a distribution, you must disable it, which requires permission
-    /// to update the distribution. Once deleted, a distribution cannot be recovered.
-    /// </para>
-    ///  </important>
+    /// Container for the parameters to the UpdateAnycastIpList operation.
+    /// Updates an Anycast static IP list.
     /// </summary>
-    public partial class DeleteDistributionRequest : AmazonCloudFrontRequest
+    public partial class UpdateAnycastIpListRequest : AmazonCloudFrontRequest
     {
         private string _id;
         private string _ifMatch;
-
-        /// <summary>
-        /// Empty constructor used to set  properties independently even when a simple constructor is available
-        /// </summary>
-        public DeleteDistributionRequest() { }
-
-        /// <summary>
-        /// Instantiates DeleteDistributionRequest with the parameterized properties
-        /// </summary>
-        /// <param name="id">The distribution ID.</param>
-        /// <param name="ifMatch">The value of the <c>ETag</c> header that you received when you disabled the distribution. For example: <c>E2QWRUHAPOMQZL</c>.</param>
-        public DeleteDistributionRequest(string id, string ifMatch)
-        {
-            _id = id;
-            _ifMatch = ifMatch;
-        }
+        private IpAddressType _ipAddressType;
 
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The distribution ID.
+        /// The ID of the Anycast static IP list.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -83,10 +61,10 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property IfMatch. 
         /// <para>
-        /// The value of the <c>ETag</c> header that you received when you disabled the distribution.
-        /// For example: <c>E2QWRUHAPOMQZL</c>.
+        /// The current version (ETag value) of the Anycast static IP list that you are updating.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string IfMatch
         {
             get { return this._ifMatch; }
@@ -97,6 +75,38 @@ namespace Amazon.CloudFront.Model
         internal bool IsSetIfMatch()
         {
             return !string.IsNullOrEmpty(this._ifMatch);
+        }
+
+        /// <summary>
+        /// Gets and sets the property IpAddressType. 
+        /// <para>
+        /// The IP address type for the Anycast static IP list. You can specify one of the following
+        /// options:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>ipv4</c> - Allocate a list of only IPv4 addresses
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ipv6</c> - Allocate a list of only IPv4 addresses
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>dualstack</c> - Allocate a list of both IPv4 and IPv6 addresses
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public IpAddressType IpAddressType
+        {
+            get { return this._ipAddressType; }
+            set { this._ipAddressType = value; }
+        }
+
+        // Check to see if IpAddressType property is set
+        internal bool IsSetIpAddressType()
+        {
+            return this._ipAddressType != null;
         }
 
     }

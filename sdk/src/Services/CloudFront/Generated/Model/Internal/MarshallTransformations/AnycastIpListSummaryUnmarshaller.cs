@@ -62,10 +62,22 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("ETag", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ETag = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("Id", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.Id = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("IpAddressType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.IpAddressType = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("IpCount", targetDepth))

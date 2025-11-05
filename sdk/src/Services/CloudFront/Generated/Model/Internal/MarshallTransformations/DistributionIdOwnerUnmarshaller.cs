@@ -34,18 +34,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for VpcOrigin Object
+    /// Response Unmarshaller for DistributionIdOwner Object
     /// </summary>  
-    public class VpcOriginUnmarshaller : IUnmarshaller<VpcOrigin, XmlUnmarshallerContext>, IUnmarshaller<VpcOrigin, JsonUnmarshallerContext>
+    public class DistributionIdOwnerUnmarshaller : IUnmarshaller<DistributionIdOwner, XmlUnmarshallerContext>, IUnmarshaller<DistributionIdOwner, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public VpcOrigin Unmarshall(XmlUnmarshallerContext context)
+        public DistributionIdOwner Unmarshall(XmlUnmarshallerContext context)
         {
-            VpcOrigin unmarshalledObject = new VpcOrigin();
+            DistributionIdOwner unmarshalledObject = new DistributionIdOwner();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -56,46 +56,16 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("AccountId", targetDepth))
+                    if (context.TestExpression("DistributionId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.AccountId = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.DistributionId = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("Arn", targetDepth))
+                    if (context.TestExpression("OwnerAccountId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("CreatedTime", targetDepth))
-                    {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
-                        unmarshalledObject.CreatedTime = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("Id", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Id = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("LastModifiedTime", targetDepth))
-                    {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
-                        unmarshalledObject.LastModifiedTime = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("Status", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Status = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("VpcOriginEndpointConfig", targetDepth))
-                    {
-                        var unmarshaller = VpcOriginEndpointConfigUnmarshaller.Instance;
-                        unmarshalledObject.VpcOriginEndpointConfig = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.OwnerAccountId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
@@ -112,17 +82,17 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public VpcOrigin Unmarshall(JsonUnmarshallerContext context)
+        public DistributionIdOwner Unmarshall(JsonUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
 
-        private static VpcOriginUnmarshaller _instance = new VpcOriginUnmarshaller();        
+        private static DistributionIdOwnerUnmarshaller _instance = new DistributionIdOwnerUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static VpcOriginUnmarshaller Instance
+        public static DistributionIdOwnerUnmarshaller Instance
         {
             get
             {

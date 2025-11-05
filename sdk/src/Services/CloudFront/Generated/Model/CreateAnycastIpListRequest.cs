@@ -35,9 +35,42 @@ namespace Amazon.CloudFront.Model
     /// </summary>
     public partial class CreateAnycastIpListRequest : AmazonCloudFrontRequest
     {
+        private IpAddressType _ipAddressType;
         private int? _ipCount;
         private string _name;
         private Tags _tags;
+
+        /// <summary>
+        /// Gets and sets the property IpAddressType. 
+        /// <para>
+        /// The IP address type for the Anycast static IP list. You can specify one of the following
+        /// options:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>ipv4</c> - Allocate a list of only IPv4 addresses
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ipv6</c> - Allocate a list of only IPv4 addresses
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>dualstack</c> - Allocate a list of both IPv4 and IPv6 addresses
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public IpAddressType IpAddressType
+        {
+            get { return this._ipAddressType; }
+            set { this._ipAddressType = value; }
+        }
+
+        // Check to see if IpAddressType property is set
+        internal bool IsSetIpAddressType()
+        {
+            return this._ipAddressType != null;
+        }
 
         /// <summary>
         /// Gets and sets the property IpCount. 

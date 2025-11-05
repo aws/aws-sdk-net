@@ -34,9 +34,9 @@ using System.Xml;
 namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateAnycastIpList Request Marshaller
+    /// GetResourcePolicy Request Marshaller
     /// </summary>       
-    public class CreateAnycastIpListRequestMarshaller : IMarshaller<IRequest, CreateAnycastIpListRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class GetResourcePolicyRequestMarshaller : IMarshaller<IRequest, GetResourcePolicyRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -45,7 +45,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateAnycastIpListRequest)input);
+            return this.Marshall((GetResourcePolicyRequest)input);
         }
 
         /// <summary>
@@ -53,50 +53,19 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateAnycastIpListRequest publicRequest)
+        public IRequest Marshall(GetResourcePolicyRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.CloudFront");
             request.HttpMethod = "POST";
-            request.ResourcePath = "/2020-05-31/anycast-ip-list";
+            request.ResourcePath = "/2020-05-31/get-resource-policy";
 
             var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
-                xmlWriter.WriteStartElement("CreateAnycastIpListRequest", "http://cloudfront.amazonaws.com/doc/2020-05-31/");
-                if(publicRequest.IsSetIpAddressType())
-                    xmlWriter.WriteElementString("IpAddressType", StringUtils.FromString(publicRequest.IpAddressType));
+                xmlWriter.WriteStartElement("GetResourcePolicyRequest", "http://cloudfront.amazonaws.com/doc/2020-05-31/");
+                if(publicRequest.IsSetResourceArn())
+                    xmlWriter.WriteElementString("ResourceArn", StringUtils.FromString(publicRequest.ResourceArn));
 
-                if(publicRequest.IsSetIpCount())
-                    xmlWriter.WriteElementString("IpCount", StringUtils.FromInt(publicRequest.IpCount));
-
-                if(publicRequest.IsSetName())
-                    xmlWriter.WriteElementString("Name", StringUtils.FromString(publicRequest.Name));
-
-                if (publicRequest.Tags != null)
-                {
-                    xmlWriter.WriteStartElement("Tags");
-                    var publicRequestTagsItems = publicRequest.Tags.Items;
-                    if (publicRequestTagsItems != null && (publicRequestTagsItems.Count > 0 || !AWSConfigs.InitializeCollections)) 
-                    {
-                        xmlWriter.WriteStartElement("Items");
-                        foreach (var publicRequestTagsItemsValue in publicRequestTagsItems) 
-                        {
-                        if (publicRequestTagsItemsValue != null)
-                        {
-                            xmlWriter.WriteStartElement("Tag");
-                            if(publicRequestTagsItemsValue.IsSetKey())
-                                xmlWriter.WriteElementString("Key", StringUtils.FromString(publicRequestTagsItemsValue.Key));                 
-
-                            if(publicRequestTagsItemsValue.IsSetValue())
-                                xmlWriter.WriteElementString("Value", StringUtils.FromString(publicRequestTagsItemsValue.Value));                 
-
-                            xmlWriter.WriteEndElement();
-                        }
-                        }            
-                        xmlWriter.WriteEndElement();            
-                    }
-                    xmlWriter.WriteEndElement();
-                }
 
                 xmlWriter.WriteEndElement();
             }
@@ -114,9 +83,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateAnycastIpListRequestMarshaller _instance = new CreateAnycastIpListRequestMarshaller();        
+        private static GetResourcePolicyRequestMarshaller _instance = new GetResourcePolicyRequestMarshaller();        
 
-        internal static CreateAnycastIpListRequestMarshaller GetInstance()
+        internal static GetResourcePolicyRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -124,7 +93,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateAnycastIpListRequestMarshaller Instance
+        public static GetResourcePolicyRequestMarshaller Instance
         {
             get
             {
