@@ -301,7 +301,7 @@ namespace Amazon.Runtime
         /// <summary>
         /// Test if the credentials are expired currently expired.
         /// </summary>
-        private bool IsExpired(CredentialsRefreshState state)
+        private static bool IsExpired(CredentialsRefreshState state)
         {
             var isExpired = state?.IsExpiredWithin(TimeSpan.Zero);
             return isExpired ?? true;
