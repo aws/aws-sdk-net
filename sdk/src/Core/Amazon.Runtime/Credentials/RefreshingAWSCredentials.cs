@@ -14,7 +14,7 @@
  */
 
 using Amazon.Runtime.Internal.Util;
-using Amazon.Util;
+using Amazon.Util.Internal;
 using System;
 using System.Globalization;
 using System.Threading;
@@ -28,6 +28,12 @@ namespace Amazon.Runtime
     public abstract class RefreshingAWSCredentials : AWSCredentials, IDisposable
     {
         private readonly Logger _logger = Logger.GetLogger(typeof(RefreshingAWSCredentials));
+        protected readonly ITimeProvider _timeProvider;
+
+        protected RefreshingAWSCredentials() : this(DefaultTimeProvider.Instance) { }
+
+        protected RefreshingAWSCredentials(ITimeProvider timeProvider) 
+            => _timeProvider = timeProvider ?? DefaultTimeProvider.Instance;
 
         /// <inheritdoc />
         public override DateTime? Expiration
@@ -50,22 +56,26 @@ namespace Amazon.Runtime
         /// </summary>
         public class CredentialsRefreshState
         {
+            private readonly ITimeProvider _timeProvider;
+
             public ImmutableCredentials Credentials { get; set; }
             public DateTime Expiration { get; set; }
 
-            public CredentialsRefreshState()
-            {
-            }
+            public CredentialsRefreshState() : this(null, default) { }
 
-            public CredentialsRefreshState(ImmutableCredentials credentials, DateTime expiration)
+            public CredentialsRefreshState(ImmutableCredentials credentials, DateTime expiration) 
+                : this (credentials, expiration, DefaultTimeProvider.Instance) { }
+
+            public CredentialsRefreshState(ImmutableCredentials credentials, DateTime expiration, ITimeProvider timeProvider)
             {
                 Credentials = credentials;
                 Expiration = expiration;
+                _timeProvider = timeProvider ?? DefaultTimeProvider.Instance;
             }
 
             internal bool IsExpiredWithin(TimeSpan preemptExpiryTime)
             {
-                var now = AWSSDKUtils.CorrectedUtcNow;
+                var now = _timeProvider.CorrectedUtcNow;
                 var exp = Expiration.ToUniversalTime();
                 return now > exp - preemptExpiryTime;
             }
@@ -119,7 +129,7 @@ namespace Amazon.Runtime
         /// if the credentials are expired. This provides a buffer to avoid corner case issues of processing time
         /// on the client side before the credentials are actually used for signing and validation on the server side.
         /// </summary>
-        protected TimeSpan ExpirationBuffer
+        public TimeSpan ExpirationBuffer
         {
             get { return _expirationBuffer; }
             set
@@ -257,7 +267,7 @@ namespace Amazon.Runtime
                 {
                     errorMessage = string.Format(CultureInfo.InvariantCulture,
                         "The retrieved credentials have already expired: Now = {0}, Credentials expiration = {1}",
-                        AWSSDKUtils.CorrectedUtcNow, state.Expiration);
+                        _timeProvider.CorrectedUtcNow, state.Expiration);
                 }
 
                 throw new AmazonClientException(errorMessage);
@@ -291,8 +301,8 @@ namespace Amazon.Runtime
             if (isExpired == true)
             {
                 _logger.InfoFormat("Determined refreshing credentials should update. Expiration time: {0}, Current time: {1}",
-                                state.Expiration.Add(PreemptExpiryTime).ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.f ffffffK", CultureInfo.InvariantCulture),
-                                AWSSDKUtils.CorrectedUtcNow.ToString("yyyy-MM-ddTHH:mm:ss.fffffffK", CultureInfo.InvariantCulture));
+                                state.Expiration.Subtract(ExpirationBuffer).ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffK", CultureInfo.InvariantCulture),
+                                _timeProvider.CorrectedUtcNow.ToString("yyyy-MM-ddTHH:mm:ss.fffffffK", CultureInfo.InvariantCulture));
             }
 
             return isExpired ?? true;
@@ -313,8 +323,8 @@ namespace Amazon.Runtime
             if (isPreemptWindow == true)
             {
                 _logger.InfoFormat("Determined refreshing credentials are in window for preempt expiration. Preempt time: {0}, Current time: {1}",
-                                state.Expiration.Add(PreemptExpiryTime).ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.f ffffffK", CultureInfo.InvariantCulture),
-                                AWSSDKUtils.CorrectedUtcNow.ToString("yyyy-MM-ddTHH:mm:ss.fffffffK", CultureInfo.InvariantCulture));
+                                state.Expiration.Add(PreemptExpiryTime).ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffK", CultureInfo.InvariantCulture),
+                                _timeProvider.CorrectedUtcNow.ToString("yyyy-MM-ddTHH:mm:ss.fffffffK", CultureInfo.InvariantCulture));
             }
 
             return isPreemptWindow;
