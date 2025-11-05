@@ -34,9 +34,9 @@ using System.Xml;
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// AbortMultipartUpload Request Marshaller
+    /// DeleteBucketMetricsConfiguration Request Marshaller
     /// </summary>       
-    public partial class AbortMultipartUploadRequestMarshaller : IMarshaller<IRequest, AbortMultipartUploadRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class DeleteBucketMetricsConfigurationRequestMarshaller : IMarshaller<IRequest, DeleteBucketMetricsConfigurationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -45,7 +45,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((AbortMultipartUploadRequest)input);
+            return this.Marshall((DeleteBucketMetricsConfigurationRequest)input);
         }
 
         /// <summary>
@@ -53,45 +53,33 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(AbortMultipartUploadRequest publicRequest)
+        public IRequest Marshall(DeleteBucketMetricsConfigurationRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.S3");
             PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "DELETE";
+            request.AddSubResource("metrics");
         
             if (publicRequest.IsSetExpectedBucketOwner()) 
             {
                 request.Headers["x-amz-expected-bucket-owner"] = publicRequest.ExpectedBucketOwner;
             }
-        
-            if (publicRequest.IsSetIfMatchInitiatedTime()) 
-            {
-                request.Headers["x-amz-if-match-initiated-time"] = StringUtils.FromDateTimeToRFC822(publicRequest.IfMatchInitiatedTime);
-            }
-        
-            if (publicRequest.IsSetRequestPayer()) 
-            {
-                request.Headers["x-amz-request-payer"] = publicRequest.RequestPayer;
-            }
             if (string.IsNullOrEmpty(publicRequest.BucketName))
-                throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "AbortMultipartUploadRequest.BucketName");
-            if (string.IsNullOrEmpty(publicRequest.Key))
-                throw new System.ArgumentException("Key is a required property and must be set before making this call.", "AbortMultipartUploadRequest.Key");
-            request.AddPathResource("{Key+}", StringUtils.FromString(publicRequest.Key));
-            if (string.IsNullOrEmpty(publicRequest.UploadId))
-                throw new AmazonS3Exception("Request object does not have required field UploadId set");
+                throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "DeleteBucketMetricsConfigurationRequest.BucketName");
+            if (string.IsNullOrEmpty(publicRequest.Id))
+                throw new AmazonS3Exception("Request object does not have required field Id set");
             
-            if (publicRequest.IsSetUploadId())
-                request.Parameters.Add("uploadId", StringUtils.FromString(publicRequest.UploadId));
-            request.ResourcePath = "/{Key+}";
+            if (publicRequest.IsSetId())
+                request.Parameters.Add("id", StringUtils.FromString(publicRequest.Id));
+            request.ResourcePath = "/";
 
             PostMarshallCustomization(request, publicRequest);
             request.UseQueryString = true;
             return request;
         }
-        private static AbortMultipartUploadRequestMarshaller _instance = new AbortMultipartUploadRequestMarshaller();        
+        private static DeleteBucketMetricsConfigurationRequestMarshaller _instance = new DeleteBucketMetricsConfigurationRequestMarshaller();        
 
-        internal static AbortMultipartUploadRequestMarshaller GetInstance()
+        internal static DeleteBucketMetricsConfigurationRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -99,7 +87,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AbortMultipartUploadRequestMarshaller Instance
+        public static DeleteBucketMetricsConfigurationRequestMarshaller Instance
         {
             get
             {
@@ -107,7 +95,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             }
         }
 
-        partial void PostMarshallCustomization(DefaultRequest defaultRequest, AbortMultipartUploadRequest publicRequest);
-        partial void PreMarshallCustomization(DefaultRequest defaultRequest, AbortMultipartUploadRequest publicRequest);
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, DeleteBucketMetricsConfigurationRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, DeleteBucketMetricsConfigurationRequest publicRequest);
     }    
 }

@@ -1,0 +1,9 @@
+{
+  "core": {
+    "updateMinimum": true,
+    "type": "patch",
+    "changeLogMessages": [
+      "Add check to see if required query string parameters areany required query string parameter is not set, then the SDK will throw the generic service level exception"
+    ]
+  }
+}
