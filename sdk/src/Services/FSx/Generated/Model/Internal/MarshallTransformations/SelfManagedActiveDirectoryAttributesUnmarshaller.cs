@@ -72,6 +72,12 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                     unmarshalledObject.DnsIps = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DomainJoinServiceAccountSecret", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DomainJoinServiceAccountSecret = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DomainName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

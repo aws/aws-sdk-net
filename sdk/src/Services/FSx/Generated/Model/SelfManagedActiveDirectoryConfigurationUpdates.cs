@@ -36,6 +36,7 @@ namespace Amazon.FSx.Model
     public partial class SelfManagedActiveDirectoryConfigurationUpdates
     {
         private List<string> _dnsIps = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private string _domainJoinServiceAccountSecret;
         private string _domainName;
         private string _fileSystemAdministratorsGroup;
         private string _organizationalUnitDistinguishedName;
@@ -60,6 +61,28 @@ namespace Amazon.FSx.Model
         internal bool IsSetDnsIps()
         {
             return this._dnsIps != null && (this._dnsIps.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DomainJoinServiceAccountSecret. 
+        /// <para>
+        /// Specifies the updated Amazon Resource Name (ARN) of the Amazon Web Services Secrets
+        /// Manager secret containing the self-managed Active Directory domain join service account
+        /// credentials. Amazon FSx uses this account to join to your self-managed Active Directory
+        /// domain.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=64, Max=1024)]
+        public string DomainJoinServiceAccountSecret
+        {
+            get { return this._domainJoinServiceAccountSecret; }
+            set { this._domainJoinServiceAccountSecret = value; }
+        }
+
+        // Check to see if DomainJoinServiceAccountSecret property is set
+        internal bool IsSetDomainJoinServiceAccountSecret()
+        {
+            return this._domainJoinServiceAccountSecret != null;
         }
 
         /// <summary>
