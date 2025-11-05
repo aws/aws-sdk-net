@@ -94,6 +94,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetPartNumberMarker())
                 request.Parameters.Add("part-number-marker", StringUtils.FromString(publicRequest.PartNumberMarker));
+            if (string.IsNullOrEmpty(publicRequest.UploadId))
+                throw new AmazonS3Exception("Request object does not have required field UploadId set");
             
             if (publicRequest.IsSetUploadId())
                 request.Parameters.Add("uploadId", StringUtils.FromString(publicRequest.UploadId));
