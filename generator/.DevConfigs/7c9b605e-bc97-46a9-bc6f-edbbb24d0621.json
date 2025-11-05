@@ -1,0 +1,9 @@
+{
+  "core": {
+    "updateMinimum": true,
+    "type": "patch",
+    "changeLogMessages": [
+      "Add required field check in marshallers if member is required and marshalled in the query string"
+    ]
+  }
+}
