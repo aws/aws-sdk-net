@@ -95,10 +95,23 @@ namespace Amazon.Runtime
         private bool _disposed;
 
         private readonly SemaphoreSlim _updateGeneratedCredentialsSemaphore = new SemaphoreSlim(1, 1);
+        
+        /// <summary>
+        /// Tracks the current state of background credentials refresh.
+        /// </summary>
         private enum CredentialsLoadState
         {
+            /// <summary>
+            /// No background refresh is currently in progress.
+            /// This is the default state, where credentials are either valid or expired.
+            /// </summary>
             NotLoading,
-            Loading
+
+            /// <summary>
+            /// A background refresh is currently in progress.
+            /// This means we're within the preempt expiry window, and credentials are still valid.
+            /// </summary>
+            Loading,
         }
 
         private volatile CredentialsLoadState currentLoadState;

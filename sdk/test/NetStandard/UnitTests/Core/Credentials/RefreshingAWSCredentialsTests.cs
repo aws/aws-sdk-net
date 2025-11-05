@@ -82,35 +82,41 @@ namespace UnitTests.NetStandard.Core.Credentials
             }
         }
 
-        [Fact]
-        public void CredentialsAreRefreshedImmediatelyWhenExpired()
+        [Theory]
+        [InlineData(15, 1, 60)] // Credentials have just expired.
+        [InlineData(5, 10, 51)] // Credentials have expired considering the expiration buffer.
+        public void CredentialsAreRefreshedImmediatelyWhenExpired(int preemptInMinutes, int bufferInMinutes, double instantInMinutes)
         {
             var mockCredentials = new MockRefreshingAWSCredentials(_lifetime, _mockProvider)
             {
-                PreemptExpiryTime = TimeSpan.FromMinutes(15),
+                PreemptExpiryTime = TimeSpan.FromMinutes(preemptInMinutes),
+                ExpirationBuffer = TimeSpan.FromMinutes(bufferInMinutes),
             };
 
             _mockProvider.CorrectedUtcNow = _baseTimeUtc;
             var initialCreds = mockCredentials.GetCredentials();
 
-            _mockProvider.CorrectedUtcNow = _baseTimeUtc + _lifetime;
+            _mockProvider.CorrectedUtcNow = _baseTimeUtc + TimeSpan.FromMinutes(instantInMinutes);
             var credsAfterExpiration = mockCredentials.GetCredentials();
             Assert.NotEqual(initialCreds, credsAfterExpiration);
             Assert.Equal(2, mockCredentials.GeneratedTokenCount);
         }
 
-        [Fact]
-        public async Task CredentialsAreRefreshedImmediatelyWhenExpiredAsync()
+        [Theory]
+        [InlineData(15, 1, 60)] // Credentials have just expired.
+        [InlineData(5, 10, 51)] // Credentials have expired considering the expiration buffer.
+        public async Task CredentialsAreRefreshedImmediatelyWhenExpiredAsync(int preemptInMinutes, int bufferInMinutes, double instantInMinutes)
         {
             var mockCredentials = new MockRefreshingAWSCredentials(_lifetime, _mockProvider)
             {
-                PreemptExpiryTime = TimeSpan.FromMinutes(15),
+                PreemptExpiryTime = TimeSpan.FromMinutes(preemptInMinutes),
+                ExpirationBuffer = TimeSpan.FromMinutes(bufferInMinutes),
             };
 
             _mockProvider.CorrectedUtcNow = _baseTimeUtc;
             var initialCreds = await mockCredentials.GetCredentialsAsync().ConfigureAwait(false);
 
-            _mockProvider.CorrectedUtcNow = _baseTimeUtc + _lifetime;
+            _mockProvider.CorrectedUtcNow = _baseTimeUtc + TimeSpan.FromMinutes(instantInMinutes);
             var credsAfterExpiration = await mockCredentials.GetCredentialsAsync().ConfigureAwait(false);
             Assert.NotEqual(initialCreds, credsAfterExpiration);
             Assert.Equal(2, mockCredentials.GeneratedTokenCount);
@@ -170,6 +176,38 @@ namespace UnitTests.NetStandard.Core.Credentials
             Assert.NotEqual(credsAfterRefresh, credsDuringPreemptExpiry);
             Assert.Equal(_mockProvider.CorrectedUtcNow + _lifetime - mockCredentials.ExpirationBuffer, mockCredentials.CurrentState.Expiration);
             Assert.Equal(2, mockCredentials.GeneratedTokenCount);
+        }
+
+        [Fact]
+        public void ConcurrentCallsDuringPreemptWindowOnlyGeneratesNewCredentialsOnce()
+        {
+            var mockCredentials = new MockRefreshingAWSCredentials(_lifetime, _mockProvider)
+            {
+                PreemptExpiryTime = TimeSpan.FromMinutes(15),
+            };
+
+            _mockProvider.CorrectedUtcNow = _baseTimeUtc;
+            var initialCreds = mockCredentials.GetCredentials();
+            var previousState = mockCredentials.CurrentState;
+
+            // Move time into preempt expiry period (not expired, but within preempt window).
+            _mockProvider.CorrectedUtcNow = _baseTimeUtc + TimeSpan.FromMinutes(50);
+            mockCredentials.CloseGenerateCredentialsGate();
+
+            // Multiple parallel calls during preempt expiry.
+            var tasks = Enumerable.Range(1, 5)
+                .Select(_ => Task.Run(() => mockCredentials.GetCredentials()))
+                .ToArray();
+            mockCredentials.OpenGenerateCredentialsGate();
+            Task.WaitAll(tasks);
+
+            // Wait for background refresh to complete.
+            Assert.True(SpinWait.SpinUntil(() => !ReferenceEquals(mockCredentials.CurrentState, previousState), 1_000));
+
+            // Only one background refresh should have occurred.
+            var credsAfterRefresh = mockCredentials.GetCredentials();
+            Assert.Equal(2, mockCredentials.GeneratedTokenCount);
+            Assert.NotEqual(initialCreds, credsAfterRefresh);
         }
 
         private class MockTimeProvider : ITimeProvider
