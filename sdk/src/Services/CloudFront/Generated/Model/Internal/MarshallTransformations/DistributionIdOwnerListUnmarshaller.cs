@@ -34,18 +34,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AnycastIpList Object
+    /// Response Unmarshaller for DistributionIdOwnerList Object
     /// </summary>  
-    public partial class AnycastIpListUnmarshaller : IXmlUnmarshaller<AnycastIpList, XmlUnmarshallerContext>
+    public partial class DistributionIdOwnerListUnmarshaller : IXmlUnmarshaller<DistributionIdOwnerList, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public AnycastIpList Unmarshall(XmlUnmarshallerContext context)
+        public DistributionIdOwnerList Unmarshall(XmlUnmarshallerContext context)
         {
-            AnycastIpList unmarshalledObject = new AnycastIpList();
+            DistributionIdOwnerList unmarshalledObject = new DistributionIdOwnerList();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -56,56 +56,44 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("AnycastIps/AnycastIp", targetDepth))
+                    if (context.TestExpression("IsTruncated", targetDepth))
                     {
-                        if (unmarshalledObject.AnycastIps == null)
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
+                        unmarshalledObject.IsTruncated = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Items/DistributionIdOwner", targetDepth))
+                    {
+                        if (unmarshalledObject.Items == null)
                         {
-                            unmarshalledObject.AnycastIps = new List<string>();
+                            unmarshalledObject.Items = new List<DistributionIdOwner>();
                         }
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.AnycastIps.Add(unmarshaller.Unmarshall(context));
+                        var unmarshaller = DistributionIdOwnerUnmarshaller.Instance;
+                        unmarshalledObject.Items.Add(unmarshaller.Unmarshall(context));
                         continue;
                     }
-                    if (context.TestExpression("Arn", targetDepth))
+                    if (context.TestExpression("Marker", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Marker = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("Id", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Id = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("IpAddressType", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.IpAddressType = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("IpCount", targetDepth))
+                    if (context.TestExpression("MaxItems", targetDepth))
                     {
                         var unmarshaller = NullableIntUnmarshaller.Instance;
-                        unmarshalledObject.IpCount = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.MaxItems = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("LastModifiedTime", targetDepth))
-                    {
-                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                        unmarshalledObject.LastModifiedTime = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("Name", targetDepth))
+                    if (context.TestExpression("NextMarker", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.NextMarker = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("Status", targetDepth))
+                    if (context.TestExpression("Quantity", targetDepth))
                     {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
+                        unmarshalledObject.Quantity = unmarshaller.Unmarshall(context);
                         continue;
                     }
 
@@ -119,14 +107,14 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
-        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, AnycastIpList unmarshalledObject, int targetDepth);
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, DistributionIdOwnerList unmarshalledObject, int targetDepth);
 
-        private static AnycastIpListUnmarshaller _instance = new AnycastIpListUnmarshaller();        
+        private static DistributionIdOwnerListUnmarshaller _instance = new DistributionIdOwnerListUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AnycastIpListUnmarshaller Instance
+        public static DistributionIdOwnerListUnmarshaller Instance
         {
             get
             {

@@ -34,18 +34,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for VpcOriginConfig Object
+    /// Response Unmarshaller for DistributionIdOwner Object
     /// </summary>  
-    public partial class VpcOriginConfigUnmarshaller : IXmlUnmarshaller<VpcOriginConfig, XmlUnmarshallerContext>
+    public partial class DistributionIdOwnerUnmarshaller : IXmlUnmarshaller<DistributionIdOwner, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public VpcOriginConfig Unmarshall(XmlUnmarshallerContext context)
+        public DistributionIdOwner Unmarshall(XmlUnmarshallerContext context)
         {
-            VpcOriginConfig unmarshalledObject = new VpcOriginConfig();
+            DistributionIdOwner unmarshalledObject = new DistributionIdOwner();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -56,28 +56,16 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("OriginKeepaliveTimeout", targetDepth))
+                    if (context.TestExpression("DistributionId", targetDepth))
                     {
-                        var unmarshaller = NullableIntUnmarshaller.Instance;
-                        unmarshalledObject.OriginKeepaliveTimeout = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("OriginReadTimeout", targetDepth))
-                    {
-                        var unmarshaller = NullableIntUnmarshaller.Instance;
-                        unmarshalledObject.OriginReadTimeout = unmarshaller.Unmarshall(context);
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.DistributionId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("OwnerAccountId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.OwnerAccountId = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("VpcOriginId", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.VpcOriginId = unmarshaller.Unmarshall(context);
                         continue;
                     }
 
@@ -91,14 +79,14 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
-        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, VpcOriginConfig unmarshalledObject, int targetDepth);
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, DistributionIdOwner unmarshalledObject, int targetDepth);
 
-        private static VpcOriginConfigUnmarshaller _instance = new VpcOriginConfigUnmarshaller();        
+        private static DistributionIdOwnerUnmarshaller _instance = new DistributionIdOwnerUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static VpcOriginConfigUnmarshaller Instance
+        public static DistributionIdOwnerUnmarshaller Instance
         {
             get
             {

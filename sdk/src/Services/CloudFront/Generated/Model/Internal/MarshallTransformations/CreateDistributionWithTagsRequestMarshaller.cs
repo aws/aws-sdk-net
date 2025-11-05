@@ -829,6 +829,8 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                                             xmlWriter.WriteElementString("OriginKeepaliveTimeout", StringUtils.FromInt(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.VpcOriginConfig.OriginKeepaliveTimeout.Value));
                                         if(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.VpcOriginConfig.IsSetOriginReadTimeout())
                                             xmlWriter.WriteElementString("OriginReadTimeout", StringUtils.FromInt(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.VpcOriginConfig.OriginReadTimeout.Value));
+                                        if(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.VpcOriginConfig.IsSetOwnerAccountId())
+                                            xmlWriter.WriteElementString("OwnerAccountId", StringUtils.FromString(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.VpcOriginConfig.OwnerAccountId));
                                         if(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.VpcOriginConfig.IsSetVpcOriginId())
                                             xmlWriter.WriteElementString("VpcOriginId", StringUtils.FromString(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.VpcOriginConfig.VpcOriginId));
                                         xmlWriter.WriteEndElement();
