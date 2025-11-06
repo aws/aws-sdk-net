@@ -21713,6 +21713,38 @@ namespace Amazon.SageMaker
         /// </summary>
         public static readonly TransformInstanceType MlG5Xlarge = new TransformInstanceType("ml.g5.xlarge");
         /// <summary>
+        /// Constant MlG612xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlG612xlarge = new TransformInstanceType("ml.g6.12xlarge");
+        /// <summary>
+        /// Constant MlG616xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlG616xlarge = new TransformInstanceType("ml.g6.16xlarge");
+        /// <summary>
+        /// Constant MlG624xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlG624xlarge = new TransformInstanceType("ml.g6.24xlarge");
+        /// <summary>
+        /// Constant MlG62xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlG62xlarge = new TransformInstanceType("ml.g6.2xlarge");
+        /// <summary>
+        /// Constant MlG648xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlG648xlarge = new TransformInstanceType("ml.g6.48xlarge");
+        /// <summary>
+        /// Constant MlG64xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlG64xlarge = new TransformInstanceType("ml.g6.4xlarge");
+        /// <summary>
+        /// Constant MlG68xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlG68xlarge = new TransformInstanceType("ml.g6.8xlarge");
+        /// <summary>
+        /// Constant MlG6Xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlG6Xlarge = new TransformInstanceType("ml.g6.xlarge");
+        /// <summary>
         /// Constant MlInf224xlarge for TransformInstanceType
         /// </summary>
         public static readonly TransformInstanceType MlInf224xlarge = new TransformInstanceType("ml.inf2.24xlarge");
