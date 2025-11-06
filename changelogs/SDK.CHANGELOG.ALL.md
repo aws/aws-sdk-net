@@ -1,3 +1,30 @@
+### 3.7.1160.0 (2025-11-06 19:55 UTC)
+* AccessAnalyzer (3.7.503.0)
+	* New field totalActiveErrors added to getFindingsStatistics response.
+* Backup (3.7.504.0)
+	* AWS Backup now supports customer-managed keys (CMK) for logically air-gapped vaults, enabling customers to maintain full control over their encryption key lifecycle. This feature helps organizations meet specific internal governance requirements or external regulatory compliance standards.
+* Connect (3.7.511.0)
+	* Added support for Conditional Questions in Evaluation Forms. Introduced Auto Evaluation capability for Evaluation Forms and Contact Evaluations. Added new API operations: SearchEvaluationForms and SearchContactEvaluations.
+* EC2 (3.7.523.0)
+	* Add Amazon EC2 R8a instance types
+* GameLift (3.7.503.0)
+	* Amazon GameLift Servers now supports game builds that use the Windows 2022 operating system.
+* IdentityStore (3.7.503.0)
+	* IdentityStore API: added new KMSExceptionReason fields to the Exception object; added multiple new fields to the User APIs - UserStatus, Birthdate, Website and Photos; added multiple new metadata fields for User, Groups and Membership APIs - CreatedAt, CreatedBy, UpdatedAt and UpdatedBy.
+* QuickSight (3.7.505.0)
+	* Support for New Data Prep Experience
+* S3Tables (3.7.503.0)
+	* Adds support for tagging APIs for S3 Tables
+* S3Vectors (3.7.503.0)
+	* Amazon S3 Vectors provides cost-effective, elastic, and durable vector storage for queries based on semantic meaning and similarity.
+* SageMaker (3.7.517.0)
+	* Added NodeProvisioningMode parameter to UpdateCluster API to determine how instance provisioning is handled during cluster operations; in Continuous mode. Added VpcId field in UpdateDomain request for SageMaker Unified Studio domains with no VPC to add a customer VPC.
+* SimpleSystemsManagement (3.7.504.0)
+	* Provides NoLongerSupportedException error message
+* Core 3.7.500.43
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.1159.0 (2025-11-05 19:25 UTC)
 * CloudFront (3.7.506.0)
 	* This release adds new and updated API operations. You can now use the IpAddressType field to specify either ipv4 or dualstack for your Anycast static IP list. You can also enable cross-account resource sharing to share your VPC origins with other AWS accounts
