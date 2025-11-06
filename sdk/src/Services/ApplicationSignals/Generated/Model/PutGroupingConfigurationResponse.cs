@@ -39,8 +39,8 @@ namespace Amazon.ApplicationSignals.Model
         /// <summary>
         /// Gets and sets the property GroupingConfiguration. 
         /// <para>
-        /// A structure containing the updated grouping configuration, including all grouping
-        /// attribute definitions and the timestamp when it was last updated.
+        /// The created or updated grouping configuration, including all attribute definitions
+        /// and metadata such as the update timestamp.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

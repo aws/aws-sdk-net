@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ApplicationSignals.Model
 {
     /// <summary>
-    /// A structure that contains identifying information for a service entity.
+    /// Represents a service entity that is monitored by Application Signals.
     /// </summary>
     public partial class ServiceEntity
     {
@@ -42,8 +42,7 @@ namespace Amazon.ApplicationSignals.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// The Amazon Web Services account ID where the service is located. Provide this value
-        /// only for cross-account access.
+        /// The AWS account ID where the service is deployed.
         /// </para>
         /// </summary>
         public string AwsAccountId
@@ -61,7 +60,8 @@ namespace Amazon.ApplicationSignals.Model
         /// <summary>
         /// Gets and sets the property Environment. 
         /// <para>
-        /// The environment where the service is deployed.
+        /// The environment where the service is deployed, such as "Production", "Staging", or
+        /// "Development".
         /// </para>
         /// </summary>
         public string Environment
@@ -79,7 +79,7 @@ namespace Amazon.ApplicationSignals.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the service.
+        /// The name of the service as identified by Application Signals.
         /// </para>
         /// </summary>
         public string Name
@@ -97,7 +97,7 @@ namespace Amazon.ApplicationSignals.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of the service entity.
+        /// The type of service, such as "WebService", "Database", "Queue", or "Function".
         /// </para>
         /// </summary>
         public string Type

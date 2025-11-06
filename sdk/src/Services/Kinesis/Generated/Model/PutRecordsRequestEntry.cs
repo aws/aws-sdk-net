@@ -46,7 +46,7 @@ namespace Amazon.Kinesis.Model
         /// key size, the total size must not exceed the maximum record size (1 MiB).
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=1048576)]
+        [AWSProperty(Required=true, Min=0, Max=10485760)]
         public MemoryStream Data
         {
             get { return this._data; }

@@ -303,14 +303,25 @@ namespace Amazon.Runtime.Internal
         private static void AddUserAgentDetails(IExecutionContext executionContext)
         {
             var requestContext = executionContext.RequestContext;
-            if (requestContext.Identity == null || requestContext.Identity is not AWSCredentials credentials)
+            if (requestContext.Identity == null)
             {
                 return;
             }
 
-            foreach (var featureId in credentials.FeatureIdSources)
+            if (requestContext.Identity is AWSCredentials credentials)
             {
-                requestContext.UserAgentDetails.AddFeature(featureId);
+                foreach (var featureId in credentials.FeatureIdSources)
+                {
+                    requestContext.UserAgentDetails.AddFeature(featureId);
+                }
+            }
+            
+            if (requestContext.Identity is AWSToken token)
+            {
+                foreach (var featureId in token.FeatureIdSources)
+                {
+                    requestContext.UserAgentDetails.AddFeature(featureId);
+                }
             }
         }
 

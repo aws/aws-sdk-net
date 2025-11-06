@@ -491,6 +491,10 @@ namespace Amazon.GameLiftStreams
         /// </summary>
         public static readonly StreamGroupStatus ERROR = new StreamGroupStatus("ERROR");
         /// <summary>
+        /// Constant EXPIRED for StreamGroupStatus
+        /// </summary>
+        public static readonly StreamGroupStatus EXPIRED = new StreamGroupStatus("EXPIRED");
+        /// <summary>
         /// Constant UPDATING_LOCATIONS for StreamGroupStatus
         /// </summary>
         public static readonly StreamGroupStatus UPDATING_LOCATIONS = new StreamGroupStatus("UPDATING_LOCATIONS");
@@ -661,9 +665,25 @@ namespace Amazon.GameLiftStreams
     {
 
         /// <summary>
+        /// Constant ApiTerminated for StreamSessionStatusReason
+        /// </summary>
+        public static readonly StreamSessionStatusReason ApiTerminated = new StreamSessionStatusReason("apiTerminated");
+        /// <summary>
+        /// Constant ApplicationExit for StreamSessionStatusReason
+        /// </summary>
+        public static readonly StreamSessionStatusReason ApplicationExit = new StreamSessionStatusReason("applicationExit");
+        /// <summary>
         /// Constant ApplicationLogS3DestinationError for StreamSessionStatusReason
         /// </summary>
         public static readonly StreamSessionStatusReason ApplicationLogS3DestinationError = new StreamSessionStatusReason("applicationLogS3DestinationError");
+        /// <summary>
+        /// Constant ConnectionTimeout for StreamSessionStatusReason
+        /// </summary>
+        public static readonly StreamSessionStatusReason ConnectionTimeout = new StreamSessionStatusReason("connectionTimeout");
+        /// <summary>
+        /// Constant IdleTimeout for StreamSessionStatusReason
+        /// </summary>
+        public static readonly StreamSessionStatusReason IdleTimeout = new StreamSessionStatusReason("idleTimeout");
         /// <summary>
         /// Constant InternalError for StreamSessionStatusReason
         /// </summary>
@@ -673,9 +693,17 @@ namespace Amazon.GameLiftStreams
         /// </summary>
         public static readonly StreamSessionStatusReason InvalidSignalRequest = new StreamSessionStatusReason("invalidSignalRequest");
         /// <summary>
+        /// Constant MaxSessionLengthTimeout for StreamSessionStatusReason
+        /// </summary>
+        public static readonly StreamSessionStatusReason MaxSessionLengthTimeout = new StreamSessionStatusReason("maxSessionLengthTimeout");
+        /// <summary>
         /// Constant PlacementTimeout for StreamSessionStatusReason
         /// </summary>
         public static readonly StreamSessionStatusReason PlacementTimeout = new StreamSessionStatusReason("placementTimeout");
+        /// <summary>
+        /// Constant ReconnectionTimeout for StreamSessionStatusReason
+        /// </summary>
+        public static readonly StreamSessionStatusReason ReconnectionTimeout = new StreamSessionStatusReason("reconnectionTimeout");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

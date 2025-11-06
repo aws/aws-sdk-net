@@ -2182,6 +2182,12 @@
     <pattern>(?!\s*$)[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDBFF-\uDC00\uDFFF\t]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CleanRooms.Model.DifferentialPrivacyColumn.Name</property>
+    <min>0</min>
+    <max>128</max>
+    <pattern>[a-z0-9_](([a-z0-9_ ]+-)*([a-z0-9_ ]+))?</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CleanRooms.Model.DifferentialPrivacyPreviewAggregation.MaxCount</property>
     <min>0</min>
   </property-value-rule>
@@ -2894,6 +2900,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CleanRooms.Model.S3Location.Key</property>
+    <min>1</min>
+    <max>1024</max>
     <pattern>[a-zA-Z0-9!_.*'()-/]+</pattern>
   </property-value-rule>
   <property-value-rule>

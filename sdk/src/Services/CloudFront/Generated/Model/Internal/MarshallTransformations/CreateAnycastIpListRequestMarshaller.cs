@@ -56,6 +56,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         public IRequest Marshall(CreateAnycastIpListRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.CloudFront");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "POST";
             request.ResourcePath = "/2020-05-31/anycast-ip-list";
 
@@ -63,6 +64,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
                 xmlWriter.WriteStartElement("CreateAnycastIpListRequest", "http://cloudfront.amazonaws.com/doc/2020-05-31/");
+                if(publicRequest.IsSetIpAddressType())
+                    xmlWriter.WriteElementString("IpAddressType", StringUtils.FromString(publicRequest.IpAddressType));
+
                 if(publicRequest.IsSetIpCount())
                     xmlWriter.WriteElementString("IpCount", StringUtils.FromInt(publicRequest.IpCount.Value));
 
@@ -128,5 +132,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, CreateAnycastIpListRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, CreateAnycastIpListRequest publicRequest);
     }    
 }

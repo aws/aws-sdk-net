@@ -68,10 +68,22 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.DateFilters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("IpFilters", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<OcsfIpFilter, OcsfIpFilterUnmarshaller>(OcsfIpFilterUnmarshaller.Instance);
+                    unmarshalledObject.IpFilters = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("MapFilters", targetDepth))
                 {
                     var unmarshaller = new JsonListUnmarshaller<OcsfMapFilter, OcsfMapFilterUnmarshaller>(OcsfMapFilterUnmarshaller.Instance);
                     unmarshalledObject.MapFilters = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("NestedCompositeFilters", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<CompositeFilter, CompositeFilterUnmarshaller>(CompositeFilterUnmarshaller.Instance);
+                    unmarshalledObject.NestedCompositeFilters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("NumberFilters", targetDepth))

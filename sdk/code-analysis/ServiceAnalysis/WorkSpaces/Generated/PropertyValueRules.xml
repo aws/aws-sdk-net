@@ -1390,6 +1390,10 @@
     <pattern>^(d-[0-9a-f]{8,63}$)|(wsd-[0-9a-z]{8,63}$)</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.Workspace.Ipv6Address</property>
+    <pattern>^(?:[0-9a-fA-F]{1,4}:){7}[0-9a-fA-F]{1,4}|[0-9a-fA-F]{1,4}(?::[0-9a-fA-F]{1,4}){0,6}::[0-9a-fA-F]{1,4}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkSpaces.Model.Workspace.SubnetId</property>
     <min>15</min>
     <max>24</max>
@@ -1514,6 +1518,10 @@
     <min>10</min>
     <max>65</max>
     <pattern>^(d-[0-9a-f]{8,63}$)|(wsd-[0-9a-z]{8,63}$)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.WorkspaceRequest.Ipv6Address</property>
+    <pattern>^(?:[0-9a-fA-F]{1,4}:){7}[0-9a-fA-F]{1,4}|[0-9a-fA-F]{1,4}(?::[0-9a-fA-F]{1,4}){0,6}::[0-9a-fA-F]{1,4}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpaces.Model.WorkspaceRequest.UserName</property>

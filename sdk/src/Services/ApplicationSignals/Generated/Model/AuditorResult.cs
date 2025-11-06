@@ -30,8 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ApplicationSignals.Model
 {
     /// <summary>
-    /// A structure that contains the result of an automated audit analysis, including the
-    /// auditor name, description of findings, and severity level.
+    /// Represents the result of an audit performed by a specific auditor on a resource.
     /// </summary>
     public partial class AuditorResult
     {
@@ -42,7 +41,8 @@ namespace Amazon.ApplicationSignals.Model
         /// <summary>
         /// Gets and sets the property Auditor. 
         /// <para>
-        /// The name of the auditor algorithm that generated this result.
+        /// The name or identifier of the auditor that performed the examination and generated
+        /// this result.
         /// </para>
         /// </summary>
         public string Auditor
@@ -60,8 +60,8 @@ namespace Amazon.ApplicationSignals.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// A detailed description of the audit finding, explaining what was observed and potential
-        /// implications.
+        /// A detailed description of what the auditor found, including any recommendations for
+        /// remediation or further investigation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=10240)]
@@ -80,8 +80,8 @@ namespace Amazon.ApplicationSignals.Model
         /// <summary>
         /// Gets and sets the property Severity. 
         /// <para>
-        /// The severity level of this audit finding, indicating the importance and potential
-        /// impact of the issue.
+        /// The severity level of the finding, such as "Critical", "High", "Medium", or "Low".
+        /// This helps prioritize remediation efforts.
         /// </para>
         /// </summary>
         public Severity Severity

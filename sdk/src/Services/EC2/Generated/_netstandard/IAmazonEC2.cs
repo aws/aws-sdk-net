@@ -1682,7 +1682,24 @@ namespace Amazon.EC2
         /// and the instances continue to run until they are interrupted or you terminate them
         /// manually.
         /// </para>
+        ///  <important> 
+        /// <para>
+        ///  <b>Terminating an instance is permanent and irreversible.</b> 
+        /// </para>
         ///  
+        /// <para>
+        /// After you terminate an instance, you can no longer connect to it, and it can't be
+        /// recovered. All attached Amazon EBS volumes that are configured to be deleted on termination
+        /// are also permanently deleted and can't be recovered. All data stored on instance store
+        /// volumes is permanently lost. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-ec2-instance-termination-works.html">
+        /// How instance termination works</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Before you terminate an instance, ensure that you have backed up all data that you
+        /// need to retain after the termination to persistent storage.
+        /// </para>
+        ///  </important> 
         /// <para>
         ///  <b>Restrictions</b> 
         /// </para>
@@ -2750,10 +2767,15 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Create a verification token. A verification token is an Amazon Web Services-generated
-        /// random value that you can use to prove ownership of an external resource. For example,
-        /// you can use a verification token to validate that you control a public IP address
-        /// range when you bring an IP address range to Amazon Web Services (BYOIP).
+        /// Create a verification token.
+        /// 
+        ///  
+        /// <para>
+        /// A verification token is an Amazon Web Services-generated random value that you can
+        /// use to prove ownership of an external resource. For example, you can use a verification
+        /// token to validate that you control a public IP address range when you bring an IP
+        /// address range to Amazon Web Services (BYOIP). 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateIpamExternalResourceVerificationToken service method.</param>
         /// <param name="cancellationToken">
@@ -2791,6 +2813,69 @@ namespace Amazon.EC2
         /// <returns>The response from the CreateIpamPool service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateIpamPool">REST API Reference for CreateIpamPool Operation</seealso>
         Task<CreateIpamPoolResponse> CreateIpamPoolAsync(CreateIpamPoolRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CreateIpamPrefixListResolver
+
+
+
+        /// <summary>
+        /// Creates an IPAM prefix list resolver.
+        /// 
+        ///  
+        /// <para>
+        /// An IPAM prefix list resolver is a component that manages the synchronization between
+        /// IPAM's CIDR selection rules and customer-managed prefix lists. It automates connectivity
+        /// configurations by selecting CIDRs from IPAM's database based on your business logic
+        /// and synchronizing them with prefix lists used in resources such as VPC route tables
+        /// and security groups.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about IPAM prefix list resolver, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/automate-prefix-list-updates.html">Automate
+        /// prefix list updates with IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateIpamPrefixListResolver service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateIpamPrefixListResolver service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateIpamPrefixListResolver">REST API Reference for CreateIpamPrefixListResolver Operation</seealso>
+        Task<CreateIpamPrefixListResolverResponse> CreateIpamPrefixListResolverAsync(CreateIpamPrefixListResolverRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CreateIpamPrefixListResolverTarget
+
+
+
+        /// <summary>
+        /// Creates an IPAM prefix list resolver target.
+        /// 
+        ///  
+        /// <para>
+        /// An IPAM prefix list resolver target is an association between a specific customer-managed
+        /// prefix list and an IPAM prefix list resolver. The target enables the resolver to synchronize
+        /// CIDRs selected by its rules into the specified prefix list, which can then be referenced
+        /// in Amazon Web Services resources.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about IPAM prefix list resolver, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/automate-prefix-list-updates.html">Automate
+        /// prefix list updates with IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateIpamPrefixListResolverTarget service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateIpamPrefixListResolverTarget service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateIpamPrefixListResolverTarget">REST API Reference for CreateIpamPrefixListResolverTarget Operation</seealso>
+        Task<CreateIpamPrefixListResolverTargetResponse> CreateIpamPrefixListResolverTargetAsync(CreateIpamPrefixListResolverTargetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -4589,14 +4674,16 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Creates a VPC with the specified CIDR blocks. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-ip-addressing.html">IP
-        /// addressing for your VPCs and subnets</a> in the <i>Amazon VPC User Guide</i>.
+        /// Creates a VPC with the specified CIDR blocks.
         /// 
         ///  
         /// <para>
-        /// You can optionally request an IPv6 CIDR block for the VPC. You can request an Amazon-provided
-        /// IPv6 CIDR block from Amazon's pool of IPv6 addresses or an IPv6 CIDR block from an
-        /// IPv6 address pool that you provisioned through bring your own IP addresses (<a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html">BYOIP</a>).
+        /// A VPC must have an associated IPv4 CIDR block. You can choose an IPv4 CIDR block or
+        /// an IPAM-allocated IPv4 CIDR block. You can optionally associate an IPv6 CIDR block
+        /// with a VPC. You can choose an IPv6 CIDR block, an Amazon-provided IPv6 CIDR block,
+        /// an IPAM-allocated IPv6 CIDR block, or an IPv6 CIDR block that you brought to Amazon
+        /// Web Services. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-ip-addressing.html">IP
+        /// addressing for your VPCs and subnets</a> in the <i>Amazon VPC User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -4607,9 +4694,9 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// You can specify the instance tenancy value for the VPC when you create it. You can't
-        /// change this value for the VPC after you create it. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-instance.html">Dedicated
-        /// Instances</a> in the <i>Amazon EC2 User Guide</i>.
+        /// You can specify DNS options and tenancy for a VPC when you create it. You can't change
+        /// the tenancy of a VPC after you create it. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/create-vpc-options.html">VPC
+        /// configuration options</a> in the <i>Amazon VPC User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateVpc service method.</param>
@@ -5086,7 +5173,24 @@ namespace Amazon.EC2
         /// 1000 or fewer. Then delete the fleet, and the remaining instances will be terminated
         /// automatically.
         /// </para>
+        ///  <important> 
+        /// <para>
+        ///  <b>Terminating an instance is permanent and irreversible.</b> 
+        /// </para>
         ///  
+        /// <para>
+        /// After you terminate an instance, you can no longer connect to it, and it can't be
+        /// recovered. All attached Amazon EBS volumes that are configured to be deleted on termination
+        /// are also permanently deleted and can't be recovered. All data stored on instance store
+        /// volumes is permanently lost. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-ec2-instance-termination-works.html">
+        /// How instance termination works</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Before you terminate an instance, ensure that you have backed up all data that you
+        /// need to retain after the termination to persistent storage.
+        /// </para>
+        ///  </important> 
         /// <para>
         ///  <b>Restrictions</b> 
         /// </para>
@@ -5277,10 +5381,15 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Delete a verification token. A verification token is an Amazon Web Services-generated
-        /// random value that you can use to prove ownership of an external resource. For example,
-        /// you can use a verification token to validate that you control a public IP address
-        /// range when you bring an IP address range to Amazon Web Services (BYOIP).
+        /// Delete a verification token.
+        /// 
+        ///  
+        /// <para>
+        /// A verification token is an Amazon Web Services-generated random value that you can
+        /// use to prove ownership of an external resource. For example, you can use a verification
+        /// token to validate that you control a public IP address range when you bring an IP
+        /// address range to Amazon Web Services (BYOIP). 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteIpamExternalResourceVerificationToken service method.</param>
         /// <param name="cancellationToken">
@@ -5320,6 +5429,50 @@ namespace Amazon.EC2
         /// <returns>The response from the DeleteIpamPool service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteIpamPool">REST API Reference for DeleteIpamPool Operation</seealso>
         Task<DeleteIpamPoolResponse> DeleteIpamPoolAsync(DeleteIpamPoolRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteIpamPrefixListResolver
+
+
+
+        /// <summary>
+        /// Deletes an IPAM prefix list resolver. Before deleting a resolver, you must first delete
+        /// all resolver targets associated with it.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIpamPrefixListResolver service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteIpamPrefixListResolver service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteIpamPrefixListResolver">REST API Reference for DeleteIpamPrefixListResolver Operation</seealso>
+        Task<DeleteIpamPrefixListResolverResponse> DeleteIpamPrefixListResolverAsync(DeleteIpamPrefixListResolverRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteIpamPrefixListResolverTarget
+
+
+
+        /// <summary>
+        /// Deletes an IPAM prefix list resolver target. This removes the association between
+        /// the resolver and the managed prefix list, stopping automatic CIDR synchronization.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about IPAM prefix list resolver, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/automate-prefix-list-updates.html">Automate
+        /// prefix list updates with IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIpamPrefixListResolverTarget service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteIpamPrefixListResolverTarget service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteIpamPrefixListResolverTarget">REST API Reference for DeleteIpamPrefixListResolverTarget Operation</seealso>
+        Task<DeleteIpamPrefixListResolverTargetResponse> DeleteIpamPrefixListResolverTargetAsync(DeleteIpamPrefixListResolverTargetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -7463,6 +7616,49 @@ namespace Amazon.EC2
 
         #endregion
                 
+        #region  DescribeCapacityReservationTopology
+
+
+
+        /// <summary>
+        /// Describes a tree-based hierarchy that represents the physical host placement of your
+        /// pending or active Capacity Reservations within an Availability Zone or Local Zone.
+        /// You can use this information to determine the relative proximity of your capacity
+        /// within the Amazon Web Services network before it is launched and use this information
+        /// to allocate capacity together to support your tightly coupled workloads.
+        /// 
+        ///  
+        /// <para>
+        /// Capacity Reservation topology is supported for specific instance types only. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-topology-prerequisites.html">Prerequisites
+        /// for Amazon EC2 instance topology</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The Amazon EC2 API follows an eventual consistency model due to the distributed nature
+        /// of the system supporting it. As a result, when you call the DescribeCapacityReservationTopology
+        /// API command immediately after launching instances, the response might return a <c>null</c>
+        /// value for <c>capacityBlockId</c> because the data might not have fully propagated
+        /// across all subsystems. For more information, see <a href="https://docs.aws.amazon.com/ec2/latest/devguide/eventual-consistency.html">Eventual
+        /// consistency in the Amazon EC2 API</a> in the <i>Amazon EC2 Developer Guide</i>.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-topology.html">Amazon
+        /// EC2 topology</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCapacityReservationTopology service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeCapacityReservationTopology service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCapacityReservationTopology">REST API Reference for DescribeCapacityReservationTopology Operation</seealso>
+        Task<DescribeCapacityReservationTopologyResponse> DescribeCapacityReservationTopologyAsync(DescribeCapacityReservationTopologyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DescribeCarrierGateways
 
 
@@ -8935,8 +9131,8 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// Instance topology is supported for specific instance types only. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-topology-prerequisites.html">
-        /// Prerequisites for Amazon EC2 instance topology</a> in the <i>Amazon EC2 User Guide</i>.
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-topology-prerequisites.html">Prerequisites
+        /// for Amazon EC2 instance topology</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -8950,7 +9146,7 @@ namespace Amazon.EC2
         ///  </note> 
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-topology.html">Amazon
-        /// EC2 instance topology</a> in the <i>Amazon EC2 User Guide</i>.
+        /// EC2 topology</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeInstanceTopology service method.</param>
@@ -9093,6 +9289,44 @@ namespace Amazon.EC2
         /// <returns>The response from the DescribeIpamPools service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpamPools">REST API Reference for DescribeIpamPools Operation</seealso>
         Task<DescribeIpamPoolsResponse> DescribeIpamPoolsAsync(DescribeIpamPoolsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribeIpamPrefixListResolvers
+
+
+
+        /// <summary>
+        /// Describes one or more IPAM prefix list resolvers. Use this operation to view the configuration,
+        /// status, and properties of your resolvers.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeIpamPrefixListResolvers service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeIpamPrefixListResolvers service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpamPrefixListResolvers">REST API Reference for DescribeIpamPrefixListResolvers Operation</seealso>
+        Task<DescribeIpamPrefixListResolversResponse> DescribeIpamPrefixListResolversAsync(DescribeIpamPrefixListResolversRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribeIpamPrefixListResolverTargets
+
+
+
+        /// <summary>
+        /// Describes one or more IPAM prefix list resolver Targets. Use this operation to view
+        /// the configuration and status of resolver targets.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeIpamPrefixListResolverTargets service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeIpamPrefixListResolverTargets service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpamPrefixListResolverTargets">REST API Reference for DescribeIpamPrefixListResolverTargets Operation</seealso>
+        Task<DescribeIpamPrefixListResolverTargetsResponse> DescribeIpamPrefixListResolverTargetsAsync(DescribeIpamPrefixListResolverTargetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -14769,6 +15003,119 @@ namespace Amazon.EC2
 
         #endregion
                 
+        #region  GetIpamPrefixListResolverRules
+
+
+
+        /// <summary>
+        /// Retrieves the CIDR selection rules for an IPAM prefix list resolver. Use this operation
+        /// to view the business logic that determines which CIDRs are selected for synchronization
+        /// with prefix lists.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetIpamPrefixListResolverRules service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetIpamPrefixListResolverRules service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamPrefixListResolverRules">REST API Reference for GetIpamPrefixListResolverRules Operation</seealso>
+        Task<GetIpamPrefixListResolverRulesResponse> GetIpamPrefixListResolverRulesAsync(GetIpamPrefixListResolverRulesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetIpamPrefixListResolverVersionEntries
+
+
+
+        /// <summary>
+        /// Retrieves the CIDR entries for a specific version of an IPAM prefix list resolver.
+        /// This shows the actual CIDRs that were selected and synchronized at a particular point
+        /// in time.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetIpamPrefixListResolverVersionEntries service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetIpamPrefixListResolverVersionEntries service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamPrefixListResolverVersionEntries">REST API Reference for GetIpamPrefixListResolverVersionEntries Operation</seealso>
+        Task<GetIpamPrefixListResolverVersionEntriesResponse> GetIpamPrefixListResolverVersionEntriesAsync(GetIpamPrefixListResolverVersionEntriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetIpamPrefixListResolverVersions
+
+
+
+        /// <summary>
+        /// Retrieves version information for an IPAM prefix list resolver.
+        /// 
+        ///  
+        /// <para>
+        /// Each version is a snapshot of what CIDRs matched your rules at that moment in time.
+        /// The version number increments every time the CIDR list changes due to infrastructure
+        /// changes.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Version example:</b> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Initial State (Version 1)</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Production environment:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// vpc-prod-web (10.1.0.0/16) - tagged env=prod
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// vpc-prod-db (10.2.0.0/16) - tagged env=prod
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Resolver rule: Include all VPCs tagged env=prod
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Version 1 CIDRs:</b> 10.1.0.0/16, 10.2.0.0/16
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Infrastructure Change (Version 2)</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// New VPC added:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// vpc-prod-api (10.3.0.0/16) - tagged env=prod
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// IPAM automatically detects the change and creates a new version.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Version 2 CIDRs:</b> 10.1.0.0/16, 10.2.0.0/16, 10.3.0.0/16
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetIpamPrefixListResolverVersions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetIpamPrefixListResolverVersions service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamPrefixListResolverVersions">REST API Reference for GetIpamPrefixListResolverVersions Operation</seealso>
+        Task<GetIpamPrefixListResolverVersionsResponse> GetIpamPrefixListResolverVersionsAsync(GetIpamPrefixListResolverVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  GetIpamResourceCidrs
 
 
@@ -16554,6 +16901,45 @@ namespace Amazon.EC2
         /// <returns>The response from the ModifyIpamPool service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyIpamPool">REST API Reference for ModifyIpamPool Operation</seealso>
         Task<ModifyIpamPoolResponse> ModifyIpamPoolAsync(ModifyIpamPoolRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ModifyIpamPrefixListResolver
+
+
+
+        /// <summary>
+        /// Modifies an IPAM prefix list resolver. You can update the description and CIDR selection
+        /// rules. Changes to rules will trigger re-evaluation and potential updates to associated
+        /// prefix lists.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyIpamPrefixListResolver service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyIpamPrefixListResolver service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyIpamPrefixListResolver">REST API Reference for ModifyIpamPrefixListResolver Operation</seealso>
+        Task<ModifyIpamPrefixListResolverResponse> ModifyIpamPrefixListResolverAsync(ModifyIpamPrefixListResolverRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ModifyIpamPrefixListResolverTarget
+
+
+
+        /// <summary>
+        /// Modifies an IPAM prefix list resolver target. You can update version tracking settings
+        /// and the desired version of the target prefix list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyIpamPrefixListResolverTarget service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyIpamPrefixListResolverTarget service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyIpamPrefixListResolverTarget">REST API Reference for ModifyIpamPrefixListResolverTarget Operation</seealso>
+        Task<ModifyIpamPrefixListResolverTargetResponse> ModifyIpamPrefixListResolverTargetAsync(ModifyIpamPrefixListResolverTargetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -19715,10 +20101,27 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Shuts down the specified instances. This operation is <a href="https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html">idempotent</a>;
+        /// Terminates (deletes) the specified instances. This operation is <a href="https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html">idempotent</a>;
         /// if you terminate an instance more than once, each call succeeds.
         /// 
+        ///  <important> 
+        /// <para>
+        ///  <b>Terminating an instance is permanent and irreversible.</b> 
+        /// </para>
         ///  
+        /// <para>
+        /// After you terminate an instance, you can no longer connect to it, and it can't be
+        /// recovered. All attached Amazon EBS volumes that are configured to be deleted on termination
+        /// are also permanently deleted and can't be recovered. All data stored on instance store
+        /// volumes is permanently lost. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-ec2-instance-termination-works.html">
+        /// How instance termination works</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Before you terminate an instance, ensure that you have backed up all data that you
+        /// need to retain after the termination to persistent storage.
+        /// </para>
+        ///  </important> 
         /// <para>
         /// If you specify multiple instances and the request fails (for example, because of a
         /// single incorrect instance ID), none of the instances are terminated.

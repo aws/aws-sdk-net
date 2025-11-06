@@ -42,8 +42,8 @@ namespace Amazon.ApplicationSignals.Model
         /// <summary>
         /// Gets and sets the property EndTime. 
         /// <para>
-        /// The end of the time period that the returned information applies to. When used in
-        /// a raw HTTP Query API, it is formatted as epoch time in seconds. For example, <c>1698778057</c>.
+        /// The end time of the query range, expressed as the number of milliseconds since January
+        /// 1, 1970, 00:00:00 UTC.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -62,7 +62,8 @@ namespace Amazon.ApplicationSignals.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Include this value in your next use of this API to get the next set of service states.
+        /// The token to use for retrieving the next page of results. This value is present only
+        /// if there are more results available than were returned in the current response.
         /// </para>
         /// </summary>
         public string NextToken
@@ -80,8 +81,8 @@ namespace Amazon.ApplicationSignals.Model
         /// <summary>
         /// Gets and sets the property ServiceStates. 
         /// <para>
-        /// An array of structures, where each structure contains information about the state
-        /// of one service, including its latest change events such as deployments.
+        /// An array of service state objects that match the specified criteria. Each service
+        /// state includes current status, recent change events, and service metadata.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -105,8 +106,8 @@ namespace Amazon.ApplicationSignals.Model
         /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
-        /// The start of the time period that the returned information applies to. When used in
-        /// a raw HTTP Query API, it is formatted as epoch time in seconds. For example, <c>1698778057</c>.
+        /// The start time of the query range, expressed as the number of milliseconds since January
+        /// 1, 1970, 00:00:00 UTC.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

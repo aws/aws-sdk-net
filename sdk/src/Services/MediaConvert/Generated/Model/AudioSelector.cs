@@ -46,6 +46,7 @@ namespace Amazon.MediaConvert.Model
         private int? _programSelection;
         private RemixSettings _remixSettings;
         private AudioSelectorType _selectorType;
+        private List<int> _streams = AWSConfigs.InitializeCollections ? new List<int>() : null;
         private List<int> _tracks = AWSConfigs.InitializeCollections ? new List<int>() : null;
 
         /// <summary>
@@ -250,14 +251,24 @@ namespace Amazon.MediaConvert.Model
         /// within your input. The default is Track. PID: Select audio by specifying the Packet
         /// Identifier (PID) values for MPEG Transport Stream inputs. Use this when you know the
         /// exact PID values of your audio streams. Track: Default. Select audio by track number.
-        /// This is the most common option and works with most input container formats. Language
-        /// code: Select audio by language using an ISO 639-2 or ISO 639-3 three-letter code in
-        /// all capital letters. Use this when your source has embedded language metadata and
-        /// you want to select tracks based on their language. HLS rendition group: Select audio
-        /// from an HLS rendition group. Use this when your input is an HLS package with multiple
-        /// audio renditions and you want to select specific rendition groups. All PCM: Select
-        /// all uncompressed PCM audio tracks from your input automatically. This is useful when
-        /// you want to include all PCM audio tracks without specifying individual track numbers.
+        /// This is the most common option and works with most input container formats. If more
+        /// types of audio data get recognized in the future, these numberings may shift, but
+        /// the numberings used for Stream mode will not. Language code: Select audio by language
+        /// using an ISO 639-2 or ISO 639-3 three-letter       code in all capital letters. Use
+        /// this when your source has embedded language metadata and you want to select tracks
+        /// based on their language. HLS rendition group: Select audio from an HLS rendition group.
+        /// Use this when your input is an HLS package with multiple audio renditions and you
+        /// want to select specific rendition groups. All PCM: Select all uncompressed PCM audio
+        /// tracks from your input automatically. This is useful when you want to include all
+        /// PCM audio tracks without specifying individual track numbers. Stream: Select audio
+        /// by stream number. Stream numbers include all tracks in the source file, regardless
+        /// of type, and correspond to either the order of tracks in the file, or if applicable,
+        /// the stream number metadata of the track. Although all tracks count toward these stream
+        /// numbers, in this audio selector context, only the stream number of a track containing
+        /// audio data may be used. If your source file contains a track which is not recognized
+        /// by the service, then the corresponding stream number will still be reserved for future
+        /// use. If more types of audio data get recognized in the future, these numberings will
+        /// not shift.
         /// </summary>
         public AudioSelectorType SelectorType
         {
@@ -272,10 +283,37 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Streams. Identify a track from the input audio to include
+        /// in this selector by entering the stream index number. These numberings count all tracks
+        /// in the input file, but only a track containing audio data may be used here. To include
+        /// several tracks in a single audio selector, specify multiple tracks as follows. Using
+        /// the console, enter a comma-separated list. For example, type "1,2,3" to include tracks
+        /// 1 through 3.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<int> Streams
+        {
+            get { return this._streams; }
+            set { this._streams = value; }
+        }
+
+        // Check to see if Streams property is set
+        internal bool IsSetStreams()
+        {
+            return this._streams != null && (this._streams.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
         /// Gets and sets the property Tracks. Identify a track from the input audio to include
-        /// in this selector by entering the track index number. To include several tracks in
-        /// a single audio selector, specify multiple tracks as follows. Using the console, enter
-        /// a comma-separated list. For example, type "1,2,3" to include tracks 1 through 3.
+        /// in this selector by entering the track index number. These numberings include only
+        /// tracks recognized as audio. If the service recognizes more types of audio tracks in
+        /// the future, these numberings may shift. To include several tracks in a single audio
+        /// selector, specify multiple tracks as follows. Using the console, enter a comma-separated
+        /// list. For example, type "1,2,3" to include tracks 1 through 3.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
         /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller

@@ -56,6 +56,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
         public IRequest Marshall(XmlMapWithXmlNamespaceRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.RestXmlProtocol");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "POST";
             request.ResourcePath = "/XmlMapWithXmlNamespace";
 
@@ -112,5 +113,6 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, XmlMapWithXmlNamespaceRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, XmlMapWithXmlNamespaceRequest publicRequest);
     }    
 }

@@ -424,6 +424,7 @@
     "CitationLocation":{
       "type":"structure",
       "members":{
+        "web":{"shape":"WebLocation"},
         "documentChar":{"shape":"DocumentCharLocation"},
         "documentPage":{"shape":"DocumentPageLocation"},
         "documentChunk":{"shape":"DocumentChunkLocation"}
@@ -509,6 +510,7 @@
       "members":{
         "text":{"shape":"String"},
         "toolUse":{"shape":"ToolUseBlockDelta"},
+        "toolResult":{"shape":"ToolResultBlocksDelta"},
         "reasoningContent":{"shape":"ReasoningContentBlockDelta"},
         "citation":{"shape":"CitationsDelta"}
       },
@@ -529,7 +531,8 @@
     "ContentBlockStart":{
       "type":"structure",
       "members":{
-        "toolUse":{"shape":"ToolUseBlockStart"}
+        "toolUse":{"shape":"ToolUseBlockStart"},
+        "toolResult":{"shape":"ToolResultBlockStart"}
       },
       "union":true
     },
@@ -2418,6 +2421,13 @@
       "type":"list",
       "member":{"shape":"SystemContentBlock"}
     },
+    "SystemTool":{
+      "type":"structure",
+      "required":["name"],
+      "members":{
+        "name":{"shape":"ToolName"}
+      }
+    },
     "Tag":{
       "type":"structure",
       "required":[
@@ -2514,6 +2524,7 @@
       "type":"structure",
       "members":{
         "toolSpec":{"shape":"ToolSpecification"},
+        "systemTool":{"shape":"SystemTool"},
         "cachePoint":{"shape":"CachePointBlock"}
       },
       "union":true
@@ -2562,8 +2573,29 @@
       "members":{
         "toolUseId":{"shape":"ToolUseId"},
         "content":{"shape":"ToolResultContentBlocks"},
+        "status":{"shape":"ToolResultStatus"},
+        "type":{"shape":"String"}
+      }
+    },
+    "ToolResultBlockDelta":{
+      "type":"structure",
+      "members":{
+        "text":{"shape":"String"}
+      },
+      "union":true
+    },
+    "ToolResultBlockStart":{
+      "type":"structure",
+      "required":["toolUseId"],
+      "members":{
+        "toolUseId":{"shape":"ToolUseId"},
+        "type":{"shape":"String"},
         "status":{"shape":"ToolResultStatus"}
       }
+    },
+    "ToolResultBlocksDelta":{
+      "type":"list",
+      "member":{"shape":"ToolResultBlockDelta"}
     },
     "ToolResultContentBlock":{
       "type":"structure",
@@ -2609,7 +2641,8 @@
       "members":{
         "toolUseId":{"shape":"ToolUseId"},
         "name":{"shape":"ToolName"},
-        "input":{"shape":"Document"}
+        "input":{"shape":"Document"},
+        "type":{"shape":"ToolUseType"}
       }
     },
     "ToolUseBlockDelta":{
@@ -2627,7 +2660,8 @@
       ],
       "members":{
         "toolUseId":{"shape":"ToolUseId"},
-        "name":{"shape":"ToolName"}
+        "name":{"shape":"ToolName"},
+        "type":{"shape":"ToolUseType"}
       }
     },
     "ToolUseId":{
@@ -2635,6 +2669,10 @@
       "max":64,
       "min":1,
       "pattern":"[a-zA-Z0-9_-]+"
+    },
+    "ToolUseType":{
+      "type":"string",
+      "enum":["server_tool_use"]
     },
     "Trace":{
       "type":"string",
@@ -2691,6 +2729,13 @@
     "VideoSourceBytesBlob":{
       "type":"blob",
       "min":1
+    },
+    "WebLocation":{
+      "type":"structure",
+      "members":{
+        "url":{"shape":"String"},
+        "domain":{"shape":"String"}
+      }
     }
   }
 }

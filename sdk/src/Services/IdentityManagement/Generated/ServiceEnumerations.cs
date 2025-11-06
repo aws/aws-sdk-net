@@ -1209,6 +1209,10 @@ namespace Amazon.IdentityManagement
         /// </summary>
         public static readonly SummaryKeyType AccountSigningCertificatesPresent = new SummaryKeyType("AccountSigningCertificatesPresent");
         /// <summary>
+        /// Constant AssumeRolePolicySizeQuota for SummaryKeyType
+        /// </summary>
+        public static readonly SummaryKeyType AssumeRolePolicySizeQuota = new SummaryKeyType("AssumeRolePolicySizeQuota");
+        /// <summary>
         /// Constant AttachedPoliciesPerGroupQuota for SummaryKeyType
         /// </summary>
         public static readonly SummaryKeyType AttachedPoliciesPerGroupQuota = new SummaryKeyType("AttachedPoliciesPerGroupQuota");
@@ -1241,6 +1245,14 @@ namespace Amazon.IdentityManagement
         /// </summary>
         public static readonly SummaryKeyType GroupsQuota = new SummaryKeyType("GroupsQuota");
         /// <summary>
+        /// Constant InstanceProfiles for SummaryKeyType
+        /// </summary>
+        public static readonly SummaryKeyType InstanceProfiles = new SummaryKeyType("InstanceProfiles");
+        /// <summary>
+        /// Constant InstanceProfilesQuota for SummaryKeyType
+        /// </summary>
+        public static readonly SummaryKeyType InstanceProfilesQuota = new SummaryKeyType("InstanceProfilesQuota");
+        /// <summary>
         /// Constant MFADevices for SummaryKeyType
         /// </summary>
         public static readonly SummaryKeyType MFADevices = new SummaryKeyType("MFADevices");
@@ -1268,6 +1280,22 @@ namespace Amazon.IdentityManagement
         /// Constant PolicyVersionsInUseQuota for SummaryKeyType
         /// </summary>
         public static readonly SummaryKeyType PolicyVersionsInUseQuota = new SummaryKeyType("PolicyVersionsInUseQuota");
+        /// <summary>
+        /// Constant Providers for SummaryKeyType
+        /// </summary>
+        public static readonly SummaryKeyType Providers = new SummaryKeyType("Providers");
+        /// <summary>
+        /// Constant RolePolicySizeQuota for SummaryKeyType
+        /// </summary>
+        public static readonly SummaryKeyType RolePolicySizeQuota = new SummaryKeyType("RolePolicySizeQuota");
+        /// <summary>
+        /// Constant Roles for SummaryKeyType
+        /// </summary>
+        public static readonly SummaryKeyType Roles = new SummaryKeyType("Roles");
+        /// <summary>
+        /// Constant RolesQuota for SummaryKeyType
+        /// </summary>
+        public static readonly SummaryKeyType RolesQuota = new SummaryKeyType("RolesQuota");
         /// <summary>
         /// Constant ServerCertificates for SummaryKeyType
         /// </summary>

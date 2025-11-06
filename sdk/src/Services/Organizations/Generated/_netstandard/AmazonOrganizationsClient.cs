@@ -56,10 +56,9 @@ namespace Amazon.Organizations
     /// </para>
     ///  
     /// <para>
-    /// We welcome your feedback. Send your comments to <a href="mailto:feedback-awsorganizations@amazon.com">feedback-awsorganizations@amazon.com</a>
-    /// or post your feedback and questions in the <a href="http://forums.aws.amazon.com/forum.jspa?forumID=219">Organizations
-    /// support forum</a>. For more information about the Amazon Web Services support forums,
-    /// see <a href="http://forums.aws.amazon.com/help.jspa">Forums Help</a>.
+    /// We welcome your feedback. You can post your feedback and questions in the <a href="https://forums.aws.amazon.com/forum.jspa?forumID=219">Organizations
+    /// support forum</a>. For more information about the Amazon Web Services Support forums,
+    /// see <a href="https://forums.aws.amazon.com/help.jspa">Forums Help</a>.
     /// </para>
     ///  
     /// <para>
@@ -1007,7 +1006,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, you must wait
-        /// until at least seven days after the account was created. Invited accounts aren't subject
+        /// until at least four days after the account was created. Invited accounts aren't subject
         /// to this waiting period.
         /// </para>
         ///  </li> </ul>
@@ -1741,7 +1740,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, you must wait
-        /// until at least seven days after the account was created. Invited accounts aren't subject
+        /// until at least four days after the account was created. Invited accounts aren't subject
         /// to this waiting period.
         /// </para>
         ///  </li> </ul>
@@ -2273,7 +2272,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, you must wait
-        /// until at least seven days after the account was created. Invited accounts aren't subject
+        /// until at least four days after the account was created. Invited accounts aren't subject
         /// to this waiting period.
         /// </para>
         ///  </li> </ul>
@@ -2871,7 +2870,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, you must wait
-        /// until at least seven days after the account was created. Invited accounts aren't subject
+        /// until at least four days after the account was created. Invited accounts aren't subject
         /// to this waiting period.
         /// </para>
         ///  </li> </ul>
@@ -3344,7 +3343,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, you must wait
-        /// until at least seven days after the account was created. Invited accounts aren't subject
+        /// until at least four days after the account was created. Invited accounts aren't subject
         /// to this waiting period.
         /// </para>
         ///  </li> </ul>
@@ -3805,7 +3804,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, you must wait
-        /// until at least seven days after the account was created. Invited accounts aren't subject
+        /// until at least four days after the account was created. Invited accounts aren't subject
         /// to this waiting period.
         /// </para>
         ///  </li> </ul>
@@ -4270,7 +4269,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, you must wait
-        /// until at least seven days after the account was created. Invited accounts aren't subject
+        /// until at least four days after the account was created. Invited accounts aren't subject
         /// to this waiting period.
         /// </para>
         ///  </li> </ul>
@@ -5552,7 +5551,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, you must wait
-        /// until at least seven days after the account was created. Invited accounts aren't subject
+        /// until at least four days after the account was created. Invited accounts aren't subject
         /// to this waiting period.
         /// </para>
         ///  </li> </ul>
@@ -5901,7 +5900,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, you must wait
-        /// until at least seven days after the account was created. Invited accounts aren't subject
+        /// until at least four days after the account was created. Invited accounts aren't subject
         /// to this waiting period.
         /// </para>
         ///  </li> </ul>
@@ -6756,7 +6755,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, you must wait
-        /// until at least seven days after the account was created. Invited accounts aren't subject
+        /// until at least four days after the account was created. Invited accounts aren't subject
         /// to this waiting period.
         /// </para>
         ///  </li> </ul>
@@ -7880,7 +7879,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, you must wait
-        /// until at least seven days after the account was created. Invited accounts aren't subject
+        /// until at least four days after the account was created. Invited accounts aren't subject
         /// to this waiting period.
         /// </para>
         ///  </li> </ul>
@@ -8223,7 +8222,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, you must wait
-        /// until at least seven days after the account was created. Invited accounts aren't subject
+        /// until at least four days after the account was created. Invited accounts aren't subject
         /// to this waiting period.
         /// </para>
         ///  </li> </ul>
@@ -8753,7 +8752,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, you must wait
-        /// until at least seven days after the account was created. Invited accounts aren't subject
+        /// until at least four days after the account was created. Invited accounts aren't subject
         /// to this waiting period.
         /// </para>
         ///  </li> </ul>
@@ -9221,7 +9220,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, you must wait
-        /// until at least seven days after the account was created. Invited accounts aren't subject
+        /// until at least four days after the account was created. Invited accounts aren't subject
         /// to this waiting period.
         /// </para>
         ///  </li> </ul>
@@ -9717,7 +9716,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, you must wait
-        /// until at least seven days after the account was created. Invited accounts aren't subject
+        /// until at least four days after the account was created. Invited accounts aren't subject
         /// to this waiting period.
         /// </para>
         ///  </li> </ul>
@@ -10249,7 +10248,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, you must wait
-        /// until at least seven days after the account was created. Invited accounts aren't subject
+        /// until at least four days after the account was created. Invited accounts aren't subject
         /// to this waiting period.
         /// </para>
         ///  </li> </ul>
@@ -10714,7 +10713,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, you must wait
-        /// until at least seven days after the account was created. Invited accounts aren't subject
+        /// until at least four days after the account was created. Invited accounts aren't subject
         /// to this waiting period.
         /// </para>
         ///  </li> </ul>
@@ -11201,7 +11200,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, you must wait
-        /// until at least seven days after the account was created. Invited accounts aren't subject
+        /// until at least four days after the account was created. Invited accounts aren't subject
         /// to this waiting period.
         /// </para>
         ///  </li> </ul>
@@ -11511,7 +11510,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// A newly created account has a waiting period before it can be removed from its organization.
-        /// You must wait until at least seven days after the account was created. Invited accounts
+        /// You must wait until at least four days after the account was created. Invited accounts
         /// aren't subject to this waiting period.
         /// </para>
         ///  </li> <li> 
@@ -11793,7 +11792,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, you must wait
-        /// until at least seven days after the account was created. Invited accounts aren't subject
+        /// until at least four days after the account was created. Invited accounts aren't subject
         /// to this waiting period.
         /// </para>
         ///  </li> </ul>
@@ -12651,7 +12650,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, you must wait
-        /// until at least seven days after the account was created. Invited accounts aren't subject
+        /// until at least four days after the account was created. Invited accounts aren't subject
         /// to this waiting period.
         /// </para>
         ///  </li> </ul>
@@ -13113,7 +13112,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, you must wait
-        /// until at least seven days after the account was created. Invited accounts aren't subject
+        /// until at least four days after the account was created. Invited accounts aren't subject
         /// to this waiting period.
         /// </para>
         ///  </li> </ul>
@@ -13968,7 +13967,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, you must wait
-        /// until at least seven days after the account was created. Invited accounts aren't subject
+        /// until at least four days after the account was created. Invited accounts aren't subject
         /// to this waiting period.
         /// </para>
         ///  </li> </ul>
@@ -14425,7 +14424,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, you must wait
-        /// until at least seven days after the account was created. Invited accounts aren't subject
+        /// until at least four days after the account was created. Invited accounts aren't subject
         /// to this waiting period.
         /// </para>
         ///  </li> </ul>
@@ -14878,7 +14877,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, you must wait
-        /// until at least seven days after the account was created. Invited accounts aren't subject
+        /// until at least four days after the account was created. Invited accounts aren't subject
         /// to this waiting period.
         /// </para>
         ///  </li> </ul>
@@ -17411,7 +17410,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, you must wait
-        /// until at least seven days after the account was created. Invited accounts aren't subject
+        /// until at least four days after the account was created. Invited accounts aren't subject
         /// to this waiting period.
         /// </para>
         ///  </li> </ul>
@@ -17881,7 +17880,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, you must wait
-        /// until at least seven days after the account was created. Invited accounts aren't subject
+        /// until at least four days after the account was created. Invited accounts aren't subject
         /// to this waiting period.
         /// </para>
         ///  </li> </ul>
@@ -18367,7 +18366,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, you must wait
-        /// until at least seven days after the account was created. Invited accounts aren't subject
+        /// until at least four days after the account was created. Invited accounts aren't subject
         /// to this waiting period.
         /// </para>
         ///  </li> </ul>
@@ -18840,7 +18839,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, you must wait
-        /// until at least seven days after the account was created. Invited accounts aren't subject
+        /// until at least four days after the account was created. Invited accounts aren't subject
         /// to this waiting period.
         /// </para>
         ///  </li> </ul>
@@ -19311,7 +19310,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, you must wait
-        /// until at least seven days after the account was created. Invited accounts aren't subject
+        /// until at least four days after the account was created. Invited accounts aren't subject
         /// to this waiting period.
         /// </para>
         ///  </li> </ul>
@@ -19965,7 +19964,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, you must wait
-        /// until at least seven days after the account was created. Invited accounts aren't subject
+        /// until at least four days after the account was created. Invited accounts aren't subject
         /// to this waiting period.
         /// </para>
         ///  </li> </ul>

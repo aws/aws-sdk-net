@@ -56,6 +56,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
         public IRequest Marshall(XmlAttributesOnPayloadRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.RestXmlProtocol");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "PUT";
             request.ResourcePath = "/XmlAttributesOnPayload";
 
@@ -107,5 +108,6 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, XmlAttributesOnPayloadRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, XmlAttributesOnPayloadRequest publicRequest);
     }    
 }

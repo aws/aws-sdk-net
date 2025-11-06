@@ -1,6 +1,0 @@
-{
-  "active": true,
-  "synopsis": "Amazon QLDB introduces the SendCommand API to interact with data in Amazon QLDB ledgers.",
-  "generate-client-constructors": true,
-  "legacy-service-id": "QLDB Session"
-}

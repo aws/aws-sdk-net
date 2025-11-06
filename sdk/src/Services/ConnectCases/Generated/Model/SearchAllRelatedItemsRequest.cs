@@ -65,8 +65,8 @@ namespace Amazon.ConnectCases.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// This API returns case IDs, not complete case objects. To retrieve full case details,
-    /// you must make additional calls to the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_GetCase.html">GetCase</a>
+    /// This API returns case identifiers, not complete case objects. To retrieve full case
+    /// details, you must make additional calls to the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_GetCase.html">GetCase</a>
     /// API for each returned case ID. 
     /// </para>
     ///  </li> <li> 

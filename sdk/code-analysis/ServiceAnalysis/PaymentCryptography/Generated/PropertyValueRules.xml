@@ -236,13 +236,13 @@
     <property>Amazon.PaymentCryptography.Model.CertificateSubjectType.City</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[A-Za-z]+</pattern>
+    <pattern>[^\[;\]&lt;&gt;]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PaymentCryptography.Model.CertificateSubjectType.CommonName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[A-Za-z]+</pattern>
+    <pattern>[^\[;\]&lt;&gt;]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PaymentCryptography.Model.CertificateSubjectType.Country</property>
@@ -260,19 +260,19 @@
     <property>Amazon.PaymentCryptography.Model.CertificateSubjectType.Organization</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[A-Za-z]+</pattern>
+    <pattern>[^\[;\]&lt;&gt;]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PaymentCryptography.Model.CertificateSubjectType.OrganizationUnit</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[A-Za-z]+</pattern>
+    <pattern>[^\[;\]&lt;&gt;]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PaymentCryptography.Model.CertificateSubjectType.StateOrProvince</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[A-Za-z]+</pattern>
+    <pattern>[^\[;\]&lt;&gt;]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PaymentCryptography.Model.DiffieHellmanDerivationData.SharedInformation</property>
@@ -515,7 +515,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PaymentCryptography.Model.WrappedKey.KeyMaterial</property>
-    <min>48</min>
+    <min>32</min>
     <max>16384</max>
   </property-value-rule>
   <property-value-rule>

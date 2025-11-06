@@ -399,7 +399,7 @@ namespace Amazon.GeoMaps.Model
         /// Example: <c>0-255.pbf</c> 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=0, Max=50)]
         public string FontUnicodeRange
         {
             get { return this._fontUnicodeRange; }

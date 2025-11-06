@@ -90,6 +90,17 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetMlflowProperties())
+            {
+                context.Writer.WritePropertyName("mlflowProperties");
+                context.Writer.WriteStartObject();
+
+                var marshaller = MlflowPropertiesPatchMarshaller.Instance;
+                marshaller.Marshall(requestObject.MlflowProperties, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetRedshiftProperties())
             {
                 context.Writer.WritePropertyName("redshiftProperties");

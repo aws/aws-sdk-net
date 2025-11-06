@@ -30,14 +30,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GroundStation.Model
 {
     /// <summary>
-    /// Ephemeris data in Orbit Ephemeris Message (OEM) format. 
+    /// Ephemeris data in Orbit Ephemeris Message (OEM) format.
     /// 
     ///  
     /// <para>
-    ///  AWS Ground Station processes OEM Customer Provided Ephemerides according to the <a
-    /// href="https://public.ccsds.org/Pubs/502x0b3e1.pdf">CCSDS standard</a> with some extra
-    /// restrictions. OEM files should be in KVN format. For more detail about the OEM format
-    /// that AWS Ground Station supports, see <a href="https://docs.aws.amazon.com/ground-station/latest/ug/providing-custom-ephemeris-data.html#oem-ephemeris-format">OEM
+    ///  AWS Ground Station processes OEM ephemerides according to the <a href="https://ccsds.org/wp-content/uploads/gravity_forms/5-448e85c647331d9cbaf66c096458bdd5/2025/01//502x0b3e1.pdf">CCSDS
+    /// standard</a> with some extra restrictions. OEM files should be in KVN format. For
+    /// more detail about the OEM format that AWS Ground Station supports, see <a href="https://docs.aws.amazon.com/ground-station/latest/ug/providing-oem-ephemeris-data.html#oem-ephemeris-format">OEM
     /// ephemeris format</a> in the AWS Ground Station user guide. 
     /// </para>
     /// </summary>
@@ -49,8 +48,7 @@ namespace Amazon.GroundStation.Model
         /// <summary>
         /// Gets and sets the property OemData. 
         /// <para>
-        /// The data for an OEM ephemeris, supplied directly in the request rather than through
-        /// an S3 object.
+        /// OEM data that you provide directly instead of using an Amazon S3 object.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -69,7 +67,7 @@ namespace Amazon.GroundStation.Model
         /// <summary>
         /// Gets and sets the property S3Object. 
         /// <para>
-        /// Identifies the S3 object to be used as the ephemeris.
+        /// The Amazon S3 object that contains the ephemeris data.
         /// </para>
         /// </summary>
         public S3Object S3Object

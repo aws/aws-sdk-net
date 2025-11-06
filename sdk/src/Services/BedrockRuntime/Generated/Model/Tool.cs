@@ -31,12 +31,13 @@ namespace Amazon.BedrockRuntime.Model
 {
     /// <summary>
     /// Information about a tool that you can use with the Converse API. For more information,
-    /// see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/tool-use.html">Tool
-    /// use (function calling)</a> in the Amazon Bedrock User Guide.
+    /// see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/tool-use.html">Call
+    /// a tool with the Converse API</a> in the Amazon Bedrock User Guide.
     /// </summary>
     public partial class Tool
     {
         private CachePointBlock _cachePoint;
+        private SystemTool _systemTool;
         private ToolSpecification _toolSpec;
 
         /// <summary>
@@ -58,9 +59,27 @@ namespace Amazon.BedrockRuntime.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SystemTool. 
+        /// <para>
+        /// Specifies the system-defined tool that you want use.
+        /// </para>
+        /// </summary>
+        public SystemTool SystemTool
+        {
+            get { return this._systemTool; }
+            set { this._systemTool = value; }
+        }
+
+        // Check to see if SystemTool property is set
+        internal bool IsSetSystemTool()
+        {
+            return this._systemTool != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ToolSpec. 
         /// <para>
-        /// The specfication for the tool.
+        /// The specfication for the tool. 
         /// </para>
         /// </summary>
         public ToolSpecification ToolSpec

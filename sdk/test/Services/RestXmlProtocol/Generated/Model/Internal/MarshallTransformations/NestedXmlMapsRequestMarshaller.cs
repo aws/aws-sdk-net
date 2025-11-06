@@ -56,6 +56,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
         public IRequest Marshall(NestedXmlMapsRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.RestXmlProtocol");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "POST";
             request.ResourcePath = "/NestedXmlMaps";
 
@@ -137,5 +138,6 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, NestedXmlMapsRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, NestedXmlMapsRequest publicRequest);
     }    
 }

@@ -6880,15 +6880,15 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.SecurityHub.Model.ResourceResult.ResourceArn</property>
-    <pattern>.*\S.*</pattern>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.SecurityHub.Model.ResourceResult.ResourceCreationTimeDt</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityHub.Model.ResourceResult.ResourceDetailCaptureTimeDt</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.ResourceResult.ResourceGuid</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>

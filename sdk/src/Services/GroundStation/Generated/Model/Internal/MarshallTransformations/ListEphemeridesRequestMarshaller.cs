@@ -85,6 +85,12 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
                 context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.EndTime.Value)));
             }
 
+            if(publicRequest.IsSetEphemerisType())
+            {
+                context.Writer.WritePropertyName("ephemerisType");
+                context.Writer.WriteStringValue(publicRequest.EphemerisType);
+            }
+
             if(publicRequest.IsSetSatelliteId())
             {
                 context.Writer.WritePropertyName("satelliteId");

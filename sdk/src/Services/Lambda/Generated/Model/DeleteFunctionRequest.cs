@@ -35,7 +35,12 @@ namespace Amazon.Lambda.Model
     /// parameter. Otherwise, all versions and aliases are deleted. This doesn't require the
     /// user to have explicit permissions for <a>DeleteAlias</a>.
     /// 
-    ///  
+    ///  <note> 
+    /// <para>
+    /// A deleted Lambda function cannot be recovered. Ensure that you specify the correct
+    /// function name and version before deleting.
+    /// </para>
+    ///  </note> 
     /// <para>
     /// To delete Lambda event source mappings that invoke a function, use <a>DeleteEventSourceMapping</a>.
     /// For Amazon Web Services services and resources that invoke your function directly,

@@ -60,10 +60,6 @@ namespace Amazon.Odb.Model
         /// <para>
         /// The status of the Zero-ETL access.
         /// </para>
-        ///  
-        /// <para>
-        /// Valid Values: <c>enabled | disabled</c> 
-        /// </para>
         /// </summary>
         public ManagedResourceStatus Status
         {

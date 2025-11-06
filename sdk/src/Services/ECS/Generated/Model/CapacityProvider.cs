@@ -88,6 +88,10 @@ namespace Amazon.ECS.Model
         /// providers are cluster-scoped, meaning they can only be used within their associated
         /// cluster.
         /// </para>
+        ///  
+        /// <para>
+        /// This is required for Managed instances.
+        /// </para>
         /// </summary>
         public string Cluster
         {

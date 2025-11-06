@@ -39,6 +39,7 @@ namespace Amazon.CloudFront.Model
         private List<string> _anycastIps = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _arn;
         private string _id;
+        private IpAddressType _ipAddressType;
         private int? _ipCount;
         private DateTime? _lastModifiedTime;
         private string _name;
@@ -104,6 +105,24 @@ namespace Amazon.CloudFront.Model
         internal bool IsSetId()
         {
             return this._id != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IpAddressType. 
+        /// <para>
+        /// The IP address type for the Anycast static IP list.
+        /// </para>
+        /// </summary>
+        public IpAddressType IpAddressType
+        {
+            get { return this._ipAddressType; }
+            set { this._ipAddressType = value; }
+        }
+
+        // Check to see if IpAddressType property is set
+        internal bool IsSetIpAddressType()
+        {
+            return this._ipAddressType != null;
         }
 
         /// <summary>

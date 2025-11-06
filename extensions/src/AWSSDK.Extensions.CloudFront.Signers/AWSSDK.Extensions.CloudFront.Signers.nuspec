@@ -3,7 +3,7 @@
   <metadata>
     <id>AWSSDK.Extensions.CloudFront.Signers</id>
     <title>AWSSDK - Extensions for AWS CloudFront</title>
-    <version>4.0.0.9</version>
+    <version>4.0.0.12</version>
     <authors>Amazon Web Services</authors>
     <description>This package contains extension methods for creating signed URLs for Amazon CloudFront distributions and for creating signed cookies for Amazon CloudFront distributions using canned or custom policies.</description>
     <language>en-US</language>
@@ -13,23 +13,23 @@
     <icon>images\AWSLogo.png</icon>
     <dependencies>
       <group targetFramework="net472">
-        <dependency id="AWSSDK.Core" version="4.0.1.1" />
-        <dependency id="AWSSDK.CloudFront" version="4.0.6.1" />
+        <dependency id="AWSSDK.Core" version="4.0.2.0" />
+        <dependency id="AWSSDK.CloudFront" version="4.0.7.4" />
         <dependency id="BouncyCastle.Cryptography" version="2.4.0" />
       </group>
       <group targetFramework="netstandard2.0">
-        <dependency id="AWSSDK.Core" version="4.0.1.1" />
-        <dependency id="AWSSDK.CloudFront" version="4.0.6.1" />
+        <dependency id="AWSSDK.Core" version="4.0.2.0" />
+        <dependency id="AWSSDK.CloudFront" version="4.0.7.4" />
         <dependency id="BouncyCastle.Cryptography" version="2.4.0" />
       </group>
       <group targetFramework="netcoreapp3.1">
-        <dependency id="AWSSDK.Core" version="4.0.1.1" />
-        <dependency id="AWSSDK.CloudFront" version="4.0.6.1" />
+        <dependency id="AWSSDK.Core" version="4.0.2.0" />
+        <dependency id="AWSSDK.CloudFront" version="4.0.7.4" />
         <dependency id="BouncyCastle.Cryptography" version="2.4.0" />
       </group>
       <group targetFramework="net8.0">
-        <dependency id="AWSSDK.Core" version="4.0.1.1" />
-        <dependency id="AWSSDK.CloudFront" version="4.0.6.1" />
+        <dependency id="AWSSDK.Core" version="4.0.2.0" />
+        <dependency id="AWSSDK.CloudFront" version="4.0.7.4" />
       </group>
     </dependencies>
   </metadata>

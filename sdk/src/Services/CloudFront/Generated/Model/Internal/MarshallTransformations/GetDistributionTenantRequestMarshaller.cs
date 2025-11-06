@@ -56,6 +56,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         public IRequest Marshall(GetDistributionTenantRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.CloudFront");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "GET";
             if (!publicRequest.IsSetIdentifier())
                 throw new AmazonCloudFrontException("Request object does not have required field Identifier set");
@@ -85,5 +86,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, GetDistributionTenantRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, GetDistributionTenantRequest publicRequest);
     }    
 }

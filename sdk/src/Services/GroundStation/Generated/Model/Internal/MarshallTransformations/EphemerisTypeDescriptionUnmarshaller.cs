@@ -56,6 +56,12 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("azEl", targetDepth))
+                {
+                    var unmarshaller = EphemerisDescriptionUnmarshaller.Instance;
+                    unmarshalledObject.AzEl = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("oem", targetDepth))
                 {
                     var unmarshaller = EphemerisDescriptionUnmarshaller.Instance;

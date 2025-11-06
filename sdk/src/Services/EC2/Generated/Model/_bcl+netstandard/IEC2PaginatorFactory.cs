@@ -528,6 +528,26 @@ namespace Amazon.EC2.Model
         IDescribeIpamPoolsPaginator DescribeIpamPools(DescribeIpamPoolsRequest request);
 
         /// <summary>
+        /// Paginator for DescribeIpamPrefixListResolvers operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IDescribeIpamPrefixListResolversPaginator DescribeIpamPrefixListResolvers(DescribeIpamPrefixListResolversRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeIpamPrefixListResolverTargets operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IDescribeIpamPrefixListResolverTargetsPaginator DescribeIpamPrefixListResolverTargets(DescribeIpamPrefixListResolverTargetsRequest request);
+
+        /// <summary>
         /// Paginator for DescribeIpamResourceDiscoveries operation
         ///</summary>
         [AWSPaginator(
@@ -1426,6 +1446,36 @@ namespace Amazon.EC2.Model
             OutputToken = new[] { "NextToken" }
         )]
         IGetIpamPoolCidrsPaginator GetIpamPoolCidrs(GetIpamPoolCidrsRequest request);
+
+        /// <summary>
+        /// Paginator for GetIpamPrefixListResolverRules operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IGetIpamPrefixListResolverRulesPaginator GetIpamPrefixListResolverRules(GetIpamPrefixListResolverRulesRequest request);
+
+        /// <summary>
+        /// Paginator for GetIpamPrefixListResolverVersionEntries operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IGetIpamPrefixListResolverVersionEntriesPaginator GetIpamPrefixListResolverVersionEntries(GetIpamPrefixListResolverVersionEntriesRequest request);
+
+        /// <summary>
+        /// Paginator for GetIpamPrefixListResolverVersions operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IGetIpamPrefixListResolverVersionsPaginator GetIpamPrefixListResolverVersions(GetIpamPrefixListResolverVersionsRequest request);
 
         /// <summary>
         /// Paginator for GetIpamResourceCidrs operation

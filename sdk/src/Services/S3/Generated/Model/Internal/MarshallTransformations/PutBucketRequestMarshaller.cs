@@ -56,12 +56,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         public IRequest Marshall(PutBucketRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.S3");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "PUT";
-        
-            if (publicRequest.IsSetCannedACL()) 
-            {
-                request.Headers["x-amz-acl"] = publicRequest.CannedACL;
-            }
         
             if (publicRequest.IsSetObjectLockEnabledForBucket()) 
             {
@@ -159,5 +155,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, PutBucketRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, PutBucketRequest publicRequest);
     }    
 }

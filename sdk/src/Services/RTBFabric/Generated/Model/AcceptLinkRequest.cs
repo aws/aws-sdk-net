@@ -31,13 +31,12 @@ namespace Amazon.RTBFabric.Model
 {
     /// <summary>
     /// Container for the parameters to the AcceptLink operation.
-    /// Accepts a link request between RTB applications.
+    /// Accepts a link request between gateways.
     /// 
     ///  
     /// <para>
-    /// When a requester RTB application requests to link with a responder RTB application,
-    /// the responder can use this operation to accept the link request and establish the
-    /// connection.
+    /// When a requester gateway requests to link with a responder gateway, the responder
+    /// can use this operation to accept the link request and establish the connection.
     /// </para>
     /// </summary>
     public partial class AcceptLinkRequest : AmazonRTBFabricRequest

@@ -56,6 +56,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         public IRequest Marshall(GetConnectionGroupByRoutingEndpointRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.CloudFront");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "GET";
             
             if (publicRequest.IsSetRoutingEndpoint())
@@ -86,5 +87,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, GetConnectionGroupByRoutingEndpointRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, GetConnectionGroupByRoutingEndpointRequest publicRequest);
     }    
 }

@@ -37,6 +37,7 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 		public IRequest Marshall(<#=this.Operation.Name #>Request publicRequest)
 		{
 			var request = new DefaultRequest(publicRequest, "<#=this.Config.Namespace#>");
+			PreMarshallCustomization(request, publicRequest);
 <#
 
 	if ((this.Config.ServiceModel.H2Support == H2SupportDegree.Optional && this.Operation.IsEventStreamBidi) || (this.Config.ServiceModel.H2Support == H2SupportDegree.EventStream && this.Operation.IsEventStreamOutput) || this.Config.ServiceModel.H2Support == H2SupportDegree.Required)
@@ -131,6 +132,7 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 	this.AddRequestSingletonMethod();
 #>
 		partial void PostMarshallCustomization(DefaultRequest defaultRequest, <#=this.Operation.Name#>Request publicRequest);
+		partial void PreMarshallCustomization(DefaultRequest defaultRequest, <#=this.Operation.Name#>Request publicRequest);
 	}	
 }
 

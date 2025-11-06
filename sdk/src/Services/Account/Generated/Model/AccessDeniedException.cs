@@ -38,7 +38,7 @@ namespace Amazon.Account.Model
     #endif
     public partial class AccessDeniedException : AmazonAccountException
     {
-        private string _requestErrorType;
+        private string _errorType;
 
         /// <summary>
         /// Constructs a new AccessDeniedException with the specified error
@@ -128,14 +128,14 @@ namespace Amazon.Account.Model
         /// </summary>
         public string RequestErrorType
         {
-            get { return this._requestErrorType; }
-            set { this._requestErrorType = value; }
+            get { return this._errorType; }
+            set { this._errorType = value; }
         }
 
         // Check to see if RequestErrorType property is set
         internal bool IsSetRequestErrorType()
         {
-            return this._requestErrorType != null;
+            return this._errorType != null;
         }
 
     }

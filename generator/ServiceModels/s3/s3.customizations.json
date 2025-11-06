@@ -255,10 +255,20 @@
                             "    xmlWriter.WriteStartElement(\"CreateBucketConfiguration\", \"http://s3.amazonaws.com/doc/2006-03-01/\");"
                         ]
                     }
+                },
+                {
+                    "CannedACL":{
+                        "injectXmlIsSet":[
+                            "return _cannedACL != null && _cannedACL != S3CannedACL.NoACL;"
+                        ]
+                    }
                 }
             ],
             "injectXmlMarshallCodeInPayload":[
                 "string regionCode = CustomRegionHandling(xmlWriter, publicRequest);"
+            ],
+            "excludeFromMarshalling":[
+                "CannedACL"
             ]
         },
         "CreateMultipartUploadRequest":{

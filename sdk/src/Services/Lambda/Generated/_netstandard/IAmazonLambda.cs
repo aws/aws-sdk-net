@@ -780,7 +780,12 @@ namespace Amazon.Lambda
         /// parameter. Otherwise, all versions and aliases are deleted. This doesn't require the
         /// user to have explicit permissions for <a>DeleteAlias</a>.
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// A deleted Lambda function cannot be recovered. Ensure that you specify the correct
+        /// function name and version before deleting.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// To delete Lambda event source mappings that invoke a function, use <a>DeleteEventSourceMapping</a>.
         /// For Amazon Web Services services and resources that invoke your function directly,
@@ -818,7 +823,12 @@ namespace Amazon.Lambda
         /// parameter. Otherwise, all versions and aliases are deleted. This doesn't require the
         /// user to have explicit permissions for <a>DeleteAlias</a>.
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// A deleted Lambda function cannot be recovered. Ensure that you specify the correct
+        /// function name and version before deleting.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// To delete Lambda event source mappings that invoke a function, use <a>DeleteEventSourceMapping</a>.
         /// For Amazon Web Services services and resources that invoke your function directly,
@@ -1677,6 +1687,11 @@ namespace Amazon.Lambda
         /// 
         ///  
         /// <para>
+        /// For synchronous invocations, the maximum payload size is 6 MB. For asynchronous invocations,
+        /// the maximum payload size is 1 MB.
+        /// </para>
+        ///  
+        /// <para>
         /// For <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-sync.html">synchronous
         /// invocation</a>, details about the function response, including errors, are included
         /// in the response body and headers. For either invocation type, you can find more information
@@ -1817,6 +1832,11 @@ namespace Amazon.Lambda
         /// The function is inactive and its VPC connection is no longer available. Wait for the
         /// VPC connection to reestablish and try again.
         /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.SerializedRequestEntityTooLargeException">
+        /// The processed request payload exceeded the <c>Invoke</c> request body size limit for
+        /// asynchronous invocations. While the event payload may be under 1 MB, the size after
+        /// internal serialization exceeds the maximum allowed size for asynchronous invocations.
+        /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ServiceException">
         /// The Lambda service encountered an internal error.
         /// </exception>
@@ -1954,6 +1974,11 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.ResourceNotReadyException">
         /// The function is inactive and its VPC connection is no longer available. Wait for the
         /// VPC connection to reestablish and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.SerializedRequestEntityTooLargeException">
+        /// The processed request payload exceeded the <c>Invoke</c> request body size limit for
+        /// asynchronous invocations. While the event payload may be under 1 MB, the size after
+        /// internal serialization exceeds the maximum allowed size for asynchronous invocations.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ServiceException">
         /// The Lambda service encountered an internal error.

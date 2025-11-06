@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ApplicationSignals.Model
 {
     /// <summary>
-    /// A structure that contains identifying information for a service level objective entity.
+    /// Represents a Service Level Objective (SLO) entity that can be audited for compliance
+    /// and performance.
     /// </summary>
     public partial class ServiceLevelObjectiveEntity
     {
@@ -40,8 +41,7 @@ namespace Amazon.ApplicationSignals.Model
         /// <summary>
         /// Gets and sets the property SloArn. 
         /// <para>
-        /// The ARN of the service level objective. The SLO must be provided with ARN for cross-account
-        /// access.
+        /// The Amazon Resource Name (ARN) of the Service Level Objective.
         /// </para>
         /// </summary>
         public string SloArn
@@ -59,7 +59,7 @@ namespace Amazon.ApplicationSignals.Model
         /// <summary>
         /// Gets and sets the property SloName. 
         /// <para>
-        /// The name of the service level objective.
+        /// The name of the Service Level Objective.
         /// </para>
         /// </summary>
         public string SloName
