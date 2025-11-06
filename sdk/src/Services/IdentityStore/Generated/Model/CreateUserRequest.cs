@@ -36,6 +36,7 @@ namespace Amazon.IdentityStore.Model
     public partial class CreateUserRequest : AmazonIdentityStoreRequest
     {
         private List<Address> _addresses = AWSConfigs.InitializeCollections ? new List<Address>() : null;
+        private string _birthdate;
         private string _displayName;
         private List<Email> _emails = AWSConfigs.InitializeCollections ? new List<Email>() : null;
         private string _identityStoreId;
@@ -43,12 +44,14 @@ namespace Amazon.IdentityStore.Model
         private Name _name;
         private string _nickName;
         private List<PhoneNumber> _phoneNumbers = AWSConfigs.InitializeCollections ? new List<PhoneNumber>() : null;
+        private List<Photo> _photos = AWSConfigs.InitializeCollections ? new List<Photo>() : null;
         private string _preferredLanguage;
         private string _profileUrl;
         private string _timezone;
         private string _title;
         private string _userName;
         private string _userType;
+        private string _website;
 
         /// <summary>
         /// Gets and sets the property Addresses. 
@@ -70,10 +73,31 @@ namespace Amazon.IdentityStore.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Birthdate. 
+        /// <para>
+        /// The user's birthdate in YYYY-MM-DD format. This field supports standard date format
+        /// for storing personal information.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Min=1, Max=1024)]
+        public string Birthdate
+        {
+            get { return this._birthdate; }
+            set { this._birthdate = value; }
+        }
+
+        // Check to see if Birthdate property is set
+        internal bool IsSetBirthdate()
+        {
+            return this._birthdate != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property DisplayName. 
         /// <para>
         /// A string containing the name of the user. This value is typically formatted for display
-        /// when the user is referenced. For example, "John Doe." 
+        /// when the user is referenced. For example, "John Doe." When used in IAM Identity Center,
+        /// this parameter is required.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=1024)]
@@ -149,7 +173,8 @@ namespace Amazon.IdentityStore.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// An object containing the name of the user.
+        /// An object containing the name of the user. When used in IAM Identity Center, this
+        /// parameter is required.
         /// </para>
         /// </summary>
         public Name Name
@@ -201,6 +226,26 @@ namespace Amazon.IdentityStore.Model
         internal bool IsSetPhoneNumbers()
         {
             return this._phoneNumbers != null && (this._phoneNumbers.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Photos. 
+        /// <para>
+        /// A list of photos associated with the user. You can add up to 3 photos per user. Each
+        /// photo can include a value, type, display name, and primary designation.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=3)]
+        public List<Photo> Photos
+        {
+            get { return this._photos; }
+            set { this._photos = value; }
+        }
+
+        // Check to see if Photos property is set
+        internal bool IsSetPhotos()
+        {
+            return this._photos != null && (this._photos.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -322,6 +367,26 @@ namespace Amazon.IdentityStore.Model
         internal bool IsSetUserType()
         {
             return this._userType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Website. 
+        /// <para>
+        /// The user's personal website or blog URL. This field allows users to provide a link
+        /// to their personal or professional website.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Min=1, Max=1024)]
+        public string Website
+        {
+            get { return this._website; }
+            set { this._website = value; }
+        }
+
+        // Check to see if Website property is set
+        internal bool IsSetWebsite()
+        {
+            return this._website != null;
         }
 
     }

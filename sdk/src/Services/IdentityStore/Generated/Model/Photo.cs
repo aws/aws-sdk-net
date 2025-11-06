@@ -30,19 +30,42 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IdentityStore.Model
 {
     /// <summary>
-    /// The phone number associated with the user.
+    /// Contains information about a user's photo. Users can have up to 3 photos, with one
+    /// designated as primary. Supports common image formats, including jpg, jpeg, png, and
+    /// gif.
     /// </summary>
-    public partial class PhoneNumber
+    public partial class Photo
     {
+        private string _display;
         private bool? _primary;
         private string _type;
         private string _value;
 
         /// <summary>
+        /// Gets and sets the property Display. 
+        /// <para>
+        /// A human-readable description of the photo for display purposes. This optional field
+        /// provides context about the photo.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Min=1, Max=1024)]
+        public string Display
+        {
+            get { return this._display; }
+            set { this._display = value; }
+        }
+
+        // Check to see if Display property is set
+        internal bool IsSetDisplay()
+        {
+            return this._display != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Primary. 
         /// <para>
-        /// A Boolean value representing whether this is the primary phone number for the associated
-        /// resource.
+        /// Specifies whether this is the user's primary photo. Default value is <c>false</c>.
+        /// Only one photo can be designated as primary per user.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
@@ -61,7 +84,8 @@ namespace Amazon.IdentityStore.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// A string representing the type of a phone number. For example, "Mobile."
+        /// The type of photo. This field is optional and can be used to categorize different
+        /// types of photos.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=1024)]
@@ -80,11 +104,11 @@ namespace Amazon.IdentityStore.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// A string containing a phone number. For example, "8675309" or "+1 (800) 123-4567".
-        /// 
+        /// The photo data or URL. Supported formats include jpg, jpeg, png, and gif. This field
+        /// is required for all photo entries.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=1, Max=1024)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=1024)]
         public string Value
         {
             get { return this._value; }

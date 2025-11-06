@@ -31,8 +31,7 @@ namespace Amazon.IdentityStore.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateGroup operation.
-    /// For the specified group in the specified identity store, updates the group metadata
-    /// and attributes.
+    /// Updates the specified group metadata and attributes in the specified identity store.
     /// </summary>
     public partial class UpdateGroupRequest : AmazonIdentityStoreRequest
     {
@@ -82,7 +81,8 @@ namespace Amazon.IdentityStore.Model
         /// Gets and sets the property Operations. 
         /// <para>
         /// A list of <c>AttributeOperation</c> objects to apply to the requested group. These
-        /// operations might add, replace, or remove an attribute.
+        /// operations might add, replace, or remove an attribute. For more information on the
+        /// attributes that can be added, replaced, or removed, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html">Group</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]

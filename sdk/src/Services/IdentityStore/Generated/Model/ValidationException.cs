@@ -37,6 +37,7 @@ namespace Amazon.IdentityStore.Model
     #endif
     public partial class ValidationException : AmazonIdentityStoreException
     {
+        private ValidationExceptionReason _reason;
 
         /// <summary>
         /// Constructs a new ValidationException with the specified error
@@ -98,6 +99,7 @@ namespace Amazon.IdentityStore.Model
         protected ValidationException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
+            this.Reason = (ValidationExceptionReason)info.GetValue("Reason", typeof(ValidationExceptionReason));
             this.RequestId = (string)info.GetValue("RequestId", typeof(string));
         }
 
@@ -119,9 +121,29 @@ namespace Amazon.IdentityStore.Model
         public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
         {
             base.GetObjectData(info, context);
+            info.AddValue("Reason", this.Reason);
             info.AddValue("RequestId", this.RequestId);
         }
 #endif
+
+        /// <summary>
+        /// Gets and sets the property Reason. 
+        /// <para>
+        /// Indicates the reason for the validation error when the service is unable to access
+        /// a Customer Managed KMS key. For non-KMS permission errors, this field is not included.
+        /// </para>
+        /// </summary>
+        public ValidationExceptionReason Reason
+        {
+            get { return this._reason; }
+            set { this._reason = value; }
+        }
+
+        // Check to see if Reason property is set
+        internal bool IsSetReason()
+        {
+            return this._reason != null;
+        }
 
     }
 }

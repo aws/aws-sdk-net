@@ -55,6 +55,12 @@
     <pattern>([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IdentityStore.Model.CreateUserRequest.Birthdate</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>[\p{L}\p{M}\p{S}\p{N}\p{P}\t\n\r  　]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IdentityStore.Model.CreateUserRequest.DisplayName</property>
     <min>1</min>
     <max>1024</max>
@@ -110,6 +116,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityStore.Model.CreateUserRequest.UserType</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>[\p{L}\p{M}\p{S}\p{N}\p{P}\t\n\r  　]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityStore.Model.CreateUserRequest.Website</property>
     <min>1</min>
     <max>1024</max>
     <pattern>[\p{L}\p{M}\p{S}\p{N}\p{P}\t\n\r  　]+</pattern>
@@ -241,6 +253,12 @@
     <pattern>([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IdentityStore.Model.DescribeUserResponse.Birthdate</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>[\p{L}\p{M}\p{S}\p{N}\p{P}\t\n\r  　]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IdentityStore.Model.DescribeUserResponse.DisplayName</property>
     <min>1</min>
     <max>1024</max>
@@ -302,6 +320,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityStore.Model.DescribeUserResponse.UserType</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>[\p{L}\p{M}\p{S}\p{N}\p{P}\t\n\r  　]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityStore.Model.DescribeUserResponse.Website</property>
     <min>1</min>
     <max>1024</max>
     <pattern>[\p{L}\p{M}\p{S}\p{N}\p{P}\t\n\r  　]+</pattern>
@@ -546,7 +570,7 @@
     <property>Amazon.IdentityStore.Model.AttributeOperation.AttributePath</property>
     <min>1</min>
     <max>255</max>
-    <pattern>\p{L}+(?:\.\p{L}+){0,2}</pattern>
+    <pattern>(?:\p{L}+:\p{L}+:\p{L}+(?:\.\p{L}+){0,3}|\p{L}+(?:\.\p{L}+){0,2})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityStore.Model.ConflictException.RequestId</property>
@@ -575,14 +599,14 @@
   <property-value-rule>
     <property>Amazon.IdentityStore.Model.ExternalId.Issuer</property>
     <min>1</min>
-    <max>100</max>
-    <pattern>(?!(?i)(arn|aws):)[\p{L}\p{M}\p{S}\p{N}\p{P}]+</pattern>
+    <max>256</max>
+    <pattern>[\p{L}\p{M}\p{S}\p{N}\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityStore.Model.Filter.AttributePath</property>
     <min>1</min>
     <max>255</max>
-    <pattern>\p{L}+(?:\.\p{L}+){0,2}</pattern>
+    <pattern>(?:\p{L}+:\p{L}+:\p{L}+(?:\.\p{L}+){0,3}|\p{L}+(?:\.\p{L}+){0,2})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityStore.Model.Filter.AttributeValue</property>
@@ -699,6 +723,24 @@
     <pattern>[\p{L}\p{M}\p{S}\p{N}\p{P}\t\n\r  　]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IdentityStore.Model.Photo.Display</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>[\p{L}\p{M}\p{S}\p{N}\p{P}\t\n\r  　]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityStore.Model.Photo.Type</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>[\p{L}\p{M}\p{S}\p{N}\p{P}\t\n\r  　]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityStore.Model.Photo.Value</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>[\p{L}\p{M}\p{S}\p{N}\p{P}\t\n\r  　]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IdentityStore.Model.ResourceNotFoundException.RequestId</property>
     <min>1</min>
     <max>36</max>
@@ -726,7 +768,13 @@
     <property>Amazon.IdentityStore.Model.UniqueAttribute.AttributePath</property>
     <min>1</min>
     <max>255</max>
-    <pattern>\p{L}+(?:\.\p{L}+){0,2}</pattern>
+    <pattern>(?:\p{L}+:\p{L}+:\p{L}+(?:\.\p{L}+){0,3}|\p{L}+(?:\.\p{L}+){0,2})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityStore.Model.User.Birthdate</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>[\p{L}\p{M}\p{S}\p{N}\p{P}\t\n\r  　]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityStore.Model.User.DisplayName</property>
@@ -790,6 +838,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityStore.Model.User.UserType</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>[\p{L}\p{M}\p{S}\p{N}\p{P}\t\n\r  　]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityStore.Model.User.Website</property>
     <min>1</min>
     <max>1024</max>
     <pattern>[\p{L}\p{M}\p{S}\p{N}\p{P}\t\n\r  　]+</pattern>

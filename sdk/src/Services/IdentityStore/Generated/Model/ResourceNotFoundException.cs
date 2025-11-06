@@ -37,6 +37,7 @@ namespace Amazon.IdentityStore.Model
     #endif
     public partial class ResourceNotFoundException : AmazonIdentityStoreException
     {
+        private ResourceNotFoundExceptionReason _reason;
         private string _resourceId;
         private ResourceType _resourceType;
 
@@ -100,6 +101,7 @@ namespace Amazon.IdentityStore.Model
         protected ResourceNotFoundException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
+            this.Reason = (ResourceNotFoundExceptionReason)info.GetValue("Reason", typeof(ResourceNotFoundExceptionReason));
             this.RequestId = (string)info.GetValue("RequestId", typeof(string));
             this.ResourceId = (string)info.GetValue("ResourceId", typeof(string));
             this.ResourceType = (ResourceType)info.GetValue("ResourceType", typeof(ResourceType));
@@ -123,6 +125,7 @@ namespace Amazon.IdentityStore.Model
         public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
         {
             base.GetObjectData(info, context);
+            info.AddValue("Reason", this.Reason);
             info.AddValue("RequestId", this.RequestId);
             info.AddValue("ResourceId", this.ResourceId);
             info.AddValue("ResourceType", this.ResourceType);
@@ -130,13 +133,33 @@ namespace Amazon.IdentityStore.Model
 #endif
 
         /// <summary>
+        /// Gets and sets the property Reason. 
+        /// <para>
+        /// Indicates the reason for a resource not found error when the service is unable to
+        /// access a Customer Managed KMS key. For non-KMS permission errors, this field is not
+        /// included.
+        /// </para>
+        /// </summary>
+        public ResourceNotFoundExceptionReason Reason
+        {
+            get { return this._reason; }
+            set { this._reason = value; }
+        }
+
+        // Check to see if Reason property is set
+        internal bool IsSetReason()
+        {
+            return this._reason != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ResourceId. 
         /// <para>
         /// The identifier for a resource in the identity store that can be used as <c>UserId</c>
         /// or <c>GroupId</c>. The format for <c>ResourceId</c> is either <c>UUID</c> or <c>1234567890-UUID</c>,
         /// where <c>UUID</c> is a randomly generated value for each resource when it is created
-        /// and <c>1234567890</c> represents the <c>IdentityStoreId</c> string value. In the case
-        /// that the identity store is migrated from a legacy SSO identity store, the <c>ResourceId</c>
+        /// and <c>1234567890</c> represents the <c> IdentityStoreId</c> string value. In the
+        /// case that the identity store is migrated from a legacy SSO identity store, the <c>ResourceId</c>
         /// for that identity store will be in the format of <c>UUID</c>. Otherwise, it will be
         /// in the <c>1234567890-UUID</c> format.
         /// </para>

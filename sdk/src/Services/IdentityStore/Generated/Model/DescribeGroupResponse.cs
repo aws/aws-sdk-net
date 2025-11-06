@@ -34,11 +34,51 @@ namespace Amazon.IdentityStore.Model
     /// </summary>
     public partial class DescribeGroupResponse : AmazonWebServiceResponse
     {
+        private DateTime? _createdAt;
+        private string _createdBy;
         private string _description;
         private string _displayName;
         private List<ExternalId> _externalIds = AWSConfigs.InitializeCollections ? new List<ExternalId>() : null;
         private string _groupId;
         private string _identityStoreId;
+        private DateTime? _updatedAt;
+        private string _updatedBy;
+
+        /// <summary>
+        /// Gets and sets the property CreatedAt. 
+        /// <para>
+        /// The date and time the group was created.
+        /// </para>
+        /// </summary>
+        public DateTime CreatedAt
+        {
+            get { return this._createdAt.GetValueOrDefault(); }
+            set { this._createdAt = value; }
+        }
+
+        // Check to see if CreatedAt property is set
+        internal bool IsSetCreatedAt()
+        {
+            return this._createdAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CreatedBy. 
+        /// <para>
+        /// The identifier of the user or system that created the group.
+        /// </para>
+        /// </summary>
+        public string CreatedBy
+        {
+            get { return this._createdBy; }
+            set { this._createdBy = value; }
+        }
+
+        // Check to see if CreatedBy property is set
+        internal bool IsSetCreatedBy()
+        {
+            return this._createdBy != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -138,6 +178,42 @@ namespace Amazon.IdentityStore.Model
         internal bool IsSetIdentityStoreId()
         {
             return this._identityStoreId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UpdatedAt. 
+        /// <para>
+        /// The date and time the group was last updated.
+        /// </para>
+        /// </summary>
+        public DateTime UpdatedAt
+        {
+            get { return this._updatedAt.GetValueOrDefault(); }
+            set { this._updatedAt = value; }
+        }
+
+        // Check to see if UpdatedAt property is set
+        internal bool IsSetUpdatedAt()
+        {
+            return this._updatedAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UpdatedBy. 
+        /// <para>
+        /// The identifier of the user or system that last updated the group.
+        /// </para>
+        /// </summary>
+        public string UpdatedBy
+        {
+            get { return this._updatedBy; }
+            set { this._updatedBy = value; }
+        }
+
+        // Check to see if UpdatedBy property is set
+        internal bool IsSetUpdatedBy()
+        {
+            return this._updatedBy != null;
         }
 
     }

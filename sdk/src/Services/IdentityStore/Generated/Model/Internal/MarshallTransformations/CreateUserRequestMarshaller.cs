@@ -85,6 +85,12 @@ namespace Amazon.IdentityStore.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetBirthdate())
+                {
+                    context.Writer.WritePropertyName("Birthdate");
+                    context.Writer.Write(publicRequest.Birthdate);
+                }
+
                 if(publicRequest.IsSetDisplayName())
                 {
                     context.Writer.WritePropertyName("DisplayName");
@@ -152,6 +158,22 @@ namespace Amazon.IdentityStore.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetPhotos())
+                {
+                    context.Writer.WritePropertyName("Photos");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestPhotosListValue in publicRequest.Photos)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = PhotoMarshaller.Instance;
+                        marshaller.Marshall(publicRequestPhotosListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetPreferredLanguage())
                 {
                     context.Writer.WritePropertyName("PreferredLanguage");
@@ -186,6 +208,12 @@ namespace Amazon.IdentityStore.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("UserType");
                     context.Writer.Write(publicRequest.UserType);
+                }
+
+                if(publicRequest.IsSetWebsite())
+                {
+                    context.Writer.WritePropertyName("Website");
+                    context.Writer.Write(publicRequest.Website);
                 }
 
                 writer.WriteObjectEnd();
