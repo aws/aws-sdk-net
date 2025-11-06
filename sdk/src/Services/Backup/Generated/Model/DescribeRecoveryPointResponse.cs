@@ -43,6 +43,7 @@ namespace Amazon.Backup.Model
         private RecoveryPointCreator _createdBy;
         private DateTime? _creationDate;
         private string _encryptionKeyArn;
+        private EncryptionKeyType _encryptionKeyType;
         private string _iamRoleArn;
         private IndexStatus _indexStatus;
         private string _indexStatusMessage;
@@ -235,6 +236,26 @@ namespace Amazon.Backup.Model
         internal bool IsSetEncryptionKeyArn()
         {
             return this._encryptionKeyArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EncryptionKeyType. 
+        /// <para>
+        /// The type of encryption key used for the recovery point. Valid values are CUSTOMER_MANAGED_KMS_KEY
+        /// for customer-managed keys or Amazon Web Services_OWNED_KMS_KEY for Amazon Web Services-owned
+        /// keys.
+        /// </para>
+        /// </summary>
+        public EncryptionKeyType EncryptionKeyType
+        {
+            get { return this._encryptionKeyType; }
+            set { this._encryptionKeyType = value; }
+        }
+
+        // Check to see if EncryptionKeyType property is set
+        internal bool IsSetEncryptionKeyType()
+        {
+            return this._encryptionKeyType != null;
         }
 
         /// <summary>

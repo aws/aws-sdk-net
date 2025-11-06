@@ -95,6 +95,12 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                     context.Writer.WritePropertyName("CreatorRequestId");
                     context.Writer.Write(Guid.NewGuid().ToString());
                 }
+                if(publicRequest.IsSetEncryptionKeyArn())
+                {
+                    context.Writer.WritePropertyName("EncryptionKeyArn");
+                    context.Writer.Write(publicRequest.EncryptionKeyArn);
+                }
+
                 if(publicRequest.IsSetMaxRetentionDays())
                 {
                     context.Writer.WritePropertyName("MaxRetentionDays");

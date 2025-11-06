@@ -96,6 +96,12 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                     unmarshalledObject.EncryptionKeyArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("EncryptionKeyType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.EncryptionKeyType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("LockDate", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
