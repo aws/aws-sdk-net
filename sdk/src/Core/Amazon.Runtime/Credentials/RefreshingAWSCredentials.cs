@@ -114,6 +114,8 @@ namespace Amazon.Runtime
             Loading,
         }
 
+        // Note this is purposefuly marked as volatile since it is modified by multiple threads. Read the comments
+        // in the GetCredentials method for more information on the locking flow and how this is used.
         private volatile CredentialsLoadState currentLoadState;
 
         #endregion
@@ -166,6 +168,31 @@ namespace Amazon.Runtime
             // We save the currentState as it might be modified or cleared.
             var tempState = currentState;
 
+            // Before acquiring the lock, check if we need to refresh credentials. This is essentially the read only section
+            // and going into the if block is the costly write section. Majority of threads going through this path will stay
+            // in the read section avoiding blocking on the semaphore. Execution only goes into the write section when credentials
+            // are nearing expiration or already expired.
+            //
+            // There are two phases of credentials needing to be refreshed:
+            // 
+            // Credentials are expired. In that case the lock will be acquired and credential refresh will be blocking further 
+            // execution until new credentials are retrieved. Once credentials are retrieved and the lock is released any other
+            // threads that were blocked due to expired credentials will one by one acquire the lock and see that 
+            // new credentials are present and use those refreshed credentials. 
+            //
+            // Credential epiration in preempt window. This is the case credentials are still valid but to avoid a later
+            // blocking expiration refresh a background refresh is triggered. Only one background refresh will be triggered
+            // which is controlled by setting currentLoadState to Loading while the lock is held.
+            // Any other threads that come through in either the read or write section in the prempt window will see the 
+            // currentLoadState is Loading and not trigger another background refresh. The current credentials will be returned
+            // instead of waiting for the background refresh to complete since they are still valid.
+            //
+            // The background refresh task is in charge of reseting the currentLoadState to NotLoading once the background refresh is complete
+            // or an exception happened. In the case of an exception during the background refresh resettting the currentLoadState to NotLoading
+            // is not done within the scope of the lock. This is safe because the only other place currentLoadState is modified to a different value
+            // is within the block of code that initiates the background refresh. The execution will never go into that block while a background
+            // refresh is in progress because the currentLoadState was set to Loading which prevents starting a background refresh. Since 
+            // currentLoadState is potentially modified by multiple threads it has been marked as volatile to ensure the latest value is always read.
             if (IsExpired(tempState) || (currentLoadState != CredentialsLoadState.Loading && IsPreemptExpiryWindow(tempState)))
             {
                 _updateGeneratedCredentialsSemaphore.Wait();
@@ -203,6 +230,9 @@ namespace Amazon.Runtime
 
         public override sealed async Task<ImmutableCredentials> GetCredentialsAsync()
         {
+            // NOTICE: Before modifying any of the logic read the comments in the synchronous GetCredentials method to 
+            // understand the locking flow. If any changes are required be sure the comments in that method are also updated.
+
             // We save the currentState as it might be modified or cleared.
             var tempState = currentState;
 
@@ -243,6 +273,9 @@ namespace Amazon.Runtime
 
         private async Task BackgroundCredentialsRefreshAsync()
         {
+            // NOTICE: Before modifying any of the logic read the comments in the synchronous GetCredentials method to 
+            // understand the locking flow. If any changes are required be sure the comments in that method are also updated.
+
             try
             {
                 var newState = await GenerateNewCredentialsAsync().ConfigureAwait(false);
@@ -263,8 +296,13 @@ namespace Amazon.Runtime
             catch (Exception e)
             {
                 _logger.Error(e, "Exception occurred performing background credentials refresh.");
+
                 // If any exceptions occur during background refresh, reset the state to NotLoading
                 // so that future GetCredentials calls can attempt to refresh again.
+                //
+                // This is safe to modify outside of the lock because the only other place currentLoadState is modified
+                // to a different value is within the block of code that initiates the background refresh. The block
+                // can never be entered while this background refresh is in progress because currentLoadState was set to Loading.
                 currentLoadState = CredentialsLoadState.NotLoading;
                 throw;
             }
