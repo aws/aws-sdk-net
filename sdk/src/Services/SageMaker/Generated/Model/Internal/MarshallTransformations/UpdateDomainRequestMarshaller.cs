@@ -137,6 +137,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.TagPropagation);
                 }
 
+                if(publicRequest.IsSetVpcId())
+                {
+                    context.Writer.WritePropertyName("VpcId");
+                    context.Writer.Write(publicRequest.VpcId);
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

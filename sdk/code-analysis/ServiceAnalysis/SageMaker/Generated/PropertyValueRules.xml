@@ -7560,6 +7560,12 @@
     <pattern>d-(-*[a-z0-9]){1,61}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.UpdateDomainRequest.VpcId</property>
+    <min>0</min>
+    <max>32</max>
+    <pattern>[-0-9a-zA-Z]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.UpdateDomainResponse.DomainArn</property>
     <min>0</min>
     <max>256</max>

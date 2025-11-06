@@ -40,6 +40,7 @@ namespace Amazon.SageMaker.Model
         private string _clusterRole;
         private List<ClusterInstanceGroupSpecification> _instanceGroups = AWSConfigs.InitializeCollections ? new List<ClusterInstanceGroupSpecification>() : null;
         private List<string> _instanceGroupsToDelete = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private ClusterNodeProvisioningMode _nodeProvisioningMode;
         private ClusterNodeRecovery _nodeRecovery;
         private List<ClusterRestrictedInstanceGroupSpecification> _restrictedInstanceGroups = AWSConfigs.InitializeCollections ? new List<ClusterRestrictedInstanceGroupSpecification>() : null;
         private ClusterTieredStorageConfig _tieredStorageConfig;
@@ -139,6 +140,28 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetInstanceGroupsToDelete()
         {
             return this._instanceGroupsToDelete != null && (this._instanceGroupsToDelete.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NodeProvisioningMode. 
+        /// <para>
+        /// Determines how instance provisioning is handled during cluster operations. In <c>Continuous</c>
+        /// mode, the cluster provisions available instances incrementally and retries until the
+        /// target count is reached. The cluster becomes operational once cluster-level resources
+        /// are ready. Use <c>CurrentCount</c> and <c>TargetCount</c> in <c>DescribeCluster</c>
+        /// to track provisioning progress.
+        /// </para>
+        /// </summary>
+        public ClusterNodeProvisioningMode NodeProvisioningMode
+        {
+            get { return this._nodeProvisioningMode; }
+            set { this._nodeProvisioningMode = value; }
+        }
+
+        // Check to see if NodeProvisioningMode property is set
+        internal bool IsSetNodeProvisioningMode()
+        {
+            return this._nodeProvisioningMode != null;
         }
 
         /// <summary>

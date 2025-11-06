@@ -43,6 +43,7 @@ namespace Amazon.SageMaker.Model
         private DomainSettingsForUpdate _domainSettingsForUpdate;
         private List<string> _subnetIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private TagPropagation _tagPropagation;
+        private string _vpcId;
 
         /// <summary>
         /// Gets and sets the property AppNetworkAccessType. 
@@ -214,6 +215,29 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetTagPropagation()
         {
             return this._tagPropagation != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcId. 
+        /// <para>
+        /// The identifier for the VPC used by the domain for network communication. Use this
+        /// field only when adding VPC configuration to a SageMaker AI domain used in Amazon SageMaker
+        /// Unified Studio that was created without VPC settings. SageMaker AI doesn't automatically
+        /// apply VPC updates to existing applications. Stop and restart your applications to
+        /// apply the changes.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=32)]
+        public string VpcId
+        {
+            get { return this._vpcId; }
+            set { this._vpcId = value; }
+        }
+
+        // Check to see if VpcId property is set
+        internal bool IsSetVpcId()
+        {
+            return this._vpcId != null;
         }
 
     }
