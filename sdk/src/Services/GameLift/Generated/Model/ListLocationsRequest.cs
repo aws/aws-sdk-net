@@ -31,9 +31,13 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the ListLocations operation.
+    /// <b>This API works with the following fleet types:</b> Anywhere
+    /// 
+    ///  
+    /// <para>
     /// Lists all custom and Amazon Web Services locations where Amazon GameLift Servers can
     /// host game servers. 
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// Note that if you call this API using a location that doesn't have a service endpoint,

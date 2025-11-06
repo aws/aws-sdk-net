@@ -31,10 +31,14 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteBuild operation.
+    /// <b>This API works with the following fleet types:</b> EC2
+    /// 
+    ///  
+    /// <para>
     /// Deletes a build. This operation permanently deletes the build resource and any uploaded
     /// build files. Deleting a build does not affect the status of any active fleets using
     /// the build, but you can no longer create new fleets with the deleted build.
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// To delete a build, specify the build ID. 

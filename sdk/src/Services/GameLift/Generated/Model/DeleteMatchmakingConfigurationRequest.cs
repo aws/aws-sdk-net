@@ -31,9 +31,14 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteMatchmakingConfiguration operation.
+    /// <b>This API works with the following fleet types:</b> EC2, Anywhere, Container
+    /// 
+    ///  
+    /// <para>
     /// Permanently removes a FlexMatch matchmaking configuration. To delete, specify the
     /// configuration name. A matchmaking configuration cannot be deleted if it is being used
     /// in any active matchmaking tickets.
+    /// </para>
     /// </summary>
     public partial class DeleteMatchmakingConfigurationRequest : AmazonGameLiftRequest
     {
