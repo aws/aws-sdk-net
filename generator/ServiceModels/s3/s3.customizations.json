@@ -886,6 +886,31 @@
                         "injectXmlMarshallCode": ["AnalyticsFilterCustomMarshall(publicRequest, xmlWriter);"]
                     }
                 }
+            ],
+            "predicateListUnmarshallers": [
+                {
+                    "AnalyticsFilter" :{
+                        "predicateListUnmarshallerName" : "AnalyticsPredicateListUnmarshaller",
+                        "filterPredicateName": "AnalyticsFilterPredicate"
+                    }
+                }
+            ]
+        },
+        "GetBucketAnalyticsConfigurationRequest":{
+            "modify" :[
+                {
+                    "Id" :{"emitPropertyName": "AnalyticsId"}
+                }
+            ]
+        },
+        "AnalyticsS3BucketDestination":{
+            "modify" :[
+                {
+                    "Format" :{
+                        "skipContextTestExpressionUnmarshallingLogic" : true,
+                        "injectXmlUnmarshallCode": ["FormatCustomUnmarshall(context, unmarshalledObject);"]
+                    }
+                }
             ]
         }
     },
