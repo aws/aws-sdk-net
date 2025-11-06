@@ -37,9 +37,9 @@ using ThirdParty.RuntimeBackports;
 namespace Amazon.S3Tables.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateTableBucket Request Marshaller
+    /// TagResource Request Marshaller
     /// </summary>       
-    public class CreateTableBucketRequestMarshaller : IMarshaller<IRequest, CreateTableBucketRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class TagResourceRequestMarshaller : IMarshaller<IRequest, TagResourceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -48,7 +48,7 @@ namespace Amazon.S3Tables.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateTableBucketRequest)input);
+            return this.Marshall((TagResourceRequest)input);
         }
 
         /// <summary>
@@ -56,14 +56,17 @@ namespace Amazon.S3Tables.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateTableBucketRequest publicRequest)
+        public IRequest Marshall(TagResourceRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.S3Tables");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-05-10";
-            request.HttpMethod = "PUT";
+            request.HttpMethod = "POST";
 
-            request.ResourcePath = "/buckets";
+            if (!publicRequest.IsSetResourceArn())
+                throw new AmazonS3TablesException("Request object does not have required field ResourceArn set");
+            request.AddPathResource("{resourceArn}", StringUtils.FromString(publicRequest.ResourceArn));
+            request.ResourcePath = "/tag/{resourceArn}";
 #if !NETFRAMEWORK
             using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
             using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
@@ -73,23 +76,6 @@ namespace Amazon.S3Tables.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
-            if(publicRequest.IsSetEncryptionConfiguration())
-            {
-                context.Writer.WritePropertyName("encryptionConfiguration");
-                context.Writer.WriteStartObject();
-
-                var marshaller = EncryptionConfigurationMarshaller.Instance;
-                marshaller.Marshall(publicRequest.EncryptionConfiguration, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(publicRequest.IsSetName())
-            {
-                context.Writer.WritePropertyName("name");
-                context.Writer.WriteStringValue(publicRequest.Name);
-            }
-
             if(publicRequest.IsSetTags())
             {
                 context.Writer.WritePropertyName("tags");
@@ -117,9 +103,9 @@ namespace Amazon.S3Tables.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateTableBucketRequestMarshaller _instance = new CreateTableBucketRequestMarshaller();        
+        private static TagResourceRequestMarshaller _instance = new TagResourceRequestMarshaller();        
 
-        internal static CreateTableBucketRequestMarshaller GetInstance()
+        internal static TagResourceRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -127,7 +113,7 @@ namespace Amazon.S3Tables.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateTableBucketRequestMarshaller Instance
+        public static TagResourceRequestMarshaller Instance
         {
             get
             {
