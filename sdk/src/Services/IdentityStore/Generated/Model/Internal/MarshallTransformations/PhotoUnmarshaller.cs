@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.IdentityStore.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GroupMembership Object
+    /// Response Unmarshaller for Photo Object
     /// </summary>  
-    public class GroupMembershipUnmarshaller : IJsonUnmarshaller<GroupMembership, JsonUnmarshallerContext>
+    public class PhotoUnmarshaller : IJsonUnmarshaller<Photo, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.IdentityStore.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public GroupMembership Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public Photo Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            GroupMembership unmarshalledObject = new GroupMembership();
+            Photo unmarshalledObject = new Photo();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,52 +56,28 @@ namespace Amazon.IdentityStore.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CreatedAt", targetDepth))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("CreatedBy", targetDepth))
+                if (context.TestExpression("Display", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CreatedBy = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.Display = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("GroupId", targetDepth))
+                if (context.TestExpression("Primary", targetDepth))
+                {
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
+                    unmarshalledObject.Primary = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("Type", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.GroupId = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IdentityStoreId", targetDepth))
+                if (context.TestExpression("Value", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.IdentityStoreId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("MemberId", targetDepth))
-                {
-                    var unmarshaller = MemberIdUnmarshaller.Instance;
-                    unmarshalledObject.MemberId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("MembershipId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MembershipId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("UpdatedAt", targetDepth))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.UpdatedAt = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("UpdatedBy", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.UpdatedBy = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.Value = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -109,12 +85,12 @@ namespace Amazon.IdentityStore.Model.Internal.MarshallTransformations
         }
 
 
-        private static GroupMembershipUnmarshaller _instance = new GroupMembershipUnmarshaller();        
+        private static PhotoUnmarshaller _instance = new PhotoUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GroupMembershipUnmarshaller Instance
+        public static PhotoUnmarshaller Instance
         {
             get
             {
