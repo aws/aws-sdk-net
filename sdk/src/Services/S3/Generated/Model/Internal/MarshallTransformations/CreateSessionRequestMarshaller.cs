@@ -13,17 +13,30 @@
  * permissions and limitations under the License.
  */
 
+/*
+ * Do not modify this file. This file is generated from the s3-2006-03-01.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Text;
+using System.Xml.Serialization;
+
+using Amazon.S3.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using System.Xml;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CreateSession Request Marshaller
     /// </summary>       
-    public class CreateSessionRequestMarshaller : IMarshaller<IRequest, CreateSessionRequest>, IMarshaller<IRequest, AmazonWebServiceRequest>
+    public partial class CreateSessionRequestMarshaller : IMarshaller<IRequest, CreateSessionRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -43,45 +56,42 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         public IRequest Marshall(CreateSessionRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.S3");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "GET";
             request.AddSubResource("session");
-
-            if (!publicRequest.IsSetBucketName())
+        
+            if (publicRequest.IsSetBucketKeyEnabled()) 
             {
-                throw new AmazonS3Exception("Request object does not have required field BucketName set");
+                request.Headers["x-amz-server-side-encryption-bucket-key-enabled"] = StringUtils.FromBool(publicRequest.BucketKeyEnabled);
             }
-
-            if (publicRequest.IsSetSessionMode())
-            {
-                request.Headers["x-amz-create-session-mode"] = publicRequest.SessionMode;
-            }
-            
-            if (publicRequest.IsSetServerSideEncryptionMethod())
+        
+            if (publicRequest.IsSetServerSideEncryption()) 
             {
                 request.Headers["x-amz-server-side-encryption"] = publicRequest.ServerSideEncryption;
             }
-
-            if (publicRequest.IsSetSSEKMSKeyId())
+        
+            if (publicRequest.IsSetSessionMode()) 
             {
-                request.Headers["x-amz-server-side-encryption-aws-kms-key-id"] = publicRequest.SSEKMSKeyId;
+                request.Headers["x-amz-create-session-mode"] = publicRequest.SessionMode;
             }
-
-            if (publicRequest.IsSetSSEKMSEncryptionContext())
+        
+            if (publicRequest.IsSetSSEKMSEncryptionContext()) 
             {
                 request.Headers["x-amz-server-side-encryption-context"] = publicRequest.SSEKMSEncryptionContext;
             }
-
-            if (publicRequest.IsSetBucketKeyEnabled())
+        
+            if (publicRequest.IsSetSSEKMSKeyId()) 
             {
-                request.Headers["x-amz-server-side-encryption-bucket-key-enabled"] = S3Transforms.ToStringValue(publicRequest.BucketKeyEnabled.Value);
+                request.Headers["x-amz-server-side-encryption-aws-kms-key-id"] = publicRequest.SSEKMSKeyId;
             }
+            if (!publicRequest.IsSetBucketName())
+                throw new AmazonS3Exception("Request object does not have required field BucketName set");
+            request.ResourcePath = "/";
 
-            request.AddPathResource("{Bucket}", StringUtils.FromString(publicRequest.BucketName));
-            request.ResourcePath = "/{Bucket}";
-
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
-        private static CreateSessionRequestMarshaller _instance = new CreateSessionRequestMarshaller();
+        private static CreateSessionRequestMarshaller _instance = new CreateSessionRequestMarshaller();        
 
         internal static CreateSessionRequestMarshaller GetInstance()
         {
@@ -95,12 +105,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         {
             get
             {
-                if (_instance == null)
-                {
-                    _instance = new CreateSessionRequestMarshaller();
-                }
                 return _instance;
             }
         }
-    }
+
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, CreateSessionRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, CreateSessionRequest publicRequest);
+    }    
 }

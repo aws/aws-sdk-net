@@ -843,6 +843,28 @@
                     "Id":{"emitPropertyName": "MetricsId"}
                 }
             ]
+        },
+        "CreateSessionRequest":{
+            "modify" :[
+                {
+                    "ServerSideEncryption": {
+                        "injectXmlIsSet" :[
+                            "return this._serverSideEncryption != null && this._serverSideEncryption != ServerSideEncryptionMethod.None;"
+                        ]
+                    }
+                }
+            ]
+        },
+        "CreateSessionOutput":{
+            "modify" :[
+                {
+                    "ServerSideEncryption": {
+                        "injectXmlIsSet" :[
+                            "return this._serverSideEncryption != null && this._serverSideEncryption != ServerSideEncryptionMethod.None;"
+                        ]
+                    }
+                }
+            ]
         }
     },
     "operationModifiers": {
