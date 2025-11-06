@@ -31,9 +31,13 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeFleetLocationAttributes operation.
+    /// <b>This API works with the following fleet types:</b> EC2, Container
+    /// 
+    ///  
+    /// <para>
     /// Retrieves information on a fleet's remote locations, including life-cycle status and
     /// any suspended fleet activity. 
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// This operation can be used in the following ways: 

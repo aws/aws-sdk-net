@@ -30,17 +30,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GameLift.Model
 {
     /// <summary>
-    /// <b>This data type is used with the Amazon GameLift Servers FleetIQ and game server
-    /// groups.</b> 
-    /// 
-    ///  
-    /// <para>
     /// Settings for a target-based scaling policy as part of a <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GameServerGroupAutoScalingPolicy.html">GameServerGroupAutoScalingPolicy</a>
     /// . These settings are used to create a target-based policy that tracks the Amazon GameLift
     /// Servers FleetIQ metric <c>"PercentUtilizedGameServers"</c> and specifies a target
     /// value for the metric. As player usage changes, the policy triggers to adjust the game
-    /// server group capacity so that the metric returns to the target value. 
-    /// </para>
+    /// server group capacity so that the metric returns to the target value.
     /// </summary>
     public partial class TargetTrackingConfiguration
     {

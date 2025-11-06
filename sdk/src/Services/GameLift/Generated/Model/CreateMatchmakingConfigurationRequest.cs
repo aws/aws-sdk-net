@@ -31,6 +31,10 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateMatchmakingConfiguration operation.
+    /// <b>This API works with the following fleet types:</b> EC2, Anywhere, Container
+    /// 
+    ///  
+    /// <para>
     /// Defines a new matchmaking configuration for use with FlexMatch. Whether your are using
     /// FlexMatch with Amazon GameLift Servers hosting or as a standalone matchmaking service,
     /// the matchmaking configuration sets out rules for matching players and forming teams.
@@ -39,7 +43,7 @@ namespace Amazon.GameLift.Model
     /// handle different game scenarios. All matchmaking requests identify the matchmaking
     /// configuration to use and provide player attributes consistent with that configuration.
     /// 
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// To create a matchmaking configuration, you must provide the following: configuration

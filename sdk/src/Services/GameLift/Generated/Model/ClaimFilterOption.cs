@@ -30,13 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GameLift.Model
 {
     /// <summary>
-    /// <b>This data type is used with the Amazon GameLift Servers FleetIQ and game server
-    /// groups.</b> 
-    /// 
-    ///  
-    /// <para>
-    ///  Filters which game servers may be claimed when calling <c>ClaimGameServer</c>. 
-    /// </para>
+    /// Filters which game servers may be claimed when calling <c>ClaimGameServer</c>.
     /// </summary>
     public partial class ClaimFilterOption
     {

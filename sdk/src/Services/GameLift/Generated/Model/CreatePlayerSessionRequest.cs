@@ -31,12 +31,16 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the CreatePlayerSession operation.
+    /// <b>This API works with the following fleet types:</b> EC2, Anywhere, Container
+    /// 
+    ///  
+    /// <para>
     /// Reserves an open player slot in a game session for a player. New player sessions can
     /// be created in any game session with an open slot that is in <c>ACTIVE</c> status and
     /// has a player creation policy of <c>ACCEPT_ALL</c>. You can add a group of players
     /// to a game session with <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreatePlayerSessions.html">CreatePlayerSessions</a>
     /// . 
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// To create a player session, specify a game session ID, player ID, and optionally a

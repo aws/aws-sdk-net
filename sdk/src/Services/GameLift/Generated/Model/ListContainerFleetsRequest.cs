@@ -31,10 +31,14 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the ListContainerFleets operation.
+    /// <b>This API works with the following fleet types:</b> Container
+    /// 
+    ///  
+    /// <para>
     /// Retrieves a collection of container fleet resources in an Amazon Web Services Region.
     /// For fleets that have multiple locations, this operation retrieves fleets based on
     /// their home Region only.
-    /// 
+    /// </para>
     ///  
     /// <para>
     ///  <b>Request options</b> 

@@ -117,11 +117,15 @@ namespace Amazon.GameLift
 
 
         /// <summary>
+        /// <b>This API works with the following fleet types:</b> EC2, Anywhere, Container
+        /// 
+        ///  
+        /// <para>
         /// Registers a player's acceptance or rejection of a proposed FlexMatch match. A matchmaking
         /// configuration may require player acceptance; if so, then matches built with that configuration
         /// cannot be completed unless all players accept the proposed match within a specified
         /// time limit. 
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// When FlexMatch builds a match, all the matchmaking tickets involved in the proposed
@@ -221,8 +225,7 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// <b>This operation is used with the Amazon GameLift Servers FleetIQ solution and game
-        /// server groups.</b> 
+        /// <b>This API works with the following fleet types:</b> EC2 (FleetIQ)
         /// 
         ///  
         /// <para>
@@ -341,11 +344,15 @@ namespace Amazon.GameLift
 
 
         /// <summary>
+        /// <b>This API works with the following fleet types:</b> EC2, Anywhere, Container
+        /// 
+        ///  
+        /// <para>
         /// Creates an alias for a fleet. In most situations, you can use an alias ID in place
         /// of a fleet ID. An alias provides a level of abstraction for a fleet that is useful
         /// when redirecting player traffic from one fleet to another, such as when updating your
         /// game build. 
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// Amazon GameLift Servers supports two types of routing strategies for aliases: simple
@@ -432,10 +439,14 @@ namespace Amazon.GameLift
 
 
         /// <summary>
+        /// <b>This API works with the following fleet types:</b> EC2, Anywhere
+        /// 
+        ///  
+        /// <para>
         /// Creates a new Amazon GameLift Servers build resource for your game server binary files.
         /// Combine game server binaries into a zip file for use with Amazon GameLift Servers.
         /// 
-        /// 
+        /// </para>
         ///  <important> 
         /// <para>
         /// When setting up a new game build for Amazon GameLift Servers, we recommend using the
@@ -548,6 +559,10 @@ namespace Amazon.GameLift
 
 
         /// <summary>
+        /// <b>This API works with the following fleet types:</b> Container
+        /// 
+        ///  
+        /// <para>
         /// Creates a managed fleet of Amazon Elastic Compute Cloud (Amazon EC2) instances to
         /// host your containerized game servers. Use this operation to define how to deploy a
         /// container architecture onto each fleet instance and configure fleet settings. You
@@ -555,7 +570,7 @@ namespace Amazon.GameLift
         /// Servers supports for multi-location fleets. A container fleet can be deployed to a
         /// single location or multiple locations. Container fleets are deployed with Amazon Linux
         /// 2023 as the instance operating system.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// Define the fleet's container architecture using container group definitions. Each
@@ -646,9 +661,21 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         /// You can update most of the properties of a fleet, including container group definitions,
-        /// and deploy the update across all fleet instances. Use a fleet update to deploy a new
-        /// game server version update across the container fleet. 
+        /// and deploy the update across all fleet instances. Use <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateContainerFleet.html">UpdateContainerFleet</a>
+        /// to deploy a new game server version update across the container fleet. 
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// A managed fleet's runtime environment depends on the Amazon Machine Image (AMI) version
+        /// it uses. When a new fleet is created, Amazon GameLift Servers assigns the latest available
+        /// AMI version to the fleet, and all compute instances in that fleet are deployed with
+        /// that version. To update the AMI version, you must create a new fleet. As a best practice,
+        /// we recommend replacing your managed fleets every 30 days to maintain a secure and
+        /// up-to-date runtime environment for your hosted game servers. For guidance, see <a
+        /// href="https://docs.aws.amazon.com/gameliftservers/latest/developerguide/security-best-practices.html">
+        /// Security best practices for Amazon GameLift Servers</a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateContainerFleet service method.</param>
         /// 
@@ -714,12 +741,16 @@ namespace Amazon.GameLift
 
 
         /// <summary>
+        /// <b>This API works with the following fleet types:</b> Container
+        /// 
+        ///  
+        /// <para>
         /// Creates a <c>ContainerGroupDefinition</c> that describes a set of containers for hosting
         /// your game server with Amazon GameLift Servers managed containers hosting. An Amazon
         /// GameLift Servers container group is similar to a container task or pod. Use container
         /// group definitions when you create a container fleet with <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateContainerFleet.html">CreateContainerFleet</a>.
         /// 
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// A container group definition determines how Amazon GameLift Servers deploys your containers
@@ -940,9 +971,13 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// Creates a fleet of compute resources to host your game servers. Use this operation
-        /// to set up the following types of fleets based on compute type: 
+        /// <b>This API works with the following fleet types:</b> EC2, Anywhere, Container
         /// 
+        ///  
+        /// <para>
+        /// Creates a fleet of compute resources to host your game servers. Use this operation
+        /// to set up a fleet for the following compute types: 
+        /// </para>
         ///  
         /// <para>
         ///  <b>Managed EC2 fleet</b> 
@@ -1001,7 +1036,18 @@ namespace Amazon.GameLift
         /// When the fleet status is ACTIVE, you can adjust capacity settings and turn autoscaling
         /// on/off for each location.
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        /// A managed fleet's runtime environment depends on the Amazon Machine Image (AMI) version
+        /// it uses. When a new fleet is created, Amazon GameLift Servers assigns the latest available
+        /// AMI version to the fleet, and all compute instances in that fleet are deployed with
+        /// that version. To update the AMI version, you must create a new fleet. As a best practice,
+        /// we recommend replacing your managed fleets every 30 days to maintain a secure and
+        /// up-to-date runtime environment for your hosted game servers. For guidance, see <a
+        /// href="https://docs.aws.amazon.com/gameliftservers/latest/developerguide/security-best-practices.html">
+        /// Security best practices for Amazon GameLift Servers</a>.
+        /// </para>
+        ///  </note> 
         /// <para>
         ///  <b>Anywhere fleet</b> 
         /// </para>
@@ -1127,10 +1173,14 @@ namespace Amazon.GameLift
 
 
         /// <summary>
+        /// <b>This API works with the following fleet types:</b> EC2, Container
+        /// 
+        ///  
+        /// <para>
         /// Adds remote locations to an EC2 and begins populating the new locations with instances.
         /// The new instances conform to the fleet's instance type, auto-scaling, and other configuration
         /// settings.
-        /// 
+        /// </para>
         ///  <note> 
         /// <para>
         /// You can't add remote locations to a fleet that resides in an Amazon Web Services Region
@@ -1243,8 +1293,7 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// <b>This operation is used with the Amazon GameLift Servers FleetIQ solution and game
-        /// server groups.</b> 
+        /// <b>This API works with the following fleet types:</b> EC2 (FleetIQ)
         /// 
         ///  
         /// <para>
@@ -1360,12 +1409,16 @@ namespace Amazon.GameLift
 
 
         /// <summary>
+        /// <b>This API works with the following fleet types:</b> EC2, Anywhere, Container
+        /// 
+        ///  
+        /// <para>
         /// Creates a multiplayer game session for players in a specific fleet location. This
         /// operation prompts an available server process to start a game session and retrieves
         /// connection information for the new game session. As an alternative, consider using
         /// the Amazon GameLift Servers game session placement feature with <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartGameSessionPlacement.html">StartGameSessionPlacement</a>,
         /// which uses the FleetIQ algorithm and queues to optimize the placement process.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// When creating a game session, you specify exactly where you want to place it and provide
@@ -1508,10 +1561,14 @@ namespace Amazon.GameLift
 
 
         /// <summary>
+        /// <b>This API works with the following fleet types:</b> EC2, Anywhere, Container
+        /// 
+        ///  
+        /// <para>
         /// Creates a placement queue that processes requests for new game sessions. A queue uses
         /// FleetIQ algorithms to locate the best available placement locations for a new game
         /// session, and then prompts the game server process to start a new game session.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// A game session queue is configured with a set of destinations (Amazon GameLift Servers
@@ -1688,7 +1745,12 @@ namespace Amazon.GameLift
 
 
         /// <summary>
+        /// <b>This API works with the following fleet types:</b> Anywhere
+        /// 
+        ///  
+        /// <para>
         /// Creates a custom location for use in an Anywhere fleet.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLocation service method.</param>
         /// 
@@ -1751,6 +1813,10 @@ namespace Amazon.GameLift
 
 
         /// <summary>
+        /// <b>This API works with the following fleet types:</b> EC2, Anywhere, Container
+        /// 
+        ///  
+        /// <para>
         /// Defines a new matchmaking configuration for use with FlexMatch. Whether your are using
         /// FlexMatch with Amazon GameLift Servers hosting or as a standalone matchmaking service,
         /// the matchmaking configuration sets out rules for matching players and forming teams.
@@ -1759,7 +1825,7 @@ namespace Amazon.GameLift
         /// handle different game scenarios. All matchmaking requests identify the matchmaking
         /// configuration to use and provide player attributes consistent with that configuration.
         /// 
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// To create a matchmaking configuration, you must provide the following: configuration
@@ -1850,10 +1916,14 @@ namespace Amazon.GameLift
 
 
         /// <summary>
+        /// <b>This API works with the following fleet types:</b> EC2, Anywhere, Container
+        /// 
+        ///  
+        /// <para>
         /// Creates a new rule set for FlexMatch matchmaking. A rule set describes the type of
         /// match to create, such as the number and size of teams. It also sets the parameters
         /// for acceptable player matches, such as minimum skill level or character type.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// To create a matchmaking rule set, provide unique rule set name and the rule set body
@@ -1944,12 +2014,16 @@ namespace Amazon.GameLift
 
 
         /// <summary>
+        /// <b>This API works with the following fleet types:</b> EC2, Anywhere, Container
+        /// 
+        ///  
+        /// <para>
         /// Reserves an open player slot in a game session for a player. New player sessions can
         /// be created in any game session with an open slot that is in <c>ACTIVE</c> status and
         /// has a player creation policy of <c>ACCEPT_ALL</c>. You can add a group of players
         /// to a game session with <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreatePlayerSessions.html">CreatePlayerSessions</a>
         /// . 
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// To create a player session, specify a game session ID, player ID, and optionally a
@@ -2015,12 +2089,16 @@ namespace Amazon.GameLift
         CreatePlayerSessionResponse CreatePlayerSession(string gameSessionId, string playerId);
 
         /// <summary>
+        /// <b>This API works with the following fleet types:</b> EC2, Anywhere, Container
+        /// 
+        ///  
+        /// <para>
         /// Reserves an open player slot in a game session for a player. New player sessions can
         /// be created in any game session with an open slot that is in <c>ACTIVE</c> status and
         /// has a player creation policy of <c>ACCEPT_ALL</c>. You can add a group of players
         /// to a game session with <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreatePlayerSessions.html">CreatePlayerSessions</a>
         /// . 
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// To create a player session, specify a game session ID, player ID, and optionally a
@@ -2116,12 +2194,16 @@ namespace Amazon.GameLift
 
 
         /// <summary>
+        /// <b>This API works with the following fleet types:</b> EC2, Anywhere, Container
+        /// 
+        ///  
+        /// <para>
         /// Reserves open slots in a game session for a group of players. New player sessions
         /// can be created in any game session with an open slot that is in <c>ACTIVE</c> status
         /// and has a player creation policy of <c>ACCEPT_ALL</c>. To add a single player to a
         /// game session, use <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreatePlayerSession.html">CreatePlayerSession</a>
         /// 
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// To create player sessions, specify a game session ID and a list of player IDs. Optionally,
@@ -2187,12 +2269,16 @@ namespace Amazon.GameLift
         CreatePlayerSessionsResponse CreatePlayerSessions(string gameSessionId, List<string> playerIds);
 
         /// <summary>
+        /// <b>This API works with the following fleet types:</b> EC2, Anywhere, Container
+        /// 
+        ///  
+        /// <para>
         /// Reserves open slots in a game session for a group of players. New player sessions
         /// can be created in any game session with an open slot that is in <c>ACTIVE</c> status
         /// and has a player creation policy of <c>ACCEPT_ALL</c>. To add a single player to a
         /// game session, use <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreatePlayerSession.html">CreatePlayerSession</a>
         /// 
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// To create player sessions, specify a game session ID and a list of player IDs. Optionally,
@@ -2288,12 +2374,16 @@ namespace Amazon.GameLift
 
 
         /// <summary>
+        /// <b>This API works with the following fleet types:</b> EC2, Anywhere
+        /// 
+        ///  
+        /// <para>
         /// Creates a new script record for your Amazon GameLift Servers Realtime script. Realtime
         /// scripts are JavaScript that provide configuration settings and optional custom game
         /// logic for your game. The script is deployed when you create a Amazon GameLift Servers
         /// Realtime fleet to host your game sessions. Script logic is executed during an active
         /// game session. 
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// To create a new script record, specify a script name and provide the script file(s).
@@ -2400,6 +2490,10 @@ namespace Amazon.GameLift
 
 
         /// <summary>
+        /// <b>This API works with the following fleet types:</b> EC2
+        /// 
+        ///  
+        /// <para>
         /// Requests authorization to create or delete a peer connection between the VPC for your
         /// Amazon GameLift Servers fleet and a virtual private cloud (VPC) in your Amazon Web
         /// Services account. VPC peering enables the game servers on your fleet to communicate
@@ -2407,7 +2501,7 @@ namespace Amazon.GameLift
         /// use <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateVpcPeeringConnection.html">CreateVpcPeeringConnection</a>
         /// to establish the peering connection. For more information, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
         /// Peering with Amazon GameLift Servers Fleets</a>.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// You can peer with VPCs that are owned by any Amazon Web Services account you have
@@ -2500,6 +2594,10 @@ namespace Amazon.GameLift
 
 
         /// <summary>
+        /// <b>This API works with the following fleet types:</b> EC2
+        /// 
+        ///  
+        /// <para>
         /// Establishes a VPC peering connection between a virtual private cloud (VPC) in an Amazon
         /// Web Services account with the VPC for your Amazon GameLift Servers fleet. VPC peering
         /// enables the game servers on your fleet to communicate directly with other Amazon Web
@@ -2508,7 +2606,7 @@ namespace Amazon.GameLift
         /// Servers fleets. You cannot peer with VPCs that are in different Regions. For more
         /// information, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
         /// Peering with Amazon GameLift Servers Fleets</a>.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// Before calling this operation to establish the peering connection, you first need
@@ -2593,10 +2691,14 @@ namespace Amazon.GameLift
 
 
         /// <summary>
+        /// <b>This API works with the following fleet types:</b> EC2, Anywhere, Container
+        /// 
+        ///  
+        /// <para>
         /// Deletes an alias. This operation removes all record of the alias. Game clients attempting
         /// to access a server process using the deleted alias receive an error. To delete an
         /// alias, specify the alias ID to be deleted.
-        /// 
+        /// </para>
         ///  
         /// <para>
         ///  <b>Related actions</b> 
@@ -2633,10 +2735,14 @@ namespace Amazon.GameLift
         DeleteAliasResponse DeleteAlias(string aliasId);
 
         /// <summary>
+        /// <b>This API works with the following fleet types:</b> EC2, Anywhere, Container
+        /// 
+        ///  
+        /// <para>
         /// Deletes an alias. This operation removes all record of the alias. Game clients attempting
         /// to access a server process using the deleted alias receive an error. To delete an
         /// alias, specify the alias ID to be deleted.
-        /// 
+        /// </para>
         ///  
         /// <para>
         ///  <b>Related actions</b> 
@@ -2704,10 +2810,14 @@ namespace Amazon.GameLift
 
 
         /// <summary>
+        /// <b>This API works with the following fleet types:</b> EC2
+        /// 
+        ///  
+        /// <para>
         /// Deletes a build. This operation permanently deletes the build resource and any uploaded
         /// build files. Deleting a build does not affect the status of any active fleets using
         /// the build, but you can no longer create new fleets with the deleted build.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// To delete a build, specify the build ID. 
@@ -2753,10 +2863,14 @@ namespace Amazon.GameLift
         DeleteBuildResponse DeleteBuild(string buildId);
 
         /// <summary>
+        /// <b>This API works with the following fleet types:</b> EC2
+        /// 
+        ///  
+        /// <para>
         /// Deletes a build. This operation permanently deletes the build resource and any uploaded
         /// build files. Deleting a build does not affect the status of any active fleets using
         /// the build, but you can no longer create new fleets with the deleted build.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// To delete a build, specify the build ID. 
@@ -2833,10 +2947,14 @@ namespace Amazon.GameLift
 
 
         /// <summary>
+        /// <b>This API works with the following fleet types:</b> Container
+        /// 
+        ///  
+        /// <para>
         /// Deletes all resources and information related to a container fleet and shuts down
         /// currently running fleet instances, including those in remote locations. The container
         /// fleet must be in <c>ACTIVE</c> status to be deleted.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// To delete a fleet, specify the fleet ID to be terminated. During the deletion process,
@@ -2912,11 +3030,15 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// Deletes a container group definition. 
+        /// <b>This API works with the following fleet types:</b> Container
         /// 
         ///  
         /// <para>
         ///  <b>Request options:</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Deletes a container group definition. 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -3028,9 +3150,13 @@ namespace Amazon.GameLift
 
 
         /// <summary>
+        /// <b>This API works with the following fleet types:</b> EC2, Anywhere, Container
+        /// 
+        ///  
+        /// <para>
         /// Deletes all resources and information related to a fleet and shuts down any currently
         /// running fleet instances, including those in remote locations.
-        /// 
+        /// </para>
         ///  <note> 
         /// <para>
         /// If the fleet being deleted has a VPC peering connection, you first need to get a valid
@@ -3083,9 +3209,13 @@ namespace Amazon.GameLift
         DeleteFleetResponse DeleteFleet(string fleetId);
 
         /// <summary>
+        /// <b>This API works with the following fleet types:</b> EC2, Anywhere, Container
+        /// 
+        ///  
+        /// <para>
         /// Deletes all resources and information related to a fleet and shuts down any currently
         /// running fleet instances, including those in remote locations.
-        /// 
+        /// </para>
         ///  <note> 
         /// <para>
         /// If the fleet being deleted has a VPC peering connection, you first need to get a valid
@@ -3169,10 +3299,14 @@ namespace Amazon.GameLift
 
 
         /// <summary>
+        /// <b>This API works with the following fleet types:</b> EC2, Container
+        /// 
+        ///  
+        /// <para>
         /// Removes locations from a multi-location fleet. When deleting a location, all game
         /// server process and all instances that are still active in the location are shut down.
         /// 
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// To delete fleet locations, identify the fleet ID and provide a list of the locations
@@ -3250,8 +3384,7 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// <b>This operation is used with the Amazon GameLift Servers FleetIQ solution and game
-        /// server groups.</b> 
+        /// <b>This API works with the following fleet types:</b> EC2 (FleetIQ)
         /// 
         ///  
         /// <para>
@@ -3354,10 +3487,15 @@ namespace Amazon.GameLift
 
 
         /// <summary>
+        /// <b>This API works with the following fleet types:</b> EC2, Anywhere, Container
+        /// 
+        ///  
+        /// <para>
         /// Deletes a game session queue. Once a queue is successfully deleted, unfulfilled <a
         /// href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartGameSessionPlacement.html">StartGameSessionPlacement</a>
         /// requests that reference the queue will fail. To delete a queue, specify the queue
         /// name.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteGameSessionQueue service method.</param>
         /// 
@@ -3416,8 +3554,12 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// Deletes a custom location.
+        /// <b>This API works with the following fleet types:</b> Anywhere
         /// 
+        ///  
+        /// <para>
+        /// Deletes a custom location.
+        /// </para>
         ///  
         /// <para>
         /// Before deleting a custom location, review any fleets currently using the custom location
@@ -3477,9 +3619,14 @@ namespace Amazon.GameLift
 
 
         /// <summary>
+        /// <b>This API works with the following fleet types:</b> EC2, Anywhere, Container
+        /// 
+        ///  
+        /// <para>
         /// Permanently removes a FlexMatch matchmaking configuration. To delete, specify the
         /// configuration name. A matchmaking configuration cannot be deleted if it is being used
         /// in any active matchmaking tickets.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteMatchmakingConfiguration service method.</param>
         /// 
@@ -3538,10 +3685,14 @@ namespace Amazon.GameLift
 
 
         /// <summary>
+        /// <b>This API works with the following fleet types:</b> EC2, Anywhere, Container
+        /// 
+        ///  
+        /// <para>
         /// Deletes an existing matchmaking rule set. To delete the rule set, provide the rule
         /// set name. Rule sets cannot be deleted if they are currently being used by a matchmaking
         /// configuration. 
-        /// 
+        /// </para>
         ///  
         /// <para>
         ///  <b>Learn more</b> 
@@ -3610,10 +3761,14 @@ namespace Amazon.GameLift
 
 
         /// <summary>
+        /// <b>This API works with the following fleet types:</b> EC2
+        /// 
+        ///  
+        /// <para>
         /// Deletes a fleet scaling policy. Once deleted, the policy is no longer in force and
         /// Amazon GameLift Servers removes all record of it. To delete a scaling policy, specify
         /// both the scaling policy name and the fleet ID it is associated with.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// To temporarily suspend scaling policies, use <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StopFleetActions.html">StopFleetActions</a>.
@@ -3676,10 +3831,14 @@ namespace Amazon.GameLift
 
 
         /// <summary>
+        /// <b>This API works with the following fleet types:</b> EC2
+        /// 
+        ///  
+        /// <para>
         /// Deletes a Realtime script. This operation permanently deletes the script record. If
         /// script files were uploaded, they are also deleted (files stored in an S3 bucket are
         /// not deleted). 
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// To delete a script, specify the script ID. Before deleting a script, be sure to terminate
@@ -3763,9 +3922,13 @@ namespace Amazon.GameLift
 
 
         /// <summary>
+        /// <b>This API works with the following fleet types:</b> EC2
+        /// 
+        ///  
+        /// <para>
         /// Cancels a pending VPC peering authorization for the specified VPC. If you need to
         /// delete an existing VPC peering connection, use <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DeleteVpcPeeringConnection.html">DeleteVpcPeeringConnection</a>.
-        /// 
+        /// </para>
         ///  
         /// <para>
         ///  <b>Related actions</b> 
@@ -3829,9 +3992,13 @@ namespace Amazon.GameLift
 
 
         /// <summary>
+        /// <b>This API works with the following fleet types:</b> EC2
+        /// 
+        ///  
+        /// <para>
         /// Removes a VPC peering connection. To delete the connection, you must have a valid
         /// authorization for the VPC peering connection that you want to delete.. 
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// Once a valid authorization exists, call this operation from the Amazon Web Services
@@ -3902,11 +4069,15 @@ namespace Amazon.GameLift
 
 
         /// <summary>
+        /// <b>This API works with the following fleet types:</b> Anywhere
+        /// 
+        ///  
+        /// <para>
         /// Removes a compute resource from an Anywhere fleet. Deregistered computes can no longer
         /// host game sessions through Amazon GameLift Servers. Use this operation with an Anywhere
         /// fleet that doesn't use the Amazon GameLift Servers Agent For Anywhere fleets with
         /// the Agent, the Agent handles all compute registry tasks for you. 
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// To deregister a compute, call this operation from the compute that's being deregistered
@@ -3966,8 +4137,7 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// <b>This operation is used with the Amazon GameLift Servers FleetIQ solution and game
-        /// server groups.</b> 
+        /// <b>This API works with the following fleet types:</b> EC2 (FleetIQ)
         /// 
         ///  
         /// <para>
@@ -4044,9 +4214,13 @@ namespace Amazon.GameLift
 
 
         /// <summary>
+        /// <b>This API works with the following fleet types:</b> EC2, Anywhere, Container
+        /// 
+        ///  
+        /// <para>
         /// Retrieves properties for an alias. This operation returns all alias metadata and settings.
         /// To get an alias's target fleet ID only, use <c>ResolveAlias</c>. 
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// To get alias properties, specify the alias ID. If successful, the requested alias
@@ -4084,9 +4258,13 @@ namespace Amazon.GameLift
         DescribeAliasResponse DescribeAlias(string aliasId);
 
         /// <summary>
+        /// <b>This API works with the following fleet types:</b> EC2, Anywhere, Container
+        /// 
+        ///  
+        /// <para>
         /// Retrieves properties for an alias. This operation returns all alias metadata and settings.
         /// To get an alias's target fleet ID only, use <c>ResolveAlias</c>. 
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// To get alias properties, specify the alias ID. If successful, the requested alias
@@ -4155,9 +4333,13 @@ namespace Amazon.GameLift
 
 
         /// <summary>
+        /// <b>This API works with the following fleet types:</b> EC2
+        /// 
+        ///  
+        /// <para>
         /// Retrieves properties for a custom game build. To request a build resource, specify
         /// a build ID. If successful, an object containing the build properties is returned.
-        /// 
+        /// </para>
         ///  
         /// <para>
         ///  <b>Learn more</b> 
@@ -4195,9 +4377,13 @@ namespace Amazon.GameLift
         DescribeBuildResponse DescribeBuild(string buildId);
 
         /// <summary>
+        /// <b>This API works with the following fleet types:</b> EC2
+        /// 
+        ///  
+        /// <para>
         /// Retrieves properties for a custom game build. To request a build resource, specify
         /// a build ID. If successful, an object containing the build properties is returned.
-        /// 
+        /// </para>
         ///  
         /// <para>
         ///  <b>Learn more</b> 
@@ -4266,10 +4452,14 @@ namespace Amazon.GameLift
 
 
         /// <summary>
+        /// <b>This API works with the following fleet types:</b> EC2, Anywhere, Container
+        /// 
+        ///  
+        /// <para>
         /// Retrieves properties for a specific compute resource in an Amazon GameLift Servers
         /// fleet. You can list all computes in a fleet by calling <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListCompute.html">ListCompute</a>.
         /// 
-        /// 
+        /// </para>
         ///  
         /// <para>
         ///  <b>Request options</b> 
@@ -4371,10 +4561,14 @@ namespace Amazon.GameLift
 
 
         /// <summary>
+        /// <b>This API works with the following fleet types:</b> Container
+        /// 
+        ///  
+        /// <para>
         /// Retrieves the properties for a container fleet. When requesting attributes for multiple
         /// fleets, use the pagination parameters to retrieve results as a set of sequential pages.
         /// 
-        /// 
+        /// </para>
         ///  
         /// <para>
         ///  <b>Request options</b> 
@@ -4457,9 +4651,13 @@ namespace Amazon.GameLift
 
 
         /// <summary>
+        /// <b>This API works with the following fleet types:</b> Container
+        /// 
+        ///  
+        /// <para>
         /// Retrieves the properties of a container group definition, including all container
         /// definitions in the group. 
-        /// 
+        /// </para>
         ///  
         /// <para>
         ///  <b>Request options:</b> 
@@ -4550,6 +4748,10 @@ namespace Amazon.GameLift
 
 
         /// <summary>
+        /// <b>This API works with the following fleet types:</b> EC2
+        /// 
+        ///  
+        /// <para>
         /// Retrieves the instance limits and current utilization for an Amazon Web Services Region
         /// or location. Instance limits control the number of instances, per instance type, per
         /// location, that your Amazon Web Services account can use. Learn more at <a href="http://aws.amazon.com/ec2/instance-types/">Amazon
@@ -4558,7 +4760,7 @@ namespace Amazon.GameLift
         /// your ability to scale your Amazon GameLift Servers fleets. You can request a limit
         /// increase for your account by using the <b>Service limits</b> page in the Amazon GameLift
         /// Servers console.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// Instance limits differ based on whether the instances are deployed in a fleet's home
@@ -4640,6 +4842,10 @@ namespace Amazon.GameLift
         DescribeEC2InstanceLimitsResponse DescribeEC2InstanceLimits(EC2InstanceType ec2InstanceType);
 
         /// <summary>
+        /// <b>This API works with the following fleet types:</b> EC2
+        /// 
+        ///  
+        /// <para>
         /// Retrieves the instance limits and current utilization for an Amazon Web Services Region
         /// or location. Instance limits control the number of instances, per instance type, per
         /// location, that your Amazon Web Services account can use. Learn more at <a href="http://aws.amazon.com/ec2/instance-types/">Amazon
@@ -4648,7 +4854,7 @@ namespace Amazon.GameLift
         /// your ability to scale your Amazon GameLift Servers fleets. You can request a limit
         /// increase for your account by using the <b>Service limits</b> page in the Amazon GameLift
         /// Servers console.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// Instance limits differ based on whether the instances are deployed in a fleet's home
@@ -4761,10 +4967,14 @@ namespace Amazon.GameLift
 
 
         /// <summary>
+        /// <b>This API works with the following fleet types:</b> EC2, Anywhere, Container
+        /// 
+        ///  
+        /// <para>
         /// Retrieves core fleet-wide properties for fleets in an Amazon Web Services Region.
         /// Properties include the computing hardware and deployment configuration for instances
         /// in the fleet.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// You can use this operation in the following ways: 
@@ -4856,9 +5066,13 @@ namespace Amazon.GameLift
 
 
         /// <summary>
+        /// <b>This API works with the following fleet types:</b> EC2, Container
+        /// 
+        ///  
+        /// <para>
         /// Retrieves the resource capacity settings for one or more fleets. For a container fleet,
         /// this operation also returns counts for game server container groups.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// With multi-location fleets, this operation retrieves data for the fleet's home Region
@@ -4966,8 +5180,12 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// Retrieves information about a managed container fleet deployment. 
+        /// <b>This API works with the following fleet types:</b> Container
         /// 
+        ///  
+        /// <para>
+        /// Retrieves information about a managed container fleet deployment. 
+        /// </para>
         ///  
         /// <para>
         ///  <b>Request options</b> 
@@ -5047,11 +5265,15 @@ namespace Amazon.GameLift
 
 
         /// <summary>
+        /// <b>This API works with the following fleet types:</b> EC2, Anywhere, Container
+        /// 
+        ///  
+        /// <para>
         /// Retrieves entries from a fleet's event log. Fleet events are initiated by changes
         /// in status, such as during fleet creation and termination, changes in capacity, etc.
         /// If a fleet has multiple locations, events are also initiated by changes to status
-        /// and capacity in remote locations. 
-        /// 
+        /// and capacity in remote locations.
+        /// </para>
         ///  
         /// <para>
         /// You can specify a time range to limit the result set. Use the pagination parameters
@@ -5127,9 +5349,13 @@ namespace Amazon.GameLift
 
 
         /// <summary>
+        /// <b>This API works with the following fleet types:</b> EC2, Container
+        /// 
+        ///  
+        /// <para>
         /// Retrieves information on a fleet's remote locations, including life-cycle status and
         /// any suspended fleet activity. 
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// This operation can be used in the following ways: 
@@ -5227,11 +5453,15 @@ namespace Amazon.GameLift
 
 
         /// <summary>
+        /// <b>This API works with the following fleet types:</b> EC2, Container
+        /// 
+        ///  
+        /// <para>
         /// Retrieves the resource capacity settings for a fleet location. The data returned includes
         /// the current capacity (number of EC2 instances) and some scaling settings for the requested
         /// fleet location. For a managed container fleet, this operation also returns counts
         /// for game server container groups.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// Use this operation to retrieve capacity information for a fleet's remote location
@@ -5322,11 +5552,15 @@ namespace Amazon.GameLift
 
 
         /// <summary>
+        /// <b>This API works with the following fleet types:</b> EC2, Anywhere, Container
+        /// 
+        ///  
+        /// <para>
         /// Retrieves current usage data for a fleet location. Utilization data provides a snapshot
         /// of current game hosting activity at the requested location. Use this operation to
         /// retrieve utilization information for a fleet's remote location or home Region (you
         /// can also retrieve home Region utilization by calling <c>DescribeFleetUtilization</c>).
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// To retrieve utilization data, identify a fleet and location. 
@@ -5412,11 +5646,15 @@ namespace Amazon.GameLift
 
 
         /// <summary>
+        /// <b>This API works with the following fleet types:</b> EC2, Container
+        /// 
+        ///  
+        /// <para>
         /// Retrieves a fleet's inbound connection permissions. Connection permissions specify
         /// IP addresses and port settings that incoming traffic can use to access server processes
         /// in the fleet. Game server processes that are running in the fleet must use a port
         /// that falls within this range. 
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// Use this operation in the following ways: 
@@ -5473,11 +5711,15 @@ namespace Amazon.GameLift
         DescribeFleetPortSettingsResponse DescribeFleetPortSettings(string fleetId);
 
         /// <summary>
+        /// <b>This API works with the following fleet types:</b> EC2, Container
+        /// 
+        ///  
+        /// <para>
         /// Retrieves a fleet's inbound connection permissions. Connection permissions specify
         /// IP addresses and port settings that incoming traffic can use to access server processes
         /// in the fleet. Game server processes that are running in the fleet must use a port
         /// that falls within this range. 
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// Use this operation in the following ways: 
@@ -5565,12 +5807,16 @@ namespace Amazon.GameLift
 
 
         /// <summary>
+        /// <b>This API works with the following fleet types:</b> EC2, Container
+        /// 
+        ///  
+        /// <para>
         /// Retrieves utilization statistics for one or more fleets. Utilization data provides
         /// a snapshot of how the fleet's hosting resources are currently being used. For fleets
         /// with remote locations, this operation retrieves data for the fleet's home Region only.
         /// See <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetLocationUtilization.html">DescribeFleetLocationUtilization</a>
         /// to get utilization statistics for a fleet's remote locations.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// This operation can be used in the following ways: 
@@ -5670,8 +5916,7 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// <b>This operation is used with the Amazon GameLift Servers FleetIQ solution and game
-        /// server groups.</b> 
+        /// <b>This API works with the following fleet types:</b> EC2 (FleetIQ)
         /// 
         ///  
         /// <para>
@@ -5746,8 +5991,7 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// <b>This operation is used with the Amazon GameLift Servers FleetIQ solution and game
-        /// server groups.</b> 
+        /// <b>This API works with the following fleet types:</b> EC2 (FleetIQ)
         /// 
         ///  
         /// <para>
@@ -5824,8 +6068,7 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// <b>This operation is used with the Amazon GameLift Servers FleetIQ solution and game
-        /// server groups.</b> 
+        /// <b>This API works with the following fleet types:</b> EC2 (FleetIQ)
         /// 
         ///  
         /// <para>
@@ -5911,10 +6154,14 @@ namespace Amazon.GameLift
 
 
         /// <summary>
+        /// <b>This API works with the following fleet types:</b> EC2, Anywhere, Container
+        /// 
+        ///  
+        /// <para>
         /// Retrieves additional game session properties, including the game session protection
         /// policy in force, a set of one or more game sessions in a specific fleet location.
         /// You can optionally filter the results by current game session status.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// This operation can be used in the following ways: 
@@ -6023,9 +6270,13 @@ namespace Amazon.GameLift
 
 
         /// <summary>
+        /// <b>This API works with the following fleet types:</b> EC2, Anywhere, Container
+        /// 
+        ///  
+        /// <para>
         /// Retrieves information, including current status, about a game session placement request.
         /// 
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// To get game session placement details, specify the placement ID.
@@ -6092,11 +6343,15 @@ namespace Amazon.GameLift
 
 
         /// <summary>
+        /// <b>This API works with the following fleet types:</b> EC2, Anywhere, Container
+        /// 
+        ///  
+        /// <para>
         /// Retrieves the properties for one or more game session queues. When requesting multiple
         /// queues, use the pagination parameters to retrieve results as a set of sequential pages.
         /// When specifying a list of queues, objects are returned only for queues that currently
         /// exist in the Region.
-        /// 
+        /// </para>
         ///  
         /// <para>
         ///  <b>Learn more</b> 
@@ -6160,9 +6415,13 @@ namespace Amazon.GameLift
 
 
         /// <summary>
+        /// <b>This API works with the following fleet types:</b> EC2, Anywhere, Container
+        /// 
+        ///  
+        /// <para>
         /// Retrieves a set of one or more game sessions in a specific fleet location. You can
         /// optionally filter the results by current game session status.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// This operation can be used in the following ways: 
@@ -6283,13 +6542,17 @@ namespace Amazon.GameLift
 
 
         /// <summary>
+        /// <b>This API works with the following fleet types:</b> EC2
+        /// 
+        ///  
+        /// <para>
         /// Retrieves information about the EC2 instances in an Amazon GameLift Servers managed
         /// fleet, including instance ID, connection data, and status. You can use this operation
         /// with a multi-location fleet to get location-specific instance information. As an alternative,
         /// use the operations <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListCompute">https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListCompute</a>
         /// and <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeCompute">https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeCompute</a>
         /// to retrieve information for compute resources, including EC2 and Anywhere fleets.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// You can call this operation in the following ways:
@@ -6398,10 +6661,14 @@ namespace Amazon.GameLift
 
 
         /// <summary>
+        /// <b>This API works with the following fleet types:</b> EC2, Anywhere, Container
+        /// 
+        ///  
+        /// <para>
         /// Retrieves one or more matchmaking tickets. Use this operation to retrieve ticket information,
         /// including--after a successful match is made--connection information for the resulting
         /// new game session. 
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// To request matchmaking tickets, provide a list of up to 10 ticket IDs. If the request
@@ -6478,8 +6745,12 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// Retrieves the details of FlexMatch matchmaking configurations. 
+        /// <b>This API works with the following fleet types:</b> EC2, Anywhere, Container
         /// 
+        ///  
+        /// <para>
+        /// Retrieves the details of FlexMatch matchmaking configurations. 
+        /// </para>
         ///  
         /// <para>
         /// This operation offers the following options: (1) retrieve all matchmaking configurations,
@@ -6551,11 +6822,15 @@ namespace Amazon.GameLift
 
 
         /// <summary>
+        /// <b>This API works with the following fleet types:</b> EC2, Anywhere, Container
+        /// 
+        ///  
+        /// <para>
         /// Retrieves the details for FlexMatch matchmaking rule sets. You can request all existing
         /// rule sets for the Region, or provide a list of one or more rule set names. When requesting
         /// multiple items, use the pagination parameters to retrieve results as a set of sequential
         /// pages. If successful, a rule set is returned for each requested name. 
-        /// 
+        /// </para>
         ///  
         /// <para>
         ///  <b>Learn more</b> 
@@ -6620,8 +6895,12 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// Retrieves properties for one or more player sessions. 
+        /// <b>This API works with the following fleet types:</b> EC2, Anywhere, Container
         /// 
+        ///  
+        /// <para>
+        /// Retrieves properties for one or more player sessions. 
+        /// </para>
         ///  
         /// <para>
         /// This action can be used in the following ways: 
@@ -6714,11 +6993,15 @@ namespace Amazon.GameLift
 
 
         /// <summary>
+        /// <b>This API works with the following fleet types:</b> EC2
+        /// 
+        ///  
+        /// <para>
         /// Retrieves a fleet's runtime configuration settings. The runtime configuration determines
         /// which server processes run, and how, on computes in the fleet. For managed EC2 fleets,
         /// the runtime configuration describes server processes that run on each fleet instance.
-        /// can update a fleet's runtime configuration at any time using <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateRuntimeConfiguration.html">UpdateRuntimeConfiguration</a>.
-        /// 
+        /// You can update a fleet's runtime configuration at any time using <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateRuntimeConfiguration.html">UpdateRuntimeConfiguration</a>.
+        /// </para>
         ///  
         /// <para>
         /// To get the current runtime configuration for a fleet, provide the fleet ID. 
@@ -6796,8 +7079,12 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// Retrieves all scaling policies applied to a fleet.
+        /// <b>This API works with the following fleet types:</b> EC2
         /// 
+        ///  
+        /// <para>
+        /// Retrieves all scaling policies applied to a fleet.
+        /// </para>
         ///  
         /// <para>
         /// To get a fleet's scaling policies, specify the fleet ID. You can filter this request
@@ -6867,8 +7154,12 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// Retrieves properties for a Realtime script. 
+        /// <b>This API works with the following fleet types:</b> EC2
         /// 
+        ///  
+        /// <para>
+        /// Retrieves properties for a Realtime script. 
+        /// </para>
         ///  
         /// <para>
         /// To request a script record, specify the script ID. If successful, an object containing
@@ -6946,10 +7237,14 @@ namespace Amazon.GameLift
 
 
         /// <summary>
+        /// <b>This API works with the following fleet types:</b> EC2
+        /// 
+        ///  
+        /// <para>
         /// Retrieves valid VPC peering authorizations that are pending for the Amazon Web Services
         /// account. This operation returns all VPC peering authorizations and requests for peering.
         /// This includes those initiated and received by this account. 
-        /// 
+        /// </para>
         ///  
         /// <para>
         ///  <b>Related actions</b> 
@@ -7009,9 +7304,13 @@ namespace Amazon.GameLift
 
 
         /// <summary>
+        /// <b>This API works with the following fleet types:</b> EC2
+        /// 
+        ///  
+        /// <para>
         /// Retrieves information on VPC peering connections. Use this operation to get peering
         /// information for all fleets or for one specific fleet ID. 
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// To retrieve connection information, call this operation from the Amazon Web Services
@@ -7083,10 +7382,14 @@ namespace Amazon.GameLift
 
 
         /// <summary>
+        /// <b>This API works with the following fleet types:</b> EC2, Container
+        /// 
+        ///  
+        /// <para>
         /// Requests authorization to remotely connect to a hosting resource in a Amazon GameLift
         /// Servers managed fleet. This operation is not used with Amazon GameLift Servers Anywhere
         /// fleets.
-        /// 
+        /// </para>
         ///  
         /// <para>
         ///  <b>Request options</b> 
@@ -7181,13 +7484,17 @@ namespace Amazon.GameLift
 
 
         /// <summary>
+        /// <b>This API works with the following fleet types:</b> EC2, Anywhere, Container
+        /// 
+        ///  
+        /// <para>
         /// Requests an authentication token from Amazon GameLift Servers for a compute resource
         /// in an Amazon GameLift Servers fleet. Game servers that are running on the compute
         /// use this token to communicate with the Amazon GameLift Servers service, such as when
         /// calling the Amazon GameLift Servers server SDK action <c>InitSDK()</c>. Authentication
         /// tokens are valid for a limited time span, so you need to request a fresh token before
         /// the current token expires.
-        /// 
+        /// </para>
         ///  
         /// <para>
         ///  <b>Request options</b> 
@@ -7282,11 +7589,15 @@ namespace Amazon.GameLift
 
 
         /// <summary>
+        /// <b>This API works with the following fleet types:</b> EC2
+        /// 
+        ///  
+        /// <para>
         /// Retrieves the location of stored game session logs for a specified game session on
         /// Amazon GameLift Servers managed fleets. When a game session is terminated, Amazon
         /// GameLift Servers automatically stores the logs in Amazon S3 and retains them for 14
         /// days. Use this URL to download the logs.
-        /// 
+        /// </para>
         ///  <note> 
         /// <para>
         /// See the <a href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_gamelift">Amazon
@@ -7321,11 +7632,15 @@ namespace Amazon.GameLift
         GetGameSessionLogUrlResponse GetGameSessionLogUrl(string gameSessionId);
 
         /// <summary>
+        /// <b>This API works with the following fleet types:</b> EC2
+        /// 
+        ///  
+        /// <para>
         /// Retrieves the location of stored game session logs for a specified game session on
         /// Amazon GameLift Servers managed fleets. When a game session is terminated, Amazon
         /// GameLift Servers automatically stores the logs in Amazon S3 and retains them for 14
         /// days. Use this URL to download the logs.
-        /// 
+        /// </para>
         ///  <note> 
         /// <para>
         /// See the <a href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_gamelift">Amazon
@@ -7391,11 +7706,15 @@ namespace Amazon.GameLift
 
 
         /// <summary>
+        /// <b>This API works with the following fleet types:</b> EC2
+        /// 
+        ///  
+        /// <para>
         /// Requests authorization to remotely connect to an instance in an Amazon GameLift Servers
         /// managed fleet. Use this operation to connect to instances with game servers that use
         /// Amazon GameLift Servers server SDK 4.x or earlier. To connect to instances with game
         /// servers that use server SDK 5.x or later, call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GetComputeAccess">https://docs.aws.amazon.com/gamelift/latest/apireference/API_GetComputeAccess</a>.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// To request access to an instance, specify IDs for the instance and the fleet it belongs
@@ -7497,10 +7816,14 @@ namespace Amazon.GameLift
 
 
         /// <summary>
+        /// <b>This API works with the following fleet types:</b> EC2, Anywhere, Container
+        /// 
+        ///  
+        /// <para>
         /// Retrieves all aliases for this Amazon Web Services account. You can filter the result
         /// set by alias name and/or routing strategy type. Use the pagination parameters to retrieve
         /// results in sequential pages.
-        /// 
+        /// </para>
         ///  <note> 
         /// <para>
         /// Returned aliases are not listed in any particular order.
@@ -7564,11 +7887,14 @@ namespace Amazon.GameLift
 
 
         /// <summary>
+        /// <b>This API works with the following fleet types:</b> EC2
+        /// 
+        ///  
+        /// <para>
         /// Retrieves build resources for all builds associated with the Amazon Web Services account
         /// in use. You can limit results to builds that are in a specific status by using the
-        /// <c>Status</c> parameter. Use the pagination parameters to retrieve results in a set
-        /// of sequential pages. 
-        /// 
+        /// <c>Status</c> parameter. Use the pagination parameters to retrieve results in 
+        /// </para>
         ///  <note> 
         /// <para>
         /// Build resources are not listed in any particular order.
@@ -7637,9 +7963,13 @@ namespace Amazon.GameLift
 
 
         /// <summary>
+        /// <b>This API works with the following fleet types:</b> EC2, Anywhere, Container
+        /// 
+        ///  
+        /// <para>
         /// Retrieves information on the compute resources in an Amazon GameLift Servers fleet.
         /// Use the pagination parameters to retrieve results in a set of sequential pages.
-        /// 
+        /// </para>
         ///  
         /// <para>
         ///  <b>Request options</b> 
@@ -7727,10 +8057,14 @@ namespace Amazon.GameLift
 
 
         /// <summary>
+        /// <b>This API works with the following fleet types:</b> Container
+        /// 
+        ///  
+        /// <para>
         /// Retrieves a collection of container fleet resources in an Amazon Web Services Region.
         /// For fleets that have multiple locations, this operation retrieves fleets based on
         /// their home Region only.
-        /// 
+        /// </para>
         ///  
         /// <para>
         ///  <b>Request options</b> 
@@ -7818,10 +8152,14 @@ namespace Amazon.GameLift
 
 
         /// <summary>
+        /// <b>This API works with the following fleet types:</b> Container
+        /// 
+        ///  
+        /// <para>
         /// Retrieves container group definitions for the Amazon Web Services account and Amazon
         /// Web Services Region. Use the pagination parameters to retrieve results in a set of
         /// sequential pages.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// This operation returns only the latest version of each definition. To retrieve all
@@ -7908,9 +8246,13 @@ namespace Amazon.GameLift
 
 
         /// <summary>
+        /// <b>This API works with the following fleet types:</b> Container
+        /// 
+        ///  
+        /// <para>
         /// Retrieves all versions of a container group definition. Use the pagination parameters
         /// to retrieve results in a set of sequential pages.
-        /// 
+        /// </para>
         ///  
         /// <para>
         ///  <b>Request options:</b> 
@@ -8001,9 +8343,13 @@ namespace Amazon.GameLift
 
 
         /// <summary>
+        /// <b>This API works with the following fleet types:</b> Container
+        /// 
+        ///  
+        /// <para>
         /// Retrieves a collection of container fleet deployments in an Amazon Web Services Region.
         /// Use the pagination parameters to retrieve results as a set of sequential pages. 
-        /// 
+        /// </para>
         ///  
         /// <para>
         ///  <b>Request options</b> 
@@ -8088,11 +8434,15 @@ namespace Amazon.GameLift
 
 
         /// <summary>
+        /// <b>This API works with the following fleet types:</b> EC2, Anywhere, Container
+        /// 
+        ///  
+        /// <para>
         /// Retrieves a collection of fleet resources in an Amazon Web Services Region. You can
         /// filter the result set to find only those fleets that are deployed with a specific
         /// build or script. For fleets that have multiple locations, this operation retrieves
         /// fleets based on their home Region only.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// You can use operation in the following ways: 
@@ -8179,7 +8529,12 @@ namespace Amazon.GameLift
 
 
         /// <summary>
+        /// <b>This API works with the following fleet types:</b> EC2 (FleetIQ)
+        /// 
+        ///  
+        /// <para>
         /// Lists a game server groups.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListGameServerGroups service method.</param>
         /// 
@@ -8230,8 +8585,7 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// <b>This operation is used with the Amazon GameLift Servers FleetIQ solution and game
-        /// server groups.</b> 
+        /// <b>This API works with the following fleet types:</b> EC2 (FleetIQ)
         /// 
         ///  
         /// <para>
@@ -8298,9 +8652,13 @@ namespace Amazon.GameLift
 
 
         /// <summary>
+        /// <b>This API works with the following fleet types:</b> Anywhere
+        /// 
+        ///  
+        /// <para>
         /// Lists all custom and Amazon Web Services locations where Amazon GameLift Servers can
         /// host game servers. 
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// Note that if you call this API using a location that doesn't have a service endpoint,
@@ -8372,9 +8730,13 @@ namespace Amazon.GameLift
 
 
         /// <summary>
+        /// <b>This API works with the following fleet types:</b> EC2
+        /// 
+        ///  
+        /// <para>
         /// Retrieves script records for all Realtime scripts that are associated with the Amazon
         /// Web Services account in use. 
-        /// 
+        /// </para>
         ///  
         /// <para>
         ///  <b>Learn more</b> 
@@ -8443,11 +8805,15 @@ namespace Amazon.GameLift
 
 
         /// <summary>
+        /// <b>This API works with the following fleet types:</b> EC2, Anywhere, Container
+        /// 
+        ///  
+        /// <para>
         /// Retrieves all tags assigned to a Amazon GameLift Servers resource. Use resource tags
         /// to organize Amazon Web Services resources for a range of purposes. This operation
         /// handles the permissions necessary to manage tags for Amazon GameLift Servers resources
         /// that support tagging.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// To list tags for a resource, specify the unique ARN value for the resource.
@@ -8534,6 +8900,10 @@ namespace Amazon.GameLift
 
 
         /// <summary>
+        /// <b>This API works with the following fleet types:</b> EC2
+        /// 
+        ///  
+        /// <para>
         /// Creates or updates a scaling policy for a fleet. Scaling policies are used to automatically
         /// scale a fleet's hosting capacity to meet player demand. An active scaling policy instructs
         /// Amazon GameLift Servers to track a fleet metric and automatically change the fleet's
@@ -8541,7 +8911,7 @@ namespace Amazon.GameLift
         /// target-based and rule-based. Use a target-based policy to quickly and efficiently
         /// manage fleet scaling; this option is the most commonly used. Use rule-based policies
         /// when you need to exert fine-grained control over auto-scaling. 
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// Fleets can have multiple scaling policies of each type in force at the same time;
@@ -8686,8 +9056,12 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// Registers a compute resource in an Amazon GameLift Servers Anywhere fleet. 
+        /// <b>This API works with the following fleet types:</b> Anywhere, Container
         /// 
+        ///  
+        /// <para>
+        /// Registers a compute resource in an Amazon GameLift Servers Anywhere fleet. 
+        /// </para>
         ///  
         /// <para>
         /// For an Anywhere fleet that's running the Amazon GameLift Servers Agent, the Agent
@@ -8798,8 +9172,7 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// <b>This operation is used with the Amazon GameLift Servers FleetIQ solution and game
-        /// server groups.</b> 
+        /// <b>This API works with the following fleet types:</b> EC2 (FleetIQ)
         /// 
         ///  
         /// <para>
@@ -8890,10 +9263,14 @@ namespace Amazon.GameLift
 
 
         /// <summary>
+        /// <b>This API works with the following fleet types:</b> EC2
+        /// 
+        ///  
+        /// <para>
         /// Retrieves a fresh set of credentials for use when uploading a new set of game build
         /// files to Amazon GameLift Servers's Amazon S3. This is done as part of the build creation
         /// process; see <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateBuild.html">CreateBuild</a>.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// To request new credentials, specify the build ID as returned with an initial <c>CreateBuild</c>
@@ -8937,10 +9314,14 @@ namespace Amazon.GameLift
         RequestUploadCredentialsResponse RequestUploadCredentials(string buildId);
 
         /// <summary>
+        /// <b>This API works with the following fleet types:</b> EC2
+        /// 
+        ///  
+        /// <para>
         /// Retrieves a fresh set of credentials for use when uploading a new set of game build
         /// files to Amazon GameLift Servers's Amazon S3. This is done as part of the build creation
         /// process; see <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateBuild.html">CreateBuild</a>.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// To request new credentials, specify the build ID as returned with an initial <c>CreateBuild</c>
@@ -9015,9 +9396,13 @@ namespace Amazon.GameLift
 
 
         /// <summary>
+        /// <b>This API works with the following fleet types:</b> EC2, Anywhere, Container
+        /// 
+        ///  
+        /// <para>
         /// Attempts to retrieve a fleet ID that is associated with an alias. Specify a unique
         /// alias identifier.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// If the alias has a <c>SIMPLE</c> routing strategy, Amazon GameLift Servers returns
@@ -9061,9 +9446,13 @@ namespace Amazon.GameLift
         ResolveAliasResponse ResolveAlias(string aliasId);
 
         /// <summary>
+        /// <b>This API works with the following fleet types:</b> EC2, Anywhere, Container
+        /// 
+        ///  
+        /// <para>
         /// Attempts to retrieve a fleet ID that is associated with an alias. Specify a unique
         /// alias identifier.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// If the alias has a <c>SIMPLE</c> routing strategy, Amazon GameLift Servers returns
@@ -9138,8 +9527,7 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// <b>This operation is used with the Amazon GameLift Servers FleetIQ solution and game
-        /// server groups.</b> 
+        /// <b>This API works with the following fleet types:</b> EC2 (FleetIQ)
         /// 
         ///  
         /// <para>
@@ -9219,9 +9607,13 @@ namespace Amazon.GameLift
 
 
         /// <summary>
+        /// <b>This API works with the following fleet types:</b> EC2, Anywhere, Container
+        /// 
+        ///  
+        /// <para>
         /// Retrieves all active game sessions that match a set of search criteria and sorts them
         /// into a specified order. 
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// This operation is not designed to continually track game session status because that
@@ -9391,10 +9783,14 @@ namespace Amazon.GameLift
 
 
         /// <summary>
+        /// <b>This API works with the following fleet types:</b> EC2, Container
+        /// 
+        ///  
+        /// <para>
         /// Resumes certain types of activity on fleet instances that were suspended with <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StopFleetActions.html">StopFleetActions</a>.
         /// For multi-location fleets, fleet actions are managed separately for each location.
         /// Currently, this operation is used to restart a fleet's auto-scaling activity.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// This operation can be used in the following ways: 
@@ -9481,6 +9877,10 @@ namespace Amazon.GameLift
 
 
         /// <summary>
+        /// <b>This API works with the following fleet types:</b> EC2, Anywhere, Container
+        /// 
+        ///  
+        /// <para>
         /// Makes a request to start a new game session using a game session queue. When processing
         /// a placement request, Amazon GameLift Servers looks for the best possible available
         /// resource to host the game session, based on how the queue is configured to prioritize
@@ -9489,7 +9889,7 @@ namespace Amazon.GameLift
         /// placement request can include a list of players to create a set of player sessions.
         /// The request can also include information to pass to the new game session, such as
         /// to specify a game map or other options.
-        /// 
+        /// </para>
         ///  
         /// <para>
         ///  <b>Request options</b> 
@@ -9651,13 +10051,17 @@ namespace Amazon.GameLift
 
 
         /// <summary>
+        /// <b>This API works with the following fleet types:</b> EC2, Anywhere, Container
+        /// 
+        ///  
+        /// <para>
         /// Finds new players to fill open slots in currently running game sessions. The backfill
         /// match process is essentially identical to the process of forming new matches. Backfill
         /// requests use the same matchmaker that was used to make the original match, and they
         /// provide matchmaking data for all players currently in the game session. FlexMatch
         /// uses this information to select new players so that backfilled match continues to
         /// meet the original match requirements. 
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// When using FlexMatch with Amazon GameLift Servers managed hosting, you can request
@@ -9761,6 +10165,10 @@ namespace Amazon.GameLift
 
 
         /// <summary>
+        /// <b>This API works with the following fleet types:</b> EC2, Anywhere, Container
+        /// 
+        ///  
+        /// <para>
         /// Uses FlexMatch to create a game match for a group of players based on custom matchmaking
         /// rules. With games that use Amazon GameLift Servers managed hosting, this operation
         /// also triggers Amazon GameLift Servers to find hosting resources and start a new game
@@ -9769,7 +10177,7 @@ namespace Amazon.GameLift
         /// multiple players, FlexMatch attempts to build a match that includes all players in
         /// the request, placing them in the same team and finding additional players as needed
         /// to fill the match. 
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// To start matchmaking, provide a unique ticket ID, specify a matchmaking configuration,
@@ -9857,10 +10265,14 @@ namespace Amazon.GameLift
 
 
         /// <summary>
+        /// <b>This API works with the following fleet types:</b> EC2, Container
+        /// 
+        ///  
+        /// <para>
         /// Suspends certain types of activity in a fleet location. Currently, this operation
         /// is used to stop auto-scaling activity. For multi-location fleets, fleet actions are
         /// managed separately for each location. 
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// Stopping fleet actions has several potential purposes. It allows you to temporarily
@@ -9954,9 +10366,13 @@ namespace Amazon.GameLift
 
 
         /// <summary>
+        /// <b>This API works with the following fleet types:</b> EC2, Anywhere, Container
+        /// 
+        ///  
+        /// <para>
         /// Cancels a game session placement that's in <c>PENDING</c> status. To stop a placement,
         /// provide the placement ID value. 
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// Results
@@ -10026,10 +10442,14 @@ namespace Amazon.GameLift
 
 
         /// <summary>
+        /// <b>This API works with the following fleet types:</b> EC2, Anywhere, Container
+        /// 
+        ///  
+        /// <para>
         /// Cancels a matchmaking ticket or match backfill ticket that is currently being processed.
         /// To stop the matchmaking operation, specify the ticket ID. If successful, work on the
         /// ticket is stopped, and the ticket status is changed to <c>CANCELLED</c>.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// This call is also used to turn off automatic backfill for an individual game session.
@@ -10105,8 +10525,7 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// <b>This operation is used with the Amazon GameLift Servers FleetIQ solution and game
-        /// server groups.</b> 
+        /// <b>This API works with the following fleet types:</b> EC2 (FleetIQ)
         /// 
         ///  
         /// <para>
@@ -10193,12 +10612,16 @@ namespace Amazon.GameLift
 
 
         /// <summary>
+        /// <b>This API works with the following fleet types:</b> EC2, Anywhere, Container
+        /// 
+        ///  
+        /// <para>
         /// Assigns a tag to an Amazon GameLift Servers resource. You can use tags to organize
         /// resources, create IAM permissions policies to manage access to groups of resources,
         /// customize Amazon Web Services cost breakdowns, and more. This operation handles the
         /// permissions necessary to manage tags for Amazon GameLift Servers resources that support
         /// tagging.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// To add a tag to a resource, specify the unique ARN value for the resource and provide
@@ -10287,6 +10710,10 @@ namespace Amazon.GameLift
 
 
         /// <summary>
+        /// <b>This API works with the following fleet types:</b> EC2, Anywhere, Container
+        /// 
+        ///  
+        /// <para>
         /// Ends a game session that's currently in progress. Use this action to terminate any
         /// game session that isn't in <c>ERROR</c> status. Terminating a game session is the
         /// most efficient way to free up a server process when it's hosting a game session that's
@@ -10294,7 +10721,7 @@ namespace Amazon.GameLift
         /// session that's being hosted on any type of Amazon GameLift Servers fleet compute,
         /// including computes for managed EC2, managed container, and Anywhere fleets. The game
         /// server must be integrated with Amazon GameLift Servers server SDK 5.x or greater.
-        /// 
+        /// </para>
         ///  
         /// <para>
         ///  <b>Request options</b> 
@@ -10415,11 +10842,15 @@ namespace Amazon.GameLift
 
 
         /// <summary>
+        /// <b>This API works with the following fleet types:</b> EC2, Anywhere, Container
+        /// 
+        ///  
+        /// <para>
         /// Removes a tag assigned to a Amazon GameLift Servers resource. You can use resource
         /// tags to organize Amazon Web Services resources for a range of purposes. This operation
         /// handles the permissions necessary to manage tags for Amazon GameLift Servers resources
         /// that support tagging.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// To remove a tag from a resource, specify the unique ARN value for the resource and
@@ -10508,10 +10939,18 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// Updates properties for an alias. Specify the unique identifier of the alias to be
-        /// updated and the new property values. When reassigning an alias to a new fleet, provide
-        /// an updated routing strategy. If successful, the updated alias record is returned.
+        /// <b>This API works with the following fleet types:</b> EC2, Anywhere, Container
         /// 
+        ///  
+        /// <para>
+        /// Updates properties for an alias. Specify the unique identifier of the alias to be
+        /// updated and the new property values.
+        /// </para>
+        ///  
+        /// <para>
+        /// When reassigning an alias to a new fleet, provide an updated routing strategy. If
+        /// successful, the updated alias record is returned.
+        /// </para>
         ///  
         /// <para>
         ///  <b>Related actions</b> 
@@ -10575,10 +11014,14 @@ namespace Amazon.GameLift
 
 
         /// <summary>
+        /// <b>This API works with the following fleet types:</b> EC2
+        /// 
+        ///  
+        /// <para>
         /// Updates metadata in a build resource, including the build name and version. To update
         /// the metadata, specify the build ID to update and provide the new values. If successful,
         /// a build object containing the updated metadata is returned.
-        /// 
+        /// </para>
         ///  
         /// <para>
         ///  <b>Learn more</b> 
@@ -10647,11 +11090,24 @@ namespace Amazon.GameLift
 
 
         /// <summary>
+        /// <b>This API works with the following fleet types:</b> Container
+        /// 
+        ///  
+        /// <para>
         /// Updates the properties of a managed container fleet. Depending on the properties being
         /// updated, this operation might initiate a fleet deployment. You can track deployments
         /// for a fleet using <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetDeployment.html">https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetDeployment.html</a>.
-        /// 
-        ///  
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// A managed fleet's runtime environment, which depends on the fleet's Amazon Machine
+        /// Image {AMI} version, can't be updated. You must create a new fleet. As a best practice,
+        /// we recommend replacing your managed fleets every 30 days to maintain a secure and
+        /// up-to-date runtime environment for your hosted game servers. For guidance, see <a
+        /// href="https://docs.aws.amazon.com/gameliftservers/latest/developerguide/security-best-practices.html">
+        /// Security best practices for Amazon GameLift Servers</a>.
+        /// </para>
+        ///  </note> 
         /// <para>
         ///  <b>Request options</b> 
         /// </para>
@@ -10783,10 +11239,14 @@ namespace Amazon.GameLift
 
 
         /// <summary>
+        /// <b>This API works with the following fleet types:</b> Container
+        /// 
+        ///  
+        /// <para>
         /// Updates properties in an existing container group definition. This operation doesn't
         /// replace the definition. Instead, it creates a new version of the definition and saves
         /// it separately. You can access all versions that you choose to retain.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// The only property you can't update is the container group type.
@@ -10900,16 +11360,29 @@ namespace Amazon.GameLift
 
 
         /// <summary>
+        /// <b>This API works with the following fleet types:</b> EC2, Anywhere, Container
+        /// 
+        ///  
+        /// <para>
         /// Updates a fleet's mutable attributes, such as game session protection and resource
         /// creation limits.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// To update fleet attributes, specify the fleet ID and the property values that you
         /// want to change. If successful, Amazon GameLift Servers returns the identifiers for
         /// the updated fleet.
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        /// A managed fleet's runtime environment, which depends on the fleet's Amazon Machine
+        /// Image {AMI} version, can't be updated. You must create a new fleet. As a best practice,
+        /// we recommend replacing your managed fleets every 30 days to maintain a secure and
+        /// up-to-date runtime environment for your hosted game servers. For guidance, see <a
+        /// href="https://docs.aws.amazon.com/gameliftservers/latest/developerguide/security-best-practices.html">
+        /// Security best practices for Amazon GameLift Servers</a>.
+        /// </para>
+        ///  </note> 
         /// <para>
         ///  <b>Learn more</b> 
         /// </para>
@@ -10984,12 +11457,16 @@ namespace Amazon.GameLift
 
 
         /// <summary>
+        /// <b>This API works with the following fleet types:</b> EC2, Container
+        /// 
+        ///  
+        /// <para>
         /// Updates capacity settings for a managed EC2 fleet or managed container fleet. For
         /// these fleets, you adjust capacity by changing the number of instances in the fleet.
         /// Fleet capacity determines the number of game sessions and players that the fleet can
         /// host based on its configuration. For fleets with multiple locations, use this operation
         /// to manage capacity settings in each location individually.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// Use this operation to set these fleet capacity properties: 
@@ -11110,9 +11587,13 @@ namespace Amazon.GameLift
 
 
         /// <summary>
+        /// <b>This API works with the following fleet types:</b> EC2, Container
+        /// 
+        ///  
+        /// <para>
         /// Updates permissions that allow inbound traffic to connect to game sessions in the
         /// fleet. 
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// To update settings, specify the fleet ID to be updated and specify the changes to
@@ -11202,8 +11683,7 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// <b>This operation is used with the Amazon GameLift Servers FleetIQ solution and game
-        /// server groups.</b> 
+        /// <b>This API works with the following fleet types:</b> EC2 (FleetIQ)
         /// 
         ///  
         /// <para>
@@ -11304,8 +11784,7 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// <b>This operation is used with the Amazon GameLift Servers FleetIQ solution and game
-        /// server groups.</b> 
+        /// <b>This API works with the following fleet types:</b> EC2 (FleetIQ)
         /// 
         ///  
         /// <para>
@@ -11384,8 +11863,12 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// Updates the mutable properties of a game session. 
+        /// <b>This API works with the following fleet types:</b> EC2, Anywhere, Container
         /// 
+        ///  
+        /// <para>
+        /// Updates the mutable properties of a game session. 
+        /// </para>
         ///  
         /// <para>
         /// To update a game session, specify the game session ID and the values you want to change.
@@ -11425,6 +11908,12 @@ namespace Amazon.GameLift
         /// The requested resources was not found. The resource was either not created yet or
         /// deleted.
         /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.NotReadyException">
+        /// The operation failed because Amazon GameLift Servers has not yet finished validating
+        /// this compute. We recommend attempting 8 to 10 retries over 3 to 5 minutes with <a
+        /// href="http://aws.amazon.com/blogs/https:/aws.amazon.com/blogs/architecture/exponential-backoff-and-jitter/">exponential
+        /// backoffs and jitter</a>.
+        /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
@@ -11463,11 +11952,15 @@ namespace Amazon.GameLift
 
 
         /// <summary>
+        /// <b>This API works with the following fleet types:</b> EC2, Anywhere, Container
+        /// 
+        ///  
+        /// <para>
         /// Updates the configuration of a game session queue, which determines how the queue
         /// processes new game session requests. To update settings, specify the queue name to
         /// be updated and provide the new settings. When updating destinations, provide a complete
         /// list of destinations. 
-        /// 
+        /// </para>
         ///  
         /// <para>
         ///  <b>Learn more</b> 
@@ -11531,10 +12024,14 @@ namespace Amazon.GameLift
 
 
         /// <summary>
+        /// <b>This API works with the following fleet types:</b> EC2, Anywhere, Container
+        /// 
+        ///  
+        /// <para>
         /// Updates settings for a FlexMatch matchmaking configuration. These changes affect all
         /// matches and game sessions that are created after the update. To update settings, specify
         /// the configuration name to be updated and provide the new settings. 
-        /// 
+        /// </para>
         ///  
         /// <para>
         ///  <b>Learn more</b> 
@@ -11598,11 +12095,15 @@ namespace Amazon.GameLift
 
 
         /// <summary>
+        /// <b>This API works with the following fleet types:</b> EC2
+        /// 
+        ///  
+        /// <para>
         /// Updates the runtime configuration for the specified fleet. The runtime configuration
         /// tells Amazon GameLift Servers how to launch server processes on computes in managed
         /// EC2 and Anywhere fleets. You can update a fleet's runtime configuration at any time
         /// after the fleet is created; it does not need to be in <c>ACTIVE</c> status.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// To update runtime configuration, specify the fleet ID and provide a <c>RuntimeConfiguration</c>
@@ -11687,8 +12188,12 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// Updates Realtime script metadata and content.
+        /// <b>This API works with the following fleet types:</b> EC2
         /// 
+        ///  
+        /// <para>
+        /// Updates Realtime script metadata and content.
+        /// </para>
         ///  
         /// <para>
         /// To update script metadata, specify the script ID and provide updated name and/or version
@@ -11780,10 +12285,14 @@ namespace Amazon.GameLift
 
 
         /// <summary>
+        /// <b>This API works with the following fleet types:</b> EC2, Anywhere, Container
+        /// 
+        ///  
+        /// <para>
         /// Validates the syntax of a matchmaking rule or rule set. This operation checks that
         /// the rule set is using syntactically correct JSON and that it conforms to allowed property
         /// expressions. To validate syntax, provide a rule set JSON string.
-        /// 
+        /// </para>
         ///  
         /// <para>
         ///  <b>Learn more</b> 

@@ -31,10 +31,14 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeFleetAttributes operation.
+    /// <b>This API works with the following fleet types:</b> EC2, Anywhere, Container
+    /// 
+    ///  
+    /// <para>
     /// Retrieves core fleet-wide properties for fleets in an Amazon Web Services Region.
     /// Properties include the computing hardware and deployment configuration for instances
     /// in the fleet.
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// You can use this operation in the following ways: 

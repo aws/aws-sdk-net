@@ -109,8 +109,16 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property ComputeStatus. 
         /// <para>
         /// Current status of the compute. A compute must have an <c>ACTIVE</c> status to host
-        /// game sessions.
+        /// game sessions. Valid values include <c>PENDING</c>, <c>ACTIVE</c>, <c>TERMINATING</c>,
+        /// and <c>IMPAIRED</c>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// While the ComputeStatus enum type is valid for Container based servers, the result
+        /// may also include other non-enumerated string values such as "Active" for fleets which
+        /// are not Container-based.
+        /// </para>
+        ///  </note>
         /// </summary>
         public ComputeStatus ComputeStatus
         {

@@ -31,10 +31,14 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the StartFleetActions operation.
+    /// <b>This API works with the following fleet types:</b> EC2, Container
+    /// 
+    ///  
+    /// <para>
     /// Resumes certain types of activity on fleet instances that were suspended with <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StopFleetActions.html">StopFleetActions</a>.
     /// For multi-location fleets, fleet actions are managed separately for each location.
     /// Currently, this operation is used to restart a fleet's auto-scaling activity.
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// This operation can be used in the following ways: 

@@ -31,8 +31,12 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeScalingPolicies operation.
-    /// Retrieves all scaling policies applied to a fleet.
+    /// <b>This API works with the following fleet types:</b> EC2
     /// 
+    ///  
+    /// <para>
+    /// Retrieves all scaling policies applied to a fleet.
+    /// </para>
     ///  
     /// <para>
     /// To get a fleet's scaling policies, specify the fleet ID. You can filter this request

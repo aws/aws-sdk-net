@@ -31,8 +31,7 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the SuspendGameServerGroup operation.
-    /// <b>This operation is used with the Amazon GameLift Servers FleetIQ solution and game
-    /// server groups.</b> 
+    /// <b>This API works with the following fleet types:</b> EC2 (FleetIQ)
     /// 
     ///  
     /// <para>

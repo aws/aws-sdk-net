@@ -31,10 +31,14 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateMatchmakingConfiguration operation.
+    /// <b>This API works with the following fleet types:</b> EC2, Anywhere, Container
+    /// 
+    ///  
+    /// <para>
     /// Updates settings for a FlexMatch matchmaking configuration. These changes affect all
     /// matches and game sessions that are created after the update. To update settings, specify
     /// the configuration name to be updated and provide the new settings. 
-    /// 
+    /// </para>
     ///  
     /// <para>
     ///  <b>Learn more</b> 

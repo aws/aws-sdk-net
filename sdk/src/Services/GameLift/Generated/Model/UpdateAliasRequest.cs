@@ -31,10 +31,18 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateAlias operation.
-    /// Updates properties for an alias. Specify the unique identifier of the alias to be
-    /// updated and the new property values. When reassigning an alias to a new fleet, provide
-    /// an updated routing strategy. If successful, the updated alias record is returned.
+    /// <b>This API works with the following fleet types:</b> EC2, Anywhere, Container
     /// 
+    ///  
+    /// <para>
+    /// Updates properties for an alias. Specify the unique identifier of the alias to be
+    /// updated and the new property values.
+    /// </para>
+    ///  
+    /// <para>
+    /// When reassigning an alias to a new fleet, provide an updated routing strategy. If
+    /// successful, the updated alias record is returned.
+    /// </para>
     ///  
     /// <para>
     ///  <b>Related actions</b> 
