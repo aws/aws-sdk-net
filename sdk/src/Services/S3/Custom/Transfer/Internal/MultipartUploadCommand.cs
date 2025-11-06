@@ -49,7 +49,6 @@ namespace Amazon.S3.Transfer.Internal
         long _totalTransferredBytes;
         Queue<UploadPartRequest> _partsToUpload = new Queue<UploadPartRequest>();
 
-
         long _contentLength;
         private static Logger Logger
         {
@@ -81,11 +80,12 @@ namespace Amazon.S3.Transfer.Internal
             this._s3Client = s3Client;
             this._fileTransporterRequest = fileTransporterRequest;
             this._contentLength = this._fileTransporterRequest.ContentLength;
+            
+            long targetPartSize = fileTransporterRequest.IsSetPartSize() 
+                ? fileTransporterRequest.PartSize 
+                : S3Constants.DefaultPartSize;
 
-            if (fileTransporterRequest.IsSetPartSize())
-                this._partSize = fileTransporterRequest.PartSize;
-            else
-                this._partSize = calculatePartSize(this._contentLength);
+            this._partSize = calculatePartSize(this._contentLength, targetPartSize);
 
             if (fileTransporterRequest.InputStream != null)
             {
@@ -98,15 +98,9 @@ namespace Amazon.S3.Transfer.Internal
             Logger.DebugFormat("Upload part size {0}.", this._partSize);
         }
 
-        private static long calculatePartSize(long fileSize)
+        private static long calculatePartSize(long contentLength, long targetPartSize)
         {
-            double partSize = Math.Ceiling((double)fileSize / S3Constants.MaxNumberOfParts);
-            if (partSize < S3Constants.MinPartSize)
-            {
-                partSize = S3Constants.MinPartSize;
-            }
-
-            return (long)partSize;
+            return Math.Max(targetPartSize, contentLength / S3Constants.MaxNumberOfParts);
         }
 
         private string determineContentType()
@@ -152,12 +146,12 @@ namespace Amazon.S3.Transfer.Internal
             return threadCount;
         }
 
-        private CompleteMultipartUploadRequest ConstructCompleteMultipartUploadRequest(InitiateMultipartUploadResponse initResponse)
+        internal CompleteMultipartUploadRequest ConstructCompleteMultipartUploadRequest(InitiateMultipartUploadResponse initResponse)
         {
             return ConstructCompleteMultipartUploadRequest(initResponse, false, null);
         }
 
-        private CompleteMultipartUploadRequest ConstructCompleteMultipartUploadRequest(InitiateMultipartUploadResponse initResponse, bool skipPartValidation, RequestEventHandler requestEventHandler)
+        internal CompleteMultipartUploadRequest ConstructCompleteMultipartUploadRequest(InitiateMultipartUploadResponse initResponse, bool skipPartValidation, RequestEventHandler requestEventHandler)
         {
             if (!skipPartValidation)
             {
@@ -182,6 +176,7 @@ namespace Amazon.S3.Transfer.Internal
                 ChecksumCRC64NVME = this._fileTransporterRequest.ChecksumCRC64NVME,
                 ChecksumSHA1 = this._fileTransporterRequest.ChecksumSHA1,
                 ChecksumSHA256 = this._fileTransporterRequest.ChecksumSHA256,
+                ExpectedBucketOwner = this._fileTransporterRequest.ExpectedBucketOwner,
             };
 
             if(this._fileTransporterRequest.ServerSideEncryptionCustomerMethod != null 
@@ -215,17 +210,30 @@ namespace Amazon.S3.Transfer.Internal
             return compRequest;
         }
 
-        private UploadPartRequest ConstructUploadPartRequest(int partNumber, long filePosition, InitiateMultipartUploadResponse initiateResponse)
+        private bool calculateIsLastPart(long remainingBytes)
+        {
+            var isLastPart = false;
+            if (remainingBytes <= this._partSize)
+                isLastPart = true;
+            return isLastPart;
+        }
+
+        internal UploadPartRequest ConstructUploadPartRequest(int partNumber, long filePosition, InitiateMultipartUploadResponse initiateResponse)
         {
             UploadPartRequest uploadPartRequest = ConstructGenericUploadPartRequest(initiateResponse);
 
+            // Calculating how many bytes are remaining to be uploaded from the current part.
+            // This is mainly used for the last part scenario.
+            var remainingBytes = this._contentLength - filePosition;
+            // We then check based on the remaining bytes and the content length if this is the last part.
+            var isLastPart = calculateIsLastPart(remainingBytes);
             uploadPartRequest.PartNumber = partNumber;
-            uploadPartRequest.PartSize = this._partSize;
+            uploadPartRequest.PartSize = isLastPart ? remainingBytes : this._partSize;
+            uploadPartRequest.IsLastPart = isLastPart;
 
-            if ((filePosition + this._partSize >= this._contentLength)
+            if (isLastPart
                 && _s3Client is Amazon.S3.Internal.IAmazonS3Encryption)
             {
-                uploadPartRequest.IsLastPart = true;
                 uploadPartRequest.PartSize = 0;
             }
 
@@ -246,7 +254,7 @@ namespace Amazon.S3.Transfer.Internal
             return uploadPartRequest;
         }
 
-        private UploadPartRequest ConstructGenericUploadPartRequest(InitiateMultipartUploadResponse initiateResponse)
+        internal UploadPartRequest ConstructGenericUploadPartRequest(InitiateMultipartUploadResponse initiateResponse)
         {
             UploadPartRequest uploadPartRequest = new UploadPartRequest()
             {
@@ -259,7 +267,8 @@ namespace Amazon.S3.Transfer.Internal
                 DisableDefaultChecksumValidation = this._fileTransporterRequest.DisableDefaultChecksumValidation,
                 DisablePayloadSigning = this._fileTransporterRequest.DisablePayloadSigning,
                 ChecksumAlgorithm = this._fileTransporterRequest.ChecksumAlgorithm,
-                RequestPayer = this._fileTransporterRequest.RequestPayer
+                RequestPayer = this._fileTransporterRequest.RequestPayer,
+                ExpectedBucketOwner = this._fileTransporterRequest.ExpectedBucketOwner,
             };
 
             // If the InitiateMultipartUploadResponse indicates that this upload is using KMS, force SigV4 for each UploadPart request
@@ -270,7 +279,7 @@ namespace Amazon.S3.Transfer.Internal
             return uploadPartRequest;
         }
 
-        private UploadPartRequest ConstructUploadPartRequestForNonSeekableStream(Stream inputStream, int partNumber, long partSize, bool isLastPart, InitiateMultipartUploadResponse initiateResponse)
+        internal UploadPartRequest ConstructUploadPartRequestForNonSeekableStream(Stream inputStream, int partNumber, long partSize, bool isLastPart, InitiateMultipartUploadResponse initiateResponse)
         {
             UploadPartRequest uploadPartRequest = ConstructGenericUploadPartRequest(initiateResponse);
             
@@ -290,12 +299,12 @@ namespace Amazon.S3.Transfer.Internal
             return uploadPartRequest;
         }
 
-        private InitiateMultipartUploadRequest ConstructInitiateMultipartUploadRequest()
+        internal InitiateMultipartUploadRequest ConstructInitiateMultipartUploadRequest()
         {
             return this.ConstructInitiateMultipartUploadRequest(null);
         }
 
-        private InitiateMultipartUploadRequest ConstructInitiateMultipartUploadRequest(RequestEventHandler requestEventHandler)
+        internal InitiateMultipartUploadRequest ConstructInitiateMultipartUploadRequest(RequestEventHandler requestEventHandler)
         {
             var initRequest = new InitiateMultipartUploadRequest()
             {
@@ -309,11 +318,17 @@ namespace Amazon.S3.Transfer.Internal
                 ServerSideEncryptionCustomerMethod = this._fileTransporterRequest.ServerSideEncryptionCustomerMethod,
                 ServerSideEncryptionCustomerProvidedKey = this._fileTransporterRequest.ServerSideEncryptionCustomerProvidedKey,
                 ServerSideEncryptionCustomerProvidedKeyMD5 = this._fileTransporterRequest.ServerSideEncryptionCustomerProvidedKeyMD5,
+                ServerSideEncryptionKeyManagementServiceEncryptionContext = this._fileTransporterRequest.SSEKMSEncryptionContext,
                 TagSet = this._fileTransporterRequest.TagSet,
                 ChecksumAlgorithm = this._fileTransporterRequest.ChecksumAlgorithm,
                 ObjectLockLegalHoldStatus = this._fileTransporterRequest.ObjectLockLegalHoldStatus,
                 ObjectLockMode = this._fileTransporterRequest.ObjectLockMode,
-                RequestPayer = this._fileTransporterRequest.RequestPayer
+                RequestPayer = this._fileTransporterRequest.RequestPayer,
+                ExpectedBucketOwner = this._fileTransporterRequest.ExpectedBucketOwner,
+                Grants = this._fileTransporterRequest.Grants,
+                Metadata = this._fileTransporterRequest.Metadata,
+                WebsiteRedirectLocation = this._fileTransporterRequest.WebsiteRedirectLocation,
+                BucketKeyEnabled = this._fileTransporterRequest.BucketKeyEnabled,
             };
 
             if (this._fileTransporterRequest.IsSetObjectLockRetainUntilDate())
