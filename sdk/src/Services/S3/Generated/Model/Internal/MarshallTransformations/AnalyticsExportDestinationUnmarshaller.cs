@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -12,67 +12,78 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the s3-2006-03-01.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.S3.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// AnalyticsExportDestinationUnmarshaller
-    /// </summary>
-    public class AnalyticsExportDestinationUnmarshaller : IXmlUnmarshaller<AnalyticsExportDestination, XmlUnmarshallerContext>
+    /// Response Unmarshaller for AnalyticsExportDestination Object
+    /// </summary>  
+    public partial class AnalyticsExportDestinationUnmarshaller : IXmlUnmarshaller<AnalyticsExportDestination, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
-        /// </summary>
+        /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
         public AnalyticsExportDestination Unmarshall(XmlUnmarshallerContext context)
         {
-            AnalyticsExportDestination AnalyticsExportDestination = new AnalyticsExportDestination();
+            AnalyticsExportDestination unmarshalledObject = new AnalyticsExportDestination();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
-
-            if (context.IsStartOfDocument)
-                targetDepth += 2;
-
+            
+            if (context.IsStartOfDocument) 
+               targetDepth += 2;
+            
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
                     if (context.TestExpression("S3BucketDestination", targetDepth))
                     {
-                        AnalyticsExportDestination.S3BucketDestination = AnalyticsS3BucketDestinationUnmarshaller.Instance.Unmarshall(context);
-
+                        var unmarshaller = AnalyticsS3BucketDestinationUnmarshaller.Instance;
+                        unmarshalledObject.S3BucketDestination = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return AnalyticsExportDestination;
+                    return unmarshalledObject;
                 }
-            }
-
-
-
-            return AnalyticsExportDestination;
+            }          
+            return unmarshalledObject;
         }
 
-        private static AnalyticsExportDestinationUnmarshaller _instance;
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, AnalyticsExportDestination unmarshalledObject, int targetDepth);
+
+        private static AnalyticsExportDestinationUnmarshaller _instance = new AnalyticsExportDestinationUnmarshaller();        
 
         /// <summary>
-        /// Singleton for the unmarshaller
-        /// </summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static AnalyticsExportDestinationUnmarshaller Instance
         {
             get
             {
-                if (_instance == null)
-                {
-                    _instance = new AnalyticsExportDestinationUnmarshaller();
-                }
                 return _instance;
             }
         }

@@ -24,49 +24,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// Get BucketAnalyticsConfiguration Request Marshaller
     /// </summary>    
-    public class GetBucketAnalyticsConfigurationRequestMarshaller : IMarshaller<IRequest, GetBucketAnalyticsConfigurationRequest>, IMarshaller<IRequest, Amazon.Runtime.AmazonWebServiceRequest>
+    public partial class GetBucketAnalyticsConfigurationRequestMarshaller : IMarshaller<IRequest, GetBucketAnalyticsConfigurationRequest>, IMarshaller<IRequest, Amazon.Runtime.AmazonWebServiceRequest>
     {
-        public IRequest Marshall(Amazon.Runtime.AmazonWebServiceRequest input)
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, GetBucketAnalyticsConfigurationRequest publicRequest)
         {
-            return this.Marshall((GetBucketAnalyticsConfigurationRequest)input);
-        }
-
-        public IRequest Marshall(GetBucketAnalyticsConfigurationRequest getAnalyticsConfigurationRequest)
-        {
-            IRequest request = new DefaultRequest(getAnalyticsConfigurationRequest, "AmazonS3");
-
-            request.Suppress404Exceptions = true;
-            request.HttpMethod = "GET";
-
-            if (getAnalyticsConfigurationRequest.IsSetExpectedBucketOwner())
-                request.Headers.Add(S3Constants.AmzHeaderExpectedBucketOwner, S3Transforms.ToStringValue(getAnalyticsConfigurationRequest.ExpectedBucketOwner));
-
-            if (string.IsNullOrEmpty(getAnalyticsConfigurationRequest.BucketName))
-                throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "GetBucketAnalyticsConfigurationRequest.BucketName");
-
-            request.ResourcePath = "/";
-            request.AddSubResource("analytics");
-            request.AddSubResource("id", getAnalyticsConfigurationRequest.AnalyticsId);
-            request.UseQueryString = true;
-
-            return request;
-        }
-
-        private static GetBucketAnalyticsConfigurationRequestMarshaller _instance;
-
-        /// <summary>
-        /// Singleton for marshaller
-        /// </summary>
-        public static GetBucketAnalyticsConfigurationRequestMarshaller Instance
-        {
-            get
-            {
-                if (_instance == null)
-                {
-                    _instance = new GetBucketAnalyticsConfigurationRequestMarshaller();
-                }
-                return _instance;
-            }
+            defaultRequest.Suppress404Exceptions = true;
         }
     }
 }
