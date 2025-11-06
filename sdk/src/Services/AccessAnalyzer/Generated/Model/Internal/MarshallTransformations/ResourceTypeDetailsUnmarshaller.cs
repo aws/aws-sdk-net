@@ -72,6 +72,12 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
                     unmarshalledObject.TotalActiveCrossAccount = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("totalActiveErrors", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.TotalActiveErrors = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("totalActivePublic", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

@@ -36,6 +36,7 @@ namespace Amazon.AccessAnalyzer.Model
     public partial class ResourceTypeDetails
     {
         private int? _totalActiveCrossAccount;
+        private int? _totalActiveErrors;
         private int? _totalActivePublic;
 
         /// <summary>
@@ -54,6 +55,24 @@ namespace Amazon.AccessAnalyzer.Model
         internal bool IsSetTotalActiveCrossAccount()
         {
             return this._totalActiveCrossAccount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TotalActiveErrors. 
+        /// <para>
+        /// The total number of active errors for the resource type.
+        /// </para>
+        /// </summary>
+        public int TotalActiveErrors
+        {
+            get { return this._totalActiveErrors.GetValueOrDefault(); }
+            set { this._totalActiveErrors = value; }
+        }
+
+        // Check to see if TotalActiveErrors property is set
+        internal bool IsSetTotalActiveErrors()
+        {
+            return this._totalActiveErrors.HasValue; 
         }
 
         /// <summary>

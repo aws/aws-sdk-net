@@ -68,7 +68,10 @@ namespace Amazon.AccessAnalyzer.Model
         /// Gets and sets the property Configuration. 
         /// <para>
         /// Specifies if the analyzer is an external access, unused access, or internal access
-        /// analyzer.
+        /// analyzer. The <a href="https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_GetAnalyzer.html">GetAnalyzer</a>
+        /// action includes this property in its response if a configuration is specified, while
+        /// the <a href="https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_ListAnalyzers.html">ListAnalyzers</a>
+        /// action omits it.
         /// </para>
         /// </summary>
         public AnalyzerConfiguration Configuration
@@ -206,7 +209,18 @@ namespace Amazon.AccessAnalyzer.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags added to the analyzer.
+        /// An array of key-value pairs applied to the analyzer. The key-value pairs consist of
+        /// the set of Unicode letters, digits, whitespace, <c>_</c>, <c>.</c>, <c>/</c>, <c>=</c>,
+        /// <c>+</c>, and <c>-</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The tag key is a value that is 1 to 128 characters in length and cannot be prefixed
+        /// with <c>aws:</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The tag value is a value that is 0 to 256 characters in length.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Tags
@@ -224,7 +238,7 @@ namespace Amazon.AccessAnalyzer.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of analyzer, which corresponds to the zone of trust chosen for the analyzer.
+        /// The type represents the zone of trust or scope for the analyzer.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
