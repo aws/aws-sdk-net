@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -13,10 +13,20 @@
  * permissions and limitations under the License.
  */
 
-
+/*
+ * Do not modify this file. This file is generated from the s3-2006-03-01.normal.json service model.
+ */
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+
+using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.S3.Model
 {
     /// <summary>
@@ -25,7 +35,7 @@ namespace Amazon.S3.Model
     ///  <note> 
     /// <para>
     ///  <b>Directory buckets</b> - These session credentials are only supported for the authentication
-    /// and authorization of Zonal endpoint APIs on directory buckets.
+    /// and authorization of Zonal endpoint API operations on directory buckets.
     /// </para>
     ///  </note>
     /// </summary>
@@ -44,7 +54,7 @@ namespace Amazon.S3.Model
         /// requests cryptographically. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required = true)]
+        [AWSProperty(Required=true)]
         public string AccessKeyId
         {
             get { return this._accessKeyId; }
@@ -66,7 +76,7 @@ namespace Amazon.S3.Model
         /// extended or refreshed beyond the original specified interval.
         /// </para>
         /// </summary>
-        [AWSProperty(Required = true)]
+        [AWSProperty(Required=true)]
         public DateTime? Expiration
         {
             get { return this._expiration; }
@@ -76,7 +86,7 @@ namespace Amazon.S3.Model
         // Check to see if Expiration property is set
         internal bool IsSetExpiration()
         {
-            return this._expiration.HasValue;
+            return this._expiration.HasValue; 
         }
 
         /// <summary>
@@ -87,7 +97,7 @@ namespace Amazon.S3.Model
         /// from being altered. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required = true, Sensitive = true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public string SecretAccessKey
         {
             get { return this._secretAccessKey; }
@@ -107,7 +117,7 @@ namespace Amazon.S3.Model
         /// the temporary security credentials. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required = true, Sensitive = true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public string SessionToken
         {
             get { return this._sessionToken; }

@@ -871,6 +871,42 @@
                     "MetricsId":{"injectXmlIsSet":["return !string.IsNullOrEmpty(this._metricsId);"]}
                 }
             ]
+        },
+        "CreateSessionRequest":{
+            "modify" :[
+                {
+                    "ServerSideEncryption": {
+                        "injectXmlIsSet" :[
+                            "return this._serverSideEncryption != null && this._serverSideEncryption != ServerSideEncryptionMethod.None;"
+                        ]
+                    }
+                },
+                {
+                    "SSEKMSKeyId":{
+                        "injectXmlIsSet":[
+                            "return !string.IsNullOrEmpty(this._ssekmsKeyId);"
+                        ]
+                    }
+                },
+                {
+                    "SSEKMSEncryptionContext":{
+                        "injectXmlIsSet":[
+                            "return !string.IsNullOrEmpty(this._ssekmsEncryptionContext);"
+                        ]
+                    }
+                }
+            ]
+        },
+        "CreateSessionOutput":{
+            "modify" :[
+                {
+                    "ServerSideEncryption": {
+                        "injectXmlIsSet" :[
+                            "return this._serverSideEncryption != null && this._serverSideEncryption != ServerSideEncryptionMethod.None;"
+                        ]
+                    }
+                }
+            ]
         }
     },
     "operationModifiers": {
