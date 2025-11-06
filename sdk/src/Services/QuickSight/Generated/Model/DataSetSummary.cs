@@ -42,6 +42,7 @@ namespace Amazon.QuickSight.Model
         private DateTime? _lastUpdatedTime;
         private string _name;
         private RowLevelPermissionDataSet _rowLevelPermissionDataSet;
+        private Dictionary<string, RowLevelPermissionDataSet> _rowLevelPermissionDataSetMap = AWSConfigs.InitializeCollections ? new Dictionary<string, RowLevelPermissionDataSet>() : null;
         private bool? _rowLevelPermissionTagConfigurationApplied;
         private DataSetUseAs _useAs;
 
@@ -175,7 +176,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property RowLevelPermissionDataSet. 
         /// <para>
-        /// The row-level security configuration for the dataset.
+        /// The row-level security configuration for the dataset in the legacy data preparation
+        /// experience.
         /// </para>
         /// </summary>
         public RowLevelPermissionDataSet RowLevelPermissionDataSet
@@ -188,6 +190,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetRowLevelPermissionDataSet()
         {
             return this._rowLevelPermissionDataSet != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RowLevelPermissionDataSetMap. 
+        /// <para>
+        /// The row-level security configuration for the dataset in the new data preparation experience.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, RowLevelPermissionDataSet> RowLevelPermissionDataSetMap
+        {
+            get { return this._rowLevelPermissionDataSetMap; }
+            set { this._rowLevelPermissionDataSetMap = value; }
+        }
+
+        // Check to see if RowLevelPermissionDataSetMap property is set
+        internal bool IsSetRowLevelPermissionDataSetMap()
+        {
+            return this._rowLevelPermissionDataSetMap != null && (this._rowLevelPermissionDataSetMap.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

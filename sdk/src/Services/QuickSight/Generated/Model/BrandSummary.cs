@@ -63,7 +63,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property BrandId. 
         /// <para>
-        /// The ID of the QuickSight brand.
+        /// The ID of the Quick Suite brand.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=512)]

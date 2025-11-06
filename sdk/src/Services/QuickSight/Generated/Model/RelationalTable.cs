@@ -84,7 +84,7 @@ namespace Amazon.QuickSight.Model
         /// The column schema of the table.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=2048)]
+        [AWSProperty(Required=true, Min=0, Max=2048)]
         public List<InputColumn> InputColumns
         {
             get { return this._inputColumns; }

@@ -45,7 +45,7 @@ namespace Amazon.QuickSight.Model
         /// The column schema from the SQL query result set.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=2048)]
+        [AWSProperty(Min=0, Max=2048)]
         public List<InputColumn> Columns
         {
             get { return this._columns; }
@@ -83,7 +83,7 @@ namespace Amazon.QuickSight.Model
         /// A display name for the SQL query result.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=64)]
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string Name
         {
             get { return this._name; }
@@ -102,7 +102,7 @@ namespace Amazon.QuickSight.Model
         /// The SQL query.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=168000)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=168000)]
         public string SqlQuery
         {
             get { return this._sqlQuery; }

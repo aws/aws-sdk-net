@@ -84,6 +84,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.S3Source = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SaaSTable", targetDepth))
+                {
+                    var unmarshaller = SaaSTableUnmarshaller.Instance;
+                    unmarshalledObject.SaaSTable = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

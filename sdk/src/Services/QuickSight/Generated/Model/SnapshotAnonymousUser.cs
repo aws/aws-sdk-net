@@ -48,7 +48,7 @@ namespace Amazon.QuickSight.Model
         /// <para>
         /// These are not the tags that are used for Amazon Web Services resource tagging. For
         /// more information on row level security in Amazon Quick Sight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-rls-tags.html">Using
-        /// Row-Level Security (RLS) with Tags</a>in the <i>Amazon QuickSight User Guide</i>.
+        /// Row-Level Security (RLS) with Tags</a>in the <i>Amazon Quick Suite User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

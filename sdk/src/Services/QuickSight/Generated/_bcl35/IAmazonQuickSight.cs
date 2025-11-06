@@ -30,7 +30,7 @@ namespace Amazon.QuickSight
     /// <summary>
     /// <para>Interface for accessing QuickSight</para>
     ///
-    /// Amazon QuickSight API Reference 
+    /// Amazon Quick Suite API Reference 
     /// <para>
     /// Amazon Quick Sight is a fully managed, serverless business intelligence service for
     /// the Amazon Web Services Cloud that makes it easy to extend data and insights to every
@@ -792,6 +792,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidDataSetParameterValueException">
+        /// An exception thrown when an invalid parameter value is provided for dataset operations.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
         /// One or more parameters has a value that isn't valid.
@@ -7745,7 +7748,7 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Generates an embed URL that you can use to embed an Amazon QuickSight dashboard or
+        /// Generates an embed URL that you can use to embed an Amazon Quick Suite dashboard or
         /// visual in your website, without having to register any reader users. Before you use
         /// this action, make sure that you have configured the dashboards and permissions.
         /// 
@@ -7767,18 +7770,19 @@ namespace Amazon.QuickSight
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You are charged only when the URL is used or there is interaction with Amazon QuickSight.
+        /// You are charged only when the URL is used or there is interaction with Amazon Quick
+        /// Suite.
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics.html">Embedded
-        /// Analytics</a> in the <i>Amazon QuickSight User Guide</i>.
+        /// Analytics</a> in the <i>Amazon Quick Suite User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// For more information about the high-level steps for embedding and for an interactive
         /// demo of the ways you can customize embedding, visit the <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-portal.html">Amazon
-        /// QuickSight Developer Portal</a>.
+        /// Quick Suite Developer Portal</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GenerateEmbedUrlForAnonymousUser service method.</param>
@@ -7859,10 +7863,10 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Generates an embed URL that you can use to embed an Amazon QuickSight experience in
-        /// your website. This action can be used for any type of user registered in an Amazon
-        /// QuickSight account. Before you use this action, make sure that you have configured
-        /// the relevant Amazon QuickSight resource and permissions.
+        /// Generates an embed URL that you can use to embed an Amazon Quick Suite experience
+        /// in your website. This action can be used for any type of user registered in an Amazon
+        /// Quick Suite account. Before you use this action, make sure that you have configured
+        /// the relevant Amazon Quick Suite resource and permissions.
         /// 
         ///  
         /// <para>
@@ -7886,18 +7890,19 @@ namespace Amazon.QuickSight
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You are charged only when the URL is used or there is interaction with Amazon QuickSight.
+        /// You are charged only when the URL is used or there is interaction with Amazon Quick
+        /// Suite.
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics.html">Embedded
-        /// Analytics</a> in the <i>Amazon QuickSight User Guide</i>.
+        /// Analytics</a> in the <i>Amazon Quick Suite User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// For more information about the high-level steps for embedding and for an interactive
         /// demo of the ways you can customize embedding, visit the <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-portal.html">Amazon
-        /// QuickSight Developer Portal</a>.
+        /// Quick Suite Developer Portal</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GenerateEmbedUrlForRegisteredUser service method.</param>
@@ -8107,7 +8112,7 @@ namespace Amazon.QuickSight
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You are charged only when the URL is used or there is interaction with QuickSight.
+        /// You are charged only when the URL is used or there is interaction with Quick Suite.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -8118,13 +8123,13 @@ namespace Amazon.QuickSight
         ///  </li> </ul> 
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics-deprecated.html">Embedding
-        /// Analytics Using GetDashboardEmbedUrl</a> in the <i>Amazon QuickSight User Guide</i>.
+        /// Analytics Using GetDashboardEmbedUrl</a> in the <i>Amazon Quick Suite User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// For more information about the high-level steps for embedding and for an interactive
         /// demo of the ways you can customize embedding, visit the <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-portal.html">Amazon
-        /// QuickSight Developer Portal</a>.
+        /// Quick Suite Developer Portal</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDashboardEmbedUrl service method.</param>
@@ -8340,7 +8345,7 @@ namespace Amazon.QuickSight
         /// with the <c> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateUser.html">UpdateUser</a>
         /// </c> API operation. Use <c> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_RegisterUser.html">RegisterUser</a>
         /// </c> API operation to add a new user with a custom permission profile attached. For
-        /// more information, see the following sections in the <i>Amazon QuickSight User Guide</i>:
+        /// more information, see the following sections in the <i>Amazon Quick Suite User Guide</i>:
         /// 
         ///  <ul> <li> 
         /// <para>
@@ -8350,7 +8355,7 @@ namespace Amazon.QuickSight
         ///  </li> <li> 
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/quicksight/latest/user/customizing-permissions-to-the-quicksight-console.html">Customizing
-        /// Access to the Amazon QuickSight Console</a> 
+        /// Access to the Amazon Quick Suite Console</a> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -10700,9 +10705,9 @@ namespace Amazon.QuickSight
         /// identity propagation</a> to ensure that an end user is authenticated and receives
         /// the embed URL that is specific to that user. The IAM Identity Center application that
         /// the user has logged into needs to have <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/trustedidentitypropagation-using-customermanagedapps-specify-trusted-apps.html">trusted
-        /// Identity Propagation enabled for QuickSight</a> with the scope value set to <c>quicksight:read</c>.
-        /// Before you use this action, make sure that you have configured the relevant QuickSight
-        /// resource and permissions.
+        /// Identity Propagation enabled for Quick Suite</a> with the scope value set to <c>quicksight:read</c>.
+        /// Before you use this action, make sure that you have configured the relevant Quick
+        /// Suite resource and permissions.
         /// </para>
         ///  
         /// <para>
@@ -11487,7 +11492,7 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Searches for any Q topic that exists in an QuickSight account.
+        /// Searches for any Q topic that exists in an Quick Suite account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchTopics service method.</param>
         /// 
@@ -12598,8 +12603,8 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Updates an QuickSight application with a token exchange grant. This operation only
-        /// supports QuickSight applications that are registered with IAM Identity Center.
+        /// Updates an Quick Suite application with a token exchange grant. This operation only
+        /// supports Quick Suite applications that are registered with IAM Identity Center.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateApplicationWithTokenExchangeGrant service method.</param>
         /// 
@@ -13260,6 +13265,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidDataSetParameterValueException">
+        /// An exception thrown when an invalid parameter value is provided for dataset operations.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
         /// One or more parameters has a value that isn't valid.
@@ -14107,7 +14115,7 @@ namespace Amazon.QuickSight
         /// Before you can turn on public sharing on your account, make sure to give public sharing
         /// permissions to an administrative user in the Identity and Access Management (IAM)
         /// console. For more information on using IAM with Amazon Quick Sight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/security_iam_service-with-iam.html">Using
-        /// QuickSight with IAM</a> in the <i>Amazon Quick Sight User Guide</i>.
+        /// Quick Suite with IAM</a> in the <i>Amazon Quick Sight User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdatePublicSharingSettings service method.</param>

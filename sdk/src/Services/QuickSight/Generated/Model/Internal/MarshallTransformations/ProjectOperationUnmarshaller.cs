@@ -66,10 +66,22 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("Alias", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Alias = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ProjectedColumns", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.ProjectedColumns = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Source", targetDepth))
+                {
+                    var unmarshaller = TransformOperationSourceUnmarshaller.Instance;
+                    unmarshalledObject.Source = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

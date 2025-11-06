@@ -149,7 +149,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Principal. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the principal. This can be an Amazon QuickSight
+        /// The Amazon Resource Name (ARN) of the principal. This can be an Amazon Quick Suite
         /// user, group or namespace associated with the flow. Namespace principal can only be
         /// set as a viewer and will grant everyone in the same namespace viewer permissions.
         /// </para>

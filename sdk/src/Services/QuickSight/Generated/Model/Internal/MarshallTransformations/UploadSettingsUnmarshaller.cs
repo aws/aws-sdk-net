@@ -72,6 +72,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.ContainsHeader = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("CustomCellAddressRange", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CustomCellAddressRange = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Delimiter", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

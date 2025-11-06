@@ -35,6 +35,7 @@ namespace Amazon.QuickSight.Model
     public partial class UploadSettings
     {
         private bool? _containsHeader;
+        private string _customCellAddressRange;
         private string _delimiter;
         private FileFormat _format;
         private int? _startFromRow;
@@ -56,6 +57,25 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetContainsHeader()
         {
             return this._containsHeader.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomCellAddressRange. 
+        /// <para>
+        /// A custom cell address range for Excel files, specifying which cells to import from
+        /// the spreadsheet.
+        /// </para>
+        /// </summary>
+        public string CustomCellAddressRange
+        {
+            get { return this._customCellAddressRange; }
+            set { this._customCellAddressRange = value; }
+        }
+
+        // Check to see if CustomCellAddressRange property is set
+        internal bool IsSetCustomCellAddressRange()
+        {
+            return this._customCellAddressRange != null;
         }
 
         /// <summary>
