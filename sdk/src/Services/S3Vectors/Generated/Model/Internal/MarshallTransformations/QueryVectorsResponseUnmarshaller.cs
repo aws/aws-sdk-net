@@ -52,6 +52,12 @@ namespace Amazon.S3Vectors.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("distanceMetric", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.DistanceMetric = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("vectors", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<QueryOutputVector, QueryOutputVectorUnmarshaller>(QueryOutputVectorUnmarshaller.Instance);
@@ -109,9 +115,9 @@ namespace Amazon.S3Vectors.Model.Internal.MarshallTransformations
                 {
                     return NotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceQuotaExceededException"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("RequestTimeoutException"))
                 {
-                    return ServiceQuotaExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return RequestTimeoutExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceUnavailableException"))
                 {
