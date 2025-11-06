@@ -32,7 +32,7 @@ namespace Amazon.S3.Transfer
     /// Contains unified response fields from both simple uploads (PutObjectResponse) 
     /// and multipart uploads (CompleteMultipartUploadResponse).
     /// </summary>
-    public class TransferUtilityUploadResponse : AmazonWebServiceResponse
+    public class TransferUtilityUploadResponse
     {
         private bool? _bucketKeyEnabled;
         private string _bucketName;
