@@ -48,6 +48,17 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetEnablement())
+            {
+                context.Writer.WritePropertyName("Enablement");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = EvaluationFormItemEnablementConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.Enablement, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetInstructions())
             {
                 context.Writer.WritePropertyName("Instructions");

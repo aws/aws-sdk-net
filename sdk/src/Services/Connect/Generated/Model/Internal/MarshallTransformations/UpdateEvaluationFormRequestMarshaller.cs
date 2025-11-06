@@ -73,6 +73,17 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAutoEvaluationConfiguration())
+                {
+                    context.Writer.WritePropertyName("AutoEvaluationConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = EvaluationFormAutoEvaluationConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.AutoEvaluationConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetClientToken())
                 {
                     context.Writer.WritePropertyName("ClientToken");

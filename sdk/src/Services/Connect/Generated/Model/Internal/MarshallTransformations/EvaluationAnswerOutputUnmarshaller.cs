@@ -66,6 +66,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("SuggestedAnswers", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<EvaluationSuggestedAnswer, EvaluationSuggestedAnswerUnmarshaller>(EvaluationSuggestedAnswerUnmarshaller.Instance);
+                    unmarshalledObject.SuggestedAnswers = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SystemSuggestedValue", targetDepth))
                 {
                     var unmarshaller = EvaluationAnswerDataUnmarshaller.Instance;

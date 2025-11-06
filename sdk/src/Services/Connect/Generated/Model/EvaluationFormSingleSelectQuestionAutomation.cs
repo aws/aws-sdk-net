@@ -36,8 +36,27 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class EvaluationFormSingleSelectQuestionAutomation
     {
+        private EvaluationFormQuestionAutomationAnswerSource _answerSource;
         private string _defaultOptionRefId;
         private List<EvaluationFormSingleSelectQuestionAutomationOption> _options = AWSConfigs.InitializeCollections ? new List<EvaluationFormSingleSelectQuestionAutomationOption>() : null;
+
+        /// <summary>
+        /// Gets and sets the property AnswerSource. 
+        /// <para>
+        /// Automation answer source.
+        /// </para>
+        /// </summary>
+        public EvaluationFormQuestionAutomationAnswerSource AnswerSource
+        {
+            get { return this._answerSource; }
+            set { this._answerSource = value; }
+        }
+
+        // Check to see if AnswerSource property is set
+        internal bool IsSetAnswerSource()
+        {
+            return this._answerSource != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DefaultOptionRefId. 
@@ -65,7 +84,7 @@ namespace Amazon.Connect.Model
         /// The automation options of the single select question.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=20)]
+        [AWSProperty(Max=20)]
         public List<EvaluationFormSingleSelectQuestionAutomationOption> Options
         {
             get { return this._options; }

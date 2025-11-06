@@ -72,6 +72,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     unmarshalledObject.AutomaticFail = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("AutomaticFailConfiguration", targetDepth))
+                {
+                    var unmarshaller = AutomaticFailConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.AutomaticFailConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("MaxValue", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

@@ -5472,7 +5472,7 @@ namespace Amazon.Connect
 
         /// <summary>
         /// This API is in preview release for Amazon Connect and is subject to change. To request
-        /// access to this API, contact Amazon Web ServicesSupport.
+        /// access to this API, contact Amazon Web Services Support.
         /// 
         ///  
         /// <para>
@@ -9028,7 +9028,7 @@ namespace Amazon.Connect
         /// For example, if you already have 99 claimed or imported numbers and a service level
         /// quota of 99 phone numbers, and in any 180 day period you release 99, claim 99, and
         /// then release 99, you will have exceeded the 200% limit. At that point you are blocked
-        /// from claiming any more numbers until you open an Amazon Web ServicesSupport ticket.
+        /// from claiming any more numbers until you open an Amazon Web Services Support ticket.
         /// 
         /// </para>
         /// </summary>
@@ -9371,7 +9371,7 @@ namespace Amazon.Connect
 
         /// <summary>
         /// This API is in preview release for Amazon Connect and is subject to change. To request
-        /// access to this API, contact Amazon Web ServicesSupport.
+        /// access to this API, contact Amazon Web Services Support.
         /// 
         ///  
         /// <para>
@@ -12294,7 +12294,7 @@ namespace Amazon.Connect
         /// <para>
         /// After releasing a phone number, the phone number enters into a cooldown period for
         /// up to 180 days. It cannot be searched for or claimed again until the period has ended.
-        /// If you accidentally release a phone number, contact Amazon Web ServicesSupport.
+        /// If you accidentally release a phone number, contact Amazon Web Services Support.
         /// </para>
         ///  </important> 
         /// <para>
@@ -12678,6 +12678,96 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  SearchContactEvaluations
+
+
+        /// <summary>
+        /// Searches contact evaluations in an Amazon Connect instance, with optional filtering.
+        /// 
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Use cases</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Following are common uses cases for this API:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Find contact evaluations by using specific search criteria.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Find contact evaluations that are tagged with a specific set of tags.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Important things to know</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// A Search operation, unlike a List operation, takes time to index changes to resource
+        /// (create, update or delete). If you don't see updated information for recently changed
+        /// contact evaluations, try calling the API again in a few seconds. Contact Evaluations
+        /// may not be fully backfilled with historical data in all regions yet, however all recently
+        /// created Contact Evaluations should be available for search.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
+        /// Connect endpoints and quotas</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchContactEvaluations service method.</param>
+        /// 
+        /// <returns>The response from the SearchContactEvaluations service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchContactEvaluations">REST API Reference for SearchContactEvaluations Operation</seealso>
+        SearchContactEvaluationsResponse SearchContactEvaluations(SearchContactEvaluationsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SearchContactEvaluations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SearchContactEvaluations operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSearchContactEvaluations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchContactEvaluations">REST API Reference for SearchContactEvaluations Operation</seealso>
+        IAsyncResult BeginSearchContactEvaluations(SearchContactEvaluationsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  SearchContactEvaluations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSearchContactEvaluations.</param>
+        /// 
+        /// <returns>Returns a  SearchContactEvaluationsResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchContactEvaluations">REST API Reference for SearchContactEvaluations Operation</seealso>
+        SearchContactEvaluationsResponse EndSearchContactEvaluations(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  SearchContactFlowModules
 
 
@@ -12898,6 +12988,98 @@ namespace Amazon.Connect
         /// <returns>Returns a  SearchEmailAddressesResult from Connect.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchEmailAddresses">REST API Reference for SearchEmailAddresses Operation</seealso>
         SearchEmailAddressesResponse EndSearchEmailAddresses(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  SearchEvaluationForms
+
+
+        /// <summary>
+        /// Searches evaluation forms in an Amazon Connect instance, with optional filtering.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Use cases</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Following are common uses cases for this API:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// List all evaluation forms in an instance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Find all evaluation forms that meet specific criteria, such as Title, Description,
+        /// Status, and more.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Find all evaluation forms that are tagged with a specific set of tags.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Important things to know</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// A Search operation, unlike a List operation, takes time to index changes to resource
+        /// (create, update or delete). If you don't see updated information for recently changed
+        /// contact evaluations, try calling the API again in a few seconds.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
+        /// Connect endpoints and quotas</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchEvaluationForms service method.</param>
+        /// 
+        /// <returns>The response from the SearchEvaluationForms service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchEvaluationForms">REST API Reference for SearchEvaluationForms Operation</seealso>
+        SearchEvaluationFormsResponse SearchEvaluationForms(SearchEvaluationFormsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SearchEvaluationForms operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SearchEvaluationForms operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSearchEvaluationForms
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchEvaluationForms">REST API Reference for SearchEvaluationForms Operation</seealso>
+        IAsyncResult BeginSearchEvaluationForms(SearchEvaluationFormsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  SearchEvaluationForms operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSearchEvaluationForms.</param>
+        /// 
+        /// <returns>Returns a  SearchEvaluationFormsResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchEvaluationForms">REST API Reference for SearchEvaluationForms Operation</seealso>
+        SearchEvaluationFormsResponse EndSearchEvaluationForms(IAsyncResult asyncResult);
 
         #endregion
         
@@ -13863,7 +14045,7 @@ namespace Amazon.Connect
         /// <para>
         /// If you use the <c>ChatDurationInMinutes</c> parameter and receive a 400 error, your
         /// account may not support the ability to configure custom chat durations. For more information,
-        /// contact Amazon Web ServicesSupport. 
+        /// contact Amazon Web Services Support. 
         /// </para>
         ///  
         /// <para>
@@ -15412,7 +15594,7 @@ namespace Amazon.Connect
 
         /// <summary>
         /// This API is in preview release for Amazon Connect and is subject to change. To request
-        /// access to this API, contact Amazon Web ServicesSupport.
+        /// access to this API, contact Amazon Web Services Support.
         /// 
         ///  
         /// <para>

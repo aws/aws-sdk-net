@@ -111,6 +111,17 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetUpdatedBy())
+                {
+                    context.Writer.WritePropertyName("UpdatedBy");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = EvaluatorUserUnionMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.UpdatedBy, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

@@ -34,8 +34,27 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class EvaluationAnswerOutput
     {
+        private List<EvaluationSuggestedAnswer> _suggestedAnswers = AWSConfigs.InitializeCollections ? new List<EvaluationSuggestedAnswer>() : null;
         private EvaluationAnswerData _systemSuggestedValue;
         private EvaluationAnswerData _value;
+
+        /// <summary>
+        /// Gets and sets the property SuggestedAnswers. 
+        /// <para>
+        /// Automation suggested answers for the questions.
+        /// </para>
+        /// </summary>
+        public List<EvaluationSuggestedAnswer> SuggestedAnswers
+        {
+            get { return this._suggestedAnswers; }
+            set { this._suggestedAnswers = value; }
+        }
+
+        // Check to see if SuggestedAnswers property is set
+        internal bool IsSetSuggestedAnswers()
+        {
+            return this._suggestedAnswers != null && (this._suggestedAnswers.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property SystemSuggestedValue. 

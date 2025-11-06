@@ -34,6 +34,7 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class EvaluationFormContent
     {
+        private EvaluationFormAutoEvaluationConfiguration _autoEvaluationConfiguration;
         private string _description;
         private string _evaluationFormArn;
         private string _evaluationFormId;
@@ -41,6 +42,24 @@ namespace Amazon.Connect.Model
         private List<EvaluationFormItem> _items = AWSConfigs.InitializeCollections ? new List<EvaluationFormItem>() : null;
         private EvaluationFormScoringStrategy _scoringStrategy;
         private string _title;
+
+        /// <summary>
+        /// Gets and sets the property AutoEvaluationConfiguration. 
+        /// <para>
+        /// The configuration of the automated evaluation.
+        /// </para>
+        /// </summary>
+        public EvaluationFormAutoEvaluationConfiguration AutoEvaluationConfiguration
+        {
+            get { return this._autoEvaluationConfiguration; }
+            set { this._autoEvaluationConfiguration = value; }
+        }
+
+        // Check to see if AutoEvaluationConfiguration property is set
+        internal bool IsSetAutoEvaluationConfiguration()
+        {
+            return this._autoEvaluationConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Description. 

@@ -66,6 +66,24 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("Acknowledgement", targetDepth))
+                {
+                    var unmarshaller = EvaluationAcknowledgementUnmarshaller.Instance;
+                    unmarshalledObject.Acknowledgement = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("AutoEvaluation", targetDepth))
+                {
+                    var unmarshaller = AutoEvaluationDetailsUnmarshaller.Instance;
+                    unmarshalledObject.AutoEvaluation = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("CalibrationSessionId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CalibrationSessionId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ContactAgentId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

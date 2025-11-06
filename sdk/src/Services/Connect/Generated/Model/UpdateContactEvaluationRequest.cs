@@ -42,6 +42,7 @@ namespace Amazon.Connect.Model
         private string _evaluationId;
         private string _instanceId;
         private Dictionary<string, EvaluationNote> _notes = AWSConfigs.InitializeCollections ? new Dictionary<string, EvaluationNote>() : null;
+        private EvaluatorUserUnion _updatedBy;
 
         /// <summary>
         /// Gets and sets the property Answers. 
@@ -118,6 +119,24 @@ namespace Amazon.Connect.Model
         internal bool IsSetNotes()
         {
             return this._notes != null && (this._notes.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UpdatedBy. 
+        /// <para>
+        /// The ID of the user who updated the contact evaluation.
+        /// </para>
+        /// </summary>
+        public EvaluatorUserUnion UpdatedBy
+        {
+            get { return this._updatedBy; }
+            set { this._updatedBy = value; }
+        }
+
+        // Check to see if UpdatedBy property is set
+        internal bool IsSetUpdatedBy()
+        {
+            return this._updatedBy != null;
         }
 
     }

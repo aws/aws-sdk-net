@@ -66,6 +66,30 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("Acknowledgement", targetDepth))
+                {
+                    var unmarshaller = EvaluationAcknowledgementSummaryUnmarshaller.Instance;
+                    unmarshalledObject.Acknowledgement = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("AutoEvaluationEnabled", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.AutoEvaluationEnabled = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("AutoEvaluationStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AutoEvaluationStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("CalibrationSessionId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CalibrationSessionId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CreatedTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
@@ -94,6 +118,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EvaluationId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("EvaluationType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.EvaluationType = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("EvaluatorArn", targetDepth))

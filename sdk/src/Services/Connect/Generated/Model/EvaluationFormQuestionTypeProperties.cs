@@ -37,6 +37,7 @@ namespace Amazon.Connect.Model
     {
         private EvaluationFormNumericQuestionProperties _numeric;
         private EvaluationFormSingleSelectQuestionProperties _singleSelect;
+        private EvaluationFormTextQuestionProperties _text;
 
         /// <summary>
         /// Gets and sets the property Numeric. 
@@ -72,6 +73,24 @@ namespace Amazon.Connect.Model
         internal bool IsSetSingleSelect()
         {
             return this._singleSelect != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Text. 
+        /// <para>
+        /// The properties of the text question.
+        /// </para>
+        /// </summary>
+        public EvaluationFormTextQuestionProperties Text
+        {
+            get { return this._text; }
+            set { this._text = value; }
+        }
+
+        // Check to see if Text property is set
+        internal bool IsSetText()
+        {
+            return this._text != null;
         }
 
     }

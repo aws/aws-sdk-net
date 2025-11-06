@@ -90,6 +90,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     unmarshalledObject.EvaluationId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("EvaluationType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.EvaluationType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("LastModifiedTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

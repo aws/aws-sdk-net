@@ -49,6 +49,7 @@ namespace Amazon.Connect.Model
         private string _evaluationId;
         private string _instanceId;
         private Dictionary<string, EvaluationNote> _notes = AWSConfigs.InitializeCollections ? new Dictionary<string, EvaluationNote>() : null;
+        private EvaluatorUserUnion _submittedBy;
 
         /// <summary>
         /// Gets and sets the property Answers. 
@@ -125,6 +126,24 @@ namespace Amazon.Connect.Model
         internal bool IsSetNotes()
         {
             return this._notes != null && (this._notes.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SubmittedBy. 
+        /// <para>
+        /// The ID of the user who submitted the contact evaluation.
+        /// </para>
+        /// </summary>
+        public EvaluatorUserUnion SubmittedBy
+        {
+            get { return this._submittedBy; }
+            set { this._submittedBy = value; }
+        }
+
+        // Check to see if SubmittedBy property is set
+        internal bool IsSetSubmittedBy()
+        {
+            return this._submittedBy != null;
         }
 
     }
