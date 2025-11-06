@@ -66,11 +66,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             }
             if (string.IsNullOrEmpty(publicRequest.BucketName))
                 throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "DeleteBucketMetricsConfigurationRequest.BucketName");
-            if (string.IsNullOrEmpty(publicRequest.Id))
-                throw new AmazonS3Exception("Request object does not have required field Id set");
+            if (string.IsNullOrEmpty(publicRequest.MetricsId))
+                throw new AmazonS3Exception("Request object does not have required field MetricsId set");
             
-            if (publicRequest.IsSetId())
-                request.Parameters.Add("id", StringUtils.FromString(publicRequest.Id));
+            if (publicRequest.IsSetMetricsId())
+                request.Parameters.Add("id", StringUtils.FromString(publicRequest.MetricsId));
             request.ResourcePath = "/";
 
             PostMarshallCustomization(request, publicRequest);

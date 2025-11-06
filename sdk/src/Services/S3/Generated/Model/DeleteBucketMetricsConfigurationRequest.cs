@@ -90,7 +90,7 @@ namespace Amazon.S3.Model
     {
         private string _bucketName;
         private string _expectedBucketOwner;
-        private string _id;
+        private string _metricsId;
 
         /// <summary>
         /// Gets and sets the property BucketName. 
@@ -132,23 +132,23 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Id. 
+        /// Gets and sets the property MetricsId. 
         /// <para>
         /// The ID used to identify the metrics configuration. The ID has a 64 character limit
         /// and can only contain letters, numbers, periods, dashes, and underscores.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public string Id
+        public string MetricsId
         {
-            get { return this._id; }
-            set { this._id = value; }
+            get { return this._metricsId; }
+            set { this._metricsId = value; }
         }
 
-        // Check to see if Id property is set
-        internal bool IsSetId()
+        // Check to see if MetricsId property is set
+        internal bool IsSetMetricsId()
         {
-            return this._id != null;
+            return this._metricsId != null;
         }
 
     }

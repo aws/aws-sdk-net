@@ -836,6 +836,13 @@
                     "Token": {"emitPropertyName": "ContinuationToken"}
                 }
             ]
+        },
+        "DeleteBucketMetricsConfigurationRequest":{
+            "modify":[
+                {
+                    "Id":{"emitPropertyName": "MetricsId"}
+                }
+            ]
         }
     },
     "operationModifiers": {
