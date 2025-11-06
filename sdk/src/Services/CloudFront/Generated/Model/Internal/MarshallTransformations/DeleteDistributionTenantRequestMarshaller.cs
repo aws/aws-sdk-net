@@ -56,6 +56,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         public IRequest Marshall(DeleteDistributionTenantRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.CloudFront");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "DELETE";
         
             if (publicRequest.IsSetIfMatch()) 
@@ -90,5 +91,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, DeleteDistributionTenantRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, DeleteDistributionTenantRequest publicRequest);
     }    
 }

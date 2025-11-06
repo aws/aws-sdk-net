@@ -34,7 +34,7 @@ namespace Amazon.Kinesis.Model
     /// Writes a single data record into an Amazon Kinesis data stream. Call <c>PutRecord</c>
     /// to send data into the stream for real-time ingestion and subsequent processing, one
     /// record at a time. Each shard can support writes up to 1,000 records per second, up
-    /// to a maximum data write total of 1 MiB per second.
+    /// to a maximum data write total of 10 MiB per second.
     /// 
     ///  <note> 
     /// <para>
@@ -117,7 +117,7 @@ namespace Amazon.Kinesis.Model
         /// key size, the total size must not exceed the maximum record size (1 MiB).
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=1048576)]
+        [AWSProperty(Required=true, Min=0, Max=10485760)]
         public MemoryStream Data
         {
             get { return this._data; }

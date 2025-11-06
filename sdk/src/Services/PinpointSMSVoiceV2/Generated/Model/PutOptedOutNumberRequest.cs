@@ -70,8 +70,8 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// </para>
         ///  <important> 
         /// <para>
-        /// If you are using a shared AWS End User Messaging SMS and Voice resource then you must
-        /// use the full Amazon Resource Name(ARN).
+        /// If you are using a shared End User MessagingSMS resource then you must use the full
+        /// Amazon Resource Name(ARN).
         /// </para>
         ///  </important>
         /// </summary>

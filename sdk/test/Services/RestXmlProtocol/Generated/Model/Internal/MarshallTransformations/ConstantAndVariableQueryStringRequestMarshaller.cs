@@ -56,6 +56,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
         public IRequest Marshall(ConstantAndVariableQueryStringRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.RestXmlProtocol");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "GET";
             request.AddSubResource("foo", "bar");
             
@@ -90,5 +91,6 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, ConstantAndVariableQueryStringRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, ConstantAndVariableQueryStringRequest publicRequest);
     }    
 }

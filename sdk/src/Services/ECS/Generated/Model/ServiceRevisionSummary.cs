@@ -37,7 +37,9 @@ namespace Amazon.ECS.Model
     {
         private string _arn;
         private int? _pendingTaskCount;
+        private double? _requestedProductionTrafficWeight;
         private int? _requestedTaskCount;
+        private double? _requestedTestTrafficWeight;
         private int? _runningTaskCount;
 
         /// <summary>
@@ -77,6 +79,26 @@ namespace Amazon.ECS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property RequestedProductionTrafficWeight. 
+        /// <para>
+        /// The percentage of production traffic that is directed to this service revision. This
+        /// value represents a snapshot of the traffic distribution and may not reflect real-time
+        /// changes during active deployments. Valid values are 0.0 to 100.0.
+        /// </para>
+        /// </summary>
+        public double? RequestedProductionTrafficWeight
+        {
+            get { return this._requestedProductionTrafficWeight; }
+            set { this._requestedProductionTrafficWeight = value; }
+        }
+
+        // Check to see if RequestedProductionTrafficWeight property is set
+        internal bool IsSetRequestedProductionTrafficWeight()
+        {
+            return this._requestedProductionTrafficWeight.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property RequestedTaskCount. 
         /// <para>
         /// The number of requested tasks for the service revision.
@@ -92,6 +114,26 @@ namespace Amazon.ECS.Model
         internal bool IsSetRequestedTaskCount()
         {
             return this._requestedTaskCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RequestedTestTrafficWeight. 
+        /// <para>
+        /// The percentage of test traffic that is directed to this service revision. This value
+        /// represents a snapshot of the traffic distribution and may not reflect real-time changes
+        /// during active deployments. Valid values are 0.0 to 100.0.
+        /// </para>
+        /// </summary>
+        public double? RequestedTestTrafficWeight
+        {
+            get { return this._requestedTestTrafficWeight; }
+            set { this._requestedTestTrafficWeight = value; }
+        }
+
+        // Check to see if RequestedTestTrafficWeight property is set
+        internal bool IsSetRequestedTestTrafficWeight()
+        {
+            return this._requestedTestTrafficWeight.HasValue; 
         }
 
         /// <summary>

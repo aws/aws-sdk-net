@@ -78,6 +78,22 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(requestObject.IsSetNestedCompositeFilters())
+            {
+                context.Writer.WritePropertyName("NestedCompositeFilters");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectNestedCompositeFiltersListValue in requestObject.NestedCompositeFilters)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = ResourcesCompositeFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectNestedCompositeFiltersListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(requestObject.IsSetNumberFilters())
             {
                 context.Writer.WritePropertyName("NumberFilters");

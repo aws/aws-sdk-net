@@ -56,6 +56,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
         public IRequest Marshall(PutAccessGrantsInstanceResourcePolicyRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.S3Control");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "PUT";
         
             if (publicRequest.IsSetAccountId()) 
@@ -111,5 +112,6 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, PutAccessGrantsInstanceResourcePolicyRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, PutAccessGrantsInstanceResourcePolicyRequest publicRequest);
     }    
 }

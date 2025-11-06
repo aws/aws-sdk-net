@@ -56,6 +56,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListDistributionsByVpcOriginIdRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.CloudFront");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "GET";
             if (!publicRequest.IsSetVpcOriginId())
                 throw new AmazonCloudFrontException("Request object does not have required field VpcOriginId set");
@@ -92,5 +93,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, ListDistributionsByVpcOriginIdRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, ListDistributionsByVpcOriginIdRequest publicRequest);
     }    
 }

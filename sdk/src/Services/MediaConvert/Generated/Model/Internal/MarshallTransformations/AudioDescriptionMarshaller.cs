@@ -68,6 +68,17 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetAudioPitchCorrectionSettings())
+            {
+                context.Writer.WritePropertyName("audioPitchCorrectionSettings");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AudioPitchCorrectionSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.AudioPitchCorrectionSettings, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetAudioSourceName())
             {
                 context.Writer.WritePropertyName("audioSourceName");

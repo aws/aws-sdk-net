@@ -68,6 +68,17 @@ namespace Amazon.RTBFabric.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetRateLimiter())
+            {
+                context.Writer.WritePropertyName("rateLimiter");
+                context.Writer.WriteStartObject();
+
+                var marshaller = RateLimiterModuleParametersMarshaller.Instance;
+                marshaller.Marshall(requestObject.RateLimiter, context);
+
+                context.Writer.WriteEndObject();
+            }
+
         }
 
         /// <summary>

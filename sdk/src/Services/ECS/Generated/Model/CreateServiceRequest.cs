@@ -199,6 +199,69 @@ namespace Amazon.ECS.Model
     /// Load balancer requirement: When your service uses Application Load Balancer, Network
     /// Load Balancer, or Service Connect
     /// </para>
+    ///  </li> </ul> </li> <li> 
+    /// <para>
+    ///  <c>LINEAR</c>: A <i>linear</i> deployment strategy (<c>LINEAR</c>) gradually shifts
+    /// traffic from the current production environment to a new environment in equal percentage
+    /// increments. With Amazon ECS linear deployments, you can control the pace of traffic
+    /// shifting and validate new service revisions with increasing amounts of production
+    /// traffic.
+    /// </para>
+    ///  
+    /// <para>
+    /// Linear deployments are best suited for the following scenarios:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// Gradual validation: When you want to gradually validate your new service version with
+    /// increasing traffic
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Performance monitoring: When you need time to monitor metrics and performance during
+    /// the deployment
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Risk minimization: When you want to minimize risk by exposing the new version to production
+    /// traffic incrementally
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Load balancer requirement: When your service uses Application Load Balancer or Service
+    /// Connect
+    /// </para>
+    ///  </li> </ul> </li> <li> 
+    /// <para>
+    ///  <c>CANARY</c>: A <i>canary</i> deployment strategy (<c>CANARY</c>) shifts a small
+    /// percentage of traffic to the new service revision first, then shifts the remaining
+    /// traffic all at once after a specified time period. This allows you to test the new
+    /// version with a subset of users before full deployment.
+    /// </para>
+    ///  
+    /// <para>
+    /// Canary deployments are best suited for the following scenarios:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// Feature testing: When you want to test new features with a small subset of users before
+    /// full rollout
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Production validation: When you need to validate performance and functionality with
+    /// real production traffic
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Blast radius control: When you want to minimize blast radius if issues are discovered
+    /// in the new version
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Load balancer requirement: When your service uses Application Load Balancer or Service
+    /// Connect
+    /// </para>
     ///  </li> </ul> </li> </ul> </li> <li> 
     /// <para>
     /// External
@@ -311,7 +374,12 @@ namespace Amazon.ECS.Model
         /// <para>
         /// The capacity provider strategy to use for the service.
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        /// If you want to use Amazon ECS Managed Instances, you must use the <c>capacityProviderStrategy</c>
+        /// request parameter and omit the <c>launchType</c> request parameter.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// If a <c>capacityProviderStrategy</c> is specified, the <c>launchType</c> parameter
         /// must be omitted. If no <c>capacityProviderStrategy</c> or <c>launchType</c> is specified,
@@ -519,7 +587,12 @@ namespace Amazon.ECS.Model
         /// The infrastructure that you run your service on. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
         /// ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        /// If you want to use Amazon ECS Managed Instances, you must use the <c>capacityProviderStrategy</c>
+        /// request parameter and omit the <c>launchType</c> request parameter.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// The <c>FARGATE</c> launch type runs your tasks on Fargate On-Demand infrastructure.
         /// </para>

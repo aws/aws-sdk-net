@@ -44,7 +44,8 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property ErrorCode. 
         /// <para>
         /// The error code for the unprocessed update of the control's enablement status in the
-        /// specified standard.
+        /// specified standard. The <c>NOT_FOUND</c> value has been deprecated and replaced by
+        /// the <c>RESOURCE_NOT_FOUND</c> value.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

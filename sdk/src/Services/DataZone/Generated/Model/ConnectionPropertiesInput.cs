@@ -39,6 +39,7 @@ namespace Amazon.DataZone.Model
         private GluePropertiesInput _glueProperties;
         private HyperPodPropertiesInput _hyperPodProperties;
         private IamPropertiesInput _iamProperties;
+        private MlflowPropertiesInput _mlflowProperties;
         private RedshiftPropertiesInput _redshiftProperties;
         private S3PropertiesInput _s3Properties;
         private SparkEmrPropertiesInput _sparkEmrProperties;
@@ -132,6 +133,24 @@ namespace Amazon.DataZone.Model
         internal bool IsSetIamProperties()
         {
             return this._iamProperties != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MlflowProperties. 
+        /// <para>
+        /// The MLflow properties of a connection.
+        /// </para>
+        /// </summary>
+        public MlflowPropertiesInput MlflowProperties
+        {
+            get { return this._mlflowProperties; }
+            set { this._mlflowProperties = value; }
+        }
+
+        // Check to see if MlflowProperties property is set
+        internal bool IsSetMlflowProperties()
+        {
+            return this._mlflowProperties != null;
         }
 
         /// <summary>

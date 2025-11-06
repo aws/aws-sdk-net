@@ -38,6 +38,7 @@ namespace Amazon.SageMaker.Model
         private string _baseInferenceComponentName;
         private InferenceComponentComputeResourceRequirements _computeResourceRequirements;
         private InferenceComponentContainerSpecification _container;
+        private InferenceComponentDataCacheConfig _dataCacheConfig;
         private string _modelName;
         private InferenceComponentStartupParameters _startupParameters;
 
@@ -123,6 +124,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetContainer()
         {
             return this._container != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DataCacheConfig. 
+        /// <para>
+        /// Settings that affect how the inference component caches data.
+        /// </para>
+        /// </summary>
+        public InferenceComponentDataCacheConfig DataCacheConfig
+        {
+            get { return this._dataCacheConfig; }
+            set { this._dataCacheConfig = value; }
+        }
+
+        // Check to see if DataCacheConfig property is set
+        internal bool IsSetDataCacheConfig()
+        {
+            return this._dataCacheConfig != null;
         }
 
         /// <summary>

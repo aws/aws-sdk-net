@@ -110,6 +110,7 @@ namespace Amazon.Lex.Model.Internal.MarshallTransformations
             {
                 request.Headers["x-amz-lex-session-attributes"] = Convert.ToBase64String(Encoding.UTF8.GetBytes(publicRequest.SessionAttributes));
             }
+            request.DisablePayloadSigning = true;
 
             return request;
         }

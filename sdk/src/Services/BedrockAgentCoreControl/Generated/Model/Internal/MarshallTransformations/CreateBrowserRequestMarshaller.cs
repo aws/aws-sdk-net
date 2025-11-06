@@ -73,6 +73,17 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetBrowserSigning())
+            {
+                context.Writer.WritePropertyName("browserSigning");
+                context.Writer.WriteStartObject();
+
+                var marshaller = BrowserSigningConfigInputMarshaller.Instance;
+                marshaller.Marshall(publicRequest.BrowserSigning, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetClientToken())
             {
                 context.Writer.WritePropertyName("clientToken");

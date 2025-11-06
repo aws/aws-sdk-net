@@ -37,6 +37,14 @@ namespace Amazon.PrometheusService.Model
         }
 
         /// <summary>
+        /// Paginator for ListAnomalyDetectors operation
+        ///</summary>
+        public IListAnomalyDetectorsPaginator ListAnomalyDetectors(ListAnomalyDetectorsRequest request) 
+        {
+            return new ListAnomalyDetectorsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListRuleGroupsNamespaces operation
         ///</summary>
         public IListRuleGroupsNamespacesPaginator ListRuleGroupsNamespaces(ListRuleGroupsNamespacesRequest request) 

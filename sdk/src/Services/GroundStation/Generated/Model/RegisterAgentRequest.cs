@@ -34,10 +34,12 @@ namespace Amazon.GroundStation.Model
     /// <note> 
     /// <para>
     ///  For use by AWS Ground Station Agent and shouldn't be called directly.
-    /// </para>
+    /// 
     ///  </note> 
     /// <para>
     ///  Registers a new agent with AWS Ground Station. 
+    /// </para>
+    /// 
     /// </para>
     /// </summary>
     public partial class RegisterAgentRequest : AmazonGroundStationRequest

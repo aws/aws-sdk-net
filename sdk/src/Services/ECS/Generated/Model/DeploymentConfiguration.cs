@@ -37,8 +37,10 @@ namespace Amazon.ECS.Model
     {
         private DeploymentAlarms _alarms;
         private int? _bakeTimeInMinutes;
+        private CanaryConfiguration _canaryConfiguration;
         private DeploymentCircuitBreaker _deploymentCircuitBreaker;
         private List<DeploymentLifecycleHook> _lifecycleHooks = AWSConfigs.InitializeCollections ? new List<DeploymentLifecycleHook>() : null;
+        private LinearConfiguration _linearConfiguration;
         private int? _maximumPercent;
         private int? _minimumHealthyPercent;
         private DeploymentStrategy _strategy;
@@ -82,6 +84,26 @@ namespace Amazon.ECS.Model
         internal bool IsSetBakeTimeInMinutes()
         {
             return this._bakeTimeInMinutes.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CanaryConfiguration. 
+        /// <para>
+        /// Configuration for canary deployment strategy. Only valid when the deployment strategy
+        /// is <c>CANARY</c>. This configuration enables shifting a fixed percentage of traffic
+        /// for testing, followed by shifting the remaining traffic after a bake period.
+        /// </para>
+        /// </summary>
+        public CanaryConfiguration CanaryConfiguration
+        {
+            get { return this._canaryConfiguration; }
+            set { this._canaryConfiguration = value; }
+        }
+
+        // Check to see if CanaryConfiguration property is set
+        internal bool IsSetCanaryConfiguration()
+        {
+            return this._canaryConfiguration != null;
         }
 
         /// <summary>
@@ -135,6 +157,26 @@ namespace Amazon.ECS.Model
         internal bool IsSetLifecycleHooks()
         {
             return this._lifecycleHooks != null && (this._lifecycleHooks.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LinearConfiguration. 
+        /// <para>
+        /// Configuration for linear deployment strategy. Only valid when the deployment strategy
+        /// is <c>LINEAR</c>. This configuration enables progressive traffic shifting in equal
+        /// percentage increments with configurable bake times between each step.
+        /// </para>
+        /// </summary>
+        public LinearConfiguration LinearConfiguration
+        {
+            get { return this._linearConfiguration; }
+            set { this._linearConfiguration = value; }
+        }
+
+        // Check to see if LinearConfiguration property is set
+        internal bool IsSetLinearConfiguration()
+        {
+            return this._linearConfiguration != null;
         }
 
         /// <summary>
@@ -321,6 +363,21 @@ namespace Amazon.ECS.Model
         /// called blue and green. With Amazon ECS blue/green deployments, you can validate new
         /// service revisions before directing production traffic to them. This approach provides
         /// a safer way to deploy changes with the ability to quickly roll back if needed.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>LINEAR</c> - A <i>linear</i> deployment strategy (<c>LINEAR</c>) gradually shifts
+        /// traffic from the current production environment to a new environment in equal percentages
+        /// over time. With Amazon ECS linear deployments, you can control the pace of traffic
+        /// shifting and validate new service revisions with increasing amounts of production
+        /// traffic.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>CANARY</c> - A <i>canary</i> deployment strategy (<c>CANARY</c>) shifts a small
+        /// percentage of traffic to the new service revision first, then shifts the remaining
+        /// traffic all at once after a specified time period. This allows you to test the new
+        /// version with a subset of users before full deployment.
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -1267,6 +1267,10 @@ namespace Amazon.Lambda
         /// </summary>
         public static readonly Runtime Java21 = new Runtime("java21");
         /// <summary>
+        /// Constant Java25 for Runtime
+        /// </summary>
+        public static readonly Runtime Java25 = new Runtime("java25");
+        /// <summary>
         /// Constant Java8 for Runtime
         /// </summary>
         public static readonly Runtime Java8 = new Runtime("java8");
@@ -1306,6 +1310,10 @@ namespace Amazon.Lambda
         /// Constant Nodejs22X for Runtime
         /// </summary>
         public static readonly Runtime Nodejs22X = new Runtime("nodejs22.x");
+        /// <summary>
+        /// Constant Nodejs24X for Runtime
+        /// </summary>
+        public static readonly Runtime Nodejs24X = new Runtime("nodejs24.x");
         /// <summary>
         /// Constant Nodejs43 for Runtime
         /// </summary>
@@ -1354,6 +1362,10 @@ namespace Amazon.Lambda
         /// Constant Python313 for Runtime
         /// </summary>
         public static readonly Runtime Python313 = new Runtime("python3.13");
+        /// <summary>
+        /// Constant Python314 for Runtime
+        /// </summary>
+        public static readonly Runtime Python314 = new Runtime("python3.14");
         /// <summary>
         /// Constant Python36 for Runtime
         /// </summary>

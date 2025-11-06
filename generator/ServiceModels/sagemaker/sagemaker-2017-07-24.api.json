@@ -1423,6 +1423,18 @@
         {"shape":"ResourceNotFound"}
       ]
     },
+    "DeleteProcessingJob":{
+      "name":"DeleteProcessingJob",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DeleteProcessingJobRequest"},
+      "errors":[
+        {"shape":"ResourceNotFound"},
+        {"shape":"ResourceInUse"}
+      ]
+    },
     "DeleteProject":{
       "name":"DeleteProject",
       "http":{
@@ -1466,6 +1478,18 @@
       },
       "input":{"shape":"DeleteTagsInput"},
       "output":{"shape":"DeleteTagsOutput"}
+    },
+    "DeleteTrainingJob":{
+      "name":"DeleteTrainingJob",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DeleteTrainingJobRequest"},
+      "errors":[
+        {"shape":"ResourceNotFound"},
+        {"shape":"ResourceInUse"}
+      ]
     },
     "DeleteTrial":{
       "name":"DeleteTrial",
@@ -6943,7 +6967,10 @@
         "OverrideVpcConfig":{"shape":"VpcConfig"},
         "ScheduledUpdateConfig":{"shape":"ScheduledUpdateConfig"},
         "CurrentImageId":{"shape":"ImageId"},
-        "DesiredImageId":{"shape":"ImageId"}
+        "DesiredImageId":{"shape":"ImageId"},
+        "TargetStateCount":{"shape":"ClusterInstanceCount"},
+        "SoftwareUpdateStatus":{"shape":"SoftwareUpdateStatus"},
+        "ActiveSoftwareUpdateConfig":{"shape":"DeploymentConfiguration"}
       }
     },
     "ClusterInstanceGroupDetailsList":{
@@ -9426,10 +9453,8 @@
       "type":"structure",
       "required":[
         "TrainingJobName",
-        "AlgorithmSpecification",
         "RoleArn",
         "OutputDataConfig",
-        "ResourceConfig",
         "StoppingCondition"
       ],
       "members":{
@@ -10447,6 +10472,13 @@
         "PipelineArn":{"shape":"PipelineArn"}
       }
     },
+    "DeleteProcessingJobRequest":{
+      "type":"structure",
+      "required":["ProcessingJobName"],
+      "members":{
+        "ProcessingJobName":{"shape":"ProcessingJobName"}
+      }
+    },
     "DeleteProjectInput":{
       "type":"structure",
       "required":["ProjectName"],
@@ -10486,6 +10518,13 @@
     "DeleteTagsOutput":{
       "type":"structure",
       "members":{}
+    },
+    "DeleteTrainingJobRequest":{
+      "type":"structure",
+      "required":["TrainingJobName"],
+      "members":{
+        "TrainingJobName":{"shape":"TrainingJobName"}
+      }
     },
     "DeleteTrialComponentRequest":{
       "type":"structure",
@@ -13640,6 +13679,7 @@
         "ExecutionRoleArns":{"shape":"ExecutionRoleArns"}
       }
     },
+    "EnableCaching":{"type":"boolean"},
     "EnableCapture":{"type":"boolean"},
     "EnableInfraCheck":{
       "type":"boolean",
@@ -15999,6 +16039,26 @@
       "box":true,
       "min":0
     },
+    "InferenceComponentDataCacheConfig":{
+      "type":"structure",
+      "required":["EnableCaching"],
+      "members":{
+        "EnableCaching":{
+          "shape":"EnableCaching",
+          "box":true
+        }
+      }
+    },
+    "InferenceComponentDataCacheConfigSummary":{
+      "type":"structure",
+      "required":["EnableCaching"],
+      "members":{
+        "EnableCaching":{
+          "shape":"EnableCaching",
+          "box":true
+        }
+      }
+    },
     "InferenceComponentDeploymentConfig":{
       "type":"structure",
       "required":["RollingUpdatePolicy"],
@@ -16061,7 +16121,8 @@
         "Container":{"shape":"InferenceComponentContainerSpecification"},
         "StartupParameters":{"shape":"InferenceComponentStartupParameters"},
         "ComputeResourceRequirements":{"shape":"InferenceComponentComputeResourceRequirements"},
-        "BaseInferenceComponentName":{"shape":"InferenceComponentName"}
+        "BaseInferenceComponentName":{"shape":"InferenceComponentName"},
+        "DataCacheConfig":{"shape":"InferenceComponentDataCacheConfig"}
       }
     },
     "InferenceComponentSpecificationSummary":{
@@ -16071,7 +16132,8 @@
         "Container":{"shape":"InferenceComponentContainerSpecificationSummary"},
         "StartupParameters":{"shape":"InferenceComponentStartupParameters"},
         "ComputeResourceRequirements":{"shape":"InferenceComponentComputeResourceRequirements"},
-        "BaseInferenceComponentName":{"shape":"InferenceComponentName"}
+        "BaseInferenceComponentName":{"shape":"InferenceComponentName"},
+        "DataCacheConfig":{"shape":"InferenceComponentDataCacheConfigSummary"}
       }
     },
     "InferenceComponentStartupParameters":{
@@ -24915,6 +24977,17 @@
       "min":0,
       "pattern":"arn:aws[a-z\\-]*:sns:[a-z0-9\\-]*:[0-9]{12}:[a-zA-Z0-9_.-]+"
     },
+    "SoftwareUpdateStatus":{
+      "type":"string",
+      "enum":[
+        "Pending",
+        "InProgress",
+        "Succeeded",
+        "Failed",
+        "RollbackInProgress",
+        "RollbackComplete"
+      ]
+    },
     "SortActionsBy":{
       "type":"string",
       "enum":[
@@ -26574,7 +26647,8 @@
         "Completed",
         "Failed",
         "Stopping",
-        "Stopped"
+        "Stopped",
+        "Deleting"
       ]
     },
     "TrainingJobStatusCounter":{
@@ -28150,6 +28224,7 @@
         "NotebookInstanceName":{"shape":"NotebookInstanceName"},
         "InstanceType":{"shape":"InstanceType"},
         "IpAddressType":{"shape":"IPAddressType"},
+        "PlatformIdentifier":{"shape":"PlatformIdentifier"},
         "RoleArn":{"shape":"RoleArn"},
         "LifecycleConfigName":{"shape":"NotebookInstanceLifecycleConfigName"},
         "DisassociateLifecycleConfig":{

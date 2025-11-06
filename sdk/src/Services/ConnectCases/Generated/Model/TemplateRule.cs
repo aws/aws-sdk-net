@@ -65,7 +65,7 @@ namespace Amazon.ConnectCases.Model
         /// Unique identifier of a field.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=500)]
+        [AWSProperty(Min=1, Max=500)]
         public string FieldId
         {
             get { return this._fieldId; }

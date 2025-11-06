@@ -433,6 +433,64 @@ namespace Amazon.GeoMaps
 
 
     /// <summary>
+    /// Constants used for properties of type TileAdditionalFeature.
+    /// </summary>
+    public class TileAdditionalFeature : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ContourLines for TileAdditionalFeature
+        /// </summary>
+        public static readonly TileAdditionalFeature ContourLines = new TileAdditionalFeature("ContourLines");
+        /// <summary>
+        /// Constant Hillshade for TileAdditionalFeature
+        /// </summary>
+        public static readonly TileAdditionalFeature Hillshade = new TileAdditionalFeature("Hillshade");
+        /// <summary>
+        /// Constant Logistics for TileAdditionalFeature
+        /// </summary>
+        public static readonly TileAdditionalFeature Logistics = new TileAdditionalFeature("Logistics");
+        /// <summary>
+        /// Constant Transit for TileAdditionalFeature
+        /// </summary>
+        public static readonly TileAdditionalFeature Transit = new TileAdditionalFeature("Transit");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TileAdditionalFeature(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TileAdditionalFeature FindValue(string value)
+        {
+            return FindValue<TileAdditionalFeature>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TileAdditionalFeature(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Traffic.
     /// </summary>
     public class Traffic : ConstantClass

@@ -31,8 +31,7 @@ namespace Amazon.IoTManagedIntegrations.Model
 {
     /// <summary>
     /// Container for the parameters to the DeregisterAccountAssociation operation.
-    /// Deregisters an account association, removing the connection between a managed thing
-    /// and a third-party account.
+    /// Deregister an account association from a managed thing.
     /// </summary>
     public partial class DeregisterAccountAssociationRequest : AmazonIoTManagedIntegrationsRequest
     {

@@ -56,6 +56,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
         public IRequest Marshall(PutJobTaggingRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.S3Control");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "PUT";
         
             if (publicRequest.IsSetAccountId()) 
@@ -125,5 +126,6 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, PutJobTaggingRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, PutJobTaggingRequest publicRequest);
     }    
 }

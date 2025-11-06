@@ -35,6 +35,8 @@ namespace Amazon.LocationService.Model
     public partial class ApiKeyRestrictions
     {
         private List<string> _allowActions = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<AndroidApp> _allowAndroidApps = AWSConfigs.InitializeCollections ? new List<AndroidApp>() : null;
+        private List<AppleApp> _allowAppleApps = AWSConfigs.InitializeCollections ? new List<AppleApp>() : null;
         private List<string> _allowReferers = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _allowResources = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
@@ -189,6 +191,56 @@ namespace Amazon.LocationService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property AllowAndroidApps. 
+        /// <para>
+        /// An optional list of allowed Android applications for which requests must originate
+        /// from. Requests using this API key from other sources will not be allowed.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=0, Max=5)]
+        public List<AndroidApp> AllowAndroidApps
+        {
+            get { return this._allowAndroidApps; }
+            set { this._allowAndroidApps = value; }
+        }
+
+        // Check to see if AllowAndroidApps property is set
+        internal bool IsSetAllowAndroidApps()
+        {
+            return this._allowAndroidApps != null && (this._allowAndroidApps.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AllowAppleApps. 
+        /// <para>
+        /// An optional list of allowed Apple applications for which requests must originate from.
+        /// Requests using this API key from other sources will not be allowed.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=0, Max=5)]
+        public List<AppleApp> AllowAppleApps
+        {
+            get { return this._allowAppleApps; }
+            set { this._allowAppleApps = value; }
+        }
+
+        // Check to see if AllowAppleApps property is set
+        internal bool IsSetAllowAppleApps()
+        {
+            return this._allowAppleApps != null && (this._allowAppleApps.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
         /// Gets and sets the property AllowReferers. 
         /// <para>
         /// An optional list of allowed HTTP referers for which requests must originate from.
@@ -232,7 +284,7 @@ namespace Amazon.LocationService.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Min=1, Max=5)]
+        [AWSProperty(Min=0, Max=5)]
         public List<string> AllowReferers
         {
             get { return this._allowReferers; }
