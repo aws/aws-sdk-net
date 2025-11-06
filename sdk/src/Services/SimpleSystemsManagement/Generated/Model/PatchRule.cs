@@ -49,6 +49,13 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  
         /// <para>
+        /// Patch Manager evaluates patch release dates using Coordinated Universal Time (UTC).
+        /// If the day represented by <c>7</c> is <c>2025-11-16</c>, patches released between
+        /// <c>2025-11-16T00:00:00Z</c> and <c>2025-11-16T23:59:59Z</c> will be included in the
+        /// approval.
+        /// </para>
+        ///  
+        /// <para>
         /// This parameter is marked as <c>Required: No</c>, but your request must include a value
         /// for either <c>ApproveAfterDays</c> or <c>ApproveUntilDate</c>.
         /// </para>
@@ -88,7 +95,13 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// Enter dates in the format <c>YYYY-MM-DD</c>. For example, <c>2024-12-31</c>.
+        /// Enter dates in the format <c>YYYY-MM-DD</c>. For example, <c>2025-11-16</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Patch Manager evaluates patch release dates using Coordinated Universal Time (UTC).
+        /// If you enter the date <c>2025-11-16</c>, patches released between <c>2025-11-16T00:00:00Z</c>
+        /// and <c>2025-11-16T23:59:59Z</c> will be included in the approval.
         /// </para>
         ///  
         /// <para>

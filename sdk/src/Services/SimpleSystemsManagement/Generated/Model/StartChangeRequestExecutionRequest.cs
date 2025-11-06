@@ -31,9 +31,20 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the StartChangeRequestExecution operation.
+    /// <important> 
+    /// <para>
+    /// Amazon Web Services Systems Manager Change Manager will no longer be open to new customers
+    /// starting November 7, 2025. If you would like to use Change Manager, sign up prior
+    /// to that date. Existing customers can continue to use the service as normal. For more
+    /// information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/change-manager-availability-change.html">Amazon
+    /// Web Services Systems Manager Change Manager availability change</a>.
+    /// </para>
+    ///  </important> 
+    /// <para>
     /// Creates a change request for Change Manager. The Automation runbooks specified in
     /// the change request run only after all required approvals for the change request have
     /// been received.
+    /// </para>
     /// </summary>
     public partial class StartChangeRequestExecutionRequest : AmazonSimpleSystemsManagementRequest
     {
