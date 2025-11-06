@@ -1,3 +1,34 @@
+### 4.0.128.0 (2025-11-06 19:55 UTC)
+* AccessAnalyzer (4.0.4.0)
+	* New field totalActiveErrors added to getFindingsStatistics response.
+* Backup (4.0.6.0)
+	* AWS Backup now supports customer-managed keys (CMK) for logically air-gapped vaults, enabling customers to maintain full control over their encryption key lifecycle. This feature helps organizations meet specific internal governance requirements or external regulatory compliance standards.
+* Connect (4.0.15.0)
+	* Added support for Conditional Questions in Evaluation Forms. Introduced Auto Evaluation capability for Evaluation Forms and Contact Evaluations. Added new API operations: SearchEvaluationForms and SearchContactEvaluations.
+* EC2 (4.0.49.0)
+	* Add Amazon EC2 R8a instance types
+* GameLift (4.0.4.0)
+	* Amazon GameLift Servers now supports game builds that use the Windows 2022 operating system.
+* IdentityStore (4.0.3.0)
+	* IdentityStore API: added new KMSExceptionReason fields to the Exception object; added multiple new fields to the User APIs - UserStatus, Birthdate, Website and Photos; added multiple new metadata fields for User, Groups and Membership APIs - CreatedAt, CreatedBy, UpdatedAt and UpdatedBy.
+* QuickSight (4.0.8.0)
+	* Support for New Data Prep Experience
+* S3 (4.0.11.0)
+	* Increasing the default part size for S3 multipart upload from 5MB to 8MB when no part size is specified. This will reduce the number of API calls for multipart uploads.
+	* Update AssemblyInfo to give S3 Unit Test project access to internals.
+	* Fixed issue where PartSize and IsLastPart fields were not properly set on Transfer Utility Upload Part Request.
+	* Add additional validations for Transfer Utility requests to ensure Upload Parts have the proper Content Length and File Offsets.
+	* Create AbortMultipartUploads api that takes in TransferUtilityAbortMultipartUploadRequest.
+	* Add missing fields to Transfer Utility request objects. ContentType on TransferUtilityUploadRequest and TransferUtilityUploadDirectoryRequest now directly updates the ContentType header, instead of being a separate field on those objects.
+* S3Tables (4.0.6.0)
+	* Adds support for tagging APIs for S3 Tables
+* S3Vectors (4.0.3.0)
+	* Amazon S3 Vectors provides cost-effective, elastic, and durable vector storage for queries based on semantic meaning and similarity.
+* SageMaker (4.0.31.0)
+	* Added NodeProvisioningMode parameter to UpdateCluster API to determine how instance provisioning is handled during cluster operations; in Continuous mode. Added VpcId field in UpdateDomain request for SageMaker Unified Studio domains with no VPC to add a customer VPC.
+* SimpleSystemsManagement (4.0.6.0)
+	* Provides NoLongerSupportedException error message
+
 ### 4.0.127.0 (2025-11-05 19:35 UTC)
 * CloudFront (4.0.8.0)
 	* This release adds new and updated API operations. You can now use the IpAddressType field to specify either ipv4 or dualstack for your Anycast static IP list. You can also enable cross-account resource sharing to share your VPC origins with other AWS accounts
