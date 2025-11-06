@@ -298,15 +298,17 @@ namespace Amazon.PaymentCryptography.Model
         /// <summary>
         /// Gets and sets the property MultiRegionKeyType. 
         /// <para>
-        /// Indicates whether this key is a multi-region key and its role in the multi-region
+        /// Indicates whether this key is a Multi-Region key and its role in the Multi-Region
         /// key hierarchy.
         /// </para>
         ///  
         /// <para>
-        /// Multi-region keys allow the same key material to be used across multiple Amazon Web
-        /// Services Regions. This field specifies whether the key is a primary key (which can
-        /// be replicated to other regions) or a replica key (which is a copy of a primary key
-        /// in another region).
+        /// Multi-Region replication keys allow the same key material to be used across multiple
+        /// Amazon Web Services Regions. This field specifies whether the key is a Primary Region
+        /// key (PRK) (which can be replicated to other Amazon Web Services Regions) or a Replica
+        /// Region key (RRK) (which is a copy of a PRK in another Region). For more information,
+        /// see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-multi-region-replication.html">Multi-Region
+        /// key replication</a>.
         /// </para>
         /// </summary>
         public MultiRegionKeyType MultiRegionKeyType
@@ -339,7 +341,8 @@ namespace Amazon.PaymentCryptography.Model
         /// <summary>
         /// Gets and sets the property ReplicationStatus. 
         /// <para>
-        /// Information about the replication status of the key across different regions.
+        /// Information about the replication status of the key across different Amazon Web Services
+        /// Regions.
         /// </para>
         ///  
         /// <para>
@@ -406,7 +409,9 @@ namespace Amazon.PaymentCryptography.Model
         /// <summary>
         /// Gets and sets the property UsingDefaultReplicationRegions. 
         /// <para>
-        /// Indicates whether this key is using the account's default replication regions configuration.
+        /// Indicates whether this key is using the account's default replication regions configuration
+        /// for <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-multi-region-replication.html">Multi-Region
+        /// key replication</a>.
         /// </para>
         ///  
         /// <para>

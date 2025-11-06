@@ -41,6 +41,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             {
                 foreach (var grant in request.Grants)
                 {
+                    if (grant == null)
+                        continue;
                     string grantee = null;
                     if (grant.Grantee.CanonicalUser != null && !string.IsNullOrEmpty(grant.Grantee.CanonicalUser))
                         grantee = string.Format(CultureInfo.InvariantCulture, "id=\"{0}\"", grant.Grantee.CanonicalUser);
@@ -60,6 +62,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             foreach (var permission in protoHeaders.Keys)
             {
+                if (permission == null)
+                    continue;
                 if (permission == S3Permission.READ)
                     irequest.Headers[S3Constants.AmzGrantHeaderRead] = protoHeaders[permission];
                 if (permission == S3Permission.WRITE)
@@ -75,14 +79,12 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             }
         }
 
-        partial void PostMarshallCustomization(DefaultRequest defaultRequest, PutBucketRequest publicRequest)
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, PutBucketRequest publicRequest)
         {
             // the NoAcl logic exists because it was originally a part of the IsSetCannedACL()
             // method https://github.com/aws/aws-sdk-net/blob/623dc261499331cb38bfec47789ddc4ef456222c/sdk/src/Services/S3/Custom/Model/PutBucketRequest.cs#L195-L198
-            if (publicRequest.IsSetCannedACL() && publicRequest.CannedACL == S3CannedACL.NoACL)
-                defaultRequest.Headers.Remove("x-amz-acl");
             if (publicRequest.IsSetCannedACL())
-                return;
+                defaultRequest.Headers.Add(HeaderKeys.XAmzAclHeader, publicRequest.CannedACL.Value);
             else if (publicRequest.Grants != null && publicRequest.Grants.Count > 0)
                 ConvertPutWithACLRequest(publicRequest, defaultRequest);
         }

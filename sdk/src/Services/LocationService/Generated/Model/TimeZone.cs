@@ -45,7 +45,7 @@ namespace Amazon.LocationService.Model
         /// IANA time zone standard</a>. For example, <c>America/Los_Angeles</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public string Name
         {
             get { return this._name; }
@@ -64,6 +64,7 @@ namespace Amazon.LocationService.Model
         /// The time zone's offset, in seconds, from UTC.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public int? Offset
         {
             get { return this._offset; }

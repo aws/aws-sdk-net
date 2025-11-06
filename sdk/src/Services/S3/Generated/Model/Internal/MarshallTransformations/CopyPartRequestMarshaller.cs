@@ -56,6 +56,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         public IRequest Marshall(CopyPartRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.S3");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "PUT";
         
             if (publicRequest.IsSetCopySourceServerSideEncryptionCustomerMethod()) 
@@ -135,5 +136,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, CopyPartRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, CopyPartRequest publicRequest);
     }    
 }

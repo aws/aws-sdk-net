@@ -31,7 +31,7 @@ namespace Amazon.IoTManagedIntegrations.Model
 {
     /// <summary>
     /// Container for the parameters to the GetManagedThing operation.
-    /// Get the attributes and capabilities associated with a managed thing.
+    /// Get details of a managed thing including its attributes and capabilities.
     /// </summary>
     public partial class GetManagedThingRequest : AmazonIoTManagedIntegrationsRequest
     {

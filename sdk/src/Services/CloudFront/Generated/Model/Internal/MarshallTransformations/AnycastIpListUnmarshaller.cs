@@ -78,6 +78,12 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         unmarshalledObject.Id = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("IpAddressType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.IpAddressType = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("IpCount", targetDepth))
                     {
                         var unmarshaller = NullableIntUnmarshaller.Instance;

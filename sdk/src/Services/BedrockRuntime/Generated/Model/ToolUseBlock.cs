@@ -31,13 +31,16 @@ namespace Amazon.BedrockRuntime.Model
 {
     /// <summary>
     /// A tool use content block. Contains information about a tool that the model is requesting
-    /// be run., The model uses the result from the tool to generate a response.
+    /// be run., The model uses the result from the tool to generate a response. For more
+    /// information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/tool-use.html">Call
+    /// a tool with the Converse API</a> in the Amazon Bedrock User Guide.
     /// </summary>
     public partial class ToolUseBlock
     {
         private Amazon.Runtime.Documents.Document _input;
         private string _name;
         private string _toolUseId;
+        private ToolUseType _type;
 
         /// <summary>
         /// Gets and sets the property Input. 
@@ -94,6 +97,24 @@ namespace Amazon.BedrockRuntime.Model
         internal bool IsSetToolUseId()
         {
             return this._toolUseId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The type for the tool request.
+        /// </para>
+        /// </summary>
+        public ToolUseType Type
+        {
+            get { return this._type; }
+            set { this._type = value; }
+        }
+
+        // Check to see if Type property is set
+        internal bool IsSetType()
+        {
+            return this._type != null;
         }
 
     }

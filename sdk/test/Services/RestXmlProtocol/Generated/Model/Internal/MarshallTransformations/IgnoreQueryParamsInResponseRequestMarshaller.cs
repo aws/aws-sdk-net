@@ -56,6 +56,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
         public IRequest Marshall(IgnoreQueryParamsInResponseRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.RestXmlProtocol");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "GET";
             request.ResourcePath = "/IgnoreQueryParamsInResponse";
 
@@ -82,5 +83,6 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, IgnoreQueryParamsInResponseRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, IgnoreQueryParamsInResponseRequest publicRequest);
     }    
 }

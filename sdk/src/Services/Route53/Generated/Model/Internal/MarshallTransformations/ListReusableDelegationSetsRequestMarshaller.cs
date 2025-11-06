@@ -56,6 +56,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListReusableDelegationSetsRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.Route53");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "GET";
             
             if (publicRequest.IsSetMarker())
@@ -89,5 +90,6 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, ListReusableDelegationSetsRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, ListReusableDelegationSetsRequest publicRequest);
     }    
 }

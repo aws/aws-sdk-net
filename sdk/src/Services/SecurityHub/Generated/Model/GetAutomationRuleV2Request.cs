@@ -31,8 +31,8 @@ namespace Amazon.SecurityHub.Model
 {
     /// <summary>
     /// Container for the parameters to the GetAutomationRuleV2 operation.
-    /// Returns an automation rule for the V2 service. This API is in private preview and
-    /// subject to change.
+    /// Returns an automation rule for the V2 service. This API is in public preview and subject
+    /// to change.
     /// </summary>
     public partial class GetAutomationRuleV2Request : AmazonSecurityHubRequest
     {

@@ -34,7 +34,27 @@ namespace Amazon.BedrockAgentCoreControl.Model
     /// </summary>
     public partial class AgentRuntimeArtifact
     {
+        private CodeConfiguration _codeConfiguration;
         private ContainerConfiguration _containerConfiguration;
+
+        /// <summary>
+        /// Gets and sets the property CodeConfiguration. 
+        /// <para>
+        /// The code configuration for the agent runtime artifact, including the source code location
+        /// and execution settings.
+        /// </para>
+        /// </summary>
+        public CodeConfiguration CodeConfiguration
+        {
+            get { return this._codeConfiguration; }
+            set { this._codeConfiguration = value; }
+        }
+
+        // Check to see if CodeConfiguration property is set
+        internal bool IsSetCodeConfiguration()
+        {
+            return this._codeConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ContainerConfiguration. 

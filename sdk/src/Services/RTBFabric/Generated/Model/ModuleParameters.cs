@@ -36,6 +36,7 @@ namespace Amazon.RTBFabric.Model
     {
         private NoBidModuleParameters _noBid;
         private OpenRtbAttributeModuleParameters _openRtbAttribute;
+        private RateLimiterModuleParameters _rateLimiter;
 
         /// <summary>
         /// Gets and sets the property NoBid. 
@@ -71,6 +72,24 @@ namespace Amazon.RTBFabric.Model
         internal bool IsSetOpenRtbAttribute()
         {
             return this._openRtbAttribute != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RateLimiter. 
+        /// <para>
+        /// Describes the parameters of a rate limit.
+        /// </para>
+        /// </summary>
+        public RateLimiterModuleParameters RateLimiter
+        {
+            get { return this._rateLimiter; }
+            set { this._rateLimiter = value; }
+        }
+
+        // Check to see if RateLimiter property is set
+        internal bool IsSetRateLimiter()
+        {
+            return this._rateLimiter != null;
         }
 
     }

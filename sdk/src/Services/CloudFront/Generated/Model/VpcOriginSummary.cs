@@ -34,6 +34,7 @@ namespace Amazon.CloudFront.Model
     /// </summary>
     public partial class VpcOriginSummary
     {
+        private string _accountId;
         private string _arn;
         private DateTime? _createdTime;
         private string _id;
@@ -41,6 +42,24 @@ namespace Amazon.CloudFront.Model
         private string _name;
         private string _originEndpointArn;
         private string _status;
+
+        /// <summary>
+        /// Gets and sets the property AccountId. 
+        /// <para>
+        /// The account ID of the Amazon Web Services account that owns the VPC origin.
+        /// </para>
+        /// </summary>
+        public string AccountId
+        {
+            get { return this._accountId; }
+            set { this._accountId = value; }
+        }
+
+        // Check to see if AccountId property is set
+        internal bool IsSetAccountId()
+        {
+            return this._accountId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Arn. 

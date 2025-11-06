@@ -45,7 +45,7 @@ namespace Amazon.LocationService.Model
         /// The total distance of travel for the route.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0)]
+        [AWSProperty(Sensitive=true, Min=0)]
         public double? Distance
         {
             get { return this._distance; }
@@ -64,7 +64,7 @@ namespace Amazon.LocationService.Model
         /// The expected duration of travel for the route.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0)]
+        [AWSProperty(Sensitive=true, Min=0)]
         public double? DurationSeconds
         {
             get { return this._durationSeconds; }

@@ -36,28 +36,37 @@ namespace Amazon.Omics.Model
     /// 
     ///  <ul> <li> 
     /// <para>
-    ///  <i>Workflow definition files</i>: Define your workflow in one or more workflow definition
-    /// files, written in WDL, Nextflow, or CWL. The workflow definition specifies the inputs
-    /// and outputs for runs that use the workflow. It also includes specifications for the
-    /// runs and run tasks for your workflow, including compute and memory requirements. The
-    /// workflow definition file must be in .zip format.
+    ///  <i>Workflow definition file:</i> A workflow definition file written in WDL, Nextflow,
+    /// or CWL. The workflow definition specifies the inputs and outputs for runs that use
+    /// the workflow. It also includes specifications for the runs and run tasks for your
+    /// workflow, including compute and memory requirements. The workflow definition file
+    /// must be in <c>.zip</c> format. For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/workflow-definition-files.html">Workflow
+    /// definition files</a> in Amazon Web Services HealthOmics.
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// You can use Amazon Q CLI to build and validate your workflow definition files in WDL,
+    /// Nextflow, and CWL. For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/getting-started.html#omics-q-prompts">Example
+    /// prompts for Amazon Q CLI</a> and the <a href="https://github.com/aws-samples/aws-healthomics-tutorials/tree/main/generative-ai">Amazon
+    /// Web Services HealthOmics Agentic generative AI tutorial</a> on GitHub.
+    /// </para>
+    ///  </li> </ul> </li> <li> 
+    /// <para>
+    ///  <i>(Optional) Parameter template file:</i> A parameter template file written in JSON.
+    /// Create the file to define the run parameters, or Amazon Web Services HealthOmics generates
+    /// the parameter template for you. For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/parameter-templates.html">Parameter
+    /// template files for HealthOmics workflows</a>. 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// (Optional) <i>Parameter template</i>: You can create a parameter template file that
-    /// defines the run parameters, or Amazon Web Services HealthOmics can generate the parameter
-    /// template for you.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <i>ECR container images</i>: Create container images for the workflow in a private
+    ///  <i>ECR container images:</i> Create container images for the workflow in a private
     /// ECR repository, or synchronize images from a supported upstream registry with your
     /// Amazon ECR private repository.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// (Optional) <i>Sentieon licenses</i>: Request a Sentieon license if using the Sentieon
-    /// software in a private workflow.
+    ///  <i>(Optional) Sentieon licenses:</i> Request a Sentieon license to use the Sentieon
+    /// software in private workflows.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -113,7 +122,7 @@ namespace Amazon.Omics.Model
         /// <para>
         /// (Optional) Use a container registry map to specify mappings between the ECR private
         /// repository and one or more upstream registries. For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/workflows-ecr.html">Container
-        /// images</a> in the <i>Amazon Web Services HealthOmics User Guide</i>. 
+        /// images</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.
         /// </para>
         /// </summary>
         public ContainerRegistryMap ContainerRegistryMap

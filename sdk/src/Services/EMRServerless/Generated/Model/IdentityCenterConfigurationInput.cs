@@ -30,13 +30,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EMRServerless.Model
 {
     /// <summary>
-    /// Specifies the IAM Identity Center configuration used to enable or disable trusted
-    /// identity propagation. When provided, this configuration determines how the application
-    /// interacts with IAM Identity Center for user authentication and access control.
+    /// The IAM Identity Center Configuration accepts the Identity Center instance parameter
+    /// required to enable trusted identity propagation. This configuration allows identity
+    /// propagation between integrated services and the Identity Center instance.
     /// </summary>
     public partial class IdentityCenterConfigurationInput
     {
         private string _identityCenterInstanceArn;
+        private bool? _userBackgroundSessionsEnabled;
 
         /// <summary>
         /// Gets and sets the property IdentityCenterInstanceArn. 
@@ -55,6 +56,26 @@ namespace Amazon.EMRServerless.Model
         internal bool IsSetIdentityCenterInstanceArn()
         {
             return this._identityCenterInstanceArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UserBackgroundSessionsEnabled. 
+        /// <para>
+        /// Enables user background sessions for this application so Livy sessions can continue
+        /// running after users log out of their interactive notebook or their Identity Center
+        /// sessions expire.
+        /// </para>
+        /// </summary>
+        public bool? UserBackgroundSessionsEnabled
+        {
+            get { return this._userBackgroundSessionsEnabled; }
+            set { this._userBackgroundSessionsEnabled = value; }
+        }
+
+        // Check to see if UserBackgroundSessionsEnabled property is set
+        internal bool IsSetUserBackgroundSessionsEnabled()
+        {
+            return this._userBackgroundSessionsEnabled.HasValue; 
         }
 
     }

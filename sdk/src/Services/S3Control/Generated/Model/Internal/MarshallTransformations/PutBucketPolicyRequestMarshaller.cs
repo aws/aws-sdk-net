@@ -56,6 +56,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
         public IRequest Marshall(PutBucketPolicyRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.S3Control");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "PUT";
         
             if (publicRequest.IsSetAccountId()) 
@@ -116,5 +117,6 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, PutBucketPolicyRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, PutBucketPolicyRequest publicRequest);
     }    
 }

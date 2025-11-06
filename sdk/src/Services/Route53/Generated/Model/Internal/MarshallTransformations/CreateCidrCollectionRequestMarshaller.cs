@@ -56,6 +56,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
         public IRequest Marshall(CreateCidrCollectionRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.Route53");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "POST";
             request.ResourcePath = "/2013-04-01/cidrcollection";
 
@@ -105,5 +106,6 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, CreateCidrCollectionRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, CreateCidrCollectionRequest publicRequest);
     }    
 }

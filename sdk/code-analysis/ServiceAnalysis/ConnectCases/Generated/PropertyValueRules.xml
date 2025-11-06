@@ -863,6 +863,16 @@
     <pattern>.*[\S]</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ConnectCases.Model.FieldOptionsCaseRule.ChildFieldId</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectCases.Model.FieldOptionsCaseRule.ParentFieldId</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ConnectCases.Model.FieldSummary.FieldArn</property>
     <min>1</min>
     <max>500</max>
@@ -970,6 +980,12 @@
     <property>Amazon.ConnectCases.Model.OperandTwo.StringValue</property>
     <min>1</min>
     <max>1500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectCases.Model.ParentChildFieldOptionsMapping.ParentFieldOptionValue</property>
+    <min>0</min>
+    <max>100</max>
+    <pattern>$|^.*[\S]</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectCases.Model.RequiredField.FieldId</property>

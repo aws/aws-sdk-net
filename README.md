@@ -150,8 +150,6 @@ Protocol tests can be found in the `sdk/test/ProtocolTests` directory. Protocol 
 	* Amazon AppStream is a fully managed, secure application streaming service that allows you to stream desktop applications from AWS to a web browser.
 * [AWSSDK.AppSync](https://www.nuget.org/packages/AWSSDK.AppSync/)
 	* AWS AppSync is an enterprise-level, fully managed GraphQL service with real-time data synchronization and offline programming features.
-* [AWSSDK.AppTest](https://www.nuget.org/packages/AWSSDK.AppTest/)
-	* AWS Mainframe Modernization Application Testing is an AWS Mainframe Modernization service feature that automates functional equivalence testing for mainframe application modernization and migration to AWS, and regression testing.
 * [AWSSDK.ARCRegionswitch](https://www.nuget.org/packages/AWSSDK.ARCRegionswitch/)
 	* This is the initial SDK release for Region switch
 * [AWSSDK.ARCZonalShift](https://www.nuget.org/packages/AWSSDK.ARCZonalShift/)
@@ -496,8 +494,6 @@ Protocol tests can be found in the `sdk/test/ProtocolTests` directory. Protocol 
 	* The AWS IoT Events service allows customers to monitor their IoT devices and sensors to detect failures or changes in operation and to trigger actions when these events occur
 * [AWSSDK.IoTEventsData](https://www.nuget.org/packages/AWSSDK.IoTEventsData/)
 	* The AWS IoT Events service allows customers to monitor their IoT devices and sensors to detect failures or changes in operation and to trigger actions when these events occur
-* [AWSSDK.IoTFleetHub](https://www.nuget.org/packages/AWSSDK.IoTFleetHub/)
-	* AWS IoT Fleet Hub, a new feature of AWS IoT Device Management that provides a web application for monitoring and managing device fleets connected to AWS IoT at scale.
 * [AWSSDK.IoTFleetWise](https://www.nuget.org/packages/AWSSDK.IoTFleetWise/)
 	* General availability (GA) for AWS IoT Fleetwise. It adds AWS IoT Fleetwise to AWS SDK. For more information, see https://docs.aws.amazon.com/iot-fleetwise/latest/APIReference/Welcome.html.
 * [AWSSDK.IoTJobsDataPlane](https://www.nuget.org/packages/AWSSDK.IoTJobsDataPlane/)
@@ -578,10 +574,6 @@ Protocol tests can be found in the `sdk/test/ProtocolTests` directory. Protocol 
 	* Initial release of Amazon Location Service. A new geospatial service providing capabilities to render maps, geocode/reverse geocode, track device locations, and detect geofence entry/exit events.
 * [AWSSDK.LookoutEquipment](https://www.nuget.org/packages/AWSSDK.LookoutEquipment/)
 	* This release introduces support for Amazon Lookout for Equipment.
-* [AWSSDK.LookoutforVision](https://www.nuget.org/packages/AWSSDK.LookoutforVision/)
-	* This release introduces support for Amazon Lookout for Vision.
-* [AWSSDK.LookoutMetrics](https://www.nuget.org/packages/AWSSDK.LookoutMetrics/)
-	* Amazon Lookout for Metrics is now generally available. You can use Lookout for Metrics to monitor your data for anomalies. For more information, see the Amazon Lookout for Metrics Developer Guide.
 * [AWSSDK.MachineLearning](https://www.nuget.org/packages/AWSSDK.MachineLearning/)
 	* Amazon Machine Learning is a service that makes it easy for developers of all skill levels to use machine learning technology.
 * [AWSSDK.Macie2](https://www.nuget.org/packages/AWSSDK.Macie2/)
@@ -732,10 +724,6 @@ Protocol tests can be found in the `sdk/test/ProtocolTests` directory. Protocol 
 	* Amazon Q - a generative AI powered application that your employees can use to ask questions and get answers from knowledge spread across disparate content repositories, summarize reports, write articles, take actions, and much more - all within their company's connected content repositories.
 * [AWSSDK.QConnect](https://www.nuget.org/packages/AWSSDK.QConnect/)
 	* Amazon Q in Connect, an LLM-enhanced evolution of Amazon Connect Wisdom. This release adds generative AI support to Amazon Q Connect QueryAssistant and GetRecommendations APIs.
-* [AWSSDK.QLDB](https://www.nuget.org/packages/AWSSDK.QLDB/)
-	* Introduces operations needed for managing Amazon QLDB ledgers. This includes the ability to create, delete, modify, and describe Amazon QLDB ledgers. This also includes the ability to cryptographically verify documents and export the journal in a ledger.
-* [AWSSDK.QLDBSession](https://www.nuget.org/packages/AWSSDK.QLDBSession/)
-	* Amazon QLDB introduces the SendCommand API to interact with data in Amazon QLDB ledgers.
 * [AWSSDK.QuickSight](https://www.nuget.org/packages/AWSSDK.QuickSight/)
 	* Amazon QuickSight is a fully managed, serverless, cloud business intelligence system that allows you to extend data and insights to every user in your organization. The first release of APIs for Amazon QuickSight introduces embedding and user/group management capabilities. The get-dashboard-embed-url API allows you to obtain an authenticated dashboard URL that can be embedded in application domains whitelisted for QuickSight dashboard embedding. User APIs allow you to programmatically expand and manage your QuickSight deployments while group APIs allow easier permissions management for resources within QuickSight.
 * [AWSSDK.RAM](https://www.nuget.org/packages/AWSSDK.RAM/)
@@ -764,8 +752,6 @@ Protocol tests can be found in the `sdk/test/ProtocolTests` directory. Protocol 
 	* AWS Resource Groups lets you search and group AWS resources from multiple services based on their tags.
 * [AWSSDK.ResourceGroupsTaggingAPI](https://www.nuget.org/packages/AWSSDK.ResourceGroupsTaggingAPI/)
 	* Resource Groups Tagging APIs can help you organize your resources and enable you to simplify resource management, access management, and cost allocation.
-* [AWSSDK.RoboMaker](https://www.nuget.org/packages/AWSSDK.RoboMaker/)
-	* (New Service) AWS RoboMaker is a service that makes it easy to develop, simulate, and deploy intelligent robotics applications at scale. 
 * [AWSSDK.Route53](https://www.nuget.org/packages/AWSSDK.Route53/)
 	* Amazon Route 53 is a highly available and scalable cloud Domain Name System (DNS) web service.
 * [AWSSDK.Route53Domains](https://www.nuget.org/packages/AWSSDK.Route53Domains/)

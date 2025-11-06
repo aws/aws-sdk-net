@@ -34,8 +34,24 @@ namespace Amazon.GroundStation.Model
     /// </summary>
     public partial class EphemerisTypeDescription
     {
+        private EphemerisDescription _azEl;
         private EphemerisDescription _oem;
         private EphemerisDescription _tle;
+
+        /// <summary>
+        /// Gets and sets the property AzEl.
+        /// </summary>
+        public EphemerisDescription AzEl
+        {
+            get { return this._azEl; }
+            set { this._azEl = value; }
+        }
+
+        // Check to see if AzEl property is set
+        internal bool IsSetAzEl()
+        {
+            return this._azEl != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Oem.

@@ -56,6 +56,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         public IRequest Marshall(CreateFieldLevelEncryptionConfigRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.CloudFront");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "POST";
             request.ResourcePath = "/2020-05-31/field-level-encryption";
 
@@ -174,5 +175,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, CreateFieldLevelEncryptionConfigRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, CreateFieldLevelEncryptionConfigRequest publicRequest);
     }    
 }

@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatchEvents.Model
 {
     /// <summary>
-    /// These are custom parameters to use when the target is a SageMaker Model Building Pipeline
-    /// that starts based on EventBridge events.
+    /// These are custom parameters to use when the target is a SageMaker AI Model Building
+    /// Pipeline that starts based on EventBridge events.
     /// </summary>
     public partial class SageMakerPipelineParameters
     {
@@ -40,7 +40,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// <summary>
         /// Gets and sets the property PipelineParameterList. 
         /// <para>
-        /// List of Parameter names and values for SageMaker Model Building Pipeline execution.
+        /// List of Parameter names and values for SageMaker AI Model Building Pipeline execution.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

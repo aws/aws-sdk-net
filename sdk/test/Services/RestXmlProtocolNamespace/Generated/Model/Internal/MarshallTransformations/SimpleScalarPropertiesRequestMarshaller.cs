@@ -56,6 +56,7 @@ namespace Amazon.RestXmlProtocolNamespace.Model.Internal.MarshallTransformations
         public IRequest Marshall(SimpleScalarPropertiesRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.RestXmlProtocolNamespace");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "PUT";
         
             if (publicRequest.IsSetFoo()) 
@@ -138,5 +139,6 @@ namespace Amazon.RestXmlProtocolNamespace.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, SimpleScalarPropertiesRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, SimpleScalarPropertiesRequest publicRequest);
     }    
 }

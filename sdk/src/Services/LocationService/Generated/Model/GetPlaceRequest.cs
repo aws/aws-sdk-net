@@ -31,8 +31,44 @@ namespace Amazon.LocationService.Model
 {
     /// <summary>
     /// Container for the parameters to the GetPlace operation.
-    /// Finds a place by its unique ID. A <c>PlaceId</c> is returned by other search operations.
+    /// <important> 
+    /// <para>
+    /// This operation is no longer current and may be deprecated in the future. We recommend
+    /// you upgrade to the <a href="/location/latest/APIReference/API_geoplaces_GetPlace.html">V2
+    /// <c>GetPlace</c> </a> operation unless you require Grab data.
     /// 
+    ///  <ul> <li> 
+    /// <para>
+    /// This version of <c>GetPlace</c> is part of a previous Amazon Location Service Places
+    /// API (version 1) which has been superseded by a more intuitive, powerful, and complete
+    /// API (version 2).
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Version 2 of the <c>GetPlace</c> operation interoperates with the rest of the Places
+    /// V2 API, while this version does not.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// If you are using an Amazon Web Services SDK or the Amazon Web Services CLI, note that
+    /// the Places API version 2 is found under <c>geo-places</c> or <c>geo_places</c>, not
+    /// under <c>location</c>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Since Grab is not yet fully supported in Places API version 2, we recommend you continue
+    /// using API version 1 when using Grab.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Start your version 2 API journey with the Places V2 <a href="/location/latest/APIReference/API_Operations_Amazon_Location_Service_Places_V2.html">API
+    /// Reference</a> or the <a href="/location/latest/developerguide/places.html">Developer
+    /// Guide</a>.
+    /// </para>
+    ///  </li> </ul> </important> 
+    /// <para>
+    /// Finds a place by its unique ID. A <c>PlaceId</c> is returned by other search operations.
+    /// </para>
     ///  <note> 
     /// <para>
     /// A PlaceId is valid only if all of the following are the same in the original search
@@ -57,6 +93,7 @@ namespace Amazon.LocationService.Model
     /// see <a href="http://aws.amazon.com/service-terms">AWS service terms</a>.
     /// </para>
     ///  </note>
+    /// </para>
     /// </summary>
     public partial class GetPlaceRequest : AmazonLocationServiceRequest
     {
@@ -152,7 +189,7 @@ namespace Amazon.LocationService.Model
         /// The identifier of the place to find.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public string PlaceId
         {
             get { return this._placeId; }

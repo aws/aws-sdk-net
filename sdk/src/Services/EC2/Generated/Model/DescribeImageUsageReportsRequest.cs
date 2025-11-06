@@ -85,6 +85,18 @@ namespace Amazon.EC2.Model
         /// <para>
         ///  <c>state</c> - The state of the report (<c>available</c> | <c>pending</c> | <c>error</c>).
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>tag:&lt;key&gt;</c> - The key/value combination of a tag assigned to the resource.
+        /// Use the tag key in the filter name and the tag value as the filter value. For example,
+        /// to find all resources that have a tag with the key <c>Owner</c> and the value <c>TeamA</c>,
+        /// specify <c>tag:Owner</c> for the filter name and <c>TeamA</c> for the filter value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>tag-key</c> - The key of a tag assigned to the resource. Use this filter to find
+        /// all resources assigned a tag with a specific key, regardless of the tag value.
+        /// </para>
         ///  </li> </ul>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

@@ -56,6 +56,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListOriginRequestPoliciesRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.CloudFront");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "GET";
             
             if (publicRequest.IsSetMarker())
@@ -92,5 +93,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, ListOriginRequestPoliciesRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, ListOriginRequestPoliciesRequest publicRequest);
     }    
 }

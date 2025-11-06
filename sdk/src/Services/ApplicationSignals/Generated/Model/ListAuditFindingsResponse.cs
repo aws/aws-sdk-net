@@ -40,9 +40,8 @@ namespace Amazon.ApplicationSignals.Model
         /// <summary>
         /// Gets and sets the property AuditFindings. 
         /// <para>
-        /// An array of structures, where each structure contains information about one audit
-        /// finding, including the auditor results, severity, and associated metric and dependency
-        /// graphs.
+        /// An array of audit findings that match the specified criteria. Each finding includes
+        /// details about the issue, affected resources, and auditor results.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -66,7 +65,8 @@ namespace Amazon.ApplicationSignals.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Include this value in your next use of this API to get the next set of audit findings.
+        /// The token to use for retrieving the next page of results. This value is present only
+        /// if there are more results available than were returned in the current response.
         /// </para>
         /// </summary>
         public string NextToken

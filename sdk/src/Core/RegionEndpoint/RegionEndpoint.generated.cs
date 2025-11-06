@@ -234,6 +234,11 @@ namespace Amazon
         public static readonly RegionEndpoint USIsobEast1 = GetRegionEndpoint("us-isob-east-1", "US ISOB East (Ohio)", "aws-iso-b", "sc2s.sgov.gov", @"^us\-isob\-\w+\-\d+$", "{service}.{region}.{dnsSuffix}");
 
         /// <summary>
+        /// The US ISOB West endpoint.
+        /// </summary>
+        public static readonly RegionEndpoint USIsobWest1 = GetRegionEndpoint("us-isob-west-1", "US ISOB West", "aws-iso-b", "sc2s.sgov.gov", @"^us\-isob\-\w+\-\d+$", "{service}.{region}.{dnsSuffix}");
+
+        /// <summary>
         /// The EU ISOE West endpoint.
         /// </summary>
         public static readonly RegionEndpoint EUIsoeWest1 = GetRegionEndpoint("eu-isoe-west-1", "EU ISOE West", "aws-iso-e", "cloud.adc-e.uk", @"^eu\-isoe\-\w+\-\d+$", "{service}.{region}.{dnsSuffix}");

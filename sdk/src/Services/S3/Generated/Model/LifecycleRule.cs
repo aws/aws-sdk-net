@@ -184,8 +184,9 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the property Prefix. 
         /// <para>
-        /// Prefix identifying one or more objects to which the rule applies. This is no longer
-        /// used; use <c>Filter</c> instead.
+        ///  The general purpose bucket prefix that identifies one or more objects to which the
+        /// rule applies. We recommend using <c>Filter</c> instead of <c>Prefix</c> for new PUTs.
+        /// Previous configurations where a prefix is defined will continue to operate as before.
         /// </para>
         ///  <important> 
         /// <para>

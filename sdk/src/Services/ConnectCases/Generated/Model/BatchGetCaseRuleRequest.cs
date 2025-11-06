@@ -44,7 +44,7 @@ namespace Amazon.ConnectCases.Model
         /// <summary>
         /// Gets and sets the property CaseRules. 
         /// <para>
-        /// List of case rule identifiers.
+        /// A list of case rule identifiers.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

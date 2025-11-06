@@ -42,6 +42,7 @@ namespace Amazon.GroundStation.Model
     public partial class ListContactsRequest : AmazonGroundStationRequest
     {
         private DateTime? _endTime;
+        private EphemerisFilter _ephemeris;
         private string _groundStation;
         private int? _maxResults;
         private string _missionProfileArn;
@@ -67,6 +68,24 @@ namespace Amazon.GroundStation.Model
         internal bool IsSetEndTime()
         {
             return this._endTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Ephemeris. 
+        /// <para>
+        /// Filter for selecting contacts that use a specific ephemeris".
+        /// </para>
+        /// </summary>
+        public EphemerisFilter Ephemeris
+        {
+            get { return this._ephemeris; }
+            set { this._ephemeris = value; }
+        }
+
+        // Check to see if Ephemeris property is set
+        internal bool IsSetEphemeris()
+        {
+            return this._ephemeris != null;
         }
 
         /// <summary>

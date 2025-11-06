@@ -36,7 +36,7 @@ namespace Amazon.SageMakerRuntime.Model
     ///  <dl> <dt>ModelInvocationTimeExceeded</dt> <dd> 
     /// <para>
     /// The model failed to finish sending the response within the timeout period allowed
-    /// by Amazon SageMaker.
+    /// by Amazon SageMaker AI.
     /// </para>
     ///  </dd> <dt>StreamBroken</dt> <dd> 
     /// <para>

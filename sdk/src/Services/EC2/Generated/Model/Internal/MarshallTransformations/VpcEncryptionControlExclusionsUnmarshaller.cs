@@ -61,10 +61,22 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.EgressOnlyInternetGateway = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("elasticFileSystem", targetDepth))
+                    {
+                        var unmarshaller = VpcEncryptionControlExclusionUnmarshaller.Instance;
+                        unmarshalledObject.ElasticFileSystem = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("internetGateway", targetDepth))
                     {
                         var unmarshaller = VpcEncryptionControlExclusionUnmarshaller.Instance;
                         unmarshalledObject.InternetGateway = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("lambda", targetDepth))
+                    {
+                        var unmarshaller = VpcEncryptionControlExclusionUnmarshaller.Instance;
+                        unmarshalledObject.Lambda = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("natGateway", targetDepth))
@@ -77,6 +89,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = VpcEncryptionControlExclusionUnmarshaller.Instance;
                         unmarshalledObject.VirtualPrivateGateway = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("vpcLattice", targetDepth))
+                    {
+                        var unmarshaller = VpcEncryptionControlExclusionUnmarshaller.Instance;
+                        unmarshalledObject.VpcLattice = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("vpcPeering", targetDepth))

@@ -13435,6 +13435,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType Trn1n32xlarge = new InstanceType("trn1n.32xlarge");
         /// <summary>
+        /// Constant Trn23xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType Trn23xlarge = new InstanceType("trn2.3xlarge");
+        /// <summary>
         /// Constant Trn248xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType Trn248xlarge = new InstanceType("trn2.48xlarge");
@@ -15004,6 +15008,360 @@ namespace Amazon.EC2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator IpamPoolState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type IpamPrefixListResolverRuleConditionOperation.
+    /// </summary>
+    public class IpamPrefixListResolverRuleConditionOperation : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Equals for IpamPrefixListResolverRuleConditionOperation
+        /// </summary>
+        public new static readonly IpamPrefixListResolverRuleConditionOperation Equals = new IpamPrefixListResolverRuleConditionOperation("equals");
+        /// <summary>
+        /// Constant NotEquals for IpamPrefixListResolverRuleConditionOperation
+        /// </summary>
+        public static readonly IpamPrefixListResolverRuleConditionOperation NotEquals = new IpamPrefixListResolverRuleConditionOperation("not-equals");
+        /// <summary>
+        /// Constant SubnetOf for IpamPrefixListResolverRuleConditionOperation
+        /// </summary>
+        public static readonly IpamPrefixListResolverRuleConditionOperation SubnetOf = new IpamPrefixListResolverRuleConditionOperation("subnet-of");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IpamPrefixListResolverRuleConditionOperation(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IpamPrefixListResolverRuleConditionOperation FindValue(string value)
+        {
+            return FindValue<IpamPrefixListResolverRuleConditionOperation>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IpamPrefixListResolverRuleConditionOperation(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type IpamPrefixListResolverRuleType.
+    /// </summary>
+    public class IpamPrefixListResolverRuleType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant IpamPoolCidr for IpamPrefixListResolverRuleType
+        /// </summary>
+        public static readonly IpamPrefixListResolverRuleType IpamPoolCidr = new IpamPrefixListResolverRuleType("ipam-pool-cidr");
+        /// <summary>
+        /// Constant IpamResourceCidr for IpamPrefixListResolverRuleType
+        /// </summary>
+        public static readonly IpamPrefixListResolverRuleType IpamResourceCidr = new IpamPrefixListResolverRuleType("ipam-resource-cidr");
+        /// <summary>
+        /// Constant StaticCidr for IpamPrefixListResolverRuleType
+        /// </summary>
+        public static readonly IpamPrefixListResolverRuleType StaticCidr = new IpamPrefixListResolverRuleType("static-cidr");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IpamPrefixListResolverRuleType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IpamPrefixListResolverRuleType FindValue(string value)
+        {
+            return FindValue<IpamPrefixListResolverRuleType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IpamPrefixListResolverRuleType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type IpamPrefixListResolverState.
+    /// </summary>
+    public class IpamPrefixListResolverState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CreateComplete for IpamPrefixListResolverState
+        /// </summary>
+        public static readonly IpamPrefixListResolverState CreateComplete = new IpamPrefixListResolverState("create-complete");
+        /// <summary>
+        /// Constant CreateFailed for IpamPrefixListResolverState
+        /// </summary>
+        public static readonly IpamPrefixListResolverState CreateFailed = new IpamPrefixListResolverState("create-failed");
+        /// <summary>
+        /// Constant CreateInProgress for IpamPrefixListResolverState
+        /// </summary>
+        public static readonly IpamPrefixListResolverState CreateInProgress = new IpamPrefixListResolverState("create-in-progress");
+        /// <summary>
+        /// Constant DeleteComplete for IpamPrefixListResolverState
+        /// </summary>
+        public static readonly IpamPrefixListResolverState DeleteComplete = new IpamPrefixListResolverState("delete-complete");
+        /// <summary>
+        /// Constant DeleteFailed for IpamPrefixListResolverState
+        /// </summary>
+        public static readonly IpamPrefixListResolverState DeleteFailed = new IpamPrefixListResolverState("delete-failed");
+        /// <summary>
+        /// Constant DeleteInProgress for IpamPrefixListResolverState
+        /// </summary>
+        public static readonly IpamPrefixListResolverState DeleteInProgress = new IpamPrefixListResolverState("delete-in-progress");
+        /// <summary>
+        /// Constant IsolateComplete for IpamPrefixListResolverState
+        /// </summary>
+        public static readonly IpamPrefixListResolverState IsolateComplete = new IpamPrefixListResolverState("isolate-complete");
+        /// <summary>
+        /// Constant IsolateInProgress for IpamPrefixListResolverState
+        /// </summary>
+        public static readonly IpamPrefixListResolverState IsolateInProgress = new IpamPrefixListResolverState("isolate-in-progress");
+        /// <summary>
+        /// Constant ModifyComplete for IpamPrefixListResolverState
+        /// </summary>
+        public static readonly IpamPrefixListResolverState ModifyComplete = new IpamPrefixListResolverState("modify-complete");
+        /// <summary>
+        /// Constant ModifyFailed for IpamPrefixListResolverState
+        /// </summary>
+        public static readonly IpamPrefixListResolverState ModifyFailed = new IpamPrefixListResolverState("modify-failed");
+        /// <summary>
+        /// Constant ModifyInProgress for IpamPrefixListResolverState
+        /// </summary>
+        public static readonly IpamPrefixListResolverState ModifyInProgress = new IpamPrefixListResolverState("modify-in-progress");
+        /// <summary>
+        /// Constant RestoreInProgress for IpamPrefixListResolverState
+        /// </summary>
+        public static readonly IpamPrefixListResolverState RestoreInProgress = new IpamPrefixListResolverState("restore-in-progress");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IpamPrefixListResolverState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IpamPrefixListResolverState FindValue(string value)
+        {
+            return FindValue<IpamPrefixListResolverState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IpamPrefixListResolverState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type IpamPrefixListResolverTargetState.
+    /// </summary>
+    public class IpamPrefixListResolverTargetState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CreateComplete for IpamPrefixListResolverTargetState
+        /// </summary>
+        public static readonly IpamPrefixListResolverTargetState CreateComplete = new IpamPrefixListResolverTargetState("create-complete");
+        /// <summary>
+        /// Constant CreateFailed for IpamPrefixListResolverTargetState
+        /// </summary>
+        public static readonly IpamPrefixListResolverTargetState CreateFailed = new IpamPrefixListResolverTargetState("create-failed");
+        /// <summary>
+        /// Constant CreateInProgress for IpamPrefixListResolverTargetState
+        /// </summary>
+        public static readonly IpamPrefixListResolverTargetState CreateInProgress = new IpamPrefixListResolverTargetState("create-in-progress");
+        /// <summary>
+        /// Constant DeleteComplete for IpamPrefixListResolverTargetState
+        /// </summary>
+        public static readonly IpamPrefixListResolverTargetState DeleteComplete = new IpamPrefixListResolverTargetState("delete-complete");
+        /// <summary>
+        /// Constant DeleteFailed for IpamPrefixListResolverTargetState
+        /// </summary>
+        public static readonly IpamPrefixListResolverTargetState DeleteFailed = new IpamPrefixListResolverTargetState("delete-failed");
+        /// <summary>
+        /// Constant DeleteInProgress for IpamPrefixListResolverTargetState
+        /// </summary>
+        public static readonly IpamPrefixListResolverTargetState DeleteInProgress = new IpamPrefixListResolverTargetState("delete-in-progress");
+        /// <summary>
+        /// Constant IsolateComplete for IpamPrefixListResolverTargetState
+        /// </summary>
+        public static readonly IpamPrefixListResolverTargetState IsolateComplete = new IpamPrefixListResolverTargetState("isolate-complete");
+        /// <summary>
+        /// Constant IsolateInProgress for IpamPrefixListResolverTargetState
+        /// </summary>
+        public static readonly IpamPrefixListResolverTargetState IsolateInProgress = new IpamPrefixListResolverTargetState("isolate-in-progress");
+        /// <summary>
+        /// Constant ModifyComplete for IpamPrefixListResolverTargetState
+        /// </summary>
+        public static readonly IpamPrefixListResolverTargetState ModifyComplete = new IpamPrefixListResolverTargetState("modify-complete");
+        /// <summary>
+        /// Constant ModifyFailed for IpamPrefixListResolverTargetState
+        /// </summary>
+        public static readonly IpamPrefixListResolverTargetState ModifyFailed = new IpamPrefixListResolverTargetState("modify-failed");
+        /// <summary>
+        /// Constant ModifyInProgress for IpamPrefixListResolverTargetState
+        /// </summary>
+        public static readonly IpamPrefixListResolverTargetState ModifyInProgress = new IpamPrefixListResolverTargetState("modify-in-progress");
+        /// <summary>
+        /// Constant RestoreInProgress for IpamPrefixListResolverTargetState
+        /// </summary>
+        public static readonly IpamPrefixListResolverTargetState RestoreInProgress = new IpamPrefixListResolverTargetState("restore-in-progress");
+        /// <summary>
+        /// Constant SyncComplete for IpamPrefixListResolverTargetState
+        /// </summary>
+        public static readonly IpamPrefixListResolverTargetState SyncComplete = new IpamPrefixListResolverTargetState("sync-complete");
+        /// <summary>
+        /// Constant SyncFailed for IpamPrefixListResolverTargetState
+        /// </summary>
+        public static readonly IpamPrefixListResolverTargetState SyncFailed = new IpamPrefixListResolverTargetState("sync-failed");
+        /// <summary>
+        /// Constant SyncInProgress for IpamPrefixListResolverTargetState
+        /// </summary>
+        public static readonly IpamPrefixListResolverTargetState SyncInProgress = new IpamPrefixListResolverTargetState("sync-in-progress");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IpamPrefixListResolverTargetState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IpamPrefixListResolverTargetState FindValue(string value)
+        {
+            return FindValue<IpamPrefixListResolverTargetState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IpamPrefixListResolverTargetState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type IpamPrefixListResolverVersionCreationStatus.
+    /// </summary>
+    public class IpamPrefixListResolverVersionCreationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Failure for IpamPrefixListResolverVersionCreationStatus
+        /// </summary>
+        public static readonly IpamPrefixListResolverVersionCreationStatus Failure = new IpamPrefixListResolverVersionCreationStatus("failure");
+        /// <summary>
+        /// Constant Pending for IpamPrefixListResolverVersionCreationStatus
+        /// </summary>
+        public static readonly IpamPrefixListResolverVersionCreationStatus Pending = new IpamPrefixListResolverVersionCreationStatus("pending");
+        /// <summary>
+        /// Constant Success for IpamPrefixListResolverVersionCreationStatus
+        /// </summary>
+        public static readonly IpamPrefixListResolverVersionCreationStatus Success = new IpamPrefixListResolverVersionCreationStatus("success");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IpamPrefixListResolverVersionCreationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IpamPrefixListResolverVersionCreationStatus FindValue(string value)
+        {
+            return FindValue<IpamPrefixListResolverVersionCreationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IpamPrefixListResolverVersionCreationStatus(string value)
         {
             return FindValue(value);
         }
@@ -20548,6 +20906,14 @@ namespace Amazon.EC2
         /// Constant IpamPool for ResourceType
         /// </summary>
         public static readonly ResourceType IpamPool = new ResourceType("ipam-pool");
+        /// <summary>
+        /// Constant IpamPrefixListResolver for ResourceType
+        /// </summary>
+        public static readonly ResourceType IpamPrefixListResolver = new ResourceType("ipam-prefix-list-resolver");
+        /// <summary>
+        /// Constant IpamPrefixListResolverTarget for ResourceType
+        /// </summary>
+        public static readonly ResourceType IpamPrefixListResolverTarget = new ResourceType("ipam-prefix-list-resolver-target");
         /// <summary>
         /// Constant IpamResourceDiscovery for ResourceType
         /// </summary>

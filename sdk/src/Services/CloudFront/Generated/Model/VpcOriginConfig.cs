@@ -36,6 +36,7 @@ namespace Amazon.CloudFront.Model
     {
         private int? _originKeepaliveTimeout;
         private int? _originReadTimeout;
+        private string _ownerAccountId;
         private string _vpcOriginId;
 
         /// <summary>
@@ -87,6 +88,24 @@ namespace Amazon.CloudFront.Model
         internal bool IsSetOriginReadTimeout()
         {
             return this._originReadTimeout.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OwnerAccountId. 
+        /// <para>
+        /// The account ID of the Amazon Web Services account that owns the VPC origin.
+        /// </para>
+        /// </summary>
+        public string OwnerAccountId
+        {
+            get { return this._ownerAccountId; }
+            set { this._ownerAccountId = value; }
+        }
+
+        // Check to see if OwnerAccountId property is set
+        internal bool IsSetOwnerAccountId()
+        {
+            return this._ownerAccountId != null;
         }
 
         /// <summary>

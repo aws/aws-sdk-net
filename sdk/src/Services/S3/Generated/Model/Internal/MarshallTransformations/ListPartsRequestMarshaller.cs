@@ -56,6 +56,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListPartsRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.S3");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "GET";
         
             if (publicRequest.IsSetExpectedBucketOwner()) 
@@ -121,5 +122,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, ListPartsRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, ListPartsRequest publicRequest);
     }    
 }

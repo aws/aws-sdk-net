@@ -247,6 +247,11 @@ namespace Amazon.Runtime.Internal.UserAgent
         public static readonly UserAgentFeatureId SSO_LOGIN_AUTH = new UserAgentFeatureId("2");
 
         /// <summary>
+        /// An operation called using a Bearer token resolved from service-specific environment variables.
+        /// </summary>
+        public static readonly UserAgentFeatureId BEARER_SERVICE_ENV_VARS = new UserAgentFeatureId("3");
+
+        /// <summary>
         /// Indicates that an AWS SDK client has been configured with a non-null, non-NoOp tracing provider.
         /// </summary>
         public static readonly UserAgentFeatureId OBSERVABILITY_TRACING = new UserAgentFeatureId("4");

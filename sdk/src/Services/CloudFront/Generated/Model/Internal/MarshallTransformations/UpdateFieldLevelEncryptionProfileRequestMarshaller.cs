@@ -56,6 +56,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         public IRequest Marshall(UpdateFieldLevelEncryptionProfileRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.CloudFront");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "PUT";
         
             if (publicRequest.IsSetIfMatch()) 
@@ -163,5 +164,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, UpdateFieldLevelEncryptionProfileRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, UpdateFieldLevelEncryptionProfileRequest publicRequest);
     }    
 }

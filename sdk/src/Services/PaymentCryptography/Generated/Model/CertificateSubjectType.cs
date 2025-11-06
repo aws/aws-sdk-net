@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PaymentCryptography.Model
 {
     /// <summary>
-    /// Metadata used in generating the CSR
+    /// The metadata used to create the certificate signing request.
     /// </summary>
     public partial class CertificateSubjectType
     {
@@ -45,7 +45,7 @@ namespace Amazon.PaymentCryptography.Model
         /// <summary>
         /// Gets and sets the property City. 
         /// <para>
-        /// City to be used in the certificate signing request
+        /// The city you provide to create the certificate signing request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -64,7 +64,7 @@ namespace Amazon.PaymentCryptography.Model
         /// <summary>
         /// Gets and sets the property CommonName. 
         /// <para>
-        /// Common Name to be used in the certificate signing request
+        /// The name you provide to create the certificate signing request.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]
@@ -83,7 +83,7 @@ namespace Amazon.PaymentCryptography.Model
         /// <summary>
         /// Gets and sets the property Country. 
         /// <para>
-        /// Country to be used in the certificate signing request
+        /// The city you provide to create the certificate signing request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=2)]
@@ -102,7 +102,7 @@ namespace Amazon.PaymentCryptography.Model
         /// <summary>
         /// Gets and sets the property EmailAddress. 
         /// <para>
-        /// Email to be used in the certificate signing request
+        /// The email address you provide to create the certificate signing request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -121,7 +121,7 @@ namespace Amazon.PaymentCryptography.Model
         /// <summary>
         /// Gets and sets the property Organization. 
         /// <para>
-        /// Organization to be used in the certificate signing request
+        /// The organization you provide to create the certificate signing request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -140,7 +140,7 @@ namespace Amazon.PaymentCryptography.Model
         /// <summary>
         /// Gets and sets the property OrganizationUnit. 
         /// <para>
-        /// Organization Unit to be used in the certificate signing request
+        /// The organization unit you provide to create the certificate signing request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -159,7 +159,7 @@ namespace Amazon.PaymentCryptography.Model
         /// <summary>
         /// Gets and sets the property StateOrProvince. 
         /// <para>
-        /// State Or Province to be used in the certificate signing request
+        /// The state or province you provide to create the certificate signing request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

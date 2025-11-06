@@ -437,6 +437,22 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeIpamPrefixListResolvers operation
+        ///</summary>
+        public IDescribeIpamPrefixListResolversPaginator DescribeIpamPrefixListResolvers(DescribeIpamPrefixListResolversRequest request) 
+        {
+            return new DescribeIpamPrefixListResolversPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeIpamPrefixListResolverTargets operation
+        ///</summary>
+        public IDescribeIpamPrefixListResolverTargetsPaginator DescribeIpamPrefixListResolverTargets(DescribeIpamPrefixListResolverTargetsRequest request) 
+        {
+            return new DescribeIpamPrefixListResolverTargetsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeIpamResourceDiscoveries operation
         ///</summary>
         public IDescribeIpamResourceDiscoveriesPaginator DescribeIpamResourceDiscoveries(DescribeIpamResourceDiscoveriesRequest request) 
@@ -1154,6 +1170,30 @@ namespace Amazon.EC2.Model
         public IGetIpamPoolCidrsPaginator GetIpamPoolCidrs(GetIpamPoolCidrsRequest request) 
         {
             return new GetIpamPoolCidrsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for GetIpamPrefixListResolverRules operation
+        ///</summary>
+        public IGetIpamPrefixListResolverRulesPaginator GetIpamPrefixListResolverRules(GetIpamPrefixListResolverRulesRequest request) 
+        {
+            return new GetIpamPrefixListResolverRulesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for GetIpamPrefixListResolverVersionEntries operation
+        ///</summary>
+        public IGetIpamPrefixListResolverVersionEntriesPaginator GetIpamPrefixListResolverVersionEntries(GetIpamPrefixListResolverVersionEntriesRequest request) 
+        {
+            return new GetIpamPrefixListResolverVersionEntriesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for GetIpamPrefixListResolverVersions operation
+        ///</summary>
+        public IGetIpamPrefixListResolverVersionsPaginator GetIpamPrefixListResolverVersions(GetIpamPrefixListResolverVersionsRequest request) 
+        {
+            return new GetIpamPrefixListResolverVersionsPaginator(this.client, request);
         }
 
         /// <summary>

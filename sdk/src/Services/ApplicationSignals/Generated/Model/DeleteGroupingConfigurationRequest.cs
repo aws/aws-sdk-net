@@ -31,8 +31,15 @@ namespace Amazon.ApplicationSignals.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteGroupingConfiguration operation.
-    /// Deletes the grouping configuration for this account. This removes all custom grouping
-    /// attribute definitions that were previously configured.
+    /// Deletes a grouping configuration that defines how services are grouped and organized
+    /// in Application Signals. Once deleted, services will no longer be grouped according
+    /// to the specified configuration rules.
+    /// 
+    ///  
+    /// <para>
+    /// This operation is irreversible. After deletion, you must recreate the grouping configuration
+    /// if you want to restore the same grouping behavior.
+    /// </para>
     /// </summary>
     public partial class DeleteGroupingConfigurationRequest : AmazonApplicationSignalsRequest
     {

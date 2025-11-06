@@ -56,6 +56,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         public IRequest Marshall(GetObjectMetadataRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.S3");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "HEAD";
         
             if (publicRequest.IsSetChecksumMode()) 
@@ -156,5 +157,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, GetObjectMetadataRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, GetObjectMetadataRequest publicRequest);
     }    
 }

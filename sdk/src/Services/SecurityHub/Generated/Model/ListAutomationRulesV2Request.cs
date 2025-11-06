@@ -32,7 +32,7 @@ namespace Amazon.SecurityHub.Model
     /// <summary>
     /// Container for the parameters to the ListAutomationRulesV2 operation.
     /// Returns a list of automation rules and metadata for the calling account. This API
-    /// is in private preview and subject to change.
+    /// is in public preview and subject to change.
     /// </summary>
     public partial class ListAutomationRulesV2Request : AmazonSecurityHubRequest
     {

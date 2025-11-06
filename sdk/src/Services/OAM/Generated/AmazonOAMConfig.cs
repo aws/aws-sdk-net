@@ -33,7 +33,7 @@ namespace Amazon.OAM
     public partial class AmazonOAMConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("OAM", "4.0.3.0");
+            InternalSDKUtils.BuildUserAgentString("OAM", "4.0.3.3");
 
         private static readonly AmazonOAMEndpointResolver EndpointResolver =
             new AmazonOAMEndpointResolver();

@@ -51,8 +51,8 @@ namespace Amazon.ECS.Model
         ///  
         /// <para>
         /// You can run your Linux tasks on an ARM-based platform by setting the value to <c>ARM64</c>.
-        /// This option is available for tasks that run on Linux Amazon EC2 instance or Linux
-        /// containers on Fargate.
+        /// This option is available for tasks that run on Linux Amazon EC2 instance, Amazon ECS
+        /// Managed Instances, or Linux containers on Fargate.
         /// </para>
         /// </summary>
         public CPUArchitecture CpuArchitecture

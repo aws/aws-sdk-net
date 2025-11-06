@@ -88,6 +88,7 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string PlaceId
         {
             get { return this._placeId; }
@@ -131,7 +132,7 @@ namespace Amazon.LocationService.Model
         /// The text of the place suggestion, typically formatted as an address string.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public string Text
         {
             get { return this._text; }

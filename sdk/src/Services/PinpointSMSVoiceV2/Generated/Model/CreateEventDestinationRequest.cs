@@ -167,7 +167,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// Gets and sets the property MatchingEventTypes. 
         /// <para>
         /// An array of event types that determine which events to log. If "ALL" is used, then
-        /// AWS End User Messaging SMS and Voice logs every event type.
+        /// End User MessagingSMS logs every event type.
         /// </para>
         ///  <note> 
         /// <para>

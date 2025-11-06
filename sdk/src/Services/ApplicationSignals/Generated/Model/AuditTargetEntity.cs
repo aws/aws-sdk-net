@@ -30,14 +30,33 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ApplicationSignals.Model
 {
     /// <summary>
-    /// A union structure that contains the specific entity information for different types
-    /// of audit targets.
+    /// A union type that represents different types of entities that can be audited, such
+    /// as services, SLOs, service operations, or canaries.
     /// </summary>
     public partial class AuditTargetEntity
     {
+        private CanaryEntity _canary;
         private ServiceEntity _service;
         private ServiceOperationEntity _serviceOperation;
         private ServiceLevelObjectiveEntity _slo;
+
+        /// <summary>
+        /// Gets and sets the property Canary. 
+        /// <para>
+        /// Canary entity information when the audit target is a CloudWatch Synthetics canary.
+        /// </para>
+        /// </summary>
+        public CanaryEntity Canary
+        {
+            get { return this._canary; }
+            set { this._canary = value; }
+        }
+
+        // Check to see if Canary property is set
+        internal bool IsSetCanary()
+        {
+            return this._canary != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Service. 
@@ -60,7 +79,8 @@ namespace Amazon.ApplicationSignals.Model
         /// <summary>
         /// Gets and sets the property ServiceOperation. 
         /// <para>
-        /// Service operation entity information when the audit target is a specific service operation.
+        /// Service operation entity information when the audit target is a specific operation
+        /// within a service.
         /// </para>
         /// </summary>
         public ServiceOperationEntity ServiceOperation
@@ -78,7 +98,7 @@ namespace Amazon.ApplicationSignals.Model
         /// <summary>
         /// Gets and sets the property Slo. 
         /// <para>
-        /// SLO entity information when the audit target is a service level objective.
+        /// Service Level Objective entity information when the audit target is an SLO.
         /// </para>
         /// </summary>
         public ServiceLevelObjectiveEntity Slo

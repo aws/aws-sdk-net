@@ -31,7 +31,8 @@ namespace Amazon.BedrockRuntime.Model
 {
     /// <summary>
     /// The model must request a specific tool. For example, <c>{"tool" : {"name" : "Your
-    /// tool name"}}</c>.
+    /// tool name"}}</c>. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/tool-use.html">Call
+    /// a tool with the Converse API</a> in the Amazon Bedrock User Guide
     /// 
     ///  <note> 
     /// <para>
