@@ -433,7 +433,6 @@ namespace ServiceClientGenerator
         public const string FlattenShapeKey = "flattenShapes";
         public const string ExcludeShapesKey = "excludeShapes";
         public const string AlternateLocationNameKey = "alternateLocationName";
-        public const string ImplementsVisitorPatternKey = "implementsVisitorPattern";
 
         JsonData _documentRoot;
 
@@ -1458,9 +1457,9 @@ namespace ServiceClientGenerator
             private readonly HashSet<string> _injectXmlPrivateMemberAssignment;
             private readonly HashSet<string> _injectXmlPropertyGetter;
             private readonly HashSet<string> _injectedXmlPropertySetter;
+            private readonly HashSet<string> _injectXmlMarshallCode;
             private readonly bool _skipSetter;
             private readonly bool _skipXmlIsSet;
-            private readonly HashSet<string> _injectXmlMarshallCode;
 
             internal PropertyModifier(string modelPropertyName, JsonData modifierData)
             {
@@ -1706,7 +1705,7 @@ namespace ServiceClientGenerator
             ///   ]
             /// }
             /// </summary>
-        public bool SkipContextTestExpressionUnmarshallingLogic { get { return _modifierData[SkipContextTestExpressionUnmarshallingLogicKey] != null; } }
+            public bool SkipContextTestExpressionUnmarshallingLogic { get { return _modifierData[SkipContextTestExpressionUnmarshallingLogicKey] != null; } }
         }
 
         #endregion
@@ -2092,91 +2091,6 @@ namespace ServiceClientGenerator
                 get;
                 private set;
             }
-        }
-
-        /// <summary>
-        /// A class that represents shapes that implement the visitor pattern.
-        /// </summary>
-        public class VisitorPattern
-        {
-            /// <summary>
-            /// Creates a Visitor
-            /// </summary>
-            /// <param name="predicateName"></param>
-            /// <param name="visitorName"></param>
-            /// <param name="visitorParam"></param>
-            public VisitorPattern(string predicateName, string visitorName, string visitorParam)
-            {
-                PredicateName = predicateName;
-                VisitorName = visitorName;
-                VisitorParam = visitorParam;
-            }
-            /// <summary>
-            /// The name of the predicate which is typically a property of a top-level 
-            /// filter class.
-            /// </summary>
-            public string PredicateName
-            {
-                get;
-                private set;
-            }
-
-            /// <summary>
-            /// The name of the visitor which the predicate accepts.
-            /// </summary>
-            public string VisitorName
-            {
-                get;
-                private set;
-            }
-
-            /// <summary>
-            /// The argument to pass into the visitor. In XML services, this is typically 
-            /// xmlWriter.
-            /// </summary>
-            public string VisitorParam
-            {
-                get;
-                private set;
-            }
-
-            /// <summary>
-            /// This is purely to communicate back to the generator that the visitor pattern has been written.
-            /// We want to write the visitor pattern to preserve existing behavior but in the future if more members
-            /// are added to the structure which implements the visitor pattern, we want that to be codegened so we don't have 
-            /// to manually add the new predicates to the visitor.
-            /// Once we write the visitor pattern in the marshaller, we set Visited to true and then proceed with normal code-gen
-            /// for the same structure.
-            /// </summary>
-            public bool Visited
-            {
-                get;
-                set;
-            }
-        }
-
-        public bool TryGetVisitorPattern(string shapeName, out VisitorPattern visitorPattern)
-        {
-            visitorPattern = null;
-            var data = _documentRoot[ImplementsVisitorPatternKey];
-            if (data != null && data[shapeName] != null)
-            {
-                string predicateName = (string)data[shapeName]["predicateName"];
-                string visitorName = (string)data[shapeName]["visitorName"];
-                string visitorParam = (string)data[shapeName]["visitorParam"];
-                visitorPattern = new VisitorPattern(predicateName, visitorName, visitorParam);
-                return true;
-            }
-
-            return false;
-        }
-
-        public VisitorPattern GetVisitorPattern(string shapeName)
-        {
-            if (TryGetVisitorPattern(shapeName, out VisitorPattern visitorPattern))
-                return visitorPattern;
-            else
-                return null;
         }
         #endregion
 
