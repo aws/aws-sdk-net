@@ -25,7 +25,7 @@ using System.Threading.Tasks;
 
 namespace Amazon.S3.Transfer.Internal
 {
-    internal partial class DownloadDirectoryCommand : BaseCommand
+    internal partial class DownloadDirectoryCommand : BaseCommand<TransferUtilityDownloadDirectoryResponse>
     {
 
         TransferUtilityConfig _config;
@@ -38,7 +38,7 @@ namespace Amazon.S3.Transfer.Internal
             this._config = config;
         }
 
-        public override async Task ExecuteAsync(CancellationToken cancellationToken)
+        public override async Task<TransferUtilityDownloadDirectoryResponse> ExecuteAsync(CancellationToken cancellationToken)
         {
             ValidateRequest();
             EnsureDirectoryExists(new DirectoryInfo(this._request.LocalDirectory));
@@ -112,6 +112,8 @@ namespace Amazon.S3.Transfer.Internal
                 }
                 await WhenAllOrFirstExceptionAsync(pendingTasks, cancellationToken)
                     .ConfigureAwait(continueOnCapturedContext: false);
+
+                return new TransferUtilityDownloadDirectoryResponse();
             }
             finally
             {

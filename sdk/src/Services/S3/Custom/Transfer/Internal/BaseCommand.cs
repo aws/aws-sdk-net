@@ -30,13 +30,12 @@ using Amazon.Runtime.Internal.UserAgent;
 
 namespace Amazon.S3.Transfer.Internal
 {
-    internal abstract partial class BaseCommand
+    /// <summary>
+    /// Generic base command that returns a typed response
+    /// </summary>
+    /// <typeparam name="TResponse">Type of response returned by the command</typeparam>
+    internal abstract partial class BaseCommand<TResponse> where TResponse : class
     {
-        public virtual object Return
-        {
-            get { return null; }
-        }
-
         internal GetObjectRequest ConvertToGetObjectRequest(BaseDownloadRequest request)
         {
             GetObjectRequest getRequest = new GetObjectRequest()
