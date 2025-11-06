@@ -50,7 +50,7 @@ namespace Amazon.S3Tables.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the maintenance job.
+        /// The name of the table containing the maintenance job status you want to check.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]

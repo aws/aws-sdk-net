@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.S3Tables.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateTable Request Marshaller
+    /// TagResource Request Marshaller
     /// </summary>       
-    public class CreateTableRequestMarshaller : IMarshaller<IRequest, CreateTableRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class TagResourceRequestMarshaller : IMarshaller<IRequest, TagResourceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -45,7 +45,7 @@ namespace Amazon.S3Tables.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateTableRequest)input);
+            return this.Marshall((TagResourceRequest)input);
         }
 
         /// <summary>
@@ -53,60 +53,23 @@ namespace Amazon.S3Tables.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateTableRequest publicRequest)
+        public IRequest Marshall(TagResourceRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.S3Tables");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-05-10";
-            request.HttpMethod = "PUT";
+            request.HttpMethod = "POST";
 
-            if (!publicRequest.IsSetNamespace())
-                throw new AmazonS3TablesException("Request object does not have required field Namespace set");
-            request.AddPathResource("{namespace}", StringUtils.FromString(publicRequest.Namespace));
-            if (!publicRequest.IsSetTableBucketARN())
-                throw new AmazonS3TablesException("Request object does not have required field TableBucketARN set");
-            request.AddPathResource("{tableBucketARN}", StringUtils.FromString(publicRequest.TableBucketARN));
-            request.ResourcePath = "/tables/{tableBucketARN}/{namespace}";
+            if (!publicRequest.IsSetResourceArn())
+                throw new AmazonS3TablesException("Request object does not have required field ResourceArn set");
+            request.AddPathResource("{resourceArn}", StringUtils.FromString(publicRequest.ResourceArn));
+            request.ResourcePath = "/tag/{resourceArn}";
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetEncryptionConfiguration())
-                {
-                    context.Writer.WritePropertyName("encryptionConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = EncryptionConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.EncryptionConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetFormat())
-                {
-                    context.Writer.WritePropertyName("format");
-                    context.Writer.Write(publicRequest.Format);
-                }
-
-                if(publicRequest.IsSetMetadata())
-                {
-                    context.Writer.WritePropertyName("metadata");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = TableMetadataMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Metadata, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("tags");
@@ -129,9 +92,9 @@ namespace Amazon.S3Tables.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateTableRequestMarshaller _instance = new CreateTableRequestMarshaller();        
+        private static TagResourceRequestMarshaller _instance = new TagResourceRequestMarshaller();        
 
-        internal static CreateTableRequestMarshaller GetInstance()
+        internal static TagResourceRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -139,7 +102,7 @@ namespace Amazon.S3Tables.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateTableRequestMarshaller Instance
+        public static TagResourceRequestMarshaller Instance
         {
             get
             {

@@ -44,12 +44,18 @@ namespace Amazon.S3Tables.Model
     /// If you use this operation with the optional <c>encryptionConfiguration</c> parameter
     /// you must have the <c>s3tables:PutTableBucketEncryption</c> permission.
     /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// You must have the <c>s3tables:TagResource</c> permission in addition to <c>s3tables:CreateTableBucket</c>
+    /// permission to create a table bucket with tags.
+    /// </para>
     ///  </li> </ul> </dd> </dl>
     /// </summary>
     public partial class CreateTableBucketRequest : AmazonS3TablesRequest
     {
         private EncryptionConfiguration _encryptionConfiguration;
         private string _name;
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property EncryptionConfiguration. 
@@ -89,6 +95,33 @@ namespace Amazon.S3Tables.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A map of user-defined tags that you would like to apply to the table bucket that you
+        /// are creating. A tag is a key-value pair that you apply to your resources. Tags can
+        /// help you organize and control access to resources. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/tagging.html">Tagging
+        /// for cost allocation or attribute-based access control (ABAC)</a>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// You must have the <c>s3tables:TagResource</c> permission in addition to <c>s3tables:CreateTableBucket</c>
+        /// permisson to create a table bucket with tags.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }
