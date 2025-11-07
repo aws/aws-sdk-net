@@ -96,6 +96,19 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         request.Parameters.Add("DnsOptions" + "." + "PrivateDnsOnlyForInboundResolverEndpoint", StringUtils.FromBool(publicRequest.DnsOptions.PrivateDnsOnlyForInboundResolverEndpoint));
                     }
+                    if(publicRequest.DnsOptions.IsSetPrivateDnsPreference())
+                    {
+                        request.Parameters.Add("DnsOptions" + "." + "PrivateDnsPreference", StringUtils.FromString(publicRequest.DnsOptions.PrivateDnsPreference));
+                    }
+                    if(publicRequest.DnsOptions.IsSetPrivateDnsSpecifiedDomains())
+                    {
+                        int publicRequestDnsOptionslistValueIndex = 1;
+                        foreach(var publicRequestDnsOptionslistValue in publicRequest.DnsOptions.PrivateDnsSpecifiedDomains)
+                        {
+                            request.Parameters.Add("DnsOptions" + "." + "PrivateDnsSpecifiedDomain" + "." + publicRequestDnsOptionslistValueIndex, StringUtils.FromString(publicRequestDnsOptionslistValue));
+                            publicRequestDnsOptionslistValueIndex++;
+                        }
+                    }
                 }
                 if(publicRequest.IsSetIpAddressType())
                 {

@@ -63,9 +63,24 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Description", StringUtils.FromString(publicRequest.Description));
                 }
+                if(publicRequest.IsSetExternalAuthorityConfiguration())
+                {
+                    if(publicRequest.ExternalAuthorityConfiguration.IsSetExternalResourceIdentifier())
+                    {
+                        request.Parameters.Add("ExternalAuthorityConfiguration" + "." + "ExternalResourceIdentifier", StringUtils.FromString(publicRequest.ExternalAuthorityConfiguration.ExternalResourceIdentifier));
+                    }
+                    if(publicRequest.ExternalAuthorityConfiguration.IsSetType())
+                    {
+                        request.Parameters.Add("ExternalAuthorityConfiguration" + "." + "Type", StringUtils.FromString(publicRequest.ExternalAuthorityConfiguration.Type));
+                    }
+                }
                 if(publicRequest.IsSetIpamScopeId())
                 {
                     request.Parameters.Add("IpamScopeId", StringUtils.FromString(publicRequest.IpamScopeId));
+                }
+                if(publicRequest.IsSetRemoveExternalAuthorityConfiguration())
+                {
+                    request.Parameters.Add("RemoveExternalAuthorityConfiguration", StringUtils.FromBool(publicRequest.RemoveExternalAuthorityConfiguration));
                 }
             }
             return request;

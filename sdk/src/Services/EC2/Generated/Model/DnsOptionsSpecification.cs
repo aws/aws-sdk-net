@@ -36,6 +36,8 @@ namespace Amazon.EC2.Model
     {
         private DnsRecordIpType _dnsRecordIpType;
         private bool? _privateDnsOnlyForInboundResolverEndpoint;
+        private string _privateDnsPreference;
+        private List<string> _privateDnsSpecifiedDomains = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property DnsRecordIpType. 
@@ -74,6 +76,72 @@ namespace Amazon.EC2.Model
         internal bool IsSetPrivateDnsOnlyForInboundResolverEndpoint()
         {
             return this._privateDnsOnlyForInboundResolverEndpoint.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PrivateDnsPreference. 
+        /// <para>
+        ///  The preference for which private domains have a private hosted zone created for and
+        /// associated with the specified VPC. Only supported when private DNS is enabled and
+        /// when the VPC endpoint type is ServiceNetwork or Resource. 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>ALL_DOMAINS</c> - VPC Lattice provisions private hosted zones for all custom domain
+        /// names.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>VERIFIED_DOMAINS_ONLY</c> - VPC Lattice provisions a private hosted zone only
+        /// if custom domain name has been verified by the provider.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>VERIFIED_DOMAINS_AND_SPECIFIED_DOMAINS</c> - VPC Lattice provisions private hosted
+        /// zones for all verified custom domain names and other domain names that the resource
+        /// consumer specifies. The resource consumer specifies the domain names in the PrivateDnsSpecifiedDomains
+        /// parameter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>SPECIFIED_DOMAINS_ONLY</c> - VPC Lattice provisions a private hosted zone for
+        /// domain names specified by the resource consumer. The resource consumer specifies the
+        /// domain names in the PrivateDnsSpecifiedDomains parameter.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public string PrivateDnsPreference
+        {
+            get { return this._privateDnsPreference; }
+            set { this._privateDnsPreference = value; }
+        }
+
+        // Check to see if PrivateDnsPreference property is set
+        internal bool IsSetPrivateDnsPreference()
+        {
+            return this._privateDnsPreference != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PrivateDnsSpecifiedDomains. 
+        /// <para>
+        ///  Indicates which of the private domains to create private hosted zones for and associate
+        /// with the specified VPC. Only supported when private DNS is enabled and the private
+        /// DNS preference is verified-domains-and-specified-domains or specified-domains-only.
+        /// 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=10)]
+        public List<string> PrivateDnsSpecifiedDomains
+        {
+            get { return this._privateDnsSpecifiedDomains; }
+            set { this._privateDnsSpecifiedDomains = value; }
+        }
+
+        // Check to see if PrivateDnsSpecifiedDomains property is set
+        internal bool IsSetPrivateDnsSpecifiedDomains()
+        {
+            return this._privateDnsSpecifiedDomains != null && (this._privateDnsSpecifiedDomains.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }
