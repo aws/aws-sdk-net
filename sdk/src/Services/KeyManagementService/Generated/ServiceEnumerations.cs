@@ -417,6 +417,10 @@ namespace Amazon.KeyManagementService
     {
 
         /// <summary>
+        /// Constant ECC_NIST_EDWARDS25519 for DataKeyPairSpec
+        /// </summary>
+        public static readonly DataKeyPairSpec ECC_NIST_EDWARDS25519 = new DataKeyPairSpec("ECC_NIST_EDWARDS25519");
+        /// <summary>
         /// Constant ECC_NIST_P256 for DataKeyPairSpec
         /// </summary>
         public static readonly DataKeyPairSpec ECC_NIST_P256 = new DataKeyPairSpec("ECC_NIST_P256");
@@ -1105,6 +1109,10 @@ namespace Amazon.KeyManagementService
     {
 
         /// <summary>
+        /// Constant ECC_NIST_EDWARDS25519 for KeySpec
+        /// </summary>
+        public static readonly KeySpec ECC_NIST_EDWARDS25519 = new KeySpec("ECC_NIST_EDWARDS25519");
+        /// <summary>
         /// Constant ECC_NIST_P256 for KeySpec
         /// </summary>
         public static readonly KeySpec ECC_NIST_P256 = new KeySpec("ECC_NIST_P256");
@@ -1624,6 +1632,14 @@ namespace Amazon.KeyManagementService
         /// Constant ECDSA_SHA_512 for SigningAlgorithmSpec
         /// </summary>
         public static readonly SigningAlgorithmSpec ECDSA_SHA_512 = new SigningAlgorithmSpec("ECDSA_SHA_512");
+        /// <summary>
+        /// Constant ED25519_PH_SHA_512 for SigningAlgorithmSpec
+        /// </summary>
+        public static readonly SigningAlgorithmSpec ED25519_PH_SHA_512 = new SigningAlgorithmSpec("ED25519_PH_SHA_512");
+        /// <summary>
+        /// Constant ED25519_SHA_512 for SigningAlgorithmSpec
+        /// </summary>
+        public static readonly SigningAlgorithmSpec ED25519_SHA_512 = new SigningAlgorithmSpec("ED25519_SHA_512");
         /// <summary>
         /// Constant ML_DSA_SHAKE_256 for SigningAlgorithmSpec
         /// </summary>

@@ -97,7 +97,7 @@ namespace Amazon.KeyManagementService.Model
     /// KMS key never leaves KMS unencrypted. However, you can use the <a>GetPublicKey</a>
     /// operation to download the public key so it can be used outside of KMS. Each KMS key
     /// can have only one key usage. KMS keys with RSA key pairs can be used to encrypt and
-    /// decrypt data or sign and verify messages (but not both). KMS keys with NIST-recommended
+    /// decrypt data or sign and verify messages (but not both). KMS keys with NIST-standard
     /// ECC key pairs can be used to sign and verify messages or derive shared secrets (but
     /// not both). KMS keys with <c>ECC_SECG_P256K1</c> can be used only to sign and verify
     /// messages. KMS keys with ML-DSA key pairs can be used to sign and verify messages.
@@ -493,8 +493,8 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        /// Asymmetric NIST-recommended elliptic curve key pairs (signing and verification -or-
-        /// deriving shared secrets)
+        /// Asymmetric NIST-standard elliptic curve key pairs (signing and verification -or- deriving
+        /// shared secrets)
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -508,7 +508,18 @@ namespace Amazon.KeyManagementService.Model
         /// <para>
         ///  <c>ECC_NIST_P521</c> (secp521r1)
         /// </para>
-        ///  </li> </ul> </li> <li> 
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ECC_NIST_EDWARDS25519</c> (ed25519) - signing and verification only
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>Note:</b> For ECC_NIST_EDWARDS25519 KMS keys, the ED25519_SHA_512 signing algorithm
+        /// requires <a href="kms/latest/APIReference/API_Sign.html#KMS-Sign-request-MessageType">
+        /// <c>MessageType:RAW</c> </a>, while ED25519_PH_SHA_512 requires <a href="kms/latest/APIReference/API_Sign.html#KMS-Sign-request-MessageType">
+        /// <c>MessageType:DIGEST</c> </a>. These message types cannot be used interchangeably.
+        /// </para>
+        ///  </li> </ul> </li> </ul> </li> <li> 
         /// <para>
         /// Other asymmetric elliptic curve key pairs (signing and verification)
         /// </para>
@@ -584,7 +595,7 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For asymmetric KMS keys with NIST-recommended elliptic curve key pairs, specify <c>SIGN_VERIFY</c>
+        /// For asymmetric KMS keys with NIST-standard elliptic curve key pairs, specify <c>SIGN_VERIFY</c>
         /// or <c>KEY_AGREEMENT</c>.
         /// </para>
         ///  </li> <li> 

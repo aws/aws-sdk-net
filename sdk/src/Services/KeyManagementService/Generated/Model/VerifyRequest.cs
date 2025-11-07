@@ -264,6 +264,18 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         ///  </important> 
         /// <para>
+        /// When using ECC_NIST_EDWARDS25519 KMS keys:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// ED25519_SHA_512 signing algorithm requires KMS <c>MessageType:RAW</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ED25519_PH_SHA_512 signing algorithm requires KMS <c>MessageType:DIGEST</c> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
         /// When the value of <c>MessageType</c> is <c>DIGEST</c>, the length of the <c>Message</c>
         /// value must match the length of hashed messages for the specified signing algorithm.
         /// </para>
