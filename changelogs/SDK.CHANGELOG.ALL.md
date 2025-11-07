@@ -1,3 +1,20 @@
+### 4.0.129.0 (2025-11-07 19:49 UTC)
+* ControlTower (4.0.3.0)
+	* Added Parent Identifier support to ListEnabledControls and GetEnabledControl API. Implemented RemediationType support for Landing Zone operations: CreateLandingZone, UpdateLandingZone and GetLandingZone APIs
+* EC2 (4.0.50.0)
+	* Adds PrivateDnsPreference and PrivateDnsSpecifiedDomains to control private DNS resolution for resource and service network VPC endpoints and IpamScopeExternalAuthorityConfiguration to integrate Amazon VPC IPAM with a third-party IPAM service
+* KeyManagementService (4.0.7.0)
+	* Added support for new ECC_NIST_EDWARDS25519 AWS KMS key spec
+* OpenSearchService (4.0.5.0)
+	* This release introduces the Default Application feature, allowing users to set, change, or unset a preferred OpenSearch UI application on a per-region basis for a streamlined and consistent user experience.
+* S3 (4.0.11.1)
+	* Fix an issue with Transfer Utility's UploadDirectory where the content type of 1 file was persisting for all the files in the directory.
+* VPCLattice (4.0.4.0)
+	* Amazon VPC Lattice now supports custom domain name for resource configurations
+* Core 4.0.3.0
+	* Re-introduce background refresh of credentials during their preempt expiry period (https://github.com/aws/aws-sdk-net/issues/4024)
+	* All service and extension packages updated to require new Core
+
 ### 4.0.128.0 (2025-11-06 19:55 UTC)
 * AccessAnalyzer (4.0.4.0)
 	* New field totalActiveErrors added to getFindingsStatistics response.
