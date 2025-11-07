@@ -1,0 +1,11 @@
+{
+  "services": [
+    {
+      "serviceName": "S3",
+      "type": "patch",
+      "changeLogMessages": [
+        "Revert Transfer MPU Validations, Part Size Updates, and passing all request fields to low level request"
+      ]
+    }
+  ]
+}
