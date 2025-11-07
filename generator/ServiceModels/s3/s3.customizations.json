@@ -981,6 +981,20 @@
                     }
                 }
             ]
+        },
+        "ListBucketAnalyticsConfigurationsRequest":{
+            "modify":[
+                {
+                    "ContinuationToken":{
+                        "injectXmlIsSet":["return !string.IsNullOrEmpty(this._continuationToken);"]
+                    }
+                },
+                {
+                    "ExpectedBucketOwner" :{
+                        "injectXmlIsSet":["return !string.IsNullOrEmpty(this._expectedBucketOwner);"]
+                    }
+                }
+            ]
         }
     },
     "operationModifiers": {
