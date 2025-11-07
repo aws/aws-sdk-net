@@ -63,7 +63,7 @@
     <property>Amazon.KeyManagementService.Model.CreateCustomKeyStoreRequest.XksProxyVpcEndpointServiceName</property>
     <min>20</min>
     <max>64</max>
-    <pattern>^com\.amazonaws\.vpce\.([a-z]+-){2,3}\d+\.vpce-svc-[0-9a-z]+$</pattern>
+    <pattern>^(com|eu)\.amazonaws\.vpce\.([a-z]+-){2,3}\d+\.vpce-svc-[0-9a-z]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.CreateCustomKeyStoreRequest.XksProxyVpcEndpointServiceOwner</property>
@@ -958,7 +958,7 @@
     <property>Amazon.KeyManagementService.Model.UpdateCustomKeyStoreRequest.XksProxyVpcEndpointServiceName</property>
     <min>20</min>
     <max>64</max>
-    <pattern>^com\.amazonaws\.vpce\.([a-z]+-){2,3}\d+\.vpce-svc-[0-9a-z]+$</pattern>
+    <pattern>^(com|eu)\.amazonaws\.vpce\.([a-z]+-){2,3}\d+\.vpce-svc-[0-9a-z]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.UpdateCustomKeyStoreRequest.XksProxyVpcEndpointServiceOwner</property>
@@ -1228,7 +1228,7 @@
     <property>Amazon.KeyManagementService.Model.XksProxyConfigurationType.VpcEndpointServiceName</property>
     <min>20</min>
     <max>64</max>
-    <pattern>^com\.amazonaws\.vpce\.([a-z]+-){2,3}\d+\.vpce-svc-[0-9a-z]+$</pattern>
+    <pattern>^(com|eu)\.amazonaws\.vpce\.([a-z]+-){2,3}\d+\.vpce-svc-[0-9a-z]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.XksProxyConfigurationType.VpcEndpointServiceOwner</property>
