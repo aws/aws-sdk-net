@@ -84,6 +84,12 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
                     unmarshalledObject.CreatedBy = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("dnsOptions", targetDepth))
+                {
+                    var unmarshaller = DnsOptionsUnmarshaller.Instance;
+                    unmarshalledObject.DnsOptions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("id", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -94,6 +100,12 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastUpdatedAt = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("privateDnsEnabled", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.PrivateDnsEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("serviceNetworkArn", targetDepth))

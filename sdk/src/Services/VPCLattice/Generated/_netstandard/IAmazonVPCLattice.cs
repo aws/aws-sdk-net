@@ -682,6 +682,39 @@ namespace Amazon.VPCLattice
 
         #endregion
                 
+        #region  DeleteDomainVerification
+
+
+
+        /// <summary>
+        /// Deletes the specified domain verification.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDomainVerification service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteDomainVerification service method, as returned by VPCLattice.</returns>
+        /// <exception cref="Amazon.VPCLattice.Model.AccessDeniedException">
+        /// The user does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.InternalServerException">
+        /// An unexpected error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/DeleteDomainVerification">REST API Reference for DeleteDomainVerification Operation</seealso>
+        Task<DeleteDomainVerificationResponse> DeleteDomainVerificationAsync(DeleteDomainVerificationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DeleteListener
 
 
@@ -1238,6 +1271,39 @@ namespace Amazon.VPCLattice
 
         #endregion
                 
+        #region  GetDomainVerification
+
+
+
+        /// <summary>
+        /// Retrieves information about a domain verification.ß
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDomainVerification service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetDomainVerification service method, as returned by VPCLattice.</returns>
+        /// <exception cref="Amazon.VPCLattice.Model.AccessDeniedException">
+        /// The user does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.InternalServerException">
+        /// An unexpected error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/GetDomainVerification">REST API Reference for GetDomainVerification Operation</seealso>
+        Task<GetDomainVerificationResponse> GetDomainVerificationAsync(GetDomainVerificationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  GetListener
 
 
@@ -1634,6 +1700,39 @@ namespace Amazon.VPCLattice
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/ListAccessLogSubscriptions">REST API Reference for ListAccessLogSubscriptions Operation</seealso>
         Task<ListAccessLogSubscriptionsResponse> ListAccessLogSubscriptionsAsync(ListAccessLogSubscriptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListDomainVerifications
+
+
+
+        /// <summary>
+        /// Lists the domain verifications.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDomainVerifications service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListDomainVerifications service method, as returned by VPCLattice.</returns>
+        /// <exception cref="Amazon.VPCLattice.Model.AccessDeniedException">
+        /// The user does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.InternalServerException">
+        /// An unexpected error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/ListDomainVerifications">REST API Reference for ListDomainVerifications Operation</seealso>
+        Task<ListDomainVerificationsResponse> ListDomainVerificationsAsync(ListDomainVerificationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -2195,6 +2294,43 @@ namespace Amazon.VPCLattice
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/RegisterTargets">REST API Reference for RegisterTargets Operation</seealso>
         Task<RegisterTargetsResponse> RegisterTargetsAsync(RegisterTargetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  StartDomainVerification
+
+
+
+        /// <summary>
+        /// Starts the domain verification process for a custom domain name.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartDomainVerification service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartDomainVerification service method, as returned by VPCLattice.</returns>
+        /// <exception cref="Amazon.VPCLattice.Model.AccessDeniedException">
+        /// The user does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ConflictException">
+        /// The request conflicts with the current state of the resource. Updating or deleting
+        /// a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.InternalServerException">
+        /// An unexpected error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ServiceQuotaExceededException">
+        /// The request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/StartDomainVerification">REST API Reference for StartDomainVerification Operation</seealso>
+        Task<StartDomainVerificationResponse> StartDomainVerificationAsync(StartDomainVerificationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

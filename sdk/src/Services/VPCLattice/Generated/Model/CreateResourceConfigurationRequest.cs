@@ -38,6 +38,9 @@ namespace Amazon.VPCLattice.Model
     {
         private bool? _allowAssociationToShareableServiceNetwork;
         private string _clientToken;
+        private string _customDomainName;
+        private string _domainVerificationIdentifier;
+        private string _groupDomain;
         private string _name;
         private List<string> _portRanges = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private ProtocolType _protocol;
@@ -86,6 +89,67 @@ namespace Amazon.VPCLattice.Model
         internal bool IsSetClientToken()
         {
             return this._clientToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomDomainName. 
+        /// <para>
+        ///  A custom domain name for your resource configuration. Additionally, provide a DomainVerificationID
+        /// to prove your ownership of a domain. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=3, Max=255)]
+        public string CustomDomainName
+        {
+            get { return this._customDomainName; }
+            set { this._customDomainName = value; }
+        }
+
+        // Check to see if CustomDomainName property is set
+        internal bool IsSetCustomDomainName()
+        {
+            return this._customDomainName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DomainVerificationIdentifier. 
+        /// <para>
+        ///  The domain verification ID of your verified custom domain name. If you don't provide
+        /// an ID, you must configure the DNS settings yourself. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string DomainVerificationIdentifier
+        {
+            get { return this._domainVerificationIdentifier; }
+            set { this._domainVerificationIdentifier = value; }
+        }
+
+        // Check to see if DomainVerificationIdentifier property is set
+        internal bool IsSetDomainVerificationIdentifier()
+        {
+            return this._domainVerificationIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GroupDomain. 
+        /// <para>
+        ///  (GROUP) The group domain for a group resource configuration. Any domains that you
+        /// create for the child resource are subdomains of the group domain. Child resources
+        /// inherit the verification status of the domain. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=3, Max=255)]
+        public string GroupDomain
+        {
+            get { return this._groupDomain; }
+            set { this._groupDomain = value; }
+        }
+
+        // Check to see if GroupDomain property is set
+        internal bool IsSetGroupDomain()
+        {
+            return this._groupDomain != null;
         }
 
         /// <summary>

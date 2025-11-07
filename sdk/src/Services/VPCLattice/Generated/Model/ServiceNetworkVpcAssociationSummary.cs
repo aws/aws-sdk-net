@@ -37,8 +37,10 @@ namespace Amazon.VPCLattice.Model
         private string _arn;
         private DateTime? _createdAt;
         private string _createdBy;
+        private DnsOptions _dnsOptions;
         private string _id;
         private DateTime? _lastUpdatedAt;
+        private bool? _privateDnsEnabled;
         private string _serviceNetworkArn;
         private string _serviceNetworkId;
         private string _serviceNetworkName;
@@ -102,6 +104,24 @@ namespace Amazon.VPCLattice.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DnsOptions. 
+        /// <para>
+        ///  The DNS options for the service network VPC association. 
+        /// </para>
+        /// </summary>
+        public DnsOptions DnsOptions
+        {
+            get { return this._dnsOptions; }
+            set { this._dnsOptions = value; }
+        }
+
+        // Check to see if DnsOptions property is set
+        internal bool IsSetDnsOptions()
+        {
+            return this._dnsOptions != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
         /// The ID of the association.
@@ -136,6 +156,24 @@ namespace Amazon.VPCLattice.Model
         internal bool IsSetLastUpdatedAt()
         {
             return this._lastUpdatedAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PrivateDnsEnabled. 
+        /// <para>
+        ///  Indicates if private DNS is enabled for the service network VPC association. 
+        /// </para>
+        /// </summary>
+        public bool PrivateDnsEnabled
+        {
+            get { return this._privateDnsEnabled.GetValueOrDefault(); }
+            set { this._privateDnsEnabled = value; }
+        }
+
+        // Check to see if PrivateDnsEnabled property is set
+        internal bool IsSetPrivateDnsEnabled()
+        {
+            return this._privateDnsEnabled.HasValue; 
         }
 
         /// <summary>

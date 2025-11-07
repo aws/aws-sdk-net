@@ -84,6 +84,24 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
                     context.Writer.WritePropertyName("clientToken");
                     context.Writer.Write(Guid.NewGuid().ToString());
                 }
+                if(publicRequest.IsSetCustomDomainName())
+                {
+                    context.Writer.WritePropertyName("customDomainName");
+                    context.Writer.Write(publicRequest.CustomDomainName);
+                }
+
+                if(publicRequest.IsSetDomainVerificationIdentifier())
+                {
+                    context.Writer.WritePropertyName("domainVerificationIdentifier");
+                    context.Writer.Write(publicRequest.DomainVerificationIdentifier);
+                }
+
+                if(publicRequest.IsSetGroupDomain())
+                {
+                    context.Writer.WritePropertyName("groupDomain");
+                    context.Writer.Write(publicRequest.GroupDomain);
+                }
+
                 if(publicRequest.IsSetName())
                 {
                     context.Writer.WritePropertyName("name");

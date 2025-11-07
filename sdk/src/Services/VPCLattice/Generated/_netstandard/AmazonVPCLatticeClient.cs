@@ -1131,6 +1131,55 @@ namespace Amazon.VPCLattice
 
         #endregion
         
+        #region  DeleteDomainVerification
+
+        internal virtual DeleteDomainVerificationResponse DeleteDomainVerification(DeleteDomainVerificationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteDomainVerificationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDomainVerificationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteDomainVerificationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes the specified domain verification.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDomainVerification service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteDomainVerification service method, as returned by VPCLattice.</returns>
+        /// <exception cref="Amazon.VPCLattice.Model.AccessDeniedException">
+        /// The user does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.InternalServerException">
+        /// An unexpected error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/DeleteDomainVerification">REST API Reference for DeleteDomainVerification Operation</seealso>
+        public virtual Task<DeleteDomainVerificationResponse> DeleteDomainVerificationAsync(DeleteDomainVerificationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteDomainVerificationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDomainVerificationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteDomainVerificationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteListener
 
         internal virtual DeleteListenerResponse DeleteListener(DeleteListenerRequest request)
@@ -1927,6 +1976,55 @@ namespace Amazon.VPCLattice
 
         #endregion
         
+        #region  GetDomainVerification
+
+        internal virtual GetDomainVerificationResponse GetDomainVerification(GetDomainVerificationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetDomainVerificationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDomainVerificationResponseUnmarshaller.Instance;
+
+            return Invoke<GetDomainVerificationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves information about a domain verification.ß
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDomainVerification service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetDomainVerification service method, as returned by VPCLattice.</returns>
+        /// <exception cref="Amazon.VPCLattice.Model.AccessDeniedException">
+        /// The user does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.InternalServerException">
+        /// An unexpected error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/GetDomainVerification">REST API Reference for GetDomainVerification Operation</seealso>
+        public virtual Task<GetDomainVerificationResponse> GetDomainVerificationAsync(GetDomainVerificationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetDomainVerificationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDomainVerificationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetDomainVerificationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetListener
 
         internal virtual GetListenerResponse GetListener(GetListenerRequest request)
@@ -2514,6 +2612,55 @@ namespace Amazon.VPCLattice
             options.ResponseUnmarshaller = ListAccessLogSubscriptionsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListAccessLogSubscriptionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListDomainVerifications
+
+        internal virtual ListDomainVerificationsResponse ListDomainVerifications(ListDomainVerificationsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListDomainVerificationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDomainVerificationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListDomainVerificationsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists the domain verifications.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDomainVerifications service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListDomainVerifications service method, as returned by VPCLattice.</returns>
+        /// <exception cref="Amazon.VPCLattice.Model.AccessDeniedException">
+        /// The user does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.InternalServerException">
+        /// An unexpected error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/ListDomainVerifications">REST API Reference for ListDomainVerifications Operation</seealso>
+        public virtual Task<ListDomainVerificationsResponse> ListDomainVerificationsAsync(ListDomainVerificationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListDomainVerificationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDomainVerificationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListDomainVerificationsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3347,6 +3494,59 @@ namespace Amazon.VPCLattice
             options.ResponseUnmarshaller = RegisterTargetsResponseUnmarshaller.Instance;
 
             return InvokeAsync<RegisterTargetsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartDomainVerification
+
+        internal virtual StartDomainVerificationResponse StartDomainVerification(StartDomainVerificationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartDomainVerificationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartDomainVerificationResponseUnmarshaller.Instance;
+
+            return Invoke<StartDomainVerificationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Starts the domain verification process for a custom domain name.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartDomainVerification service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartDomainVerification service method, as returned by VPCLattice.</returns>
+        /// <exception cref="Amazon.VPCLattice.Model.AccessDeniedException">
+        /// The user does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ConflictException">
+        /// The request conflicts with the current state of the resource. Updating or deleting
+        /// a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.InternalServerException">
+        /// An unexpected error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ServiceQuotaExceededException">
+        /// The request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/StartDomainVerification">REST API Reference for StartDomainVerification Operation</seealso>
+        public virtual Task<StartDomainVerificationResponse> StartDomainVerificationAsync(StartDomainVerificationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartDomainVerificationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartDomainVerificationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartDomainVerificationResponse>(request, options, cancellationToken);
         }
 
         #endregion

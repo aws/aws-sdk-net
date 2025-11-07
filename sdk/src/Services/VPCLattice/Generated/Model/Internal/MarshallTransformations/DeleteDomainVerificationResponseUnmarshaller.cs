@@ -35,9 +35,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CreateServiceNetworkResourceAssociation operation
+    /// Response Unmarshaller for DeleteDomainVerification operation
     /// </summary>  
-    public class CreateServiceNetworkResourceAssociationResponseUnmarshaller : JsonResponseUnmarshaller
+    public class DeleteDomainVerificationResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,43 +46,8 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            CreateServiceNetworkResourceAssociationResponse response = new CreateServiceNetworkResourceAssociationResponse();
+            DeleteDomainVerificationResponse response = new DeleteDomainVerificationResponse();
 
-            context.Read();
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
-            {
-                if (context.TestExpression("arn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Arn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("createdBy", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.CreatedBy = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("id", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Id = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("privateDnsEnabled", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    response.PrivateDnsEnabled = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("status", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Status = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-            }
 
             return response;
         }
@@ -109,10 +74,6 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
                 {
                     return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ConflictException"))
-                {
-                    return ConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerException"))
                 {
                     return InternalServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
@@ -120,10 +81,6 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
                 {
                     return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceQuotaExceededException"))
-                {
-                    return ServiceQuotaExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ThrottlingException"))
                 {
@@ -137,9 +94,9 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
             return new AmazonVPCLatticeException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static CreateServiceNetworkResourceAssociationResponseUnmarshaller _instance = new CreateServiceNetworkResourceAssociationResponseUnmarshaller();        
+        private static DeleteDomainVerificationResponseUnmarshaller _instance = new DeleteDomainVerificationResponseUnmarshaller();        
 
-        internal static CreateServiceNetworkResourceAssociationResponseUnmarshaller GetInstance()
+        internal static DeleteDomainVerificationResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -147,7 +104,7 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateServiceNetworkResourceAssociationResponseUnmarshaller Instance
+        public static DeleteDomainVerificationResponseUnmarshaller Instance
         {
             get
             {

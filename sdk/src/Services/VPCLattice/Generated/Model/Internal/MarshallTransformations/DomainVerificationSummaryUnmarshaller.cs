@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ResourceConfigurationSummary Object
+    /// Response Unmarshaller for DomainVerificationSummary Object
     /// </summary>  
-    public class ResourceConfigurationSummaryUnmarshaller : IUnmarshaller<ResourceConfigurationSummary, XmlUnmarshallerContext>, IUnmarshaller<ResourceConfigurationSummary, JsonUnmarshallerContext>
+    public class DomainVerificationSummaryUnmarshaller : IUnmarshaller<DomainVerificationSummary, XmlUnmarshallerContext>, IUnmarshaller<DomainVerificationSummary, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ResourceConfigurationSummary IUnmarshaller<ResourceConfigurationSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        DomainVerificationSummary IUnmarshaller<DomainVerificationSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public ResourceConfigurationSummary Unmarshall(JsonUnmarshallerContext context)
+        public DomainVerificationSummary Unmarshall(JsonUnmarshallerContext context)
         {
-            ResourceConfigurationSummary unmarshalledObject = new ResourceConfigurationSummary();
+            DomainVerificationSummary unmarshalledObject = new DomainVerificationSummary();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,12 +66,6 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("amazonManaged", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.AmazonManaged = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("arn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -84,22 +78,10 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
                     unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("customDomainName", targetDepth))
+                if (context.TestExpression("domainName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CustomDomainName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("domainVerificationId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DomainVerificationId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("groupDomain", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.GroupDomain = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DomainName = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("id", targetDepth))
@@ -108,28 +90,10 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
                     unmarshalledObject.Id = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("lastUpdatedAt", targetDepth))
+                if (context.TestExpression("lastVerifiedTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.LastUpdatedAt = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("name", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("resourceConfigurationGroupId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ResourceConfigurationGroupId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("resourceGatewayId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ResourceGatewayId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LastVerifiedTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("status", targetDepth))
@@ -138,10 +102,16 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("type", targetDepth))
+                if (context.TestExpression("tags", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.Tags = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("txtMethodConfig", targetDepth))
+                {
+                    var unmarshaller = TxtMethodConfigUnmarshaller.Instance;
+                    unmarshalledObject.TxtMethodConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -149,12 +119,12 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
         }
 
 
-        private static ResourceConfigurationSummaryUnmarshaller _instance = new ResourceConfigurationSummaryUnmarshaller();        
+        private static DomainVerificationSummaryUnmarshaller _instance = new DomainVerificationSummaryUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ResourceConfigurationSummaryUnmarshaller Instance
+        public static DomainVerificationSummaryUnmarshaller Instance
         {
             get
             {

@@ -64,10 +64,22 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
                     response.CreatedBy = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("dnsOptions", targetDepth))
+                {
+                    var unmarshaller = DnsOptionsUnmarshaller.Instance;
+                    response.DnsOptions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("id", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Id = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("privateDnsEnabled", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    response.PrivateDnsEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("securityGroupIds", targetDepth))

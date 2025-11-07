@@ -30,23 +30,23 @@ using Amazon.Runtime.Internal;
 namespace Amazon.VPCLattice.Model
 {
     /// <summary>
-    /// This is the response object from the CreateServiceNetworkResourceAssociation operation.
+    /// This is the response object from the StartDomainVerification operation.
     /// </summary>
-    public partial class CreateServiceNetworkResourceAssociationResponse : AmazonWebServiceResponse
+    public partial class StartDomainVerificationResponse : AmazonWebServiceResponse
     {
         private string _arn;
-        private string _createdBy;
+        private string _domainName;
         private string _id;
-        private bool? _privateDnsEnabled;
-        private ServiceNetworkResourceAssociationStatus _status;
+        private VerificationStatus _status;
+        private TxtMethodConfig _txtMethodConfig;
 
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the association.
+        ///  The Amazon Resource Name (ARN) of the domain verification. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=22, Max=2048)]
+        [AWSProperty(Required=true, Min=20, Max=2048)]
         public string Arn
         {
             get { return this._arn; }
@@ -60,31 +60,31 @@ namespace Amazon.VPCLattice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CreatedBy. 
+        /// Gets and sets the property DomainName. 
         /// <para>
-        /// The ID of the account that created the association.
+        ///  The domain name being verified. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=12)]
-        public string CreatedBy
+        [AWSProperty(Required=true, Min=3, Max=255)]
+        public string DomainName
         {
-            get { return this._createdBy; }
-            set { this._createdBy = value; }
+            get { return this._domainName; }
+            set { this._domainName = value; }
         }
 
-        // Check to see if CreatedBy property is set
-        internal bool IsSetCreatedBy()
+        // Check to see if DomainName property is set
+        internal bool IsSetDomainName()
         {
-            return this._createdBy != null;
+            return this._domainName != null;
         }
 
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The ID of the association.
+        ///  The ID of the domain verification. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=22, Max=22)]
+        [AWSProperty(Required=true, Min=20, Max=20)]
         public string Id
         {
             get { return this._id; }
@@ -98,31 +98,13 @@ namespace Amazon.VPCLattice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PrivateDnsEnabled. 
-        /// <para>
-        ///  Indicates if private DNS is is enabled for the service network resource association.
-        /// 
-        /// </para>
-        /// </summary>
-        public bool PrivateDnsEnabled
-        {
-            get { return this._privateDnsEnabled.GetValueOrDefault(); }
-            set { this._privateDnsEnabled = value; }
-        }
-
-        // Check to see if PrivateDnsEnabled property is set
-        internal bool IsSetPrivateDnsEnabled()
-        {
-            return this._privateDnsEnabled.HasValue; 
-        }
-
-        /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the association.
+        ///  The current status of the domain verification process. 
         /// </para>
         /// </summary>
-        public ServiceNetworkResourceAssociationStatus Status
+        [AWSProperty(Required=true)]
+        public VerificationStatus Status
         {
             get { return this._status; }
             set { this._status = value; }
@@ -132,6 +114,24 @@ namespace Amazon.VPCLattice.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TxtMethodConfig. 
+        /// <para>
+        ///  The TXT record configuration used for domain verification. 
+        /// </para>
+        /// </summary>
+        public TxtMethodConfig TxtMethodConfig
+        {
+            get { return this._txtMethodConfig; }
+            set { this._txtMethodConfig = value; }
+        }
+
+        // Check to see if TxtMethodConfig property is set
+        internal bool IsSetTxtMethodConfig()
+        {
+            return this._txtMethodConfig != null;
         }
 
     }

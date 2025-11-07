@@ -35,9 +35,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetServiceNetworkResourceAssociation operation
+    /// Response Unmarshaller for GetDomainVerification operation
     /// </summary>  
-    public class GetServiceNetworkResourceAssociationResponseUnmarshaller : JsonResponseUnmarshaller
+    public class GetDomainVerificationResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,7 +46,7 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            GetServiceNetworkResourceAssociationResponse response = new GetServiceNetworkResourceAssociationResponse();
+            GetDomainVerificationResponse response = new GetDomainVerificationResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
@@ -64,34 +64,10 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
                     response.CreatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("createdBy", targetDepth))
+                if (context.TestExpression("domainName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.CreatedBy = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("dnsEntry", targetDepth))
-                {
-                    var unmarshaller = DnsEntryUnmarshaller.Instance;
-                    response.DnsEntry = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("domainVerificationStatus", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.DomainVerificationStatus = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("failureCode", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.FailureCode = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("failureReason", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.FailureReason = unmarshaller.Unmarshall(context);
+                    response.DomainName = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("id", targetDepth))
@@ -100,70 +76,28 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
                     response.Id = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("isManagedAssociation", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    response.IsManagedAssociation = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("lastUpdatedAt", targetDepth))
+                if (context.TestExpression("lastVerifiedTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
-                    response.LastUpdatedAt = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("privateDnsEnabled", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    response.PrivateDnsEnabled = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("privateDnsEntry", targetDepth))
-                {
-                    var unmarshaller = DnsEntryUnmarshaller.Instance;
-                    response.PrivateDnsEntry = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("resourceConfigurationArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.ResourceConfigurationArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("resourceConfigurationId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.ResourceConfigurationId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("resourceConfigurationName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.ResourceConfigurationName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("serviceNetworkArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.ServiceNetworkArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("serviceNetworkId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.ServiceNetworkId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("serviceNetworkName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.ServiceNetworkName = unmarshaller.Unmarshall(context);
+                    response.LastVerifiedTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Status = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("tags", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    response.Tags = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("txtMethodConfig", targetDepth))
+                {
+                    var unmarshaller = TxtMethodConfigUnmarshaller.Instance;
+                    response.TxtMethodConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -213,9 +147,9 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
             return new AmazonVPCLatticeException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static GetServiceNetworkResourceAssociationResponseUnmarshaller _instance = new GetServiceNetworkResourceAssociationResponseUnmarshaller();        
+        private static GetDomainVerificationResponseUnmarshaller _instance = new GetDomainVerificationResponseUnmarshaller();        
 
-        internal static GetServiceNetworkResourceAssociationResponseUnmarshaller GetInstance()
+        internal static GetDomainVerificationResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -223,7 +157,7 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetServiceNetworkResourceAssociationResponseUnmarshaller Instance
+        public static GetDomainVerificationResponseUnmarshaller Instance
         {
             get
             {

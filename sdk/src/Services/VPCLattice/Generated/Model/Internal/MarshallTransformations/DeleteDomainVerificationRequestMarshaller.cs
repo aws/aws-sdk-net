@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ListResourceConfigurations Request Marshaller
+    /// DeleteDomainVerification Request Marshaller
     /// </summary>       
-    public class ListResourceConfigurationsRequestMarshaller : IMarshaller<IRequest, ListResourceConfigurationsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class DeleteDomainVerificationRequestMarshaller : IMarshaller<IRequest, DeleteDomainVerificationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -45,7 +45,7 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((ListResourceConfigurationsRequest)input);
+            return this.Marshall((DeleteDomainVerificationRequest)input);
         }
 
         /// <summary>
@@ -53,35 +53,22 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(ListResourceConfigurationsRequest publicRequest)
+        public IRequest Marshall(DeleteDomainVerificationRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.VPCLattice");
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2022-11-30";
-            request.HttpMethod = "GET";
+            request.HttpMethod = "DELETE";
 
-            
-            if (publicRequest.IsSetDomainVerificationIdentifier())
-                request.Parameters.Add("domainVerificationIdentifier", StringUtils.FromString(publicRequest.DomainVerificationIdentifier));
-            
-            if (publicRequest.IsSetMaxResults())
-                request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
-            
-            if (publicRequest.IsSetNextToken())
-                request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
-            
-            if (publicRequest.IsSetResourceConfigurationGroupIdentifier())
-                request.Parameters.Add("resourceConfigurationGroupIdentifier", StringUtils.FromString(publicRequest.ResourceConfigurationGroupIdentifier));
-            
-            if (publicRequest.IsSetResourceGatewayIdentifier())
-                request.Parameters.Add("resourceGatewayIdentifier", StringUtils.FromString(publicRequest.ResourceGatewayIdentifier));
-            request.ResourcePath = "/resourceconfigurations";
-            request.UseQueryString = true;
+            if (!publicRequest.IsSetDomainVerificationIdentifier())
+                throw new AmazonVPCLatticeException("Request object does not have required field DomainVerificationIdentifier set");
+            request.AddPathResource("{domainVerificationIdentifier}", StringUtils.FromString(publicRequest.DomainVerificationIdentifier));
+            request.ResourcePath = "/domainverifications/{domainVerificationIdentifier}";
 
             return request;
         }
-        private static ListResourceConfigurationsRequestMarshaller _instance = new ListResourceConfigurationsRequestMarshaller();        
+        private static DeleteDomainVerificationRequestMarshaller _instance = new DeleteDomainVerificationRequestMarshaller();        
 
-        internal static ListResourceConfigurationsRequestMarshaller GetInstance()
+        internal static DeleteDomainVerificationRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -89,7 +76,7 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ListResourceConfigurationsRequestMarshaller Instance
+        public static DeleteDomainVerificationRequestMarshaller Instance
         {
             get
             {

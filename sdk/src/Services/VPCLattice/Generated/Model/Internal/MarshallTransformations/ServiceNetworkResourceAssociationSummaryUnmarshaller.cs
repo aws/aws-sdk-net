@@ -108,6 +108,12 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
                     unmarshalledObject.IsManagedAssociation = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("privateDnsEnabled", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.PrivateDnsEnabled = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("privateDnsEntry", targetDepth))
                 {
                     var unmarshaller = DnsEntryUnmarshaller.Instance;

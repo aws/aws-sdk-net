@@ -992,6 +992,61 @@ namespace Amazon.VPCLattice
 
         #endregion
         
+        #region  DeleteDomainVerification
+
+
+        /// <summary>
+        /// Deletes the specified domain verification.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDomainVerification service method.</param>
+        /// 
+        /// <returns>The response from the DeleteDomainVerification service method, as returned by VPCLattice.</returns>
+        /// <exception cref="Amazon.VPCLattice.Model.AccessDeniedException">
+        /// The user does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.InternalServerException">
+        /// An unexpected error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/DeleteDomainVerification">REST API Reference for DeleteDomainVerification Operation</seealso>
+        DeleteDomainVerificationResponse DeleteDomainVerification(DeleteDomainVerificationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteDomainVerification operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDomainVerification operation on AmazonVPCLatticeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteDomainVerification
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/DeleteDomainVerification">REST API Reference for DeleteDomainVerification Operation</seealso>
+        IAsyncResult BeginDeleteDomainVerification(DeleteDomainVerificationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteDomainVerification operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteDomainVerification.</param>
+        /// 
+        /// <returns>Returns a  DeleteDomainVerificationResult from VPCLattice.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/DeleteDomainVerification">REST API Reference for DeleteDomainVerification Operation</seealso>
+        DeleteDomainVerificationResponse EndDeleteDomainVerification(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeleteListener
 
 
@@ -1878,6 +1933,61 @@ namespace Amazon.VPCLattice
 
         #endregion
         
+        #region  GetDomainVerification
+
+
+        /// <summary>
+        /// Retrieves information about a domain verification.ß
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDomainVerification service method.</param>
+        /// 
+        /// <returns>The response from the GetDomainVerification service method, as returned by VPCLattice.</returns>
+        /// <exception cref="Amazon.VPCLattice.Model.AccessDeniedException">
+        /// The user does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.InternalServerException">
+        /// An unexpected error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/GetDomainVerification">REST API Reference for GetDomainVerification Operation</seealso>
+        GetDomainVerificationResponse GetDomainVerification(GetDomainVerificationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDomainVerification operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetDomainVerification operation on AmazonVPCLatticeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDomainVerification
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/GetDomainVerification">REST API Reference for GetDomainVerification Operation</seealso>
+        IAsyncResult BeginGetDomainVerification(GetDomainVerificationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetDomainVerification operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDomainVerification.</param>
+        /// 
+        /// <returns>Returns a  GetDomainVerificationResult from VPCLattice.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/GetDomainVerification">REST API Reference for GetDomainVerification Operation</seealso>
+        GetDomainVerificationResponse EndGetDomainVerification(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetListener
 
 
@@ -2538,6 +2648,61 @@ namespace Amazon.VPCLattice
         /// <returns>Returns a  ListAccessLogSubscriptionsResult from VPCLattice.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/ListAccessLogSubscriptions">REST API Reference for ListAccessLogSubscriptions Operation</seealso>
         ListAccessLogSubscriptionsResponse EndListAccessLogSubscriptions(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListDomainVerifications
+
+
+        /// <summary>
+        /// Lists the domain verifications.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDomainVerifications service method.</param>
+        /// 
+        /// <returns>The response from the ListDomainVerifications service method, as returned by VPCLattice.</returns>
+        /// <exception cref="Amazon.VPCLattice.Model.AccessDeniedException">
+        /// The user does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.InternalServerException">
+        /// An unexpected error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/ListDomainVerifications">REST API Reference for ListDomainVerifications Operation</seealso>
+        ListDomainVerificationsResponse ListDomainVerifications(ListDomainVerificationsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListDomainVerifications operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListDomainVerifications operation on AmazonVPCLatticeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDomainVerifications
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/ListDomainVerifications">REST API Reference for ListDomainVerifications Operation</seealso>
+        IAsyncResult BeginListDomainVerifications(ListDomainVerificationsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListDomainVerifications operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListDomainVerifications.</param>
+        /// 
+        /// <returns>Returns a  ListDomainVerificationsResult from VPCLattice.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/ListDomainVerifications">REST API Reference for ListDomainVerifications Operation</seealso>
+        ListDomainVerificationsResponse EndListDomainVerifications(IAsyncResult asyncResult);
 
         #endregion
         
@@ -3473,6 +3638,65 @@ namespace Amazon.VPCLattice
         /// <returns>Returns a  RegisterTargetsResult from VPCLattice.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/RegisterTargets">REST API Reference for RegisterTargets Operation</seealso>
         RegisterTargetsResponse EndRegisterTargets(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  StartDomainVerification
+
+
+        /// <summary>
+        /// Starts the domain verification process for a custom domain name.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartDomainVerification service method.</param>
+        /// 
+        /// <returns>The response from the StartDomainVerification service method, as returned by VPCLattice.</returns>
+        /// <exception cref="Amazon.VPCLattice.Model.AccessDeniedException">
+        /// The user does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ConflictException">
+        /// The request conflicts with the current state of the resource. Updating or deleting
+        /// a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.InternalServerException">
+        /// An unexpected error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ServiceQuotaExceededException">
+        /// The request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/StartDomainVerification">REST API Reference for StartDomainVerification Operation</seealso>
+        StartDomainVerificationResponse StartDomainVerification(StartDomainVerificationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartDomainVerification operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartDomainVerification operation on AmazonVPCLatticeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartDomainVerification
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/StartDomainVerification">REST API Reference for StartDomainVerification Operation</seealso>
+        IAsyncResult BeginStartDomainVerification(StartDomainVerificationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartDomainVerification operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartDomainVerification.</param>
+        /// 
+        /// <returns>Returns a  StartDomainVerificationResult from VPCLattice.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/StartDomainVerification">REST API Reference for StartDomainVerification Operation</seealso>
+        StartDomainVerificationResponse EndStartDomainVerification(IAsyncResult asyncResult);
 
         #endregion
         
