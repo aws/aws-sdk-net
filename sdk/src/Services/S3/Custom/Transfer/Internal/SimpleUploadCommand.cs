@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Util;
 using Amazon.S3.Model;
 using Amazon.S3.Util;
 using Amazon.Runtime;
+using Amazon.Util;
 
 namespace Amazon.S3.Transfer.Internal
 {
@@ -54,7 +55,6 @@ namespace Amazon.S3.Transfer.Internal
         {
             PutObjectRequest putRequest = new PutObjectRequest()
             {
-                Headers = this._fileTransporterRequest.Headers,
                 BucketName = this._fileTransporterRequest.BucketName,
                 Key = this._fileTransporterRequest.Key,
                 CannedACL = this._fileTransporterRequest.CannedACL,
@@ -85,6 +85,25 @@ namespace Amazon.S3.Transfer.Internal
                 ServerSideEncryptionKeyManagementServiceEncryptionContext = this._fileTransporterRequest.SSEKMSEncryptionContext,
                 WebsiteRedirectLocation = this._fileTransporterRequest.WebsiteRedirectLocation,
             };
+            
+            // We are iterating over the Headers to avoid setting the Header from the Transfer utility upload request 
+            // to the PutObjectRequest since that will cause issues down the line.
+            // The AmazonS3PreMarshallHandler modifies the content type on the headers collection 
+            // which would impact other requests in a directory upload if the Headers were referenced.
+            if (this._fileTransporterRequest.Headers != null && this._fileTransporterRequest.Headers.Count > 0)
+            {
+                foreach (var headerKey in this._fileTransporterRequest.Headers.Keys)
+                {
+                    if (string.Equals(headerKey, HeaderKeys.ContentTypeHeader) && this._fileTransporterRequest.IsSetContentType())
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        putRequest.Headers[headerKey] = this._fileTransporterRequest.Headers[headerKey];
+                    }
+                }
+            }
 
             // Avoid setting ContentType to null, as that may clear
             // out an existing value in Headers collection
