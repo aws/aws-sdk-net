@@ -766,6 +766,13 @@ namespace Amazon.ControlTower
         /// Decommissions a landing zone. This API call starts an asynchronous operation that
         /// deletes Amazon Web Services Control Tower resources deployed in accounts managed by
         /// Amazon Web Services Control Tower.
+        /// 
+        ///  
+        /// <para>
+        /// Decommissioning a landing zone is a process with significant consequences, and it
+        /// cannot be undone. We strongly recommend that you perform this decommissioning process
+        /// only if you intend to stop using your landing zone.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteLandingZone service method.</param>
         /// 
@@ -859,8 +866,8 @@ namespace Amazon.ControlTower
         /// The request references a resource that does not exist.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ServiceQuotaExceededException">
-        /// The request would cause a service quota to be exceeded. The limit is 100 concurrent
-        /// operations.
+        /// The request would cause a service quota to be exceeded. See <a href="https://docs.aws.amazon.com/controltower/latest/userguide/request-an-increase.html">Service
+        /// quotas</a>.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -939,8 +946,8 @@ namespace Amazon.ControlTower
         /// The request references a resource that does not exist.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ServiceQuotaExceededException">
-        /// The request would cause a service quota to be exceeded. The limit is 100 concurrent
-        /// operations.
+        /// The request would cause a service quota to be exceeded. See <a href="https://docs.aws.amazon.com/controltower/latest/userguide/request-an-increase.html">Service
+        /// quotas</a>.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -1018,8 +1025,8 @@ namespace Amazon.ControlTower
         /// The request references a resource that does not exist.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ServiceQuotaExceededException">
-        /// The request would cause a service quota to be exceeded. The limit is 100 concurrent
-        /// operations.
+        /// The request would cause a service quota to be exceeded. See <a href="https://docs.aws.amazon.com/controltower/latest/userguide/request-an-increase.html">Service
+        /// quotas</a>.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -1098,8 +1105,8 @@ namespace Amazon.ControlTower
         /// The request references a resource that does not exist.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ServiceQuotaExceededException">
-        /// The request would cause a service quota to be exceeded. The limit is 100 concurrent
-        /// operations.
+        /// The request would cause a service quota to be exceeded. See <a href="https://docs.aws.amazon.com/controltower/latest/userguide/request-an-increase.html">Service
+        /// quotas</a>.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -2150,8 +2157,8 @@ namespace Amazon.ControlTower
         /// The request references a resource that does not exist.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ServiceQuotaExceededException">
-        /// The request would cause a service quota to be exceeded. The limit is 100 concurrent
-        /// operations.
+        /// The request would cause a service quota to be exceeded. See <a href="https://docs.aws.amazon.com/controltower/latest/userguide/request-an-increase.html">Service
+        /// quotas</a>.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -2208,7 +2215,7 @@ namespace Amazon.ControlTower
         #region  ResetEnabledControl
 
         /// <summary>
-        /// Resets an enabled control.
+        /// Resets an enabled control. Does not work for controls implemented with SCPs.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ResetEnabledControl service method.</param>
         /// 
@@ -2226,8 +2233,8 @@ namespace Amazon.ControlTower
         /// The request references a resource that does not exist.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ServiceQuotaExceededException">
-        /// The request would cause a service quota to be exceeded. The limit is 100 concurrent
-        /// operations.
+        /// The request would cause a service quota to be exceeded. See <a href="https://docs.aws.amazon.com/controltower/latest/userguide/request-an-increase.html">Service
+        /// quotas</a>.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -2508,8 +2515,8 @@ namespace Amazon.ControlTower
         /// The request references a resource that does not exist.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ServiceQuotaExceededException">
-        /// The request would cause a service quota to be exceeded. The limit is 100 concurrent
-        /// operations.
+        /// The request would cause a service quota to be exceeded. See <a href="https://docs.aws.amazon.com/controltower/latest/userguide/request-an-increase.html">Service
+        /// quotas</a>.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -2605,8 +2612,8 @@ namespace Amazon.ControlTower
         /// The request references a resource that does not exist.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ServiceQuotaExceededException">
-        /// The request would cause a service quota to be exceeded. The limit is 100 concurrent
-        /// operations.
+        /// The request would cause a service quota to be exceeded. See <a href="https://docs.aws.amazon.com/controltower/latest/userguide/request-an-increase.html">Service
+        /// quotas</a>.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ThrottlingException">
         /// The request was denied due to request throttling.

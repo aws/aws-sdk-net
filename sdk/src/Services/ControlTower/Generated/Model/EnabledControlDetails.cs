@@ -38,6 +38,7 @@ namespace Amazon.ControlTower.Model
         private string _controlIdentifier;
         private DriftStatusSummary _driftStatusSummary;
         private List<EnabledControlParameterSummary> _parameters = AWSConfigs.InitializeCollections ? new List<EnabledControlParameterSummary>() : null;
+        private string _parentIdentifier;
         private EnablementStatusSummary _statusSummary;
         private string _targetIdentifier;
         private List<Region> _targetRegions = AWSConfigs.InitializeCollections ? new List<Region>() : null;
@@ -116,6 +117,26 @@ namespace Amazon.ControlTower.Model
         internal bool IsSetParameters()
         {
             return this._parameters != null && (this._parameters.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ParentIdentifier. 
+        /// <para>
+        /// The ARN of the parent enabled control from which this control inherits its configuration,
+        /// if applicable.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string ParentIdentifier
+        {
+            get { return this._parentIdentifier; }
+            set { this._parentIdentifier = value; }
+        }
+
+        // Check to see if ParentIdentifier property is set
+        internal bool IsSetParentIdentifier()
+        {
+            return this._parentIdentifier != null;
         }
 
         /// <summary>

@@ -37,6 +37,9 @@ namespace Amazon.ControlTower.Model
     {
         private List<string> _controlIdentifiers = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _driftStatuses = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _inheritanceDriftStatuses = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _parentIdentifiers = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _resourceDriftStatuses = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _statuses = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
@@ -75,6 +78,66 @@ namespace Amazon.ControlTower.Model
         internal bool IsSetDriftStatuses()
         {
             return this._driftStatuses != null && (this._driftStatuses.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property InheritanceDriftStatuses. 
+        /// <para>
+        /// Filters enabled controls by their inheritance drift status, allowing you to find controls
+        /// with specific inheritance-related drift conditions.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1)]
+        public List<string> InheritanceDriftStatuses
+        {
+            get { return this._inheritanceDriftStatuses; }
+            set { this._inheritanceDriftStatuses = value; }
+        }
+
+        // Check to see if InheritanceDriftStatuses property is set
+        internal bool IsSetInheritanceDriftStatuses()
+        {
+            return this._inheritanceDriftStatuses != null && (this._inheritanceDriftStatuses.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ParentIdentifiers. 
+        /// <para>
+        /// Filters enabled controls by their parent control identifiers, allowing you to find
+        /// child controls of specific parent controls.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1)]
+        public List<string> ParentIdentifiers
+        {
+            get { return this._parentIdentifiers; }
+            set { this._parentIdentifiers = value; }
+        }
+
+        // Check to see if ParentIdentifiers property is set
+        internal bool IsSetParentIdentifiers()
+        {
+            return this._parentIdentifiers != null && (this._parentIdentifiers.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceDriftStatuses. 
+        /// <para>
+        /// Filters enabled controls by their resource drift status, allowing you to find controls
+        /// with specific resource-related drift conditions.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1)]
+        public List<string> ResourceDriftStatuses
+        {
+            get { return this._resourceDriftStatuses; }
+            set { this._resourceDriftStatuses = value; }
+        }
+
+        // Check to see if ResourceDriftStatuses property is set
+        internal bool IsSetResourceDriftStatuses()
+        {
+            return this._resourceDriftStatuses != null && (this._resourceDriftStatuses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

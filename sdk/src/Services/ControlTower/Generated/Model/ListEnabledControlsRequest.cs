@@ -38,6 +38,7 @@ namespace Amazon.ControlTower.Model
     public partial class ListEnabledControlsRequest : AmazonControlTowerRequest
     {
         private EnabledControlFilter _filter;
+        private bool? _includeChildren;
         private int? _maxResults;
         private string _nextToken;
         private string _targetIdentifier;
@@ -59,6 +60,25 @@ namespace Amazon.ControlTower.Model
         internal bool IsSetFilter()
         {
             return this._filter != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IncludeChildren. 
+        /// <para>
+        /// A boolean value that determines whether to include enabled controls from child organizational
+        /// units in the response.
+        /// </para>
+        /// </summary>
+        public bool IncludeChildren
+        {
+            get { return this._includeChildren.GetValueOrDefault(); }
+            set { this._includeChildren = value; }
+        }
+
+        // Check to see if IncludeChildren property is set
+        internal bool IsSetIncludeChildren()
+        {
+            return this._includeChildren.HasValue; 
         }
 
         /// <summary>

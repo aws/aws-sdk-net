@@ -30,30 +30,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ControlTower.Model
 {
     /// <summary>
-    /// Container for the parameters to the ResetEnabledControl operation.
-    /// Resets an enabled control. Does not work for controls implemented with SCPs.
+    /// Represents drift information related to control inheritance between organizational
+    /// units.
     /// </summary>
-    public partial class ResetEnabledControlRequest : AmazonControlTowerRequest
+    public partial class EnabledControlInheritanceDrift
     {
-        private string _enabledControlIdentifier;
+        private DriftStatus _status;
 
         /// <summary>
-        /// Gets and sets the property EnabledControlIdentifier. 
+        /// Gets and sets the property Status. 
         /// <para>
-        /// The ARN of the enabled control to be reset.
+        /// The status of inheritance drift for the enabled control, indicating whether inheritance
+        /// configuration matches expectations.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=20, Max=2048)]
-        public string EnabledControlIdentifier
+        public DriftStatus Status
         {
-            get { return this._enabledControlIdentifier; }
-            set { this._enabledControlIdentifier = value; }
+            get { return this._status; }
+            set { this._status = value; }
         }
 
-        // Check to see if EnabledControlIdentifier property is set
-        internal bool IsSetEnabledControlIdentifier()
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
         {
-            return this._enabledControlIdentifier != null;
+            return this._status != null;
         }
 
     }

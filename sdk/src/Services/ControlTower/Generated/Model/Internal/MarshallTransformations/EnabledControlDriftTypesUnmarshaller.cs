@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ControlTower.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DriftStatusSummary Object
+    /// Response Unmarshaller for EnabledControlDriftTypes Object
     /// </summary>  
-    public class DriftStatusSummaryUnmarshaller : IUnmarshaller<DriftStatusSummary, XmlUnmarshallerContext>, IUnmarshaller<DriftStatusSummary, JsonUnmarshallerContext>
+    public class EnabledControlDriftTypesUnmarshaller : IUnmarshaller<EnabledControlDriftTypes, XmlUnmarshallerContext>, IUnmarshaller<EnabledControlDriftTypes, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        DriftStatusSummary IUnmarshaller<DriftStatusSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        EnabledControlDriftTypes IUnmarshaller<EnabledControlDriftTypes, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.ControlTower.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public DriftStatusSummary Unmarshall(JsonUnmarshallerContext context)
+        public EnabledControlDriftTypes Unmarshall(JsonUnmarshallerContext context)
         {
-            DriftStatusSummary unmarshalledObject = new DriftStatusSummary();
+            EnabledControlDriftTypes unmarshalledObject = new EnabledControlDriftTypes();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,16 +66,16 @@ namespace Amazon.ControlTower.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("driftStatus", targetDepth))
+                if (context.TestExpression("inheritance", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DriftStatus = unmarshaller.Unmarshall(context);
+                    var unmarshaller = EnabledControlInheritanceDriftUnmarshaller.Instance;
+                    unmarshalledObject.Inheritance = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("types", targetDepth))
+                if (context.TestExpression("resource", targetDepth))
                 {
-                    var unmarshaller = EnabledControlDriftTypesUnmarshaller.Instance;
-                    unmarshalledObject.Types = unmarshaller.Unmarshall(context);
+                    var unmarshaller = EnabledControlResourceDriftUnmarshaller.Instance;
+                    unmarshalledObject.Resource = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -83,12 +83,12 @@ namespace Amazon.ControlTower.Model.Internal.MarshallTransformations
         }
 
 
-        private static DriftStatusSummaryUnmarshaller _instance = new DriftStatusSummaryUnmarshaller();        
+        private static EnabledControlDriftTypesUnmarshaller _instance = new EnabledControlDriftTypesUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DriftStatusSummaryUnmarshaller Instance
+        public static EnabledControlDriftTypesUnmarshaller Instance
         {
             get
             {

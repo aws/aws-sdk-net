@@ -84,6 +84,12 @@ namespace Amazon.ControlTower.Model.Internal.MarshallTransformations
                     unmarshalledObject.DriftStatusSummary = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("parentIdentifier", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ParentIdentifier = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("statusSummary", targetDepth))
                 {
                     var unmarshaller = EnablementStatusSummaryUnmarshaller.Instance;

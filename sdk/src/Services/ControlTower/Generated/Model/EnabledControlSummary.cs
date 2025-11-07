@@ -37,6 +37,7 @@ namespace Amazon.ControlTower.Model
         private string _arn;
         private string _controlIdentifier;
         private DriftStatusSummary _driftStatusSummary;
+        private string _parentIdentifier;
         private EnablementStatusSummary _statusSummary;
         private string _targetIdentifier;
 
@@ -94,6 +95,26 @@ namespace Amazon.ControlTower.Model
         internal bool IsSetDriftStatusSummary()
         {
             return this._driftStatusSummary != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ParentIdentifier. 
+        /// <para>
+        /// The ARN of the parent enabled control from which this control inherits its configuration,
+        /// if applicable.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string ParentIdentifier
+        {
+            get { return this._parentIdentifier; }
+            set { this._parentIdentifier = value; }
+        }
+
+        // Check to see if ParentIdentifier property is set
+        internal bool IsSetParentIdentifier()
+        {
+            return this._parentIdentifier != null;
         }
 
         /// <summary>

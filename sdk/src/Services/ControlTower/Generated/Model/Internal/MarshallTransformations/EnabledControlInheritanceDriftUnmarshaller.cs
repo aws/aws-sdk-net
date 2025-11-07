@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ControlTower.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for LandingZoneDetail Object
+    /// Response Unmarshaller for EnabledControlInheritanceDrift Object
     /// </summary>  
-    public class LandingZoneDetailUnmarshaller : IUnmarshaller<LandingZoneDetail, XmlUnmarshallerContext>, IUnmarshaller<LandingZoneDetail, JsonUnmarshallerContext>
+    public class EnabledControlInheritanceDriftUnmarshaller : IUnmarshaller<EnabledControlInheritanceDrift, XmlUnmarshallerContext>, IUnmarshaller<EnabledControlInheritanceDrift, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        LandingZoneDetail IUnmarshaller<LandingZoneDetail, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        EnabledControlInheritanceDrift IUnmarshaller<EnabledControlInheritanceDrift, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.ControlTower.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public LandingZoneDetail Unmarshall(JsonUnmarshallerContext context)
+        public EnabledControlInheritanceDrift Unmarshall(JsonUnmarshallerContext context)
         {
-            LandingZoneDetail unmarshalledObject = new LandingZoneDetail();
+            EnabledControlInheritanceDrift unmarshalledObject = new EnabledControlInheritanceDrift();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,46 +66,10 @@ namespace Amazon.ControlTower.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("arn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("driftStatus", targetDepth))
-                {
-                    var unmarshaller = LandingZoneDriftStatusSummaryUnmarshaller.Instance;
-                    unmarshalledObject.DriftStatus = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("latestAvailableVersion", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LatestAvailableVersion = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("manifest", targetDepth))
-                {
-                    var unmarshaller = Amazon.Runtime.Documents.Internal.Transform.DocumentUnmarshaller.Instance;
-                    unmarshalledObject.Manifest = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("remediationTypes", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.RemediationTypes = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("version", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Version = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -113,12 +77,12 @@ namespace Amazon.ControlTower.Model.Internal.MarshallTransformations
         }
 
 
-        private static LandingZoneDetailUnmarshaller _instance = new LandingZoneDetailUnmarshaller();        
+        private static EnabledControlInheritanceDriftUnmarshaller _instance = new EnabledControlInheritanceDriftUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static LandingZoneDetailUnmarshaller Instance
+        public static EnabledControlInheritanceDriftUnmarshaller Instance
         {
             get
             {

@@ -38,6 +38,7 @@ namespace Amazon.ControlTower.Model
         private LandingZoneDriftStatusSummary _driftStatus;
         private string _latestAvailableVersion;
         private Amazon.Runtime.Documents.Document _manifest;
+        private List<string> _remediationTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private LandingZoneStatus _status;
         private string _version;
 
@@ -115,6 +116,26 @@ namespace Amazon.ControlTower.Model
         internal bool IsSetManifest()
         {
             return !this._manifest.IsNull();
+        }
+
+        /// <summary>
+        /// Gets and sets the property RemediationTypes. 
+        /// <para>
+        /// The types of remediation actions configured for the landing zone, such as automatic
+        /// drift correction or compliance enforcement.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1)]
+        public List<string> RemediationTypes
+        {
+            get { return this._remediationTypes; }
+            set { this._remediationTypes = value; }
+        }
+
+        // Check to see if RemediationTypes property is set
+        internal bool IsSetRemediationTypes()
+        {
+            return this._remediationTypes != null && (this._remediationTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -39,6 +39,7 @@ namespace Amazon.ControlTower.Model
     {
         private string _landingZoneIdentifier;
         private Amazon.Runtime.Documents.Document _manifest;
+        private List<string> _remediationTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _version;
 
         /// <summary>
@@ -80,6 +81,26 @@ namespace Amazon.ControlTower.Model
         internal bool IsSetManifest()
         {
             return !this._manifest.IsNull();
+        }
+
+        /// <summary>
+        /// Gets and sets the property RemediationTypes. 
+        /// <para>
+        /// Specifies the types of remediation actions to apply when updating the landing zone
+        /// configuration.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1)]
+        public List<string> RemediationTypes
+        {
+            get { return this._remediationTypes; }
+            set { this._remediationTypes = value; }
+        }
+
+        // Check to see if RemediationTypes property is set
+        internal bool IsSetRemediationTypes()
+        {
+            return this._remediationTypes != null && (this._remediationTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
