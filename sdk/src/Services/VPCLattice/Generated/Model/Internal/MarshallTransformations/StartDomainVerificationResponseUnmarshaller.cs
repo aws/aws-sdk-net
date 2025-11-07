@@ -35,9 +35,9 @@ using Amazon.Util;
 namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CreateServiceNetworkVpcAssociation operation
+    /// Response Unmarshaller for StartDomainVerification operation
     /// </summary>  
-    public class CreateServiceNetworkVpcAssociationResponseUnmarshaller : JsonResponseUnmarshaller
+    public class StartDomainVerificationResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,7 +46,7 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            CreateServiceNetworkVpcAssociationResponse response = new CreateServiceNetworkVpcAssociationResponse();
+            StartDomainVerificationResponse response = new StartDomainVerificationResponse();
             StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
             context.Read(ref reader);
             int targetDepth = context.CurrentDepth;
@@ -58,16 +58,10 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
                     response.Arn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("createdBy", targetDepth))
+                if (context.TestExpression("domainName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.CreatedBy = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("dnsOptions", targetDepth))
-                {
-                    var unmarshaller = DnsOptionsUnmarshaller.Instance;
-                    response.DnsOptions = unmarshaller.Unmarshall(context, ref reader);
+                    response.DomainName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("id", targetDepth))
@@ -76,22 +70,16 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
                     response.Id = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("privateDnsEnabled", targetDepth))
-                {
-                    var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    response.PrivateDnsEnabled = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("securityGroupIds", targetDepth))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    response.SecurityGroupIds = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
                 if (context.TestExpression("status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Status = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("txtMethodConfig", targetDepth))
+                {
+                    var unmarshaller = TxtMethodConfigUnmarshaller.Instance;
+                    response.TxtMethodConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -131,10 +119,6 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
                 {
                     return InternalServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
-                {
-                    return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceQuotaExceededException"))
                 {
                     return ServiceQuotaExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
@@ -151,9 +135,9 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
             return new AmazonVPCLatticeException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static CreateServiceNetworkVpcAssociationResponseUnmarshaller _instance = new CreateServiceNetworkVpcAssociationResponseUnmarshaller();        
+        private static StartDomainVerificationResponseUnmarshaller _instance = new StartDomainVerificationResponseUnmarshaller();        
 
-        internal static CreateServiceNetworkVpcAssociationResponseUnmarshaller GetInstance()
+        internal static StartDomainVerificationResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -161,7 +145,7 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateServiceNetworkVpcAssociationResponseUnmarshaller Instance
+        public static StartDomainVerificationResponseUnmarshaller Instance
         {
             get
             {

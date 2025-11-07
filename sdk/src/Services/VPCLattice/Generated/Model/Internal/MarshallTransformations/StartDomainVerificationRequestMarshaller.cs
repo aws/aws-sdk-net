@@ -37,9 +37,9 @@ using ThirdParty.RuntimeBackports;
 namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateServiceNetworkVpcAssociation Request Marshaller
+    /// StartDomainVerification Request Marshaller
     /// </summary>       
-    public class CreateServiceNetworkVpcAssociationRequestMarshaller : IMarshaller<IRequest, CreateServiceNetworkVpcAssociationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class StartDomainVerificationRequestMarshaller : IMarshaller<IRequest, StartDomainVerificationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -48,7 +48,7 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateServiceNetworkVpcAssociationRequest)input);
+            return this.Marshall((StartDomainVerificationRequest)input);
         }
 
         /// <summary>
@@ -56,14 +56,14 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateServiceNetworkVpcAssociationRequest publicRequest)
+        public IRequest Marshall(StartDomainVerificationRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.VPCLattice");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2022-11-30";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/servicenetworkvpcassociations";
+            request.ResourcePath = "/domainverifications";
 #if !NETFRAMEWORK
             using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
             using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
@@ -84,38 +84,10 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("clientToken");
                 context.Writer.WriteStringValue(Guid.NewGuid().ToString());
             }
-            if(publicRequest.IsSetDnsOptions())
+            if(publicRequest.IsSetDomainName())
             {
-                context.Writer.WritePropertyName("dnsOptions");
-                context.Writer.WriteStartObject();
-
-                var marshaller = DnsOptionsMarshaller.Instance;
-                marshaller.Marshall(publicRequest.DnsOptions, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(publicRequest.IsSetPrivateDnsEnabled())
-            {
-                context.Writer.WritePropertyName("privateDnsEnabled");
-                context.Writer.WriteBooleanValue(publicRequest.PrivateDnsEnabled.Value);
-            }
-
-            if(publicRequest.IsSetSecurityGroupIds())
-            {
-                context.Writer.WritePropertyName("securityGroupIds");
-                context.Writer.WriteStartArray();
-                foreach(var publicRequestSecurityGroupIdsListValue in publicRequest.SecurityGroupIds)
-                {
-                        context.Writer.WriteStringValue(publicRequestSecurityGroupIdsListValue);
-                }
-                context.Writer.WriteEndArray();
-            }
-
-            if(publicRequest.IsSetServiceNetworkIdentifier())
-            {
-                context.Writer.WritePropertyName("serviceNetworkIdentifier");
-                context.Writer.WriteStringValue(publicRequest.ServiceNetworkIdentifier);
+                context.Writer.WritePropertyName("domainName");
+                context.Writer.WriteStringValue(publicRequest.DomainName);
             }
 
             if(publicRequest.IsSetTags())
@@ -132,12 +104,6 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
-            if(publicRequest.IsSetVpcIdentifier())
-            {
-                context.Writer.WritePropertyName("vpcIdentifier");
-                context.Writer.WriteStringValue(publicRequest.VpcIdentifier);
-            }
-
             writer.WriteEndObject();
             writer.Flush();
             // ToArray() must be called here because aspects of sigv4 signing require a byte array
@@ -151,9 +117,9 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateServiceNetworkVpcAssociationRequestMarshaller _instance = new CreateServiceNetworkVpcAssociationRequestMarshaller();        
+        private static StartDomainVerificationRequestMarshaller _instance = new StartDomainVerificationRequestMarshaller();        
 
-        internal static CreateServiceNetworkVpcAssociationRequestMarshaller GetInstance()
+        internal static StartDomainVerificationRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -161,7 +127,7 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateServiceNetworkVpcAssociationRequestMarshaller Instance
+        public static StartDomainVerificationRequestMarshaller Instance
         {
             get
             {

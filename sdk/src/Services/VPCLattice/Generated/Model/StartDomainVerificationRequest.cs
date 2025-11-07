@@ -30,26 +30,22 @@ using Amazon.Runtime.Internal;
 namespace Amazon.VPCLattice.Model
 {
     /// <summary>
-    /// Container for the parameters to the CreateServiceNetworkResourceAssociation operation.
-    /// Associates the specified service network with the specified resource configuration.
-    /// This allows the resource configuration to receive connections through the service
-    /// network, including through a service network VPC endpoint.
+    /// Container for the parameters to the StartDomainVerification operation.
+    /// Starts the domain verification process for a custom domain name.
     /// </summary>
-    public partial class CreateServiceNetworkResourceAssociationRequest : AmazonVPCLatticeRequest
+    public partial class StartDomainVerificationRequest : AmazonVPCLatticeRequest
     {
         private string _clientToken;
-        private bool? _privateDnsEnabled;
-        private string _resourceConfigurationIdentifier;
-        private string _serviceNetworkIdentifier;
+        private string _domainName;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// A unique, case-sensitive identifier that you provide to ensure the idempotency of
+        ///  A unique, case-sensitive identifier that you provide to ensure the idempotency of
         /// the request. If you retry a request that completed successfully using the same client
         /// token and parameters, the retry succeeds without performing any actions. If the parameters
-        /// aren't identical, the retry fails.
+        /// aren't identical, the retry fails. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -66,66 +62,28 @@ namespace Amazon.VPCLattice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PrivateDnsEnabled. 
+        /// Gets and sets the property DomainName. 
         /// <para>
-        ///  Indicates if private DNS is enabled for the service network resource association.
-        /// 
+        ///  The domain name to verify ownership for. 
         /// </para>
         /// </summary>
-        public bool? PrivateDnsEnabled
+        [AWSProperty(Required=true, Min=3, Max=255)]
+        public string DomainName
         {
-            get { return this._privateDnsEnabled; }
-            set { this._privateDnsEnabled = value; }
+            get { return this._domainName; }
+            set { this._domainName = value; }
         }
 
-        // Check to see if PrivateDnsEnabled property is set
-        internal bool IsSetPrivateDnsEnabled()
+        // Check to see if DomainName property is set
+        internal bool IsSetDomainName()
         {
-            return this._privateDnsEnabled.HasValue; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property ResourceConfigurationIdentifier. 
-        /// <para>
-        /// The ID of the resource configuration to associate with the service network.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Min=20, Max=2048)]
-        public string ResourceConfigurationIdentifier
-        {
-            get { return this._resourceConfigurationIdentifier; }
-            set { this._resourceConfigurationIdentifier = value; }
-        }
-
-        // Check to see if ResourceConfigurationIdentifier property is set
-        internal bool IsSetResourceConfigurationIdentifier()
-        {
-            return this._resourceConfigurationIdentifier != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property ServiceNetworkIdentifier. 
-        /// <para>
-        /// The ID of the service network to associate with the resource configuration.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Min=3, Max=2048)]
-        public string ServiceNetworkIdentifier
-        {
-            get { return this._serviceNetworkIdentifier; }
-            set { this._serviceNetworkIdentifier = value; }
-        }
-
-        // Check to see if ServiceNetworkIdentifier property is set
-        internal bool IsSetServiceNetworkIdentifier()
-        {
-            return this._serviceNetworkIdentifier != null;
+            return this._domainName != null;
         }
 
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// A key-value pair to associate with a resource.
+        ///  The tags for the domain verification. 
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

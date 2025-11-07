@@ -35,9 +35,9 @@ using Amazon.Util;
 namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CreateServiceNetworkVpcAssociation operation
+    /// Response Unmarshaller for DeleteDomainVerification operation
     /// </summary>  
-    public class CreateServiceNetworkVpcAssociationResponseUnmarshaller : JsonResponseUnmarshaller
+    public class DeleteDomainVerificationResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,55 +46,7 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            CreateServiceNetworkVpcAssociationResponse response = new CreateServiceNetworkVpcAssociationResponse();
-            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
-            context.Read(ref reader);
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
-            {
-                if (context.TestExpression("arn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Arn = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("createdBy", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.CreatedBy = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("dnsOptions", targetDepth))
-                {
-                    var unmarshaller = DnsOptionsUnmarshaller.Instance;
-                    response.DnsOptions = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("id", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Id = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("privateDnsEnabled", targetDepth))
-                {
-                    var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    response.PrivateDnsEnabled = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("securityGroupIds", targetDepth))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    response.SecurityGroupIds = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("status", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Status = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-            }
+            DeleteDomainVerificationResponse response = new DeleteDomainVerificationResponse();
 
             return response;
         }
@@ -123,10 +75,6 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
                 {
                     return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ConflictException"))
-                {
-                    return ConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerException"))
                 {
                     return InternalServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
@@ -134,10 +82,6 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
                 {
                     return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceQuotaExceededException"))
-                {
-                    return ServiceQuotaExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ThrottlingException"))
                 {
@@ -151,9 +95,9 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
             return new AmazonVPCLatticeException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static CreateServiceNetworkVpcAssociationResponseUnmarshaller _instance = new CreateServiceNetworkVpcAssociationResponseUnmarshaller();        
+        private static DeleteDomainVerificationResponseUnmarshaller _instance = new DeleteDomainVerificationResponseUnmarshaller();        
 
-        internal static CreateServiceNetworkVpcAssociationResponseUnmarshaller GetInstance()
+        internal static DeleteDomainVerificationResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -161,7 +105,7 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateServiceNetworkVpcAssociationResponseUnmarshaller Instance
+        public static DeleteDomainVerificationResponseUnmarshaller Instance
         {
             get
             {
