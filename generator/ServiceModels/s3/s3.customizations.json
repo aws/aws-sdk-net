@@ -995,6 +995,18 @@
                     }
                 }
             ]
+        },
+        "DeleteBucketAnalyticsConfigurationRequest":{
+            "modify":[
+                {
+                    "Id":{"emitPropertyName":"AnalyticsId"}
+                },
+                {
+                    "ExpectedBucketOwner":{"injectXmlIsSet":[
+                        "return !String.IsNullOrEmpty(this._expectedBucketOwner);"
+                    ]}
+                }
+            ]
         }
     },
     "operationModifiers": {
