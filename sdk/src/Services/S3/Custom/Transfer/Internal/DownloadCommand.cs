@@ -33,7 +33,7 @@ using System.IO;
 
 namespace Amazon.S3.Transfer.Internal
 {
-    internal partial class DownloadCommand : BaseCommand
+    internal partial class DownloadCommand : BaseCommand<TransferUtilityDownloadResponse>
     {
         static int MAX_BACKOFF_IN_MILLISECONDS = (int)TimeSpan.FromSeconds(30).TotalMilliseconds;
 
@@ -176,4 +176,3 @@ namespace Amazon.S3.Transfer.Internal
         }
     }
 }
-

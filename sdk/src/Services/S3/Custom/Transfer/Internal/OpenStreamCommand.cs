@@ -29,7 +29,7 @@ using Amazon.S3.Model;
 
 namespace Amazon.S3.Transfer.Internal
 {
-    internal partial class OpenStreamCommand : BaseCommand
+    internal partial class OpenStreamCommand : BaseCommand<TransferUtilityOpenStreamResponse>
     {
         IAmazonS3 _s3Client;
         TransferUtilityOpenStreamRequest _request;
@@ -58,11 +58,6 @@ namespace Amazon.S3.Transfer.Internal
         internal Stream ResponseStream
         {
             get { return this._responseStream; }
-        }
-
-        public override object  Return
-        {
-            get { return this.ResponseStream; }
         }
     }
 }

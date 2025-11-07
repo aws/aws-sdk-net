@@ -24,11 +24,11 @@ using System.Threading.Tasks;
 
 namespace Amazon.S3.Transfer.Internal
 {
-    internal partial class SimpleUploadCommand : BaseCommand
+    internal partial class SimpleUploadCommand : BaseCommand<TransferUtilityUploadResponse>
     {
         public SemaphoreSlim AsyncThrottler { get; set; }
 
-        public override async Task ExecuteAsync(CancellationToken cancellationToken)
+        public override async Task<TransferUtilityUploadResponse> ExecuteAsync(CancellationToken cancellationToken)
         {
             try
             {
@@ -47,6 +47,8 @@ namespace Amazon.S3.Transfer.Internal
                 var mappedResponse = ResponseMapper.MapPutObjectResponse(response);
 
                 FireTransferCompletedEvent(mappedResponse);
+                
+                return mappedResponse;
             }
             catch (Exception)
             {

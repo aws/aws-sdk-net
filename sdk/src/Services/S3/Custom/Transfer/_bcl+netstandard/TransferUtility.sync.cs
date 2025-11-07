@@ -285,6 +285,154 @@ namespace Amazon.S3.Transfer
             }
         }
 
+        /// <summary>
+        /// 	Uploads the specified file and returns response metadata.
+        /// 	The object key is derived from the file's name.
+        /// 	Multiple threads are used to read the file and perform multiple uploads in parallel.  
+        /// 	For large uploads, the file will be divided and uploaded in parts using 
+        /// 	Amazon S3's multipart API.  The parts will be reassembled as one object in
+        /// 	Amazon S3.
+        /// </summary>
+        /// <remarks>
+        /// <para>
+        /// If you are uploading large files, TransferUtility will use multipart upload to fulfill the request. 
+        /// If a multipart upload is interrupted, TransferUtility will attempt to abort the multipart upload. 
+        /// Under certain circumstances (network outage, power failure, etc.), TransferUtility will not be able 
+        /// to abort the multipart upload. In this case, in order to stop getting charged for the storage of uploaded parts,
+        /// you should manually invoke TransferUtility.AbortMultipartUploads() to abort the incomplete multipart uploads.
+        /// </para>
+        /// </remarks>
+        /// <param name="filePath">
+        /// 	The file path of the file to upload.
+        /// </param>
+        /// <param name="bucketName">
+        /// 	The target Amazon S3 bucket, that is, the name of the bucket to upload the file to.
+        /// </param>
+        /// <returns>The upload response metadata.</returns>
+        public TransferUtilityUploadResponse UploadWithResponse(string filePath, string bucketName)
+        {
+            try
+            {
+                return UploadWithResponseAsync(filePath, bucketName).Result;
+            }
+            catch (AggregateException e)
+            {
+                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// 	Uploads the specified file and returns response metadata.
+        /// 	Multiple threads are used to read the file and perform multiple uploads in parallel.  
+        /// 	For large uploads, the file will be divided and uploaded in parts using 
+        /// 	Amazon S3's multipart API.  The parts will be reassembled as one object in
+        /// 	Amazon S3.
+        /// </summary>
+        /// <remarks>
+        /// <para>
+        /// If you are uploading large files, TransferUtility will use multipart upload to fulfill the request. 
+        /// If a multipart upload is interrupted, TransferUtility will attempt to abort the multipart upload. 
+        /// Under certain circumstances (network outage, power failure, etc.), TransferUtility will not be able 
+        /// to abort the multipart upload. In this case, in order to stop getting charged for the storage of uploaded parts,
+        /// you should manually invoke TransferUtility.AbortMultipartUploads() to abort the incomplete multipart uploads.
+        /// </para>
+        /// </remarks>
+        /// <param name="filePath">
+        /// 	The file path of the file to upload.
+        /// </param>
+        /// <param name="bucketName">
+        /// 	The target Amazon S3 bucket, that is, the name of the bucket to upload the file to.
+        /// </param>
+        /// <param name="key">
+        /// 	The key under which the Amazon S3 object is stored.
+        /// </param>
+        /// <returns>The upload response metadata.</returns>
+        public TransferUtilityUploadResponse UploadWithResponse(string filePath, string bucketName, string key)
+        {
+            try
+            {
+                return UploadWithResponseAsync(filePath, bucketName, key).Result;
+            }
+            catch (AggregateException e)
+            {
+                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// 	Uploads the contents of the specified stream and returns response metadata.
+        /// 	For large uploads, the file will be divided and uploaded in parts using 
+        /// 	Amazon S3's multipart API.  The parts will be reassembled as one object in
+        /// 	Amazon S3.
+        /// </summary>
+        /// <remarks>
+        /// <para>
+        /// If you are uploading large files, TransferUtility will use multipart upload to fulfill the request. 
+        /// If a multipart upload is interrupted, TransferUtility will attempt to abort the multipart upload. 
+        /// Under certain circumstances (network outage, power failure, etc.), TransferUtility will not be able 
+        /// to abort the multipart upload. In this case, in order to stop getting charged for the storage of uploaded parts,
+        /// you should manually invoke TransferUtility.AbortMultipartUploads() to abort the incomplete multipart uploads.
+        /// </para>
+        /// </remarks>
+        /// <param name="stream">
+        /// 	The stream to read to obtain the content to upload.
+        /// </param>
+        /// <param name="bucketName">
+        /// 	The target Amazon S3 bucket, that is, the name of the bucket to upload the stream to.
+        /// </param>
+        /// <param name="key">
+        /// 	The key under which the Amazon S3 object is stored.
+        /// </param>
+        /// <returns>The upload response metadata.</returns>
+        public TransferUtilityUploadResponse UploadWithResponse(Stream stream, string bucketName, string key)
+        {
+            try
+            {
+                return UploadWithResponseAsync(stream, bucketName, key).Result;
+            }
+            catch (AggregateException e)
+            {
+                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// 	Uploads the file or stream specified by the request and returns response metadata.
+        /// 	To track the progress of the upload,
+        /// 	add an event listener to the request's <c>UploadProgressEvent</c>.
+        /// 	For large uploads, the file will be divided and uploaded in parts using 
+        /// 	Amazon S3's multipart API.  The parts will be reassembled as one object in
+        /// 	Amazon S3.
+        /// </summary>
+        /// <remarks>
+        /// <para>
+        /// If you are uploading large files, TransferUtility will use multipart upload to fulfill the request. 
+        /// If a multipart upload is interrupted, TransferUtility will attempt to abort the multipart upload. 
+        /// Under certain circumstances (network outage, power failure, etc.), TransferUtility will not be able 
+        /// to abort the multipart upload. In this case, in order to stop getting charged for the storage of uploaded parts,
+        /// you should manually invoke TransferUtility.AbortMultipartUploads() to abort the incomplete multipart uploads.
+        /// </para>
+        /// </remarks>
+        /// <param name="request">
+        /// 	Contains all the parameters required to upload to Amazon S3.
+        /// </param>
+        /// <returns>The upload response metadata.</returns>
+        public TransferUtilityUploadResponse UploadWithResponse(TransferUtilityUploadRequest request)
+        {
+            try
+            {
+                return UploadWithResponseAsync(request).Result;
+            }
+            catch (AggregateException e)
+            {
+                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
+                return null;
+            }
+        }
+
         #endregion
 
         #region OpenStream
