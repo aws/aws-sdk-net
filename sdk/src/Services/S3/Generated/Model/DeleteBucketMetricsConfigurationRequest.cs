@@ -128,7 +128,7 @@ namespace Amazon.S3.Model
         // Check to see if ExpectedBucketOwner property is set
         internal bool IsSetExpectedBucketOwner()
         {
-            return this._expectedBucketOwner != null;
+            return !string.IsNullOrEmpty(this._expectedBucketOwner);
         }
 
         /// <summary>
@@ -148,7 +148,7 @@ namespace Amazon.S3.Model
         // Check to see if MetricsId property is set
         internal bool IsSetMetricsId()
         {
-            return this._metricsId != null;
+            return !string.IsNullOrEmpty(this._metricsId);
         }
 
     }
