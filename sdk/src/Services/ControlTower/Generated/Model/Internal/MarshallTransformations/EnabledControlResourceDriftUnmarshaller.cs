@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.ControlTower.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DriftStatusSummary Object
+    /// Response Unmarshaller for EnabledControlResourceDrift Object
     /// </summary>  
-    public class DriftStatusSummaryUnmarshaller : IJsonUnmarshaller<DriftStatusSummary, JsonUnmarshallerContext>
+    public class EnabledControlResourceDriftUnmarshaller : IJsonUnmarshaller<EnabledControlResourceDrift, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.ControlTower.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public DriftStatusSummary Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public EnabledControlResourceDrift Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            DriftStatusSummary unmarshalledObject = new DriftStatusSummary();
+            EnabledControlResourceDrift unmarshalledObject = new EnabledControlResourceDrift();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,16 +56,10 @@ namespace Amazon.ControlTower.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("driftStatus", targetDepth))
+                if (context.TestExpression("status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DriftStatus = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("types", targetDepth))
-                {
-                    var unmarshaller = EnabledControlDriftTypesUnmarshaller.Instance;
-                    unmarshalledObject.Types = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -73,12 +67,12 @@ namespace Amazon.ControlTower.Model.Internal.MarshallTransformations
         }
 
 
-        private static DriftStatusSummaryUnmarshaller _instance = new DriftStatusSummaryUnmarshaller();        
+        private static EnabledControlResourceDriftUnmarshaller _instance = new EnabledControlResourceDriftUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DriftStatusSummaryUnmarshaller Instance
+        public static EnabledControlResourceDriftUnmarshaller Instance
         {
             get
             {
