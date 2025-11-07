@@ -33,7 +33,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
         public IRequest Marshall(GetBucketLoggingRequest getBucketLoggingRequest)
         {
-            IRequest request = new DefaultRequest(getBucketLoggingRequest, "AmazonS3");
+            IRequest request = new DefaultRequest(getBucketLoggingRequest, "Amazon.S3");
             
             request.Suppress404Exceptions = true;
             request.HttpMethod = "GET";

@@ -38,7 +38,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (string.IsNullOrEmpty(getObjectRequest.Key))
                 throw new System.ArgumentException("Key is a required property and must be set before making this call.", "GetObjectRequest.Key");
 
-            IRequest request = new DefaultRequest(getObjectRequest, "AmazonS3");
+            IRequest request = new DefaultRequest(getObjectRequest, "Amazon.S3");
 
             request.HttpMethod = "GET";
 

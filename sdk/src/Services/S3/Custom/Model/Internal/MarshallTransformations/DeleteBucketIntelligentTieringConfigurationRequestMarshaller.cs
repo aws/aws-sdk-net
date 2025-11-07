@@ -36,7 +36,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
         public IRequest Marshall(DeleteBucketIntelligentTieringConfigurationRequest deleteBucketIntelligentTieringConfigurationRequest)
         {
-            IRequest request = new DefaultRequest(deleteBucketIntelligentTieringConfigurationRequest, "AmazonS3");
+            IRequest request = new DefaultRequest(deleteBucketIntelligentTieringConfigurationRequest, "Amazon.S3");
 
             request.HttpMethod = "DELETE";
 

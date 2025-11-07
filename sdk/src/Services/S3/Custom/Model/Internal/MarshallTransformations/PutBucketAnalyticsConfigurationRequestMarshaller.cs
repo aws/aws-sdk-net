@@ -40,7 +40,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         }
         public IRequest Marshall(PutBucketAnalyticsConfigurationRequest putBucketAnalyticsConfigurationRequest)
         {
-            IRequest request = new DefaultRequest(putBucketAnalyticsConfigurationRequest, "AmazonS3");
+            IRequest request = new DefaultRequest(putBucketAnalyticsConfigurationRequest, "Amazon.S3");
 
             request.HttpMethod = "PUT";
 

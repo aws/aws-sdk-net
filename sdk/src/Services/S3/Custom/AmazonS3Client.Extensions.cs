@@ -234,7 +234,7 @@ namespace Amazon.S3
                                          string token,
                                          SignatureVersion signatureVersion)
         {
-            IRequest request = new DefaultRequest(getPreSignedUrlRequest, "AmazonS3");
+            IRequest request = new DefaultRequest(getPreSignedUrlRequest, "Amazon.S3");
             request.HttpMethod = getPreSignedUrlRequest.Verb.ToString();
 
             var headers = getPreSignedUrlRequest.Headers;
@@ -776,7 +776,7 @@ namespace Amazon.S3
         /// <returns>Internal request object</returns>
         private static IRequest MarshallCreatePresignedPost(CreatePresignedPostRequest createPresignedPostRequest)
         {
-            IRequest request = new DefaultRequest(createPresignedPostRequest, "AmazonS3");
+            IRequest request = new DefaultRequest(createPresignedPostRequest, "Amazon.S3");
             request.HttpMethod = "POST";
 
             // Post uses root resource path

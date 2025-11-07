@@ -40,7 +40,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
         public IRequest Marshall(CompleteMultipartUploadRequest completeMultipartUploadRequest)
         {
-            IRequest request = new DefaultRequest(completeMultipartUploadRequest, "AmazonS3");
+            IRequest request = new DefaultRequest(completeMultipartUploadRequest, "Amazon.S3");
 
             request.HttpMethod = "POST";
 
