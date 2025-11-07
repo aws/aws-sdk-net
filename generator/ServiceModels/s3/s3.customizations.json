@@ -912,6 +912,13 @@
                     }
                 }
             ]
+        },
+        "DeleteBucketAnalyticsConfigurationRequest":{
+            "modify":[
+                {
+                    "Id":{"emitPropertyName":"AnalyticsId"}
+                }
+            ]
         }
     },
     "operationModifiers": {
