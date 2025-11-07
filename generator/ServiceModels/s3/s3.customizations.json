@@ -817,6 +817,11 @@
             "modify":[
                 {
                     "Id":{"emitPropertyName": "MetricsId"}
+                },
+                {
+                    "ExpectedBucketOwner" :{
+                        "injectXmlIsSet":["return !String.IsNullOrEmpty(this._expectedBucketOwner);"]
+                    }
                 }
             ]
         }
