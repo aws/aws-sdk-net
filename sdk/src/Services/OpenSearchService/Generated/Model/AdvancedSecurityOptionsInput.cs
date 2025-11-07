@@ -85,8 +85,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property IAMFederationOptions. 
         /// <para>
-        /// Container for information about the IAM federation configuration for an OpenSearch
-        /// UI application.
+        /// Input configuration for IAM identity federation within advanced security options.
         /// </para>
         /// </summary>
         public IAMFederationOptionsInput IAMFederationOptions

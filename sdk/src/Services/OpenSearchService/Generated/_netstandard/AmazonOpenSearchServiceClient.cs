@@ -2387,6 +2387,58 @@ namespace Amazon.OpenSearchService
 
         #endregion
         
+        #region  GetDefaultApplicationSetting
+
+        internal virtual GetDefaultApplicationSettingResponse GetDefaultApplicationSetting(GetDefaultApplicationSettingRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetDefaultApplicationSettingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDefaultApplicationSettingResponseUnmarshaller.Instance;
+
+            return Invoke<GetDefaultApplicationSettingResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Gets the ARN of the current default application.
+        /// 
+        ///  
+        /// <para>
+        ///  If the default application isn't set, the operation returns a resource not found
+        /// error.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDefaultApplicationSetting service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetDefaultApplicationSetting service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.AccessDeniedException">
+        /// An error occurred because you don't have permissions to access the resource.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/GetDefaultApplicationSetting">REST API Reference for GetDefaultApplicationSetting Operation</seealso>
+        public virtual Task<GetDefaultApplicationSettingResponse> GetDefaultApplicationSettingAsync(GetDefaultApplicationSettingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetDefaultApplicationSettingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDefaultApplicationSettingResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetDefaultApplicationSettingResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetDirectQueryDataSource
 
         internal virtual GetDirectQueryDataSourceResponse GetDirectQueryDataSource(GetDirectQueryDataSourceRequest request)
@@ -3368,6 +3420,59 @@ namespace Amazon.OpenSearchService
             options.ResponseUnmarshaller = PurchaseReservedInstanceOfferingResponseUnmarshaller.Instance;
 
             return InvokeAsync<PurchaseReservedInstanceOfferingResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutDefaultApplicationSetting
+
+        internal virtual PutDefaultApplicationSettingResponse PutDefaultApplicationSetting(PutDefaultApplicationSettingRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = PutDefaultApplicationSettingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutDefaultApplicationSettingResponseUnmarshaller.Instance;
+
+            return Invoke<PutDefaultApplicationSettingResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Sets the default application to the application with the specified ARN.
+        /// 
+        ///  
+        /// <para>
+        ///  To remove the default application, use the <c>GetDefaultApplicationSetting</c> operation
+        /// to get the current default and then call the <c>PutDefaultApplicationSetting</c> with
+        /// the current applications ARN and the <c>setAsDefault</c> parameter set to <c>false</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutDefaultApplicationSetting service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutDefaultApplicationSetting service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.AccessDeniedException">
+        /// An error occurred because you don't have permissions to access the resource.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/PutDefaultApplicationSetting">REST API Reference for PutDefaultApplicationSetting Operation</seealso>
+        public virtual Task<PutDefaultApplicationSettingResponse> PutDefaultApplicationSettingAsync(PutDefaultApplicationSettingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = PutDefaultApplicationSettingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutDefaultApplicationSettingResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutDefaultApplicationSettingResponse>(request, options, cancellationToken);
         }
 
         #endregion

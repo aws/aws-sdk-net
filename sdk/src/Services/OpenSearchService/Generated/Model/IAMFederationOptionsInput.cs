@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// The IAM federation authentication configuration for an Amazon OpenSearch Service domain.
+    /// Input parameters for configuring IAM identity federation settings.
     /// </summary>
     public partial class IAMFederationOptionsInput
     {
@@ -41,7 +41,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property Enabled. 
         /// <para>
-        /// True to enable IAM federation authentication for a domain.
+        /// Specifies whether IAM identity federation is enabled for the OpenSearch domain.
         /// </para>
         /// </summary>
         public bool Enabled
@@ -59,7 +59,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property RolesKey. 
         /// <para>
-        /// Element of the IAM federation assertion to use for backend roles. Default is <c>roles</c>.
+        /// The key in the SAML assertion that contains the user's role information.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -78,7 +78,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property SubjectKey. 
         /// <para>
-        /// Element of the IAM federation assertion to use for the user name. Default is <c>sub</c>.
+        /// The key in the SAML assertion that contains the user's subject identifier.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

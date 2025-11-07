@@ -3223,6 +3223,78 @@ namespace Amazon.OpenSearchService
 
         #endregion
         
+        #region  GetDefaultApplicationSetting
+
+        /// <summary>
+        /// Gets the ARN of the current default application.
+        /// 
+        ///  
+        /// <para>
+        ///  If the default application isn't set, the operation returns a resource not found
+        /// error.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDefaultApplicationSetting service method.</param>
+        /// 
+        /// <returns>The response from the GetDefaultApplicationSetting service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.AccessDeniedException">
+        /// An error occurred because you don't have permissions to access the resource.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/GetDefaultApplicationSetting">REST API Reference for GetDefaultApplicationSetting Operation</seealso>
+        public virtual GetDefaultApplicationSettingResponse GetDefaultApplicationSetting(GetDefaultApplicationSettingRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetDefaultApplicationSettingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDefaultApplicationSettingResponseUnmarshaller.Instance;
+
+            return Invoke<GetDefaultApplicationSettingResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDefaultApplicationSetting operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetDefaultApplicationSetting operation on AmazonOpenSearchServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDefaultApplicationSetting
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/GetDefaultApplicationSetting">REST API Reference for GetDefaultApplicationSetting Operation</seealso>
+        public virtual IAsyncResult BeginGetDefaultApplicationSetting(GetDefaultApplicationSettingRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetDefaultApplicationSettingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDefaultApplicationSettingResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetDefaultApplicationSetting operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDefaultApplicationSetting.</param>
+        /// 
+        /// <returns>Returns a  GetDefaultApplicationSettingResult from OpenSearchService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/GetDefaultApplicationSetting">REST API Reference for GetDefaultApplicationSetting Operation</seealso>
+        public virtual GetDefaultApplicationSettingResponse EndGetDefaultApplicationSetting(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetDefaultApplicationSettingResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetDirectQueryDataSource
 
         /// <summary>
@@ -4604,6 +4676,79 @@ namespace Amazon.OpenSearchService
         public virtual PurchaseReservedInstanceOfferingResponse EndPurchaseReservedInstanceOffering(IAsyncResult asyncResult)
         {
             return EndInvoke<PurchaseReservedInstanceOfferingResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  PutDefaultApplicationSetting
+
+        /// <summary>
+        /// Sets the default application to the application with the specified ARN.
+        /// 
+        ///  
+        /// <para>
+        ///  To remove the default application, use the <c>GetDefaultApplicationSetting</c> operation
+        /// to get the current default and then call the <c>PutDefaultApplicationSetting</c> with
+        /// the current applications ARN and the <c>setAsDefault</c> parameter set to <c>false</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutDefaultApplicationSetting service method.</param>
+        /// 
+        /// <returns>The response from the PutDefaultApplicationSetting service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.AccessDeniedException">
+        /// An error occurred because you don't have permissions to access the resource.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/PutDefaultApplicationSetting">REST API Reference for PutDefaultApplicationSetting Operation</seealso>
+        public virtual PutDefaultApplicationSettingResponse PutDefaultApplicationSetting(PutDefaultApplicationSettingRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = PutDefaultApplicationSettingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutDefaultApplicationSettingResponseUnmarshaller.Instance;
+
+            return Invoke<PutDefaultApplicationSettingResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutDefaultApplicationSetting operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutDefaultApplicationSetting operation on AmazonOpenSearchServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutDefaultApplicationSetting
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/PutDefaultApplicationSetting">REST API Reference for PutDefaultApplicationSetting Operation</seealso>
+        public virtual IAsyncResult BeginPutDefaultApplicationSetting(PutDefaultApplicationSettingRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = PutDefaultApplicationSettingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutDefaultApplicationSettingResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutDefaultApplicationSetting operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutDefaultApplicationSetting.</param>
+        /// 
+        /// <returns>Returns a  PutDefaultApplicationSettingResult from OpenSearchService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/PutDefaultApplicationSetting">REST API Reference for PutDefaultApplicationSetting Operation</seealso>
+        public virtual PutDefaultApplicationSettingResponse EndPutDefaultApplicationSetting(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PutDefaultApplicationSettingResponse>(asyncResult);
         }
 
         #endregion
