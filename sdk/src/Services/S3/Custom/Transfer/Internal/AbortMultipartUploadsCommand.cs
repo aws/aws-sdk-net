@@ -31,45 +31,36 @@ namespace Amazon.S3.Transfer.Internal
     internal partial class AbortMultipartUploadsCommand : BaseCommand
     {
         IAmazonS3 _s3Client;
-        TransferUtilityAbortMultipartUploadRequest _request;
-        TransferUtilityConfig _config;
+        string _bucketName; 
+        DateTime _initiatedDate;
 
-        internal AbortMultipartUploadsCommand(IAmazonS3 s3Client, TransferUtilityAbortMultipartUploadRequest request, TransferUtilityConfig config)
+        internal AbortMultipartUploadsCommand(IAmazonS3 s3Client, string bucketName, DateTime initiateDate)
         {
             this._s3Client = s3Client;
-            this._request = request;
-            this._config = config;
+            this._bucketName = bucketName;
+            this._initiatedDate = initiateDate;
         }
 
-        internal ListMultipartUploadsRequest ConstructListMultipartUploadsRequest(ListMultipartUploadsResponse listResponse)
+        private ListMultipartUploadsRequest ConstructListMultipartUploadsRequest(ListMultipartUploadsResponse listResponse)
             {
                 ListMultipartUploadsRequest listRequest = new ListMultipartUploadsRequest()
                 {
-                    BucketName = this._request.BucketName,
+                    BucketName = this._bucketName,
                     KeyMarker = listResponse.KeyMarker,
                     UploadIdMarker = listResponse.NextUploadIdMarker,
-                    ExpectedBucketOwner = this._request.ExpectedBucketOwner,
-                    RequestPayer = this._request.RequestPayer
                 };
-
-               
-                    
-
                 ((Amazon.Runtime.Internal.IAmazonWebServiceRequest)listRequest).AddBeforeRequestHandler(this.RequestEventHandler);
             return listRequest;
         }
 
-        internal AbortMultipartUploadRequest ConstructAbortMultipartUploadRequest(MultipartUpload upload)
+        private AbortMultipartUploadRequest ConstructAbortMultipartUploadRequest(MultipartUpload upload)
                     {
                         var abortRequest = new AbortMultipartUploadRequest()
                         {
-                            BucketName = this._request.BucketName,
+                            BucketName = this._bucketName,
                             Key = upload.Key,
                             UploadId = upload.UploadId,
-                            ExpectedBucketOwner = this._request.ExpectedBucketOwner,
-                            RequestPayer = this._request.RequestPayer
                         };
-
                         ((Amazon.Runtime.Internal.IAmazonWebServiceRequest)abortRequest).AddBeforeRequestHandler(this.RequestEventHandler);
             return abortRequest;
         }

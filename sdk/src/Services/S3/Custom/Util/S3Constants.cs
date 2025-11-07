@@ -33,7 +33,6 @@ namespace Amazon.S3.Util
         internal const int PutObjectDefaultTimeout = 20 * 60 * 1000;
 
         internal static readonly long MinPartSize = 5 * (long)Math.Pow(2, 20);
-        internal static readonly long DefaultPartSize = 8 * (long)Math.Pow(2, 20);
         internal const int MaxNumberOfParts = 10000;
 
         internal const int DefaultBufferSize = 8192;

@@ -50,7 +50,7 @@ namespace Amazon.S3.Transfer.Internal
             this._config = config;
         }
 
-        internal TransferUtilityUploadRequest ConstructRequest(string basePath, string filepath, string prefix)
+        private TransferUtilityUploadRequest ConstructRequest(string basePath, string filepath, string prefix)
         {
             string key = filepath.Substring(basePath.Length);
             key = key.Replace(@"\", "/");
@@ -79,12 +79,6 @@ namespace Amazon.S3.Transfer.Internal
                 RequestPayer = this._request.RequestPayer,
                 DisableDefaultChecksumValidation = this._request.DisableDefaultChecksumValidation,
                 ChecksumAlgorithm = this._request.ChecksumAlgorithm,
-                BucketKeyEnabled = this._request.BucketKeyEnabled,
-                ExpectedBucketOwner = this._request.ExpectedBucketOwner,
-                SSEKMSEncryptionContext = this._request.SSEKMSEncryptionContext,
-                WebsiteRedirectLocation = this._request.WebsiteRedirectLocation,
-                Headers = this._request.Headers,
-                Grants = this._request.Grants
             };
             
             if (this._request.IsSetObjectLockRetainUntilDate())

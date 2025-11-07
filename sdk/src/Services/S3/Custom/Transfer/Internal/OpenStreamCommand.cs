@@ -41,7 +41,7 @@ namespace Amazon.S3.Transfer.Internal
             this._request = request;
         }
 
-        internal GetObjectRequest ConstructRequest()
+        private GetObjectRequest ConstructRequest()
         {
             if (!this._request.IsSetBucketName())
             {

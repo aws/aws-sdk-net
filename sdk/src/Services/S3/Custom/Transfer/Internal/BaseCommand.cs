@@ -37,7 +37,7 @@ namespace Amazon.S3.Transfer.Internal
             get { return null; }
         }
 
-        internal GetObjectRequest ConvertToGetObjectRequest(BaseDownloadRequest request)
+        protected GetObjectRequest ConvertToGetObjectRequest(BaseDownloadRequest request)
         {
             GetObjectRequest getRequest = new GetObjectRequest()
             {
@@ -61,21 +61,6 @@ namespace Amazon.S3.Transfer.Internal
             getRequest.ServerSideEncryptionCustomerProvidedKeyMD5 = request.ServerSideEncryptionCustomerProvidedKeyMD5;
             getRequest.ChecksumMode = request.ChecksumMode;
             getRequest.RequestPayer = request.RequestPayer;
-
-            if (request.IsSetExpectedBucketOwner())
-            {
-                getRequest.ExpectedBucketOwner = request.ExpectedBucketOwner;
-            }
-            if (request.IsSetIfMatch())
-            {
-                getRequest.EtagToMatch = request.IfMatch;
-            }
-            if (request.IsSetIfNoneMatch())
-            {
-                getRequest.EtagToNotMatch = request.IfNoneMatch;
-            }
-            
-            getRequest.ResponseHeaderOverrides = request.ResponseHeaderOverrides;
 
             return getRequest;
         }

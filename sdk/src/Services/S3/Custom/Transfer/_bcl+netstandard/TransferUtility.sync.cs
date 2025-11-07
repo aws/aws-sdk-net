@@ -459,24 +459,6 @@ namespace Amazon.S3.Transfer
             }
         }
 
-        /// <summary>
-        /// 	Aborts the multipart uploads based on the specified request parameters.
-        /// </summary>
-        /// <param name="request">
-        /// 	Contains all the parameters required to abort multipart uploads.
-        /// </param>
-        public void AbortMultipartUploads(TransferUtilityAbortMultipartUploadRequest request)
-        {
-            try
-            {
-                AbortMultipartUploadsAsync(request).Wait();
-            }
-            catch (AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-            }
-        }
-
         #endregion
     }
 }

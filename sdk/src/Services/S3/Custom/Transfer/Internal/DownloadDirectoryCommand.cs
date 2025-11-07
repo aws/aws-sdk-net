@@ -91,7 +91,7 @@ namespace Amazon.S3.Transfer.Internal
             directory.Create();
         }
 
-        internal TransferUtilityDownloadRequest ConstructTransferUtilityDownloadRequest(S3Object s3Object, int prefixLength)
+        private TransferUtilityDownloadRequest ConstructTransferUtilityDownloadRequest(S3Object s3Object, int prefixLength)
         {
             var downloadRequest = new TransferUtilityDownloadRequest();
             downloadRequest.BucketName = this._request.BucketName;
@@ -102,10 +102,6 @@ namespace Amazon.S3.Transfer.Internal
             downloadRequest.ServerSideEncryptionCustomerProvidedKey = this._request.ServerSideEncryptionCustomerProvidedKey;
             downloadRequest.ServerSideEncryptionCustomerProvidedKeyMD5 = this._request.ServerSideEncryptionCustomerProvidedKeyMD5;
             downloadRequest.RequestPayer = this._request.RequestPayer;
-            downloadRequest.ExpectedBucketOwner = this._request.ExpectedBucketOwner;
-            downloadRequest.IfMatch = this._request.IfMatch;
-            downloadRequest.IfNoneMatch = this._request.IfNoneMatch;
-            downloadRequest.ResponseHeaderOverrides = this._request.ResponseHeaderOverrides;
 
             //Ensure the target file is a rooted within LocalDirectory. Otherwise error.
             if(!InternalSDKUtils.IsFilePathRootedWithDirectoryPath(downloadRequest.FilePath, _request.LocalDirectory))
@@ -141,12 +137,11 @@ namespace Amazon.S3.Transfer.Internal
             }
 
             listRequestV2.RequestPayer = this._request.RequestPayer;
-            listRequestV2.ExpectedBucketOwner = this._request.ExpectedBucketOwner;
 
             return listRequestV2;
         }
 
-        internal ListObjectsRequest ConstructListObjectRequest()
+        private ListObjectsRequest ConstructListObjectRequest()
         {
             ListObjectsRequest listRequest = new ListObjectsRequest();
             listRequest.BucketName = this._request.BucketName;
@@ -169,7 +164,6 @@ namespace Amazon.S3.Transfer.Internal
             }
 
             listRequest.RequestPayer = this._request.RequestPayer;
-            listRequest.ExpectedBucketOwner = this._request.ExpectedBucketOwner;
 
             return listRequest;
         }

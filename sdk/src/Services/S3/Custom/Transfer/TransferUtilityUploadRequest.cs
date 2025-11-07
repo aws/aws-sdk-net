@@ -38,10 +38,20 @@ namespace Amazon.S3.Transfer
     /// </summary>
     public partial class TransferUtilityUploadRequest : BaseUploadRequest
     {
+        private string bucketName;
         private string key;
+        private S3CannedACL cannedACL;
+        private string contentType;
+        private S3StorageClass storageClass;
         private long? partSize;
         private bool autoCloseStream = true;
         private bool autoResetStreamPosition = true;
+        private ServerSideEncryptionMethod encryption;
+        private ServerSideEncryptionCustomerMethod serverSideCustomerEncryption;
+        private string serverSideEncryptionCustomerProvidedKey;
+        private string serverSideEncryptionCustomerProvidedKeyMD5;
+        private string serverSideEncryptionKeyManagementServiceKeyId;
+        private ChecksumAlgorithm checksumAlgorithm;
         private string _checksumCRC32;
         private string _checksumCRC32C;
         private string _checksumCRC64NVME;
@@ -51,7 +61,41 @@ namespace Amazon.S3.Transfer
         private string _ifMatch;
         private long? _mpuObjectSize;
 
+        private HeadersCollection headersCollection = new HeadersCollection();
+        private MetadataCollection metadataCollection = new MetadataCollection();
+
+        private List<Tag> tagset;
+
         private Stream inputStream;
+        private ObjectLockLegalHoldStatus objectLockLegalHoldStatus;
+        private ObjectLockMode objectLockMode;
+        private DateTime? objectLockRetainUntilDate;
+
+        #region BucketName
+
+        /// <summary>
+        /// 	Gets or sets the name of the bucket.
+        /// </summary>
+        /// <value>
+        /// 	The name of the bucket.
+        /// </value>
+        public string BucketName
+        {
+            get { return this.bucketName; }
+            set { this.bucketName = value; }
+        }
+
+
+        /// <summary>
+        /// Checks if BucketName property is set.
+        /// </summary>
+        /// <returns>true if BucketName property is set.</returns>
+        internal bool IsSetBucketName()
+        {
+            return !System.String.IsNullOrEmpty(this.bucketName);
+        }
+
+        #endregion
 
         #region Key
         /// <summary>
@@ -74,6 +118,166 @@ namespace Amazon.S3.Transfer
         internal bool IsSetKey()
         {
             return !System.String.IsNullOrEmpty(this.key);
+        }
+
+        #endregion
+
+        #region CannedACL
+
+        /// <summary>
+        /// 	Gets or sets the canned access control list (ACL)
+        /// 	for the uploaded object.
+        /// 	Please refer to 
+        /// 	<see cref="T:Amazon.S3.S3CannedACL"/> for
+        /// 	information on Amazon S3 canned ACLs.
+        /// </summary>
+        /// <value>
+        /// 	The canned access control list (ACL)
+        /// 	for the uploaded object.
+        /// </value>
+        public S3CannedACL CannedACL
+        {
+            get { return this.cannedACL; }
+            set { this.cannedACL = value; }
+        }
+
+        /// <summary>
+        /// Checks if the CannedACL property is set.
+        /// </summary>
+        /// <returns>true if there is the CannedACL property is set.</returns>
+        internal bool IsSetCannedACL()
+        {
+            return (cannedACL != null);
+        }
+
+        /// <summary>
+        /// 	Removes the cannned access control list (ACL)
+        /// 	for the uploaded object.
+        /// </summary>
+        public void RemoveCannedACL()
+        {
+            this.cannedACL = null;
+        }
+
+        #endregion
+
+        #region ContentType
+        /// <summary>
+        /// 	Gets or sets the content type of the uploaded Amazon S3 object.
+        /// </summary>
+        /// <value>
+        /// 	The content type of the uploaded Amazon S3 object.
+        /// </value>
+        public string ContentType
+        {
+            get { return this.contentType; }
+            set { this.contentType = value; }
+        }
+
+
+        /// <summary>
+        /// Checks if ContentType property is set.
+        /// </summary>
+        /// <returns>true if ContentType property is set.</returns>
+        internal bool IsSetContentType()
+        {
+            return !System.String.IsNullOrEmpty(this.contentType);
+        }
+
+        #endregion
+
+        #region StorageClass
+
+        /// <summary>
+        /// 	Gets or sets the storage class for the uploaded Amazon S3 object.
+        /// 	Please refer to 
+        /// 	<see cref="T:Amazon.S3.S3StorageClass"/> for
+        /// 	information on S3 Storage Classes.
+        /// </summary>
+        /// <value>
+        /// 	The storage class for the uploaded Amazon S3 object.
+        /// </value>
+        public S3StorageClass StorageClass
+        {
+            get { return this.storageClass; }
+            set { this.storageClass = value; }
+        }
+
+        #endregion    
+
+        #region ServerSideEncryption
+
+        /// <summary>
+        /// Gets and sets the ServerSideEncryptionMethod property.
+        /// Specifies the encryption used on the server to
+        /// store the content.
+        /// </summary>
+        public ServerSideEncryptionMethod ServerSideEncryptionMethod
+        {
+            get { return this.encryption; }
+            set { this.encryption = value; }
+        }
+
+        /// <summary>
+        /// The Server-side encryption algorithm to be used with the customer provided key.
+        ///  
+        /// </summary>
+        public ServerSideEncryptionCustomerMethod ServerSideEncryptionCustomerMethod
+        {
+            get { return this.serverSideCustomerEncryption; }
+            set { this.serverSideCustomerEncryption = value; }
+        }
+
+        /// <summary>
+        /// The id of the AWS Key Management Service key that Amazon S3 should use to encrypt and decrypt the object.
+        /// If a key id is not specified, the default key will be used for encryption and decryption.
+        /// </summary>
+        [AWSProperty(Sensitive=true)]
+        public string ServerSideEncryptionKeyManagementServiceKeyId
+        {
+            get { return this.serverSideEncryptionKeyManagementServiceKeyId; }
+            set { this.serverSideEncryptionKeyManagementServiceKeyId = value; }
+        }
+
+        /// <summary>
+        /// Checks if ServerSideEncryptionKeyManagementServiceKeyId property is set.
+        /// </summary>
+        /// <returns>true if ServerSideEncryptionKeyManagementServiceKeyId property is set.</returns>
+        internal bool IsSetServerSideEncryptionKeyManagementServiceKeyId()
+        {
+            return !System.String.IsNullOrEmpty(this.serverSideEncryptionKeyManagementServiceKeyId);
+        }
+
+        /// <summary>
+        /// The Base64 encoded encryption key for Amazon S3 to use to encrypt the object
+        /// <para>
+        /// Using the encryption key you provide as part of your request Amazon S3 manages both the encryption, as it writes 
+        /// to disks, and decryption, when you access your objects. Therefore, you don't need to maintain any data encryption code. The only 
+        /// thing you do is manage the encryption keys you provide.
+        /// </para>
+        /// <para>
+        /// When you retrieve an object, you must provide the same encryption key as part of your request. Amazon S3 first verifies 
+        /// the encryption key you provided matches, and then decrypts the object before returning the object data to you.
+        /// </para>
+        /// <para>
+        /// Important: Amazon S3 does not store the encryption key you provide.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true)]
+        public string ServerSideEncryptionCustomerProvidedKey
+        {
+            get { return this.serverSideEncryptionCustomerProvidedKey; }
+            set { this.serverSideEncryptionCustomerProvidedKey = value; }
+        }
+
+        /// <summary>
+        /// The MD5 of the customer encryption key specified in the ServerSideEncryptionCustomerProvidedKey property. The MD5 is
+        /// base 64 encoded. This field is optional, the SDK will calculate the MD5 if this is not set.
+        /// </summary>
+        public string ServerSideEncryptionCustomerProvidedKeyMD5
+        {
+            get { return this.serverSideEncryptionCustomerProvidedKeyMD5; }
+            set { this.serverSideEncryptionCustomerProvidedKeyMD5 = value; }
         }
 
         #endregion
@@ -139,6 +343,43 @@ namespace Amazon.S3.Transfer
         internal bool IsSetPartSize()
         {
             return this.partSize.HasValue;
+        }
+
+        /// <summary>
+        /// The collection of headers for the request.
+        /// </summary>
+        public HeadersCollection Headers
+        {
+            get
+            {
+                if (this.headersCollection == null)
+                    this.headersCollection = new HeadersCollection();
+                return this.headersCollection;
+            }
+            internal set { this.headersCollection = value; }
+        }
+
+        /// <summary>
+        /// The collection of meta data for the request.
+        /// </summary>
+        public MetadataCollection Metadata
+        {
+            get
+            {
+                if (this.metadataCollection == null)
+                    this.metadataCollection = new MetadataCollection();
+                return this.metadataCollection;
+            }
+            internal set { this.metadataCollection = value; }
+        }
+
+        /// <summary>
+        /// The tag-set for the object.
+        /// </summary>
+        public List<Tag> TagSet
+        {
+            get { return this.tagset; }
+            set { this.tagset = value; }
         }
 
         /// <summary>
@@ -260,6 +501,100 @@ namespace Amazon.S3.Transfer
             return this;
         }
         #endregion
+
+        /// <summary>
+        /// <para><b>WARNING: Setting DisableDefaultChecksumValidation to true disables the default data 
+        /// integrity check on upload requests.</b></para>
+        /// <para>When true, checksum verification will not be used in upload requests. This may increase upload 
+        /// performance under high CPU loads. Setting DisableDefaultChecksumValidation sets the deprecated property
+        /// DisableMD5Stream to the same value. The default value is false.</para>
+        /// <para>Checksums, SigV4 payload signing, and HTTPS each provide some data integrity 
+        /// verification. If DisableDefaultChecksumValidation is true and DisablePayloadSigning is true, then the 
+        /// possibility of data corruption is completely dependent on HTTPS being the only remaining 
+        /// source of data integrity verification.</para>
+        /// </summary>
+        public bool? DisableDefaultChecksumValidation { get; set; }
+
+        /// <summary>      
+        /// <para><b>WARNING: Setting DisablePayloadSigning to true disables the SigV4 payload signing 
+        /// data integrity check on this request.</b></para>  
+        /// <para>If using SigV4, the DisablePayloadSigning flag controls if the payload should be 
+        /// signed on a request by request basis. By default this flag is null which will use the 
+        /// default client behavior. The default client behavior is to sign the payload. When 
+        /// DisablePayloadSigning is true, the request will be signed with an UNSIGNED-PAYLOAD value. 
+        /// Setting DisablePayloadSigning to true requires that the request is sent over a HTTPS 
+        /// connection.</para>        
+        /// <para>Under certain circumstances, such as uploading to S3 while using MD5 hashing, it may 
+        /// be desireable to use UNSIGNED-PAYLOAD to decrease signing CPU usage. This flag only applies 
+        /// to Amazon S3 PutObject and UploadPart requests.</para>
+        /// <para>MD5Stream, SigV4 payload signing, and HTTPS each provide some data integrity 
+        /// verification. If DisableMD5Stream is true and DisablePayloadSigning is true, then the 
+        /// possibility of data corruption is completely dependant on HTTPS being the only remaining 
+        /// source of data integrity verification.</para>
+        /// </summary>
+        public bool? DisablePayloadSigning { get; set; }
+
+        /// <summary>
+        /// Gets and sets the property ObjectLockLegalHoldStatus. 
+        /// <para>
+        /// Specifies whether a legal hold will be applied to this object. For more information
+        /// about S3 Object Lock, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html">Object
+        /// Lock</a>.
+        /// </para>
+        /// </summary>
+        public ObjectLockLegalHoldStatus ObjectLockLegalHoldStatus
+        {
+            get { return this.objectLockLegalHoldStatus; }
+            set { this.objectLockLegalHoldStatus = value; }
+        }
+
+        /// <summary>
+        /// Gets and sets the property ObjectLockMode. 
+        /// <para>
+        /// The Object Lock mode that you want to apply to this object.
+        /// </para>
+        /// </summary>
+        public ObjectLockMode ObjectLockMode
+        {
+            get { return this.objectLockMode; }
+            set { this.objectLockMode = value; }
+        }
+
+        /// <summary>
+        /// Gets and sets the property ObjectLockRetainUntilDate. 
+        /// <para>
+        /// The date and time when you want this object's Object Lock to expire.
+        /// </para>
+        /// </summary>
+        public DateTime ObjectLockRetainUntilDate
+        {
+            get { return this.objectLockRetainUntilDate.GetValueOrDefault(); }
+            set { this.objectLockRetainUntilDate = value; }
+        }
+
+        // Check to see if ObjectLockRetainUntilDate property is set
+        internal bool IsSetObjectLockRetainUntilDate()
+        {
+            return this.objectLockRetainUntilDate.HasValue;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ChecksumAlgorithm. 
+        /// <para>
+        /// Indicates the algorithm used to create the checksum for the object.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">
+        /// Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you provide an individual checksum, Amazon S3 will ignore any provided <c>ChecksumAlgorithm</c>.
+        /// </para>
+        /// </summary>
+        public ChecksumAlgorithm ChecksumAlgorithm
+        {
+            get { return this.checksumAlgorithm; }
+            set { this.checksumAlgorithm = value; }
+        }
 
         /// <summary>
         /// Gets and sets the property ChecksumCRC32. 

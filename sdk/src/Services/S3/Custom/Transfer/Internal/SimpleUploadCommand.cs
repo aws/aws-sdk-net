@@ -50,7 +50,7 @@ namespace Amazon.S3.Transfer.Internal
             var fileName = fileTransporterRequest.FilePath;
         }
 
-        internal PutObjectRequest ConstructRequest()
+        private PutObjectRequest ConstructRequest()
         {
             PutObjectRequest putRequest = new PutObjectRequest()
             {
@@ -78,12 +78,7 @@ namespace Amazon.S3.Transfer.Internal
                 ChecksumCRC64NVME = this._fileTransporterRequest.ChecksumCRC64NVME,
                 ChecksumSHA1 = this._fileTransporterRequest.ChecksumSHA1,
                 ChecksumSHA256 = this._fileTransporterRequest.ChecksumSHA256,
-                RequestPayer = this._fileTransporterRequest.RequestPayer,
-                BucketKeyEnabled = this._fileTransporterRequest.BucketKeyEnabled,
-                ExpectedBucketOwner = this._fileTransporterRequest.ExpectedBucketOwner,
-                Grants = this._fileTransporterRequest.Grants,
-                ServerSideEncryptionKeyManagementServiceEncryptionContext = this._fileTransporterRequest.SSEKMSEncryptionContext,
-                WebsiteRedirectLocation = this._fileTransporterRequest.WebsiteRedirectLocation,
+                RequestPayer = this._fileTransporterRequest.RequestPayer
             };
 
             // Avoid setting ContentType to null, as that may clear

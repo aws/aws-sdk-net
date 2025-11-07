@@ -52,11 +52,6 @@ namespace Amazon.S3.Transfer
 
         private RequestPayer requestPayer;
 
-        private string expectedBucketOwner;
-        private string ifMatch;
-        private string ifNoneMatch;
-        private ResponseHeaderOverrides responseHeaders;
-
         /// <summary>
         /// 	Gets or sets the name of the bucket.
         /// </summary>
@@ -259,108 +254,6 @@ namespace Amazon.S3.Transfer
         {
             get { return this.requestPayer; }
             set { this.requestPayer = value; }
-        }
-        
-        /// <summary>
-        /// Gets and sets the property ExpectedBucketOwner. 
-        /// <para>
-        /// The account ID of the expected bucket owner. If the account ID that you provide does
-        /// not match the actual owner of the bucket, the request fails with the HTTP status code
-        /// <c>403 Forbidden</c> (access denied).
-        /// </para>
-        /// </summary>
-        public string ExpectedBucketOwner
-        {
-            get { return this.expectedBucketOwner; }
-            set { this.expectedBucketOwner = value; }
-        }
-
-        /// <summary>
-        /// Checks to see if ExpectedBucketOwner is set.
-        /// </summary>
-        /// <returns>true, if ExpectedBucketOwner property is set.</returns>
-        internal bool IsSetExpectedBucketOwner()
-        {
-            return !String.IsNullOrEmpty(this.expectedBucketOwner);
-        }
-        
-        /// <summary>
-        /// Gets and sets the property IfMatch. 
-        /// <para>
-        /// Return the object only if its entity tag (ETag) is the same as the one specified in this header;
-        /// otherwise, return a <c>412 Precondition Failed</c> error.
-        /// </para>
-        /// <para>
-        /// If both of the <c>If-Match</c> and <c>If-Unmodified-Since</c> headers are present in the request as follows:
-        /// <c>If-Match</c> condition evaluates to <c>true</c>, and; <c>If-Unmodified-Since</c> condition evaluates to <c>false</c>;
-        /// then, S3 returns <c>200 OK</c> and the data requested.
-        /// </para>
-        /// <para>
-        /// For more information about conditional requests, see <see href="https://tools.ietf.org/html/rfc7232">RFC 7232</see>.
-        /// </para>
-        /// </summary>
-        public string IfMatch
-        {
-            get { return this.ifMatch; }
-            set { this.ifMatch = value; }
-        }
-
-        /// <summary>
-        /// Checks to see if IfMatch is set.
-        /// </summary>
-        /// <returns>true, if IfMatch property is set.</returns>
-        internal bool IsSetIfMatch()
-        {
-            return !String.IsNullOrEmpty(this.ifMatch);
-        }
-        
-        /// <summary>
-        /// Gets and sets the property IfNoneMatch. 
-        /// <para>
-        /// Return the object only if its entity tag (ETag) is different from the one specified in this header;
-        /// otherwise, return a <c>304 Not Modified</c> error.
-        /// </para>
-        /// <para>
-        /// If both of the <c>If-None-Match</c> and <c>If-Modified-Since</c> headers are present in the request as follows:
-        /// <c> If-None-Match</c> condition evaluates to <c>false</c>, and; <c>If-Modified-Since</c> condition evaluates to <c>true</c>;
-        /// then, S3 returns <c>304 Not Modified</c> HTTP status code.
-        /// </para>
-        /// <para>
-        /// For more information about conditional requests, see <see href="https://tools.ietf.org/html/rfc7232">RFC 7232</see>.
-        /// </para>
-        /// </summary>
-        public string IfNoneMatch
-        {
-            get { return this.ifNoneMatch; }
-            set { this.ifNoneMatch = value; }
-        }
-
-        /// <summary>
-        /// Checks to see if IfNoneMatch is set.
-        /// </summary>
-        /// <returns>true, if IfNoneMatch property is set.</returns>
-        internal bool IsSetIfNoneMatch()
-        {
-            return !String.IsNullOrEmpty(this.ifNoneMatch);
-        }
-
-        /// <summary>
-        /// A set of response headers that should be returned with the object.
-        /// </summary>
-        public ResponseHeaderOverrides ResponseHeaderOverrides
-        {
-            get
-            {
-                if (this.responseHeaders == null)
-                {
-                    this.responseHeaders = new ResponseHeaderOverrides();
-                }
-                return this.responseHeaders;
-            }
-            set
-            {
-                this.responseHeaders = value;
-            }
         }
 
         /// <summary>
