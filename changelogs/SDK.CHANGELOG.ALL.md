@@ -1,3 +1,15 @@
+### 3.7.1161.0 (2025-11-07 19:22 UTC)
+* ControlTower (3.7.502.0)
+	* Added Parent Identifier support to ListEnabledControls and GetEnabledControl API. Implemented RemediationType support for Landing Zone operations: CreateLandingZone, UpdateLandingZone and GetLandingZone APIs
+* EC2 (3.7.524.0)
+	* Adds PrivateDnsPreference and PrivateDnsSpecifiedDomains to control private DNS resolution for resource and service network VPC endpoints and IpamScopeExternalAuthorityConfiguration to integrate Amazon VPC IPAM with a third-party IPAM service
+* KeyManagementService (3.7.504.0)
+	* Added support for new ECC_NIST_EDWARDS25519 AWS KMS key spec
+* OpenSearchService (3.7.503.0)
+	* This release introduces the Default Application feature, allowing users to set, change, or unset a preferred OpenSearch UI application on a per-region basis for a streamlined and consistent user experience.
+* VPCLattice (3.7.504.0)
+	* Amazon VPC Lattice now supports custom domain name for resource configurations
+
 ### 3.7.1160.0 (2025-11-06 19:55 UTC)
 * AccessAnalyzer (3.7.503.0)
 	* New field totalActiveErrors added to getFindingsStatistics response.
