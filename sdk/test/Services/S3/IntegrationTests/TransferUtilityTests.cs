@@ -1320,6 +1320,112 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             progressValidator.AssertOnCompletion();
         }
 
+        [TestMethod]
+        [TestCategory("S3")]
+        public void SimpleDownloadInitiatedEventTest()
+        {
+            var fileName = UtilityMethods.GenerateName(@"SimpleDownloadTest\InitiatedEvent");
+            var eventValidator = new TransferLifecycleEventValidator<DownloadInitiatedEventArgs>
+            {
+                Validate = (args) =>
+                {
+                    Assert.IsNotNull(args.Request);
+                    Assert.AreEqual(args.FilePath, Path.Combine(BasePath, fileName + ".download"));
+                    // Note: DownloadInitiatedEventArgs does not have TotalBytes since we don't know the size until GetObjectResponse
+                }
+            };
+            DownloadWithLifecycleEvents(fileName, 10 * MEG_SIZE, eventValidator, null, null);
+            eventValidator.AssertEventFired();
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public void SimpleDownloadCompletedEventTest()
+        {
+            var fileName = UtilityMethods.GenerateName(@"SimpleDownloadTest\CompletedEvent");
+            var eventValidator = new TransferLifecycleEventValidator<DownloadCompletedEventArgs>
+            {
+                Validate = (args) =>
+                {
+                    Assert.IsNotNull(args.Request);
+                    Assert.IsNotNull(args.Response);
+                    Assert.AreEqual(args.TransferredBytes, args.TotalBytes);
+                    Assert.AreEqual(10 * MEG_SIZE, args.TotalBytes);
+                    Assert.IsTrue(!string.IsNullOrEmpty(args.Response.ETag));
+                    Assert.AreEqual(args.FilePath, Path.Combine(BasePath, fileName + ".download"));
+                }
+            };
+            DownloadWithLifecycleEvents(fileName, 10 * MEG_SIZE, null, eventValidator, null);
+            eventValidator.AssertEventFired();
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public void SimpleDownloadFailedEventTest()
+        {
+            var fileName = UtilityMethods.GenerateName(@"SimpleDownloadTest\FailedEvent");
+            var eventValidator = new TransferLifecycleEventValidator<DownloadFailedEventArgs>
+            {
+                Validate = (args) =>
+                {
+                    Assert.IsNotNull(args.Request);
+                    Assert.AreEqual(args.FilePath, Path.Combine(BasePath, fileName + ".download"));
+                    
+                    // Non-existent key should always be early failure with unknown total bytes
+                    Assert.AreEqual(-1, args.TotalBytes, "Non-existent key should result in TotalBytes = -1");
+                    Assert.AreEqual(0, args.TransferredBytes, "No bytes should be transferred for non-existent key");
+                }
+            };
+            
+            // Use non-existent key to force failure
+            var nonExistentKey = "non-existent-key-" + Guid.NewGuid().ToString();
+            
+            try
+            {
+                DownloadWithLifecycleEventsAndKey(fileName, nonExistentKey, null, null, eventValidator);
+                Assert.Fail("Expected an exception to be thrown for non-existent key");
+            }
+            catch (AmazonS3Exception)
+            {
+                // Expected exception - the failed event should have been fired
+                eventValidator.AssertEventFired();
+            }
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public void SimpleDownloadCompleteLifecycleTest()
+        {
+            var fileName = UtilityMethods.GenerateName(@"SimpleDownloadTest\CompleteLifecycle");
+            
+            var initiatedValidator = new TransferLifecycleEventValidator<DownloadInitiatedEventArgs>
+            {
+                Validate = (args) =>
+                {
+                    Assert.IsNotNull(args.Request);
+                    Assert.AreEqual(args.FilePath, Path.Combine(BasePath, fileName + ".download"));
+                    // Note: DownloadInitiatedEventArgs does not have TotalBytes since we don't know the size until GetObjectResponse
+                }
+            };
+            
+            var completedValidator = new TransferLifecycleEventValidator<DownloadCompletedEventArgs>
+            {
+                Validate = (args) =>
+                {
+                    Assert.IsNotNull(args.Request);
+                    Assert.IsNotNull(args.Response);
+                    Assert.AreEqual(args.TransferredBytes, args.TotalBytes);
+                    Assert.AreEqual(8 * MEG_SIZE, args.TotalBytes);
+                    Assert.AreEqual(args.FilePath, Path.Combine(BasePath, fileName + ".download"));
+                }
+            };
+
+            DownloadWithLifecycleEvents(fileName, 8 * MEG_SIZE, initiatedValidator, completedValidator, null);
+            
+            initiatedValidator.AssertEventFired();
+            completedValidator.AssertEventFired();
+        }
+
         void Download(string fileName, long size, TransferProgressValidator<WriteObjectProgressArgs> progressValidator)
         {
             var key = fileName;
@@ -2121,6 +2227,85 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
             transferUtility.Upload(request);
         }
+
+        void DownloadWithLifecycleEvents(string fileName, long size,
+            TransferLifecycleEventValidator<DownloadInitiatedEventArgs> initiatedValidator,
+            TransferLifecycleEventValidator<DownloadCompletedEventArgs> completedValidator,
+            TransferLifecycleEventValidator<DownloadFailedEventArgs> failedValidator)
+        {
+            // First upload the file so we have something to download
+            var key = fileName;
+            var originalFilePath = Path.Combine(BasePath, fileName);
+            UtilityMethods.GenerateFile(originalFilePath, size);
+
+            Client.PutObject(new PutObjectRequest
+            {
+                BucketName = bucketName,
+                Key = key,
+                FilePath = originalFilePath
+            });
+
+            var downloadedFilePath = originalFilePath + ".download";
+
+            var transferUtility = new TransferUtility(Client);
+            var request = new TransferUtilityDownloadRequest
+            {
+                BucketName = bucketName,
+                FilePath = downloadedFilePath,
+                Key = key
+            };
+
+            if (initiatedValidator != null)
+            {
+                request.DownloadInitiatedEvent += initiatedValidator.OnEventFired;
+            }
+
+            if (completedValidator != null)
+            {
+                request.DownloadCompletedEvent += completedValidator.OnEventFired;
+            }
+
+            if (failedValidator != null)
+            {
+                request.DownloadFailedEvent += failedValidator.OnEventFired;
+            }
+
+            transferUtility.Download(request);
+        }
+
+        void DownloadWithLifecycleEventsAndKey(string fileName, string keyToDownload,
+            TransferLifecycleEventValidator<DownloadInitiatedEventArgs> initiatedValidator,
+            TransferLifecycleEventValidator<DownloadCompletedEventArgs> completedValidator,
+            TransferLifecycleEventValidator<DownloadFailedEventArgs> failedValidator)
+        {
+            var downloadedFilePath = Path.Combine(BasePath, fileName + ".download");
+
+            var transferUtility = new TransferUtility(Client);
+            var request = new TransferUtilityDownloadRequest
+            {
+                BucketName = bucketName,
+                FilePath = downloadedFilePath,
+                Key = keyToDownload
+            };
+
+            if (initiatedValidator != null)
+            {
+                request.DownloadInitiatedEvent += initiatedValidator.OnEventFired;
+            }
+
+            if (completedValidator != null)
+            {
+                request.DownloadCompletedEvent += completedValidator.OnEventFired;
+            }
+
+            if (failedValidator != null)
+            {
+                request.DownloadFailedEvent += failedValidator.OnEventFired;
+            }
+
+            transferUtility.Download(request);
+        }
+
         private class UnseekableStream : MemoryStream
         {
             private readonly bool _setZeroLengthStream;
