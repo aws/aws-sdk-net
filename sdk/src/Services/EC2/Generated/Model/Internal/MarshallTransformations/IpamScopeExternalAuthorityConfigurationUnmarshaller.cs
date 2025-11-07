@@ -33,18 +33,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DnsOptions Object
+    /// Response Unmarshaller for IpamScopeExternalAuthorityConfiguration Object
     /// </summary>  
-    public class DnsOptionsUnmarshaller : IXmlUnmarshaller<DnsOptions, XmlUnmarshallerContext>
+    public class IpamScopeExternalAuthorityConfigurationUnmarshaller : IXmlUnmarshaller<IpamScopeExternalAuthorityConfiguration, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public DnsOptions Unmarshall(XmlUnmarshallerContext context)
+        public IpamScopeExternalAuthorityConfiguration Unmarshall(XmlUnmarshallerContext context)
         {
-            DnsOptions unmarshalledObject = new DnsOptions();
+            IpamScopeExternalAuthorityConfiguration unmarshalledObject = new IpamScopeExternalAuthorityConfiguration();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -55,33 +55,16 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("dnsRecordIpType", targetDepth))
+                    if (context.TestExpression("externalResourceIdentifier", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.DnsRecordIpType = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.ExternalResourceIdentifier = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("privateDnsOnlyForInboundResolverEndpoint", targetDepth))
-                    {
-                        var unmarshaller = NullableBoolUnmarshaller.Instance;
-                        unmarshalledObject.PrivateDnsOnlyForInboundResolverEndpoint = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("privateDnsPreference", targetDepth))
+                    if (context.TestExpression("type", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.PrivateDnsPreference = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("privateDnsSpecifiedDomainSet/item", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        if (unmarshalledObject.PrivateDnsSpecifiedDomains == null)
-                        {
-                            unmarshalledObject.PrivateDnsSpecifiedDomains = new List<string>();
-                        }
-                        var item = unmarshaller.Unmarshall(context);
-                        unmarshalledObject.PrivateDnsSpecifiedDomains.Add(item);
+                        unmarshalledObject.Type = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
@@ -94,12 +77,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
-        private static DnsOptionsUnmarshaller _instance = new DnsOptionsUnmarshaller();        
+        private static IpamScopeExternalAuthorityConfigurationUnmarshaller _instance = new IpamScopeExternalAuthorityConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DnsOptionsUnmarshaller Instance
+        public static IpamScopeExternalAuthorityConfigurationUnmarshaller Instance
         {
             get
             {
