@@ -1,0 +1,13 @@
+{
+  "core": {
+    "updateMinimum": true,
+    "type": "minor",
+    "changeLogMessages": [
+      "Re-introduce background refresh of credentials during their preempt expiry period (https://github.com/aws/aws-sdk-net/issues/4024)"
+    ],
+    "backwardIncompatibilitiesToIgnore": [
+      "Amazon.Runtime.RefreshingAWSCredentials/MethodAdded",
+      "Amazon.Runtime.RefreshingAWSCredentials/FieldTypeChanged"
+    ]
+  }
+}
