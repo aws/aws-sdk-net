@@ -135,7 +135,7 @@ namespace Amazon.S3.Model
         // Check to see if ContinuationToken property is set
         internal bool IsSetContinuationToken()
         {
-            return this._continuationToken != null;
+            return !string.IsNullOrEmpty(this._continuationToken);
         }
 
         /// <summary>
@@ -155,7 +155,7 @@ namespace Amazon.S3.Model
         // Check to see if ExpectedBucketOwner property is set
         internal bool IsSetExpectedBucketOwner()
         {
-            return this._expectedBucketOwner != null;
+            return !string.IsNullOrEmpty(this._expectedBucketOwner);
         }
 
     }

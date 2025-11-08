@@ -99,7 +99,7 @@ namespace Amazon.S3.Model
         // Check to see if NextToken property is set
         internal bool IsSetNextToken()
         {
-            return this._nextToken != null;
+            return !string.IsNullOrEmpty(this._nextToken);
         }
 
         /// <summary>
@@ -118,7 +118,7 @@ namespace Amazon.S3.Model
         // Check to see if Token property is set
         internal bool IsSetToken()
         {
-            return this._token != null;
+            return !string.IsNullOrEmpty(this._token);
         }
 
     }
