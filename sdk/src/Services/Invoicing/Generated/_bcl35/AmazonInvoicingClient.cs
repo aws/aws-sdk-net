@@ -502,6 +502,80 @@ namespace Amazon.Invoicing
 
         #endregion
         
+        #region  GetInvoicePDF
+
+        /// <summary>
+        /// Returns a URL to download the invoice document and supplemental documents associated
+        /// with an invoice. The URLs are pre-signed and have expiration time. For special cases
+        /// like Brazil, where Amazon Web Services generated invoice identifiers and government
+        /// provided identifiers do not match, use the Amazon Web Services generated invoice identifier
+        /// when making API requests. To grant IAM permission to use this operation, the caller
+        /// needs the <c>invoicing:GetInvoicePDF</c> policy action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetInvoicePDF service method.</param>
+        /// 
+        /// <returns>The response from the GetInvoicePDF service method, as returned by Invoicing.</returns>
+        /// <exception cref="Amazon.Invoicing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.InternalServerException">
+        /// The processing request failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/invoicing-2024-12-01/GetInvoicePDF">REST API Reference for GetInvoicePDF Operation</seealso>
+        public virtual GetInvoicePDFResponse GetInvoicePDF(GetInvoicePDFRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetInvoicePDFRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetInvoicePDFResponseUnmarshaller.Instance;
+
+            return Invoke<GetInvoicePDFResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetInvoicePDF operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetInvoicePDF operation on AmazonInvoicingClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetInvoicePDF
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/invoicing-2024-12-01/GetInvoicePDF">REST API Reference for GetInvoicePDF Operation</seealso>
+        public virtual IAsyncResult BeginGetInvoicePDF(GetInvoicePDFRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetInvoicePDFRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetInvoicePDFResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetInvoicePDF operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetInvoicePDF.</param>
+        /// 
+        /// <returns>Returns a  GetInvoicePDFResult from Invoicing.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/invoicing-2024-12-01/GetInvoicePDF">REST API Reference for GetInvoicePDF Operation</seealso>
+        public virtual GetInvoicePDFResponse EndGetInvoicePDF(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetInvoicePDFResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetInvoiceUnit
 
         /// <summary>

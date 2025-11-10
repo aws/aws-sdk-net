@@ -173,6 +173,44 @@ namespace Amazon.Invoicing
 
         #endregion
                 
+        #region  GetInvoicePDF
+
+
+
+        /// <summary>
+        /// Returns a URL to download the invoice document and supplemental documents associated
+        /// with an invoice. The URLs are pre-signed and have expiration time. For special cases
+        /// like Brazil, where Amazon Web Services generated invoice identifiers and government
+        /// provided identifiers do not match, use the Amazon Web Services generated invoice identifier
+        /// when making API requests. To grant IAM permission to use this operation, the caller
+        /// needs the <c>invoicing:GetInvoicePDF</c> policy action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetInvoicePDF service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetInvoicePDF service method, as returned by Invoicing.</returns>
+        /// <exception cref="Amazon.Invoicing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.InternalServerException">
+        /// The processing request failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/invoicing-2024-12-01/GetInvoicePDF">REST API Reference for GetInvoicePDF Operation</seealso>
+        Task<GetInvoicePDFResponse> GetInvoicePDFAsync(GetInvoicePDFRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  GetInvoiceUnit
 
 
