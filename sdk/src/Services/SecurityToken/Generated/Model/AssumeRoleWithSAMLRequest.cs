@@ -46,7 +46,12 @@ namespace Amazon.SecurityToken.Model
     /// key ID, a secret access key, and a security token. Applications can use these temporary
     /// security credentials to sign calls to Amazon Web Services services.
     /// </para>
-    ///  
+    ///  <note> 
+    /// <para>
+    /// AssumeRoleWithSAML will not work on IAM Identity Center managed roles. These roles'
+    /// names start with <c>AWSReservedSSO_</c>.
+    /// </para>
+    ///  </note> 
     /// <para>
     ///  <b>Session Duration</b> 
     /// </para>

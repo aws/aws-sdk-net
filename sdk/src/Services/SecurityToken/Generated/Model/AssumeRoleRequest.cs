@@ -246,7 +246,7 @@ namespace Amazon.SecurityToken.Model
         /// <para>
         /// The regex used to validate this parameter is a string of characters consisting of
         /// upper- and lower-case alphanumeric characters with no spaces. You can also include
-        /// underscores or any of the following characters: =,.@:/-
+        /// underscores or any of the following characters: +=,.@:\/-
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=1224)]
@@ -375,7 +375,7 @@ namespace Amazon.SecurityToken.Model
         /// 
         /// </para>
         /// </summary>
-        [AWSProperty(Max=5)]
+        [AWSProperty(Min=1, Max=5)]
         public List<ProvidedContext> ProvidedContexts
         {
             get { return this._providedContexts; }
@@ -433,7 +433,7 @@ namespace Amazon.SecurityToken.Model
         /// <para>
         /// The regex used to validate this parameter is a string of characters consisting of
         /// upper- and lower-case alphanumeric characters with no spaces. You can also include
-        /// underscores or any of the following characters: =,.@-
+        /// underscores or any of the following characters: +=,.@-
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=2, Max=64)]
@@ -462,7 +462,7 @@ namespace Amazon.SecurityToken.Model
         /// <para>
         /// The regex used to validate this parameter is a string of characters consisting of
         /// upper- and lower-case alphanumeric characters with no spaces. You can also include
-        /// underscores or any of the following characters: =,.@-
+        /// underscores or any of the following characters: +=/:,.@-
         /// </para>
         /// </summary>
         [AWSProperty(Min=9, Max=256)]

@@ -30,44 +30,41 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityToken.Model
 {
     /// <summary>
-    /// STS is not activated in the requested region for the account that is being asked to
-    /// generate credentials. The account administrator must use the IAM console to activate
-    /// STS in that region. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html#sts-regions-activate-deactivate">Activating
-    /// and Deactivating STS in an Amazon Web Services Region</a> in the <i>IAM User Guide</i>.
+    /// 
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
-    public partial class RegionDisabledException : AmazonSecurityTokenServiceException
+    public partial class ExpiredTradeInTokenException : AmazonSecurityTokenServiceException
     {
 
         /// <summary>
-        /// Constructs a new RegionDisabledException with the specified error
+        /// Constructs a new ExpiredTradeInTokenException with the specified error
         /// message.
         /// </summary>
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        public RegionDisabledException(string message) 
+        public ExpiredTradeInTokenException(string message) 
             : base(message) {}
 
         /// <summary>
-        /// Construct instance of RegionDisabledException
+        /// Construct instance of ExpiredTradeInTokenException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="innerException"></param>
-        public RegionDisabledException(string message, Exception innerException) 
+        public ExpiredTradeInTokenException(string message, Exception innerException) 
             : base(message, innerException) {}
 
         /// <summary>
-        /// Construct instance of RegionDisabledException
+        /// Construct instance of ExpiredTradeInTokenException
         /// </summary>
         /// <param name="innerException"></param>
-        public RegionDisabledException(Exception innerException) 
+        public ExpiredTradeInTokenException(Exception innerException) 
             : base(innerException) {}
 
         /// <summary>
-        /// Construct instance of RegionDisabledException
+        /// Construct instance of ExpiredTradeInTokenException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="innerException"></param>
@@ -75,30 +72,30 @@ namespace Amazon.SecurityToken.Model
         /// <param name="errorCode"></param>
         /// <param name="requestId"></param>
         /// <param name="statusCode"></param>
-        public RegionDisabledException(string message, Exception innerException, Amazon.Runtime.ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+        public ExpiredTradeInTokenException(string message, Exception innerException, Amazon.Runtime.ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, requestId, statusCode) {}
 
         /// <summary>
-        /// Construct instance of RegionDisabledException
+        /// Construct instance of ExpiredTradeInTokenException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="errorType"></param>
         /// <param name="errorCode"></param>
         /// <param name="requestId"></param>
         /// <param name="statusCode"></param>
-        public RegionDisabledException(string message, Amazon.Runtime.ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+        public ExpiredTradeInTokenException(string message, Amazon.Runtime.ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
 #if !NETSTANDARD
         /// <summary>
-        /// Constructs a new instance of the RegionDisabledException class with serialized data.
+        /// Constructs a new instance of the ExpiredTradeInTokenException class with serialized data.
         /// </summary>
         /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
         /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
         /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is null. </exception>
         /// <exception cref="T:System.Runtime.Serialization.SerializationException">The class name is null or <see cref="P:System.Exception.HResult" /> is zero (0). </exception>
-        protected RegionDisabledException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+        protected ExpiredTradeInTokenException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
         }

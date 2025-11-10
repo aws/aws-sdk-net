@@ -176,6 +176,16 @@
     <pattern>[\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SecurityToken.Model.GetDelegatedAccessTokenResponse.AssumedPrincipal</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>[\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityToken.Model.GetDelegatedAccessTokenResponse.PackedPolicySize</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SecurityToken.Model.GetFederationTokenRequest.DurationSeconds</property>
     <min>900</min>
     <max>129600</max>
