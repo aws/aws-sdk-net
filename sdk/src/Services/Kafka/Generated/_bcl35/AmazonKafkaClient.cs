@@ -3726,6 +3726,82 @@ namespace Amazon.Kafka
 
         #endregion
         
+        #region  UpdateRebalancing
+
+        /// <summary>
+        /// Use this resource to update the intelligent rebalancing status of an Amazon MSK Provisioned
+        /// cluster with Express brokers.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRebalancing service method.</param>
+        /// 
+        /// <returns>The response from the UpdateRebalancing service method, as returned by Kafka.</returns>
+        /// <exception cref="Amazon.Kafka.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.NotFoundException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ServiceUnavailableException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.TooManyRequestsException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.UnauthorizedException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/UpdateRebalancing">REST API Reference for UpdateRebalancing Operation</seealso>
+        public virtual UpdateRebalancingResponse UpdateRebalancing(UpdateRebalancingRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateRebalancingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateRebalancingResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateRebalancingResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateRebalancing operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRebalancing operation on AmazonKafkaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateRebalancing
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/UpdateRebalancing">REST API Reference for UpdateRebalancing Operation</seealso>
+        public virtual IAsyncResult BeginUpdateRebalancing(UpdateRebalancingRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateRebalancingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateRebalancingResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateRebalancing operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateRebalancing.</param>
+        /// 
+        /// <returns>Returns a  UpdateRebalancingResult from Kafka.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/UpdateRebalancing">REST API Reference for UpdateRebalancing Operation</seealso>
+        public virtual UpdateRebalancingResponse EndUpdateRebalancing(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateRebalancingResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  UpdateReplicationInfo
 
         /// <summary>

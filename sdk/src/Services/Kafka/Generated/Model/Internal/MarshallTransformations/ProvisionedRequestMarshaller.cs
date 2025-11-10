@@ -132,6 +132,17 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetRebalancing())
+            {
+                context.Writer.WritePropertyName("rebalancing");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = RebalancingMarshaller.Instance;
+                marshaller.Marshall(requestObject.Rebalancing, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetStorageMode())
             {
                 context.Writer.WritePropertyName("storageMode");

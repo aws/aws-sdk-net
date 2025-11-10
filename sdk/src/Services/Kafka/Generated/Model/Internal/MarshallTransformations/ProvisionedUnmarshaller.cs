@@ -120,6 +120,12 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
                     unmarshalledObject.OpenMonitoring = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("rebalancing", targetDepth))
+                {
+                    var unmarshaller = RebalancingUnmarshaller.Instance;
+                    unmarshalledObject.Rebalancing = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("storageMode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
