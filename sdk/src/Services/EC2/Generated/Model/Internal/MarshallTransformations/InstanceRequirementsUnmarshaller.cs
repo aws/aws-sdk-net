@@ -221,6 +221,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.OnDemandMaxPricePercentageOverLowestPrice = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("requireEncryptionInTransit", targetDepth))
+                    {
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
+                        unmarshalledObject.RequireEncryptionInTransit = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("requireHibernateSupport", targetDepth))
                     {
                         var unmarshaller = NullableBoolUnmarshaller.Instance;
