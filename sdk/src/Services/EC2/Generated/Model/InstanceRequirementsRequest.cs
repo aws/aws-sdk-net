@@ -102,6 +102,7 @@ namespace Amazon.EC2.Model
         private NetworkBandwidthGbpsRequest _networkBandwidthGbps;
         private NetworkInterfaceCountRequest _networkInterfaceCount;
         private int? _onDemandMaxPricePercentageOverLowestPrice;
+        private bool? _requireEncryptionInTransit;
         private bool? _requireHibernateSupport;
         private int? _spotMaxPricePercentageOverLowestPrice;
         private TotalLocalStorageGBRequest _totalLocalStorageGB;
@@ -818,6 +819,30 @@ namespace Amazon.EC2.Model
         internal bool IsSetOnDemandMaxPricePercentageOverLowestPrice()
         {
             return this._onDemandMaxPricePercentageOverLowestPrice.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RequireEncryptionInTransit. 
+        /// <para>
+        /// Specifies whether instance types must support encrypting in-transit traffic between
+        /// instances. For more information, including the supported instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/data-protection.html#encryption-transit">Encryption
+        /// in transit</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: <c>false</c> 
+        /// </para>
+        /// </summary>
+        public bool RequireEncryptionInTransit
+        {
+            get { return this._requireEncryptionInTransit.GetValueOrDefault(); }
+            set { this._requireEncryptionInTransit = value; }
+        }
+
+        // Check to see if RequireEncryptionInTransit property is set
+        internal bool IsSetRequireEncryptionInTransit()
+        {
+            return this._requireEncryptionInTransit.HasValue; 
         }
 
         /// <summary>
