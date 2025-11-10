@@ -49,6 +49,7 @@ namespace Amazon.VerifiedPermissions.Model
         private Dictionary<string, AttributeValue> _attributes = AWSConfigs.InitializeCollections ? new Dictionary<string, AttributeValue>() : null;
         private EntityIdentifier _identifier;
         private List<EntityIdentifier> _parents = AWSConfigs.InitializeCollections ? new List<EntityIdentifier>() : null;
+        private Dictionary<string, CedarTagValue> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, CedarTagValue>() : null;
 
         /// <summary>
         /// Gets and sets the property Attributes. 
@@ -122,6 +123,29 @@ namespace Amazon.VerifiedPermissions.Model
         internal bool IsSetParents()
         {
             return this._parents != null && (this._parents.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A list of cedar tags for the entity.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public Dictionary<string, CedarTagValue> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }
