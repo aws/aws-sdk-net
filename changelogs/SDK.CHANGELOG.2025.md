@@ -1,3 +1,33 @@
+### 3.7.1162.0 (2025-11-10 19:38 UTC)
+* ACMPCA (3.7.503.0)
+	* Private Certificate Authority service now supports ML-DSA key algorithms.
+* AppStream (3.7.503.0)
+	* AWS Appstream support for IPv6
+* Backup (3.7.505.0)
+	* AWS Backup supports backups of Amazon EKS clusters, including Kubernetes cluster state and persistent storage attached to the EKS cluster via a persistent volume claim (EBS volumes, EFS file systems, and S3 buckets).
+* Braket (3.7.503.0)
+	* Adds ExperimentalCapabilities field to CreateQuantumTask request and GetQuantumTask response objects. Enables use of experimental software capabilities when creating quantum tasks.
+* DataZone (3.7.510.0)
+	* Remove trackingServerName from DataZone Connection MLflowProperties
+* DSQL (3.7.504.0)
+	* Cluster endpoint added to CreateCluster and GetCluster API responses
+* EC2 (3.7.525.0)
+	* Amazon EC2 Fleet customers can now filter instance types based on encryption-in-transit support using Attribute-Based Instance Type Selection (ABIS), eliminating the manual effort of identifying and selecting compatible instance types for security-sensitive workloads.
+* GuardDuty (3.7.506.0)
+	* Include tags filed in CreatePublishingDestinationRequest and DescribePublishingDestinationResponse.
+* IdentityManagement (3.7.504.0)
+	* Added CreateDelegationRequest API, which is not available for general use at this time.
+* Invoicing (3.7.503.0)
+	* Added new invoicing get-invoice-pdf API Operation
+* Kafka (3.7.503.0)
+	* Amazon MSK now supports intelligent rebalancing for MSK Express brokers.
+* SecurityToken (3.7.503.0)
+	* Added GetDelegatedAccessToken API, which is not available for general use at this time.
+* VerifiedPermissions (3.7.504.0)
+	* Amazon Verified Permissions / Features : Adds support for entity Cedar tags.
+* WAFV2 (3.7.503.0)
+	* AWS WAF now supports CLOUDWATCH_TELEMETRY_RULE_MANAGED as a LogScope option, enabling automated logging configuration through Amazon CloudWatch Logs for telemetry data collection and analysis.
+
 ### 3.7.1161.0 (2025-11-07 19:22 UTC)
 * ControlTower (3.7.502.0)
 	* Added Parent Identifier support to ListEnabledControls and GetEnabledControl API. Implemented RemediationType support for Landing Zone operations: CreateLandingZone, UpdateLandingZone and GetLandingZone APIs
