@@ -35,6 +35,7 @@ namespace Amazon.AppStream.Model
     public partial class NetworkAccessConfiguration
     {
         private string _eniId;
+        private List<string> _eniIpv6Addresses = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _eniPrivateIpAddress;
 
         /// <summary>
@@ -55,6 +56,25 @@ namespace Amazon.AppStream.Model
         internal bool IsSetEniId()
         {
             return this._eniId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EniIpv6Addresses. 
+        /// <para>
+        /// The IPv6 addresses of the elastic network interface that is attached to instances
+        /// in your VPC.
+        /// </para>
+        /// </summary>
+        public List<string> EniIpv6Addresses
+        {
+            get { return this._eniIpv6Addresses; }
+            set { this._eniIpv6Addresses = value; }
+        }
+
+        // Check to see if EniIpv6Addresses property is set
+        internal bool IsSetEniIpv6Addresses()
+        {
+            return this._eniIpv6Addresses != null && (this._eniIpv6Addresses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

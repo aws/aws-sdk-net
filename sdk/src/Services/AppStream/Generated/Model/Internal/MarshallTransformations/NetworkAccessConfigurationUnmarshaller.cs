@@ -72,6 +72,12 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                     unmarshalledObject.EniId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("EniIpv6Addresses", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.EniIpv6Addresses = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("EniPrivateIpAddress", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
