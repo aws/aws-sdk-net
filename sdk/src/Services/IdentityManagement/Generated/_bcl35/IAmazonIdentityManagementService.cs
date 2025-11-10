@@ -751,6 +751,64 @@ namespace Amazon.IdentityManagement
 
         #endregion
         
+        #region  CreateDelegationRequest
+
+
+        /// <summary>
+        /// This API is currently unavailable for general use.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDelegationRequest service method.</param>
+        /// 
+        /// <returns>The response from the CreateDelegationRequest service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.ConcurrentModificationException">
+        /// The request was rejected because multiple requests to change this object were submitted
+        /// simultaneously. Wait a few minutes and submit your request again.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.EntityAlreadyExistsException">
+        /// The request was rejected because it attempted to create a resource that already exists.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// Amazon Web Services account limits. The error message describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateDelegationRequest">REST API Reference for CreateDelegationRequest Operation</seealso>
+        CreateDelegationRequestResponse CreateDelegationRequest(CreateDelegationRequestRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateDelegationRequest operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateDelegationRequest operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateDelegationRequest
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateDelegationRequest">REST API Reference for CreateDelegationRequest Operation</seealso>
+        IAsyncResult BeginCreateDelegationRequest(CreateDelegationRequestRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateDelegationRequest operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateDelegationRequest.</param>
+        /// 
+        /// <returns>Returns a  CreateDelegationRequestResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateDelegationRequest">REST API Reference for CreateDelegationRequest Operation</seealso>
+        CreateDelegationRequestResponse EndCreateDelegationRequest(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateGroup
 
 

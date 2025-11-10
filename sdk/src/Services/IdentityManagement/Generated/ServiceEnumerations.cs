@@ -747,6 +747,56 @@ namespace Amazon.IdentityManagement
 
 
     /// <summary>
+    /// Constants used for properties of type PolicyParameterTypeEnum.
+    /// </summary>
+    public class PolicyParameterTypeEnum : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant String for PolicyParameterTypeEnum
+        /// </summary>
+        public static readonly PolicyParameterTypeEnum String = new PolicyParameterTypeEnum("string");
+        /// <summary>
+        /// Constant StringList for PolicyParameterTypeEnum
+        /// </summary>
+        public static readonly PolicyParameterTypeEnum StringList = new PolicyParameterTypeEnum("stringList");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PolicyParameterTypeEnum(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PolicyParameterTypeEnum FindValue(string value)
+        {
+            return FindValue<PolicyParameterTypeEnum>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PolicyParameterTypeEnum(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type PolicyScopeType.
     /// </summary>
     public class PolicyScopeType : ConstantClass

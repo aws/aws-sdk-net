@@ -1326,6 +1326,83 @@ namespace Amazon.IdentityManagement
 
         #endregion
         
+        #region  CreateDelegationRequest
+
+
+        /// <summary>
+        /// This API is currently unavailable for general use.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDelegationRequest service method.</param>
+        /// 
+        /// <returns>The response from the CreateDelegationRequest service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.ConcurrentModificationException">
+        /// The request was rejected because multiple requests to change this object were submitted
+        /// simultaneously. Wait a few minutes and submit your request again.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.EntityAlreadyExistsException">
+        /// The request was rejected because it attempted to create a resource that already exists.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// Amazon Web Services account limits. The error message describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateDelegationRequest">REST API Reference for CreateDelegationRequest Operation</seealso>
+        public virtual CreateDelegationRequestResponse CreateDelegationRequest(CreateDelegationRequestRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateDelegationRequestRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDelegationRequestResponseUnmarshaller.Instance;
+
+            return Invoke<CreateDelegationRequestResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// This API is currently unavailable for general use.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDelegationRequest service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateDelegationRequest service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.ConcurrentModificationException">
+        /// The request was rejected because multiple requests to change this object were submitted
+        /// simultaneously. Wait a few minutes and submit your request again.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.EntityAlreadyExistsException">
+        /// The request was rejected because it attempted to create a resource that already exists.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// Amazon Web Services account limits. The error message describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateDelegationRequest">REST API Reference for CreateDelegationRequest Operation</seealso>
+        public virtual Task<CreateDelegationRequestResponse> CreateDelegationRequestAsync(CreateDelegationRequestRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateDelegationRequestRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDelegationRequestResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateDelegationRequestResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateGroup
 
 
