@@ -88,6 +88,12 @@ namespace Amazon.Braket.Model.Internal.MarshallTransformations
                     response.EndedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("experimentalCapabilities", targetDepth))
+                {
+                    var unmarshaller = ExperimentalCapabilitiesUnmarshaller.Instance;
+                    response.ExperimentalCapabilities = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("failureReason", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
