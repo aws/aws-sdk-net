@@ -118,6 +118,18 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                     response.IamRoleArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("IsParent", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    response.IsParent = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ParentJobId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ParentJobId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("PercentDone", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

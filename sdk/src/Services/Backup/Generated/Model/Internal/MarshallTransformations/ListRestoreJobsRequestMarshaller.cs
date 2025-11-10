@@ -75,6 +75,9 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetByCreatedBefore())
                 request.Parameters.Add("createdBefore", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.ByCreatedBefore));
             
+            if (publicRequest.IsSetByParentJobId())
+                request.Parameters.Add("parentJobId", StringUtils.FromString(publicRequest.ByParentJobId));
+            
             if (publicRequest.IsSetByResourceType())
                 request.Parameters.Add("resourceType", StringUtils.FromString(publicRequest.ByResourceType));
             
