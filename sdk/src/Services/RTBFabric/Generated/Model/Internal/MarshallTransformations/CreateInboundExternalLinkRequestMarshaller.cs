@@ -92,6 +92,17 @@ namespace Amazon.RTBFabric.Model.Internal.MarshallTransformations
                     context.Writer.WritePropertyName("clientToken");
                     context.Writer.Write(Guid.NewGuid().ToString());
                 }
+                if(publicRequest.IsSetLogSettings())
+                {
+                    context.Writer.WritePropertyName("logSettings");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = LinkLogSettingsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.LogSettings, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("tags");

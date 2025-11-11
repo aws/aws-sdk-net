@@ -35,10 +35,27 @@ namespace Amazon.RTBFabric.Model
     /// </summary>
     public partial class CreateOutboundExternalLinkRequest : AmazonRTBFabricRequest
     {
+        private LinkAttributes _attributes;
         private string _clientToken;
         private string _gatewayId;
+        private LinkLogSettings _logSettings;
         private string _publicEndpoint;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+
+        /// <summary>
+        /// Gets and sets the property Attributes.
+        /// </summary>
+        public LinkAttributes Attributes
+        {
+            get { return this._attributes; }
+            set { this._attributes = value; }
+        }
+
+        // Check to see if Attributes property is set
+        internal bool IsSetAttributes()
+        {
+            return this._attributes != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
@@ -75,6 +92,22 @@ namespace Amazon.RTBFabric.Model
         internal bool IsSetGatewayId()
         {
             return this._gatewayId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LogSettings.
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public LinkLogSettings LogSettings
+        {
+            get { return this._logSettings; }
+            set { this._logSettings = value; }
+        }
+
+        // Check to see if LogSettings property is set
+        internal bool IsSetLogSettings()
+        {
+            return this._logSettings != null;
         }
 
         /// <summary>

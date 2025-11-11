@@ -70,6 +70,17 @@ namespace Amazon.RTBFabric.Model.Internal.MarshallTransformations
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAttributes())
+                {
+                    context.Writer.WritePropertyName("attributes");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = LinkAttributesMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Attributes, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetClientToken())
                 {
                     context.Writer.WritePropertyName("clientToken");
@@ -81,6 +92,17 @@ namespace Amazon.RTBFabric.Model.Internal.MarshallTransformations
                     context.Writer.WritePropertyName("clientToken");
                     context.Writer.Write(Guid.NewGuid().ToString());
                 }
+                if(publicRequest.IsSetLogSettings())
+                {
+                    context.Writer.WritePropertyName("logSettings");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = LinkLogSettingsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.LogSettings, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetPublicEndpoint())
                 {
                     context.Writer.WritePropertyName("publicEndpoint");

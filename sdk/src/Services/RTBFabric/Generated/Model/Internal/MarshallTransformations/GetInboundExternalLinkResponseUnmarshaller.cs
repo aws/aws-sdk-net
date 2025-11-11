@@ -88,6 +88,12 @@ namespace Amazon.RTBFabric.Model.Internal.MarshallTransformations
                     response.LinkId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("logSettings", targetDepth))
+                {
+                    var unmarshaller = LinkLogSettingsUnmarshaller.Instance;
+                    response.LogSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("pendingFlowModules", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<ModuleConfiguration, ModuleConfigurationUnmarshaller>(ModuleConfigurationUnmarshaller.Instance);
