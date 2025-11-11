@@ -179,7 +179,8 @@
                     "Filter": 
                     {
                         "skipContextTestExpressionUnmarshallingLogic" : true,
-                        "injectXmlUnmarshallCode": ["FilterCustomUnmarshall(context, unmarshalledObject);"]
+                        "injectXmlUnmarshallCode": ["FilterCustomUnmarshall(context, unmarshalledObject);"],
+                        "injectXmlMarshallCode": ["FilterCustomMarshall(publicRequestConfigurationRulesValue, xmlWriter);"]
                     }
                 }
             ]
@@ -778,6 +779,44 @@
                     }
                 }
             ]
+        },
+        "PutBucketMetricsConfigurationRequest":{
+            "modify" : [
+                {
+                    "Id" :{"emitPropertyName" :"MetricsId"}
+                },
+                {
+                    "ExpectedBucketOwner":{
+                        "injectXmlIsSet":["return !String.IsNullOrEmpty(this._expectedBucketOwner);"]
+                    }
+                }
+            ]
+        },
+        "MetricsConfiguration":{
+            "modify":[
+                {
+                    "Filter" : 
+                    {
+                        "emitPropertyName" : "MetricsFilter"
+                    }
+                },
+                {
+                    "MetricsFilter":{
+                        "injectXmlMarshallCode": ["MetricsFilterCustomMarshall(publicRequest, xmlWriter);"]
+                    }
+                },
+                {
+                    "Id" : {"emitPropertyName" : "MetricsId"}
+                }
+            ],
+            "predicateListUnmarshallers": [
+                {
+                    "MetricsFilter" :{
+                        "predicateListUnmarshallerName" : "MetricsPredicateListFilterUnmarshaller",
+                        "filterPredicateName": "MetricsFilterPredicate"
+                    }
+                }
+            ]
         }
     },
     "operationModifiers": {
@@ -1141,13 +1180,8 @@
     },
     "excludeShapes":[
         "NotificationConfiguration",
-        "CopyPartResult"
-    ],
-    "implementsVisitorPattern":{
-        "LifecycleFilter":{
-            "predicateName": "LifecycleFilterPredicate",
-            "visitorName": "LifecycleFilterPredicateMarshallVisitor",
-            "visitorParam": "xmlWriter"
-        }
-    }
+        "CopyPartResult",
+        "MetricsFilter",
+        "MetricsAndOperator"
+    ]
 }
