@@ -12,20 +12,28 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the s3-2006-03-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
+using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// Returns information about the DeleteBucketMetricsConfiguration response metadata.
-    /// The DeleteBucketMetricsConfiguration operation has a void result type.
+    /// This is the response object from the DeleteBucketMetricsConfiguration operation.
     /// </summary>
     public partial class DeleteBucketMetricsConfigurationResponse : AmazonWebServiceResponse
     {
+
     }
 }
