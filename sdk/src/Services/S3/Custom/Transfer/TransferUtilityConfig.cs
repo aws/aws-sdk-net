@@ -42,6 +42,7 @@ namespace Amazon.S3.Transfer
     {
         long _minSizeBeforePartUpload = 16 * (long)Math.Pow(2, 20);
         int _concurrentServiceRequests;
+        int _maxInMemoryParts = 1024; // When combined with the default part size of 8MB, we get 8GB of memory being utilized as the default.
 
         /// <summary>
         /// Default constructor.
@@ -79,6 +80,22 @@ namespace Amazon.S3.Transfer
                     value = 1;
 
                 this._concurrentServiceRequests = value;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the maximum number of parts to buffer in memory during multipart downloads.
+        /// The default value is 1024.
+        /// </summary>
+        public int MaxInMemoryParts
+        {
+            get { return this._maxInMemoryParts; }
+            set
+            {
+                if (value < 1)
+                    value = 1;
+
+                this._maxInMemoryParts = value;
             }
         }
     }
