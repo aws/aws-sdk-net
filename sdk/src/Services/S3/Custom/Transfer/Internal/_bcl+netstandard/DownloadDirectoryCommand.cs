@@ -108,12 +108,16 @@ namespace Amazon.S3.Transfer.Internal
                     var command = new DownloadCommand(this._s3Client, downloadRequest);
 
                     var task = ExecuteCommandAsync(command, internalCts, asyncThrottler);
+                    
                     pendingTasks.Add(task);
                 }
                 await WhenAllOrFirstExceptionAsync(pendingTasks, cancellationToken)
                     .ConfigureAwait(continueOnCapturedContext: false);
 
-                return new TransferUtilityDownloadDirectoryResponse();
+                return new TransferUtilityDownloadDirectoryResponse
+                {
+                    ObjectsDownloaded = _numberOfFilesDownloaded
+                };
             }
             finally
             {

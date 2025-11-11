@@ -22,5 +22,9 @@ namespace Amazon.S3.Transfer
     /// </summary>
     public class TransferUtilityDownloadDirectoryResponse
     {
+        /// <summary>
+        /// The number of objects that have been downloaded
+        /// </summary>
+        public long ObjectsDownloaded { get; set; }
     }
 }
