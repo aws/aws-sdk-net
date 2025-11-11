@@ -829,6 +829,35 @@
                     }
                 }
             ]
+        },
+        "ListBucketMetricsConfigurationsOutput":{
+            "modify":[
+                {
+                    "ContinuationToken":{"emitPropertyName":"Token"}
+                },
+                {
+                    "Token" : {"injectXmlIsSet":["return !string.IsNullOrEmpty(this._token);"]}
+                },
+                {
+                    "NextContinuationToken": {"emitPropertyName": "NextToken"}
+                },
+                {
+                    "NextToken": {"injectXmlIsSet":["return !string.IsNullOrEmpty(this._nextToken);"]}
+                }
+            ]
+        },
+        "ListBucketMetricsConfigurationsRequest":{
+            "modify":[
+                {
+                    "Token": {"emitPropertyName": "ContinuationToken"}
+                },
+                {
+                     "ContinuationToken" : {"injectXmlIsSet":["return !string.IsNullOrEmpty(this._continuationToken);"]}
+                },
+                {
+                    "ExpectedBucketOwner" :{"injectXmlIsSet" :["return !string.IsNullOrEmpty(this._expectedBucketOwner);"]}
+                }
+            ]
         }
     },
     "operationModifiers": {
