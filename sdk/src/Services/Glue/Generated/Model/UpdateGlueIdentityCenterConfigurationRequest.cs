@@ -37,6 +37,7 @@ namespace Amazon.Glue.Model
     public partial class UpdateGlueIdentityCenterConfigurationRequest : AmazonGlueRequest
     {
         private List<string> _scopes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private bool? _userBackgroundSessionsEnabled;
 
         /// <summary>
         /// Gets and sets the property Scopes. 
@@ -61,6 +62,25 @@ namespace Amazon.Glue.Model
         internal bool IsSetScopes()
         {
             return this._scopes != null && (this._scopes.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UserBackgroundSessionsEnabled. 
+        /// <para>
+        /// Specifies whether users can run background sessions when using Identity Center authentication
+        /// with Glue services.
+        /// </para>
+        /// </summary>
+        public bool? UserBackgroundSessionsEnabled
+        {
+            get { return this._userBackgroundSessionsEnabled; }
+            set { this._userBackgroundSessionsEnabled = value; }
+        }
+
+        // Check to see if UserBackgroundSessionsEnabled property is set
+        internal bool IsSetUserBackgroundSessionsEnabled()
+        {
+            return this._userBackgroundSessionsEnabled.HasValue; 
         }
 
     }

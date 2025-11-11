@@ -128,6 +128,12 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
                     unmarshalledObject.StreamStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("WarmThroughput", targetDepth))
+                {
+                    var unmarshaller = WarmThroughputObjectUnmarshaller.Instance;
+                    unmarshalledObject.WarmThroughput = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

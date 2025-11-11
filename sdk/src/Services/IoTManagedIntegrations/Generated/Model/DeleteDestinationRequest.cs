@@ -31,7 +31,7 @@ namespace Amazon.IoTManagedIntegrations.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteDestination operation.
-    /// Deletes a customer-managed destination specified by id.
+    /// Deletes a notification destination specified by name.
     /// </summary>
     public partial class DeleteDestinationRequest : AmazonIoTManagedIntegrationsRequest
     {

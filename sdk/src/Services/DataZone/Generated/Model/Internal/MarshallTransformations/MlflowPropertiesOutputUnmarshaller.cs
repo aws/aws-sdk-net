@@ -62,12 +62,6 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                     unmarshalledObject.TrackingServerArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("trackingServerName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TrackingServerName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
             }
             return unmarshalledObject;
         }

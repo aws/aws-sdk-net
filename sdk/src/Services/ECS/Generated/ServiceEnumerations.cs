@@ -3359,6 +3359,106 @@ namespace Amazon.ECS
 
 
     /// <summary>
+    /// Constants used for properties of type ServiceConnectAccessLoggingFormat.
+    /// </summary>
+    public class ServiceConnectAccessLoggingFormat : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant JSON for ServiceConnectAccessLoggingFormat
+        /// </summary>
+        public static readonly ServiceConnectAccessLoggingFormat JSON = new ServiceConnectAccessLoggingFormat("JSON");
+        /// <summary>
+        /// Constant TEXT for ServiceConnectAccessLoggingFormat
+        /// </summary>
+        public static readonly ServiceConnectAccessLoggingFormat TEXT = new ServiceConnectAccessLoggingFormat("TEXT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ServiceConnectAccessLoggingFormat(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ServiceConnectAccessLoggingFormat FindValue(string value)
+        {
+            return FindValue<ServiceConnectAccessLoggingFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ServiceConnectAccessLoggingFormat(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ServiceConnectIncludeQueryParameters.
+    /// </summary>
+    public class ServiceConnectIncludeQueryParameters : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for ServiceConnectIncludeQueryParameters
+        /// </summary>
+        public static readonly ServiceConnectIncludeQueryParameters DISABLED = new ServiceConnectIncludeQueryParameters("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for ServiceConnectIncludeQueryParameters
+        /// </summary>
+        public static readonly ServiceConnectIncludeQueryParameters ENABLED = new ServiceConnectIncludeQueryParameters("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ServiceConnectIncludeQueryParameters(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ServiceConnectIncludeQueryParameters FindValue(string value)
+        {
+            return FindValue<ServiceConnectIncludeQueryParameters>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ServiceConnectIncludeQueryParameters(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ServiceDeploymentLifecycleStage.
     /// </summary>
     public class ServiceDeploymentLifecycleStage : ConstantClass

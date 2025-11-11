@@ -31,7 +31,7 @@ namespace Amazon.ControlTower.Model
 {
     /// <summary>
     /// Container for the parameters to the ResetEnabledControl operation.
-    /// Resets an enabled control.
+    /// Resets an enabled control. Does not work for controls implemented with SCPs.
     /// </summary>
     public partial class ResetEnabledControlRequest : AmazonControlTowerRequest
     {

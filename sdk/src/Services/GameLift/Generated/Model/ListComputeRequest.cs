@@ -31,9 +31,13 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the ListCompute operation.
+    /// <b>This API works with the following fleet types:</b> EC2, Anywhere, Container
+    /// 
+    ///  
+    /// <para>
     /// Retrieves information on the compute resources in an Amazon GameLift Servers fleet.
     /// Use the pagination parameters to retrieve results in a set of sequential pages.
-    /// 
+    /// </para>
     ///  
     /// <para>
     ///  <b>Request options</b> 

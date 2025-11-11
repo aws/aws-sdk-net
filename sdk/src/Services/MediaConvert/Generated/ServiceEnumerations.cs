@@ -2023,6 +2023,10 @@ namespace Amazon.MediaConvert
         /// </summary>
         public static readonly AudioSelectorType PID = new AudioSelectorType("PID");
         /// <summary>
+        /// Constant STREAM for AudioSelectorType
+        /// </summary>
+        public static readonly AudioSelectorType STREAM = new AudioSelectorType("STREAM");
+        /// <summary>
         /// Constant TRACK for AudioSelectorType
         /// </summary>
         public static readonly AudioSelectorType TRACK = new AudioSelectorType("TRACK");
@@ -6854,6 +6858,10 @@ namespace Amazon.MediaConvert
         /// Constant DISTINCT for DashManifestStyle
         /// </summary>
         public static readonly DashManifestStyle DISTINCT = new DashManifestStyle("DISTINCT");
+        /// <summary>
+        /// Constant FULL for DashManifestStyle
+        /// </summary>
+        public static readonly DashManifestStyle FULL = new DashManifestStyle("FULL");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -21813,6 +21821,56 @@ namespace Amazon.MediaConvert
 
 
     /// <summary>
+    /// Constants used for properties of type SlowPalPitchCorrection.
+    /// </summary>
+    public class SlowPalPitchCorrection : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for SlowPalPitchCorrection
+        /// </summary>
+        public static readonly SlowPalPitchCorrection DISABLED = new SlowPalPitchCorrection("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for SlowPalPitchCorrection
+        /// </summary>
+        public static readonly SlowPalPitchCorrection ENABLED = new SlowPalPitchCorrection("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SlowPalPitchCorrection(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SlowPalPitchCorrection FindValue(string value)
+        {
+            return FindValue<SlowPalPitchCorrection>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SlowPalPitchCorrection(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type SrtStylePassthrough.
     /// </summary>
     public class SrtStylePassthrough : ConstantClass
@@ -23604,6 +23662,56 @@ namespace Amazon.MediaConvert
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator VideoOverlayUnit(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type VideoSelectorMode.
+    /// </summary>
+    public class VideoSelectorMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AUTO for VideoSelectorMode
+        /// </summary>
+        public static readonly VideoSelectorMode AUTO = new VideoSelectorMode("AUTO");
+        /// <summary>
+        /// Constant REMUX_ALL for VideoSelectorMode
+        /// </summary>
+        public static readonly VideoSelectorMode REMUX_ALL = new VideoSelectorMode("REMUX_ALL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public VideoSelectorMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VideoSelectorMode FindValue(string value)
+        {
+            return FindValue<VideoSelectorMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VideoSelectorMode(string value)
         {
             return FindValue(value);
         }

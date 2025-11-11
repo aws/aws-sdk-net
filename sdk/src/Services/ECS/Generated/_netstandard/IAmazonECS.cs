@@ -350,9 +350,9 @@ namespace Amazon.ECS
         /// <para>
         ///  <c>LINEAR</c>: A <i>linear</i> deployment strategy (<c>LINEAR</c>) gradually shifts
         /// traffic from the current production environment to a new environment in equal percentage
-        /// increments over a specified time period. With Amazon ECS linear deployments, you can
-        /// control the pace of traffic shifting and validate new service revisions with increasing
-        /// amounts of production traffic.
+        /// increments. With Amazon ECS linear deployments, you can control the pace of traffic
+        /// shifting and validate new service revisions with increasing amounts of production
+        /// traffic.
         /// </para>
         ///  
         /// <para>
@@ -375,8 +375,8 @@ namespace Amazon.ECS
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Load balancer requirement: When your service uses Application Load Balancer, Network
-        /// Load Balancer, or Service Connect
+        /// Load balancer requirement: When your service uses Application Load Balancer or Service
+        /// Connect
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
@@ -406,8 +406,8 @@ namespace Amazon.ECS
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Load balancer requirement: When your service uses Application Load Balancer, Network
-        /// Load Balancer, or Service Connect
+        /// Load balancer requirement: When your service uses Application Load Balancer or Service
+        /// Connect
         /// </para>
         ///  </li> </ul> </li> </ul> </li> <li> 
         /// <para>
@@ -2463,7 +2463,7 @@ namespace Amazon.ECS
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.BlockedException">
         /// Your Amazon Web Services account was blocked. For more information, contact <a href="http://aws.amazon.com/contact-us/">
-        /// Amazon Web ServicesSupport</a>.
+        /// Amazon Web Services Support</a>.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using

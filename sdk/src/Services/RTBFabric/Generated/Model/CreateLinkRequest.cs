@@ -31,12 +31,12 @@ namespace Amazon.RTBFabric.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateLink operation.
-    /// Creates a new link between RTB applications.
+    /// Creates a new link between gateways.
     /// 
     ///  
     /// <para>
-    /// Establishes a connection that allows RTB applications to communicate and exchange
-    /// bid requests and responses.
+    /// Establishes a connection that allows gateways to communicate and exchange bid requests
+    /// and responses.
     /// </para>
     /// </summary>
     public partial class CreateLinkRequest : AmazonRTBFabricRequest

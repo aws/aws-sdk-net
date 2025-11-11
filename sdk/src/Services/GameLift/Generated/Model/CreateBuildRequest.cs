@@ -31,10 +31,14 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateBuild operation.
+    /// <b>This API works with the following fleet types:</b> EC2, Anywhere
+    /// 
+    ///  
+    /// <para>
     /// Creates a new Amazon GameLift Servers build resource for your game server binary files.
     /// Combine game server binaries into a zip file for use with Amazon GameLift Servers.
     /// 
-    /// 
+    /// </para>
     ///  <important> 
     /// <para>
     /// When setting up a new game build for Amazon GameLift Servers, we recommend using the

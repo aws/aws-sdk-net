@@ -31,12 +31,12 @@ namespace Amazon.RTBFabric.Model
 {
     /// <summary>
     /// Container for the parameters to the ListLinks operation.
-    /// Lists links associated with an RTB application.
+    /// Lists links associated with gateways.
     /// 
     ///  
     /// <para>
-    /// Returns a list of all links for the specified RTB application, including their status
-    /// and configuration details.
+    /// Returns a list of all links for the specified gateways, including their status and
+    /// configuration details.
     /// </para>
     /// </summary>
     public partial class ListLinksRequest : AmazonRTBFabricRequest

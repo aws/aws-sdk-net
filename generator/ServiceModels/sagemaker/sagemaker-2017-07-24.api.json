@@ -6967,7 +6967,10 @@
         "OverrideVpcConfig":{"shape":"VpcConfig"},
         "ScheduledUpdateConfig":{"shape":"ScheduledUpdateConfig"},
         "CurrentImageId":{"shape":"ImageId"},
-        "DesiredImageId":{"shape":"ImageId"}
+        "DesiredImageId":{"shape":"ImageId"},
+        "TargetStateCount":{"shape":"ClusterInstanceCount"},
+        "SoftwareUpdateStatus":{"shape":"SoftwareUpdateStatus"},
+        "ActiveSoftwareUpdateConfig":{"shape":"DeploymentConfiguration"}
       }
     },
     "ClusterInstanceGroupDetailsList":{
@@ -9450,10 +9453,8 @@
       "type":"structure",
       "required":[
         "TrainingJobName",
-        "AlgorithmSpecification",
         "RoleArn",
         "OutputDataConfig",
-        "ResourceConfig",
         "StoppingCondition"
       ],
       "members":{
@@ -24976,6 +24977,17 @@
       "min":0,
       "pattern":"arn:aws[a-z\\-]*:sns:[a-z0-9\\-]*:[0-9]{12}:[a-zA-Z0-9_.-]+"
     },
+    "SoftwareUpdateStatus":{
+      "type":"string",
+      "enum":[
+        "Pending",
+        "InProgress",
+        "Succeeded",
+        "Failed",
+        "RollbackInProgress",
+        "RollbackComplete"
+      ]
+    },
     "SortActionsBy":{
       "type":"string",
       "enum":[
@@ -27038,7 +27050,15 @@
         "ml.inf2.xlarge",
         "ml.inf2.8xlarge",
         "ml.inf2.24xlarge",
-        "ml.inf2.48xlarge"
+        "ml.inf2.48xlarge",
+        "ml.g6.xlarge",
+        "ml.g6.2xlarge",
+        "ml.g6.4xlarge",
+        "ml.g6.8xlarge",
+        "ml.g6.12xlarge",
+        "ml.g6.16xlarge",
+        "ml.g6.24xlarge",
+        "ml.g6.48xlarge"
       ]
     },
     "TransformInstanceTypes":{
@@ -27662,6 +27682,7 @@
         "TieredStorageConfig":{"shape":"ClusterTieredStorageConfig"},
         "NodeRecovery":{"shape":"ClusterNodeRecovery"},
         "InstanceGroupsToDelete":{"shape":"ClusterInstanceGroupsToDelete"},
+        "NodeProvisioningMode":{"shape":"ClusterNodeProvisioningMode"},
         "ClusterRole":{"shape":"RoleArn"},
         "AutoScaling":{"shape":"ClusterAutoScalingConfig"}
       }
@@ -27832,7 +27853,8 @@
         "DefaultSpaceSettings":{"shape":"DefaultSpaceSettings"},
         "SubnetIds":{"shape":"Subnets"},
         "AppNetworkAccessType":{"shape":"AppNetworkAccessType"},
-        "TagPropagation":{"shape":"TagPropagation"}
+        "TagPropagation":{"shape":"TagPropagation"},
+        "VpcId":{"shape":"VpcId"}
       }
     },
     "UpdateDomainResponse":{
@@ -28212,6 +28234,7 @@
         "NotebookInstanceName":{"shape":"NotebookInstanceName"},
         "InstanceType":{"shape":"InstanceType"},
         "IpAddressType":{"shape":"IPAddressType"},
+        "PlatformIdentifier":{"shape":"PlatformIdentifier"},
         "RoleArn":{"shape":"RoleArn"},
         "LifecycleConfigName":{"shape":"NotebookInstanceLifecycleConfigName"},
         "DisassociateLifecycleConfig":{

@@ -112,6 +112,22 @@ namespace AWSSDKDocSamples.Amazon.IoTManagedIntegrations.Generated
             #endregion
         }
 
+        public void IoTManagedIntegrationsGetManagedThingCertificate()
+        {
+            #region example-1
+
+            var client = new AmazonIoTManagedIntegrationsClient();
+            var response = client.GetManagedThingCertificate(new GetManagedThingCertificateRequest 
+            {
+                Identifier = "example-managed-thing-id"
+            });
+
+            string certificatePem = response.CertificatePem;
+            string managedThingId = response.ManagedThingId;
+
+            #endregion
+        }
+
         public void IoTManagedIntegrationsGetSchemaVersion()
         {
             #region example-1

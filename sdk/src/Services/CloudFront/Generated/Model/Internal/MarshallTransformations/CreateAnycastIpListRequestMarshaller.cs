@@ -64,6 +64,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
                 xmlWriter.WriteStartElement("CreateAnycastIpListRequest", "http://cloudfront.amazonaws.com/doc/2020-05-31/");
+                if(publicRequest.IsSetIpAddressType())
+                    xmlWriter.WriteElementString("IpAddressType", StringUtils.FromString(publicRequest.IpAddressType));
+
                 if(publicRequest.IsSetIpCount())
                     xmlWriter.WriteElementString("IpCount", StringUtils.FromInt(publicRequest.IpCount.Value));
 

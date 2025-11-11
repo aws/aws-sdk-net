@@ -143,6 +143,74 @@ namespace Amazon.PrometheusService
 
         #endregion
         
+        #region  CreateAnomalyDetector
+
+
+        /// <summary>
+        /// Creates an anomaly detector within a workspace using the Random Cut Forest algorithm
+        /// for time-series analysis. The anomaly detector analyzes Amazon Managed Service for
+        /// Prometheus metrics to identify unusual patterns and behaviors.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAnomalyDetector service method.</param>
+        /// 
+        /// <returns>The response from the CreateAnomalyDetector service method, as returned by PrometheusService.</returns>
+        /// <exception cref="Amazon.PrometheusService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ConflictException">
+        /// The request would cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of the request.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ServiceQuotaExceededException">
+        /// Completing the request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/CreateAnomalyDetector">REST API Reference for CreateAnomalyDetector Operation</seealso>
+        CreateAnomalyDetectorResponse CreateAnomalyDetector(CreateAnomalyDetectorRequest request);
+
+
+
+        /// <summary>
+        /// Creates an anomaly detector within a workspace using the Random Cut Forest algorithm
+        /// for time-series analysis. The anomaly detector analyzes Amazon Managed Service for
+        /// Prometheus metrics to identify unusual patterns and behaviors.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAnomalyDetector service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateAnomalyDetector service method, as returned by PrometheusService.</returns>
+        /// <exception cref="Amazon.PrometheusService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ConflictException">
+        /// The request would cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of the request.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ServiceQuotaExceededException">
+        /// Completing the request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/CreateAnomalyDetector">REST API Reference for CreateAnomalyDetector Operation</seealso>
+        Task<CreateAnomalyDetectorResponse> CreateAnomalyDetectorAsync(CreateAnomalyDetectorRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  CreateLoggingConfiguration
 
 
@@ -614,6 +682,70 @@ namespace Amazon.PrometheusService
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DeleteAlertManagerDefinition">REST API Reference for DeleteAlertManagerDefinition Operation</seealso>
         Task<DeleteAlertManagerDefinitionResponse> DeleteAlertManagerDefinitionAsync(DeleteAlertManagerDefinitionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteAnomalyDetector
+
+
+        /// <summary>
+        /// Removes an anomaly detector from a workspace. This operation is idempotent.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAnomalyDetector service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAnomalyDetector service method, as returned by PrometheusService.</returns>
+        /// <exception cref="Amazon.PrometheusService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ConflictException">
+        /// The request would cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of the request.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ResourceNotFoundException">
+        /// The request references a resources that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DeleteAnomalyDetector">REST API Reference for DeleteAnomalyDetector Operation</seealso>
+        DeleteAnomalyDetectorResponse DeleteAnomalyDetector(DeleteAnomalyDetectorRequest request);
+
+
+
+        /// <summary>
+        /// Removes an anomaly detector from a workspace. This operation is idempotent.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAnomalyDetector service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteAnomalyDetector service method, as returned by PrometheusService.</returns>
+        /// <exception cref="Amazon.PrometheusService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ConflictException">
+        /// The request would cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of the request.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ResourceNotFoundException">
+        /// The request references a resources that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DeleteAnomalyDetector">REST API Reference for DeleteAnomalyDetector Operation</seealso>
+        Task<DeleteAnomalyDetectorResponse> DeleteAnomalyDetectorAsync(DeleteAnomalyDetectorRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1135,6 +1267,66 @@ namespace Amazon.PrometheusService
 
         #endregion
         
+        #region  DescribeAnomalyDetector
+
+
+        /// <summary>
+        /// Retrieves detailed information about a specific anomaly detector, including its status
+        /// and configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAnomalyDetector service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAnomalyDetector service method, as returned by PrometheusService.</returns>
+        /// <exception cref="Amazon.PrometheusService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of the request.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ResourceNotFoundException">
+        /// The request references a resources that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DescribeAnomalyDetector">REST API Reference for DescribeAnomalyDetector Operation</seealso>
+        DescribeAnomalyDetectorResponse DescribeAnomalyDetector(DescribeAnomalyDetectorRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves detailed information about a specific anomaly detector, including its status
+        /// and configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAnomalyDetector service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeAnomalyDetector service method, as returned by PrometheusService.</returns>
+        /// <exception cref="Amazon.PrometheusService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of the request.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ResourceNotFoundException">
+        /// The request references a resources that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DescribeAnomalyDetector">REST API Reference for DescribeAnomalyDetector Operation</seealso>
+        Task<DescribeAnomalyDetectorResponse> DescribeAnomalyDetectorAsync(DescribeAnomalyDetectorRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DescribeLoggingConfiguration
 
 
@@ -1651,6 +1843,66 @@ namespace Amazon.PrometheusService
 
         #endregion
         
+        #region  ListAnomalyDetectors
+
+
+        /// <summary>
+        /// Returns a paginated list of anomaly detectors for a workspace with optional filtering
+        /// by alias.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAnomalyDetectors service method.</param>
+        /// 
+        /// <returns>The response from the ListAnomalyDetectors service method, as returned by PrometheusService.</returns>
+        /// <exception cref="Amazon.PrometheusService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of the request.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ResourceNotFoundException">
+        /// The request references a resources that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/ListAnomalyDetectors">REST API Reference for ListAnomalyDetectors Operation</seealso>
+        ListAnomalyDetectorsResponse ListAnomalyDetectors(ListAnomalyDetectorsRequest request);
+
+
+
+        /// <summary>
+        /// Returns a paginated list of anomaly detectors for a workspace with optional filtering
+        /// by alias.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAnomalyDetectors service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAnomalyDetectors service method, as returned by PrometheusService.</returns>
+        /// <exception cref="Amazon.PrometheusService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of the request.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ResourceNotFoundException">
+        /// The request references a resources that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/ListAnomalyDetectors">REST API Reference for ListAnomalyDetectors Operation</seealso>
+        Task<ListAnomalyDetectorsResponse> ListAnomalyDetectorsAsync(ListAnomalyDetectorsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListRuleGroupsNamespaces
 
 
@@ -1952,6 +2204,82 @@ namespace Amazon.PrometheusService
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/PutAlertManagerDefinition">REST API Reference for PutAlertManagerDefinition Operation</seealso>
         Task<PutAlertManagerDefinitionResponse> PutAlertManagerDefinitionAsync(PutAlertManagerDefinitionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  PutAnomalyDetector
+
+
+        /// <summary>
+        /// When you call <c>PutAnomalyDetector</c>, the operation creates a new anomaly detector
+        /// if one doesn't exist, or updates an existing one. Each call to this operation triggers
+        /// a complete retraining of the detector, which includes querying the minimum required
+        /// samples and backfilling the detector with historical data. This process occurs regardless
+        /// of whether you're making a minor change like updating the evaluation interval or making
+        /// more substantial modifications. The operation serves as the single method for creating,
+        /// updating, and retraining anomaly detectors.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutAnomalyDetector service method.</param>
+        /// 
+        /// <returns>The response from the PutAnomalyDetector service method, as returned by PrometheusService.</returns>
+        /// <exception cref="Amazon.PrometheusService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ConflictException">
+        /// The request would cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of the request.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ServiceQuotaExceededException">
+        /// Completing the request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/PutAnomalyDetector">REST API Reference for PutAnomalyDetector Operation</seealso>
+        PutAnomalyDetectorResponse PutAnomalyDetector(PutAnomalyDetectorRequest request);
+
+
+
+        /// <summary>
+        /// When you call <c>PutAnomalyDetector</c>, the operation creates a new anomaly detector
+        /// if one doesn't exist, or updates an existing one. Each call to this operation triggers
+        /// a complete retraining of the detector, which includes querying the minimum required
+        /// samples and backfilling the detector with historical data. This process occurs regardless
+        /// of whether you're making a minor change like updating the evaluation interval or making
+        /// more substantial modifications. The operation serves as the single method for creating,
+        /// updating, and retraining anomaly detectors.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutAnomalyDetector service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutAnomalyDetector service method, as returned by PrometheusService.</returns>
+        /// <exception cref="Amazon.PrometheusService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ConflictException">
+        /// The request would cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of the request.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ServiceQuotaExceededException">
+        /// Completing the request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/PutAnomalyDetector">REST API Reference for PutAnomalyDetector Operation</seealso>
+        Task<PutAnomalyDetectorResponse> PutAnomalyDetectorAsync(PutAnomalyDetectorRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

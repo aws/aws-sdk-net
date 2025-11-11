@@ -47,6 +47,18 @@ namespace Amazon.S3Vectors.Model.Internal.MarshallTransformations
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
             CreateIndexResponse response = new CreateIndexResponse();
+            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            context.Read(ref reader);
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth, ref reader))
+            {
+                if (context.TestExpression("indexArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.IndexArn = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+            }
 
             return response;
         }
@@ -86,6 +98,10 @@ namespace Amazon.S3Vectors.Model.Internal.MarshallTransformations
                 if (errorResponse.Code != null && errorResponse.Code.Equals("NotFoundException"))
                 {
                     return NotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("RequestTimeoutException"))
+                {
+                    return RequestTimeoutExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceQuotaExceededException"))
                 {

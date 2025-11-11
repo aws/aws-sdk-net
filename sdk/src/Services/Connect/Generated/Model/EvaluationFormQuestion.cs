@@ -34,6 +34,7 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class EvaluationFormQuestion
     {
+        private EvaluationFormItemEnablementConfiguration _enablement;
         private string _instructions;
         private bool? _notApplicableEnabled;
         private EvaluationFormQuestionType _questionType;
@@ -41,6 +42,24 @@ namespace Amazon.Connect.Model
         private string _refId;
         private string _title;
         private double? _weight;
+
+        /// <summary>
+        /// Gets and sets the property Enablement. 
+        /// <para>
+        /// A question conditional enablement.
+        /// </para>
+        /// </summary>
+        public EvaluationFormItemEnablementConfiguration Enablement
+        {
+            get { return this._enablement; }
+            set { this._enablement = value; }
+        }
+
+        // Check to see if Enablement property is set
+        internal bool IsSetEnablement()
+        {
+            return this._enablement != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Instructions. 

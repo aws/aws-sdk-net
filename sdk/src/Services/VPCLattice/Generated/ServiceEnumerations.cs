@@ -329,6 +329,64 @@ namespace Amazon.VPCLattice
 
 
     /// <summary>
+    /// Constants used for properties of type PrivateDnsPreference.
+    /// </summary>
+    public class PrivateDnsPreference : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALL_DOMAINS for PrivateDnsPreference
+        /// </summary>
+        public static readonly PrivateDnsPreference ALL_DOMAINS = new PrivateDnsPreference("ALL_DOMAINS");
+        /// <summary>
+        /// Constant SPECIFIED_DOMAINS_ONLY for PrivateDnsPreference
+        /// </summary>
+        public static readonly PrivateDnsPreference SPECIFIED_DOMAINS_ONLY = new PrivateDnsPreference("SPECIFIED_DOMAINS_ONLY");
+        /// <summary>
+        /// Constant VERIFIED_DOMAINS_AND_SPECIFIED_DOMAINS for PrivateDnsPreference
+        /// </summary>
+        public static readonly PrivateDnsPreference VERIFIED_DOMAINS_AND_SPECIFIED_DOMAINS = new PrivateDnsPreference("VERIFIED_DOMAINS_AND_SPECIFIED_DOMAINS");
+        /// <summary>
+        /// Constant VERIFIED_DOMAINS_ONLY for PrivateDnsPreference
+        /// </summary>
+        public static readonly PrivateDnsPreference VERIFIED_DOMAINS_ONLY = new PrivateDnsPreference("VERIFIED_DOMAINS_ONLY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PrivateDnsPreference(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PrivateDnsPreference FindValue(string value)
+        {
+            return FindValue<PrivateDnsPreference>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PrivateDnsPreference(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ProtocolType.
     /// </summary>
     public class ProtocolType : ConstantClass
@@ -1336,6 +1394,60 @@ namespace Amazon.VPCLattice
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ValidationExceptionReason(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type VerificationStatus.
+    /// </summary>
+    public class VerificationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PENDING for VerificationStatus
+        /// </summary>
+        public static readonly VerificationStatus PENDING = new VerificationStatus("PENDING");
+        /// <summary>
+        /// Constant VERIFICATION_TIMED_OUT for VerificationStatus
+        /// </summary>
+        public static readonly VerificationStatus VERIFICATION_TIMED_OUT = new VerificationStatus("VERIFICATION_TIMED_OUT");
+        /// <summary>
+        /// Constant VERIFIED for VerificationStatus
+        /// </summary>
+        public static readonly VerificationStatus VERIFIED = new VerificationStatus("VERIFIED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public VerificationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VerificationStatus FindValue(string value)
+        {
+            return FindValue<VerificationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VerificationStatus(string value)
         {
             return FindValue(value);
         }

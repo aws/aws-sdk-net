@@ -86,6 +86,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(publicRequest.IsSetUserBackgroundSessionsEnabled())
+            {
+                context.Writer.WritePropertyName("UserBackgroundSessionsEnabled");
+                context.Writer.WriteBooleanValue(publicRequest.UserBackgroundSessionsEnabled.Value);
+            }
+
             writer.WriteEndObject();
             writer.Flush();
             // ToArray() must be called here because aspects of sigv4 signing require a byte array

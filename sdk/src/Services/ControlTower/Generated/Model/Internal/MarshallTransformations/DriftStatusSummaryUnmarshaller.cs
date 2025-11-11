@@ -62,6 +62,12 @@ namespace Amazon.ControlTower.Model.Internal.MarshallTransformations
                     unmarshalledObject.DriftStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("types", targetDepth))
+                {
+                    var unmarshaller = EnabledControlDriftTypesUnmarshaller.Instance;
+                    unmarshalledObject.Types = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

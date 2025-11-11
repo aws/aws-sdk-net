@@ -609,6 +609,30 @@
     <pattern>[a-zA-Z0-9-/_]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.VerifiedPermissions.Model.CedarTagValue.Datetime</property>
+    <min>10</min>
+    <max>28</max>
+    <pattern>\d{4}-\d{2}-\d{2}(T\d{2}:\d{2}:\d{2}(\.\d{3})?(Z|[+-]\d{4}))?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VerifiedPermissions.Model.CedarTagValue.Decimal</property>
+    <min>3</min>
+    <max>23</max>
+    <pattern>-?\d{1,15}\.\d{1,4}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VerifiedPermissions.Model.CedarTagValue.Duration</property>
+    <min>2</min>
+    <max>100</max>
+    <pattern>-?(\d+d)?(\d+h)?(\d+m)?(\d+s)?(\d+ms)?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VerifiedPermissions.Model.CedarTagValue.Ipaddr</property>
+    <min>1</min>
+    <max>44</max>
+    <pattern>[0-9a-fA-F\.:\/]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.VerifiedPermissions.Model.CognitoGroupConfiguration.GroupEntityType</property>
     <min>1</min>
     <max>200</max>

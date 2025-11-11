@@ -92,6 +92,12 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetWarmThroughputMiBps())
+            {
+                context.Writer.WritePropertyName("WarmThroughputMiBps");
+                context.Writer.WriteNumberValue(publicRequest.WarmThroughputMiBps.Value);
+            }
+
             writer.WriteEndObject();
             writer.Flush();
             // ToArray() must be called here because aspects of sigv4 signing require a byte array

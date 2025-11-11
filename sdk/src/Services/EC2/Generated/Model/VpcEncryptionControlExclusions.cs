@@ -35,9 +35,12 @@ namespace Amazon.EC2.Model
     public partial class VpcEncryptionControlExclusions
     {
         private VpcEncryptionControlExclusion _egressOnlyInternetGateway;
+        private VpcEncryptionControlExclusion _elasticFileSystem;
         private VpcEncryptionControlExclusion _internetGateway;
+        private VpcEncryptionControlExclusion _lambda;
         private VpcEncryptionControlExclusion _natGateway;
         private VpcEncryptionControlExclusion _virtualPrivateGateway;
+        private VpcEncryptionControlExclusion _vpcLattice;
         private VpcEncryptionControlExclusion _vpcPeering;
 
         /// <summary>
@@ -56,6 +59,21 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ElasticFileSystem.
+        /// </summary>
+        public VpcEncryptionControlExclusion ElasticFileSystem
+        {
+            get { return this._elasticFileSystem; }
+            set { this._elasticFileSystem = value; }
+        }
+
+        // Check to see if ElasticFileSystem property is set
+        internal bool IsSetElasticFileSystem()
+        {
+            return this._elasticFileSystem != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property InternetGateway.
         /// </summary>
         public VpcEncryptionControlExclusion InternetGateway
@@ -68,6 +86,21 @@ namespace Amazon.EC2.Model
         internal bool IsSetInternetGateway()
         {
             return this._internetGateway != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Lambda.
+        /// </summary>
+        public VpcEncryptionControlExclusion Lambda
+        {
+            get { return this._lambda; }
+            set { this._lambda = value; }
+        }
+
+        // Check to see if Lambda property is set
+        internal bool IsSetLambda()
+        {
+            return this._lambda != null;
         }
 
         /// <summary>
@@ -98,6 +131,21 @@ namespace Amazon.EC2.Model
         internal bool IsSetVirtualPrivateGateway()
         {
             return this._virtualPrivateGateway != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcLattice.
+        /// </summary>
+        public VpcEncryptionControlExclusion VpcLattice
+        {
+            get { return this._vpcLattice; }
+            set { this._vpcLattice = value; }
+        }
+
+        // Check to see if VpcLattice property is set
+        internal bool IsSetVpcLattice()
+        {
+            return this._vpcLattice != null;
         }
 
         /// <summary>

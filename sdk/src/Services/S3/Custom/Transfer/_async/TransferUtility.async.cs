@@ -238,7 +238,32 @@ namespace Amazon.S3.Transfer
             using(CreateSpan(nameof(AbortMultipartUploadsAsync), null, Amazon.Runtime.Telemetry.Tracing.SpanKind.CLIENT))
             {
                 CheckForBlockedArn(bucketName, "AbortMultipartUploads");
-                var command = new AbortMultipartUploadsCommand(this._s3Client, bucketName, initiatedDate, this._config);
+                var request = new TransferUtilityAbortMultipartUploadRequest
+                {
+                    BucketName = bucketName,
+                    InitiatedDate = initiatedDate
+                };
+                var command = new AbortMultipartUploadsCommand(this._s3Client, request, this._config);
+                await command.ExecuteAsync(cancellationToken).ConfigureAwait(false);
+            }
+        }
+
+        /// <summary>
+        /// 	Aborts the multipart uploads based on the specified request parameters.
+        /// </summary>
+        /// <param name="request">
+        /// 	Contains all the parameters required to abort multipart uploads.
+        /// </param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public async Task AbortMultipartUploadsAsync(TransferUtilityAbortMultipartUploadRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            using(CreateSpan(nameof(AbortMultipartUploadsAsync), null, Amazon.Runtime.Telemetry.Tracing.SpanKind.CLIENT))
+            {
+                CheckForBlockedArn(request.BucketName, "AbortMultipartUploads");
+                var command = new AbortMultipartUploadsCommand(this._s3Client, request, this._config);
                 await command.ExecuteAsync(cancellationToken).ConfigureAwait(false);
             }
         }

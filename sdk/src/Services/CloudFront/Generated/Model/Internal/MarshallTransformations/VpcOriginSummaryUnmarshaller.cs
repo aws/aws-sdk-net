@@ -56,6 +56,12 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("AccountId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.AccountId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("Arn", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

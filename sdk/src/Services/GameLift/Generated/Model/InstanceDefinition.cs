@@ -30,16 +30,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GameLift.Model
 {
     /// <summary>
-    /// <b>This data type is used with the Amazon GameLift Servers FleetIQ and game server
-    /// groups.</b> 
-    /// 
-    ///  
-    /// <para>
     /// An allowed instance type for a game server group. All game server groups must have
     /// at least two instance types defined for it. Amazon GameLift Servers FleetIQ periodically
     /// evaluates each defined instance type for viability. It then updates the Auto Scaling
     /// group with the list of viable instance types.
-    /// </para>
     /// </summary>
     public partial class InstanceDefinition
     {

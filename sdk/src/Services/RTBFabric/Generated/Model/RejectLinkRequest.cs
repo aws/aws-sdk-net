@@ -31,12 +31,12 @@ namespace Amazon.RTBFabric.Model
 {
     /// <summary>
     /// Container for the parameters to the RejectLink operation.
-    /// Rejects a link request between RTB applications.
+    /// Rejects a link request between gateways.
     /// 
     ///  
     /// <para>
-    /// When a requester RTB application requests to link with a responder RTB application,
-    /// the responder can use this operation to decline the link request.
+    /// When a requester gateway requests to link with a responder gateway, the responder
+    /// can use this operation to decline the link request.
     /// </para>
     /// </summary>
     public partial class RejectLinkRequest : AmazonRTBFabricRequest

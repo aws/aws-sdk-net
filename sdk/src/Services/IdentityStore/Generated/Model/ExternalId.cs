@@ -62,7 +62,7 @@ namespace Amazon.IdentityStore.Model
         /// The issuer for an external identifier.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=100)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=256)]
         public string Issuer
         {
             get { return this._issuer; }

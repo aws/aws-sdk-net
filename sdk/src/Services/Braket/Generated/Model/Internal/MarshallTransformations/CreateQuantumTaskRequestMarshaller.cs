@@ -118,6 +118,17 @@ namespace Amazon.Braket.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.DeviceParameters);
             }
 
+            if(publicRequest.IsSetExperimentalCapabilities())
+            {
+                context.Writer.WritePropertyName("experimentalCapabilities");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ExperimentalCapabilitiesMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ExperimentalCapabilities, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetJobToken())
             {
                 context.Writer.WritePropertyName("jobToken");

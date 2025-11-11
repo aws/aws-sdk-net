@@ -70,6 +70,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     response.Scopes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("UserBackgroundSessionsEnabled", targetDepth))
+                {
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
+                    response.UserBackgroundSessionsEnabled = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
 
             return response;

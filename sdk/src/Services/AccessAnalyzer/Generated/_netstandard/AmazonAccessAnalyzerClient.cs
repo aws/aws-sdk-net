@@ -42,13 +42,14 @@ namespace Amazon.AccessAnalyzer
     ///
     /// Identity and Access Management Access Analyzer helps you to set, verify, and refine
     /// your IAM policies by providing a suite of capabilities. Its features include findings
-    /// for external and unused access, basic and custom policy checks for validating policies,
-    /// and policy generation to generate fine-grained policies. To start using IAM Access
-    /// Analyzer to identify external or unused access, you first need to create an analyzer.
+    /// for external, internal, and unused access, basic and custom policy checks for validating
+    /// policies, and policy generation to generate fine-grained policies. To start using
+    /// IAM Access Analyzer to identify external, internal, or unused access, you first need
+    /// to create an analyzer.
     /// 
     ///  
     /// <para>
-    ///  <b>External access analyzers</b> help identify potential risks of accessing resources
+    ///  <b>External access analyzers</b> help you identify potential risks of accessing resources
     /// by enabling you to identify any resource policies that grant access to an external
     /// principal. It does this by using logic-based reasoning to analyze resource-based policies
     /// in your Amazon Web Services environment. An external principal can be another Amazon
@@ -59,9 +60,16 @@ namespace Amazon.AccessAnalyzer
     /// </para>
     ///  
     /// <para>
-    ///  <b>Unused access analyzers</b> help identify potential identity access risks by enabling
-    /// you to identify unused IAM roles, unused access keys, unused console passwords, and
-    /// IAM principals with unused service and action-level permissions.
+    ///  <b>Internal access analyzers</b> help you identify which principals within your organization
+    /// or account have access to selected resources. This analysis supports implementing
+    /// the principle of least privilege by ensuring that your specified resources can only
+    /// be accessed by the intended principals within your organization.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Unused access analyzers</b> help you identify potential identity access risks
+    /// by enabling you to identify unused IAM roles, unused access keys, unused console passwords,
+    /// and IAM principals with unused service and action-level permissions.
     /// </para>
     ///  
     /// <para>
@@ -73,8 +81,8 @@ namespace Amazon.AccessAnalyzer
     ///  
     /// <para>
     /// This guide describes the IAM Access Analyzer operations that you can call programmatically.
-    /// For general information about IAM Access Analyzer, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/what-is-access-analyzer.html">Identity
-    /// and Access Management Access Analyzer</a> in the <b>IAM User Guide</b>.
+    /// For general information about IAM Access Analyzer, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/what-is-access-analyzer.html">Using
+    /// Identity and Access Management Access Analyzer</a> in the <b>IAM User Guide</b>.
     /// </para>
     /// </summary>
     public partial class AmazonAccessAnalyzerClient : AmazonServiceClient, IAmazonAccessAnalyzer
@@ -929,6 +937,12 @@ namespace Amazon.AccessAnalyzer
 
         /// <summary>
         /// Retrieves information about a resource that was analyzed.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This action is supported only for external access analyzers.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAnalyzedResource service method.</param>
         /// <param name="cancellationToken">
@@ -1082,6 +1096,13 @@ namespace Amazon.AccessAnalyzer
         /// use <c>access-analyzer:GetFinding</c> in the <c>Action</c> element of an IAM policy
         /// statement. You must have permission to perform the <c>access-analyzer:GetFinding</c>
         /// action.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// GetFinding is supported only for external access analyzers. You must use GetFindingV2
+        /// for internal and unused access analyzers.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetFinding service method.</param>
         /// <param name="cancellationToken">
@@ -1571,6 +1592,12 @@ namespace Amazon.AccessAnalyzer
         /// href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-reference-filter-keys.html">IAM
         /// Access Analyzer filter keys</a> in the <b>IAM User Guide</b>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// ListFindings is supported only for external access analyzers. You must use ListFindingsV2
+        /// for internal and unused access analyzers.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListFindings service method.</param>
         /// <param name="cancellationToken">
@@ -1821,6 +1848,12 @@ namespace Amazon.AccessAnalyzer
 
         /// <summary>
         /// Immediately starts a scan of the policies applied to the specified resource.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This action is supported only for external access analyzers.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartResourceScan service method.</param>
         /// <param name="cancellationToken">
@@ -1965,6 +1998,12 @@ namespace Amazon.AccessAnalyzer
 
         /// <summary>
         /// Modifies the configuration of an existing analyzer.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This action is not supported for external access analyzers.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAnalyzer service method.</param>
         /// <param name="cancellationToken">

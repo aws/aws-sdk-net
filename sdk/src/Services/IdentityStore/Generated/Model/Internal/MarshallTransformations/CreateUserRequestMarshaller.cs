@@ -91,6 +91,12 @@ namespace Amazon.IdentityStore.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(publicRequest.IsSetBirthdate())
+            {
+                context.Writer.WritePropertyName("Birthdate");
+                context.Writer.WriteStringValue(publicRequest.Birthdate);
+            }
+
             if(publicRequest.IsSetDisplayName())
             {
                 context.Writer.WritePropertyName("DisplayName");
@@ -158,6 +164,22 @@ namespace Amazon.IdentityStore.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(publicRequest.IsSetPhotos())
+            {
+                context.Writer.WritePropertyName("Photos");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestPhotosListValue in publicRequest.Photos)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = PhotoMarshaller.Instance;
+                    marshaller.Marshall(publicRequestPhotosListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(publicRequest.IsSetPreferredLanguage())
             {
                 context.Writer.WritePropertyName("PreferredLanguage");
@@ -192,6 +214,12 @@ namespace Amazon.IdentityStore.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("UserType");
                 context.Writer.WriteStringValue(publicRequest.UserType);
+            }
+
+            if(publicRequest.IsSetWebsite())
+            {
+                context.Writer.WritePropertyName("Website");
+                context.Writer.WriteStringValue(publicRequest.Website);
             }
 
             writer.WriteEndObject();
