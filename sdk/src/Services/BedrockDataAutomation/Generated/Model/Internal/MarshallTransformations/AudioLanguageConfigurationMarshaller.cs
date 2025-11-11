@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// AudioOverrideConfiguration Marshaller
+    /// AudioLanguageConfiguration Marshaller
     /// </summary>
-    public class AudioOverrideConfigurationMarshaller : IRequestMarshaller<AudioOverrideConfiguration, JsonMarshallerContext> 
+    public class AudioLanguageConfigurationMarshaller : IRequestMarshaller<AudioLanguageConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,30 +42,31 @@ namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(AudioOverrideConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(AudioLanguageConfiguration requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetLanguageConfiguration())
+            if(requestObject.IsSetGenerativeOutputLanguage())
             {
-                context.Writer.WritePropertyName("languageConfiguration");
-                context.Writer.WriteStartObject();
-
-                var marshaller = AudioLanguageConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.LanguageConfiguration, context);
-
-                context.Writer.WriteEndObject();
+                context.Writer.WritePropertyName("generativeOutputLanguage");
+                context.Writer.WriteStringValue(requestObject.GenerativeOutputLanguage);
             }
 
-            if(requestObject.IsSetModalityProcessing())
+            if(requestObject.IsSetIdentifyMultipleLanguages())
             {
-                context.Writer.WritePropertyName("modalityProcessing");
-                context.Writer.WriteStartObject();
+                context.Writer.WritePropertyName("identifyMultipleLanguages");
+                context.Writer.WriteBooleanValue(requestObject.IdentifyMultipleLanguages.Value);
+            }
 
-                var marshaller = ModalityProcessingConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.ModalityProcessing, context);
-
-                context.Writer.WriteEndObject();
+            if(requestObject.IsSetInputLanguages())
+            {
+                context.Writer.WritePropertyName("inputLanguages");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectInputLanguagesListValue in requestObject.InputLanguages)
+                {
+                        context.Writer.WriteStringValue(requestObjectInputLanguagesListValue);
+                }
+                context.Writer.WriteEndArray();
             }
 
         }
@@ -73,7 +74,7 @@ namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static AudioOverrideConfigurationMarshaller Instance = new AudioOverrideConfigurationMarshaller();
+        public readonly static AudioLanguageConfigurationMarshaller Instance = new AudioLanguageConfigurationMarshaller();
 
     }
 }

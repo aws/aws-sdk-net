@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AudioOverrideConfiguration Object
+    /// Response Unmarshaller for AudioLanguageConfiguration Object
     /// </summary>  
-    public class AudioOverrideConfigurationUnmarshaller : IJsonUnmarshaller<AudioOverrideConfiguration, JsonUnmarshallerContext>
+    public class AudioLanguageConfigurationUnmarshaller : IJsonUnmarshaller<AudioLanguageConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AudioOverrideConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public AudioLanguageConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            AudioOverrideConfiguration unmarshalledObject = new AudioOverrideConfiguration();
+            AudioLanguageConfiguration unmarshalledObject = new AudioLanguageConfiguration();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,16 +56,22 @@ namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("languageConfiguration", targetDepth))
+                if (context.TestExpression("generativeOutputLanguage", targetDepth))
                 {
-                    var unmarshaller = AudioLanguageConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.LanguageConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.GenerativeOutputLanguage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("modalityProcessing", targetDepth))
+                if (context.TestExpression("identifyMultipleLanguages", targetDepth))
                 {
-                    var unmarshaller = ModalityProcessingConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.ModalityProcessing = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
+                    unmarshalledObject.IdentifyMultipleLanguages = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("inputLanguages", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.InputLanguages = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -73,12 +79,12 @@ namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
         }
 
 
-        private static AudioOverrideConfigurationUnmarshaller _instance = new AudioOverrideConfigurationUnmarshaller();        
+        private static AudioLanguageConfigurationUnmarshaller _instance = new AudioLanguageConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AudioOverrideConfigurationUnmarshaller Instance
+        public static AudioLanguageConfigurationUnmarshaller Instance
         {
             get
             {
