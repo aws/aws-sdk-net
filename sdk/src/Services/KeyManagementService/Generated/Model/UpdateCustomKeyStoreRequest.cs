@@ -171,6 +171,7 @@ namespace Amazon.KeyManagementService.Model
         private string _xksProxyUriEndpoint;
         private string _xksProxyUriPath;
         private string _xksProxyVpcEndpointServiceName;
+        private string _xksProxyVpcEndpointServiceOwner;
 
         /// <summary>
         /// Gets and sets the property CloudHsmClusterId. 
@@ -460,6 +461,32 @@ namespace Amazon.KeyManagementService.Model
         internal bool IsSetXksProxyVpcEndpointServiceName()
         {
             return this._xksProxyVpcEndpointServiceName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property XksProxyVpcEndpointServiceOwner. 
+        /// <para>
+        /// Changes the Amazon Web Services account ID that KMS uses to identify the Amazon VPC
+        /// endpoint service for your external key store proxy (XKS proxy). This parameter is
+        /// optional. If not specified, the current Amazon Web Services account ID for the VPC
+        /// endpoint service will not be updated.
+        /// </para>
+        ///  
+        /// <para>
+        /// To change this value, the external key store must be disconnected.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=12, Max=12)]
+        public string XksProxyVpcEndpointServiceOwner
+        {
+            get { return this._xksProxyVpcEndpointServiceOwner; }
+            set { this._xksProxyVpcEndpointServiceOwner = value; }
+        }
+
+        // Check to see if XksProxyVpcEndpointServiceOwner property is set
+        internal bool IsSetXksProxyVpcEndpointServiceOwner()
+        {
+            return this._xksProxyVpcEndpointServiceOwner != null;
         }
 
     }

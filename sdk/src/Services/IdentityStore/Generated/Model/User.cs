@@ -35,6 +35,9 @@ namespace Amazon.IdentityStore.Model
     public partial class User
     {
         private List<Address> _addresses = AWSConfigs.InitializeCollections ? new List<Address>() : null;
+        private string _birthdate;
+        private DateTime? _createdAt;
+        private string _createdBy;
         private string _displayName;
         private List<Email> _emails = AWSConfigs.InitializeCollections ? new List<Email>() : null;
         private List<ExternalId> _externalIds = AWSConfigs.InitializeCollections ? new List<ExternalId>() : null;
@@ -43,13 +46,18 @@ namespace Amazon.IdentityStore.Model
         private Name _name;
         private string _nickName;
         private List<PhoneNumber> _phoneNumbers = AWSConfigs.InitializeCollections ? new List<PhoneNumber>() : null;
+        private List<Photo> _photos = AWSConfigs.InitializeCollections ? new List<Photo>() : null;
         private string _preferredLanguage;
         private string _profileUrl;
         private string _timezone;
         private string _title;
+        private DateTime? _updatedAt;
+        private string _updatedBy;
         private string _userId;
         private string _userName;
+        private UserStatus _userStatus;
         private string _userType;
+        private string _website;
 
         /// <summary>
         /// Gets and sets the property Addresses. 
@@ -76,10 +84,70 @@ namespace Amazon.IdentityStore.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Birthdate. 
+        /// <para>
+        /// The user's birthdate in YYYY-MM-DD format. This field stores personal birthdate information
+        /// for the user.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Min=1, Max=1024)]
+        public string Birthdate
+        {
+            get { return this._birthdate; }
+            set { this._birthdate = value; }
+        }
+
+        // Check to see if Birthdate property is set
+        internal bool IsSetBirthdate()
+        {
+            return this._birthdate != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CreatedAt. 
+        /// <para>
+        /// The date and time the user was created.
+        /// </para>
+        /// </summary>
+        public DateTime? CreatedAt
+        {
+            get { return this._createdAt; }
+            set { this._createdAt = value; }
+        }
+
+        // Check to see if CreatedAt property is set
+        internal bool IsSetCreatedAt()
+        {
+            return this._createdAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CreatedBy. 
+        /// <para>
+        /// The identifier of the user or system that created the user.
+        /// </para>
+        /// </summary>
+        public string CreatedBy
+        {
+            get { return this._createdBy; }
+            set { this._createdBy = value; }
+        }
+
+        // Check to see if CreatedBy property is set
+        internal bool IsSetCreatedBy()
+        {
+            return this._createdBy != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property DisplayName. 
         /// <para>
         /// A string containing the name of the user that is formatted for display when the user
         /// is referenced. For example, "John Doe."
+        /// </para>
+        ///  
+        /// <para>
+        /// Prefix search supports a maximum of 1,000 characters for the string.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=1024)]
@@ -245,6 +313,31 @@ namespace Amazon.IdentityStore.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Photos. 
+        /// <para>
+        /// A list of photos associated with the user. Users can have up to 3 photos with metadata
+        /// including type, display name, and primary designation.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=3)]
+        public List<Photo> Photos
+        {
+            get { return this._photos; }
+            set { this._photos = value; }
+        }
+
+        // Check to see if Photos property is set
+        internal bool IsSetPhotos()
+        {
+            return this._photos != null && (this._photos.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
         /// Gets and sets the property PreferredLanguage. 
         /// <para>
         /// A string containing the preferred language of the user. For example, "American English"
@@ -323,6 +416,42 @@ namespace Amazon.IdentityStore.Model
         }
 
         /// <summary>
+        /// Gets and sets the property UpdatedAt. 
+        /// <para>
+        /// The date and time the user was last updated.
+        /// </para>
+        /// </summary>
+        public DateTime? UpdatedAt
+        {
+            get { return this._updatedAt; }
+            set { this._updatedAt = value; }
+        }
+
+        // Check to see if UpdatedAt property is set
+        internal bool IsSetUpdatedAt()
+        {
+            return this._updatedAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UpdatedBy. 
+        /// <para>
+        /// The identifier of the user or system that last updated the user.
+        /// </para>
+        /// </summary>
+        public string UpdatedBy
+        {
+            get { return this._updatedBy; }
+            set { this._updatedBy = value; }
+        }
+
+        // Check to see if UpdatedBy property is set
+        internal bool IsSetUpdatedBy()
+        {
+            return this._updatedBy != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property UserId. 
         /// <para>
         /// The identifier for a user in the identity store.
@@ -364,6 +493,24 @@ namespace Amazon.IdentityStore.Model
         }
 
         /// <summary>
+        /// Gets and sets the property UserStatus. 
+        /// <para>
+        /// The current status of the user account.
+        /// </para>
+        /// </summary>
+        public UserStatus UserStatus
+        {
+            get { return this._userStatus; }
+            set { this._userStatus = value; }
+        }
+
+        // Check to see if UserStatus property is set
+        internal bool IsSetUserStatus()
+        {
+            return this._userStatus != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property UserType. 
         /// <para>
         /// A string indicating the type of user. Possible values are left unspecified. The value
@@ -381,6 +528,26 @@ namespace Amazon.IdentityStore.Model
         internal bool IsSetUserType()
         {
             return this._userType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Website. 
+        /// <para>
+        /// The user's personal website or blog URL. This field stores website information for
+        /// personal or professional use.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Min=1, Max=1024)]
+        public string Website
+        {
+            get { return this._website; }
+            set { this._website = value; }
+        }
+
+        // Check to see if Website property is set
+        internal bool IsSetWebsite()
+        {
+            return this._website != null;
         }
 
     }

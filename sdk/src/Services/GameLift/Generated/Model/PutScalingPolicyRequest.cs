@@ -31,6 +31,10 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the PutScalingPolicy operation.
+    /// <b>This API works with the following fleet types:</b> EC2
+    /// 
+    ///  
+    /// <para>
     /// Creates or updates a scaling policy for a fleet. Scaling policies are used to automatically
     /// scale a fleet's hosting capacity to meet player demand. An active scaling policy instructs
     /// Amazon GameLift Servers to track a fleet metric and automatically change the fleet's
@@ -38,7 +42,7 @@ namespace Amazon.GameLift.Model
     /// target-based and rule-based. Use a target-based policy to quickly and efficiently
     /// manage fleet scaling; this option is the most commonly used. Use rule-based policies
     /// when you need to exert fine-grained control over auto-scaling. 
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// Fleets can have multiple scaling policies of each type in force at the same time;

@@ -364,6 +364,21 @@ namespace Amazon.ECS.Model
         /// service revisions before directing production traffic to them. This approach provides
         /// a safer way to deploy changes with the ability to quickly roll back if needed.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>LINEAR</c> - A <i>linear</i> deployment strategy (<c>LINEAR</c>) gradually shifts
+        /// traffic from the current production environment to a new environment in equal percentages
+        /// over time. With Amazon ECS linear deployments, you can control the pace of traffic
+        /// shifting and validate new service revisions with increasing amounts of production
+        /// traffic.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>CANARY</c> - A <i>canary</i> deployment strategy (<c>CANARY</c>) shifts a small
+        /// percentage of traffic to the new service revision first, then shifts the remaining
+        /// traffic all at once after a specified time period. This allows you to test the new
+        /// version with a subset of users before full deployment.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         public DeploymentStrategy Strategy

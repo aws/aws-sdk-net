@@ -35,6 +35,12 @@
     <pattern>arn:aws[-a-z0-9]*:[a-z0-9]+:[-a-z0-9]*:[0-9]{12}:[-a-zA-Z0-9/:_]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Invoicing.Model.GetInvoicePDFRequest.InvoiceId</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Invoicing.Model.GetInvoiceUnitRequest.InvoiceUnitArn</property>
     <min>1</min>
     <max>256</max>
@@ -240,6 +246,18 @@
     <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Invoicing.Model.InvoicePDF.DocumentUrl</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Invoicing.Model.InvoicePDF.InvoiceId</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Invoicing.Model.InvoiceProfile.AccountId</property>
     <pattern>\d{12}</pattern>
   </property-value-rule>
@@ -392,6 +410,12 @@
     <property>Amazon.Invoicing.Model.ResourceTag.Value</property>
     <min>0</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Invoicing.Model.SupplementalDocument.DocumentUrl</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Invoicing.Model.TaxesBreakdown.TotalAmount</property>

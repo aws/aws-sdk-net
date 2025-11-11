@@ -4121,6 +4121,130 @@ namespace Amazon.QuickSight
 
 
     /// <summary>
+    /// Constants used for properties of type DataPrepSimpleAggregationFunctionType.
+    /// </summary>
+    public class DataPrepSimpleAggregationFunctionType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AVERAGE for DataPrepSimpleAggregationFunctionType
+        /// </summary>
+        public static readonly DataPrepSimpleAggregationFunctionType AVERAGE = new DataPrepSimpleAggregationFunctionType("AVERAGE");
+        /// <summary>
+        /// Constant COUNT for DataPrepSimpleAggregationFunctionType
+        /// </summary>
+        public static readonly DataPrepSimpleAggregationFunctionType COUNT = new DataPrepSimpleAggregationFunctionType("COUNT");
+        /// <summary>
+        /// Constant DISTINCT_COUNT for DataPrepSimpleAggregationFunctionType
+        /// </summary>
+        public static readonly DataPrepSimpleAggregationFunctionType DISTINCT_COUNT = new DataPrepSimpleAggregationFunctionType("DISTINCT_COUNT");
+        /// <summary>
+        /// Constant MAX for DataPrepSimpleAggregationFunctionType
+        /// </summary>
+        public static readonly DataPrepSimpleAggregationFunctionType MAX = new DataPrepSimpleAggregationFunctionType("MAX");
+        /// <summary>
+        /// Constant MIN for DataPrepSimpleAggregationFunctionType
+        /// </summary>
+        public static readonly DataPrepSimpleAggregationFunctionType MIN = new DataPrepSimpleAggregationFunctionType("MIN");
+        /// <summary>
+        /// Constant SUM for DataPrepSimpleAggregationFunctionType
+        /// </summary>
+        public static readonly DataPrepSimpleAggregationFunctionType SUM = new DataPrepSimpleAggregationFunctionType("SUM");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DataPrepSimpleAggregationFunctionType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DataPrepSimpleAggregationFunctionType FindValue(string value)
+        {
+            return FindValue<DataPrepSimpleAggregationFunctionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DataPrepSimpleAggregationFunctionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DataSetDateComparisonFilterOperator.
+    /// </summary>
+    public class DataSetDateComparisonFilterOperator : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AFTER for DataSetDateComparisonFilterOperator
+        /// </summary>
+        public static readonly DataSetDateComparisonFilterOperator AFTER = new DataSetDateComparisonFilterOperator("AFTER");
+        /// <summary>
+        /// Constant AFTER_OR_EQUALS_TO for DataSetDateComparisonFilterOperator
+        /// </summary>
+        public static readonly DataSetDateComparisonFilterOperator AFTER_OR_EQUALS_TO = new DataSetDateComparisonFilterOperator("AFTER_OR_EQUALS_TO");
+        /// <summary>
+        /// Constant BEFORE for DataSetDateComparisonFilterOperator
+        /// </summary>
+        public static readonly DataSetDateComparisonFilterOperator BEFORE = new DataSetDateComparisonFilterOperator("BEFORE");
+        /// <summary>
+        /// Constant BEFORE_OR_EQUALS_TO for DataSetDateComparisonFilterOperator
+        /// </summary>
+        public static readonly DataSetDateComparisonFilterOperator BEFORE_OR_EQUALS_TO = new DataSetDateComparisonFilterOperator("BEFORE_OR_EQUALS_TO");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DataSetDateComparisonFilterOperator(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DataSetDateComparisonFilterOperator FindValue(string value)
+        {
+            return FindValue<DataSetDateComparisonFilterOperator>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DataSetDateComparisonFilterOperator(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DataSetFilterAttribute.
     /// </summary>
     public class DataSetFilterAttribute : ConstantClass
@@ -4237,6 +4361,72 @@ namespace Amazon.QuickSight
 
 
     /// <summary>
+    /// Constants used for properties of type DataSetNumericComparisonFilterOperator.
+    /// </summary>
+    public class DataSetNumericComparisonFilterOperator : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DOES_NOT_EQUAL for DataSetNumericComparisonFilterOperator
+        /// </summary>
+        public static readonly DataSetNumericComparisonFilterOperator DOES_NOT_EQUAL = new DataSetNumericComparisonFilterOperator("DOES_NOT_EQUAL");
+        /// <summary>
+        /// Constant EQUALS for DataSetNumericComparisonFilterOperator
+        /// </summary>
+        public static readonly DataSetNumericComparisonFilterOperator EQUALS = new DataSetNumericComparisonFilterOperator("EQUALS");
+        /// <summary>
+        /// Constant GREATER_THAN for DataSetNumericComparisonFilterOperator
+        /// </summary>
+        public static readonly DataSetNumericComparisonFilterOperator GREATER_THAN = new DataSetNumericComparisonFilterOperator("GREATER_THAN");
+        /// <summary>
+        /// Constant GREATER_THAN_OR_EQUALS_TO for DataSetNumericComparisonFilterOperator
+        /// </summary>
+        public static readonly DataSetNumericComparisonFilterOperator GREATER_THAN_OR_EQUALS_TO = new DataSetNumericComparisonFilterOperator("GREATER_THAN_OR_EQUALS_TO");
+        /// <summary>
+        /// Constant LESS_THAN for DataSetNumericComparisonFilterOperator
+        /// </summary>
+        public static readonly DataSetNumericComparisonFilterOperator LESS_THAN = new DataSetNumericComparisonFilterOperator("LESS_THAN");
+        /// <summary>
+        /// Constant LESS_THAN_OR_EQUALS_TO for DataSetNumericComparisonFilterOperator
+        /// </summary>
+        public static readonly DataSetNumericComparisonFilterOperator LESS_THAN_OR_EQUALS_TO = new DataSetNumericComparisonFilterOperator("LESS_THAN_OR_EQUALS_TO");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DataSetNumericComparisonFilterOperator(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DataSetNumericComparisonFilterOperator FindValue(string value)
+        {
+            return FindValue<DataSetNumericComparisonFilterOperator>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DataSetNumericComparisonFilterOperator(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DatasetParameterValueType.
     /// </summary>
     public class DatasetParameterValueType : ConstantClass
@@ -4280,6 +4470,122 @@ namespace Amazon.QuickSight
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator DatasetParameterValueType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DataSetStringComparisonFilterOperator.
+    /// </summary>
+    public class DataSetStringComparisonFilterOperator : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CONTAINS for DataSetStringComparisonFilterOperator
+        /// </summary>
+        public static readonly DataSetStringComparisonFilterOperator CONTAINS = new DataSetStringComparisonFilterOperator("CONTAINS");
+        /// <summary>
+        /// Constant DOES_NOT_CONTAIN for DataSetStringComparisonFilterOperator
+        /// </summary>
+        public static readonly DataSetStringComparisonFilterOperator DOES_NOT_CONTAIN = new DataSetStringComparisonFilterOperator("DOES_NOT_CONTAIN");
+        /// <summary>
+        /// Constant DOES_NOT_EQUAL for DataSetStringComparisonFilterOperator
+        /// </summary>
+        public static readonly DataSetStringComparisonFilterOperator DOES_NOT_EQUAL = new DataSetStringComparisonFilterOperator("DOES_NOT_EQUAL");
+        /// <summary>
+        /// Constant ENDS_WITH for DataSetStringComparisonFilterOperator
+        /// </summary>
+        public static readonly DataSetStringComparisonFilterOperator ENDS_WITH = new DataSetStringComparisonFilterOperator("ENDS_WITH");
+        /// <summary>
+        /// Constant EQUALS for DataSetStringComparisonFilterOperator
+        /// </summary>
+        public static readonly DataSetStringComparisonFilterOperator EQUALS = new DataSetStringComparisonFilterOperator("EQUALS");
+        /// <summary>
+        /// Constant STARTS_WITH for DataSetStringComparisonFilterOperator
+        /// </summary>
+        public static readonly DataSetStringComparisonFilterOperator STARTS_WITH = new DataSetStringComparisonFilterOperator("STARTS_WITH");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DataSetStringComparisonFilterOperator(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DataSetStringComparisonFilterOperator FindValue(string value)
+        {
+            return FindValue<DataSetStringComparisonFilterOperator>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DataSetStringComparisonFilterOperator(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DataSetStringListFilterOperator.
+    /// </summary>
+    public class DataSetStringListFilterOperator : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EXCLUDE for DataSetStringListFilterOperator
+        /// </summary>
+        public static readonly DataSetStringListFilterOperator EXCLUDE = new DataSetStringListFilterOperator("EXCLUDE");
+        /// <summary>
+        /// Constant INCLUDE for DataSetStringListFilterOperator
+        /// </summary>
+        public static readonly DataSetStringListFilterOperator INCLUDE = new DataSetStringListFilterOperator("INCLUDE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DataSetStringListFilterOperator(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DataSetStringListFilterOperator FindValue(string value)
+        {
+            return FindValue<DataSetStringListFilterOperator>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DataSetStringListFilterOperator(string value)
         {
             return FindValue(value);
         }
@@ -7550,6 +7856,64 @@ namespace Amazon.QuickSight
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator InputColumnDataType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type JoinOperationType.
+    /// </summary>
+    public class JoinOperationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INNER for JoinOperationType
+        /// </summary>
+        public static readonly JoinOperationType INNER = new JoinOperationType("INNER");
+        /// <summary>
+        /// Constant LEFT for JoinOperationType
+        /// </summary>
+        public static readonly JoinOperationType LEFT = new JoinOperationType("LEFT");
+        /// <summary>
+        /// Constant OUTER for JoinOperationType
+        /// </summary>
+        public static readonly JoinOperationType OUTER = new JoinOperationType("OUTER");
+        /// <summary>
+        /// Constant RIGHT for JoinOperationType
+        /// </summary>
+        public static readonly JoinOperationType RIGHT = new JoinOperationType("RIGHT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public JoinOperationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static JoinOperationType FindValue(string value)
+        {
+            return FindValue<JoinOperationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator JoinOperationType(string value)
         {
             return FindValue(value);
         }

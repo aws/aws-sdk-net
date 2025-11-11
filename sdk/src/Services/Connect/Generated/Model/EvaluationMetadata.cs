@@ -34,10 +34,68 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class EvaluationMetadata
     {
+        private EvaluationAcknowledgement _acknowledgement;
+        private AutoEvaluationDetails _autoEvaluation;
+        private string _calibrationSessionId;
         private string _contactAgentId;
         private string _contactId;
         private string _evaluatorArn;
         private EvaluationScore _score;
+
+        /// <summary>
+        /// Gets and sets the property Acknowledgement. 
+        /// <para>
+        /// Information related to evaluation acknowledgement.
+        /// </para>
+        /// </summary>
+        public EvaluationAcknowledgement Acknowledgement
+        {
+            get { return this._acknowledgement; }
+            set { this._acknowledgement = value; }
+        }
+
+        // Check to see if Acknowledgement property is set
+        internal bool IsSetAcknowledgement()
+        {
+            return this._acknowledgement != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AutoEvaluation. 
+        /// <para>
+        /// Information related to automated evaluation.
+        /// </para>
+        /// </summary>
+        public AutoEvaluationDetails AutoEvaluation
+        {
+            get { return this._autoEvaluation; }
+            set { this._autoEvaluation = value; }
+        }
+
+        // Check to see if AutoEvaluation property is set
+        internal bool IsSetAutoEvaluation()
+        {
+            return this._autoEvaluation != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CalibrationSessionId. 
+        /// <para>
+        /// The calibration session ID that this evaluation belongs to.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=500)]
+        public string CalibrationSessionId
+        {
+            get { return this._calibrationSessionId; }
+            set { this._calibrationSessionId = value; }
+        }
+
+        // Check to see if CalibrationSessionId property is set
+        internal bool IsSetCalibrationSessionId()
+        {
+            return this._calibrationSessionId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ContactAgentId. 

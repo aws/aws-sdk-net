@@ -56,6 +56,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("accessLogConfiguration", targetDepth))
+                {
+                    var unmarshaller = ServiceConnectAccessLogConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.AccessLogConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("enabled", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;

@@ -31,9 +31,13 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateFleet operation.
-    /// Creates a fleet of compute resources to host your game servers. Use this operation
-    /// to set up the following types of fleets based on compute type: 
+    /// <b>This API works with the following fleet types:</b> EC2, Anywhere, Container
     /// 
+    ///  
+    /// <para>
+    /// Creates a fleet of compute resources to host your game servers. Use this operation
+    /// to set up a fleet for the following compute types: 
+    /// </para>
     ///  
     /// <para>
     ///  <b>Managed EC2 fleet</b> 
@@ -92,7 +96,18 @@ namespace Amazon.GameLift.Model
     /// When the fleet status is ACTIVE, you can adjust capacity settings and turn autoscaling
     /// on/off for each location.
     /// </para>
-    ///  
+    ///  <note> 
+    /// <para>
+    /// A managed fleet's runtime environment depends on the Amazon Machine Image (AMI) version
+    /// it uses. When a new fleet is created, Amazon GameLift Servers assigns the latest available
+    /// AMI version to the fleet, and all compute instances in that fleet are deployed with
+    /// that version. To update the AMI version, you must create a new fleet. As a best practice,
+    /// we recommend replacing your managed fleets every 30 days to maintain a secure and
+    /// up-to-date runtime environment for your hosted game servers. For guidance, see <a
+    /// href="https://docs.aws.amazon.com/gameliftservers/latest/developerguide/security-best-practices.html">
+    /// Security best practices for Amazon GameLift Servers</a>.
+    /// </para>
+    ///  </note> 
     /// <para>
     ///  <b>Anywhere fleet</b> 
     /// </para>

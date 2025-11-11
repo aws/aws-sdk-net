@@ -37,10 +37,11 @@ namespace Amazon.PaymentCryptography.Model
     /// 
     ///  
     /// <para>
-    /// Multi-region keys allow you to use the same key material across multiple Amazon Web
-    /// Services Regions, providing lower latency for applications distributed across regions.
-    /// When you add Replication Regions, Amazon Web Services Payment Cryptography securely
-    /// replicates the key material to the specified Amazon Web Services Regions.
+    ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-multi-region-replication.html">Multi-Region
+    /// key replication</a> allow you to use the same key material across multiple Amazon
+    /// Web Services Regions, providing lower latency for applications distributed across
+    /// regions. When you add Replication Regions, Amazon Web Services Payment Cryptography
+    /// securely replicates the key material to the specified Amazon Web Services Regions.
     /// </para>
     ///  
     /// <para>

@@ -31,11 +31,24 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateContainerFleet operation.
+    /// <b>This API works with the following fleet types:</b> Container
+    /// 
+    ///  
+    /// <para>
     /// Updates the properties of a managed container fleet. Depending on the properties being
     /// updated, this operation might initiate a fleet deployment. You can track deployments
     /// for a fleet using <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetDeployment.html">https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetDeployment.html</a>.
-    /// 
-    ///  
+    /// </para>
+    ///  <note> 
+    /// <para>
+    /// A managed fleet's runtime environment, which depends on the fleet's Amazon Machine
+    /// Image {AMI} version, can't be updated. You must create a new fleet. As a best practice,
+    /// we recommend replacing your managed fleets every 30 days to maintain a secure and
+    /// up-to-date runtime environment for your hosted game servers. For guidance, see <a
+    /// href="https://docs.aws.amazon.com/gameliftservers/latest/developerguide/security-best-practices.html">
+    /// Security best practices for Amazon GameLift Servers</a>.
+    /// </para>
+    ///  </note> 
     /// <para>
     ///  <b>Request options</b> 
     /// </para>

@@ -42,8 +42,8 @@ namespace Amazon.IdentityStore
     ///
     /// The Identity Store service used by IAM Identity Center provides a single place to
     /// retrieve all of your identities (users and groups). For more information, see the
-    /// <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html">IAM
-    /// Identity Center User Guide</a>.
+    /// <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html">
+    /// IAM Identity Center User Guide</a>.
     /// 
     ///  
     /// <para>
@@ -52,7 +52,11 @@ namespace Amazon.IdentityStore
     /// </para>
     ///  <note> 
     /// <para>
-    /// IAM Identity Center uses the <c>sso</c> and <c>identitystore</c> API namespaces.
+    ///  IAM Identity Center uses the <c>sso</c>, <c>sso-directory</c>, and <c>identitystore</c>
+    /// API namespaces. The <c>sso-directory</c> and <c>identitystore</c> namespaces authorize
+    /// access to data in the Identity Store. Make sure your policies with IAM actions from
+    /// these two namespaces are consistent to avoid conflicting authorization to the same
+    /// data.
     /// </para>
     ///  </note>
     /// </summary>
@@ -686,9 +690,10 @@ namespace Amazon.IdentityStore
         /// 
         ///  <note> 
         /// <para>
-        /// If you have administrator access to a member account, you can use this API from the
-        /// member account. Read about <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html">member
-        /// accounts</a> in the <i>Organizations User Guide</i>. 
+        /// If you have access to a member account, you can use this API operation from the member
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/manage-your-accounts.html#limiting-access-from-member-accounts">Limiting
+        /// access to the identity store from member accounts</a> in the <i> IAM Identity Center
+        /// User Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -744,9 +749,10 @@ namespace Amazon.IdentityStore
         /// 
         ///  <note> 
         /// <para>
-        /// If you have administrator access to a member account, you can use this API from the
-        /// member account. Read about <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html">member
-        /// accounts</a> in the <i>Organizations User Guide</i>. 
+        /// If you have access to a member account, you can use this API operation from the member
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/manage-your-accounts.html#limiting-access-from-member-accounts">Limiting
+        /// access to the identity store from member accounts</a> in the <i> IAM Identity Center
+        /// User Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -801,9 +807,10 @@ namespace Amazon.IdentityStore
         /// 
         ///  <note> 
         /// <para>
-        /// If you have administrator access to a member account, you can use this API from the
-        /// member account. Read about <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html">member
-        /// accounts</a> in the <i>Organizations User Guide</i>. 
+        /// If you have access to a member account, you can use this API operation from the member
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/manage-your-accounts.html#limiting-access-from-member-accounts">Limiting
+        /// access to the identity store from member accounts</a> in the <i> IAM Identity Center
+        /// User Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -858,9 +865,10 @@ namespace Amazon.IdentityStore
         /// 
         ///  <note> 
         /// <para>
-        /// If you have administrator access to a member account, you can use this API from the
-        /// member account. Read about <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html">member
-        /// accounts</a> in the <i>Organizations User Guide</i>. 
+        /// If you have access to a member account, you can use this API operation from the member
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/manage-your-accounts.html#limiting-access-from-member-accounts">Limiting
+        /// access to the identity store from member accounts</a> in the <i> IAM Identity Center
+        /// User Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -915,9 +923,10 @@ namespace Amazon.IdentityStore
         /// 
         ///  <note> 
         /// <para>
-        /// If you have administrator access to a member account, you can use this API from the
-        /// member account. Read about <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html">member
-        /// accounts</a> in the <i>Organizations User Guide</i>. 
+        /// If you have access to a member account, you can use this API operation from the member
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/manage-your-accounts.html#limiting-access-from-member-accounts">Limiting
+        /// access to the identity store from member accounts</a> in the <i> IAM Identity Center
+        /// User Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -972,9 +981,10 @@ namespace Amazon.IdentityStore
         /// 
         ///  <note> 
         /// <para>
-        /// If you have administrator access to a member account, you can use this API from the
-        /// member account. Read about <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html">member
-        /// accounts</a> in the <i>Organizations User Guide</i>. 
+        /// If you have access to a member account, you can use this API operation from the member
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/manage-your-accounts.html#limiting-access-from-member-accounts">Limiting
+        /// access to the identity store from member accounts</a> in the <i> IAM Identity Center
+        /// User Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1030,9 +1040,10 @@ namespace Amazon.IdentityStore
         /// 
         ///  <note> 
         /// <para>
-        /// If you have administrator access to a member account, you can use this API from the
-        /// member account. Read about <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html">member
-        /// accounts</a> in the <i>Organizations User Guide</i>. 
+        /// If you have access to a member account, you can use this API operation from the member
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/manage-your-accounts.html#limiting-access-from-member-accounts">Limiting
+        /// access to the identity store from member accounts</a> in the <i> IAM Identity Center
+        /// User Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1083,14 +1094,15 @@ namespace Amazon.IdentityStore
 
 
         /// <summary>
-        /// For the specified group in the specified identity store, returns the list of all <c>GroupMembership</c>
-        /// objects and returns results in paginated form.
+        /// For the specified group in the specified identity store, returns the list of all <c>
+        /// GroupMembership</c> objects and returns results in paginated form.
         /// 
         ///  <note> 
         /// <para>
-        /// If you have administrator access to a member account, you can use this API from the
-        /// member account. Read about <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html">member
-        /// accounts</a> in the <i>Organizations User Guide</i>. 
+        /// If you have access to a member account, you can use this API operation from the member
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/manage-your-accounts.html#limiting-access-from-member-accounts">Limiting
+        /// access to the identity store from member accounts</a> in the <i> IAM Identity Center
+        /// User Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1142,13 +1154,14 @@ namespace Amazon.IdentityStore
 
         /// <summary>
         /// For the specified member in the specified identity store, returns the list of all
-        /// <c>GroupMembership</c> objects and returns results in paginated form.
+        /// <c> GroupMembership</c> objects and returns results in paginated form.
         /// 
         ///  <note> 
         /// <para>
-        /// If you have administrator access to a member account, you can use this API from the
-        /// member account. Read about <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html">member
-        /// accounts</a> in the <i>Organizations User Guide</i>. 
+        /// If you have access to a member account, you can use this API operation from the member
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/manage-your-accounts.html#limiting-access-from-member-accounts">Limiting
+        /// access to the identity store from member accounts</a> in the <i> IAM Identity Center
+        /// User Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1205,9 +1218,10 @@ namespace Amazon.IdentityStore
         /// 
         ///  <note> 
         /// <para>
-        /// If you have administrator access to a member account, you can use this API from the
-        /// member account. Read about <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html">member
-        /// accounts</a> in the <i>Organizations User Guide</i>. 
+        /// If you have access to a member account, you can use this API operation from the member
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/manage-your-accounts.html#limiting-access-from-member-accounts">Limiting
+        /// access to the identity store from member accounts</a> in the <i> IAM Identity Center
+        /// User Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1264,9 +1278,10 @@ namespace Amazon.IdentityStore
         /// 
         ///  <note> 
         /// <para>
-        /// If you have administrator access to a member account, you can use this API from the
-        /// member account. Read about <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html">member
-        /// accounts</a> in the <i>Organizations User Guide</i>.
+        /// If you have access to a member account, you can use this API operation from the member
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/manage-your-accounts.html#limiting-access-from-member-accounts">Limiting
+        /// access to the identity store from member accounts</a> in the <i> IAM Identity Center
+        /// User Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1317,8 +1332,7 @@ namespace Amazon.IdentityStore
 
 
         /// <summary>
-        /// For the specified group in the specified identity store, updates the group metadata
-        /// and attributes.
+        /// Updates the specified group metadata and attributes in the specified identity store.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateGroup service method.</param>
         /// <param name="cancellationToken">
@@ -1385,8 +1399,7 @@ namespace Amazon.IdentityStore
 
 
         /// <summary>
-        /// For the specified user in the specified identity store, updates the user metadata
-        /// and attributes.
+        /// Updates the specified user metadata and attributes in the specified identity store.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateUser service method.</param>
         /// <param name="cancellationToken">

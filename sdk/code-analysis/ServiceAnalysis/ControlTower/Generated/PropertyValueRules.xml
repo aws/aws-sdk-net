@@ -4,147 +4,153 @@
     <property>Amazon.ControlTower.Model.CreateLandingZoneRequest.Version</property>
     <min>3</min>
     <max>10</max>
-    <pattern>^\d+.\d+$</pattern>
+    <pattern>\d+.\d+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ControlTower.Model.CreateLandingZoneResponse.Arn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^arn:aws[0-9a-zA-Z_\-:\/]+$</pattern>
+    <pattern>arn:aws[0-9a-zA-Z_\-:\/]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ControlTower.Model.CreateLandingZoneResponse.OperationIdentifier</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ControlTower.Model.DeleteLandingZoneResponse.OperationIdentifier</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ControlTower.Model.DisableBaselineRequest.EnabledBaselineIdentifier</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^arn:aws[0-9a-zA-Z_\-:\/]+$</pattern>
+    <pattern>arn:aws[0-9a-zA-Z_\-:\/]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ControlTower.Model.DisableBaselineResponse.OperationIdentifier</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ControlTower.Model.DisableControlRequest.ControlIdentifier</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^arn:aws[0-9a-zA-Z_\-:\/]+$</pattern>
+    <pattern>arn:aws[0-9a-zA-Z_\-:\/]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ControlTower.Model.DisableControlRequest.EnabledControlIdentifier</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:aws[0-9a-zA-Z_\-:\/]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ControlTower.Model.DisableControlRequest.TargetIdentifier</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^arn:aws[0-9a-zA-Z_\-:\/]+$</pattern>
+    <pattern>arn:aws[0-9a-zA-Z_\-:\/]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ControlTower.Model.DisableControlResponse.OperationIdentifier</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ControlTower.Model.EnableBaselineRequest.BaselineIdentifier</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^arn:aws[0-9a-zA-Z_\-:\/]+$</pattern>
+    <pattern>arn:aws[0-9a-zA-Z_\-:\/]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ControlTower.Model.EnableBaselineRequest.BaselineVersion</property>
     <min>1</min>
     <max>10</max>
-    <pattern>^\d+(?:\.\d+){0,2}$</pattern>
+    <pattern>\d+(?:\.\d+){0,2}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ControlTower.Model.EnableBaselineRequest.TargetIdentifier</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^arn:aws[0-9a-zA-Z_\-:\/]+$</pattern>
+    <pattern>arn:aws[0-9a-zA-Z_\-:\/]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ControlTower.Model.EnableBaselineResponse.Arn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^arn:aws[0-9a-zA-Z_\-:\/]+$</pattern>
+    <pattern>arn:aws[0-9a-zA-Z_\-:\/]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ControlTower.Model.EnableBaselineResponse.OperationIdentifier</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ControlTower.Model.EnableControlRequest.ControlIdentifier</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^arn:aws[0-9a-zA-Z_\-:\/]+$</pattern>
+    <pattern>arn:aws[0-9a-zA-Z_\-:\/]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ControlTower.Model.EnableControlRequest.TargetIdentifier</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^arn:aws[0-9a-zA-Z_\-:\/]+$</pattern>
+    <pattern>arn:aws[0-9a-zA-Z_\-:\/]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ControlTower.Model.EnableControlResponse.Arn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^arn:aws[0-9a-zA-Z_\-:\/]+$</pattern>
+    <pattern>arn:aws[0-9a-zA-Z_\-:\/]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ControlTower.Model.EnableControlResponse.OperationIdentifier</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ControlTower.Model.GetBaselineRequest.BaselineIdentifier</property>
-    <pattern>^arn:[a-z-]+:controltower:[a-z0-9-]*:[0-9]{0,12}:baseline/[A-Z0-9]{16}$</pattern>
+    <pattern>arn:[a-z-]+:controltower:[a-z0-9-]*:[0-9]{0,12}:baseline/[A-Z0-9]{16}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ControlTower.Model.GetBaselineResponse.Arn</property>
-    <pattern>^arn:[a-z-]+:controltower:[a-z0-9-]*:[0-9]{0,12}:baseline/[A-Z0-9]{16}$</pattern>
+    <pattern>arn:[a-z-]+:controltower:[a-z0-9-]*:[0-9]{0,12}:baseline/[A-Z0-9]{16}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ControlTower.Model.GetBaselineOperationRequest.OperationIdentifier</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ControlTower.Model.GetControlOperationRequest.OperationIdentifier</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ControlTower.Model.GetEnabledBaselineRequest.EnabledBaselineIdentifier</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^arn:aws[0-9a-zA-Z_\-:\/]+$</pattern>
+    <pattern>arn:aws[0-9a-zA-Z_\-:\/]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ControlTower.Model.GetEnabledControlRequest.EnabledControlIdentifier</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^arn:aws[0-9a-zA-Z_\-:\/]+$</pattern>
+    <pattern>arn:aws[0-9a-zA-Z_\-:\/]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ControlTower.Model.GetLandingZoneOperationRequest.OperationIdentifier</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ControlTower.Model.ListBaselinesRequest.MaxResults</property>
@@ -158,11 +164,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ControlTower.Model.ListControlOperationsRequest.NextToken</property>
-    <pattern>\S+</pattern>
+    <pattern>.*\S+.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ControlTower.Model.ListControlOperationsResponse.NextToken</property>
-    <pattern>\S+</pattern>
+    <pattern>.*\S+.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ControlTower.Model.ListEnabledBaselinesRequest.MaxResults</property>
@@ -171,11 +177,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ControlTower.Model.ListEnabledBaselinesRequest.NextToken</property>
-    <pattern>\S+</pattern>
+    <pattern>.*\S+.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ControlTower.Model.ListEnabledBaselinesResponse.NextToken</property>
-    <pattern>\S+</pattern>
+    <pattern>.*\S+.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ControlTower.Model.ListEnabledControlsRequest.MaxResults</property>
@@ -186,7 +192,7 @@
     <property>Amazon.ControlTower.Model.ListEnabledControlsRequest.TargetIdentifier</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^arn:aws[0-9a-zA-Z_\-:\/]+$</pattern>
+    <pattern>arn:aws[0-9a-zA-Z_\-:\/]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ControlTower.Model.ListLandingZoneOperationsRequest.MaxResults</property>
@@ -202,247 +208,259 @@
     <property>Amazon.ControlTower.Model.ListTagsForResourceRequest.ResourceArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^arn:aws[0-9a-zA-Z_\-:\/]+$</pattern>
+    <pattern>arn:aws[0-9a-zA-Z_\-:\/]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ControlTower.Model.ResetEnabledBaselineRequest.EnabledBaselineIdentifier</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^arn:aws[0-9a-zA-Z_\-:\/]+$</pattern>
+    <pattern>arn:aws[0-9a-zA-Z_\-:\/]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ControlTower.Model.ResetEnabledBaselineResponse.OperationIdentifier</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ControlTower.Model.ResetEnabledControlRequest.EnabledControlIdentifier</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^arn:aws[0-9a-zA-Z_\-:\/]+$</pattern>
+    <pattern>arn:aws[0-9a-zA-Z_\-:\/]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ControlTower.Model.ResetEnabledControlResponse.OperationIdentifier</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ControlTower.Model.ResetLandingZoneResponse.OperationIdentifier</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ControlTower.Model.TagResourceRequest.ResourceArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^arn:aws[0-9a-zA-Z_\-:\/]+$</pattern>
+    <pattern>arn:aws[0-9a-zA-Z_\-:\/]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ControlTower.Model.UntagResourceRequest.ResourceArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^arn:aws[0-9a-zA-Z_\-:\/]+$</pattern>
+    <pattern>arn:aws[0-9a-zA-Z_\-:\/]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ControlTower.Model.UpdateEnabledBaselineRequest.BaselineVersion</property>
     <min>1</min>
     <max>10</max>
-    <pattern>^\d+(?:\.\d+){0,2}$</pattern>
+    <pattern>\d+(?:\.\d+){0,2}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ControlTower.Model.UpdateEnabledBaselineRequest.EnabledBaselineIdentifier</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^arn:aws[0-9a-zA-Z_\-:\/]+$</pattern>
+    <pattern>arn:aws[0-9a-zA-Z_\-:\/]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ControlTower.Model.UpdateEnabledBaselineResponse.OperationIdentifier</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ControlTower.Model.UpdateEnabledControlRequest.EnabledControlIdentifier</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^arn:aws[0-9a-zA-Z_\-:\/]+$</pattern>
+    <pattern>arn:aws[0-9a-zA-Z_\-:\/]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ControlTower.Model.UpdateEnabledControlResponse.OperationIdentifier</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ControlTower.Model.UpdateLandingZoneRequest.Version</property>
     <min>3</min>
     <max>10</max>
-    <pattern>^\d+.\d+$</pattern>
+    <pattern>\d+.\d+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ControlTower.Model.UpdateLandingZoneResponse.OperationIdentifier</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ControlTower.Model.BaselineOperation.OperationIdentifier</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ControlTower.Model.ControlOperation.ControlIdentifier</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^arn:aws[0-9a-zA-Z_\-:\/]+$</pattern>
+    <pattern>arn:aws[0-9a-zA-Z_\-:\/]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ControlTower.Model.ControlOperation.EnabledControlIdentifier</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^arn:aws[0-9a-zA-Z_\-:\/]+$</pattern>
+    <pattern>arn:aws[0-9a-zA-Z_\-:\/]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ControlTower.Model.ControlOperation.OperationIdentifier</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ControlTower.Model.ControlOperation.TargetIdentifier</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^arn:aws[0-9a-zA-Z_\-:\/]+$</pattern>
+    <pattern>arn:aws[0-9a-zA-Z_\-:\/]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ControlTower.Model.ControlOperationSummary.ControlIdentifier</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^arn:aws[0-9a-zA-Z_\-:\/]+$</pattern>
+    <pattern>arn:aws[0-9a-zA-Z_\-:\/]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ControlTower.Model.ControlOperationSummary.EnabledControlIdentifier</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^arn:aws[0-9a-zA-Z_\-:\/]+$</pattern>
+    <pattern>arn:aws[0-9a-zA-Z_\-:\/]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ControlTower.Model.ControlOperationSummary.OperationIdentifier</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ControlTower.Model.ControlOperationSummary.TargetIdentifier</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^arn:aws[0-9a-zA-Z_\-:\/]+$</pattern>
+    <pattern>arn:aws[0-9a-zA-Z_\-:\/]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ControlTower.Model.EnabledBaselineDetails.Arn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^arn:aws[0-9a-zA-Z_\-:\/]+$</pattern>
+    <pattern>arn:aws[0-9a-zA-Z_\-:\/]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ControlTower.Model.EnabledBaselineDetails.ParentIdentifier</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^arn:aws[0-9a-zA-Z_\-:\/]+$</pattern>
+    <pattern>arn:aws[0-9a-zA-Z_\-:\/]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ControlTower.Model.EnabledBaselineSummary.Arn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^arn:aws[0-9a-zA-Z_\-:\/]+$</pattern>
+    <pattern>arn:aws[0-9a-zA-Z_\-:\/]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ControlTower.Model.EnabledBaselineSummary.ParentIdentifier</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^arn:aws[0-9a-zA-Z_\-:\/]+$</pattern>
+    <pattern>arn:aws[0-9a-zA-Z_\-:\/]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ControlTower.Model.EnabledControlDetails.Arn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^arn:aws[0-9a-zA-Z_\-:\/]+$</pattern>
+    <pattern>arn:aws[0-9a-zA-Z_\-:\/]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ControlTower.Model.EnabledControlDetails.ControlIdentifier</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^arn:aws[0-9a-zA-Z_\-:\/]+$</pattern>
+    <pattern>arn:aws[0-9a-zA-Z_\-:\/]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ControlTower.Model.EnabledControlDetails.ParentIdentifier</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:aws[0-9a-zA-Z_\-:\/]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ControlTower.Model.EnabledControlDetails.TargetIdentifier</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^arn:aws[0-9a-zA-Z_\-:\/]+$</pattern>
+    <pattern>arn:aws[0-9a-zA-Z_\-:\/]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ControlTower.Model.EnabledControlSummary.Arn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^arn:aws[0-9a-zA-Z_\-:\/]+$</pattern>
+    <pattern>arn:aws[0-9a-zA-Z_\-:\/]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ControlTower.Model.EnabledControlSummary.ControlIdentifier</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^arn:aws[0-9a-zA-Z_\-:\/]+$</pattern>
+    <pattern>arn:aws[0-9a-zA-Z_\-:\/]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ControlTower.Model.EnabledControlSummary.ParentIdentifier</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:aws[0-9a-zA-Z_\-:\/]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ControlTower.Model.EnabledControlSummary.TargetIdentifier</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^arn:aws[0-9a-zA-Z_\-:\/]+$</pattern>
+    <pattern>arn:aws[0-9a-zA-Z_\-:\/]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ControlTower.Model.EnablementStatusSummary.LastOperationIdentifier</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ControlTower.Model.LandingZoneDetail.Arn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^arn:aws[0-9a-zA-Z_\-:\/]+$</pattern>
+    <pattern>arn:aws[0-9a-zA-Z_\-:\/]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ControlTower.Model.LandingZoneDetail.LatestAvailableVersion</property>
     <min>3</min>
     <max>10</max>
-    <pattern>^\d+.\d+$</pattern>
+    <pattern>\d+.\d+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ControlTower.Model.LandingZoneDetail.Version</property>
     <min>3</min>
     <max>10</max>
-    <pattern>^\d+.\d+$</pattern>
+    <pattern>\d+.\d+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ControlTower.Model.LandingZoneOperationDetail.OperationIdentifier</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ControlTower.Model.LandingZoneOperationSummary.OperationIdentifier</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ControlTower.Model.LandingZoneSummary.Arn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^arn:aws[0-9a-zA-Z_\-:\/]+$</pattern>
+    <pattern>arn:aws[0-9a-zA-Z_\-:\/]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ControlTower.Model.Region.Name</property>

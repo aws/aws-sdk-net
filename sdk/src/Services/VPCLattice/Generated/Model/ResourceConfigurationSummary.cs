@@ -37,6 +37,9 @@ namespace Amazon.VPCLattice.Model
         private bool? _amazonManaged;
         private string _arn;
         private DateTime? _createdAt;
+        private string _customDomainName;
+        private string _domainVerificationId;
+        private string _groupDomain;
         private string _id;
         private DateTime? _lastUpdatedAt;
         private string _name;
@@ -98,6 +101,65 @@ namespace Amazon.VPCLattice.Model
         internal bool IsSetCreatedAt()
         {
             return this._createdAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomDomainName. 
+        /// <para>
+        ///  The custom domain name. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=3, Max=255)]
+        public string CustomDomainName
+        {
+            get { return this._customDomainName; }
+            set { this._customDomainName = value; }
+        }
+
+        // Check to see if CustomDomainName property is set
+        internal bool IsSetCustomDomainName()
+        {
+            return this._customDomainName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DomainVerificationId. 
+        /// <para>
+        ///  The domain verification ID. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=20)]
+        public string DomainVerificationId
+        {
+            get { return this._domainVerificationId; }
+            set { this._domainVerificationId = value; }
+        }
+
+        // Check to see if DomainVerificationId property is set
+        internal bool IsSetDomainVerificationId()
+        {
+            return this._domainVerificationId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GroupDomain. 
+        /// <para>
+        ///  (GROUP) The group domain for a group resource configuration. Any domains that you
+        /// create for the child resource are subdomains of the group domain. Child resources
+        /// inherit the verification status of the domain. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=3, Max=255)]
+        public string GroupDomain
+        {
+            get { return this._groupDomain; }
+            set { this._groupDomain = value; }
+        }
+
+        // Check to see if GroupDomain property is set
+        internal bool IsSetGroupDomain()
+        {
+            return this._groupDomain != null;
         }
 
         /// <summary>

@@ -39,6 +39,7 @@ namespace Amazon.QuickSight.Model
         private CustomSql _customSql;
         private RelationalTable _relationalTable;
         private S3Source _s3Source;
+        private SaaSTable _saaSTable;
 
         /// <summary>
         /// Gets and sets the property CustomSql. 
@@ -92,6 +93,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetS3Source()
         {
             return this._s3Source != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SaaSTable. 
+        /// <para>
+        /// A physical table type for Software-as-a-Service (SaaS) sources.
+        /// </para>
+        /// </summary>
+        public SaaSTable SaaSTable
+        {
+            get { return this._saaSTable; }
+            set { this._saaSTable = value; }
+        }
+
+        // Check to see if SaaSTable property is set
+        internal bool IsSetSaaSTable()
+        {
+            return this._saaSTable != null;
         }
 
     }

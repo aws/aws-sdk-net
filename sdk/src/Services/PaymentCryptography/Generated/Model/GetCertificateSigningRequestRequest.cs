@@ -31,7 +31,7 @@ namespace Amazon.PaymentCryptography.Model
 {
     /// <summary>
     /// Container for the parameters to the GetCertificateSigningRequest operation.
-    /// Used to retrieve the public key for a keypair.
+    /// Creates a certificate signing request (CSR) from a key pair.
     /// </summary>
     public partial class GetCertificateSigningRequestRequest : AmazonPaymentCryptographyRequest
     {
@@ -42,7 +42,7 @@ namespace Amazon.PaymentCryptography.Model
         /// <summary>
         /// Gets and sets the property CertificateSubject. 
         /// <para>
-        /// Certificate subject data
+        /// The metadata used to create the CSR.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -80,7 +80,7 @@ namespace Amazon.PaymentCryptography.Model
         /// <summary>
         /// Gets and sets the property SigningAlgorithm. 
         /// <para>
-        /// Algorithm used to generate the certificate signing request
+        /// The cryptographic algorithm used to sign your CSR.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

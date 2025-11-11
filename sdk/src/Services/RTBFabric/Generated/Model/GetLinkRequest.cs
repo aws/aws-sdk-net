@@ -31,12 +31,12 @@ namespace Amazon.RTBFabric.Model
 {
     /// <summary>
     /// Container for the parameters to the GetLink operation.
-    /// Retrieves information about a link between RTB applications.
+    /// Retrieves information about a link between gateways.
     /// 
     ///  
     /// <para>
     /// Returns detailed information about the link configuration, status, and associated
-    /// RTB applications.
+    /// gateways.
     /// </para>
     /// </summary>
     public partial class GetLinkRequest : AmazonRTBFabricRequest

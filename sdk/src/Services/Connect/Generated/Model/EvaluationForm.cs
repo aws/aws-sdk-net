@@ -34,6 +34,7 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class EvaluationForm
     {
+        private EvaluationFormAutoEvaluationConfiguration _autoEvaluationConfiguration;
         private string _createdBy;
         private DateTime? _createdTime;
         private string _description;
@@ -48,6 +49,24 @@ namespace Amazon.Connect.Model
         private EvaluationFormVersionStatus _status;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _title;
+
+        /// <summary>
+        /// Gets and sets the property AutoEvaluationConfiguration. 
+        /// <para>
+        /// The automatic evaluation configuration of an evaluation form.
+        /// </para>
+        /// </summary>
+        public EvaluationFormAutoEvaluationConfiguration AutoEvaluationConfiguration
+        {
+            get { return this._autoEvaluationConfiguration; }
+            set { this._autoEvaluationConfiguration = value; }
+        }
+
+        // Check to see if AutoEvaluationConfiguration property is set
+        internal bool IsSetAutoEvaluationConfiguration()
+        {
+            return this._autoEvaluationConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CreatedBy. 

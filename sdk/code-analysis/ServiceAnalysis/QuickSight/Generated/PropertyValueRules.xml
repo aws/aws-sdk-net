@@ -3556,6 +3556,21 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.AggregateOperation.Alias</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.Aggregation.NewColumnId</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.Aggregation.NewColumnName</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.AggregationPartitionBy.FieldName</property>
     <max>256</max>
   </property-value-rule>
@@ -3628,6 +3643,21 @@
   <property-value-rule>
     <property>Amazon.QuickSight.Model.APIKeyConnectionMetadata.Email</property>
     <pattern>[\w.%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.AppendedColumn.ColumnName</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.AppendedColumn.NewColumnId</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.AppendOperation.Alias</property>
+    <min>1</min>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.AssetBundleExportJobError.Message</property>
@@ -3986,6 +4016,11 @@
     <max>32</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.CastColumnTypesOperation.Alias</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.CategoricalDimensionField.FieldId</property>
     <min>1</min>
     <max>512</max>
@@ -4052,6 +4087,16 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.ColumnToUnpivot.ColumnName</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.ColumnToUnpivot.NewValue</property>
+    <min>0</min>
+    <max>2047</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.ComboChartVisual.VisualContentAltText</property>
     <min>1</min>
     <max>1024</max>
@@ -4107,6 +4152,11 @@
   <property-value-rule>
     <property>Amazon.QuickSight.Model.ContributionAnalysisFactor.FieldName</property>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.CreateColumnsOperation.Alias</property>
+    <min>1</min>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.CreateTopicReviewedAnswer.AnswerId</property>
@@ -4202,7 +4252,7 @@
   <property-value-rule>
     <property>Amazon.QuickSight.Model.CustomSql.Name</property>
     <min>1</min>
-    <max>64</max>
+    <max>128</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.CustomSql.SqlQuery</property>
@@ -4385,7 +4435,32 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.DataPrepListAggregationFunction.InputColumnName</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.DataPrepSimpleAggregationFunction.InputColumnName</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.DataSet.Name</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.DataSetColumnIdMapping.SourceColumnId</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.DataSetColumnIdMapping.TargetColumnId</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.DataSetDateFilterCondition.ColumnName</property>
     <min>1</min>
     <max>128</max>
   </property-value-rule>
@@ -4403,8 +4478,22 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.DataSetNumericFilterCondition.ColumnName</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.DataSetReference.DataSetPlaceholder</property>
     <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.DataSetStringFilterCondition.ColumnName</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.DataSetStringFilterValue.StaticValue</property>
+    <max>512</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.DataSetSummary.Name</property>
@@ -4530,6 +4619,17 @@
     <property>Amazon.QuickSight.Model.DestinationParameterValueConfiguration.SourceField</property>
     <min>1</min>
     <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.DestinationTable.Alias</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.DestinationTableSource.TransformOperationId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[0-9a-zA-Z-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.DisplayFormatOptions.BlankCellFormat</property>
@@ -4736,6 +4836,11 @@
     <property>Amazon.QuickSight.Model.FilterSliderControl.Title</property>
     <min>1</min>
     <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.FiltersOperation.Alias</property>
+    <min>1</min>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.FilterTextAreaControl.Delimiter</property>
@@ -5166,10 +5271,26 @@
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.ImportTableOperation.Alias</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.ImportTableOperationSource.SourceTableId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[0-9a-zA-Z-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.Ingestion.IngestionId</property>
     <min>1</min>
     <max>128</max>
     <pattern>^[a-zA-Z0-9-_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.InputColumn.Id</property>
+    <min>1</min>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.InputColumn.Name</property>
@@ -5240,6 +5361,16 @@
     <min>1</min>
     <max>64</max>
     <pattern>[0-9a-zA-Z-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.JoinOperation.Alias</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.JoinOperation.OnClause</property>
+    <min>1</min>
+    <max>512</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.KPISparklineOptions.Color</property>
@@ -5542,7 +5673,22 @@
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.OutputColumn.Id</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.OutputColumn.Name</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.OutputColumnNameOverride.OutputColumnName</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.OutputColumnNameOverride.SourceColumnName</property>
     <min>1</min>
     <max>128</max>
   </property-value-rule>
@@ -5739,9 +5885,34 @@
     <pattern>[\w\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.PivotConfiguration.LabelColumnName</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.PivotedLabel.LabelName</property>
+    <min>0</min>
+    <max>2047</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.PivotedLabel.NewColumnId</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.PivotedLabel.NewColumnName</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.PivotFieldSortOptions.FieldId</property>
     <min>1</min>
     <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.PivotOperation.Alias</property>
+    <min>1</min>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.PivotTableCellConditionalFormatting.FieldId</property>
@@ -5823,6 +5994,11 @@
     <property>Amazon.QuickSight.Model.PrestoParameters.Port</property>
     <min>1</min>
     <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.ProjectOperation.Alias</property>
+    <min>1</min>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.QBusinessParameters.ApplicationArn</property>
@@ -6051,6 +6227,11 @@
     <max>128</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.RenameColumnsOperation.Alias</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.ResourcePermission.Principal</property>
     <min>1</min>
     <max>256</max>
@@ -6151,6 +6332,17 @@
   <property-value-rule>
     <property>Amazon.QuickSight.Model.SemanticEntityType.TypeName</property>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.SemanticTable.Alias</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.SemanticTable.DestinationTableId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[0-9a-zA-Z-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.SemanticType.SubTypeName</property>
@@ -6322,6 +6514,12 @@
     <max>128</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.SourceTable.PhysicalTableId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[0-9a-zA-Z-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.SparkParameters.Host</property>
     <min>1</min>
     <max>256</max>
@@ -6429,6 +6627,16 @@
     <property>Amazon.QuickSight.Model.TableFieldOption.FieldId</property>
     <min>1</min>
     <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.TablePathElement.Id</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.TablePathElement.Name</property>
+    <min>1</min>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.TableVisual.VisualContentAltText</property>
@@ -6805,6 +7013,12 @@
     <max>512</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.TransformOperationSource.TransformOperationId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[0-9a-zA-Z-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.TransposedTableOption.ColumnIndex</property>
     <min>0</min>
     <max>9999</max>
@@ -6917,6 +7131,31 @@
     <min>1</min>
     <max>512</max>
     <pattern>[\w\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.UnpivotOperation.Alias</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.UnpivotOperation.UnpivotedLabelColumnId</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.UnpivotOperation.UnpivotedLabelColumnName</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.UnpivotOperation.UnpivotedValueColumnId</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.UnpivotOperation.UnpivotedValueColumnName</property>
+    <min>1</min>
+    <max>128</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.UntagColumnOperation.ColumnName</property>

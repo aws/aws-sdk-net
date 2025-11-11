@@ -31,8 +31,12 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateGameSession operation.
-    /// Updates the mutable properties of a game session. 
+    /// <b>This API works with the following fleet types:</b> EC2, Anywhere, Container
     /// 
+    ///  
+    /// <para>
+    /// Updates the mutable properties of a game session. 
+    /// </para>
     ///  
     /// <para>
     /// To update a game session, specify the game session ID and the values you want to change.

@@ -78,11 +78,11 @@ namespace Amazon.SageMakerRuntime.Model
         /// Gets and sets the property CustomAttributes. 
         /// <para>
         /// Provides additional information in the response about the inference returned by a
-        /// model hosted at an Amazon SageMaker endpoint. The information is an opaque value that
-        /// is forwarded verbatim. You could use this value, for example, to return an ID received
-        /// in the <c>CustomAttributes</c> header of a request or other metadata that a service
-        /// endpoint was programmed to produce. The value must consist of no more than 1024 visible
-        /// US-ASCII characters as specified in <a href="https://tools.ietf.org/html/rfc7230#section-3.2.6">Section
+        /// model hosted at an Amazon SageMaker AI endpoint. The information is an opaque value
+        /// that is forwarded verbatim. You could use this value, for example, to return an ID
+        /// received in the <c>CustomAttributes</c> header of a request or other metadata that
+        /// a service endpoint was programmed to produce. The value must consist of no more than
+        /// 1024 visible US-ASCII characters as specified in <a href="https://tools.ietf.org/html/rfc7230#section-3.2.6">Section
         /// 3.3.6. Field Value Components</a> of the Hypertext Transfer Protocol (HTTP/1.1). If
         /// the customer wants the custom attribute returned, the model must set the custom attribute
         /// to be included on the way back. 
@@ -97,7 +97,7 @@ namespace Amazon.SageMakerRuntime.Model
         ///  
         /// <para>
         /// This feature is currently supported in the Amazon Web Services SDKs but not in the
-        /// Amazon SageMaker Python SDK.
+        /// Amazon SageMaker AI Python SDK.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Max=1024)]

@@ -563,6 +563,56 @@ namespace Amazon.Backup
 
 
     /// <summary>
+    /// Constants used for properties of type EncryptionKeyType.
+    /// </summary>
+    public class EncryptionKeyType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AWS_OWNED_KMS_KEY for EncryptionKeyType
+        /// </summary>
+        public static readonly EncryptionKeyType AWS_OWNED_KMS_KEY = new EncryptionKeyType("AWS_OWNED_KMS_KEY");
+        /// <summary>
+        /// Constant CUSTOMER_MANAGED_KMS_KEY for EncryptionKeyType
+        /// </summary>
+        public static readonly EncryptionKeyType CUSTOMER_MANAGED_KMS_KEY = new EncryptionKeyType("CUSTOMER_MANAGED_KMS_KEY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EncryptionKeyType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EncryptionKeyType FindValue(string value)
+        {
+            return FindValue<EncryptionKeyType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EncryptionKeyType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Index.
     /// </summary>
     public class Index : ConstantClass

@@ -166,7 +166,7 @@ namespace Amazon.PaymentCryptography.Model
         /// <summary>
         /// Gets and sets the property WrappingKeyCertificate. 
         /// <para>
-        /// Key Identifier used for unwrapping the import key
+        /// The certificate used to wrap the TR-34 key block.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=32768)]

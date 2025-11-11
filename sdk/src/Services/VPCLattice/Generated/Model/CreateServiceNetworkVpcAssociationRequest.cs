@@ -57,6 +57,8 @@ namespace Amazon.VPCLattice.Model
     public partial class CreateServiceNetworkVpcAssociationRequest : AmazonVPCLatticeRequest
     {
         private string _clientToken;
+        private DnsOptions _dnsOptions;
+        private bool? _privateDnsEnabled;
         private List<string> _securityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _serviceNetworkIdentifier;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
@@ -82,6 +84,42 @@ namespace Amazon.VPCLattice.Model
         internal bool IsSetClientToken()
         {
             return this._clientToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DnsOptions. 
+        /// <para>
+        ///  DNS options for the service network VPC association. 
+        /// </para>
+        /// </summary>
+        public DnsOptions DnsOptions
+        {
+            get { return this._dnsOptions; }
+            set { this._dnsOptions = value; }
+        }
+
+        // Check to see if DnsOptions property is set
+        internal bool IsSetDnsOptions()
+        {
+            return this._dnsOptions != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PrivateDnsEnabled. 
+        /// <para>
+        ///  Indicates if private DNS is enabled for the VPC association. 
+        /// </para>
+        /// </summary>
+        public bool? PrivateDnsEnabled
+        {
+            get { return this._privateDnsEnabled; }
+            set { this._privateDnsEnabled = value; }
+        }
+
+        // Check to see if PrivateDnsEnabled property is set
+        internal bool IsSetPrivateDnsEnabled()
+        {
+            return this._privateDnsEnabled.HasValue; 
         }
 
         /// <summary>

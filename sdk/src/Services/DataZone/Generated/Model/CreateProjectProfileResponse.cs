@@ -34,6 +34,7 @@ namespace Amazon.DataZone.Model
     /// </summary>
     public partial class CreateProjectProfileResponse : AmazonWebServiceResponse
     {
+        private bool? _allowCustomProjectResourceTags;
         private DateTime? _createdAt;
         private string _createdBy;
         private string _description;
@@ -43,7 +44,27 @@ namespace Amazon.DataZone.Model
         private string _id;
         private DateTime? _lastUpdatedAt;
         private string _name;
+        private List<ResourceTagParameter> _projectResourceTags = AWSConfigs.InitializeCollections ? new List<ResourceTagParameter>() : null;
+        private string _projectResourceTagsDescription;
         private Status _status;
+
+        /// <summary>
+        /// Gets and sets the property AllowCustomProjectResourceTags. 
+        /// <para>
+        /// Specifies whether custom project resource tags are supported.
+        /// </para>
+        /// </summary>
+        public bool? AllowCustomProjectResourceTags
+        {
+            get { return this._allowCustomProjectResourceTags; }
+            set { this._allowCustomProjectResourceTags = value; }
+        }
+
+        // Check to see if AllowCustomProjectResourceTags property is set
+        internal bool IsSetAllowCustomProjectResourceTags()
+        {
+            return this._allowCustomProjectResourceTags.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property CreatedAt. 
@@ -216,6 +237,50 @@ namespace Amazon.DataZone.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProjectResourceTags. 
+        /// <para>
+        /// The resource tags of the project profile.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=0, Max=25)]
+        public List<ResourceTagParameter> ProjectResourceTags
+        {
+            get { return this._projectResourceTags; }
+            set { this._projectResourceTags = value; }
+        }
+
+        // Check to see if ProjectResourceTags property is set
+        internal bool IsSetProjectResourceTags()
+        {
+            return this._projectResourceTags != null && (this._projectResourceTags.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProjectResourceTagsDescription. 
+        /// <para>
+        /// Field viewable through the UI that provides a project user with the allowed resource
+        /// tag specifications.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Min=0, Max=2048)]
+        public string ProjectResourceTagsDescription
+        {
+            get { return this._projectResourceTagsDescription; }
+            set { this._projectResourceTagsDescription = value; }
+        }
+
+        // Check to see if ProjectResourceTagsDescription property is set
+        internal bool IsSetProjectResourceTagsDescription()
+        {
+            return this._projectResourceTagsDescription != null;
         }
 
         /// <summary>

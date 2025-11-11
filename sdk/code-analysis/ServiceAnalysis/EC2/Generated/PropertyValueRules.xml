@@ -328,6 +328,16 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeIpamPrefixListResolversRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeIpamPrefixListResolverTargetsRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EC2.Model.DescribeIpamResourceDiscoveriesRequest.MaxResults</property>
     <min>5</min>
     <max>1000</max>
@@ -755,6 +765,21 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EC2.Model.GetIpamPrefixListResolverRulesRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.GetIpamPrefixListResolverVersionEntriesRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.GetIpamPrefixListResolverVersionsRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EC2.Model.GetIpamResourceCidrsRequest.MaxResults</property>
     <min>5</min>
     <max>1000</max>
@@ -1152,6 +1177,21 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.IpamPool.IpamScopeArn</property>
+    <min>1</min>
+    <max>1283</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.IpamPrefixListResolver.IpamArn</property>
+    <min>1</min>
+    <max>1283</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.IpamPrefixListResolver.IpamPrefixListResolverArn</property>
+    <min>1</min>
+    <max>1283</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.IpamPrefixListResolverTarget.IpamPrefixListResolverTargetArn</property>
     <min>1</min>
     <max>1283</max>
   </property-value-rule>

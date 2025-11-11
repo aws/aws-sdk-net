@@ -31,11 +31,15 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the AcceptMatch operation.
+    /// <b>This API works with the following fleet types:</b> EC2, Anywhere, Container
+    /// 
+    ///  
+    /// <para>
     /// Registers a player's acceptance or rejection of a proposed FlexMatch match. A matchmaking
     /// configuration may require player acceptance; if so, then matches built with that configuration
     /// cannot be completed unless all players accept the proposed match within a specified
     /// time limit. 
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// When FlexMatch builds a match, all the matchmaking tickets involved in the proposed

@@ -321,6 +321,9 @@ namespace Amazon.S3Vectors
         /// <exception cref="Amazon.S3Vectors.Model.NotFoundException">
         /// The request was rejected because the specified resource can't be found.
         /// </exception>
+        /// <exception cref="Amazon.S3Vectors.Model.RequestTimeoutException">
+        /// The request timed out. Retry your request.
+        /// </exception>
         /// <exception cref="Amazon.S3Vectors.Model.ServiceQuotaExceededException">
         /// Your request exceeds a service quota.
         /// </exception>
@@ -394,6 +397,9 @@ namespace Amazon.S3Vectors
         /// <exception cref="Amazon.S3Vectors.Model.InternalServerException">
         /// The request failed due to an internal server error.
         /// </exception>
+        /// <exception cref="Amazon.S3Vectors.Model.RequestTimeoutException">
+        /// The request timed out. Retry your request.
+        /// </exception>
         /// <exception cref="Amazon.S3Vectors.Model.ServiceQuotaExceededException">
         /// Your request exceeds a service quota.
         /// </exception>
@@ -461,8 +467,8 @@ namespace Amazon.S3Vectors
         /// <exception cref="Amazon.S3Vectors.Model.InternalServerException">
         /// The request failed due to an internal server error.
         /// </exception>
-        /// <exception cref="Amazon.S3Vectors.Model.ServiceQuotaExceededException">
-        /// Your request exceeds a service quota.
+        /// <exception cref="Amazon.S3Vectors.Model.RequestTimeoutException">
+        /// The request timed out. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.S3Vectors.Model.ServiceUnavailableException">
         /// The service is unavailable. Wait briefly and retry your request. If it continues to
@@ -535,8 +541,8 @@ namespace Amazon.S3Vectors
         /// <exception cref="Amazon.S3Vectors.Model.InternalServerException">
         /// The request failed due to an internal server error.
         /// </exception>
-        /// <exception cref="Amazon.S3Vectors.Model.ServiceQuotaExceededException">
-        /// Your request exceeds a service quota.
+        /// <exception cref="Amazon.S3Vectors.Model.RequestTimeoutException">
+        /// The request timed out. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.S3Vectors.Model.ServiceUnavailableException">
         /// The service is unavailable. Wait briefly and retry your request. If it continues to
@@ -605,8 +611,8 @@ namespace Amazon.S3Vectors
         /// <exception cref="Amazon.S3Vectors.Model.NotFoundException">
         /// The request was rejected because the specified resource can't be found.
         /// </exception>
-        /// <exception cref="Amazon.S3Vectors.Model.ServiceQuotaExceededException">
-        /// Your request exceeds a service quota.
+        /// <exception cref="Amazon.S3Vectors.Model.RequestTimeoutException">
+        /// The request timed out. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.S3Vectors.Model.ServiceUnavailableException">
         /// The service is unavailable. Wait briefly and retry your request. If it continues to
@@ -709,8 +715,8 @@ namespace Amazon.S3Vectors
         /// <exception cref="Amazon.S3Vectors.Model.NotFoundException">
         /// The request was rejected because the specified resource can't be found.
         /// </exception>
-        /// <exception cref="Amazon.S3Vectors.Model.ServiceQuotaExceededException">
-        /// Your request exceeds a service quota.
+        /// <exception cref="Amazon.S3Vectors.Model.RequestTimeoutException">
+        /// The request timed out. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.S3Vectors.Model.ServiceUnavailableException">
         /// The service is unavailable. Wait briefly and retry your request. If it continues to
@@ -779,8 +785,8 @@ namespace Amazon.S3Vectors
         /// <exception cref="Amazon.S3Vectors.Model.NotFoundException">
         /// The request was rejected because the specified resource can't be found.
         /// </exception>
-        /// <exception cref="Amazon.S3Vectors.Model.ServiceQuotaExceededException">
-        /// Your request exceeds a service quota.
+        /// <exception cref="Amazon.S3Vectors.Model.RequestTimeoutException">
+        /// The request timed out. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.S3Vectors.Model.ServiceUnavailableException">
         /// The service is unavailable. Wait briefly and retry your request. If it continues to
@@ -849,8 +855,8 @@ namespace Amazon.S3Vectors
         /// <exception cref="Amazon.S3Vectors.Model.NotFoundException">
         /// The request was rejected because the specified resource can't be found.
         /// </exception>
-        /// <exception cref="Amazon.S3Vectors.Model.ServiceQuotaExceededException">
-        /// Your request exceeds a service quota.
+        /// <exception cref="Amazon.S3Vectors.Model.RequestTimeoutException">
+        /// The request timed out. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.S3Vectors.Model.ServiceUnavailableException">
         /// The service is unavailable. Wait briefly and retry your request. If it continues to
@@ -919,8 +925,8 @@ namespace Amazon.S3Vectors
         /// <exception cref="Amazon.S3Vectors.Model.NotFoundException">
         /// The request was rejected because the specified resource can't be found.
         /// </exception>
-        /// <exception cref="Amazon.S3Vectors.Model.ServiceQuotaExceededException">
-        /// Your request exceeds a service quota.
+        /// <exception cref="Amazon.S3Vectors.Model.RequestTimeoutException">
+        /// The request timed out. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.S3Vectors.Model.ServiceUnavailableException">
         /// The service is unavailable. Wait briefly and retry your request. If it continues to
@@ -1022,8 +1028,8 @@ namespace Amazon.S3Vectors
         /// <exception cref="Amazon.S3Vectors.Model.NotFoundException">
         /// The request was rejected because the specified resource can't be found.
         /// </exception>
-        /// <exception cref="Amazon.S3Vectors.Model.ServiceQuotaExceededException">
-        /// Your request exceeds a service quota.
+        /// <exception cref="Amazon.S3Vectors.Model.RequestTimeoutException">
+        /// The request timed out. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.S3Vectors.Model.ServiceUnavailableException">
         /// The service is unavailable. Wait briefly and retry your request. If it continues to
@@ -1092,8 +1098,8 @@ namespace Amazon.S3Vectors
         /// <exception cref="Amazon.S3Vectors.Model.NotFoundException">
         /// The request was rejected because the specified resource can't be found.
         /// </exception>
-        /// <exception cref="Amazon.S3Vectors.Model.ServiceQuotaExceededException">
-        /// Your request exceeds a service quota.
+        /// <exception cref="Amazon.S3Vectors.Model.RequestTimeoutException">
+        /// The request timed out. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.S3Vectors.Model.ServiceUnavailableException">
         /// The service is unavailable. Wait briefly and retry your request. If it continues to
@@ -1159,8 +1165,8 @@ namespace Amazon.S3Vectors
         /// <exception cref="Amazon.S3Vectors.Model.InternalServerException">
         /// The request failed due to an internal server error.
         /// </exception>
-        /// <exception cref="Amazon.S3Vectors.Model.ServiceQuotaExceededException">
-        /// Your request exceeds a service quota.
+        /// <exception cref="Amazon.S3Vectors.Model.RequestTimeoutException">
+        /// The request timed out. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.S3Vectors.Model.ServiceUnavailableException">
         /// The service is unavailable. Wait briefly and retry your request. If it continues to
@@ -1249,8 +1255,8 @@ namespace Amazon.S3Vectors
         /// <exception cref="Amazon.S3Vectors.Model.NotFoundException">
         /// The request was rejected because the specified resource can't be found.
         /// </exception>
-        /// <exception cref="Amazon.S3Vectors.Model.ServiceQuotaExceededException">
-        /// Your request exceeds a service quota.
+        /// <exception cref="Amazon.S3Vectors.Model.RequestTimeoutException">
+        /// The request timed out. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.S3Vectors.Model.ServiceUnavailableException">
         /// The service is unavailable. Wait briefly and retry your request. If it continues to
@@ -1319,8 +1325,8 @@ namespace Amazon.S3Vectors
         /// <exception cref="Amazon.S3Vectors.Model.NotFoundException">
         /// The request was rejected because the specified resource can't be found.
         /// </exception>
-        /// <exception cref="Amazon.S3Vectors.Model.ServiceQuotaExceededException">
-        /// Your request exceeds a service quota.
+        /// <exception cref="Amazon.S3Vectors.Model.RequestTimeoutException">
+        /// The request timed out. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.S3Vectors.Model.ServiceUnavailableException">
         /// The service is unavailable. Wait briefly and retry your request. If it continues to
@@ -1437,6 +1443,9 @@ namespace Amazon.S3Vectors
         /// </exception>
         /// <exception cref="Amazon.S3Vectors.Model.NotFoundException">
         /// The request was rejected because the specified resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.S3Vectors.Model.RequestTimeoutException">
+        /// The request timed out. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.S3Vectors.Model.ServiceQuotaExceededException">
         /// Your request exceeds a service quota.
@@ -1563,8 +1572,8 @@ namespace Amazon.S3Vectors
         /// <exception cref="Amazon.S3Vectors.Model.NotFoundException">
         /// The request was rejected because the specified resource can't be found.
         /// </exception>
-        /// <exception cref="Amazon.S3Vectors.Model.ServiceQuotaExceededException">
-        /// Your request exceeds a service quota.
+        /// <exception cref="Amazon.S3Vectors.Model.RequestTimeoutException">
+        /// The request timed out. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.S3Vectors.Model.ServiceUnavailableException">
         /// The service is unavailable. Wait briefly and retry your request. If it continues to

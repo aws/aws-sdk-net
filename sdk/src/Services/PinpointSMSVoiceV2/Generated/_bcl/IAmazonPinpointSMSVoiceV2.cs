@@ -32,29 +32,26 @@ namespace Amazon.PinpointSMSVoiceV2
     /// <summary>
     /// <para>Interface for accessing PinpointSMSVoiceV2</para>
     ///
-    /// Welcome to the <i>AWS End User Messaging SMS and Voice, version 2 API Reference</i>.
-    /// This guide provides information about AWS End User Messaging SMS and Voice, version
-    /// 2 API resources, including supported HTTP methods, parameters, and schemas.
+    /// Welcome to the <i>End User MessagingSMS, version 2 API Reference</i>. This guide provides
+    /// information about End User MessagingSMS, version 2 API resources, including supported
+    /// HTTP methods, parameters, and schemas.
     /// 
     ///  
     /// <para>
     /// Amazon Pinpoint is an Amazon Web Services service that you can use to engage with
-    /// your recipients across multiple messaging channels. The AWS End User Messaging SMS
-    /// and Voice, version 2 API provides programmatic access to options that are unique to
-    /// the SMS and voice channels. AWS End User Messaging SMS and Voice, version 2 resources
-    /// such as phone numbers, sender IDs, and opt-out lists can be used by the Amazon Pinpoint
-    /// API.
+    /// your recipients across multiple messaging channels. The End User MessagingSMS, version
+    /// 2 API provides programmatic access to options that are unique to the SMS and voice
+    /// channels. End User MessagingSMS, version 2 resources such as phone numbers, sender
+    /// IDs, and opt-out lists can be used by the Amazon Pinpoint API.
     /// </para>
     ///  
     /// <para>
-    /// If you're new to AWS End User Messaging SMS and Voice, it's also helpful to review
-    /// the <a href="https://docs.aws.amazon.com/sms-voice/latest/userguide/what-is-service.html">
-    /// AWS End User Messaging SMS User Guide</a>. The <i>AWS End User Messaging SMS User
-    /// Guide </i> provides tutorials, code samples, and procedures that demonstrate how to
-    /// use AWS End User Messaging SMS and Voice features programmatically and how to integrate
-    /// functionality into mobile apps and other types of applications. The guide also provides
-    /// key information, such as AWS End User Messaging SMS and Voice integration with other
-    /// Amazon Web Services services, and the quotas that apply to use of the service.
+    /// If you're new to End User MessagingSMS, it's also helpful to review the <a href="https://docs.aws.amazon.com/sms-voice/latest/userguide/what-is-service.html">
+    /// End User MessagingSMS User Guide</a>, where you'll find tutorials, code samples, and
+    /// procedures that demonstrate how to use End User MessagingSMS features programmatically
+    /// and how to integrate functionality into mobile apps and other types of applications.
+    /// The guide also provides key information, such as End User MessagingSMS integration
+    /// with other Amazon Web Services services, and the quotas that apply to use of the service.
     /// </para>
     ///  
     /// <para>
@@ -62,10 +59,10 @@ namespace Amazon.PinpointSMSVoiceV2
     /// </para>
     ///  
     /// <para>
-    /// The <i>AWS End User Messaging SMS and Voice version 2 API Reference</i> is available
-    /// in several Amazon Web Services Regions and it provides an endpoint for each of these
-    /// Regions. For a list of all the Regions and endpoints where the API is currently available,
-    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#pinpoint_region">Amazon
+    /// The <i>End User MessagingSMS version 2 API Reference</i> is available in several Amazon
+    /// Web Services Regions and it provides an endpoint for each of these Regions. For a
+    /// list of all the Regions and endpoints where the API is currently available, see <a
+    /// href="https://docs.aws.amazon.com/hgeneral/latest/gr/rande.html#pinpoint_region">Amazon
     /// Web Services Service Endpoints</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/pinpoint.html">Amazon
     /// Pinpoint endpoints and quotas</a> in the Amazon Web Services General Reference. To
     /// learn more about Amazon Web Services Regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande-manage.html">Managing
@@ -78,7 +75,7 @@ namespace Amazon.PinpointSMSVoiceV2
     /// high-throughput, and highly redundant network connections. These Availability Zones
     /// enable us to provide very high levels of availability and redundancy, while also minimizing
     /// latency. To learn more about the number of Availability Zones that are available in
-    /// each Region, see <a href="https://aws.amazon.com/about-aws/global-infrastructure/">Amazon
+    /// each Region, see <a href="http://aws.amazon.com/about-aws/global-infrastructure/">Amazon
     /// Web Services Global Infrastructure.</a> 
     /// </para>
     /// </summary>
@@ -270,6 +267,72 @@ namespace Amazon.PinpointSMSVoiceV2
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/AssociateProtectConfiguration">REST API Reference for AssociateProtectConfiguration Operation</seealso>
         Task<AssociateProtectConfigurationResponse> AssociateProtectConfigurationAsync(AssociateProtectConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CarrierLookup
+
+
+        /// <summary>
+        /// Returns information about a destination phone number, including whether the number
+        /// type and whether it is valid, the carrier, and more.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CarrierLookup service method.</param>
+        /// 
+        /// <returns>The response from the CarrierLookup service method, as returned by PinpointSMSVoiceV2.</returns>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.AccessDeniedException">
+        /// The request was denied because you don't have sufficient permissions to access the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.InternalServerException">
+        /// The API encountered an unexpected error and couldn't complete the request. You might
+        /// be able to successfully issue the request again in the future.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.ServiceQuotaExceededException">
+        /// The request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.ThrottlingException">
+        /// An error that occurred because too many requests were sent during a certain amount
+        /// of time.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.ValidationException">
+        /// A validation exception for a field.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/CarrierLookup">REST API Reference for CarrierLookup Operation</seealso>
+        CarrierLookupResponse CarrierLookup(CarrierLookupRequest request);
+
+
+
+        /// <summary>
+        /// Returns information about a destination phone number, including whether the number
+        /// type and whether it is valid, the carrier, and more.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CarrierLookup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CarrierLookup service method, as returned by PinpointSMSVoiceV2.</returns>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.AccessDeniedException">
+        /// The request was denied because you don't have sufficient permissions to access the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.InternalServerException">
+        /// The API encountered an unexpected error and couldn't complete the request. You might
+        /// be able to successfully issue the request again in the future.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.ServiceQuotaExceededException">
+        /// The request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.ThrottlingException">
+        /// An error that occurred because too many requests were sent during a certain amount
+        /// of time.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.ValidationException">
+        /// A validation exception for a field.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/CarrierLookup">REST API Reference for CarrierLookup Operation</seealso>
+        Task<CarrierLookupResponse> CarrierLookupAsync(CarrierLookupRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -508,7 +571,7 @@ namespace Amazon.PinpointSMSVoiceV2
         /// for the phone number is added to the opt-out list. In addition to STOP, your recipients
         /// can use any supported opt-out keyword, such as CANCEL or OPTOUT. For a list of supported
         /// opt-out keywords, see <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-sms-manage.html#channels-sms-manage-optout">
-        /// SMS opt out </a> in the <i>AWS End User Messaging SMS User Guide</i>.
+        /// SMS opt out </a> in the End User MessagingSMS User Guide.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateOptOutList service method.</param>
@@ -556,7 +619,7 @@ namespace Amazon.PinpointSMSVoiceV2
         /// for the phone number is added to the opt-out list. In addition to STOP, your recipients
         /// can use any supported opt-out keyword, such as CANCEL or OPTOUT. For a list of supported
         /// opt-out keywords, see <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-sms-manage.html#channels-sms-manage-optout">
-        /// SMS opt out </a> in the <i>AWS End User Messaging SMS User Guide</i>.
+        /// SMS opt out </a> in the End User MessagingSMS User Guide.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateOptOutList service method.</param>
@@ -1580,8 +1643,8 @@ namespace Amazon.PinpointSMSVoiceV2
         /// A keyword is a word that you can search for on a particular phone number or pool.
         /// It is also a specific word or phrase that an end user can send to your number to elicit
         /// a response, such as an informational message or a special offer. When your number
-        /// receives a message that begins with a keyword, AWS End User Messaging SMS and Voice
-        /// responds with a customizable message.
+        /// receives a message that begins with a keyword, End User MessagingSMS responds with
+        /// a customizable message.
         /// </para>
         ///  
         /// <para>
@@ -1627,8 +1690,8 @@ namespace Amazon.PinpointSMSVoiceV2
         /// A keyword is a word that you can search for on a particular phone number or pool.
         /// It is also a specific word or phrase that an end user can send to your number to elicit
         /// a response, such as an informational message or a special offer. When your number
-        /// receives a message that begins with a keyword, AWS End User Messaging SMS and Voice
-        /// responds with a customizable message.
+        /// receives a message that begins with a keyword, End User MessagingSMS responds with
+        /// a customizable message.
         /// </para>
         ///  
         /// <para>
@@ -2385,9 +2448,8 @@ namespace Amazon.PinpointSMSVoiceV2
 
 
         /// <summary>
-        /// Deletes the resource-based policy document attached to the AWS End User Messaging
-        /// SMS and Voice resource. A shared resource can be a Pool, Opt-out list, Sender Id,
-        /// or Phone number.
+        /// Deletes the resource-based policy document attached to the End User MessagingSMS resource.
+        /// A shared resource can be a Pool, Opt-out list, Sender Id, or Phone number.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteResourcePolicy service method.</param>
         /// 
@@ -2416,9 +2478,8 @@ namespace Amazon.PinpointSMSVoiceV2
 
 
         /// <summary>
-        /// Deletes the resource-based policy document attached to the AWS End User Messaging
-        /// SMS and Voice resource. A shared resource can be a Pool, Opt-out list, Sender Id,
-        /// or Phone number.
+        /// Deletes the resource-based policy document attached to the End User MessagingSMS resource.
+        /// A shared resource can be a Pool, Opt-out list, Sender Id, or Phone number.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteResourcePolicy service method.</param>
         /// <param name="cancellationToken">
@@ -2457,7 +2518,7 @@ namespace Amazon.PinpointSMSVoiceV2
         /// Deleting a spend limit override will set the <c>EnforcedLimit</c> to equal the <c>MaxLimit</c>,
         /// which is controlled by Amazon Web Services. For more information on spend limits (quotas)
         /// see <a href="https://docs.aws.amazon.com/sms-voice/latest/userguide/quotas.html">Quotas
-        /// </a> in the <i>AWS End User Messaging SMS User Guide</i>.
+        /// </a> in the <i>End User MessagingSMS User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteTextMessageSpendLimitOverride service method.</param>
         /// 
@@ -2487,7 +2548,7 @@ namespace Amazon.PinpointSMSVoiceV2
         /// Deleting a spend limit override will set the <c>EnforcedLimit</c> to equal the <c>MaxLimit</c>,
         /// which is controlled by Amazon Web Services. For more information on spend limits (quotas)
         /// see <a href="https://docs.aws.amazon.com/sms-voice/latest/userguide/quotas.html">Quotas
-        /// </a> in the <i>AWS End User Messaging SMS User Guide</i>.
+        /// </a> in the <i>End User MessagingSMS User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteTextMessageSpendLimitOverride service method.</param>
         /// <param name="cancellationToken">
@@ -2597,7 +2658,7 @@ namespace Amazon.PinpointSMSVoiceV2
         /// Deleting a spend limit override sets the <c>EnforcedLimit</c> equal to the <c>MaxLimit</c>,
         /// which is controlled by Amazon Web Services. For more information on spending limits
         /// (quotas) see <a href="https://docs.aws.amazon.com/sms-voice/latest/userguide/quotas.html">Quotas
-        /// </a> in the <i>AWS End User Messaging SMS User Guide</i>.
+        /// </a> in the <i>End User MessagingSMS User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteVoiceMessageSpendLimitOverride service method.</param>
         /// 
@@ -2627,7 +2688,7 @@ namespace Amazon.PinpointSMSVoiceV2
         /// Deleting a spend limit override sets the <c>EnforcedLimit</c> equal to the <c>MaxLimit</c>,
         /// which is controlled by Amazon Web Services. For more information on spending limits
         /// (quotas) see <a href="https://docs.aws.amazon.com/sms-voice/latest/userguide/quotas.html">Quotas
-        /// </a> in the <i>AWS End User Messaging SMS User Guide</i>.
+        /// </a> in the <i>End User MessagingSMS User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteVoiceMessageSpendLimitOverride service method.</param>
         /// <param name="cancellationToken">
@@ -2735,16 +2796,16 @@ namespace Amazon.PinpointSMSVoiceV2
 
 
         /// <summary>
-        /// Describes the current AWS End User Messaging SMS and Voice SMS Voice V2 resource quotas
-        /// for your account. The description for a quota includes the quota name, current usage
-        /// toward that quota, and the quota's maximum value.
+        /// Describes the current End User MessagingSMS SMS Voice V2 resource quotas for your
+        /// account. The description for a quota includes the quota name, current usage toward
+        /// that quota, and the quota's maximum value.
         /// 
         ///  
         /// <para>
         /// When you establish an Amazon Web Services account, the account has initial quotas
         /// on the maximum number of configuration sets, opt-out lists, phone numbers, and pools
         /// that you can create in a given Region. For more information see <a href="https://docs.aws.amazon.com/sms-voice/latest/userguide/quotas.html">Quotas
-        /// </a> in the <i>AWS End User Messaging SMS User Guide</i>.
+        /// </a> in the <i>End User MessagingSMS User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAccountLimits service method.</param>
@@ -2771,16 +2832,16 @@ namespace Amazon.PinpointSMSVoiceV2
 
 
         /// <summary>
-        /// Describes the current AWS End User Messaging SMS and Voice SMS Voice V2 resource quotas
-        /// for your account. The description for a quota includes the quota name, current usage
-        /// toward that quota, and the quota's maximum value.
+        /// Describes the current End User MessagingSMS SMS Voice V2 resource quotas for your
+        /// account. The description for a quota includes the quota name, current usage toward
+        /// that quota, and the quota's maximum value.
         /// 
         ///  
         /// <para>
         /// When you establish an Amazon Web Services account, the account has initial quotas
         /// on the maximum number of configuration sets, opt-out lists, phone numbers, and pools
         /// that you can create in a given Region. For more information see <a href="https://docs.aws.amazon.com/sms-voice/latest/userguide/quotas.html">Quotas
-        /// </a> in the <i>AWS End User Messaging SMS User Guide</i>.
+        /// </a> in the <i>End User MessagingSMS User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAccountLimits service method.</param>
@@ -2911,8 +2972,8 @@ namespace Amazon.PinpointSMSVoiceV2
         /// A keyword is a word that you can search for on a particular phone number or pool.
         /// It is also a specific word or phrase that an end user can send to your number to elicit
         /// a response, such as an informational message or a special offer. When your number
-        /// receives a message that begins with a keyword, AWS End User Messaging SMS and Voice
-        /// responds with a customizable message.
+        /// receives a message that begins with a keyword, End User MessagingSMS responds with
+        /// a customizable message.
         /// </para>
         ///  
         /// <para>
@@ -2954,8 +3015,8 @@ namespace Amazon.PinpointSMSVoiceV2
         /// A keyword is a word that you can search for on a particular phone number or pool.
         /// It is also a specific word or phrase that an end user can send to your number to elicit
         /// a response, such as an informational message or a special offer. When your number
-        /// receives a message that begins with a keyword, AWS End User Messaging SMS and Voice
-        /// responds with a customizable message.
+        /// receives a message that begins with a keyword, End User MessagingSMS responds with
+        /// a customizable message.
         /// </para>
         ///  
         /// <para>
@@ -3973,7 +4034,7 @@ namespace Amazon.PinpointSMSVoiceV2
         /// spend limit in a given Region. For more information on increasing your monthly spend
         /// limit, see <a href="https://docs.aws.amazon.com/sms-voice/latest/userguide/awssupport-spend-threshold.html">
         /// Requesting increases to your monthly SMS, MMS, or Voice spending quota </a> in the
-        /// <i>AWS End User Messaging SMS User Guide</i>.
+        /// <i>End User MessagingSMS User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeSpendLimits service method.</param>
@@ -4008,7 +4069,7 @@ namespace Amazon.PinpointSMSVoiceV2
         /// spend limit in a given Region. For more information on increasing your monthly spend
         /// limit, see <a href="https://docs.aws.amazon.com/sms-voice/latest/userguide/awssupport-spend-threshold.html">
         /// Requesting increases to your monthly SMS, MMS, or Voice spending quota </a> in the
-        /// <i>AWS End User Messaging SMS User Guide</i>.
+        /// <i>End User MessagingSMS User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeSpendLimits service method.</param>
@@ -4403,9 +4464,9 @@ namespace Amazon.PinpointSMSVoiceV2
 
 
         /// <summary>
-        /// Retrieves the JSON text of the resource-based policy document attached to the AWS
-        /// End User Messaging SMS and Voice resource. A shared resource can be a Pool, Opt-out
-        /// list, Sender Id, or Phone number.
+        /// Retrieves the JSON text of the resource-based policy document attached to the End
+        /// User MessagingSMS resource. A shared resource can be a Pool, Opt-out list, Sender
+        /// Id, or Phone number.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetResourcePolicy service method.</param>
         /// 
@@ -4434,9 +4495,9 @@ namespace Amazon.PinpointSMSVoiceV2
 
 
         /// <summary>
-        /// Retrieves the JSON text of the resource-based policy document attached to the AWS
-        /// End User Messaging SMS and Voice resource. A shared resource can be a Pool, Opt-out
-        /// list, Sender Id, or Phone number.
+        /// Retrieves the JSON text of the resource-based policy document attached to the End
+        /// User MessagingSMS resource. A shared resource can be a Pool, Opt-out list, Sender
+        /// Id, or Phone number.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetResourcePolicy service method.</param>
         /// <param name="cancellationToken">
@@ -4748,8 +4809,8 @@ namespace Amazon.PinpointSMSVoiceV2
         ///  A keyword is a word that you can search for on a particular phone number or pool.
         /// It is also a specific word or phrase that an end user can send to your number to elicit
         /// a response, such as an informational message or a special offer. When your number
-        /// receives a message that begins with a keyword, AWS End User Messaging SMS and Voice
-        /// responds with a customizable message.
+        /// receives a message that begins with a keyword, End User MessagingSMS responds with
+        /// a customizable message.
         /// </para>
         ///  
         /// <para>
@@ -4798,8 +4859,8 @@ namespace Amazon.PinpointSMSVoiceV2
         ///  A keyword is a word that you can search for on a particular phone number or pool.
         /// It is also a specific word or phrase that an end user can send to your number to elicit
         /// a response, such as an informational message or a special offer. When your number
-        /// receives a message that begins with a keyword, AWS End User Messaging SMS and Voice
-        /// responds with a customizable message.
+        /// receives a message that begins with a keyword, End User MessagingSMS responds with
+        /// a customizable message.
         /// </para>
         ///  
         /// <para>
@@ -5153,11 +5214,11 @@ namespace Amazon.PinpointSMSVoiceV2
 
 
         /// <summary>
-        /// Attaches a resource-based policy to a AWS End User Messaging SMS and Voice resource(phone
-        /// number, sender Id, phone poll, or opt-out list) that is used for sharing the resource.
-        /// A shared resource can be a Pool, Opt-out list, Sender Id, or Phone number. For more
-        /// information about resource-based policies, see <a href="https://docs.aws.amazon.com/sms-voice/latest/userguide/shared-resources.html">Working
-        /// with shared resources</a> in the <i>AWS End User Messaging SMS User Guide</i>.
+        /// Attaches a resource-based policy to a End User MessagingSMS resource(phone number,
+        /// sender Id, phone poll, or opt-out list) that is used for sharing the resource. A shared
+        /// resource can be a Pool, Opt-out list, Sender Id, or Phone number. For more information
+        /// about resource-based policies, see <a href="https://docs.aws.amazon.com/sms-voice/latest/userguide/shared-resources.html">Working
+        /// with shared resources</a> in the <i>End User MessagingSMS User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutResourcePolicy service method.</param>
         /// 
@@ -5186,11 +5247,11 @@ namespace Amazon.PinpointSMSVoiceV2
 
 
         /// <summary>
-        /// Attaches a resource-based policy to a AWS End User Messaging SMS and Voice resource(phone
-        /// number, sender Id, phone poll, or opt-out list) that is used for sharing the resource.
-        /// A shared resource can be a Pool, Opt-out list, Sender Id, or Phone number. For more
-        /// information about resource-based policies, see <a href="https://docs.aws.amazon.com/sms-voice/latest/userguide/shared-resources.html">Working
-        /// with shared resources</a> in the <i>AWS End User Messaging SMS User Guide</i>.
+        /// Attaches a resource-based policy to a End User MessagingSMS resource(phone number,
+        /// sender Id, phone poll, or opt-out list) that is used for sharing the resource. A shared
+        /// resource can be a Pool, Opt-out list, Sender Id, or Phone number. For more information
+        /// about resource-based policies, see <a href="https://docs.aws.amazon.com/sms-voice/latest/userguide/shared-resources.html">Working
+        /// with shared resources</a> in the <i>End User MessagingSMS User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutResourcePolicy service method.</param>
         /// <param name="cancellationToken">
@@ -5389,7 +5450,7 @@ namespace Amazon.PinpointSMSVoiceV2
         /// <summary>
         /// Request an origination phone number for use in your account. For more information
         /// on phone number request see <a href="https://docs.aws.amazon.com/sms-voice/latest/userguide/phone-numbers-request.html">Request
-        /// a phone number</a> in the <i>AWS End User Messaging SMS User Guide</i>.
+        /// a phone number</a> in the <i>End User MessagingSMS User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RequestPhoneNumber service method.</param>
         /// 
@@ -5428,7 +5489,7 @@ namespace Amazon.PinpointSMSVoiceV2
         /// <summary>
         /// Request an origination phone number for use in your account. For more information
         /// on phone number request see <a href="https://docs.aws.amazon.com/sms-voice/latest/userguide/phone-numbers-request.html">Request
-        /// a phone number</a> in the <i>AWS End User Messaging SMS User Guide</i>.
+        /// a phone number</a> in the <i>End User MessagingSMS User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RequestPhoneNumber service method.</param>
         /// <param name="cancellationToken">
@@ -5722,7 +5783,7 @@ namespace Amazon.PinpointSMSVoiceV2
         /// depends on the destination country of your messages, as well as the type of phone
         /// number (origination number) that you use to send the message. For more information
         /// about MPS, see <a href="https://docs.aws.amazon.com/sms-voice/latest/userguide/sms-limitations-mps.html">Message
-        /// Parts per Second (MPS) limits</a> in the <i>AWS End User Messaging SMS User Guide</i>.
+        /// Parts per Second (MPS) limits</a> in the <i>End User MessagingSMS User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SendTextMessage service method.</param>
@@ -5769,7 +5830,7 @@ namespace Amazon.PinpointSMSVoiceV2
         /// depends on the destination country of your messages, as well as the type of phone
         /// number (origination number) that you use to send the message. For more information
         /// about MPS, see <a href="https://docs.aws.amazon.com/sms-voice/latest/userguide/sms-limitations-mps.html">Message
-        /// Parts per Second (MPS) limits</a> in the <i>AWS End User Messaging SMS User Guide</i>.
+        /// Parts per Second (MPS) limits</a> in the <i>End User MessagingSMS User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SendTextMessage service method.</param>
@@ -6451,7 +6512,7 @@ namespace Amazon.PinpointSMSVoiceV2
         /// an existing tag key, the value is overwritten with the new value. Each tag consists
         /// of a key and an optional value. Tag keys must be unique per resource. For more information
         /// about tags, see <a href="https://docs.aws.amazon.com/sms-voice/latest/userguide/phone-numbers-tags.html">Tags
-        /// </a> in the <i>AWS End User Messaging SMS User Guide</i>.
+        /// </a> in the <i>End User MessagingSMS User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// 
@@ -6487,7 +6548,7 @@ namespace Amazon.PinpointSMSVoiceV2
         /// an existing tag key, the value is overwritten with the new value. Each tag consists
         /// of a key and an optional value. Tag keys must be unique per resource. For more information
         /// about tags, see <a href="https://docs.aws.amazon.com/sms-voice/latest/userguide/phone-numbers-tags.html">Tags
-        /// </a> in the <i>AWS End User Messaging SMS User Guide</i>.
+        /// </a> in the <i>End User MessagingSMS User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// <param name="cancellationToken">
@@ -6527,7 +6588,7 @@ namespace Amazon.PinpointSMSVoiceV2
         /// <summary>
         /// Removes the association of the specified tags from a resource. For more information
         /// on tags see <a href="https://docs.aws.amazon.com/sms-voice/latest/userguide/phone-numbers-tags.html">Tags
-        /// </a> in the <i>AWS End User Messaging SMS User Guide</i>.
+        /// </a> in the <i>End User MessagingSMS User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// 
@@ -6558,7 +6619,7 @@ namespace Amazon.PinpointSMSVoiceV2
         /// <summary>
         /// Removes the association of the specified tags from a resource. For more information
         /// on tags see <a href="https://docs.aws.amazon.com/sms-voice/latest/userguide/phone-numbers-tags.html">Tags
-        /// </a> in the <i>AWS End User Messaging SMS User Guide</i>.
+        /// </a> in the <i>End User MessagingSMS User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// <param name="cancellationToken">

@@ -52,6 +52,25 @@ namespace Amazon.SavingsPlans.Internal
                 ["UseFIPS"] = parameters["UseFIPS"],
                 ["Endpoint"] = parameters["Endpoint"],
             };
+            if (!IsSet(refs["Endpoint"]) && Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], true))
+            {
+                if (IsSet(refs["Region"]) && (refs["PartitionResult"] = Partition((string)refs["Region"])) != null)
+                {
+                    if (Equals(GetAttr(refs["PartitionResult"], "name"), "aws"))
+                    {
+                        return new Endpoint("https://savingsplans.global.api.aws", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingName"":""savingsplans"",""signingRegion"":""us-east-1""}]}", refs), InterpolateJson(@"", refs));
+                    }
+                    if (Equals(GetAttr(refs["PartitionResult"], "supportsDualStack"), true))
+                    {
+                        return new Endpoint(Interpolate(@"https://savingsplans.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                    }
+                    throw new AmazonClientException("DualStack is enabled but this partition does not support DualStack");
+                }
+                if (!IsSet(refs["Region"]))
+                {
+                    return new Endpoint("https://savingsplans.global.api.aws", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingName"":""savingsplans"",""signingRegion"":""us-east-1""}]}", refs), InterpolateJson(@"", refs));
+                }
+            }
             if (IsSet(refs["Endpoint"]))
             {
                 if (Equals(refs["UseFIPS"], true))

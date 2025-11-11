@@ -410,6 +410,12 @@
     <pattern>[a-z][a-z0-9_]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.GetDefaultApplicationSettingResponse.ApplicationArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.OpenSearchService.Model.GetDirectQueryDataSourceRequest.DataSourceName</property>
     <min>3</min>
     <max>80</max>
@@ -594,6 +600,18 @@
     <property>Amazon.OpenSearchService.Model.PurchaseReservedInstanceOfferingResponse.ReservedInstanceId</property>
     <min>36</min>
     <max>36</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.PutDefaultApplicationSettingRequest.ApplicationArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.PutDefaultApplicationSettingResponse.ApplicationArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchService.Model.RejectInboundConnectionRequest.ConnectionId</property>

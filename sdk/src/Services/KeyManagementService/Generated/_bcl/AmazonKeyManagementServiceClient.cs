@@ -2834,7 +2834,7 @@ namespace Amazon.KeyManagementService
         /// KMS key never leaves KMS unencrypted. However, you can use the <a>GetPublicKey</a>
         /// operation to download the public key so it can be used outside of KMS. Each KMS key
         /// can have only one key usage. KMS keys with RSA key pairs can be used to encrypt and
-        /// decrypt data or sign and verify messages (but not both). KMS keys with NIST-recommended
+        /// decrypt data or sign and verify messages (but not both). KMS keys with NIST-standard
         /// ECC key pairs can be used to sign and verify messages or derive shared secrets (but
         /// not both). KMS keys with <c>ECC_SECG_P256K1</c> can be used only to sign and verify
         /// messages. KMS keys with ML-DSA key pairs can be used to sign and verify messages.
@@ -3243,7 +3243,7 @@ namespace Amazon.KeyManagementService
         /// KMS key never leaves KMS unencrypted. However, you can use the <a>GetPublicKey</a>
         /// operation to download the public key so it can be used outside of KMS. Each KMS key
         /// can have only one key usage. KMS keys with RSA key pairs can be used to encrypt and
-        /// decrypt data or sign and verify messages (but not both). KMS keys with NIST-recommended
+        /// decrypt data or sign and verify messages (but not both). KMS keys with NIST-standard
         /// ECC key pairs can be used to sign and verify messages or derive shared secrets (but
         /// not both). KMS keys with <c>ECC_SECG_P256K1</c> can be used only to sign and verify
         /// messages. KMS keys with ML-DSA key pairs can be used to sign and verify messages.
@@ -5086,7 +5086,7 @@ namespace Amazon.KeyManagementService
         /// 
         ///  <note> 
         /// <para>
-        /// You must use an asymmetric NIST-recommended elliptic curve (ECC) or SM2 (China Regions
+        /// You must use an asymmetric NIST-standard elliptic curve (ECC) or SM2 (China Regions
         /// only) KMS key pair with a <c>KeyUsage</c> value of <c>KEY_AGREEMENT</c> to call DeriveSharedSecret.
         /// </para>
         ///  </note> 
@@ -5113,7 +5113,7 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        /// The asymmetric KMS key must use a NIST-recommended elliptic curve (ECC) or SM2 (China
+        /// The asymmetric KMS key must use a NIST-standard elliptic curve (ECC) or SM2 (China
         /// Regions only) key spec.
         /// </para>
         ///  </li> <li> 
@@ -5123,7 +5123,7 @@ namespace Amazon.KeyManagementService
         ///  
         /// <para>
         /// Bob can call <a>CreateKey</a> to create an asymmetric KMS key pair or generate a key
-        /// pair outside of KMS. Bob's key pair must use the same NIST-recommended elliptic curve
+        /// pair outside of KMS. Bob's key pair must use the same NIST-standard elliptic curve
         /// (ECC) or SM2 (China Regions ony) curve as Alice.
         /// </para>
         ///  </li> <li> 
@@ -5159,9 +5159,9 @@ namespace Amazon.KeyManagementService
         ///  </li> </ol> 
         /// <para>
         /// To derive a shared secret you must provide a key agreement algorithm, the private
-        /// key of the caller's asymmetric NIST-recommended elliptic curve or SM2 (China Regions
-        /// only) KMS key pair, and the public key from your peer's NIST-recommended elliptic
-        /// curve or SM2 (China Regions only) key pair. The public key can be from another asymmetric
+        /// key of the caller's asymmetric NIST-standard elliptic curve or SM2 (China Regions
+        /// only) KMS key pair, and the public key from your peer's NIST-standard elliptic curve
+        /// or SM2 (China Regions only) key pair. The public key can be from another asymmetric
         /// KMS key pair or from a key pair generated outside of KMS, but both key pairs must
         /// be on the same elliptic curve.
         /// </para>
@@ -5300,7 +5300,7 @@ namespace Amazon.KeyManagementService
         /// 
         ///  <note> 
         /// <para>
-        /// You must use an asymmetric NIST-recommended elliptic curve (ECC) or SM2 (China Regions
+        /// You must use an asymmetric NIST-standard elliptic curve (ECC) or SM2 (China Regions
         /// only) KMS key pair with a <c>KeyUsage</c> value of <c>KEY_AGREEMENT</c> to call DeriveSharedSecret.
         /// </para>
         ///  </note> 
@@ -5327,7 +5327,7 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        /// The asymmetric KMS key must use a NIST-recommended elliptic curve (ECC) or SM2 (China
+        /// The asymmetric KMS key must use a NIST-standard elliptic curve (ECC) or SM2 (China
         /// Regions only) key spec.
         /// </para>
         ///  </li> <li> 
@@ -5337,7 +5337,7 @@ namespace Amazon.KeyManagementService
         ///  
         /// <para>
         /// Bob can call <a>CreateKey</a> to create an asymmetric KMS key pair or generate a key
-        /// pair outside of KMS. Bob's key pair must use the same NIST-recommended elliptic curve
+        /// pair outside of KMS. Bob's key pair must use the same NIST-standard elliptic curve
         /// (ECC) or SM2 (China Regions ony) curve as Alice.
         /// </para>
         ///  </li> <li> 
@@ -5373,9 +5373,9 @@ namespace Amazon.KeyManagementService
         ///  </li> </ol> 
         /// <para>
         /// To derive a shared secret you must provide a key agreement algorithm, the private
-        /// key of the caller's asymmetric NIST-recommended elliptic curve or SM2 (China Regions
-        /// only) KMS key pair, and the public key from your peer's NIST-recommended elliptic
-        /// curve or SM2 (China Regions only) key pair. The public key can be from another asymmetric
+        /// key of the caller's asymmetric NIST-standard elliptic curve or SM2 (China Regions
+        /// only) KMS key pair, and the public key from your peer's NIST-standard elliptic curve
+        /// or SM2 (China Regions only) key pair. The public key can be from another asymmetric
         /// KMS key pair or from a key pair generated outside of KMS, but both key pairs must
         /// be on the same elliptic curve.
         /// </para>
