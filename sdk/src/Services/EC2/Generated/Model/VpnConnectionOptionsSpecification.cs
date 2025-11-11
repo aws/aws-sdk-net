@@ -42,6 +42,7 @@ namespace Amazon.EC2.Model
         private string _remoteIpv6NetworkCidr;
         private bool? _staticRoutesOnly;
         private string _transportTransitGatewayAttachmentId;
+        private VpnTunnelBandwidth _tunnelBandwidth;
         private TunnelInsideIpVersion _tunnelInsideIpVersion;
         private List<VpnTunnelOptionsSpecification> _tunnelOptions = AWSConfigs.InitializeCollections ? new List<VpnTunnelOptionsSpecification>() : null;
 
@@ -225,6 +226,28 @@ namespace Amazon.EC2.Model
         internal bool IsSetTransportTransitGatewayAttachmentId()
         {
             return this._transportTransitGatewayAttachmentId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TunnelBandwidth. 
+        /// <para>
+        ///  The desired bandwidth specification for the VPN tunnel, used when creating or modifying
+        /// VPN connection options to set the tunnel's throughput capacity. <c>standard</c> supports
+        /// up to 1.25 Gbps per tunnel, while <c>large</c> supports up to 5 Gbps per tunnel. The
+        /// default value is <c>standard</c>. Existing VPN connections without a bandwidth setting
+        /// will automatically default to <c>standard</c>. 
+        /// </para>
+        /// </summary>
+        public VpnTunnelBandwidth TunnelBandwidth
+        {
+            get { return this._tunnelBandwidth; }
+            set { this._tunnelBandwidth = value; }
+        }
+
+        // Check to see if TunnelBandwidth property is set
+        internal bool IsSetTunnelBandwidth()
+        {
+            return this._tunnelBandwidth != null;
         }
 
         /// <summary>

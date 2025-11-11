@@ -103,6 +103,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.TransportTransitGatewayAttachmentId = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("tunnelBandwidth", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.TunnelBandwidth = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("tunnelInsideIpVersion", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
