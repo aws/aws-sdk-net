@@ -83,6 +83,10 @@ namespace Amazon.SecurityIR
         /// </summary>
         public static readonly AwsRegion ApSoutheast5 = new AwsRegion("ap-southeast-5");
         /// <summary>
+        /// Constant ApSoutheast6 for AwsRegion
+        /// </summary>
+        public static readonly AwsRegion ApSoutheast6 = new AwsRegion("ap-southeast-6");
+        /// <summary>
         /// Constant ApSoutheast7 for AwsRegion
         /// </summary>
         public static readonly AwsRegion ApSoutheast7 = new AwsRegion("ap-southeast-7");
@@ -382,6 +386,112 @@ namespace Amazon.SecurityIR
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ClosureCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CommunicationType.
+    /// </summary>
+    public class CommunicationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CaseAcknowledged for CommunicationType
+        /// </summary>
+        public static readonly CommunicationType CaseAcknowledged = new CommunicationType("Case Acknowledged");
+        /// <summary>
+        /// Constant CaseAttachmentUrlUploaded for CommunicationType
+        /// </summary>
+        public static readonly CommunicationType CaseAttachmentUrlUploaded = new CommunicationType("Case Attachment Url Uploaded");
+        /// <summary>
+        /// Constant CaseClosed for CommunicationType
+        /// </summary>
+        public static readonly CommunicationType CaseClosed = new CommunicationType("Case Closed");
+        /// <summary>
+        /// Constant CaseCommentAdded for CommunicationType
+        /// </summary>
+        public static readonly CommunicationType CaseCommentAdded = new CommunicationType("Case Comment Added");
+        /// <summary>
+        /// Constant CaseCommentUpdated for CommunicationType
+        /// </summary>
+        public static readonly CommunicationType CaseCommentUpdated = new CommunicationType("Case Comment Updated");
+        /// <summary>
+        /// Constant CaseCreated for CommunicationType
+        /// </summary>
+        public static readonly CommunicationType CaseCreated = new CommunicationType("Case Created");
+        /// <summary>
+        /// Constant CasePendingCustomerActionReminder for CommunicationType
+        /// </summary>
+        public static readonly CommunicationType CasePendingCustomerActionReminder = new CommunicationType("Case Pending Customer Action Reminder");
+        /// <summary>
+        /// Constant CaseStatusUpdated for CommunicationType
+        /// </summary>
+        public static readonly CommunicationType CaseStatusUpdated = new CommunicationType("Case Status Updated");
+        /// <summary>
+        /// Constant CaseUpdated for CommunicationType
+        /// </summary>
+        public static readonly CommunicationType CaseUpdated = new CommunicationType("Case Updated");
+        /// <summary>
+        /// Constant CaseUpdatedToServiceManaged for CommunicationType
+        /// </summary>
+        public static readonly CommunicationType CaseUpdatedToServiceManaged = new CommunicationType("Case Updated To Service Managed");
+        /// <summary>
+        /// Constant DeregisterDelegatedAdministrator for CommunicationType
+        /// </summary>
+        public static readonly CommunicationType DeregisterDelegatedAdministrator = new CommunicationType("Deregister Delegated Administrator");
+        /// <summary>
+        /// Constant DisableAWSServiceAccess for CommunicationType
+        /// </summary>
+        public static readonly CommunicationType DisableAWSServiceAccess = new CommunicationType("Disable AWS Service Access");
+        /// <summary>
+        /// Constant MembershipCancelled for CommunicationType
+        /// </summary>
+        public static readonly CommunicationType MembershipCancelled = new CommunicationType("Membership Cancelled");
+        /// <summary>
+        /// Constant MembershipCreated for CommunicationType
+        /// </summary>
+        public static readonly CommunicationType MembershipCreated = new CommunicationType("Membership Created");
+        /// <summary>
+        /// Constant MembershipUpdated for CommunicationType
+        /// </summary>
+        public static readonly CommunicationType MembershipUpdated = new CommunicationType("Membership Updated");
+        /// <summary>
+        /// Constant RegisterDelegatedAdministrator for CommunicationType
+        /// </summary>
+        public static readonly CommunicationType RegisterDelegatedAdministrator = new CommunicationType("Register Delegated Administrator");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CommunicationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CommunicationType FindValue(string value)
+        {
+            return FindValue<CommunicationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CommunicationType(string value)
         {
             return FindValue(value);
         }

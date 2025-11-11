@@ -323,7 +323,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityIR.Model.CaseAttachmentAttributes.Creator</property>
-    <pattern>.*((^AWS Responder)|(^\d{12}$)|(^security-ir.amazonaws.com)).*</pattern>
+    <pattern>.*((^AWS Responder)|(^\d{12}$)|(^arn:([^:]*aws[^:]*):(?:(?:iam)::\d{12}:(?:user|role|group|root)(?:(?:/[^/]+)+)?|(?:sts)::\d{12}:assumed-role/[^/]+/[^/]+)$)|(^security-ir.amazonaws.com)).*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityIR.Model.CaseAttachmentAttributes.FileName</property>
@@ -399,11 +399,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityIR.Model.ListCommentsItem.Creator</property>
-    <pattern>.*((^AWS Responder)|(^\d{12}$)|(^security-ir.amazonaws.com)).*</pattern>
+    <pattern>.*((^AWS Responder)|(^\d{12}$)|(^arn:([^:]*aws[^:]*):(?:(?:iam)::\d{12}:(?:user|role|group|root)(?:(?:/[^/]+)+)?|(?:sts)::\d{12}:assumed-role/[^/]+/[^/]+)$)|(^security-ir.amazonaws.com)).*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityIR.Model.ListCommentsItem.LastUpdatedBy</property>
-    <pattern>.*((^AWS Responder)|(^\d{12}$)|(^security-ir.amazonaws.com)).*</pattern>
+    <pattern>.*((^AWS Responder)|(^\d{12}$)|(^arn:([^:]*aws[^:]*):(?:(?:iam)::\d{12}:(?:user|role|group|root)(?:(?:/[^/]+)+)?|(?:sts)::\d{12}:assumed-role/[^/]+/[^/]+)$)|(^security-ir.amazonaws.com)).*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityIR.Model.ListMembershipItem.AccountId</property>
