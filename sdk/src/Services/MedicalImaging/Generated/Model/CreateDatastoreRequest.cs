@@ -39,6 +39,7 @@ namespace Amazon.MedicalImaging.Model
         private string _datastoreName;
         private string _kmsKeyArn;
         private string _lambdaAuthorizerArn;
+        private LosslessStorageFormat _losslessStorageFormat;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
@@ -115,6 +116,24 @@ namespace Amazon.MedicalImaging.Model
         internal bool IsSetLambdaAuthorizerArn()
         {
             return this._lambdaAuthorizerArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LosslessStorageFormat. 
+        /// <para>
+        /// The lossless storage format for the datastore.
+        /// </para>
+        /// </summary>
+        public LosslessStorageFormat LosslessStorageFormat
+        {
+            get { return this._losslessStorageFormat; }
+            set { this._losslessStorageFormat = value; }
+        }
+
+        // Check to see if LosslessStorageFormat property is set
+        internal bool IsSetLosslessStorageFormat()
+        {
+            return this._losslessStorageFormat != null;
         }
 
         /// <summary>

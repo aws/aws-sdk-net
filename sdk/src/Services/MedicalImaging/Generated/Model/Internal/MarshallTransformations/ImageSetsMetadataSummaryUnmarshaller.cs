@@ -90,6 +90,18 @@ namespace Amazon.MedicalImaging.Model.Internal.MarshallTransformations
                     unmarshalledObject.IsPrimary = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("lastAccessedAt", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.LastAccessedAt = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("storageTier", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.StorageTier = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("updatedAt", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
