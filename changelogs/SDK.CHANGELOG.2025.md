@@ -1,3 +1,17 @@
+### 3.7.1163.0 (2025-11-11 19:23 UTC)
+* Batch (3.7.501.11)
+	* Documentation-only update: update API and doc descriptions per EKS ImageType default value switch from AL2 to AL2023.
+* BedrockDataAutomation (3.7.503.0)
+	* Added support for Language Expansion feature for BDA Audio modality.
+* EC2 (3.7.526.0)
+	* AWS Site-to-Site VPN now supports VPN connections with up to 5 Gbps bandwidth per tunnel, a 4x improvement from existing limit of 1.25 Gbps.
+* MedicalImaging (3.7.504.0)
+	* Added new fields in existing APIs.
+* RTBFabric (3.7.502.0)
+	* Added LogSettings and LinkAttribute fields to external links
+* SecurityIR (3.7.504.0)
+	* Added support for configuring communication preferences as well as clearly displaying case comment author identities.
+
 ### 3.7.1162.0 (2025-11-10 19:38 UTC)
 * ACMPCA (3.7.503.0)
 	* Private Certificate Authority service now supports ML-DSA key algorithms.
