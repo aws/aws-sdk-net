@@ -101,6 +101,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         request.Parameters.Add("Options" + "." + "TransportTransitGatewayAttachmentId", StringUtils.FromString(publicRequest.Options.TransportTransitGatewayAttachmentId));
                     }
+                    if(publicRequest.Options.IsSetTunnelBandwidth())
+                    {
+                        request.Parameters.Add("Options" + "." + "TunnelBandwidth", StringUtils.FromString(publicRequest.Options.TunnelBandwidth));
+                    }
                     if(publicRequest.Options.IsSetTunnelInsideIpVersion())
                     {
                         request.Parameters.Add("Options" + "." + "TunnelInsideIpVersion", StringUtils.FromString(publicRequest.Options.TunnelInsideIpVersion));
