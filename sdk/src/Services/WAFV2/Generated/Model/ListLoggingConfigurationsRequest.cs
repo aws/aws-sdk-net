@@ -78,6 +78,13 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  
         /// <para>
+        /// The log scope <c>CLOUDWATCH_TELEMETRY_RULE_MANAGED</c> indicates a configuration that
+        /// is managed through Amazon CloudWatch Logs for telemetry data collection and analysis.
+        /// For information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/WhatIsCloudWatchLogs.html">What
+        /// is Amazon CloudWatch Logs ?</a> in the <i>Amazon CloudWatch Logs user guide</i>. 
+        /// </para>
+        ///  
+        /// <para>
         /// Default: <c>CUSTOMER</c> 
         /// </para>
         /// </summary>

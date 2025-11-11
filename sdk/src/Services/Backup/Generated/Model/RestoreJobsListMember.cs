@@ -45,6 +45,8 @@ namespace Amazon.Backup.Model
         private string _deletionStatusMessage;
         private long? _expectedCompletionTimeMinutes;
         private string _iamRoleArn;
+        private bool? _isParent;
+        private string _parentJobId;
         private string _percentDone;
         private string _recoveryPointArn;
         private DateTime? _recoveryPointCreationDate;
@@ -261,6 +263,43 @@ namespace Amazon.Backup.Model
         internal bool IsSetIamRoleArn()
         {
             return this._iamRoleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IsParent. 
+        /// <para>
+        /// This is a boolean value indicating whether the restore job is a parent (composite)
+        /// restore job.
+        /// </para>
+        /// </summary>
+        public bool? IsParent
+        {
+            get { return this._isParent; }
+            set { this._isParent = value; }
+        }
+
+        // Check to see if IsParent property is set
+        internal bool IsSetIsParent()
+        {
+            return this._isParent.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ParentJobId. 
+        /// <para>
+        /// This is the unique identifier of the parent restore job for the selected restore job.
+        /// </para>
+        /// </summary>
+        public string ParentJobId
+        {
+            get { return this._parentJobId; }
+            set { this._parentJobId = value; }
+        }
+
+        // Check to see if ParentJobId property is set
+        internal bool IsSetParentJobId()
+        {
+            return this._parentJobId != null;
         }
 
         /// <summary>

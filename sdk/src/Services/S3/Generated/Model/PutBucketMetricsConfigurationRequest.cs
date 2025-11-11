@@ -143,7 +143,7 @@ namespace Amazon.S3.Model
         // Check to see if ExpectedBucketOwner property is set
         internal bool IsSetExpectedBucketOwner()
         {
-            return this._expectedBucketOwner != null;
+            return !String.IsNullOrEmpty(this._expectedBucketOwner);
         }
 
         /// <summary>

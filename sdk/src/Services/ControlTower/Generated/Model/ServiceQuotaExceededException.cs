@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ControlTower.Model
 {
     /// <summary>
-    /// The request would cause a service quota to be exceeded. The limit is 100 concurrent
-    /// operations.
+    /// The request would cause a service quota to be exceeded. See <a href="https://docs.aws.amazon.com/controltower/latest/userguide/request-an-increase.html">Service
+    /// quotas</a>.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

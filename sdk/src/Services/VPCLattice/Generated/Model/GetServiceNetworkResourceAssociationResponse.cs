@@ -38,11 +38,13 @@ namespace Amazon.VPCLattice.Model
         private DateTime? _createdAt;
         private string _createdBy;
         private DnsEntry _dnsEntry;
+        private VerificationStatus _domainVerificationStatus;
         private string _failureCode;
         private string _failureReason;
         private string _id;
         private bool? _isManagedAssociation;
         private DateTime? _lastUpdatedAt;
+        private bool? _privateDnsEnabled;
         private DnsEntry _privateDnsEntry;
         private string _resourceConfigurationArn;
         private string _resourceConfigurationId;
@@ -124,6 +126,24 @@ namespace Amazon.VPCLattice.Model
         internal bool IsSetDnsEntry()
         {
             return this._dnsEntry != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DomainVerificationStatus. 
+        /// <para>
+        ///  The domain verification status in the service network resource association. 
+        /// </para>
+        /// </summary>
+        public VerificationStatus DomainVerificationStatus
+        {
+            get { return this._domainVerificationStatus; }
+            set { this._domainVerificationStatus = value; }
+        }
+
+        // Check to see if DomainVerificationStatus property is set
+        internal bool IsSetDomainVerificationStatus()
+        {
+            return this._domainVerificationStatus != null;
         }
 
         /// <summary>
@@ -215,6 +235,25 @@ namespace Amazon.VPCLattice.Model
         internal bool IsSetLastUpdatedAt()
         {
             return this._lastUpdatedAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PrivateDnsEnabled. 
+        /// <para>
+        ///  Indicates if private DNS is enabled in the service network resource association.
+        /// 
+        /// </para>
+        /// </summary>
+        public bool? PrivateDnsEnabled
+        {
+            get { return this._privateDnsEnabled; }
+            set { this._privateDnsEnabled = value; }
+        }
+
+        // Check to see if PrivateDnsEnabled property is set
+        internal bool IsSetPrivateDnsEnabled()
+        {
+            return this._privateDnsEnabled.HasValue; 
         }
 
         /// <summary>

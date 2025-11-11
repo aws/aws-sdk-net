@@ -34,6 +34,26 @@ namespace Amazon.S3Vectors.Model
     /// </summary>
     public partial class CreateIndexResponse : AmazonWebServiceResponse
     {
+        private string _indexArn;
+
+        /// <summary>
+        /// Gets and sets the property IndexArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the newly created vector index.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public string IndexArn
+        {
+            get { return this._indexArn; }
+            set { this._indexArn = value; }
+        }
+
+        // Check to see if IndexArn property is set
+        internal bool IsSetIndexArn()
+        {
+            return this._indexArn != null;
+        }
 
     }
 }

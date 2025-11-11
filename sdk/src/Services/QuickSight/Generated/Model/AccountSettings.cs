@@ -120,7 +120,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property PublicSharingEnabled. 
         /// <para>
-        /// A Boolean value that indicates whether public sharing is turned on for an QuickSight
+        /// A Boolean value that indicates whether public sharing is turned on for an Quick Suite
         /// account. For more information about turning on public sharing, see <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdatePublicSharingSettings.html">UpdatePublicSharingSettings</a>.
         /// </para>
         /// </summary>

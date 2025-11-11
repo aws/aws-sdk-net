@@ -31,10 +31,14 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteAlias operation.
+    /// <b>This API works with the following fleet types:</b> EC2, Anywhere, Container
+    /// 
+    ///  
+    /// <para>
     /// Deletes an alias. This operation removes all record of the alias. Game clients attempting
     /// to access a server process using the deleted alias receive an error. To delete an
     /// alias, specify the alias ID to be deleted.
-    /// 
+    /// </para>
     ///  
     /// <para>
     ///  <b>Related actions</b> 

@@ -31,10 +31,14 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the RequestUploadCredentials operation.
+    /// <b>This API works with the following fleet types:</b> EC2
+    /// 
+    ///  
+    /// <para>
     /// Retrieves a fresh set of credentials for use when uploading a new set of game build
     /// files to Amazon GameLift Servers's Amazon S3. This is done as part of the build creation
     /// process; see <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateBuild.html">CreateBuild</a>.
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// To request new credentials, specify the build ID as returned with an initial <c>CreateBuild</c>

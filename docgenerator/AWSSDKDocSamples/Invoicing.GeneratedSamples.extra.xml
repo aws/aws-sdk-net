@@ -59,6 +59,44 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.Invoicing.IAmazonInvoicing.GetInvoicePDF(Amazon.Invoicing.Model.GetInvoicePDFRequest)" />
+            <member name="M:Amazon.Invoicing.AmazonInvoicingClient.GetInvoicePDF(Amazon.Invoicing.Model.GetInvoicePDFRequest)" />
+            <member name="T:Amazon.Invoicing.Model.GetInvoicePDFRequest" />
+            <member name="T:Amazon.Invoicing.Model.GetInvoicePDFResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="GetInvoicePDF without supplemental documents"
+                    source=".\AWSSDKDocSamples\Invoicing\Invoicing.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Invoicing.IAmazonInvoicing.GetInvoicePDF(Amazon.Invoicing.Model.GetInvoicePDFRequest)" />
+            <member name="M:Amazon.Invoicing.AmazonInvoicingClient.GetInvoicePDF(Amazon.Invoicing.Model.GetInvoicePDFRequest)" />
+            <member name="T:Amazon.Invoicing.Model.GetInvoicePDFRequest" />
+            <member name="T:Amazon.Invoicing.Model.GetInvoicePDFResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="GetInvoicePDF with supplemental documents"
+                    source=".\AWSSDKDocSamples\Invoicing\Invoicing.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.Invoicing.IAmazonInvoicing.GetInvoiceUnit(Amazon.Invoicing.Model.GetInvoiceUnitRequest)" />
             <member name="M:Amazon.Invoicing.AmazonInvoicingClient.GetInvoiceUnit(Amazon.Invoicing.Model.GetInvoiceUnitRequest)" />
             <member name="T:Amazon.Invoicing.Model.GetInvoiceUnitRequest" />

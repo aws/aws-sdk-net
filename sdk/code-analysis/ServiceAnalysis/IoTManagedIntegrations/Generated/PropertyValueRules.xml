@@ -783,6 +783,24 @@
     <pattern>[a-zA-Z0-9:_-]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoTManagedIntegrations.Model.GetManagedThingCertificateRequest.Identifier</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9:_-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTManagedIntegrations.Model.GetManagedThingCertificateResponse.CertificatePem</property>
+    <min>1</min>
+    <max>65536</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTManagedIntegrations.Model.GetManagedThingCertificateResponse.ManagedThingId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9:_-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.GetManagedThingConnectivityDataRequest.Identifier</property>
     <min>1</min>
     <max>64</max>
@@ -1796,7 +1814,7 @@
     <property>Amazon.IoTManagedIntegrations.Model.CapabilityReportCapability.Name</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[/a-zA-Z0-9\._ ]+</pattern>
+    <pattern>[/a-zA-Z0-9\._ -]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.CapabilityReportCapability.Version</property>
@@ -1837,7 +1855,7 @@
     <property>Amazon.IoTManagedIntegrations.Model.CommandCapability.Name</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[/a-zA-Z0-9\._ ]+</pattern>
+    <pattern>[/a-zA-Z0-9\._ -]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.CommandCapability.Version</property>
@@ -2153,7 +2171,7 @@
     <property>Amazon.IoTManagedIntegrations.Model.MatterCapabilityReportAttribute.Name</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[/a-zA-Z0-9\._ ]+</pattern>
+    <pattern>[/a-zA-Z0-9\._ -]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.MatterCapabilityReportCluster.FabricIndex</property>
@@ -2175,7 +2193,7 @@
     <property>Amazon.IoTManagedIntegrations.Model.MatterCapabilityReportCluster.Name</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[/a-zA-Z0-9\._ ]+</pattern>
+    <pattern>[/a-zA-Z0-9\._ -]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.MatterCapabilityReportCluster.PublicId</property>
@@ -2363,7 +2381,7 @@
     <property>Amazon.IoTManagedIntegrations.Model.StateCapability.Name</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[/a-zA-Z0-9\._ ]+</pattern>
+    <pattern>[/a-zA-Z0-9\._ -]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.StateCapability.Version</property>

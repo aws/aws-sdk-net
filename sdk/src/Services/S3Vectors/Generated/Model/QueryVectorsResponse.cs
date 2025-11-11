@@ -34,7 +34,28 @@ namespace Amazon.S3Vectors.Model
     /// </summary>
     public partial class QueryVectorsResponse : AmazonWebServiceResponse
     {
+        private DistanceMetric _distanceMetric;
         private List<QueryOutputVector> _vectors = AWSConfigs.InitializeCollections ? new List<QueryOutputVector>() : null;
+
+        /// <summary>
+        /// Gets and sets the property DistanceMetric. 
+        /// <para>
+        /// The distance metric that was used for the similarity search calculation. This is the
+        /// same distance metric that was configured for the vector index when it was created.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public DistanceMetric DistanceMetric
+        {
+            get { return this._distanceMetric; }
+            set { this._distanceMetric = value; }
+        }
+
+        // Check to see if DistanceMetric property is set
+        internal bool IsSetDistanceMetric()
+        {
+            return this._distanceMetric != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Vectors. 

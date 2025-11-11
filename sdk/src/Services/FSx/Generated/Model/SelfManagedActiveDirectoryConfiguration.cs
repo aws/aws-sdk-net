@@ -41,6 +41,7 @@ namespace Amazon.FSx.Model
     public partial class SelfManagedActiveDirectoryConfiguration
     {
         private List<string> _dnsIps = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private string _domainJoinServiceAccountSecret;
         private string _domainName;
         private string _fileSystemAdministratorsGroup;
         private string _organizationalUnitDistinguishedName;
@@ -70,6 +71,49 @@ namespace Amazon.FSx.Model
         internal bool IsSetDnsIps()
         {
             return this._dnsIps != null && (this._dnsIps.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DomainJoinServiceAccountSecret. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret containing
+        /// the self-managed Active Directory domain join service account credentials. When provided,
+        /// Amazon FSx uses the credentials stored in this secret to join the file system to your
+        /// self-managed Active Directory domain.
+        /// </para>
+        ///  
+        /// <para>
+        /// The secret must contain two key-value pairs:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>CUSTOMER_MANAGED_ACTIVE_DIRECTORY_USERNAME</c> - The username for the service
+        /// account
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>CUSTOMER_MANAGED_ACTIVE_DIRECTORY_PASSWORD</c> - The password for the service
+        /// account
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/self-manage-prereqs.html">
+        /// Using Amazon FSx for Windows with your self-managed Microsoft Active Directory</a>
+        /// or <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/self-manage-prereqs.html">
+        /// Using Amazon FSx for ONTAP with your self-managed Microsoft Active Directory</a>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=64, Max=1024)]
+        public string DomainJoinServiceAccountSecret
+        {
+            get { return this._domainJoinServiceAccountSecret; }
+            set { this._domainJoinServiceAccountSecret = value; }
+        }
+
+        // Check to see if DomainJoinServiceAccountSecret property is set
+        internal bool IsSetDomainJoinServiceAccountSecret()
+        {
+            return this._domainJoinServiceAccountSecret != null;
         }
 
         /// <summary>
@@ -152,7 +196,7 @@ namespace Amazon.FSx.Model
         /// will use to join to your AD domain.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=256)]
+        [AWSProperty(Sensitive=true, Min=1, Max=256)]
         public string Password
         {
             get { return this._password; }
@@ -174,7 +218,7 @@ namespace Amazon.FSx.Model
         /// or in the default location of your AD domain.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=256)]
+        [AWSProperty(Min=1, Max=256)]
         public string UserName
         {
             get { return this._userName; }

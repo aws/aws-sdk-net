@@ -38,12 +38,32 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class CreateEvaluationFormRequest : AmazonConnectRequest
     {
+        private EvaluationFormAutoEvaluationConfiguration _autoEvaluationConfiguration;
         private string _clientToken;
         private string _description;
         private string _instanceId;
         private List<EvaluationFormItem> _items = AWSConfigs.InitializeCollections ? new List<EvaluationFormItem>() : null;
         private EvaluationFormScoringStrategy _scoringStrategy;
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _title;
+
+        /// <summary>
+        /// Gets and sets the property AutoEvaluationConfiguration. 
+        /// <para>
+        /// Configuration information about automated evaluations.
+        /// </para>
+        /// </summary>
+        public EvaluationFormAutoEvaluationConfiguration AutoEvaluationConfiguration
+        {
+            get { return this._autoEvaluationConfiguration; }
+            set { this._autoEvaluationConfiguration = value; }
+        }
+
+        // Check to see if AutoEvaluationConfiguration property is set
+        internal bool IsSetAutoEvaluationConfiguration()
+        {
+            return this._autoEvaluationConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
@@ -147,6 +167,31 @@ namespace Amazon.Connect.Model
         internal bool IsSetScoringStrategy()
         {
             return this._scoringStrategy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags used to organize, track, or control access for this resource. For example,
+        /// { "Tags": {"key1":"value1", "key2":"value2"} }.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=50)]
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

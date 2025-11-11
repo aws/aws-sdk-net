@@ -40,6 +40,7 @@ namespace Amazon.MediaConvert.Model
     {
         private AudioChannelTaggingSettings _audioChannelTaggingSettings;
         private AudioNormalizationSettings _audioNormalizationSettings;
+        private AudioPitchCorrectionSettings _audioPitchCorrectionSettings;
         private string _audioSourceName;
         private int? _audioType;
         private AudioTypeControl _audioTypeControl;
@@ -83,6 +84,22 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetAudioNormalizationSettings()
         {
             return this._audioNormalizationSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AudioPitchCorrectionSettings. Settings for audio pitch
+        /// correction during framerate conversion.
+        /// </summary>
+        public AudioPitchCorrectionSettings AudioPitchCorrectionSettings
+        {
+            get { return this._audioPitchCorrectionSettings; }
+            set { this._audioPitchCorrectionSettings = value; }
+        }
+
+        // Check to see if AudioPitchCorrectionSettings property is set
+        internal bool IsSetAudioPitchCorrectionSettings()
+        {
+            return this._audioPitchCorrectionSettings != null;
         }
 
         /// <summary>

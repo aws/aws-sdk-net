@@ -31,9 +31,13 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the ListScripts operation.
+    /// <b>This API works with the following fleet types:</b> EC2
+    /// 
+    ///  
+    /// <para>
     /// Retrieves script records for all Realtime scripts that are associated with the Amazon
     /// Web Services account in use. 
-    /// 
+    /// </para>
     ///  
     /// <para>
     ///  <b>Learn more</b> 

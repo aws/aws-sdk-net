@@ -76,6 +76,12 @@ namespace Amazon.DSQL.Model.Internal.MarshallTransformations
                     response.EncryptionDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("endpoint", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Endpoint = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("identifier", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

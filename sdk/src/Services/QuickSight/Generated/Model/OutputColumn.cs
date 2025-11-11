@@ -35,6 +35,7 @@ namespace Amazon.QuickSight.Model
     public partial class OutputColumn
     {
         private string _description;
+        private string _id;
         private string _name;
         private ColumnDataSubType _subType;
         private ColumnDataType _type;
@@ -56,6 +57,25 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Id. 
+        /// <para>
+        /// A unique identifier for the output column.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string Id
+        {
+            get { return this._id; }
+            set { this._id = value; }
+        }
+
+        // Check to see if Id property is set
+        internal bool IsSetId()
+        {
+            return this._id != null;
         }
 
         /// <summary>

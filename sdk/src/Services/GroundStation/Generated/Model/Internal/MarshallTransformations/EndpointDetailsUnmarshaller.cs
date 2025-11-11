@@ -62,6 +62,12 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
                     unmarshalledObject.AwsGroundStationAgentEndpoint = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("downlinkAwsGroundStationAgentEndpoint", targetDepth))
+                {
+                    var unmarshaller = DownlinkAwsGroundStationAgentEndpointDetailsUnmarshaller.Instance;
+                    unmarshalledObject.DownlinkAwsGroundStationAgentEndpoint = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("endpoint", targetDepth))
                 {
                     var unmarshaller = DataflowEndpointUnmarshaller.Instance;
@@ -84,6 +90,12 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = SecurityDetailsUnmarshaller.Instance;
                     unmarshalledObject.SecurityDetails = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("uplinkAwsGroundStationAgentEndpoint", targetDepth))
+                {
+                    var unmarshaller = UplinkAwsGroundStationAgentEndpointDetailsUnmarshaller.Instance;
+                    unmarshalledObject.UplinkAwsGroundStationAgentEndpoint = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

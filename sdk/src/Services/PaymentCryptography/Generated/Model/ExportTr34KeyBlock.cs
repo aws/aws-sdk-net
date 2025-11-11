@@ -149,7 +149,7 @@ namespace Amazon.PaymentCryptography.Model
         /// <summary>
         /// Gets and sets the property SigningKeyCertificate. 
         /// <para>
-        /// Certificate used for signing the export key
+        /// The certificate used to sign the TR-34 key block.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=32768)]

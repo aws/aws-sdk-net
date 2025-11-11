@@ -65,8 +65,8 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// &gt;Consumers of the endpoint service can use the private name only when the state
-        /// is <c>verified</c>.
+        /// Consumers of the endpoint service can use the private name only when the state is
+        /// <c>verified</c>.
         /// </para>
         /// </summary>
         public DnsNameState State

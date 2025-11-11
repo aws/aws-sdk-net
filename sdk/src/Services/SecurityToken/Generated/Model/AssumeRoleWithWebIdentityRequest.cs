@@ -121,8 +121,8 @@ namespace Amazon.SecurityToken.Model
     /// <para>
     /// (Optional) You can configure your IdP to pass attributes into your web identity token
     /// as session tags. Each session tag consists of a key name and an associated value.
-    /// For more information about session tags, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Passing
-    /// Session Tags in STS</a> in the <i>IAM User Guide</i>.
+    /// For more information about session tags, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html#id_session-tags_adding-assume-role-idp">Passing
+    /// session tags using AssumeRoleWithWebIdentity</a> in the <i>IAM User Guide</i>.
     /// </para>
     ///  
     /// <para>

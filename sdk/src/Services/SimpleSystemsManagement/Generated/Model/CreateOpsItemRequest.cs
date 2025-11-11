@@ -253,15 +253,6 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>/aws/changerequest</c> 
-        /// </para>
-        ///  
-        /// <para>
-        /// This type of OpsItem is used by Change Manager for reviewing and approving or rejecting
-        /// change requests. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         ///  <c>/aws/insight</c> 
         /// </para>
         ///  
@@ -269,7 +260,24 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate
         /// OpsItems. 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>/aws/changerequest</c> 
+        /// </para>
+        ///  
+        /// <para>
+        /// This type of OpsItem is used by Change Manager for reviewing and approving or rejecting
+        /// change requests. 
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// Amazon Web Services Systems Manager Change Manager will no longer be open to new customers
+        /// starting November 7, 2025. If you would like to use Change Manager, sign up prior
+        /// to that date. Existing customers can continue to use the service as normal. For more
+        /// information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/change-manager-availability-change.html">Amazon
+        /// Web Services Systems Manager Change Manager availability change</a>.
+        /// </para>
+        ///  </important> </li> </ul>
         /// </summary>
         public string OpsItemType
         {

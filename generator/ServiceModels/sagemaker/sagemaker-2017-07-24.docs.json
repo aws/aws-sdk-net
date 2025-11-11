@@ -2549,6 +2549,7 @@
       "base": null,
       "refs": {
         "ClusterInstanceGroupDetails$TargetCount": "<p>The number of instances you specified to add to the instance group of a SageMaker HyperPod cluster.</p>",
+        "ClusterInstanceGroupDetails$TargetStateCount": "<p>The number of nodes running a specific image ID since the last software update request.</p>",
         "ClusterInstanceGroupSpecification$InstanceCount": "<p>Specifies the number of instances to add to the instance group of a SageMaker HyperPod cluster.</p>",
         "ClusterRestrictedInstanceGroupDetails$TargetCount": "<p>The number of instances you specified to add to the restricted instance group of a SageMaker HyperPod cluster.</p>",
         "ClusterRestrictedInstanceGroupSpecification$InstanceCount": "<p>Specifies the number of instances to add to the restricted instance group of a SageMaker HyperPod cluster.</p>"
@@ -2751,7 +2752,8 @@
       "base": null,
       "refs": {
         "CreateClusterRequest$NodeProvisioningMode": "<p>The mode for provisioning nodes in the cluster. You can specify the following modes:</p> <ul> <li> <p> <b>Continuous</b>: Scaling behavior that enables 1) concurrent operation execution within instance groups, 2) continuous retry mechanisms for failed operations, 3) enhanced customer visibility into cluster events through detailed event streams, 4) partial provisioning capabilities. Your clusters and instance groups remain <code>InService</code> while scaling. This mode is only supported for EKS orchestrated clusters.</p> </li> </ul>",
-        "DescribeClusterResponse$NodeProvisioningMode": "<p>The mode used for provisioning nodes in the cluster.</p>"
+        "DescribeClusterResponse$NodeProvisioningMode": "<p>The mode used for provisioning nodes in the cluster.</p>",
+        "UpdateClusterRequest$NodeProvisioningMode": "<p>Determines how instance provisioning is handled during cluster operations. In <code>Continuous</code> mode, the cluster provisions available instances incrementally and retries until the target count is reached. The cluster becomes operational once cluster-level resources are ready. Use <code>CurrentCount</code> and <code>TargetCount</code> in <code>DescribeCluster</code> to track provisioning progress.</p>"
       }
     },
     "ClusterNodeRecovery": {
@@ -4654,6 +4656,7 @@
     "DeploymentConfiguration": {
       "base": "<p>The configuration to use when updating the AMI versions.</p>",
       "refs": {
+        "ClusterInstanceGroupDetails$ActiveSoftwareUpdateConfig": null,
         "ScheduledUpdateConfig$DeploymentConfig": "<p>The configuration to use when updating the AMI versions.</p>",
         "UpdateClusterSoftwareRequest$DeploymentConfig": "<p>The configuration to use when updating the AMI versions.</p>"
       }
@@ -13272,7 +13275,8 @@
       "base": null,
       "refs": {
         "CreateNotebookInstanceInput$PlatformIdentifier": "<p>The platform identifier of the notebook instance runtime environment. The default value is <code>notebook-al2-v2</code>.</p>",
-        "DescribeNotebookInstanceOutput$PlatformIdentifier": "<p>The platform identifier of the notebook instance runtime environment.</p>"
+        "DescribeNotebookInstanceOutput$PlatformIdentifier": "<p>The platform identifier of the notebook instance runtime environment.</p>",
+        "UpdateNotebookInstanceInput$PlatformIdentifier": "<p>The platform identifier of the notebook instance runtime environment.</p>"
       }
     },
     "PolicyString": {
@@ -15440,6 +15444,12 @@
         "AsyncInferenceNotificationConfig$ErrorTopic": "<p>Amazon SNS topic to post a notification to when inference fails. If no topic is provided, no notification is sent on failure.</p>",
         "LabelingJobOutputConfig$SnsTopicArn": "<p>An Amazon Simple Notification Service (Amazon SNS) output topic ARN. Provide a <code>SnsTopicArn</code> if you want to do real time chaining to another streaming job and receive an Amazon SNS notifications each time a data object is submitted by a worker.</p> <p>If you provide an <code>SnsTopicArn</code> in <code>OutputConfig</code>, when workers complete labeling tasks, Ground Truth will send labeling task output data to the SNS output topic you specify here. </p> <p>To learn more, see <a href=\"https://docs.aws.amazon.com/sagemaker/latest/dg/sms-streaming-labeling-job.html#sms-streaming-how-it-works-output-data\">Receive Output Data from a Streaming Labeling Job</a>. </p>",
         "LabelingJobSnsDataSource$SnsTopicArn": "<p>The Amazon SNS input topic Amazon Resource Name (ARN). Specify the ARN of the input topic you will use to send new data objects to a streaming labeling job.</p>"
+      }
+    },
+    "SoftwareUpdateStatus": {
+      "base": null,
+      "refs": {
+        "ClusterInstanceGroupDetails$SoftwareUpdateStatus": "<p>Status of the last software udpate request.</p>"
       }
     },
     "SortActionsBy": {
@@ -18950,7 +18960,8 @@
       "base": null,
       "refs": {
         "CreateDomainRequest$VpcId": "<p>The ID of the Amazon Virtual Private Cloud (VPC) that the domain uses for communication.</p> <p>The field is optional when the <code>AppNetworkAccessType</code> parameter is set to <code>PublicInternetOnly</code> for domains created from Amazon SageMaker Unified Studio.</p>",
-        "DescribeDomainResponse$VpcId": "<p>The ID of the Amazon Virtual Private Cloud (VPC) that the domain uses for communication.</p>"
+        "DescribeDomainResponse$VpcId": "<p>The ID of the Amazon Virtual Private Cloud (VPC) that the domain uses for communication.</p>",
+        "UpdateDomainRequest$VpcId": "<p>The identifier for the VPC used by the domain for network communication. Use this field only when adding VPC configuration to a SageMaker AI domain used in Amazon SageMaker Unified Studio that was created without VPC settings. SageMaker AI doesn't automatically apply VPC updates to existing applications. Stop and restart your applications to apply the changes.</p>"
       }
     },
     "VpcOnlyTrustedAccounts": {

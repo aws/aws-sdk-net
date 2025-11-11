@@ -81,6 +81,7 @@ namespace Amazon.IdentityStore.Model
         /// Gets and sets the property Value. 
         /// <para>
         /// A string containing a phone number. For example, "8675309" or "+1 (800) 123-4567".
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=1024)]

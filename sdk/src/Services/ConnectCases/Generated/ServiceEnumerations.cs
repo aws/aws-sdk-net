@@ -421,6 +421,14 @@ namespace Amazon.ConnectCases
     {
 
         /// <summary>
+        /// Constant FieldOptions for RuleType
+        /// </summary>
+        public static readonly RuleType FieldOptions = new RuleType("FieldOptions");
+        /// <summary>
+        /// Constant Hidden for RuleType
+        /// </summary>
+        public static readonly RuleType Hidden = new RuleType("Hidden");
+        /// <summary>
         /// Constant Required for RuleType
         /// </summary>
         public static readonly RuleType Required = new RuleType("Required");
