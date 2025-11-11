@@ -34,9 +34,25 @@ namespace Amazon.SecurityIR.Model
     /// </summary>
     public partial class IncidentResponder
     {
+        private List<string> _communicationPreferences = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _email;
         private string _jobTitle;
         private string _name;
+
+        /// <summary>
+        /// Gets and sets the property CommunicationPreferences.
+        /// </summary>
+        public List<string> CommunicationPreferences
+        {
+            get { return this._communicationPreferences; }
+            set { this._communicationPreferences = value; }
+        }
+
+        // Check to see if CommunicationPreferences property is set
+        internal bool IsSetCommunicationPreferences()
+        {
+            return this._communicationPreferences != null && (this._communicationPreferences.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property Email.

@@ -66,6 +66,12 @@ namespace Amazon.SecurityIR.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("communicationPreferences", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.CommunicationPreferences = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("email", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

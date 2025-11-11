@@ -48,6 +48,17 @@ namespace Amazon.SecurityIR.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetCommunicationPreferences())
+            {
+                context.Writer.WritePropertyName("communicationPreferences");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectCommunicationPreferencesListValue in requestObject.CommunicationPreferences)
+                {
+                        context.Writer.Write(requestObjectCommunicationPreferencesListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetEmail())
             {
                 context.Writer.WritePropertyName("email");
