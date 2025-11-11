@@ -79,6 +79,56 @@ namespace Amazon.BedrockDataAutomation
 
 
     /// <summary>
+    /// Constants used for properties of type AudioGenerativeOutputLanguage.
+    /// </summary>
+    public class AudioGenerativeOutputLanguage : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DEFAULT for AudioGenerativeOutputLanguage
+        /// </summary>
+        public static readonly AudioGenerativeOutputLanguage DEFAULT = new AudioGenerativeOutputLanguage("DEFAULT");
+        /// <summary>
+        /// Constant EN for AudioGenerativeOutputLanguage
+        /// </summary>
+        public static readonly AudioGenerativeOutputLanguage EN = new AudioGenerativeOutputLanguage("EN");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AudioGenerativeOutputLanguage(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AudioGenerativeOutputLanguage FindValue(string value)
+        {
+            return FindValue<AudioGenerativeOutputLanguage>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AudioGenerativeOutputLanguage(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AudioStandardGenerativeFieldType.
     /// </summary>
     public class AudioStandardGenerativeFieldType : ConstantClass
@@ -670,6 +720,92 @@ namespace Amazon.BedrockDataAutomation
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ImageStandardGenerativeFieldType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Language.
+    /// </summary>
+    public class Language : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CN for Language
+        /// </summary>
+        public static readonly Language CN = new Language("CN");
+        /// <summary>
+        /// Constant DE for Language
+        /// </summary>
+        public static readonly Language DE = new Language("DE");
+        /// <summary>
+        /// Constant EN for Language
+        /// </summary>
+        public static readonly Language EN = new Language("EN");
+        /// <summary>
+        /// Constant ES for Language
+        /// </summary>
+        public static readonly Language ES = new Language("ES");
+        /// <summary>
+        /// Constant FR for Language
+        /// </summary>
+        public static readonly Language FR = new Language("FR");
+        /// <summary>
+        /// Constant HK for Language
+        /// </summary>
+        public static readonly Language HK = new Language("HK");
+        /// <summary>
+        /// Constant IT for Language
+        /// </summary>
+        public static readonly Language IT = new Language("IT");
+        /// <summary>
+        /// Constant JA for Language
+        /// </summary>
+        public static readonly Language JA = new Language("JA");
+        /// <summary>
+        /// Constant KO for Language
+        /// </summary>
+        public static readonly Language KO = new Language("KO");
+        /// <summary>
+        /// Constant PT for Language
+        /// </summary>
+        public static readonly Language PT = new Language("PT");
+        /// <summary>
+        /// Constant TW for Language
+        /// </summary>
+        public static readonly Language TW = new Language("TW");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Language(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Language FindValue(string value)
+        {
+            return FindValue<Language>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Language(string value)
         {
             return FindValue(value);
         }

@@ -34,7 +34,23 @@ namespace Amazon.BedrockDataAutomation.Model
     /// </summary>
     public partial class AudioOverrideConfiguration
     {
+        private AudioLanguageConfiguration _languageConfiguration;
         private ModalityProcessingConfiguration _modalityProcessing;
+
+        /// <summary>
+        /// Gets and sets the property LanguageConfiguration.
+        /// </summary>
+        public AudioLanguageConfiguration LanguageConfiguration
+        {
+            get { return this._languageConfiguration; }
+            set { this._languageConfiguration = value; }
+        }
+
+        // Check to see if LanguageConfiguration property is set
+        internal bool IsSetLanguageConfiguration()
+        {
+            return this._languageConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ModalityProcessing.

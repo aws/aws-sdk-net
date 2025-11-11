@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AudioOverrideConfiguration Object
+    /// Response Unmarshaller for AudioLanguageConfiguration Object
     /// </summary>  
-    public class AudioOverrideConfigurationUnmarshaller : IUnmarshaller<AudioOverrideConfiguration, XmlUnmarshallerContext>, IUnmarshaller<AudioOverrideConfiguration, JsonUnmarshallerContext>
+    public class AudioLanguageConfigurationUnmarshaller : IUnmarshaller<AudioLanguageConfiguration, XmlUnmarshallerContext>, IUnmarshaller<AudioLanguageConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        AudioOverrideConfiguration IUnmarshaller<AudioOverrideConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AudioLanguageConfiguration IUnmarshaller<AudioLanguageConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public AudioOverrideConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public AudioLanguageConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
-            AudioOverrideConfiguration unmarshalledObject = new AudioOverrideConfiguration();
+            AudioLanguageConfiguration unmarshalledObject = new AudioLanguageConfiguration();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,16 +66,22 @@ namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("languageConfiguration", targetDepth))
+                if (context.TestExpression("generativeOutputLanguage", targetDepth))
                 {
-                    var unmarshaller = AudioLanguageConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.LanguageConfiguration = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.GenerativeOutputLanguage = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("modalityProcessing", targetDepth))
+                if (context.TestExpression("identifyMultipleLanguages", targetDepth))
                 {
-                    var unmarshaller = ModalityProcessingConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.ModalityProcessing = unmarshaller.Unmarshall(context);
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.IdentifyMultipleLanguages = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("inputLanguages", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.InputLanguages = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -83,12 +89,12 @@ namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
         }
 
 
-        private static AudioOverrideConfigurationUnmarshaller _instance = new AudioOverrideConfigurationUnmarshaller();        
+        private static AudioLanguageConfigurationUnmarshaller _instance = new AudioLanguageConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AudioOverrideConfigurationUnmarshaller Instance
+        public static AudioLanguageConfigurationUnmarshaller Instance
         {
             get
             {
