@@ -33,7 +33,6 @@ namespace Amazon.S3.Transfer.Internal
     internal class MultipartStreamHandler : IStreamHandler
     {
         private readonly IPartBufferManager _partBufferManager;
-        private StreamPartBuffer _currentPartBuffer;
         private bool _disposed = false;
 
         public MultipartStreamHandler(IPartBufferManager partBufferManager)
@@ -54,55 +53,22 @@ namespace Amazon.S3.Transfer.Internal
             if (offset + count > buffer.Length)
                 throw new ArgumentException("Offset and count exceed buffer bounds");
 
-            // If current ArrayPool buffer is exhausted, try to get next part
-            if (_currentPartBuffer == null || _currentPartBuffer.RemainingBytes == 0)
+            // Simplified: unified data source approach handles both direct streaming and buffered parts
+            var nextPartNumber = _partBufferManager.NextExpectedPartNumber;
+            
+            try
             {
-                // Dispose previous buffer (returns to ArrayPool) and release buffer space
-                if (_currentPartBuffer != null)
-                {
-                    _currentPartBuffer.Dispose();
-                    _partBufferManager.ReleaseBufferSpace(); // Free space for new downloads
-                    _currentPartBuffer = null;
-                }
-
-                var nextPartNumber = _partBufferManager.NextExpectedPartNumber;
-                
                 var result = await _partBufferManager.ReadPartAsync(nextPartNumber, buffer, offset, count, cancellationToken)
                     .ConfigureAwait(false);
                 
-                if (result.IsDirectStreamed)
-                {
-                    // SUCCESS: Got data directly from downloader without buffering
-                    return result.BytesRead;
-                }
-                
-                if (result.BytesRead == 0)
-                {
-                    return 0; // End of stream
-                }
-                
-                // If we got here with buffered data, the part should be available in the buffer manager
-                // This indicates the ReadPartAsync returned early - we need to get the buffer separately
-                // This shouldn't happen
-                throw new InvalidOperationException("ReadPartAsync returned buffered data but no buffer was provided");
+                // Both StreamDataSource and BufferedDataSource copy data directly into user buffer
+                return result.BytesRead; // 0 = end of stream, >0 = got data
             }
-            
-            // Direct read from ArrayPool buffer (no MemoryStream overhead!)
-            var availableBytes = _currentPartBuffer.RemainingBytes;
-            var bytesToRead = Math.Min(count, availableBytes);
-            
-            // Direct copy from ArrayPool buffer to user buffer
-            Buffer.BlockCopy(
-                _currentPartBuffer.ArrayPoolBuffer,  // Source: ArrayPool buffer
-                _currentPartBuffer.CurrentPosition,  // Source offset
-                buffer,                              // Destination: user buffer
-                offset,                              // Destination offset
-                bytesToRead                          // Bytes to copy
-            );
-            
-            _currentPartBuffer.CurrentPosition += bytesToRead;
-            
-            return bytesToRead;
+            catch (InvalidOperationException ex) when (ex.Message.Contains("expected part") || ex.Message.Contains("Download complete"))
+            {
+                // No more parts available - end of download
+                return 0;
+            }
         }
 
         private void ThrowIfDisposed()
@@ -120,14 +86,6 @@ namespace Amazon.S3.Transfer.Internal
             {
                 try
                 {
-                    // Clean up current ArrayPool-based PartBuffer and release buffer space
-                    if (_currentPartBuffer != null)
-                    {
-                        _currentPartBuffer.Dispose(); // Returns ArrayPool buffer to pool
-                        _partBufferManager.ReleaseBufferSpace(); // Free space for new downloads
-                        _currentPartBuffer = null;
-                    }
-                    
                     // Note: We don't dispose _partBufferManager here since it's owned by the coordinator
                     // The BufferedMultipartStream will handle disposing the buffer manager
                 }

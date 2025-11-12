@@ -130,8 +130,13 @@ namespace Amazon.S3.Transfer.Internal
             if (partBufferManager == null)
                 throw new ArgumentNullException(nameof(partBufferManager));
 
+            Logger.DebugFormat("[MultipartDownloadCoordinator] StartDownloadsAsync - TotalParts={0}, ObjectSize={1}, IsSinglePart={2}, HasCachedResponse={3}", 
+                discoveryResult.TotalParts, discoveryResult.ObjectSize, discoveryResult.IsSinglePart, 
+                discoveryResult.CachedFirstPartResponse != null);
+
             if (discoveryResult.IsSinglePart)
             {
+                Logger.DebugFormat("[MultipartDownloadCoordinator] Single part download detected, marking complete");
                 // Single part - no downloads needed, just state management
                 lock (_lockObject)
                 {
@@ -148,6 +153,9 @@ namespace Amazon.S3.Transfer.Internal
                 // Check if we have a cached first part response to avoid re-downloading part 1
                 if (discoveryResult.CachedFirstPartResponse != null)
                 {
+                    Logger.DebugFormat("[MultipartDownloadCoordinator] Using cached first part response, starting downloads for parts 2-{0}", 
+                        discoveryResult.TotalParts);
+
                     // Process cached first part response
                     var cachedPartTask = ProcessCachedFirstPartAsync(discoveryResult.CachedFirstPartResponse, partBufferManager, internalCts.Token);
                     downloadTasks.Add(cachedPartTask);
@@ -155,22 +163,31 @@ namespace Amazon.S3.Transfer.Internal
                     // Start concurrent downloads for remaining parts (2 onwards)
                     for (int partNum = 2; partNum <= discoveryResult.TotalParts; partNum++)
                     {
+                        Logger.DebugFormat("[MultipartDownloadCoordinator] Creating download task for part {0}", partNum);
                         var task = CreateDownloadTaskAsync(partNum, discoveryResult.ObjectSize, partBufferManager, internalCts.Token);
                         downloadTasks.Add(task);
                     }
                 }
                 else
                 {
+                    Logger.DebugFormat("[MultipartDownloadCoordinator] No cached response, starting downloads for all parts 1-{0}", 
+                        discoveryResult.TotalParts);
+
                     // No cached response - start concurrent downloads for all parts
                     for (int partNum = 1; partNum <= discoveryResult.TotalParts; partNum++)
                     {
+                        Logger.DebugFormat("[MultipartDownloadCoordinator] Creating download task for part {0}", partNum);
                         var task = CreateDownloadTaskAsync(partNum, discoveryResult.ObjectSize, partBufferManager, internalCts.Token);
                         downloadTasks.Add(task);
                     }
                 }
 
+                Logger.DebugFormat("[MultipartDownloadCoordinator] Created {0} download tasks, waiting for completion", downloadTasks.Count);
+
                 // Wait for all downloads to complete
                 await Task.WhenAll(downloadTasks).ConfigureAwait(false);
+
+                Logger.DebugFormat("[MultipartDownloadCoordinator] All download tasks completed successfully");
 
                 // Mark successful completion
                 lock (_lockObject)
@@ -182,6 +199,8 @@ namespace Amazon.S3.Transfer.Internal
             }
             catch (Exception ex)
             {
+                Logger.DebugFormat("[MultipartDownloadCoordinator] StartDownloadsAsync failed: {0}", ex.Message);
+
                 lock (_lockObject)
                 {
                     _currentState = StreamState.Error;
@@ -197,41 +216,26 @@ namespace Amazon.S3.Transfer.Internal
             }
         }
 
-        private StreamDataSource CreateResponseStreamDataSource(int partNumber, GetObjectResponse response, long objectSize)
-        {
-            return new StreamDataSource(partNumber, async (buffer, offset, count, ct) =>
-            {
-                // Extracted lambda logic (same as current implementation)
-                int totalRead = 0;
-                while (totalRead < count && totalRead < response.ContentLength)
-                {
-                    int remainingInBuffer = count - totalRead;
-                    int remainingInResponse = (int)(response.ContentLength - totalRead);
-                    int maxToRead = Math.Min(remainingInBuffer, remainingInResponse);
-                    
-                    int bytesRead = await response.ResponseStream.ReadAsync(
-                        buffer, offset + totalRead, maxToRead, ct).ConfigureAwait(false);
-                    
-                    if (bytesRead == 0) break;
-                    totalRead += bytesRead;
-                }
-                
-                ReportProgress(partNumber, totalRead, objectSize);
-                return totalRead;
-            });
-        }
 
         private async Task ProcessCachedFirstPartAsync(GetObjectResponse cachedResponse, IPartBufferManager partBufferManager, CancellationToken cancellationToken)
         {
-            try
-            {
-                var streamSource = CreateResponseStreamDataSource(1, cachedResponse, cachedResponse.ContentLength);
-                await partBufferManager.AddDataSourceAsync(streamSource, cancellationToken).ConfigureAwait(false);
-            }
-            finally
-            {
-                cachedResponse?.Dispose();
-            }
+            Logger.DebugFormat("[MultipartDownloadCoordinator] ProcessCachedFirstPartAsync - ContentLength={0}, ETag={1}", 
+                cachedResponse.ContentLength, cachedResponse.ETag);
+
+            // Create StreamDataSource with ownership transfer - StreamDataSource will dispose the response
+            var streamSource = new StreamDataSource(
+                partNumber: 1, 
+                response: cachedResponse,  // Transfer ownership here
+                objectSize: cachedResponse.ContentLength,
+                progressReporter: ReportProgress
+            );
+            
+            Logger.DebugFormat("[MultipartDownloadCoordinator] ProcessCachedFirstPartAsync - created StreamDataSource for part 1, adding to buffer manager");
+            
+            // StreamDataSource now owns the response and will dispose it when done
+            await partBufferManager.AddDataSourceAsync(streamSource, cancellationToken).ConfigureAwait(false);
+            
+            Logger.DebugFormat("[MultipartDownloadCoordinator] ProcessCachedFirstPartAsync - part 1 added to buffer manager successfully");
         }
 
         private async Task CreateDownloadTaskAsync(int partNumber, long objectSize, IPartBufferManager partBufferManager, CancellationToken cancellationToken)
@@ -255,17 +259,28 @@ namespace Amazon.S3.Transfer.Internal
                         // PART strategy: Use part number from original upload
                         getObjectRequest = CreateGetObjectRequest();
                         getObjectRequest.PartNumber = partNumber;
+                        
+                        Logger.DebugFormat("[DEBUG] Requesting part {0} from S3 using PART strategy, PartNumber={1}", 
+                            partNumber, getObjectRequest.PartNumber);
                     }
                     else
                     {
                         // RANGE strategy: Use calculated byte range
                         var (startByte, endByte) = CalculatePartRange(partNumber, objectSize);
+                        long expectedSize = endByte - startByte + 1;
                         
                         getObjectRequest = CreateGetObjectRequest();
                         getObjectRequest.ByteRange = new ByteRange(startByte, endByte);
+                        
+                        Logger.DebugFormat("[DEBUG] Requesting part {0} from S3 using RANGE strategy, ByteRange={1}-{2}, ExpectedSize={3}", 
+                            partNumber, startByte, endByte, expectedSize);
                     }
                     
                     response = await _s3Client.GetObjectAsync(getObjectRequest, cancellationToken).ConfigureAwait(false);
+                    
+                    // DEBUG: Verify S3 response
+                    Logger.DebugFormat("[DEBUG] Got S3 response for part {0}, ContentLength={1}, ETag={2}", 
+                        partNumber, response.ContentLength, response.ETag);
                     
                     // Validate ETag consistency for SEP compliance
                     if (!string.IsNullOrEmpty(_savedETag) && !string.Equals(_savedETag, response.ETag, StringComparison.OrdinalIgnoreCase))
@@ -281,11 +296,25 @@ namespace Amazon.S3.Transfer.Internal
                 // Try direct streaming first if this is the expected part
                 if (partNumber == partBufferManager.NextExpectedPartNumber)
                 {
-                    var streamSource = CreateResponseStreamDataSource(partNumber, response, objectSize);
+                    Logger.DebugFormat("[DEBUG] Part {0} matches NextExpectedPartNumber, using direct streaming path", partNumber);
+                    
+                    // Create StreamDataSource with ownership transfer - this is the safer approach
+                    var streamSource = new StreamDataSource(
+                        partNumber: partNumber, 
+                        response: response,  // Transfer ownership here
+                        objectSize: objectSize,
+                        progressReporter: ReportProgress
+                    );
+                    
                     await partBufferManager.AddDataSourceAsync(streamSource, cancellationToken).ConfigureAwait(false);
                     
                     // Direct streaming registered successfully - return early
                     return;
+                }
+                else
+                {
+                    Logger.DebugFormat("[DEBUG] Part {0} does not match NextExpectedPartNumber ({1}), using buffered path", 
+                        partNumber, partBufferManager.NextExpectedPartNumber);
                 }
                 
                 // Fallback to buffering approach
