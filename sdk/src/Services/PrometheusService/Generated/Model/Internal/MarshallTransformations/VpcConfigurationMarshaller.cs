@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.PrometheusService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Source Marshaller
+    /// VpcConfiguration Marshaller
     /// </summary>
-    public class SourceMarshaller : IRequestMarshaller<Source, JsonMarshallerContext> 
+    public class VpcConfigurationMarshaller : IRequestMarshaller<VpcConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,30 +42,30 @@ namespace Amazon.PrometheusService.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(Source requestObject, JsonMarshallerContext context)
+        public void Marshall(VpcConfiguration requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetEksConfiguration())
+            if(requestObject.IsSetSecurityGroupIds())
             {
-                context.Writer.WritePropertyName("eksConfiguration");
-                context.Writer.WriteStartObject();
-
-                var marshaller = EksConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.EksConfiguration, context);
-
-                context.Writer.WriteEndObject();
+                context.Writer.WritePropertyName("securityGroupIds");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectSecurityGroupIdsListValue in requestObject.SecurityGroupIds)
+                {
+                        context.Writer.WriteStringValue(requestObjectSecurityGroupIdsListValue);
+                }
+                context.Writer.WriteEndArray();
             }
 
-            if(requestObject.IsSetVpcConfiguration())
+            if(requestObject.IsSetSubnetIds())
             {
-                context.Writer.WritePropertyName("vpcConfiguration");
-                context.Writer.WriteStartObject();
-
-                var marshaller = VpcConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.VpcConfiguration, context);
-
-                context.Writer.WriteEndObject();
+                context.Writer.WritePropertyName("subnetIds");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectSubnetIdsListValue in requestObject.SubnetIds)
+                {
+                        context.Writer.WriteStringValue(requestObjectSubnetIdsListValue);
+                }
+                context.Writer.WriteEndArray();
             }
 
         }
@@ -73,7 +73,7 @@ namespace Amazon.PrometheusService.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static SourceMarshaller Instance = new SourceMarshaller();
+        public readonly static VpcConfigurationMarshaller Instance = new VpcConfigurationMarshaller();
 
     }
 }

@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.PrometheusService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Source Object
+    /// Response Unmarshaller for VpcConfiguration Object
     /// </summary>  
-    public class SourceUnmarshaller : IJsonUnmarshaller<Source, JsonUnmarshallerContext>
+    public class VpcConfigurationUnmarshaller : IJsonUnmarshaller<VpcConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.PrometheusService.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public Source Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public VpcConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            Source unmarshalledObject = new Source();
+            VpcConfiguration unmarshalledObject = new VpcConfiguration();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,16 +56,16 @@ namespace Amazon.PrometheusService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("eksConfiguration", targetDepth))
+                if (context.TestExpression("securityGroupIds", targetDepth))
                 {
-                    var unmarshaller = EksConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.EksConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.SecurityGroupIds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("vpcConfiguration", targetDepth))
+                if (context.TestExpression("subnetIds", targetDepth))
                 {
-                    var unmarshaller = VpcConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.VpcConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.SubnetIds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -73,12 +73,12 @@ namespace Amazon.PrometheusService.Model.Internal.MarshallTransformations
         }
 
 
-        private static SourceUnmarshaller _instance = new SourceUnmarshaller();        
+        private static VpcConfigurationUnmarshaller _instance = new VpcConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SourceUnmarshaller Instance
+        public static VpcConfigurationUnmarshaller Instance
         {
             get
             {
