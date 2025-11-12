@@ -33438,6 +33438,62 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  GetImageAncestry
+
+        /// <summary>
+        /// Retrieves the ancestry chain of the specified AMI, tracing its lineage back to the
+        /// root AMI. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-ancestry.html">AMI
+        /// ancestry</a> in <i>Amazon EC2 User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetImageAncestry service method.</param>
+        /// 
+        /// <returns>The response from the GetImageAncestry service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetImageAncestry">REST API Reference for GetImageAncestry Operation</seealso>
+        public virtual GetImageAncestryResponse GetImageAncestry(GetImageAncestryRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetImageAncestryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetImageAncestryResponseUnmarshaller.Instance;
+
+            return Invoke<GetImageAncestryResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetImageAncestry operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetImageAncestry operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetImageAncestry
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetImageAncestry">REST API Reference for GetImageAncestry Operation</seealso>
+        public virtual IAsyncResult BeginGetImageAncestry(GetImageAncestryRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetImageAncestryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetImageAncestryResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetImageAncestry operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetImageAncestry.</param>
+        /// 
+        /// <returns>Returns a  GetImageAncestryResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetImageAncestry">REST API Reference for GetImageAncestry Operation</seealso>
+        public virtual GetImageAncestryResponse EndGetImageAncestry(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetImageAncestryResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetImageBlockPublicAccessState
 
         /// <summary>

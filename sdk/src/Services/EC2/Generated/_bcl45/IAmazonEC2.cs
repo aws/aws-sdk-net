@@ -25198,6 +25198,38 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  GetImageAncestry
+
+
+        /// <summary>
+        /// Retrieves the ancestry chain of the specified AMI, tracing its lineage back to the
+        /// root AMI. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-ancestry.html">AMI
+        /// ancestry</a> in <i>Amazon EC2 User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetImageAncestry service method.</param>
+        /// 
+        /// <returns>The response from the GetImageAncestry service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetImageAncestry">REST API Reference for GetImageAncestry Operation</seealso>
+        GetImageAncestryResponse GetImageAncestry(GetImageAncestryRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves the ancestry chain of the specified AMI, tracing its lineage back to the
+        /// root AMI. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-ancestry.html">AMI
+        /// ancestry</a> in <i>Amazon EC2 User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetImageAncestry service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetImageAncestry service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetImageAncestry">REST API Reference for GetImageAncestry Operation</seealso>
+        Task<GetImageAncestryResponse> GetImageAncestryAsync(GetImageAncestryRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetImageBlockPublicAccessState
 
 
