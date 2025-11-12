@@ -353,6 +353,37 @@ namespace Amazon.S3.Transfer
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<Stream> OpenStreamAsync(TransferUtilityOpenStreamRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
+        /// <summary>
+        /// 	Returns a stream from which the caller can read the content from the specified
+        /// 	Amazon S3 bucket and key, along with response metadata.
+        /// 	The caller of this method is responsible for closing the stream.
+        /// </summary>
+        /// <param name="bucketName">
+        /// 	The name of the bucket.
+        /// </param>
+        /// <param name="key">
+        /// 	The object key.
+        /// </param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation with response metadata.</returns>
+        Task<TransferUtilityOpenStreamResponse> OpenStreamWithResponseAsync(string bucketName, string key, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// 	Returns a stream to read the contents from Amazon S3 as 
+        /// 	specified by the <c>TransferUtilityOpenStreamRequest</c>, along with response metadata.
+        /// 	The caller of this method is responsible for closing the stream.
+        /// </summary>
+        /// <param name="request">
+        /// 	Contains all the parameters required for the OpenStreamWithResponse operation.
+        /// </param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation with response metadata.</returns>
+        Task<TransferUtilityOpenStreamResponse> OpenStreamWithResponseAsync(TransferUtilityOpenStreamRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
         #endregion
     }
 }

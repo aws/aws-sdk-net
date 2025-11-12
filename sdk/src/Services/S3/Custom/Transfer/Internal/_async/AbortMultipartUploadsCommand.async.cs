@@ -82,7 +82,7 @@ namespace Amazon.S3.Transfer.Internal
                 }
                 while (listResponse.IsTruncated.GetValueOrDefault());
 
-                await WhenAllOrFirstExceptionAsync(pendingTasks,cancellationToken)
+                await TaskHelpers.WhenAllOrFirstExceptionAsync(pendingTasks,cancellationToken)
                     .ConfigureAwait(continueOnCapturedContext: false);
 
                 return new TransferUtilityAbortMultipartUploadsResponse();

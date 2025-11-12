@@ -133,7 +133,7 @@ namespace Amazon.S3.Transfer.Internal
                     }
 
                     Logger.DebugFormat("Waiting for upload part requests to complete. ({0})", initResponse.UploadId);
-                    _uploadResponses = await WhenAllOrFirstExceptionAsync(pendingUploadPartTasks, cancellationToken)
+                    _uploadResponses = await TaskHelpers.WhenAllOrFirstExceptionAsync(pendingUploadPartTasks, cancellationToken)
                         .ConfigureAwait(continueOnCapturedContext: false);
 
                     Logger.DebugFormat("Beginning completing multipart. ({0})", initResponse.UploadId);

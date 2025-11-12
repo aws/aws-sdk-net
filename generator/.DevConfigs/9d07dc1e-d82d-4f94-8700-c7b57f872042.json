@@ -1,0 +1,11 @@
+{
+  "services": [
+    {
+      "serviceName": "S3",
+      "type": "minor",
+      "changeLogMessages": [
+        "Create OpenStreamWithResponseAsync API and implement multi part download"
+      ]
+    }
+  ]
+}

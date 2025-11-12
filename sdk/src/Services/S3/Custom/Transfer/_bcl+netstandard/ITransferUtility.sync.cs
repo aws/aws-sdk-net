@@ -248,6 +248,35 @@ namespace Amazon.S3.Transfer
         /// </returns>
         Stream OpenStream(TransferUtilityOpenStreamRequest request);
 
+        /// <summary>
+        /// 	Returns a stream from which the caller can read the content from the specified
+        /// 	Amazon S3 bucket and key, along with response metadata.
+        /// 	The caller of this method is responsible for closing the stream.
+        /// </summary>
+        /// <param name="bucketName">
+        /// 	The name of the bucket.
+        /// </param>
+        /// <param name="key">
+        /// 	The object key.
+        /// </param>
+        /// <returns>
+        /// 	A response containing the stream and metadata from the specified Amazon S3 bucket and key.
+        /// </returns>
+        TransferUtilityOpenStreamResponse OpenStreamWithResponse(string bucketName, string key);
+
+        /// <summary>
+        /// 	Returns a stream to read the contents from Amazon S3 as 
+        /// 	specified by the <c>TransferUtilityOpenStreamRequest</c>, along with response metadata.
+        /// 	The caller of this method is responsible for closing the stream.
+        /// </summary>
+        /// <param name="request">
+        /// 	Contains all the parameters required for the OpenStreamWithResponse operation.
+        /// </param>
+        /// <returns>
+        /// 	A response containing the stream and metadata from Amazon S3.
+        /// </returns>
+        TransferUtilityOpenStreamResponse OpenStreamWithResponse(TransferUtilityOpenStreamRequest request);
+
         #endregion
 
         #region Download

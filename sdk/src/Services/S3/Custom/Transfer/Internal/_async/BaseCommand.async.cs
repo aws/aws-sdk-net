@@ -31,58 +31,6 @@ namespace Amazon.S3.Transfer.Internal
         /// </summary>
         public abstract Task<TResponse> ExecuteAsync(CancellationToken cancellationToken);
 
-        /// <summary>
-        ///  Waits for all of the tasks to complete or till any task fails or is canceled.
-        /// </summary>        
-        protected static async Task<List<T>> WhenAllOrFirstExceptionAsync<T>(List<Task<T>> pendingTasks, CancellationToken cancellationToken)
-        {
-            int processed = 0;            
-            int total = pendingTasks.Count;
-            var responses = new List<T>();
-            while (processed < total)
-            {
-                cancellationToken.ThrowIfCancellationRequested();
-
-                var completedTask = await Task.WhenAny(pendingTasks)
-                    .ConfigureAwait(continueOnCapturedContext: false);
-                
-                //If RanToCompletion a response will be returned
-                //If Faulted or Canceled an appropriate exception will be thrown  
-                var response = await completedTask
-                    .ConfigureAwait(continueOnCapturedContext: false);
-                responses.Add(response);
-                
-                pendingTasks.Remove(completedTask);
-                processed++;
-            }
-            
-            return responses;
-        }
-
-        /// <summary>
-        /// Waits for all of the tasks to complete or till any task fails or is canceled.
-        /// </summary>        
-        protected static async Task WhenAllOrFirstExceptionAsync(List<Task> pendingTasks, CancellationToken cancellationToken)
-        {
-            int processed = 0;
-            int total = pendingTasks.Count;            
-            while (processed < total)
-            {
-                cancellationToken.ThrowIfCancellationRequested();
-
-                var completedTask = await Task.WhenAny(pendingTasks)
-                    .ConfigureAwait(continueOnCapturedContext: false);                
-                
-                //If RanToCompletion a response will be returned
-                //If Faulted or Canceled an appropriate exception will be thrown       
-                await completedTask
-                    .ConfigureAwait(continueOnCapturedContext: false);                    
-                
-                pendingTasks.Remove(completedTask);
-                processed++;
-            }
-        }
-
         protected static async Task ExecuteCommandAsync<T>(BaseCommand<T> command, CancellationTokenSource internalCts, SemaphoreSlim throttler) where T : class
         {
             try

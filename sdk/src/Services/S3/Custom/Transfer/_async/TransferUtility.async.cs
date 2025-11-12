@@ -376,6 +376,53 @@ namespace Amazon.S3.Transfer
             }
         }
 
+        /// <summary>
+        /// 	Returns a response containing a stream and metadata from which the caller can read the content from the specified
+        /// 	Amazon S3 bucket and key. Uses enhanced multipart streaming with buffering for improved performance.
+        /// 	The caller of this method is responsible for closing the stream.
+        /// </summary>
+        /// <param name="bucketName">
+        /// 	The name of the bucket.
+        /// </param>
+        /// <param name="key">
+        /// 	The object key.
+        /// </param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation with response metadata.</returns>
+        public async Task<TransferUtilityOpenStreamResponse> OpenStreamWithResponseAsync(string bucketName, string key, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            TransferUtilityOpenStreamRequest request = new TransferUtilityOpenStreamRequest()
+            {
+                BucketName = bucketName,
+                Key = key
+            };
+            return await OpenStreamWithResponseAsync(request, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// 	Returns a response containing a stream and metadata to read the contents from Amazon S3 as 
+        /// 	specified by the <c>TransferUtilityOpenStreamRequest</c>. Uses enhanced multipart streaming with buffering for improved performance.
+        /// 	The caller of this method is responsible for closing the stream.
+        /// </summary>
+        /// <param name="request">
+        /// 	Contains all the parameters required for the OpenStreamWithResponse operation.
+        /// </param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation with response metadata.</returns>
+        public async Task<TransferUtilityOpenStreamResponse> OpenStreamWithResponseAsync(TransferUtilityOpenStreamRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            using(CreateSpan(nameof(OpenStreamWithResponseAsync), null, Amazon.Runtime.Telemetry.Tracing.SpanKind.CLIENT))
+            {
+                CheckForBlockedArn(request.BucketName, "OpenStreamWithResponse");
+                OpenStreamWithResponseCommand command = new OpenStreamWithResponseCommand(this._s3Client, request, this._config);
+                return await command.ExecuteAsync(cancellationToken).ConfigureAwait(continueOnCapturedContext: false);
+            }
+        }
+
         #endregion
 
         internal BaseCommand<TransferUtilityUploadResponse> GetUploadCommand(TransferUtilityUploadRequest request, SemaphoreSlim asyncThrottler)
