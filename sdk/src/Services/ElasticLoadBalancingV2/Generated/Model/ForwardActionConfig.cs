@@ -40,7 +40,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property TargetGroups. 
         /// <para>
-        /// The target groups. For Network Load Balancers, you can specify a single target group.
+        /// The target groups.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
