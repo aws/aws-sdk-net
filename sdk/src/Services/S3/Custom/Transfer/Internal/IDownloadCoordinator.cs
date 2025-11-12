@@ -91,13 +91,7 @@ namespace Amazon.S3.Transfer.Internal
         /// Null for multipart downloads.
         /// </summary>
         public GetObjectResponse SinglePartResponse { get; set; }
-        
-        /// <summary>
-        /// For multipart PART strategy downloads, contains the cached first part response
-        /// from discovery to avoid re-requesting part 1. Null for other scenarios.
-        /// </summary>
-        public GetObjectResponse CachedFirstPartResponse { get; set; }
-        
+    
         /// <summary>
         /// Indicates whether this is a single-part download.
         /// </summary>

@@ -148,14 +148,20 @@ namespace Amazon.S3.Transfer.Internal
                     }
                 }
                 
-                // If we read less than requested, we've reached the end of this part
-                if (bytesRead < count || bytesRead == 0)
+                // Only mark complete on true EOF from HTTP stream (bytesRead == 0)
+                // Partial reads (bytesRead < count) are normal due to network buffering
+                if (bytesRead == 0)
                 {
-                    Logger.DebugFormat("[StreamDataSource] Part {0} ReadAsync - marking complete because bytesRead({1}) < count({2}) or bytesRead == 0", 
-                        PartNumber, bytesRead, count);
-                    Logger.DebugFormat("[StreamDataSource] Part {0} ReadAsync - STREAM ENDED: ExpectedContentLength={1}", 
+                    Logger.DebugFormat("[StreamDataSource] Part {0} ReadAsync - marking complete because HTTP stream reached EOF (bytesRead == 0)", 
+                        PartNumber);
+                    Logger.DebugFormat("[StreamDataSource] Part {0} ReadAsync - STREAM ENDED: ContentLength={1}", 
                         PartNumber, _ownedResponse?.ContentLength ?? -1);
                     _isComplete = true;
+                }
+                else
+                {
+                    Logger.DebugFormat("[StreamDataSource] Part {0} ReadAsync - partial read ({1} < {2}) is normal, continuing stream", 
+                        PartNumber, bytesRead, count);
                 }
                 
                 return bytesRead;

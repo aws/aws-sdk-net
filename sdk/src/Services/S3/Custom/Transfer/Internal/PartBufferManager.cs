@@ -138,7 +138,7 @@ namespace Amazon.S3.Transfer.Internal
             await AddDataSourceAsync(streamSource, cancellationToken).ConfigureAwait(false);
         }
 
-        public async Task<ReadResult> ReadPartAsync(int partNumber, byte[] buffer, int offset, int count, CancellationToken cancellationToken)
+        public async Task<ReadResult> ReadPartAsync(int requestedPartNumber, byte[] buffer, int offset, int count, CancellationToken cancellationToken)
         {
             ThrowIfDisposed();
             
@@ -152,128 +152,172 @@ namespace Amazon.S3.Transfer.Internal
                 throw new ArgumentException("Offset and count exceed buffer bounds");
 
             Logger.DebugFormat("[PartBufferManager] ReadPartAsync called for part {0} - offset={1}, count={2}, nextExpected={3}", 
-                partNumber, offset, count, _nextExpectedPartNumber);
+                requestedPartNumber, offset, count, _nextExpectedPartNumber);
 
             // Validate sequential access
             lock (_lockObject)
             {
-                if (partNumber != _nextExpectedPartNumber)
+                if (requestedPartNumber != _nextExpectedPartNumber)
                 {
                     Logger.DebugFormat("[PartBufferManager] Sequential access violation - requested part {0} but expected part {1}", 
-                        partNumber, _nextExpectedPartNumber);
+                        requestedPartNumber, _nextExpectedPartNumber);
                     throw new InvalidOperationException(
-                        $"Requested part {partNumber} but expected part {_nextExpectedPartNumber}. Parts must be consumed sequentially.");
+                        $"Requested part {requestedPartNumber} but expected part {_nextExpectedPartNumber}. Parts must be consumed sequentially.");
                 }
             }
-
-            Logger.DebugFormat("[PartBufferManager] Part {0} - checking availability, current parts in collection: {1}", 
-                partNumber, _partDataSources.Count);
-
-            // Wait for the part to become available
-            int waitIterations = 0;
-            while (!_partDataSources.ContainsKey(partNumber))
-            {
-                waitIterations++;
-                Logger.DebugFormat("[PartBufferManager] Part {0} - not available yet, wait iteration {1}", 
-                    partNumber, waitIterations);
-
-                // Check for completion first
-                lock (_lockObject)
-                {
-                    if (_downloadComplete)
-                    {
-                        Logger.DebugFormat("[PartBufferManager] Part {0} - download marked complete, exception={1}", 
-                            partNumber, _downloadException?.Message ?? "none");
-
-                        if (_downloadException != null)
-                            throw new InvalidOperationException("Multipart download failed", _downloadException);
-                        
-                        return new ReadResult { BytesRead = 0, IsDirectStreamed = false }; // End of stream
-                    }
-                }
-                
-                // Wait for a part to become available
-                Logger.DebugFormat("[PartBufferManager] Part {0} - waiting for part to become available...", partNumber);
-                await Task.Run(() => _partAvailable.WaitOne(), cancellationToken).ConfigureAwait(false);
-                Logger.DebugFormat("[PartBufferManager] Part {0} - wait completed, rechecking availability", partNumber);
-            }
-
-            Logger.DebugFormat("[PartBufferManager] Part {0} - found in collection, retrieving data source", partNumber);
-
-            // Get the data source for this part (leave it in collection)
-            if (!_partDataSources.TryGetValue(partNumber, out var dataSource))
-            {
-                Logger.DebugFormat("[DEBUG] PartBufferManager - Part {0} expected but not found after availability check", partNumber);
-                
-                // DEBUG: Show what's actually in the dictionary
-                var actualParts = string.Join(", ", _partDataSources.Keys);
-                Logger.DebugFormat("[DEBUG] PartBufferManager - Dictionary actually contains parts: {0}", actualParts);
-                
-                throw new InvalidOperationException($"Part {partNumber} was expected but not found");
-            }
-
-            Logger.DebugFormat("[DEBUG] PartBufferManager - Retrieved data source for part {0}: actual PartNumber={1}, IsDirectStream={2}, IsComplete={3}, IsAvailable={4}", 
-                partNumber, dataSource.PartNumber, dataSource.IsDirectStream, dataSource.IsComplete, dataSource.IsAvailable);
             
-            // DEBUG: Verify the data source claims the same part number we requested
-            if (dataSource.PartNumber != partNumber)
+            // CROSS-PART BOUNDARY READING - Fill buffer completely across multiple parts
+            int totalBytesRead = 0;
+            bool wasDirectStreamed = false;
+            
+            Logger.DebugFormat("[PartBufferManager] Starting cross-part boundary read - filling {0} bytes across multiple parts if needed", count);
+            
+            // Keep reading until buffer is full or we reach true EOF
+            while (totalBytesRead < count)
             {
-                Logger.DebugFormat("[DEBUG] PartBufferManager - CRITICAL BUG: Requested part {0} but got data source for part {1}!", 
-                    partNumber, dataSource.PartNumber);
-            }
+                var currentPartNumber = _nextExpectedPartNumber;
+                Logger.DebugFormat("[PartBufferManager] Cross-part read - trying part {0}, progress={1}/{2}, parts in collection: {3}", 
+                    currentPartNumber, totalBytesRead, count, _partDataSources.Count);
 
-            try
-            {
-                // Single, unified read path - works for both direct streaming and buffered!
-                Logger.DebugFormat("[PartBufferManager] Part {0} - calling dataSource.ReadAsync(offset={1}, count={2})", 
-                    partNumber, offset, count);
-                
-                var bytesRead = await dataSource.ReadAsync(buffer, offset, count, cancellationToken).ConfigureAwait(false);
-                
-                Logger.DebugFormat("[PartBufferManager] Part {0} - dataSource.ReadAsync returned {1} bytes, IsComplete={2}", 
-                    partNumber, bytesRead, dataSource.IsComplete);
-                
-                // Only remove and advance when we're actually done with this part
-                if (dataSource.IsComplete)
+                // Wait for the current part to become available
+                int waitIterations = 0;
+                while (!_partDataSources.ContainsKey(currentPartNumber))
                 {
-                    Logger.DebugFormat("[PartBufferManager] Part {0} - marked complete, removing from collection and advancing", partNumber);
-                    
-                    // Remove from collection
-                    _partDataSources.TryRemove(partNumber, out _);
-                    
-                    // Clean up the data source
-                    dataSource.Dispose();
-                    
-                    // Release buffer space (for buffered sources, this frees up a slot)
-                    ReleaseBufferSpace();
-                    
-                    // Advance to next part only when this part is complete
+                    waitIterations++;
+                    Logger.DebugFormat("[PartBufferManager] Part {0} - not available yet, wait iteration {1}", 
+                        currentPartNumber, waitIterations);
+
+                    // Check for completion first
                     lock (_lockObject)
                     {
-                        _nextExpectedPartNumber++;
-                        Logger.DebugFormat("[PartBufferManager] Part {0} - advanced nextExpectedPartNumber to {1}", 
-                            partNumber, _nextExpectedPartNumber);
+                        if (_downloadComplete)
+                        {
+                            Logger.DebugFormat("[PartBufferManager] Part {0} - download marked complete, exception={1}", 
+                                currentPartNumber, _downloadException?.Message ?? "none");
+
+                            if (_downloadException != null)
+                                throw new InvalidOperationException("Multipart download failed", _downloadException);
+                            
+                            // True EOF - return what we've read so far
+                            Logger.DebugFormat("[PartBufferManager] Cross-part read - TRUE EOF reached, returning {0} bytes", totalBytesRead);
+                            return new ReadResult { BytesRead = totalBytesRead, IsDirectStreamed = wasDirectStreamed };
+                        }
+                    }
+                    
+                    // Wait for a part to become available
+                    Logger.DebugFormat("[PartBufferManager] Part {0} - waiting for part to become available...", currentPartNumber);
+                    await Task.Run(() => _partAvailable.WaitOne(), cancellationToken).ConfigureAwait(false);
+                    Logger.DebugFormat("[PartBufferManager] Part {0} - wait completed, rechecking availability", currentPartNumber);
+                }
+
+                Logger.DebugFormat("[PartBufferManager] Part {0} - found in collection, retrieving data source", currentPartNumber);
+
+                // Get the data source for current part
+                if (!_partDataSources.TryGetValue(currentPartNumber, out var dataSource))
+                {
+                    Logger.DebugFormat("[PartBufferManager] Part {0} - disappeared after availability check", currentPartNumber);
+                    
+                    // DEBUG: Show what's actually in the dictionary
+                    var actualParts = string.Join(", ", _partDataSources.Keys);
+                    Logger.DebugFormat("[PartBufferManager] Dictionary actually contains parts: {0}", actualParts);
+                    
+                    throw new InvalidOperationException($"Part {currentPartNumber} disappeared after availability check");
+                }
+
+                Logger.DebugFormat("[PartBufferManager] Part {0} - data source: IsDirectStream={1}, IsComplete={2}, IsAvailable={3}", 
+                    currentPartNumber, dataSource.IsDirectStream, dataSource.IsComplete, dataSource.IsAvailable);
+
+                try
+                {
+                    // Calculate remaining space in buffer for cross-part reading
+                    int remainingCount = count - totalBytesRead;
+                    int currentOffset = offset + totalBytesRead;
+                    
+                    Logger.DebugFormat("[PartBufferManager] Part {0} - reading into remaining buffer space: offset={1}, count={2} (total progress: {3}/{4})", 
+                        currentPartNumber, currentOffset, remainingCount, totalBytesRead, count);
+                    
+                    // Read from this part into the remaining buffer space
+                    var partBytesRead = await dataSource.ReadAsync(buffer, currentOffset, remainingCount, cancellationToken).ConfigureAwait(false);
+                    
+                    Logger.DebugFormat("[PartBufferManager] Part {0} - dataSource.ReadAsync returned {1} bytes (requested {2}), IsComplete={3}", 
+                        currentPartNumber, partBytesRead, remainingCount, dataSource.IsComplete);
+                    
+                    // Accumulate the bytes read and track direct streaming
+                    totalBytesRead += partBytesRead;
+                    wasDirectStreamed = wasDirectStreamed || dataSource.IsDirectStream;
+                    
+                    // If this part is complete, clean up and advance
+                    if (dataSource.IsComplete)
+                    {
+                        Logger.DebugFormat("[PartBufferManager] Part {0} - marked complete, removing from collection and advancing", currentPartNumber);
+                        
+                        // Remove from collection
+                        _partDataSources.TryRemove(currentPartNumber, out _);
+                        
+                        // Clean up the data source
+                        dataSource.Dispose();
+                        
+                        // Release buffer space (for buffered sources, this frees up a slot)
+                        ReleaseBufferSpace();
+                        
+                        // Advance to next part
+                        lock (_lockObject)
+                        {
+                            _nextExpectedPartNumber++;
+                            Logger.DebugFormat("[PartBufferManager] Part {0} - advanced nextExpectedPartNumber to {1}", 
+                                currentPartNumber, _nextExpectedPartNumber);
+                        }
+                        
+                        // If this part gave us 0 bytes, continue to next part
+                        if (partBytesRead == 0)
+                        {
+                            Logger.DebugFormat("[PartBufferManager] Cross-part read - part {0} completed with 0 bytes, continuing to part {1}", 
+                                currentPartNumber, _nextExpectedPartNumber);
+                            continue; // Try next part
+                        }
+                        
+                        // If buffer is not full yet, continue to next part
+                        if (totalBytesRead < count)
+                        {
+                            Logger.DebugFormat("[PartBufferManager] Cross-part read - buffer not full ({0}/{1}), continuing to part {2}", 
+                                totalBytesRead, count, _nextExpectedPartNumber);
+                            continue; // Continue filling buffer from next part
+                        }
+                    }
+                    
+                    // If part is not complete but we got 0 bytes, it's EOF
+                    if (partBytesRead == 0)
+                    {
+                        Logger.DebugFormat("[PartBufferManager] Part {0} returned 0 bytes but not complete - EOF reached", 
+                            currentPartNumber);
+                        break; // End of stream
+                    }
+                    
+                    // If buffer is full, we're done
+                    if (totalBytesRead >= count)
+                    {
+                        Logger.DebugFormat("[PartBufferManager] Cross-part read - buffer filled completely ({0}/{1})", totalBytesRead, count);
+                        break; // Buffer is full
                     }
                 }
-                else
+                catch (Exception ex)
                 {
-                    Logger.DebugFormat("[PartBufferManager] Part {0} - not complete yet, keeping in collection for next read", partNumber);
+                    Logger.DebugFormat("[PartBufferManager] Part {0} - ReadAsync failed: {1}", currentPartNumber, ex.Message);
+                    // Clean up on failure
+                    dataSource?.Dispose();
+                    ReleaseBufferSpace();
+                    throw;
                 }
-                
-                return new ReadResult 
-                { 
-                    BytesRead = bytesRead, 
-                    IsDirectStreamed = dataSource.IsDirectStream 
-                };
             }
-            catch (Exception ex)
-            {
-                Logger.DebugFormat("[PartBufferManager] Part {0} - ReadAsync failed: {1}", partNumber, ex.Message);
-                // Clean up on failure
-                dataSource?.Dispose();
-                ReleaseBufferSpace();
-                throw;
-            }
+            
+            Logger.DebugFormat("[PartBufferManager] Cross-part read completed - returning {0} bytes (requested {1}), wasDirectStreamed={2}", 
+                totalBytesRead, count, wasDirectStreamed);
+            
+            return new ReadResult 
+            { 
+                BytesRead = totalBytesRead, 
+                IsDirectStreamed = wasDirectStreamed 
+            };
         }
 
         public void ReleaseBufferSpace()

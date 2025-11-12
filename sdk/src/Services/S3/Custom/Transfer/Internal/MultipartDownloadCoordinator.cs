@@ -130,9 +130,8 @@ namespace Amazon.S3.Transfer.Internal
             if (partBufferManager == null)
                 throw new ArgumentNullException(nameof(partBufferManager));
 
-            Logger.DebugFormat("[MultipartDownloadCoordinator] StartDownloadsAsync - TotalParts={0}, ObjectSize={1}, IsSinglePart={2}, HasCachedResponse={3}", 
-                discoveryResult.TotalParts, discoveryResult.ObjectSize, discoveryResult.IsSinglePart, 
-                discoveryResult.CachedFirstPartResponse != null);
+            Logger.DebugFormat("[MultipartDownloadCoordinator] StartDownloadsAsync - TotalParts={0}, ObjectSize={1}, IsSinglePart={2}", 
+                discoveryResult.TotalParts, discoveryResult.ObjectSize, discoveryResult.IsSinglePart);
 
             if (discoveryResult.IsSinglePart)
             {
@@ -150,36 +149,16 @@ namespace Amazon.S3.Transfer.Internal
 
             try
             {
-                // Check if we have a cached first part response to avoid re-downloading part 1
-                if (discoveryResult.CachedFirstPartResponse != null)
-                {
-                    Logger.DebugFormat("[MultipartDownloadCoordinator] Using cached first part response, starting downloads for parts 2-{0}", 
-                        discoveryResult.TotalParts);
+                Logger.DebugFormat("[MultipartDownloadCoordinator] Starting fresh downloads for all parts 1-{0}", 
+                    discoveryResult.TotalParts);
 
-                    // Process cached first part response
-                    var cachedPartTask = ProcessCachedFirstPartAsync(discoveryResult.CachedFirstPartResponse, partBufferManager, internalCts.Token);
-                    downloadTasks.Add(cachedPartTask);
-                    
-                    // Start concurrent downloads for remaining parts (2 onwards)
-                    for (int partNum = 2; partNum <= discoveryResult.TotalParts; partNum++)
-                    {
-                        Logger.DebugFormat("[MultipartDownloadCoordinator] Creating download task for part {0}", partNum);
-                        var task = CreateDownloadTaskAsync(partNum, discoveryResult.ObjectSize, partBufferManager, internalCts.Token);
-                        downloadTasks.Add(task);
-                    }
-                }
-                else
+                // Start concurrent downloads for all parts with fresh HTTP requests
+                // This ensures all parts (including Part 1) get fresh connections to prevent timeouts
+                for (int partNum = 1; partNum <= discoveryResult.TotalParts; partNum++)
                 {
-                    Logger.DebugFormat("[MultipartDownloadCoordinator] No cached response, starting downloads for all parts 1-{0}", 
-                        discoveryResult.TotalParts);
-
-                    // No cached response - start concurrent downloads for all parts
-                    for (int partNum = 1; partNum <= discoveryResult.TotalParts; partNum++)
-                    {
-                        Logger.DebugFormat("[MultipartDownloadCoordinator] Creating download task for part {0}", partNum);
-                        var task = CreateDownloadTaskAsync(partNum, discoveryResult.ObjectSize, partBufferManager, internalCts.Token);
-                        downloadTasks.Add(task);
-                    }
+                    Logger.DebugFormat("[MultipartDownloadCoordinator] Creating download task for part {0}", partNum);
+                    var task = CreateDownloadTaskAsync(partNum, discoveryResult.ObjectSize, partBufferManager, internalCts.Token);
+                    downloadTasks.Add(task);
                 }
 
                 Logger.DebugFormat("[MultipartDownloadCoordinator] Created {0} download tasks, waiting for completion", downloadTasks.Count);
@@ -217,26 +196,6 @@ namespace Amazon.S3.Transfer.Internal
         }
 
 
-        private async Task ProcessCachedFirstPartAsync(GetObjectResponse cachedResponse, IPartBufferManager partBufferManager, CancellationToken cancellationToken)
-        {
-            Logger.DebugFormat("[MultipartDownloadCoordinator] ProcessCachedFirstPartAsync - ContentLength={0}, ETag={1}", 
-                cachedResponse.ContentLength, cachedResponse.ETag);
-
-            // Create StreamDataSource with ownership transfer - StreamDataSource will dispose the response
-            var streamSource = new StreamDataSource(
-                partNumber: 1, 
-                response: cachedResponse,  // Transfer ownership here
-                objectSize: cachedResponse.ContentLength,
-                progressReporter: ReportProgress
-            );
-            
-            Logger.DebugFormat("[MultipartDownloadCoordinator] ProcessCachedFirstPartAsync - created StreamDataSource for part 1, adding to buffer manager");
-            
-            // StreamDataSource now owns the response and will dispose it when done
-            await partBufferManager.AddDataSourceAsync(streamSource, cancellationToken).ConfigureAwait(false);
-            
-            Logger.DebugFormat("[MultipartDownloadCoordinator] ProcessCachedFirstPartAsync - part 1 added to buffer manager successfully");
-        }
 
         private async Task CreateDownloadTaskAsync(int partNumber, long objectSize, IPartBufferManager partBufferManager, CancellationToken cancellationToken)
         {
@@ -244,6 +203,8 @@ namespace Amazon.S3.Transfer.Internal
             await partBufferManager.WaitForBufferSpaceAsync(cancellationToken).ConfigureAwait(false);
             
             GetObjectResponse response = null;
+            bool ownershipTransferred = false; // Track if response ownership was transferred
+            
             try
             {
                 // Limit HTTP concurrency
@@ -306,6 +267,8 @@ namespace Amazon.S3.Transfer.Internal
                         progressReporter: ReportProgress
                     );
                     
+                    ownershipTransferred = true; // Mark that ownership has been transferred
+                    
                     await partBufferManager.AddDataSourceAsync(streamSource, cancellationToken).ConfigureAwait(false);
                     
                     // Direct streaming registered successfully - return early
@@ -333,7 +296,11 @@ namespace Amazon.S3.Transfer.Internal
             }
             finally
             {
-                response?.Dispose();
+                // Only dispose if ownership wasn't transferred to StreamDataSource
+                if (!ownershipTransferred)
+                {
+                    response?.Dispose();
+                }
             }
         }
 
@@ -343,43 +310,57 @@ namespace Amazon.S3.Transfer.Internal
             try
             {
                 // For PART strategy, start with GetObject for partNumber=1 (no HEAD request needed)
-                // This provides both discovery data and content in a single request
+                // This provides discovery data - we'll dispose the response immediately to avoid stale connections
                 var firstPartRequest = CreateGetObjectRequest();
                 firstPartRequest.PartNumber = 1;
                 
                 var firstPartResponse = await _s3Client.GetObjectAsync(firstPartRequest, cancellationToken).ConfigureAwait(false);
                 
-                // Save ETag for SEP compliance validation
-                _savedETag = firstPartResponse.ETag;
-                
-                // Check if PartsCount is available (indicates multipart upload)
-                if (firstPartResponse.PartsCount.HasValue && firstPartResponse.PartsCount.Value > 1)
+                try
                 {
-                    // SEP-compliant: Store actual part count from S3 response
-                    _discoveredPartCount = firstPartResponse.PartsCount.Value;
+                    // Save ETag for SEP compliance validation
+                    _savedETag = firstPartResponse.ETag;
                     
-                    // This is a multipart upload - cache the first part response to avoid re-requesting it
-                    return new DownloadDiscoveryResult
+                    // Check if PartsCount is available (indicates multipart upload)
+                    if (firstPartResponse.PartsCount.HasValue && firstPartResponse.PartsCount.Value > 1)
                     {
-                        TotalParts = firstPartResponse.PartsCount.Value,
-                        ObjectSize = firstPartResponse.ContentLength,
-                        SinglePartResponse = null,
-                        CachedFirstPartResponse = firstPartResponse // Cache for reuse during downloads
-                    };
-                }
-                else
-                {
+                        // SEP-compliant: Store actual part count from S3 response
+                        _discoveredPartCount = firstPartResponse.PartsCount.Value;
+                        
+                        // SEP Step 3: Parse total content length from ContentRange header
+                        // For example, "bytes 0-5242879/52428800" -> extract 52428800
+                        var totalObjectSize = ExtractTotalSizeFromContentRange(firstPartResponse.ContentRange);
+                        
+                        // This is a multipart upload - extract metadata only, no caching
+                        return new DownloadDiscoveryResult
+                        {
+                            TotalParts = firstPartResponse.PartsCount.Value,
+                            ObjectSize = totalObjectSize,
+                            SinglePartResponse = null,
+                        };
+                    }
+                    else
+                    {
                         // SEP-compliant: Single part strategy
                         _discoveredPartCount = 1;
                         
-                        // This is a single part upload
+                        // This is a single part upload - return the response for immediate use
                         return new DownloadDiscoveryResult
                         {
                             TotalParts = 1,
                             ObjectSize = firstPartResponse.ContentLength,
                             SinglePartResponse = firstPartResponse,
-                            CachedFirstPartResponse = null
                         };
+                    }
+                }
+                finally
+                {
+                    // For multipart uploads, dispose the response immediately to prevent stale connections
+                    // For single part uploads, the response is returned and will be disposed by the caller
+                    if (firstPartResponse.PartsCount.HasValue && firstPartResponse.PartsCount.Value > 1)
+                    {
+                        firstPartResponse.Dispose();
+                    }
                 }
             }
             catch (Exception ex)
@@ -420,7 +401,6 @@ namespace Amazon.S3.Transfer.Internal
                         TotalParts = 1,
                         ObjectSize = objectSize,
                         SinglePartResponse = firstRangeResponse,
-                        CachedFirstPartResponse = null
                     };
                 }
                 
@@ -438,8 +418,7 @@ namespace Amazon.S3.Transfer.Internal
                 {
                     TotalParts = _discoveredPartCount,
                     ObjectSize = totalObjectSize,
-                    SinglePartResponse = null,
-                    CachedFirstPartResponse = null
+                    SinglePartResponse = null
                 };
             }
             catch (Exception ex)
