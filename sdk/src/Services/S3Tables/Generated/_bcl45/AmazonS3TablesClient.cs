@@ -999,6 +999,99 @@ namespace Amazon.S3Tables
 
         #endregion
         
+        #region  DeleteTableBucketMetricsConfiguration
+
+
+        /// <summary>
+        /// Deletes the metrics configuration for a table bucket.
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <c>s3tables:DeleteTableBucketMetricsConfiguration</c> permission
+        /// to use this operation.
+        /// </para>
+        ///  </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTableBucketMetricsConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DeleteTableBucketMetricsConfiguration service method, as returned by S3Tables.</returns>
+        /// <exception cref="Amazon.S3Tables.Model.BadRequestException">
+        /// The request is invalid or malformed.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.ConflictException">
+        /// The request failed because there is a conflict with a previous write. You can retry
+        /// the request.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.ForbiddenException">
+        /// The caller isn't authorized to make the request.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.InternalServerErrorException">
+        /// The request failed due to an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.NotFoundException">
+        /// The request was rejected because the specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.TooManyRequestsException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/DeleteTableBucketMetricsConfiguration">REST API Reference for DeleteTableBucketMetricsConfiguration Operation</seealso>
+        public virtual DeleteTableBucketMetricsConfigurationResponse DeleteTableBucketMetricsConfiguration(DeleteTableBucketMetricsConfigurationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteTableBucketMetricsConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTableBucketMetricsConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteTableBucketMetricsConfigurationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes the metrics configuration for a table bucket.
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <c>s3tables:DeleteTableBucketMetricsConfiguration</c> permission
+        /// to use this operation.
+        /// </para>
+        ///  </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTableBucketMetricsConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteTableBucketMetricsConfiguration service method, as returned by S3Tables.</returns>
+        /// <exception cref="Amazon.S3Tables.Model.BadRequestException">
+        /// The request is invalid or malformed.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.ConflictException">
+        /// The request failed because there is a conflict with a previous write. You can retry
+        /// the request.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.ForbiddenException">
+        /// The caller isn't authorized to make the request.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.InternalServerErrorException">
+        /// The request failed due to an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.NotFoundException">
+        /// The request was rejected because the specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.TooManyRequestsException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/DeleteTableBucketMetricsConfiguration">REST API Reference for DeleteTableBucketMetricsConfiguration Operation</seealso>
+        public virtual Task<DeleteTableBucketMetricsConfigurationResponse> DeleteTableBucketMetricsConfigurationAsync(DeleteTableBucketMetricsConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteTableBucketMetricsConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTableBucketMetricsConfigurationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteTableBucketMetricsConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteTableBucketPolicy
 
 
@@ -1674,6 +1767,99 @@ namespace Amazon.S3Tables
             options.ResponseUnmarshaller = GetTableBucketMaintenanceConfigurationResponseUnmarshaller.Instance;
             
             return InvokeAsync<GetTableBucketMaintenanceConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetTableBucketMetricsConfiguration
+
+
+        /// <summary>
+        /// Gets the metrics configuration for a table bucket.
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <c>s3tables:GetTableBucketMetricsConfiguration</c> permission to
+        /// use this operation.
+        /// </para>
+        ///  </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTableBucketMetricsConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the GetTableBucketMetricsConfiguration service method, as returned by S3Tables.</returns>
+        /// <exception cref="Amazon.S3Tables.Model.BadRequestException">
+        /// The request is invalid or malformed.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.ConflictException">
+        /// The request failed because there is a conflict with a previous write. You can retry
+        /// the request.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.ForbiddenException">
+        /// The caller isn't authorized to make the request.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.InternalServerErrorException">
+        /// The request failed due to an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.NotFoundException">
+        /// The request was rejected because the specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.TooManyRequestsException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/GetTableBucketMetricsConfiguration">REST API Reference for GetTableBucketMetricsConfiguration Operation</seealso>
+        public virtual GetTableBucketMetricsConfigurationResponse GetTableBucketMetricsConfiguration(GetTableBucketMetricsConfigurationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetTableBucketMetricsConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTableBucketMetricsConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<GetTableBucketMetricsConfigurationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Gets the metrics configuration for a table bucket.
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <c>s3tables:GetTableBucketMetricsConfiguration</c> permission to
+        /// use this operation.
+        /// </para>
+        ///  </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTableBucketMetricsConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetTableBucketMetricsConfiguration service method, as returned by S3Tables.</returns>
+        /// <exception cref="Amazon.S3Tables.Model.BadRequestException">
+        /// The request is invalid or malformed.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.ConflictException">
+        /// The request failed because there is a conflict with a previous write. You can retry
+        /// the request.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.ForbiddenException">
+        /// The caller isn't authorized to make the request.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.InternalServerErrorException">
+        /// The request failed due to an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.NotFoundException">
+        /// The request was rejected because the specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.TooManyRequestsException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/GetTableBucketMetricsConfiguration">REST API Reference for GetTableBucketMetricsConfiguration Operation</seealso>
+        public virtual Task<GetTableBucketMetricsConfigurationResponse> GetTableBucketMetricsConfigurationAsync(GetTableBucketMetricsConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetTableBucketMetricsConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTableBucketMetricsConfigurationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetTableBucketMetricsConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2854,6 +3040,99 @@ namespace Amazon.S3Tables
             options.ResponseUnmarshaller = PutTableBucketMaintenanceConfigurationResponseUnmarshaller.Instance;
             
             return InvokeAsync<PutTableBucketMaintenanceConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutTableBucketMetricsConfiguration
+
+
+        /// <summary>
+        /// Sets the metrics configuration for a table bucket.
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <c>s3tables:PutTableBucketMetricsConfiguration</c> permission to
+        /// use this operation.
+        /// </para>
+        ///  </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutTableBucketMetricsConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the PutTableBucketMetricsConfiguration service method, as returned by S3Tables.</returns>
+        /// <exception cref="Amazon.S3Tables.Model.BadRequestException">
+        /// The request is invalid or malformed.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.ConflictException">
+        /// The request failed because there is a conflict with a previous write. You can retry
+        /// the request.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.ForbiddenException">
+        /// The caller isn't authorized to make the request.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.InternalServerErrorException">
+        /// The request failed due to an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.NotFoundException">
+        /// The request was rejected because the specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.TooManyRequestsException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/PutTableBucketMetricsConfiguration">REST API Reference for PutTableBucketMetricsConfiguration Operation</seealso>
+        public virtual PutTableBucketMetricsConfigurationResponse PutTableBucketMetricsConfiguration(PutTableBucketMetricsConfigurationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = PutTableBucketMetricsConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutTableBucketMetricsConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<PutTableBucketMetricsConfigurationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Sets the metrics configuration for a table bucket.
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <c>s3tables:PutTableBucketMetricsConfiguration</c> permission to
+        /// use this operation.
+        /// </para>
+        ///  </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutTableBucketMetricsConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutTableBucketMetricsConfiguration service method, as returned by S3Tables.</returns>
+        /// <exception cref="Amazon.S3Tables.Model.BadRequestException">
+        /// The request is invalid or malformed.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.ConflictException">
+        /// The request failed because there is a conflict with a previous write. You can retry
+        /// the request.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.ForbiddenException">
+        /// The caller isn't authorized to make the request.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.InternalServerErrorException">
+        /// The request failed due to an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.NotFoundException">
+        /// The request was rejected because the specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.TooManyRequestsException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/PutTableBucketMetricsConfiguration">REST API Reference for PutTableBucketMetricsConfiguration Operation</seealso>
+        public virtual Task<PutTableBucketMetricsConfigurationResponse> PutTableBucketMetricsConfigurationAsync(PutTableBucketMetricsConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = PutTableBucketMetricsConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutTableBucketMetricsConfigurationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<PutTableBucketMetricsConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion

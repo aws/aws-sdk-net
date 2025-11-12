@@ -871,6 +871,86 @@ namespace Amazon.S3Tables
 
         #endregion
         
+        #region  DeleteTableBucketMetricsConfiguration
+
+        /// <summary>
+        /// Deletes the metrics configuration for a table bucket.
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <c>s3tables:DeleteTableBucketMetricsConfiguration</c> permission
+        /// to use this operation.
+        /// </para>
+        ///  </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTableBucketMetricsConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DeleteTableBucketMetricsConfiguration service method, as returned by S3Tables.</returns>
+        /// <exception cref="Amazon.S3Tables.Model.BadRequestException">
+        /// The request is invalid or malformed.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.ConflictException">
+        /// The request failed because there is a conflict with a previous write. You can retry
+        /// the request.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.ForbiddenException">
+        /// The caller isn't authorized to make the request.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.InternalServerErrorException">
+        /// The request failed due to an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.NotFoundException">
+        /// The request was rejected because the specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.TooManyRequestsException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/DeleteTableBucketMetricsConfiguration">REST API Reference for DeleteTableBucketMetricsConfiguration Operation</seealso>
+        public virtual DeleteTableBucketMetricsConfigurationResponse DeleteTableBucketMetricsConfiguration(DeleteTableBucketMetricsConfigurationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteTableBucketMetricsConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTableBucketMetricsConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteTableBucketMetricsConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteTableBucketMetricsConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTableBucketMetricsConfiguration operation on AmazonS3TablesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteTableBucketMetricsConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/DeleteTableBucketMetricsConfiguration">REST API Reference for DeleteTableBucketMetricsConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginDeleteTableBucketMetricsConfiguration(DeleteTableBucketMetricsConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteTableBucketMetricsConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTableBucketMetricsConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteTableBucketMetricsConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteTableBucketMetricsConfiguration.</param>
+        /// 
+        /// <returns>Returns a  DeleteTableBucketMetricsConfigurationResult from S3Tables.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/DeleteTableBucketMetricsConfiguration">REST API Reference for DeleteTableBucketMetricsConfiguration Operation</seealso>
+        public virtual DeleteTableBucketMetricsConfigurationResponse EndDeleteTableBucketMetricsConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteTableBucketMetricsConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteTableBucketPolicy
 
         /// <summary>
@@ -1441,6 +1521,86 @@ namespace Amazon.S3Tables
         public virtual GetTableBucketMaintenanceConfigurationResponse EndGetTableBucketMaintenanceConfiguration(IAsyncResult asyncResult)
         {
             return EndInvoke<GetTableBucketMaintenanceConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetTableBucketMetricsConfiguration
+
+        /// <summary>
+        /// Gets the metrics configuration for a table bucket.
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <c>s3tables:GetTableBucketMetricsConfiguration</c> permission to
+        /// use this operation.
+        /// </para>
+        ///  </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTableBucketMetricsConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the GetTableBucketMetricsConfiguration service method, as returned by S3Tables.</returns>
+        /// <exception cref="Amazon.S3Tables.Model.BadRequestException">
+        /// The request is invalid or malformed.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.ConflictException">
+        /// The request failed because there is a conflict with a previous write. You can retry
+        /// the request.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.ForbiddenException">
+        /// The caller isn't authorized to make the request.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.InternalServerErrorException">
+        /// The request failed due to an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.NotFoundException">
+        /// The request was rejected because the specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.TooManyRequestsException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/GetTableBucketMetricsConfiguration">REST API Reference for GetTableBucketMetricsConfiguration Operation</seealso>
+        public virtual GetTableBucketMetricsConfigurationResponse GetTableBucketMetricsConfiguration(GetTableBucketMetricsConfigurationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetTableBucketMetricsConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTableBucketMetricsConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<GetTableBucketMetricsConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetTableBucketMetricsConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetTableBucketMetricsConfiguration operation on AmazonS3TablesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetTableBucketMetricsConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/GetTableBucketMetricsConfiguration">REST API Reference for GetTableBucketMetricsConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginGetTableBucketMetricsConfiguration(GetTableBucketMetricsConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetTableBucketMetricsConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTableBucketMetricsConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetTableBucketMetricsConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetTableBucketMetricsConfiguration.</param>
+        /// 
+        /// <returns>Returns a  GetTableBucketMetricsConfigurationResult from S3Tables.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/GetTableBucketMetricsConfiguration">REST API Reference for GetTableBucketMetricsConfiguration Operation</seealso>
+        public virtual GetTableBucketMetricsConfigurationResponse EndGetTableBucketMetricsConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetTableBucketMetricsConfigurationResponse>(asyncResult);
         }
 
         #endregion
@@ -2433,6 +2593,86 @@ namespace Amazon.S3Tables
         public virtual PutTableBucketMaintenanceConfigurationResponse EndPutTableBucketMaintenanceConfiguration(IAsyncResult asyncResult)
         {
             return EndInvoke<PutTableBucketMaintenanceConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  PutTableBucketMetricsConfiguration
+
+        /// <summary>
+        /// Sets the metrics configuration for a table bucket.
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <c>s3tables:PutTableBucketMetricsConfiguration</c> permission to
+        /// use this operation.
+        /// </para>
+        ///  </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutTableBucketMetricsConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the PutTableBucketMetricsConfiguration service method, as returned by S3Tables.</returns>
+        /// <exception cref="Amazon.S3Tables.Model.BadRequestException">
+        /// The request is invalid or malformed.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.ConflictException">
+        /// The request failed because there is a conflict with a previous write. You can retry
+        /// the request.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.ForbiddenException">
+        /// The caller isn't authorized to make the request.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.InternalServerErrorException">
+        /// The request failed due to an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.NotFoundException">
+        /// The request was rejected because the specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.TooManyRequestsException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/PutTableBucketMetricsConfiguration">REST API Reference for PutTableBucketMetricsConfiguration Operation</seealso>
+        public virtual PutTableBucketMetricsConfigurationResponse PutTableBucketMetricsConfiguration(PutTableBucketMetricsConfigurationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = PutTableBucketMetricsConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutTableBucketMetricsConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<PutTableBucketMetricsConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutTableBucketMetricsConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutTableBucketMetricsConfiguration operation on AmazonS3TablesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutTableBucketMetricsConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/PutTableBucketMetricsConfiguration">REST API Reference for PutTableBucketMetricsConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginPutTableBucketMetricsConfiguration(PutTableBucketMetricsConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = PutTableBucketMetricsConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutTableBucketMetricsConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutTableBucketMetricsConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutTableBucketMetricsConfiguration.</param>
+        /// 
+        /// <returns>Returns a  PutTableBucketMetricsConfigurationResult from S3Tables.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/PutTableBucketMetricsConfiguration">REST API Reference for PutTableBucketMetricsConfiguration Operation</seealso>
+        public virtual PutTableBucketMetricsConfigurationResponse EndPutTableBucketMetricsConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PutTableBucketMetricsConfigurationResponse>(asyncResult);
         }
 
         #endregion
