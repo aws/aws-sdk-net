@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.PrometheusService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Source Object
+    /// Response Unmarshaller for VpcConfiguration Object
     /// </summary>  
-    public class SourceUnmarshaller : IUnmarshaller<Source, XmlUnmarshallerContext>, IUnmarshaller<Source, JsonUnmarshallerContext>
+    public class VpcConfigurationUnmarshaller : IUnmarshaller<VpcConfiguration, XmlUnmarshallerContext>, IUnmarshaller<VpcConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Source IUnmarshaller<Source, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        VpcConfiguration IUnmarshaller<VpcConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.PrometheusService.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public Source Unmarshall(JsonUnmarshallerContext context)
+        public VpcConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
-            Source unmarshalledObject = new Source();
+            VpcConfiguration unmarshalledObject = new VpcConfiguration();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,16 +66,16 @@ namespace Amazon.PrometheusService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("eksConfiguration", targetDepth))
+                if (context.TestExpression("securityGroupIds", targetDepth))
                 {
-                    var unmarshaller = EksConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.EksConfiguration = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.SecurityGroupIds = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("vpcConfiguration", targetDepth))
+                if (context.TestExpression("subnetIds", targetDepth))
                 {
-                    var unmarshaller = VpcConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.VpcConfiguration = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.SubnetIds = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -83,12 +83,12 @@ namespace Amazon.PrometheusService.Model.Internal.MarshallTransformations
         }
 
 
-        private static SourceUnmarshaller _instance = new SourceUnmarshaller();        
+        private static VpcConfigurationUnmarshaller _instance = new VpcConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SourceUnmarshaller Instance
+        public static VpcConfigurationUnmarshaller Instance
         {
             get
             {
