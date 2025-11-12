@@ -1,0 +1,119 @@
+/*******************************************************************************
+ *  Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ *  Licensed under the Apache License, Version 2.0 (the "License"). You may not use
+ *  this file except in compliance with the License. A copy of the License is located at
+ *
+ *  http://aws.amazon.com/apache2.0
+ *
+ *  or in the "license" file accompanying this file.
+ *  This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ *  CONDITIONS OF ANY KIND, either express or implied. See the License for the
+ *  specific language governing permissions and limitations under the License.
+ * *****************************************************************************
+ *    __  _    _  ___
+ *   (  )( \/\/ )/ __)
+ *   /__\ \    / \__ \
+ *  (_)(_) \/\/  (___/
+ *
+ *  AWS SDK for .NET
+ *  API Version: 2006-03-01
+ *
+ */
+using System;
+using System.Diagnostics.CodeAnalysis;
+using System.Threading;
+using System.Threading.Tasks;
+
+namespace Amazon.S3.Transfer.Internal
+{
+    /// <summary>
+    /// ArrayPool-based buffered data source that reads from pre-buffered part data.
+    /// Used when HTTP response arrives before reader is ready, requiring intermediate buffering.
+    /// Manages ArrayPool lifecycle and provides efficient buffer-to-buffer copying.
+    /// </summary>
+    internal class BufferedDataSource : IPartDataSource
+    {
+        private readonly StreamPartBuffer _partBuffer;
+        private bool _disposed = false;
+
+        public int PartNumber => _partBuffer.PartNumber;
+        public bool IsAvailable => true; // Always available when created
+        public bool IsComplete => _partBuffer.RemainingBytes == 0;
+        public bool IsDirectStream => false;
+
+        public BufferedDataSource(StreamPartBuffer partBuffer)
+        {
+            _partBuffer = partBuffer ?? throw new ArgumentNullException(nameof(partBuffer));
+        }
+
+        public Task<int> ReadAsync(byte[] buffer, int offset, int count, CancellationToken cancellationToken)
+        {
+            ThrowIfDisposed();
+            
+            if (buffer == null)
+                throw new ArgumentNullException(nameof(buffer));
+            if (offset < 0)
+                throw new ArgumentOutOfRangeException(nameof(offset), "Offset must be non-negative");
+            if (count < 0)
+                throw new ArgumentOutOfRangeException(nameof(count), "Count must be non-negative");
+            if (offset + count > buffer.Length)
+                throw new ArgumentException("Offset and count exceed buffer bounds");
+
+            if (_partBuffer.RemainingBytes == 0)
+                return Task.FromResult(0); // End of part
+
+            try
+            {
+                // Calculate bytes to copy from buffered part
+                var availableBytes = _partBuffer.RemainingBytes;
+                var bytesToRead = Math.Min(count, availableBytes);
+                
+                // Direct copy: ArrayPool buffer → user buffer (optimized single copy)
+                Buffer.BlockCopy(
+                    _partBuffer.ArrayPoolBuffer,    // Source: ArrayPool buffer
+                    _partBuffer.CurrentPosition,    // Source offset
+                    buffer,                         // Destination: user buffer
+                    offset,                         // Destination offset
+                    bytesToRead                     // Bytes to copy
+                );
+                
+                // Update position in the part buffer
+                _partBuffer.CurrentPosition += bytesToRead;
+                
+                return Task.FromResult(bytesToRead);
+            }
+            catch (Exception)
+            {
+                // On any error during read, mark the buffer as consumed to prevent further reads
+                _partBuffer.CurrentPosition = _partBuffer.Length;
+                throw;
+            }
+        }
+
+        private void ThrowIfDisposed()
+        {
+            if (_disposed)
+                throw new ObjectDisposedException(nameof(BufferedDataSource));
+        }
+
+        [SuppressMessage("Design", "CA1031:Do not catch general exception types", Justification = "Dispose methods should not throw exceptions")]
+        public void Dispose()
+        {
+            if (!_disposed)
+            {
+                try
+                {
+                    // Dispose the underlying StreamPartBuffer, which returns ArrayPool buffer to pool
+                    _partBuffer?.Dispose();
+                }
+                catch (Exception)
+                {
+                    // Suppressing CA1031: Dispose methods should not throw exceptions
+                    // Continue disposal process silently on any errors
+                }
+                
+                _disposed = true;
+            }
+        }
+    }
+}

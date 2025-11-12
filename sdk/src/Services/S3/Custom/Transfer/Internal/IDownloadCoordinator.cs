@@ -1,0 +1,137 @@
+/*******************************************************************************
+ *  Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ *  Licensed under the Apache License, Version 2.0 (the "License"). You may not use
+ *  this file except in compliance with the License. A copy of the License is located at
+ *
+ *  http://aws.amazon.com/apache2.0
+ *
+ *  or in the "license" file accompanying this file.
+ *  This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ *  CONDITIONS OF ANY KIND, either express or implied. See the License for the
+ *  specific language governing permissions and limitations under the License.
+ * *****************************************************************************
+ *    __  _    _  ___
+ *   (  )( \/\/ )/ __)
+ *   /__\ \    / \__ \
+ *  (_)(_) \/\/  (___/
+ *
+ *  AWS SDK for .NET
+ *  API Version: 2006-03-01
+ *
+ */
+using System;
+using System.Threading;
+using System.Threading.Tasks;
+using Amazon.S3.Model;
+
+namespace Amazon.S3.Transfer.Internal
+{
+    /// <summary>
+    /// Coordinates multipart download orchestration including discovery, concurrent downloads,
+    /// and progress reporting. Separates download coordination logic from stream management.
+    /// </summary>
+    internal interface IDownloadCoordinator : IDisposable
+    {
+        /// <summary>
+        /// Discover whether the object requires single-part or multipart downloading.
+        /// Performs HEAD request or similar to determine object size and part strategy.
+        /// </summary>
+        /// <param name="cancellationToken">A token to cancel the discovery operation.</param>
+        /// <returns>
+        /// A task containing discovery results including total parts, object size,
+        /// and initial response data if single-part.
+        /// </returns>
+        Task<DownloadDiscoveryResult> DiscoverDownloadStrategyAsync(CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Initialize and start concurrent multipart downloads.
+        /// Manages HTTP concurrency, part range calculations, and download orchestration.
+        /// </summary>
+        /// <param name="discoveryResult">Results from the discovery phase.</param>
+        /// <param name="partBufferManager">Manager for coordinating downloaded part buffers.</param>
+        /// <param name="cancellationToken">A token to cancel the download operation.</param>
+        /// <returns>A task that completes when all downloads finish or an error occurs.</returns>
+        Task StartDownloadsAsync(DownloadDiscoveryResult discoveryResult, IPartBufferManager partBufferManager, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Gets the current download state for monitoring and progress reporting.
+        /// </summary>
+        StreamState CurrentState { get; }
+        
+        /// <summary>
+        /// Gets any exception that occurred during downloads.
+        /// </summary>
+        Exception DownloadException { get; }
+        
+        /// <summary>
+        /// Event raised when download progress changes (optional progress reporting).
+        /// </summary>
+        event EventHandler<DownloadProgressEventArgs> ProgressChanged;
+    }
+    
+    /// <summary>
+    /// Results from the download discovery phase.
+    /// Contains information needed to determine download strategy.
+    /// </summary>
+    internal class DownloadDiscoveryResult
+    {
+        /// <summary>
+        /// Total number of parts needed for the download.
+        /// 1 indicates single-part download, >1 indicates multipart.
+        /// </summary>
+        public int TotalParts { get; set; }
+        
+        /// <summary>
+        /// Total size of the object in bytes.
+        /// </summary>
+        public long ObjectSize { get; set; }
+        
+        /// <summary>
+        /// For single-part downloads, contains the response with the object stream.
+        /// Null for multipart downloads.
+        /// </summary>
+        public GetObjectResponse SinglePartResponse { get; set; }
+        
+        /// <summary>
+        /// For multipart PART strategy downloads, contains the cached first part response
+        /// from discovery to avoid re-requesting part 1. Null for other scenarios.
+        /// </summary>
+        public GetObjectResponse CachedFirstPartResponse { get; set; }
+        
+        /// <summary>
+        /// Indicates whether this is a single-part download.
+        /// </summary>
+        public bool IsSinglePart => TotalParts == 1;
+    }
+    
+    /// <summary>
+    /// Event arguments for download progress reporting.
+    /// </summary>
+    internal class DownloadProgressEventArgs : EventArgs
+    {
+        /// <summary>
+        /// Number of parts completed.
+        /// </summary>
+        public int CompletedParts { get; set; }
+        
+        /// <summary>
+        /// Total number of parts.
+        /// </summary>
+        public int TotalParts { get; set; }
+        
+        /// <summary>
+        /// Total bytes downloaded so far.
+        /// </summary>
+        public long BytesDownloaded { get; set; }
+        
+        /// <summary>
+        /// Total size of the object.
+        /// </summary>
+        public long TotalBytes { get; set; }
+        
+        /// <summary>
+        /// Download completion percentage (0-100).
+        /// </summary>
+        public double PercentComplete => TotalBytes > 0 ? (BytesDownloaded * 100.0) / TotalBytes : 0;
+    }
+}
