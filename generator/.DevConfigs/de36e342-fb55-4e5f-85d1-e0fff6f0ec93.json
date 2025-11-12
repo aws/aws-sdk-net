@@ -1,0 +1,21 @@
+{
+  "core": {
+    "updateMinimum": true,
+    "type": "patch",
+    "changeLogMessages": [
+      "Add check to see if required query string parameters are set. If not set, then the SDK will throw the generic service level exception."
+    ]
+  },
+  "services": [
+    {
+      "serviceName": "S3",
+      "type": "patch",
+      "changeLogMessages": [
+        "Generate ListBucketMetricsConfigurations.",
+        "Generate DeleteBucketMetricsConfiguration.",
+        "Generate PutBucketMetricsConfiguration, and add check in marshallers for required query strings. If required members for query strings are not set, the SDK will throw the base service-level exception. This is not a breaking change.",
+        "Generate GetBucketMetricsConfiguration."
+      ]
+    }
+  ]
+}
