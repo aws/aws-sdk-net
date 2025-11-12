@@ -7812,6 +7812,91 @@ namespace Amazon.Redshift
 
         #endregion
         
+        #region  GetIdentityCenterAuthToken
+
+        /// <summary>
+        /// Generates an encrypted authentication token that propagates the caller's Amazon Web
+        /// Services IAM Identity Center identity to Amazon Redshift clusters. This API extracts
+        /// the Amazon Web Services IAM Identity Center identity from enhanced credentials and
+        /// creates a secure token that Amazon Redshift drivers can use for authentication.
+        /// 
+        ///  
+        /// <para>
+        /// The token is encrypted using Key Management Service (KMS) and can only be decrypted
+        /// by the specified Amazon Redshift clusters. The token contains the caller's Amazon
+        /// Web Services IAM Identity Center identity information and is valid for a limited time
+        /// period.
+        /// </para>
+        ///  
+        /// <para>
+        /// This API is exclusively for use with Amazon Web Services IAM Identity Center enhanced
+        /// credentials. If the caller is not using enhanced credentials with embedded Amazon
+        /// Web Services IAM Identity Center identity, the API will return an error.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetIdentityCenterAuthToken service method.</param>
+        /// 
+        /// <returns>The response from the GetIdentityCenterAuthToken service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
+        /// The <c>ClusterIdentifier</c> parameter does not refer to an existing cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidClusterStateException">
+        /// The specified cluster is not in the <c>available</c> state.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.RedshiftInvalidParameterException">
+        /// The request contains one or more invalid parameters. This error occurs when required
+        /// parameters are missing, parameter values are outside acceptable ranges, or parameter
+        /// formats are incorrect.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/GetIdentityCenterAuthToken">REST API Reference for GetIdentityCenterAuthToken Operation</seealso>
+        public virtual GetIdentityCenterAuthTokenResponse GetIdentityCenterAuthToken(GetIdentityCenterAuthTokenRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetIdentityCenterAuthTokenRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetIdentityCenterAuthTokenResponseUnmarshaller.Instance;
+
+            return Invoke<GetIdentityCenterAuthTokenResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetIdentityCenterAuthToken operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetIdentityCenterAuthToken operation on AmazonRedshiftClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetIdentityCenterAuthToken
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/GetIdentityCenterAuthToken">REST API Reference for GetIdentityCenterAuthToken Operation</seealso>
+        public virtual IAsyncResult BeginGetIdentityCenterAuthToken(GetIdentityCenterAuthTokenRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetIdentityCenterAuthTokenRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetIdentityCenterAuthTokenResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetIdentityCenterAuthToken operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetIdentityCenterAuthToken.</param>
+        /// 
+        /// <returns>Returns a  GetIdentityCenterAuthTokenResult from Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/GetIdentityCenterAuthToken">REST API Reference for GetIdentityCenterAuthToken Operation</seealso>
+        public virtual GetIdentityCenterAuthTokenResponse EndGetIdentityCenterAuthToken(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetIdentityCenterAuthTokenResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetReservedNodeExchangeConfigurationOptions
 
         /// <summary>
