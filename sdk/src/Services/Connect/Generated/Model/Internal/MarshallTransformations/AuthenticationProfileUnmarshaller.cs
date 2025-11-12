@@ -138,6 +138,18 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     unmarshalledObject.PeriodicSessionDuration = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SessionInactivityDuration", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.SessionInactivityDuration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SessionInactivityHandlingEnabled", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.SessionInactivityHandlingEnabled = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

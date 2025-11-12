@@ -113,6 +113,18 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.PeriodicSessionDuration);
                 }
 
+                if(publicRequest.IsSetSessionInactivityDuration())
+                {
+                    context.Writer.WritePropertyName("SessionInactivityDuration");
+                    context.Writer.Write(publicRequest.SessionInactivityDuration);
+                }
+
+                if(publicRequest.IsSetSessionInactivityHandlingEnabled())
+                {
+                    context.Writer.WritePropertyName("SessionInactivityHandlingEnabled");
+                    context.Writer.Write(publicRequest.SessionInactivityHandlingEnabled);
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
