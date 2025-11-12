@@ -480,6 +480,124 @@ namespace Amazon.DatabaseMigrationService
 
         #endregion
         
+        #region  CancelMetadataModelConversion
+
+
+        /// <summary>
+        /// Cancels a single metadata model conversion operation that was started with <c>StartMetadataModelConversion</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelMetadataModelConversion service method.</param>
+        /// 
+        /// <returns>The response from the CancelMetadataModelConversion service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
+        /// DMS was denied access to the endpoint. Check that the role is correctly configured.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
+        /// The resource is in a state that prevents it from being used for database migration.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CancelMetadataModelConversion">REST API Reference for CancelMetadataModelConversion Operation</seealso>
+        public virtual CancelMetadataModelConversionResponse CancelMetadataModelConversion(CancelMetadataModelConversionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CancelMetadataModelConversionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelMetadataModelConversionResponseUnmarshaller.Instance;
+
+            return Invoke<CancelMetadataModelConversionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Cancels a single metadata model conversion operation that was started with <c>StartMetadataModelConversion</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelMetadataModelConversion service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CancelMetadataModelConversion service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
+        /// DMS was denied access to the endpoint. Check that the role is correctly configured.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
+        /// The resource is in a state that prevents it from being used for database migration.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CancelMetadataModelConversion">REST API Reference for CancelMetadataModelConversion Operation</seealso>
+        public virtual Task<CancelMetadataModelConversionResponse> CancelMetadataModelConversionAsync(CancelMetadataModelConversionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CancelMetadataModelConversionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelMetadataModelConversionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CancelMetadataModelConversionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CancelMetadataModelCreation
+
+
+        /// <summary>
+        /// Cancels a single metadata model creation operation that was started with <c>StartMetadataModelCreation</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelMetadataModelCreation service method.</param>
+        /// 
+        /// <returns>The response from the CancelMetadataModelCreation service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
+        /// DMS was denied access to the endpoint. Check that the role is correctly configured.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
+        /// The resource is in a state that prevents it from being used for database migration.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CancelMetadataModelCreation">REST API Reference for CancelMetadataModelCreation Operation</seealso>
+        public virtual CancelMetadataModelCreationResponse CancelMetadataModelCreation(CancelMetadataModelCreationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CancelMetadataModelCreationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelMetadataModelCreationResponseUnmarshaller.Instance;
+
+            return Invoke<CancelMetadataModelCreationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Cancels a single metadata model creation operation that was started with <c>StartMetadataModelCreation</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelMetadataModelCreation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CancelMetadataModelCreation service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
+        /// DMS was denied access to the endpoint. Check that the role is correctly configured.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
+        /// The resource is in a state that prevents it from being used for database migration.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CancelMetadataModelCreation">REST API Reference for CancelMetadataModelCreation Operation</seealso>
+        public virtual Task<CancelMetadataModelCreationResponse> CancelMetadataModelCreationAsync(CancelMetadataModelCreationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CancelMetadataModelCreationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelMetadataModelCreationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CancelMetadataModelCreationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CancelReplicationTaskAssessmentRun
 
 
@@ -3860,6 +3978,61 @@ namespace Amazon.DatabaseMigrationService
 
         #endregion
         
+        #region  DescribeMetadataModel
+
+
+        /// <summary>
+        /// Gets detailed information about the specified metadata model, including its definition
+        /// and corresponding converted objects in the target database if applicable.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMetadataModel service method.</param>
+        /// 
+        /// <returns>The response from the DescribeMetadataModel service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
+        /// DMS was denied access to the endpoint. Check that the role is correctly configured.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeMetadataModel">REST API Reference for DescribeMetadataModel Operation</seealso>
+        public virtual DescribeMetadataModelResponse DescribeMetadataModel(DescribeMetadataModelRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeMetadataModelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeMetadataModelResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeMetadataModelResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Gets detailed information about the specified metadata model, including its definition
+        /// and corresponding converted objects in the target database if applicable.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMetadataModel service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeMetadataModel service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
+        /// DMS was denied access to the endpoint. Check that the role is correctly configured.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeMetadataModel">REST API Reference for DescribeMetadataModel Operation</seealso>
+        public virtual Task<DescribeMetadataModelResponse> DescribeMetadataModelAsync(DescribeMetadataModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeMetadataModelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeMetadataModelResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeMetadataModelResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeMetadataModelAssessments
 
 
@@ -3909,6 +4082,61 @@ namespace Amazon.DatabaseMigrationService
 
         #endregion
         
+        #region  DescribeMetadataModelChildren
+
+
+        /// <summary>
+        /// Gets a list of child metadata models for the specified metadata model in the database
+        /// hierarchy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMetadataModelChildren service method.</param>
+        /// 
+        /// <returns>The response from the DescribeMetadataModelChildren service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
+        /// DMS was denied access to the endpoint. Check that the role is correctly configured.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeMetadataModelChildren">REST API Reference for DescribeMetadataModelChildren Operation</seealso>
+        public virtual DescribeMetadataModelChildrenResponse DescribeMetadataModelChildren(DescribeMetadataModelChildrenRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeMetadataModelChildrenRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeMetadataModelChildrenResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeMetadataModelChildrenResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Gets a list of child metadata models for the specified metadata model in the database
+        /// hierarchy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMetadataModelChildren service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeMetadataModelChildren service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
+        /// DMS was denied access to the endpoint. Check that the role is correctly configured.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeMetadataModelChildren">REST API Reference for DescribeMetadataModelChildren Operation</seealso>
+        public virtual Task<DescribeMetadataModelChildrenResponse> DescribeMetadataModelChildrenAsync(DescribeMetadataModelChildrenRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeMetadataModelChildrenRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeMetadataModelChildrenResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeMetadataModelChildrenResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeMetadataModelConversions
 
 
@@ -3952,6 +4180,59 @@ namespace Amazon.DatabaseMigrationService
             options.ResponseUnmarshaller = DescribeMetadataModelConversionsResponseUnmarshaller.Instance;
             
             return InvokeAsync<DescribeMetadataModelConversionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeMetadataModelCreations
+
+
+        /// <summary>
+        /// Returns a paginated list of metadata model creation requests for a migration project.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMetadataModelCreations service method.</param>
+        /// 
+        /// <returns>The response from the DescribeMetadataModelCreations service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
+        /// DMS was denied access to the endpoint. Check that the role is correctly configured.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeMetadataModelCreations">REST API Reference for DescribeMetadataModelCreations Operation</seealso>
+        public virtual DescribeMetadataModelCreationsResponse DescribeMetadataModelCreations(DescribeMetadataModelCreationsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeMetadataModelCreationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeMetadataModelCreationsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeMetadataModelCreationsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns a paginated list of metadata model creation requests for a migration project.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMetadataModelCreations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeMetadataModelCreations service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
+        /// DMS was denied access to the endpoint. Check that the role is correctly configured.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeMetadataModelCreations">REST API Reference for DescribeMetadataModelCreations Operation</seealso>
+        public virtual Task<DescribeMetadataModelCreationsResponse> DescribeMetadataModelCreationsAsync(DescribeMetadataModelCreationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeMetadataModelCreationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeMetadataModelCreationsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeMetadataModelCreationsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5164,6 +5445,67 @@ namespace Amazon.DatabaseMigrationService
             options.ResponseUnmarshaller = ExportMetadataModelAssessmentResponseUnmarshaller.Instance;
             
             return InvokeAsync<ExportMetadataModelAssessmentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetTargetSelectionRules
+
+
+        /// <summary>
+        /// Converts source selection rules into their target counterparts for schema conversion
+        /// operations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTargetSelectionRules service method.</param>
+        /// 
+        /// <returns>The response from the GetTargetSelectionRules service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
+        /// DMS was denied access to the endpoint. Check that the role is correctly configured.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
+        /// The resource is in a state that prevents it from being used for database migration.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/GetTargetSelectionRules">REST API Reference for GetTargetSelectionRules Operation</seealso>
+        public virtual GetTargetSelectionRulesResponse GetTargetSelectionRules(GetTargetSelectionRulesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetTargetSelectionRulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTargetSelectionRulesResponseUnmarshaller.Instance;
+
+            return Invoke<GetTargetSelectionRulesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Converts source selection rules into their target counterparts for schema conversion
+        /// operations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTargetSelectionRules service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetTargetSelectionRules service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
+        /// DMS was denied access to the endpoint. Check that the role is correctly configured.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
+        /// The resource is in a state that prevents it from being used for database migration.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/GetTargetSelectionRules">REST API Reference for GetTargetSelectionRules Operation</seealso>
+        public virtual Task<GetTargetSelectionRulesResponse> GetTargetSelectionRulesAsync(GetTargetSelectionRulesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetTargetSelectionRulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTargetSelectionRulesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetTargetSelectionRulesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -7026,6 +7368,87 @@ namespace Amazon.DatabaseMigrationService
             options.ResponseUnmarshaller = StartMetadataModelConversionResponseUnmarshaller.Instance;
             
             return InvokeAsync<StartMetadataModelConversionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartMetadataModelCreation
+
+
+        /// <summary>
+        /// Creates source metadata model of the given type with the specified properties for
+        /// schema conversion operations.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This action supports only these directions: from SQL Server to Aurora PostgreSQL,
+        /// or from SQL Server to RDS for PostgreSQL.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartMetadataModelCreation service method.</param>
+        /// 
+        /// <returns>The response from the StartMetadataModelCreation service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
+        /// DMS was denied access to the endpoint. Check that the role is correctly configured.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceAlreadyExistsException">
+        /// The resource you are attempting to create already exists.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceQuotaExceededException">
+        /// The quota for this resource quota has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartMetadataModelCreation">REST API Reference for StartMetadataModelCreation Operation</seealso>
+        public virtual StartMetadataModelCreationResponse StartMetadataModelCreation(StartMetadataModelCreationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartMetadataModelCreationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartMetadataModelCreationResponseUnmarshaller.Instance;
+
+            return Invoke<StartMetadataModelCreationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates source metadata model of the given type with the specified properties for
+        /// schema conversion operations.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This action supports only these directions: from SQL Server to Aurora PostgreSQL,
+        /// or from SQL Server to RDS for PostgreSQL.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartMetadataModelCreation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartMetadataModelCreation service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
+        /// DMS was denied access to the endpoint. Check that the role is correctly configured.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceAlreadyExistsException">
+        /// The resource you are attempting to create already exists.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceQuotaExceededException">
+        /// The quota for this resource quota has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartMetadataModelCreation">REST API Reference for StartMetadataModelCreation Operation</seealso>
+        public virtual Task<StartMetadataModelCreationResponse> StartMetadataModelCreationAsync(StartMetadataModelCreationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartMetadataModelCreationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartMetadataModelCreationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StartMetadataModelCreationResponse>(request, options, cancellationToken);
         }
 
         #endregion
