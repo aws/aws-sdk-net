@@ -65,6 +65,8 @@ namespace Amazon.NotificationsContacts.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetArn())
                 throw new AmazonNotificationsContactsException("Request object does not have required field Arn set");
             request.AddPathResource("{arn}", StringUtils.FromString(publicRequest.Arn));
+            if (publicRequest.TagKeys == null)
+                throw new AmazonNotificationsContactsException("Request object does not have required field TagKeys set");
             
             if (publicRequest.IsSetTagKeys())
                 request.ParameterCollection.Add("tagKeys", publicRequest.TagKeys);

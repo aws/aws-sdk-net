@@ -68,6 +68,8 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetIncludeResult())
                 request.Parameters.Add("includeResult", StringUtils.FromBool(publicRequest.IncludeResult));
+            if (string.IsNullOrEmpty(publicRequest.TargetArn))
+                throw new AmazonIoTException("Request object does not have required field TargetArn set");
             
             if (publicRequest.IsSetTargetArn())
                 request.Parameters.Add("targetArn", StringUtils.FromString(publicRequest.TargetArn));

@@ -77,6 +77,8 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             else            
                 request.Parameters.Add("clientToken", System.Guid.NewGuid().ToString());
                 
+            if (string.IsNullOrEmpty(publicRequest.FormName))
+                throw new AmazonDataZoneException("Request object does not have required field FormName set");
             
             if (publicRequest.IsSetFormName())
                 request.Parameters.Add("formName", StringUtils.FromString(publicRequest.FormName));

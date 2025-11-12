@@ -62,9 +62,13 @@ namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-07-27";
             request.HttpMethod = "DELETE";
 
+            if (string.IsNullOrEmpty(publicRequest.ResourceArn))
+                throw new AmazonIoTEventsException("Request object does not have required field ResourceArn set");
             
             if (publicRequest.IsSetResourceArn())
                 request.Parameters.Add("resourceArn", StringUtils.FromString(publicRequest.ResourceArn));
+            if (publicRequest.TagKeys == null)
+                throw new AmazonIoTEventsException("Request object does not have required field TagKeys set");
             
             if (publicRequest.IsSetTagKeys())
                 request.ParameterCollection.Add("tagKeys", publicRequest.TagKeys);

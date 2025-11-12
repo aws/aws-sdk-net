@@ -68,6 +68,8 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetRegistrationId())
                 throw new AmazonConnectException("Request object does not have required field RegistrationId set");
             request.AddPathResource("{RegistrationId}", StringUtils.FromString(publicRequest.RegistrationId));
+            if (string.IsNullOrEmpty(publicRequest.ContactId))
+                throw new AmazonConnectException("Request object does not have required field ContactId set");
             
             if (publicRequest.IsSetContactId())
                 request.Parameters.Add("contactId", StringUtils.FromString(publicRequest.ContactId));

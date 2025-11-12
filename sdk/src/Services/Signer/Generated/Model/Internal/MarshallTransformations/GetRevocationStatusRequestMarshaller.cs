@@ -62,18 +62,28 @@ namespace Amazon.Signer.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-08-25";
             request.HttpMethod = "GET";
 
+            if (publicRequest.CertificateHashes == null)
+                throw new AmazonSignerException("Request object does not have required field CertificateHashes set");
             
             if (publicRequest.IsSetCertificateHashes())
                 request.ParameterCollection.Add("certificateHashes", publicRequest.CertificateHashes);
+            if (string.IsNullOrEmpty(publicRequest.JobArn))
+                throw new AmazonSignerException("Request object does not have required field JobArn set");
             
             if (publicRequest.IsSetJobArn())
                 request.Parameters.Add("jobArn", StringUtils.FromString(publicRequest.JobArn));
+            if (string.IsNullOrEmpty(publicRequest.PlatformId))
+                throw new AmazonSignerException("Request object does not have required field PlatformId set");
             
             if (publicRequest.IsSetPlatformId())
                 request.Parameters.Add("platformId", StringUtils.FromString(publicRequest.PlatformId));
+            if (string.IsNullOrEmpty(publicRequest.ProfileVersionArn))
+                throw new AmazonSignerException("Request object does not have required field ProfileVersionArn set");
             
             if (publicRequest.IsSetProfileVersionArn())
                 request.Parameters.Add("profileVersionArn", StringUtils.FromString(publicRequest.ProfileVersionArn));
+            if (publicRequest.SignatureTimestamp == null)
+                throw new AmazonSignerException("Request object does not have required field SignatureTimestamp set");
             
             if (publicRequest.IsSetSignatureTimestamp())
                 request.Parameters.Add("signatureTimestamp", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.SignatureTimestamp));

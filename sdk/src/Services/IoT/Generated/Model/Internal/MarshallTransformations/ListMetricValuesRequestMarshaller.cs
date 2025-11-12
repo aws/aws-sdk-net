@@ -68,21 +68,29 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetDimensionValueOperator())
                 request.Parameters.Add("dimensionValueOperator", StringUtils.FromString(publicRequest.DimensionValueOperator));
+            if (publicRequest.EndTime == null)
+                throw new AmazonIoTException("Request object does not have required field EndTime set");
             
             if (publicRequest.IsSetEndTime())
                 request.Parameters.Add("endTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.EndTime));
             
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
+            if (string.IsNullOrEmpty(publicRequest.MetricName))
+                throw new AmazonIoTException("Request object does not have required field MetricName set");
             
             if (publicRequest.IsSetMetricName())
                 request.Parameters.Add("metricName", StringUtils.FromString(publicRequest.MetricName));
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
+            if (publicRequest.StartTime == null)
+                throw new AmazonIoTException("Request object does not have required field StartTime set");
             
             if (publicRequest.IsSetStartTime())
                 request.Parameters.Add("startTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.StartTime));
+            if (string.IsNullOrEmpty(publicRequest.ThingName))
+                throw new AmazonIoTException("Request object does not have required field ThingName set");
             
             if (publicRequest.IsSetThingName())
                 request.Parameters.Add("thingName", StringUtils.FromString(publicRequest.ThingName));

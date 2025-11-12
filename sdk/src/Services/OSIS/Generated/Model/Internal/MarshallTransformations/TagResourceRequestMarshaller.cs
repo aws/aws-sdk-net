@@ -63,6 +63,8 @@ namespace Amazon.OSIS.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2022-01-01";
             request.HttpMethod = "POST";
 
+            if (string.IsNullOrEmpty(publicRequest.Arn))
+                throw new AmazonOSISException("Request object does not have required field Arn set");
             
             if (publicRequest.IsSetArn())
                 request.Parameters.Add("arn", StringUtils.FromString(publicRequest.Arn));

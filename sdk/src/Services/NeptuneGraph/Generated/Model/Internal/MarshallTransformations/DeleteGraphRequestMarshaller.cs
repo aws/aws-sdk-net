@@ -65,6 +65,8 @@ namespace Amazon.NeptuneGraph.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetGraphIdentifier())
                 throw new AmazonNeptuneGraphException("Request object does not have required field GraphIdentifier set");
             request.AddPathResource("{graphIdentifier}", StringUtils.FromString(publicRequest.GraphIdentifier));
+            if (publicRequest.SkipSnapshot == null)
+                throw new AmazonNeptuneGraphException("Request object does not have required field SkipSnapshot set");
             
             if (publicRequest.IsSetSkipSnapshot())
                 request.Parameters.Add("skipSnapshot", StringUtils.FromBool(publicRequest.SkipSnapshot));

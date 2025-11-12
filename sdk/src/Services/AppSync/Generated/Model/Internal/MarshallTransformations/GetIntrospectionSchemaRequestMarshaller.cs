@@ -65,6 +65,8 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetApiId())
                 throw new AmazonAppSyncException("Request object does not have required field ApiId set");
             request.AddPathResource("{apiId}", StringUtils.FromString(publicRequest.ApiId));
+            if (string.IsNullOrEmpty(publicRequest.Format))
+                throw new AmazonAppSyncException("Request object does not have required field Format set");
             
             if (publicRequest.IsSetFormat())
                 request.Parameters.Add("format", StringUtils.FromString(publicRequest.Format));

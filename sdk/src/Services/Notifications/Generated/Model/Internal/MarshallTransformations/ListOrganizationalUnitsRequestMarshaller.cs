@@ -68,6 +68,8 @@ namespace Amazon.Notifications.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
+            if (string.IsNullOrEmpty(publicRequest.NotificationConfigurationArn))
+                throw new AmazonNotificationsException("Request object does not have required field NotificationConfigurationArn set");
             
             if (publicRequest.IsSetNotificationConfigurationArn())
                 request.Parameters.Add("notificationConfigurationArn", StringUtils.FromString(publicRequest.NotificationConfigurationArn));

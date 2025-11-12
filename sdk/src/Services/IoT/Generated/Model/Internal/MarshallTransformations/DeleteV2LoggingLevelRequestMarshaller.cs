@@ -62,9 +62,13 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-05-28";
             request.HttpMethod = "DELETE";
 
+            if (string.IsNullOrEmpty(publicRequest.TargetName))
+                throw new AmazonIoTException("Request object does not have required field TargetName set");
             
             if (publicRequest.IsSetTargetName())
                 request.Parameters.Add("targetName", StringUtils.FromString(publicRequest.TargetName));
+            if (string.IsNullOrEmpty(publicRequest.TargetType))
+                throw new AmazonIoTException("Request object does not have required field TargetType set");
             
             if (publicRequest.IsSetTargetType())
                 request.Parameters.Add("targetType", StringUtils.FromString(publicRequest.TargetType));

@@ -62,6 +62,8 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-12-02";
             request.HttpMethod = "GET";
 
+            if (string.IsNullOrEmpty(publicRequest.StepExecutionId))
+                throw new AmazonImagebuilderException("Request object does not have required field StepExecutionId set");
             
             if (publicRequest.IsSetStepExecutionId())
                 request.Parameters.Add("stepExecutionId", StringUtils.FromString(publicRequest.StepExecutionId));

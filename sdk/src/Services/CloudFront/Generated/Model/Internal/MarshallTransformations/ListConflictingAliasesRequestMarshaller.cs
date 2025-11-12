@@ -58,9 +58,13 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             var request = new DefaultRequest(publicRequest, "Amazon.CloudFront");
             PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "GET";
+            if (string.IsNullOrEmpty(publicRequest.Alias))
+                throw new AmazonCloudFrontException("Request object does not have required field Alias set");
             
             if (publicRequest.IsSetAlias())
                 request.Parameters.Add("Alias", StringUtils.FromString(publicRequest.Alias));
+            if (string.IsNullOrEmpty(publicRequest.DistributionId))
+                throw new AmazonCloudFrontException("Request object does not have required field DistributionId set");
             
             if (publicRequest.IsSetDistributionId())
                 request.Parameters.Add("DistributionId", StringUtils.FromString(publicRequest.DistributionId));

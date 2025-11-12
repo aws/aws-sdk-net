@@ -65,6 +65,8 @@ namespace Amazon.FinSpaceData.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetPermissionGroupId())
                 throw new AmazonFinSpaceDataException("Request object does not have required field PermissionGroupId set");
             request.AddPathResource("{permissionGroupId}", StringUtils.FromString(publicRequest.PermissionGroupId));
+            if (publicRequest.MaxResults == null)
+                throw new AmazonFinSpaceDataException("Request object does not have required field MaxResults set");
             
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));

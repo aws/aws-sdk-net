@@ -65,6 +65,8 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetProfileArn())
                 throw new AmazonWellArchitectedException("Request object does not have required field ProfileArn set");
             request.AddPathResource("{ProfileArn}", StringUtils.FromString(publicRequest.ProfileArn));
+            if (string.IsNullOrEmpty(publicRequest.ClientRequestToken))
+                throw new AmazonWellArchitectedException("Request object does not have required field ClientRequestToken set");
             
             if (publicRequest.IsSetClientRequestToken())
                 request.Parameters.Add("ClientRequestToken", StringUtils.FromString(publicRequest.ClientRequestToken));

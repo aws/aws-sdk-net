@@ -74,6 +74,8 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetIncludeExtensions())
                 request.Parameters.Add("includeExtensions", StringUtils.FromBool(publicRequest.IncludeExtensions));
+            if (string.IsNullOrEmpty(publicRequest.OutputType))
+                throw new AmazonApiGatewayV2Exception("Request object does not have required field OutputType set");
             
             if (publicRequest.IsSetOutputType())
                 request.Parameters.Add("outputType", StringUtils.FromString(publicRequest.OutputType));

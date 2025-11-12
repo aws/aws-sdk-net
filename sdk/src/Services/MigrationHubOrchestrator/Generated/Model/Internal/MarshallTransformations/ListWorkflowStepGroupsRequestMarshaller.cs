@@ -68,6 +68,8 @@ namespace Amazon.MigrationHubOrchestrator.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
+            if (string.IsNullOrEmpty(publicRequest.WorkflowId))
+                throw new AmazonMigrationHubOrchestratorException("Request object does not have required field WorkflowId set");
             
             if (publicRequest.IsSetWorkflowId())
                 request.Parameters.Add("workflowId", StringUtils.FromString(publicRequest.WorkflowId));

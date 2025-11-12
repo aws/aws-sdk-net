@@ -65,6 +65,8 @@ namespace Amazon.QApps.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetResourceARN())
                 throw new AmazonQAppsException("Request object does not have required field ResourceARN set");
             request.AddPathResource("{resourceARN}", StringUtils.FromString(publicRequest.ResourceARN));
+            if (publicRequest.TagKeys == null)
+                throw new AmazonQAppsException("Request object does not have required field TagKeys set");
             
             if (publicRequest.IsSetTagKeys())
                 request.ParameterCollection.Add("tagKeys", publicRequest.TagKeys);

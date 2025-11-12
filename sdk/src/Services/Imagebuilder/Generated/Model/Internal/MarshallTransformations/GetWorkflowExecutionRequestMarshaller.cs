@@ -62,6 +62,8 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-12-02";
             request.HttpMethod = "GET";
 
+            if (string.IsNullOrEmpty(publicRequest.WorkflowExecutionId))
+                throw new AmazonImagebuilderException("Request object does not have required field WorkflowExecutionId set");
             
             if (publicRequest.IsSetWorkflowExecutionId())
                 request.Parameters.Add("workflowExecutionId", StringUtils.FromString(publicRequest.WorkflowExecutionId));

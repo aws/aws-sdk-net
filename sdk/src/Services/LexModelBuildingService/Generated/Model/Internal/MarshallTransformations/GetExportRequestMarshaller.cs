@@ -62,15 +62,23 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-04-19";
             request.HttpMethod = "GET";
 
+            if (string.IsNullOrEmpty(publicRequest.ExportType))
+                throw new AmazonLexModelBuildingServiceException("Request object does not have required field ExportType set");
             
             if (publicRequest.IsSetExportType())
                 request.Parameters.Add("exportType", StringUtils.FromString(publicRequest.ExportType));
+            if (string.IsNullOrEmpty(publicRequest.Name))
+                throw new AmazonLexModelBuildingServiceException("Request object does not have required field Name set");
             
             if (publicRequest.IsSetName())
                 request.Parameters.Add("name", StringUtils.FromString(publicRequest.Name));
+            if (string.IsNullOrEmpty(publicRequest.ResourceType))
+                throw new AmazonLexModelBuildingServiceException("Request object does not have required field ResourceType set");
             
             if (publicRequest.IsSetResourceType())
                 request.Parameters.Add("resourceType", StringUtils.FromString(publicRequest.ResourceType));
+            if (string.IsNullOrEmpty(publicRequest.Version))
+                throw new AmazonLexModelBuildingServiceException("Request object does not have required field Version set");
             
             if (publicRequest.IsSetVersion())
                 request.Parameters.Add("version", StringUtils.FromString(publicRequest.Version));

@@ -58,9 +58,13 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             var request = new DefaultRequest(publicRequest, "Amazon.Route53");
             PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "GET";
+            if (string.IsNullOrEmpty(publicRequest.VPCId))
+                throw new AmazonRoute53Exception("Request object does not have required field VPCId set");
             
             if (publicRequest.IsSetVPCId())
                 request.Parameters.Add("vpcid", StringUtils.FromString(publicRequest.VPCId));
+            if (string.IsNullOrEmpty(publicRequest.VPCRegion))
+                throw new AmazonRoute53Exception("Request object does not have required field VPCRegion set");
             
             if (publicRequest.IsSetVPCRegion())
                 request.Parameters.Add("vpcregion", StringUtils.FromString(publicRequest.VPCRegion));

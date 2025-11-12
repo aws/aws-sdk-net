@@ -65,9 +65,13 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetChannelId())
                 throw new AmazonMediaLiveException("Request object does not have required field ChannelId set");
             request.AddPathResource("{channelId}", StringUtils.FromString(publicRequest.ChannelId));
+            if (string.IsNullOrEmpty(publicRequest.PipelineId))
+                throw new AmazonMediaLiveException("Request object does not have required field PipelineId set");
             
             if (publicRequest.IsSetPipelineId())
                 request.Parameters.Add("pipelineId", StringUtils.FromString(publicRequest.PipelineId));
+            if (string.IsNullOrEmpty(publicRequest.ThumbnailType))
+                throw new AmazonMediaLiveException("Request object does not have required field ThumbnailType set");
             
             if (publicRequest.IsSetThumbnailType())
                 request.Parameters.Add("thumbnailType", StringUtils.FromString(publicRequest.ThumbnailType));
