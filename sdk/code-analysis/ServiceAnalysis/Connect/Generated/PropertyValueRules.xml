@@ -3390,6 +3390,11 @@
     <max>60</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.UpdateAuthenticationProfileRequest.SessionInactivityDuration</property>
+    <min>15</min>
+    <max>720</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.UpdateContactRequest.ContactId</property>
     <min>1</min>
     <max>256</max>
@@ -4213,6 +4218,11 @@
     <property>Amazon.Connect.Model.AuthenticationProfile.PeriodicSessionDuration</property>
     <min>10</min>
     <max>60</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.AuthenticationProfile.SessionInactivityDuration</property>
+    <min>15</min>
+    <max>720</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.AuthenticationProfileSummary.Id</property>

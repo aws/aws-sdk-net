@@ -56,6 +56,8 @@ namespace Amazon.Connect.Model
         private int? _maxSessionDuration;
         private string _name;
         private int? _periodicSessionDuration;
+        private int? _sessionInactivityDuration;
+        private bool? _sessionInactivityHandlingEnabled;
 
         /// <summary>
         /// Gets and sets the property AllowedIps. 
@@ -286,6 +288,7 @@ namespace Amazon.Connect.Model
         /// the session duration</a> in the <i>Amazon Connect Administrator Guide</i>.
         /// </para>
         /// </summary>
+        [Obsolete("PeriodicSessionDuration is deprecated. Use SessionInactivityDuration instead.")]
         [AWSProperty(Min=10, Max=60)]
         public int? PeriodicSessionDuration
         {
@@ -297,6 +300,44 @@ namespace Amazon.Connect.Model
         internal bool IsSetPeriodicSessionDuration()
         {
             return this._periodicSessionDuration.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SessionInactivityDuration. 
+        /// <para>
+        /// The period, in minutes, before an agent is automatically signed out of the contact
+        /// center when they go inactive.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=15, Max=720)]
+        public int? SessionInactivityDuration
+        {
+            get { return this._sessionInactivityDuration; }
+            set { this._sessionInactivityDuration = value; }
+        }
+
+        // Check to see if SessionInactivityDuration property is set
+        internal bool IsSetSessionInactivityDuration()
+        {
+            return this._sessionInactivityDuration.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SessionInactivityHandlingEnabled. 
+        /// <para>
+        /// Determines if automatic logout on user inactivity is enabled.
+        /// </para>
+        /// </summary>
+        public bool? SessionInactivityHandlingEnabled
+        {
+            get { return this._sessionInactivityHandlingEnabled; }
+            set { this._sessionInactivityHandlingEnabled = value; }
+        }
+
+        // Check to see if SessionInactivityHandlingEnabled property is set
+        internal bool IsSetSessionInactivityHandlingEnabled()
+        {
+            return this._sessionInactivityHandlingEnabled.HasValue; 
         }
 
     }
