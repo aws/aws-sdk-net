@@ -221,6 +221,104 @@ namespace Amazon.DatabaseMigrationService
 
         #endregion
         
+        #region  CancelMetadataModelConversion
+
+
+        /// <summary>
+        /// Cancels a single metadata model conversion operation that was started with <c>StartMetadataModelConversion</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelMetadataModelConversion service method.</param>
+        /// 
+        /// <returns>The response from the CancelMetadataModelConversion service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
+        /// DMS was denied access to the endpoint. Check that the role is correctly configured.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
+        /// The resource is in a state that prevents it from being used for database migration.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CancelMetadataModelConversion">REST API Reference for CancelMetadataModelConversion Operation</seealso>
+        CancelMetadataModelConversionResponse CancelMetadataModelConversion(CancelMetadataModelConversionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CancelMetadataModelConversion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CancelMetadataModelConversion operation on AmazonDatabaseMigrationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCancelMetadataModelConversion
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CancelMetadataModelConversion">REST API Reference for CancelMetadataModelConversion Operation</seealso>
+        IAsyncResult BeginCancelMetadataModelConversion(CancelMetadataModelConversionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CancelMetadataModelConversion operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCancelMetadataModelConversion.</param>
+        /// 
+        /// <returns>Returns a  CancelMetadataModelConversionResult from DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CancelMetadataModelConversion">REST API Reference for CancelMetadataModelConversion Operation</seealso>
+        CancelMetadataModelConversionResponse EndCancelMetadataModelConversion(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CancelMetadataModelCreation
+
+
+        /// <summary>
+        /// Cancels a single metadata model creation operation that was started with <c>StartMetadataModelCreation</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelMetadataModelCreation service method.</param>
+        /// 
+        /// <returns>The response from the CancelMetadataModelCreation service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
+        /// DMS was denied access to the endpoint. Check that the role is correctly configured.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
+        /// The resource is in a state that prevents it from being used for database migration.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CancelMetadataModelCreation">REST API Reference for CancelMetadataModelCreation Operation</seealso>
+        CancelMetadataModelCreationResponse CancelMetadataModelCreation(CancelMetadataModelCreationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CancelMetadataModelCreation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CancelMetadataModelCreation operation on AmazonDatabaseMigrationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCancelMetadataModelCreation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CancelMetadataModelCreation">REST API Reference for CancelMetadataModelCreation Operation</seealso>
+        IAsyncResult BeginCancelMetadataModelCreation(CancelMetadataModelCreationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CancelMetadataModelCreation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCancelMetadataModelCreation.</param>
+        /// 
+        /// <returns>Returns a  CancelMetadataModelCreationResult from DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CancelMetadataModelCreation">REST API Reference for CancelMetadataModelCreation Operation</seealso>
+        CancelMetadataModelCreationResponse EndCancelMetadataModelCreation(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CancelReplicationTaskAssessmentRun
 
 
@@ -2847,6 +2945,53 @@ namespace Amazon.DatabaseMigrationService
 
         #endregion
         
+        #region  DescribeMetadataModel
+
+
+        /// <summary>
+        /// Gets detailed information about the specified metadata model, including its definition
+        /// and corresponding converted objects in the target database if applicable.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMetadataModel service method.</param>
+        /// 
+        /// <returns>The response from the DescribeMetadataModel service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
+        /// DMS was denied access to the endpoint. Check that the role is correctly configured.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeMetadataModel">REST API Reference for DescribeMetadataModel Operation</seealso>
+        DescribeMetadataModelResponse DescribeMetadataModel(DescribeMetadataModelRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeMetadataModel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMetadataModel operation on AmazonDatabaseMigrationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeMetadataModel
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeMetadataModel">REST API Reference for DescribeMetadataModel Operation</seealso>
+        IAsyncResult BeginDescribeMetadataModel(DescribeMetadataModelRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeMetadataModel operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeMetadataModel.</param>
+        /// 
+        /// <returns>Returns a  DescribeMetadataModelResult from DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeMetadataModel">REST API Reference for DescribeMetadataModel Operation</seealso>
+        DescribeMetadataModelResponse EndDescribeMetadataModel(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeMetadataModelAssessments
 
 
@@ -2891,6 +3036,53 @@ namespace Amazon.DatabaseMigrationService
 
         #endregion
         
+        #region  DescribeMetadataModelChildren
+
+
+        /// <summary>
+        /// Gets a list of child metadata models for the specified metadata model in the database
+        /// hierarchy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMetadataModelChildren service method.</param>
+        /// 
+        /// <returns>The response from the DescribeMetadataModelChildren service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
+        /// DMS was denied access to the endpoint. Check that the role is correctly configured.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeMetadataModelChildren">REST API Reference for DescribeMetadataModelChildren Operation</seealso>
+        DescribeMetadataModelChildrenResponse DescribeMetadataModelChildren(DescribeMetadataModelChildrenRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeMetadataModelChildren operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMetadataModelChildren operation on AmazonDatabaseMigrationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeMetadataModelChildren
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeMetadataModelChildren">REST API Reference for DescribeMetadataModelChildren Operation</seealso>
+        IAsyncResult BeginDescribeMetadataModelChildren(DescribeMetadataModelChildrenRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeMetadataModelChildren operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeMetadataModelChildren.</param>
+        /// 
+        /// <returns>Returns a  DescribeMetadataModelChildrenResult from DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeMetadataModelChildren">REST API Reference for DescribeMetadataModelChildren Operation</seealso>
+        DescribeMetadataModelChildrenResponse EndDescribeMetadataModelChildren(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeMetadataModelConversions
 
 
@@ -2931,6 +3123,52 @@ namespace Amazon.DatabaseMigrationService
         /// <returns>Returns a  DescribeMetadataModelConversionsResult from DatabaseMigrationService.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeMetadataModelConversions">REST API Reference for DescribeMetadataModelConversions Operation</seealso>
         DescribeMetadataModelConversionsResponse EndDescribeMetadataModelConversions(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeMetadataModelCreations
+
+
+        /// <summary>
+        /// Returns a paginated list of metadata model creation requests for a migration project.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMetadataModelCreations service method.</param>
+        /// 
+        /// <returns>The response from the DescribeMetadataModelCreations service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
+        /// DMS was denied access to the endpoint. Check that the role is correctly configured.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeMetadataModelCreations">REST API Reference for DescribeMetadataModelCreations Operation</seealso>
+        DescribeMetadataModelCreationsResponse DescribeMetadataModelCreations(DescribeMetadataModelCreationsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeMetadataModelCreations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMetadataModelCreations operation on AmazonDatabaseMigrationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeMetadataModelCreations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeMetadataModelCreations">REST API Reference for DescribeMetadataModelCreations Operation</seealso>
+        IAsyncResult BeginDescribeMetadataModelCreations(DescribeMetadataModelCreationsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeMetadataModelCreations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeMetadataModelCreations.</param>
+        /// 
+        /// <returns>Returns a  DescribeMetadataModelCreationsResult from DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeMetadataModelCreations">REST API Reference for DescribeMetadataModelCreations Operation</seealso>
+        DescribeMetadataModelCreationsResponse EndDescribeMetadataModelCreations(IAsyncResult asyncResult);
 
         #endregion
         
@@ -3966,6 +4204,56 @@ namespace Amazon.DatabaseMigrationService
         /// <returns>Returns a  ExportMetadataModelAssessmentResult from DatabaseMigrationService.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ExportMetadataModelAssessment">REST API Reference for ExportMetadataModelAssessment Operation</seealso>
         ExportMetadataModelAssessmentResponse EndExportMetadataModelAssessment(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetTargetSelectionRules
+
+
+        /// <summary>
+        /// Converts source selection rules into their target counterparts for schema conversion
+        /// operations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTargetSelectionRules service method.</param>
+        /// 
+        /// <returns>The response from the GetTargetSelectionRules service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
+        /// DMS was denied access to the endpoint. Check that the role is correctly configured.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
+        /// The resource is in a state that prevents it from being used for database migration.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/GetTargetSelectionRules">REST API Reference for GetTargetSelectionRules Operation</seealso>
+        GetTargetSelectionRulesResponse GetTargetSelectionRules(GetTargetSelectionRulesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetTargetSelectionRules operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetTargetSelectionRules operation on AmazonDatabaseMigrationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetTargetSelectionRules
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/GetTargetSelectionRules">REST API Reference for GetTargetSelectionRules Operation</seealso>
+        IAsyncResult BeginGetTargetSelectionRules(GetTargetSelectionRulesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetTargetSelectionRules operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetTargetSelectionRules.</param>
+        /// 
+        /// <returns>Returns a  GetTargetSelectionRulesResult from DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/GetTargetSelectionRules">REST API Reference for GetTargetSelectionRules Operation</seealso>
+        GetTargetSelectionRulesResponse EndGetTargetSelectionRules(IAsyncResult asyncResult);
 
         #endregion
         
@@ -5365,6 +5653,66 @@ namespace Amazon.DatabaseMigrationService
         /// <returns>Returns a  StartMetadataModelConversionResult from DatabaseMigrationService.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartMetadataModelConversion">REST API Reference for StartMetadataModelConversion Operation</seealso>
         StartMetadataModelConversionResponse EndStartMetadataModelConversion(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  StartMetadataModelCreation
+
+
+        /// <summary>
+        /// Creates source metadata model of the given type with the specified properties for
+        /// schema conversion operations.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This action supports only these directions: from SQL Server to Aurora PostgreSQL,
+        /// or from SQL Server to RDS for PostgreSQL.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartMetadataModelCreation service method.</param>
+        /// 
+        /// <returns>The response from the StartMetadataModelCreation service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
+        /// DMS was denied access to the endpoint. Check that the role is correctly configured.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceAlreadyExistsException">
+        /// The resource you are attempting to create already exists.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceQuotaExceededException">
+        /// The quota for this resource quota has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartMetadataModelCreation">REST API Reference for StartMetadataModelCreation Operation</seealso>
+        StartMetadataModelCreationResponse StartMetadataModelCreation(StartMetadataModelCreationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartMetadataModelCreation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartMetadataModelCreation operation on AmazonDatabaseMigrationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartMetadataModelCreation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartMetadataModelCreation">REST API Reference for StartMetadataModelCreation Operation</seealso>
+        IAsyncResult BeginStartMetadataModelCreation(StartMetadataModelCreationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartMetadataModelCreation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartMetadataModelCreation.</param>
+        /// 
+        /// <returns>Returns a  StartMetadataModelCreationResult from DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartMetadataModelCreation">REST API Reference for StartMetadataModelCreation Operation</seealso>
+        StartMetadataModelCreationResponse EndStartMetadataModelCreation(IAsyncResult asyncResult);
 
         #endregion
         
