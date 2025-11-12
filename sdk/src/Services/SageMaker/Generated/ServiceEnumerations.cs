@@ -4693,6 +4693,10 @@ namespace Amazon.SageMaker
         /// </summary>
         public static readonly ClusterInstanceType MlTrn1n32xlarge = new ClusterInstanceType("ml.trn1n.32xlarge");
         /// <summary>
+        /// Constant MlTrn23xlarge for ClusterInstanceType
+        /// </summary>
+        public static readonly ClusterInstanceType MlTrn23xlarge = new ClusterInstanceType("ml.trn2.3xlarge");
+        /// <summary>
         /// Constant MlTrn248xlarge for ClusterInstanceType
         /// </summary>
         public static readonly ClusterInstanceType MlTrn248xlarge = new ClusterInstanceType("ml.trn2.48xlarge");
