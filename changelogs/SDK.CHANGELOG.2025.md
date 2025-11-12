@@ -1,3 +1,21 @@
+### 3.7.1164.0 (2025-11-12 19:42 UTC)
+* Connect (3.7.512.0)
+	* Updated Authentication Profile APIs to add support for automatic logout on user inactivity
+* DatabaseMigrationService (3.7.503.0)
+	* Added support of SQL statements creation, metadata model discovery and selection rules transformation.
+* EC2 (3.7.527.0)
+	* Adds complete AMI ancestry tracing from immediate parent through each preceding generation back to the root AMI
+* ElasticLoadBalancingV2 (3.7.503.0)
+	* This release expands ALB Authentication to support JWT verification and adds support for a new JWT validation action in listener rule.
+* PrometheusService (3.7.506.0)
+	* Add VPC source configuration support enabling Amazon Managed Service for Prometheus Collector to collect metrics from MSK clusters.
+* Redshift (3.7.504.0)
+	* Added GetIdentityCenterAuthToken API to retrieve encrypted authentication tokens for Identity Center integrated applications. This API enables programmatic access to secure Identity Center tokens with proper error handling and parameter validation across supported SDK languages.
+* S3Tables (3.7.504.0)
+	* Adds support for request metrics metrics APIs for S3 Tables
+* SageMaker (3.7.518.0)
+	* Add support for trn2.3xlarge instance type for SageMaker Hyperpod
+
 ### 3.7.1163.0 (2025-11-11 19:23 UTC)
 * Batch (3.7.501.11)
 	* Documentation-only update: update API and doc descriptions per EKS ImageType default value switch from AL2 to AL2023.
