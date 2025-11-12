@@ -33,7 +33,7 @@ namespace Amazon.ControlCatalog
     public partial class AmazonControlCatalogConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("ControlCatalog", "4.0.3.4");
+            InternalSDKUtils.BuildUserAgentString("ControlCatalog", "4.0.3.5");
 
         private static readonly AmazonControlCatalogEndpointResolver EndpointResolver =
             new AmazonControlCatalogEndpointResolver();

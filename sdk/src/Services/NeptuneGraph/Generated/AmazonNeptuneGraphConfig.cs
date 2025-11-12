@@ -33,7 +33,7 @@ namespace Amazon.NeptuneGraph
     public partial class AmazonNeptuneGraphConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Neptune Graph", "4.0.2.2");
+            InternalSDKUtils.BuildUserAgentString("Neptune Graph", "4.0.2.3");
 
         private static readonly AmazonNeptuneGraphEndpointResolver EndpointResolver =
             new AmazonNeptuneGraphEndpointResolver();

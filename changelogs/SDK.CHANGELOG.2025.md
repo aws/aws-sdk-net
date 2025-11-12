@@ -1,3 +1,29 @@
+### 4.0.132.0 (2025-11-12 19:39 UTC)
+* Connect (4.0.16.0)
+	* Updated Authentication Profile APIs to add support for automatic logout on user inactivity
+* DatabaseMigrationService (4.0.5.0)
+	* Added support of SQL statements creation, metadata model discovery and selection rules transformation.
+* EC2 (4.0.53.0)
+	* Adds complete AMI ancestry tracing from immediate parent through each preceding generation back to the root AMI
+* ElasticLoadBalancingV2 (4.0.4.0)
+	* This release expands ALB Authentication to support JWT verification and adds support for a new JWT validation action in listener rule.
+* PrometheusService (4.0.7.0)
+	* Add VPC source configuration support enabling Amazon Managed Service for Prometheus Collector to collect metrics from MSK clusters.
+* Redshift (4.0.4.0)
+	* Added GetIdentityCenterAuthToken API to retrieve encrypted authentication tokens for Identity Center integrated applications. This API enables programmatic access to secure Identity Center tokens with proper error handling and parameter validation across supported SDK languages.
+* S3 (4.0.11.2)
+	* Generate ListBucketMetricsConfigurations.
+	* Generate DeleteBucketMetricsConfiguration.
+	* Generate PutBucketMetricsConfiguration, and add check in marshallers for required query strings. If required members for query strings are not set, the SDK will throw the base service-level exception. This is not a breaking change.
+	* Generate GetBucketMetricsConfiguration.
+* S3Tables (4.0.7.0)
+	* Adds support for request metrics metrics APIs for S3 Tables
+* SageMaker (4.0.32.0)
+	* Add support for trn2.3xlarge instance type for SageMaker Hyperpod
+* Core 4.0.3.1
+	* Add check to see if required query string parameters are set. If not set, then the SDK will throw the generic service level exception.
+	* All service and extension packages updated to require new Core
+
 ### 4.0.131.0 (2025-11-11 19:24 UTC)
 * Batch (4.0.3.5)
 	* Documentation-only update: update API and doc descriptions per EKS ImageType default value switch from AL2 to AL2023.

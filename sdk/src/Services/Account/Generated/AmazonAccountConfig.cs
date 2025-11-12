@@ -33,7 +33,7 @@ namespace Amazon.Account
     public partial class AmazonAccountConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Account", "4.0.2.4");
+            InternalSDKUtils.BuildUserAgentString("Account", "4.0.2.5");
 
         private static readonly AmazonAccountEndpointResolver EndpointResolver =
             new AmazonAccountEndpointResolver();
