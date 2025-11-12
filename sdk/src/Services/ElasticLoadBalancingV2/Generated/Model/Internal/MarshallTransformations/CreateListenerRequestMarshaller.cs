@@ -242,6 +242,42 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                                 }
                             }
                         }
+                        if(publicRequestlistValue.IsSetJwtValidationConfig())
+                        {
+                            if(publicRequestlistValue.JwtValidationConfig.IsSetAdditionalClaims())
+                            {
+                                int publicRequestlistValueJwtValidationConfiglistValueIndex = 1;
+                                foreach(var publicRequestlistValueJwtValidationConfiglistValue in publicRequestlistValue.JwtValidationConfig.AdditionalClaims)
+                                {
+                                    if(publicRequestlistValueJwtValidationConfiglistValue.IsSetFormat())
+                                    {
+                                        request.Parameters.Add("DefaultActions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "JwtValidationConfig" + "." + "AdditionalClaims" + "." + "member" + "." + publicRequestlistValueJwtValidationConfiglistValueIndex + "." + "Format", StringUtils.FromString(publicRequestlistValueJwtValidationConfiglistValue.Format));
+                                    }
+                                    if(publicRequestlistValueJwtValidationConfiglistValue.IsSetName())
+                                    {
+                                        request.Parameters.Add("DefaultActions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "JwtValidationConfig" + "." + "AdditionalClaims" + "." + "member" + "." + publicRequestlistValueJwtValidationConfiglistValueIndex + "." + "Name", StringUtils.FromString(publicRequestlistValueJwtValidationConfiglistValue.Name));
+                                    }
+                                    if(publicRequestlistValueJwtValidationConfiglistValue.IsSetValues())
+                                    {
+                                        int publicRequestlistValueJwtValidationConfiglistValuelistValueIndex = 1;
+                                        foreach(var publicRequestlistValueJwtValidationConfiglistValuelistValue in publicRequestlistValueJwtValidationConfiglistValue.Values)
+                                        {
+                                            request.Parameters.Add("DefaultActions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "JwtValidationConfig" + "." + "AdditionalClaims" + "." + "member" + "." + publicRequestlistValueJwtValidationConfiglistValueIndex + "." + "Values" + "." + "member" + "." + publicRequestlistValueJwtValidationConfiglistValuelistValueIndex, StringUtils.FromString(publicRequestlistValueJwtValidationConfiglistValuelistValue));
+                                            publicRequestlistValueJwtValidationConfiglistValuelistValueIndex++;
+                                        }
+                                    }
+                                    publicRequestlistValueJwtValidationConfiglistValueIndex++;
+                                }
+                            }
+                            if(publicRequestlistValue.JwtValidationConfig.IsSetIssuer())
+                            {
+                                request.Parameters.Add("DefaultActions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "JwtValidationConfig" + "." + "Issuer", StringUtils.FromString(publicRequestlistValue.JwtValidationConfig.Issuer));
+                            }
+                            if(publicRequestlistValue.JwtValidationConfig.IsSetJwksEndpoint())
+                            {
+                                request.Parameters.Add("DefaultActions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "JwtValidationConfig" + "." + "JwksEndpoint", StringUtils.FromString(publicRequestlistValue.JwtValidationConfig.JwksEndpoint));
+                            }
+                        }
                         if(publicRequestlistValue.IsSetOrder())
                         {
                             request.Parameters.Add("DefaultActions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Order", StringUtils.FromInt(publicRequestlistValue.Order));

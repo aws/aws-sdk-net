@@ -1504,7 +1504,7 @@ namespace Amazon.ElasticLoadBalancingV2
 
         /// <summary>
         /// Describes the specified rules or the rules for the specified listener. You must specify
-        /// either a listener or one or more rules.
+        /// either a listener or rules.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeRules service method.</param>
         /// 
