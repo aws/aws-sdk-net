@@ -459,10 +459,6 @@ namespace Amazon.RDS
         /// </summary>
         public static readonly ClusterScalabilityType Limitless = new ClusterScalabilityType("limitless");
         /// <summary>
-        /// Constant Scaleout for ClusterScalabilityType
-        /// </summary>
-        public static readonly ClusterScalabilityType Scaleout = new ClusterScalabilityType("scaleout");
-        /// <summary>
         /// Constant Standard for ClusterScalabilityType
         /// </summary>
         public static readonly ClusterScalabilityType Standard = new ClusterScalabilityType("standard");
