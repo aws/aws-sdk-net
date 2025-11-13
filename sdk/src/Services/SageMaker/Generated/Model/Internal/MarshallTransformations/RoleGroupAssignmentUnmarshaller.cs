@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for PartnerAppConfig Object
+    /// Response Unmarshaller for RoleGroupAssignment Object
     /// </summary>  
-    public class PartnerAppConfigUnmarshaller : IJsonUnmarshaller<PartnerAppConfig, JsonUnmarshallerContext>
+    public class RoleGroupAssignmentUnmarshaller : IJsonUnmarshaller<RoleGroupAssignment, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public PartnerAppConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public RoleGroupAssignment Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            PartnerAppConfig unmarshalledObject = new PartnerAppConfig();
+            RoleGroupAssignment unmarshalledObject = new RoleGroupAssignment();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,28 +56,16 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AdminUsers", targetDepth))
+                if (context.TestExpression("GroupPatterns", targetDepth))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.AdminUsers = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.GroupPatterns = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Arguments", targetDepth))
+                if (context.TestExpression("RoleName", targetDepth))
                 {
-                    var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    unmarshalledObject.Arguments = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("AssignedGroupPatterns", targetDepth))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.AssignedGroupPatterns = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("RoleGroupAssignments", targetDepth))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<RoleGroupAssignment, RoleGroupAssignmentUnmarshaller>(RoleGroupAssignmentUnmarshaller.Instance);
-                    unmarshalledObject.RoleGroupAssignments = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RoleName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -85,12 +73,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         }
 
 
-        private static PartnerAppConfigUnmarshaller _instance = new PartnerAppConfigUnmarshaller();        
+        private static RoleGroupAssignmentUnmarshaller _instance = new RoleGroupAssignmentUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static PartnerAppConfigUnmarshaller Instance
+        public static RoleGroupAssignmentUnmarshaller Instance
         {
             get
             {
