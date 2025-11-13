@@ -65,9 +65,9 @@ namespace Amazon.MediaConvert.Model
 
         /// <summary>
         /// Gets and sets the property Duration. Specify the duration, in milliseconds, for your
-        /// video generator input.Enter an integer from 50 to 86400000.
+        /// video generator input.Enter an integer from 1 to 86400000.
         /// </summary>
-        [AWSProperty(Min=50, Max=86400000)]
+        [AWSProperty(Min=1, Max=86400000)]
         public int? Duration
         {
             get { return this._duration; }

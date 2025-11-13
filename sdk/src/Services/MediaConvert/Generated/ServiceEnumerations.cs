@@ -5135,6 +5135,56 @@ namespace Amazon.MediaConvert
 
 
     /// <summary>
+    /// Constants used for properties of type CmfcC2paManifest.
+    /// </summary>
+    public class CmfcC2paManifest : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EXCLUDE for CmfcC2paManifest
+        /// </summary>
+        public static readonly CmfcC2paManifest EXCLUDE = new CmfcC2paManifest("EXCLUDE");
+        /// <summary>
+        /// Constant INCLUDE for CmfcC2paManifest
+        /// </summary>
+        public static readonly CmfcC2paManifest INCLUDE = new CmfcC2paManifest("INCLUDE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CmfcC2paManifest(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CmfcC2paManifest FindValue(string value)
+        {
+            return FindValue<CmfcC2paManifest>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CmfcC2paManifest(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type CmfcDescriptiveVideoServiceFlag.
     /// </summary>
     public class CmfcDescriptiveVideoServiceFlag : ConstantClass
@@ -9794,6 +9844,56 @@ namespace Amazon.MediaConvert
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Format(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FrameControl.
+    /// </summary>
+    public class FrameControl : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NEAREST_IDRFRAME for FrameControl
+        /// </summary>
+        public static readonly FrameControl NEAREST_IDRFRAME = new FrameControl("NEAREST_IDRFRAME");
+        /// <summary>
+        /// Constant NEAREST_IFRAME for FrameControl
+        /// </summary>
+        public static readonly FrameControl NEAREST_IFRAME = new FrameControl("NEAREST_IFRAME");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FrameControl(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FrameControl FindValue(string value)
+        {
+            return FindValue<FrameControl>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FrameControl(string value)
         {
             return FindValue(value);
         }
@@ -17984,6 +18084,56 @@ namespace Amazon.MediaConvert
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator MpdAudioDuration(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MpdC2paManifest.
+    /// </summary>
+    public class MpdC2paManifest : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EXCLUDE for MpdC2paManifest
+        /// </summary>
+        public static readonly MpdC2paManifest EXCLUDE = new MpdC2paManifest("EXCLUDE");
+        /// <summary>
+        /// Constant INCLUDE for MpdC2paManifest
+        /// </summary>
+        public static readonly MpdC2paManifest INCLUDE = new MpdC2paManifest("INCLUDE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MpdC2paManifest(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MpdC2paManifest FindValue(string value)
+        {
+            return FindValue<MpdC2paManifest>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MpdC2paManifest(string value)
         {
             return FindValue(value);
         }
