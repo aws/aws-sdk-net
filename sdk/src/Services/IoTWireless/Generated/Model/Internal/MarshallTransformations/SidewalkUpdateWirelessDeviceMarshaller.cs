@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// SidewalkCreateWirelessDevice Marshaller
+    /// SidewalkUpdateWirelessDevice Marshaller
     /// </summary>
-    public class SidewalkCreateWirelessDeviceMarshaller : IRequestMarshaller<SidewalkCreateWirelessDevice, JsonMarshallerContext> 
+    public class SidewalkUpdateWirelessDeviceMarshaller : IRequestMarshaller<SidewalkUpdateWirelessDevice, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,16 +44,10 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(SidewalkCreateWirelessDevice requestObject, JsonMarshallerContext context)
+        public void Marshall(SidewalkUpdateWirelessDevice requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetDeviceProfileId())
-            {
-                context.Writer.WritePropertyName("DeviceProfileId");
-                context.Writer.Write(requestObject.DeviceProfileId);
-            }
-
             if(requestObject.IsSetPositioning())
             {
                 context.Writer.WritePropertyName("Positioning");
@@ -65,18 +59,12 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
-            if(requestObject.IsSetSidewalkManufacturingSn())
-            {
-                context.Writer.WritePropertyName("SidewalkManufacturingSn");
-                context.Writer.Write(requestObject.SidewalkManufacturingSn);
-            }
-
         }
 
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static SidewalkCreateWirelessDeviceMarshaller Instance = new SidewalkCreateWirelessDeviceMarshaller();
+        public readonly static SidewalkUpdateWirelessDeviceMarshaller Instance = new SidewalkUpdateWirelessDeviceMarshaller();
 
     }
 }

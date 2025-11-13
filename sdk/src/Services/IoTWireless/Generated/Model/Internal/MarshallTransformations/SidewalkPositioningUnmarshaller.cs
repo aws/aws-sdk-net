@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for SidewalkGetStartImportInfo Object
+    /// Response Unmarshaller for SidewalkPositioning Object
     /// </summary>  
-    public class SidewalkGetStartImportInfoUnmarshaller : IUnmarshaller<SidewalkGetStartImportInfo, XmlUnmarshallerContext>, IUnmarshaller<SidewalkGetStartImportInfo, JsonUnmarshallerContext>
+    public class SidewalkPositioningUnmarshaller : IUnmarshaller<SidewalkPositioning, XmlUnmarshallerContext>, IUnmarshaller<SidewalkPositioning, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        SidewalkGetStartImportInfo IUnmarshaller<SidewalkGetStartImportInfo, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        SidewalkPositioning IUnmarshaller<SidewalkPositioning, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public SidewalkGetStartImportInfo Unmarshall(JsonUnmarshallerContext context)
+        public SidewalkPositioning Unmarshall(JsonUnmarshallerContext context)
         {
-            SidewalkGetStartImportInfo unmarshalledObject = new SidewalkGetStartImportInfo();
+            SidewalkPositioning unmarshalledObject = new SidewalkPositioning();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,22 +66,10 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("DeviceCreationFileList", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.DeviceCreationFileList = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Positioning", targetDepth))
-                {
-                    var unmarshaller = SidewalkPositioningUnmarshaller.Instance;
-                    unmarshalledObject.Positioning = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Role", targetDepth))
+                if (context.TestExpression("DestinationName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Role = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DestinationName = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -89,12 +77,12 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
         }
 
 
-        private static SidewalkGetStartImportInfoUnmarshaller _instance = new SidewalkGetStartImportInfoUnmarshaller();        
+        private static SidewalkPositioningUnmarshaller _instance = new SidewalkPositioningUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SidewalkGetStartImportInfoUnmarshaller Instance
+        public static SidewalkPositioningUnmarshaller Instance
         {
             get
             {

@@ -4002,7 +4002,7 @@ namespace Amazon.IoTWireless
         ///  <important> 
         /// <para>
         /// This action is no longer supported. Calls to retrieve the position information should
-        /// use the <a href="https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetResourcePosition.html">GetResourcePosition</a>
+        /// use the <a href="https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_GetResourcePosition.html">GetResourcePosition</a>
         /// API operation instead.
         /// </para>
         ///  </important>
@@ -4043,7 +4043,7 @@ namespace Amazon.IoTWireless
         ///  <important> 
         /// <para>
         /// This action is no longer supported. Calls to retrieve the position information should
-        /// use the <a href="https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetResourcePosition.html">GetResourcePosition</a>
+        /// use the <a href="https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_GetResourcePosition.html">GetResourcePosition</a>
         /// API operation instead.
         /// </para>
         ///  </important>
@@ -4091,7 +4091,7 @@ namespace Amazon.IoTWireless
         ///  <important> 
         /// <para>
         /// This action is no longer supported. Calls to retrieve the position configuration should
-        /// use the <a href="https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetResourcePosition.html">GetResourcePosition</a>
+        /// use the <a href="https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_GetResourcePosition.html">GetResourcePosition</a>
         /// API operation instead.
         /// </para>
         ///  </important>
@@ -4132,7 +4132,7 @@ namespace Amazon.IoTWireless
         ///  <important> 
         /// <para>
         /// This action is no longer supported. Calls to retrieve the position configuration should
-        /// use the <a href="https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetResourcePosition.html">GetResourcePosition</a>
+        /// use the <a href="https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_GetResourcePosition.html">GetResourcePosition</a>
         /// API operation instead.
         /// </para>
         ///  </important>
@@ -5858,7 +5858,7 @@ namespace Amazon.IoTWireless
         ///  <important> 
         /// <para>
         /// This action is no longer supported. Calls to retrieve position information should
-        /// use the <a href="https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetResourcePosition.html">GetResourcePosition</a>
+        /// use the <a href="https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_GetResourcePosition.html">GetResourcePosition</a>
         /// API operation instead.
         /// </para>
         ///  </important>
@@ -5896,7 +5896,7 @@ namespace Amazon.IoTWireless
         ///  <important> 
         /// <para>
         /// This action is no longer supported. Calls to retrieve position information should
-        /// use the <a href="https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetResourcePosition.html">GetResourcePosition</a>
+        /// use the <a href="https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_GetResourcePosition.html">GetResourcePosition</a>
         /// API operation instead.
         /// </para>
         ///  </important>
@@ -6143,7 +6143,8 @@ namespace Amazon.IoTWireless
 
 
         /// <summary>
-        /// List wireless devices that have been added to an import task.
+        /// List of import tasks and summary information of onboarding status of devices in each
+        /// import task.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListWirelessDeviceImportTasks service method.</param>
         /// 
@@ -6178,7 +6179,8 @@ namespace Amazon.IoTWireless
 
 
         /// <summary>
-        /// List wireless devices that have been added to an import task.
+        /// List of import tasks and summary information of onboarding status of devices in each
+        /// import task.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListWirelessDeviceImportTasks service method.</param>
         /// <param name="cancellationToken">
@@ -6420,7 +6422,7 @@ namespace Amazon.IoTWireless
         ///  <important> 
         /// <para>
         /// This action is no longer supported. Calls to update the position configuration should
-        /// use the <a href="https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_UpdateResourcePosition.html">UpdateResourcePosition</a>
+        /// use the <a href="https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_UpdateResourcePosition.html">UpdateResourcePosition</a>
         /// API operation instead.
         /// </para>
         ///  </important>
@@ -6461,7 +6463,7 @@ namespace Amazon.IoTWireless
         ///  <important> 
         /// <para>
         /// This action is no longer supported. Calls to update the position configuration should
-        /// use the <a href="https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_UpdateResourcePosition.html">UpdateResourcePosition</a>
+        /// use the <a href="https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_UpdateResourcePosition.html">UpdateResourcePosition</a>
         /// API operation instead.
         /// </para>
         ///  </important>
@@ -8117,7 +8119,7 @@ namespace Amazon.IoTWireless
         ///  <important> 
         /// <para>
         /// This action is no longer supported. Calls to update the position information should
-        /// use the <a href="https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_UpdateResourcePosition.html">UpdateResourcePosition</a>
+        /// use the <a href="https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_UpdateResourcePosition.html">UpdateResourcePosition</a>
         /// API operation instead.
         /// </para>
         ///  </important>
@@ -8158,7 +8160,7 @@ namespace Amazon.IoTWireless
         ///  <important> 
         /// <para>
         /// This action is no longer supported. Calls to update the position information should
-        /// use the <a href="https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_UpdateResourcePosition.html">UpdateResourcePosition</a>
+        /// use the <a href="https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_UpdateResourcePosition.html">UpdateResourcePosition</a>
         /// API operation instead.
         /// </para>
         ///  </important>

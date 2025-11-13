@@ -90,6 +90,12 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
                     unmarshalledObject.DeviceProfileId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Positioning", targetDepth))
+                {
+                    var unmarshaller = SidewalkPositioningUnmarshaller.Instance;
+                    unmarshalledObject.Positioning = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("PrivateKeys", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<CertificateList, CertificateListUnmarshaller>(CertificateListUnmarshaller.Instance);

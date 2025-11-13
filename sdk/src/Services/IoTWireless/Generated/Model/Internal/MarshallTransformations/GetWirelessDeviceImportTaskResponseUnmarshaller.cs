@@ -100,6 +100,12 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
                     response.PendingImportedDeviceCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Positioning", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Positioning = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Sidewalk", targetDepth))
                 {
                     var unmarshaller = SidewalkGetStartImportInfoUnmarshaller.Instance;

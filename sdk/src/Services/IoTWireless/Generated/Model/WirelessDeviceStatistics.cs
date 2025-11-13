@@ -43,6 +43,7 @@ namespace Amazon.IoTWireless.Model
         private int? _mcGroupId;
         private string _multicastDeviceStatus;
         private string _name;
+        private PositioningConfigStatus _positioning;
         private SidewalkListDevice _sidewalk;
         private WirelessDeviceType _type;
 
@@ -210,6 +211,25 @@ namespace Amazon.IoTWireless.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Positioning. 
+        /// <para>
+        /// The integration status of the Device Location feature for LoRaWAN and Amazon Sidewalk
+        /// enabled devices.
+        /// </para>
+        /// </summary>
+        public PositioningConfigStatus Positioning
+        {
+            get { return this._positioning; }
+            set { this._positioning = value; }
+        }
+
+        // Check to see if Positioning property is set
+        internal bool IsSetPositioning()
+        {
+            return this._positioning != null;
         }
 
         /// <summary>

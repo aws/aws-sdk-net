@@ -30,31 +30,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTWireless.Model
 {
     /// <summary>
-    /// Sidewalk-related information for devices in an import task that are being onboarded.
+    /// The Sidewalk-related object containing positioning information used to configure Sidewalk
+    /// devices during import.
     /// </summary>
-    public partial class SidewalkGetStartImportInfo
+    public partial class SidewalkListDevicesForImportInfo
     {
-        private List<string> _deviceCreationFileList = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private SidewalkPositioning _positioning;
-        private string _role;
-
-        /// <summary>
-        /// Gets and sets the property DeviceCreationFileList. 
-        /// <para>
-        /// List of Sidewalk devices that are added to the import task.
-        /// </para>
-        /// </summary>
-        public List<string> DeviceCreationFileList
-        {
-            get { return this._deviceCreationFileList; }
-            set { this._deviceCreationFileList = value; }
-        }
-
-        // Check to see if DeviceCreationFileList property is set
-        internal bool IsSetDeviceCreationFileList()
-        {
-            return this._deviceCreationFileList != null && (this._deviceCreationFileList.Count > 0 || !AWSConfigs.InitializeCollections); 
-        }
 
         /// <summary>
         /// Gets and sets the property Positioning. 
@@ -72,25 +53,6 @@ namespace Amazon.IoTWireless.Model
         internal bool IsSetPositioning()
         {
             return this._positioning != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Role. 
-        /// <para>
-        /// The IAM role that allows AWS IoT Wireless to access the CSV file in the S3 bucket.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Max=2048)]
-        public string Role
-        {
-            get { return this._role; }
-            set { this._role = value; }
-        }
-
-        // Check to see if Role property is set
-        internal bool IsSetRole()
-        {
-            return this._role != null;
         }
 
     }

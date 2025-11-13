@@ -120,6 +120,12 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Positioning", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Positioning = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Sidewalk", targetDepth))
                 {
                     var unmarshaller = SidewalkListDeviceUnmarshaller.Instance;

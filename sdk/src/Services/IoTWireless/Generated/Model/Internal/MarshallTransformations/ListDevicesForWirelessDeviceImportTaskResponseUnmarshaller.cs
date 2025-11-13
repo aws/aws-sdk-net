@@ -70,6 +70,18 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
                     response.NextToken = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Positioning", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Positioning = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Sidewalk", targetDepth))
+                {
+                    var unmarshaller = SidewalkListDevicesForImportInfoUnmarshaller.Instance;
+                    response.Sidewalk = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;
