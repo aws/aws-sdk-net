@@ -1,3 +1,25 @@
+### 3.7.1165.0 (2025-11-13 19:40 UTC)
+* CloudFormation (3.7.504.0)
+	* CloudFormation now supports GetHookResult API with annotations to retrieve structured compliance check results and remediation guidance for each evaluated resource, replacing the previous single-message limitation with detailed validation outcomes.
+* ControlCatalog (3.7.503.0)
+	* Added support for related control mappings with new RELATED_CONTROL mapping type in ListControlMappings API.
+* EC2 (3.7.528.0)
+	* Added support for new accelerator types ("media") and accelerator names ("L4", "L40s", "GAUDI_HL_205", "INFERENTIA2", "TRAINIUM", "TRAINIUM2", "U30") in Attributes Based Instance Type Selection for launched instance types.
+* ECR (3.7.503.0)
+	* Add Amazon ECR FIPS PrivateLink endpoint support
+* ElasticLoadBalancingV2 (3.7.504.0)
+	* QUIC and TCP_QUIC protocol support for Network Load Balancer (NLB). This capability enables customers to forward QUIC traffic to their targets with ultra-low latency while maintaining session stickiness using QUIC Connection IDs.
+* IoTWireless (3.7.503.0)
+	* Integration of Device Location with Amazon Sidewalk network for Amazon Sidewalk enabled devices
+* MediaConvert (3.7.505.0)
+	* Lowers minimum duration for black video generator. Adds support for embedding and signing C2PA content credentials in DASH and CMAF HLS outputs.
+* RDS (3.7.507.0)
+	* Updated endpoint and service metadata
+* SageMaker (3.7.519.0)
+	* Added support for minor version upgrades and AWS Identity Center integration for SageMaker Hadron Partner Apps, enabling automated version management and IdC group-based access control.
+* WorkSpacesWeb (3.7.503.0)
+	* Support for managing web content filtering for defining, tracking and regulating type of content accessed with WorkSpaces Secure Browser as part of browser settings.
+
 ### 3.7.1164.0 (2025-11-12 19:42 UTC)
 * Connect (3.7.512.0)
 	* Updated Authentication Profile APIs to add support for automatic logout on user inactivity
