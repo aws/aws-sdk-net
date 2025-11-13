@@ -1,3 +1,27 @@
+### 4.0.133.0 (2025-11-13 21:18 UTC)
+* CloudFormation (4.0.6.0)
+	* CloudFormation now supports GetHookResult API with annotations to retrieve structured compliance check results and remediation guidance for each evaluated resource, replacing the previous single-message limitation with detailed validation outcomes.
+* ControlCatalog (4.0.4.0)
+	* Added support for related control mappings with new RELATED_CONTROL mapping type in ListControlMappings API.
+* EC2 (4.0.54.0)
+	* Added support for new accelerator types ("media") and accelerator names ("L4", "L40s", "GAUDI_HL_205", "INFERENTIA2", "TRAINIUM", "TRAINIUM2", "U30") in Attributes Based Instance Type Selection for launched instance types.
+* ECR (4.0.6.0)
+	* Add Amazon ECR FIPS PrivateLink endpoint support
+* ElasticLoadBalancingV2 (4.0.5.0)
+	* QUIC and TCP_QUIC protocol support for Network Load Balancer (NLB). This capability enables customers to forward QUIC traffic to their targets with ultra-low latency while maintaining session stickiness using QUIC Connection IDs.
+* IoTWireless (4.0.5.0)
+	* Integration of Device Location with Amazon Sidewalk network for Amazon Sidewalk enabled devices
+* MediaConvert (4.0.11.0)
+	* Lowers minimum duration for black video generator. Adds support for embedding and signing C2PA content credentials in DASH and CMAF HLS outputs.
+* RDS (4.0.11.0)
+	* Updated endpoint and service metadata
+* S3 (4.0.11.3)
+	* Fix the service name sent as metrics for s3 from AmazonS3 to Amazon.S3 to be consistent with all other services. 
+* SageMaker (4.0.33.0)
+	* Added support for minor version upgrades and AWS Identity Center integration for SageMaker Hadron Partner Apps, enabling automated version management and IdC group-based access control.
+* WorkSpacesWeb (4.0.4.0)
+	* Support for managing web content filtering for defining, tracking and regulating type of content accessed with WorkSpaces Secure Browser as part of browser settings.
+
 ### 4.0.132.0 (2025-11-12 19:39 UTC)
 * Connect (4.0.16.0)
 	* Updated Authentication Profile APIs to add support for automatic logout on user inactivity
