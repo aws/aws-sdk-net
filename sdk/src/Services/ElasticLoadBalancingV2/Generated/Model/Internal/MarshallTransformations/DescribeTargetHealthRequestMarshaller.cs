@@ -89,6 +89,10 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("Targets" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Port", StringUtils.FromInt(publicRequestlistValue.Port));
                         }
+                        if(publicRequestlistValue.IsSetQuicServerId())
+                        {
+                            request.Parameters.Add("Targets" + "." + "member" + "." + publicRequestlistValueIndex + "." + "QuicServerId", StringUtils.FromString(publicRequestlistValue.QuicServerId));
+                        }
                         publicRequestlistValueIndex++;
                     }
                 }

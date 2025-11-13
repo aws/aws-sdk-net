@@ -845,9 +845,17 @@ namespace Amazon.ElasticLoadBalancingV2
         /// </summary>
         public static readonly ProtocolEnum HTTPS = new ProtocolEnum("HTTPS");
         /// <summary>
+        /// Constant QUIC for ProtocolEnum
+        /// </summary>
+        public static readonly ProtocolEnum QUIC = new ProtocolEnum("QUIC");
+        /// <summary>
         /// Constant TCP for ProtocolEnum
         /// </summary>
         public static readonly ProtocolEnum TCP = new ProtocolEnum("TCP");
+        /// <summary>
+        /// Constant TCP_QUIC for ProtocolEnum
+        /// </summary>
+        public static readonly ProtocolEnum TCP_QUIC = new ProtocolEnum("TCP_QUIC");
         /// <summary>
         /// Constant TCP_UDP for ProtocolEnum
         /// </summary>
