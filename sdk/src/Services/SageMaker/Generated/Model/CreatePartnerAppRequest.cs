@@ -38,6 +38,7 @@ namespace Amazon.SageMaker.Model
         private PartnerAppConfig _applicationConfig;
         private PartnerAppAuthType _authType;
         private string _clientToken;
+        private bool? _enableAutoMinorVersionUpgrade;
         private bool? _enableIamSessionBasedIdentity;
         private string _executionRoleArn;
         private string _kmsKeyId;
@@ -101,6 +102,26 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetClientToken()
         {
             return this._clientToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnableAutoMinorVersionUpgrade. 
+        /// <para>
+        /// When set to <c>TRUE</c>, the SageMaker Partner AI App is automatically upgraded to
+        /// the latest minor version during the next scheduled maintenance window, if one is available.
+        /// Default is <c>FALSE</c>.
+        /// </para>
+        /// </summary>
+        public bool EnableAutoMinorVersionUpgrade
+        {
+            get { return this._enableAutoMinorVersionUpgrade.GetValueOrDefault(); }
+            set { this._enableAutoMinorVersionUpgrade = value; }
+        }
+
+        // Check to see if EnableAutoMinorVersionUpgrade property is set
+        internal bool IsSetEnableAutoMinorVersionUpgrade()
+        {
+            return this._enableAutoMinorVersionUpgrade.HasValue; 
         }
 
         /// <summary>

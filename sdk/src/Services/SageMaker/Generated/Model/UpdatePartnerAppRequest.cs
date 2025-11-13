@@ -36,8 +36,10 @@ namespace Amazon.SageMaker.Model
     public partial class UpdatePartnerAppRequest : AmazonSageMakerRequest
     {
         private PartnerAppConfig _applicationConfig;
+        private string _appVersion;
         private string _arn;
         private string _clientToken;
+        private bool? _enableAutoMinorVersionUpgrade;
         private bool? _enableIamSessionBasedIdentity;
         private PartnerAppMaintenanceConfig _maintenanceConfig;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
@@ -59,6 +61,27 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetApplicationConfig()
         {
             return this._applicationConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AppVersion. 
+        /// <para>
+        /// The semantic version to upgrade the SageMaker Partner AI App to. Must be the same
+        /// semantic version returned in the <c>AvailableUpgrade</c> field from <c>DescribePartnerApp</c>.
+        /// Version skipping and downgrades are not supported.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=64)]
+        public string AppVersion
+        {
+            get { return this._appVersion; }
+            set { this._appVersion = value; }
+        }
+
+        // Check to see if AppVersion property is set
+        internal bool IsSetAppVersion()
+        {
+            return this._appVersion != null;
         }
 
         /// <summary>
@@ -97,6 +120,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetClientToken()
         {
             return this._clientToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnableAutoMinorVersionUpgrade. 
+        /// <para>
+        /// When set to <c>TRUE</c>, the SageMaker Partner AI App is automatically upgraded to
+        /// the latest minor version during the next scheduled maintenance window, if one is available.
+        /// </para>
+        /// </summary>
+        public bool EnableAutoMinorVersionUpgrade
+        {
+            get { return this._enableAutoMinorVersionUpgrade.GetValueOrDefault(); }
+            set { this._enableAutoMinorVersionUpgrade = value; }
+        }
+
+        // Check to see if EnableAutoMinorVersionUpgrade property is set
+        internal bool IsSetEnableAutoMinorVersionUpgrade()
+        {
+            return this._enableAutoMinorVersionUpgrade.HasValue; 
         }
 
         /// <summary>

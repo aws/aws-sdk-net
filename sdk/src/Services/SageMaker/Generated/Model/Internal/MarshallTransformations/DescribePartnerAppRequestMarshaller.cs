@@ -75,6 +75,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Arn);
                 }
 
+                if(publicRequest.IsSetIncludeAvailableUpgrade())
+                {
+                    context.Writer.WritePropertyName("IncludeAvailableUpgrade");
+                    context.Writer.Write(publicRequest.IncludeAvailableUpgrade);
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

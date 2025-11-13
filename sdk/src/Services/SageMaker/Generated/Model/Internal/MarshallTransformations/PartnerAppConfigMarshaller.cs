@@ -73,6 +73,33 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetAssignedGroupPatterns())
+            {
+                context.Writer.WritePropertyName("AssignedGroupPatterns");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectAssignedGroupPatternsListValue in requestObject.AssignedGroupPatterns)
+                {
+                        context.Writer.Write(requestObjectAssignedGroupPatternsListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetRoleGroupAssignments())
+            {
+                context.Writer.WritePropertyName("RoleGroupAssignments");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectRoleGroupAssignmentsListValue in requestObject.RoleGroupAssignments)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = RoleGroupAssignmentMarshaller.Instance;
+                    marshaller.Marshall(requestObjectRoleGroupAssignmentsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
         }
 
         /// <summary>

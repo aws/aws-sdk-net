@@ -70,6 +70,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     response.AuthType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("AvailableUpgrade", targetDepth))
+                {
+                    var unmarshaller = AvailableUpgradeUnmarshaller.Instance;
+                    response.AvailableUpgrade = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("BaseUrl", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -80,6 +86,18 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
                     response.CreationTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("CurrentVersionEolDate", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    response.CurrentVersionEolDate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("EnableAutoMinorVersionUpgrade", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    response.EnableAutoMinorVersionUpgrade = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("EnableIamSessionBasedIdentity", targetDepth))

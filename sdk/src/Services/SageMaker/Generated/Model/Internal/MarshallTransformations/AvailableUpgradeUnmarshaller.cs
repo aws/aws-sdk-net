@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for PartnerAppConfig Object
+    /// Response Unmarshaller for AvailableUpgrade Object
     /// </summary>  
-    public class PartnerAppConfigUnmarshaller : IUnmarshaller<PartnerAppConfig, XmlUnmarshallerContext>, IUnmarshaller<PartnerAppConfig, JsonUnmarshallerContext>
+    public class AvailableUpgradeUnmarshaller : IUnmarshaller<AvailableUpgrade, XmlUnmarshallerContext>, IUnmarshaller<AvailableUpgrade, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        PartnerAppConfig IUnmarshaller<PartnerAppConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AvailableUpgrade IUnmarshaller<AvailableUpgrade, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public PartnerAppConfig Unmarshall(JsonUnmarshallerContext context)
+        public AvailableUpgrade Unmarshall(JsonUnmarshallerContext context)
         {
-            PartnerAppConfig unmarshalledObject = new PartnerAppConfig();
+            AvailableUpgrade unmarshalledObject = new AvailableUpgrade();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,28 +66,16 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("AdminUsers", targetDepth))
+                if (context.TestExpression("ReleaseNotes", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.AdminUsers = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ReleaseNotes = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Arguments", targetDepth))
+                if (context.TestExpression("Version", targetDepth))
                 {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    unmarshalledObject.Arguments = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("AssignedGroupPatterns", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.AssignedGroupPatterns = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("RoleGroupAssignments", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<RoleGroupAssignment, RoleGroupAssignmentUnmarshaller>(RoleGroupAssignmentUnmarshaller.Instance);
-                    unmarshalledObject.RoleGroupAssignments = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Version = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -95,12 +83,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         }
 
 
-        private static PartnerAppConfigUnmarshaller _instance = new PartnerAppConfigUnmarshaller();        
+        private static AvailableUpgradeUnmarshaller _instance = new AvailableUpgradeUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static PartnerAppConfigUnmarshaller Instance
+        public static AvailableUpgradeUnmarshaller Instance
         {
             get
             {
