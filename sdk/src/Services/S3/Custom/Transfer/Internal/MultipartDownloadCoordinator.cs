@@ -72,6 +72,13 @@ namespace Amazon.S3.Transfer.Internal
             
             _config.Validate();
             _httpConcurrencySlots = new SemaphoreSlim(_config.ConcurrentServiceRequests);
+            
+            // [DIAGNOSTIC] Log actual configuration being used
+            Logger.InfoFormat("[CONFIG-VERIFY] MultipartDownloadCoordinator initialized:");
+            Logger.InfoFormat("[CONFIG-VERIFY]   ConcurrentServiceRequests = {0}", _config.ConcurrentServiceRequests);
+            Logger.InfoFormat("[CONFIG-VERIFY]   BufferSize = {0} ({1} KB)", _config.BufferSize, _config.BufferSize / 1024);
+            Logger.InfoFormat("[CONFIG-VERIFY]   TargetPartSizeBytes = {0} ({1} MB)", _config.TargetPartSizeBytes, _config.TargetPartSizeBytes / 1024 / 1024);
+            Logger.InfoFormat("[CONFIG-VERIFY]   HttpConcurrencySemaphore initialized with {0} slots", _httpConcurrencySlots.CurrentCount);
         }
 
         public StreamState CurrentState 
@@ -227,14 +234,16 @@ namespace Amazon.S3.Transfer.Internal
             {
                 // Limit HTTP concurrency
                 var slotWaitTimer = Stopwatch.StartNew();
-                Logger.InfoFormat("[CONCURRENCY] Part {0} - Waiting for HTTP slot (TaskId={1})", 
-                    partNumber, taskId);
+                var availableBefore = _httpConcurrencySlots.CurrentCount;
+                Logger.InfoFormat("[CONCURRENCY] Part {0} - Waiting for HTTP slot (TaskId={1}, AvailableSlots={2}/{3})", 
+                    partNumber, taskId, availableBefore, _config.ConcurrentServiceRequests);
                 
                 await _httpConcurrencySlots.WaitAsync(cancellationToken).ConfigureAwait(false);
                 slotWaitTimer.Stop();
+                var availableAfter = _httpConcurrencySlots.CurrentCount;
                 
-                Logger.InfoFormat("[CONCURRENCY] Part {0} - Acquired HTTP slot after {1}ms (TaskId={2})", 
-                    partNumber, slotWaitTimer.ElapsedMilliseconds, taskId);
+                Logger.InfoFormat("[CONCURRENCY] Part {0} - Acquired HTTP slot after {1}ms (TaskId={2}, AvailableNow={3}/{4})", 
+                    partNumber, slotWaitTimer.ElapsedMilliseconds, taskId, availableAfter, _config.ConcurrentServiceRequests);
                 
                 var httpTimer = Stopwatch.StartNew();
                 var httpStartTime = AWSSDKUtils.CorrectedUtcNow;
@@ -290,8 +299,9 @@ namespace Amazon.S3.Transfer.Internal
                 finally
                 {
                     _httpConcurrencySlots.Release();
-                    Logger.InfoFormat("[CONCURRENCY] Part {0} - Released HTTP slot (TaskId={1})", 
-                        partNumber, taskId);
+                    var availableAfterRelease = _httpConcurrencySlots.CurrentCount;
+                    Logger.InfoFormat("[CONCURRENCY] Part {0} - Released HTTP slot (TaskId={1}, AvailableNow={2}/{3})", 
+                        partNumber, taskId, availableAfterRelease, _config.ConcurrentServiceRequests);
                 }
                 
                 // Always buffer the part
