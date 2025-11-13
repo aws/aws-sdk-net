@@ -98,7 +98,7 @@ namespace Amazon.CloudFormation.Model
         ///  
         /// <para>
         /// Some stack templates might include resources that can affect permissions in your Amazon
-        /// Web Services account; for example, by creating new IAM users. For those stacks, you
+        /// Web Services account, for example, by creating new IAM users. For those stacks, you
         /// must explicitly acknowledge this by specifying one of these capabilities.
         /// </para>
         ///  
@@ -473,8 +473,8 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property ResourceTypes. 
         /// <para>
-        /// The template resource types that you have permissions to work with if you execute
-        /// this change set, such as <c>AWS::EC2::Instance</c>, <c>AWS::EC2::*</c>, or <c>Custom::MyCustomInstance</c>.
+        /// Specifies which resource types you can work with, such as <c>AWS::EC2::Instance</c>
+        /// or <c>Custom::MyCustomInstance</c>.
         /// </para>
         ///  
         /// <para>
@@ -482,7 +482,8 @@ namespace Amazon.CloudFormation.Model
         /// the stack update fails. By default, CloudFormation grants permissions to all resource
         /// types. IAM uses this parameter for condition keys in IAM policies for CloudFormation.
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/control-access-with-iam.html">Control
-        /// access with Identity and Access Management</a> in the <i>CloudFormation User Guide</i>.
+        /// CloudFormation access with Identity and Access Management</a> in the <i>CloudFormation
+        /// User Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -600,7 +601,8 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// Conditional: You must specify only <c>TemplateBody</c> or <c>TemplateURL</c>.
+        /// Conditional: You must specify only one of the following parameters: <c>TemplateBody</c>,
+        /// <c>TemplateURL</c>, or set the <c>UsePreviousTemplate</c> to <c>true</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -627,7 +629,8 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// Conditional: You must specify only <c>TemplateBody</c> or <c>TemplateURL</c>.
+        /// Conditional: You must specify only one of the following parameters: <c>TemplateBody</c>,
+        /// <c>TemplateURL</c>, or set the <c>UsePreviousTemplate</c> to <c>true</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=5120)]
@@ -648,6 +651,19 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         /// Whether to reuse the template that's associated with the stack to create the change
         /// set.
+        /// </para>
+        ///  
+        /// <para>
+        /// When using templates with the <c>AWS::LanguageExtensions</c> transform, provide the
+        /// template instead of using <c>UsePreviousTemplate</c> to ensure new parameter values
+        /// and Systems Manager parameter updates are applied correctly. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/transform-aws-languageextensions.html">AWS::LanguageExtensions
+        /// transform</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Conditional: You must specify only one of the following parameters: <c>TemplateBody</c>,
+        /// <c>TemplateURL</c>, or set the <c>UsePreviousTemplate</c> to <c>true</c>.
         /// </para>
         /// </summary>
         public bool UsePreviousTemplate

@@ -30,23 +30,42 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
-    /// A <c>ListHookResults</c> call returns a summary of a Hook invocation.
+    /// This is the response object from the GetHookResult operation.
     /// </summary>
-    public partial class HookResultSummary
+    public partial class GetHookResultResponse : AmazonWebServiceResponse
     {
+        private List<Annotation> _annotations = AWSConfigs.InitializeCollections ? new List<Annotation>() : null;
         private HookFailureMode _failureMode;
-        private string _hookExecutionTarget;
         private string _hookResultId;
         private string _hookStatusReason;
         private HookInvocationPoint _invocationPoint;
         private DateTime? _invokedAt;
+        private string _originalTypeName;
         private HookStatus _status;
-        private string _targetId;
-        private ListHookResultsTargetType _targetType;
+        private HookTarget _target;
         private string _typeArn;
         private string _typeConfigurationVersionId;
         private string _typeName;
         private string _typeVersionId;
+
+        /// <summary>
+        /// Gets and sets the property Annotations. 
+        /// <para>
+        /// A list of objects with additional information and guidance that can help you resolve
+        /// a failed Hook invocation.
+        /// </para>
+        /// </summary>
+        public List<Annotation> Annotations
+        {
+            get { return this._annotations; }
+            set { this._annotations = value; }
+        }
+
+        // Check to see if Annotations property is set
+        internal bool IsSetAnnotations()
+        {
+            return this._annotations != null && (this._annotations.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property FailureMode. 
@@ -67,34 +86,9 @@ namespace Amazon.CloudFormation.Model
         }
 
         /// <summary>
-        /// Gets and sets the property HookExecutionTarget. 
-        /// <para>
-        /// The Amazon Resource Name (ARN) of the target stack or request token of the Cloud Control
-        /// API operation.
-        /// </para>
-        ///  
-        /// <para>
-        /// Only shown in responses when the request does not specify <c>TargetType</c> and <c>TargetId</c>
-        /// filters.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=1600)]
-        public string HookExecutionTarget
-        {
-            get { return this._hookExecutionTarget; }
-            set { this._hookExecutionTarget = value; }
-        }
-
-        // Check to see if HookExecutionTarget property is set
-        internal bool IsSetHookExecutionTarget()
-        {
-            return this._hookExecutionTarget != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property HookResultId. 
         /// <para>
-        /// The unique identifier for this Hook invocation result.
+        /// The unique identifier of the Hook result.
         /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=36)]
@@ -113,8 +107,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property HookStatusReason. 
         /// <para>
-        /// A description of the Hook results status. For example, if the Hook result is in a
-        /// failed state, this may contain additional information for the failed state.
+        /// A message that provides additional details about the Hook invocation status.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -153,11 +146,6 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         /// The timestamp when the Hook was invoked.
         /// </para>
-        ///  
-        /// <para>
-        /// Only shown in responses when the request does not specify <c>TargetType</c> and <c>TargetId</c>
-        /// filters.
-        /// </para>
         /// </summary>
         public DateTime InvokedAt
         {
@@ -169,6 +157,31 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetInvokedAt()
         {
             return this._invokedAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OriginalTypeName. 
+        /// <para>
+        /// The original public type name of the Hook when an alias is used.
+        /// </para>
+        ///  
+        /// <para>
+        /// For example, if you activate <c>AWS::Hooks::GuardHook</c> with alias <c>MyCompany::Custom::GuardHook</c>,
+        /// then <c>TypeName</c> will be <c>MyCompany::Custom::GuardHook</c> and <c>OriginalTypeName</c>
+        /// will be <c>AWS::Hooks::GuardHook</c>. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=10, Max=196)]
+        public string OriginalTypeName
+        {
+            get { return this._originalTypeName; }
+            set { this._originalTypeName = value; }
+        }
+
+        // Check to see if OriginalTypeName property is set
+        internal bool IsSetOriginalTypeName()
+        {
+            return this._originalTypeName != null;
         }
 
         /// <summary>
@@ -207,46 +220,27 @@ namespace Amazon.CloudFormation.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TargetId. 
+        /// Gets and sets the property Target. 
         /// <para>
-        /// The unique identifier of the Hook invocation target.
+        /// Information about the target of the Hook invocation.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1600)]
-        public string TargetId
+        public HookTarget Target
         {
-            get { return this._targetId; }
-            set { this._targetId = value; }
+            get { return this._target; }
+            set { this._target = value; }
         }
 
-        // Check to see if TargetId property is set
-        internal bool IsSetTargetId()
+        // Check to see if Target property is set
+        internal bool IsSetTarget()
         {
-            return this._targetId != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property TargetType. 
-        /// <para>
-        /// The target type that the Hook was invoked against.
-        /// </para>
-        /// </summary>
-        public ListHookResultsTargetType TargetType
-        {
-            get { return this._targetType; }
-            set { this._targetType = value; }
-        }
-
-        // Check to see if TargetType property is set
-        internal bool IsSetTargetType()
-        {
-            return this._targetType != null;
+            return this._target != null;
         }
 
         /// <summary>
         /// Gets and sets the property TypeArn. 
         /// <para>
-        /// The ARN of the Hook that was invoked.
+        /// The Amazon Resource Name (ARN) of the Hook.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]
@@ -265,7 +259,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property TypeConfigurationVersionId. 
         /// <para>
-        /// The version of the Hook configuration.
+        /// The version identifier of the Hook configuration data that was used during invocation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -303,7 +297,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property TypeVersionId. 
         /// <para>
-        /// The version of the Hook that was invoked.
+        /// The version identifier of the Hook that was invoked.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

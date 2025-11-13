@@ -30,30 +30,32 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
-    /// The output for the <a>GetStackPolicy</a> action.
+    /// Container for the parameters to the GetHookResult operation.
+    /// Retrieves detailed information and remediation guidance for a Hook invocation result.
     /// </summary>
-    public partial class GetStackPolicyResponse : AmazonWebServiceResponse
+    public partial class GetHookResultRequest : AmazonCloudFormationRequest
     {
-        private string _stackPolicyBody;
+        private string _hookResultId;
 
         /// <summary>
-        /// Gets and sets the property StackPolicyBody. 
+        /// Gets and sets the property HookResultId. 
         /// <para>
-        /// Structure that contains the stack policy body. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html">Prevent
-        /// updates to stack resources</a> in the <i>CloudFormation User Guide</i>.
+        /// The unique identifier (ID) of the Hook invocation result that you want details about.
+        /// You can get the ID from the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListHookResults.html">ListHookResults</a>
+        /// operation.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=16384)]
-        public string StackPolicyBody
+        [AWSProperty(Min=36, Max=36)]
+        public string HookResultId
         {
-            get { return this._stackPolicyBody; }
-            set { this._stackPolicyBody = value; }
+            get { return this._hookResultId; }
+            set { this._hookResultId = value; }
         }
 
-        // Check to see if StackPolicyBody property is set
-        internal bool IsSetStackPolicyBody()
+        // Check to see if HookResultId property is set
+        internal bool IsSetHookResultId()
         {
-            return this._stackPolicyBody != null;
+            return this._hookResultId != null;
         }
 
     }

@@ -129,11 +129,8 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If the previous paginated request didn't return all of the remaining results, the
-        /// response object's <c>NextToken</c> parameter value is set to a token. To retrieve
-        /// the next set of results, call this action again and assign that token to the request
-        /// object's <c>NextToken</c> parameter. If there are no remaining results, the previous
-        /// response object's <c>NextToken</c> parameter is set to <c>null</c>.
+        /// The token for the next set of items to return. (You received this token from a previous
+        /// call.)
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
