@@ -72,6 +72,18 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.AudioTrackType);
             }
 
+            if(requestObject.IsSetC2paManifest())
+            {
+                context.Writer.WritePropertyName("c2paManifest");
+                context.Writer.Write(requestObject.C2paManifest);
+            }
+
+            if(requestObject.IsSetCertificateSecret())
+            {
+                context.Writer.WritePropertyName("certificateSecret");
+                context.Writer.Write(requestObject.CertificateSecret);
+            }
+
             if(requestObject.IsSetDescriptiveVideoServiceFlag())
             {
                 context.Writer.WritePropertyName("descriptiveVideoServiceFlag");
@@ -106,6 +118,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("scte35Source");
                 context.Writer.Write(requestObject.Scte35Source);
+            }
+
+            if(requestObject.IsSetSigningKmsKey())
+            {
+                context.Writer.WritePropertyName("signingKmsKey");
+                context.Writer.Write(requestObject.SigningKmsKey);
             }
 
             if(requestObject.IsSetTimedMetadata())

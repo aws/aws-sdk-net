@@ -48,6 +48,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetFrameControl())
+            {
+                context.Writer.WritePropertyName("frameControl");
+                context.Writer.Write(requestObject.FrameControl);
+            }
+
             if(requestObject.IsSetVideoSelectorMode())
             {
                 context.Writer.WritePropertyName("videoSelectorMode");
