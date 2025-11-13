@@ -21,6 +21,7 @@
  */
 using System;
 using System.Collections.Concurrent;
+using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Threading;
@@ -80,7 +81,15 @@ namespace Amazon.S3.Transfer.Internal
         public async Task WaitForBufferSpaceAsync(CancellationToken cancellationToken)
         {
             ThrowIfDisposed();
+            var waitTimer = Stopwatch.StartNew();
             await _bufferSpaceAvailable.WaitAsync(cancellationToken).ConfigureAwait(false);
+            waitTimer.Stop();
+            
+            if (waitTimer.ElapsedMilliseconds > 0)
+            {
+                Logger.InfoFormat("[PERF] Buffer Space Wait - Duration: {0}ms (slots available after wait)", 
+                    waitTimer.ElapsedMilliseconds);
+            }
         }
 
         public Task AddDataSourceAsync(IPartDataSource dataSource, CancellationToken cancellationToken)
@@ -140,6 +149,7 @@ namespace Amazon.S3.Transfer.Internal
             if (offset + count > buffer.Length)
                 throw new ArgumentException("Offset and count exceed buffer bounds");
 
+            var overallTimer = Stopwatch.StartNew();
             Logger.DebugFormat("[PartBufferManager] ReadPartAsync called for part {0} - offset={1}, count={2}, nextExpected={3}", 
                 requestedPartNumber, offset, count, _nextExpectedPartNumber);
 
@@ -157,6 +167,8 @@ namespace Amazon.S3.Transfer.Internal
             
             // CROSS-PART BOUNDARY READING - Fill buffer completely across multiple parts
             int totalBytesRead = 0;
+            int partsConsumed = 0;
+            var totalWaitTime = TimeSpan.Zero;
             
             Logger.DebugFormat("[PartBufferManager] Starting cross-part boundary read - filling {0} bytes across multiple parts if needed", count);
             
@@ -169,6 +181,7 @@ namespace Amazon.S3.Transfer.Internal
 
                 // Wait for the current part to become available
                 int waitIterations = 0;
+                var partWaitTimer = Stopwatch.StartNew();
                 while (!_partDataSources.ContainsKey(currentPartNumber))
                 {
                     waitIterations++;
@@ -180,6 +193,7 @@ namespace Amazon.S3.Transfer.Internal
                     {
                         if (_downloadComplete)
                         {
+                            partWaitTimer.Stop();
                             Logger.DebugFormat("[PartBufferManager] Part {0} - download marked complete, exception={1}", 
                                 currentPartNumber, _downloadException?.Message ?? "none");
 
@@ -187,6 +201,9 @@ namespace Amazon.S3.Transfer.Internal
                                 throw new InvalidOperationException("Multipart download failed", _downloadException);
                             
                             // True EOF - return what we've read so far
+                            overallTimer.Stop();
+                            Logger.InfoFormat("[PERF] Cross-Part Read Complete - Parts: {0}, TotalBytes: {1}, Duration: {2}ms, WaitTime: {3}ms", 
+                                partsConsumed, totalBytesRead, overallTimer.ElapsedMilliseconds, totalWaitTime.TotalMilliseconds);
                             Logger.DebugFormat("[PartBufferManager] Cross-part read - TRUE EOF reached, returning {0} bytes", totalBytesRead);
                             return totalBytesRead;
                         }
@@ -196,6 +213,14 @@ namespace Amazon.S3.Transfer.Internal
                     Logger.DebugFormat("[PartBufferManager] Part {0} - waiting for part to become available...", currentPartNumber);
                     await Task.Run(() => _partAvailable.WaitOne(), cancellationToken).ConfigureAwait(false);
                     Logger.DebugFormat("[PartBufferManager] Part {0} - wait completed, rechecking availability", currentPartNumber);
+                }
+                partWaitTimer.Stop();
+                totalWaitTime += partWaitTimer.Elapsed;
+                
+                if (waitIterations > 0)
+                {
+                    Logger.InfoFormat("[PERF] Part {0} Availability Wait - Iterations: {1}, Duration: {2}ms", 
+                        currentPartNumber, waitIterations, partWaitTimer.ElapsedMilliseconds);
                 }
 
                 Logger.DebugFormat("[PartBufferManager] Part {0} - found in collection, retrieving data source", currentPartNumber);
@@ -236,10 +261,14 @@ namespace Amazon.S3.Transfer.Internal
                     }
                     
                     // Read from this part into the remaining buffer space
+                    var partReadTimer = Stopwatch.StartNew();
                     var partBytesRead = await dataSource.ReadAsync(buffer, currentOffset, remainingCount, cancellationToken).ConfigureAwait(false);
+                    partReadTimer.Stop();
                     
                     Logger.DebugFormat("[PartBufferManager] Part {0} - dataSource.ReadAsync returned {1} bytes (requested {2}), IsComplete={3}", 
                         currentPartNumber, partBytesRead, remainingCount, dataSource.IsComplete);
+                    Logger.InfoFormat("[PERF] Part {0} Data Source Read - Duration: {1}ms, Bytes: {2}", 
+                        currentPartNumber, partReadTimer.ElapsedMilliseconds, partBytesRead);
                     
                     // Log buffer state AFTER reading from data source
                     if (partBytesRead > 0)
@@ -271,6 +300,7 @@ namespace Amazon.S3.Transfer.Internal
                     
                     // Accumulate the bytes read
                     totalBytesRead += partBytesRead;
+                    partsConsumed++;
                     
                     Logger.DebugFormat("[PartBufferManager] Part {0} - Accumulated totalBytesRead={1}/{2}", 
                         currentPartNumber, totalBytesRead, count);
@@ -339,6 +369,9 @@ namespace Amazon.S3.Transfer.Internal
                 }
             }
             
+            overallTimer.Stop();
+            Logger.InfoFormat("[PERF] Cross-Part Read Complete - Parts: {0}, TotalBytes: {1}, Requested: {2}, Duration: {3}ms, WaitTime: {4}ms", 
+                partsConsumed, totalBytesRead, count, overallTimer.ElapsedMilliseconds, totalWaitTime.TotalMilliseconds);
             Logger.DebugFormat("[PartBufferManager] Cross-part read completed - returning {0} bytes (requested {1})", 
                 totalBytesRead, count);
             

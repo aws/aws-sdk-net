@@ -20,10 +20,12 @@
  *
  */
 using System;
+using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.S3.Transfer.Internal
 {
@@ -42,6 +44,14 @@ namespace Amazon.S3.Transfer.Internal
         private IStreamHandler _streamHandler;
         private bool _initialized = false;
         private bool _disposed = false;
+
+        private static Logger Logger
+        {
+            get
+            {
+                return Logger.GetLogger(typeof(TransferUtility));
+            }
+        }
 
         /// <summary>
         /// Creates a new BufferedMultipartStream with dependency injection.
@@ -100,6 +110,9 @@ namespace Amazon.S3.Transfer.Internal
             if (_initialized)
                 throw new InvalidOperationException("Stream has already been initialized");
 
+            var initTimer = Stopwatch.StartNew();
+            Logger.InfoFormat("[PERF] Stream Initialization Start");
+
             try
             {
                 // Step 1: Discover download strategy (single-part vs multipart)
@@ -111,21 +124,33 @@ namespace Amazon.S3.Transfer.Internal
                 {
                     // Single part - use direct passthrough handler
                     _streamHandler = new SinglePartStreamHandler(discoveryResult.SinglePartResponse.ResponseStream);
+                    Logger.InfoFormat("[PERF] Stream Handler - Type: SinglePart");
                 }
                 else
                 {
                     // Multipart - use coordinated handler with buffer manager
                     _streamHandler = new MultipartStreamHandler(_partBufferManager);
+                    Logger.InfoFormat("[PERF] Stream Handler - Type: Multipart");
                     
                     // Step 3: Start concurrent downloads for multipart
+                    var downloadsTimer = Stopwatch.StartNew();
                     await _downloadCoordinator.StartDownloadsAsync(discoveryResult, _partBufferManager, cancellationToken)
                         .ConfigureAwait(false);
+                    downloadsTimer.Stop();
+                    Logger.InfoFormat("[PERF] Start Downloads - Duration: {0}ms", downloadsTimer.ElapsedMilliseconds);
                 }
                 
                 _initialized = true;
+                initTimer.Stop();
+                Logger.InfoFormat("[PERF] Stream Initialization Complete - Total: {0}ms, Type: {1}", 
+                    initTimer.ElapsedMilliseconds, discoveryResult.IsSinglePart ? "SinglePart" : "Multipart");
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                initTimer.Stop();
+                Logger.InfoFormat("[PERF] Stream Initialization Failed - Duration: {0}ms, Error: {1}", 
+                    initTimer.ElapsedMilliseconds, ex.Message);
+                
                 // Clean up on initialization failure
                 _streamHandler?.Dispose();
                 _streamHandler = null;
@@ -150,9 +175,19 @@ namespace Amazon.S3.Transfer.Internal
             if (offset + count > buffer.Length)
                 throw new ArgumentException("Offset and count exceed buffer bounds");
 
+            var readTimer = Stopwatch.StartNew();
             // Delegate to the appropriate stream handler (single-part or multipart)
-            return await _streamHandler.ReadAsync(buffer, offset, count, cancellationToken)
+            var bytesRead = await _streamHandler.ReadAsync(buffer, offset, count, cancellationToken)
                 .ConfigureAwait(false);
+            readTimer.Stop();
+            
+            if (count > 0 && readTimer.ElapsedMilliseconds > 5) // Only log if significant time
+            {
+                Logger.InfoFormat("[PERF] Stream Read - Requested: {0}, Received: {1}, Duration: {2}ms", 
+                    count, bytesRead, readTimer.ElapsedMilliseconds);
+            }
+            
+            return bytesRead;
         }
 
 
