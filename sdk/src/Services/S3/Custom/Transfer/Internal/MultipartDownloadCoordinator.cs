@@ -24,6 +24,7 @@ using System.Buffers;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.IO;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.S3.Model;
@@ -203,7 +204,6 @@ namespace Amazon.S3.Transfer.Internal
             await partBufferManager.WaitForBufferSpaceAsync(cancellationToken).ConfigureAwait(false);
             
             GetObjectResponse response = null;
-            bool ownershipTransferred = false; // Track if response ownership was transferred
             
             try
             {
@@ -254,36 +254,11 @@ namespace Amazon.S3.Transfer.Internal
                     _httpConcurrencySlots.Release();
                 }
                 
-                // Try direct streaming first if this is the expected part
-                if (partNumber == partBufferManager.NextExpectedPartNumber)
-                {
-                    Logger.DebugFormat("[DEBUG] Part {0} matches NextExpectedPartNumber, using direct streaming path", partNumber);
-                    
-                    // Create StreamDataSource with ownership transfer - this is the safer approach
-                    var streamSource = new StreamDataSource(
-                        partNumber: partNumber, 
-                        response: response,  // Transfer ownership here
-                        objectSize: objectSize,
-                        progressReporter: ReportProgress
-                    );
-                    
-                    ownershipTransferred = true; // Mark that ownership has been transferred
-                    
-                    await partBufferManager.AddDataSourceAsync(streamSource, cancellationToken).ConfigureAwait(false);
-                    
-                    // Direct streaming registered successfully - return early
-                    return;
-                }
-                else
-                {
-                    Logger.DebugFormat("[DEBUG] Part {0} does not match NextExpectedPartNumber ({1}), using buffered path", 
-                        partNumber, partBufferManager.NextExpectedPartNumber);
-                }
-                
-                // Fallback to buffering approach
+                // Always buffer the part
+                Logger.DebugFormat("[DEBUG] Part {0} - buffering response", partNumber);
                 var downloadedPart = await BufferPartFromResponseAsync(partNumber, response, cancellationToken).ConfigureAwait(false);
                 
-                // Add the downloaded part to the buffer manager (smart signaling handled internally)
+                // Add the downloaded part to the buffer manager
                 await partBufferManager.AddBufferAsync(downloadedPart, cancellationToken).ConfigureAwait(false);
                 
                 // Report progress
@@ -296,11 +271,8 @@ namespace Amazon.S3.Transfer.Internal
             }
             finally
             {
-                // Only dispose if ownership wasn't transferred to StreamDataSource
-                if (!ownershipTransferred)
-                {
-                    response?.Dispose();
-                }
+                // Always dispose the response since we never transfer ownership
+                response?.Dispose();
             }
         }
 
@@ -453,28 +425,22 @@ namespace Amazon.S3.Transfer.Internal
             {
                 // Create strategy-specific request
                 GetObjectRequest getObjectRequest;
-                int expectedPartSize;
                 
                 if (_request.MultipartDownloadType == MultipartDownloadType.PART)
                 {
                     // PART strategy: Use part number from original upload
                     getObjectRequest = CreateGetObjectRequest();
                     getObjectRequest.PartNumber = partNumber;
-                    
-                    // For PART strategy, we don't know the exact size ahead of time
-                    expectedPartSize = (int)_config.BufferSize;
                 }
                 else
                 {
                     // RANGE strategy: Use calculated byte range
                     var (startByte, endByte) = CalculatePartRange(partNumber, objectSize);
-                    expectedPartSize = (int)(endByte - startByte + 1);
                     
                     getObjectRequest = CreateGetObjectRequest();
                     getObjectRequest.ByteRange = new ByteRange(startByte, endByte);
                 }
                 
-                partBuffer = ArrayPool<byte>.Shared.Rent(expectedPartSize);
                 response = await _s3Client.GetObjectAsync(getObjectRequest, cancellationToken).ConfigureAwait(false);
                 
                 // Validate ETag consistency for SEP compliance
@@ -483,14 +449,42 @@ namespace Amazon.S3.Transfer.Internal
                     throw new InvalidOperationException($"ETag mismatch detected for part {partNumber} - object may have been modified during download");
                 }
 
+                // Use ContentLength to determine exact bytes to read
+                long expectedBytes = response.ContentLength;
+                
+                // Start with initial buffer size
+                int initialBufferSize;
+                if (_request.MultipartDownloadType == MultipartDownloadType.PART)
+                {
+                    // For PART strategy, start with reasonable size and expand as needed
+                    initialBufferSize = (int)Math.Min(expectedBytes, _config.TargetPartSizeBytes);
+                }
+                else
+                {
+                    // For RANGE strategy, use the exact Content-Length
+                    initialBufferSize = (int)expectedBytes;
+                }
+                
+                partBuffer = ArrayPool<byte>.Shared.Rent(initialBufferSize);
+                
                 int totalRead = 0;
                 
-                // Read directly into final buffer - NO INTERMEDIATE BUFFER!
-                while (totalRead < partBuffer.Length)
+                // Read response stream into buffer based on ContentLength
+                while (totalRead < expectedBytes)
                 {
-                    // Calculate optimal read size for this iteration
-                    int remainingSpace = partBuffer.Length - totalRead;
-                    int readSize = Math.Min(remainingSpace, _config.BufferSize);
+                    // Calculate how many bytes we still need to read
+                    int remainingBytes = (int)(expectedBytes - totalRead);
+                    int bufferSpace = partBuffer.Length - totalRead;
+                    
+                    // Expand buffer if needed BEFORE reading
+                    if (bufferSpace == 0)
+                    {
+                        partBuffer = ExpandPartBuffer(partBuffer, totalRead);
+                        bufferSpace = partBuffer.Length - totalRead;
+                    }
+                    
+                    // Read size is minimum of: remaining bytes needed, buffer space available, and optimal chunk size
+                    int readSize = Math.Min(Math.Min(remainingBytes, bufferSpace), _config.BufferSize);
                     
                     // Read directly into final destination at correct offset
                     int bytesRead = await response.ResponseStream.ReadAsync(
@@ -499,14 +493,13 @@ namespace Amazon.S3.Transfer.Internal
                         readSize,       // Count: optimal chunk size
                         cancellationToken).ConfigureAwait(false);
                     
-                    if (bytesRead == 0) break; // End of stream
-                    totalRead += bytesRead;
-                    
-                    // Handle buffer expansion if part is larger than expected
-                    if (totalRead == partBuffer.Length && await HasMoreDataAsync(response.ResponseStream, cancellationToken).ConfigureAwait(false))
+                    if (bytesRead == 0)
                     {
-                        partBuffer = ExpandPartBuffer(partBuffer, totalRead);
+                        // Unexpected EOF - break but don't fail
+                        break;
                     }
+                    
+                    totalRead += bytesRead;
                 }
 
                 // Create ArrayPool-based StreamPartBuffer (no copying!)
@@ -550,30 +543,57 @@ namespace Amazon.S3.Transfer.Internal
             
             try
             {
-                // Estimate buffer size based on strategy
-                int expectedPartSize;
+                // Use ContentLength to determine exact bytes to read
+                long expectedBytes = response.ContentLength;
+                
+                // Start with initial buffer size
+                int initialBufferSize;
                 if (_request.MultipartDownloadType == MultipartDownloadType.PART)
                 {
-                    // For PART strategy, we don't know the exact size ahead of time
-                    // TODO come back to this maybe we should just use 8MB here?
-                    expectedPartSize = (int)_config.BufferSize;
+                    // For PART strategy, start with reasonable size and expand as needed
+                    initialBufferSize = (int)Math.Min(expectedBytes, _config.TargetPartSizeBytes);
                 }
                 else
                 {
-                    // For RANGE strategy, use the Content-Length from response
-                    expectedPartSize = (int)response.ContentLength;
+                    // For RANGE strategy, use the exact Content-Length
+                    initialBufferSize = (int)expectedBytes;
                 }
                 
-                partBuffer = ArrayPool<byte>.Shared.Rent(expectedPartSize);
+                Logger.DebugFormat("[DOWNLOAD] Part {0} - Starting BufferPartFromResponseAsync, initialBufferSize={1}, response.ContentLength={2}", 
+                    partNumber, initialBufferSize, response.ContentLength);
+                
+                partBuffer = ArrayPool<byte>.Shared.Rent(initialBufferSize);
+                Logger.DebugFormat("[DOWNLOAD] Part {0} - Rented ArrayPool buffer, actualBufferSize={1}", 
+                    partNumber, partBuffer.Length);
                 
                 int totalRead = 0;
+                int readIteration = 0;
                 
-                // Read response stream into buffer - NO INTERMEDIATE BUFFER!
-                while (totalRead < partBuffer.Length)
+                // Read response stream into buffer based on ContentLength
+                while (totalRead < expectedBytes)
                 {
-                    // Calculate optimal read size for this iteration
-                    int remainingSpace = partBuffer.Length - totalRead;
-                    int readSize = Math.Min(remainingSpace, _config.BufferSize);
+                    readIteration++;
+                    
+                    // Calculate how many bytes we still need to read
+                    int remainingBytes = (int)(expectedBytes - totalRead);
+                    int bufferSpace = partBuffer.Length - totalRead;
+                    
+                    // Expand buffer if needed BEFORE reading
+                    if (bufferSpace == 0)
+                    {
+                        Logger.DebugFormat("[DOWNLOAD] Part {0} - Buffer full ({1} bytes), need {2} more bytes, expanding buffer", 
+                            partNumber, totalRead, remainingBytes);
+                        partBuffer = ExpandPartBuffer(partBuffer, totalRead);
+                        bufferSpace = partBuffer.Length - totalRead;
+                        Logger.DebugFormat("[DOWNLOAD] Part {0} - Buffer expanded to {1} bytes, new buffer space={2}", 
+                            partNumber, partBuffer.Length, bufferSpace);
+                    }
+                    
+                    // Read size is minimum of: remaining bytes needed, buffer space available, and optimal chunk size
+                    int readSize = Math.Min(Math.Min(remainingBytes, bufferSpace), _config.BufferSize);
+                    
+                    Logger.DebugFormat("[DOWNLOAD] Part {0} - Iteration {1}: About to read - offset={2}, count={3}, remainingBytes={4}, bufferSpace={5}, totalRead={6}", 
+                        partNumber, readIteration, totalRead, readSize, remainingBytes, bufferSpace, totalRead);
                     
                     // Read directly into final destination at correct offset
                     int bytesRead = await response.ResponseStream.ReadAsync(
@@ -582,14 +602,35 @@ namespace Amazon.S3.Transfer.Internal
                         readSize,       // Count: optimal chunk size
                         cancellationToken).ConfigureAwait(false);
                     
-                    if (bytesRead == 0) break; // End of stream
+                    Logger.DebugFormat("[DOWNLOAD] Part {0} - Iteration {1}: Read {2} bytes from S3 stream (requested {3})", 
+                        partNumber, readIteration, bytesRead, readSize);
+                    
+                    if (bytesRead == 0) 
+                    {
+                        // Unexpected EOF - log warning but don't fail
+                        Logger.DebugFormat("[DOWNLOAD] Part {0} - Unexpected EOF: Read {1} bytes but expected {2} bytes", 
+                            partNumber, totalRead, expectedBytes);
+                        break;
+                    }
+                    
                     totalRead += bytesRead;
                     
-                    // Handle buffer expansion if part is larger than expected
-                    if (totalRead == partBuffer.Length && await HasMoreDataAsync(response.ResponseStream, cancellationToken).ConfigureAwait(false))
-                    {
-                        partBuffer = ExpandPartBuffer(partBuffer, totalRead);
-                    }
+                    Logger.DebugFormat("[DOWNLOAD] Part {0} - Iteration {1}: totalRead now = {2} bytes (target: {3} bytes)", 
+                        partNumber, readIteration, totalRead, expectedBytes);
+                }
+
+                Logger.DebugFormat("[DOWNLOAD] Part {0} - Finished reading from S3 stream: totalRead={1} bytes (expected {2}), iterations={3}", 
+                    partNumber, totalRead, expectedBytes, readIteration);
+                
+                // Log first and last few bytes for debugging
+                if (totalRead > 0)
+                {
+                    var firstBytes = string.Join(" ", partBuffer.Take(Math.Min(8, totalRead)).Select(b => $"0x{b:X2}"));
+                    var lastBytes = totalRead >= 8 
+                        ? string.Join(" ", partBuffer.Skip(totalRead - 8).Take(8).Select(b => $"0x{b:X2}"))
+                        : "N/A";
+                    Logger.DebugFormat("[DOWNLOAD] Part {0} - Buffer content: First 8 bytes=[{1}], Last 8 bytes=[{2}]", 
+                        partNumber, firstBytes, lastBytes);
                 }
 
                 // Create ArrayPool-based StreamPartBuffer (no copying!)
@@ -598,6 +639,9 @@ namespace Amazon.S3.Transfer.Internal
                     partBuffer,     // Transfer ownership to StreamPartBuffer
                     totalRead       // Actual data length
                 );
+
+                Logger.DebugFormat("[DOWNLOAD] Part {0} - Created StreamPartBuffer: PartNumber={1}, ActualSize={2}, BufferLength={3}", 
+                    partNumber, downloadedPart.PartNumber, downloadedPart.ActualSize, downloadedPart.Length);
 
                 partBuffer = null; // Clear reference to prevent return in finally
                 return downloadedPart;
@@ -610,14 +654,6 @@ namespace Amazon.S3.Transfer.Internal
             }
         }
 
-        private async Task<bool> HasMoreDataAsync(Stream stream, CancellationToken cancellationToken)
-        {
-            // Simple peek check - try to read one more byte
-            var tempBuffer = new byte[1];
-            var result = await stream.ReadAsync(tempBuffer, 0, 1, cancellationToken).ConfigureAwait(false);
-            return result > 0;
-        }
-        
         private byte[] ExpandPartBuffer(byte[] currentBuffer, int validDataLength)
         {
             var newSize = Math.Max(currentBuffer.Length * 2, validDataLength + (int)_config.TargetPartSizeBytes);

@@ -22,6 +22,7 @@
 using System;
 using System.Collections.Concurrent;
 using System.Diagnostics.CodeAnalysis;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime.Internal.Util;
@@ -89,8 +90,8 @@ namespace Amazon.S3.Transfer.Internal
             if (dataSource == null)
                 throw new ArgumentNullException(nameof(dataSource));
 
-            Logger.DebugFormat("[DEBUG] PartBufferManager.AddDataSourceAsync - adding data source for part {0}, IsDirectStream={1}, IsAvailable={2}", 
-                dataSource.PartNumber, dataSource.IsDirectStream, dataSource.IsAvailable);
+            Logger.DebugFormat("[DEBUG] PartBufferManager.AddDataSourceAsync - adding data source for part {0}, IsAvailable={1}", 
+                dataSource.PartNumber, dataSource.IsAvailable);
 
             // Add the data source to the collection
             if (!_partDataSources.TryAdd(dataSource.PartNumber, dataSource))
@@ -126,19 +127,7 @@ namespace Amazon.S3.Transfer.Internal
             await AddDataSourceAsync(bufferedSource, cancellationToken).ConfigureAwait(false);
         }
 
-        public async Task AddStreamSourceAsync(int partNumber, Func<byte[], int, int, CancellationToken, Task<int>> streamCallback, CancellationToken cancellationToken)
-        {
-            ThrowIfDisposed();
-            
-            if (streamCallback == null)
-                throw new ArgumentNullException(nameof(streamCallback));
-
-            // Create a StreamDataSource and add it
-            var streamSource = new StreamDataSource(partNumber, streamCallback);
-            await AddDataSourceAsync(streamSource, cancellationToken).ConfigureAwait(false);
-        }
-
-        public async Task<ReadResult> ReadPartAsync(int requestedPartNumber, byte[] buffer, int offset, int count, CancellationToken cancellationToken)
+        public async Task<int> ReadPartAsync(int requestedPartNumber, byte[] buffer, int offset, int count, CancellationToken cancellationToken)
         {
             ThrowIfDisposed();
             
@@ -168,7 +157,6 @@ namespace Amazon.S3.Transfer.Internal
             
             // CROSS-PART BOUNDARY READING - Fill buffer completely across multiple parts
             int totalBytesRead = 0;
-            bool wasDirectStreamed = false;
             
             Logger.DebugFormat("[PartBufferManager] Starting cross-part boundary read - filling {0} bytes across multiple parts if needed", count);
             
@@ -200,7 +188,7 @@ namespace Amazon.S3.Transfer.Internal
                             
                             // True EOF - return what we've read so far
                             Logger.DebugFormat("[PartBufferManager] Cross-part read - TRUE EOF reached, returning {0} bytes", totalBytesRead);
-                            return new ReadResult { BytesRead = totalBytesRead, IsDirectStreamed = wasDirectStreamed };
+                            return totalBytesRead;
                         }
                     }
                     
@@ -224,8 +212,8 @@ namespace Amazon.S3.Transfer.Internal
                     throw new InvalidOperationException($"Part {currentPartNumber} disappeared after availability check");
                 }
 
-                Logger.DebugFormat("[PartBufferManager] Part {0} - data source: IsDirectStream={1}, IsComplete={2}, IsAvailable={3}", 
-                    currentPartNumber, dataSource.IsDirectStream, dataSource.IsComplete, dataSource.IsAvailable);
+                Logger.DebugFormat("[PartBufferManager] Part {0} - data source: IsComplete={1}, IsAvailable={2}", 
+                    currentPartNumber, dataSource.IsComplete, dataSource.IsAvailable);
 
                 try
                 {
@@ -236,15 +224,56 @@ namespace Amazon.S3.Transfer.Internal
                     Logger.DebugFormat("[PartBufferManager] Part {0} - reading into remaining buffer space: offset={1}, count={2} (total progress: {3}/{4})", 
                         currentPartNumber, currentOffset, remainingCount, totalBytesRead, count);
                     
+                    // Log buffer state BEFORE reading from data source
+                    if (totalBytesRead > 0 && count >= 16)
+                    {
+                        var bufferLastBytes = string.Join(" ", buffer
+                            .Skip(offset + Math.Max(0, totalBytesRead - 8))
+                            .Take(Math.Min(8, totalBytesRead))
+                            .Select(b => $"0x{b:X2}"));
+                        Logger.DebugFormat("[PartBufferManager] Part {0} - Buffer state BEFORE read: Last 8 bytes at boundary=[{1}]", 
+                            currentPartNumber, bufferLastBytes);
+                    }
+                    
                     // Read from this part into the remaining buffer space
                     var partBytesRead = await dataSource.ReadAsync(buffer, currentOffset, remainingCount, cancellationToken).ConfigureAwait(false);
                     
                     Logger.DebugFormat("[PartBufferManager] Part {0} - dataSource.ReadAsync returned {1} bytes (requested {2}), IsComplete={3}", 
                         currentPartNumber, partBytesRead, remainingCount, dataSource.IsComplete);
                     
-                    // Accumulate the bytes read and track direct streaming
+                    // Log buffer state AFTER reading from data source
+                    if (partBytesRead > 0)
+                    {
+                        var newBytesFirst = string.Join(" ", buffer
+                            .Skip(currentOffset)
+                            .Take(Math.Min(8, partBytesRead))
+                            .Select(b => $"0x{b:X2}"));
+                        var newBytesLast = partBytesRead >= 8
+                            ? string.Join(" ", buffer
+                                .Skip(currentOffset + partBytesRead - 8)
+                                .Take(8)
+                                .Select(b => $"0x{b:X2}"))
+                            : "N/A";
+                        Logger.DebugFormat("[PartBufferManager] Part {0} - New bytes written: First 8=[{1}], Last 8=[{2}]", 
+                            currentPartNumber, newBytesFirst, newBytesLast);
+                        
+                        // Show the boundary region (last 4 bytes of previous + first 4 bytes of new)
+                        if (totalBytesRead > 0 && count >= 8)
+                        {
+                            var boundaryBytes = string.Join(" ", buffer
+                                .Skip(offset + Math.Max(0, totalBytesRead - 4))
+                                .Take(Math.Min(8, 4 + partBytesRead))
+                                .Select(b => $"0x{b:X2}"));
+                            Logger.DebugFormat("[PartBufferManager] Part {0} - BOUNDARY: 4 prev + 4 new = [{1}] (offset={2})", 
+                                currentPartNumber, boundaryBytes, offset + Math.Max(0, totalBytesRead - 4));
+                        }
+                    }
+                    
+                    // Accumulate the bytes read
                     totalBytesRead += partBytesRead;
-                    wasDirectStreamed = wasDirectStreamed || dataSource.IsDirectStream;
+                    
+                    Logger.DebugFormat("[PartBufferManager] Part {0} - Accumulated totalBytesRead={1}/{2}", 
+                        currentPartNumber, totalBytesRead, count);
                     
                     // If this part is complete, clean up and advance
                     if (dataSource.IsComplete)
@@ -310,14 +339,10 @@ namespace Amazon.S3.Transfer.Internal
                 }
             }
             
-            Logger.DebugFormat("[PartBufferManager] Cross-part read completed - returning {0} bytes (requested {1}), wasDirectStreamed={2}", 
-                totalBytesRead, count, wasDirectStreamed);
+            Logger.DebugFormat("[PartBufferManager] Cross-part read completed - returning {0} bytes (requested {1})", 
+                totalBytesRead, count);
             
-            return new ReadResult 
-            { 
-                BytesRead = totalBytesRead, 
-                IsDirectStreamed = wasDirectStreamed 
-            };
+            return totalBytesRead;
         }
 
         public void ReleaseBufferSpace()

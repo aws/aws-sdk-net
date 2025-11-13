@@ -27,19 +27,9 @@ using System.Threading.Tasks;
 namespace Amazon.S3.Transfer.Internal
 {
     /// <summary>
-    /// Result of a part read operation indicating how the data was obtained.
-    /// </summary>
-    internal class ReadResult
-    {
-        public int BytesRead { get; set; }
-        public bool IsDirectStreamed { get; set; }
-    }
-
-    /// <summary>
     /// Manages part buffers with ArrayPool lifecycle and concurrency control.
     /// Handles smart sequential signaling and buffer space management to ensure
     /// efficient memory usage during multipart downloads.
-    /// Uses callback-based coordination for optimal direct streaming performance.
     /// </summary>
     internal interface IPartBufferManager : IDisposable
     {
@@ -52,16 +42,6 @@ namespace Amazon.S3.Transfer.Internal
         Task WaitForBufferSpaceAsync(CancellationToken cancellationToken);
         
         /// <summary>
-        /// Add a data source (either buffered or streaming) for a specific part.
-        /// This unified method handles both buffered parts and direct streaming sources.
-        /// Uses smart signaling to only notify readers when the next expected part arrives.
-        /// </summary>
-        /// <param name="dataSource">The data source (BufferedDataSource or StreamDataSource) to add.</param>
-        /// <param name="cancellationToken">A token to cancel the operation.</param>
-        /// <returns>A task that completes when the data source has been added and signaling is complete.</returns>
-        Task AddDataSourceAsync(IPartDataSource dataSource, CancellationToken cancellationToken);
-        
-        /// <summary>
         /// Add a downloaded part buffer and signal readers if it enables sequential reading.
         /// Uses smart signaling to only notify readers when the next expected part arrives.
         /// </summary>
@@ -71,18 +51,8 @@ namespace Amazon.S3.Transfer.Internal
         Task AddBufferAsync(StreamPartBuffer buffer, CancellationToken cancellationToken);
         
         /// <summary>
-        /// Add a direct streaming source for a specific part number.
-        /// This enables zero-copy performance when the reader is ready to consume data immediately.
-        /// </summary>
-        /// <param name="partNumber">The part number that will be available for streaming.</param>
-        /// <param name="streamCallback">Callback to stream data directly to a reader's buffer.</param>
-        /// <param name="cancellationToken">A token to cancel the operation.</param>
-        /// <returns>A task that completes when the streaming source has been registered.</returns>
-        Task AddStreamSourceAsync(int partNumber, Func<byte[], int, int, CancellationToken, Task<int>> streamCallback, CancellationToken cancellationToken);
-        
-        /// <summary>
-        /// Read a part with automatic coordination between direct streaming and buffered data.
-        /// This unified method handles both direct streaming (when available) and buffered reads seamlessly.
+        /// Read a part from the buffer manager.
+        /// This method handles buffered reads from ArrayPool buffers.
         /// </summary>
         /// <param name="partNumber">The part number to read.</param>
         /// <param name="buffer">The buffer to read data into.</param>
@@ -90,10 +60,10 @@ namespace Amazon.S3.Transfer.Internal
         /// <param name="count">The maximum number of bytes to read.</param>
         /// <param name="cancellationToken">A token to cancel the operation.</param>
         /// <returns>
-        /// A task whose result contains the number of bytes read and whether direct streaming was used.
+        /// A task whose result contains the number of bytes read.
         /// Returns 0 bytes read when end of stream is reached.
         /// </returns>
-        Task<ReadResult> ReadPartAsync(int partNumber, byte[] buffer, int offset, int count, CancellationToken cancellationToken);
+        Task<int> ReadPartAsync(int partNumber, byte[] buffer, int offset, int count, CancellationToken cancellationToken);
         
         /// <summary>
         /// Release buffer space when a consumer finishes with a part.

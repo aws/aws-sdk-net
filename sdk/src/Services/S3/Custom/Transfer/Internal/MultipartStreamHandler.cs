@@ -58,11 +58,11 @@ namespace Amazon.S3.Transfer.Internal
             
             try
             {
-                var result = await _partBufferManager.ReadPartAsync(nextPartNumber, buffer, offset, count, cancellationToken)
+                var bytesRead = await _partBufferManager.ReadPartAsync(nextPartNumber, buffer, offset, count, cancellationToken)
                     .ConfigureAwait(false);
                 
-                // Both StreamDataSource and BufferedDataSource copy data directly into user buffer
-                return result.BytesRead; // 0 = end of stream, >0 = got data
+                // Buffered data source copies data directly into user buffer
+                return bytesRead; // 0 = end of stream, >0 = got data
             }
             catch (InvalidOperationException ex) when (ex.Message.Contains("expected part") || ex.Message.Contains("Download complete"))
             {

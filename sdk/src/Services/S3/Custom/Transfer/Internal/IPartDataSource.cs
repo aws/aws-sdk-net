@@ -26,15 +26,14 @@ using System.Threading.Tasks;
 namespace Amazon.S3.Transfer.Internal
 {
     /// <summary>
-    /// Unified interface for both direct streaming and buffered part data sources.
-    /// Allows PartBufferManager to treat both types identically, simplifying coordination logic.
+    /// Interface for buffered part data sources.
+    /// Provides a consistent way to read downloaded part data from ArrayPool buffers.
     /// </summary>
     internal interface IPartDataSource : IDisposable
     {
         /// <summary>
         /// Reads data from this source into the provided buffer.
-        /// For direct streaming, this pipes from HTTP response stream.
-        /// For buffered sources, this copies from ArrayPool buffer.
+        /// Copies from the ArrayPool buffer to the destination buffer.
         /// </summary>
         /// <param name="buffer">Destination buffer</param>
         /// <param name="offset">Offset in destination buffer</param>
@@ -45,7 +44,7 @@ namespace Amazon.S3.Transfer.Internal
 
         /// <summary>
         /// Indicates if this data source is ready to be read from.
-        /// Always true for both implementations in our use case.
+        /// Always true in our use case.
         /// </summary>
         bool IsAvailable { get; }
 
@@ -58,10 +57,5 @@ namespace Amazon.S3.Transfer.Internal
         /// Part number this data source represents.
         /// </summary>
         int PartNumber { get; }
-
-        /// <summary>
-        /// Indicates whether this is a direct streaming source (for metrics/logging).
-        /// </summary>
-        bool IsDirectStream { get; }
     }
 }
