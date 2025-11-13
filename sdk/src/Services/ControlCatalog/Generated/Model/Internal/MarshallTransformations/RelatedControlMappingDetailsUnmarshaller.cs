@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.ControlCatalog.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Mapping Object
+    /// Response Unmarshaller for RelatedControlMappingDetails Object
     /// </summary>  
-    public class MappingUnmarshaller : IJsonUnmarshaller<Mapping, JsonUnmarshallerContext>
+    public class RelatedControlMappingDetailsUnmarshaller : IJsonUnmarshaller<RelatedControlMappingDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.ControlCatalog.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public Mapping Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public RelatedControlMappingDetails Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            Mapping unmarshalledObject = new Mapping();
+            RelatedControlMappingDetails unmarshalledObject = new RelatedControlMappingDetails();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,22 +56,16 @@ namespace Amazon.ControlCatalog.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CommonControl", targetDepth))
+                if (context.TestExpression("ControlArn", targetDepth))
                 {
-                    var unmarshaller = CommonControlMappingDetailsUnmarshaller.Instance;
-                    unmarshalledObject.CommonControl = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ControlArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Framework", targetDepth))
+                if (context.TestExpression("RelationType", targetDepth))
                 {
-                    var unmarshaller = FrameworkMappingDetailsUnmarshaller.Instance;
-                    unmarshalledObject.Framework = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("RelatedControl", targetDepth))
-                {
-                    var unmarshaller = RelatedControlMappingDetailsUnmarshaller.Instance;
-                    unmarshalledObject.RelatedControl = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RelationType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -79,12 +73,12 @@ namespace Amazon.ControlCatalog.Model.Internal.MarshallTransformations
         }
 
 
-        private static MappingUnmarshaller _instance = new MappingUnmarshaller();        
+        private static RelatedControlMappingDetailsUnmarshaller _instance = new RelatedControlMappingDetailsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static MappingUnmarshaller Instance
+        public static RelatedControlMappingDetailsUnmarshaller Instance
         {
             get
             {
