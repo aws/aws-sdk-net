@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for BrowserSettings Object
+    /// Response Unmarshaller for WebContentFilteringPolicy Object
     /// </summary>  
-    public class BrowserSettingsUnmarshaller : IJsonUnmarshaller<BrowserSettings, JsonUnmarshallerContext>
+    public class WebContentFilteringPolicyUnmarshaller : IJsonUnmarshaller<WebContentFilteringPolicy, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public BrowserSettings Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public WebContentFilteringPolicy Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            BrowserSettings unmarshalledObject = new BrowserSettings();
+            WebContentFilteringPolicy unmarshalledObject = new WebContentFilteringPolicy();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,40 +56,22 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("additionalEncryptionContext", targetDepth))
-                {
-                    var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    unmarshalledObject.AdditionalEncryptionContext = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("associatedPortalArns", targetDepth))
+                if (context.TestExpression("allowedUrls", targetDepth))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.AssociatedPortalArns = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.AllowedUrls = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("browserPolicy", targetDepth))
+                if (context.TestExpression("blockedCategories", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.BrowserPolicy = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.BlockedCategories = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("browserSettingsArn", targetDepth))
+                if (context.TestExpression("blockedUrls", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.BrowserSettingsArn = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("customerManagedKey", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CustomerManagedKey = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("webContentFilteringPolicy", targetDepth))
-                {
-                    var unmarshaller = WebContentFilteringPolicyUnmarshaller.Instance;
-                    unmarshalledObject.WebContentFilteringPolicy = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.BlockedUrls = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -97,12 +79,12 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
         }
 
 
-        private static BrowserSettingsUnmarshaller _instance = new BrowserSettingsUnmarshaller();        
+        private static WebContentFilteringPolicyUnmarshaller _instance = new WebContentFilteringPolicyUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static BrowserSettingsUnmarshaller Instance
+        public static WebContentFilteringPolicyUnmarshaller Instance
         {
             get
             {
