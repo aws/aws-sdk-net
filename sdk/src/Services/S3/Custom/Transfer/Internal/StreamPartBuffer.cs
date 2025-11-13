@@ -105,35 +105,6 @@ namespace Amazon.S3.Transfer.Internal
         }
 
         /// <summary>
-        /// Creates a StreamPartBuffer from a GetObjectRequest for streaming scenarios.
-        /// </summary>
-        /// <param name="request">The GetObjectRequest used to download this part</param>
-        /// <param name="arrayPoolBuffer">The ArrayPool buffer containing downloaded data (ownership transferred)</param>
-        /// <param name="actualDataLength">Actual length of valid data in buffer</param>
-        /// <param name="partSize">Part size for Range GET part number calculation</param>
-        /// <returns>A StreamPartBuffer optimized for streaming</returns>
-        public static StreamPartBuffer FromGetObjectRequest(GetObjectRequest request, byte[] arrayPoolBuffer, int actualDataLength, long partSize = 8 * 1024 * 1024)
-        {
-            int partNumber;
-            if (request.PartNumber.HasValue)
-            {
-                // Part GET strategy - use actual part number
-                partNumber = request.PartNumber.Value;
-            }
-            else if (request.ByteRange != null)
-            {
-                // Range GET strategy - calculate synthetic part number from byte range
-                partNumber = (int)(request.ByteRange.Start / partSize) + 1;
-            }
-            else
-            {
-                throw new InvalidOperationException("GetObjectRequest must have either PartNumber or ByteRange for StreamPartBuffer creation");
-            }
-            
-            return new StreamPartBuffer(partNumber, arrayPoolBuffer, actualDataLength);
-        }
-
-        /// <summary>
         /// Returns a string representation of this StreamPartBuffer for debugging.
         /// </summary>
         /// <returns>A string describing this stream part buffer</returns>
