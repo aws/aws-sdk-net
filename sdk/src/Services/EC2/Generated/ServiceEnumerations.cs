@@ -101,6 +101,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly AcceleratorName A10g = new AcceleratorName("a10g");
         /// <summary>
+        /// Constant GaudiHl205 for AcceleratorName
+        /// </summary>
+        public static readonly AcceleratorName GaudiHl205 = new AcceleratorName("gaudi-hl-205");
+        /// <summary>
         /// Constant H100 for AcceleratorName
         /// </summary>
         public static readonly AcceleratorName H100 = new AcceleratorName("h100");
@@ -109,6 +113,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly AcceleratorName Inferentia = new AcceleratorName("inferentia");
         /// <summary>
+        /// Constant Inferentia2 for AcceleratorName
+        /// </summary>
+        public static readonly AcceleratorName Inferentia2 = new AcceleratorName("inferentia2");
+        /// <summary>
         /// Constant K520 for AcceleratorName
         /// </summary>
         public static readonly AcceleratorName K520 = new AcceleratorName("k520");
@@ -116,6 +124,14 @@ namespace Amazon.EC2
         /// Constant K80 for AcceleratorName
         /// </summary>
         public static readonly AcceleratorName K80 = new AcceleratorName("k80");
+        /// <summary>
+        /// Constant L4 for AcceleratorName
+        /// </summary>
+        public static readonly AcceleratorName L4 = new AcceleratorName("l4");
+        /// <summary>
+        /// Constant L40s for AcceleratorName
+        /// </summary>
+        public static readonly AcceleratorName L40s = new AcceleratorName("l40s");
         /// <summary>
         /// Constant M60 for AcceleratorName
         /// </summary>
@@ -132,6 +148,18 @@ namespace Amazon.EC2
         /// Constant T4g for AcceleratorName
         /// </summary>
         public static readonly AcceleratorName T4g = new AcceleratorName("t4g");
+        /// <summary>
+        /// Constant Trainium for AcceleratorName
+        /// </summary>
+        public static readonly AcceleratorName Trainium = new AcceleratorName("trainium");
+        /// <summary>
+        /// Constant Trainium2 for AcceleratorName
+        /// </summary>
+        public static readonly AcceleratorName Trainium2 = new AcceleratorName("trainium2");
+        /// <summary>
+        /// Constant U30 for AcceleratorName
+        /// </summary>
+        public static readonly AcceleratorName U30 = new AcceleratorName("u30");
         /// <summary>
         /// Constant V100 for AcceleratorName
         /// </summary>
@@ -194,6 +222,10 @@ namespace Amazon.EC2
         /// Constant Inference for AcceleratorType
         /// </summary>
         public static readonly AcceleratorType Inference = new AcceleratorType("inference");
+        /// <summary>
+        /// Constant Media for AcceleratorType
+        /// </summary>
+        public static readonly AcceleratorType Media = new AcceleratorType("media");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
