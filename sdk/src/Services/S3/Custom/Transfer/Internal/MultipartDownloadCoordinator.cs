@@ -311,7 +311,7 @@ namespace Amazon.S3.Transfer.Internal
                 bufferingTimer.Stop();
                 
                 double throughputMBps = downloadedPart.ActualSize / (1024.0 * 1024.0) / (bufferingTimer.Elapsed.TotalSeconds);
-                Logger.InfoFormat("[PERF] Part {0} Buffering - Duration: {1}ms, Bytes: {2}, Throughput: {3:F2} MB/s", 
+                Logger.InfoFormat("[PERF] Part {0} HTTP-TO-BUFFER - Duration: {1}ms, Bytes: {2}, Throughput: {3:F2} MB/s", 
                     partNumber, bufferingTimer.ElapsedMilliseconds, downloadedPart.ActualSize, throughputMBps);
                 
                 // Add the downloaded part to the buffer manager

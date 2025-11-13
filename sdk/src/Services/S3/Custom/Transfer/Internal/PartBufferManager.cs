@@ -267,7 +267,7 @@ namespace Amazon.S3.Transfer.Internal
                     
                     Logger.DebugFormat("[PartBufferManager] Part {0} - dataSource.ReadAsync returned {1} bytes (requested {2}), IsComplete={3}", 
                         currentPartNumber, partBytesRead, remainingCount, dataSource.IsComplete);
-                    Logger.InfoFormat("[PERF] Part {0} Data Source Read - Duration: {1}ms, Bytes: {2}", 
+                    Logger.InfoFormat("[PERF] Part {0} BUFFER-TO-USER - Duration: {1}ms, Bytes: {2}", 
                         currentPartNumber, partReadTimer.ElapsedMilliseconds, partBytesRead);
                     
                     // Log buffer state AFTER reading from data source
