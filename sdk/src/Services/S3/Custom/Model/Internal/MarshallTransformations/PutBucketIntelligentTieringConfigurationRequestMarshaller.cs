@@ -47,7 +47,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(PutBucketIntelligentTieringConfigurationRequest PutBucketIntelligentTieringConfigurationRequest)
 		{
-			IRequest request = new DefaultRequest(PutBucketIntelligentTieringConfigurationRequest, "AmazonS3");
+			IRequest request = new DefaultRequest(PutBucketIntelligentTieringConfigurationRequest, "Amazon.S3");
 			var intelligentTieringConfiguration = PutBucketIntelligentTieringConfigurationRequest.IntelligentTieringConfiguration;
 			request.HttpMethod = "PUT";
 

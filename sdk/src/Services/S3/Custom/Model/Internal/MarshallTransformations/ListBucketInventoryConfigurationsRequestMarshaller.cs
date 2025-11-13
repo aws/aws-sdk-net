@@ -34,7 +34,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
         public IRequest Marshall(ListBucketInventoryConfigurationsRequest listBucketInventoryConfigurationsRequest)
         {
-            IRequest request = new DefaultRequest(listBucketInventoryConfigurationsRequest, "AmazonS3");
+            IRequest request = new DefaultRequest(listBucketInventoryConfigurationsRequest, "Amazon.S3");
 
             request.HttpMethod = "GET";
 

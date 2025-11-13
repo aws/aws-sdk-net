@@ -36,7 +36,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
         public IRequest Marshall(DeleteObjectRequest deleteObjectRequest)
         {
-            IRequest request = new DefaultRequest(deleteObjectRequest, "AmazonS3");
+            IRequest request = new DefaultRequest(deleteObjectRequest, "Amazon.S3");
 
             request.HttpMethod = "DELETE";
 

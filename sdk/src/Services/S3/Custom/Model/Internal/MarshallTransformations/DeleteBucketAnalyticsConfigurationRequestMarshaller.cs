@@ -33,7 +33,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
         public IRequest Marshall(DeleteBucketAnalyticsConfigurationRequest deleteBucketAnalyticsConfigurationRequest)
         {
-            IRequest request = new DefaultRequest(deleteBucketAnalyticsConfigurationRequest, "AmazonS3");
+            IRequest request = new DefaultRequest(deleteBucketAnalyticsConfigurationRequest, "Amazon.S3");
 
             request.HttpMethod = "DELETE";
 

@@ -40,7 +40,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             var destinationKey = copyObjectRequest.DestinationKey;
             
-            IRequest request = new DefaultRequest(copyObjectRequest, "AmazonS3");
+            IRequest request = new DefaultRequest(copyObjectRequest, "Amazon.S3");
 
             request.HttpMethod = "PUT";
 

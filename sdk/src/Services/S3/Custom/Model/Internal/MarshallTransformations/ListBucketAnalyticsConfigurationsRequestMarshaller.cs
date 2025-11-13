@@ -34,7 +34,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
         public IRequest Marshall(ListBucketAnalyticsConfigurationsRequest listBucketAnalyticsConfigurationsRequest)
         {
-            IRequest request = new DefaultRequest(listBucketAnalyticsConfigurationsRequest, "AmazonS3");
+            IRequest request = new DefaultRequest(listBucketAnalyticsConfigurationsRequest, "Amazon.S3");
 
             request.HttpMethod = "GET";
 

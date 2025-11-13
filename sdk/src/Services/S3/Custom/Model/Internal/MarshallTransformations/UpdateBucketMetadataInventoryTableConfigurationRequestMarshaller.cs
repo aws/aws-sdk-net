@@ -35,7 +35,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
         public IRequest Marshall(UpdateBucketMetadataInventoryTableConfigurationRequest updateBucketMetadataInventoryTableConfigurationRequest)
         {
-            IRequest request = new DefaultRequest(updateBucketMetadataInventoryTableConfigurationRequest, "AmazonS3");
+            IRequest request = new DefaultRequest(updateBucketMetadataInventoryTableConfigurationRequest, "Amazon.S3");
 
             request.HttpMethod = "PUT";
 
