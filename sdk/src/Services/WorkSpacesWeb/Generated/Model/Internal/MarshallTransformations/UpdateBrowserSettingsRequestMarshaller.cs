@@ -87,6 +87,17 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
                     context.Writer.WritePropertyName("clientToken");
                     context.Writer.Write(Guid.NewGuid().ToString());
                 }
+                if(publicRequest.IsSetWebContentFilteringPolicy())
+                {
+                    context.Writer.WritePropertyName("webContentFilteringPolicy");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = WebContentFilteringPolicyMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.WebContentFilteringPolicy, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

@@ -42,6 +42,7 @@ namespace Amazon.WorkSpacesWeb.Model
         private string _clientToken;
         private string _customerManagedKey;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
+        private WebContentFilteringPolicy _webContentFilteringPolicy;
 
         /// <summary>
         /// Gets and sets the property AdditionalEncryptionContext. 
@@ -68,7 +69,7 @@ namespace Amazon.WorkSpacesWeb.Model
         /// sessions.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true, Min=2, Max=131072)]
+        [AWSProperty(Sensitive=true, Min=2, Max=131072)]
         public string BrowserPolicy
         {
             get { return this._browserPolicy; }
@@ -144,6 +145,25 @@ namespace Amazon.WorkSpacesWeb.Model
         internal bool IsSetTags()
         {
             return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property WebContentFilteringPolicy. 
+        /// <para>
+        /// The policy that specifies which URLs end users are allowed to access or which URLs
+        /// or domain categories they are restricted from accessing for enhanced security.
+        /// </para>
+        /// </summary>
+        public WebContentFilteringPolicy WebContentFilteringPolicy
+        {
+            get { return this._webContentFilteringPolicy; }
+            set { this._webContentFilteringPolicy = value; }
+        }
+
+        // Check to see if WebContentFilteringPolicy property is set
+        internal bool IsSetWebContentFilteringPolicy()
+        {
+            return this._webContentFilteringPolicy != null;
         }
 
     }

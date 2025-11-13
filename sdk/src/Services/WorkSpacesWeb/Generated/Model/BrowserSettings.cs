@@ -41,6 +41,7 @@ namespace Amazon.WorkSpacesWeb.Model
         private string _browserPolicy;
         private string _browserSettingsArn;
         private string _customerManagedKey;
+        private WebContentFilteringPolicy _webContentFilteringPolicy;
 
         /// <summary>
         /// Gets and sets the property AdditionalEncryptionContext. 
@@ -134,6 +135,25 @@ namespace Amazon.WorkSpacesWeb.Model
         internal bool IsSetCustomerManagedKey()
         {
             return this._customerManagedKey != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WebContentFilteringPolicy. 
+        /// <para>
+        /// The policy that specifies which URLs end users are allowed to access or which URLs
+        /// or domain categories they are restricted from accessing for enhanced security.
+        /// </para>
+        /// </summary>
+        public WebContentFilteringPolicy WebContentFilteringPolicy
+        {
+            get { return this._webContentFilteringPolicy; }
+            set { this._webContentFilteringPolicy = value; }
+        }
+
+        // Check to see if WebContentFilteringPolicy property is set
+        internal bool IsSetWebContentFilteringPolicy()
+        {
+            return this._webContentFilteringPolicy != null;
         }
 
     }
