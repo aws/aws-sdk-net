@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// SidewalkSingleStartImportInfo Marshaller
+    /// SidewalkUpdateWirelessDevice Marshaller
     /// </summary>
-    public class SidewalkSingleStartImportInfoMarshaller : IRequestMarshaller<SidewalkSingleStartImportInfo, JsonMarshallerContext> 
+    public class SidewalkUpdateWirelessDeviceMarshaller : IRequestMarshaller<SidewalkUpdateWirelessDevice, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,7 +42,7 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(SidewalkSingleStartImportInfo requestObject, JsonMarshallerContext context)
+        public void Marshall(SidewalkUpdateWirelessDevice requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
@@ -57,18 +57,12 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
-            if(requestObject.IsSetSidewalkManufacturingSn())
-            {
-                context.Writer.WritePropertyName("SidewalkManufacturingSn");
-                context.Writer.WriteStringValue(requestObject.SidewalkManufacturingSn);
-            }
-
         }
 
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static SidewalkSingleStartImportInfoMarshaller Instance = new SidewalkSingleStartImportInfoMarshaller();
+        public readonly static SidewalkUpdateWirelessDeviceMarshaller Instance = new SidewalkUpdateWirelessDeviceMarshaller();
 
     }
 }

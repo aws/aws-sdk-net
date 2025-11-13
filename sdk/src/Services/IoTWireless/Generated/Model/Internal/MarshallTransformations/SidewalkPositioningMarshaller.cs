@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// SidewalkSingleStartImportInfo Marshaller
+    /// SidewalkPositioning Marshaller
     /// </summary>
-    public class SidewalkSingleStartImportInfoMarshaller : IRequestMarshaller<SidewalkSingleStartImportInfo, JsonMarshallerContext> 
+    public class SidewalkPositioningMarshaller : IRequestMarshaller<SidewalkPositioning, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,25 +42,14 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(SidewalkSingleStartImportInfo requestObject, JsonMarshallerContext context)
+        public void Marshall(SidewalkPositioning requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetPositioning())
+            if(requestObject.IsSetDestinationName())
             {
-                context.Writer.WritePropertyName("Positioning");
-                context.Writer.WriteStartObject();
-
-                var marshaller = SidewalkPositioningMarshaller.Instance;
-                marshaller.Marshall(requestObject.Positioning, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(requestObject.IsSetSidewalkManufacturingSn())
-            {
-                context.Writer.WritePropertyName("SidewalkManufacturingSn");
-                context.Writer.WriteStringValue(requestObject.SidewalkManufacturingSn);
+                context.Writer.WritePropertyName("DestinationName");
+                context.Writer.WriteStringValue(requestObject.DestinationName);
             }
 
         }
@@ -68,7 +57,7 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static SidewalkSingleStartImportInfoMarshaller Instance = new SidewalkSingleStartImportInfoMarshaller();
+        public readonly static SidewalkPositioningMarshaller Instance = new SidewalkPositioningMarshaller();
 
     }
 }

@@ -30,32 +30,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTWireless.Model
 {
     /// <summary>
-    /// Sidewalk object for creating a wireless device.
+    /// The Sidewalk-related object containing positioning information used to configure Sidewalk
+    /// devices during import.
     /// </summary>
-    public partial class SidewalkCreateWirelessDevice
+    public partial class SidewalkListDevicesForImportInfo
     {
-        private string _deviceProfileId;
         private SidewalkPositioning _positioning;
-        private string _sidewalkManufacturingSn;
-
-        /// <summary>
-        /// Gets and sets the property DeviceProfileId. 
-        /// <para>
-        /// The ID of the Sidewalk device profile.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Max=256)]
-        public string DeviceProfileId
-        {
-            get { return this._deviceProfileId; }
-            set { this._deviceProfileId = value; }
-        }
-
-        // Check to see if DeviceProfileId property is set
-        internal bool IsSetDeviceProfileId()
-        {
-            return this._deviceProfileId != null;
-        }
 
         /// <summary>
         /// Gets and sets the property Positioning. 
@@ -73,25 +53,6 @@ namespace Amazon.IoTWireless.Model
         internal bool IsSetPositioning()
         {
             return this._positioning != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property SidewalkManufacturingSn. 
-        /// <para>
-        /// The Sidewalk manufacturing serial number.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Max=64)]
-        public string SidewalkManufacturingSn
-        {
-            get { return this._sidewalkManufacturingSn; }
-            set { this._sidewalkManufacturingSn = value; }
-        }
-
-        // Check to see if SidewalkManufacturingSn property is set
-        internal bool IsSetSidewalkManufacturingSn()
-        {
-            return this._sidewalkManufacturingSn != null;
         }
 
     }

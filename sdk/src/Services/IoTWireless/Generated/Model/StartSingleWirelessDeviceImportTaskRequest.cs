@@ -38,6 +38,7 @@ namespace Amazon.IoTWireless.Model
         private string _clientRequestToken;
         private string _destinationName;
         private string _deviceName;
+        private PositioningConfigStatus _positioning;
         private SidewalkSingleStartImportInfo _sidewalk;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
@@ -93,6 +94,24 @@ namespace Amazon.IoTWireless.Model
         internal bool IsSetDeviceName()
         {
             return this._deviceName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Positioning. 
+        /// <para>
+        /// The integration status of the Device Location feature for Sidewalk devices.
+        /// </para>
+        /// </summary>
+        public PositioningConfigStatus Positioning
+        {
+            get { return this._positioning; }
+            set { this._positioning = value; }
+        }
+
+        // Check to see if Positioning property is set
+        internal bool IsSetPositioning()
+        {
+            return this._positioning != null;
         }
 
         /// <summary>
