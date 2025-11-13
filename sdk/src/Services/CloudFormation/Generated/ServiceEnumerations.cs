@@ -137,6 +137,122 @@ namespace Amazon.CloudFormation
 
 
     /// <summary>
+    /// Constants used for properties of type AnnotationSeverityLevel.
+    /// </summary>
+    public class AnnotationSeverityLevel : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CRITICAL for AnnotationSeverityLevel
+        /// </summary>
+        public static readonly AnnotationSeverityLevel CRITICAL = new AnnotationSeverityLevel("CRITICAL");
+        /// <summary>
+        /// Constant HIGH for AnnotationSeverityLevel
+        /// </summary>
+        public static readonly AnnotationSeverityLevel HIGH = new AnnotationSeverityLevel("HIGH");
+        /// <summary>
+        /// Constant INFORMATIONAL for AnnotationSeverityLevel
+        /// </summary>
+        public static readonly AnnotationSeverityLevel INFORMATIONAL = new AnnotationSeverityLevel("INFORMATIONAL");
+        /// <summary>
+        /// Constant LOW for AnnotationSeverityLevel
+        /// </summary>
+        public static readonly AnnotationSeverityLevel LOW = new AnnotationSeverityLevel("LOW");
+        /// <summary>
+        /// Constant MEDIUM for AnnotationSeverityLevel
+        /// </summary>
+        public static readonly AnnotationSeverityLevel MEDIUM = new AnnotationSeverityLevel("MEDIUM");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AnnotationSeverityLevel(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AnnotationSeverityLevel FindValue(string value)
+        {
+            return FindValue<AnnotationSeverityLevel>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AnnotationSeverityLevel(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AnnotationStatus.
+    /// </summary>
+    public class AnnotationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED for AnnotationStatus
+        /// </summary>
+        public static readonly AnnotationStatus FAILED = new AnnotationStatus("FAILED");
+        /// <summary>
+        /// Constant PASSED for AnnotationStatus
+        /// </summary>
+        public static readonly AnnotationStatus PASSED = new AnnotationStatus("PASSED");
+        /// <summary>
+        /// Constant SKIPPED for AnnotationStatus
+        /// </summary>
+        public static readonly AnnotationStatus SKIPPED = new AnnotationStatus("SKIPPED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AnnotationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AnnotationStatus FindValue(string value)
+        {
+            return FindValue<AnnotationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AnnotationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AttributeChangeType.
     /// </summary>
     public class AttributeChangeType : ConstantClass
@@ -1572,6 +1688,64 @@ namespace Amazon.CloudFormation
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator HookStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type HookTargetAction.
+    /// </summary>
+    public class HookTargetAction : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CREATE for HookTargetAction
+        /// </summary>
+        public static readonly HookTargetAction CREATE = new HookTargetAction("CREATE");
+        /// <summary>
+        /// Constant DELETE for HookTargetAction
+        /// </summary>
+        public static readonly HookTargetAction DELETE = new HookTargetAction("DELETE");
+        /// <summary>
+        /// Constant IMPORT for HookTargetAction
+        /// </summary>
+        public static readonly HookTargetAction IMPORT = new HookTargetAction("IMPORT");
+        /// <summary>
+        /// Constant UPDATE for HookTargetAction
+        /// </summary>
+        public static readonly HookTargetAction UPDATE = new HookTargetAction("UPDATE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public HookTargetAction(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HookTargetAction FindValue(string value)
+        {
+            return FindValue<HookTargetAction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HookTargetAction(string value)
         {
             return FindValue(value);
         }

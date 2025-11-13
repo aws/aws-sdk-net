@@ -58,7 +58,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property TargetType. 
         /// <para>
-        /// The name of the type.
+        /// The Hook target type.
         /// </para>
         /// </summary>
         public HookTargetType TargetType

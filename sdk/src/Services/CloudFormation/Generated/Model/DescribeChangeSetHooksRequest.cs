@@ -31,7 +31,7 @@ namespace Amazon.CloudFormation.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeChangeSetHooks operation.
-    /// Returns hook-related information for the change set and a list of changes that CloudFormation
+    /// Returns Hook-related information for the change set and a list of changes that CloudFormation
     /// makes when you run the change set.
     /// </summary>
     public partial class DescribeChangeSetHooksRequest : AmazonCloudFormationRequest
@@ -81,8 +81,8 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// A string, provided by the <c>DescribeChangeSetHooks</c> response output, that identifies
-        /// the next page of information that you want to retrieve.
+        /// The token for the next set of items to return. (You received this token from a previous
+        /// call.)
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

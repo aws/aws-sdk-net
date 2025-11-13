@@ -161,7 +161,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// Provides the status of the change set hook.
+        /// Provides the status of the change set Hook.
         /// </para>
         /// </summary>
         public ChangeSetHooksStatus Status

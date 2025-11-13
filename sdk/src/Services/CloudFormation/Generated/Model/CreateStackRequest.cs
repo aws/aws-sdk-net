@@ -381,13 +381,8 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property ResourceTypes. 
         /// <para>
-        /// The template resource types that you have permissions to work with for this create
-        /// stack action, such as <c>AWS::EC2::Instance</c>, <c>AWS::EC2::*</c>, or <c>Custom::MyCustomInstance</c>.
-        /// Use the following syntax to describe template resource types: <c>AWS::*</c> (for all
-        /// Amazon Web Services resources), <c>Custom::*</c> (for all custom resources), <c>Custom::<i>logical_ID</i>
-        /// </c> (for a specific custom resource), <c>AWS::<i>service_name</i>::*</c> (for all
-        /// resources of a particular Amazon Web Services service), and <c>AWS::<i>service_name</i>::<i>resource_logical_ID</i>
-        /// </c> (for a specific Amazon Web Services resource).
+        /// Specifies which resource types you can work with, such as <c>AWS::EC2::Instance</c>
+        /// or <c>Custom::MyCustomInstance</c>.
         /// </para>
         ///  
         /// <para>
@@ -395,7 +390,7 @@ namespace Amazon.CloudFormation.Model
         /// stack creation fails. By default, CloudFormation grants permissions to all resource
         /// types. IAM uses this parameter for CloudFormation-specific condition keys in IAM policies.
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/control-access-with-iam.html">Control
-        /// access with Identity and Access Management</a>.
+        /// CloudFormation access with Identity and Access Management</a>.
         /// </para>
         ///  <note> 
         /// <para>

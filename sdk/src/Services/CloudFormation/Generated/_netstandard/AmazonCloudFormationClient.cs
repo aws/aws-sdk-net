@@ -1397,7 +1397,7 @@ namespace Amazon.CloudFormation
 
 
         /// <summary>
-        /// Returns hook-related information for the change set and a list of changes that CloudFormation
+        /// Returns Hook-related information for the change set and a list of changes that CloudFormation
         /// makes when you run the change set.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeChangeSetHooks service method.</param>
@@ -2548,6 +2548,42 @@ namespace Amazon.CloudFormation
             options.ResponseUnmarshaller = GetGeneratedTemplateResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetGeneratedTemplateResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  GetHookResult
+
+        internal virtual GetHookResultResponse GetHookResult(GetHookResultRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetHookResultRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetHookResultResponseUnmarshaller.Instance;
+
+            return Invoke<GetHookResultResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves detailed information and remediation guidance for a Hook invocation result.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetHookResult service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetHookResult service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.HookResultNotFoundException">
+        /// The specified target doesn't have any requested Hook invocations.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/GetHookResult">REST API Reference for GetHookResult Operation</seealso>
+        public virtual Task<GetHookResultResponse> GetHookResultAsync(GetHookResultRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetHookResultRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetHookResultResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetHookResultResponse>(request, options, cancellationToken);
         }
         #endregion
         

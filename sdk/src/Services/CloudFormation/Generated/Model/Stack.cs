@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
-    /// The Stack data type.
+    /// The <c>Stack</c> data type.
     /// </summary>
     public partial class Stack
     {

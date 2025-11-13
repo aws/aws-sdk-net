@@ -43,7 +43,8 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// A string that identifies the next page of limits that you want to retrieve.
+        /// The token for the next set of items to return. (You received this token from a previous
+        /// call.)
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

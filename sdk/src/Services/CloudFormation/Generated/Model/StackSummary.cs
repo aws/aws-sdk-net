@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
-    /// The StackSummary Data Type
+    /// The <c>StackSummary</c> Data Type
     /// </summary>
     public partial class StackSummary
     {
