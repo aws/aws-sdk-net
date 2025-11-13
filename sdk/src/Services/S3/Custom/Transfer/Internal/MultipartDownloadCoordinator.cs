@@ -30,6 +30,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Amazon.S3.Model;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Util;
 
 namespace Amazon.S3.Transfer.Internal
 {
@@ -207,7 +208,11 @@ namespace Amazon.S3.Transfer.Internal
         private async Task CreateDownloadTaskAsync(int partNumber, long objectSize, IPartBufferManager partBufferManager, CancellationToken cancellationToken)
         {
             var partTimer = Stopwatch.StartNew();
-            Logger.InfoFormat("[PERF] Part {0} Download Start", partNumber);
+            var taskId = Task.CurrentId ?? -1;
+            var threadId = Thread.CurrentThread.ManagedThreadId;
+            
+            Logger.InfoFormat("[PERF] Part {0} Download Start - TaskId={1}, ThreadId={2}", 
+                partNumber, taskId, threadId);
             
             // Wait for buffer space before starting download
             var bufferWaitTimer = Stopwatch.StartNew();
@@ -222,12 +227,21 @@ namespace Amazon.S3.Transfer.Internal
             {
                 // Limit HTTP concurrency
                 var slotWaitTimer = Stopwatch.StartNew();
+                Logger.InfoFormat("[CONCURRENCY] Part {0} - Waiting for HTTP slot (TaskId={1})", 
+                    partNumber, taskId);
+                
                 await _httpConcurrencySlots.WaitAsync(cancellationToken).ConfigureAwait(false);
                 slotWaitTimer.Stop();
                 
+                Logger.InfoFormat("[CONCURRENCY] Part {0} - Acquired HTTP slot after {1}ms (TaskId={2})", 
+                    partNumber, slotWaitTimer.ElapsedMilliseconds, taskId);
+                
                 var httpTimer = Stopwatch.StartNew();
+                var httpStartTime = AWSSDKUtils.CorrectedUtcNow;
                 try
                 {
+                    Logger.InfoFormat("[PARALLEL] [{0:HH:mm:ss.fff}] Part {1} - HTTP request START (TaskId={2}, ThreadId={3})",
+                        httpStartTime, partNumber, taskId, threadId);
                     // Create strategy-specific request
                     GetObjectRequest getObjectRequest;
                     
@@ -255,6 +269,10 @@ namespace Amazon.S3.Transfer.Internal
                     
                     response = await _s3Client.GetObjectAsync(getObjectRequest, cancellationToken).ConfigureAwait(false);
                     httpTimer.Stop();
+                    var httpEndTime = AWSSDKUtils.CorrectedUtcNow;
+                    
+                    Logger.InfoFormat("[PARALLEL] [{0:HH:mm:ss.fff}] Part {1} - HTTP request COMPLETE (TaskId={2}, ThreadId={3}, Duration={4}ms)",
+                        httpEndTime, partNumber, taskId, Thread.CurrentThread.ManagedThreadId, httpTimer.ElapsedMilliseconds);
                     
                     Logger.InfoFormat("[PERF] Part {0} HTTP Request - Slot wait: {1}ms, Request duration: {2}ms, ContentLength: {3} bytes", 
                         partNumber, slotWaitTimer.ElapsedMilliseconds, httpTimer.ElapsedMilliseconds, response.ContentLength);
@@ -272,6 +290,8 @@ namespace Amazon.S3.Transfer.Internal
                 finally
                 {
                     _httpConcurrencySlots.Release();
+                    Logger.InfoFormat("[CONCURRENCY] Part {0} - Released HTTP slot (TaskId={1})", 
+                        partNumber, taskId);
                 }
                 
                 // Always buffer the part
@@ -655,13 +675,27 @@ namespace Amazon.S3.Transfer.Internal
                         partNumber, readIteration, totalRead, readSize, remainingBytes, bufferSpace, totalRead);
                     
                     var iterationTimer = Stopwatch.StartNew();
+                    var readTaskId = Task.CurrentId ?? -1;
+                    var readThreadId = Thread.CurrentThread.ManagedThreadId;
+                    var readStartTime = AWSSDKUtils.CorrectedUtcNow;
+                    
+                    Logger.InfoFormat("[ASYNC-READ] [{0:HH:mm:ss.fff}] Part {1} Iteration {2} - ReadAsync START (TaskId={3}, ThreadId={4}, Bytes={5})",
+                        readStartTime, partNumber, readIteration, readTaskId, readThreadId, readSize);
+                    
                     // Read directly into final destination at correct offset
                     int bytesRead = await response.ResponseStream.ReadAsync(
                         partBuffer,     // Destination: final ArrayPool buffer
                         totalRead,      // Offset: current position in buffer
                         readSize,       // Count: optimal chunk size
                         cancellationToken).ConfigureAwait(false);
+                    
                     iterationTimer.Stop();
+                    var readEndTime = AWSSDKUtils.CorrectedUtcNow;
+                    var readThreadIdAfter = Thread.CurrentThread.ManagedThreadId;
+                    
+                    Logger.InfoFormat("[ASYNC-READ] [{0:HH:mm:ss.fff}] Part {1} Iteration {2} - ReadAsync COMPLETE (TaskId={3}, ThreadIdBefore={4}, ThreadIdAfter={5}, Duration={6}ms, BytesRead={7}/{8})",
+                        readEndTime, partNumber, readIteration, readTaskId, readThreadId, readThreadIdAfter, 
+                        iterationTimer.ElapsedMilliseconds, bytesRead, readSize);
                     
                     Logger.DebugFormat("[DOWNLOAD] Part {0} - Iteration {1}: Read {2} bytes from S3 stream (requested {3})", 
                         partNumber, readIteration, bytesRead, readSize);
