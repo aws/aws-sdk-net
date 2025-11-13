@@ -153,10 +153,6 @@ namespace Amazon.S3.Transfer.Internal
             {
                 Logger.DebugFormat("[MultipartDownloadCoordinator] Single part download detected, marking complete");
                 // Single part - no downloads needed, just state management
-                lock (_lockObject)
-                {
-                    _currentState = StreamState.DownloadsComplete;
-                }
                 return;
             }
 
@@ -185,11 +181,6 @@ namespace Amazon.S3.Transfer.Internal
                 Logger.DebugFormat("[MultipartDownloadCoordinator] All download tasks completed successfully");
 
                 // Mark successful completion
-                lock (_lockObject)
-                {
-                    _currentState = StreamState.DownloadsComplete;
-                }
-                
                 partBufferManager.MarkDownloadComplete(null);
             }
             catch (Exception ex)
