@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ControlCatalog.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Mapping Object
+    /// Response Unmarshaller for RelatedControlMappingDetails Object
     /// </summary>  
-    public class MappingUnmarshaller : IUnmarshaller<Mapping, XmlUnmarshallerContext>, IUnmarshaller<Mapping, JsonUnmarshallerContext>
+    public class RelatedControlMappingDetailsUnmarshaller : IUnmarshaller<RelatedControlMappingDetails, XmlUnmarshallerContext>, IUnmarshaller<RelatedControlMappingDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Mapping IUnmarshaller<Mapping, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        RelatedControlMappingDetails IUnmarshaller<RelatedControlMappingDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.ControlCatalog.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public Mapping Unmarshall(JsonUnmarshallerContext context)
+        public RelatedControlMappingDetails Unmarshall(JsonUnmarshallerContext context)
         {
-            Mapping unmarshalledObject = new Mapping();
+            RelatedControlMappingDetails unmarshalledObject = new RelatedControlMappingDetails();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,22 +66,16 @@ namespace Amazon.ControlCatalog.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("CommonControl", targetDepth))
+                if (context.TestExpression("ControlArn", targetDepth))
                 {
-                    var unmarshaller = CommonControlMappingDetailsUnmarshaller.Instance;
-                    unmarshalledObject.CommonControl = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ControlArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Framework", targetDepth))
+                if (context.TestExpression("RelationType", targetDepth))
                 {
-                    var unmarshaller = FrameworkMappingDetailsUnmarshaller.Instance;
-                    unmarshalledObject.Framework = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("RelatedControl", targetDepth))
-                {
-                    var unmarshaller = RelatedControlMappingDetailsUnmarshaller.Instance;
-                    unmarshalledObject.RelatedControl = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RelationType = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -89,12 +83,12 @@ namespace Amazon.ControlCatalog.Model.Internal.MarshallTransformations
         }
 
 
-        private static MappingUnmarshaller _instance = new MappingUnmarshaller();        
+        private static RelatedControlMappingDetailsUnmarshaller _instance = new RelatedControlMappingDetailsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static MappingUnmarshaller Instance
+        public static RelatedControlMappingDetailsUnmarshaller Instance
         {
             get
             {

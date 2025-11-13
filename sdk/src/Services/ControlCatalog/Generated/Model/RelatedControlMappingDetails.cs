@@ -30,22 +30,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ControlCatalog.Model
 {
     /// <summary>
-    /// A structure that contains information about a control mapping, including the control
-    /// ARN, mapping type, and mapping details.
+    /// A structure that describes a control's relationship status with other controls.
     /// </summary>
-    public partial class ControlMapping
+    public partial class RelatedControlMappingDetails
     {
         private string _controlArn;
-        private Mapping _mapping;
-        private MappingType _mappingType;
+        private ControlRelationType _relationType;
 
         /// <summary>
         /// Gets and sets the property ControlArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) that identifies the control in the mapping.
+        /// The unique identifier of a control.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=34, Max=2048)]
+        [AWSProperty(Min=34, Max=2048)]
         public string ControlArn
         {
             get { return this._controlArn; }
@@ -59,42 +57,22 @@ namespace Amazon.ControlCatalog.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Mapping. 
+        /// Gets and sets the property RelationType. 
         /// <para>
-        /// The details of the mapping relationship, for example, containing framework, common
-        /// control, or related control information.
+        /// Returns an enumerated value that represents the relationship between two or more controls.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public Mapping Mapping
+        public ControlRelationType RelationType
         {
-            get { return this._mapping; }
-            set { this._mapping = value; }
+            get { return this._relationType; }
+            set { this._relationType = value; }
         }
 
-        // Check to see if Mapping property is set
-        internal bool IsSetMapping()
+        // Check to see if RelationType property is set
+        internal bool IsSetRelationType()
         {
-            return this._mapping != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property MappingType. 
-        /// <para>
-        /// The type of mapping relationship between the control and other entities.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public MappingType MappingType
-        {
-            get { return this._mappingType; }
-            set { this._mappingType = value; }
-        }
-
-        // Check to see if MappingType property is set
-        internal bool IsSetMappingType()
-        {
-            return this._mappingType != null;
+            return this._relationType != null;
         }
 
     }
