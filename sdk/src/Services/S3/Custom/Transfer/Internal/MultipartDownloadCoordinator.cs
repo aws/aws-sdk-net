@@ -349,47 +349,71 @@ namespace Amazon.S3.Transfer.Internal
                 // Get target part size for RANGE strategy
                 var targetPartSize = _request.IsSetPartSize() ? _request.PartSize : _config.TargetPartSizeBytes;
                 
-                // For RANGE strategy, start with GetObject for ByteRange(0, targetPartSize-1) (no HEAD request needed)
-                // This provides both discovery data and content in a single request
+                // SEP Step 1: Create GetObject request with range=0-{targetPartSize-1} for first part
                 var firstRangeRequest = CreateGetObjectRequest();
                 firstRangeRequest.ByteRange = new ByteRange(0, targetPartSize - 1);
                 
+                // SEP Step 2: Send request and wait for response
                 var firstRangeResponse = await _s3Client.GetObjectAsync(firstRangeRequest, cancellationToken).ConfigureAwait(false);
                 
-                // Save ETag for SEP compliance validation
+                // Save ETag for SEP Step 5 (IfMatch validation in subsequent requests)
                 _savedETag = firstRangeResponse.ETag;
                 
-                var objectSize = firstRangeResponse.ContentLength;
-                
-                // Check if we got the entire object in one request (small object case)
-                if (firstRangeResponse.ContentRange == null || objectSize <= targetPartSize)
+                // SEP Step 3: Parse total content length from ContentRange header
+                // Check if ContentRange is null (object smaller than requested range)
+                if (firstRangeResponse.ContentRange == null)
                 {
-                    // SEP-compliant: Single part strategy
+                    // No ContentRange means we got the entire small object
                     _discoveredPartCount = 1;
                     
-                    // This is a small object that fits in one part
                     return new DownloadDiscoveryResult
                     {
                         TotalParts = 1,
-                        ObjectSize = objectSize,
+                        ObjectSize = firstRangeResponse.ContentLength,
                         SinglePartResponse = firstRangeResponse,
                     };
                 }
                 
-                // Parse the Content-Range header to get the total object size
-                // Format: "bytes 0-{end}/{total-size}" or "bytes 0-{end}/*"
-                var contentRange = firstRangeResponse.ContentRange;
-                var totalObjectSize = ExtractTotalSizeFromContentRange(contentRange);
+                // Parse total object size from ContentRange (e.g., "bytes 0-5242879/52428800" -> 52428800)
+                var totalContentLength = ExtractTotalSizeFromContentRange(firstRangeResponse.ContentRange);
                 
+                // SEP Step 4: Compare parsed total with ContentLength to determine single vs multipart
+                if (totalContentLength == firstRangeResponse.ContentLength)
+                {
+                    // Single part: total size equals returned ContentLength
+                    // This request contains all of the data
+                    _discoveredPartCount = 1;
+                    
+                    return new DownloadDiscoveryResult
+                    {
+                        TotalParts = 1,
+                        ObjectSize = totalContentLength,
+                        SinglePartResponse = firstRangeResponse,
+                    };
+                }
+                
+                // Multipart: total size != ContentLength, more parts available
+                // SEP Step 4 validation: Verify ContentLength matches targetPartSize
+                if (firstRangeResponse.ContentLength != targetPartSize)
+                {
+                    throw new InvalidOperationException(
+                        $"Expected first part size {targetPartSize} bytes, but received {firstRangeResponse.ContentLength} bytes. " +
+                        $"Total object size is {totalContentLength} bytes.");
+                }
+                
+                // Dispose first part response since we'll download all parts fresh
                 firstRangeResponse.Dispose();
                 
-                // SEP-compliant: Calculate and store part count based on object size and target part size
-                _discoveredPartCount = (int)Math.Ceiling((double)totalObjectSize / targetPartSize);
+                // SEP Step 5: Calculate number of ranged GET requests required
+                _discoveredPartCount = (int)Math.Ceiling((double)totalContentLength / targetPartSize);
+                
+                Logger.DebugFormat("[RANGE Discovery] Multipart download detected: TotalSize={0}, PartSize={1}, PartCount={2}",
+                    totalContentLength, targetPartSize, _discoveredPartCount);
                 
                 return new DownloadDiscoveryResult
                 {
                     TotalParts = _discoveredPartCount,
-                    ObjectSize = totalObjectSize,
+                    ObjectSize = totalContentLength,
                     SinglePartResponse = null
                 };
             }
