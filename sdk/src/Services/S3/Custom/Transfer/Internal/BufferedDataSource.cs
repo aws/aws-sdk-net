@@ -48,22 +48,22 @@ namespace Amazon.S3.Transfer.Internal
         {
             ThrowIfDisposed();
             
-            if (buffer == null)
-                throw new ArgumentNullException(nameof(buffer));
-            if (offset < 0)
-                throw new ArgumentOutOfRangeException(nameof(offset), "Offset must be non-negative");
-            if (count < 0)
-                throw new ArgumentOutOfRangeException(nameof(count), "Count must be non-negative");
-            if (offset + count > buffer.Length)
-                throw new ArgumentException("Offset and count exceed buffer bounds");
-
-            if (_partBuffer.RemainingBytes == 0)
-            {
-                return Task.FromResult(0); // End of part
-            }
-
             try
             {
+                if (buffer == null)
+                    throw new ArgumentNullException(nameof(buffer));
+                if (offset < 0)
+                    throw new ArgumentOutOfRangeException(nameof(offset), "Offset must be non-negative");
+                if (count < 0)
+                    throw new ArgumentOutOfRangeException(nameof(count), "Count must be non-negative");
+                if (offset + count > buffer.Length)
+                    throw new ArgumentException("Offset and count exceed buffer bounds");
+
+                if (_partBuffer.RemainingBytes == 0)
+                {
+                    return Task.FromResult(0); // End of part
+                }
+
                 // Calculate bytes to copy from buffered part
                 var availableBytes = _partBuffer.RemainingBytes;
                 var bytesToRead = Math.Min(count, availableBytes);
@@ -83,7 +83,7 @@ namespace Amazon.S3.Transfer.Internal
             }
             catch (Exception)
             {
-                // On any error during read, mark the buffer as consumed to prevent further reads
+                // On any error during read (including validation), mark the buffer as consumed to prevent further reads
                 _partBuffer.CurrentPosition = _partBuffer.Length;
                 throw;
             }

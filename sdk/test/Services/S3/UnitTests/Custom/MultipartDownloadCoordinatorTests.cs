@@ -854,12 +854,15 @@ namespace AWSSDK.UnitTests
             var totalObjectSize = 20 * 1024 * 1024;
             var partSize = 8 * 1024 * 1024;
             
-            // Both parts have correct ranges
+            // All three parts have correct ranges
             var firstPartResponse = MultipartDownloadTestHelpers.CreateRangeResponse(
                 0, partSize - 1, totalObjectSize, "test-etag");
             
             var secondPartResponse = MultipartDownloadTestHelpers.CreateRangeResponse(
                 partSize, 2 * partSize - 1, totalObjectSize, "test-etag");
+            
+            var thirdPartResponse = MultipartDownloadTestHelpers.CreateRangeResponse(
+                2 * partSize, totalObjectSize - 1, totalObjectSize, "test-etag");
             
             int callCount = 0;
             var mockClient = new Mock<IAmazonS3>();
@@ -867,9 +870,9 @@ namespace AWSSDK.UnitTests
                 .Returns(() =>
                 {
                     callCount++;
-                    return callCount == 1
-                        ? Task.FromResult(firstPartResponse)
-                        : Task.FromResult(secondPartResponse);
+                    if (callCount == 1) return Task.FromResult(firstPartResponse);
+                    if (callCount == 2) return Task.FromResult(secondPartResponse);
+                    return Task.FromResult(thirdPartResponse);
                 });
             
             var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest(

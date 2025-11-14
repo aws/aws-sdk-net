@@ -40,6 +40,30 @@ namespace AWSSDK.UnitTests
             byte[] testData = null,
             bool includeHeaders = true)
         {
+            return CreateMockGetObjectResponseWithEncryption(
+                contentLength,
+                partsCount,
+                contentRange,
+                eTag,
+                testData,
+                includeHeaders,
+                ServerSideEncryptionMethod.AES256,
+                null);
+        }
+
+        /// <summary>
+        /// Creates a GetObjectResponse with configurable properties including encryption settings.
+        /// </summary>
+        public static GetObjectResponse CreateMockGetObjectResponseWithEncryption(
+            long contentLength,
+            int? partsCount,
+            string contentRange,
+            string eTag,
+            byte[] testData,
+            bool includeHeaders,
+            ServerSideEncryptionMethod serverSideEncryptionMethod,
+            string serverSideEncryptionKeyManagementServiceKeyId)
+        {
             var response = new GetObjectResponse();
             
             // Set ContentLength
@@ -74,7 +98,13 @@ namespace AWSSDK.UnitTests
             }
             
             // Server-side encryption
-            response.ServerSideEncryptionMethod = ServerSideEncryptionMethod.AES256;
+            response.ServerSideEncryptionMethod = serverSideEncryptionMethod;
+            
+            // KMS key ID (if provided)
+            if (!string.IsNullOrEmpty(serverSideEncryptionKeyManagementServiceKeyId))
+            {
+                response.ServerSideEncryptionKeyManagementServiceKeyId = serverSideEncryptionKeyManagementServiceKeyId;
+            }
             
             return response;
         }

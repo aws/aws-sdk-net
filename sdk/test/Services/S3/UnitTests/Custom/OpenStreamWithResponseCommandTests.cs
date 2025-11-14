@@ -106,24 +106,23 @@ namespace AWSSDK.UnitTests
         public async Task ExecuteAsync_MapsMetadataFromInitialResponse()
         {
             // Arrange
-            var headers = new HeadersCollection();
-            headers["Content-Language"] = "en-US";
-            headers["Cache-Control"] = "max-age=3600";
+            var testData = MultipartDownloadTestHelpers.GenerateTestData(1024, 0);
+            var mockResponse = MultipartDownloadTestHelpers.CreateMockGetObjectResponseWithEncryption(
+                contentLength: 1024,
+                partsCount: null,
+                contentRange: null,
+                eTag: "test-etag-123",
+                testData: testData,
+                includeHeaders: true,
+                serverSideEncryptionMethod: ServerSideEncryptionMethod.AES256,
+                serverSideEncryptionKeyManagementServiceKeyId: "test-kms-key");
             
-            var mockResponse = new Mock<GetObjectResponse>();
-            mockResponse.Setup(x => x.ContentLength).Returns(1024);
-            mockResponse.Setup(x => x.PartsCount).Returns((int?)null);
-            mockResponse.Setup(x => x.ContentRange).Returns((string)null);
-            mockResponse.Setup(x => x.ETag).Returns("test-etag-123");
-            mockResponse.Setup(x => x.Headers).Returns(headers);
-            mockResponse.Setup(x => x.ResponseStream).Returns(new MemoryStream(new byte[1024]));
-            mockResponse.Setup(x => x.Metadata).Returns(new MetadataCollection());
-            mockResponse.Setup(x => x.ServerSideEncryptionMethod).Returns(ServerSideEncryptionMethod.AES256);
-            mockResponse.Setup(x => x.ServerSideEncryptionCustomerMethod).Returns(ServerSideEncryptionCustomerMethod.None);
-            mockResponse.Setup(x => x.ServerSideEncryptionKeyManagementServiceKeyId).Returns("test-kms-key");
+            // Add custom headers
+            mockResponse.Headers["Content-Language"] = "en-US";
+            mockResponse.Headers["Cache-Control"] = "max-age=3600";
             
             var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client(
-                (req, ct) => Task.FromResult(mockResponse.Object));
+                (req, ct) => Task.FromResult(mockResponse));
             
             var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest();
             var config = new TransferUtilityConfig();
@@ -171,14 +170,12 @@ namespace AWSSDK.UnitTests
             var partSize = 10 * 1024 * 1024;
             var totalParts = 5;
             
-            var mockResponse = MultipartDownloadTestHelpers.CreateMultipartFirstPartResponse(
-                partSize, totalParts, totalObjectSize, "multipart-etag");
-            
-            var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client(
-                (req, ct) => Task.FromResult(mockResponse));
+            // Use CreateMockS3ClientForMultipart to properly mock all parts
+            var mockClient = MultipartDownloadTestHelpers.CreateMockS3ClientForMultipart(
+                totalParts, partSize, totalObjectSize, "multipart-etag", usePartStrategy: true);
             
             var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest();
-            var config = new TransferUtilityConfig();
+            var config = new TransferUtilityConfig { ConcurrentServiceRequests = 1 };
             var command = new OpenStreamWithResponseCommand(mockClient.Object, request, config);
 
             // Act
@@ -187,6 +184,9 @@ namespace AWSSDK.UnitTests
             // Assert
             Assert.IsNotNull(response);
             Assert.AreEqual("multipart-etag", response.ETag);
+            
+            // Cleanup
+            response.ResponseStream.Dispose();
         }
 
         #endregion

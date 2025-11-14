@@ -694,8 +694,8 @@ namespace AWSSDK.UnitTests
                 // Verify next 50 bytes from part 2
                 Assert.IsTrue(MultipartDownloadTestHelpers.VerifyDataMatch(testData2, readBuffer, 100, 50));
                 
-                // Should have advanced to part 3
-                Assert.AreEqual(3, manager.NextExpectedPartNumber);
+                // Should still be on part 2 (not complete yet, 50 bytes remaining)
+                Assert.AreEqual(2, manager.NextExpectedPartNumber);
             }
             finally
             {
