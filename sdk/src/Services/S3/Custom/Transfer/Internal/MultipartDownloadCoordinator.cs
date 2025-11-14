@@ -22,15 +22,11 @@
 using System;
 using System.Buffers;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.IO;
-using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.S3.Model;
-using Amazon.Runtime.Internal.Util;
-using Amazon.Util;
 
 namespace Amazon.S3.Transfer.Internal
 {
@@ -54,14 +50,6 @@ namespace Amazon.S3.Transfer.Internal
         private string _savedETag;
         private int _discoveredPartCount;
 
-        private static Logger Logger
-        {
-            get
-            {
-                return Logger.GetLogger(typeof(TransferUtility));
-            }
-        }
-
         public event EventHandler<DownloadProgressEventArgs> ProgressChanged;
 
         public MultipartDownloadCoordinator(IAmazonS3 s3Client, TransferUtilityOpenStreamRequest request, StreamConfiguration config)
@@ -72,12 +60,6 @@ namespace Amazon.S3.Transfer.Internal
             
             _config.Validate();
             _httpConcurrencySlots = new SemaphoreSlim(_config.ConcurrentServiceRequests);
-            
-            // [DIAGNOSTIC] Log actual configuration being used
-            Logger.InfoFormat("[CONFIG] ConcurrentRequests={0}", _config.ConcurrentServiceRequests);
-            Logger.InfoFormat("[CONFIG] BufferSizeBytes={0} ({1} KB)", _config.BufferSize, _config.BufferSize / 1024);
-            Logger.InfoFormat("[CONFIG] TargetPartSizeBytes={0} ({1} MB)", _config.TargetPartSizeBytes, _config.TargetPartSizeBytes / 1024 / 1024);
-            Logger.InfoFormat("[CONFIG] HttpConcurrencySlots={0}", _httpConcurrencySlots.CurrentCount);
         }
 
         public StreamState CurrentState 
@@ -112,10 +94,6 @@ namespace Amazon.S3.Transfer.Internal
                     throw new InvalidOperationException($"Discovery can only be performed in Initializing state, current state: {_currentState}");
             }
 
-            var discoveryTimer = Stopwatch.StartNew();
-            var strategy = _request.MultipartDownloadType == MultipartDownloadType.PART ? "PART" : "RANGE";
-            Logger.InfoFormat("[PERF] Discovery Start - Strategy={0}", strategy);
-
             try
             {
                 // Use strategy-specific discovery based on MultipartDownloadType
@@ -123,18 +101,10 @@ namespace Amazon.S3.Transfer.Internal
                     ? await DiscoverUsingPartStrategyAsync(cancellationToken).ConfigureAwait(false)
                     : await DiscoverUsingRangeStrategyAsync(cancellationToken).ConfigureAwait(false);
                 
-                discoveryTimer.Stop();
-                Logger.InfoFormat("[PERF] Discovery Complete - Duration: {0}ms, Parts: {1}, Size: {2} bytes, IsSinglePart: {3}", 
-                    discoveryTimer.ElapsedMilliseconds, result.TotalParts, result.ObjectSize, result.IsSinglePart);
-                
                 return result;
             }
             catch (Exception ex)
             {
-                discoveryTimer.Stop();
-                Logger.InfoFormat("[PERF] Discovery Failed - Duration: {0}ms, Error: {1}", 
-                    discoveryTimer.ElapsedMilliseconds, ex.Message);
-                
                 lock (_lockObject)
                 {
                     _currentState = StreamState.Error;
@@ -153,12 +123,8 @@ namespace Amazon.S3.Transfer.Internal
             if (partBufferManager == null)
                 throw new ArgumentNullException(nameof(partBufferManager));
 
-            Logger.DebugFormat("[MultipartDownloadCoordinator] StartDownloadsAsync - TotalParts={0}, ObjectSize={1}, IsSinglePart={2}", 
-                discoveryResult.TotalParts, discoveryResult.ObjectSize, discoveryResult.IsSinglePart);
-
             if (discoveryResult.IsSinglePart)
             {
-                Logger.DebugFormat("[STATE] DownloadType - Type=SinglePart, Action=MarkingComplete");
                 // Single part - no downloads needed, just state management
                 return;
             }
@@ -168,32 +134,22 @@ namespace Amazon.S3.Transfer.Internal
 
             try
             {
-                Logger.DebugFormat("[MultipartDownloadCoordinator] Starting fresh downloads for all parts 1-{0}", 
-                    discoveryResult.TotalParts);
-
                 // Start concurrent downloads for all parts with fresh HTTP requests
                 // This ensures all parts (including Part 1) get fresh connections to prevent timeouts
                 for (int partNum = 1; partNum <= discoveryResult.TotalParts; partNum++)
                 {
-                    Logger.DebugFormat("[STATE] TaskCreate - Part{0}", partNum);
                     var task = CreateDownloadTaskAsync(partNum, discoveryResult.ObjectSize, partBufferManager, internalCts.Token);
                     downloadTasks.Add(task);
                 }
 
-                Logger.DebugFormat("[STATE] TasksCreated - Count={0}, State=WaitingForCompletion", downloadTasks.Count);
-
                 // Wait for all downloads to complete
                 await Task.WhenAll(downloadTasks).ConfigureAwait(false);
-
-                Logger.DebugFormat("[STATE] TasksComplete - Status=Success");
 
                 // Mark successful completion
                 partBufferManager.MarkDownloadComplete(null);
             }
             catch (Exception ex)
             {
-                Logger.DebugFormat("[ERROR] DownloadFailed - Message={0}", ex.Message);
-
                 lock (_lockObject)
                 {
                     _currentState = StreamState.Error;
@@ -213,43 +169,18 @@ namespace Amazon.S3.Transfer.Internal
 
         private async Task CreateDownloadTaskAsync(int partNumber, long objectSize, IPartBufferManager partBufferManager, CancellationToken cancellationToken)
         {
-            var partTimer = Stopwatch.StartNew();
-            var taskId = Task.CurrentId ?? -1;
-            var threadId = Thread.CurrentThread.ManagedThreadId;
-            
-            Logger.InfoFormat("[PERF] Part {0} Download Start - TaskId={1}, ThreadId={2}", 
-                partNumber, taskId, threadId);
-            
             // Wait for buffer space before starting download
-            var bufferWaitTimer = Stopwatch.StartNew();
             await partBufferManager.WaitForBufferSpaceAsync(cancellationToken).ConfigureAwait(false);
-            bufferWaitTimer.Stop();
-            Logger.InfoFormat("[PERF] Part {0} Buffer Space Wait - Duration: {1}ms", 
-                partNumber, bufferWaitTimer.ElapsedMilliseconds);
             
             GetObjectResponse response = null;
             
             try
             {
                 // Limit HTTP concurrency
-                var slotWaitTimer = Stopwatch.StartNew();
-                var availableBefore = _httpConcurrencySlots.CurrentCount;
-                Logger.InfoFormat("[CONCUR] SlotWait - Part{0} - TaskId={1}, SlotsAvail={2}/{3}",
-                    partNumber, taskId, availableBefore, _config.ConcurrentServiceRequests);
-                
                 await _httpConcurrencySlots.WaitAsync(cancellationToken).ConfigureAwait(false);
-                slotWaitTimer.Stop();
-                var availableAfter = _httpConcurrencySlots.CurrentCount;
                 
-                Logger.InfoFormat("[CONCUR] SlotAcquired - Part{0} - WaitMs={1}, TaskId={2}, SlotsAvail={3}/{4}",
-                    partNumber, slotWaitTimer.ElapsedMilliseconds, taskId, availableAfter, _config.ConcurrentServiceRequests);
-                
-                var httpTimer = Stopwatch.StartNew();
-                var httpStartTime = AWSSDKUtils.CorrectedUtcNow;
                 try
                 {
-                    Logger.InfoFormat("[HTTP] RequestStart - Part{0} - Timestamp={1:HH:mm:ss.fff}, TaskId={2}, ThreadId={3}",
-                        partNumber, httpStartTime, taskId, threadId);
                     // Create strategy-specific request
                     GetObjectRequest getObjectRequest;
                     
@@ -258,36 +189,17 @@ namespace Amazon.S3.Transfer.Internal
                         // PART strategy: Use part number from original upload
                         getObjectRequest = CreateGetObjectRequest();
                         getObjectRequest.PartNumber = partNumber;
-                        
-                        Logger.DebugFormat("[DEBUG] Requesting part {0} from S3 using PART strategy, PartNumber={1}", 
-                            partNumber, getObjectRequest.PartNumber);
                     }
                     else
                     {
                         // RANGE strategy: Use calculated byte range
                         var (startByte, endByte) = CalculatePartRange(partNumber, objectSize);
-                        long expectedSize = endByte - startByte + 1;
                         
                         getObjectRequest = CreateGetObjectRequest();
                         getObjectRequest.ByteRange = new ByteRange(startByte, endByte);
-                        
-                        Logger.DebugFormat("[DEBUG] Requesting part {0} from S3 using RANGE strategy, ByteRange={1}-{2}, ExpectedSize={3}", 
-                            partNumber, startByte, endByte, expectedSize);
                     }
                     
                     response = await _s3Client.GetObjectAsync(getObjectRequest, cancellationToken).ConfigureAwait(false);
-                    httpTimer.Stop();
-                    var httpEndTime = AWSSDKUtils.CorrectedUtcNow;
-                    
-                    Logger.InfoFormat("[HTTP] RequestComplete - Part{0} - Timestamp={1:HH:mm:ss.fff}, TaskId={2}, ThreadId={3}, DurationMs={4}",
-                        partNumber, httpEndTime, taskId, Thread.CurrentThread.ManagedThreadId, httpTimer.ElapsedMilliseconds);
-                    
-                    Logger.InfoFormat("[PERF] Part {0} HTTP Request - Slot wait: {1}ms, Request duration: {2}ms, ContentLength: {3} bytes", 
-                        partNumber, slotWaitTimer.ElapsedMilliseconds, httpTimer.ElapsedMilliseconds, response.ContentLength);
-                    
-                    // DEBUG: Verify S3 response
-                    Logger.DebugFormat("[DEBUG] Got S3 response for part {0}, ContentLength={1}, ETag={2}", 
-                        partNumber, response.ContentLength, response.ETag);
                     
                     // Validate ETag consistency for SEP compliance
                     if (!string.IsNullOrEmpty(_savedETag) && !string.Equals(_savedETag, response.ETag, StringComparison.OrdinalIgnoreCase))
@@ -298,37 +210,19 @@ namespace Amazon.S3.Transfer.Internal
                 finally
                 {
                     _httpConcurrencySlots.Release();
-                    var availableAfterRelease = _httpConcurrencySlots.CurrentCount;
-                    Logger.InfoFormat("[CONCUR] SlotReleased - Part{0} - TaskId={1}, SlotsAvail={2}/{3}",
-                        partNumber, taskId, availableAfterRelease, _config.ConcurrentServiceRequests);
                 }
                 
                 // Always buffer the part
-                Logger.DebugFormat("[STATE] BufferingResponse - Part{0}", partNumber);
-                var bufferingTimer = Stopwatch.StartNew();
                 var downloadedPart = await BufferPartFromResponseAsync(partNumber, response, cancellationToken).ConfigureAwait(false);
-                bufferingTimer.Stop();
-                
-                double throughputMBps = downloadedPart.ActualSize / (1024.0 * 1024.0) / (bufferingTimer.Elapsed.TotalSeconds);
-                Logger.InfoFormat("[PERF] Part {0} HTTP-TO-BUFFER - Duration: {1}ms, Bytes: {2}, Throughput: {3:F2} MB/s", 
-                    partNumber, bufferingTimer.ElapsedMilliseconds, downloadedPart.ActualSize, throughputMBps);
                 
                 // Add the downloaded part to the buffer manager
                 await partBufferManager.AddBufferAsync(downloadedPart, cancellationToken).ConfigureAwait(false);
                 
-                partTimer.Stop();
-                double totalThroughputMBps = downloadedPart.ActualSize / (1024.0 * 1024.0) / (partTimer.Elapsed.TotalSeconds);
-                Logger.InfoFormat("[PERF] Part {0} Download Complete - Total: {1}ms, Bytes: {2}, Throughput: {3:F2} MB/s", 
-                    partNumber, partTimer.ElapsedMilliseconds, downloadedPart.ActualSize, totalThroughputMBps);
-                
                 // Report progress
                 ReportProgress(partNumber, downloadedPart.ActualSize, objectSize);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                partTimer.Stop();
-                Logger.InfoFormat("[PERF] Part {0} Download Failed - Duration: {1}ms, Error: {2}", 
-                    partNumber, partTimer.ElapsedMilliseconds, ex.Message);
                 // On any failure, the buffer space reservation is handled by the part buffer manager
                 throw;
             }
@@ -342,149 +236,130 @@ namespace Amazon.S3.Transfer.Internal
 
         private async Task<DownloadDiscoveryResult> DiscoverUsingPartStrategyAsync(CancellationToken cancellationToken)
         {
+            // For PART strategy, start with GetObject for partNumber=1 (no HEAD request needed)
+            // This provides discovery data - we'll dispose the response immediately to avoid stale connections
+            var firstPartRequest = CreateGetObjectRequest();
+            firstPartRequest.PartNumber = 1;
+            
+            var firstPartResponse = await _s3Client.GetObjectAsync(firstPartRequest, cancellationToken).ConfigureAwait(false);
+            
             try
             {
-                // For PART strategy, start with GetObject for partNumber=1 (no HEAD request needed)
-                // This provides discovery data - we'll dispose the response immediately to avoid stale connections
-                var firstPartRequest = CreateGetObjectRequest();
-                firstPartRequest.PartNumber = 1;
+                // Save ETag for SEP compliance validation
+                _savedETag = firstPartResponse.ETag;
                 
-                var firstPartResponse = await _s3Client.GetObjectAsync(firstPartRequest, cancellationToken).ConfigureAwait(false);
-                
-                try
+                // Check if PartsCount is available (indicates multipart upload)
+                if (firstPartResponse.PartsCount.HasValue && firstPartResponse.PartsCount.Value > 1)
                 {
-                    // Save ETag for SEP compliance validation
-                    _savedETag = firstPartResponse.ETag;
+                    // SEP-compliant: Store actual part count from S3 response
+                    _discoveredPartCount = firstPartResponse.PartsCount.Value;
                     
-                    // Check if PartsCount is available (indicates multipart upload)
-                    if (firstPartResponse.PartsCount.HasValue && firstPartResponse.PartsCount.Value > 1)
+                    // SEP Step 3: Parse total content length from ContentRange header
+                    // For example, "bytes 0-5242879/52428800" -> extract 52428800
+                    var totalObjectSize = ExtractTotalSizeFromContentRange(firstPartResponse.ContentRange);
+                    
+                    // This is a multipart upload - extract metadata only, no caching
+                    return new DownloadDiscoveryResult
                     {
-                        // SEP-compliant: Store actual part count from S3 response
-                        _discoveredPartCount = firstPartResponse.PartsCount.Value;
-                        
-                        // SEP Step 3: Parse total content length from ContentRange header
-                        // For example, "bytes 0-5242879/52428800" -> extract 52428800
-                        var totalObjectSize = ExtractTotalSizeFromContentRange(firstPartResponse.ContentRange);
-                        
-                        // This is a multipart upload - extract metadata only, no caching
-                        return new DownloadDiscoveryResult
-                        {
-                            TotalParts = firstPartResponse.PartsCount.Value,
-                            ObjectSize = totalObjectSize,
-                            SinglePartResponse = null,
-                        };
-                    }
-                    else
-                    {
-                        // SEP-compliant: Single part strategy
-                        _discoveredPartCount = 1;
-                        
-                        // This is a single part upload - return the response for immediate use
-                        return new DownloadDiscoveryResult
-                        {
-                            TotalParts = 1,
-                            ObjectSize = firstPartResponse.ContentLength,
-                            SinglePartResponse = firstPartResponse,
-                        };
-                    }
+                        TotalParts = firstPartResponse.PartsCount.Value,
+                        ObjectSize = totalObjectSize,
+                        SinglePartResponse = null,
+                    };
                 }
-                finally
+                else
                 {
-                    // For multipart uploads, dispose the response immediately to prevent stale connections
-                    // For single part uploads, the response is returned and will be disposed by the caller
-                    if (firstPartResponse.PartsCount.HasValue && firstPartResponse.PartsCount.Value > 1)
+                    // SEP-compliant: Single part strategy
+                    _discoveredPartCount = 1;
+                    
+                    // This is a single part upload - return the response for immediate use
+                    return new DownloadDiscoveryResult
                     {
-                        firstPartResponse.Dispose();
-                    }
+                        TotalParts = 1,
+                        ObjectSize = firstPartResponse.ContentLength,
+                        SinglePartResponse = firstPartResponse,
+                    };
                 }
             }
-            catch (Exception ex)
+            finally
             {
-                Logger.Error(ex, "Failed to discover download strategy using PART method for {0}/{1}", _request.BucketName, _request.Key);
-                throw;
+                // For multipart uploads, dispose the response immediately to prevent stale connections
+                // For single part uploads, the response is returned and will be disposed by the caller
+                if (firstPartResponse.PartsCount.HasValue && firstPartResponse.PartsCount.Value > 1)
+                {
+                    firstPartResponse.Dispose();
+                }
             }
         }
 
         private async Task<DownloadDiscoveryResult> DiscoverUsingRangeStrategyAsync(CancellationToken cancellationToken)
         {
-            try
+            // Get target part size for RANGE strategy
+            var targetPartSize = _request.IsSetPartSize() ? _request.PartSize : _config.TargetPartSizeBytes;
+            
+            // SEP Step 1: Create GetObject request with range=0-{targetPartSize-1} for first part
+            var firstRangeRequest = CreateGetObjectRequest();
+            firstRangeRequest.ByteRange = new ByteRange(0, targetPartSize - 1);
+            
+            // SEP Step 2: Send request and wait for response
+            var firstRangeResponse = await _s3Client.GetObjectAsync(firstRangeRequest, cancellationToken).ConfigureAwait(false);
+            
+            // Save ETag for SEP Step 5 (IfMatch validation in subsequent requests)
+            _savedETag = firstRangeResponse.ETag;
+            
+            // SEP Step 3: Parse total content length from ContentRange header
+            // Check if ContentRange is null (object smaller than requested range)
+            if (firstRangeResponse.ContentRange == null)
             {
-                // Get target part size for RANGE strategy
-                var targetPartSize = _request.IsSetPartSize() ? _request.PartSize : _config.TargetPartSizeBytes;
-                
-                // SEP Step 1: Create GetObject request with range=0-{targetPartSize-1} for first part
-                var firstRangeRequest = CreateGetObjectRequest();
-                firstRangeRequest.ByteRange = new ByteRange(0, targetPartSize - 1);
-                
-                // SEP Step 2: Send request and wait for response
-                var firstRangeResponse = await _s3Client.GetObjectAsync(firstRangeRequest, cancellationToken).ConfigureAwait(false);
-                
-                // Save ETag for SEP Step 5 (IfMatch validation in subsequent requests)
-                _savedETag = firstRangeResponse.ETag;
-                
-                // SEP Step 3: Parse total content length from ContentRange header
-                // Check if ContentRange is null (object smaller than requested range)
-                if (firstRangeResponse.ContentRange == null)
-                {
-                    // No ContentRange means we got the entire small object
-                    _discoveredPartCount = 1;
-                    
-                    return new DownloadDiscoveryResult
-                    {
-                        TotalParts = 1,
-                        ObjectSize = firstRangeResponse.ContentLength,
-                        SinglePartResponse = firstRangeResponse,
-                    };
-                }
-                
-                // Parse total object size from ContentRange (e.g., "bytes 0-5242879/52428800" -> 52428800)
-                var totalContentLength = ExtractTotalSizeFromContentRange(firstRangeResponse.ContentRange);
-                
-                // SEP Step 4: Compare parsed total with ContentLength to determine single vs multipart
-                if (totalContentLength == firstRangeResponse.ContentLength)
-                {
-                    // Single part: total size equals returned ContentLength
-                    // This request contains all of the data
-                    _discoveredPartCount = 1;
-                    
-                    return new DownloadDiscoveryResult
-                    {
-                        TotalParts = 1,
-                        ObjectSize = totalContentLength,
-                        SinglePartResponse = firstRangeResponse,
-                    };
-                }
-                
-                // Multipart: total size != ContentLength, more parts available
-                // SEP Step 4 validation: Verify ContentLength matches targetPartSize
-                if (firstRangeResponse.ContentLength != targetPartSize)
-                {
-                    throw new InvalidOperationException(
-                        $"Expected first part size {targetPartSize} bytes, but received {firstRangeResponse.ContentLength} bytes. " +
-                        $"Total object size is {totalContentLength} bytes.");
-                }
-                
-                // Dispose first part response since we'll download all parts fresh
-                firstRangeResponse.Dispose();
-                
-                // SEP Step 5: Calculate number of ranged GET requests required
-                _discoveredPartCount = (int)Math.Ceiling((double)totalContentLength / targetPartSize);
-                
-                Logger.DebugFormat("[RANGE Discovery] Multipart download detected: TotalSize={0}, PartSize={1}, PartCount={2}",
-                    totalContentLength, targetPartSize, _discoveredPartCount);
+                // No ContentRange means we got the entire small object
+                _discoveredPartCount = 1;
                 
                 return new DownloadDiscoveryResult
                 {
-                    TotalParts = _discoveredPartCount,
-                    ObjectSize = totalContentLength,
-                    SinglePartResponse = null
+                    TotalParts = 1,
+                    ObjectSize = firstRangeResponse.ContentLength,
+                    SinglePartResponse = firstRangeResponse,
                 };
             }
-            catch (Exception ex)
+            
+            // Parse total object size from ContentRange (e.g., "bytes 0-5242879/52428800" -> 52428800)
+            var totalContentLength = ExtractTotalSizeFromContentRange(firstRangeResponse.ContentRange);
+            
+            // SEP Step 4: Compare parsed total with ContentLength to determine single vs multipart
+            if (totalContentLength == firstRangeResponse.ContentLength)
             {
-                Logger.Error(ex, "Failed to discover download strategy using RANGE method for {0}/{1}", _request.BucketName, _request.Key);
-                throw;
+                // Single part: total size equals returned ContentLength
+                // This request contains all of the data
+                _discoveredPartCount = 1;
+                
+                return new DownloadDiscoveryResult
+                {
+                    TotalParts = 1,
+                    ObjectSize = totalContentLength,
+                    SinglePartResponse = firstRangeResponse,
+                };
             }
+            
+            // Multipart: total size != ContentLength, more parts available
+            // SEP Step 4 validation: Verify ContentLength matches targetPartSize
+            if (firstRangeResponse.ContentLength != targetPartSize)
+            {
+                throw new InvalidOperationException(
+                    $"Expected first part size {targetPartSize} bytes, but received {firstRangeResponse.ContentLength} bytes. " +
+                    $"Total object size is {totalContentLength} bytes.");
+            }
+            
+            // Dispose first part response since we'll download all parts fresh
+            firstRangeResponse.Dispose();
+            
+            // SEP Step 5: Calculate number of ranged GET requests required
+            _discoveredPartCount = (int)Math.Ceiling((double)totalContentLength / targetPartSize);
+            
+            return new DownloadDiscoveryResult
+            {
+                TotalParts = _discoveredPartCount,
+                ObjectSize = totalContentLength,
+                SinglePartResponse = null
+            };
         }
 
         private GetObjectRequest CreateGetObjectRequest()
@@ -507,19 +382,10 @@ namespace Amazon.S3.Transfer.Internal
             StreamPartBuffer downloadedPart = null;
             byte[] partBuffer = null;
             
-            // === PROFILING: Function Entry ===
-            var functionTimer = Stopwatch.StartNew();
-            var timestamp = AWSSDKUtils.CorrectedUtcNow;
-            Logger.InfoFormat("[PROFILE] Part {0} BufferPartFromResponse START at {1:HH:mm:ss.fff}", 
-                partNumber, timestamp);
-            
             try
             {
                 // Use ContentLength to determine exact bytes to read
                 long expectedBytes = response.ContentLength;
-                
-                // === PROFILING: Initial Buffer Allocation ===
-                var allocTimer = Stopwatch.StartNew();
                 
                 // Start with initial buffer size
                 int initialBufferSize;
@@ -534,70 +400,26 @@ namespace Amazon.S3.Transfer.Internal
                     initialBufferSize = (int)expectedBytes;
                 }
                 
-                Logger.DebugFormat("[DOWNLOAD] Part {0} - Starting BufferPartFromResponseAsync, initialBufferSize={1}, response.ContentLength={2}", 
-                    partNumber, initialBufferSize, response.ContentLength);
-                
                 partBuffer = ArrayPool<byte>.Shared.Rent(initialBufferSize);
-                allocTimer.Stop();
-                
-                Logger.DebugFormat("[DOWNLOAD] Part {0} - Rented ArrayPool buffer, actualBufferSize={1}", 
-                    partNumber, partBuffer.Length);
-                Logger.InfoFormat("[PERF] Buffer Alloc - Part{0} - DurationMs={1}, BytesReq={2}, BytesRented={3}, BytesExpected={4}",
-                    partNumber, allocTimer.ElapsedMilliseconds, initialBufferSize, partBuffer.Length, expectedBytes);
                 
                 int totalRead = 0;
-                int readIteration = 0;
-                var totalReadTime = 0L;
-                var totalBufferExpandTime = 0L;
-                int bufferExpansionCount = 0;
-                var readTimer = Stopwatch.StartNew();
                 
                 // Read response stream into buffer based on ContentLength
                 while (totalRead < expectedBytes)
                 {
-                    readIteration++;
-                    
                     // Calculate how many bytes we still need to read
                     int remainingBytes = (int)(expectedBytes - totalRead);
                     int bufferSpace = partBuffer.Length - totalRead;
                     
-                    // === PROFILING: Buffer Expansion ===
                     // Expand buffer if needed BEFORE reading
                     if (bufferSpace == 0)
                     {
-                        var expandTimer = Stopwatch.StartNew();
-                        var oldSize = partBuffer.Length;
-                        
-                        Logger.DebugFormat("[BUFFER] Expanding - Part{0} - CurrentBytes={1}, NeedBytes={2}",
-                            partNumber, totalRead, remainingBytes);
-                        
                         partBuffer = ExpandPartBuffer(partBuffer, totalRead);
                         bufferSpace = partBuffer.Length - totalRead;
-                        bufferExpansionCount++;
-                        expandTimer.Stop();
-                        totalBufferExpandTime += expandTimer.ElapsedMilliseconds;
-                        
-                        Logger.DebugFormat("[DOWNLOAD] Part {0} - Buffer expanded to {1} bytes, new buffer space={2}", 
-                            partNumber, partBuffer.Length, bufferSpace);
-                        Logger.InfoFormat("[PERF] Buffer Expand - Part{0} - Iteration={1}, DurationMs={2}, OldSize={3}, NewSize={4}, DataBytes={5}, RemainingBytes={6}",
-                            partNumber, readIteration, expandTimer.ElapsedMilliseconds,
-                            oldSize, partBuffer.Length, totalRead, remainingBytes);
                     }
                     
                     // Read size is minimum of: remaining bytes needed, buffer space available, and optimal chunk size
                     int readSize = Math.Min(Math.Min(remainingBytes, bufferSpace), _config.BufferSize);
-                    
-                    Logger.DebugFormat("[DOWNLOAD] Part {0} - Iteration {1}: About to read - offset={2}, count={3}, remainingBytes={4}, bufferSpace={5}, totalRead={6}", 
-                        partNumber, readIteration, totalRead, readSize, remainingBytes, bufferSpace, totalRead);
-                    
-                    // === PROFILING: Individual ReadAsync ===
-                    var iterationTimer = Stopwatch.StartNew();
-                    var readTaskId = Task.CurrentId ?? -1;
-                    var readThreadId = Thread.CurrentThread.ManagedThreadId;
-                    var readStartTime = AWSSDKUtils.CorrectedUtcNow;
-                    
-                    Logger.InfoFormat("[HTTP] ResponseReadStart - Part{0} - Iteration={1}, Timestamp={2:HH:mm:ss.fff}, TaskId={3}, ThreadId={4}, BytesReq={5}",
-                        partNumber, readIteration, readStartTime, readTaskId, readThreadId, readSize);
                     
                     // Read directly into final destination at correct offset
                     int bytesRead = await response.ResponseStream.ReadAsync(
@@ -606,84 +428,21 @@ namespace Amazon.S3.Transfer.Internal
                         readSize,       // Count: optimal chunk size
                         cancellationToken).ConfigureAwait(false);
                     
-                    iterationTimer.Stop();
-                    totalReadTime += iterationTimer.ElapsedMilliseconds;
-                    var readEndTime = AWSSDKUtils.CorrectedUtcNow;
-                    var readThreadIdAfter = Thread.CurrentThread.ManagedThreadId;
-                    
-                    Logger.InfoFormat("[HTTP] ResponseReadComplete - Part{0} - Iteration={1}, Timestamp={2:HH:mm:ss.fff}, TaskId={3}, ThreadIdBefore={4}, ThreadIdAfter={5}, DurationMs={6}, BytesRead={7}/{8}",
-                        partNumber, readIteration, readEndTime, readTaskId, readThreadId, readThreadIdAfter,
-                        iterationTimer.ElapsedMilliseconds, bytesRead, readSize);
-                    
-                    Logger.DebugFormat("[HTTP] ResponseRead - Part{0} - Iteration={1}, BytesRead={2}, BytesReq={3}",
-                        partNumber, readIteration, bytesRead, readSize);
-                    Logger.InfoFormat("[PERF] HTTP BufferFill - Part{0} - Iteration={1}, DurationMs={2}, BytesReq={3}, BytesRead={4}, TotalBytes={5}/{6}",
-                        partNumber, readIteration, iterationTimer.ElapsedMilliseconds,
-                        readSize, bytesRead, totalRead + bytesRead, expectedBytes);
-                    
                     if (bytesRead == 0) 
                     {
-                        // Unexpected EOF - log warning but don't fail
-                        Logger.DebugFormat("[DOWNLOAD] Part {0} - Unexpected EOF: Read {1} bytes but expected {2} bytes", 
-                            partNumber, totalRead, expectedBytes);
+                        // Unexpected EOF
                         break;
                     }
                     
                     totalRead += bytesRead;
-                    
-                    Logger.DebugFormat("[HTTP] BufferProgress - Part{0} - Iteration={1}, TotalBytes={2}/{3}",
-                        partNumber, readIteration, totalRead, expectedBytes);
                 }
 
-                readTimer.Stop();
-                Logger.InfoFormat("[PERF] Part {0} Buffer Read Complete - Iterations: {1}, TotalBytes: {2}, Duration: {3}ms, AvgPerIteration: {4:F2}ms", 
-                    partNumber, readIteration, totalRead, readTimer.ElapsedMilliseconds, 
-                    readIteration > 0 ? (double)readTimer.ElapsedMilliseconds / readIteration : 0);
-                
-                Logger.DebugFormat("[HTTP] BufferComplete - Part{0} - TotalBytes={1}, ExpectedBytes={2}, Iterations={3}",
-                    partNumber, totalRead, expectedBytes, readIteration);
-                
-                // Log first and last few bytes for debugging
-                if (totalRead > 0)
-                {
-                    var firstBytes = string.Join(" ", partBuffer.Take(Math.Min(8, totalRead)).Select(b => $"0x{b:X2}"));
-                    var lastBytes = totalRead >= 8 
-                        ? string.Join(" ", partBuffer.Skip(totalRead - 8).Take(8).Select(b => $"0x{b:X2}"))
-                        : "N/A";
-                    Logger.DebugFormat("[DOWNLOAD] Part {0} - Buffer content: First 8 bytes=[{1}], Last 8 bytes=[{2}]", 
-                        partNumber, firstBytes, lastBytes);
-                }
-
-                // === PROFILING: StreamPartBuffer Creation ===
-                var createTimer = Stopwatch.StartNew();
-                
                 // Create ArrayPool-based StreamPartBuffer (no copying!)
                 downloadedPart = StreamPartBuffer.FromArrayPoolBuffer(
                     partNumber,
                     partBuffer,     // Transfer ownership to StreamPartBuffer
                     totalRead       // Actual data length
                 );
-                
-                createTimer.Stop();
-
-                Logger.DebugFormat("[DOWNLOAD] Part {0} - Created StreamPartBuffer: PartNumber={1}, ActualSize={2}, BufferLength={3}", 
-                    partNumber, downloadedPart.PartNumber, downloadedPart.ActualSize, downloadedPart.Length);
-                Logger.InfoFormat("[PERF] Buffer Create - Part{0} - DurationMs={1}", partNumber, createTimer.ElapsedMilliseconds);
-                
-                // === PROFILING: Final Summary ===
-                functionTimer.Stop();
-                var expandPct = functionTimer.ElapsedMilliseconds > 0 
-                    ? Math.Round((totalBufferExpandTime / (double)functionTimer.ElapsedMilliseconds) * 100, 1) 
-                    : 0;
-                var readPct = functionTimer.ElapsedMilliseconds > 0 
-                    ? Math.Round((totalReadTime / (double)functionTimer.ElapsedMilliseconds) * 100, 1) 
-                    : 0;
-                var avgReadTime = readIteration > 0 ? Math.Round(totalReadTime / (double)readIteration, 2) : 0;
-                
-                Logger.InfoFormat("[PERF] Part Summary - Part{0} - TotalMs={1}, AllocMs={2}, ExpandMs={3}, ExpandCount={4}, ExpandPct={5:F1}, ReadMs={6}, ReadIters={7}, ReadPct={8:F1}, CreateMs={9}, AvgReadMs={10:F1}, Bytes={11}",
-                    partNumber, functionTimer.ElapsedMilliseconds,
-                    allocTimer.ElapsedMilliseconds, totalBufferExpandTime, bufferExpansionCount, expandPct,
-                    totalReadTime, readIteration, readPct, createTimer.ElapsedMilliseconds, avgReadTime, totalRead);
 
                 partBuffer = null; // Clear reference to prevent return in finally
                 return downloadedPart;
