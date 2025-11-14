@@ -54,27 +54,22 @@ namespace Amazon.S3.Transfer.Internal
         public int BufferSize { get; set; }
         
         /// <summary>
-        /// Creates a StreamConfiguration from the specific configuration values needed.
+        /// Creates a StreamConfiguration with the specified configuration values.
         /// </summary>
         /// <param name="concurrentServiceRequests">Maximum concurrent HTTP requests for downloading parts.</param>
         /// <param name="maxInMemoryParts">Maximum number of parts to keep in memory simultaneously.</param>
         /// <param name="bufferSize">Buffer size used for optimal I/O operations.</param>
         /// <param name="request">Download request containing part size information.</param>
-        /// <returns>A new StreamConfiguration instance with the specified values.</returns>
-        public static StreamConfiguration FromValues(int concurrentServiceRequests, int maxInMemoryParts, int bufferSize, BaseDownloadRequest request = null)
+        public StreamConfiguration(int concurrentServiceRequests, int maxInMemoryParts, int bufferSize, BaseDownloadRequest request = null)
         {
+            ConcurrentServiceRequests = concurrentServiceRequests;
+            MaxInMemoryParts = maxInMemoryParts;
+            BufferSize = bufferSize;
+            
             // Determine target part size from request or use 8MB default
-            long targetPartSize = (request?.IsSetPartSize() == true) 
+            TargetPartSizeBytes = (request?.IsSetPartSize() == true) 
                 ? request.PartSize 
                 : 8 * 1024 * 1024; // 8MB default
-                
-            return new StreamConfiguration
-            {
-                ConcurrentServiceRequests = concurrentServiceRequests,
-                MaxInMemoryParts = maxInMemoryParts,
-                TargetPartSizeBytes = targetPartSize,
-                BufferSize = bufferSize
-            };
         }
         
         /// <summary>
@@ -93,21 +88,6 @@ namespace Amazon.S3.Transfer.Internal
                 
             if (BufferSize <= 0)
                 throw new ArgumentOutOfRangeException(nameof(BufferSize), "Must be greater than 0");
-        }
-        
-        /// <summary>
-        /// Creates a copy of this configuration.
-        /// </summary>
-        /// <returns>A new StreamConfiguration instance with the same values.</returns>
-        public StreamConfiguration Clone()
-        {
-            return new StreamConfiguration
-            {
-                ConcurrentServiceRequests = ConcurrentServiceRequests,
-                MaxInMemoryParts = MaxInMemoryParts,
-                TargetPartSizeBytes = TargetPartSizeBytes,
-                BufferSize = BufferSize
-            };
         }
     }
 }

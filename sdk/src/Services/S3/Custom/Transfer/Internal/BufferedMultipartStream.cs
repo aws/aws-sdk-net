@@ -81,7 +81,7 @@ namespace Amazon.S3.Transfer.Internal
 
             // Create configuration from specific values we need
             var s3Config = (AmazonS3Config)s3Client.Config;
-            var config = StreamConfiguration.FromValues(
+            var config = new StreamConfiguration(
                 transferConfig.ConcurrentServiceRequests,
                 transferConfig.MaxInMemoryParts,
                 s3Config.BufferSize,
