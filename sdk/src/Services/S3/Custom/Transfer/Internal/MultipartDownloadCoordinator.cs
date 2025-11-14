@@ -48,10 +48,6 @@ namespace Amazon.S3.Transfer.Internal
 
         private string _savedETag;
         private int _discoveredPartCount;
-        
-        private long _totalTransferredBytes;
-
-        public event EventHandler<DownloadProgressEventArgs> ProgressChanged;
 
         public MultipartDownloadCoordinator(IAmazonS3 s3Client, TransferUtilityOpenStreamRequest request, StreamConfiguration config)
         {
@@ -137,7 +133,6 @@ namespace Amazon.S3.Transfer.Internal
             {
                 // Part 1 is always buffered during discovery (optimization to avoid re-downloading)
                 await partBufferManager.AddBufferAsync(discoveryResult.BufferedFirstPart, cancellationToken).ConfigureAwait(false);
-                ReportProgress(1, discoveryResult.BufferedFirstPart.ActualSize, discoveryResult.ObjectSize);
 
                 // Start concurrent downloads for remaining parts (Part 2 onwards)
                 for (int partNum = 2; partNum <= discoveryResult.TotalParts; partNum++)
@@ -242,9 +237,6 @@ namespace Amazon.S3.Transfer.Internal
                 
                 // Add the downloaded part to the buffer manager
                 await partBufferManager.AddBufferAsync(downloadedPart, cancellationToken).ConfigureAwait(false);
-                
-                // Report progress
-                ReportProgress(partNumber, downloadedPart.ActualSize, objectSize);
             }
             catch (Exception)
             {
@@ -573,20 +565,6 @@ namespace Amazon.S3.Transfer.Internal
             }
             // For PART strategy, we could validate but S3 manages the part boundaries,
             // so we trust the PartsCount and ContentRange from the initial response
-        }
-
-        private void ReportProgress(int completedPart, long partBytes, long totalBytes)
-        {
-            // Accumulate actual bytes downloaded (thread-safe for concurrent downloads)
-            long transferredBytes = Interlocked.Add(ref _totalTransferredBytes, partBytes);
-            
-            ProgressChanged?.Invoke(this, new DownloadProgressEventArgs
-            {
-                CompletedParts = completedPart,
-                TotalParts = _discoveredPartCount,
-                BytesDownloaded = transferredBytes,  // Use actual accumulated bytes
-                TotalBytes = totalBytes
-            });
         }
 
         private void ThrowIfDisposed()
