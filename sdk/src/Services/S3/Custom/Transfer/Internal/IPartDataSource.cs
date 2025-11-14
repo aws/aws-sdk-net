@@ -43,12 +43,6 @@ namespace Amazon.S3.Transfer.Internal
         Task<int> ReadAsync(byte[] buffer, int offset, int count, CancellationToken cancellationToken);
 
         /// <summary>
-        /// Indicates if this data source is ready to be read from.
-        /// Always true in our use case.
-        /// </summary>
-        bool IsAvailable { get; }
-
-        /// <summary>
         /// Indicates if this data source has been fully consumed and can be disposed.
         /// </summary>
         bool IsComplete { get; }

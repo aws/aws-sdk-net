@@ -29,7 +29,6 @@ namespace AWSSDK.UnitTests
             // Assert
             Assert.IsNotNull(dataSource);
             Assert.AreEqual(1, dataSource.PartNumber);
-            Assert.IsTrue(dataSource.IsAvailable);
             Assert.IsFalse(dataSource.IsComplete);
 
             // Cleanup
@@ -62,25 +61,6 @@ namespace AWSSDK.UnitTests
             {
                 // Act & Assert
                 Assert.AreEqual(5, dataSource.PartNumber);
-            }
-            finally
-            {
-                dataSource.Dispose();
-            }
-        }
-
-        [TestMethod]
-        public void IsAvailable_AlwaysReturnsTrue()
-        {
-            // Arrange
-            byte[] testBuffer = ArrayPool<byte>.Shared.Rent(1024);
-            var partBuffer = new StreamPartBuffer(1, testBuffer, 512);
-            var dataSource = new BufferedDataSource(partBuffer);
-
-            try
-            {
-                // Act & Assert
-                Assert.IsTrue(dataSource.IsAvailable);
             }
             finally
             {

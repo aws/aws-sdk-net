@@ -78,6 +78,7 @@ namespace Amazon.S3.Transfer.Internal
             if (transferConfig == null) throw new ArgumentNullException(nameof(transferConfig));
 
             // Create configuration from specific values we need
+            // TODO i dont think i need to cast this
             var s3Config = (AmazonS3Config)s3Client.Config;
             
             // Determine target part size from request or use 8MB default
@@ -91,7 +92,6 @@ namespace Amazon.S3.Transfer.Internal
                 s3Config.BufferSize,
                 targetPartSize);
             
-            // Create dependencies using dependency injection
             var partBufferManager = new PartBufferManager(config);
             var downloadCoordinator = new MultipartDownloadCoordinator(s3Client, request, config);
             

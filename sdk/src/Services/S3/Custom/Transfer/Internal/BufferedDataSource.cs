@@ -36,7 +36,6 @@ namespace Amazon.S3.Transfer.Internal
         private bool _disposed = false;
 
         public int PartNumber => _partBuffer.PartNumber;
-        public bool IsAvailable => true; // Always available when created
         public bool IsComplete => _partBuffer.RemainingBytes == 0;
 
         public BufferedDataSource(StreamPartBuffer partBuffer)
