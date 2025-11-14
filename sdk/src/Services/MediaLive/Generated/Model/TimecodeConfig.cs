@@ -64,7 +64,6 @@ namespace Amazon.MediaLive.Model
         /// are permitted to avoid unnecessary discontinuities in the output timecode. No timecode
         /// sync when this is not specified.
         /// </summary>
-        [AWSProperty(Min=1, Max=1000000)]
         public int SyncThreshold
         {
             get { return this._syncThreshold.GetValueOrDefault(); }

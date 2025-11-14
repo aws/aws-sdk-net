@@ -85,7 +85,6 @@ namespace Amazon.MediaLive.Model
         /// not enter a duration, the time_signal will continue until you insert a cancellation
         /// message.
         /// </summary>
-        [AWSProperty(Min=0, Max=1099511627775)]
         public long SegmentationDuration
         {
             get { return this._segmentationDuration.GetValueOrDefault(); }
@@ -101,7 +100,7 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property SegmentationEventId. Corresponds to SCTE-35 segmentation_event_id.
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=4294967295)]
+        [AWSProperty(Required=true)]
         public long SegmentationEventId
         {
             get { return this._segmentationEventId.GetValueOrDefault(); }
@@ -120,7 +119,6 @@ namespace Amazon.MediaLive.Model
         /// console, enter the ID in decimal (for example, "52"). In the CLI, API, or an SDK,
         /// enter the ID in hex (for example, "0x34") or decimal (for example, "52").
         /// </summary>
-        [AWSProperty(Min=0, Max=255)]
         public int SegmentationTypeId
         {
             get { return this._segmentationTypeId.GetValueOrDefault(); }
@@ -159,7 +157,6 @@ namespace Amazon.MediaLive.Model
         /// the CLI, API, or an SDK, enter one of the types listed in the SCTE-35 specification,
         /// in either hex (for example, "0x0C" ) or in decimal (for example, "12").
         /// </summary>
-        [AWSProperty(Min=0, Max=255)]
         public int SegmentationUpidType
         {
             get { return this._segmentationUpidType.GetValueOrDefault(); }
@@ -176,7 +173,6 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property SegmentNum. Corresponds to SCTE-35 segment_num. A value
         /// that is valid for the specified segmentation_type_id.
         /// </summary>
-        [AWSProperty(Min=0, Max=255)]
         public int SegmentNum
         {
             get { return this._segmentNum.GetValueOrDefault(); }
@@ -193,7 +189,6 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property SegmentsExpected. Corresponds to SCTE-35 segments_expected.
         /// A value that is valid for the specified segmentation_type_id.
         /// </summary>
-        [AWSProperty(Min=0, Max=255)]
         public int SegmentsExpected
         {
             get { return this._segmentsExpected.GetValueOrDefault(); }
@@ -210,7 +205,6 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property SubSegmentNum. Corresponds to SCTE-35 sub_segment_num.
         /// A value that is valid for the specified segmentation_type_id.
         /// </summary>
-        [AWSProperty(Min=0, Max=255)]
         public int SubSegmentNum
         {
             get { return this._subSegmentNum.GetValueOrDefault(); }
@@ -227,7 +221,6 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property SubSegmentsExpected. Corresponds to SCTE-35 sub_segments_expected.
         /// A value that is valid for the specified segmentation_type_id.
         /// </summary>
-        [AWSProperty(Min=0, Max=255)]
         public int SubSegmentsExpected
         {
             get { return this._subSegmentsExpected.GetValueOrDefault(); }

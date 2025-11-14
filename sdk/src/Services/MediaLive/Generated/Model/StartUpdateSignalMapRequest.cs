@@ -62,7 +62,6 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property Description. A resource's optional description.
         /// </summary>
-        [AWSProperty(Min=0, Max=1024)]
         public string Description
         {
             get { return this._description; }
@@ -79,7 +78,6 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property DiscoveryEntryPointArn. A top-level supported AWS resource
         /// ARN to discovery a signal map from.
         /// </summary>
-        [AWSProperty(Min=1, Max=2048)]
         public string DiscoveryEntryPointArn
         {
             get { return this._discoveryEntryPointArn; }
@@ -144,7 +142,6 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property Name. A resource's name. Names must be unique within the
         /// scope of a resource type in a specific region.
         /// </summary>
-        [AWSProperty(Min=1, Max=255)]
         public string Name
         {
             get { return this._name; }

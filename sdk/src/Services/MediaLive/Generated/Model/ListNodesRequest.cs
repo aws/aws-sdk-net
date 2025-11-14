@@ -58,7 +58,6 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property MaxResults. The maximum number of items to return.
         /// </summary>
-        [AWSProperty(Min=1, Max=1000)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

@@ -139,7 +139,6 @@ namespace Amazon.MediaLive.Model
         /// used for scaling. 0 is the softest setting, 100 is the sharpest. A setting of 50 is
         /// recommended for most content.
         /// </summary>
-        [AWSProperty(Min=0, Max=100)]
         public int Sharpness
         {
             get { return this._sharpness.GetValueOrDefault(); }

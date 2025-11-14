@@ -77,7 +77,6 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property Dialnorm. Sets the dialnorm for the output. Default 23.
         /// </summary>
-        [AWSProperty(Min=1, Max=31)]
         public int Dialnorm
         {
             get { return this._dialnorm.GetValueOrDefault(); }

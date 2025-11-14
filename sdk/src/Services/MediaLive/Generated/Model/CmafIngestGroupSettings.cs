@@ -124,7 +124,6 @@ namespace Amazon.MediaLive.Model
         /// the "id3" string.\nThe modifier can only contain: numbers, letters, plus (+), minus
         /// (-), underscore (_) and period (.) and has a maximum length of 100 characters.
         /// </summary>
-        [AWSProperty(Max=100)]
         public string Id3NameModifier
         {
             get { return this._id3NameModifier; }
@@ -160,7 +159,6 @@ namespace Amazon.MediaLive.Model
         /// the "klv" string.\nThe modifier can only contain: numbers, letters, plus (+), minus
         /// (-), underscore (_) and period (.) and has a maximum length of 100 characters.
         /// </summary>
-        [AWSProperty(Max=100)]
         public string KlvNameModifier
         {
             get { return this._klvNameModifier; }
@@ -198,7 +196,6 @@ namespace Amazon.MediaLive.Model
         /// letters, plus (+), minus (-), underscore (_) and period (.) and has a maximum length
         /// of 100 characters.
         /// </summary>
-        [AWSProperty(Max=100)]
         public string NielsenId3NameModifier
         {
             get { return this._nielsenId3NameModifier; }
@@ -219,7 +216,6 @@ namespace Amazon.MediaLive.Model
         /// plus (+), minus (-), underscore (_) and period (.) and has a maximum length of 100
         /// characters.
         /// </summary>
-        [AWSProperty(Max=100)]
         public string Scte35NameModifier
         {
             get { return this._scte35NameModifier; }
@@ -253,7 +249,6 @@ namespace Amazon.MediaLive.Model
         /// the specified duration, so the actual segment length might be longer, and it might
         /// be a fraction of the units.
         /// </summary>
-        [AWSProperty(Min=1)]
         public int SegmentLength
         {
             get { return this._segmentLength.GetValueOrDefault(); }
@@ -285,7 +280,6 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property SendDelayMs. Number of milliseconds to delay the output
         /// from the second pipeline.
         /// </summary>
-        [AWSProperty(Min=0, Max=2000)]
         public int SendDelayMs
         {
             get { return this._sendDelayMs.GetValueOrDefault(); }
@@ -318,7 +312,6 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property TimedMetadataId3Period. If you set up to insert a timecode
         /// in the output, specify the frequency for the frame, in seconds.
         /// </summary>
-        [AWSProperty(Min=0, Max=10000)]
         public int TimedMetadataId3Period
         {
             get { return this._timedMetadataId3Period.GetValueOrDefault(); }

@@ -75,7 +75,6 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property RolloverInterval. Number of seconds to write to archive
         /// file before closing and starting a new one.
         /// </summary>
-        [AWSProperty(Min=1)]
         public int RolloverInterval
         {
             get { return this._rolloverInterval.GetValueOrDefault(); }

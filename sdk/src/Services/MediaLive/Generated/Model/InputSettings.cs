@@ -114,7 +114,6 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property FilterStrength. Adjusts the magnitude of filtering from
         /// 1 (minimal) to 5 (strongest).
         /// </summary>
-        [AWSProperty(Min=1, Max=5)]
         public int FilterStrength
         {
             get { return this._filterStrength.GetValueOrDefault(); }
@@ -164,7 +163,6 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property Scte35Pid. PID from which to read SCTE-35 messages. If
         /// left undefined, EML will select the first SCTE-35 PID found in the input.
         /// </summary>
-        [AWSProperty(Min=32, Max=8191)]
         public int Scte35Pid
         {
             get { return this._scte35Pid.GetValueOrDefault(); }

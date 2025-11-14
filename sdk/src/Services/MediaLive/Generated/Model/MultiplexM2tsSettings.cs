@@ -104,7 +104,6 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property AudioFramesPerPes. The number of audio frames to insert
         /// for each PES packet.
         /// </summary>
-        [AWSProperty(Min=0)]
         public int AudioFramesPerPes
         {
             get { return this._audioFramesPerPes.GetValueOrDefault(); }
@@ -236,7 +235,6 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property PcrPeriod. Maximum time in milliseconds between Program
         /// Clock Reference (PCRs) inserted into the transport stream.
         /// </summary>
-        [AWSProperty(Min=0, Max=500)]
         public int PcrPeriod
         {
             get { return this._pcrPeriod.GetValueOrDefault(); }

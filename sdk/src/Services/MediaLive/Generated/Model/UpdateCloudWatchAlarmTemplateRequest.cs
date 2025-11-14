@@ -68,7 +68,6 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property DatapointsToAlarm. The number of datapoints within the
         /// evaluation period that must be breaching to trigger the alarm.
         /// </summary>
-        [AWSProperty(Min=1)]
         public int DatapointsToAlarm
         {
             get { return this._datapointsToAlarm.GetValueOrDefault(); }
@@ -84,7 +83,6 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property Description. A resource's optional description.
         /// </summary>
-        [AWSProperty(Min=0, Max=1024)]
         public string Description
         {
             get { return this._description; }
@@ -101,7 +99,6 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property EvaluationPeriods. The number of periods over which data
         /// is compared to the specified threshold.
         /// </summary>
-        [AWSProperty(Min=1)]
         public int EvaluationPeriods
         {
             get { return this._evaluationPeriods.GetValueOrDefault(); }
@@ -151,7 +148,6 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property MetricName. The name of the metric associated with the
         /// alarm. Must be compatible with targetResourceType.
         /// </summary>
-        [AWSProperty(Max=64)]
         public string MetricName
         {
             get { return this._metricName; }
@@ -168,7 +164,6 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property Name. A resource's name. Names must be unique within the
         /// scope of a resource type in a specific region.
         /// </summary>
-        [AWSProperty(Min=1, Max=255)]
         public string Name
         {
             get { return this._name; }
@@ -185,7 +180,6 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property Period. The period, in seconds, over which the specified
         /// statistic is applied.
         /// </summary>
-        [AWSProperty(Min=10, Max=86400)]
         public int Period
         {
             get { return this._period.GetValueOrDefault(); }

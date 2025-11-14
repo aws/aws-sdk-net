@@ -39,7 +39,6 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property Pid. Selects a specific PID from within a video source.
         /// </summary>
-        [AWSProperty(Min=0, Max=8191)]
         public int Pid
         {
             get { return this._pid.GetValueOrDefault(); }

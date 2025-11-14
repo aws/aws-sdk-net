@@ -132,7 +132,6 @@ namespace Amazon.MediaLive.Model
         /// the specified duration, so the actual segment length might be longer, and it might
         /// be a fraction of the units.
         /// </summary>
-        [AWSProperty(Min=1)]
         public int SegmentLength
         {
             get { return this._segmentLength.GetValueOrDefault(); }
@@ -180,7 +179,6 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property TimedMetadataId3Period. If you set up to insert a timecode
         /// in the output, specify the frequency for the frame, in seconds.
         /// </summary>
-        [AWSProperty(Min=0, Max=10000)]
         public int TimedMetadataId3Period
         {
             get { return this._timedMetadataId3Period.GetValueOrDefault(); }

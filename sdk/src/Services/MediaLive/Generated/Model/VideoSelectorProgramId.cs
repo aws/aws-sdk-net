@@ -41,7 +41,6 @@ namespace Amazon.MediaLive.Model
         /// transport stream. If the program doesn't exist, the first program within the transport
         /// stream will be selected by default.
         /// </summary>
-        [AWSProperty(Min=0, Max=65536)]
         public int ProgramId
         {
             get { return this._programId.GetValueOrDefault(); }

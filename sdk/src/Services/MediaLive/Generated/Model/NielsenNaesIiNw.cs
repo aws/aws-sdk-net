@@ -42,7 +42,7 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property CheckDigitString. Enter the check digit string for the
         /// watermark
         /// </summary>
-        [AWSProperty(Required=true, Min=2, Max=2)]
+        [AWSProperty(Required=true)]
         public string CheckDigitString
         {
             get { return this._checkDigitString; }

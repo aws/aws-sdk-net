@@ -57,7 +57,7 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property StaticKeyValue. Static key value as a 32 character hexadecimal
         /// string.
         /// </summary>
-        [AWSProperty(Required=true, Min=32, Max=32)]
+        [AWSProperty(Required=true)]
         public string StaticKeyValue
         {
             get { return this._staticKeyValue; }

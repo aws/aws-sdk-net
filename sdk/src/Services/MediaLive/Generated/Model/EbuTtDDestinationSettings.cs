@@ -45,7 +45,6 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property CopyrightHolder. Complete this field if you want to include
         /// the name of the copyright holder in the copyright tag in the captions metadata.
         /// </summary>
-        [AWSProperty(Max=1000)]
         public string CopyrightHolder
         {
             get { return this._copyrightHolder; }
@@ -63,7 +62,6 @@ namespace Amazon.MediaLive.Model
         /// of the computed cell size. Valid only if the defaultLineHeight is also set. If you
         /// leave this field empty, the default font size is 80% of the cell size.
         /// </summary>
-        [AWSProperty(Min=1, Max=800)]
         public int DefaultFontSize
         {
             get { return this._defaultFontSize.GetValueOrDefault(); }
@@ -79,7 +77,6 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property DefaultLineHeight. Documentation update needed
         /// </summary>
-        [AWSProperty(Min=80, Max=800)]
         public int DefaultLineHeight
         {
             get { return this._defaultLineHeight.GetValueOrDefault(); }
