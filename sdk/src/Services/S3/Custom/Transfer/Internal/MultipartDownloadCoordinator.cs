@@ -134,9 +134,18 @@ namespace Amazon.S3.Transfer.Internal
 
             try
             {
-                // Start concurrent downloads for all parts with fresh HTTP requests
-                // This ensures all parts (including Part 1) get fresh connections to prevent timeouts
-                for (int partNum = 1; partNum <= discoveryResult.TotalParts; partNum++)
+                // If we already buffered Part 1 during discovery, add it to the buffer manager first
+                // This optimization avoids re-downloading Part 1
+                int startPart = 1;
+                if (discoveryResult.BufferedFirstPart != null)
+                {
+                    await partBufferManager.AddBufferAsync(discoveryResult.BufferedFirstPart, cancellationToken).ConfigureAwait(false);
+                    ReportProgress(1, discoveryResult.BufferedFirstPart.ActualSize, discoveryResult.ObjectSize);
+                    startPart = 2;  // Start downloading from Part 2
+                }
+
+                // Start concurrent downloads for remaining parts
+                for (int partNum = startPart; partNum <= discoveryResult.TotalParts; partNum++)
                 {
                     var task = CreateDownloadTaskAsync(partNum, discoveryResult.ObjectSize, partBufferManager, internalCts.Token);
                     downloadTasks.Add(task);
@@ -237,57 +246,51 @@ namespace Amazon.S3.Transfer.Internal
         private async Task<DownloadDiscoveryResult> DiscoverUsingPartStrategyAsync(CancellationToken cancellationToken)
         {
             // For PART strategy, start with GetObject for partNumber=1 (no HEAD request needed)
-            // This provides discovery data - we'll dispose the response immediately to avoid stale connections
             var firstPartRequest = CreateGetObjectRequest();
             firstPartRequest.PartNumber = 1;
             
             var firstPartResponse = await _s3Client.GetObjectAsync(firstPartRequest, cancellationToken).ConfigureAwait(false);
             
-            try
+            // Save ETag for SEP compliance validation
+            _savedETag = firstPartResponse.ETag;
+            
+            // Check if PartsCount is available (indicates multipart upload)
+            if (firstPartResponse.PartsCount.HasValue && firstPartResponse.PartsCount.Value > 1)
             {
-                // Save ETag for SEP compliance validation
-                _savedETag = firstPartResponse.ETag;
+                // SEP-compliant: Store actual part count from S3 response
+                _discoveredPartCount = firstPartResponse.PartsCount.Value;
                 
-                // Check if PartsCount is available (indicates multipart upload)
-                if (firstPartResponse.PartsCount.HasValue && firstPartResponse.PartsCount.Value > 1)
+                // SEP Step 3: Parse total content length from ContentRange header
+                // For example, "bytes 0-5242879/52428800" -> extract 52428800
+                var totalObjectSize = ExtractTotalSizeFromContentRange(firstPartResponse.ContentRange);
+                
+                // Multipart: Buffer Part 1 NOW to avoid re-downloading it later
+                var bufferedFirstPart = await BufferPartFromResponseAsync(1, firstPartResponse, cancellationToken).ConfigureAwait(false);
+                
+                // Keep the response for metadata extraction (will be disposed by OpenStreamWithResponseCommand)
+                return new DownloadDiscoveryResult
                 {
-                    // SEP-compliant: Store actual part count from S3 response
-                    _discoveredPartCount = firstPartResponse.PartsCount.Value;
-                    
-                    // SEP Step 3: Parse total content length from ContentRange header
-                    // For example, "bytes 0-5242879/52428800" -> extract 52428800
-                    var totalObjectSize = ExtractTotalSizeFromContentRange(firstPartResponse.ContentRange);
-                    
-                    // This is a multipart upload - extract metadata only, no caching
-                    return new DownloadDiscoveryResult
-                    {
-                        TotalParts = firstPartResponse.PartsCount.Value,
-                        ObjectSize = totalObjectSize,
-                        SinglePartResponse = null,
-                    };
-                }
-                else
-                {
-                    // SEP-compliant: Single part strategy
-                    _discoveredPartCount = 1;
-                    
-                    // This is a single part upload - return the response for immediate use
-                    return new DownloadDiscoveryResult
-                    {
-                        TotalParts = 1,
-                        ObjectSize = firstPartResponse.ContentLength,
-                        SinglePartResponse = firstPartResponse,
-                    };
-                }
+                    TotalParts = firstPartResponse.PartsCount.Value,
+                    ObjectSize = totalObjectSize,
+                    SinglePartResponse = null,
+                    InitialResponse = firstPartResponse,  // Keep for metadata
+                    BufferedFirstPart = bufferedFirstPart  // Reuse this!
+                };
             }
-            finally
+            else
             {
-                // For multipart uploads, dispose the response immediately to prevent stale connections
-                // For single part uploads, the response is returned and will be disposed by the caller
-                if (firstPartResponse.PartsCount.HasValue && firstPartResponse.PartsCount.Value > 1)
+                // SEP-compliant: Single part strategy
+                _discoveredPartCount = 1;
+                
+                // This is a single part upload - return the response for immediate use
+                return new DownloadDiscoveryResult
                 {
-                    firstPartResponse.Dispose();
-                }
+                    TotalParts = 1,
+                    ObjectSize = firstPartResponse.ContentLength,
+                    SinglePartResponse = firstPartResponse,
+                    InitialResponse = firstPartResponse,  // Same as SinglePartResponse for consistency
+                    BufferedFirstPart = null  // Not needed for single-part
+                };
             }
         }
 
@@ -318,6 +321,8 @@ namespace Amazon.S3.Transfer.Internal
                     TotalParts = 1,
                     ObjectSize = firstRangeResponse.ContentLength,
                     SinglePartResponse = firstRangeResponse,
+                    InitialResponse = firstRangeResponse,  // Same as SinglePartResponse for consistency
+                    BufferedFirstPart = null  // Not needed for single-part
                 };
             }
             
@@ -336,6 +341,8 @@ namespace Amazon.S3.Transfer.Internal
                     TotalParts = 1,
                     ObjectSize = totalContentLength,
                     SinglePartResponse = firstRangeResponse,
+                    InitialResponse = firstRangeResponse,  // Same as SinglePartResponse for consistency
+                    BufferedFirstPart = null  // Not needed for single-part
                 };
             }
             
@@ -348,17 +355,20 @@ namespace Amazon.S3.Transfer.Internal
                     $"Total object size is {totalContentLength} bytes.");
             }
             
-            // Dispose first part response since we'll download all parts fresh
-            firstRangeResponse.Dispose();
+            // Multipart: Buffer Part 1 NOW to avoid re-downloading it later
+            var bufferedFirstPart = await BufferPartFromResponseAsync(1, firstRangeResponse, cancellationToken).ConfigureAwait(false);
             
             // SEP Step 5: Calculate number of ranged GET requests required
             _discoveredPartCount = (int)Math.Ceiling((double)totalContentLength / targetPartSize);
             
+            // Keep the response for metadata extraction (will be disposed by OpenStreamWithResponseCommand)
             return new DownloadDiscoveryResult
             {
                 TotalParts = _discoveredPartCount,
                 ObjectSize = totalContentLength,
-                SinglePartResponse = null
+                SinglePartResponse = null,
+                InitialResponse = firstRangeResponse,  // Keep for metadata
+                BufferedFirstPart = bufferedFirstPart  // Reuse this!
             };
         }
 

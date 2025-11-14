@@ -31,11 +31,13 @@ namespace Amazon.S3.Transfer.Internal
             var bufferedStream = BufferedMultipartStream.Create(_s3Client, _request, _config);
             await bufferedStream.InitializeAsync(cancellationToken).ConfigureAwait(false);
             
-            // Create response with the stream
-            return new TransferUtilityOpenStreamResponse
-            {
-                ResponseStream = bufferedStream
-            };
+            // Populate metadata from the initial GetObject response (from discovery phase)
+            var discoveryResult = bufferedStream.DiscoveryResult;
+            var response = ResponseMapper.MapGetObjectResponseToOpenStream(discoveryResult.InitialResponse);
+            
+            response.ResponseStream = bufferedStream;
+            return response;
+            
         }
     }
 }

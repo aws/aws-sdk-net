@@ -54,20 +54,14 @@ namespace Amazon.S3.Transfer.Internal
         public int BufferSize { get; set; }
         
         /// <summary>
-        /// Timeout for individual HTTP requests.
-        /// </summary>
-        public TimeSpan RequestTimeout { get; set; }
-        
-        /// <summary>
         /// Creates a StreamConfiguration from the specific configuration values needed.
         /// </summary>
         /// <param name="concurrentServiceRequests">Maximum concurrent HTTP requests for downloading parts.</param>
         /// <param name="maxInMemoryParts">Maximum number of parts to keep in memory simultaneously.</param>
         /// <param name="bufferSize">Buffer size used for optimal I/O operations.</param>
-        /// <param name="requestTimeout">Timeout for individual HTTP requests.</param>
         /// <param name="request">Download request containing part size information.</param>
         /// <returns>A new StreamConfiguration instance with the specified values.</returns>
-        public static StreamConfiguration FromValues(int concurrentServiceRequests, int maxInMemoryParts, int bufferSize, TimeSpan? requestTimeout, BaseDownloadRequest request = null)
+        public static StreamConfiguration FromValues(int concurrentServiceRequests, int maxInMemoryParts, int bufferSize, BaseDownloadRequest request = null)
         {
             // Determine target part size from request or use 8MB default
             long targetPartSize = (request?.IsSetPartSize() == true) 
@@ -79,8 +73,7 @@ namespace Amazon.S3.Transfer.Internal
                 ConcurrentServiceRequests = concurrentServiceRequests,
                 MaxInMemoryParts = maxInMemoryParts,
                 TargetPartSizeBytes = targetPartSize,
-                BufferSize = bufferSize,
-                RequestTimeout = requestTimeout ?? TimeSpan.FromMinutes(5) // Default timeout
+                BufferSize = bufferSize
             };
         }
         
@@ -100,9 +93,6 @@ namespace Amazon.S3.Transfer.Internal
                 
             if (BufferSize <= 0)
                 throw new ArgumentOutOfRangeException(nameof(BufferSize), "Must be greater than 0");
-                
-            if (RequestTimeout <= TimeSpan.Zero)
-                throw new ArgumentOutOfRangeException(nameof(RequestTimeout), "Must be greater than TimeSpan.Zero");
         }
         
         /// <summary>
@@ -116,8 +106,7 @@ namespace Amazon.S3.Transfer.Internal
                 ConcurrentServiceRequests = ConcurrentServiceRequests,
                 MaxInMemoryParts = MaxInMemoryParts,
                 TargetPartSizeBytes = TargetPartSizeBytes,
-                BufferSize = BufferSize,
-                RequestTimeout = RequestTimeout
+                BufferSize = BufferSize
             };
         }
     }

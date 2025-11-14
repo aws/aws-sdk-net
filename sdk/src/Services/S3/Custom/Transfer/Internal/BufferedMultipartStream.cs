@@ -42,6 +42,13 @@ namespace Amazon.S3.Transfer.Internal
         private IStreamHandler _streamHandler;
         private bool _initialized = false;
         private bool _disposed = false;
+        private DownloadDiscoveryResult _discoveryResult;
+
+        /// <summary>
+        /// Gets the discovery result containing metadata from the initial GetObject response.
+        /// Available after InitializeAsync completes successfully.
+        /// </summary>
+        public DownloadDiscoveryResult DiscoveryResult => _discoveryResult;
 
         /// <summary>
         /// Creates a new BufferedMultipartStream with dependency injection.
@@ -78,7 +85,6 @@ namespace Amazon.S3.Transfer.Internal
                 transferConfig.ConcurrentServiceRequests,
                 transferConfig.MaxInMemoryParts,
                 s3Config.BufferSize,
-                s3Config.Timeout,
                 request);
             
             // Create dependencies using dependency injection
@@ -103,14 +109,14 @@ namespace Amazon.S3.Transfer.Internal
             try
             {
                 // Step 1: Discover download strategy (single-part vs multipart)
-                var discoveryResult = await _downloadCoordinator.DiscoverDownloadStrategyAsync(cancellationToken)
+                _discoveryResult = await _downloadCoordinator.DiscoverDownloadStrategyAsync(cancellationToken)
                     .ConfigureAwait(false);
                 
                 // Step 2: Set up appropriate stream handler based on discovery results
-                if (discoveryResult.IsSinglePart)
+                if (_discoveryResult.IsSinglePart)
                 {
                     // Single part - use direct passthrough handler
-                    _streamHandler = new SinglePartStreamHandler(discoveryResult.SinglePartResponse.ResponseStream);
+                    _streamHandler = new SinglePartStreamHandler(_discoveryResult.SinglePartResponse.ResponseStream);
                 }
                 else
                 {
@@ -118,7 +124,7 @@ namespace Amazon.S3.Transfer.Internal
                     _streamHandler = new MultipartStreamHandler(_partBufferManager);
                     
                     // Step 3: Start concurrent downloads for multipart
-                    await _downloadCoordinator.StartDownloadsAsync(discoveryResult, _partBufferManager, cancellationToken)
+                    await _downloadCoordinator.StartDownloadsAsync(_discoveryResult, _partBufferManager, cancellationToken)
                         .ConfigureAwait(false);
                 }
                 
