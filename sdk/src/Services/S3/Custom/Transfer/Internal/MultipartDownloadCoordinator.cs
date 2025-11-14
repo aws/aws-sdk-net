@@ -364,17 +364,8 @@ namespace Amazon.S3.Transfer.Internal
 
         private GetObjectRequest CreateGetObjectRequest()
         {
-            var request = new GetObjectRequest
-            {
-                BucketName = _request.BucketName,
-                Key = _request.Key,
-                VersionId = _request.VersionId,
-                ServerSideEncryptionCustomerMethod = _request.ServerSideEncryptionCustomerMethod,
-                ServerSideEncryptionCustomerProvidedKey = _request.ServerSideEncryptionCustomerProvidedKey,
-                ServerSideEncryptionCustomerProvidedKeyMD5 = _request.ServerSideEncryptionCustomerProvidedKeyMD5
-            };
-            
-            return request;
+            // TODO i need to add user agent information here somehow
+            return RequestMapper.MapToGetObjectRequest(_request);
         }
 
         private async Task<StreamPartBuffer> BufferPartFromResponseAsync(int partNumber, GetObjectResponse response, CancellationToken cancellationToken)

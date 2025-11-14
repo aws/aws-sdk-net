@@ -68,7 +68,6 @@ namespace Amazon.S3.Transfer.Internal
                 var availableBytes = _partBuffer.RemainingBytes;
                 var bytesToRead = Math.Min(count, availableBytes);
                 
-                // Direct copy: ArrayPool buffer → user buffer (optimized single copy)
                 Buffer.BlockCopy(
                     _partBuffer.ArrayPoolBuffer,    // Source: ArrayPool buffer
                     _partBuffer.CurrentPosition,    // Source offset

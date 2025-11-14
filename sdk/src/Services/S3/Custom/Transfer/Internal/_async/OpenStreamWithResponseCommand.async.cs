@@ -28,11 +28,8 @@ namespace Amazon.S3.Transfer.Internal
     {
         public override async Task<TransferUtilityOpenStreamResponse> ExecuteAsync(CancellationToken cancellationToken)
         {
-            // Always use BufferedMultipartStream - it handles both single-part and multipart automatically
             var bufferedStream = BufferedMultipartStream.Create(_s3Client, _request, _config);
             await bufferedStream.InitializeAsync(cancellationToken).ConfigureAwait(false);
-            
-            _responseStream = bufferedStream;
             
             // Create response with the stream
             return new TransferUtilityOpenStreamResponse

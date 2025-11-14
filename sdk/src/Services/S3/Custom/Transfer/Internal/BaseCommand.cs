@@ -38,43 +38,11 @@ namespace Amazon.S3.Transfer.Internal
     {
         internal GetObjectRequest ConvertToGetObjectRequest(BaseDownloadRequest request)
         {
-            GetObjectRequest getRequest = new GetObjectRequest()
-            {
-                BucketName = request.BucketName,
-                Key = request.Key,
-                VersionId = request.VersionId
-            };
-            ((Amazon.Runtime.Internal.IAmazonWebServiceRequest)getRequest).AddBeforeRequestHandler(this.RequestEventHandler);
-
-            if (request.IsSetModifiedSinceDate())
-            {
-                getRequest.ModifiedSinceDate = request.ModifiedSinceDate;
-            }
-            if (request.IsSetUnmodifiedSinceDate())
-            {
-                getRequest.UnmodifiedSinceDate = request.UnmodifiedSinceDate;
-            }
-
-            getRequest.ServerSideEncryptionCustomerMethod = request.ServerSideEncryptionCustomerMethod;
-            getRequest.ServerSideEncryptionCustomerProvidedKey = request.ServerSideEncryptionCustomerProvidedKey;
-            getRequest.ServerSideEncryptionCustomerProvidedKeyMD5 = request.ServerSideEncryptionCustomerProvidedKeyMD5;
-            getRequest.ChecksumMode = request.ChecksumMode;
-            getRequest.RequestPayer = request.RequestPayer;
-
-            if (request.IsSetExpectedBucketOwner())
-            {
-                getRequest.ExpectedBucketOwner = request.ExpectedBucketOwner;
-            }
-            if (request.IsSetIfMatch())
-            {
-                getRequest.EtagToMatch = request.IfMatch;
-            }
-            if (request.IsSetIfNoneMatch())
-            {
-                getRequest.EtagToNotMatch = request.IfNoneMatch;
-            }
+            // Use centralized request mapping
+            GetObjectRequest getRequest = RequestMapper.MapToGetObjectRequest(request);
             
-            getRequest.ResponseHeaderOverrides = request.ResponseHeaderOverrides;
+            // Add command-specific event handler
+            ((Amazon.Runtime.Internal.IAmazonWebServiceRequest)getRequest).AddBeforeRequestHandler(this.RequestEventHandler);
 
             return getRequest;
         }

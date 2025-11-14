@@ -38,7 +38,6 @@ namespace Amazon.S3.Transfer.Internal
         IAmazonS3 _s3Client;
         TransferUtilityOpenStreamRequest _request;
         TransferUtilityConfig _config;
-        Stream _responseStream;
 
         internal OpenStreamWithResponseCommand(IAmazonS3 s3Client, TransferUtilityOpenStreamRequest request, TransferUtilityConfig config)
         {
@@ -59,11 +58,6 @@ namespace Amazon.S3.Transfer.Internal
             }
 
              return ConvertToGetObjectRequest(this._request);
-        }
-
-        internal Stream ResponseStream
-        {
-            get { return this._responseStream; }
         }
     }
 }
