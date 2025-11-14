@@ -76,10 +76,6 @@ namespace Amazon.S3.Transfer.Internal
             if (s3Client == null) throw new ArgumentNullException(nameof(s3Client));
             if (request == null) throw new ArgumentNullException(nameof(request));
             if (transferConfig == null) throw new ArgumentNullException(nameof(transferConfig));
-
-            // Create configuration from specific values we need
-            // TODO i dont think i need to cast this
-            var s3Config = (AmazonS3Config)s3Client.Config;
             
             // Determine target part size from request or use 8MB default
             long targetPartSize = request.IsSetPartSize() 
@@ -89,7 +85,7 @@ namespace Amazon.S3.Transfer.Internal
             var config = new StreamConfiguration(
                 transferConfig.ConcurrentServiceRequests,
                 transferConfig.MaxInMemoryParts,
-                s3Config.BufferSize,
+                s3Client.Config.BufferSize,
                 targetPartSize);
             
             var partBufferManager = new PartBufferManager(config);
