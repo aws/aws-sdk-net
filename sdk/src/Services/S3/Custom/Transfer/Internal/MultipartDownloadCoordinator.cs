@@ -508,10 +508,19 @@ namespace Amazon.S3.Transfer.Internal
             StreamPartBuffer downloadedPart = null;
             byte[] partBuffer = null;
             
+            // === PROFILING: Function Entry ===
+            var functionTimer = Stopwatch.StartNew();
+            var timestamp = AWSSDKUtils.CorrectedUtcNow;
+            Logger.InfoFormat("[PROFILE] Part {0} BufferPartFromResponse START at {1:HH:mm:ss.fff}", 
+                partNumber, timestamp);
+            
             try
             {
                 // Use ContentLength to determine exact bytes to read
                 long expectedBytes = response.ContentLength;
+                
+                // === PROFILING: Initial Buffer Allocation ===
+                var allocTimer = Stopwatch.StartNew();
                 
                 // Start with initial buffer size
                 int initialBufferSize;
@@ -530,11 +539,18 @@ namespace Amazon.S3.Transfer.Internal
                     partNumber, initialBufferSize, response.ContentLength);
                 
                 partBuffer = ArrayPool<byte>.Shared.Rent(initialBufferSize);
+                allocTimer.Stop();
+                
                 Logger.DebugFormat("[DOWNLOAD] Part {0} - Rented ArrayPool buffer, actualBufferSize={1}", 
                     partNumber, partBuffer.Length);
+                Logger.InfoFormat("[PROFILE] Part {0} ALLOC: {1}ms (requested={2}, rented={3}, expected={4})", 
+                    partNumber, allocTimer.ElapsedMilliseconds, initialBufferSize, partBuffer.Length, expectedBytes);
                 
                 int totalRead = 0;
                 int readIteration = 0;
+                var totalReadTime = 0L;
+                var totalBufferExpandTime = 0L;
+                int bufferExpansionCount = 0;
                 var readTimer = Stopwatch.StartNew();
                 
                 // Read response stream into buffer based on ContentLength
@@ -546,15 +562,27 @@ namespace Amazon.S3.Transfer.Internal
                     int remainingBytes = (int)(expectedBytes - totalRead);
                     int bufferSpace = partBuffer.Length - totalRead;
                     
+                    // === PROFILING: Buffer Expansion ===
                     // Expand buffer if needed BEFORE reading
                     if (bufferSpace == 0)
                     {
+                        var expandTimer = Stopwatch.StartNew();
+                        var oldSize = partBuffer.Length;
+                        
                         Logger.DebugFormat("[DOWNLOAD] Part {0} - Buffer full ({1} bytes), need {2} more bytes, expanding buffer", 
                             partNumber, totalRead, remainingBytes);
+                        
                         partBuffer = ExpandPartBuffer(partBuffer, totalRead);
                         bufferSpace = partBuffer.Length - totalRead;
+                        bufferExpansionCount++;
+                        expandTimer.Stop();
+                        totalBufferExpandTime += expandTimer.ElapsedMilliseconds;
+                        
                         Logger.DebugFormat("[DOWNLOAD] Part {0} - Buffer expanded to {1} bytes, new buffer space={2}", 
                             partNumber, partBuffer.Length, bufferSpace);
+                        Logger.InfoFormat("[PROFILE] Part {0} EXPAND iter={1}: {2}ms (old={3}, new={4}, data={5}, remaining={6})", 
+                            partNumber, readIteration, expandTimer.ElapsedMilliseconds, 
+                            oldSize, partBuffer.Length, totalRead, remainingBytes);
                     }
                     
                     // Read size is minimum of: remaining bytes needed, buffer space available, and optimal chunk size
@@ -563,6 +591,7 @@ namespace Amazon.S3.Transfer.Internal
                     Logger.DebugFormat("[DOWNLOAD] Part {0} - Iteration {1}: About to read - offset={2}, count={3}, remainingBytes={4}, bufferSpace={5}, totalRead={6}", 
                         partNumber, readIteration, totalRead, readSize, remainingBytes, bufferSpace, totalRead);
                     
+                    // === PROFILING: Individual ReadAsync ===
                     var iterationTimer = Stopwatch.StartNew();
                     var readTaskId = Task.CurrentId ?? -1;
                     var readThreadId = Thread.CurrentThread.ManagedThreadId;
@@ -579,6 +608,7 @@ namespace Amazon.S3.Transfer.Internal
                         cancellationToken).ConfigureAwait(false);
                     
                     iterationTimer.Stop();
+                    totalReadTime += iterationTimer.ElapsedMilliseconds;
                     var readEndTime = AWSSDKUtils.CorrectedUtcNow;
                     var readThreadIdAfter = Thread.CurrentThread.ManagedThreadId;
                     
@@ -588,8 +618,9 @@ namespace Amazon.S3.Transfer.Internal
                     
                     Logger.DebugFormat("[DOWNLOAD] Part {0} - Iteration {1}: Read {2} bytes from S3 stream (requested {3})", 
                         partNumber, readIteration, bytesRead, readSize);
-                    Logger.InfoFormat("[PERF] Part {0} Buffer Read Iteration {1} - Duration: {2}ms, Bytes: {3}, Requested: {4}", 
-                        partNumber, readIteration, iterationTimer.ElapsedMilliseconds, bytesRead, readSize);
+                    Logger.InfoFormat("[PROFILE] Part {0} READ iter={1}: {2}ms (requested={3}, got={4}, total={5}/{6})", 
+                        partNumber, readIteration, iterationTimer.ElapsedMilliseconds, 
+                        readSize, bytesRead, totalRead + bytesRead, expectedBytes);
                     
                     if (bytesRead == 0) 
                     {
@@ -624,15 +655,36 @@ namespace Amazon.S3.Transfer.Internal
                         partNumber, firstBytes, lastBytes);
                 }
 
+                // === PROFILING: StreamPartBuffer Creation ===
+                var createTimer = Stopwatch.StartNew();
+                
                 // Create ArrayPool-based StreamPartBuffer (no copying!)
                 downloadedPart = StreamPartBuffer.FromArrayPoolBuffer(
                     partNumber,
                     partBuffer,     // Transfer ownership to StreamPartBuffer
                     totalRead       // Actual data length
                 );
+                
+                createTimer.Stop();
 
                 Logger.DebugFormat("[DOWNLOAD] Part {0} - Created StreamPartBuffer: PartNumber={1}, ActualSize={2}, BufferLength={3}", 
                     partNumber, downloadedPart.PartNumber, downloadedPart.ActualSize, downloadedPart.Length);
+                Logger.InfoFormat("[PROFILE] Part {0} CREATE: {1}ms", partNumber, createTimer.ElapsedMilliseconds);
+                
+                // === PROFILING: Final Summary ===
+                functionTimer.Stop();
+                var expandPct = functionTimer.ElapsedMilliseconds > 0 
+                    ? Math.Round((totalBufferExpandTime / (double)functionTimer.ElapsedMilliseconds) * 100, 1) 
+                    : 0;
+                var readPct = functionTimer.ElapsedMilliseconds > 0 
+                    ? Math.Round((totalReadTime / (double)functionTimer.ElapsedMilliseconds) * 100, 1) 
+                    : 0;
+                var avgReadTime = readIteration > 0 ? Math.Round(totalReadTime / (double)readIteration, 2) : 0;
+                
+                Logger.InfoFormat("[PROFILE] Part {0} SUMMARY: total={1}ms, alloc={2}ms, expand={3}ms ({4} times, {5}%), read={6}ms ({7} iters, {8}%), create={9}ms, avgRead={10}ms, bytes={11}", 
+                    partNumber, functionTimer.ElapsedMilliseconds, 
+                    allocTimer.ElapsedMilliseconds, totalBufferExpandTime, bufferExpansionCount, expandPct,
+                    totalReadTime, readIteration, readPct, createTimer.ElapsedMilliseconds, avgReadTime, totalRead);
 
                 partBuffer = null; // Clear reference to prevent return in finally
                 return downloadedPart;
