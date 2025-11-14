@@ -1,3 +1,13 @@
+### 4.0.134.0 (2025-11-14 19:25 UTC)
+* DataZone (4.0.15.0)
+	* Adds support for granting read and write access to Amazon S3 general purpose buckets using CreateSubscriptionRequest and AcceptSubscriptionRequest APIs. Also adds search filters for SSOUser and SSOGroup to ListSubscriptions APIs and deprecates "sortBy" parameter for ListSubscriptions APIs.
+* EC2 (4.0.55.0)
+	* This release adds AvailabilityZoneId support for CreateInstanceConnectEndpoint, DescribeInstanceConnectEndpoints, and DeleteInstanceConnectEndpoint APIs.
+* Imagebuilder (4.0.5.0)
+	* EC2 Image Builder now supports invoking Lambda functions and executing Step Functions state machine through image workflows.
+* MediaLive (4.0.9.0)
+	* Removed all the value constraint (min/max) for the shape definitions (e.g. integerMin0Max3600) on the C2j models to get rid of the need to request an exemption from the SDK team whenever a shape definition (e.g. integerMin0Max3600) is changed.
+
 ### 4.0.133.0 (2025-11-13 21:18 UTC)
 * CloudFormation (4.0.6.0)
 	* CloudFormation now supports GetHookResult API with annotations to retrieve structured compliance check results and remediation guidance for each evaluated resource, replacing the previous single-message limitation with detailed validation outcomes.
