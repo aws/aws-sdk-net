@@ -931,5 +931,461 @@ namespace AWSSDK.UnitTests
         }
 
         #endregion
+
+        #region Cancellation Token Tests
+
+        [TestMethod]
+        [ExpectedException(typeof(OperationCanceledException))]
+        public async Task DiscoverDownloadStrategyAsync_WhenCancelled_ThrowsOperationCanceledException()
+        {
+            // Arrange
+            var mockClient = new Mock<IAmazonS3>();
+            mockClient.Setup(x => x.GetObjectAsync(It.IsAny<GetObjectRequest>(), It.IsAny<CancellationToken>()))
+                .ThrowsAsync(new OperationCanceledException());
+            
+            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest();
+            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration();
+            var coordinator = new MultipartDownloadCoordinator(mockClient.Object, request, config);
+            
+            var cts = new CancellationTokenSource();
+            cts.Cancel();
+
+            // Act
+            await coordinator.DiscoverDownloadStrategyAsync(cts.Token);
+        }
+
+        [TestMethod]
+        public async Task DiscoverDownloadStrategyAsync_WhenCancelled_SetsDownloadException()
+        {
+            // Arrange
+            var mockClient = new Mock<IAmazonS3>();
+            var cancelledException = new OperationCanceledException();
+            mockClient.Setup(x => x.GetObjectAsync(It.IsAny<GetObjectRequest>(), It.IsAny<CancellationToken>()))
+                .ThrowsAsync(cancelledException);
+            
+            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest();
+            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration();
+            var coordinator = new MultipartDownloadCoordinator(mockClient.Object, request, config);
+            
+            var cts = new CancellationTokenSource();
+            cts.Cancel();
+
+            // Act
+            try
+            {
+                await coordinator.DiscoverDownloadStrategyAsync(cts.Token);
+            }
+            catch (OperationCanceledException)
+            {
+                // Expected
+            }
+
+            // Assert
+            Assert.IsNotNull(coordinator.DownloadException);
+            Assert.IsInstanceOfType(coordinator.DownloadException, typeof(OperationCanceledException));
+        }
+
+        [TestMethod]
+        public async Task DiscoverDownloadStrategyAsync_PassesCancellationTokenToS3Client()
+        {
+            // Arrange
+            CancellationToken capturedToken = default;
+            var mockClient = new Mock<IAmazonS3>();
+            mockClient.Setup(x => x.GetObjectAsync(It.IsAny<GetObjectRequest>(), It.IsAny<CancellationToken>()))
+                .Callback<GetObjectRequest, CancellationToken>((req, ct) => capturedToken = ct)
+                .ReturnsAsync(MultipartDownloadTestHelpers.CreateSinglePartResponse(1024));
+            
+            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest();
+            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration();
+            var coordinator = new MultipartDownloadCoordinator(mockClient.Object, request, config);
+            
+            var cts = new CancellationTokenSource();
+
+            // Act
+            await coordinator.DiscoverDownloadStrategyAsync(cts.Token);
+
+            // Assert
+            Assert.AreEqual(cts.Token, capturedToken);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(OperationCanceledException))]
+        public async Task StartDownloadsAsync_WhenCancelledBeforeStart_ThrowsOperationCanceledException()
+        {
+            // Arrange
+            var totalParts = 3;
+            var partSize = 8 * 1024 * 1024;
+            var totalObjectSize = totalParts * partSize;
+            
+            var mockClient = MultipartDownloadTestHelpers.CreateMockS3ClientForMultipart(
+                totalParts, partSize, totalObjectSize, "test-etag", usePartStrategy: true);
+            
+            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest(
+                downloadType: MultipartDownloadType.PART);
+            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration();
+            var coordinator = new MultipartDownloadCoordinator(mockClient.Object, request, config);
+            
+            var discoveryResult = await coordinator.DiscoverDownloadStrategyAsync(CancellationToken.None);
+            
+            var mockBufferManager = new Mock<IPartBufferManager>();
+            mockBufferManager.Setup(x => x.AddBufferAsync(It.IsAny<StreamPartBuffer>(), It.IsAny<CancellationToken>()))
+                .ThrowsAsync(new OperationCanceledException());
+            
+            var cts = new CancellationTokenSource();
+            cts.Cancel();
+
+            // Act
+            await coordinator.StartDownloadsAsync(discoveryResult, mockBufferManager.Object, cts.Token);
+        }
+
+        [TestMethod]
+        public async Task StartDownloadsAsync_WhenCancelledDuringDownloads_NotifiesBufferManager()
+        {
+            // Arrange
+            var totalParts = 3;
+            var partSize = 8 * 1024 * 1024;
+            var totalObjectSize = totalParts * partSize;
+            
+            var callCount = 0;
+            var mockClient = new Mock<IAmazonS3>();
+            mockClient.Setup(x => x.GetObjectAsync(It.IsAny<GetObjectRequest>(), It.IsAny<CancellationToken>()))
+                .Returns(() =>
+                {
+                    callCount++;
+                    if (callCount == 1)
+                    {
+                        // First call (discovery) succeeds
+                        return Task.FromResult(MultipartDownloadTestHelpers.CreateMultipartFirstPartResponse(
+                            partSize, totalParts, totalObjectSize, "test-etag"));
+                    }
+                    else
+                    {
+                        // Subsequent calls (downloads) throw cancellation
+                        throw new OperationCanceledException();
+                    }
+                });
+            
+            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest(
+                downloadType: MultipartDownloadType.PART);
+            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration(concurrentRequests: 1);
+            var coordinator = new MultipartDownloadCoordinator(mockClient.Object, request, config);
+            
+            var discoveryResult = await coordinator.DiscoverDownloadStrategyAsync(CancellationToken.None);
+            
+            Exception capturedError = null;
+            var mockBufferManager = new Mock<IPartBufferManager>();
+            mockBufferManager.Setup(x => x.WaitForBufferSpaceAsync(It.IsAny<CancellationToken>()))
+                .Returns(Task.CompletedTask);
+            mockBufferManager.Setup(x => x.AddBufferAsync(It.IsAny<StreamPartBuffer>(), It.IsAny<CancellationToken>()))
+                .Returns(Task.CompletedTask);
+            mockBufferManager.Setup(x => x.MarkDownloadComplete(It.IsAny<Exception>()))
+                .Callback<Exception>(ex => capturedError = ex);
+
+            // Act
+            try
+            {
+                await coordinator.StartDownloadsAsync(discoveryResult, mockBufferManager.Object, CancellationToken.None);
+            }
+            catch (OperationCanceledException)
+            {
+                // Expected
+            }
+
+            // Assert
+            mockBufferManager.Verify(x => x.MarkDownloadComplete(It.IsAny<Exception>()), Times.Once);
+            Assert.IsNotNull(capturedError);
+            Assert.IsInstanceOfType(capturedError, typeof(OperationCanceledException));
+        }
+
+        [TestMethod]
+        public async Task StartDownloadsAsync_WhenCancelled_SetsDownloadException()
+        {
+            // Arrange
+            var totalParts = 3;
+            var partSize = 8 * 1024 * 1024;
+            var totalObjectSize = totalParts * partSize;
+            
+            var callCount = 0;
+            var mockClient = new Mock<IAmazonS3>();
+            mockClient.Setup(x => x.GetObjectAsync(It.IsAny<GetObjectRequest>(), It.IsAny<CancellationToken>()))
+                .Returns(() =>
+                {
+                    callCount++;
+                    if (callCount == 1)
+                    {
+                        return Task.FromResult(MultipartDownloadTestHelpers.CreateMultipartFirstPartResponse(
+                            partSize, totalParts, totalObjectSize, "test-etag"));
+                    }
+                    throw new OperationCanceledException();
+                });
+            
+            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest(
+                downloadType: MultipartDownloadType.PART);
+            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration(concurrentRequests: 1);
+            var coordinator = new MultipartDownloadCoordinator(mockClient.Object, request, config);
+            
+            var discoveryResult = await coordinator.DiscoverDownloadStrategyAsync(CancellationToken.None);
+            
+            var mockBufferManager = new Mock<IPartBufferManager>();
+            mockBufferManager.Setup(x => x.WaitForBufferSpaceAsync(It.IsAny<CancellationToken>()))
+                .Returns(Task.CompletedTask);
+            mockBufferManager.Setup(x => x.AddBufferAsync(It.IsAny<StreamPartBuffer>(), It.IsAny<CancellationToken>()))
+                .Returns(Task.CompletedTask);
+            mockBufferManager.Setup(x => x.MarkDownloadComplete(It.IsAny<Exception>()));
+
+            // Act
+            try
+            {
+                await coordinator.StartDownloadsAsync(discoveryResult, mockBufferManager.Object, CancellationToken.None);
+            }
+            catch (OperationCanceledException)
+            {
+                // Expected
+            }
+
+            // Assert
+            Assert.IsNotNull(coordinator.DownloadException);
+            Assert.IsInstanceOfType(coordinator.DownloadException, typeof(OperationCanceledException));
+        }
+
+        [TestMethod]
+        public async Task StartDownloadsAsync_PassesCancellationTokenToBufferManager()
+        {
+            // Arrange
+            var totalParts = 2;
+            var partSize = 8 * 1024 * 1024;
+            var totalObjectSize = totalParts * partSize;
+            
+            var mockClient = MultipartDownloadTestHelpers.CreateMockS3ClientForMultipart(
+                totalParts, partSize, totalObjectSize, "test-etag", usePartStrategy: true);
+            
+            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest(
+                downloadType: MultipartDownloadType.PART);
+            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration();
+            var coordinator = new MultipartDownloadCoordinator(mockClient.Object, request, config);
+            
+            var discoveryResult = await coordinator.DiscoverDownloadStrategyAsync(CancellationToken.None);
+            
+            CancellationToken capturedAddBufferToken = default;
+            CancellationToken capturedWaitToken = default;
+            
+            var mockBufferManager = new Mock<IPartBufferManager>();
+            mockBufferManager.Setup(x => x.WaitForBufferSpaceAsync(It.IsAny<CancellationToken>()))
+                .Callback<CancellationToken>(ct => capturedWaitToken = ct)
+                .Returns(Task.CompletedTask);
+            mockBufferManager.Setup(x => x.AddBufferAsync(It.IsAny<StreamPartBuffer>(), It.IsAny<CancellationToken>()))
+                .Callback<StreamPartBuffer, CancellationToken>((buffer, ct) => capturedAddBufferToken = ct)
+                .Returns(Task.CompletedTask);
+            mockBufferManager.Setup(x => x.MarkDownloadComplete(It.IsAny<Exception>()));
+            
+            var cts = new CancellationTokenSource();
+
+            // Act
+            await coordinator.StartDownloadsAsync(discoveryResult, mockBufferManager.Object, cts.Token);
+
+            // Assert
+            Assert.IsFalse(capturedAddBufferToken == default);
+            Assert.IsFalse(capturedWaitToken == default);
+        }
+
+        [TestMethod]
+        public async Task StartDownloadsAsync_SinglePart_DoesNotThrowOnCancellation()
+        {
+            // Arrange - Single part download should return immediately without using cancellation token
+            var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client();
+            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest();
+            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration();
+            var coordinator = new MultipartDownloadCoordinator(mockClient.Object, request, config);
+            
+            var discoveryResult = new DownloadDiscoveryResult
+            {
+                TotalParts = 1,
+                ObjectSize = 1024,
+                SinglePartResponse = new GetObjectResponse(),
+                InitialResponse = new GetObjectResponse(),
+                BufferedFirstPart = null
+            };
+            
+            var mockBufferManager = new Mock<IPartBufferManager>();
+            
+            var cts = new CancellationTokenSource();
+            cts.Cancel();
+
+            // Act - should complete without throwing even though token is cancelled
+            await coordinator.StartDownloadsAsync(discoveryResult, mockBufferManager.Object, cts.Token);
+
+            // Assert - no exception thrown, no S3 calls made
+            mockClient.Verify(x => x.GetObjectAsync(It.IsAny<GetObjectRequest>(), It.IsAny<CancellationToken>()), Times.Never);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(OperationCanceledException))]
+        public async Task StartDownloadsAsync_WhenCancelledDuringBufferWait_ThrowsOperationCanceledException()
+        {
+            // Arrange
+            var totalParts = 3;
+            var partSize = 8 * 1024 * 1024;
+            var totalObjectSize = totalParts * partSize;
+            
+            var mockClient = MultipartDownloadTestHelpers.CreateMockS3ClientForMultipart(
+                totalParts, partSize, totalObjectSize, "test-etag", usePartStrategy: true);
+            
+            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest(
+                downloadType: MultipartDownloadType.PART);
+            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration();
+            var coordinator = new MultipartDownloadCoordinator(mockClient.Object, request, config);
+            
+            var discoveryResult = await coordinator.DiscoverDownloadStrategyAsync(CancellationToken.None);
+            
+            var mockBufferManager = new Mock<IPartBufferManager>();
+            mockBufferManager.Setup(x => x.WaitForBufferSpaceAsync(It.IsAny<CancellationToken>()))
+                .ThrowsAsync(new OperationCanceledException());
+            mockBufferManager.Setup(x => x.AddBufferAsync(It.IsAny<StreamPartBuffer>(), It.IsAny<CancellationToken>()))
+                .Returns(Task.CompletedTask);
+            mockBufferManager.Setup(x => x.MarkDownloadComplete(It.IsAny<Exception>()));
+
+            // Act
+            await coordinator.StartDownloadsAsync(discoveryResult, mockBufferManager.Object, CancellationToken.None);
+        }
+
+        [TestMethod]
+        public async Task StartDownloadsAsync_CancellationPropagatesAcrossConcurrentDownloads()
+        {
+            // Arrange - Multiple concurrent downloads, one fails with cancellation
+            var totalParts = 5;
+            var partSize = 8 * 1024 * 1024;
+            var totalObjectSize = totalParts * partSize;
+            
+            var callCount = 0;
+            var mockClient = new Mock<IAmazonS3>();
+            mockClient.Setup(x => x.GetObjectAsync(It.IsAny<GetObjectRequest>(), It.IsAny<CancellationToken>()))
+                .Returns(() =>
+                {
+                    callCount++;
+                    if (callCount == 1)
+                    {
+                        // Discovery call succeeds
+                        return Task.FromResult(MultipartDownloadTestHelpers.CreateMultipartFirstPartResponse(
+                            partSize, totalParts, totalObjectSize, "test-etag"));
+                    }
+                    else if (callCount == 2)
+                    {
+                        // Second download (part 2) throws cancellation
+                        throw new OperationCanceledException();
+                    }
+                    else
+                    {
+                        // Other downloads should also be cancelled
+                        return Task.FromResult(MultipartDownloadTestHelpers.CreateMockGetObjectResponse(
+                            partSize, totalParts, 
+                            $"bytes {(callCount - 1) * partSize}-{callCount * partSize - 1}/{totalObjectSize}",
+                            "test-etag"));
+                    }
+                });
+            
+            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest(
+                downloadType: MultipartDownloadType.PART);
+            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration(concurrentRequests: 2);
+            var coordinator = new MultipartDownloadCoordinator(mockClient.Object, request, config);
+            
+            var discoveryResult = await coordinator.DiscoverDownloadStrategyAsync(CancellationToken.None);
+            
+            var mockBufferManager = new Mock<IPartBufferManager>();
+            mockBufferManager.Setup(x => x.WaitForBufferSpaceAsync(It.IsAny<CancellationToken>()))
+                .Returns(Task.CompletedTask);
+            mockBufferManager.Setup(x => x.AddBufferAsync(It.IsAny<StreamPartBuffer>(), It.IsAny<CancellationToken>()))
+                .Returns(Task.CompletedTask);
+            mockBufferManager.Setup(x => x.MarkDownloadComplete(It.IsAny<Exception>()));
+
+            // Act
+            try
+            {
+                await coordinator.StartDownloadsAsync(discoveryResult, mockBufferManager.Object, CancellationToken.None);
+            }
+            catch (OperationCanceledException)
+            {
+                // Expected
+            }
+
+            // Assert - Buffer manager should be notified of failure
+            mockBufferManager.Verify(x => x.MarkDownloadComplete(It.IsAny<Exception>()), Times.Once);
+        }
+
+        [TestMethod]
+        public async Task Coordinator_CanBeDisposedAfterCancellation()
+        {
+            // Arrange
+            var mockClient = new Mock<IAmazonS3>();
+            mockClient.Setup(x => x.GetObjectAsync(It.IsAny<GetObjectRequest>(), It.IsAny<CancellationToken>()))
+                .ThrowsAsync(new OperationCanceledException());
+            
+            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest();
+            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration();
+            var coordinator = new MultipartDownloadCoordinator(mockClient.Object, request, config);
+            
+            var cts = new CancellationTokenSource();
+            cts.Cancel();
+
+            // Act
+            try
+            {
+                await coordinator.DiscoverDownloadStrategyAsync(cts.Token);
+            }
+            catch (OperationCanceledException)
+            {
+                // Expected
+            }
+            
+            // Dispose should not throw
+            coordinator.Dispose();
+
+            // Assert - Multiple disposes should also work
+            coordinator.Dispose();
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(OperationCanceledException))]
+        public async Task StartDownloadsAsync_RangeStrategy_CancellationDuringDownloads()
+        {
+            // Arrange - RANGE strategy cancellation
+            var totalObjectSize = 20 * 1024 * 1024;
+            var partSize = 8 * 1024 * 1024;
+            
+            var callCount = 0;
+            var mockClient = new Mock<IAmazonS3>();
+            mockClient.Setup(x => x.GetObjectAsync(It.IsAny<GetObjectRequest>(), It.IsAny<CancellationToken>()))
+                .Returns(() =>
+                {
+                    callCount++;
+                    if (callCount == 1)
+                    {
+                        // Discovery succeeds
+                        return Task.FromResult(MultipartDownloadTestHelpers.CreateRangeResponse(
+                            0, partSize - 1, totalObjectSize, "test-etag"));
+                    }
+                    // Part 2 download throws cancellation
+                    throw new OperationCanceledException();
+                });
+            
+            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest(
+                partSize: partSize,
+                downloadType: MultipartDownloadType.RANGE);
+            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration(concurrentRequests: 1);
+            var coordinator = new MultipartDownloadCoordinator(mockClient.Object, request, config);
+            
+            var discoveryResult = await coordinator.DiscoverDownloadStrategyAsync(CancellationToken.None);
+            
+            var mockBufferManager = new Mock<IPartBufferManager>();
+            mockBufferManager.Setup(x => x.WaitForBufferSpaceAsync(It.IsAny<CancellationToken>()))
+                .Returns(Task.CompletedTask);
+            mockBufferManager.Setup(x => x.AddBufferAsync(It.IsAny<StreamPartBuffer>(), It.IsAny<CancellationToken>()))
+                .Returns(Task.CompletedTask);
+            mockBufferManager.Setup(x => x.MarkDownloadComplete(It.IsAny<Exception>()));
+
+            // Act
+            await coordinator.StartDownloadsAsync(discoveryResult, mockBufferManager.Object, CancellationToken.None);
+        }
+
+        #endregion
     }
 }
