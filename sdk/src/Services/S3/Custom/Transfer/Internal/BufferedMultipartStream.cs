@@ -111,7 +111,7 @@ namespace Amazon.S3.Transfer.Internal
                 throw new InvalidOperationException("Stream has already been initialized");
 
             var initTimer = Stopwatch.StartNew();
-            Logger.InfoFormat("[PERF] Stream Initialization Start");
+            Logger.InfoFormat("[PERF] Stream Init - State=Starting");
 
             try
             {
@@ -124,31 +124,31 @@ namespace Amazon.S3.Transfer.Internal
                 {
                     // Single part - use direct passthrough handler
                     _streamHandler = new SinglePartStreamHandler(discoveryResult.SinglePartResponse.ResponseStream);
-                    Logger.InfoFormat("[PERF] Stream Handler - Type: SinglePart");
+                    Logger.InfoFormat("[STATE] StreamHandler - Type=SinglePart");
                 }
                 else
                 {
                     // Multipart - use coordinated handler with buffer manager
                     _streamHandler = new MultipartStreamHandler(_partBufferManager);
-                    Logger.InfoFormat("[PERF] Stream Handler - Type: Multipart");
+                    Logger.InfoFormat("[STATE] StreamHandler - Type=Multipart");
                     
                     // Step 3: Start concurrent downloads for multipart
                     var downloadsTimer = Stopwatch.StartNew();
                     await _downloadCoordinator.StartDownloadsAsync(discoveryResult, _partBufferManager, cancellationToken)
                         .ConfigureAwait(false);
                     downloadsTimer.Stop();
-                    Logger.InfoFormat("[PERF] Start Downloads - Duration: {0}ms", downloadsTimer.ElapsedMilliseconds);
+                    Logger.InfoFormat("[PERF] Stream DownloadStart - DurationMs={0}", downloadsTimer.ElapsedMilliseconds);
                 }
                 
                 _initialized = true;
                 initTimer.Stop();
-                Logger.InfoFormat("[PERF] Stream Initialization Complete - Total: {0}ms, Type: {1}", 
-                    initTimer.ElapsedMilliseconds, discoveryResult.IsSinglePart ? "SinglePart" : "Multipart");
+                Logger.InfoFormat("[PERF] Stream Init - Type={0}, TotalMs={1}", 
+                    discoveryResult.IsSinglePart ? "SinglePart" : "Multipart", initTimer.ElapsedMilliseconds);
             }
             catch (Exception ex)
             {
                 initTimer.Stop();
-                Logger.InfoFormat("[PERF] Stream Initialization Failed - Duration: {0}ms, Error: {1}", 
+                Logger.InfoFormat("[ERROR] Stream Init - DurationMs={0}, Error={1}", 
                     initTimer.ElapsedMilliseconds, ex.Message);
                 
                 // Clean up on initialization failure
@@ -183,7 +183,7 @@ namespace Amazon.S3.Transfer.Internal
             
             if (count > 0 && readTimer.ElapsedMilliseconds > 5) // Only log if significant time
             {
-                Logger.InfoFormat("[PERF] Stream Read - Requested: {0}, Received: {1}, Duration: {2}ms", 
+                Logger.InfoFormat("[PERF] Stream Read - BytesReq={0}, BytesRead={1}, DurationMs={2}", 
                     count, bytesRead, readTimer.ElapsedMilliseconds);
             }
             

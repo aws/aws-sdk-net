@@ -74,11 +74,10 @@ namespace Amazon.S3.Transfer.Internal
             _httpConcurrencySlots = new SemaphoreSlim(_config.ConcurrentServiceRequests);
             
             // [DIAGNOSTIC] Log actual configuration being used
-            Logger.InfoFormat("[CONFIG-VERIFY] MultipartDownloadCoordinator initialized:");
-            Logger.InfoFormat("[CONFIG-VERIFY]   ConcurrentServiceRequests = {0}", _config.ConcurrentServiceRequests);
-            Logger.InfoFormat("[CONFIG-VERIFY]   BufferSize = {0} ({1} KB)", _config.BufferSize, _config.BufferSize / 1024);
-            Logger.InfoFormat("[CONFIG-VERIFY]   TargetPartSizeBytes = {0} ({1} MB)", _config.TargetPartSizeBytes, _config.TargetPartSizeBytes / 1024 / 1024);
-            Logger.InfoFormat("[CONFIG-VERIFY]   HttpConcurrencySemaphore initialized with {0} slots", _httpConcurrencySlots.CurrentCount);
+            Logger.InfoFormat("[CONFIG] ConcurrentRequests={0}", _config.ConcurrentServiceRequests);
+            Logger.InfoFormat("[CONFIG] BufferSizeBytes={0} ({1} KB)", _config.BufferSize, _config.BufferSize / 1024);
+            Logger.InfoFormat("[CONFIG] TargetPartSizeBytes={0} ({1} MB)", _config.TargetPartSizeBytes, _config.TargetPartSizeBytes / 1024 / 1024);
+            Logger.InfoFormat("[CONFIG] HttpConcurrencySlots={0}", _httpConcurrencySlots.CurrentCount);
         }
 
         public StreamState CurrentState 
@@ -115,7 +114,7 @@ namespace Amazon.S3.Transfer.Internal
 
             var discoveryTimer = Stopwatch.StartNew();
             var strategy = _request.MultipartDownloadType == MultipartDownloadType.PART ? "PART" : "RANGE";
-            Logger.InfoFormat("[PERF] Discovery Started - Strategy: {0}", strategy);
+            Logger.InfoFormat("[PERF] Discovery Start - Strategy={0}", strategy);
 
             try
             {
@@ -159,7 +158,7 @@ namespace Amazon.S3.Transfer.Internal
 
             if (discoveryResult.IsSinglePart)
             {
-                Logger.DebugFormat("[MultipartDownloadCoordinator] Single part download detected, marking complete");
+                Logger.DebugFormat("[STATE] DownloadType - Type=SinglePart, Action=MarkingComplete");
                 // Single part - no downloads needed, just state management
                 return;
             }
@@ -176,24 +175,24 @@ namespace Amazon.S3.Transfer.Internal
                 // This ensures all parts (including Part 1) get fresh connections to prevent timeouts
                 for (int partNum = 1; partNum <= discoveryResult.TotalParts; partNum++)
                 {
-                    Logger.DebugFormat("[MultipartDownloadCoordinator] Creating download task for part {0}", partNum);
+                    Logger.DebugFormat("[STATE] TaskCreate - Part{0}", partNum);
                     var task = CreateDownloadTaskAsync(partNum, discoveryResult.ObjectSize, partBufferManager, internalCts.Token);
                     downloadTasks.Add(task);
                 }
 
-                Logger.DebugFormat("[MultipartDownloadCoordinator] Created {0} download tasks, waiting for completion", downloadTasks.Count);
+                Logger.DebugFormat("[STATE] TasksCreated - Count={0}, State=WaitingForCompletion", downloadTasks.Count);
 
                 // Wait for all downloads to complete
                 await Task.WhenAll(downloadTasks).ConfigureAwait(false);
 
-                Logger.DebugFormat("[MultipartDownloadCoordinator] All download tasks completed successfully");
+                Logger.DebugFormat("[STATE] TasksComplete - Status=Success");
 
                 // Mark successful completion
                 partBufferManager.MarkDownloadComplete(null);
             }
             catch (Exception ex)
             {
-                Logger.DebugFormat("[MultipartDownloadCoordinator] StartDownloadsAsync failed: {0}", ex.Message);
+                Logger.DebugFormat("[ERROR] DownloadFailed - Message={0}", ex.Message);
 
                 lock (_lockObject)
                 {
@@ -235,22 +234,22 @@ namespace Amazon.S3.Transfer.Internal
                 // Limit HTTP concurrency
                 var slotWaitTimer = Stopwatch.StartNew();
                 var availableBefore = _httpConcurrencySlots.CurrentCount;
-                Logger.InfoFormat("[CONCURRENCY] Part {0} - Waiting for HTTP slot (TaskId={1}, AvailableSlots={2}/{3})", 
+                Logger.InfoFormat("[CONCUR] SlotWait - Part{0} - TaskId={1}, SlotsAvail={2}/{3}",
                     partNumber, taskId, availableBefore, _config.ConcurrentServiceRequests);
                 
                 await _httpConcurrencySlots.WaitAsync(cancellationToken).ConfigureAwait(false);
                 slotWaitTimer.Stop();
                 var availableAfter = _httpConcurrencySlots.CurrentCount;
                 
-                Logger.InfoFormat("[CONCURRENCY] Part {0} - Acquired HTTP slot after {1}ms (TaskId={2}, AvailableNow={3}/{4})", 
+                Logger.InfoFormat("[CONCUR] SlotAcquired - Part{0} - WaitMs={1}, TaskId={2}, SlotsAvail={3}/{4}",
                     partNumber, slotWaitTimer.ElapsedMilliseconds, taskId, availableAfter, _config.ConcurrentServiceRequests);
                 
                 var httpTimer = Stopwatch.StartNew();
                 var httpStartTime = AWSSDKUtils.CorrectedUtcNow;
                 try
                 {
-                    Logger.InfoFormat("[PARALLEL] [{0:HH:mm:ss.fff}] Part {1} - HTTP request START (TaskId={2}, ThreadId={3})",
-                        httpStartTime, partNumber, taskId, threadId);
+                    Logger.InfoFormat("[HTTP] RequestStart - Part{0} - Timestamp={1:HH:mm:ss.fff}, TaskId={2}, ThreadId={3}",
+                        partNumber, httpStartTime, taskId, threadId);
                     // Create strategy-specific request
                     GetObjectRequest getObjectRequest;
                     
@@ -280,8 +279,8 @@ namespace Amazon.S3.Transfer.Internal
                     httpTimer.Stop();
                     var httpEndTime = AWSSDKUtils.CorrectedUtcNow;
                     
-                    Logger.InfoFormat("[PARALLEL] [{0:HH:mm:ss.fff}] Part {1} - HTTP request COMPLETE (TaskId={2}, ThreadId={3}, Duration={4}ms)",
-                        httpEndTime, partNumber, taskId, Thread.CurrentThread.ManagedThreadId, httpTimer.ElapsedMilliseconds);
+                    Logger.InfoFormat("[HTTP] RequestComplete - Part{0} - Timestamp={1:HH:mm:ss.fff}, TaskId={2}, ThreadId={3}, DurationMs={4}",
+                        partNumber, httpEndTime, taskId, Thread.CurrentThread.ManagedThreadId, httpTimer.ElapsedMilliseconds);
                     
                     Logger.InfoFormat("[PERF] Part {0} HTTP Request - Slot wait: {1}ms, Request duration: {2}ms, ContentLength: {3} bytes", 
                         partNumber, slotWaitTimer.ElapsedMilliseconds, httpTimer.ElapsedMilliseconds, response.ContentLength);
@@ -300,12 +299,12 @@ namespace Amazon.S3.Transfer.Internal
                 {
                     _httpConcurrencySlots.Release();
                     var availableAfterRelease = _httpConcurrencySlots.CurrentCount;
-                    Logger.InfoFormat("[CONCURRENCY] Part {0} - Released HTTP slot (TaskId={1}, AvailableNow={2}/{3})", 
+                    Logger.InfoFormat("[CONCUR] SlotReleased - Part{0} - TaskId={1}, SlotsAvail={2}/{3}",
                         partNumber, taskId, availableAfterRelease, _config.ConcurrentServiceRequests);
                 }
                 
                 // Always buffer the part
-                Logger.DebugFormat("[DEBUG] Part {0} - buffering response", partNumber);
+                Logger.DebugFormat("[STATE] BufferingResponse - Part{0}", partNumber);
                 var bufferingTimer = Stopwatch.StartNew();
                 var downloadedPart = await BufferPartFromResponseAsync(partNumber, response, cancellationToken).ConfigureAwait(false);
                 bufferingTimer.Stop();
@@ -543,7 +542,7 @@ namespace Amazon.S3.Transfer.Internal
                 
                 Logger.DebugFormat("[DOWNLOAD] Part {0} - Rented ArrayPool buffer, actualBufferSize={1}", 
                     partNumber, partBuffer.Length);
-                Logger.InfoFormat("[PROFILE] Part {0} ALLOC: {1}ms (requested={2}, rented={3}, expected={4})", 
+                Logger.InfoFormat("[PERF] Buffer Alloc - Part{0} - DurationMs={1}, BytesReq={2}, BytesRented={3}, BytesExpected={4}",
                     partNumber, allocTimer.ElapsedMilliseconds, initialBufferSize, partBuffer.Length, expectedBytes);
                 
                 int totalRead = 0;
@@ -569,7 +568,7 @@ namespace Amazon.S3.Transfer.Internal
                         var expandTimer = Stopwatch.StartNew();
                         var oldSize = partBuffer.Length;
                         
-                        Logger.DebugFormat("[DOWNLOAD] Part {0} - Buffer full ({1} bytes), need {2} more bytes, expanding buffer", 
+                        Logger.DebugFormat("[BUFFER] Expanding - Part{0} - CurrentBytes={1}, NeedBytes={2}",
                             partNumber, totalRead, remainingBytes);
                         
                         partBuffer = ExpandPartBuffer(partBuffer, totalRead);
@@ -580,8 +579,8 @@ namespace Amazon.S3.Transfer.Internal
                         
                         Logger.DebugFormat("[DOWNLOAD] Part {0} - Buffer expanded to {1} bytes, new buffer space={2}", 
                             partNumber, partBuffer.Length, bufferSpace);
-                        Logger.InfoFormat("[PROFILE] Part {0} EXPAND iter={1}: {2}ms (old={3}, new={4}, data={5}, remaining={6})", 
-                            partNumber, readIteration, expandTimer.ElapsedMilliseconds, 
+                        Logger.InfoFormat("[PERF] Buffer Expand - Part{0} - Iteration={1}, DurationMs={2}, OldSize={3}, NewSize={4}, DataBytes={5}, RemainingBytes={6}",
+                            partNumber, readIteration, expandTimer.ElapsedMilliseconds,
                             oldSize, partBuffer.Length, totalRead, remainingBytes);
                     }
                     
@@ -597,8 +596,8 @@ namespace Amazon.S3.Transfer.Internal
                     var readThreadId = Thread.CurrentThread.ManagedThreadId;
                     var readStartTime = AWSSDKUtils.CorrectedUtcNow;
                     
-                    Logger.InfoFormat("[ASYNC-READ] [{0:HH:mm:ss.fff}] Part {1} Iteration {2} - ReadAsync START (TaskId={3}, ThreadId={4}, Bytes={5})",
-                        readStartTime, partNumber, readIteration, readTaskId, readThreadId, readSize);
+                    Logger.InfoFormat("[HTTP] ResponseReadStart - Part{0} - Iteration={1}, Timestamp={2:HH:mm:ss.fff}, TaskId={3}, ThreadId={4}, BytesReq={5}",
+                        partNumber, readIteration, readStartTime, readTaskId, readThreadId, readSize);
                     
                     // Read directly into final destination at correct offset
                     int bytesRead = await response.ResponseStream.ReadAsync(
@@ -612,14 +611,14 @@ namespace Amazon.S3.Transfer.Internal
                     var readEndTime = AWSSDKUtils.CorrectedUtcNow;
                     var readThreadIdAfter = Thread.CurrentThread.ManagedThreadId;
                     
-                    Logger.InfoFormat("[ASYNC-READ] [{0:HH:mm:ss.fff}] Part {1} Iteration {2} - ReadAsync COMPLETE (TaskId={3}, ThreadIdBefore={4}, ThreadIdAfter={5}, Duration={6}ms, BytesRead={7}/{8})",
-                        readEndTime, partNumber, readIteration, readTaskId, readThreadId, readThreadIdAfter, 
+                    Logger.InfoFormat("[HTTP] ResponseReadComplete - Part{0} - Iteration={1}, Timestamp={2:HH:mm:ss.fff}, TaskId={3}, ThreadIdBefore={4}, ThreadIdAfter={5}, DurationMs={6}, BytesRead={7}/{8}",
+                        partNumber, readIteration, readEndTime, readTaskId, readThreadId, readThreadIdAfter,
                         iterationTimer.ElapsedMilliseconds, bytesRead, readSize);
                     
-                    Logger.DebugFormat("[DOWNLOAD] Part {0} - Iteration {1}: Read {2} bytes from S3 stream (requested {3})", 
+                    Logger.DebugFormat("[HTTP] ResponseRead - Part{0} - Iteration={1}, BytesRead={2}, BytesReq={3}",
                         partNumber, readIteration, bytesRead, readSize);
-                    Logger.InfoFormat("[PROFILE] Part {0} READ iter={1}: {2}ms (requested={3}, got={4}, total={5}/{6})", 
-                        partNumber, readIteration, iterationTimer.ElapsedMilliseconds, 
+                    Logger.InfoFormat("[PERF] HTTP BufferFill - Part{0} - Iteration={1}, DurationMs={2}, BytesReq={3}, BytesRead={4}, TotalBytes={5}/{6}",
+                        partNumber, readIteration, iterationTimer.ElapsedMilliseconds,
                         readSize, bytesRead, totalRead + bytesRead, expectedBytes);
                     
                     if (bytesRead == 0) 
@@ -632,7 +631,7 @@ namespace Amazon.S3.Transfer.Internal
                     
                     totalRead += bytesRead;
                     
-                    Logger.DebugFormat("[DOWNLOAD] Part {0} - Iteration {1}: totalRead now = {2} bytes (target: {3} bytes)", 
+                    Logger.DebugFormat("[HTTP] BufferProgress - Part{0} - Iteration={1}, TotalBytes={2}/{3}",
                         partNumber, readIteration, totalRead, expectedBytes);
                 }
 
@@ -641,7 +640,7 @@ namespace Amazon.S3.Transfer.Internal
                     partNumber, readIteration, totalRead, readTimer.ElapsedMilliseconds, 
                     readIteration > 0 ? (double)readTimer.ElapsedMilliseconds / readIteration : 0);
                 
-                Logger.DebugFormat("[DOWNLOAD] Part {0} - Finished reading from S3 stream: totalRead={1} bytes (expected {2}), iterations={3}", 
+                Logger.DebugFormat("[HTTP] BufferComplete - Part{0} - TotalBytes={1}, ExpectedBytes={2}, Iterations={3}",
                     partNumber, totalRead, expectedBytes, readIteration);
                 
                 // Log first and last few bytes for debugging
@@ -669,7 +668,7 @@ namespace Amazon.S3.Transfer.Internal
 
                 Logger.DebugFormat("[DOWNLOAD] Part {0} - Created StreamPartBuffer: PartNumber={1}, ActualSize={2}, BufferLength={3}", 
                     partNumber, downloadedPart.PartNumber, downloadedPart.ActualSize, downloadedPart.Length);
-                Logger.InfoFormat("[PROFILE] Part {0} CREATE: {1}ms", partNumber, createTimer.ElapsedMilliseconds);
+                Logger.InfoFormat("[PERF] Buffer Create - Part{0} - DurationMs={1}", partNumber, createTimer.ElapsedMilliseconds);
                 
                 // === PROFILING: Final Summary ===
                 functionTimer.Stop();
@@ -681,8 +680,8 @@ namespace Amazon.S3.Transfer.Internal
                     : 0;
                 var avgReadTime = readIteration > 0 ? Math.Round(totalReadTime / (double)readIteration, 2) : 0;
                 
-                Logger.InfoFormat("[PROFILE] Part {0} SUMMARY: total={1}ms, alloc={2}ms, expand={3}ms ({4} times, {5}%), read={6}ms ({7} iters, {8}%), create={9}ms, avgRead={10}ms, bytes={11}", 
-                    partNumber, functionTimer.ElapsedMilliseconds, 
+                Logger.InfoFormat("[PERF] Part Summary - Part{0} - TotalMs={1}, AllocMs={2}, ExpandMs={3}, ExpandCount={4}, ExpandPct={5:F1}, ReadMs={6}, ReadIters={7}, ReadPct={8:F1}, CreateMs={9}, AvgReadMs={10:F1}, Bytes={11}",
+                    partNumber, functionTimer.ElapsedMilliseconds,
                     allocTimer.ElapsedMilliseconds, totalBufferExpandTime, bufferExpansionCount, expandPct,
                     totalReadTime, readIteration, readPct, createTimer.ElapsedMilliseconds, avgReadTime, totalRead);
 
