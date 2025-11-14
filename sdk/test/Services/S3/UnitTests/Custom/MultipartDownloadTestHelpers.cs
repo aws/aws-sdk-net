@@ -27,12 +27,12 @@ namespace AWSSDK.UnitTests
         
         #endregion
 
-        #region Mock GetObjectResponse Creation
+        #region GetObjectResponse Creation
 
         /// <summary>
-        /// Creates a mock GetObjectResponse with configurable properties for testing.
+        /// Creates a GetObjectResponse with configurable properties for testing.
         /// </summary>
-        public static Mock<GetObjectResponse> CreateMockGetObjectResponse(
+        public static GetObjectResponse CreateMockGetObjectResponse(
             long contentLength,
             int? partsCount = null,
             string contentRange = null,
@@ -40,22 +40,24 @@ namespace AWSSDK.UnitTests
             byte[] testData = null,
             bool includeHeaders = true)
         {
-            var mockResponse = new Mock<GetObjectResponse>();
+            var response = new GetObjectResponse();
             
-            // Basic properties
-            mockResponse.Setup(x => x.ContentLength).Returns(contentLength);
-            mockResponse.Setup(x => x.ETag).Returns(eTag);
+            // Set ContentLength
+            response.ContentLength = contentLength;
+            
+            // Set ETag
+            response.ETag = eTag;
             
             // PartsCount (for multipart uploads)
             if (partsCount.HasValue)
             {
-                mockResponse.Setup(x => x.PartsCount).Returns(partsCount.Value);
+                response.PartsCount = partsCount.Value;
             }
             
             // ContentRange (for range requests)
             if (contentRange != null)
             {
-                mockResponse.Setup(x => x.ContentRange).Returns(contentRange);
+                response.ContentRange = contentRange;
             }
             
             // ResponseStream with test data
@@ -63,30 +65,24 @@ namespace AWSSDK.UnitTests
             {
                 testData = GenerateTestData((int)contentLength, 0);
             }
-            var responseStream = new MemoryStream(testData);
-            mockResponse.Setup(x => x.ResponseStream).Returns(responseStream);
+            response.ResponseStream = new MemoryStream(testData);
             
             // Headers
             if (includeHeaders)
             {
-                var headers = new HeadersCollection();
-                headers["x-amz-server-side-encryption"] = "AES256";
-                mockResponse.Setup(x => x.Headers).Returns(headers);
+                response.Headers["x-amz-server-side-encryption"] = "AES256";
             }
             
-            // Metadata
-            mockResponse.Setup(x => x.Metadata).Returns(new MetadataCollection());
-            
             // Server-side encryption
-            mockResponse.Setup(x => x.ServerSideEncryptionMethod).Returns(ServerSideEncryptionMethod.AES256);
+            response.ServerSideEncryptionMethod = ServerSideEncryptionMethod.AES256;
             
-            return mockResponse;
+            return response;
         }
 
         /// <summary>
         /// Creates a GetObjectResponse for a single-part download scenario.
         /// </summary>
-        public static Mock<GetObjectResponse> CreateSinglePartResponse(
+        public static GetObjectResponse CreateSinglePartResponse(
             long objectSize,
             string eTag = "single-part-etag")
         {
@@ -100,7 +96,7 @@ namespace AWSSDK.UnitTests
         /// <summary>
         /// Creates a GetObjectResponse for the first part of a multipart download (PART strategy).
         /// </summary>
-        public static Mock<GetObjectResponse> CreateMultipartFirstPartResponse(
+        public static GetObjectResponse CreateMultipartFirstPartResponse(
             long partSize,
             int totalParts,
             long totalObjectSize,
@@ -119,7 +115,7 @@ namespace AWSSDK.UnitTests
         /// <summary>
         /// Creates a GetObjectResponse for a range request (RANGE strategy).
         /// </summary>
-        public static Mock<GetObjectResponse> CreateRangeResponse(
+        public static GetObjectResponse CreateRangeResponse(
             long rangeStart,
             long rangeEnd,
             long totalObjectSize,
@@ -154,9 +150,9 @@ namespace AWSSDK.UnitTests
                     .Returns(getObjectBehavior);
             }
             
-            // Setup Config property
+            // Setup Config property - BufferSize is not virtual, so set directly
             var mockConfig = new Mock<AmazonS3Config>();
-            mockConfig.Setup(x => x.BufferSize).Returns(BufferSize);
+            mockConfig.Object.BufferSize = BufferSize;
             mockClient.Setup(x => x.Config).Returns(mockConfig.Object);
             
             return mockClient;
@@ -181,19 +177,19 @@ namespace AWSSDK.UnitTests
                     ? totalObjectSize - (partSize * (totalParts - 1))  // Last part may be smaller
                     : partSize;
                 
-                Mock<GetObjectResponse> mockResponse;
+                GetObjectResponse response;
                 
                 if (usePartStrategy)
                 {
                     // PART strategy: First part has PartsCount
                     if (partNumber == 1)
                     {
-                        mockResponse = CreateMultipartFirstPartResponse(actualPartSize, totalParts, totalObjectSize, eTag);
+                        response = CreateMultipartFirstPartResponse(actualPartSize, totalParts, totalObjectSize, eTag);
                     }
                     else
                     {
                         var contentRange = $"bytes {(partNumber - 1) * partSize}-{(partNumber - 1) * partSize + actualPartSize - 1}/{totalObjectSize}";
-                        mockResponse = CreateMockGetObjectResponse(actualPartSize, totalParts, contentRange, eTag);
+                        response = CreateMockGetObjectResponse(actualPartSize, totalParts, contentRange, eTag);
                     }
                 }
                 else
@@ -201,10 +197,10 @@ namespace AWSSDK.UnitTests
                     // RANGE strategy: Use byte ranges
                     long rangeStart = (partNumber - 1) * partSize;
                     long rangeEnd = rangeStart + actualPartSize - 1;
-                    mockResponse = CreateRangeResponse(rangeStart, rangeEnd, totalObjectSize, eTag);
+                    response = CreateRangeResponse(rangeStart, rangeEnd, totalObjectSize, eTag);
                 }
                 
-                partResponses[i] = mockResponse.Object;
+                partResponses[i] = response;
             }
             
             var callCount = 0;

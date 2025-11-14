@@ -22,7 +22,7 @@ namespace AWSSDK.UnitTests
             // Arrange
             var mockResponse = MultipartDownloadTestHelpers.CreateSinglePartResponse(1024, "test-etag");
             var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client(
-                (req, ct) => Task.FromResult(mockResponse.Object));
+                (req, ct) => Task.FromResult(mockResponse));
             
             var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest();
             var config = new TransferUtilityConfig();
@@ -43,7 +43,7 @@ namespace AWSSDK.UnitTests
             // Arrange
             var mockResponse = MultipartDownloadTestHelpers.CreateSinglePartResponse(1024, "test-etag");
             var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client(
-                (req, ct) => Task.FromResult(mockResponse.Object));
+                (req, ct) => Task.FromResult(mockResponse));
             
             var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest();
             var config = new TransferUtilityConfig();
@@ -64,7 +64,7 @@ namespace AWSSDK.UnitTests
             // Arrange
             var mockResponse = MultipartDownloadTestHelpers.CreateSinglePartResponse(1024, "test-etag");
             var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client(
-                (req, ct) => Task.FromResult(mockResponse.Object));
+                (req, ct) => Task.FromResult(mockResponse));
             
             var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest();
             var config = new TransferUtilityConfig();
@@ -84,7 +84,7 @@ namespace AWSSDK.UnitTests
             // Arrange
             var mockResponse = MultipartDownloadTestHelpers.CreateSinglePartResponse(1024, "test-etag");
             var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client(
-                (req, ct) => Task.FromResult(mockResponse.Object));
+                (req, ct) => Task.FromResult(mockResponse));
             
             var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest();
             var config = new TransferUtilityConfig();
@@ -149,7 +149,7 @@ namespace AWSSDK.UnitTests
                 eTag: "single-part-etag");
             
             var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client(
-                (req, ct) => Task.FromResult(mockResponse.Object));
+                (req, ct) => Task.FromResult(mockResponse));
             
             var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest();
             var config = new TransferUtilityConfig();
@@ -175,7 +175,7 @@ namespace AWSSDK.UnitTests
                 partSize, totalParts, totalObjectSize, "multipart-etag");
             
             var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client(
-                (req, ct) => Task.FromResult(mockResponse.Object));
+                (req, ct) => Task.FromResult(mockResponse));
             
             var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest();
             var config = new TransferUtilityConfig();
@@ -206,7 +206,7 @@ namespace AWSSDK.UnitTests
                 testData: testData);
             
             var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client(
-                (req, ct) => Task.FromResult(mockResponse.Object));
+                (req, ct) => Task.FromResult(mockResponse));
             
             var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest();
             var config = new TransferUtilityConfig();

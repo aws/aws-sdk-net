@@ -104,7 +104,7 @@ namespace AWSSDK.UnitTests
                 eTag: "single-part-etag");
             
             var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client(
-                (req, ct) => Task.FromResult(mockResponse.Object));
+                (req, ct) => Task.FromResult(mockResponse));
             
             var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest(
                 downloadType: MultipartDownloadType.PART);
@@ -134,7 +134,7 @@ namespace AWSSDK.UnitTests
                 eTag: "single-part-etag");
             
             var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client(
-                (req, ct) => Task.FromResult(mockResponse.Object));
+                (req, ct) => Task.FromResult(mockResponse));
             
             var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest(
                 downloadType: MultipartDownloadType.PART);
@@ -156,7 +156,7 @@ namespace AWSSDK.UnitTests
             // Arrange
             var mockResponse = MultipartDownloadTestHelpers.CreateSinglePartResponse(objectSize: 1024);
             var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client(
-                (req, ct) => Task.FromResult(mockResponse.Object));
+                (req, ct) => Task.FromResult(mockResponse));
             
             var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest(
                 downloadType: MultipartDownloadType.PART);
@@ -186,7 +186,7 @@ namespace AWSSDK.UnitTests
                 partSize, totalParts, totalObjectSize, "multipart-etag");
             
             var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client(
-                (req, ct) => Task.FromResult(mockResponse.Object));
+                (req, ct) => Task.FromResult(mockResponse));
             
             var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest(
                 downloadType: MultipartDownloadType.PART);
@@ -214,7 +214,7 @@ namespace AWSSDK.UnitTests
                 partSize, totalParts, totalObjectSize, "multipart-etag");
             
             var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client(
-                (req, ct) => Task.FromResult(mockResponse.Object));
+                (req, ct) => Task.FromResult(mockResponse));
             
             var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest(
                 downloadType: MultipartDownloadType.PART);
@@ -237,7 +237,7 @@ namespace AWSSDK.UnitTests
                 8 * 1024 * 1024, 5, 40 * 1024 * 1024, "saved-etag");
             
             var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client(
-                (req, ct) => Task.FromResult(mockResponse.Object));
+                (req, ct) => Task.FromResult(mockResponse));
             
             var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest(
                 downloadType: MultipartDownloadType.PART);
@@ -266,7 +266,7 @@ namespace AWSSDK.UnitTests
                 eTag: "test-etag");
             
             var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client(
-                (req, ct) => Task.FromResult(mockResponse.Object));
+                (req, ct) => Task.FromResult(mockResponse));
             
             var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest(
                 downloadType: MultipartDownloadType.PART);
@@ -292,7 +292,7 @@ namespace AWSSDK.UnitTests
                 eTag: "test-etag");
             
             var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client(
-                (req, ct) => Task.FromResult(mockResponse.Object));
+                (req, ct) => Task.FromResult(mockResponse));
             
             var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest(
                 downloadType: MultipartDownloadType.PART);
@@ -320,7 +320,7 @@ namespace AWSSDK.UnitTests
                 eTag: "small-object-etag");
             
             var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client(
-                (req, ct) => Task.FromResult(mockResponse.Object));
+                (req, ct) => Task.FromResult(mockResponse));
             
             var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest(
                 downloadType: MultipartDownloadType.RANGE);
@@ -355,7 +355,7 @@ namespace AWSSDK.UnitTests
                 eTag: "single-range-etag");
             
             var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client(
-                (req, ct) => Task.FromResult(mockResponse.Object));
+                (req, ct) => Task.FromResult(mockResponse));
             
             var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest(
                 downloadType: MultipartDownloadType.RANGE);
@@ -386,7 +386,7 @@ namespace AWSSDK.UnitTests
                 0, partSize - 1, totalObjectSize, "range-etag");
             
             var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client(
-                (req, ct) => Task.FromResult(mockResponse.Object));
+                (req, ct) => Task.FromResult(mockResponse));
             
             var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest(
                 partSize: partSize,
@@ -413,7 +413,7 @@ namespace AWSSDK.UnitTests
                 0, partSize - 1, totalObjectSize, "range-etag");
             
             var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client(
-                (req, ct) => Task.FromResult(mockResponse.Object));
+                (req, ct) => Task.FromResult(mockResponse));
             
             var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest(
                 partSize: partSize,
@@ -444,7 +444,7 @@ namespace AWSSDK.UnitTests
                 eTag: "range-etag");
             
             var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client(
-                (req, ct) => Task.FromResult(mockResponse.Object));
+                (req, ct) => Task.FromResult(mockResponse));
             
             var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest(
                 partSize: partSize,
@@ -464,7 +464,7 @@ namespace AWSSDK.UnitTests
                 0, 8 * 1024 * 1024 - 1, 50 * 1024 * 1024, "saved-range-etag");
             
             var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client(
-                (req, ct) => Task.FromResult(mockResponse.Object));
+                (req, ct) => Task.FromResult(mockResponse));
             
             var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest(
                 partSize: 8 * 1024 * 1024,
@@ -490,7 +490,7 @@ namespace AWSSDK.UnitTests
                 0, partSize - 1, totalObjectSize, "range-etag");
             
             var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client(
-                (req, ct) => Task.FromResult(mockResponse.Object));
+                (req, ct) => Task.FromResult(mockResponse));
             
             var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest(
                 partSize: partSize,
@@ -522,8 +522,8 @@ namespace AWSSDK.UnitTests
             {
                 TotalParts = 1,
                 ObjectSize = 1024,
-                SinglePartResponse = Mock.Of<GetObjectResponse>(),
-                InitialResponse = Mock.Of<GetObjectResponse>(),
+                SinglePartResponse = new GetObjectResponse(),
+                InitialResponse = new GetObjectResponse(),
                 BufferedFirstPart = null
             };
             
@@ -564,10 +564,10 @@ namespace AWSSDK.UnitTests
             
             var discoveryResult = new DownloadDiscoveryResult
             {
-                TotalParts = 2,
-                ObjectSize = 16 * 1024 * 1024,
+                TotalParts = 5,
+                ObjectSize = 50 * 1024 * 1024,
                 SinglePartResponse = null,
-                InitialResponse = Mock.Of<GetObjectResponse>(),
+                InitialResponse = new GetObjectResponse(),
                 BufferedFirstPart = null
             };
 
@@ -605,8 +605,8 @@ namespace AWSSDK.UnitTests
                 {
                     callCount++;
                     return callCount == 1
-                        ? Task.FromResult(firstPartResponse.Object)
-                        : Task.FromResult(secondPartResponse.Object);
+                        ? Task.FromResult(firstPartResponse)
+                        : Task.FromResult(secondPartResponse);
                 });
             
             var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest(
@@ -652,8 +652,8 @@ namespace AWSSDK.UnitTests
                 {
                     callCount++;
                     return callCount == 1
-                        ? Task.FromResult(firstPartResponse.Object)
-                        : Task.FromResult(secondPartResponse.Object);
+                        ? Task.FromResult(firstPartResponse)
+                        : Task.FromResult(secondPartResponse);
                 });
             
             var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest(
@@ -699,8 +699,8 @@ namespace AWSSDK.UnitTests
                 {
                     callCount++;
                     return callCount == 1
-                        ? Task.FromResult(firstPartResponse.Object)
-                        : Task.FromResult(secondPartResponse.Object);
+                        ? Task.FromResult(firstPartResponse)
+                        : Task.FromResult(secondPartResponse);
                 });
             
             var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest(
@@ -746,8 +746,8 @@ namespace AWSSDK.UnitTests
                 {
                     callCount++;
                     return callCount == 1
-                        ? Task.FromResult(firstPartResponse.Object)
-                        : Task.FromResult(secondPartResponse.Object);
+                        ? Task.FromResult(firstPartResponse)
+                        : Task.FromResult(secondPartResponse);
                 });
             
             var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest(
@@ -795,8 +795,8 @@ namespace AWSSDK.UnitTests
                 {
                     callCount++;
                     return callCount == 1
-                        ? Task.FromResult(firstPartResponse.Object)
-                        : Task.FromResult(secondPartResponse.Object);
+                        ? Task.FromResult(firstPartResponse)
+                        : Task.FromResult(secondPartResponse);
                 });
             
             var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest(
@@ -868,8 +868,8 @@ namespace AWSSDK.UnitTests
                 {
                     callCount++;
                     return callCount == 1
-                        ? Task.FromResult(firstPartResponse.Object)
-                        : Task.FromResult(secondPartResponse.Object);
+                        ? Task.FromResult(firstPartResponse)
+                        : Task.FromResult(secondPartResponse);
                 });
             
             var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest(
