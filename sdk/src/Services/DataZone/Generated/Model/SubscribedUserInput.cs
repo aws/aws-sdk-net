@@ -30,47 +30,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataZone.Model
 {
     /// <summary>
-    /// The user profile details.
+    /// The subscribed user.
     /// </summary>
-    public partial class UserProfileDetails
+    public partial class SubscribedUserInput
     {
-        private IamUserProfileDetails _iam;
-        private SsoUserProfileDetails _sso;
+        private string _identifier;
 
         /// <summary>
-        /// Gets and sets the property Iam. 
+        /// Gets and sets the property Identifier. 
         /// <para>
-        /// The IAM details of the user profile.
+        /// The ID of the subscribed user.
         /// </para>
         /// </summary>
-        public IamUserProfileDetails Iam
+        public string Identifier
         {
-            get { return this._iam; }
-            set { this._iam = value; }
+            get { return this._identifier; }
+            set { this._identifier = value; }
         }
 
-        // Check to see if Iam property is set
-        internal bool IsSetIam()
+        // Check to see if Identifier property is set
+        internal bool IsSetIdentifier()
         {
-            return this._iam != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Sso. 
-        /// <para>
-        /// The SSO details of the user profile.
-        /// </para>
-        /// </summary>
-        public SsoUserProfileDetails Sso
-        {
-            get { return this._sso; }
-            set { this._sso = value; }
-        }
-
-        // Check to see if Sso property is set
-        internal bool IsSetSso()
-        {
-            return this._sso != null;
+            return this._identifier != null;
         }
 
     }

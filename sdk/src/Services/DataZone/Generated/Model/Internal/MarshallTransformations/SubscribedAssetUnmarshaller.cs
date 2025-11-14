@@ -102,6 +102,12 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                     unmarshalledObject.GrantedTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("permissions", targetDepth))
+                {
+                    var unmarshaller = PermissionsUnmarshaller.Instance;
+                    unmarshalledObject.Permissions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

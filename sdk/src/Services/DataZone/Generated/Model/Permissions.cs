@@ -30,47 +30,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataZone.Model
 {
     /// <summary>
-    /// The user profile details.
+    /// The asset permissions.
     /// </summary>
-    public partial class UserProfileDetails
+    public partial class Permissions
     {
-        private IamUserProfileDetails _iam;
-        private SsoUserProfileDetails _sso;
+        private List<string> _s3 = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
-        /// Gets and sets the property Iam. 
+        /// Gets and sets the property S3. 
         /// <para>
-        /// The IAM details of the user profile.
+        /// The S3 details of the asset permissions.
         /// </para>
         /// </summary>
-        public IamUserProfileDetails Iam
+        public List<string> S3
         {
-            get { return this._iam; }
-            set { this._iam = value; }
+            get { return this._s3; }
+            set { this._s3 = value; }
         }
 
-        // Check to see if Iam property is set
-        internal bool IsSetIam()
+        // Check to see if S3 property is set
+        internal bool IsSetS3()
         {
-            return this._iam != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Sso. 
-        /// <para>
-        /// The SSO details of the user profile.
-        /// </para>
-        /// </summary>
-        public SsoUserProfileDetails Sso
-        {
-            get { return this._sso; }
-            set { this._sso = value; }
-        }
-
-        // Check to see if Sso property is set
-        internal bool IsSetSso()
-        {
-            return this._sso != null;
+            return this._s3 != null && (this._s3.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

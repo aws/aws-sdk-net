@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DataZone.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for SubscribedPrincipal Object
+    /// Response Unmarshaller for SubscribedUser Object
     /// </summary>  
-    public class SubscribedPrincipalUnmarshaller : IUnmarshaller<SubscribedPrincipal, XmlUnmarshallerContext>, IUnmarshaller<SubscribedPrincipal, JsonUnmarshallerContext>
+    public class SubscribedUserUnmarshaller : IUnmarshaller<SubscribedUser, XmlUnmarshallerContext>, IUnmarshaller<SubscribedUser, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        SubscribedPrincipal IUnmarshaller<SubscribedPrincipal, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        SubscribedUser IUnmarshaller<SubscribedUser, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public SubscribedPrincipal Unmarshall(JsonUnmarshallerContext context)
+        public SubscribedUser Unmarshall(JsonUnmarshallerContext context)
         {
-            SubscribedPrincipal unmarshalledObject = new SubscribedPrincipal();
+            SubscribedUser unmarshalledObject = new SubscribedUser();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,22 +66,16 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("group", targetDepth))
+                if (context.TestExpression("details", targetDepth))
                 {
-                    var unmarshaller = SubscribedGroupUnmarshaller.Instance;
-                    unmarshalledObject.Group = unmarshaller.Unmarshall(context);
+                    var unmarshaller = UserProfileDetailsUnmarshaller.Instance;
+                    unmarshalledObject.Details = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("project", targetDepth))
+                if (context.TestExpression("id", targetDepth))
                 {
-                    var unmarshaller = SubscribedProjectUnmarshaller.Instance;
-                    unmarshalledObject.Project = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("user", targetDepth))
-                {
-                    var unmarshaller = SubscribedUserUnmarshaller.Instance;
-                    unmarshalledObject.User = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Id = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -89,12 +83,12 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         }
 
 
-        private static SubscribedPrincipalUnmarshaller _instance = new SubscribedPrincipalUnmarshaller();        
+        private static SubscribedUserUnmarshaller _instance = new SubscribedUserUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SubscribedPrincipalUnmarshaller Instance
+        public static SubscribedUserUnmarshaller Instance
         {
             get
             {

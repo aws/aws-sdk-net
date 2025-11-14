@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DataZone.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// SubscribedPrincipalInput Marshaller
+    /// AssetPermission Marshaller
     /// </summary>
-    public class SubscribedPrincipalInputMarshaller : IRequestMarshaller<SubscribedPrincipalInput, JsonMarshallerContext> 
+    public class AssetPermissionMarshaller : IRequestMarshaller<AssetPermission, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,39 +44,23 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(SubscribedPrincipalInput requestObject, JsonMarshallerContext context)
+        public void Marshall(AssetPermission requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetGroup())
+            if(requestObject.IsSetAssetId())
             {
-                context.Writer.WritePropertyName("group");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = SubscribedGroupInputMarshaller.Instance;
-                marshaller.Marshall(requestObject.Group, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("assetId");
+                context.Writer.Write(requestObject.AssetId);
             }
 
-            if(requestObject.IsSetProject())
+            if(requestObject.IsSetPermissions())
             {
-                context.Writer.WritePropertyName("project");
+                context.Writer.WritePropertyName("permissions");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = SubscribedProjectInputMarshaller.Instance;
-                marshaller.Marshall(requestObject.Project, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetUser())
-            {
-                context.Writer.WritePropertyName("user");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = SubscribedUserInputMarshaller.Instance;
-                marshaller.Marshall(requestObject.User, context);
+                var marshaller = PermissionsMarshaller.Instance;
+                marshaller.Marshall(requestObject.Permissions, context);
 
                 context.Writer.WriteObjectEnd();
             }
@@ -86,7 +70,7 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static SubscribedPrincipalInputMarshaller Instance = new SubscribedPrincipalInputMarshaller();
+        public readonly static AssetPermissionMarshaller Instance = new AssetPermissionMarshaller();
 
     }
 }

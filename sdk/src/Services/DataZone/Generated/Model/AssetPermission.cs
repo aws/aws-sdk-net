@@ -30,47 +30,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataZone.Model
 {
     /// <summary>
-    /// The user profile details.
+    /// The asset permissions.
     /// </summary>
-    public partial class UserProfileDetails
+    public partial class AssetPermission
     {
-        private IamUserProfileDetails _iam;
-        private SsoUserProfileDetails _sso;
+        private string _assetId;
+        private Permissions _permissions;
 
         /// <summary>
-        /// Gets and sets the property Iam. 
+        /// Gets and sets the property AssetId. 
         /// <para>
-        /// The IAM details of the user profile.
+        /// The asset ID as part of the asset permissions.
         /// </para>
         /// </summary>
-        public IamUserProfileDetails Iam
+        [AWSProperty(Required=true)]
+        public string AssetId
         {
-            get { return this._iam; }
-            set { this._iam = value; }
+            get { return this._assetId; }
+            set { this._assetId = value; }
         }
 
-        // Check to see if Iam property is set
-        internal bool IsSetIam()
+        // Check to see if AssetId property is set
+        internal bool IsSetAssetId()
         {
-            return this._iam != null;
+            return this._assetId != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Sso. 
+        /// Gets and sets the property Permissions. 
         /// <para>
-        /// The SSO details of the user profile.
+        /// The details as part of the asset permissions.
         /// </para>
         /// </summary>
-        public SsoUserProfileDetails Sso
+        [AWSProperty(Required=true)]
+        public Permissions Permissions
         {
-            get { return this._sso; }
-            set { this._sso = value; }
+            get { return this._permissions; }
+            set { this._permissions = value; }
         }
 
-        // Check to see if Sso property is set
-        internal bool IsSetSso()
+        // Check to see if Permissions property is set
+        internal bool IsSetPermissions()
         {
-            return this._sso != null;
+            return this._permissions != null;
         }
 
     }

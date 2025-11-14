@@ -39,7 +39,9 @@ namespace Amazon.DataZone.Model
         private string _domainIdentifier;
         private int? _maxResults;
         private string _nextToken;
+        private string _owningGroupId;
         private string _owningProjectId;
+        private string _owningUserId;
         private SortKey _sortBy;
         private SortOrder _sortOrder;
         private SubscriptionRequestStatus _status;
@@ -129,6 +131,24 @@ namespace Amazon.DataZone.Model
         }
 
         /// <summary>
+        /// Gets and sets the property OwningGroupId. 
+        /// <para>
+        /// The ID of the owning group.
+        /// </para>
+        /// </summary>
+        public string OwningGroupId
+        {
+            get { return this._owningGroupId; }
+            set { this._owningGroupId = value; }
+        }
+
+        // Check to see if OwningGroupId property is set
+        internal bool IsSetOwningGroupId()
+        {
+            return this._owningGroupId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property OwningProjectId. 
         /// <para>
         /// The identifier of the project for the subscription requests.
@@ -147,11 +167,30 @@ namespace Amazon.DataZone.Model
         }
 
         /// <summary>
+        /// Gets and sets the property OwningUserId. 
+        /// <para>
+        /// The ID of the owning user.
+        /// </para>
+        /// </summary>
+        public string OwningUserId
+        {
+            get { return this._owningUserId; }
+            set { this._owningUserId = value; }
+        }
+
+        // Check to see if OwningUserId property is set
+        internal bool IsSetOwningUserId()
+        {
+            return this._owningUserId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SortBy. 
         /// <para>
         /// Specifies the way to sort the results of this action.
         /// </para>
         /// </summary>
+        [Obsolete("Results are always sorted by updatedAt")]
         public SortKey SortBy
         {
             get { return this._sortBy; }

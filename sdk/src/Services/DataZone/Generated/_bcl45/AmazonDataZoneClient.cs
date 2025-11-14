@@ -374,6 +374,9 @@ namespace Amazon.DataZone
         /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
         /// The specified resource cannot be found.
         /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ServiceQuotaExceededException">
+        /// The request has exceeded the specified service quota.
+        /// </exception>
         /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
         /// The request was denied due to request throttling.
         /// </exception>
@@ -414,6 +417,9 @@ namespace Amazon.DataZone
         /// </exception>
         /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
         /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ServiceQuotaExceededException">
+        /// The request has exceeded the specified service quota.
         /// </exception>
         /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -3756,6 +3762,9 @@ namespace Amazon.DataZone
         /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
         /// The specified resource cannot be found.
         /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ServiceQuotaExceededException">
+        /// The request has exceeded the specified service quota.
+        /// </exception>
         /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
         /// The request was denied due to request throttling.
         /// </exception>
@@ -3796,6 +3805,9 @@ namespace Amazon.DataZone
         /// </exception>
         /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
         /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ServiceQuotaExceededException">
+        /// The request has exceeded the specified service quota.
         /// </exception>
         /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
         /// The request was denied due to request throttling.

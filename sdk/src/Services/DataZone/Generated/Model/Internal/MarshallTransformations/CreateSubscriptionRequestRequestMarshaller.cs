@@ -70,6 +70,38 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAssetPermissions())
+                {
+                    context.Writer.WritePropertyName("assetPermissions");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestAssetPermissionsListValue in publicRequest.AssetPermissions)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = AssetPermissionMarshaller.Instance;
+                        marshaller.Marshall(publicRequestAssetPermissionsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetAssetScopes())
+                {
+                    context.Writer.WritePropertyName("assetScopes");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestAssetScopesListValue in publicRequest.AssetScopes)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = AcceptedAssetScopeMarshaller.Instance;
+                        marshaller.Marshall(publicRequestAssetScopesListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetClientToken())
                 {
                     context.Writer.WritePropertyName("clientToken");

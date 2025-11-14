@@ -35,10 +35,29 @@ namespace Amazon.DataZone.Model
     /// </summary>
     public partial class AcceptSubscriptionRequestRequest : AmazonDataZoneRequest
     {
+        private List<AssetPermission> _assetPermissions = AWSConfigs.InitializeCollections ? new List<AssetPermission>() : null;
         private List<AcceptedAssetScope> _assetScopes = AWSConfigs.InitializeCollections ? new List<AcceptedAssetScope>() : null;
         private string _decisionComment;
         private string _domainIdentifier;
         private string _identifier;
+
+        /// <summary>
+        /// Gets and sets the property AssetPermissions. 
+        /// <para>
+        /// The asset permissions of the accept subscription request.
+        /// </para>
+        /// </summary>
+        public List<AssetPermission> AssetPermissions
+        {
+            get { return this._assetPermissions; }
+            set { this._assetPermissions = value; }
+        }
+
+        // Check to see if AssetPermissions property is set
+        internal bool IsSetAssetPermissions()
+        {
+            return this._assetPermissions != null && (this._assetPermissions.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property AssetScopes. 

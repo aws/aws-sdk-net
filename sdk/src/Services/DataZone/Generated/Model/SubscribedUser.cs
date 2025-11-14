@@ -30,20 +30,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataZone.Model
 {
     /// <summary>
-    /// This is the response object from the UpdateUserProfile operation.
+    /// The subscribed user.
     /// </summary>
-    public partial class UpdateUserProfileResponse : AmazonWebServiceResponse
+    public partial class SubscribedUser
     {
         private UserProfileDetails _details;
-        private string _domainId;
         private string _id;
-        private UserProfileStatus _status;
-        private UserProfileType _type;
 
         /// <summary>
         /// Gets and sets the property Details. 
         /// <para>
-        /// The results of the UpdateUserProfile action.
+        /// The subscribed user details.
         /// </para>
         /// </summary>
         public UserProfileDetails Details
@@ -59,27 +56,9 @@ namespace Amazon.DataZone.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DomainId. 
-        /// <para>
-        /// The identifier of the Amazon DataZone domain in which a user profile is updated.
-        /// </para>
-        /// </summary>
-        public string DomainId
-        {
-            get { return this._domainId; }
-            set { this._domainId = value; }
-        }
-
-        // Check to see if DomainId property is set
-        internal bool IsSetDomainId()
-        {
-            return this._domainId != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The identifier of the user profile.
+        /// The ID of the subscribed user.
         /// </para>
         /// </summary>
         public string Id
@@ -92,42 +71,6 @@ namespace Amazon.DataZone.Model
         internal bool IsSetId()
         {
             return this._id != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Status. 
-        /// <para>
-        /// The status of the user profile.
-        /// </para>
-        /// </summary>
-        public UserProfileStatus Status
-        {
-            get { return this._status; }
-            set { this._status = value; }
-        }
-
-        // Check to see if Status property is set
-        internal bool IsSetStatus()
-        {
-            return this._status != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Type. 
-        /// <para>
-        /// The type of the user profile.
-        /// </para>
-        /// </summary>
-        public UserProfileType Type
-        {
-            get { return this._type; }
-            set { this._type = value; }
-        }
-
-        // Check to see if Type property is set
-        internal bool IsSetType()
-        {
-            return this._type != null;
         }
 
     }

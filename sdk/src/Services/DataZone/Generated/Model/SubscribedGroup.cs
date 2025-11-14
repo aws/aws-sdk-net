@@ -30,47 +30,48 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataZone.Model
 {
     /// <summary>
-    /// The user profile details.
+    /// The group that subscribes to the asset.
     /// </summary>
-    public partial class UserProfileDetails
+    public partial class SubscribedGroup
     {
-        private IamUserProfileDetails _iam;
-        private SsoUserProfileDetails _sso;
+        private string _id;
+        private string _name;
 
         /// <summary>
-        /// Gets and sets the property Iam. 
+        /// Gets and sets the property Id. 
         /// <para>
-        /// The IAM details of the user profile.
+        /// The ID of the subscribed group.
         /// </para>
         /// </summary>
-        public IamUserProfileDetails Iam
+        public string Id
         {
-            get { return this._iam; }
-            set { this._iam = value; }
+            get { return this._id; }
+            set { this._id = value; }
         }
 
-        // Check to see if Iam property is set
-        internal bool IsSetIam()
+        // Check to see if Id property is set
+        internal bool IsSetId()
         {
-            return this._iam != null;
+            return this._id != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Sso. 
+        /// Gets and sets the property Name. 
         /// <para>
-        /// The SSO details of the user profile.
+        /// The name of the subscribed group.
         /// </para>
         /// </summary>
-        public SsoUserProfileDetails Sso
+        [AWSProperty(Sensitive=true, Min=1, Max=1024)]
+        public string Name
         {
-            get { return this._sso; }
-            set { this._sso = value; }
+            get { return this._name; }
+            set { this._name = value; }
         }
 
-        // Check to see if Sso property is set
-        internal bool IsSetSso()
+        // Check to see if Name property is set
+        internal bool IsSetName()
         {
-            return this._sso != null;
+            return this._name != null;
         }
 
     }
