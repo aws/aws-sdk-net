@@ -752,6 +752,323 @@ namespace AWSSDK.UnitTests
 
         #endregion
 
+        #region Validation Tests
+
+        [TestMethod]
+        [ExpectedException(typeof(InvalidOperationException))]
+        public async Task Validation_ContentRange_MissingHeader_ThrowsException()
+        {
+            // Arrange - RANGE strategy with missing ContentRange in response
+            var totalObjectSize = 20 * 1024 * 1024;
+            var partSize = 8 * 1024 * 1024;
+            
+            // First part response for discovery (with ContentRange)
+            var firstPartResponse = MultipartDownloadTestHelpers.CreateRangeResponse(
+                0, partSize - 1, totalObjectSize, "test-etag");
+            
+            // Second part response WITHOUT ContentRange (invalid!)
+            var secondPartResponse = MultipartDownloadTestHelpers.CreateMockGetObjectResponse(
+                contentLength: partSize,
+                partsCount: null,
+                contentRange: null,  // Missing ContentRange!
+                eTag: "test-etag");
+            
+            int callCount = 0;
+            var mockClient = new Mock<IAmazonS3>();
+            mockClient.Setup(x => x.GetObjectAsync(It.IsAny<GetObjectRequest>(), It.IsAny<CancellationToken>()))
+                .Returns(() =>
+                {
+                    callCount++;
+                    return callCount == 1
+                        ? Task.FromResult(firstPartResponse.Object)
+                        : Task.FromResult(secondPartResponse.Object);
+                });
+            
+            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest(
+                partSize: partSize,
+                downloadType: MultipartDownloadType.RANGE);
+            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration(concurrentRequests: 1);
+            var coordinator = new MultipartDownloadCoordinator(mockClient.Object, request, config);
+            
+            var discoveryResult = await coordinator.DiscoverDownloadStrategyAsync(CancellationToken.None);
+            
+            var mockBufferManager = new Mock<IPartBufferManager>();
+            mockBufferManager.Setup(x => x.WaitForBufferSpaceAsync(It.IsAny<CancellationToken>()))
+                .Returns(Task.CompletedTask);
+            mockBufferManager.Setup(x => x.AddBufferAsync(It.IsAny<StreamPartBuffer>(), It.IsAny<CancellationToken>()))
+                .Returns(Task.CompletedTask);
+
+            // Act - should throw when validating part 2's missing ContentRange
+            await coordinator.StartDownloadsAsync(discoveryResult, mockBufferManager.Object, CancellationToken.None);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(InvalidOperationException))]
+        public async Task Validation_ContentRange_InvalidFormat_ThrowsException()
+        {
+            // Arrange - RANGE strategy with malformed ContentRange
+            var totalObjectSize = 20 * 1024 * 1024;
+            var partSize = 8 * 1024 * 1024;
+            
+            var firstPartResponse = MultipartDownloadTestHelpers.CreateRangeResponse(
+                0, partSize - 1, totalObjectSize, "test-etag");
+            
+            // Second part with invalid ContentRange format
+            var secondPartResponse = MultipartDownloadTestHelpers.CreateMockGetObjectResponse(
+                contentLength: partSize,
+                partsCount: null,
+                contentRange: "invalid-format-no-slash",  // Invalid format!
+                eTag: "test-etag");
+            
+            int callCount = 0;
+            var mockClient = new Mock<IAmazonS3>();
+            mockClient.Setup(x => x.GetObjectAsync(It.IsAny<GetObjectRequest>(), It.IsAny<CancellationToken>()))
+                .Returns(() =>
+                {
+                    callCount++;
+                    return callCount == 1
+                        ? Task.FromResult(firstPartResponse.Object)
+                        : Task.FromResult(secondPartResponse.Object);
+                });
+            
+            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest(
+                partSize: partSize,
+                downloadType: MultipartDownloadType.RANGE);
+            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration(concurrentRequests: 1);
+            var coordinator = new MultipartDownloadCoordinator(mockClient.Object, request, config);
+            
+            var discoveryResult = await coordinator.DiscoverDownloadStrategyAsync(CancellationToken.None);
+            
+            var mockBufferManager = new Mock<IPartBufferManager>();
+            mockBufferManager.Setup(x => x.WaitForBufferSpaceAsync(It.IsAny<CancellationToken>()))
+                .Returns(Task.CompletedTask);
+            mockBufferManager.Setup(x => x.AddBufferAsync(It.IsAny<StreamPartBuffer>(), It.IsAny<CancellationToken>()))
+                .Returns(Task.CompletedTask);
+
+            // Act - should throw when validating malformed ContentRange
+            await coordinator.StartDownloadsAsync(discoveryResult, mockBufferManager.Object, CancellationToken.None);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(InvalidOperationException))]
+        public async Task Validation_ContentRange_UnparseableRange_ThrowsException()
+        {
+            // Arrange - RANGE strategy with unparseable range values
+            var totalObjectSize = 20 * 1024 * 1024;
+            var partSize = 8 * 1024 * 1024;
+            
+            var firstPartResponse = MultipartDownloadTestHelpers.CreateRangeResponse(
+                0, partSize - 1, totalObjectSize, "test-etag");
+            
+            // Second part with unparseable range (letters instead of numbers)
+            var secondPartResponse = MultipartDownloadTestHelpers.CreateMockGetObjectResponse(
+                contentLength: partSize,
+                partsCount: null,
+                contentRange: "bytes abc-xyz/20971520",  // Unparseable!
+                eTag: "test-etag");
+            
+            int callCount = 0;
+            var mockClient = new Mock<IAmazonS3>();
+            mockClient.Setup(x => x.GetObjectAsync(It.IsAny<GetObjectRequest>(), It.IsAny<CancellationToken>()))
+                .Returns(() =>
+                {
+                    callCount++;
+                    return callCount == 1
+                        ? Task.FromResult(firstPartResponse.Object)
+                        : Task.FromResult(secondPartResponse.Object);
+                });
+            
+            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest(
+                partSize: partSize,
+                downloadType: MultipartDownloadType.RANGE);
+            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration(concurrentRequests: 1);
+            var coordinator = new MultipartDownloadCoordinator(mockClient.Object, request, config);
+            
+            var discoveryResult = await coordinator.DiscoverDownloadStrategyAsync(CancellationToken.None);
+            
+            var mockBufferManager = new Mock<IPartBufferManager>();
+            mockBufferManager.Setup(x => x.WaitForBufferSpaceAsync(It.IsAny<CancellationToken>()))
+                .Returns(Task.CompletedTask);
+            mockBufferManager.Setup(x => x.AddBufferAsync(It.IsAny<StreamPartBuffer>(), It.IsAny<CancellationToken>()))
+                .Returns(Task.CompletedTask);
+
+            // Act - should throw when parsing invalid range values
+            await coordinator.StartDownloadsAsync(discoveryResult, mockBufferManager.Object, CancellationToken.None);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(InvalidOperationException))]
+        public async Task Validation_ContentRange_RangeMismatch_ThrowsException()
+        {
+            // Arrange - RANGE strategy where response range doesn't match request
+            var totalObjectSize = 20 * 1024 * 1024;
+            var partSize = 8 * 1024 * 1024;
+            
+            var firstPartResponse = MultipartDownloadTestHelpers.CreateRangeResponse(
+                0, partSize - 1, totalObjectSize, "test-etag");
+            
+            // Second part with WRONG range (should be 8388608-16777215, but returns 0-8388607)
+            var secondPartResponse = MultipartDownloadTestHelpers.CreateMockGetObjectResponse(
+                contentLength: partSize,
+                partsCount: null,
+                contentRange: $"bytes 0-{partSize - 1}/{totalObjectSize}",  // Wrong range!
+                eTag: "test-etag");
+            
+            int callCount = 0;
+            var mockClient = new Mock<IAmazonS3>();
+            mockClient.Setup(x => x.GetObjectAsync(It.IsAny<GetObjectRequest>(), It.IsAny<CancellationToken>()))
+                .Returns(() =>
+                {
+                    callCount++;
+                    return callCount == 1
+                        ? Task.FromResult(firstPartResponse.Object)
+                        : Task.FromResult(secondPartResponse.Object);
+                });
+            
+            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest(
+                partSize: partSize,
+                downloadType: MultipartDownloadType.RANGE);
+            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration(concurrentRequests: 1);
+            var coordinator = new MultipartDownloadCoordinator(mockClient.Object, request, config);
+            
+            var discoveryResult = await coordinator.DiscoverDownloadStrategyAsync(CancellationToken.None);
+            
+            var mockBufferManager = new Mock<IPartBufferManager>();
+            mockBufferManager.Setup(x => x.WaitForBufferSpaceAsync(It.IsAny<CancellationToken>()))
+                .Returns(Task.CompletedTask);
+            mockBufferManager.Setup(x => x.AddBufferAsync(It.IsAny<StreamPartBuffer>(), It.IsAny<CancellationToken>()))
+                .Returns(Task.CompletedTask);
+
+            // Act - should throw with detailed mismatch message
+            await coordinator.StartDownloadsAsync(discoveryResult, mockBufferManager.Object, CancellationToken.None);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(InvalidOperationException))]
+        public async Task Validation_ETag_Mismatch_ThrowsException()
+        {
+            // Arrange - ETag changes between discovery and download (object modified)
+            var totalParts = 3;
+            var partSize = 8 * 1024 * 1024;
+            var totalObjectSize = totalParts * partSize;
+            
+            // Discovery returns one ETag
+            var firstPartResponse = MultipartDownloadTestHelpers.CreateMultipartFirstPartResponse(
+                partSize, totalParts, totalObjectSize, "original-etag");
+            
+            // Part 2 download returns DIFFERENT ETag (object was modified!)
+            var secondPartResponse = MultipartDownloadTestHelpers.CreateMockGetObjectResponse(
+                contentLength: partSize,
+                partsCount: totalParts,
+                contentRange: $"bytes {partSize}-{2 * partSize - 1}/{totalObjectSize}",
+                eTag: "modified-etag");  // Different ETag!
+            
+            int callCount = 0;
+            var mockClient = new Mock<IAmazonS3>();
+            mockClient.Setup(x => x.GetObjectAsync(It.IsAny<GetObjectRequest>(), It.IsAny<CancellationToken>()))
+                .Returns(() =>
+                {
+                    callCount++;
+                    return callCount == 1
+                        ? Task.FromResult(firstPartResponse.Object)
+                        : Task.FromResult(secondPartResponse.Object);
+                });
+            
+            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest(
+                downloadType: MultipartDownloadType.PART);
+            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration(concurrentRequests: 1);
+            var coordinator = new MultipartDownloadCoordinator(mockClient.Object, request, config);
+            
+            var discoveryResult = await coordinator.DiscoverDownloadStrategyAsync(CancellationToken.None);
+            
+            var mockBufferManager = new Mock<IPartBufferManager>();
+            mockBufferManager.Setup(x => x.WaitForBufferSpaceAsync(It.IsAny<CancellationToken>()))
+                .Returns(Task.CompletedTask);
+            mockBufferManager.Setup(x => x.AddBufferAsync(It.IsAny<StreamPartBuffer>(), It.IsAny<CancellationToken>()))
+                .Returns(Task.CompletedTask);
+
+            // Act - should throw when ETag mismatch detected
+            await coordinator.StartDownloadsAsync(discoveryResult, mockBufferManager.Object, CancellationToken.None);
+        }
+
+        [TestMethod]
+        public async Task Validation_ETag_Matching_Succeeds()
+        {
+            // Arrange - All parts have consistent ETag
+            var totalParts = 2;
+            var partSize = 8 * 1024 * 1024;
+            var totalObjectSize = totalParts * partSize;
+            var consistentETag = "consistent-etag";
+            
+            var mockClient = MultipartDownloadTestHelpers.CreateMockS3ClientForMultipart(
+                totalParts, partSize, totalObjectSize, consistentETag, usePartStrategy: true);
+            
+            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest(
+                downloadType: MultipartDownloadType.PART);
+            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration(concurrentRequests: 1);
+            var coordinator = new MultipartDownloadCoordinator(mockClient.Object, request, config);
+            
+            var discoveryResult = await coordinator.DiscoverDownloadStrategyAsync(CancellationToken.None);
+            
+            var mockBufferManager = new Mock<IPartBufferManager>();
+            mockBufferManager.Setup(x => x.WaitForBufferSpaceAsync(It.IsAny<CancellationToken>()))
+                .Returns(Task.CompletedTask);
+            mockBufferManager.Setup(x => x.AddBufferAsync(It.IsAny<StreamPartBuffer>(), It.IsAny<CancellationToken>()))
+                .Returns(Task.CompletedTask);
+
+            // Act - should succeed with matching ETags
+            await coordinator.StartDownloadsAsync(discoveryResult, mockBufferManager.Object, CancellationToken.None);
+
+            // Assert - no exception thrown
+        }
+
+        [TestMethod]
+        public async Task Validation_ContentRange_ValidRange_Succeeds()
+        {
+            // Arrange - RANGE strategy with correct ContentRange
+            var totalObjectSize = 20 * 1024 * 1024;
+            var partSize = 8 * 1024 * 1024;
+            
+            // Both parts have correct ranges
+            var firstPartResponse = MultipartDownloadTestHelpers.CreateRangeResponse(
+                0, partSize - 1, totalObjectSize, "test-etag");
+            
+            var secondPartResponse = MultipartDownloadTestHelpers.CreateRangeResponse(
+                partSize, 2 * partSize - 1, totalObjectSize, "test-etag");
+            
+            int callCount = 0;
+            var mockClient = new Mock<IAmazonS3>();
+            mockClient.Setup(x => x.GetObjectAsync(It.IsAny<GetObjectRequest>(), It.IsAny<CancellationToken>()))
+                .Returns(() =>
+                {
+                    callCount++;
+                    return callCount == 1
+                        ? Task.FromResult(firstPartResponse.Object)
+                        : Task.FromResult(secondPartResponse.Object);
+                });
+            
+            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest(
+                partSize: partSize,
+                downloadType: MultipartDownloadType.RANGE);
+            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration(concurrentRequests: 1);
+            var coordinator = new MultipartDownloadCoordinator(mockClient.Object, request, config);
+            
+            var discoveryResult = await coordinator.DiscoverDownloadStrategyAsync(CancellationToken.None);
+            
+            var mockBufferManager = new Mock<IPartBufferManager>();
+            mockBufferManager.Setup(x => x.WaitForBufferSpaceAsync(It.IsAny<CancellationToken>()))
+                .Returns(Task.CompletedTask);
+            mockBufferManager.Setup(x => x.AddBufferAsync(It.IsAny<StreamPartBuffer>(), It.IsAny<CancellationToken>()))
+                .Returns(Task.CompletedTask);
+
+            // Act - should succeed with valid ranges
+            await coordinator.StartDownloadsAsync(discoveryResult, mockBufferManager.Object, CancellationToken.None);
+
+            // Assert - no exception thrown
+        }
+
+        #endregion
+
         #region Disposal Tests
 
         [TestMethod]
