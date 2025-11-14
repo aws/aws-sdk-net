@@ -54,11 +54,6 @@ namespace Amazon.S3.Transfer.Internal
         Task StartDownloadsAsync(DownloadDiscoveryResult discoveryResult, IPartBufferManager partBufferManager, CancellationToken cancellationToken);
 
         /// <summary>
-        /// Gets the current download state for monitoring and progress reporting.
-        /// </summary>
-        StreamState CurrentState { get; }
-
-        /// <summary>
         /// Gets the exception that occurred during downloads, if applicable.
         /// </summary>
         Exception DownloadException { get; }

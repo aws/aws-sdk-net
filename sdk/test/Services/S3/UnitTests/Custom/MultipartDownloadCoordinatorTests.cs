@@ -32,7 +32,6 @@ namespace AWSSDK.UnitTests
 
             // Assert
             Assert.IsNotNull(coordinator);
-            Assert.AreEqual(StreamState.Initializing, coordinator.CurrentState);
             Assert.IsNull(coordinator.DownloadException);
         }
 
@@ -75,22 +74,6 @@ namespace AWSSDK.UnitTests
         #endregion
 
         #region Property Tests
-
-        [TestMethod]
-        public void CurrentState_InitiallyInitializing()
-        {
-            // Arrange
-            var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client();
-            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest();
-            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration();
-            var coordinator = new MultipartDownloadCoordinator(mockClient.Object, request, config);
-
-            // Act
-            var state = coordinator.CurrentState;
-
-            // Assert
-            Assert.AreEqual(StreamState.Initializing, state);
-        }
 
         [TestMethod]
         public void DownloadException_InitiallyNull()

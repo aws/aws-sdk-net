@@ -41,9 +41,9 @@ namespace Amazon.S3.Transfer.Internal
         private readonly StreamConfiguration _config;
         private readonly SemaphoreSlim _httpConcurrencySlots;
         
-        private StreamState _currentState = StreamState.Initializing;
         private Exception _downloadException;
         private bool _disposed = false;
+        private bool _discoveryCompleted = false;
         private readonly object _lockObject = new object();
 
         private string _savedETag;
@@ -59,18 +59,7 @@ namespace Amazon.S3.Transfer.Internal
             _httpConcurrencySlots = new SemaphoreSlim(_config.ConcurrentServiceRequests);
         }
 
-        public StreamState CurrentState 
-        { 
-            get 
-            { 
-                lock (_lockObject)
-                {
-                    return _currentState;
-                }
-            }
-        }
-
-        public Exception DownloadException 
+        public Exception DownloadException
         { 
             get 
             { 
@@ -87,8 +76,8 @@ namespace Amazon.S3.Transfer.Internal
             
             lock (_lockObject)
             {
-                if (_currentState != StreamState.Initializing)
-                    throw new InvalidOperationException($"Discovery can only be performed in Initializing state, current state: {_currentState}");
+                if (_discoveryCompleted)
+                    throw new InvalidOperationException("Discovery has already been performed");
             }
 
             try
@@ -98,13 +87,17 @@ namespace Amazon.S3.Transfer.Internal
                     ? await DiscoverUsingPartStrategyAsync(cancellationToken).ConfigureAwait(false)
                     : await DiscoverUsingRangeStrategyAsync(cancellationToken).ConfigureAwait(false);
                 
+                lock (_lockObject)
+                {
+                    _discoveryCompleted = true;
+                }
+                
                 return result;
             }
             catch (Exception ex)
             {
                 lock (_lockObject)
                 {
-                    _currentState = StreamState.Error;
                     _downloadException = ex;
                 }
                 throw;
@@ -161,7 +154,6 @@ namespace Amazon.S3.Transfer.Internal
             {
                 lock (_lockObject)
                 {
-                    _currentState = StreamState.Error;
                     _downloadException = ex;
                 }
                 
