@@ -42,7 +42,7 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property CbetCheckDigitString. Enter the CBET check digits to use
         /// in the watermark.
         /// </summary>
-        [AWSProperty(Required=true, Min=2, Max=2)]
+        [AWSProperty(Required=true)]
         public string CbetCheckDigitString
         {
             get { return this._cbetCheckDigitString; }
@@ -75,7 +75,7 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property Csid. Enter the CBET Source ID (CSID) to use in the watermark
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=7)]
+        [AWSProperty(Required=true)]
         public string Csid
         {
             get { return this._csid; }

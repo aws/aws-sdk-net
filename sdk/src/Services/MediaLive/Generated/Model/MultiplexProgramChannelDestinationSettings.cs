@@ -43,7 +43,6 @@ namespace Amazon.MediaLive.Model
         /// MediaLive will handle the connection of the two MediaLive pipelines to the two Multiplex
         /// instances.The Multiplex must be in the same region as the Channel.
         /// </summary>
-        [AWSProperty(Min=1)]
         public string MultiplexId
         {
             get { return this._multiplexId; }
@@ -60,7 +59,6 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property ProgramName. The program name of the Multiplex program
         /// that the encoder is providing output to.
         /// </summary>
-        [AWSProperty(Min=1)]
         public string ProgramName
         {
             get { return this._programName; }

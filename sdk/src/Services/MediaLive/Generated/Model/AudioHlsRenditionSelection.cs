@@ -41,7 +41,7 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property GroupId. Specifies the GROUP-ID in the #EXT-X-MEDIA tag
         /// of the target HLS audio rendition.
         /// </summary>
-        [AWSProperty(Required=true, Min=1)]
+        [AWSProperty(Required=true)]
         public string GroupId
         {
             get { return this._groupId; }
@@ -58,7 +58,7 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property Name. Specifies the NAME in the #EXT-X-MEDIA tag of the
         /// target HLS audio rendition.
         /// </summary>
-        [AWSProperty(Required=true, Min=1)]
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }

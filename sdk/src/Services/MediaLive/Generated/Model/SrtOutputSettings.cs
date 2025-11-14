@@ -46,7 +46,6 @@ namespace Amazon.MediaLive.Model
         /// maintain a constant, low-jitter SRT output, and it accommodates clock recovery, input
         /// switching, input disruptions, picture reordering, and so on. Range: 0-10000 milliseconds.
         /// </summary>
-        [AWSProperty(Min=0, Max=10000)]
         public int? BufferMsec
         {
             get { return this._bufferMsec; }
@@ -117,7 +116,6 @@ namespace Amazon.MediaLive.Model
         /// in packet recovery and matching as closely as possible the packet timing of the sender.
         /// Range: 40-16000 milliseconds.
         /// </summary>
-        [AWSProperty(Min=40, Max=16000)]
         public int? Latency
         {
             get { return this._latency; }

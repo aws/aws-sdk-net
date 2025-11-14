@@ -192,7 +192,6 @@ namespace Amazon.MediaLive.Model
         /// of the audio output track. Only used if languageControlMode is useConfigured, or there
         /// is no ISO 639 language code specified in the input.
         /// </summary>
-        [AWSProperty(Min=1, Max=35)]
         public string LanguageCode
         {
             get { return this._languageCode; }
@@ -228,7 +227,7 @@ namespace Amazon.MediaLive.Model
         /// this name to uniquely identify this AudioDescription.  Description names should be
         /// unique within this Live Event.
         /// </summary>
-        [AWSProperty(Required=true, Max=255)]
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }
