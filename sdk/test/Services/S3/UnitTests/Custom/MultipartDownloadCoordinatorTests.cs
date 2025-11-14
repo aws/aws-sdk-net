@@ -5,6 +5,8 @@ using Amazon.S3.Transfer.Internal;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using System;
+using System.Buffers;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
@@ -638,6 +640,114 @@ namespace AWSSDK.UnitTests
 
             // Assert
             Assert.AreEqual(totalParts, progressEvents);
+        }
+
+        [TestMethod]
+        public async Task StartDownloadsAsync_TracksActualBytesNotApproximation()
+        {
+            // Arrange - Setup 3 parts with different sizes to verify actual byte tracking
+            var part1Size = 8 * 1024 * 1024;      // 8MB
+            var part2Size = 8 * 1024 * 1024;      // 8MB
+            var part3Size = 4 * 1024 * 1024;      // 4MB (last part is smaller!)
+            var totalObjectSize = 20 * 1024 * 1024; // 20MB total
+            var totalParts = 3;
+            var targetPartSize = 8 * 1024 * 1024;  // Standard part size
+            
+            // Create mock responses with actual variable sizes
+            var part1Response = MultipartDownloadTestHelpers.CreateMockGetObjectResponse(
+                contentLength: part1Size,
+                partsCount: totalParts,
+                contentRange: $"bytes 0-{part1Size - 1}/{totalObjectSize}",
+                eTag: "test-etag");
+            
+            var part2Response = MultipartDownloadTestHelpers.CreateMockGetObjectResponse(
+                contentLength: part2Size,
+                partsCount: totalParts,
+                contentRange: $"bytes {part1Size}-{part1Size + part2Size - 1}/{totalObjectSize}",
+                eTag: "test-etag");
+            
+            var part3Response = MultipartDownloadTestHelpers.CreateMockGetObjectResponse(
+                contentLength: part3Size,  // Last part is smaller!
+                partsCount: totalParts,
+                contentRange: $"bytes {part1Size + part2Size}-{totalObjectSize - 1}/{totalObjectSize}",
+                eTag: "test-etag");
+            
+            int callCount = 0;
+            var mockClient = new Mock<IAmazonS3>();
+            mockClient.Setup(x => x.GetObjectAsync(It.IsAny<GetObjectRequest>(), It.IsAny<CancellationToken>()))
+                .Returns(() =>
+                {
+                    callCount++;
+                    return callCount switch
+                    {
+                        1 => Task.FromResult(part2Response.Object),
+                        2 => Task.FromResult(part3Response.Object),
+                        _ => throw new InvalidOperationException("Unexpected call")
+                    };
+                });
+            
+            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest(
+                partSize: targetPartSize,
+                downloadType: MultipartDownloadType.PART);
+            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration(concurrentRequests: 1);
+            var coordinator = new MultipartDownloadCoordinator(mockClient.Object, request, config);
+            
+            // Track reported bytes to verify accurate accumulation
+            var reportedBytesDownloaded = new List<long>();
+            var reportedCompletedParts = new List<int>();
+            
+            coordinator.ProgressChanged += (sender, args) =>
+            {
+                reportedBytesDownloaded.Add(args.BytesDownloaded);
+                reportedCompletedParts.Add(args.CompletedParts);
+            };
+            
+            // Create buffered first part
+            var buffer = ArrayPool<byte>.Shared.Rent(part1Size);
+            var bufferedFirstPart = StreamPartBuffer.FromArrayPoolBuffer(1, buffer, part1Size);
+            
+            var discoveryResult = new DownloadDiscoveryResult
+            {
+                TotalParts = totalParts,
+                ObjectSize = totalObjectSize,
+                SinglePartResponse = null,
+                InitialResponse = part1Response.Object,
+                BufferedFirstPart = bufferedFirstPart
+            };
+            
+            var mockBufferManager = new Mock<IPartBufferManager>();
+            mockBufferManager.Setup(x => x.WaitForBufferSpaceAsync(It.IsAny<CancellationToken>()))
+                .Returns(Task.CompletedTask);
+            mockBufferManager.Setup(x => x.AddBufferAsync(It.IsAny<StreamPartBuffer>(), It.IsAny<CancellationToken>()))
+                .Returns(Task.CompletedTask);
+
+            // Act
+            await coordinator.StartDownloadsAsync(discoveryResult, mockBufferManager.Object, CancellationToken.None);
+
+            // Assert - verify ACTUAL bytes accumulated correctly (not approximation!)
+            Assert.AreEqual(3, reportedBytesDownloaded.Count, "Should have 3 progress reports");
+            
+            // Part 1 (buffered): 8MB
+            Assert.AreEqual(part1Size, reportedBytesDownloaded[0], 
+                "Part 1: Should report actual 8MB");
+            Assert.AreEqual(1, reportedCompletedParts[0]);
+            
+            // Part 2: 8MB + 8MB = 16MB accumulated
+            Assert.AreEqual(part1Size + part2Size, reportedBytesDownloaded[1], 
+                "Part 2: Should report accumulated 16MB");
+            Assert.AreEqual(2, reportedCompletedParts[1]);
+            
+            // Part 3 (smaller last part): 8MB + 8MB + 4MB = 20MB accumulated
+            Assert.AreEqual(part1Size + part2Size + part3Size, reportedBytesDownloaded[2], 
+                "Part 3: Should report accumulated 20MB (actual total, not 24MB approximation!)");
+            Assert.AreEqual(3, reportedCompletedParts[2]);
+            
+            // Verify we reached exactly the total object size (not an approximation)
+            Assert.AreEqual(totalObjectSize, reportedBytesDownloaded[2],
+                "Final reported bytes should match exact object size");
+            
+            // OLD BROKEN CODE would have reported: 8MB, 16MB, 24MB (wrong - uses partNum * targetPartSize)
+            // NEW FIXED CODE correctly reports: 8MB, 16MB, 20MB (correct - uses actual accumulated bytes)
         }
 
         #endregion

@@ -46,9 +46,10 @@ namespace Amazon.S3.Transfer.Internal
         private bool _disposed = false;
         private readonly object _lockObject = new object();
 
-        // Strategy-specific state
         private string _savedETag;
         private int _discoveredPartCount;
+        
+        private long _totalTransferredBytes;
 
         public event EventHandler<DownloadProgressEventArgs> ProgressChanged;
 
@@ -450,7 +451,7 @@ namespace Amazon.S3.Transfer.Internal
                         bufferSpace = partBuffer.Length - totalRead;
                     }
                     
-                    // Read size is minimum of: remaining bytes needed, buffer space available, and optimal chunk size
+                    // Read size is minimum of: remaining bytes needed, buffer space available, and configured buffer size
                     int readSize = Math.Min(Math.Min(remainingBytes, bufferSpace), _config.BufferSize);
                     
                     // Read directly into final destination at correct offset
@@ -481,7 +482,7 @@ namespace Amazon.S3.Transfer.Internal
             }
             finally
             {
-                // OPTIMIZATION: Only return partBuffer if ownership wasn't transferred
+                // Only return partBuffer if ownership wasn't transferred
                 if (partBuffer != null)
                     ArrayPool<byte>.Shared.Return(partBuffer);
             }
@@ -509,12 +510,12 @@ namespace Amazon.S3.Transfer.Internal
             var endByte = Math.Min(startByte + targetPartSize - 1, objectSize - 1);
             return (startByte, endByte);
         }
-        
+
         private long ExtractTotalSizeFromContentRange(string contentRange)
         {
             if (string.IsNullOrEmpty(contentRange))
                 throw new InvalidOperationException("Content-Range header is missing from range request response");
-                
+
             // Format: "bytes 0-{end}/{total-size}" or "bytes 0-{end}/*"
             var parts = contentRange.Split('/');
             if (parts.Length == 2 && parts[1] != "*")
@@ -524,10 +525,11 @@ namespace Amazon.S3.Transfer.Internal
                     return totalSize;
                 }
             }
-            
+
             throw new InvalidOperationException($"Unable to parse Content-Range header: {contentRange}");
         }
 
+        // TODO add unit tests for these validations
         private void ValidateContentRange(GetObjectResponse response, int partNumber, long objectSize)
         {
             // SEP Part GET Step 5 / Ranged GET Step 7: 
@@ -575,13 +577,14 @@ namespace Amazon.S3.Transfer.Internal
 
         private void ReportProgress(int completedPart, long partBytes, long totalBytes)
         {
-            var targetPartSize = _request.IsSetPartSize() ? _request.PartSize : _config.TargetPartSizeBytes;
+            // Accumulate actual bytes downloaded (thread-safe for concurrent downloads)
+            long transferredBytes = Interlocked.Add(ref _totalTransferredBytes, partBytes);
             
             ProgressChanged?.Invoke(this, new DownloadProgressEventArgs
             {
                 CompletedParts = completedPart,
-                TotalParts = _discoveredPartCount, // SEP-compliant: Use stored part count
-                BytesDownloaded = completedPart * targetPartSize, // Approximation
+                TotalParts = _discoveredPartCount,
+                BytesDownloaded = transferredBytes,  // Use actual accumulated bytes
                 TotalBytes = totalBytes
             });
         }
