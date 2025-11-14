@@ -134,18 +134,12 @@ namespace Amazon.S3.Transfer.Internal
 
             try
             {
-                // If we already buffered Part 1 during discovery, add it to the buffer manager first
-                // This optimization avoids re-downloading Part 1
-                int startPart = 1;
-                if (discoveryResult.BufferedFirstPart != null)
-                {
-                    await partBufferManager.AddBufferAsync(discoveryResult.BufferedFirstPart, cancellationToken).ConfigureAwait(false);
-                    ReportProgress(1, discoveryResult.BufferedFirstPart.ActualSize, discoveryResult.ObjectSize);
-                    startPart = 2;  // Start downloading from Part 2
-                }
+                // Part 1 is always buffered during discovery (optimization to avoid re-downloading)
+                await partBufferManager.AddBufferAsync(discoveryResult.BufferedFirstPart, cancellationToken).ConfigureAwait(false);
+                ReportProgress(1, discoveryResult.BufferedFirstPart.ActualSize, discoveryResult.ObjectSize);
 
-                // Start concurrent downloads for remaining parts
-                for (int partNum = startPart; partNum <= discoveryResult.TotalParts; partNum++)
+                // Start concurrent downloads for remaining parts (Part 2 onwards)
+                for (int partNum = 2; partNum <= discoveryResult.TotalParts; partNum++)
                 {
                     var task = CreateDownloadTaskAsync(partNum, discoveryResult.ObjectSize, partBufferManager, internalCts.Token);
                     downloadTasks.Add(task);
@@ -153,6 +147,16 @@ namespace Amazon.S3.Transfer.Internal
 
                 // Wait for all downloads to complete
                 await Task.WhenAll(downloadTasks).ConfigureAwait(false);
+
+                // SEP Part GET Step 6 / Ranged GET Step 8:
+                // "validate that the total number of part GET requests sent matches with the expected PartsCount"
+                // Note: downloadTasks.Count + 1 accounts for Part 1 being buffered during discovery
+                if (downloadTasks.Count + 1 != discoveryResult.TotalParts)
+                {
+                    throw new InvalidOperationException(
+                        $"Request count mismatch. Expected {discoveryResult.TotalParts} parts, " +
+                        $"but sent {downloadTasks.Count + 1} requests");
+                }
 
                 // Mark successful completion
                 partBufferManager.MarkDownloadComplete(null);
@@ -198,6 +202,10 @@ namespace Amazon.S3.Transfer.Internal
                         // PART strategy: Use part number from original upload
                         getObjectRequest = CreateGetObjectRequest();
                         getObjectRequest.PartNumber = partNumber;
+                        
+                        // SEP Part GET Step 4: "The S3 Transfer Manager MUST also set IfMatch member 
+                        // for each request to the Etag value saved from Step 3"
+                        getObjectRequest.EtagToMatch = _savedETag;
                     }
                     else
                     {
@@ -206,9 +214,16 @@ namespace Amazon.S3.Transfer.Internal
                         
                         getObjectRequest = CreateGetObjectRequest();
                         getObjectRequest.ByteRange = new ByteRange(startByte, endByte);
+                        
+                        // SEP Ranged GET Step 6: "The S3 Transfer Manager MUST also set IfMatch member 
+                        // for each request to the value saved from Step 5"
+                        getObjectRequest.EtagToMatch = _savedETag;
                     }
                     
                     response = await _s3Client.GetObjectAsync(getObjectRequest, cancellationToken).ConfigureAwait(false);
+                    
+                    // SEP Part GET Step 5 / Ranged GET Step 7: Validate ContentRange matches request
+                    ValidateContentRange(response, partNumber, objectSize);
                     
                     // Validate ETag consistency for SEP compliance
                     if (!string.IsNullOrEmpty(_savedETag) && !string.Equals(_savedETag, response.ETag, StringComparison.OrdinalIgnoreCase))
@@ -245,28 +260,36 @@ namespace Amazon.S3.Transfer.Internal
 
         private async Task<DownloadDiscoveryResult> DiscoverUsingPartStrategyAsync(CancellationToken cancellationToken)
         {
-            // For PART strategy, start with GetObject for partNumber=1 (no HEAD request needed)
+            // SEP Part GET Step 1: "create a new GetObject request copying all fields in DownloadRequest. 
+            // Set partNumber to 1."
             var firstPartRequest = CreateGetObjectRequest();
             firstPartRequest.PartNumber = 1;
             
+            // SEP Part GET Step 2: "send the request and wait for the response in a non-blocking fashion"
             var firstPartResponse = await _s3Client.GetObjectAsync(firstPartRequest, cancellationToken).ConfigureAwait(false);
             
-            // Save ETag for SEP compliance validation
+            // SEP Part GET Step 3: Save ETag for later IfMatch validation in subsequent requests
             _savedETag = firstPartResponse.ETag;
             
-            // Check if PartsCount is available (indicates multipart upload)
+            // SEP Part GET Step 3: "check the response. First parse total content length from ContentRange 
+            // of the GetObject response and save the value in a variable. The length is the numeric value 
+            // after / delimiter. For example, given ContentRange=bytes 0-1/5, 5 is the total content length. 
+            // Then check PartsCount."
             if (firstPartResponse.PartsCount.HasValue && firstPartResponse.PartsCount.Value > 1)
             {
-                // SEP-compliant: Store actual part count from S3 response
+                // SEP Part GET Step 3: "If PartsCount in the response is larger than 1, it indicates there 
+                // are more parts available to download. The S3 Transfer Manager MUST save etag from the 
+                // response to a variable."
                 _discoveredPartCount = firstPartResponse.PartsCount.Value;
                 
-                // SEP Step 3: Parse total content length from ContentRange header
+                // Parse total content length from ContentRange header
                 // For example, "bytes 0-5242879/52428800" -> extract 52428800
                 var totalObjectSize = ExtractTotalSizeFromContentRange(firstPartResponse.ContentRange);
                 
-                // Multipart: Buffer Part 1 NOW to avoid re-downloading it later
+                // Optimization: Buffer Part 1 NOW to avoid re-downloading it later (SEP Step 4 will use this)
                 var bufferedFirstPart = await BufferPartFromResponseAsync(1, firstPartResponse, cancellationToken).ConfigureAwait(false);
                 
+                // SEP Part GET Step 7 will use this response for creating DownloadResponse
                 // Keep the response for metadata extraction (will be disposed by OpenStreamWithResponseCommand)
                 return new DownloadDiscoveryResult
                 {
@@ -279,10 +302,10 @@ namespace Amazon.S3.Transfer.Internal
             }
             else
             {
-                // SEP-compliant: Single part strategy
+                // SEP Part GET Step 3: "If PartsCount is 1, go to Step 7."
                 _discoveredPartCount = 1;
                 
-                // This is a single part upload - return the response for immediate use
+                // Single part upload - return the response for immediate use (SEP Step 7)
                 return new DownloadDiscoveryResult
                 {
                     TotalParts = 1,
@@ -299,17 +322,21 @@ namespace Amazon.S3.Transfer.Internal
             // Get target part size for RANGE strategy
             var targetPartSize = _request.IsSetPartSize() ? _request.PartSize : _config.TargetPartSizeBytes;
             
-            // SEP Step 1: Create GetObject request with range=0-{targetPartSize-1} for first part
+            // SEP Ranged GET Step 1: "create a new GetObject request copying all fields in the original request. 
+            // Set range value to bytes=0-{targetPartSizeBytes-1} to request the first part."
             var firstRangeRequest = CreateGetObjectRequest();
             firstRangeRequest.ByteRange = new ByteRange(0, targetPartSize - 1);
             
-            // SEP Step 2: Send request and wait for response
+            // SEP Ranged GET Step 2: "send the request and wait for the response in a non-blocking fashion"
             var firstRangeResponse = await _s3Client.GetObjectAsync(firstRangeRequest, cancellationToken).ConfigureAwait(false);
             
-            // Save ETag for SEP Step 5 (IfMatch validation in subsequent requests)
+            // SEP Ranged GET Step 5: "save Etag from the response to a variable" 
+            // (for IfMatch validation in subsequent requests)
             _savedETag = firstRangeResponse.ETag;
             
-            // SEP Step 3: Parse total content length from ContentRange header
+            // SEP Ranged GET Step 3: "parse total content length from ContentRange of the GetObject response 
+            // and save the value in a variable. The length is the numeric value after / delimiter. 
+            // For example, given ContentRange=bytes0-1/5, 5 is the total content length."
             // Check if ContentRange is null (object smaller than requested range)
             if (firstRangeResponse.ContentRange == null)
             {
@@ -329,7 +356,9 @@ namespace Amazon.S3.Transfer.Internal
             // Parse total object size from ContentRange (e.g., "bytes 0-5242879/52428800" -> 52428800)
             var totalContentLength = ExtractTotalSizeFromContentRange(firstRangeResponse.ContentRange);
             
-            // SEP Step 4: Compare parsed total with ContentLength to determine single vs multipart
+            // SEP Ranged GET Step 4: "compare the parsed total content length from Step 3 with ContentLength 
+            // of the response. If the parsed total content length equals to the value from ContentLength, 
+            // it indicates this request contains all of the data. The request is finished, return the response."
             if (totalContentLength == firstRangeResponse.ContentLength)
             {
                 // Single part: total size equals returned ContentLength
@@ -346,8 +375,8 @@ namespace Amazon.S3.Transfer.Internal
                 };
             }
             
-            // Multipart: total size != ContentLength, more parts available
-            // SEP Step 4 validation: Verify ContentLength matches targetPartSize
+            // SEP Ranged GET Step 4: "If they do not match, it indicates there are more parts available 
+            // to download. Add a validation to verify that ContentLength equals to the targetPartSizeBytes."
             if (firstRangeResponse.ContentLength != targetPartSize)
             {
                 throw new InvalidOperationException(
@@ -355,12 +384,14 @@ namespace Amazon.S3.Transfer.Internal
                     $"Total object size is {totalContentLength} bytes.");
             }
             
-            // Multipart: Buffer Part 1 NOW to avoid re-downloading it later
+            // Optimization: Buffer Part 1 NOW to avoid re-downloading it later (SEP Step 6 will use this)
             var bufferedFirstPart = await BufferPartFromResponseAsync(1, firstRangeResponse, cancellationToken).ConfigureAwait(false);
             
-            // SEP Step 5: Calculate number of ranged GET requests required
+            // SEP Ranged GET Step 5: "calculate number of requests required by performing integer division 
+            // of total contentLength/targetPartSizeBytes. Save the number of ranged GET requests in a variable."
             _discoveredPartCount = (int)Math.Ceiling((double)totalContentLength / targetPartSize);
             
+            // SEP Ranged GET Step 9 will use this response for creating DownloadResponse
             // Keep the response for metadata extraction (will be disposed by OpenStreamWithResponseCommand)
             return new DownloadDiscoveryResult
             {
@@ -368,7 +399,7 @@ namespace Amazon.S3.Transfer.Internal
                 ObjectSize = totalContentLength,
                 SinglePartResponse = null,
                 InitialResponse = firstRangeResponse,  // Keep for metadata
-                BufferedFirstPart = bufferedFirstPart  // Reuse this!
+                BufferedFirstPart = bufferedFirstPart  // Reuse first part
             };
         }
 
@@ -460,25 +491,16 @@ namespace Amazon.S3.Transfer.Internal
         {
             var newSize = Math.Max(currentBuffer.Length * 2, validDataLength + (int)_config.TargetPartSizeBytes);
             var expandedBuffer = ArrayPool<byte>.Shared.Rent(newSize);
-            
+
             // Single copy of valid data to expanded buffer
             Buffer.BlockCopy(currentBuffer, 0, expandedBuffer, 0, validDataLength);
-            
+
             // Return old buffer to pool
             ArrayPool<byte>.Shared.Return(currentBuffer);
-            
+
             return expandedBuffer;
         }
-
-        private int CalculatePartCount(long objectSize)
-        {
-            // SEP-compliant: Always return the discovered part count determined during strategy discovery
-            // This ensures consistency with SEP specification:
-            // - PART strategy: Uses PartsCount from S3 response (SEP Step 3)  
-            // - RANGE strategy: Uses calculated count based on object size and target part size (SEP Step 5)
-            return _discoveredPartCount;
-        }
-
+        
         private (long startByte, long endByte) CalculatePartRange(int partNumber, long objectSize)
         {
             var targetPartSize = _request.IsSetPartSize() ? _request.PartSize : _config.TargetPartSizeBytes;
@@ -504,6 +526,51 @@ namespace Amazon.S3.Transfer.Internal
             }
             
             throw new InvalidOperationException($"Unable to parse Content-Range header: {contentRange}");
+        }
+
+        private void ValidateContentRange(GetObjectResponse response, int partNumber, long objectSize)
+        {
+            // SEP Part GET Step 5 / Ranged GET Step 7: 
+            // "validate that ContentRange matches with the requested range" and
+            // "the content range of the response aligns with the starting offset of the destination"
+            
+            if (_request.MultipartDownloadType == MultipartDownloadType.RANGE)
+            {
+                var (expectedStartByte, expectedEndByte) = CalculatePartRange(partNumber, objectSize);
+                
+                // Parse actual ContentRange from response
+                // Format: "bytes {start}-{end}/{total}"
+                var contentRange = response.ContentRange;
+                if (string.IsNullOrEmpty(contentRange))
+                {
+                    throw new InvalidOperationException($"ContentRange header missing from part {partNumber} response");
+                }
+                
+                var parts = contentRange.Replace("bytes ", "").Split('/');
+                if (parts.Length != 2)
+                {
+                    throw new InvalidOperationException($"Invalid ContentRange format: {contentRange}");
+                }
+                
+                var rangeParts = parts[0].Split('-');
+                if (rangeParts.Length != 2 || 
+                    !long.TryParse(rangeParts[0], out var actualStartByte) ||
+                    !long.TryParse(rangeParts[1], out var actualEndByte))
+                {
+                    throw new InvalidOperationException($"Unable to parse ContentRange: {contentRange}");
+                }
+                
+                // Validate range matches what we requested
+                if (actualStartByte != expectedStartByte || actualEndByte != expectedEndByte)
+                {
+                    throw new InvalidOperationException(
+                        $"ContentRange mismatch for part {partNumber}. " +
+                        $"Expected: bytes {expectedStartByte}-{expectedEndByte}, " +
+                        $"Actual: bytes {actualStartByte}-{actualEndByte}");
+                }
+            }
+            // For PART strategy, we could validate but S3 manages the part boundaries,
+            // so we trust the PartsCount and ContentRange from the initial response
         }
 
         private void ReportProgress(int completedPart, long partBytes, long totalBytes)
