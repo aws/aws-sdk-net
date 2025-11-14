@@ -145,99 +145,107 @@ namespace Amazon.S3.Transfer.Internal
             // Keep reading until buffer is full or we reach true EOF
             while (totalBytesRead < count)
             {
-                var currentPartNumber = _nextExpectedPartNumber;
-
-                // Wait for the current part to become available
-                while (!_partDataSources.ContainsKey(currentPartNumber))
-                {
-                    // Check for completion first
-                    lock (_lockObject)
-                    {
-                        if (_downloadComplete)
-                        {
-                            if (_downloadException != null)
-                                throw new InvalidOperationException("Multipart download failed", _downloadException);
-                            
-                            // True EOF - return what we've read so far
-                            return totalBytesRead;
-                        }
-                    }
-                    
-                    // Wait for a part to become available
-                    await Task.Run(() => _partAvailable.WaitOne(), cancellationToken).ConfigureAwait(false);
-                }
-
-                // Get the data source for current part
-                if (!_partDataSources.TryGetValue(currentPartNumber, out var dataSource))
-                {
-                    throw new InvalidOperationException($"Part {currentPartNumber} disappeared after availability check");
-                }
-
-                try
-                {
-                    // Calculate remaining space in buffer for cross-part reading
-                    int remainingCount = count - totalBytesRead;
-                    int currentOffset = offset + totalBytesRead;
-                    
-                    // Read from this part into the remaining buffer space
-                    var partBytesRead = await dataSource.ReadAsync(buffer, currentOffset, remainingCount, cancellationToken).ConfigureAwait(false);
-                    
-                    // Accumulate the bytes read
-                    totalBytesRead += partBytesRead;
-                    
-                    // If this part is complete, clean up and advance
-                    if (dataSource.IsComplete)
-                    {
-                        // Remove from collection
-                        _partDataSources.TryRemove(currentPartNumber, out _);
-                        
-                        // Clean up the data source
-                        dataSource.Dispose();
-                        
-                        // Release buffer space (for buffered sources, this frees up a slot)
-                        ReleaseBufferSpace();
-                        
-                        // Advance to next part
-                        lock (_lockObject)
-                        {
-                            _nextExpectedPartNumber++;
-                        }
-                        
-                        // If this part gave us 0 bytes, continue to next part
-                        if (partBytesRead == 0)
-                        {
-                            continue; // Try next part
-                        }
-                        
-                        // If buffer is not full yet, continue to next part
-                        if (totalBytesRead < count)
-                        {
-                            continue; // Continue filling buffer from next part
-                        }
-                    }
-                    
-                    // If part is not complete but we got 0 bytes, it's EOF
-                    if (partBytesRead == 0)
-                    {
-                        break; // End of stream
-                    }
-                    
-                    // If buffer is full, we're done
-                    if (totalBytesRead >= count)
-                    {
-                        break; // Buffer is full
-                    }
-                }
-                catch (Exception)
-                {
-                    // Clean up on failure
-                    dataSource?.Dispose();
-                    ReleaseBufferSpace();
-                    throw;
-                }
+                var (bytesRead, shouldContinue) = await ReadFromCurrentPartAsync(
+                    buffer, 
+                    offset + totalBytesRead, 
+                    count - totalBytesRead, 
+                    cancellationToken).ConfigureAwait(false);
+                
+                totalBytesRead += bytesRead;
+                
+                if (!shouldContinue)
+                    break;
             }
             
             return totalBytesRead;
+        }
+
+        /// <summary>
+        /// Reads data from the current expected part, handling part availability, completion, and cleanup.
+        /// </summary>
+        /// <returns>
+        /// A tuple containing:
+        /// - bytesRead: The number of bytes read from the current part
+        /// - shouldContinue: Whether reading should continue (false indicates EOF or buffer full from a non-complete part)
+        /// </returns>
+        private async Task<(int bytesRead, bool shouldContinue)> ReadFromCurrentPartAsync(
+            byte[] buffer, 
+            int offset, 
+            int count, 
+            CancellationToken cancellationToken)
+        {
+            var currentPartNumber = _nextExpectedPartNumber;
+
+            // Wait for the current part to become available
+            while (!_partDataSources.ContainsKey(currentPartNumber))
+            {
+                // Check for completion first
+                lock (_lockObject)
+                {
+                    if (_downloadComplete)
+                    {
+                        if (_downloadException != null)
+                            throw new InvalidOperationException("Multipart download failed", _downloadException);
+                        
+                        // True EOF - no more data available
+                        return (0, false);
+                    }
+                }
+                
+                // Wait for a part to become available
+                await Task.Run(() => _partAvailable.WaitOne(), cancellationToken).ConfigureAwait(false);
+            }
+
+            // Get the data source for current part
+            if (!_partDataSources.TryGetValue(currentPartNumber, out var dataSource))
+            {
+                throw new InvalidOperationException($"Part {currentPartNumber} disappeared after availability check");
+            }
+
+            try
+            {
+                // Read from this part into the buffer
+                var partBytesRead = await dataSource.ReadAsync(buffer, offset, count, cancellationToken).ConfigureAwait(false);
+                
+                // If this part is complete, clean up and advance
+                if (dataSource.IsComplete)
+                {
+                    // Remove from collection
+                    _partDataSources.TryRemove(currentPartNumber, out _);
+                    
+                    // Clean up the data source
+                    dataSource.Dispose();
+                    
+                    // Release buffer space (for buffered sources, this frees up a slot)
+                    ReleaseBufferSpace();
+                    
+                    // Advance to next part
+                    lock (_lockObject)
+                    {
+                        _nextExpectedPartNumber++;
+                    }
+                    
+                    // Continue reading to fill buffer across part boundaries
+                    return (partBytesRead, true);
+                }
+                
+                // If part is not complete but we got 0 bytes, it's EOF
+                if (partBytesRead == 0)
+                {
+                    return (0, false);
+                }
+                
+                // Part has more data but we filled the buffer from this read
+                // Don't continue - we'll resume from this part on next call
+                return (partBytesRead, false);
+            }
+            catch (Exception)
+            {
+                // Clean up on failure
+                dataSource?.Dispose();
+                ReleaseBufferSpace();
+                throw;
+            }
         }
 
         public void ReleaseBufferSpace()
