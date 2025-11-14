@@ -154,8 +154,7 @@ namespace AWSSDK.UnitTests
             {
                 TotalParts = 1,
                 ObjectSize = 1024,
-                InitialResponse = mockResponse,
-                BufferedFirstPart = null
+                InitialResponse = mockResponse
             };
 
             var mockCoordinator = new Mock<IDownloadCoordinator>();
@@ -175,7 +174,7 @@ namespace AWSSDK.UnitTests
         }
 
         [TestMethod]
-        public async Task InitializeAsync_SinglePart_DoesNotStartDownloads()
+        public async Task InitializeAsync_SinglePart_CallsStartDownloads()
         {
             // Arrange
             var mockResponse = MultipartDownloadTestHelpers.CreateSinglePartResponse(1024);
@@ -183,13 +182,14 @@ namespace AWSSDK.UnitTests
             {
                 TotalParts = 1,
                 ObjectSize = 1024,
-                InitialResponse = mockResponse,
-                BufferedFirstPart = null
+                InitialResponse = mockResponse
             };
 
             var mockCoordinator = new Mock<IDownloadCoordinator>();
             mockCoordinator.Setup(x => x.DiscoverDownloadStrategyAsync(It.IsAny<CancellationToken>()))
                 .ReturnsAsync(discoveryResult);
+            mockCoordinator.Setup(x => x.StartDownloadsAsync(It.IsAny<DownloadDiscoveryResult>(), It.IsAny<IPartBufferManager>(), It.IsAny<CancellationToken>()))
+                .Returns(Task.CompletedTask);
 
             var mockBufferManager = new Mock<IPartBufferManager>();
             var config = MultipartDownloadTestHelpers.CreateStreamConfiguration();
@@ -200,8 +200,8 @@ namespace AWSSDK.UnitTests
 
             // Assert
             mockCoordinator.Verify(
-                x => x.StartDownloadsAsync(It.IsAny<DownloadDiscoveryResult>(), It.IsAny<IPartBufferManager>(), It.IsAny<CancellationToken>()),
-                Times.Never);
+                x => x.StartDownloadsAsync(discoveryResult, mockBufferManager.Object, It.IsAny<CancellationToken>()),
+                Times.Once);
         }
 
         #endregion
@@ -216,8 +216,7 @@ namespace AWSSDK.UnitTests
             {
                 TotalParts = 5,
                 ObjectSize = 50 * 1024 * 1024,
-                InitialResponse = new GetObjectResponse(),
-                BufferedFirstPart = null
+                InitialResponse = new GetObjectResponse()
             };
 
             var mockCoordinator = new Mock<IDownloadCoordinator>();
@@ -245,8 +244,7 @@ namespace AWSSDK.UnitTests
             {
                 TotalParts = 5,
                 ObjectSize = 50 * 1024 * 1024,
-                InitialResponse = new GetObjectResponse(),
-                BufferedFirstPart = null
+                InitialResponse = new GetObjectResponse()
             };
 
             var mockCoordinator = new Mock<IDownloadCoordinator>();
@@ -280,8 +278,7 @@ namespace AWSSDK.UnitTests
             {
                 TotalParts = 1,
                 ObjectSize = 1024,
-                InitialResponse = MultipartDownloadTestHelpers.CreateSinglePartResponse(1024),
-                BufferedFirstPart = null
+                InitialResponse = MultipartDownloadTestHelpers.CreateSinglePartResponse(1024)
             };
 
             var mockCoordinator = new Mock<IDownloadCoordinator>();
@@ -310,8 +307,7 @@ namespace AWSSDK.UnitTests
             {
                 TotalParts = 1,
                 ObjectSize = 1024,
-                InitialResponse = mockResponse,
-                BufferedFirstPart = null
+                InitialResponse = mockResponse
             };
 
             var mockCoordinator = new Mock<IDownloadCoordinator>();
@@ -378,8 +374,7 @@ namespace AWSSDK.UnitTests
             {
                 TotalParts = 1,
                 ObjectSize = 1024,
-                InitialResponse = mockResponse,
-                BufferedFirstPart = null
+                InitialResponse = mockResponse
             };
 
             var mockCoordinator = new Mock<IDownloadCoordinator>();
@@ -406,8 +401,7 @@ namespace AWSSDK.UnitTests
             {
                 TotalParts = 1,
                 ObjectSize = 1024,
-                InitialResponse = mockResponse,
-                BufferedFirstPart = null
+                InitialResponse = mockResponse
             };
 
             var mockCoordinator = new Mock<IDownloadCoordinator>();
@@ -436,8 +430,7 @@ namespace AWSSDK.UnitTests
             {
                 TotalParts = 1,
                 ObjectSize = 1024,
-                InitialResponse = mockResponse,
-                BufferedFirstPart = null
+                InitialResponse = mockResponse
             };
 
             var mockCoordinator = new Mock<IDownloadCoordinator>();
@@ -466,8 +459,7 @@ namespace AWSSDK.UnitTests
             {
                 TotalParts = 1,
                 ObjectSize = 1024,
-                InitialResponse = mockResponse,
-                BufferedFirstPart = null
+                InitialResponse = mockResponse
             };
 
             var mockCoordinator = new Mock<IDownloadCoordinator>();

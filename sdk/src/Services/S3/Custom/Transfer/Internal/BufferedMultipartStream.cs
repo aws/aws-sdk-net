@@ -96,6 +96,7 @@ namespace Amazon.S3.Transfer.Internal
 
         /// <summary>
         /// Initialize the stream by discovering download strategy and setting up appropriate handlers.
+        /// Unified logic handles both single-part and multipart downloads through the same code path.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token for the initialization operation.</param>
         public async Task InitializeAsync(CancellationToken cancellationToken)
@@ -112,21 +113,12 @@ namespace Amazon.S3.Transfer.Internal
                 _discoveryResult = await _downloadCoordinator.DiscoverDownloadStrategyAsync(cancellationToken)
                     .ConfigureAwait(false);
                 
-                // Step 2: Set up appropriate stream handler based on discovery results
-                if (_discoveryResult.IsSinglePart)
-                {
-                    // Single part - use direct passthrough handler
-                    _streamHandler = new SinglePartStreamHandler(_discoveryResult.InitialResponse.ResponseStream);
-                }
-                else
-                {
-                    // Multipart - use coordinated handler with buffer manager
-                    _streamHandler = new MultipartStreamHandler(_partBufferManager);
-                    
-                    // Step 3: Start concurrent downloads for multipart
-                    await _downloadCoordinator.StartDownloadsAsync(_discoveryResult, _partBufferManager, cancellationToken)
-                        .ConfigureAwait(false);
-                }
+                // Step 2: Create stream manager
+                _streamHandler = new MultipartStreamHandler(_partBufferManager);
+                
+                // Step 3: Start downloads (coordinator handles both single-part and multipart)
+                await _downloadCoordinator.StartDownloadsAsync(_discoveryResult, _partBufferManager, cancellationToken)
+                    .ConfigureAwait(false);
                 
                 _initialized = true;
             }

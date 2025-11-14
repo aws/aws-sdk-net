@@ -61,7 +61,7 @@ namespace Amazon.S3.Transfer.Internal
 
     /// <summary>
     /// Results from the download discovery phase.
-    /// Contains information needed to determine download strategy.
+    /// Contains metadata needed to determine download strategy.
     /// </summary>
     internal class DownloadDiscoveryResult
     {
@@ -77,19 +77,13 @@ namespace Amazon.S3.Transfer.Internal
         public long ObjectSize { get; set; }
 
         /// <summary>
-        /// Contains the GetObjectResponse from the discovery phase.
-        /// For single-part downloads (TotalParts == 1), this contains the complete response with stream.
-        /// For multipart downloads, this contains metadata from the first part request.
+        /// Contains the GetObjectResponse from the discovery phase with its ResponseStream.
+        /// For single-part downloads (TotalParts == 1), this contains the complete response.
+        /// For multipart downloads, this contains the first part response.
+        /// The ResponseStream will be buffered in StartDownloadsAsync.
         /// Used for extracting metadata (ETag, Headers, ServerSideEncryption, etc.) in all scenarios.
         /// </summary>
         public GetObjectResponse InitialResponse { get; set; }
-
-        /// <summary>
-        /// For multipart downloads, contains the pre-buffered first part from discovery.
-        /// This optimization avoids re-downloading Part 1 during the concurrent download phase.
-        /// Null for single-part downloads.
-        /// </summary>
-        public StreamPartBuffer BufferedFirstPart { get; set; }
 
         /// <summary>
         /// Indicates if this is a single-part download (TotalParts == 1).

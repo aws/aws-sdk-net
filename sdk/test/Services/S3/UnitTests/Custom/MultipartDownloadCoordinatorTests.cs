@@ -119,7 +119,6 @@ namespace AWSSDK.UnitTests
             Assert.AreEqual(1, result.TotalParts);
             Assert.AreEqual(1024 * 1024, result.ObjectSize);
             Assert.IsNotNull(result.InitialResponse);
-            Assert.IsNull(result.BufferedFirstPart);
         }
 
         [TestMethod]
@@ -146,7 +145,6 @@ namespace AWSSDK.UnitTests
             // Assert
             Assert.AreEqual(1, result.TotalParts);
             Assert.IsNotNull(result.InitialResponse);
-            Assert.IsNull(result.BufferedFirstPart);
         }
 
         [TestMethod]
@@ -165,8 +163,8 @@ namespace AWSSDK.UnitTests
             // Act
             var result = await coordinator.DiscoverDownloadStrategyAsync(CancellationToken.None);
 
-            // Assert
-            Assert.IsNull(result.BufferedFirstPart);
+            // Assert - Single-part does not buffer during discovery
+            Assert.IsNotNull(result.InitialResponse);
         }
 
         #endregion
@@ -223,9 +221,8 @@ namespace AWSSDK.UnitTests
             // Act
             var result = await coordinator.DiscoverDownloadStrategyAsync(CancellationToken.None);
 
-            // Assert
-            Assert.IsNotNull(result.BufferedFirstPart);
-            Assert.AreEqual(1, result.BufferedFirstPart.PartNumber);
+            // Assert - Multipart returns response with stream for buffering in StartDownloadsAsync
+            Assert.IsNotNull(result.InitialResponse);
         }
 
         [TestMethod]
@@ -333,7 +330,6 @@ namespace AWSSDK.UnitTests
             Assert.AreEqual(1, result.TotalParts);
             Assert.AreEqual(objectSize, result.ObjectSize);
             Assert.IsNotNull(result.InitialResponse);
-            Assert.IsNull(result.BufferedFirstPart);
         }
 
         #endregion
@@ -399,32 +395,6 @@ namespace AWSSDK.UnitTests
             // Assert
             Assert.AreEqual(7, result.TotalParts); // 52428800 / 8388608 = 6.25 -> 7 parts
             Assert.IsNotNull(result.InitialResponse);
-        }
-
-        [TestMethod]
-        public async Task DiscoverUsingRangeStrategy_Multipart_BuffersFirstPart()
-        {
-            // Arrange
-            var totalObjectSize = 50 * 1024 * 1024;
-            var partSize = 8 * 1024 * 1024;
-            
-            var mockResponse = MultipartDownloadTestHelpers.CreateRangeResponse(
-                0, partSize - 1, totalObjectSize, "range-etag");
-            
-            var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client(
-                (req, ct) => Task.FromResult(mockResponse));
-            
-            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest(
-                partSize: partSize,
-                downloadType: MultipartDownloadType.RANGE);
-            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration();
-            var coordinator = new MultipartDownloadCoordinator(mockClient.Object, request, config);
-
-            // Act
-            var result = await coordinator.DiscoverDownloadStrategyAsync(CancellationToken.None);
-
-            // Assert
-            Assert.IsNotNull(result.BufferedFirstPart);
         }
 
         [TestMethod]
@@ -521,8 +491,7 @@ namespace AWSSDK.UnitTests
             {
                 TotalParts = 1,
                 ObjectSize = 1024,
-                InitialResponse = new GetObjectResponse(),
-                BufferedFirstPart = null
+                InitialResponse = new GetObjectResponse()
             };
             
             var mockBufferManager = new Mock<IPartBufferManager>();
@@ -564,8 +533,7 @@ namespace AWSSDK.UnitTests
             {
                 TotalParts = 5,
                 ObjectSize = 50 * 1024 * 1024,
-                InitialResponse = new GetObjectResponse(),
-                BufferedFirstPart = null
+                InitialResponse = new GetObjectResponse()
             };
 
             // Act
@@ -1006,8 +974,8 @@ namespace AWSSDK.UnitTests
         }
 
         [TestMethod]
-        [ExpectedException(typeof(OperationCanceledException))]
-        public async Task StartDownloadsAsync_WhenCancelledBeforeStart_ThrowsOperationCanceledException()
+        [ExpectedException(typeof(TaskCanceledException))]
+        public async Task StartDownloadsAsync_WhenCancelledBeforeStart_ThrowsTaskCanceledException()
         {
             // Arrange
             var totalParts = 3;
@@ -1026,7 +994,7 @@ namespace AWSSDK.UnitTests
             
             var mockBufferManager = new Mock<IPartBufferManager>();
             mockBufferManager.Setup(x => x.AddBufferAsync(It.IsAny<StreamPartBuffer>(), It.IsAny<CancellationToken>()))
-                .ThrowsAsync(new OperationCanceledException());
+                .ThrowsAsync(new TaskCanceledException());
             
             var cts = new CancellationTokenSource();
             cts.Cancel();
@@ -1198,8 +1166,7 @@ namespace AWSSDK.UnitTests
             {
                 TotalParts = 1,
                 ObjectSize = 1024,
-                InitialResponse = new GetObjectResponse(),
-                BufferedFirstPart = null
+                InitialResponse = new GetObjectResponse()
             };
             
             var mockBufferManager = new Mock<IPartBufferManager>();

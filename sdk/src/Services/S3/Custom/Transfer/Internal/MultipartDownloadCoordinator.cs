@@ -112,21 +112,23 @@ namespace Amazon.S3.Transfer.Internal
             if (partBufferManager == null)
                 throw new ArgumentNullException(nameof(partBufferManager));
 
-            if (discoveryResult.IsSinglePart)
-            {
-                // Single part - no downloads needed, just state management
-                return;
-            }
-
             var downloadTasks = new List<Task>();
             var internalCts = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
 
             try
             {
-                // Part 1 is always buffered during discovery (optimization to avoid re-downloading)
-                await partBufferManager.AddBufferAsync(discoveryResult.BufferedFirstPart, cancellationToken).ConfigureAwait(false);
+                // Buffer Part 1 from InitialResponse (applies to both single-part and multipart)
+                var bufferedFirstPart = await BufferPartFromResponseAsync(1, discoveryResult.InitialResponse, cancellationToken).ConfigureAwait(false);
+                await partBufferManager.AddBufferAsync(bufferedFirstPart, cancellationToken).ConfigureAwait(false);
 
-                // Start concurrent downloads for remaining parts (Part 2 onwards)
+                if (discoveryResult.IsSinglePart)
+                {
+                    // Single-part: Part 1 is the entire object
+                    partBufferManager.MarkDownloadComplete(null);
+                    return;
+                }
+
+                // Multipart: Start concurrent downloads for remaining parts (Part 2 onwards)
                 for (int partNum = 2; partNum <= discoveryResult.TotalParts; partNum++)
                 {
                     var task = CreateDownloadTaskAsync(partNum, discoveryResult.ObjectSize, partBufferManager, internalCts.Token);
@@ -271,17 +273,13 @@ namespace Amazon.S3.Transfer.Internal
                 // For example, "bytes 0-5242879/52428800" -> extract 52428800
                 var totalObjectSize = ExtractTotalSizeFromContentRange(firstPartResponse.ContentRange);
                 
-                // Optimization: Buffer Part 1 NOW to avoid re-downloading it later (SEP Step 4 will use this)
-                var bufferedFirstPart = await BufferPartFromResponseAsync(1, firstPartResponse, cancellationToken).ConfigureAwait(false);
-                
                 // SEP Part GET Step 7 will use this response for creating DownloadResponse
-                // Keep the response for metadata extraction (will be disposed by OpenStreamWithResponseCommand)
+                // Keep the response with its stream (will be buffered in StartDownloadsAsync)
                 return new DownloadDiscoveryResult
                 {
                     TotalParts = firstPartResponse.PartsCount.Value,
                     ObjectSize = totalObjectSize,
-                    InitialResponse = firstPartResponse,  // Keep for metadata
-                    BufferedFirstPart = bufferedFirstPart  // Reuse this!
+                    InitialResponse = firstPartResponse  // Keep response with stream
                 };
             }
             else
@@ -294,8 +292,7 @@ namespace Amazon.S3.Transfer.Internal
                 {
                     TotalParts = 1,
                     ObjectSize = firstPartResponse.ContentLength,
-                    InitialResponse = firstPartResponse,
-                    BufferedFirstPart = null  // Not needed for single-part
+                    InitialResponse = firstPartResponse  // Keep response with stream
                 };
             }
         }
@@ -330,8 +327,7 @@ namespace Amazon.S3.Transfer.Internal
                 {
                     TotalParts = 1,
                     ObjectSize = firstRangeResponse.ContentLength,
-                    InitialResponse = firstRangeResponse,
-                    BufferedFirstPart = null  // Not needed for single-part
+                    InitialResponse = firstRangeResponse  // Keep response with stream
                 };
             }
             
@@ -351,8 +347,7 @@ namespace Amazon.S3.Transfer.Internal
                 {
                     TotalParts = 1,
                     ObjectSize = totalContentLength,
-                    InitialResponse = firstRangeResponse,
-                    BufferedFirstPart = null  // Not needed for single-part
+                    InitialResponse = firstRangeResponse  // Keep response with stream
                 };
             }
             
@@ -365,21 +360,17 @@ namespace Amazon.S3.Transfer.Internal
                     $"Total object size is {totalContentLength} bytes.");
             }
             
-            // Optimization: Buffer Part 1 NOW to avoid re-downloading it later (SEP Step 6 will use this)
-            var bufferedFirstPart = await BufferPartFromResponseAsync(1, firstRangeResponse, cancellationToken).ConfigureAwait(false);
-            
             // SEP Ranged GET Step 5: "calculate number of requests required by performing integer division 
             // of total contentLength/targetPartSizeBytes. Save the number of ranged GET requests in a variable."
             _discoveredPartCount = (int)Math.Ceiling((double)totalContentLength / targetPartSize);
             
             // SEP Ranged GET Step 9 will use this response for creating DownloadResponse
-            // Keep the response for metadata extraction (will be disposed by OpenStreamWithResponseCommand)
+            // Keep the response with its stream (will be buffered in StartDownloadsAsync)
             return new DownloadDiscoveryResult
             {
                 TotalParts = _discoveredPartCount,
                 ObjectSize = totalContentLength,
-                InitialResponse = firstRangeResponse,  // Keep for metadata
-                BufferedFirstPart = bufferedFirstPart  // Reuse first part
+                InitialResponse = firstRangeResponse  // Keep response with stream
             };
         }
 
