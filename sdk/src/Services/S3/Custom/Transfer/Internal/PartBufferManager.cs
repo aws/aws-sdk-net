@@ -85,11 +85,17 @@ namespace Amazon.S3.Transfer.Internal
             await _bufferSpaceAvailable.WaitAsync(cancellationToken).ConfigureAwait(false);
             waitTimer.Stop();
             
+            var slotsAfter = _bufferSpaceAvailable.CurrentCount;
+            
             if (waitTimer.ElapsedMilliseconds > 0)
             {
-                var slotsAfter = _bufferSpaceAvailable.CurrentCount;
                 Logger.InfoFormat("[BUFFER] SpaceWait - DurationMs={0}, SlotsAfter={1}", 
                     waitTimer.ElapsedMilliseconds, slotsAfter);
+            }
+            else
+            {
+                Logger.DebugFormat("[BUFFER] SpaceAcquired - DurationMs=0, SlotsAfter={0}", 
+                    slotsAfter);
             }
         }
 
