@@ -81,11 +81,17 @@ namespace Amazon.S3.Transfer.Internal
 
             // Create configuration from specific values we need
             var s3Config = (AmazonS3Config)s3Client.Config;
+            
+            // Determine target part size from request or use 8MB default
+            long targetPartSize = request.IsSetPartSize() 
+                ? request.PartSize 
+                : 8 * 1024 * 1024; // 8MB default
+            
             var config = new StreamConfiguration(
                 transferConfig.ConcurrentServiceRequests,
                 transferConfig.MaxInMemoryParts,
                 s3Config.BufferSize,
-                request);
+                targetPartSize);
             
             // Create dependencies using dependency injection
             var partBufferManager = new PartBufferManager(config);

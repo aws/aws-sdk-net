@@ -45,19 +45,5 @@ namespace Amazon.S3.Transfer.Internal
             this._request = request;
             this._config = config;
         }
-
-        internal GetObjectRequest ConstructRequest()
-        {
-            if (!this._request.IsSetBucketName())
-            {
-                throw new InvalidOperationException("The bucketName Specified is null or empty!");
-            }
-            if (!this._request.IsSetKey())
-            {
-                throw new InvalidOperationException("The key Specified is null or empty!");
-            }
-
-             return ConvertToGetObjectRequest(this._request);
-        }
     }
 }

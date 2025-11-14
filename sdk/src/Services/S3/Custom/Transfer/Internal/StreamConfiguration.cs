@@ -59,17 +59,13 @@ namespace Amazon.S3.Transfer.Internal
         /// <param name="concurrentServiceRequests">Maximum concurrent HTTP requests for downloading parts.</param>
         /// <param name="maxInMemoryParts">Maximum number of parts to keep in memory simultaneously.</param>
         /// <param name="bufferSize">Buffer size used for optimal I/O operations.</param>
-        /// <param name="request">Download request containing part size information.</param>
-        public StreamConfiguration(int concurrentServiceRequests, int maxInMemoryParts, int bufferSize, BaseDownloadRequest request = null)
+        /// <param name="targetPartSizeBytes">Target size for each part in bytes.</param>
+        public StreamConfiguration(int concurrentServiceRequests, int maxInMemoryParts, int bufferSize, long targetPartSizeBytes)
         {
             ConcurrentServiceRequests = concurrentServiceRequests;
             MaxInMemoryParts = maxInMemoryParts;
             BufferSize = bufferSize;
-            
-            // Determine target part size from request or use 8MB default
-            TargetPartSizeBytes = (request?.IsSetPartSize() == true) 
-                ? request.PartSize 
-                : 8 * 1024 * 1024; // 8MB default
+            TargetPartSizeBytes = targetPartSizeBytes;
         }
         
         /// <summary>
