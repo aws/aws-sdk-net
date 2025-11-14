@@ -84,116 +84,66 @@ namespace AWSSDK.UnitTests
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentOutOfRangeException))]
-        public void Validate_WithNegativeConcurrentRequests_ThrowsException()
+        public void Constructor_WithNegativeConcurrentRequests_ThrowsException()
         {
-            // Arrange
+            // Act & Assert - ExpectedException
             var config = new StreamConfiguration(-1, 5, 8192, 8 * 1024 * 1024);
-
-            // Act
-            config.Validate();
-
-            // Assert - ExpectedException
         }
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentOutOfRangeException))]
-        public void Validate_WithZeroConcurrentRequests_ThrowsException()
+        public void Constructor_WithZeroConcurrentRequests_ThrowsException()
         {
-            // Arrange
+            // Act & Assert - ExpectedException
             var config = new StreamConfiguration(0, 5, 8192, 8 * 1024 * 1024);
-
-            // Act
-            config.Validate();
-
-            // Assert - ExpectedException
         }
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentOutOfRangeException))]
-        public void Validate_WithNegativeMaxInMemoryParts_ThrowsException()
+        public void Constructor_WithNegativeMaxInMemoryParts_ThrowsException()
         {
-            // Arrange
+            // Act & Assert - ExpectedException
             var config = new StreamConfiguration(10, -1, 8192, 8 * 1024 * 1024);
-
-            // Act
-            config.Validate();
-
-            // Assert - ExpectedException
         }
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentOutOfRangeException))]
-        public void Validate_WithZeroMaxInMemoryParts_ThrowsException()
+        public void Constructor_WithZeroMaxInMemoryParts_ThrowsException()
         {
-            // Arrange
+            // Act & Assert - ExpectedException
             var config = new StreamConfiguration(10, 0, 8192, 8 * 1024 * 1024);
-
-            // Act
-            config.Validate();
-
-            // Assert - ExpectedException
         }
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentOutOfRangeException))]
-        public void Validate_WithNegativeTargetPartSize_ThrowsException()
+        public void Constructor_WithNegativeTargetPartSize_ThrowsException()
         {
-            // Arrange
+            // Act & Assert - ExpectedException
             var config = new StreamConfiguration(10, 5, 8192, -1L);
-
-            // Act
-            config.Validate();
-
-            // Assert - ExpectedException
         }
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentOutOfRangeException))]
-        public void Validate_WithZeroTargetPartSize_ThrowsException()
+        public void Constructor_WithZeroTargetPartSize_ThrowsException()
         {
-            // Arrange
+            // Act & Assert - ExpectedException
             var config = new StreamConfiguration(10, 5, 8192, 0L);
-
-            // Act
-            config.Validate();
-
-            // Assert - ExpectedException
         }
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentOutOfRangeException))]
-        public void Validate_WithNegativeBufferSize_ThrowsException()
+        public void Constructor_WithNegativeBufferSize_ThrowsException()
         {
-            // Arrange
+            // Act & Assert - ExpectedException
             var config = new StreamConfiguration(10, 5, -1, 8 * 1024 * 1024);
-
-            // Act
-            config.Validate();
-
-            // Assert - ExpectedException
         }
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentOutOfRangeException))]
-        public void Validate_WithZeroBufferSize_ThrowsException()
+        public void Constructor_WithZeroBufferSize_ThrowsException()
         {
-            // Arrange
+            // Act & Assert - ExpectedException
             var config = new StreamConfiguration(10, 5, 0, 8 * 1024 * 1024);
-
-            // Act
-            config.Validate();
-
-            // Assert - ExpectedException
-        }
-
-        [TestMethod]
-        public void Validate_WithValidConfiguration_DoesNotThrow()
-        {
-            // Arrange
-            var config = new StreamConfiguration(10, 5, 8192, 8 * 1024 * 1024);
-
-            // Act & Assert - Should not throw
-            config.Validate();
         }
 
         #endregion

@@ -55,7 +55,6 @@ namespace Amazon.S3.Transfer.Internal
             _request = request ?? throw new ArgumentNullException(nameof(request));
             _config = config ?? throw new ArgumentNullException(nameof(config));
             
-            _config.Validate();
             _httpConcurrencySlots = new SemaphoreSlim(_config.ConcurrentServiceRequests);
         }
 
@@ -135,6 +134,7 @@ namespace Amazon.S3.Transfer.Internal
                 }
 
                 // Wait for all downloads to complete
+                // TODO CHANGE THIS TO WHENALLORFIRSTEXCEPTION
                 await Task.WhenAll(downloadTasks).ConfigureAwait(false);
 
                 // SEP Part GET Step 6 / Ranged GET Step 8:
@@ -513,7 +513,6 @@ namespace Amazon.S3.Transfer.Internal
             throw new InvalidOperationException($"Unable to parse Content-Range header: {contentRange}");
         }
 
-        // TODO add unit tests for these validations
         private void ValidateContentRange(GetObjectResponse response, int partNumber, long objectSize)
         {
             // SEP Part GET Step 5 / Ranged GET Step 7: 

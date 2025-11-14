@@ -48,8 +48,6 @@ namespace Amazon.S3.Transfer.Internal
         {
             if (config == null)
                 throw new ArgumentNullException(nameof(config));
-                
-            config.Validate();
             
             _partDataSources = new ConcurrentDictionary<int, IPartDataSource>();
             _bufferSpaceAvailable = new SemaphoreSlim(config.MaxInMemoryParts);

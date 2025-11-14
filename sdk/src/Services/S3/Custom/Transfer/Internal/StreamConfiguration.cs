@@ -60,30 +60,22 @@ namespace Amazon.S3.Transfer.Internal
         /// <param name="maxInMemoryParts">Maximum number of parts to keep in memory simultaneously.</param>
         /// <param name="bufferSize">Buffer size used for optimal I/O operations.</param>
         /// <param name="targetPartSizeBytes">Target size for each part in bytes.</param>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown when any parameter is less than or equal to 0.</exception>
         public StreamConfiguration(int concurrentServiceRequests, int maxInMemoryParts, int bufferSize, long targetPartSizeBytes)
         {
+            if (concurrentServiceRequests <= 0)
+                throw new ArgumentOutOfRangeException(nameof(concurrentServiceRequests), "Must be greater than 0");
+            if (maxInMemoryParts <= 0)
+                throw new ArgumentOutOfRangeException(nameof(maxInMemoryParts), "Must be greater than 0");
+            if (bufferSize <= 0)
+                throw new ArgumentOutOfRangeException(nameof(bufferSize), "Must be greater than 0");
+            if (targetPartSizeBytes <= 0)
+                throw new ArgumentOutOfRangeException(nameof(targetPartSizeBytes), "Must be greater than 0");
+            
             ConcurrentServiceRequests = concurrentServiceRequests;
             MaxInMemoryParts = maxInMemoryParts;
             BufferSize = bufferSize;
             TargetPartSizeBytes = targetPartSizeBytes;
-        }
-        
-        /// <summary>
-        /// Validates that all configuration values are within acceptable ranges.
-        /// </summary>
-        public void Validate()
-        {
-            if (ConcurrentServiceRequests <= 0)
-                throw new ArgumentOutOfRangeException(nameof(ConcurrentServiceRequests), "Must be greater than 0");
-                
-            if (MaxInMemoryParts <= 0)
-                throw new ArgumentOutOfRangeException(nameof(MaxInMemoryParts), "Must be greater than 0");
-                
-            if (TargetPartSizeBytes <= 0)
-                throw new ArgumentOutOfRangeException(nameof(TargetPartSizeBytes), "Must be greater than 0");
-                
-            if (BufferSize <= 0)
-                throw new ArgumentOutOfRangeException(nameof(BufferSize), "Must be greater than 0");
         }
     }
 }

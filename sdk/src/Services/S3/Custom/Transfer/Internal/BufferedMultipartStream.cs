@@ -61,8 +61,6 @@ namespace Amazon.S3.Transfer.Internal
             _downloadCoordinator = downloadCoordinator ?? throw new ArgumentNullException(nameof(downloadCoordinator));
             _partBufferManager = partBufferManager ?? throw new ArgumentNullException(nameof(partBufferManager));
             _config = config ?? throw new ArgumentNullException(nameof(config));
-            
-            _config.Validate();
         }
 
         /// <summary>
