@@ -280,7 +280,6 @@ namespace Amazon.S3.Transfer.Internal
                 {
                     TotalParts = firstPartResponse.PartsCount.Value,
                     ObjectSize = totalObjectSize,
-                    SinglePartResponse = null,
                     InitialResponse = firstPartResponse,  // Keep for metadata
                     BufferedFirstPart = bufferedFirstPart  // Reuse this!
                 };
@@ -295,8 +294,7 @@ namespace Amazon.S3.Transfer.Internal
                 {
                     TotalParts = 1,
                     ObjectSize = firstPartResponse.ContentLength,
-                    SinglePartResponse = firstPartResponse,
-                    InitialResponse = firstPartResponse,  // Same as SinglePartResponse for consistency
+                    InitialResponse = firstPartResponse,
                     BufferedFirstPart = null  // Not needed for single-part
                 };
             }
@@ -332,8 +330,7 @@ namespace Amazon.S3.Transfer.Internal
                 {
                     TotalParts = 1,
                     ObjectSize = firstRangeResponse.ContentLength,
-                    SinglePartResponse = firstRangeResponse,
-                    InitialResponse = firstRangeResponse,  // Same as SinglePartResponse for consistency
+                    InitialResponse = firstRangeResponse,
                     BufferedFirstPart = null  // Not needed for single-part
                 };
             }
@@ -354,8 +351,7 @@ namespace Amazon.S3.Transfer.Internal
                 {
                     TotalParts = 1,
                     ObjectSize = totalContentLength,
-                    SinglePartResponse = firstRangeResponse,
-                    InitialResponse = firstRangeResponse,  // Same as SinglePartResponse for consistency
+                    InitialResponse = firstRangeResponse,
                     BufferedFirstPart = null  // Not needed for single-part
                 };
             }
@@ -382,7 +378,6 @@ namespace Amazon.S3.Transfer.Internal
             {
                 TotalParts = _discoveredPartCount,
                 ObjectSize = totalContentLength,
-                SinglePartResponse = null,
                 InitialResponse = firstRangeResponse,  // Keep for metadata
                 BufferedFirstPart = bufferedFirstPart  // Reuse first part
             };

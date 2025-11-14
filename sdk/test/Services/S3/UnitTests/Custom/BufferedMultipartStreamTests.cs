@@ -154,7 +154,6 @@ namespace AWSSDK.UnitTests
             {
                 TotalParts = 1,
                 ObjectSize = 1024,
-                SinglePartResponse = mockResponse,
                 InitialResponse = mockResponse,
                 BufferedFirstPart = null
             };
@@ -184,7 +183,6 @@ namespace AWSSDK.UnitTests
             {
                 TotalParts = 1,
                 ObjectSize = 1024,
-                SinglePartResponse = mockResponse,
                 InitialResponse = mockResponse,
                 BufferedFirstPart = null
             };
@@ -218,7 +216,6 @@ namespace AWSSDK.UnitTests
             {
                 TotalParts = 5,
                 ObjectSize = 50 * 1024 * 1024,
-                SinglePartResponse = null,
                 InitialResponse = new GetObjectResponse(),
                 BufferedFirstPart = null
             };
@@ -248,7 +245,6 @@ namespace AWSSDK.UnitTests
             {
                 TotalParts = 5,
                 ObjectSize = 50 * 1024 * 1024,
-                SinglePartResponse = null,
                 InitialResponse = new GetObjectResponse(),
                 BufferedFirstPart = null
             };
@@ -284,8 +280,7 @@ namespace AWSSDK.UnitTests
             {
                 TotalParts = 1,
                 ObjectSize = 1024,
-                SinglePartResponse = MultipartDownloadTestHelpers.CreateSinglePartResponse(1024),
-                InitialResponse = new GetObjectResponse(),
+                InitialResponse = MultipartDownloadTestHelpers.CreateSinglePartResponse(1024),
                 BufferedFirstPart = null
             };
 
@@ -315,7 +310,6 @@ namespace AWSSDK.UnitTests
             {
                 TotalParts = 1,
                 ObjectSize = 1024,
-                SinglePartResponse = mockResponse,
                 InitialResponse = mockResponse,
                 BufferedFirstPart = null
             };
@@ -384,7 +378,6 @@ namespace AWSSDK.UnitTests
             {
                 TotalParts = 1,
                 ObjectSize = 1024,
-                SinglePartResponse = mockResponse,
                 InitialResponse = mockResponse,
                 BufferedFirstPart = null
             };
@@ -413,7 +406,6 @@ namespace AWSSDK.UnitTests
             {
                 TotalParts = 1,
                 ObjectSize = 1024,
-                SinglePartResponse = mockResponse,
                 InitialResponse = mockResponse,
                 BufferedFirstPart = null
             };
@@ -444,7 +436,6 @@ namespace AWSSDK.UnitTests
             {
                 TotalParts = 1,
                 ObjectSize = 1024,
-                SinglePartResponse = mockResponse,
                 InitialResponse = mockResponse,
                 BufferedFirstPart = null
             };
@@ -475,7 +466,6 @@ namespace AWSSDK.UnitTests
             {
                 TotalParts = 1,
                 ObjectSize = 1024,
-                SinglePartResponse = mockResponse,
                 InitialResponse = mockResponse,
                 BufferedFirstPart = null
             };

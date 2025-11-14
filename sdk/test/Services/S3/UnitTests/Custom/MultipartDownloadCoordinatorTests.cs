@@ -118,8 +118,7 @@ namespace AWSSDK.UnitTests
             Assert.IsNotNull(result);
             Assert.AreEqual(1, result.TotalParts);
             Assert.AreEqual(1024 * 1024, result.ObjectSize);
-            Assert.IsNotNull(result.SinglePartResponse);
-            Assert.AreEqual(result.InitialResponse, result.SinglePartResponse);
+            Assert.IsNotNull(result.InitialResponse);
             Assert.IsNull(result.BufferedFirstPart);
         }
 
@@ -146,7 +145,7 @@ namespace AWSSDK.UnitTests
 
             // Assert
             Assert.AreEqual(1, result.TotalParts);
-            Assert.IsNotNull(result.SinglePartResponse);
+            Assert.IsNotNull(result.InitialResponse);
             Assert.IsNull(result.BufferedFirstPart);
         }
 
@@ -199,7 +198,7 @@ namespace AWSSDK.UnitTests
             // Assert
             Assert.AreEqual(5, result.TotalParts);
             Assert.AreEqual(totalObjectSize, result.ObjectSize);
-            Assert.IsNull(result.SinglePartResponse);
+            Assert.IsNotNull(result.InitialResponse);
         }
 
         [TestMethod]
@@ -333,7 +332,7 @@ namespace AWSSDK.UnitTests
             // Assert
             Assert.AreEqual(1, result.TotalParts);
             Assert.AreEqual(objectSize, result.ObjectSize);
-            Assert.IsNotNull(result.SinglePartResponse);
+            Assert.IsNotNull(result.InitialResponse);
             Assert.IsNull(result.BufferedFirstPart);
         }
 
@@ -367,7 +366,7 @@ namespace AWSSDK.UnitTests
 
             // Assert
             Assert.AreEqual(1, result.TotalParts);
-            Assert.IsNotNull(result.SinglePartResponse);
+            Assert.IsNotNull(result.InitialResponse);
         }
 
         #endregion
@@ -399,7 +398,7 @@ namespace AWSSDK.UnitTests
 
             // Assert
             Assert.AreEqual(7, result.TotalParts); // 52428800 / 8388608 = 6.25 -> 7 parts
-            Assert.IsNull(result.SinglePartResponse);
+            Assert.IsNotNull(result.InitialResponse);
         }
 
         [TestMethod]
@@ -522,7 +521,6 @@ namespace AWSSDK.UnitTests
             {
                 TotalParts = 1,
                 ObjectSize = 1024,
-                SinglePartResponse = new GetObjectResponse(),
                 InitialResponse = new GetObjectResponse(),
                 BufferedFirstPart = null
             };
@@ -566,7 +564,6 @@ namespace AWSSDK.UnitTests
             {
                 TotalParts = 5,
                 ObjectSize = 50 * 1024 * 1024,
-                SinglePartResponse = null,
                 InitialResponse = new GetObjectResponse(),
                 BufferedFirstPart = null
             };
@@ -1201,7 +1198,6 @@ namespace AWSSDK.UnitTests
             {
                 TotalParts = 1,
                 ObjectSize = 1024,
-                SinglePartResponse = new GetObjectResponse(),
                 InitialResponse = new GetObjectResponse(),
                 BufferedFirstPart = null
             };

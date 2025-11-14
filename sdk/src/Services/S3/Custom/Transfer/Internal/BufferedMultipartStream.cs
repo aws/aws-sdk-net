@@ -116,7 +116,7 @@ namespace Amazon.S3.Transfer.Internal
                 if (_discoveryResult.IsSinglePart)
                 {
                     // Single part - use direct passthrough handler
-                    _streamHandler = new SinglePartStreamHandler(_discoveryResult.SinglePartResponse.ResponseStream);
+                    _streamHandler = new SinglePartStreamHandler(_discoveryResult.InitialResponse.ResponseStream);
                 }
                 else
                 {

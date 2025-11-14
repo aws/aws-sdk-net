@@ -77,17 +77,10 @@ namespace Amazon.S3.Transfer.Internal
         public long ObjectSize { get; set; }
 
         /// <summary>
-        /// For single-part downloads, contains the response with the object stream.
-        /// Null for multipart downloads.
-        /// </summary>
-        public GetObjectResponse SinglePartResponse { get; set; }
-
-        /// <summary>
-        /// Contains the initial GetObjectResponse from the discovery phase.
-        /// Used for extracting metadata (ETag, Headers, ServerSideEncryption, etc.) 
-        /// in both single-part and multipart scenarios.
-        /// For single-part, this will be the same as SinglePartResponse.
-        /// For multipart, this contains metadata from the first part request.
+        /// Contains the GetObjectResponse from the discovery phase.
+        /// For single-part downloads (TotalParts == 1), this contains the complete response with stream.
+        /// For multipart downloads, this contains metadata from the first part request.
+        /// Used for extracting metadata (ETag, Headers, ServerSideEncryption, etc.) in all scenarios.
         /// </summary>
         public GetObjectResponse InitialResponse { get; set; }
 
