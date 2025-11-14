@@ -46,12 +46,12 @@ namespace Amazon.S3.Transfer.Internal
         /// <summary>
         /// Initialize and start concurrent multipart downloads.
         /// Manages HTTP concurrency, part range calculations, and download orchestration.
+        /// Data handling is delegated to the IPartDataHandler provided during construction.
         /// </summary>
         /// <param name="discoveryResult">Results from the discovery phase.</param>
-        /// <param name="partBufferManager">Manager for coordinating downloaded part buffers.</param>
         /// <param name="cancellationToken">A token to cancel the download operation.</param>
         /// <returns>A task that completes when all downloads finish or an error occurs.</returns>
-        Task StartDownloadsAsync(DownloadDiscoveryResult discoveryResult, IPartBufferManager partBufferManager, CancellationToken cancellationToken);
+        Task StartDownloadsAsync(DownloadDiscoveryResult discoveryResult, CancellationToken cancellationToken);
 
         /// <summary>
         /// Gets the exception that occurred during downloads, if applicable.

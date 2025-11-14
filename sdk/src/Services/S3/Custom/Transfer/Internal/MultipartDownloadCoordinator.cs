@@ -39,6 +39,7 @@ namespace Amazon.S3.Transfer.Internal
         private readonly IAmazonS3 _s3Client;
         private readonly TransferUtilityOpenStreamRequest _request;
         private readonly StreamConfiguration _config;
+        private readonly IPartDataHandler _dataHandler;
         private readonly SemaphoreSlim _httpConcurrencySlots;
         
         private Exception _downloadException;
@@ -49,11 +50,12 @@ namespace Amazon.S3.Transfer.Internal
         private string _savedETag;
         private int _discoveredPartCount;
 
-        public MultipartDownloadCoordinator(IAmazonS3 s3Client, TransferUtilityOpenStreamRequest request, StreamConfiguration config)
+        public MultipartDownloadCoordinator(IAmazonS3 s3Client, TransferUtilityOpenStreamRequest request, StreamConfiguration config, IPartDataHandler dataHandler)
         {
             _s3Client = s3Client ?? throw new ArgumentNullException(nameof(s3Client));
             _request = request ?? throw new ArgumentNullException(nameof(request));
             _config = config ?? throw new ArgumentNullException(nameof(config));
+            _dataHandler = dataHandler ?? throw new ArgumentNullException(nameof(dataHandler));
             
             _httpConcurrencySlots = new SemaphoreSlim(_config.ConcurrentServiceRequests);
         }
@@ -103,35 +105,35 @@ namespace Amazon.S3.Transfer.Internal
             }
         }
 
-        public async Task StartDownloadsAsync(DownloadDiscoveryResult discoveryResult, IPartBufferManager partBufferManager, CancellationToken cancellationToken)
+        public async Task StartDownloadsAsync(DownloadDiscoveryResult discoveryResult, CancellationToken cancellationToken)
         {
             ThrowIfDisposed();
             
             if (discoveryResult == null)
                 throw new ArgumentNullException(nameof(discoveryResult));
-            if (partBufferManager == null)
-                throw new ArgumentNullException(nameof(partBufferManager));
 
             var downloadTasks = new List<Task>();
             var internalCts = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
 
             try
             {
-                // Buffer Part 1 from InitialResponse (applies to both single-part and multipart)
-                var bufferedFirstPart = await BufferPartFromResponseAsync(1, discoveryResult.InitialResponse, cancellationToken).ConfigureAwait(false);
-                await partBufferManager.AddBufferAsync(bufferedFirstPart, cancellationToken).ConfigureAwait(false);
+                // Prepare the data handler for the download
+                await _dataHandler.PrepareAsync(discoveryResult).ConfigureAwait(false);
+
+                // Process Part 1 from InitialResponse (applies to both single-part and multipart)
+                await _dataHandler.ProcessPartAsync(1, discoveryResult.InitialResponse, cancellationToken).ConfigureAwait(false);
 
                 if (discoveryResult.IsSinglePart)
                 {
                     // Single-part: Part 1 is the entire object
-                    partBufferManager.MarkDownloadComplete(null);
+                    _dataHandler.OnDownloadComplete(null);
                     return;
                 }
 
                 // Multipart: Start concurrent downloads for remaining parts (Part 2 onwards)
                 for (int partNum = 2; partNum <= discoveryResult.TotalParts; partNum++)
                 {
-                    var task = CreateDownloadTaskAsync(partNum, discoveryResult.ObjectSize, partBufferManager, internalCts.Token);
+                    var task = CreateDownloadTaskAsync(partNum, discoveryResult.ObjectSize, internalCts.Token);
                     downloadTasks.Add(task);
                 }
 
@@ -150,7 +152,7 @@ namespace Amazon.S3.Transfer.Internal
                 }
 
                 // Mark successful completion
-                partBufferManager.MarkDownloadComplete(null);
+                _dataHandler.OnDownloadComplete(null);
             }
             catch (Exception ex)
             {
@@ -159,7 +161,7 @@ namespace Amazon.S3.Transfer.Internal
                     _downloadException = ex;
                 }
                 
-                partBufferManager.MarkDownloadComplete(ex);
+                _dataHandler.OnDownloadComplete(ex);
                 throw;
             }
             finally
@@ -170,10 +172,10 @@ namespace Amazon.S3.Transfer.Internal
 
 
 
-        private async Task CreateDownloadTaskAsync(int partNumber, long objectSize, IPartBufferManager partBufferManager, CancellationToken cancellationToken)
+        private async Task CreateDownloadTaskAsync(int partNumber, long objectSize, CancellationToken cancellationToken)
         {
-            // Wait for buffer space before starting download
-            await partBufferManager.WaitForBufferSpaceAsync(cancellationToken).ConfigureAwait(false);
+            // Wait for capacity before starting download
+            await _dataHandler.WaitForCapacityAsync(cancellationToken).ConfigureAwait(false);
             
             GetObjectResponse response = null;
             
@@ -226,15 +228,13 @@ namespace Amazon.S3.Transfer.Internal
                     _httpConcurrencySlots.Release();
                 }
                 
-                // Always buffer the part
-                var downloadedPart = await BufferPartFromResponseAsync(partNumber, response, cancellationToken).ConfigureAwait(false);
-                
-                // Add the downloaded part to the buffer manager
-                await partBufferManager.AddBufferAsync(downloadedPart, cancellationToken).ConfigureAwait(false);
+                // Delegate data handling to the handler
+                await _dataHandler.ProcessPartAsync(partNumber, response, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
-                // On any failure, the buffer space reservation is handled by the part buffer manager
+                // Release capacity on failure
+                _dataHandler.ReleaseCapacity();
                 throw;
             }
             finally
@@ -380,98 +380,6 @@ namespace Amazon.S3.Transfer.Internal
             return RequestMapper.MapToGetObjectRequest(_request);
         }
 
-        private async Task<StreamPartBuffer> BufferPartFromResponseAsync(int partNumber, GetObjectResponse response, CancellationToken cancellationToken)
-        {
-            StreamPartBuffer downloadedPart = null;
-            byte[] partBuffer = null;
-            
-            try
-            {
-                // Use ContentLength to determine exact bytes to read
-                long expectedBytes = response.ContentLength;
-                
-                // Start with initial buffer size
-                int initialBufferSize;
-                if (_request.MultipartDownloadType == MultipartDownloadType.PART)
-                {
-                    // For PART strategy, start with reasonable size and expand as needed
-                    initialBufferSize = (int)Math.Min(expectedBytes, _config.TargetPartSizeBytes);
-                }
-                else
-                {
-                    // For RANGE strategy, use the exact Content-Length
-                    initialBufferSize = (int)expectedBytes;
-                }
-                
-                partBuffer = ArrayPool<byte>.Shared.Rent(initialBufferSize);
-                
-                int totalRead = 0;
-                
-                // Read response stream into buffer based on ContentLength
-                while (totalRead < expectedBytes)
-                {
-                    // Calculate how many bytes we still need to read
-                    int remainingBytes = (int)(expectedBytes - totalRead);
-                    int bufferSpace = partBuffer.Length - totalRead;
-                    
-                    // Expand buffer if needed BEFORE reading
-                    if (bufferSpace == 0)
-                    {
-                        partBuffer = ExpandPartBuffer(partBuffer, totalRead);
-                        bufferSpace = partBuffer.Length - totalRead;
-                    }
-                    
-                    // Read size is minimum of: remaining bytes needed, buffer space available, and configured buffer size
-                    int readSize = Math.Min(Math.Min(remainingBytes, bufferSpace), _config.BufferSize);
-                    
-                    // Read directly into final destination at correct offset
-                    int bytesRead = await response.ResponseStream.ReadAsync(
-                        partBuffer,     // Destination: final ArrayPool buffer
-                        totalRead,      // Offset: current position in buffer
-                        readSize,       // Count: optimal chunk size
-                        cancellationToken).ConfigureAwait(false);
-                    
-                    if (bytesRead == 0) 
-                    {
-                        // Unexpected EOF
-                        break;
-                    }
-                    
-                    totalRead += bytesRead;
-                }
-
-                // Create ArrayPool-based StreamPartBuffer (no copying!)
-                downloadedPart = StreamPartBuffer.FromArrayPoolBuffer(
-                    partNumber,
-                    partBuffer,     // Transfer ownership to StreamPartBuffer
-                    totalRead       // Actual data length
-                );
-
-                partBuffer = null; // Clear reference to prevent return in finally
-                return downloadedPart;
-            }
-            finally
-            {
-                // Only return partBuffer if ownership wasn't transferred
-                if (partBuffer != null)
-                    ArrayPool<byte>.Shared.Return(partBuffer);
-            }
-        }
-
-        private byte[] ExpandPartBuffer(byte[] currentBuffer, int validDataLength)
-        {
-            var newSize = Math.Max(currentBuffer.Length * 2, validDataLength + (int)_config.TargetPartSizeBytes);
-            var expandedBuffer = ArrayPool<byte>.Shared.Rent(newSize);
-
-            // Single copy of valid data to expanded buffer
-            Buffer.BlockCopy(currentBuffer, 0, expandedBuffer, 0, validDataLength);
-
-            // Return old buffer to pool
-            ArrayPool<byte>.Shared.Return(currentBuffer);
-
-            return expandedBuffer;
-        }
-        
         private (long startByte, long endByte) CalculatePartRange(int partNumber, long objectSize)
         {
             var targetPartSize = _request.IsSetPartSize() ? _request.PartSize : _config.TargetPartSizeBytes;
@@ -560,6 +468,7 @@ namespace Amazon.S3.Transfer.Internal
                 try
                 {
                     _httpConcurrencySlots?.Dispose();
+                    _dataHandler?.Dispose();
                 }
                 catch (Exception)
                 {

@@ -188,7 +188,7 @@ namespace AWSSDK.UnitTests
             var mockCoordinator = new Mock<IDownloadCoordinator>();
             mockCoordinator.Setup(x => x.DiscoverDownloadStrategyAsync(It.IsAny<CancellationToken>()))
                 .ReturnsAsync(discoveryResult);
-            mockCoordinator.Setup(x => x.StartDownloadsAsync(It.IsAny<DownloadDiscoveryResult>(), It.IsAny<IPartBufferManager>(), It.IsAny<CancellationToken>()))
+            mockCoordinator.Setup(x => x.StartDownloadsAsync(It.IsAny<DownloadDiscoveryResult>(), It.IsAny<CancellationToken>()))
                 .Returns(Task.CompletedTask);
 
             var mockBufferManager = new Mock<IPartBufferManager>();
@@ -200,7 +200,7 @@ namespace AWSSDK.UnitTests
 
             // Assert
             mockCoordinator.Verify(
-                x => x.StartDownloadsAsync(discoveryResult, mockBufferManager.Object, It.IsAny<CancellationToken>()),
+                x => x.StartDownloadsAsync(discoveryResult, It.IsAny<CancellationToken>()),
                 Times.Once);
         }
 
@@ -222,7 +222,7 @@ namespace AWSSDK.UnitTests
             var mockCoordinator = new Mock<IDownloadCoordinator>();
             mockCoordinator.Setup(x => x.DiscoverDownloadStrategyAsync(It.IsAny<CancellationToken>()))
                 .ReturnsAsync(discoveryResult);
-            mockCoordinator.Setup(x => x.StartDownloadsAsync(It.IsAny<DownloadDiscoveryResult>(), It.IsAny<IPartBufferManager>(), It.IsAny<CancellationToken>()))
+            mockCoordinator.Setup(x => x.StartDownloadsAsync(It.IsAny<DownloadDiscoveryResult>(), It.IsAny<CancellationToken>()))
                 .Returns(Task.CompletedTask);
 
             var mockBufferManager = new Mock<IPartBufferManager>();
@@ -250,7 +250,7 @@ namespace AWSSDK.UnitTests
             var mockCoordinator = new Mock<IDownloadCoordinator>();
             mockCoordinator.Setup(x => x.DiscoverDownloadStrategyAsync(It.IsAny<CancellationToken>()))
                 .ReturnsAsync(discoveryResult);
-            mockCoordinator.Setup(x => x.StartDownloadsAsync(It.IsAny<DownloadDiscoveryResult>(), It.IsAny<IPartBufferManager>(), It.IsAny<CancellationToken>()))
+            mockCoordinator.Setup(x => x.StartDownloadsAsync(It.IsAny<DownloadDiscoveryResult>(), It.IsAny<CancellationToken>()))
                 .Returns(Task.CompletedTask);
 
             var mockBufferManager = new Mock<IPartBufferManager>();
@@ -262,7 +262,7 @@ namespace AWSSDK.UnitTests
 
             // Assert
             mockCoordinator.Verify(
-                x => x.StartDownloadsAsync(discoveryResult, mockBufferManager.Object, It.IsAny<CancellationToken>()),
+                x => x.StartDownloadsAsync(discoveryResult, It.IsAny<CancellationToken>()),
                 Times.Once);
         }
 

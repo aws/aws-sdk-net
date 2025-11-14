@@ -89,7 +89,8 @@ namespace Amazon.S3.Transfer.Internal
                 targetPartSize);
             
             var partBufferManager = new PartBufferManager(config);
-            var downloadCoordinator = new MultipartDownloadCoordinator(s3Client, request, config);
+            var dataHandler = new BufferedPartDataHandler(partBufferManager, config, request);
+            var downloadCoordinator = new MultipartDownloadCoordinator(s3Client, request, config, dataHandler);
             
             return new BufferedMultipartStream(downloadCoordinator, partBufferManager, config);
         }
@@ -117,7 +118,7 @@ namespace Amazon.S3.Transfer.Internal
                 _streamHandler = new MultipartStreamHandler(_partBufferManager);
                 
                 // Step 3: Start downloads (coordinator handles both single-part and multipart)
-                await _downloadCoordinator.StartDownloadsAsync(_discoveryResult, _partBufferManager, cancellationToken)
+                await _downloadCoordinator.StartDownloadsAsync(_discoveryResult, cancellationToken)
                     .ConfigureAwait(false);
                 
                 _initialized = true;
