@@ -129,7 +129,9 @@ namespace Amazon.S3.Transfer.Internal
                 }
             }
             
-            // CROSS-PART BOUNDARY READING - Fill buffer completely across multiple parts
+            // Read across part boundaries to fill the buffer completely, matching standard Stream.Read() behavior
+            // (should fill buffer as much as possible, not stop at internal part boundaries)
+
             int totalBytesRead = 0;
             
             // Keep reading until buffer is full or we reach true EOF
@@ -234,8 +236,8 @@ namespace Amazon.S3.Transfer.Internal
         {
             ThrowIfDisposed();
             
-            // Release buffer space when a consumer finishes with a part (CRT-style)
-            _bufferSpaceAvailable.Release();  // Frees buffer space for new downloads
+            // Release buffer space when a consumer finishes with a part
+            _bufferSpaceAvailable.Release();
         }
 
         public void MarkDownloadComplete(Exception exception)

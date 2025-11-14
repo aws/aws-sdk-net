@@ -53,22 +53,14 @@ namespace Amazon.S3.Transfer.Internal
             if (offset + count > buffer.Length)
                 throw new ArgumentException("Offset and count exceed buffer bounds");
 
-            // Simplified: unified data source approach handles both direct streaming and buffered parts
+            // Unified data source approach handles both direct streaming and buffered parts
             var nextPartNumber = _partBufferManager.NextExpectedPartNumber;
             
-            try
-            {
-                var bytesRead = await _partBufferManager.ReadPartAsync(nextPartNumber, buffer, offset, count, cancellationToken)
-                    .ConfigureAwait(false);
-                
-                // Buffered data source copies data directly into user buffer
-                return bytesRead; // 0 = end of stream, >0 = got data
-            }
-            catch (InvalidOperationException ex) when (ex.Message.Contains("expected part") || ex.Message.Contains("Download complete"))
-            {
-                // No more parts available - end of download
-                return 0;
-            }
+            var bytesRead = await _partBufferManager.ReadPartAsync(nextPartNumber, buffer, offset, count, cancellationToken)
+                .ConfigureAwait(false);
+            
+            // Return bytes read: 0 = end of stream, >0 = got data
+            return bytesRead;
         }
 
         private void ThrowIfDisposed()
