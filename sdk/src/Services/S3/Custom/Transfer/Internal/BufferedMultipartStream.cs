@@ -38,7 +38,6 @@ namespace Amazon.S3.Transfer.Internal
         private readonly IPartBufferManager _partBufferManager;
         private readonly StreamConfiguration _config;
         
-        // Stream handler for reading (single-part or multipart)
         private IStreamHandler _streamHandler;
         private bool _initialized = false;
         private bool _disposed = false;
