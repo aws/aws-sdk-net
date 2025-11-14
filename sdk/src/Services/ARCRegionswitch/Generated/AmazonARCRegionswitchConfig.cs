@@ -32,7 +32,7 @@ namespace Amazon.ARCRegionswitch
     public partial class AmazonARCRegionswitchConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("ARC Region switch", "3.7.501.36");
+            InternalSDKUtils.BuildUserAgentString("ARC Region switch", "3.7.501.37");
 
         private string _userAgent = UserAgentString;
         ///<summary>
