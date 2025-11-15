@@ -43,7 +43,7 @@ namespace Amazon.S3.Transfer.Internal
         private Exception _downloadException;
         private bool _disposed = false;
 
-        public PartBufferManager(StreamConfiguration config)
+        public PartBufferManager(BufferedDownloadConfiguration config)
         {
             if (config == null)
                 throw new ArgumentNullException(nameof(config));

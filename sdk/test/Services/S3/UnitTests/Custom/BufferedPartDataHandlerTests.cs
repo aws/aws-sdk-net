@@ -20,7 +20,7 @@ namespace AWSSDK.UnitTests
         {
             // Arrange
             var mockBufferManager = new Mock<IPartBufferManager>();
-            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
 
             // Act
             var handler = new BufferedPartDataHandler(mockBufferManager.Object, config);
@@ -34,7 +34,7 @@ namespace AWSSDK.UnitTests
         public void Constructor_WithNullBufferManager_ThrowsArgumentNullException()
         {
             // Arrange
-            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
 
             // Act
             var handler = new BufferedPartDataHandler(null, config);
@@ -64,7 +64,7 @@ namespace AWSSDK.UnitTests
             new Random().NextBytes(partData);
 
             var mockBufferManager = new Mock<IPartBufferManager>();
-            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var handler = new BufferedPartDataHandler(mockBufferManager.Object, config);
 
             var response = new GetObjectResponse
@@ -96,7 +96,7 @@ namespace AWSSDK.UnitTests
                 .Callback<StreamPartBuffer, CancellationToken>((buffer, ct) => capturedBuffer = buffer)
                 .Returns(Task.CompletedTask);
 
-            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var handler = new BufferedPartDataHandler(mockBufferManager.Object, config);
 
             var response = new GetObjectResponse
@@ -128,7 +128,7 @@ namespace AWSSDK.UnitTests
                 .Callback<StreamPartBuffer, CancellationToken>((buffer, ct) => capturedBuffer = buffer)
                 .Returns(Task.CompletedTask);
 
-            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var handler = new BufferedPartDataHandler(mockBufferManager.Object, config);
 
             var response = new GetObjectResponse
@@ -159,7 +159,7 @@ namespace AWSSDK.UnitTests
                 .Callback<StreamPartBuffer, CancellationToken>((buffer, ct) => capturedBuffer = buffer)
                 .Returns(Task.CompletedTask);
 
-            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var handler = new BufferedPartDataHandler(mockBufferManager.Object, config);
 
             var response = new GetObjectResponse
@@ -195,7 +195,7 @@ namespace AWSSDK.UnitTests
                 .Callback<StreamPartBuffer, CancellationToken>((buffer, ct) => capturedBuffer = buffer)
                 .Returns(Task.CompletedTask);
 
-            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var handler = new BufferedPartDataHandler(mockBufferManager.Object, config);
 
             var response = new GetObjectResponse
@@ -220,7 +220,7 @@ namespace AWSSDK.UnitTests
         {
             // Arrange
             var mockBufferManager = new Mock<IPartBufferManager>();
-            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var handler = new BufferedPartDataHandler(mockBufferManager.Object, config);
 
             var response = new GetObjectResponse
@@ -251,7 +251,7 @@ namespace AWSSDK.UnitTests
             var partData = new byte[partSize];
 
             var mockBufferManager = new Mock<IPartBufferManager>();
-            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var handler = new BufferedPartDataHandler(mockBufferManager.Object, config);
 
             var response = new GetObjectResponse
@@ -280,7 +280,7 @@ namespace AWSSDK.UnitTests
                 .Callback<StreamPartBuffer, CancellationToken>((buffer, ct) => capturedToken = ct)
                 .Returns(Task.CompletedTask);
 
-            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var handler = new BufferedPartDataHandler(mockBufferManager.Object, config);
 
             var response = new GetObjectResponse
@@ -310,7 +310,7 @@ namespace AWSSDK.UnitTests
             mockBufferManager.Setup(x => x.WaitForBufferSpaceAsync(It.IsAny<CancellationToken>()))
                 .Returns(Task.CompletedTask);
 
-            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var handler = new BufferedPartDataHandler(mockBufferManager.Object, config);
 
             // Act
@@ -332,7 +332,7 @@ namespace AWSSDK.UnitTests
                 .Callback<CancellationToken>(ct => capturedToken = ct)
                 .Returns(Task.CompletedTask);
 
-            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var handler = new BufferedPartDataHandler(mockBufferManager.Object, config);
 
             var cts = new CancellationTokenSource();
@@ -353,7 +353,7 @@ namespace AWSSDK.UnitTests
             mockBufferManager.Setup(x => x.WaitForBufferSpaceAsync(It.IsAny<CancellationToken>()))
                 .ThrowsAsync(new OperationCanceledException());
 
-            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var handler = new BufferedPartDataHandler(mockBufferManager.Object, config);
 
             var cts = new CancellationTokenSource();
@@ -372,7 +372,7 @@ namespace AWSSDK.UnitTests
         {
             // Arrange
             var mockBufferManager = new Mock<IPartBufferManager>();
-            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var handler = new BufferedPartDataHandler(mockBufferManager.Object, config);
 
             // Act
@@ -387,7 +387,7 @@ namespace AWSSDK.UnitTests
         {
             // Arrange
             var mockBufferManager = new Mock<IPartBufferManager>();
-            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var handler = new BufferedPartDataHandler(mockBufferManager.Object, config);
 
             // Act
@@ -408,7 +408,7 @@ namespace AWSSDK.UnitTests
         {
             // Arrange
             var mockBufferManager = new Mock<IPartBufferManager>();
-            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var handler = new BufferedPartDataHandler(mockBufferManager.Object, config);
 
             // Act
@@ -431,7 +431,7 @@ namespace AWSSDK.UnitTests
             mockBufferManager.Setup(x => x.MarkDownloadComplete(It.IsAny<Exception>()))
                 .Callback<Exception>(ex => capturedEx = ex);
 
-            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var handler = new BufferedPartDataHandler(mockBufferManager.Object, config);
 
             // Act
@@ -448,7 +448,7 @@ namespace AWSSDK.UnitTests
             var testException = new OperationCanceledException();
 
             var mockBufferManager = new Mock<IPartBufferManager>();
-            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var handler = new BufferedPartDataHandler(mockBufferManager.Object, config);
 
             // Act
@@ -465,7 +465,7 @@ namespace AWSSDK.UnitTests
         {
             // Arrange
             var mockBufferManager = new Mock<IPartBufferManager>();
-            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var handler = new BufferedPartDataHandler(mockBufferManager.Object, config);
 
             // Act - calling multiple times should work
@@ -488,7 +488,7 @@ namespace AWSSDK.UnitTests
         {
             // Arrange
             var mockBufferManager = new Mock<IPartBufferManager>();
-            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var handler = new BufferedPartDataHandler(mockBufferManager.Object, config);
 
             // Act
@@ -503,7 +503,7 @@ namespace AWSSDK.UnitTests
         {
             // Arrange
             var mockBufferManager = new Mock<IPartBufferManager>();
-            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var handler = new BufferedPartDataHandler(mockBufferManager.Object, config);
 
             // Act

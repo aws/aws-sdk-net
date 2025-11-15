@@ -21,7 +21,7 @@ namespace AWSSDK.UnitTests
         public void Constructor_WithValidConfiguration_CreatesManager()
         {
             // Arrange
-            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
 
             // Act
             var manager = new PartBufferManager(config);
@@ -52,7 +52,7 @@ namespace AWSSDK.UnitTests
         public void NextExpectedPartNumber_StartsAtOne()
         {
             // Arrange
-            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var manager = new PartBufferManager(config);
 
             try
@@ -70,7 +70,7 @@ namespace AWSSDK.UnitTests
         public async Task NextExpectedPartNumber_IncrementsAfterPartComplete()
         {
             // Arrange
-            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var manager = new PartBufferManager(config);
 
             try
@@ -101,7 +101,7 @@ namespace AWSSDK.UnitTests
         public async Task WaitForBufferSpaceAsync_InitialState_AllowsImmediateAccess()
         {
             // Arrange
-            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration(maxInMemoryParts: 5);
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration(maxInMemoryParts: 5);
             var manager = new PartBufferManager(config);
 
             try
@@ -123,7 +123,7 @@ namespace AWSSDK.UnitTests
         public async Task WaitForBufferSpaceAsync_WhenMaxPartsReached_Blocks()
         {
             // Arrange
-            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration(maxInMemoryParts: 2);
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration(maxInMemoryParts: 2);
             var manager = new PartBufferManager(config);
 
             try
@@ -160,7 +160,7 @@ namespace AWSSDK.UnitTests
         public async Task WaitForBufferSpaceAsync_AfterRelease_AllowsAccess()
         {
             // Arrange
-            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration(maxInMemoryParts: 1);
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration(maxInMemoryParts: 1);
             var manager = new PartBufferManager(config);
 
             try
@@ -191,7 +191,7 @@ namespace AWSSDK.UnitTests
         public async Task WaitForBufferSpaceAsync_WithCancellation_ThrowsOperationCanceledException()
         {
             // Arrange
-            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration(maxInMemoryParts: 1);
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration(maxInMemoryParts: 1);
             var manager = new PartBufferManager(config);
             var cts = new CancellationTokenSource();
 
@@ -232,7 +232,7 @@ namespace AWSSDK.UnitTests
         public async Task AddBufferAsync_CreatesBufferedDataSource()
         {
             // Arrange
-            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var manager = new PartBufferManager(config);
 
             try
@@ -259,7 +259,7 @@ namespace AWSSDK.UnitTests
         public async Task AddBufferAsync_WithNullBuffer_ThrowsArgumentNullException()
         {
             // Arrange
-            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var manager = new PartBufferManager(config);
 
             try
@@ -279,7 +279,7 @@ namespace AWSSDK.UnitTests
         public async Task AddBufferAsync_SignalsPartAvailable()
         {
             // Arrange
-            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var manager = new PartBufferManager(config);
 
             try
@@ -317,7 +317,7 @@ namespace AWSSDK.UnitTests
         public async Task AddDataSourceAsync_AddsToCollection()
         {
             // Arrange
-            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var manager = new PartBufferManager(config);
 
             try
@@ -345,7 +345,7 @@ namespace AWSSDK.UnitTests
         public async Task AddDataSourceAsync_WithNullDataSource_ThrowsArgumentNullException()
         {
             // Arrange
-            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var manager = new PartBufferManager(config);
 
             try
@@ -366,7 +366,7 @@ namespace AWSSDK.UnitTests
         public async Task AddDataSourceAsync_WithDuplicatePartNumber_ThrowsInvalidOperationException()
         {
             // Arrange
-            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var manager = new PartBufferManager(config);
 
             try
@@ -401,7 +401,7 @@ namespace AWSSDK.UnitTests
         public async Task ReadPartAsync_WithCorrectPartNumber_ReadsData()
         {
             // Arrange
-            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var manager = new PartBufferManager(config);
 
             try
@@ -432,7 +432,7 @@ namespace AWSSDK.UnitTests
         public async Task ReadPartAsync_WithWrongPartNumber_ThrowsInvalidOperationException()
         {
             // Arrange
-            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var manager = new PartBufferManager(config);
 
             try
@@ -458,7 +458,7 @@ namespace AWSSDK.UnitTests
         public async Task ReadPartAsync_AdvancesNextExpectedPartNumber()
         {
             // Arrange
-            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var manager = new PartBufferManager(config);
 
             try
@@ -490,7 +490,7 @@ namespace AWSSDK.UnitTests
         public async Task ReadPartAsync_WithNullBuffer_ThrowsArgumentNullException()
         {
             // Arrange
-            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var manager = new PartBufferManager(config);
 
             try
@@ -511,7 +511,7 @@ namespace AWSSDK.UnitTests
         public async Task ReadPartAsync_WithNegativeOffset_ThrowsArgumentOutOfRangeException()
         {
             // Arrange
-            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var manager = new PartBufferManager(config);
             byte[] readBuffer = new byte[512];
 
@@ -533,7 +533,7 @@ namespace AWSSDK.UnitTests
         public async Task ReadPartAsync_WithNegativeCount_ThrowsArgumentOutOfRangeException()
         {
             // Arrange
-            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var manager = new PartBufferManager(config);
             byte[] readBuffer = new byte[512];
 
@@ -555,7 +555,7 @@ namespace AWSSDK.UnitTests
         public async Task ReadPartAsync_WithOffsetCountExceedingBounds_ThrowsArgumentException()
         {
             // Arrange
-            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var manager = new PartBufferManager(config);
             byte[] readBuffer = new byte[512];
 
@@ -580,7 +580,7 @@ namespace AWSSDK.UnitTests
         public async Task ReadPartAsync_WaitsForPartAvailability()
         {
             // Arrange
-            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var manager = new PartBufferManager(config);
 
             try
@@ -615,7 +615,7 @@ namespace AWSSDK.UnitTests
         public async Task ReadPartAsync_WhenDownloadComplete_ReturnsZero()
         {
             // Arrange
-            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var manager = new PartBufferManager(config);
 
             try
@@ -641,7 +641,7 @@ namespace AWSSDK.UnitTests
         public async Task ReadPartAsync_WhenDownloadFailed_ThrowsException()
         {
             // Arrange
-            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var manager = new PartBufferManager(config);
 
             try
@@ -670,7 +670,7 @@ namespace AWSSDK.UnitTests
         public async Task ReadPartAsync_ReadingAcrossPartBoundary_FillsBuffer()
         {
             // Arrange
-            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var manager = new PartBufferManager(config);
 
             try
@@ -715,7 +715,7 @@ namespace AWSSDK.UnitTests
         public async Task ReadPartAsync_MultiplePartsInSingleRead_AdvancesCorrectly()
         {
             // Arrange
-            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var manager = new PartBufferManager(config);
 
             try
@@ -748,7 +748,7 @@ namespace AWSSDK.UnitTests
         public async Task ReadPartAsync_PartCompletes_AdvancesToNextPart()
         {
             // Arrange
-            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var manager = new PartBufferManager(config);
 
             try
@@ -787,7 +787,7 @@ namespace AWSSDK.UnitTests
         public async Task ReadPartAsync_EmptyPart_ContinuesToNextPart()
         {
             // Arrange
-            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var manager = new PartBufferManager(config);
 
             try
@@ -827,7 +827,7 @@ namespace AWSSDK.UnitTests
         public void ReleaseBufferSpace_IncreasesAvailableSlots()
         {
             // Arrange
-            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration(maxInMemoryParts: 1);
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration(maxInMemoryParts: 1);
             var manager = new PartBufferManager(config);
 
             try
@@ -860,7 +860,7 @@ namespace AWSSDK.UnitTests
         public void ReleaseBufferSpace_AfterDispose_ThrowsObjectDisposedException()
         {
             // Arrange
-            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var manager = new PartBufferManager(config);
             manager.Dispose();
 
@@ -878,7 +878,7 @@ namespace AWSSDK.UnitTests
         public async Task MarkDownloadComplete_WithNullException_SignalsSuccess()
         {
             // Arrange
-            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var manager = new PartBufferManager(config);
 
             try
@@ -901,7 +901,7 @@ namespace AWSSDK.UnitTests
         public async Task MarkDownloadComplete_WithException_StoresException()
         {
             // Arrange
-            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var manager = new PartBufferManager(config);
             var testException = new Exception("Test exception");
 
@@ -930,7 +930,7 @@ namespace AWSSDK.UnitTests
         public async Task MarkDownloadComplete_SignalsWaitingReads()
         {
             // Arrange
-            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var manager = new PartBufferManager(config);
 
             try
@@ -967,7 +967,7 @@ namespace AWSSDK.UnitTests
         public void Dispose_DisposesAllDataSources()
         {
             // Arrange
-            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var manager = new PartBufferManager(config);
             
             byte[] testBuffer = ArrayPool<byte>.Shared.Rent(512);
@@ -985,7 +985,7 @@ namespace AWSSDK.UnitTests
         public void Dispose_ClearsCollection()
         {
             // Arrange
-            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var manager = new PartBufferManager(config);
             
             byte[] testBuffer = ArrayPool<byte>.Shared.Rent(512);
@@ -1003,7 +1003,7 @@ namespace AWSSDK.UnitTests
         public void Dispose_MultipleCalls_IsIdempotent()
         {
             // Arrange
-            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var manager = new PartBufferManager(config);
 
             // Act - Dispose multiple times
@@ -1019,7 +1019,7 @@ namespace AWSSDK.UnitTests
         public async Task Operations_AfterDispose_ThrowObjectDisposedException()
         {
             // Arrange
-            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var manager = new PartBufferManager(config);
             manager.Dispose();
 

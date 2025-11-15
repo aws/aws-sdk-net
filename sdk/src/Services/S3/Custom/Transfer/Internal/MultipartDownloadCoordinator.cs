@@ -38,7 +38,7 @@ namespace Amazon.S3.Transfer.Internal
     {
         private readonly IAmazonS3 _s3Client;
         private readonly TransferUtilityOpenStreamRequest _request;
-        private readonly StreamConfiguration _config;
+        private readonly DownloadCoordinatorConfiguration _config;
         private readonly IPartDataHandler _dataHandler;
         private readonly SemaphoreSlim _httpConcurrencySlots;
         
@@ -50,7 +50,7 @@ namespace Amazon.S3.Transfer.Internal
         private string _savedETag;
         private int _discoveredPartCount;
 
-        public MultipartDownloadCoordinator(IAmazonS3 s3Client, TransferUtilityOpenStreamRequest request, StreamConfiguration config, IPartDataHandler dataHandler)
+        public MultipartDownloadCoordinator(IAmazonS3 s3Client, TransferUtilityOpenStreamRequest request, DownloadCoordinatorConfiguration config, IPartDataHandler dataHandler)
         {
             _s3Client = s3Client ?? throw new ArgumentNullException(nameof(s3Client));
             _request = request ?? throw new ArgumentNullException(nameof(request));

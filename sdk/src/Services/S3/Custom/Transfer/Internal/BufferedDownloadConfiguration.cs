@@ -24,24 +24,15 @@ using System;
 namespace Amazon.S3.Transfer.Internal
 {
     /// <summary>
-    /// Configuration settings for multipart download streams.
+    /// Configuration settings for buffered multipart downloads to streams.
+    /// Extends base coordinator settings with buffer-specific parameters.
     /// </summary>
-    internal class StreamConfiguration
+    internal class BufferedDownloadConfiguration : DownloadCoordinatorConfiguration
     {
-        /// <summary>
-        /// Maximum concurrent HTTP requests for downloading parts.
-        /// </summary>
-        public int ConcurrentServiceRequests { get; set; }
-        
         /// <summary>
         /// Maximum parts to keep in memory simultaneously.
         /// </summary>
         public int MaxInMemoryParts { get; set; }
-        
-        /// <summary>
-        /// Target part size in bytes.
-        /// </summary>
-        public long TargetPartSizeBytes { get; set; }
         
         /// <summary>
         /// Buffer size for I/O operations.
@@ -49,28 +40,27 @@ namespace Amazon.S3.Transfer.Internal
         public int BufferSize { get; set; }
         
         /// <summary>
-        /// Creates a StreamConfiguration with the specified configuration values.
+        /// Creates a BufferedDownloadConfiguration with the specified configuration values.
         /// </summary>
         /// <param name="concurrentServiceRequests">Maximum concurrent HTTP requests for downloading parts.</param>
         /// <param name="maxInMemoryParts">Maximum number of parts to keep in memory simultaneously.</param>
         /// <param name="bufferSize">Buffer size used for optimal I/O operations.</param>
         /// <param name="targetPartSizeBytes">Target size for each part in bytes.</param>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when any parameter is less than or equal to 0.</exception>
-        public StreamConfiguration(int concurrentServiceRequests, int maxInMemoryParts, int bufferSize, long targetPartSizeBytes)
+        public BufferedDownloadConfiguration(
+            int concurrentServiceRequests,
+            int maxInMemoryParts,
+            int bufferSize,
+            long targetPartSizeBytes)
+            : base(concurrentServiceRequests, targetPartSizeBytes)
         {
-            if (concurrentServiceRequests <= 0)
-                throw new ArgumentOutOfRangeException(nameof(concurrentServiceRequests), "Must be greater than 0");
             if (maxInMemoryParts <= 0)
                 throw new ArgumentOutOfRangeException(nameof(maxInMemoryParts), "Must be greater than 0");
             if (bufferSize <= 0)
                 throw new ArgumentOutOfRangeException(nameof(bufferSize), "Must be greater than 0");
-            if (targetPartSizeBytes <= 0)
-                throw new ArgumentOutOfRangeException(nameof(targetPartSizeBytes), "Must be greater than 0");
             
-            ConcurrentServiceRequests = concurrentServiceRequests;
             MaxInMemoryParts = maxInMemoryParts;
             BufferSize = bufferSize;
-            TargetPartSizeBytes = targetPartSizeBytes;
         }
     }
 }

@@ -5,11 +5,11 @@ using System;
 namespace AWSSDK.UnitTests
 {
     /// <summary>
-    /// Unit tests for StreamConfiguration class.
+    /// Unit tests for BufferedDownloadConfiguration class.
     /// Tests configuration validation and parameter handling.
     /// </summary>
     [TestClass]
-    public class StreamConfigurationTests
+    public class BufferedDownloadConfigurationTests
     {
         #region Constructor Tests
 
@@ -23,7 +23,7 @@ namespace AWSSDK.UnitTests
             long targetPartSize = 8 * 1024 * 1024; // 8MB
 
             // Act
-            var config = new StreamConfiguration(concurrentRequests, maxInMemoryParts, bufferSize, targetPartSize);
+            var config = new BufferedDownloadConfiguration(concurrentRequests, maxInMemoryParts, bufferSize, targetPartSize);
 
             // Assert
             Assert.AreEqual(concurrentRequests, config.ConcurrentServiceRequests);
@@ -39,7 +39,7 @@ namespace AWSSDK.UnitTests
             long expectedPartSize = 10 * 1024 * 1024; // 10MB
 
             // Act
-            var config = new StreamConfiguration(10, 5, 8192, expectedPartSize);
+            var config = new BufferedDownloadConfiguration(10, 5, 8192, expectedPartSize);
 
             // Assert
             Assert.AreEqual(expectedPartSize, config.TargetPartSizeBytes);
@@ -53,7 +53,7 @@ namespace AWSSDK.UnitTests
             long largePartSize = long.MaxValue / 2;
 
             // Act
-            var config = new StreamConfiguration(largeValue, largeValue, largeValue, largePartSize);
+            var config = new BufferedDownloadConfiguration(largeValue, largeValue, largeValue, largePartSize);
 
             // Assert
             Assert.AreEqual(largeValue, config.ConcurrentServiceRequests);
@@ -69,7 +69,7 @@ namespace AWSSDK.UnitTests
             long partSize = 8 * 1024 * 1024; // 8MB
 
             // Act
-            var config = new StreamConfiguration(1, 1, 1, partSize);
+            var config = new BufferedDownloadConfiguration(1, 1, 1, partSize);
 
             // Assert
             Assert.AreEqual(1, config.ConcurrentServiceRequests);
@@ -87,7 +87,7 @@ namespace AWSSDK.UnitTests
         public void Constructor_WithNegativeConcurrentRequests_ThrowsException()
         {
             // Act & Assert - ExpectedException
-            var config = new StreamConfiguration(-1, 5, 8192, 8 * 1024 * 1024);
+            var config = new BufferedDownloadConfiguration(-1, 5, 8192, 8 * 1024 * 1024);
         }
 
         [TestMethod]
@@ -95,7 +95,7 @@ namespace AWSSDK.UnitTests
         public void Constructor_WithZeroConcurrentRequests_ThrowsException()
         {
             // Act & Assert - ExpectedException
-            var config = new StreamConfiguration(0, 5, 8192, 8 * 1024 * 1024);
+            var config = new BufferedDownloadConfiguration(0, 5, 8192, 8 * 1024 * 1024);
         }
 
         [TestMethod]
@@ -103,7 +103,7 @@ namespace AWSSDK.UnitTests
         public void Constructor_WithNegativeMaxInMemoryParts_ThrowsException()
         {
             // Act & Assert - ExpectedException
-            var config = new StreamConfiguration(10, -1, 8192, 8 * 1024 * 1024);
+            var config = new BufferedDownloadConfiguration(10, -1, 8192, 8 * 1024 * 1024);
         }
 
         [TestMethod]
@@ -111,7 +111,7 @@ namespace AWSSDK.UnitTests
         public void Constructor_WithZeroMaxInMemoryParts_ThrowsException()
         {
             // Act & Assert - ExpectedException
-            var config = new StreamConfiguration(10, 0, 8192, 8 * 1024 * 1024);
+            var config = new BufferedDownloadConfiguration(10, 0, 8192, 8 * 1024 * 1024);
         }
 
         [TestMethod]
@@ -119,7 +119,7 @@ namespace AWSSDK.UnitTests
         public void Constructor_WithNegativeTargetPartSize_ThrowsException()
         {
             // Act & Assert - ExpectedException
-            var config = new StreamConfiguration(10, 5, 8192, -1L);
+            var config = new BufferedDownloadConfiguration(10, 5, 8192, -1L);
         }
 
         [TestMethod]
@@ -127,7 +127,7 @@ namespace AWSSDK.UnitTests
         public void Constructor_WithZeroTargetPartSize_ThrowsException()
         {
             // Act & Assert - ExpectedException
-            var config = new StreamConfiguration(10, 5, 8192, 0L);
+            var config = new BufferedDownloadConfiguration(10, 5, 8192, 0L);
         }
 
         [TestMethod]
@@ -135,7 +135,7 @@ namespace AWSSDK.UnitTests
         public void Constructor_WithNegativeBufferSize_ThrowsException()
         {
             // Act & Assert - ExpectedException
-            var config = new StreamConfiguration(10, 5, -1, 8 * 1024 * 1024);
+            var config = new BufferedDownloadConfiguration(10, 5, -1, 8 * 1024 * 1024);
         }
 
         [TestMethod]
@@ -143,7 +143,7 @@ namespace AWSSDK.UnitTests
         public void Constructor_WithZeroBufferSize_ThrowsException()
         {
             // Act & Assert - ExpectedException
-            var config = new StreamConfiguration(10, 5, 0, 8 * 1024 * 1024);
+            var config = new BufferedDownloadConfiguration(10, 5, 0, 8 * 1024 * 1024);
         }
 
         #endregion

@@ -34,11 +34,11 @@ namespace Amazon.S3.Transfer.Internal
     internal class BufferedPartDataHandler : IPartDataHandler
     {
         private readonly IPartBufferManager _partBufferManager;
-        private readonly StreamConfiguration _config;
+        private readonly BufferedDownloadConfiguration _config;
         
         public BufferedPartDataHandler(
             IPartBufferManager partBufferManager,
-            StreamConfiguration config)
+            BufferedDownloadConfiguration config)
         {
             _partBufferManager = partBufferManager ?? throw new ArgumentNullException(nameof(partBufferManager));
             _config = config ?? throw new ArgumentNullException(nameof(config));

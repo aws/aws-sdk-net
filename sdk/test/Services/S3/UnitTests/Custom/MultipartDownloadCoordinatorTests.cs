@@ -37,7 +37,7 @@ namespace AWSSDK.UnitTests
             // Arrange
             var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client();
             var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest();
-            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var mockDataHandler = CreateMockDataHandler();
 
             // Act
@@ -54,7 +54,7 @@ namespace AWSSDK.UnitTests
         {
             // Arrange
             var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest();
-            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var mockDataHandler = CreateMockDataHandler();
 
             // Act
@@ -67,7 +67,7 @@ namespace AWSSDK.UnitTests
         {
             // Arrange
             var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client();
-            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var mockDataHandler = CreateMockDataHandler();
 
             // Act
@@ -97,7 +97,7 @@ namespace AWSSDK.UnitTests
             // Arrange
             var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client();
             var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest();
-            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var coordinator = new MultipartDownloadCoordinator(mockClient.Object, request, config, CreateMockDataHandler().Object);
 
             // Act
@@ -124,7 +124,7 @@ namespace AWSSDK.UnitTests
             
             var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest(
                 downloadType: MultipartDownloadType.PART);
-            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var coordinator = new MultipartDownloadCoordinator(mockClient.Object, request, config, CreateMockDataHandler().Object);
 
             // Act
@@ -152,7 +152,7 @@ namespace AWSSDK.UnitTests
             
             var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest(
                 downloadType: MultipartDownloadType.PART);
-            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var coordinator = new MultipartDownloadCoordinator(mockClient.Object, request, config, CreateMockDataHandler().Object);
 
             // Act
@@ -173,7 +173,7 @@ namespace AWSSDK.UnitTests
             
             var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest(
                 downloadType: MultipartDownloadType.PART);
-            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var coordinator = new MultipartDownloadCoordinator(mockClient.Object, request, config, CreateMockDataHandler().Object);
 
             // Act
@@ -203,7 +203,7 @@ namespace AWSSDK.UnitTests
             
             var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest(
                 downloadType: MultipartDownloadType.PART);
-            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var coordinator = new MultipartDownloadCoordinator(mockClient.Object, request, config, CreateMockDataHandler().Object);
 
             // Act
@@ -231,7 +231,7 @@ namespace AWSSDK.UnitTests
             
             var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest(
                 downloadType: MultipartDownloadType.PART);
-            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var coordinator = new MultipartDownloadCoordinator(mockClient.Object, request, config, CreateMockDataHandler().Object);
 
             // Act
@@ -253,7 +253,7 @@ namespace AWSSDK.UnitTests
             
             var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest(
                 downloadType: MultipartDownloadType.PART);
-            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var coordinator = new MultipartDownloadCoordinator(mockClient.Object, request, config, CreateMockDataHandler().Object);
 
             // Act
@@ -282,7 +282,7 @@ namespace AWSSDK.UnitTests
             
             var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest(
                 downloadType: MultipartDownloadType.PART);
-            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var coordinator = new MultipartDownloadCoordinator(mockClient.Object, request, config, CreateMockDataHandler().Object);
 
             // Act
@@ -308,7 +308,7 @@ namespace AWSSDK.UnitTests
             
             var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest(
                 downloadType: MultipartDownloadType.PART);
-            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var coordinator = new MultipartDownloadCoordinator(mockClient.Object, request, config, CreateMockDataHandler().Object);
 
             // Act
@@ -336,7 +336,7 @@ namespace AWSSDK.UnitTests
             
             var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest(
                 downloadType: MultipartDownloadType.RANGE);
-            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var coordinator = new MultipartDownloadCoordinator(mockClient.Object, request, config, CreateMockDataHandler().Object);
 
             // Act
@@ -370,7 +370,7 @@ namespace AWSSDK.UnitTests
             
             var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest(
                 downloadType: MultipartDownloadType.RANGE);
-            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var coordinator = new MultipartDownloadCoordinator(mockClient.Object, request, config, CreateMockDataHandler().Object);
 
             // Act
@@ -402,7 +402,7 @@ namespace AWSSDK.UnitTests
             var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest(
                 partSize: partSize,
                 downloadType: MultipartDownloadType.RANGE);
-            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var coordinator = new MultipartDownloadCoordinator(mockClient.Object, request, config, CreateMockDataHandler().Object);
 
             // Act
@@ -434,7 +434,7 @@ namespace AWSSDK.UnitTests
             var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest(
                 partSize: partSize,
                 downloadType: MultipartDownloadType.RANGE);
-            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var coordinator = new MultipartDownloadCoordinator(mockClient.Object, request, config, CreateMockDataHandler().Object);
 
             // Act
@@ -454,7 +454,7 @@ namespace AWSSDK.UnitTests
             var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest(
                 partSize: 8 * 1024 * 1024,
                 downloadType: MultipartDownloadType.RANGE);
-            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var coordinator = new MultipartDownloadCoordinator(mockClient.Object, request, config, CreateMockDataHandler().Object);
 
             // Act
@@ -480,7 +480,7 @@ namespace AWSSDK.UnitTests
             var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest(
                 partSize: partSize,
                 downloadType: MultipartDownloadType.RANGE);
-            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var coordinator = new MultipartDownloadCoordinator(mockClient.Object, request, config, CreateMockDataHandler().Object);
 
             // Act
@@ -500,7 +500,7 @@ namespace AWSSDK.UnitTests
             // Arrange
             var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client();
             var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest();
-            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var coordinator = new MultipartDownloadCoordinator(mockClient.Object, request, config, CreateMockDataHandler().Object);
             
             var discoveryResult = new DownloadDiscoveryResult
@@ -526,7 +526,7 @@ namespace AWSSDK.UnitTests
             // Arrange
             var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client();
             var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest();
-            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var coordinator = new MultipartDownloadCoordinator(mockClient.Object, request, config, CreateMockDataHandler().Object);
 
             // Act
@@ -570,7 +570,7 @@ namespace AWSSDK.UnitTests
             var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest(
                 partSize: partSize,
                 downloadType: MultipartDownloadType.RANGE);
-            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration(concurrentRequests: 1);
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration(concurrentRequests: 1);
             var coordinator = new MultipartDownloadCoordinator(mockClient.Object, request, config, CreateMockDataHandler().Object);
             
             var discoveryResult = await coordinator.DiscoverDownloadStrategyAsync(CancellationToken.None);
@@ -611,7 +611,7 @@ namespace AWSSDK.UnitTests
             var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest(
                 partSize: partSize,
                 downloadType: MultipartDownloadType.RANGE);
-            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration(concurrentRequests: 1);
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration(concurrentRequests: 1);
             var coordinator = new MultipartDownloadCoordinator(mockClient.Object, request, config, CreateMockDataHandler().Object);
             
             var discoveryResult = await coordinator.DiscoverDownloadStrategyAsync(CancellationToken.None);
@@ -652,7 +652,7 @@ namespace AWSSDK.UnitTests
             var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest(
                 partSize: partSize,
                 downloadType: MultipartDownloadType.RANGE);
-            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration(concurrentRequests: 1);
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration(concurrentRequests: 1);
             var coordinator = new MultipartDownloadCoordinator(mockClient.Object, request, config, CreateMockDataHandler().Object);
             
             var discoveryResult = await coordinator.DiscoverDownloadStrategyAsync(CancellationToken.None);
@@ -693,7 +693,7 @@ namespace AWSSDK.UnitTests
             var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest(
                 partSize: partSize,
                 downloadType: MultipartDownloadType.RANGE);
-            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration(concurrentRequests: 1);
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration(concurrentRequests: 1);
             var coordinator = new MultipartDownloadCoordinator(mockClient.Object, request, config, CreateMockDataHandler().Object);
             
             var discoveryResult = await coordinator.DiscoverDownloadStrategyAsync(CancellationToken.None);
@@ -735,7 +735,7 @@ namespace AWSSDK.UnitTests
             
             var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest(
                 downloadType: MultipartDownloadType.PART);
-            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration(concurrentRequests: 1);
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration(concurrentRequests: 1);
             var coordinator = new MultipartDownloadCoordinator(mockClient.Object, request, config, CreateMockDataHandler().Object);
             
             var discoveryResult = await coordinator.DiscoverDownloadStrategyAsync(CancellationToken.None);
@@ -758,7 +758,7 @@ namespace AWSSDK.UnitTests
             
             var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest(
                 downloadType: MultipartDownloadType.PART);
-            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration(concurrentRequests: 1);
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration(concurrentRequests: 1);
             var coordinator = new MultipartDownloadCoordinator(mockClient.Object, request, config, CreateMockDataHandler().Object);
             
             var discoveryResult = await coordinator.DiscoverDownloadStrategyAsync(CancellationToken.None);
@@ -800,7 +800,7 @@ namespace AWSSDK.UnitTests
             var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest(
                 partSize: partSize,
                 downloadType: MultipartDownloadType.RANGE);
-            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration(concurrentRequests: 1);
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration(concurrentRequests: 1);
             var coordinator = new MultipartDownloadCoordinator(mockClient.Object, request, config, CreateMockDataHandler().Object);
             
             var discoveryResult = await coordinator.DiscoverDownloadStrategyAsync(CancellationToken.None);
@@ -821,7 +821,7 @@ namespace AWSSDK.UnitTests
             // Arrange
             var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client();
             var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest();
-            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var coordinator = new MultipartDownloadCoordinator(mockClient.Object, request, config, CreateMockDataHandler().Object);
 
             // Act
@@ -838,7 +838,7 @@ namespace AWSSDK.UnitTests
             // Arrange
             var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client();
             var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest();
-            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var coordinator = new MultipartDownloadCoordinator(mockClient.Object, request, config, CreateMockDataHandler().Object);
 
             // Act
@@ -860,7 +860,7 @@ namespace AWSSDK.UnitTests
                 .ThrowsAsync(new OperationCanceledException());
             
             var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest();
-            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var coordinator = new MultipartDownloadCoordinator(mockClient.Object, request, config, CreateMockDataHandler().Object);
             
             var cts = new CancellationTokenSource();
@@ -880,7 +880,7 @@ namespace AWSSDK.UnitTests
                 .ThrowsAsync(cancelledException);
             
             var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest();
-            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var coordinator = new MultipartDownloadCoordinator(mockClient.Object, request, config, CreateMockDataHandler().Object);
             
             var cts = new CancellationTokenSource();
@@ -912,7 +912,7 @@ namespace AWSSDK.UnitTests
                 .ReturnsAsync(MultipartDownloadTestHelpers.CreateSinglePartResponse(1024));
             
             var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest();
-            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var coordinator = new MultipartDownloadCoordinator(mockClient.Object, request, config, CreateMockDataHandler().Object);
             
             var cts = new CancellationTokenSource();
@@ -938,7 +938,7 @@ namespace AWSSDK.UnitTests
             
             var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest(
                 downloadType: MultipartDownloadType.PART);
-            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var coordinator = new MultipartDownloadCoordinator(mockClient.Object, request, config, CreateMockDataHandler().Object);
             
             var discoveryResult = await coordinator.DiscoverDownloadStrategyAsync(CancellationToken.None);
@@ -979,7 +979,7 @@ namespace AWSSDK.UnitTests
             
             var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest(
                 downloadType: MultipartDownloadType.PART);
-            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration(concurrentRequests: 1);
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration(concurrentRequests: 1);
             var coordinator = new MultipartDownloadCoordinator(mockClient.Object, request, config, CreateMockDataHandler().Object);
             
             var discoveryResult = await coordinator.DiscoverDownloadStrategyAsync(CancellationToken.None);
@@ -1023,7 +1023,7 @@ namespace AWSSDK.UnitTests
             
             var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest(
                 downloadType: MultipartDownloadType.PART);
-            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration(concurrentRequests: 1);
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration(concurrentRequests: 1);
             var coordinator = new MultipartDownloadCoordinator(mockClient.Object, request, config, CreateMockDataHandler().Object);
             
             var discoveryResult = await coordinator.DiscoverDownloadStrategyAsync(CancellationToken.None);
@@ -1056,7 +1056,7 @@ namespace AWSSDK.UnitTests
             
             var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest(
                 downloadType: MultipartDownloadType.PART);
-            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var coordinator = new MultipartDownloadCoordinator(mockClient.Object, request, config, CreateMockDataHandler().Object);
             
             var discoveryResult = await coordinator.DiscoverDownloadStrategyAsync(CancellationToken.None);
@@ -1076,7 +1076,7 @@ namespace AWSSDK.UnitTests
             // Arrange - Single part download should return immediately without using cancellation token
             var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client();
             var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest();
-            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var coordinator = new MultipartDownloadCoordinator(mockClient.Object, request, config, CreateMockDataHandler().Object);
             
             var discoveryResult = new DownloadDiscoveryResult
@@ -1133,7 +1133,7 @@ namespace AWSSDK.UnitTests
             
             var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest(
                 downloadType: MultipartDownloadType.PART);
-            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration(concurrentRequests: 2);
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration(concurrentRequests: 2);
             var coordinator = new MultipartDownloadCoordinator(mockClient.Object, request, config, CreateMockDataHandler().Object);
             
             var discoveryResult = await coordinator.DiscoverDownloadStrategyAsync(CancellationToken.None);
@@ -1161,7 +1161,7 @@ namespace AWSSDK.UnitTests
                 .ThrowsAsync(new OperationCanceledException());
             
             var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest();
-            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var coordinator = new MultipartDownloadCoordinator(mockClient.Object, request, config, CreateMockDataHandler().Object);
             
             var cts = new CancellationTokenSource();
@@ -1211,7 +1211,7 @@ namespace AWSSDK.UnitTests
             var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest(
                 partSize: partSize,
                 downloadType: MultipartDownloadType.RANGE);
-            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration(concurrentRequests: 1);
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration(concurrentRequests: 1);
             var coordinator = new MultipartDownloadCoordinator(mockClient.Object, request, config, CreateMockDataHandler().Object);
             
             var discoveryResult = await coordinator.DiscoverDownloadStrategyAsync(CancellationToken.None);

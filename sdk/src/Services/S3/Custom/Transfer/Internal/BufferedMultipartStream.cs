@@ -36,7 +36,7 @@ namespace Amazon.S3.Transfer.Internal
     {
         private readonly IDownloadCoordinator _downloadCoordinator;
         private readonly IPartBufferManager _partBufferManager;
-        private readonly StreamConfiguration _config;
+        private readonly BufferedDownloadConfiguration _config;
         
         private IStreamHandler _streamHandler;
         private bool _initialized = false;
@@ -55,7 +55,7 @@ namespace Amazon.S3.Transfer.Internal
         /// <param name="downloadCoordinator">Coordinates download discovery and orchestration.</param>
         /// <param name="partBufferManager">Manages part buffer lifecycle and synchronization.</param>
         /// <param name="config">Configuration settings for the stream.</param>
-        public BufferedMultipartStream(IDownloadCoordinator downloadCoordinator, IPartBufferManager partBufferManager, StreamConfiguration config)
+        public BufferedMultipartStream(IDownloadCoordinator downloadCoordinator, IPartBufferManager partBufferManager, BufferedDownloadConfiguration config)
         {
             _downloadCoordinator = downloadCoordinator ?? throw new ArgumentNullException(nameof(downloadCoordinator));
             _partBufferManager = partBufferManager ?? throw new ArgumentNullException(nameof(partBufferManager));
@@ -80,7 +80,7 @@ namespace Amazon.S3.Transfer.Internal
                 ? request.PartSize 
                 : 8 * 1024 * 1024; // 8MB default
             
-            var config = new StreamConfiguration(
+            var config = new BufferedDownloadConfiguration(
                 transferConfig.ConcurrentServiceRequests,
                 transferConfig.MaxInMemoryParts,
                 s3Client.Config.BufferSize,

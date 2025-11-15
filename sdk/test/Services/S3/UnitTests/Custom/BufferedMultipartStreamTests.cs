@@ -33,7 +33,7 @@ namespace AWSSDK.UnitTests
 
         private Mock<IDownloadCoordinator> _mockCoordinator;
         private Mock<IPartBufferManager> _mockBufferManager;
-        private StreamConfiguration _config;
+        private BufferedDownloadConfiguration _config;
 
         #endregion
 
@@ -44,7 +44,7 @@ namespace AWSSDK.UnitTests
         {
             _mockCoordinator = new Mock<IDownloadCoordinator>();
             _mockBufferManager = new Mock<IPartBufferManager>();
-            _config = MultipartDownloadTestHelpers.CreateStreamConfiguration();
+            _config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
         }
 
         #endregion
@@ -173,7 +173,7 @@ namespace AWSSDK.UnitTests
                 .ReturnsAsync(discoveryResult);
 
             var mockBufferManager = new Mock<IPartBufferManager>();
-            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var stream = new BufferedMultipartStream(mockCoordinator.Object, mockBufferManager.Object, config);
 
             // Act
@@ -203,7 +203,7 @@ namespace AWSSDK.UnitTests
                 .Returns(Task.CompletedTask);
 
             var mockBufferManager = new Mock<IPartBufferManager>();
-            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var stream = new BufferedMultipartStream(mockCoordinator.Object, mockBufferManager.Object, config);
 
             // Act
@@ -237,7 +237,7 @@ namespace AWSSDK.UnitTests
                 .Returns(Task.CompletedTask);
 
             var mockBufferManager = new Mock<IPartBufferManager>();
-            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var stream = new BufferedMultipartStream(mockCoordinator.Object, mockBufferManager.Object, config);
 
             // Act
@@ -265,7 +265,7 @@ namespace AWSSDK.UnitTests
                 .Returns(Task.CompletedTask);
 
             var mockBufferManager = new Mock<IPartBufferManager>();
-            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var stream = new BufferedMultipartStream(mockCoordinator.Object, mockBufferManager.Object, config);
 
             // Act
@@ -297,7 +297,7 @@ namespace AWSSDK.UnitTests
                 .ReturnsAsync(discoveryResult);
 
             var mockBufferManager = new Mock<IPartBufferManager>();
-            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var stream = new BufferedMultipartStream(mockCoordinator.Object, mockBufferManager.Object, config);
 
             // Act
@@ -326,7 +326,7 @@ namespace AWSSDK.UnitTests
                 .ReturnsAsync(discoveryResult);
 
             var mockBufferManager = new Mock<IPartBufferManager>();
-            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var stream = new BufferedMultipartStream(mockCoordinator.Object, mockBufferManager.Object, config);
 
             // Act
@@ -345,7 +345,7 @@ namespace AWSSDK.UnitTests
             // Arrange
             var mockCoordinator = new Mock<IDownloadCoordinator>();
             var mockBufferManager = new Mock<IPartBufferManager>();
-            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var stream = new BufferedMultipartStream(mockCoordinator.Object, mockBufferManager.Object, config);
 
             var buffer = new byte[1024];
@@ -361,7 +361,7 @@ namespace AWSSDK.UnitTests
             // Arrange
             var mockCoordinator = new Mock<IDownloadCoordinator>();
             var mockBufferManager = new Mock<IPartBufferManager>();
-            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var stream = new BufferedMultipartStream(mockCoordinator.Object, mockBufferManager.Object, config);
 
             stream.Dispose();

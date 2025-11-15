@@ -308,18 +308,18 @@ namespace AWSSDK.UnitTests
 
         #endregion
 
-        #region StreamConfiguration Creation
+        #region BufferedDownloadConfiguration Creation
 
         /// <summary>
-        /// Creates a default StreamConfiguration for testing.
+        /// Creates a default BufferedDownloadConfiguration for testing.
         /// </summary>
-        internal static StreamConfiguration CreateStreamConfiguration(
+        internal static BufferedDownloadConfiguration CreateBufferedDownloadConfiguration(
             int concurrentRequests = DefaultConcurrentRequests,
             int maxInMemoryParts = DefaultMaxInMemoryParts,
             int bufferSize = BufferSize,
             long partSize = DefaultPartSize)
         {
-            return new StreamConfiguration(
+            return new BufferedDownloadConfiguration(
                 concurrentRequests,
                 maxInMemoryParts,
                 bufferSize,
@@ -327,11 +327,11 @@ namespace AWSSDK.UnitTests
         }
 
         /// <summary>
-        /// Creates a StreamConfiguration with minimal settings for testing.
+        /// Creates a BufferedDownloadConfiguration with minimal settings for testing.
         /// </summary>
-        internal static StreamConfiguration CreateMinimalStreamConfiguration()
+        internal static BufferedDownloadConfiguration CreateMinimalBufferedDownloadConfiguration()
         {
-            return new StreamConfiguration(1, 1, 1024, 8 * 1024 * 1024);
+            return new BufferedDownloadConfiguration(1, 1, 1024, 8 * 1024 * 1024);
         }
 
         #endregion
