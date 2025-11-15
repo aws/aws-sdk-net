@@ -191,6 +191,98 @@ namespace AWSSDK.UnitTests
 
         #endregion
 
+        #region ContentLength and ContentRange Validation Tests
+
+        [TestMethod]
+        public async Task ExecuteAsync_SinglePart_SetsCorrectContentLengthAndRange()
+        {
+            // Arrange
+            var objectSize = 2048;
+            var mockResponse = MultipartDownloadTestHelpers.CreateSinglePartResponse(
+                objectSize: objectSize,
+                eTag: "single-part-etag");
+            
+            var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client(
+                (req, ct) => Task.FromResult(mockResponse));
+            
+            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest();
+            var config = new TransferUtilityConfig();
+            var command = new OpenStreamWithResponseCommand(mockClient.Object, request, config);
+
+            // Act
+            var response = await command.ExecuteAsync(CancellationToken.None);
+
+            // Assert - SEP Part GET Step 7 / Ranged GET Step 9
+            Assert.AreEqual(objectSize, response.Headers.ContentLength, 
+                "ContentLength should equal total object size");
+            Assert.AreEqual($"bytes 0-{objectSize - 1}/{objectSize}", response.ContentRange,
+                "ContentRange should be bytes 0-(ContentLength-1)/ContentLength");
+            
+            // Cleanup
+            response.ResponseStream.Dispose();
+        }
+
+        [TestMethod]
+        public async Task ExecuteAsync_MultipartPartStrategy_SetsCorrectContentLengthAndRange()
+        {
+            // Arrange
+            var totalParts = 5;
+            var partSize = 10 * 1024 * 1024; // 10MB per part
+            var totalObjectSize = (long)totalParts * partSize; // 50MB total
+            
+            var mockClient = MultipartDownloadTestHelpers.CreateMockS3ClientForMultipart(
+                totalParts, partSize, totalObjectSize, "multipart-etag", usePartStrategy: true);
+            
+            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest(
+                downloadType: MultipartDownloadType.PART);
+            var config = new TransferUtilityConfig { ConcurrentServiceRequests = 1 };
+            var command = new OpenStreamWithResponseCommand(mockClient.Object, request, config);
+
+            // Act
+            var response = await command.ExecuteAsync(CancellationToken.None);
+
+            // Assert - SEP Part GET Step 7
+            Assert.AreEqual(totalObjectSize, response.Headers.ContentLength,
+                "ContentLength should equal total object size, not first part size");
+            Assert.AreEqual($"bytes 0-{totalObjectSize - 1}/{totalObjectSize}", response.ContentRange,
+                "ContentRange should be bytes 0-(ContentLength-1)/ContentLength for entire object");
+            
+            // Cleanup
+            response.ResponseStream.Dispose();
+        }
+
+        [TestMethod]
+        public async Task ExecuteAsync_MultipartRangeStrategy_SetsCorrectContentLengthAndRange()
+        {
+            // Arrange
+            var totalObjectSize = 25 * 1024 * 1024; // 25MB total
+            var partSize = 8 * 1024 * 1024; // 8MB per part
+            var totalParts = (int)Math.Ceiling((double)totalObjectSize / partSize); // 4 parts
+            
+            var mockClient = MultipartDownloadTestHelpers.CreateMockS3ClientForMultipart(
+                totalParts, partSize, totalObjectSize, "range-multipart-etag", usePartStrategy: false);
+            
+            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest(
+                partSize: partSize,
+                downloadType: MultipartDownloadType.RANGE);
+            var config = new TransferUtilityConfig { ConcurrentServiceRequests = 1 };
+            var command = new OpenStreamWithResponseCommand(mockClient.Object, request, config);
+
+            // Act
+            var response = await command.ExecuteAsync(CancellationToken.None);
+
+            // Assert - SEP Ranged GET Step 9
+            Assert.AreEqual(totalObjectSize, response.Headers.ContentLength,
+                "ContentLength should equal total object size, not first range size");
+            Assert.AreEqual($"bytes 0-{totalObjectSize - 1}/{totalObjectSize}", response.ContentRange,
+                "ContentRange should be bytes 0-(ContentLength-1)/ContentLength for entire object");
+            
+            // Cleanup
+            response.ResponseStream.Dispose();
+        }
+
+        #endregion
+
         #region Integration Tests
 
         [TestMethod]

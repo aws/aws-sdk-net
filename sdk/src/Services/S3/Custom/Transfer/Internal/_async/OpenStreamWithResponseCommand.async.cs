@@ -35,6 +35,13 @@ namespace Amazon.S3.Transfer.Internal
             var discoveryResult = bufferedStream.DiscoveryResult;
             var response = ResponseMapper.MapGetObjectResponseToOpenStream(discoveryResult.InitialResponse);
             
+            // SEP Part GET Step 7 / Ranged GET Step 9:
+            // Set ContentLength to total object size (not just first part)
+            response.Headers.ContentLength = discoveryResult.ObjectSize;
+            
+            // Set ContentRange to represent the entire object: bytes 0-(ContentLength-1)/ContentLength
+            response.ContentRange = $"bytes 0-{discoveryResult.ObjectSize - 1}/{discoveryResult.ObjectSize}";
+            
             response.ResponseStream = bufferedStream;
             return response;
             
