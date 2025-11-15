@@ -64,7 +64,6 @@ namespace Amazon.S3.Transfer.Internal
 
         /// <summary>
         /// Factory method to create BufferedMultipartStream with default dependencies.
-        /// Maintains backward compatibility with existing code.
         /// </summary>
         /// <param name="s3Client">S3 client for making requests.</param>
         /// <param name="request">Stream request parameters.</param>
@@ -96,7 +95,6 @@ namespace Amazon.S3.Transfer.Internal
 
         /// <summary>
         /// Initialize the stream by discovering download strategy and setting up appropriate handlers.
-        /// Unified logic handles both single-part and multipart downloads through the same code path.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token for the initialization operation.</param>
         public async Task InitializeAsync(CancellationToken cancellationToken)
@@ -200,7 +198,7 @@ namespace Amazon.S3.Transfer.Internal
             {
                 try
                 {
-                    // Dispose stream handler (handles both single-part and multipart scenarios)
+                    // Dispose stream handler
                     _streamHandler?.Dispose();
                     _streamHandler = null;
                     

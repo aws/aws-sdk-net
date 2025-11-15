@@ -125,13 +125,11 @@ namespace Amazon.S3.Transfer.Internal
                         $"Requested part {requestedPartNumber} but expected part {_nextExpectedPartNumber}. Parts must be consumed sequentially.");
                 }
             }
-            
-            // Read across part boundaries to fill the buffer completely, matching standard Stream.Read() behavior
-            // (should fill buffer as much as possible, not stop at internal part boundaries)
 
             int totalBytesRead = 0;
             
             // Keep reading until buffer is full or we reach true EOF
+            // Note: We Read across part boundaries to fill the buffer completely, matching standard Stream.Read() behavior
             while (totalBytesRead < count)
             {
                 var (bytesRead, shouldContinue) = await ReadFromCurrentPartAsync(
