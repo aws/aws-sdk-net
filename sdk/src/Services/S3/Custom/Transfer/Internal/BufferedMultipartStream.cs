@@ -88,7 +88,7 @@ namespace Amazon.S3.Transfer.Internal
                 targetPartSize);
             
             var partBufferManager = new PartBufferManager(config);
-            var dataHandler = new BufferedPartDataHandler(partBufferManager, config, request);
+            var dataHandler = new BufferedPartDataHandler(partBufferManager, config);
             var downloadCoordinator = new MultipartDownloadCoordinator(s3Client, request, config, dataHandler);
             
             return new BufferedMultipartStream(downloadCoordinator, partBufferManager, config);

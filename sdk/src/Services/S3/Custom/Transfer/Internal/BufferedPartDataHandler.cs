@@ -35,16 +35,13 @@ namespace Amazon.S3.Transfer.Internal
     {
         private readonly IPartBufferManager _partBufferManager;
         private readonly StreamConfiguration _config;
-        private readonly TransferUtilityOpenStreamRequest _request;
         
         public BufferedPartDataHandler(
             IPartBufferManager partBufferManager,
-            StreamConfiguration config,
-            TransferUtilityOpenStreamRequest request)
+            StreamConfiguration config)
         {
             _partBufferManager = partBufferManager ?? throw new ArgumentNullException(nameof(partBufferManager));
             _config = config ?? throw new ArgumentNullException(nameof(config));
-            _request = request ?? throw new ArgumentNullException(nameof(request));
         }
         
         public async Task ProcessPartAsync(
@@ -92,21 +89,9 @@ namespace Amazon.S3.Transfer.Internal
             
             try
             {
-                // Use ContentLength to determine exact bytes to read
+                // Use ContentLength to determine exact bytes to read and allocate
                 long expectedBytes = response.ContentLength;
-                
-                // Start with initial buffer size
-                int initialBufferSize;
-                if (_request.MultipartDownloadType == MultipartDownloadType.PART)
-                {
-                    // For PART strategy, start with reasonable size and expand as needed
-                    initialBufferSize = (int)Math.Min(expectedBytes, _config.TargetPartSizeBytes);
-                }
-                else
-                {
-                    // For RANGE strategy, use the exact Content-Length
-                    initialBufferSize = (int)expectedBytes;
-                }
+                int initialBufferSize = (int)expectedBytes;
                 
                 partBuffer = ArrayPool<byte>.Shared.Rent(initialBufferSize);
                 
