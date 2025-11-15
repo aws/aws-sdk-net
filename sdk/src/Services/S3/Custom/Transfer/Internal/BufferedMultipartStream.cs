@@ -148,7 +148,7 @@ namespace Amazon.S3.Transfer.Internal
             if (offset + count > buffer.Length)
                 throw new ArgumentException("Offset and count exceed buffer bounds");
 
-            // Delegate to the appropriate stream handler (single-part or multipart)
+            // Delegate to the appropriate stream handler
             var bytesRead = await _streamHandler.ReadAsync(buffer, offset, count, cancellationToken)
                 .ConfigureAwait(false);
             
