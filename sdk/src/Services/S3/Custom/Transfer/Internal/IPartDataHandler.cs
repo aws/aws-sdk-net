@@ -32,15 +32,7 @@ namespace Amazon.S3.Transfer.Internal
     /// Enables separation of download orchestration from data handling (buffering, file writing, etc).
     /// </summary>
     internal interface IPartDataHandler : IDisposable
-    {
-        /// <summary>
-        /// Prepare for receiving parts (pre-allocate resources, setup, etc).
-        /// Called once before any parts are downloaded.
-        /// </summary>
-        /// <param name="discoveryResult">Discovery metadata including total parts and object size</param>
-        /// <returns>Task that completes when preparation is done</returns>
-        Task PrepareAsync(DownloadDiscoveryResult discoveryResult);
-        
+    {        
         /// <summary>
         /// Process a downloaded part from the GetObjectResponse.
         /// Implementation decides whether to buffer in memory, write to file, etc.

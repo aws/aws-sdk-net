@@ -68,51 +68,6 @@ namespace AWSSDK.UnitTests
 
         #endregion
 
-        #region PrepareAsync Tests
-
-        [TestMethod]
-        public async Task PrepareAsync_CompletesSuccessfully()
-        {
-            // Arrange
-            var mockBufferManager = new Mock<IPartBufferManager>();
-            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration();
-            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest();
-            var handler = new BufferedPartDataHandler(mockBufferManager.Object, config, request);
-
-            var discoveryResult = new DownloadDiscoveryResult
-            {
-                TotalParts = 5,
-                ObjectSize = 50 * 1024 * 1024,
-                InitialResponse = new GetObjectResponse()
-            };
-
-            // Act
-            await handler.PrepareAsync(discoveryResult);
-
-            // Assert - should complete without any setup
-            // No interactions with buffer manager expected for buffered strategy
-            mockBufferManager.Verify(
-                x => x.AddBufferAsync(It.IsAny<StreamPartBuffer>(), It.IsAny<CancellationToken>()),
-                Times.Never);
-        }
-
-        [TestMethod]
-        public async Task PrepareAsync_WithNullDiscoveryResult_DoesNotThrow()
-        {
-            // Arrange
-            var mockBufferManager = new Mock<IPartBufferManager>();
-            var config = MultipartDownloadTestHelpers.CreateStreamConfiguration();
-            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest();
-            var handler = new BufferedPartDataHandler(mockBufferManager.Object, config, request);
-
-            // Act - should not throw even with null
-            await handler.PrepareAsync(null);
-
-            // Assert - completes successfully
-        }
-
-        #endregion
-
         #region ProcessPartAsync Tests - Basic Functionality
 
         [TestMethod]

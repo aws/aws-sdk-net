@@ -20,8 +20,6 @@ namespace AWSSDK.UnitTests
         private Mock<IPartDataHandler> CreateMockDataHandler()
         {
             var mockHandler = new Mock<IPartDataHandler>();
-            mockHandler.Setup(x => x.PrepareAsync(It.IsAny<DownloadDiscoveryResult>()))
-                .Returns(Task.CompletedTask);
             mockHandler.Setup(x => x.ProcessPartAsync(It.IsAny<int>(), It.IsAny<GetObjectResponse>(), It.IsAny<CancellationToken>()))
                 .Returns(Task.CompletedTask);
             mockHandler.Setup(x => x.WaitForCapacityAsync(It.IsAny<CancellationToken>()))

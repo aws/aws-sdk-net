@@ -47,12 +47,6 @@ namespace Amazon.S3.Transfer.Internal
             _request = request ?? throw new ArgumentNullException(nameof(request));
         }
         
-        public Task PrepareAsync(DownloadDiscoveryResult discoveryResult)
-        {
-            // No preparation needed for buffered downloads
-            return Task.CompletedTask;
-        }
-        
         public async Task ProcessPartAsync(
             int partNumber,
             GetObjectResponse response, 

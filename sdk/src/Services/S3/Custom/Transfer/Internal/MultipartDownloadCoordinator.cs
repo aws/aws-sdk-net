@@ -32,7 +32,7 @@ namespace Amazon.S3.Transfer.Internal
 {
     /// <summary>
     /// Coordinates multipart downloads using PART or RANGE strategies per SEP spec.
-    /// Handles discovery, concurrent downloads, and progress reporting.
+    /// Handles discovery, concurrent downloads.
     /// </summary>
     internal class MultipartDownloadCoordinator : IDownloadCoordinator
     {
@@ -117,9 +117,6 @@ namespace Amazon.S3.Transfer.Internal
 
             try
             {
-                // Prepare the data handler for the download
-                await _dataHandler.PrepareAsync(discoveryResult).ConfigureAwait(false);
-
                 // Process Part 1 from InitialResponse (applies to both single-part and multipart)
                 await _dataHandler.ProcessPartAsync(1, discoveryResult.InitialResponse, cancellationToken).ConfigureAwait(false);
 
