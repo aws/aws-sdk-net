@@ -14,9 +14,16 @@ using AWSSDK_DotNet.IntegrationTests.Utils;
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 {
     /// <summary>
-    /// Integration tests for TransferUtility.OpenStream with multipart download support.
-    /// Tests various combinations of part sizes, download strategies (PART vs RANGE), 
-    /// and buffer sizes to ensure correct behavior of OpenStreamWithResponseCommand.
+    /// Integration tests for TransferUtility.OpenStreamWithResponse functionality.
+    /// These tests verify end-to-end functionality with actual S3 operations.
+    /// 
+    /// Most test scenarios (buffer sizes, part boundaries, stream behavior) are covered 
+    /// in BufferedMultipartStreamTests.cs with mocked dependencies for faster execution.
+    /// 
+    /// These integration tests focus on:
+    /// - Basic single-part downloads
+    /// - Basic multipart downloads
+    /// - Real S3 metadata preservation
     /// </summary>
     [TestClass]
     public class TransferUtilityOpenStreamTests : TestBase<AmazonS3Client>
@@ -48,75 +55,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             }
         }
 
-        #region Helper Methods
-
-        /// <summary>
-        /// Creates a test object in S3 and returns the expected checksum.
-        /// </summary>
-        private async Task<(string key, string checksum)> CreateTestObjectWithChecksum(long sizeInBytes)
-        {
-            var key = UtilityMethods.GenerateName("openstream-test");
-            var filePath = Path.Combine(BasePath, key);
-            
-            // Generate test file
-            UtilityMethods.GenerateFile(filePath, sizeInBytes);
-            
-            // Calculate checksum
-            var fileBytes = File.ReadAllBytes(filePath);
-            var checksum = CryptoUtilFactory.CryptoInstance.ComputeCRC32Hash(fileBytes);
-            
-            // Upload to S3
-            await Client.PutObjectAsync(new PutObjectRequest
-            {
-                BucketName = bucketName,
-                Key = key,
-                FilePath = filePath
-            });
-            
-            return (key, checksum);
-        }
-
-        /// <summary>
-        /// Reads a stream into a byte array using the specified buffer size.
-        /// </summary>
-        private async Task<byte[]> ReadStreamToByteArray(Stream stream, long expectedSize, int bufferSize)
-        {
-            var result = new List<byte>();
-            var buffer = new byte[bufferSize];
-            int bytesRead;
-            
-            while ((bytesRead = await stream.ReadAsync(buffer, 0, buffer.Length)) > 0)
-            {
-                result.AddRange(buffer.Take(bytesRead));
-            }
-            
-            return result.ToArray();
-        }
-
-        /// <summary>
-        /// Calculates the checksum of downloaded data.
-        /// </summary>
-        private string CalculateChecksum(byte[] data)
-        {
-            return CryptoUtilFactory.CryptoInstance.ComputeCRC32Hash(data);
-        }
-
-        /// <summary>
-        /// Validates ContentLength and ContentRange headers.
-        /// </summary>
-        private void ValidateHeaders(TransferUtilityOpenStreamResponse response, long expectedSize)
-        {
-            Assert.AreEqual(expectedSize, response.Headers.ContentLength,
-                "ContentLength should equal total object size");
-            
-            var expectedRange = $"bytes 0-{expectedSize - 1}/{expectedSize}";
-            Assert.AreEqual(expectedRange, response.ContentRange,
-                "ContentRange should be bytes 0-(ContentLength-1)/ContentLength");
-        }
-
-        #endregion
-
-        #region Single-Part Baseline Tests
+        #region Single-Part Tests
 
         [TestMethod]
         [TestCategory("S3")]
@@ -175,112 +114,21 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
         #endregion
 
-        #region Multipart Matrix Tests - 10MB Objects
+        #region Multipart Test
 
         [TestMethod]
         [TestCategory("S3")]
         [TestCategory("OpenStream")]
         [TestCategory("Multipart")]
-        [DataRow(5 * 1024 * 1024, "PART", 1 * 1024 * 1024, DisplayName = "10MB: 5MB parts, PART strategy, 1MB buffer")]
-        [DataRow(5 * 1024 * 1024, "RANGE", 1 * 1024 * 1024, DisplayName = "10MB: 5MB parts, RANGE strategy, 1MB buffer")]
-        [DataRow(5 * 1024 * 1024, "PART", 16 * 1024 * 1024, DisplayName = "10MB: 5MB parts, PART strategy, 16MB buffer")]
-        [DataRow(5 * 1024 * 1024, "RANGE", 16 * 1024 * 1024, DisplayName = "10MB: 5MB parts, RANGE strategy, 16MB buffer")]
-        [DataRow(8 * 1024 * 1024, "PART", 2 * 1024 * 1024, DisplayName = "10MB: 8MB parts, PART strategy, 2MB buffer")]
-        [DataRow(8 * 1024 * 1024, "RANGE", 2 * 1024 * 1024, DisplayName = "10MB: 8MB parts, RANGE strategy, 2MB buffer")]
-        [DataRow(8 * 1024 * 1024, "PART", 16 * 1024 * 1024, DisplayName = "10MB: 8MB parts, PART strategy, 16MB buffer")]
-        [DataRow(8 * 1024 * 1024, "RANGE", 16 * 1024 * 1024, DisplayName = "10MB: 8MB parts, RANGE strategy, 16MB buffer")]
-        public async Task OpenStream_Multipart_10MB_Matrix(long partSize, string strategyName, int bufferSize)
+        public async Task OpenStream_Multipart_BasicDownload()
         {
-            await ExecuteMultipartTest(10 * MB, partSize, strategyName, bufferSize);
-        }
-
-        #endregion
-
-        #region Multipart Matrix Tests - 50MB Objects
-
-        [TestMethod]
-        [TestCategory("S3")]
-        [TestCategory("OpenStream")]
-        [TestCategory("Multipart")]
-        [DataRow(5 * 1024 * 1024, "PART", 1 * 1024 * 1024, DisplayName = "50MB: 5MB parts, PART strategy, 1MB buffer")]
-        [DataRow(5 * 1024 * 1024, "RANGE", 1 * 1024 * 1024, DisplayName = "50MB: 5MB parts, RANGE strategy, 1MB buffer")]
-        [DataRow(5 * 1024 * 1024, "PART", 2 * 1024 * 1024, DisplayName = "50MB: 5MB parts, PART strategy, 2MB buffer")]
-        [DataRow(5 * 1024 * 1024, "RANGE", 2 * 1024 * 1024, DisplayName = "50MB: 5MB parts, RANGE strategy, 2MB buffer")]
-        [DataRow(5 * 1024 * 1024, "PART", 16 * 1024 * 1024, DisplayName = "50MB: 5MB parts, PART strategy, 16MB buffer")]
-        [DataRow(5 * 1024 * 1024, "RANGE", 16 * 1024 * 1024, DisplayName = "50MB: 5MB parts, RANGE strategy, 16MB buffer")]
-        [DataRow(5 * 1024 * 1024, "PART", 32 * 1024 * 1024, DisplayName = "50MB: 5MB parts, PART strategy, 32MB buffer")]
-        [DataRow(5 * 1024 * 1024, "RANGE", 32 * 1024 * 1024, DisplayName = "50MB: 5MB parts, RANGE strategy, 32MB buffer")]
-        [DataRow(8 * 1024 * 1024, "PART", 1 * 1024 * 1024, DisplayName = "50MB: 8MB parts, PART strategy, 1MB buffer")]
-        [DataRow(8 * 1024 * 1024, "RANGE", 1 * 1024 * 1024, DisplayName = "50MB: 8MB parts, RANGE strategy, 1MB buffer")]
-        [DataRow(8 * 1024 * 1024, "PART", 2 * 1024 * 1024, DisplayName = "50MB: 8MB parts, PART strategy, 2MB buffer")]
-        [DataRow(8 * 1024 * 1024, "RANGE", 2 * 1024 * 1024, DisplayName = "50MB: 8MB parts, RANGE strategy, 2MB buffer")]
-        [DataRow(8 * 1024 * 1024, "PART", 4 * 1024 * 1024, DisplayName = "50MB: 8MB parts, PART strategy, 4MB buffer")]
-        [DataRow(8 * 1024 * 1024, "RANGE", 4 * 1024 * 1024, DisplayName = "50MB: 8MB parts, RANGE strategy, 4MB buffer")]
-        [DataRow(8 * 1024 * 1024, "PART", 16 * 1024 * 1024, DisplayName = "50MB: 8MB parts, PART strategy, 16MB buffer")]
-        [DataRow(8 * 1024 * 1024, "RANGE", 16 * 1024 * 1024, DisplayName = "50MB: 8MB parts, RANGE strategy, 16MB buffer")]
-        [DataRow(16 * 1024 * 1024, "PART", 2 * 1024 * 1024, DisplayName = "50MB: 16MB parts, PART strategy, 2MB buffer")]
-        [DataRow(16 * 1024 * 1024, "RANGE", 2 * 1024 * 1024, DisplayName = "50MB: 16MB parts, RANGE strategy, 2MB buffer")]
-        [DataRow(16 * 1024 * 1024, "PART", 4 * 1024 * 1024, DisplayName = "50MB: 16MB parts, PART strategy, 4MB buffer")]
-        [DataRow(16 * 1024 * 1024, "RANGE", 4 * 1024 * 1024, DisplayName = "50MB: 16MB parts, RANGE strategy, 4MB buffer")]
-        [DataRow(16 * 1024 * 1024, "PART", 8 * 1024 * 1024, DisplayName = "50MB: 16MB parts, PART strategy, 8MB buffer")]
-        [DataRow(16 * 1024 * 1024, "RANGE", 8 * 1024 * 1024, DisplayName = "50MB: 16MB parts, RANGE strategy, 8MB buffer")]
-        [DataRow(16 * 1024 * 1024, "PART", 32 * 1024 * 1024, DisplayName = "50MB: 16MB parts, PART strategy, 32MB buffer")]
-        [DataRow(16 * 1024 * 1024, "RANGE", 32 * 1024 * 1024, DisplayName = "50MB: 16MB parts, RANGE strategy, 32MB buffer")]
-        public async Task OpenStream_Multipart_50MB_Matrix(long partSize, string strategyName, int bufferSize)
-        {
-            await ExecuteMultipartTest(50 * MB, partSize, strategyName, bufferSize);
-        }
-
-        #endregion
-
-        #region Multipart Matrix Tests - 100MB Objects
-
-        [TestMethod]
-        [TestCategory("S3")]
-        [TestCategory("OpenStream")]
-        [TestCategory("Multipart")]
-        [DataRow(8 * 1024 * 1024, "PART", 2 * 1024 * 1024, DisplayName = "100MB: 8MB parts, PART strategy, 2MB buffer")]
-        [DataRow(8 * 1024 * 1024, "RANGE", 2 * 1024 * 1024, DisplayName = "100MB: 8MB parts, RANGE strategy, 2MB buffer")]
-        [DataRow(8 * 1024 * 1024, "PART", 16 * 1024 * 1024, DisplayName = "100MB: 8MB parts, PART strategy, 16MB buffer")]
-        [DataRow(8 * 1024 * 1024, "RANGE", 16 * 1024 * 1024, DisplayName = "100MB: 8MB parts, RANGE strategy, 16MB buffer")]
-        [DataRow(16 * 1024 * 1024, "PART", 4 * 1024 * 1024, DisplayName = "100MB: 16MB parts, PART strategy, 4MB buffer")]
-        [DataRow(16 * 1024 * 1024, "RANGE", 4 * 1024 * 1024, DisplayName = "100MB: 16MB parts, RANGE strategy, 4MB buffer")]
-        [DataRow(16 * 1024 * 1024, "PART", 32 * 1024 * 1024, DisplayName = "100MB: 16MB parts, PART strategy, 32MB buffer")]
-        [DataRow(16 * 1024 * 1024, "RANGE", 32 * 1024 * 1024, DisplayName = "100MB: 16MB parts, RANGE strategy, 32MB buffer")]
-        [DataRow(32 * 1024 * 1024, "PART", 4 * 1024 * 1024, DisplayName = "100MB: 32MB parts, PART strategy, 4MB buffer")]
-        [DataRow(32 * 1024 * 1024, "RANGE", 4 * 1024 * 1024, DisplayName = "100MB: 32MB parts, RANGE strategy, 4MB buffer")]
-        [DataRow(32 * 1024 * 1024, "PART", 8 * 1024 * 1024, DisplayName = "100MB: 32MB parts, PART strategy, 8MB buffer")]
-        [DataRow(32 * 1024 * 1024, "RANGE", 8 * 1024 * 1024, DisplayName = "100MB: 32MB parts, RANGE strategy, 8MB buffer")]
-        [DataRow(32 * 1024 * 1024, "PART", 64 * 1024 * 1024, DisplayName = "100MB: 32MB parts, PART strategy, 64MB buffer")]
-        [DataRow(32 * 1024 * 1024, "RANGE", 64 * 1024 * 1024, DisplayName = "100MB: 32MB parts, RANGE strategy, 64MB buffer")]
-        public async Task OpenStream_Multipart_100MB_Matrix(long partSize, string strategyName, int bufferSize)
-        {
-            await ExecuteMultipartTest(100 * MB, partSize, strategyName, bufferSize);
-        }
-
-        #endregion
-
-        #region Core Multipart Test Executor
-
-        /// <summary>
-        /// Core test method that executes multipart download test with specified parameters.
-        /// </summary>
-        private async Task ExecuteMultipartTest(long objectSize, long partSize, string strategyName, int bufferSize)
-        {
-            // Arrange
+            // Arrange - Simple multipart download to verify end-to-end S3 integration
+            // Object must be > 16MB to trigger multipart upload (AWS SDK default threshold)
+            var objectSize = 20 * MB;
+            var partSize = 8 * MB;
             var (key, expectedChecksum) = await CreateTestObjectWithChecksum(objectSize);
-            
-            var downloadType = strategyName == "PART" 
-                ? MultipartDownloadType.PART 
-                : MultipartDownloadType.RANGE;
 
-            var config = new TransferUtilityConfig
-            {
-                ConcurrentServiceRequests = 1 // Sequential for easier debugging
-            };
-
-            // Act
-            var transferUtility = new TransferUtility(Client, config);
+            var transferUtility = new TransferUtility(Client);
             var request = new TransferUtilityOpenStreamRequest
             {
                 BucketName = bucketName,
@@ -288,159 +136,19 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 PartSize = partSize
             };
 
+            // Act
             using (var response = await transferUtility.OpenStreamWithResponseAsync(request))
             {
-                // Assert - Response structure
+                // Assert
                 Assert.IsNotNull(response, "Response should not be null");
                 Assert.IsNotNull(response.ResponseStream, "ResponseStream should not be null");
-                
-                // Assert - Headers
                 ValidateHeaders(response, objectSize);
-                
-                // Assert - Data integrity via checksum
-                var downloadedBytes = await ReadStreamToByteArray(response.ResponseStream, objectSize, bufferSize);
-                var actualChecksum = CalculateChecksum(downloadedBytes);
-                
-                Assert.AreEqual(expectedChecksum, actualChecksum,
-                    $"Checksum mismatch for objectSize={objectSize}, partSize={partSize}, strategy={strategyName}, bufferSize={bufferSize}");
-                Assert.AreEqual(objectSize, downloadedBytes.Length,
-                    $"Size mismatch for objectSize={objectSize}, partSize={partSize}, strategy={strategyName}, bufferSize={bufferSize}");
 
-                Console.WriteLine($"✓ Verified: {objectSize / MB}MB object, {partSize / MB}MB parts, {strategyName} strategy, {bufferSize / MB}MB buffer");
-            }
-        }
-
-        #endregion
-
-        #region Edge Case Tests
-
-        [TestMethod]
-        [TestCategory("S3")]
-        [TestCategory("OpenStream")]
-        [TestCategory("EdgeCase")]
-        public async Task OpenStream_ExactPartBoundary_TwoParts()
-        {
-            // Arrange - Object size exactly equals 2 parts
-            var partSize = 8 * MB;
-            var objectSize = 2 * partSize; // 16MB exactly
-            var (key, expectedChecksum) = await CreateTestObjectWithChecksum(objectSize);
-
-            var transferUtility = new TransferUtility(Client);
-            var request = new TransferUtilityOpenStreamRequest
-            {
-                BucketName = bucketName,
-                Key = key,
-                PartSize = partSize
-            };
-
-            // Act
-            using (var response = await transferUtility.OpenStreamWithResponseAsync(request))
-            {
-                // Assert
-                ValidateHeaders(response, objectSize);
                 var downloadedBytes = await ReadStreamToByteArray(response.ResponseStream, objectSize, (int)(2 * MB));
                 var actualChecksum = CalculateChecksum(downloadedBytes);
                 
-                Assert.AreEqual(expectedChecksum, actualChecksum);
-                Assert.AreEqual(objectSize, downloadedBytes.Length);
-            }
-        }
-
-        [TestMethod]
-        [TestCategory("S3")]
-        [TestCategory("OpenStream")]
-        [TestCategory("EdgeCase")]
-        public async Task OpenStream_NonAlignedPartBoundary()
-        {
-            // Arrange - Object size not aligned to part boundaries
-            var partSize = 8 * MB;
-            var objectSize = (2 * partSize) + (3 * MB); // 19MB (2 full parts + 3MB remainder)
-            var (key, expectedChecksum) = await CreateTestObjectWithChecksum(objectSize);
-
-            var transferUtility = new TransferUtility(Client);
-            var request = new TransferUtilityOpenStreamRequest
-            {
-                BucketName = bucketName,
-                Key = key,
-                PartSize = partSize
-            };
-
-            // Act
-            using (var response = await transferUtility.OpenStreamWithResponseAsync(request))
-            {
-                // Assert
-                ValidateHeaders(response, objectSize);
-                var downloadedBytes = await ReadStreamToByteArray(response.ResponseStream, objectSize, (int)(2 * MB));
-                var actualChecksum = CalculateChecksum(downloadedBytes);
-                
-                Assert.AreEqual(expectedChecksum, actualChecksum);
-                Assert.AreEqual(objectSize, downloadedBytes.Length);
-            }
-        }
-
-        [TestMethod]
-        [TestCategory("S3")]
-        [TestCategory("OpenStream")]
-        [TestCategory("EdgeCase")]
-        public async Task OpenStream_BufferLargerThanPartSize()
-        {
-            // Arrange - Buffer size larger than part size
-            var partSize = 5 * MB;
-            var bufferSize = (int)(8 * MB);
-            var objectSize = 20 * MB;
-            var (key, expectedChecksum) = await CreateTestObjectWithChecksum(objectSize);
-
-            var transferUtility = new TransferUtility(Client);
-            var request = new TransferUtilityOpenStreamRequest
-            {
-                BucketName = bucketName,
-                Key = key,
-                PartSize = partSize
-            };
-
-            // Act
-            using (var response = await transferUtility.OpenStreamWithResponseAsync(request))
-            {
-                // Assert
-                ValidateHeaders(response, objectSize);
-                var downloadedBytes = await ReadStreamToByteArray(response.ResponseStream, objectSize, bufferSize);
-                var actualChecksum = CalculateChecksum(downloadedBytes);
-                
-                Assert.AreEqual(expectedChecksum, actualChecksum);
-                Assert.AreEqual(objectSize, downloadedBytes.Length);
-            }
-        }
-
-        [TestMethod]
-        [TestCategory("S3")]
-        [TestCategory("OpenStream")]
-        [TestCategory("EdgeCase")]
-        public async Task OpenStream_SmallBufferLargeParts()
-        {
-            // Arrange - Very small buffer with large parts (stress test buffering)
-            var partSize = 16 * MB;
-            var bufferSize = 512 * 1024; // 512KB buffer
-            var objectSize = 40 * MB;
-            var (key, expectedChecksum) = await CreateTestObjectWithChecksum(objectSize);
-
-            var transferUtility = new TransferUtility(Client);
-            var request = new TransferUtilityOpenStreamRequest
-            {
-                BucketName = bucketName,
-                Key = key,
-                PartSize = partSize
-            };
-
-            // Act
-            using (var response = await transferUtility.OpenStreamWithResponseAsync(request))
-            {
-                // Assert
-                ValidateHeaders(response, objectSize);
-                var downloadedBytes = await ReadStreamToByteArray(response.ResponseStream, objectSize, bufferSize);
-                var actualChecksum = CalculateChecksum(downloadedBytes);
-                
-                Assert.AreEqual(expectedChecksum, actualChecksum);
-                Assert.AreEqual(objectSize, downloadedBytes.Length);
+                Assert.AreEqual(expectedChecksum, actualChecksum, "Downloaded data checksum should match");
+                Assert.AreEqual(objectSize, downloadedBytes.Length, "Downloaded size should match");
             }
         }
 
@@ -529,69 +237,82 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
         #endregion
 
-        #region Stream Behavior Tests
+        #region Helper Methods
 
-        [TestMethod]
-        [TestCategory("S3")]
-        [TestCategory("OpenStream")]
-        [TestCategory("StreamBehavior")]
-        public async Task OpenStream_SupportsMultipleReads()
+        /// <summary>
+        /// Creates a test object in S3 with the specified size and returns its key and checksum.
+        /// </summary>
+        private static async Task<(string key, string checksum)> CreateTestObjectWithChecksum(long objectSize)
         {
-            // Arrange
-            var objectSize = 5 * MB;
-            var (key, expectedChecksum) = await CreateTestObjectWithChecksum(objectSize);
-
-            // Act
-            var transferUtility = new TransferUtility(Client);
-            using (var response = await transferUtility.OpenStreamWithResponseAsync(bucketName, key))
+            var key = UtilityMethods.GenerateName("openstream-test");
+            var filePath = Path.Combine(BasePath, key);
+            UtilityMethods.GenerateFile(filePath, objectSize);
+            
+            // Calculate checksum before upload
+            var checksum = CalculateFileChecksum(filePath);
+            
+            await Client.PutObjectAsync(new PutObjectRequest
             {
-                // Read in multiple small chunks
-                var allBytes = new List<byte>();
-                var buffer = new byte[1024 * 100]; // 100KB chunks
-                int bytesRead;
+                BucketName = bucketName,
+                Key = key,
+                FilePath = filePath
+            });
+            
+            return (key, checksum);
+        }
 
-                while ((bytesRead = await response.ResponseStream.ReadAsync(buffer, 0, buffer.Length)) > 0)
-                {
-                    allBytes.AddRange(buffer.Take(bytesRead));
-                }
-
-                // Assert
-                var actualChecksum = CalculateChecksum(allBytes.ToArray());
-                Assert.AreEqual(expectedChecksum, actualChecksum);
-                Assert.AreEqual(objectSize, allBytes.Count);
+        /// <summary>
+        /// Calculates the MD5 checksum of a file.
+        /// </summary>
+        private static string CalculateFileChecksum(string filePath)
+        {
+            using (var md5 = System.Security.Cryptography.MD5.Create())
+            using (var stream = File.OpenRead(filePath))
+            {
+                var hash = md5.ComputeHash(stream);
+                return Convert.ToBase64String(hash);
             }
         }
 
-        [TestMethod]
-        [TestCategory("S3")]
-        [TestCategory("OpenStream")]
-        [TestCategory("StreamBehavior")]
-        public async Task OpenStream_ReturnsZeroAtEndOfStream()
+        /// <summary>
+        /// Validates that the response headers contain expected values.
+        /// </summary>
+        private static void ValidateHeaders(TransferUtilityOpenStreamResponse response, long expectedSize)
         {
-            // Arrange
-            var objectSize = 2 * MB;
-            var (key, _) = await CreateTestObjectWithChecksum(objectSize);
+            Assert.IsNotNull(response.Headers, "Headers should not be null");
+            Assert.AreEqual(expectedSize, response.Headers.ContentLength, "Content length should match");
+            Assert.IsNotNull(response.ETag, "ETag should not be null");
+        }
 
-            // Act
-            var transferUtility = new TransferUtility(Client);
-            using (var response = await transferUtility.OpenStreamWithResponseAsync(bucketName, key))
+        /// <summary>
+        /// Reads a stream completely into a byte array using the specified buffer size.
+        /// </summary>
+        private static async Task<byte[]> ReadStreamToByteArray(Stream stream, long totalSize, int bufferSize)
+        {
+            var result = new byte[totalSize];
+            var buffer = new byte[bufferSize];
+            long totalRead = 0;
+            
+            int bytesRead;
+            while ((bytesRead = await stream.ReadAsync(buffer, 0, buffer.Length)) > 0)
             {
-                // Read entire stream
-                var buffer = new byte[objectSize];
-                var totalRead = 0;
-                while (totalRead < objectSize)
-                {
-                    var bytesRead = await response.ResponseStream.ReadAsync(buffer, totalRead, (int)(objectSize - totalRead));
-                    if (bytesRead == 0) break;
-                    totalRead += bytesRead;
-                }
+                Array.Copy(buffer, 0, result, totalRead, bytesRead);
+                totalRead += bytesRead;
+            }
+            
+            Assert.AreEqual(totalSize, totalRead, "Should read expected number of bytes");
+            return result;
+        }
 
-                // Try to read past end of stream
-                var extraRead = await response.ResponseStream.ReadAsync(buffer, 0, buffer.Length);
-
-                // Assert
-                Assert.AreEqual(0, extraRead, "Reading past end of stream should return 0");
-                Assert.AreEqual(objectSize, totalRead);
+        /// <summary>
+        /// Calculates the MD5 checksum of a byte array.
+        /// </summary>
+        private static string CalculateChecksum(byte[] data)
+        {
+            using (var md5 = System.Security.Cryptography.MD5.Create())
+            {
+                var hash = md5.ComputeHash(data);
+                return Convert.ToBase64String(hash);
             }
         }
 

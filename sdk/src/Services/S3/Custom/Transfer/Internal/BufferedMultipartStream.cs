@@ -109,14 +109,11 @@ namespace Amazon.S3.Transfer.Internal
 
             try
             {
-                // Step 1: Discover download strategy (single-part vs multipart)
                 _discoveryResult = await _downloadCoordinator.DiscoverDownloadStrategyAsync(cancellationToken)
                     .ConfigureAwait(false);
                 
-                // Step 2: Create stream manager
                 _streamHandler = new MultipartStreamHandler(_partBufferManager);
                 
-                // Step 3: Start downloads (coordinator handles both single-part and multipart)
                 await _downloadCoordinator.StartDownloadsAsync(_discoveryResult, cancellationToken)
                     .ConfigureAwait(false);
                 
