@@ -47,9 +47,9 @@ namespace Amazon.S3.Transfer.Internal
         Task AddBufferAsync(StreamPartBuffer buffer, CancellationToken cancellationToken);
         
         /// <summary>
-        /// Reads buffered data from ArrayPool buffers.
+        /// Reads data from the buffer manager. Automatically handles sequential part consumption
+        /// and reads across part boundaries to fill the buffer when possible, matching standard Stream.Read() behavior.
         /// </summary>
-        /// <param name="partNumber">The part number to read.</param>
         /// <param name="buffer">The buffer to read data into.</param>
         /// <param name="offset">The offset in the buffer.</param>
         /// <param name="count">The maximum number of bytes to read.</param>
@@ -58,7 +58,7 @@ namespace Amazon.S3.Transfer.Internal
         /// A task whose result contains the number of bytes read.
         /// Returns 0 bytes read when end of stream is reached.
         /// </returns>
-        Task<int> ReadPartAsync(int partNumber, byte[] buffer, int offset, int count, CancellationToken cancellationToken);
+        Task<int> ReadAsync(byte[] buffer, int offset, int count, CancellationToken cancellationToken);
         
         /// <summary>
         /// Releases buffer space to allow new parts to be downloaded.

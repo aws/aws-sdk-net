@@ -103,7 +103,7 @@ namespace Amazon.S3.Transfer.Internal
             await AddDataSourceAsync(bufferedSource, cancellationToken).ConfigureAwait(false);
         }
 
-        public async Task<int> ReadPartAsync(int requestedPartNumber, byte[] buffer, int offset, int count, CancellationToken cancellationToken)
+        public async Task<int> ReadAsync(byte[] buffer, int offset, int count, CancellationToken cancellationToken)
         {
             ThrowIfDisposed();
             
@@ -116,20 +116,10 @@ namespace Amazon.S3.Transfer.Internal
             if (offset + count > buffer.Length)
                 throw new ArgumentException("Offset and count exceed buffer bounds");
 
-            // Validate sequential access
-            lock (_lockObject)
-            {
-                if (requestedPartNumber != _nextExpectedPartNumber)
-                {
-                    throw new InvalidOperationException(
-                        $"Requested part {requestedPartNumber} but expected part {_nextExpectedPartNumber}. Parts must be consumed sequentially.");
-                }
-            }
-
             int totalBytesRead = 0;
             
             // Keep reading until buffer is full or we reach true EOF
-            // Note: We Read across part boundaries to fill the buffer completely, matching standard Stream.Read() behavior
+            // Note: We read across part boundaries to fill the buffer completely, matching standard Stream.Read() behavior
             while (totalBytesRead < count)
             {
                 var (bytesRead, shouldContinue) = await ReadFromCurrentPartAsync(

@@ -38,7 +38,6 @@ namespace Amazon.S3.Transfer.Internal
         private readonly IPartBufferManager _partBufferManager;
         private readonly BufferedDownloadConfiguration _config;
         
-        private IStreamHandler _streamHandler;
         private bool _initialized = false;
         private bool _disposed = false;
         private DownloadDiscoveryResult _discoveryResult;
@@ -110,8 +109,6 @@ namespace Amazon.S3.Transfer.Internal
                 _discoveryResult = await _downloadCoordinator.DiscoverDownloadStrategyAsync(cancellationToken)
                     .ConfigureAwait(false);
                 
-                _streamHandler = new MultipartStreamHandler(_partBufferManager);
-                
                 await _downloadCoordinator.StartDownloadsAsync(_discoveryResult, cancellationToken)
                     .ConfigureAwait(false);
                 
@@ -120,8 +117,6 @@ namespace Amazon.S3.Transfer.Internal
             catch (Exception)
             {
                 // Clean up on initialization failure
-                _streamHandler?.Dispose();
-                _streamHandler = null;
                 throw;
             }
         }
@@ -143,8 +138,7 @@ namespace Amazon.S3.Transfer.Internal
             if (offset + count > buffer.Length)
                 throw new ArgumentException("Offset and count exceed buffer bounds");
 
-            // Delegate to the appropriate stream handler
-            var bytesRead = await _streamHandler.ReadAsync(buffer, offset, count, cancellationToken)
+            var bytesRead = await _partBufferManager.ReadAsync(buffer, offset, count, cancellationToken)
                 .ConfigureAwait(false);
             
             return bytesRead;
@@ -198,10 +192,6 @@ namespace Amazon.S3.Transfer.Internal
             {
                 try
                 {
-                    // Dispose stream handler
-                    _streamHandler?.Dispose();
-                    _streamHandler = null;
-                    
                     // Dispose modular dependencies
                     _downloadCoordinator?.Dispose();
                     _partBufferManager?.Dispose();

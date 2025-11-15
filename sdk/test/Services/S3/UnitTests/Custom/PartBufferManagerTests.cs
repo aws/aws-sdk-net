@@ -82,7 +82,7 @@ namespace AWSSDK.UnitTests
 
                 // Read part 1 completely
                 byte[] readBuffer = new byte[512];
-                await manager.ReadPartAsync(1, readBuffer, 0, 512, CancellationToken.None);
+                await manager.ReadAsync(readBuffer, 0, 512, CancellationToken.None);
 
                 // Act & Assert - Should advance to part 2
                 Assert.AreEqual(2, manager.NextExpectedPartNumber);
@@ -245,7 +245,7 @@ namespace AWSSDK.UnitTests
 
                 // Assert - Should be able to read from part 1
                 byte[] readBuffer = new byte[512];
-                int bytesRead = await manager.ReadPartAsync(1, readBuffer, 0, 512, CancellationToken.None);
+                int bytesRead = await manager.ReadAsync(readBuffer, 0, 512, CancellationToken.None);
                 Assert.AreEqual(512, bytesRead);
             }
             finally
@@ -288,7 +288,7 @@ namespace AWSSDK.UnitTests
                 var readTask = Task.Run(async () =>
                 {
                     byte[] readBuffer = new byte[512];
-                    return await manager.ReadPartAsync(1, readBuffer, 0, 512, CancellationToken.None);
+                    return await manager.ReadAsync(readBuffer, 0, 512, CancellationToken.None);
                 });
 
                 // Give read task time to start waiting
@@ -331,7 +331,7 @@ namespace AWSSDK.UnitTests
 
                 // Assert - Should be able to read from part 1
                 byte[] readBuffer = new byte[512];
-                int bytesRead = await manager.ReadPartAsync(1, readBuffer, 0, 512, CancellationToken.None);
+                int bytesRead = await manager.ReadAsync(readBuffer, 0, 512, CancellationToken.None);
                 Assert.AreEqual(512, bytesRead);
             }
             finally
@@ -395,10 +395,10 @@ namespace AWSSDK.UnitTests
 
         #endregion
 
-        #region ReadPartAsync Tests - Sequential Access
+        #region ReadAsync Tests - Sequential Access
 
         [TestMethod]
-        public async Task ReadPartAsync_WithCorrectPartNumber_ReadsData()
+        public async Task ReadAsync_ReadsDataSequentially()
         {
             // Arrange
             var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
@@ -415,7 +415,7 @@ namespace AWSSDK.UnitTests
 
                 // Act
                 byte[] readBuffer = new byte[512];
-                int bytesRead = await manager.ReadPartAsync(1, readBuffer, 0, 512, CancellationToken.None);
+                int bytesRead = await manager.ReadAsync(readBuffer, 0, 512, CancellationToken.None);
 
                 // Assert
                 Assert.AreEqual(512, bytesRead);
@@ -428,34 +428,7 @@ namespace AWSSDK.UnitTests
         }
 
         [TestMethod]
-        [ExpectedException(typeof(InvalidOperationException))]
-        public async Task ReadPartAsync_WithWrongPartNumber_ThrowsInvalidOperationException()
-        {
-            // Arrange
-            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
-            var manager = new PartBufferManager(config);
-
-            try
-            {
-                // Add part 2 (but expecting part 1)
-                byte[] testBuffer = ArrayPool<byte>.Shared.Rent(512);
-                var partBuffer = new StreamPartBuffer(2, testBuffer, 512);
-                await manager.AddBufferAsync(partBuffer, CancellationToken.None);
-
-                // Act - Request part 2 when expecting part 1
-                byte[] readBuffer = new byte[512];
-                await manager.ReadPartAsync(2, readBuffer, 0, 512, CancellationToken.None);
-
-                // Assert - ExpectedException
-            }
-            finally
-            {
-                manager.Dispose();
-            }
-        }
-
-        [TestMethod]
-        public async Task ReadPartAsync_AdvancesNextExpectedPartNumber()
+        public async Task ReadAsync_AdvancesNextExpectedPartNumber()
         {
             // Arrange
             var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
@@ -470,7 +443,7 @@ namespace AWSSDK.UnitTests
 
                 // Read part 1 completely
                 byte[] readBuffer = new byte[512];
-                await manager.ReadPartAsync(1, readBuffer, 0, 512, CancellationToken.None);
+                await manager.ReadAsync(readBuffer, 0, 512, CancellationToken.None);
 
                 // Assert
                 Assert.AreEqual(2, manager.NextExpectedPartNumber);
@@ -483,11 +456,11 @@ namespace AWSSDK.UnitTests
 
         #endregion
 
-        #region ReadPartAsync Tests - Parameter Validation
+        #region ReadAsync Tests - Parameter Validation
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentNullException))]
-        public async Task ReadPartAsync_WithNullBuffer_ThrowsArgumentNullException()
+        public async Task ReadAsync_WithNullBuffer_ThrowsArgumentNullException()
         {
             // Arrange
             var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
@@ -496,7 +469,7 @@ namespace AWSSDK.UnitTests
             try
             {
                 // Act
-                await manager.ReadPartAsync(1, null, 0, 512, CancellationToken.None);
+                await manager.ReadAsync(null, 0, 512, CancellationToken.None);
 
                 // Assert - ExpectedException
             }
@@ -508,7 +481,7 @@ namespace AWSSDK.UnitTests
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentOutOfRangeException))]
-        public async Task ReadPartAsync_WithNegativeOffset_ThrowsArgumentOutOfRangeException()
+        public async Task ReadAsync_WithNegativeOffset_ThrowsArgumentOutOfRangeException()
         {
             // Arrange
             var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
@@ -518,7 +491,7 @@ namespace AWSSDK.UnitTests
             try
             {
                 // Act
-                await manager.ReadPartAsync(1, readBuffer, -1, 512, CancellationToken.None);
+                await manager.ReadAsync(readBuffer, -1, 512, CancellationToken.None);
 
                 // Assert - ExpectedException
             }
@@ -530,7 +503,7 @@ namespace AWSSDK.UnitTests
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentOutOfRangeException))]
-        public async Task ReadPartAsync_WithNegativeCount_ThrowsArgumentOutOfRangeException()
+        public async Task ReadAsync_WithNegativeCount_ThrowsArgumentOutOfRangeException()
         {
             // Arrange
             var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
@@ -540,7 +513,7 @@ namespace AWSSDK.UnitTests
             try
             {
                 // Act
-                await manager.ReadPartAsync(1, readBuffer, 0, -1, CancellationToken.None);
+                await manager.ReadAsync(readBuffer, 0, -1, CancellationToken.None);
 
                 // Assert - ExpectedException
             }
@@ -552,7 +525,7 @@ namespace AWSSDK.UnitTests
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentException))]
-        public async Task ReadPartAsync_WithOffsetCountExceedingBounds_ThrowsArgumentException()
+        public async Task ReadAsync_WithOffsetCountExceedingBounds_ThrowsArgumentException()
         {
             // Arrange
             var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
@@ -562,7 +535,7 @@ namespace AWSSDK.UnitTests
             try
             {
                 // Act
-                await manager.ReadPartAsync(1, readBuffer, 400, 200, CancellationToken.None);
+                await manager.ReadAsync(readBuffer, 400, 200, CancellationToken.None);
 
                 // Assert - ExpectedException
             }
@@ -574,10 +547,10 @@ namespace AWSSDK.UnitTests
 
         #endregion
 
-        #region ReadPartAsync Tests - Waiting
+        #region ReadAsync Tests - Waiting
 
         [TestMethod]
-        public async Task ReadPartAsync_WaitsForPartAvailability()
+        public async Task ReadAsync_WaitsForPartAvailability()
         {
             // Arrange
             var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
@@ -589,7 +562,7 @@ namespace AWSSDK.UnitTests
                 var readTask = Task.Run(async () =>
                 {
                     byte[] readBuffer = new byte[512];
-                    return await manager.ReadPartAsync(1, readBuffer, 0, 512, CancellationToken.None);
+                    return await manager.ReadAsync(readBuffer, 0, 512, CancellationToken.None);
                 });
 
                 // Give read task time to start waiting
@@ -612,7 +585,7 @@ namespace AWSSDK.UnitTests
         }
 
         [TestMethod]
-        public async Task ReadPartAsync_WhenDownloadComplete_ReturnsZero()
+        public async Task ReadAsync_WhenDownloadComplete_ReturnsZero()
         {
             // Arrange
             var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
@@ -625,7 +598,7 @@ namespace AWSSDK.UnitTests
 
                 // Act
                 byte[] readBuffer = new byte[512];
-                int bytesRead = await manager.ReadPartAsync(1, readBuffer, 0, 512, CancellationToken.None);
+                int bytesRead = await manager.ReadAsync(readBuffer, 0, 512, CancellationToken.None);
 
                 // Assert
                 Assert.AreEqual(0, bytesRead);
@@ -638,7 +611,7 @@ namespace AWSSDK.UnitTests
 
         [TestMethod]
         [ExpectedException(typeof(InvalidOperationException))]
-        public async Task ReadPartAsync_WhenDownloadFailed_ThrowsException()
+        public async Task ReadAsync_WhenDownloadFailed_ThrowsException()
         {
             // Arrange
             var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
@@ -652,7 +625,7 @@ namespace AWSSDK.UnitTests
 
                 // Act
                 byte[] readBuffer = new byte[512];
-                await manager.ReadPartAsync(1, readBuffer, 0, 512, CancellationToken.None);
+                await manager.ReadAsync(readBuffer, 0, 512, CancellationToken.None);
 
                 // Assert - ExpectedException
             }
@@ -664,10 +637,10 @@ namespace AWSSDK.UnitTests
 
         #endregion
 
-        #region ReadPartAsync Tests - Cross-Part Boundary Reading
+        #region ReadAsync Tests - Cross-Part Boundary Reading
 
         [TestMethod]
-        public async Task ReadPartAsync_ReadingAcrossPartBoundary_FillsBuffer()
+        public async Task ReadAsync_ReadingAcrossPartBoundary_FillsBuffer()
         {
             // Arrange
             var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
@@ -691,7 +664,7 @@ namespace AWSSDK.UnitTests
 
                 // Act - Request 150 bytes (spans both parts)
                 byte[] readBuffer = new byte[150];
-                int bytesRead = await manager.ReadPartAsync(1, readBuffer, 0, 150, CancellationToken.None);
+                int bytesRead = await manager.ReadAsync(readBuffer, 0, 150, CancellationToken.None);
 
                 // Assert
                 Assert.AreEqual(150, bytesRead);
@@ -712,7 +685,7 @@ namespace AWSSDK.UnitTests
         }
 
         [TestMethod]
-        public async Task ReadPartAsync_MultiplePartsInSingleRead_AdvancesCorrectly()
+        public async Task ReadAsync_MultiplePartsInSingleRead_AdvancesCorrectly()
         {
             // Arrange
             var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
@@ -732,7 +705,7 @@ namespace AWSSDK.UnitTests
 
                 // Act - Read 150 bytes (all 3 parts)
                 byte[] readBuffer = new byte[150];
-                int bytesRead = await manager.ReadPartAsync(1, readBuffer, 0, 150, CancellationToken.None);
+                int bytesRead = await manager.ReadAsync(readBuffer, 0, 150, CancellationToken.None);
 
                 // Assert
                 Assert.AreEqual(150, bytesRead);
@@ -745,7 +718,7 @@ namespace AWSSDK.UnitTests
         }
 
         [TestMethod]
-        public async Task ReadPartAsync_PartCompletes_AdvancesToNextPart()
+        public async Task ReadAsync_PartCompletes_AdvancesToNextPart()
         {
             // Arrange
             var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
@@ -760,7 +733,7 @@ namespace AWSSDK.UnitTests
 
                 // Read part 1 completely
                 byte[] readBuffer = new byte[100];
-                await manager.ReadPartAsync(1, readBuffer, 0, 100, CancellationToken.None);
+                await manager.ReadAsync(readBuffer, 0, 100, CancellationToken.None);
 
                 // Assert - Should advance to part 2
                 Assert.AreEqual(2, manager.NextExpectedPartNumber);
@@ -771,7 +744,7 @@ namespace AWSSDK.UnitTests
                 await manager.AddBufferAsync(partBuffer2, CancellationToken.None);
 
                 // Read part 2
-                int bytesRead = await manager.ReadPartAsync(2, readBuffer, 0, 100, CancellationToken.None);
+                int bytesRead = await manager.ReadAsync(readBuffer, 0, 100, CancellationToken.None);
 
                 // Assert
                 Assert.AreEqual(100, bytesRead);
@@ -784,7 +757,7 @@ namespace AWSSDK.UnitTests
         }
 
         [TestMethod]
-        public async Task ReadPartAsync_EmptyPart_ContinuesToNextPart()
+        public async Task ReadAsync_EmptyPart_ContinuesToNextPart()
         {
             // Arrange
             var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
@@ -806,7 +779,7 @@ namespace AWSSDK.UnitTests
 
                 // Act - Try to read 100 bytes starting from part 1
                 byte[] readBuffer = new byte[100];
-                int bytesRead = await manager.ReadPartAsync(1, readBuffer, 0, 100, CancellationToken.None);
+                int bytesRead = await manager.ReadAsync(readBuffer, 0, 100, CancellationToken.None);
 
                 // Assert - Should skip empty part 1 and read from part 2
                 Assert.AreEqual(100, bytesRead);
@@ -888,7 +861,7 @@ namespace AWSSDK.UnitTests
 
                 // Assert - Reading should return 0 (EOF)
                 byte[] readBuffer = new byte[512];
-                int bytesRead = await manager.ReadPartAsync(1, readBuffer, 0, 512, CancellationToken.None);
+                int bytesRead = await manager.ReadAsync(readBuffer, 0, 512, CancellationToken.None);
                 Assert.AreEqual(0, bytesRead);
             }
             finally
@@ -914,7 +887,7 @@ namespace AWSSDK.UnitTests
                 byte[] readBuffer = new byte[512];
                 var ex = await Assert.ThrowsExceptionAsync<InvalidOperationException>(async () =>
                 {
-                    await manager.ReadPartAsync(1, readBuffer, 0, 512, CancellationToken.None);
+                    await manager.ReadAsync(readBuffer, 0, 512, CancellationToken.None);
                 });
 
                 Assert.IsNotNull(ex.InnerException);
@@ -939,7 +912,7 @@ namespace AWSSDK.UnitTests
                 var readTask = Task.Run(async () =>
                 {
                     byte[] readBuffer = new byte[512];
-                    return await manager.ReadPartAsync(1, readBuffer, 0, 512, CancellationToken.None);
+                    return await manager.ReadAsync(readBuffer, 0, 512, CancellationToken.None);
                 });
 
                 // Give read task time to start waiting
