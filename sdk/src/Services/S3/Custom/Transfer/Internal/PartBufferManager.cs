@@ -67,17 +67,7 @@ namespace Amazon.S3.Transfer.Internal
         public async Task WaitForBufferSpaceAsync(CancellationToken cancellationToken)
         {
             ThrowIfDisposed();
-            
-            try
-            {
-                await _bufferSpaceAvailable.WaitAsync(cancellationToken).ConfigureAwait(false);
-            }
-            catch (TaskCanceledException ex)
-            {
-                // TODO
-                // Convert TaskCanceledException to OperationCanceledException for consistent API
-                throw new OperationCanceledException("The operation was canceled.", ex, cancellationToken);
-            }
+            await _bufferSpaceAvailable.WaitAsync(cancellationToken).ConfigureAwait(false);
         }
 
         public Task AddDataSourceAsync(IPartDataSource dataSource, CancellationToken cancellationToken)

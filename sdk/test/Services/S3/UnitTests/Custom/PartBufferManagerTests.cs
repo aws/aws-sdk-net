@@ -204,10 +204,18 @@ namespace AWSSDK.UnitTests
                 cts.Cancel();
 
                 // Act & Assert
-                await Assert.ThrowsExceptionAsync<OperationCanceledException>(async () =>
+                // Use try-catch to accept both OperationCanceledException and TaskCanceledException
+                // (TaskCanceledException derives from OperationCanceledException)
+                try
                 {
                     await manager.WaitForBufferSpaceAsync(cts.Token);
-                });
+                    Assert.Fail("Expected OperationCanceledException was not thrown");
+                }
+                catch (OperationCanceledException ex)
+                {
+                    // Success - accepts both OperationCanceledException and derived types like TaskCanceledException
+                    Assert.AreEqual(cts.Token, ex.CancellationToken, "CancellationToken should match the provided token");
+                }
             }
             finally
             {
