@@ -28,9 +28,8 @@ using System.Threading.Tasks;
 namespace Amazon.S3.Transfer.Internal
 {
     /// <summary>
-    /// Simplified part buffer manager using unified data source pattern.
-    /// Treats both direct streaming and buffered parts identically through IPartDataSource abstraction.
-    /// Dramatically reduces complexity while preserving all performance optimizations.
+    /// Manages part buffers with ArrayPool lifecycle and concurrency control.
+    /// Uses IPartDataSource for uniform handling of streaming and buffered data.
     /// </summary>
     internal class PartBufferManager : IPartBufferManager
     {
@@ -161,13 +160,9 @@ namespace Amazon.S3.Transfer.Internal
         }
 
         /// <summary>
-        /// Reads data from the current expected part, handling part availability, completion, and cleanup.
+        /// Reads from the current expected part. Handles part availability, completion, and cleanup.
+        /// Returns (bytesRead, shouldContinue) where shouldContinue indicates if more data is available.
         /// </summary>
-        /// <returns>
-        /// A tuple containing:
-        /// - bytesRead: The number of bytes read from the current part
-        /// - shouldContinue: Whether reading should continue (false indicates EOF or buffer full from a non-complete part)
-        /// </returns>
         private async Task<(int bytesRead, bool shouldContinue)> ReadFromCurrentPartAsync(
             byte[] buffer, 
             int offset, 

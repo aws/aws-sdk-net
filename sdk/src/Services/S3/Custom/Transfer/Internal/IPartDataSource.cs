@@ -27,13 +27,11 @@ namespace Amazon.S3.Transfer.Internal
 {
     /// <summary>
     /// Interface for buffered part data sources.
-    /// Provides a consistent way to read downloaded part data from ArrayPool buffers.
     /// </summary>
     internal interface IPartDataSource : IDisposable
     {
         /// <summary>
-        /// Reads data from this source into the provided buffer.
-        /// Copies from the ArrayPool buffer to the destination buffer.
+        /// Reads data from the ArrayPool buffer into the destination buffer.
         /// </summary>
         /// <param name="buffer">Destination buffer</param>
         /// <param name="offset">Offset in destination buffer</param>
@@ -43,7 +41,7 @@ namespace Amazon.S3.Transfer.Internal
         Task<int> ReadAsync(byte[] buffer, int offset, int count, CancellationToken cancellationToken);
 
         /// <summary>
-        /// Indicates if this data source has been fully consumed and can be disposed.
+        /// Whether this data source has been fully consumed.
         /// </summary>
         bool IsComplete { get; }
 

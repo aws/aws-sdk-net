@@ -25,31 +25,26 @@ namespace Amazon.S3.Transfer.Internal
 {
     /// <summary>
     /// Configuration settings for multipart download streams.
-    /// Encapsulates all configuration parameters needed by the stream components.
     /// </summary>
     internal class StreamConfiguration
     {
         /// <summary>
-        /// Maximum number of concurrent HTTP requests for downloading parts.
-        /// Controls download parallelism and resource usage.
+        /// Maximum concurrent HTTP requests for downloading parts.
         /// </summary>
         public int ConcurrentServiceRequests { get; set; }
         
         /// <summary>
-        /// Maximum number of parts to keep in memory simultaneously.
-        /// Controls memory usage by limiting buffered parts.
+        /// Maximum parts to keep in memory simultaneously.
         /// </summary>
         public int MaxInMemoryParts { get; set; }
         
         /// <summary>
-        /// Target size for each part in bytes.
-        /// Used for buffer allocation and part range calculations.
+        /// Target part size in bytes.
         /// </summary>
         public long TargetPartSizeBytes { get; set; }
         
         /// <summary>
-        /// Buffer size used for optimal I/O operations.
-        /// Controls the chunk size for reading from S3 response streams.
+        /// Buffer size for I/O operations.
         /// </summary>
         public int BufferSize { get; set; }
         

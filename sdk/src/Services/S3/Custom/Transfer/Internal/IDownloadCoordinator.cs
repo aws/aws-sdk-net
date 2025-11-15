@@ -27,14 +27,12 @@ using Amazon.S3.Model;
 namespace Amazon.S3.Transfer.Internal
 {
     /// <summary>
-    /// Coordinates multipart download orchestration including discovery, concurrent downloads,
-    /// and progress reporting. Separates download coordination logic from stream management.
+    /// Coordinates multipart downloads including discovery, concurrent downloads, and progress reporting.
     /// </summary>
     internal interface IDownloadCoordinator : IDisposable
     {
         /// <summary>
-        /// Discover whether the object requires single-part or multipart downloading.
-        /// Performs HEAD request or similar to determine object size and part strategy.
+        /// Discovers whether the object requires single-part or multipart downloading.
         /// </summary>
         /// <param name="cancellationToken">A token to cancel the discovery operation.</param>
         /// <returns>
@@ -44,9 +42,7 @@ namespace Amazon.S3.Transfer.Internal
         Task<DownloadDiscoveryResult> DiscoverDownloadStrategyAsync(CancellationToken cancellationToken);
 
         /// <summary>
-        /// Initialize and start concurrent multipart downloads.
-        /// Manages HTTP concurrency, part range calculations, and download orchestration.
-        /// Data handling is delegated to the IPartDataHandler provided during construction.
+        /// Starts concurrent downloads with HTTP concurrency control and part range calculations.
         /// </summary>
         /// <param name="discoveryResult">Results from the discovery phase.</param>
         /// <param name="cancellationToken">A token to cancel the download operation.</param>
@@ -54,20 +50,18 @@ namespace Amazon.S3.Transfer.Internal
         Task StartDownloadsAsync(DownloadDiscoveryResult discoveryResult, CancellationToken cancellationToken);
 
         /// <summary>
-        /// Gets the exception that occurred during downloads, if applicable.
+        /// Exception that occurred during downloads, if any.
         /// </summary>
         Exception DownloadException { get; }
     }
 
     /// <summary>
-    /// Results from the download discovery phase.
-    /// Contains metadata needed to determine download strategy.
+    /// Download discovery results with metadata for determining download strategy.
     /// </summary>
     internal class DownloadDiscoveryResult
     {
         /// <summary>
-        /// Total number of parts needed for the download.
-        /// 1 indicates single-part download, >1 indicates multipart.
+        /// Total parts needed (1 = single-part, >1 = multipart).
         /// </summary>
         public int TotalParts { get; set; }
 
@@ -77,16 +71,12 @@ namespace Amazon.S3.Transfer.Internal
         public long ObjectSize { get; set; }
 
         /// <summary>
-        /// Contains the GetObjectResponse from the discovery phase with its ResponseStream.
-        /// For single-part downloads (TotalParts == 1), this contains the complete response.
-        /// For multipart downloads, this contains the first part response.
-        /// The ResponseStream will be buffered in StartDownloadsAsync.
-        /// Used for extracting metadata (ETag, Headers, ServerSideEncryption, etc.) in all scenarios.
+        /// GetObjectResponse from discovery with ResponseStream (complete for single-part, first part for multipart).
         /// </summary>
         public GetObjectResponse InitialResponse { get; set; }
 
         /// <summary>
-        /// Indicates if this is a single-part download (TotalParts == 1).
+        /// Whether this is a single-part download.
         /// </summary>
         public bool IsSinglePart => TotalParts == 1;
     }

@@ -31,8 +31,8 @@ using Amazon.S3.Model;
 namespace Amazon.S3.Transfer.Internal
 {
     /// <summary>
-    /// Coordinates multipart download orchestration including discovery, concurrent downloads,
-    /// and progress reporting. Supports both PART and RANGE strategies following SEP specification.
+    /// Coordinates multipart downloads using PART or RANGE strategies per SEP spec.
+    /// Handles discovery, concurrent downloads, and progress reporting.
     /// </summary>
     internal class MultipartDownloadCoordinator : IDownloadCoordinator
     {

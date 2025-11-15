@@ -27,7 +27,6 @@ namespace Amazon.S3.Transfer.Internal
 {
     /// <summary>
     /// Abstraction for different streaming strategies (single-part vs multipart).
-    /// Enables clean separation between stream orchestration and actual data reading logic.
     /// </summary>
     internal interface IStreamHandler : IDisposable
     {

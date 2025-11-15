@@ -28,22 +28,18 @@ namespace Amazon.S3.Transfer.Internal
 {
     /// <summary>
     /// Manages part buffers with ArrayPool lifecycle and concurrency control.
-    /// Handles smart sequential signaling and buffer space management to ensure
-    /// efficient memory usage during multipart downloads.
     /// </summary>
     internal interface IPartBufferManager : IDisposable
     {
         /// <summary>
-        /// Wait for available buffer space before downloading a new part.
-        /// This ensures we don't exceed the configured maximum number of parts in memory.
+        /// Waits for available buffer space before downloading a new part.
         /// </summary>
         /// <param name="cancellationToken">A token to cancel the wait operation.</param>
         /// <returns>A task that completes when buffer space becomes available.</returns>
         Task WaitForBufferSpaceAsync(CancellationToken cancellationToken);
         
         /// <summary>
-        /// Add a downloaded part buffer and signal readers if it enables sequential reading.
-        /// Uses smart signaling to only notify readers when the next expected part arrives.
+        /// Adds a downloaded part buffer and signals readers when next expected part arrives.
         /// </summary>
         /// <param name="buffer">The downloaded part buffer to add.</param>
         /// <param name="cancellationToken">A token to cancel the operation.</param>
@@ -51,8 +47,7 @@ namespace Amazon.S3.Transfer.Internal
         Task AddBufferAsync(StreamPartBuffer buffer, CancellationToken cancellationToken);
         
         /// <summary>
-        /// Read a part from the buffer manager.
-        /// This method handles buffered reads from ArrayPool buffers.
+        /// Reads buffered data from ArrayPool buffers.
         /// </summary>
         /// <param name="partNumber">The part number to read.</param>
         /// <param name="buffer">The buffer to read data into.</param>
@@ -66,19 +61,17 @@ namespace Amazon.S3.Transfer.Internal
         Task<int> ReadPartAsync(int partNumber, byte[] buffer, int offset, int count, CancellationToken cancellationToken);
         
         /// <summary>
-        /// Release buffer space when a consumer finishes with a part.
-        /// This allows new parts to be downloaded by freeing up buffer slots.
+        /// Releases buffer space to allow new parts to be downloaded.
         /// </summary>
         void ReleaseBufferSpace();
         
         /// <summary>
-        /// Gets the next expected part number in the sequence.
-        /// Used for coordination between downloaders and readers.
+        /// Next expected part number in the sequence.
         /// </summary>
         int NextExpectedPartNumber { get; }
         
         /// <summary>
-        /// Mark that downloads have completed to handle end-of-stream scenarios.
+        /// Marks download completion and handles end-of-stream.
         /// </summary>
         /// <param name="exception">Any exception that occurred during downloads, or null if successful.</param>
         void MarkDownloadComplete(Exception exception);

@@ -27,8 +27,7 @@ using System.Threading.Tasks;
 namespace Amazon.S3.Transfer.Internal
 {
     /// <summary>
-    /// Stream handler for multipart downloads that coordinates with buffer manager to provide sequential reading.
-    /// Implements the direct streaming optimization to eliminate unnecessary ArrayPool buffering when possible.
+    /// Stream handler for multipart downloads using the buffer manager for sequential reads.
     /// </summary>
     internal class MultipartStreamHandler : IStreamHandler
     {
