@@ -29,18 +29,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
     public class TransferUtilityOpenStreamTests : TestBase<AmazonS3Client>
     {
         private static readonly long MB = 1024 * 1024;
-        private static readonly string BasePath = @"c:\temp\test\openstream\";
         private static string bucketName;
 
         [ClassInitialize()]
         public static void ClassInitialize(TestContext testContext)
         {
             bucketName = S3TestUtils.CreateBucketWithWait(Client);
-            
-            if (!Directory.Exists(BasePath))
-            {
-                Directory.CreateDirectory(BasePath);
-            }
         }
 
         [ClassCleanup]
@@ -48,11 +42,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         {
             AmazonS3Util.DeleteS3BucketWithObjects(Client, bucketName);
             BaseClean();
-            
-            if (Directory.Exists(BasePath))
-            {
-                Directory.Delete(BasePath, true);
-            }
         }
 
         #region Single-Part Tests
@@ -165,7 +154,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             // Arrange
             var objectSize = 10 * MB;
             var key = UtilityMethods.GenerateName("metadata-test");
-            var filePath = Path.Combine(BasePath, key);
+            var filePath = Path.Combine(Path.GetTempPath(), key);
             UtilityMethods.GenerateFile(filePath, objectSize);
 
             var putRequest = new PutObjectRequest
@@ -208,7 +197,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             // Arrange
             var objectSize = 15 * MB;
             var key = UtilityMethods.GenerateName("etag-test");
-            var filePath = Path.Combine(BasePath, key);
+            var filePath = Path.Combine(Path.GetTempPath(), key);
             UtilityMethods.GenerateFile(filePath, objectSize);
 
             await Client.PutObjectAsync(new PutObjectRequest
@@ -245,7 +234,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         private static async Task<(string key, string checksum)> CreateTestObjectWithChecksum(long objectSize)
         {
             var key = UtilityMethods.GenerateName("openstream-test");
-            var filePath = Path.Combine(BasePath, key);
+            var filePath = Path.Combine(Path.GetTempPath(), key);
             UtilityMethods.GenerateFile(filePath, objectSize);
             
             // Calculate checksum before upload
