@@ -30,51 +30,48 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteIntegrationTableProperties operation.
-    /// Deletes the table properties that have been created for the tables that need to be
-    /// replicated.
+    /// A filter for integration resource properties.
     /// </summary>
-    public partial class DeleteIntegrationTablePropertiesRequest : AmazonGlueRequest
+    public partial class IntegrationResourcePropertyFilter
     {
-        private string _resourceArn;
-        private string _tableName;
+        private string _name;
+        private List<string> _values = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
-        /// Gets and sets the property ResourceArn. 
+        /// Gets and sets the property Name. 
         /// <para>
-        /// The connection ARN of the source, or the database ARN of the target.
+        /// The name of the filter. Supported filter keys are <c>SourceArn</c> and <c>TargetArn</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=512)]
-        public string ResourceArn
+        [AWSProperty(Min=1, Max=128)]
+        public string Name
         {
-            get { return this._resourceArn; }
-            set { this._resourceArn = value; }
+            get { return this._name; }
+            set { this._name = value; }
         }
 
-        // Check to see if ResourceArn property is set
-        internal bool IsSetResourceArn()
+        // Check to see if Name property is set
+        internal bool IsSetName()
         {
-            return this._resourceArn != null;
+            return this._name != null;
         }
 
         /// <summary>
-        /// Gets and sets the property TableName. 
+        /// Gets and sets the property Values. 
         /// <para>
-        /// The name of the table to be replicated.
+        /// A list of filter values.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
-        public string TableName
+        public List<string> Values
         {
-            get { return this._tableName; }
-            set { this._tableName = value; }
+            get { return this._values; }
+            set { this._values = value; }
         }
 
-        // Check to see if TableName property is set
-        internal bool IsSetTableName()
+        // Check to see if Values property is set
+        internal bool IsSetValues()
         {
-            return this._tableName != null;
+            return this._values != null && (this._values.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

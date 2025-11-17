@@ -30,25 +30,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetIntegrationTableProperties operation.
-    /// This API is used to retrieve optional override properties for the tables that need
-    /// to be replicated. These properties can include properties for filtering and partition
-    /// for source and target tables.
+    /// Container for the parameters to the DeleteIntegrationResourceProperty operation.
+    /// This API is used for deleting the <c>ResourceProperty</c> of the Glue connection (for
+    /// the source) or Glue database ARN (for the target).
     /// </summary>
-    public partial class GetIntegrationTablePropertiesRequest : AmazonGlueRequest
+    public partial class DeleteIntegrationResourcePropertyRequest : AmazonGlueRequest
     {
         private string _resourceArn;
-        private string _tableName;
 
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the target table for which to retrieve integration
-        /// table properties. Currently, this API only supports retrieving properties for target
-        /// tables, and the provided ARN should be the ARN of the target table in the Glue Data
-        /// Catalog. Support for retrieving integration table properties for source connections
-        /// (using the connection ARN) is not yet implemented and will be added in a future release.
-        /// 
+        /// The connection ARN of the source, or the database ARN of the target.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=512)]
@@ -62,25 +55,6 @@ namespace Amazon.Glue.Model
         internal bool IsSetResourceArn()
         {
             return this._resourceArn != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property TableName. 
-        /// <para>
-        /// The name of the table to be replicated.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
-        public string TableName
-        {
-            get { return this._tableName; }
-            set { this._tableName = value; }
-        }
-
-        // Check to see if TableName property is set
-        internal bool IsSetTableName()
-        {
-            return this._tableName != null;
         }
 
     }

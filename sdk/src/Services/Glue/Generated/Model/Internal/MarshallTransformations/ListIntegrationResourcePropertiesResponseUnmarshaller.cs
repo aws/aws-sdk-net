@@ -35,9 +35,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for UpdateIntegrationResourceProperty operation
+    /// Response Unmarshaller for ListIntegrationResourceProperties operation
     /// </summary>  
-    public class UpdateIntegrationResourcePropertyResponseUnmarshaller : JsonResponseUnmarshaller
+    public class ListIntegrationResourcePropertiesResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,34 +46,22 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            UpdateIntegrationResourcePropertyResponse response = new UpdateIntegrationResourcePropertyResponse();
+            ListIntegrationResourcePropertiesResponse response = new ListIntegrationResourcePropertiesResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ResourceArn", targetDepth))
+                if (context.TestExpression("IntegrationResourcePropertyList", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<IntegrationResourceProperty, IntegrationResourcePropertyUnmarshaller>(IntegrationResourcePropertyUnmarshaller.Instance);
+                    response.IntegrationResourcePropertyList = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Marker", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.ResourceArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ResourcePropertyArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.ResourcePropertyArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("SourceProcessingProperties", targetDepth))
-                {
-                    var unmarshaller = SourceProcessingPropertiesUnmarshaller.Instance;
-                    response.SourceProcessingProperties = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("TargetProcessingProperties", targetDepth))
-                {
-                    var unmarshaller = TargetProcessingPropertiesUnmarshaller.Instance;
-                    response.TargetProcessingProperties = unmarshaller.Unmarshall(context);
+                    response.Marker = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -131,9 +119,9 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             return new AmazonGlueException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static UpdateIntegrationResourcePropertyResponseUnmarshaller _instance = new UpdateIntegrationResourcePropertyResponseUnmarshaller();        
+        private static ListIntegrationResourcePropertiesResponseUnmarshaller _instance = new ListIntegrationResourcePropertiesResponseUnmarshaller();        
 
-        internal static UpdateIntegrationResourcePropertyResponseUnmarshaller GetInstance()
+        internal static ListIntegrationResourcePropertiesResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -141,7 +129,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UpdateIntegrationResourcePropertyResponseUnmarshaller Instance
+        public static ListIntegrationResourcePropertiesResponseUnmarshaller Instance
         {
             get
             {

@@ -30,32 +30,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetIntegrationResourceProperty operation.
-    /// This API is used for fetching the <c>ResourceProperty</c> of the Glue connection (for
-    /// the source) or Glue database ARN (for the target)
+    /// This is the response object from the DeleteIntegrationResourceProperty operation.
     /// </summary>
-    public partial class GetIntegrationResourcePropertyRequest : AmazonGlueRequest
+    public partial class DeleteIntegrationResourcePropertyResponse : AmazonWebServiceResponse
     {
-        private string _resourceArn;
-
-        /// <summary>
-        /// Gets and sets the property ResourceArn. 
-        /// <para>
-        /// The connection ARN of the source, or the database ARN of the target.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=512)]
-        public string ResourceArn
-        {
-            get { return this._resourceArn; }
-            set { this._resourceArn = value; }
-        }
-
-        // Check to see if ResourceArn property is set
-        internal bool IsSetResourceArn()
-        {
-            return this._resourceArn != null;
-        }
 
     }
 }

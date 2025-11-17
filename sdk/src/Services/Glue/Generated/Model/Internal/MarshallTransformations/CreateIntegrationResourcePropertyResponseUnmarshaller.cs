@@ -58,6 +58,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     response.ResourceArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ResourcePropertyArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ResourcePropertyArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SourceProcessingProperties", targetDepth))
                 {
                     var unmarshaller = SourceProcessingPropertiesUnmarshaller.Instance;

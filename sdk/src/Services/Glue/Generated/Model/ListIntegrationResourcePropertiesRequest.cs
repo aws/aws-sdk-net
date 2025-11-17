@@ -30,43 +30,41 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeInboundIntegrations operation.
-    /// Returns a list of inbound integrations for the specified integration.
+    /// Container for the parameters to the ListIntegrationResourceProperties operation.
+    /// List integration resource properties for a single customer. It supports the filters,
+    /// maxRecords and markers.
     /// </summary>
-    public partial class DescribeInboundIntegrationsRequest : AmazonGlueRequest
+    public partial class ListIntegrationResourcePropertiesRequest : AmazonGlueRequest
     {
-        private string _integrationArn;
+        private List<IntegrationResourcePropertyFilter> _filters = AWSConfigs.InitializeCollections ? new List<IntegrationResourcePropertyFilter>() : null;
         private string _marker;
         private int? _maxRecords;
-        private string _targetArn;
 
         /// <summary>
-        /// Gets and sets the property IntegrationArn. 
+        /// Gets and sets the property Filters. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the integration.
+        /// A list of filters, supported filter Key is <c>SourceArn</c> and <c>TargetArn</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=128)]
-        public string IntegrationArn
+        public List<IntegrationResourcePropertyFilter> Filters
         {
-            get { return this._integrationArn; }
-            set { this._integrationArn = value; }
+            get { return this._filters; }
+            set { this._filters = value; }
         }
 
-        // Check to see if IntegrationArn property is set
-        internal bool IsSetIntegrationArn()
+        // Check to see if Filters property is set
+        internal bool IsSetFilters()
         {
-            return this._integrationArn != null;
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        /// A token to specify where to start paginating. This is the marker from a previously
-        /// truncated response.
+        /// This is the pagination token for next page, initial value is <c>null</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=128)]
+        [AWSProperty(Min=1, Max=1024)]
         public string Marker
         {
             get { return this._marker; }
@@ -82,7 +80,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property MaxRecords. 
         /// <para>
-        /// The total number of items to return in the output.
+        /// This is total number of items to be evaluated.
         /// </para>
         /// </summary>
         public int MaxRecords
@@ -95,25 +93,6 @@ namespace Amazon.Glue.Model
         internal bool IsSetMaxRecords()
         {
             return this._maxRecords.HasValue; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property TargetArn. 
-        /// <para>
-        /// The Amazon Resource Name (ARN) of the target resource in the integration.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=512)]
-        public string TargetArn
-        {
-            get { return this._targetArn; }
-            set { this._targetArn = value; }
-        }
-
-        // Check to see if TargetArn property is set
-        internal bool IsSetTargetArn()
-        {
-            return this._targetArn != null;
         }
 
     }

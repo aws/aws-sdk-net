@@ -35,6 +35,7 @@ namespace Amazon.Glue.Model
     public partial class CreateIntegrationResourcePropertyResponse : AmazonWebServiceResponse
     {
         private string _resourceArn;
+        private string _resourcePropertyArn;
         private SourceProcessingProperties _sourceProcessingProperties;
         private TargetProcessingProperties _targetProcessingProperties;
 
@@ -44,7 +45,7 @@ namespace Amazon.Glue.Model
         /// The connection ARN of the source, or the database ARN of the target.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Required=true, Min=1, Max=512)]
         public string ResourceArn
         {
             get { return this._resourceArn; }
@@ -55,6 +56,25 @@ namespace Amazon.Glue.Model
         internal bool IsSetResourceArn()
         {
             return this._resourceArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourcePropertyArn. 
+        /// <para>
+        /// The resource ARN created through this create API. The format is something like arn:aws:glue:&lt;region&gt;:&lt;account_id&gt;:integrationresourceproperty/*
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=512)]
+        public string ResourcePropertyArn
+        {
+            get { return this._resourcePropertyArn; }
+            set { this._resourcePropertyArn = value; }
+        }
+
+        // Check to see if ResourcePropertyArn property is set
+        internal bool IsSetResourcePropertyArn()
+        {
+            return this._resourcePropertyArn != null;
         }
 
         /// <summary>

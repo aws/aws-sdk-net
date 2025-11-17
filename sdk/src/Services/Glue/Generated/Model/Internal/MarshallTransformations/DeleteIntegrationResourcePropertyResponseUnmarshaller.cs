@@ -35,9 +35,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for UpdateIntegrationResourceProperty operation
+    /// Response Unmarshaller for DeleteIntegrationResourceProperty operation
     /// </summary>  
-    public class UpdateIntegrationResourcePropertyResponseUnmarshaller : JsonResponseUnmarshaller
+    public class DeleteIntegrationResourcePropertyResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,37 +46,8 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            UpdateIntegrationResourcePropertyResponse response = new UpdateIntegrationResourcePropertyResponse();
+            DeleteIntegrationResourcePropertyResponse response = new DeleteIntegrationResourcePropertyResponse();
 
-            context.Read();
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
-            {
-                if (context.TestExpression("ResourceArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.ResourceArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ResourcePropertyArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.ResourcePropertyArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("SourceProcessingProperties", targetDepth))
-                {
-                    var unmarshaller = SourceProcessingPropertiesUnmarshaller.Instance;
-                    response.SourceProcessingProperties = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("TargetProcessingProperties", targetDepth))
-                {
-                    var unmarshaller = TargetProcessingPropertiesUnmarshaller.Instance;
-                    response.TargetProcessingProperties = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-            }
 
             return response;
         }
@@ -131,9 +102,9 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             return new AmazonGlueException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static UpdateIntegrationResourcePropertyResponseUnmarshaller _instance = new UpdateIntegrationResourcePropertyResponseUnmarshaller();        
+        private static DeleteIntegrationResourcePropertyResponseUnmarshaller _instance = new DeleteIntegrationResourcePropertyResponseUnmarshaller();        
 
-        internal static UpdateIntegrationResourcePropertyResponseUnmarshaller GetInstance()
+        internal static DeleteIntegrationResourcePropertyResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -141,7 +112,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UpdateIntegrationResourcePropertyResponseUnmarshaller Instance
+        public static DeleteIntegrationResourcePropertyResponseUnmarshaller Instance
         {
             get
             {

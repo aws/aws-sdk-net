@@ -204,7 +204,7 @@ namespace Amazon.Glue.Model
         /// The ARN of the source for the integration.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Required=true, Min=1, Max=512)]
         public string SourceArn
         {
             get { return this._sourceArn; }
@@ -293,7 +293,7 @@ namespace Amazon.Glue.Model
         /// The ARN of the target for the integration.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Required=true, Min=1, Max=512)]
         public string TargetArn
         {
             get { return this._targetArn; }

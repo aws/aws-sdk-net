@@ -42,6 +42,7 @@ namespace Amazon.Glue.Model
     {
         private string _resourceArn;
         private SourceProcessingProperties _sourceProcessingProperties;
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private TargetProcessingProperties _targetProcessingProperties;
 
         /// <summary>
@@ -50,7 +51,7 @@ namespace Amazon.Glue.Model
         /// The connection ARN of the source, or the database ARN of the target.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Required=true, Min=1, Max=512)]
         public string ResourceArn
         {
             get { return this._resourceArn; }
@@ -79,6 +80,24 @@ namespace Amazon.Glue.Model
         internal bool IsSetSourceProcessingProperties()
         {
             return this._sourceProcessingProperties != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// Metadata assigned to the resource consisting of a list of key-value pairs.
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

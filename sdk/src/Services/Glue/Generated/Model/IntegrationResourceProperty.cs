@@ -30,9 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// This is the response object from the UpdateIntegrationResourceProperty operation.
+    /// A structure representing an integration resource property.
     /// </summary>
-    public partial class UpdateIntegrationResourcePropertyResponse : AmazonWebServiceResponse
+    public partial class IntegrationResourceProperty
     {
         private string _resourceArn;
         private string _resourcePropertyArn;
@@ -45,7 +45,7 @@ namespace Amazon.Glue.Model
         /// The connection ARN of the source, or the database ARN of the target.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=512)]
+        [AWSProperty(Required=true, Min=1, Max=512)]
         public string ResourceArn
         {
             get { return this._resourceArn; }

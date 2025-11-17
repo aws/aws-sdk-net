@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateIntegrationResourceProperty Request Marshaller
+    /// DeleteIntegrationResourceProperty Request Marshaller
     /// </summary>       
-    public class CreateIntegrationResourcePropertyRequestMarshaller : IMarshaller<IRequest, CreateIntegrationResourcePropertyRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class DeleteIntegrationResourcePropertyRequestMarshaller : IMarshaller<IRequest, DeleteIntegrationResourcePropertyRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -45,7 +45,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateIntegrationResourcePropertyRequest)input);
+            return this.Marshall((DeleteIntegrationResourcePropertyRequest)input);
         }
 
         /// <summary>
@@ -53,10 +53,10 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateIntegrationResourcePropertyRequest publicRequest)
+        public IRequest Marshall(DeleteIntegrationResourcePropertyRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Glue");
-            string target = "AWSGlue.CreateIntegrationResourceProperty";
+            string target = "AWSGlue.DeleteIntegrationResourceProperty";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-03-31";
@@ -75,44 +75,6 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ResourceArn);
                 }
 
-                if(publicRequest.IsSetSourceProcessingProperties())
-                {
-                    context.Writer.WritePropertyName("SourceProcessingProperties");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = SourceProcessingPropertiesMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SourceProcessingProperties, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetTargetProcessingProperties())
-                {
-                    context.Writer.WritePropertyName("TargetProcessingProperties");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = TargetProcessingPropertiesMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.TargetProcessingProperties, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
@@ -121,9 +83,9 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateIntegrationResourcePropertyRequestMarshaller _instance = new CreateIntegrationResourcePropertyRequestMarshaller();        
+        private static DeleteIntegrationResourcePropertyRequestMarshaller _instance = new DeleteIntegrationResourcePropertyRequestMarshaller();        
 
-        internal static CreateIntegrationResourcePropertyRequestMarshaller GetInstance()
+        internal static DeleteIntegrationResourcePropertyRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -131,7 +93,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateIntegrationResourcePropertyRequestMarshaller Instance
+        public static DeleteIntegrationResourcePropertyRequestMarshaller Instance
         {
             get
             {
