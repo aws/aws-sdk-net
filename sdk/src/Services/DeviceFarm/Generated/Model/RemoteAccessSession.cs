@@ -37,21 +37,17 @@ namespace Amazon.DeviceFarm.Model
         private string _appUpload;
         private string _arn;
         private BillingMethod _billingMethod;
-        private string _clientId;
         private DateTime? _created;
         private Device _device;
         private DeviceMinutes _deviceMinutes;
         private DeviceProxy _deviceProxy;
         private string _deviceUdid;
         private string _endpoint;
-        private string _hostAddress;
+        private RemoteAccessEndpoints _endpoints;
         private string _instanceArn;
         private InteractionMode _interactionMode;
         private string _message;
         private string _name;
-        private bool? _remoteDebugEnabled;
-        private string _remoteRecordAppArn;
-        private bool? _remoteRecordEnabled;
         private ExecutionResult _result;
         private bool? _skipAppResign;
         private DateTime? _started;
@@ -115,31 +111,6 @@ namespace Amazon.DeviceFarm.Model
         internal bool IsSetBillingMethod()
         {
             return this._billingMethod != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property ClientId. 
-        /// <para>
-        /// Unique identifier of your client for the remote access session. Only returned if remote
-        /// debugging is enabled for the remote access session.
-        /// </para>
-        ///  
-        /// <para>
-        /// Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
-        /// longer supported</a>.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=0, Max=64)]
-        public string ClientId
-        {
-            get { return this._clientId; }
-            set { this._clientId = value; }
-        }
-
-        // Check to see if ClientId property is set
-        internal bool IsSetClientId()
-        {
-            return this._clientId != null;
         }
 
         /// <summary>
@@ -242,9 +213,11 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property Endpoint. 
         /// <para>
-        /// The endpoint for the remote access sesssion.
+        /// The endpoint for the remote access session. This field is deprecated, and is replaced
+        /// by the new <c>endpoints.interactiveEndpoint</c> field.
         /// </para>
         /// </summary>
+        [Obsolete("This field is deprecated, and is replaced by the new endpoints.interactiveEndpoint field.")]
         public string Endpoint
         {
             get { return this._endpoint; }
@@ -258,28 +231,18 @@ namespace Amazon.DeviceFarm.Model
         }
 
         /// <summary>
-        /// Gets and sets the property HostAddress. 
-        /// <para>
-        /// IP address of the EC2 host where you need to connect to remotely debug devices. Only
-        /// returned if remote debugging is enabled for the remote access session.
-        /// </para>
-        ///  
-        /// <para>
-        /// Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
-        /// longer supported</a>.
-        /// </para>
+        /// Gets and sets the property Endpoints.
         /// </summary>
-        [AWSProperty(Max=1024)]
-        public string HostAddress
+        public RemoteAccessEndpoints Endpoints
         {
-            get { return this._hostAddress; }
-            set { this._hostAddress = value; }
+            get { return this._endpoints; }
+            set { this._endpoints = value; }
         }
 
-        // Check to see if HostAddress property is set
-        internal bool IsSetHostAddress()
+        // Check to see if Endpoints property is set
+        internal bool IsSetEndpoints()
         {
-            return this._hostAddress != null;
+            return this._endpoints != null;
         }
 
         /// <summary>
@@ -304,26 +267,11 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property InteractionMode. 
         /// <para>
-        /// The interaction mode of the remote access session. Valid values are:
+        /// The interaction mode of the remote access session. Changing the interactive mode of
+        /// remote access sessions is no longer available.
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// INTERACTIVE: You can interact with the iOS device by viewing, touching, and rotating
-        /// the screen. You cannot run XCUITest framework-based tests in this mode.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// NO_VIDEO: You are connected to the device, but cannot interact with it or view the
-        /// screen. This mode has the fastest test execution speed. You can run XCUITest framework-based
-        /// tests in this mode.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// VIDEO_ONLY: You can view the screen, but cannot touch or rotate it. You can run XCUITest
-        /// framework-based tests and watch the screen in this mode.
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
+        [Obsolete("Changing the interactive mode of Remote Access sessions is no longer available.")]
         [AWSProperty(Min=0, Max=64)]
         public InteractionMode InteractionMode
         {
@@ -373,68 +321,6 @@ namespace Amazon.DeviceFarm.Model
         internal bool IsSetName()
         {
             return this._name != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property RemoteDebugEnabled. 
-        /// <para>
-        /// This flag is set to <c>true</c> if remote debugging is enabled for the remote access
-        /// session.
-        /// </para>
-        ///  
-        /// <para>
-        /// Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
-        /// longer supported</a>.
-        /// </para>
-        /// </summary>
-        public bool RemoteDebugEnabled
-        {
-            get { return this._remoteDebugEnabled.GetValueOrDefault(); }
-            set { this._remoteDebugEnabled = value; }
-        }
-
-        // Check to see if RemoteDebugEnabled property is set
-        internal bool IsSetRemoteDebugEnabled()
-        {
-            return this._remoteDebugEnabled.HasValue; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property RemoteRecordAppArn. 
-        /// <para>
-        /// The ARN for the app to be recorded in the remote access session.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=32, Max=1011)]
-        public string RemoteRecordAppArn
-        {
-            get { return this._remoteRecordAppArn; }
-            set { this._remoteRecordAppArn = value; }
-        }
-
-        // Check to see if RemoteRecordAppArn property is set
-        internal bool IsSetRemoteRecordAppArn()
-        {
-            return this._remoteRecordAppArn != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property RemoteRecordEnabled. 
-        /// <para>
-        /// This flag is set to <c>true</c> if remote recording is enabled for the remote access
-        /// session.
-        /// </para>
-        /// </summary>
-        public bool RemoteRecordEnabled
-        {
-            get { return this._remoteRecordEnabled.GetValueOrDefault(); }
-            set { this._remoteRecordEnabled = value; }
-        }
-
-        // Check to see if RemoteRecordEnabled property is set
-        internal bool IsSetRemoteRecordEnabled()
-        {
-            return this._remoteRecordEnabled.HasValue; 
         }
 
         /// <summary>

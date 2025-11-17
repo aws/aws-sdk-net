@@ -1134,12 +1134,14 @@ namespace Amazon.DeviceFarm
 
 
         /// <summary>
-        /// Deletes an AWS Device Farm project, given the project ARN.
+        /// Deletes an AWS Device Farm project, given the project ARN. You cannot delete a project
+        /// if it has an active run or session.
         /// 
-        ///  
+        ///  <important> 
         /// <para>
-        ///  Deleting this resource does not stop an in-progress run.
+        /// You cannot undo this operation.
         /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteProject service method.</param>
         /// 
@@ -1168,12 +1170,14 @@ namespace Amazon.DeviceFarm
 
 
         /// <summary>
-        /// Deletes an AWS Device Farm project, given the project ARN.
+        /// Deletes an AWS Device Farm project, given the project ARN. You cannot delete a project
+        /// if it has an active run or session.
         /// 
-        ///  
+        ///  <important> 
         /// <para>
-        ///  Deleting this resource does not stop an in-progress run.
+        /// You cannot undo this operation.
         /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteProject service method.</param>
         /// <param name="cancellationToken">
@@ -1209,7 +1213,14 @@ namespace Amazon.DeviceFarm
 
 
         /// <summary>
-        /// Deletes a completed remote access session and its results.
+        /// Deletes a completed remote access session and its results. You cannot delete a remote
+        /// access session if it is still active.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// You cannot undo this operation.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteRemoteAccessSession service method.</param>
         /// 
@@ -1238,7 +1249,14 @@ namespace Amazon.DeviceFarm
 
 
         /// <summary>
-        /// Deletes a completed remote access session and its results.
+        /// Deletes a completed remote access session and its results. You cannot delete a remote
+        /// access session if it is still active.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// You cannot undo this operation.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteRemoteAccessSession service method.</param>
         /// <param name="cancellationToken">
@@ -1274,12 +1292,13 @@ namespace Amazon.DeviceFarm
 
 
         /// <summary>
-        /// Deletes the run, given the run ARN.
+        /// Deletes the run, given the run ARN. You cannot delete a run if it is still active.
         /// 
-        ///  
+        ///  <important> 
         /// <para>
-        ///  Deleting this resource does not stop an in-progress run.
+        /// You cannot undo this operation.
         /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteRun service method.</param>
         /// 
@@ -1308,12 +1327,13 @@ namespace Amazon.DeviceFarm
 
 
         /// <summary>
-        /// Deletes the run, given the run ARN.
+        /// Deletes the run, given the run ARN. You cannot delete a run if it is still active.
         /// 
-        ///  
+        ///  <important> 
         /// <para>
-        ///  Deleting this resource does not stop an in-progress run.
+        /// You cannot undo this operation.
         /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteRun service method.</param>
         /// <param name="cancellationToken">
@@ -1349,17 +1369,14 @@ namespace Amazon.DeviceFarm
 
 
         /// <summary>
-        /// Deletes a Selenium testing project and all content generated under it. 
+        /// Deletes a Selenium testing project and all content generated under it. You cannot
+        /// delete a project if it has active sessions.
         /// 
         ///  <important> 
         /// <para>
         /// You cannot undo this operation.
         /// </para>
-        ///  </important> <note> 
-        /// <para>
-        /// You cannot delete a project if it has active sessions.
-        /// </para>
-        ///  </note>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteTestGridProject service method.</param>
         /// 
@@ -1389,17 +1406,14 @@ namespace Amazon.DeviceFarm
 
 
         /// <summary>
-        /// Deletes a Selenium testing project and all content generated under it. 
+        /// Deletes a Selenium testing project and all content generated under it. You cannot
+        /// delete a project if it has active sessions.
         /// 
         ///  <important> 
         /// <para>
         /// You cannot undo this operation.
         /// </para>
-        ///  </important> <note> 
-        /// <para>
-        /// You cannot delete a project if it has active sessions.
-        /// </para>
-        ///  </note>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteTestGridProject service method.</param>
         /// <param name="cancellationToken">

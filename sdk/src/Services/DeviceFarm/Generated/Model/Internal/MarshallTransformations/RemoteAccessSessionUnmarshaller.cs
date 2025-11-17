@@ -84,12 +84,6 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
                     unmarshalledObject.BillingMethod = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("clientId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ClientId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("created", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
@@ -126,10 +120,10 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
                     unmarshalledObject.Endpoint = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("hostAddress", targetDepth))
+                if (context.TestExpression("endpoints", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.HostAddress = unmarshaller.Unmarshall(context);
+                    var unmarshaller = RemoteAccessEndpointsUnmarshaller.Instance;
+                    unmarshalledObject.Endpoints = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("instanceArn", targetDepth))
@@ -154,24 +148,6 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("remoteDebugEnabled", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.RemoteDebugEnabled = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("remoteRecordAppArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RemoteRecordAppArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("remoteRecordEnabled", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.RemoteRecordEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("result", targetDepth))

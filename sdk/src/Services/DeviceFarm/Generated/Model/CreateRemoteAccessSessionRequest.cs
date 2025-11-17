@@ -36,18 +36,13 @@ namespace Amazon.DeviceFarm.Model
     public partial class CreateRemoteAccessSessionRequest : AmazonDeviceFarmRequest
     {
         private string _appArn;
-        private string _clientId;
         private CreateRemoteAccessSessionConfiguration _configuration;
         private string _deviceArn;
         private string _instanceArn;
         private InteractionMode _interactionMode;
         private string _name;
         private string _projectArn;
-        private bool? _remoteDebugEnabled;
-        private string _remoteRecordAppArn;
-        private bool? _remoteRecordEnabled;
         private bool? _skipAppResign;
-        private string _sshPublicKey;
 
         /// <summary>
         /// Gets and sets the property AppArn. 
@@ -66,32 +61,6 @@ namespace Amazon.DeviceFarm.Model
         internal bool IsSetAppArn()
         {
             return this._appArn != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property ClientId. 
-        /// <para>
-        /// Unique identifier for the client. If you want access to multiple devices on the same
-        /// client, you should pass the same <c>clientId</c> value in each call to <c>CreateRemoteAccessSession</c>.
-        /// This identifier is required only if <c>remoteDebugEnabled</c> is set to <c>true</c>.
-        /// </para>
-        ///  
-        /// <para>
-        /// Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
-        /// longer supported</a>.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=0, Max=64)]
-        public string ClientId
-        {
-            get { return this._clientId; }
-            set { this._clientId = value; }
-        }
-
-        // Check to see if ClientId property is set
-        internal bool IsSetClientId()
-        {
-            return this._clientId != null;
         }
 
         /// <summary>
@@ -154,26 +123,11 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property InteractionMode. 
         /// <para>
-        /// The interaction mode of the remote access session. Valid values are:
+        /// The interaction mode of the remote access session. Changing the interactive mode of
+        /// remote access sessions is no longer available.
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// INTERACTIVE: You can interact with the iOS device by viewing, touching, and rotating
-        /// the screen. You cannot run XCUITest framework-based tests in this mode.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// NO_VIDEO: You are connected to the device, but cannot interact with it or view the
-        /// screen. This mode has the fastest test execution speed. You can run XCUITest framework-based
-        /// tests in this mode.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// VIDEO_ONLY: You can view the screen, but cannot touch or rotate it. You can run XCUITest
-        /// framework-based tests and watch the screen in this mode.
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
+        [Obsolete("Changing the interactive mode of Remote Access sessions is no longer available.")]
         [AWSProperty(Min=0, Max=64)]
         public InteractionMode InteractionMode
         {
@@ -227,67 +181,6 @@ namespace Amazon.DeviceFarm.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RemoteDebugEnabled. 
-        /// <para>
-        /// Set to <c>true</c> if you want to access devices remotely for debugging in your remote
-        /// access session.
-        /// </para>
-        ///  
-        /// <para>
-        /// Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
-        /// longer supported</a>.
-        /// </para>
-        /// </summary>
-        public bool RemoteDebugEnabled
-        {
-            get { return this._remoteDebugEnabled.GetValueOrDefault(); }
-            set { this._remoteDebugEnabled = value; }
-        }
-
-        // Check to see if RemoteDebugEnabled property is set
-        internal bool IsSetRemoteDebugEnabled()
-        {
-            return this._remoteDebugEnabled.HasValue; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property RemoteRecordAppArn. 
-        /// <para>
-        /// The Amazon Resource Name (ARN) for the app to be recorded in the remote access session.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=32, Max=1011)]
-        public string RemoteRecordAppArn
-        {
-            get { return this._remoteRecordAppArn; }
-            set { this._remoteRecordAppArn = value; }
-        }
-
-        // Check to see if RemoteRecordAppArn property is set
-        internal bool IsSetRemoteRecordAppArn()
-        {
-            return this._remoteRecordAppArn != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property RemoteRecordEnabled. 
-        /// <para>
-        /// Set to <c>true</c> to enable remote recording for the remote access session.
-        /// </para>
-        /// </summary>
-        public bool RemoteRecordEnabled
-        {
-            get { return this._remoteRecordEnabled.GetValueOrDefault(); }
-            set { this._remoteRecordEnabled = value; }
-        }
-
-        // Check to see if RemoteRecordEnabled property is set
-        internal bool IsSetRemoteRecordEnabled()
-        {
-            return this._remoteRecordEnabled.HasValue; 
-        }
-
-        /// <summary>
         /// Gets and sets the property SkipAppResign. 
         /// <para>
         /// When set to <c>true</c>, for private devices, Device Farm does not sign your app again.
@@ -309,32 +202,6 @@ namespace Amazon.DeviceFarm.Model
         internal bool IsSetSkipAppResign()
         {
             return this._skipAppResign.HasValue; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property SshPublicKey. 
-        /// <para>
-        /// Ignored. The public key of the <c>ssh</c> key pair you want to use for connecting
-        /// to remote devices in your remote debugging session. This key is required only if <c>remoteDebugEnabled</c>
-        /// is set to <c>true</c>.
-        /// </para>
-        ///  
-        /// <para>
-        /// Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
-        /// longer supported</a>.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=0, Max=8192)]
-        public string SshPublicKey
-        {
-            get { return this._sshPublicKey; }
-            set { this._sshPublicKey = value; }
-        }
-
-        // Check to see if SshPublicKey property is set
-        internal bool IsSetSshPublicKey()
-        {
-            return this._sshPublicKey != null;
         }
 
     }
