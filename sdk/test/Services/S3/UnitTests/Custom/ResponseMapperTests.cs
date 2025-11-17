@@ -270,6 +270,96 @@ namespace AWSSDK.UnitTests
 
         [TestMethod]
         [TestCategory("S3")]
+        public void Validate_DownloadRequest_ConvertToGetObjectRequest_MapsAllProperties()
+        {
+            var tuDownloadRequest = new TransferUtilityDownloadRequest
+            {
+                BucketName = "test-bucket",
+                Key = "test-key",
+                VersionId = "v-1",
+                ModifiedSinceDate = Amazon.Util.AWSSDKUtils.CorrectedUtcNow.AddDays(-2),
+                UnmodifiedSinceDate = Amazon.Util.AWSSDKUtils.CorrectedUtcNow.AddDays(-1),
+                ServerSideEncryptionCustomerMethod = ServerSideEncryptionCustomerMethod.AES256,
+                ServerSideEncryptionCustomerProvidedKey = "base64-key",
+                ServerSideEncryptionCustomerProvidedKeyMD5 = "md5",
+                ExpectedBucketOwner = "expected-owner",
+                IfMatch = "etag-match",
+                IfNoneMatch = "etag-notmatch",
+                ResponseHeaderOverrides = new ResponseHeaderOverrides { CacheControl = "no-cache" },
+                RequestPayer = RequestPayer.Requester,
+                ChecksumMode = ChecksumMode.ENABLED
+            };
+
+            var cmd = new DownloadCommand(null, tuDownloadRequest);
+            var getRequest = cmd.ConvertToGetObjectRequest(tuDownloadRequest);
+
+            Assert.IsNotNull(getRequest, "ConvertToGetObjectRequest returned null");
+
+            Assert.AreEqual(tuDownloadRequest.BucketName, getRequest.BucketName);
+            Assert.AreEqual(tuDownloadRequest.Key, getRequest.Key);
+            Assert.AreEqual(tuDownloadRequest.VersionId, getRequest.VersionId);
+            Assert.AreEqual(tuDownloadRequest.ModifiedSinceDate, getRequest.ModifiedSinceDate);
+            Assert.AreEqual(tuDownloadRequest.UnmodifiedSinceDate, getRequest.UnmodifiedSinceDate);
+            Assert.AreEqual(tuDownloadRequest.ServerSideEncryptionCustomerMethod, getRequest.ServerSideEncryptionCustomerMethod);
+            Assert.AreEqual(tuDownloadRequest.ServerSideEncryptionCustomerProvidedKey, getRequest.ServerSideEncryptionCustomerProvidedKey);
+            Assert.AreEqual(tuDownloadRequest.ServerSideEncryptionCustomerProvidedKeyMD5, getRequest.ServerSideEncryptionCustomerProvidedKeyMD5);
+            Assert.AreEqual(tuDownloadRequest.ExpectedBucketOwner, getRequest.ExpectedBucketOwner);
+            Assert.AreEqual(tuDownloadRequest.IfMatch, getRequest.EtagToMatch);
+            Assert.AreEqual(tuDownloadRequest.IfNoneMatch, getRequest.EtagToNotMatch);
+            Assert.AreEqual(tuDownloadRequest.ChecksumMode, getRequest.ChecksumMode);
+            Assert.AreEqual(tuDownloadRequest.RequestPayer, getRequest.RequestPayer);
+
+            Assert.IsNotNull(getRequest.ResponseHeaderOverrides, "ResponseHeaderOverrides was not mapped");
+            Assert.AreEqual(tuDownloadRequest.ResponseHeaderOverrides.CacheControl, getRequest.ResponseHeaderOverrides.CacheControl);
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public void Validate_OpenStreamRequest_ConvertToGetObjectRequest_MapsAllProperties()
+        {
+            var tuOpenStreamRequest = new TransferUtilityOpenStreamRequest
+            {
+                BucketName = "test-bucket",
+                Key = "test-key",
+                VersionId = "v-1",
+                ModifiedSinceDate = Amazon.Util.AWSSDKUtils.CorrectedUtcNow.AddDays(-2),
+                UnmodifiedSinceDate = Amazon.Util.AWSSDKUtils.CorrectedUtcNow.AddDays(-1),
+                ServerSideEncryptionCustomerMethod = ServerSideEncryptionCustomerMethod.AES256,
+                ServerSideEncryptionCustomerProvidedKey = "base64-key",
+                ServerSideEncryptionCustomerProvidedKeyMD5 = "md5",
+                ExpectedBucketOwner = "expected-owner",
+                IfMatch = "etag-match",
+                IfNoneMatch = "etag-notmatch",
+                ResponseHeaderOverrides = new ResponseHeaderOverrides { CacheControl = "no-cache" },
+                RequestPayer = RequestPayer.Requester,
+                ChecksumMode = ChecksumMode.ENABLED
+            };
+
+            var cmd = new OpenStreamCommand(null, tuOpenStreamRequest);
+            var getRequest = cmd.ConvertToGetObjectRequest(tuOpenStreamRequest);
+
+            Assert.IsNotNull(getRequest, "ConvertToGetObjectRequest returned null");
+
+            Assert.AreEqual(tuOpenStreamRequest.BucketName, getRequest.BucketName);
+            Assert.AreEqual(tuOpenStreamRequest.Key, getRequest.Key);
+            Assert.AreEqual(tuOpenStreamRequest.VersionId, getRequest.VersionId);
+            Assert.AreEqual(tuOpenStreamRequest.ModifiedSinceDate, getRequest.ModifiedSinceDate);
+            Assert.AreEqual(tuOpenStreamRequest.UnmodifiedSinceDate, getRequest.UnmodifiedSinceDate);
+            Assert.AreEqual(tuOpenStreamRequest.ServerSideEncryptionCustomerMethod, getRequest.ServerSideEncryptionCustomerMethod);
+            Assert.AreEqual(tuOpenStreamRequest.ServerSideEncryptionCustomerProvidedKey, getRequest.ServerSideEncryptionCustomerProvidedKey);
+            Assert.AreEqual(tuOpenStreamRequest.ServerSideEncryptionCustomerProvidedKeyMD5, getRequest.ServerSideEncryptionCustomerProvidedKeyMD5);
+            Assert.AreEqual(tuOpenStreamRequest.ExpectedBucketOwner, getRequest.ExpectedBucketOwner);
+            Assert.AreEqual(tuOpenStreamRequest.IfMatch, getRequest.EtagToMatch);
+            Assert.AreEqual(tuOpenStreamRequest.IfNoneMatch, getRequest.EtagToNotMatch);
+            Assert.AreEqual(tuOpenStreamRequest.ChecksumMode, getRequest.ChecksumMode);
+            Assert.AreEqual(tuOpenStreamRequest.RequestPayer, getRequest.RequestPayer);
+
+            Assert.IsNotNull(getRequest.ResponseHeaderOverrides, "ResponseHeaderOverrides was not mapped");
+            Assert.AreEqual(tuOpenStreamRequest.ResponseHeaderOverrides.CacheControl, getRequest.ResponseHeaderOverrides.CacheControl);
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
         public void MapAbortMultipartUploadsCommand_ConstructListMultipartUploadsRequest_AllMappedProperties_WorkCorrectly()
         {
             // Create a TransferUtilityAbortMultipartUploadRequest with all fields set
