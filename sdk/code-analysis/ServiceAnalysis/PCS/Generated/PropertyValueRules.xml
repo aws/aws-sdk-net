@@ -211,10 +211,12 @@
   <property-value-rule>
     <property>Amazon.PCS.Model.ClusterSlurmConfiguration.ScaleDownIdleTimeInSeconds</property>
     <min>1</min>
+    <max>10000000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PCS.Model.ClusterSlurmConfigurationRequest.ScaleDownIdleTimeInSeconds</property>
     <min>1</min>
+    <max>10000000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PCS.Model.ComputeNodeGroup.AmiId</property>
@@ -272,5 +274,6 @@
   <property-value-rule>
     <property>Amazon.PCS.Model.UpdateClusterSlurmConfigurationRequest.ScaleDownIdleTimeInSeconds</property>
     <min>1</min>
+    <max>10000000</max>
   </property-value-rule>
 </property-value-rules>

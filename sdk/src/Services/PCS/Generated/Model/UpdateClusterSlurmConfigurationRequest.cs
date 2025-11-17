@@ -37,6 +37,7 @@ namespace Amazon.PCS.Model
         private UpdateAccountingRequest _accounting;
         private int? _scaleDownIdleTimeInSeconds;
         private List<SlurmCustomSetting> _slurmCustomSettings = AWSConfigs.InitializeCollections ? new List<SlurmCustomSetting>() : null;
+        private UpdateSlurmRestRequest _slurmRest;
 
         /// <summary>
         /// Gets and sets the property Accounting. 
@@ -66,7 +67,7 @@ namespace Amazon.PCS.Model
         /// Default: <c>600</c> 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
+        [AWSProperty(Min=1, Max=10000000)]
         public int ScaleDownIdleTimeInSeconds
         {
             get { return this._scaleDownIdleTimeInSeconds.GetValueOrDefault(); }
@@ -95,6 +96,24 @@ namespace Amazon.PCS.Model
         internal bool IsSetSlurmCustomSettings()
         {
             return this._slurmCustomSettings != null && (this._slurmCustomSettings.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SlurmRest. 
+        /// <para>
+        /// The Slurm REST API configuration for the cluster.
+        /// </para>
+        /// </summary>
+        public UpdateSlurmRestRequest SlurmRest
+        {
+            get { return this._slurmRest; }
+            set { this._slurmRest = value; }
+        }
+
+        // Check to see if SlurmRest property is set
+        internal bool IsSetSlurmRest()
+        {
+            return this._slurmRest != null;
         }
 
     }

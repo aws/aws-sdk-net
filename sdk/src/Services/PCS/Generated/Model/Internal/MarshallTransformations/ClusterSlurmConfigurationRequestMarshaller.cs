@@ -81,6 +81,17 @@ namespace Amazon.PCS.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetSlurmRest())
+            {
+                context.Writer.WritePropertyName("slurmRest");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = SlurmRestRequestMarshaller.Instance;
+                marshaller.Marshall(requestObject.SlurmRest, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>
