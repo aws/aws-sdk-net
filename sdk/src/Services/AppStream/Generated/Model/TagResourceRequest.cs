@@ -31,8 +31,8 @@ namespace Amazon.AppStream.Model
 {
     /// <summary>
     /// Container for the parameters to the TagResource operation.
-    /// Adds or overwrites one or more tags for the specified AppStream 2.0 resource. You
-    /// can tag AppStream 2.0 image builders, images, fleets, and stacks.
+    /// Adds or overwrites one or more tags for the specified WorkSpaces Applications resource.
+    /// You can tag WorkSpaces Applications image builders, images, fleets, and stacks.
     /// 
     ///  
     /// <para>
@@ -47,7 +47,7 @@ namespace Amazon.AppStream.Model
     ///  
     /// <para>
     /// For more information about tags, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging
-    /// Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.
+    /// Your Resources</a> in the <i>Amazon WorkSpaces Applications Administration Guide</i>.
     /// </para>
     /// </summary>
     public partial class TagResourceRequest : AmazonAppStreamRequest

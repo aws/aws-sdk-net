@@ -61,8 +61,8 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property EniIpv6Addresses. 
         /// <para>
-        /// The IPv6 addresses of the elastic network interface that is attached to instances
-        /// in your VPC.
+        /// The IPv6 addresses assigned to the elastic network interface. This field supports
+        /// IPv6 connectivity for WorkSpaces Applications instances.
         /// </para>
         /// </summary>
         public List<string> EniIpv6Addresses

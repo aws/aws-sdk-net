@@ -144,6 +144,12 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                     unmarshalledObject.ImageSharedWithOthers = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ImageType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ImageType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("LatestAppstreamAgentVersion", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

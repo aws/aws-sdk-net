@@ -36,35 +36,36 @@ namespace Amazon.AppStream
     /// <summary>
     /// <para>Implementation for accessing AppStream</para>
     ///
-    /// Amazon AppStream 2.0 
+    /// Amazon WorkSpaces Applications 
     /// <para>
-    /// This is the <i>Amazon AppStream 2.0 API Reference</i>. This documentation provides
-    /// descriptions and syntax for each of the actions and data types in AppStream 2.0. AppStream
-    /// 2.0 is a fully managed, secure application streaming service that lets you stream
-    /// desktop applications to users without rewriting applications. AppStream 2.0 manages
-    /// the AWS resources that are required to host and run your applications, scales automatically,
-    /// and provides access to your users on demand. 
+    /// This is the <i>Amazon WorkSpaces Applications API Reference</i>. This documentation
+    /// provides descriptions and syntax for each of the actions and data types in WorkSpaces
+    /// Applications. WorkSpaces Applications is a fully managed, secure application streaming
+    /// service that lets you stream desktop applications to users without rewriting applications.
+    /// WorkSpaces Applications manages the AWS resources that are required to host and run
+    /// your applications, scales automatically, and provides access to your users on demand.
+    /// 
     /// </para>
     ///  <note> 
     /// <para>
-    /// You can call the AppStream 2.0 API operations by using an interface VPC endpoint (interface
-    /// endpoint). For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/access-api-cli-through-interface-vpc-endpoint.html">Access
-    /// AppStream 2.0 API Operations and CLI Commands Through an Interface VPC Endpoint</a>
-    /// in the <i>Amazon AppStream 2.0 Administration Guide</i>.
+    /// You can call the WorkSpaces Applications API operations by using an interface VPC
+    /// endpoint (interface endpoint). For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/access-api-cli-through-interface-vpc-endpoint.html">Access
+    /// WorkSpaces Applications API Operations and CLI Commands Through an Interface VPC Endpoint</a>
+    /// in the <i>Amazon WorkSpaces Applications Administration Guide</i>.
     /// </para>
     ///  </note> 
     /// <para>
-    /// To learn more about AppStream 2.0, see the following resources:
+    /// To learn more about WorkSpaces Applications, see the following resources:
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a href="http://aws.amazon.com/appstream2">Amazon AppStream 2.0 product page</a>
-    /// 
+    ///  <a href="http://aws.amazon.com/appstream2">Amazon WorkSpaces Applications product
+    /// page</a> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a href="http://aws.amazon.com/documentation/appstream2">Amazon AppStream 2.0 documentation</a>
-    /// 
+    ///  <a href="http://aws.amazon.com/documentation/appstream2">Amazon WorkSpaces Applications
+    /// documentation</a> 
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -843,7 +844,7 @@ namespace Amazon.AppStream
         /// 
         ///  
         /// <para>
-        /// App blocks are an Amazon AppStream 2.0 resource that stores the details about the
+        /// App blocks are a WorkSpaces Applications resource that stores the details about the
         /// virtual hard disk in an S3 bucket. It also stores the setup script with details about
         /// how to mount the virtual hard disk. The virtual hard disk includes the application
         /// binaries and other files necessary to launch your applications. Multiple applications
@@ -943,8 +944,8 @@ namespace Amazon.AppStream
         /// The attempted operation is not permitted.
         /// </exception>
         /// <exception cref="Amazon.AppStream.Model.RequestLimitExceededException">
-        /// AppStream 2.0 can’t process the request right now because the Describe calls from
-        /// your AWS account are being throttled by Amazon EC2. Try again later.
+        /// WorkSpaces Applications can’t process the request right now because the Describe calls
+        /// from your AWS account are being throttled by Amazon EC2. Try again later.
         /// </exception>
         /// <exception cref="Amazon.AppStream.Model.ResourceAlreadyExistsException">
         /// The specified resource already exists.
@@ -1068,8 +1069,8 @@ namespace Amazon.AppStream
         /// 
         ///  
         /// <para>
-        /// Applications are an Amazon AppStream 2.0 resource that stores the details about how
-        /// to launch applications on Elastic fleet streaming instances. An application consists
+        /// Applications are a WorkSpaces Applications resource that stores the details about
+        /// how to launch applications on Elastic fleet streaming instances. An application consists
         /// of the launch details, icon, and display name. Applications are associated with an
         /// app block that contains the application binaries and other files. The applications
         /// assigned to an Elastic fleet are the applications users can launch. 
@@ -1146,9 +1147,9 @@ namespace Amazon.AppStream
         #region  CreateDirectoryConfig
 
         /// <summary>
-        /// Creates a Directory Config object in AppStream 2.0. This object includes the configuration
-        /// information required to join fleets and image builders to Microsoft Active Directory
-        /// domains.
+        /// Creates a Directory Config object in WorkSpaces Applications. This object includes
+        /// the configuration information required to join fleets and image builders to Microsoft
+        /// Active Directory domains.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDirectoryConfig service method.</param>
         /// 
@@ -1223,7 +1224,7 @@ namespace Amazon.AppStream
         /// <summary>
         /// Creates a new entitlement. Entitlements control access to specific applications within
         /// a stack, based on user attributes. Entitlements apply to SAML 2.0 federated user identities.
-        /// Amazon AppStream 2.0 user pool and streaming URL users are entitled to all applications
+        /// WorkSpaces Applications user pool and streaming URL users are entitled to all applications
         /// in a stack. Entitlements don't apply to the desktop stream view application, or to
         /// applications managed by a dynamic app provider using the Dynamic Application Framework.
         /// </summary>
@@ -1288,6 +1289,84 @@ namespace Amazon.AppStream
 
         #endregion
         
+        #region  CreateExportImageTask
+
+        /// <summary>
+        /// Creates a task to export a WorkSpaces Applications image to an EC2 AMI. This allows
+        /// you to use your customized WorkSpaces Applications images with other AWS services
+        /// or for backup purposes.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateExportImageTask service method.</param>
+        /// 
+        /// <returns>The response from the CreateExportImageTask service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.ConcurrentModificationException">
+        /// An API error occurred. Wait a few minutes and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.InvalidAccountStatusException">
+        /// The resource cannot be created because your AWS account is suspended. For assistance,
+        /// contact AWS Support.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.InvalidRoleException">
+        /// The specified role is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.LimitExceededException">
+        /// The requested limit exceeds the permitted limit for an account.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotAvailableException">
+        /// The specified resource exists and is not in use, but isn't available.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateExportImageTask">REST API Reference for CreateExportImageTask Operation</seealso>
+        public virtual CreateExportImageTaskResponse CreateExportImageTask(CreateExportImageTaskRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateExportImageTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateExportImageTaskResponseUnmarshaller.Instance;
+
+            return Invoke<CreateExportImageTaskResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateExportImageTask operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateExportImageTask operation on AmazonAppStreamClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateExportImageTask
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateExportImageTask">REST API Reference for CreateExportImageTask Operation</seealso>
+        public virtual IAsyncResult BeginCreateExportImageTask(CreateExportImageTaskRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateExportImageTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateExportImageTaskResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateExportImageTask operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateExportImageTask.</param>
+        /// 
+        /// <returns>Returns a  CreateExportImageTaskResult from AppStream.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateExportImageTask">REST API Reference for CreateExportImageTask Operation</seealso>
+        public virtual CreateExportImageTaskResponse EndCreateExportImageTask(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateExportImageTaskResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateFleet
 
         /// <summary>
@@ -1320,8 +1399,8 @@ namespace Amazon.AppStream
         /// The attempted operation is not permitted.
         /// </exception>
         /// <exception cref="Amazon.AppStream.Model.RequestLimitExceededException">
-        /// AppStream 2.0 can’t process the request right now because the Describe calls from
-        /// your AWS account are being throttled by Amazon EC2. Try again later.
+        /// WorkSpaces Applications can’t process the request right now because the Describe calls
+        /// from your AWS account are being throttled by Amazon EC2. Try again later.
         /// </exception>
         /// <exception cref="Amazon.AppStream.Model.ResourceAlreadyExistsException">
         /// The specified resource already exists.
@@ -1416,8 +1495,8 @@ namespace Amazon.AppStream
         /// The attempted operation is not permitted.
         /// </exception>
         /// <exception cref="Amazon.AppStream.Model.RequestLimitExceededException">
-        /// AppStream 2.0 can’t process the request right now because the Describe calls from
-        /// your AWS account are being throttled by Amazon EC2. Try again later.
+        /// WorkSpaces Applications can’t process the request right now because the Describe calls
+        /// from your AWS account are being throttled by Amazon EC2. Try again later.
         /// </exception>
         /// <exception cref="Amazon.AppStream.Model.ResourceAlreadyExistsException">
         /// The specified resource already exists.
@@ -1534,6 +1613,89 @@ namespace Amazon.AppStream
 
         #endregion
         
+        #region  CreateImportedImage
+
+        /// <summary>
+        /// Creates a custom WorkSpaces Applications image by importing an EC2 AMI. This allows
+        /// you to use your own customized AMI to create WorkSpaces Applications images that support
+        /// additional instance types beyond the standard stream.* instances.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateImportedImage service method.</param>
+        /// 
+        /// <returns>The response from the CreateImportedImage service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.DryRunOperationException">
+        /// The exception that is thrown when a dry run operation is requested. This indicates
+        /// that the validation checks have been performed successfully, but no actual resources
+        /// were created or modified.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.IncompatibleImageException">
+        /// The image can't be updated because it's not compatible for updates.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.InvalidAccountStatusException">
+        /// The resource cannot be created because your AWS account is suspended. For assistance,
+        /// contact AWS Support.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.InvalidRoleException">
+        /// The specified role is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.LimitExceededException">
+        /// The requested limit exceeds the permitted limit for an account.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceAlreadyExistsException">
+        /// The specified resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateImportedImage">REST API Reference for CreateImportedImage Operation</seealso>
+        public virtual CreateImportedImageResponse CreateImportedImage(CreateImportedImageRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateImportedImageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateImportedImageResponseUnmarshaller.Instance;
+
+            return Invoke<CreateImportedImageResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateImportedImage operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateImportedImage operation on AmazonAppStreamClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateImportedImage
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateImportedImage">REST API Reference for CreateImportedImage Operation</seealso>
+        public virtual IAsyncResult BeginCreateImportedImage(CreateImportedImageRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateImportedImageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateImportedImageResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateImportedImage operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateImportedImage.</param>
+        /// 
+        /// <returns>Returns a  CreateImportedImageResult from AppStream.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateImportedImage">REST API Reference for CreateImportedImage Operation</seealso>
+        public virtual CreateImportedImageResponse EndCreateImportedImage(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateImportedImageResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateStack
 
         /// <summary>
@@ -1617,8 +1779,9 @@ namespace Amazon.AppStream
         #region  CreateStreamingURL
 
         /// <summary>
-        /// Creates a temporary URL to start an AppStream 2.0 streaming session for the specified
-        /// user. A streaming URL enables application streaming to be tested without user setup.
+        /// Creates a temporary URL to start an WorkSpaces Applications streaming session for
+        /// the specified user. A streaming URL enables application streaming to be tested without
+        /// user setup.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateStreamingURL service method.</param>
         /// 
@@ -1759,13 +1922,14 @@ namespace Amazon.AppStream
 
         /// <summary>
         /// Creates a new image with the latest Windows operating system updates, driver updates,
-        /// and AppStream 2.0 agent software.
+        /// and WorkSpaces Applications agent software.
         /// 
         ///  
         /// <para>
-        /// For more information, see the "Update an Image by Using Managed AppStream 2.0 Image
-        /// Updates" section in <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/administer-images.html">Administer
-        /// Your AppStream 2.0 Images</a>, in the <i>Amazon AppStream 2.0 Administration Guide</i>.
+        /// For more information, see the "Update an Image by Using Managed WorkSpaces Applications
+        /// Image Updates" section in <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/administer-images.html">Administer
+        /// Your WorkSpaces Applications Images</a>, in the <i>Amazon WorkSpaces Applications
+        /// Administration Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateUpdatedImage service method.</param>
@@ -2176,8 +2340,9 @@ namespace Amazon.AppStream
         #region  DeleteDirectoryConfig
 
         /// <summary>
-        /// Deletes the specified Directory Config object from AppStream 2.0. This object includes
-        /// the information required to join streaming instances to an Active Directory domain.
+        /// Deletes the specified Directory Config object from WorkSpaces Applications. This object
+        /// includes the information required to join streaming instances to an Active Directory
+        /// domain.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDirectoryConfig service method.</param>
         /// 
@@ -3173,8 +3338,8 @@ namespace Amazon.AppStream
 
         /// <summary>
         /// Retrieves a list that describes one or more specified Directory Config objects for
-        /// AppStream 2.0, if the names for these objects are provided. Otherwise, all Directory
-        /// Config objects in the account are described. These objects include the configuration
+        /// WorkSpaces Applications, if the names for these objects are provided. Otherwise, all
+        /// Directory Config objects in the account are described. These objects include the configuration
         /// information required to join fleets and image builders to Microsoft Active Directory
         /// domains. 
         /// 
@@ -3972,7 +4137,7 @@ namespace Amazon.AppStream
         #region  DisableUser
 
         /// <summary>
-        /// Disables the specified user in the user pool. Users can't sign in to AppStream 2.0
+        /// Disables the specified user in the user pool. Users can't sign in to WorkSpaces Applications
         /// until they are re-enabled. This action does not delete the user.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisableUser service method.</param>
@@ -4354,8 +4519,8 @@ namespace Amazon.AppStream
         #region  EnableUser
 
         /// <summary>
-        /// Enables a user in the user pool. After being enabled, users can sign in to AppStream
-        /// 2.0 and open applications from the stacks to which they are assigned.
+        /// Enables a user in the user pool. After being enabled, users can sign in to WorkSpaces
+        /// Applications and open applications from the stacks to which they are assigned.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnableUser service method.</param>
         /// 
@@ -4463,6 +4628,67 @@ namespace Amazon.AppStream
         public virtual ExpireSessionResponse EndExpireSession(IAsyncResult asyncResult)
         {
             return EndInvoke<ExpireSessionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetExportImageTask
+
+        /// <summary>
+        /// Retrieves information about an export image task, including its current state, progress,
+        /// and any error details.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetExportImageTask service method.</param>
+        /// 
+        /// <returns>The response from the GetExportImageTask service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/GetExportImageTask">REST API Reference for GetExportImageTask Operation</seealso>
+        public virtual GetExportImageTaskResponse GetExportImageTask(GetExportImageTaskRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetExportImageTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetExportImageTaskResponseUnmarshaller.Instance;
+
+            return Invoke<GetExportImageTaskResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetExportImageTask operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetExportImageTask operation on AmazonAppStreamClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetExportImageTask
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/GetExportImageTask">REST API Reference for GetExportImageTask Operation</seealso>
+        public virtual IAsyncResult BeginGetExportImageTask(GetExportImageTaskRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetExportImageTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetExportImageTaskResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetExportImageTask operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetExportImageTask.</param>
+        /// 
+        /// <returns>Returns a  GetExportImageTaskResult from AppStream.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/GetExportImageTask">REST API Reference for GetExportImageTask Operation</seealso>
+        public virtual GetExportImageTaskResponse EndGetExportImageTask(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetExportImageTaskResponse>(asyncResult);
         }
 
         #endregion
@@ -4638,16 +4864,74 @@ namespace Amazon.AppStream
 
         #endregion
         
+        #region  ListExportImageTasks
+
+        /// <summary>
+        /// Lists export image tasks, with optional filtering and pagination. Use this operation
+        /// to monitor the status of multiple export operations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListExportImageTasks service method.</param>
+        /// 
+        /// <returns>The response from the ListExportImageTasks service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ListExportImageTasks">REST API Reference for ListExportImageTasks Operation</seealso>
+        public virtual ListExportImageTasksResponse ListExportImageTasks(ListExportImageTasksRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListExportImageTasksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListExportImageTasksResponseUnmarshaller.Instance;
+
+            return Invoke<ListExportImageTasksResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListExportImageTasks operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListExportImageTasks operation on AmazonAppStreamClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListExportImageTasks
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ListExportImageTasks">REST API Reference for ListExportImageTasks Operation</seealso>
+        public virtual IAsyncResult BeginListExportImageTasks(ListExportImageTasksRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListExportImageTasksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListExportImageTasksResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListExportImageTasks operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListExportImageTasks.</param>
+        /// 
+        /// <returns>Returns a  ListExportImageTasksResult from AppStream.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ListExportImageTasks">REST API Reference for ListExportImageTasks Operation</seealso>
+        public virtual ListExportImageTasksResponse EndListExportImageTasks(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListExportImageTasksResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListTagsForResource
 
         /// <summary>
-        /// Retrieves a list of all tags for the specified AppStream 2.0 resource. You can tag
-        /// AppStream 2.0 image builders, images, fleets, and stacks.
+        /// Retrieves a list of all tags for the specified WorkSpaces Applications resource. You
+        /// can tag WorkSpaces Applications image builders, images, fleets, and stacks.
         /// 
         ///  
         /// <para>
         /// For more information about tags, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging
-        /// Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.
+        /// Your Resources</a> in the <i>Amazon WorkSpaces Applications Administration Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
@@ -4734,8 +5018,8 @@ namespace Amazon.AppStream
         /// The attempted operation is not permitted.
         /// </exception>
         /// <exception cref="Amazon.AppStream.Model.RequestLimitExceededException">
-        /// AppStream 2.0 can’t process the request right now because the Describe calls from
-        /// your AWS account are being throttled by Amazon EC2. Try again later.
+        /// WorkSpaces Applications can’t process the request right now because the Describe calls
+        /// from your AWS account are being throttled by Amazon EC2. Try again later.
         /// </exception>
         /// <exception cref="Amazon.AppStream.Model.ResourceNotAvailableException">
         /// The specified resource exists and is not in use, but isn't available.
@@ -4814,8 +5098,8 @@ namespace Amazon.AppStream
         /// The attempted operation is not permitted.
         /// </exception>
         /// <exception cref="Amazon.AppStream.Model.RequestLimitExceededException">
-        /// AppStream 2.0 can’t process the request right now because the Describe calls from
-        /// your AWS account are being throttled by Amazon EC2. Try again later.
+        /// WorkSpaces Applications can’t process the request right now because the Describe calls
+        /// from your AWS account are being throttled by Amazon EC2. Try again later.
         /// </exception>
         /// <exception cref="Amazon.AppStream.Model.ResourceNotAvailableException">
         /// The specified resource exists and is not in use, but isn't available.
@@ -5197,8 +5481,8 @@ namespace Amazon.AppStream
         #region  TagResource
 
         /// <summary>
-        /// Adds or overwrites one or more tags for the specified AppStream 2.0 resource. You
-        /// can tag AppStream 2.0 image builders, images, fleets, and stacks.
+        /// Adds or overwrites one or more tags for the specified WorkSpaces Applications resource.
+        /// You can tag WorkSpaces Applications image builders, images, fleets, and stacks.
         /// 
         ///  
         /// <para>
@@ -5213,7 +5497,7 @@ namespace Amazon.AppStream
         ///  
         /// <para>
         /// For more information about tags, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging
-        /// Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.
+        /// Your Resources</a> in the <i>Amazon WorkSpaces Applications Administration Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
@@ -5278,7 +5562,8 @@ namespace Amazon.AppStream
         #region  UntagResource
 
         /// <summary>
-        /// Disassociates one or more specified tags from the specified AppStream 2.0 resource.
+        /// Disassociates one or more specified tags from the specified WorkSpaces Applications
+        /// resource.
         /// 
         ///  
         /// <para>
@@ -5287,7 +5572,7 @@ namespace Amazon.AppStream
         ///  
         /// <para>
         /// For more information about tags, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging
-        /// Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.
+        /// Your Resources</a> in the <i>Amazon WorkSpaces Applications Administration Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
@@ -5378,8 +5663,8 @@ namespace Amazon.AppStream
         /// The attempted operation is not permitted.
         /// </exception>
         /// <exception cref="Amazon.AppStream.Model.RequestLimitExceededException">
-        /// AppStream 2.0 can’t process the request right now because the Describe calls from
-        /// your AWS account are being throttled by Amazon EC2. Try again later.
+        /// WorkSpaces Applications can’t process the request right now because the Describe calls
+        /// from your AWS account are being throttled by Amazon EC2. Try again later.
         /// </exception>
         /// <exception cref="Amazon.AppStream.Model.ResourceInUseException">
         /// The specified resource is in use.
@@ -5502,9 +5787,9 @@ namespace Amazon.AppStream
         #region  UpdateDirectoryConfig
 
         /// <summary>
-        /// Updates the specified Directory Config object in AppStream 2.0. This object includes
-        /// the configuration information required to join fleets and image builders to Microsoft
-        /// Active Directory domains.
+        /// Updates the specified Directory Config object in WorkSpaces Applications. This object
+        /// includes the configuration information required to join fleets and image builders
+        /// to Microsoft Active Directory domains.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateDirectoryConfig service method.</param>
         /// 
@@ -5704,8 +5989,8 @@ namespace Amazon.AppStream
         /// The attempted operation is not permitted.
         /// </exception>
         /// <exception cref="Amazon.AppStream.Model.RequestLimitExceededException">
-        /// AppStream 2.0 can’t process the request right now because the Describe calls from
-        /// your AWS account are being throttled by Amazon EC2. Try again later.
+        /// WorkSpaces Applications can’t process the request right now because the Describe calls
+        /// from your AWS account are being throttled by Amazon EC2. Try again later.
         /// </exception>
         /// <exception cref="Amazon.AppStream.Model.ResourceInUseException">
         /// The specified resource is in use.

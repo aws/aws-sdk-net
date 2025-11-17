@@ -34,7 +34,7 @@ namespace Amazon.AppStream.Model
     /// 
     ///  
     /// <para>
-    /// App blocks are an Amazon AppStream 2.0 resource that stores the details about the
+    /// App blocks are a WorkSpaces Applications resource that stores the details about the
     /// virtual hard disk in an S3 bucket. It also stores the setup script with details about
     /// how to mount the virtual hard disk. The virtual hard disk includes the application
     /// binaries and other files necessary to launch your applications. Multiple applications
@@ -258,9 +258,10 @@ namespace Amazon.AppStream.Model
         /// </para>
         ///  
         /// <para>
-        /// An app block with AppStream 2.0 packaging will be in the <c>INACTIVE</c> state if
-        /// no application package (VHD) is assigned to it. After an application package (VHD)
-        /// is created by an app block builder for an app block, it becomes <c>ACTIVE</c>. 
+        /// An app block with WorkSpaces Applications packaging will be in the <c>INACTIVE</c>
+        /// state if no application package (VHD) is assigned to it. After an application package
+        /// (VHD) is created by an app block builder for an app block, it becomes <c>ACTIVE</c>.
+        /// 
         /// </para>
         ///  
         /// <para>

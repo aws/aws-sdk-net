@@ -31,8 +31,9 @@ namespace Amazon.AppStream.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateStreamingURL operation.
-    /// Creates a temporary URL to start an AppStream 2.0 streaming session for the specified
-    /// user. A streaming URL enables application streaming to be tested without user setup.
+    /// Creates a temporary URL to start an WorkSpaces Applications streaming session for
+    /// the specified user. A streaming URL enables application streaming to be tested without
+    /// user setup.
     /// </summary>
     public partial class CreateStreamingURLRequest : AmazonAppStreamRequest
     {
@@ -88,7 +89,7 @@ namespace Amazon.AppStream.Model
         /// Gets and sets the property SessionContext. 
         /// <para>
         /// The session context. For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/managing-stacks-fleets.html#managing-stacks-fleets-parameters">Session
-        /// Context</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.
+        /// Context</a> in the <i>Amazon WorkSpaces Applications Administration Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

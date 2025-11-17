@@ -50,6 +50,7 @@ namespace Amazon.AppStream.Model
         private string _name;
         private NetworkAccessConfiguration _networkAccessConfiguration;
         private PlatformType _platform;
+        private VolumeConfig _rootVolumeConfig;
         private ImageBuilderState _state;
         private ImageBuilderStateChangeReason _stateChangeReason;
         private VpcConfig _vpcConfig;
@@ -77,8 +78,8 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property AppstreamAgentVersion. 
         /// <para>
-        /// The version of the AppStream 2.0 agent that is currently being used by the image builder.
-        /// 
+        /// The version of the WorkSpaces Applications agent that is currently being used by the
+        /// image builder. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -211,14 +212,15 @@ namespace Amazon.AppStream.Model
         /// The ARN of the IAM role that is applied to the image builder. To assume a role, the
         /// image builder calls the AWS Security Token Service (STS) <c>AssumeRole</c> API operation
         /// and passes the ARN of the role to use. The operation creates a new session with temporary
-        /// credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b>
-        /// credential profile on the instance.
+        /// credentials. WorkSpaces Applications retrieves the temporary credentials and creates
+        /// the <b>appstream_machine_role</b> credential profile on the instance.
         /// </para>
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using
-        /// an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream
-        /// 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.
+        /// an IAM Role to Grant Permissions to Applications and Scripts Running on WorkSpaces
+        /// Applications Streaming Instances</a> in the <i>Amazon WorkSpaces Applications Administration
+        /// Guide</i>.
         /// </para>
         /// </summary>
         public string IamRoleArn
@@ -368,10 +370,6 @@ namespace Amazon.AppStream.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// stream.graphics-desktop.2xlarge
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         /// stream.graphics.g4dn.xlarge
         /// </para>
         ///  </li> <li> 
@@ -393,18 +391,6 @@ namespace Amazon.AppStream.Model
         ///  </li> <li> 
         /// <para>
         /// stream.graphics.g4dn.16xlarge
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// stream.graphics-pro.4xlarge
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// stream.graphics-pro.8xlarge
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// stream.graphics-pro.16xlarge
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -508,8 +494,8 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property LatestAppstreamAgentVersion. 
         /// <para>
-        /// Indicates whether the image builder is using the latest AppStream 2.0 agent version
-        /// or not.
+        /// Indicates whether the image builder is using the latest WorkSpaces Applications agent
+        /// version or not.
         /// </para>
         /// </summary>
         public LatestAppstreamAgentVersion LatestAppstreamAgentVersion
@@ -574,6 +560,25 @@ namespace Amazon.AppStream.Model
         internal bool IsSetPlatform()
         {
             return this._platform != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RootVolumeConfig. 
+        /// <para>
+        /// The current configuration of the root volume for the image builder, including the
+        /// storage size in GB.
+        /// </para>
+        /// </summary>
+        public VolumeConfig RootVolumeConfig
+        {
+            get { return this._rootVolumeConfig; }
+            set { this._rootVolumeConfig = value; }
+        }
+
+        // Check to see if RootVolumeConfig property is set
+        internal bool IsSetRootVolumeConfig()
+        {
+            return this._rootVolumeConfig != null;
         }
 
         /// <summary>

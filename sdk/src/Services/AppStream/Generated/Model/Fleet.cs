@@ -54,6 +54,7 @@ namespace Amazon.AppStream.Model
         private int? _maxUserDurationInSeconds;
         private string _name;
         private PlatformType _platform;
+        private VolumeConfig _rootVolumeConfig;
         private S3Location _sessionScriptS3Location;
         private FleetState _state;
         private StreamView _streamView;
@@ -270,14 +271,15 @@ namespace Amazon.AppStream.Model
         /// The ARN of the IAM role that is applied to the fleet. To assume a role, the fleet
         /// instance calls the AWS Security Token Service (STS) <c>AssumeRole</c> API operation
         /// and passes the ARN of the role to use. The operation creates a new session with temporary
-        /// credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b>
-        /// credential profile on the instance.
+        /// credentials. WorkSpaces Applications retrieves the temporary credentials and creates
+        /// the <b>appstream_machine_role</b> credential profile on the instance.
         /// </para>
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using
-        /// an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream
-        /// 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.
+        /// an IAM Role to Grant Permissions to Applications and Scripts Running on WorkSpaces
+        /// Applications Streaming Instances</a> in the <i>Amazon WorkSpaces Applications Administration
+        /// Guide</i>.
         /// </para>
         /// </summary>
         public string IamRoleArn
@@ -471,10 +473,6 @@ namespace Amazon.AppStream.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// stream.graphics-desktop.2xlarge
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         /// stream.graphics.g4dn.xlarge
         /// </para>
         ///  </li> <li> 
@@ -496,18 +494,6 @@ namespace Amazon.AppStream.Model
         ///  </li> <li> 
         /// <para>
         /// stream.graphics.g4dn.16xlarge
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// stream.graphics-pro.4xlarge
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// stream.graphics-pro.8xlarge
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// stream.graphics-pro.16xlarge
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -709,6 +695,25 @@ namespace Amazon.AppStream.Model
         }
 
         /// <summary>
+        /// Gets and sets the property RootVolumeConfig. 
+        /// <para>
+        /// The current configuration of the root volume for fleet instances, including the storage
+        /// size in GB.
+        /// </para>
+        /// </summary>
+        public VolumeConfig RootVolumeConfig
+        {
+            get { return this._rootVolumeConfig; }
+            set { this._rootVolumeConfig = value; }
+        }
+
+        // Check to see if RootVolumeConfig property is set
+        internal bool IsSetRootVolumeConfig()
+        {
+            return this._rootVolumeConfig != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SessionScriptS3Location. 
         /// <para>
         /// The S3 location of the session scripts configuration zip file. This only applies to
@@ -749,10 +754,10 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property StreamView. 
         /// <para>
-        /// The AppStream 2.0 view that is displayed to your users when they stream from the fleet.
-        /// When <c>APP</c> is specified, only the windows of applications opened by users display.
-        /// When <c>DESKTOP</c> is specified, the standard desktop that is provided by the operating
-        /// system displays.
+        /// The WorkSpaces Applications view that is displayed to your users when they stream
+        /// from the fleet. When <c>APP</c> is specified, only the windows of applications opened
+        /// by users display. When <c>DESKTOP</c> is specified, the standard desktop that is provided
+        /// by the operating system displays.
         /// </para>
         ///  
         /// <para>
