@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for SchemaConversionRequest Object
+    /// Response Unmarshaller for Progress Object
     /// </summary>  
-    public class SchemaConversionRequestUnmarshaller : IJsonUnmarshaller<SchemaConversionRequest, JsonUnmarshallerContext>
+    public class ProgressUnmarshaller : IJsonUnmarshaller<Progress, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public SchemaConversionRequest Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public Progress Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            SchemaConversionRequest unmarshalledObject = new SchemaConversionRequest();
+            Progress unmarshalledObject = new Progress();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,40 +56,28 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Error", targetDepth))
+                if (context.TestExpression("ProcessedObject", targetDepth))
                 {
-                    var unmarshaller = ErrorDetailsUnmarshaller.Instance;
-                    unmarshalledObject.Error = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = ProcessedObjectUnmarshaller.Instance;
+                    unmarshalledObject.ProcessedObject = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ExportSqlDetails", targetDepth))
+                if (context.TestExpression("ProgressPercent", targetDepth))
                 {
-                    var unmarshaller = ExportSqlDetailsUnmarshaller.Instance;
-                    unmarshalledObject.ExportSqlDetails = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
+                    unmarshalledObject.ProgressPercent = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MigrationProjectArn", targetDepth))
+                if (context.TestExpression("ProgressStep", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MigrationProjectArn = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.ProgressStep = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Progress", targetDepth))
+                if (context.TestExpression("TotalObjects", targetDepth))
                 {
-                    var unmarshaller = ProgressUnmarshaller.Instance;
-                    unmarshalledObject.Progress = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("RequestIdentifier", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RequestIdentifier = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Status", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
+                    unmarshalledObject.TotalObjects = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -97,12 +85,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
         }
 
 
-        private static SchemaConversionRequestUnmarshaller _instance = new SchemaConversionRequestUnmarshaller();        
+        private static ProgressUnmarshaller _instance = new ProgressUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SchemaConversionRequestUnmarshaller Instance
+        public static ProgressUnmarshaller Instance
         {
             get
             {

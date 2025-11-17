@@ -116,6 +116,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     unmarshalledObject.RedshiftSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("SybaseAseSettings", targetDepth))
+                {
+                    var unmarshaller = SybaseAseDataProviderSettingsUnmarshaller.Instance;
+                    unmarshalledObject.SybaseAseSettings = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }
