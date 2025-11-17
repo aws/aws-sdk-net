@@ -697,6 +697,78 @@ namespace Amazon.OpenSearchService
 
         #endregion
         
+        #region  CreateIndex
+
+
+        /// <summary>
+        /// Creates an OpenSearch index with optional automatic semantic enrichment for specified
+        /// text fields. Automatic semantic enrichment enables semantic search capabilities without
+        /// requiring machine learning expertise, improving search relevance by up to 20% by understanding
+        /// search intent and contextual meaning beyond keyword matching. The semantic enrichment
+        /// process has zero impact on search latency as sparse encodings are stored directly
+        /// within the index during indexing. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/opensearch-semantic-enrichment.html">Automatic
+        /// semantic enrichment</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateIndex service method.</param>
+        /// 
+        /// <returns>The response from the CreateIndex service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.AccessDeniedException">
+        /// An error occurred because you don't have permissions to access the resource.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DependencyFailureException">
+        /// An exception for when a failure in one of the dependencies results in the service
+        /// being unable to fetch details about the resource.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access an unsupported operation.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceAlreadyExistsException">
+        /// An exception for creating a resource that already exists.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ThrottlingException">
+        /// The request was denied due to request throttling. Reduce the frequency of your requests
+        /// and try again.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/CreateIndex">REST API Reference for CreateIndex Operation</seealso>
+        CreateIndexResponse CreateIndex(CreateIndexRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateIndex operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateIndex operation on AmazonOpenSearchServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateIndex
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/CreateIndex">REST API Reference for CreateIndex Operation</seealso>
+        IAsyncResult BeginCreateIndex(CreateIndexRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateIndex operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateIndex.</param>
+        /// 
+        /// <returns>Returns a  CreateIndexResult from OpenSearchService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/CreateIndex">REST API Reference for CreateIndex Operation</seealso>
+        CreateIndexResponse EndCreateIndex(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateOutboundConnection
 
 
@@ -1149,6 +1221,70 @@ namespace Amazon.OpenSearchService
         /// <returns>Returns a  DeleteInboundConnectionResult from OpenSearchService.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DeleteInboundConnection">REST API Reference for DeleteInboundConnection Operation</seealso>
         DeleteInboundConnectionResponse EndDeleteInboundConnection(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteIndex
+
+
+        /// <summary>
+        /// Deletes an OpenSearch index. This operation permanently removes the index and cannot
+        /// be undone.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIndex service method.</param>
+        /// 
+        /// <returns>The response from the DeleteIndex service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.AccessDeniedException">
+        /// An error occurred because you don't have permissions to access the resource.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DependencyFailureException">
+        /// An exception for when a failure in one of the dependencies results in the service
+        /// being unable to fetch details about the resource.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access an unsupported operation.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ThrottlingException">
+        /// The request was denied due to request throttling. Reduce the frequency of your requests
+        /// and try again.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DeleteIndex">REST API Reference for DeleteIndex Operation</seealso>
+        DeleteIndexResponse DeleteIndex(DeleteIndexRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteIndex operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIndex operation on AmazonOpenSearchServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteIndex
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DeleteIndex">REST API Reference for DeleteIndex Operation</seealso>
+        IAsyncResult BeginDeleteIndex(DeleteIndexRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteIndex operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteIndex.</param>
+        /// 
+        /// <returns>Returns a  DeleteIndexResult from OpenSearchService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DeleteIndex">REST API Reference for DeleteIndex Operation</seealso>
+        DeleteIndexResponse EndDeleteIndex(IAsyncResult asyncResult);
 
         #endregion
         
@@ -2188,7 +2324,7 @@ namespace Amazon.OpenSearchService
 
 
         /// <summary>
-        /// Dissociates multiple packages from a domain simulatneously.
+        /// Dissociates multiple packages from a domain simultaneously.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DissociatePackages service method.</param>
         /// 
@@ -2582,6 +2718,71 @@ namespace Amazon.OpenSearchService
         /// <returns>Returns a  GetDomainMaintenanceStatusResult from OpenSearchService.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/GetDomainMaintenanceStatus">REST API Reference for GetDomainMaintenanceStatus Operation</seealso>
         GetDomainMaintenanceStatusResponse EndGetDomainMaintenanceStatus(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetIndex
+
+
+        /// <summary>
+        /// Retrieves information about an OpenSearch index including its schema and semantic
+        /// enrichment configuration. Use this operation to view the current index structure and
+        /// semantic search settings.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetIndex service method.</param>
+        /// 
+        /// <returns>The response from the GetIndex service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.AccessDeniedException">
+        /// An error occurred because you don't have permissions to access the resource.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DependencyFailureException">
+        /// An exception for when a failure in one of the dependencies results in the service
+        /// being unable to fetch details about the resource.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access an unsupported operation.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ThrottlingException">
+        /// The request was denied due to request throttling. Reduce the frequency of your requests
+        /// and try again.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/GetIndex">REST API Reference for GetIndex Operation</seealso>
+        GetIndexResponse GetIndex(GetIndexRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetIndex operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetIndex operation on AmazonOpenSearchServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetIndex
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/GetIndex">REST API Reference for GetIndex Operation</seealso>
+        IAsyncResult BeginGetIndex(GetIndexRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetIndex operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetIndex.</param>
+        /// 
+        /// <returns>Returns a  GetIndexResult from OpenSearchService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/GetIndex">REST API Reference for GetIndex Operation</seealso>
+        GetIndexResponse EndGetIndex(IAsyncResult asyncResult);
 
         #endregion
         
@@ -4137,6 +4338,72 @@ namespace Amazon.OpenSearchService
         /// <returns>Returns a  UpdateDomainConfigResult from OpenSearchService.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/UpdateDomainConfig">REST API Reference for UpdateDomainConfig Operation</seealso>
         UpdateDomainConfigResponse EndUpdateDomainConfig(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateIndex
+
+
+        /// <summary>
+        /// Updates an existing OpenSearch index schema and semantic enrichment configuration.
+        /// This operation allows modification of field mappings and semantic search settings
+        /// for text fields. Changes to semantic enrichment configuration will apply to newly
+        /// ingested documents.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateIndex service method.</param>
+        /// 
+        /// <returns>The response from the UpdateIndex service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.AccessDeniedException">
+        /// An error occurred because you don't have permissions to access the resource.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DependencyFailureException">
+        /// An exception for when a failure in one of the dependencies results in the service
+        /// being unable to fetch details about the resource.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access an unsupported operation.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ThrottlingException">
+        /// The request was denied due to request throttling. Reduce the frequency of your requests
+        /// and try again.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/UpdateIndex">REST API Reference for UpdateIndex Operation</seealso>
+        UpdateIndexResponse UpdateIndex(UpdateIndexRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateIndex operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateIndex operation on AmazonOpenSearchServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateIndex
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/UpdateIndex">REST API Reference for UpdateIndex Operation</seealso>
+        IAsyncResult BeginUpdateIndex(UpdateIndexRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateIndex operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateIndex.</param>
+        /// 
+        /// <returns>Returns a  UpdateIndexResult from OpenSearchService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/UpdateIndex">REST API Reference for UpdateIndex Operation</seealso>
+        UpdateIndexResponse EndUpdateIndex(IAsyncResult asyncResult);
 
         #endregion
         
