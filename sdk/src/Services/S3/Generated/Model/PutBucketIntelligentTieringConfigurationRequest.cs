@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -12,18 +12,28 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using Amazon.Runtime;
+
+/*
+ * Do not modify this file. This file is generated from the s3-2006-03-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
+using System.Xml.Serialization;
 using System.Text;
+using System.IO;
+using System.Net;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.S3.Model
 {
     /// <summary>
     /// Container for the parameters to the PutBucketIntelligentTieringConfiguration operation.
     /// <note> 
     /// <para>
-    /// This operation is not supported by directory buckets.
+    /// This operation is not supported for directory buckets.
     /// </para>
     ///  </note> 
     /// <para>
@@ -54,8 +64,7 @@ namespace Amazon.S3.Model
     /// </para>
     ///  
     /// <para>
-    /// Operations related to <code>PutBucketIntelligentTieringConfiguration</code> include:
-    /// 
+    /// Operations related to <c>PutBucketIntelligentTieringConfiguration</c> include: 
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -80,7 +89,7 @@ namespace Amazon.S3.Model
     /// </para>
     ///  </note> 
     /// <para>
-    ///  <code>PutBucketIntelligentTieringConfiguration</code> has the following special errors:
+    ///  <c>PutBucketIntelligentTieringConfiguration</c> has the following special errors:
     /// </para>
     ///  <dl> <dt>HTTP 400 Bad Request Error</dt> <dd> 
     /// <para>
@@ -102,31 +111,41 @@ namespace Amazon.S3.Model
     ///  </dd> <dt>HTTP 403 Forbidden Error</dt> <dd> 
     /// <para>
     ///  <i>Cause:</i> You are not the owner of the specified bucket, or you do not have the
-    /// <code>s3:PutIntelligentTieringConfiguration</code> bucket permission to set the configuration
+    /// <c>s3:PutIntelligentTieringConfiguration</c> bucket permission to set the configuration
     /// on the bucket. 
     /// </para>
-    ///  </dd> </dl>
+    ///  </dd> </dl> <important> 
+    /// <para>
+    /// You must URL encode any signed header values that contain spaces. For example, if
+    /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+    /// must URL encode this value to <c>my%20%20file.txt</c>.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class PutBucketIntelligentTieringConfigurationRequest : AmazonWebServiceRequest
     {
-        private string bucketName;
-        private string expectedBucketOwner;
-        private string intelligentTieringId;
-        private IntelligentTieringConfiguration intelligentTieringConfiguration;
+        private string _bucketName;
+        private string _expectedBucketOwner;
+        private IntelligentTieringConfiguration _intelligentTieringConfiguration;
+        private string _intelligentTieringId;
 
         /// <summary>
-        /// <para>The name of the Amazon S3 bucket whose configuration you want to modify or retrieve.</para>
+        /// Gets and sets the property BucketName. 
+        /// <para>
+        /// The name of the Amazon S3 bucket whose configuration you want to modify or retrieve.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string BucketName
         {
-            get { return this.bucketName; }
-            set { this.bucketName = value; }
+            get { return this._bucketName; }
+            set { this._bucketName = value; }
         }
 
         // Check to see if BucketName property is set
         internal bool IsSetBucketName()
         {
-            return this.bucketName != null;
+            return this._bucketName != null;
         }
 
         /// <summary>
@@ -139,44 +158,53 @@ namespace Amazon.S3.Model
         /// </summary>
         public string ExpectedBucketOwner
         {
-            get { return this.expectedBucketOwner; }
-            set { this.expectedBucketOwner = value; }
+            get { return this._expectedBucketOwner; }
+            set { this._expectedBucketOwner = value; }
         }
 
         // Check to see if ExpectedBucketOwner property is set
         internal bool IsSetExpectedBucketOwner()
         {
-            return this.expectedBucketOwner != null;
+            return this._expectedBucketOwner != null;
         }
 
         /// <summary>
-        /// <para>The ID used to identify the S3 Intelligent-Tiering configuration.</para>
+        /// Gets and sets the property IntelligentTieringConfiguration. 
+        /// <para>
+        /// Container for S3 Intelligent-Tiering configuration.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
+        public IntelligentTieringConfiguration IntelligentTieringConfiguration
+        {
+            get { return this._intelligentTieringConfiguration; }
+            set { this._intelligentTieringConfiguration = value; }
+        }
+
+        // Check to see if IntelligentTieringConfiguration property is set
+        internal bool IsSetIntelligentTieringConfiguration()
+        {
+            return this._intelligentTieringConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IntelligentTieringId. 
+        /// <para>
+        /// The ID used to identify the S3 Intelligent-Tiering configuration.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
         public string IntelligentTieringId
         {
-            get { return this.intelligentTieringId; }
-            set { this.intelligentTieringId = value; }
+            get { return this._intelligentTieringId; }
+            set { this._intelligentTieringId = value; }
         }
 
         // Check to see if IntelligentTieringId property is set
         internal bool IsSetIntelligentTieringId()
         {
-            return this.intelligentTieringId != null;
+            return this._intelligentTieringId != null;
         }
 
-        /// <summary>
-        /// <para>Container for S3 Intelligent-Tiering configuration.</para>
-        /// </summary>
-        public IntelligentTieringConfiguration IntelligentTieringConfiguration
-        {
-            get { return this.intelligentTieringConfiguration; }
-            set { this.intelligentTieringConfiguration = value; }
-        }
-
-        // Check to see if IntelligentTieringConfiguration property is set
-        internal bool IsIntelligentTieringConfiguration()
-        {
-            return this.intelligentTieringConfiguration != null;
-        }
     }
 }

@@ -1007,6 +1007,28 @@
                     ]}
                 }
             ]
+        },
+        "PutBucketIntelligentTieringConfigurationRequest" : {
+            "modify" : [
+                {
+                    "Id": {"emitPropertyName": "IntelligentTieringId"}
+                }
+            ]
+        },
+        "IntelligentTieringConfiguration" : {
+            "modify": [
+                {
+                    "Id" :{"emitPropertyName":"IntelligentTieringId"}
+                },
+                {
+                    "Filter": {"emitPropertyName": "IntelligentTieringFilter"}
+                },
+                {                   
+                    "IntelligentTieringFilter" :{
+                        "injectXmlMarshallCode": ["IntelligentTieringFilterCustomMarshall(publicRequest, xmlWriter);"]
+                    }
+                }
+            ]
         }
     },
     "operationModifiers": {
@@ -1381,6 +1403,8 @@
         "MetricsFilter",
         "MetricsAndOperator",
         "AnalyticsFilter",
-        "AnalyticsAndOperator"
+        "AnalyticsAndOperator",
+        "IntelligentTieringFilter",
+        "IntelligentTieringAndOperator"
     ]
 }
