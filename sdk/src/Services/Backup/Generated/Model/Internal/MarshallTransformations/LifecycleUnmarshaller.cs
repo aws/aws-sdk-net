@@ -62,6 +62,12 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                     unmarshalledObject.DeleteAfterDays = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("DeleteAfterEvent", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DeleteAfterEvent = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("MoveToColdStorageAfterDays", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
