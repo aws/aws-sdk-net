@@ -55,6 +55,12 @@ namespace Amazon.Backup.Model
         /// be true or false. Example: <c>update-global-settings --global-settings isMpaEnabled=false
         /// --region us-west-2</c>.
         /// </para>
+        ///  
+        /// <para>
+        /// A value for Backup Service-Linked Role creation, styled as<c>isDelegatedAdministratorEnabled</c>.
+        /// Values can be true or false. Example: <c>update-global-settings --global-settings
+        /// isDelegatedAdministratorEnabled=false --region us-west-2</c>.
+        /// </para>
         /// </summary>
         public Dictionary<string, string> GlobalSettings
         {

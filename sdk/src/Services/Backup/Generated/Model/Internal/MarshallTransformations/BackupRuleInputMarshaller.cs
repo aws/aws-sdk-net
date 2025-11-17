@@ -147,6 +147,12 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.TargetBackupVaultName);
             }
 
+            if(requestObject.IsSetTargetLogicallyAirGappedBackupVaultArn())
+            {
+                context.Writer.WritePropertyName("TargetLogicallyAirGappedBackupVaultArn");
+                context.Writer.Write(requestObject.TargetLogicallyAirGappedBackupVaultArn);
+            }
+
         }
 
         /// <summary>

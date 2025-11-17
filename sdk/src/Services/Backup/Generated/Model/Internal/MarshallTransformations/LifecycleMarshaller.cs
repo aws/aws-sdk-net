@@ -54,6 +54,12 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.DeleteAfterDays);
             }
 
+            if(requestObject.IsSetDeleteAfterEvent())
+            {
+                context.Writer.WritePropertyName("DeleteAfterEvent");
+                context.Writer.Write(requestObject.DeleteAfterEvent);
+            }
+
             if(requestObject.IsSetMoveToColdStorageAfterDays())
             {
                 context.Writer.WritePropertyName("MoveToColdStorageAfterDays");

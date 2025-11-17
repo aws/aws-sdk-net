@@ -55,6 +55,7 @@ namespace Amazon.Backup.Model
     public partial class Lifecycle
     {
         private long? _deleteAfterDays;
+        private LifecycleDeleteAfterEvent _deleteAfterEvent;
         private long? _moveToColdStorageAfterDays;
         private bool? _optInToArchiveForSupportedResources;
 
@@ -75,6 +76,26 @@ namespace Amazon.Backup.Model
         internal bool IsSetDeleteAfterDays()
         {
             return this._deleteAfterDays.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeleteAfterEvent. 
+        /// <para>
+        /// The event after which a recovery point is deleted. A recovery point with both <c>DeleteAfterDays</c>
+        /// and <c>DeleteAfterEvent</c> will delete after whichever condition is satisfied first.
+        /// Not valid as an input.
+        /// </para>
+        /// </summary>
+        public LifecycleDeleteAfterEvent DeleteAfterEvent
+        {
+            get { return this._deleteAfterEvent; }
+            set { this._deleteAfterEvent = value; }
+        }
+
+        // Check to see if DeleteAfterEvent property is set
+        internal bool IsSetDeleteAfterEvent()
+        {
+            return this._deleteAfterEvent != null;
         }
 
         /// <summary>

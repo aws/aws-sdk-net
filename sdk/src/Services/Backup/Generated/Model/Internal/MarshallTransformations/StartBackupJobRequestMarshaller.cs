@@ -127,6 +127,12 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetLogicallyAirGappedBackupVaultArn())
+                {
+                    context.Writer.WritePropertyName("LogicallyAirGappedBackupVaultArn");
+                    context.Writer.Write(publicRequest.LogicallyAirGappedBackupVaultArn);
+                }
+
                 if(publicRequest.IsSetRecoveryPointTags())
                 {
                     context.Writer.WritePropertyName("RecoveryPointTags");

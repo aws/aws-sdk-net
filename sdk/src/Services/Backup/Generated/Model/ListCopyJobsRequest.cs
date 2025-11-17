@@ -45,6 +45,7 @@ namespace Amazon.Backup.Model
         private string _byParentJobId;
         private string _byResourceArn;
         private string _byResourceType;
+        private string _bySourceRecoveryPointArn;
         private CopyJobState _byState;
         private int? _maxResults;
         private string _nextToken;
@@ -319,6 +320,24 @@ namespace Amazon.Backup.Model
         internal bool IsSetByResourceType()
         {
             return this._byResourceType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BySourceRecoveryPointArn. 
+        /// <para>
+        /// Filters copy jobs by the specified source recovery point ARN.
+        /// </para>
+        /// </summary>
+        public string BySourceRecoveryPointArn
+        {
+            get { return this._bySourceRecoveryPointArn; }
+            set { this._bySourceRecoveryPointArn = value; }
+        }
+
+        // Check to see if BySourceRecoveryPointArn property is set
+        internal bool IsSetBySourceRecoveryPointArn()
+        {
+            return this._bySourceRecoveryPointArn != null;
         }
 
         /// <summary>

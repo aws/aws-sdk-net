@@ -138,6 +138,12 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                     unmarshalledObject.TargetBackupVaultName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("TargetLogicallyAirGappedBackupVaultArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TargetLogicallyAirGappedBackupVaultArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

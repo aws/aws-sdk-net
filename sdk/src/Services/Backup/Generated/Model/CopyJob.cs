@@ -41,6 +41,7 @@ namespace Amazon.Backup.Model
         private string _compositeMemberIdentifier;
         private string _copyJobId;
         private RecoveryPointCreator _createdBy;
+        private string _createdByBackupJobId;
         private DateTime? _creationDate;
         private string _destinationBackupVaultArn;
         private string _destinationEncryptionKeyArn;
@@ -186,6 +187,25 @@ namespace Amazon.Backup.Model
         internal bool IsSetCreatedBy()
         {
             return this._createdBy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CreatedByBackupJobId. 
+        /// <para>
+        /// The backup job ID that initiated this copy job. Only applicable to scheduled copy
+        /// jobs and automatic copy jobs to logically air-gapped vault.
+        /// </para>
+        /// </summary>
+        public string CreatedByBackupJobId
+        {
+            get { return this._createdByBackupJobId; }
+            set { this._createdByBackupJobId = value; }
+        }
+
+        // Check to see if CreatedByBackupJobId property is set
+        internal bool IsSetCreatedByBackupJobId()
+        {
+            return this._createdByBackupJobId != null;
         }
 
         /// <summary>

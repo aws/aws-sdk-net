@@ -45,6 +45,7 @@ namespace Amazon.Backup.Model
         private string _scheduleExpressionTimezone;
         private long? _startWindowMinutes;
         private string _targetBackupVaultName;
+        private string _targetLogicallyAirGappedBackupVaultArn;
 
         /// <summary>
         /// Gets and sets the property CompletionWindowMinutes. 
@@ -302,6 +303,28 @@ namespace Amazon.Backup.Model
         internal bool IsSetTargetBackupVaultName()
         {
             return this._targetBackupVaultName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TargetLogicallyAirGappedBackupVaultArn. 
+        /// <para>
+        /// The ARN of a logically air-gapped vault. ARN must be in the same account and Region.
+        /// If provided, supported fully managed resources back up directly to logically air-gapped
+        /// vault, while other supported resources create a temporary (billable) snapshot in backup
+        /// vault, then copy it to logically air-gapped vault. Unsupported resources only back
+        /// up to the specified backup vault.
+        /// </para>
+        /// </summary>
+        public string TargetLogicallyAirGappedBackupVaultArn
+        {
+            get { return this._targetLogicallyAirGappedBackupVaultArn; }
+            set { this._targetLogicallyAirGappedBackupVaultArn = value; }
+        }
+
+        // Check to see if TargetLogicallyAirGappedBackupVaultArn property is set
+        internal bool IsSetTargetLogicallyAirGappedBackupVaultArn()
+        {
+            return this._targetLogicallyAirGappedBackupVaultArn != null;
         }
 
     }
