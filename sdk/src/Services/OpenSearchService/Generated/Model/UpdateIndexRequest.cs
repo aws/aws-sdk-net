@@ -30,13 +30,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// Container for the parameters to the DissociatePackages operation.
-    /// Dissociates multiple packages from a domain simultaneously.
+    /// Container for the parameters to the UpdateIndex operation.
+    /// Updates an existing OpenSearch index schema and semantic enrichment configuration.
+    /// This operation allows modification of field mappings and semantic search settings
+    /// for text fields. Changes to semantic enrichment configuration will apply to newly
+    /// ingested documents.
     /// </summary>
-    public partial class DissociatePackagesRequest : AmazonOpenSearchServiceRequest
+    public partial class UpdateIndexRequest : AmazonOpenSearchServiceRequest
     {
         private string _domainName;
-        private List<string> _packageList = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private string _indexName;
+        private Amazon.Runtime.Documents.Document _indexSchema;
 
         /// <summary>
         /// Gets and sets the property DomainName.
@@ -55,27 +59,42 @@ namespace Amazon.OpenSearchService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PackageList. 
+        /// Gets and sets the property IndexName. 
         /// <para>
-        /// A list of package IDs to be dissociated from a domain.
+        /// The name of the index to update.
         /// </para>
-        /// <para />
-        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
-        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
-        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
-        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Required=true)]
-        public List<string> PackageList
+        [AWSProperty(Required=true, Min=1, Max=255)]
+        public string IndexName
         {
-            get { return this._packageList; }
-            set { this._packageList = value; }
+            get { return this._indexName; }
+            set { this._indexName = value; }
         }
 
-        // Check to see if PackageList property is set
-        internal bool IsSetPackageList()
+        // Check to see if IndexName property is set
+        internal bool IsSetIndexName()
         {
-            return this._packageList != null && (this._packageList.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._indexName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IndexSchema. 
+        /// <para>
+        /// The updated JSON schema for the index including any changes to mappings, settings,
+        /// and semantic enrichment configuration.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public Amazon.Runtime.Documents.Document IndexSchema
+        {
+            get { return this._indexSchema; }
+            set { this._indexSchema = value; }
+        }
+
+        // Check to see if IndexSchema property is set
+        internal bool IsSetIndexSchema()
+        {
+            return !this._indexSchema.IsNull();
         }
 
     }

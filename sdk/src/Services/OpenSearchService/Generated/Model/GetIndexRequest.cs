@@ -30,50 +30,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// Configuration settings for an OpenSearch application. For more information, see <a
-    /// href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/application.html">Using
-    /// the OpenSearch user interface in Amazon OpenSearch Service</a>.
+    /// Container for the parameters to the GetIndex operation.
+    /// Retrieves information about an OpenSearch index including its schema and semantic
+    /// enrichment configuration. Use this operation to view the current index structure and
+    /// semantic search settings.
     /// </summary>
-    public partial class AppConfig
+    public partial class GetIndexRequest : AmazonOpenSearchServiceRequest
     {
-        private AppConfigType _key;
-        private string _value;
+        private string _domainName;
+        private string _indexName;
 
         /// <summary>
-        /// Gets and sets the property Key. 
-        /// <para>
-        /// The configuration item to set, such as the admin role for the OpenSearch application.
-        /// </para>
+        /// Gets and sets the property DomainName.
         /// </summary>
-        public AppConfigType Key
+        [AWSProperty(Required=true, Min=3, Max=28)]
+        public string DomainName
         {
-            get { return this._key; }
-            set { this._key = value; }
+            get { return this._domainName; }
+            set { this._domainName = value; }
         }
 
-        // Check to see if Key property is set
-        internal bool IsSetKey()
+        // Check to see if DomainName property is set
+        internal bool IsSetDomainName()
         {
-            return this._key != null;
+            return this._domainName != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Value. 
+        /// Gets and sets the property IndexName. 
         /// <para>
-        /// The value assigned to the configuration key, such as an IAM user ARN.
+        /// The name of the index to retrieve information about.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=4096)]
-        public string Value
+        [AWSProperty(Required=true, Min=1, Max=255)]
+        public string IndexName
         {
-            get { return this._value; }
-            set { this._value = value; }
+            get { return this._indexName; }
+            set { this._indexName = value; }
         }
 
-        // Check to see if Value property is set
-        internal bool IsSetValue()
+        // Check to see if IndexName property is set
+        internal bool IsSetIndexName()
         {
-            return this._value != null;
+            return this._indexName != null;
         }
 
     }
