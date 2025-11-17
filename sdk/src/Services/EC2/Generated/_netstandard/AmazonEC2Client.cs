@@ -14023,6 +14023,74 @@ namespace Amazon.EC2
         }
         #endregion
         
+        #region  DescribeInstanceSqlHaHistoryStates
+
+        internal virtual DescribeInstanceSqlHaHistoryStatesResponse DescribeInstanceSqlHaHistoryStates(DescribeInstanceSqlHaHistoryStatesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeInstanceSqlHaHistoryStatesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeInstanceSqlHaHistoryStatesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeInstanceSqlHaHistoryStatesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describes the historical SQL Server High Availability states for Amazon EC2 instances
+        /// that are enabled for Amazon EC2 High Availability for SQL Server monitoring.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInstanceSqlHaHistoryStates service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeInstanceSqlHaHistoryStates service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceSqlHaHistoryStates">REST API Reference for DescribeInstanceSqlHaHistoryStates Operation</seealso>
+        public virtual Task<DescribeInstanceSqlHaHistoryStatesResponse> DescribeInstanceSqlHaHistoryStatesAsync(DescribeInstanceSqlHaHistoryStatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeInstanceSqlHaHistoryStatesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeInstanceSqlHaHistoryStatesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeInstanceSqlHaHistoryStatesResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  DescribeInstanceSqlHaStates
+
+        internal virtual DescribeInstanceSqlHaStatesResponse DescribeInstanceSqlHaStates(DescribeInstanceSqlHaStatesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeInstanceSqlHaStatesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeInstanceSqlHaStatesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeInstanceSqlHaStatesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describes the SQL Server High Availability states for Amazon EC2 instances that are
+        /// enabled for Amazon EC2 High Availability for SQL Server monitoring.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInstanceSqlHaStates service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeInstanceSqlHaStates service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceSqlHaStates">REST API Reference for DescribeInstanceSqlHaStates Operation</seealso>
+        public virtual Task<DescribeInstanceSqlHaStatesResponse> DescribeInstanceSqlHaStatesAsync(DescribeInstanceSqlHaStatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeInstanceSqlHaStatesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeInstanceSqlHaStatesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeInstanceSqlHaStatesResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  DescribeInstanceStatus
 
         internal virtual DescribeInstanceStatusResponse DescribeInstanceStatus()
@@ -20060,6 +20128,42 @@ namespace Amazon.EC2
         }
         #endregion
         
+        #region  DisableInstanceSqlHaStandbyDetections
+
+        internal virtual DisableInstanceSqlHaStandbyDetectionsResponse DisableInstanceSqlHaStandbyDetections(DisableInstanceSqlHaStandbyDetectionsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DisableInstanceSqlHaStandbyDetectionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisableInstanceSqlHaStandbyDetectionsResponseUnmarshaller.Instance;
+
+            return Invoke<DisableInstanceSqlHaStandbyDetectionsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Disable Amazon EC2 instances running in an SQL Server High Availability cluster from
+        /// SQL Server High Availability instance standby detection monitoring. Once disabled,
+        /// Amazon Web Services no longer monitors the metadata for the instances to determine
+        /// whether they are active or standby nodes in the SQL Server High Availability cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableInstanceSqlHaStandbyDetections service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisableInstanceSqlHaStandbyDetections service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableInstanceSqlHaStandbyDetections">REST API Reference for DisableInstanceSqlHaStandbyDetections Operation</seealso>
+        public virtual Task<DisableInstanceSqlHaStandbyDetectionsResponse> DisableInstanceSqlHaStandbyDetectionsAsync(DisableInstanceSqlHaStandbyDetectionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DisableInstanceSqlHaStandbyDetectionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisableInstanceSqlHaStandbyDetectionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DisableInstanceSqlHaStandbyDetectionsResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  DisableIpamOrganizationAdminAccount
 
         internal virtual DisableIpamOrganizationAdminAccountResponse DisableIpamOrganizationAdminAccount(DisableIpamOrganizationAdminAccountRequest request)
@@ -21609,6 +21713,53 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = EnableImageDeregistrationProtectionResponseUnmarshaller.Instance;
 
             return InvokeAsync<EnableImageDeregistrationProtectionResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  EnableInstanceSqlHaStandbyDetections
+
+        internal virtual EnableInstanceSqlHaStandbyDetectionsResponse EnableInstanceSqlHaStandbyDetections(EnableInstanceSqlHaStandbyDetectionsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = EnableInstanceSqlHaStandbyDetectionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EnableInstanceSqlHaStandbyDetectionsResponseUnmarshaller.Instance;
+
+            return Invoke<EnableInstanceSqlHaStandbyDetectionsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Enable Amazon EC2 instances running in an SQL Server High Availability cluster for
+        /// SQL Server High Availability instance standby detection monitoring. Once enabled,
+        /// Amazon Web Services monitors the metadata for the instances to determine whether they
+        /// are active or standby nodes in the SQL Server High Availability cluster. If the instances
+        /// are determined to be standby failover nodes, Amazon Web Services automatically applies
+        /// SQL Server licensing fee waiver for those instances.
+        /// 
+        ///  
+        /// <para>
+        /// To register an instance, it must be running a Windows SQL Server license-included
+        /// AMI and have the Amazon Web Services Systems Manager agent installed and running.
+        /// Only Windows Server 2019 and later and SQL Server (Standard and Enterprise editions)
+        /// 2017 and later are supported. For more information, see <a href="https://docs.aws.amazon.com/sql-server-ec2/latest/userguide/prerequisites-and-requirements.html">
+        /// Prerequisites for using SQL Server High Availability instance standby detection</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableInstanceSqlHaStandbyDetections service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the EnableInstanceSqlHaStandbyDetections service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableInstanceSqlHaStandbyDetections">REST API Reference for EnableInstanceSqlHaStandbyDetections Operation</seealso>
+        public virtual Task<EnableInstanceSqlHaStandbyDetectionsResponse> EnableInstanceSqlHaStandbyDetectionsAsync(EnableInstanceSqlHaStandbyDetectionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = EnableInstanceSqlHaStandbyDetectionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EnableInstanceSqlHaStandbyDetectionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<EnableInstanceSqlHaStandbyDetectionsResponse>(request, options, cancellationToken);
         }
         #endregion
         
