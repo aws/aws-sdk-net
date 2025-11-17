@@ -59,6 +59,12 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetScteInSegments())
+            {
+                context.Writer.WritePropertyName("ScteInSegments");
+                context.Writer.Write(requestObject.ScteInSegments);
+            }
+
         }
 
         /// <summary>

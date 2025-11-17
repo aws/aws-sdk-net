@@ -42,7 +42,7 @@ namespace Amazon.MediaPackageV2.Model
         /// Gets and sets the property MQCSInputSwitching. 
         /// <para>
         /// When true, AWS Elemental MediaPackage performs input switching based on the MQCS.
-        /// Default is true. This setting is valid only when <c>InputType</c> is <c>CMAF</c>.
+        /// Default is false. This setting is valid only when <c>InputType</c> is <c>CMAF</c>.
         /// </para>
         /// </summary>
         public bool MQCSInputSwitching

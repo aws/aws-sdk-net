@@ -35,6 +35,7 @@ namespace Amazon.MediaPackageV2.Model
     public partial class Scte
     {
         private List<string> _scteFilter = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private ScteInSegments _scteInSegments;
 
         /// <summary>
         /// Gets and sets the property ScteFilter. 
@@ -53,6 +54,38 @@ namespace Amazon.MediaPackageV2.Model
         internal bool IsSetScteFilter()
         {
             return this._scteFilter != null && (this._scteFilter.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ScteInSegments. 
+        /// <para>
+        /// Controls whether SCTE-35 messages are included in segment files.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// None – SCTE-35 messages are not included in segments (default)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// All – SCTE-35 messages are embedded in segment data
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  For DASH manifests, when set to <c>All</c>, an <c>InbandEventStream</c> tag signals
+        /// that SCTE messages are present in segments. This setting works independently of manifest
+        /// ad markers.
+        /// </para>
+        /// </summary>
+        public ScteInSegments ScteInSegments
+        {
+            get { return this._scteInSegments; }
+            set { this._scteInSegments = value; }
+        }
+
+        // Check to see if ScteInSegments property is set
+        internal bool IsSetScteInSegments()
+        {
+            return this._scteInSegments != null;
         }
 
     }

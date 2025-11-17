@@ -72,6 +72,12 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.ScteFilter = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ScteInSegments", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ScteInSegments = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }
