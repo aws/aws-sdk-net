@@ -4638,6 +4638,78 @@ namespace Amazon.GuardDuty
 
         #endregion
         
+        #region  SendObjectMalwareScan
+
+        /// <summary>
+        /// Initiates a malware scan for a specific S3 object. This API allows you to perform
+        /// on-demand malware scanning of individual objects in S3 buckets that have Malware Protection
+        /// for S3 enabled.
+        /// 
+        ///  
+        /// <para>
+        /// When you use this API, the Amazon Web Services service terms for GuardDuty Malware
+        /// Protection apply. For more information, see <a href="http://aws.amazon.com/service-terms/#87._Amazon_GuardDuty">Amazon
+        /// Web Services service terms for GuardDuty Malware Protection</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SendObjectMalwareScan service method.</param>
+        /// 
+        /// <returns>The response from the SendObjectMalwareScan service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.AccessDeniedException">
+        /// An access denied exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/SendObjectMalwareScan">REST API Reference for SendObjectMalwareScan Operation</seealso>
+        public virtual SendObjectMalwareScanResponse SendObjectMalwareScan(SendObjectMalwareScanRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SendObjectMalwareScanRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SendObjectMalwareScanResponseUnmarshaller.Instance;
+
+            return Invoke<SendObjectMalwareScanResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SendObjectMalwareScan operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SendObjectMalwareScan operation on AmazonGuardDutyClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSendObjectMalwareScan
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/SendObjectMalwareScan">REST API Reference for SendObjectMalwareScan Operation</seealso>
+        public virtual IAsyncResult BeginSendObjectMalwareScan(SendObjectMalwareScanRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SendObjectMalwareScanRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SendObjectMalwareScanResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  SendObjectMalwareScan operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSendObjectMalwareScan.</param>
+        /// 
+        /// <returns>Returns a  SendObjectMalwareScanResult from GuardDuty.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/SendObjectMalwareScan">REST API Reference for SendObjectMalwareScan Operation</seealso>
+        public virtual SendObjectMalwareScanResponse EndSendObjectMalwareScan(IAsyncResult asyncResult)
+        {
+            return EndInvoke<SendObjectMalwareScanResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  StartMalwareScan
 
         /// <summary>

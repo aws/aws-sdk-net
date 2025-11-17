@@ -3319,6 +3319,58 @@ namespace Amazon.GuardDuty
 
         #endregion
         
+        #region  SendObjectMalwareScan
+
+        internal virtual SendObjectMalwareScanResponse SendObjectMalwareScan(SendObjectMalwareScanRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SendObjectMalwareScanRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SendObjectMalwareScanResponseUnmarshaller.Instance;
+
+            return Invoke<SendObjectMalwareScanResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Initiates a malware scan for a specific S3 object. This API allows you to perform
+        /// on-demand malware scanning of individual objects in S3 buckets that have Malware Protection
+        /// for S3 enabled.
+        /// 
+        ///  
+        /// <para>
+        /// When you use this API, the Amazon Web Services service terms for GuardDuty Malware
+        /// Protection apply. For more information, see <a href="http://aws.amazon.com/service-terms/#87._Amazon_GuardDuty">Amazon
+        /// Web Services service terms for GuardDuty Malware Protection</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SendObjectMalwareScan service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SendObjectMalwareScan service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.AccessDeniedException">
+        /// An access denied exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/SendObjectMalwareScan">REST API Reference for SendObjectMalwareScan Operation</seealso>
+        public virtual Task<SendObjectMalwareScanResponse> SendObjectMalwareScanAsync(SendObjectMalwareScanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SendObjectMalwareScanRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SendObjectMalwareScanResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SendObjectMalwareScanResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  StartMalwareScan
 
         internal virtual StartMalwareScanResponse StartMalwareScan(StartMalwareScanRequest request)
