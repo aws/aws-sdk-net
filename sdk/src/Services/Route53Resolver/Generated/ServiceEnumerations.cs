@@ -297,6 +297,10 @@ namespace Amazon.Route53Resolver
         /// </summary>
         public static readonly DnsThreatProtection DGA = new DnsThreatProtection("DGA");
         /// <summary>
+        /// Constant DICTIONARY_DGA for DnsThreatProtection
+        /// </summary>
+        public static readonly DnsThreatProtection DICTIONARY_DGA = new DnsThreatProtection("DICTIONARY_DGA");
+        /// <summary>
         /// Constant DNS_TUNNELING for DnsThreatProtection
         /// </summary>
         public static readonly DnsThreatProtection DNS_TUNNELING = new DnsThreatProtection("DNS_TUNNELING");
