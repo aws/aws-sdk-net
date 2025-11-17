@@ -31,8 +31,8 @@ namespace Amazon.AppStream.Model
 {
     /// <summary>
     /// An attribute associated with an entitlement. Application entitlements work by matching
-    /// a supported SAML 2.0 attribute name to a value when a user identity federates to an
-    /// Amazon AppStream 2.0 SAML application.
+    /// a supported SAML 2.0 attribute name to a value when a user identity federates to a
+    /// WorkSpaces Applications SAML application.
     /// </summary>
     public partial class EntitlementAttribute
     {
@@ -43,7 +43,7 @@ namespace Amazon.AppStream.Model
         /// Gets and sets the property Name. 
         /// <para>
         /// A supported AWS IAM SAML <c>PrincipalTag</c> attribute that is matched to the associated
-        /// value when a user identity federates into an Amazon AppStream 2.0 SAML application.
+        /// value when a user identity federates into a WorkSpaces Applications SAML application.
         /// </para>
         ///  
         /// <para>
@@ -99,7 +99,7 @@ namespace Amazon.AppStream.Model
         /// Gets and sets the property Value. 
         /// <para>
         /// A value that is matched to a supported SAML attribute name when a user identity federates
-        /// into an Amazon AppStream 2.0 SAML application. 
+        /// into a WorkSpaces Applications SAML application. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]

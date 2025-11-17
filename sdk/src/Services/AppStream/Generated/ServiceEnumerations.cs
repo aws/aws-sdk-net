@@ -145,6 +145,56 @@ namespace Amazon.AppStream
 
 
     /// <summary>
+    /// Constants used for properties of type AgentSoftwareVersion.
+    /// </summary>
+    public class AgentSoftwareVersion : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALWAYS_LATEST for AgentSoftwareVersion
+        /// </summary>
+        public static readonly AgentSoftwareVersion ALWAYS_LATEST = new AgentSoftwareVersion("ALWAYS_LATEST");
+        /// <summary>
+        /// Constant CURRENT_LATEST for AgentSoftwareVersion
+        /// </summary>
+        public static readonly AgentSoftwareVersion CURRENT_LATEST = new AgentSoftwareVersion("CURRENT_LATEST");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AgentSoftwareVersion(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AgentSoftwareVersion FindValue(string value)
+        {
+            return FindValue<AgentSoftwareVersion>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AgentSoftwareVersion(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AppBlockBuilderAttribute.
     /// </summary>
     public class AppBlockBuilderAttribute : ConstantClass
@@ -661,6 +711,60 @@ namespace Amazon.AppStream
 
 
     /// <summary>
+    /// Constants used for properties of type ExportImageTaskState.
+    /// </summary>
+    public class ExportImageTaskState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLETED for ExportImageTaskState
+        /// </summary>
+        public static readonly ExportImageTaskState COMPLETED = new ExportImageTaskState("COMPLETED");
+        /// <summary>
+        /// Constant EXPORTING for ExportImageTaskState
+        /// </summary>
+        public static readonly ExportImageTaskState EXPORTING = new ExportImageTaskState("EXPORTING");
+        /// <summary>
+        /// Constant FAILED for ExportImageTaskState
+        /// </summary>
+        public static readonly ExportImageTaskState FAILED = new ExportImageTaskState("FAILED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ExportImageTaskState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ExportImageTaskState FindValue(string value)
+        {
+            return FindValue<ExportImageTaskState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ExportImageTaskState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type FleetAttribute.
     /// </summary>
     public class FleetAttribute : ConstantClass
@@ -686,6 +790,10 @@ namespace Amazon.AppStream
         /// Constant USB_DEVICE_FILTER_STRINGS for FleetAttribute
         /// </summary>
         public static readonly FleetAttribute USB_DEVICE_FILTER_STRINGS = new FleetAttribute("USB_DEVICE_FILTER_STRINGS");
+        /// <summary>
+        /// Constant VOLUME_CONFIGURATION for FleetAttribute
+        /// </summary>
+        public static readonly FleetAttribute VOLUME_CONFIGURATION = new FleetAttribute("VOLUME_CONFIGURATION");
         /// <summary>
         /// Constant VPC_CONFIGURATION for FleetAttribute
         /// </summary>
@@ -856,6 +964,10 @@ namespace Amazon.AppStream
         /// Constant SUBNET_NOT_FOUND for FleetErrorCode
         /// </summary>
         public static readonly FleetErrorCode SUBNET_NOT_FOUND = new FleetErrorCode("SUBNET_NOT_FOUND");
+        /// <summary>
+        /// Constant VALIDATION_ERROR for FleetErrorCode
+        /// </summary>
+        public static readonly FleetErrorCode VALIDATION_ERROR = new FleetErrorCode("VALIDATION_ERROR");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1022,6 +1134,10 @@ namespace Amazon.AppStream
         /// Constant PENDING for ImageBuilderState
         /// </summary>
         public static readonly ImageBuilderState PENDING = new ImageBuilderState("PENDING");
+        /// <summary>
+        /// Constant PENDING_IMAGE_IMPORT for ImageBuilderState
+        /// </summary>
+        public static readonly ImageBuilderState PENDING_IMAGE_IMPORT = new ImageBuilderState("PENDING_IMAGE_IMPORT");
         /// <summary>
         /// Constant PENDING_QUALIFICATION for ImageBuilderState
         /// </summary>
@@ -1232,6 +1348,10 @@ namespace Amazon.AppStream
         /// Constant PENDING for ImageState
         /// </summary>
         public static readonly ImageState PENDING = new ImageState("PENDING");
+        /// <summary>
+        /// Constant VALIDATING for ImageState
+        /// </summary>
+        public static readonly ImageState VALIDATING = new ImageState("VALIDATING");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1283,6 +1403,14 @@ namespace Amazon.AppStream
         /// </summary>
         public static readonly ImageStateChangeReasonCode IMAGE_COPY_FAILURE = new ImageStateChangeReasonCode("IMAGE_COPY_FAILURE");
         /// <summary>
+        /// Constant IMAGE_IMPORT_FAILURE for ImageStateChangeReasonCode
+        /// </summary>
+        public static readonly ImageStateChangeReasonCode IMAGE_IMPORT_FAILURE = new ImageStateChangeReasonCode("IMAGE_IMPORT_FAILURE");
+        /// <summary>
+        /// Constant IMAGE_UPDATE_FAILURE for ImageStateChangeReasonCode
+        /// </summary>
+        public static readonly ImageStateChangeReasonCode IMAGE_UPDATE_FAILURE = new ImageStateChangeReasonCode("IMAGE_UPDATE_FAILURE");
+        /// <summary>
         /// Constant INTERNAL_ERROR for ImageStateChangeReasonCode
         /// </summary>
         public static readonly ImageStateChangeReasonCode INTERNAL_ERROR = new ImageStateChangeReasonCode("INTERNAL_ERROR");
@@ -1316,6 +1444,56 @@ namespace Amazon.AppStream
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ImageStateChangeReasonCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ImageType.
+    /// </summary>
+    public class ImageType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CUSTOM for ImageType
+        /// </summary>
+        public static readonly ImageType CUSTOM = new ImageType("CUSTOM");
+        /// <summary>
+        /// Constant NATIVE for ImageType
+        /// </summary>
+        public static readonly ImageType NATIVE = new ImageType("NATIVE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ImageType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ImageType FindValue(string value)
+        {
+            return FindValue<ImageType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ImageType(string value)
         {
             return FindValue(value);
         }

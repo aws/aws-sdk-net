@@ -31,7 +31,8 @@ namespace Amazon.AppStream.Model
 {
     /// <summary>
     /// Container for the parameters to the UntagResource operation.
-    /// Disassociates one or more specified tags from the specified AppStream 2.0 resource.
+    /// Disassociates one or more specified tags from the specified WorkSpaces Applications
+    /// resource.
     /// 
     ///  
     /// <para>
@@ -40,7 +41,7 @@ namespace Amazon.AppStream.Model
     ///  
     /// <para>
     /// For more information about tags, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging
-    /// Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.
+    /// Your Resources</a> in the <i>Amazon WorkSpaces Applications Administration Guide</i>.
     /// </para>
     /// </summary>
     public partial class UntagResourceRequest : AmazonAppStreamRequest
