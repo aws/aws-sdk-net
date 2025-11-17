@@ -310,6 +310,13 @@ namespace Amazon.S3.Transfer
         /// 	If the key is not specified in the request parameter,
         /// 	the file name will used as the key name.
         /// </summary>
+        /// <remarks>
+        /// 	<para>
+        /// 	<b>Note:</b> Consider using <see cref="DownloadWithResponseAsync(TransferUtilityDownloadRequest, CancellationToken)"/> 
+        /// 	instead. The newer operation uses parallel downloads to improve performance 
+        /// 	and returns response metadata.
+        /// 	</para>
+        /// </remarks>
         /// <param name="request">
         /// 	Contains all the parameters required to download an Amazon S3 object.
         /// </param>
@@ -318,6 +325,112 @@ namespace Amazon.S3.Transfer
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task DownloadAsync(TransferUtilityDownloadRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// 	Downloads the content from Amazon S3 and writes it to the specified file, returning response metadata.
+        /// </summary>
+        /// <remarks>
+        /// 	<para>
+        /// 	This method uses parallel downloads to significantly improve throughput compared to 
+        /// 	the standard <see cref="DownloadAsync(TransferUtilityDownloadRequest, CancellationToken)"/> method.
+        /// 	</para>
+        /// 	<para>
+        /// 	<b>How it works:</b>
+        /// 	</para>
+        /// 	<list type="bullet">
+        /// 	<item><description>For large objects, the download is automatically split into parts (default 8MB per part)</description></item>
+        /// 	<item><description>Multiple parts are downloaded concurrently using parallel requests to S3</description></item>
+        /// 	<item><description>Downloaded parts are written directly to the file as they arrive</description></item>
+        /// 	</list>
+        /// 	<para>
+        /// 	<b>Configuration Options:</b>
+        /// 	</para>
+        /// 	<para>
+        /// 	You can customize the download behavior using <see cref="TransferUtilityConfig"/>:
+        /// 	</para>
+        /// 	<code>
+        /// 	var config = new TransferUtilityConfig
+        /// 	{
+        /// 	    // Control how many parts download in parallel (default: 10)
+        /// 	    ConcurrentServiceRequests = 20
+        /// 	};
+        /// 	var transferUtility = new TransferUtility(s3Client, config);
+        /// 	</code>
+        /// 	<para>
+        /// 	Use <see cref="TransferUtilityConfig.ConcurrentServiceRequests"/> to control parallel download threads.
+        /// 	</para>
+        /// </remarks>
+        /// <param name="filePath">
+        /// 	The file path where the downloaded content will be written.
+        /// </param>
+        /// <param name="bucketName">
+        /// 	The name of the bucket containing the Amazon S3 object to download.
+        /// </param>
+        /// <param name="key">
+        /// 	The key under which the Amazon S3 object is stored.
+        /// </param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation with download response metadata.</returns>
+        Task<TransferUtilityDownloadResponse> DownloadWithResponseAsync(string filePath, string bucketName, string key, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// 	Downloads the content from Amazon S3 based on the request and returns response metadata.
+        /// 	To track the progress of the download, add an event listener to the request's <c>WriteObjectProgressEvent</c>.
+        /// </summary>
+        /// <remarks>
+        /// 	<para>
+        /// 	This method uses parallel downloads to significantly improve throughput compared to 
+        /// 	the standard <see cref="DownloadAsync(TransferUtilityDownloadRequest, CancellationToken)"/> method.
+        /// 	</para>
+        /// 	<para>
+        /// 	<b>How it works:</b>
+        /// 	</para>
+        /// 	<list type="bullet">
+        /// 	<item><description>For large objects, the download is automatically split into parts (default 8MB per part)</description></item>
+        /// 	<item><description>Multiple parts are downloaded concurrently using parallel requests to S3</description></item>
+        /// 	<item><description>Downloaded parts are written directly to the file as they arrive</description></item>
+        /// 	</list>
+        /// 	<para>
+        /// 	<b>Configuration Options:</b>
+        /// 	</para>
+        /// 	<para>
+        /// 	You can customize the download behavior using <see cref="TransferUtilityConfig"/>:
+        /// 	</para>
+        /// 	<code>
+        /// 	var config = new TransferUtilityConfig
+        /// 	{
+        /// 	    // Control how many parts download in parallel (default: 10)
+        /// 	    ConcurrentServiceRequests = 20
+        /// 	};
+        /// 	var transferUtility = new TransferUtility(s3Client, config);
+        /// 	</code>
+        /// 	<para>
+        /// 	Use <see cref="TransferUtilityConfig.ConcurrentServiceRequests"/> to control parallel download threads.
+        /// 	</para>
+        /// 	<para>
+        /// 	You can also customize the part size per request using <see cref="BaseDownloadRequest.PartSize"/>:
+        /// 	</para>
+        /// 	<code>
+        /// 	var request = new TransferUtilityDownloadRequest
+        /// 	{
+        /// 	    BucketName = "my-bucket",
+        /// 	    Key = "my-key",
+        /// 	    FilePath = "local-file.txt",
+        /// 	    PartSize = 16 * 1024 * 1024  // Use 16MB parts instead of default 8MB
+        /// 	};
+        /// 	var response = await transferUtility.DownloadWithResponseAsync(request);
+        /// 	</code>
+        /// </remarks>
+        /// <param name="request">
+        /// 	Contains all the parameters required to download an Amazon S3 object.
+        /// </param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation with download response metadata.</returns>
+        Task<TransferUtilityDownloadResponse> DownloadWithResponseAsync(TransferUtilityDownloadRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
 

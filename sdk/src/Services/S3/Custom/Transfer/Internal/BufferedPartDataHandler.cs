@@ -57,6 +57,12 @@ namespace Amazon.S3.Transfer.Internal
             _config = config ?? throw new ArgumentNullException(nameof(config));
         }
         
+        public Task PrepareAsync(DownloadDiscoveryResult discoveryResult, CancellationToken cancellationToken)
+        {
+            // No preparation needed for buffered handler - buffers are created on demand
+            return Task.CompletedTask;
+        }
+        
         /// <inheritdoc/>
         public async Task ProcessPartAsync(
             int partNumber,
@@ -127,55 +133,39 @@ namespace Amazon.S3.Transfer.Internal
                 // Get reference to the buffer for writing
                 var partBuffer = downloadedPart.ArrayPoolBuffer;
                 
-                int totalRead = 0;
-                int chunkCount = 0;
-                
-                // Read response stream into buffer in chunks based on ContentLength.
-                // Example: For a 10MB part with 8KB BufferSize:
-                //   - Loop 1: remainingBytes=10MB, readSize=8KB → reads 8KB at offset 0
-                //   - Loop 2: remainingBytes=9.992MB, readSize=8KB → reads 8KB at offset 8KB
-                //   - ...continues until totalRead reaches 10MB (1,280 iterations)
-                while (totalRead < expectedBytes)
+                // Create a MemoryStream wrapper around the pooled buffer
+                // writable: true allows WriteResponseStreamAsync to write to it
+                // The MemoryStream starts at position 0 and can grow up to initialBufferSize
+                using (var memoryStream = new MemoryStream(partBuffer, 0, initialBufferSize, writable: true))
                 {
-                    // Calculate how many bytes we still need to read
-                    int remainingBytes = (int)(expectedBytes - totalRead);
+                    Logger.DebugFormat("BufferedPartDataHandler: [Part {0}] Reading response stream into buffer",
+                        partNumber);
+
+                    // Use GetObjectResponse's stream copy logic which includes:
+                    // - Progress tracking with events
+                    // - Size validation (ContentLength vs bytes read)
+                    // - Buffered reading with proper chunk sizes
+                    await response.WriteResponseStreamAsync(
+                        memoryStream,
+                        null, // destination identifier (not needed for memory stream)
+                        _config.BufferSize,
+                        cancellationToken,
+                        validateSize: true)
+                        .ConfigureAwait(false);
                     
-                    // Read in chunks up to BufferSize, but never exceed remaining bytes
-                    int readSize = Math.Min(remainingBytes, _config.BufferSize);
+                    int totalRead = (int)memoryStream.Position;
                     
-                    // Read directly into buffer at current position
-                    int bytesRead = await response.ResponseStream.ReadAsync(
-                        partBuffer,
-                        totalRead,
-                        readSize,
-                        cancellationToken).ConfigureAwait(false);
-                    
-                    if (bytesRead == 0) 
+                    Logger.DebugFormat("BufferedPartDataHandler: [Part {0}] Read {1} bytes from response stream",
+                        partNumber, totalRead);
+
+                    // Set the length to reflect actual bytes read
+                    downloadedPart.SetLength(totalRead);
+
+                    if (totalRead != expectedBytes)
                     {
-                        var errorMessage = $"Unexpected end of stream while downloading part {partNumber}. " +
-                            $"Expected {expectedBytes} bytes but only received {totalRead} bytes. " +
-                            $"This indicates a network error or S3 service issue.";
-                        
-                        Logger.Error(null, "BufferedPartDataHandler: [Part {0}] {1}", 
-                            partNumber, errorMessage);
-                        
-                        throw new IOException(errorMessage);
+                        Logger.Error(null, "BufferedPartDataHandler: [Part {0}] Size mismatch - Expected {1} bytes, read {2} bytes",
+                            partNumber, expectedBytes, totalRead);
                     }
-                    
-                    totalRead += bytesRead;
-                    chunkCount++;
-                }
-
-                Logger.DebugFormat("BufferedPartDataHandler: [Part {0}] Read {1} bytes in {2} chunks from response stream",
-                    partNumber, totalRead, chunkCount);
-
-                // Set the length to reflect actual bytes read
-                downloadedPart.SetLength(totalRead);
-
-                if (totalRead != expectedBytes)
-                {
-                    Logger.Error(null, "BufferedPartDataHandler: [Part {0}] Size mismatch - Expected {1} bytes, read {2} bytes",
-                        partNumber, expectedBytes, totalRead);
                 }
                 
                 return downloadedPart;

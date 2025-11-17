@@ -393,6 +393,13 @@ namespace Amazon.S3.Transfer
         /// <summary>
         /// 	Downloads the content from Amazon S3 and writes it to the specified file.  
         /// </summary>
+        /// <remarks>
+        /// 	<para>
+        /// 	<b>Note:</b> Consider using <see cref="DownloadWithResponse(string, string, string)"/> 
+        /// 	instead. The newer operation uses parallel downloads to improve performance 
+        /// 	and returns response metadata.
+        /// 	</para>
+        /// </remarks>
         /// <param name="filePath">
         /// 	The file path where the content from Amazon S3 will be written to.
         /// </param>
@@ -409,10 +416,117 @@ namespace Amazon.S3.Transfer
         /// 	If the key is not specified in the request parameter,
         /// 	the file name will used as the key name.
         /// </summary>
+        /// <remarks>
+        /// 	<para>
+        /// 	<b>Note:</b> Consider using <see cref="DownloadWithResponse(TransferUtilityDownloadRequest)"/> 
+        /// 	instead. The newer operation uses parallel downloads to improve performance 
+        /// 	and returns response metadata.
+        /// 	</para>
+        /// </remarks>
         /// <param name="request">
         /// 	Contains all the parameters required to download an Amazon S3 object.
         /// </param>
         void Download(TransferUtilityDownloadRequest request);
+
+        /// <summary>
+        /// 	Downloads the content from Amazon S3 and writes it to the specified file, returning response metadata.
+        /// </summary>
+        /// <remarks>
+        /// 	<para>
+        /// 	This method uses parallel downloads to significantly improve throughput compared to 
+        /// 	the standard <see cref="Download(string, string, string)"/> method.
+        /// 	</para>
+        /// 	<para>
+        /// 	<b>How it works:</b>
+        /// 	</para>
+        /// 	<list type="bullet">
+        /// 	<item><description>For large objects, the download is automatically split into parts (default 8MB per part)</description></item>
+        /// 	<item><description>Multiple parts are downloaded concurrently using parallel requests to S3</description></item>
+        /// 	<item><description>Downloaded parts are written directly to the file as they arrive</description></item>
+        /// 	</list>
+        /// 	<para>
+        /// 	<b>Configuration Options:</b>
+        /// 	</para>
+        /// 	<para>
+        /// 	You can customize the download behavior using <see cref="TransferUtilityConfig"/>:
+        /// 	</para>
+        /// 	<code>
+        /// 	var config = new TransferUtilityConfig
+        /// 	{
+        /// 	    // Control how many parts download in parallel (default: 10)
+        /// 	    ConcurrentServiceRequests = 20
+        /// 	};
+        /// 	var transferUtility = new TransferUtility(s3Client, config);
+        /// 	</code>
+        /// 	<para>
+        /// 	Use <see cref="TransferUtilityConfig.ConcurrentServiceRequests"/> to control parallel download threads.
+        /// 	</para>
+        /// </remarks>
+        /// <param name="filePath">
+        /// 	The file path where the downloaded content will be written.
+        /// </param>
+        /// <param name="bucketName">
+        /// 	The name of the bucket containing the Amazon S3 object to download.
+        /// </param>
+        /// <param name="key">
+        /// 	The key under which the Amazon S3 object is stored.
+        /// </param>
+        /// <returns>Response metadata including headers and version information from the download.</returns>
+        TransferUtilityDownloadResponse DownloadWithResponse(string filePath, string bucketName, string key);
+
+        /// <summary>
+        /// 	Downloads the content from Amazon S3 based on the request and returns response metadata.
+        /// 	To track the progress of the download, add an event listener to the request's <c>WriteObjectProgressEvent</c>.
+        /// </summary>
+        /// <remarks>
+        /// 	<para>
+        /// 	This method uses parallel downloads to significantly improve throughput compared to 
+        /// 	the standard <see cref="Download(TransferUtilityDownloadRequest)"/> method.
+        /// 	</para>
+        /// 	<para>
+        /// 	<b>How it works:</b>
+        /// 	</para>
+        /// 	<list type="bullet">
+        /// 	<item><description>For large objects, the download is automatically split into parts (default 8MB per part)</description></item>
+        /// 	<item><description>Multiple parts are downloaded concurrently using parallel requests to S3</description></item>
+        /// 	<item><description>Downloaded parts are written directly to the file as they arrive</description></item>
+        /// 	</list>
+        /// 	<para>
+        /// 	<b>Configuration Options:</b>
+        /// 	</para>
+        /// 	<para>
+        /// 	You can customize the download behavior using <see cref="TransferUtilityConfig"/>:
+        /// 	</para>
+        /// 	<code>
+        /// 	var config = new TransferUtilityConfig
+        /// 	{
+        /// 	    // Control how many parts download in parallel (default: 10)
+        /// 	    ConcurrentServiceRequests = 20
+        /// 	};
+        /// 	var transferUtility = new TransferUtility(s3Client, config);
+        /// 	</code>
+        /// 	<para>
+        /// 	Use <see cref="TransferUtilityConfig.ConcurrentServiceRequests"/> to control parallel download threads.
+        /// 	</para>
+        /// 	<para>
+        /// 	You can also customize the part size per request using <see cref="BaseDownloadRequest.PartSize"/>:
+        /// 	</para>
+        /// 	<code>
+        /// 	var request = new TransferUtilityDownloadRequest
+        /// 	{
+        /// 	    BucketName = "my-bucket",
+        /// 	    Key = "my-key",
+        /// 	    FilePath = "local-file.txt",
+        /// 	    PartSize = 16 * 1024 * 1024  // Use 16MB parts instead of default 8MB
+        /// 	};
+        /// 	var response = transferUtility.DownloadWithResponse(request);
+        /// 	</code>
+        /// </remarks>
+        /// <param name="request">
+        /// 	Contains all the parameters required to download an Amazon S3 object.
+        /// </param>
+        /// <returns>Response metadata including headers and version information from the download.</returns>
+        TransferUtilityDownloadResponse DownloadWithResponse(TransferUtilityDownloadRequest request);
         #endregion
 
         #region DownloadDirectory

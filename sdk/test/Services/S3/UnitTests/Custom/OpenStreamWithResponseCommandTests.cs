@@ -281,6 +281,34 @@ namespace AWSSDK.UnitTests
             response.ResponseStream.Dispose();
         }
 
+        [TestMethod]
+        public async Task ExecuteAsync_ZeroByteObject_ContentRangeIsNull()
+        {
+            // Arrange - Mock a 0-byte object
+            var mockResponse = MultipartDownloadTestHelpers.CreateSinglePartResponse(
+                objectSize: 0,
+                eTag: "empty-etag");
+            
+            var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client(
+                (req, ct) => Task.FromResult(mockResponse));
+            
+            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest();
+            var config = new TransferUtilityConfig();
+            var command = new OpenStreamWithResponseCommand(mockClient.Object, request, config);
+
+            // Act
+            var response = await command.ExecuteAsync(CancellationToken.None);
+
+            // Assert - S3 returns null ContentRange for 0-byte objects
+            Assert.AreEqual(0, response.Headers.ContentLength, 
+                "ContentLength should be 0 for empty object");
+            Assert.IsNull(response.ContentRange, 
+                "ContentRange should be null for 0-byte objects (matching S3 behavior)");
+            
+            // Cleanup
+            response.ResponseStream.Dispose();
+        }
+
         #endregion
 
         #region Integration Tests

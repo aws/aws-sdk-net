@@ -592,5 +592,250 @@ namespace AWSSDK.UnitTests
         }
 
         #endregion
+
+        #region FileDownloadConfiguration Creation
+
+        /// <summary>
+        /// Creates a default FileDownloadConfiguration for testing.
+        /// </summary>
+        internal static FileDownloadConfiguration CreateFileDownloadConfiguration(
+            int concurrentRequests = DefaultConcurrentRequests,
+            int bufferSize = BufferSize,
+            long partSize = DefaultPartSize,
+            string destinationPath = null)
+        {
+            destinationPath = destinationPath ?? Path.Combine(Path.GetTempPath(), $"test-download-{Guid.NewGuid()}.dat");
+            return new FileDownloadConfiguration(
+                concurrentRequests,
+                bufferSize,
+                partSize,
+                destinationPath);
+        }
+
+        #endregion
+
+        #region TransferUtilityDownloadRequest Creation
+
+        /// <summary>
+        /// Creates a mock TransferUtilityDownloadRequest for testing.
+        /// </summary>
+        public static TransferUtilityDownloadRequest CreateDownloadRequest(
+            string bucketName = "test-bucket",
+            string key = "test-key",
+            string filePath = null,
+            long? partSize = null)
+        {
+            filePath = filePath ?? Path.Combine(Path.GetTempPath(), $"test-download-{Guid.NewGuid()}.dat");
+            
+            var request = new TransferUtilityDownloadRequest
+            {
+                BucketName = bucketName,
+                Key = key,
+                FilePath = filePath
+            };
+            
+            if (partSize.HasValue)
+            {
+                request.PartSize = partSize.Value;
+            }
+            
+            return request;
+        }
+
+        #endregion
+
+        #region Temporary File Management
+
+        /// <summary>
+        /// Creates a temporary file path for testing.
+        /// Returns path in temp directory with unique name.
+        /// </summary>
+        public static string CreateTempFilePath(string fileName = null)
+        {
+            fileName = fileName ?? $"test-download-{Guid.NewGuid()}.dat";
+            return Path.Combine(Path.GetTempPath(), fileName);
+        }
+
+        /// <summary>
+        /// Cleans up temporary files used in tests.
+        /// Safe to call even if files don't exist.
+        /// </summary>
+        public static void CleanupTempFiles(params string[] filePaths)
+        {
+            foreach (var filePath in filePaths)
+            {
+                if (string.IsNullOrEmpty(filePath))
+                    continue;
+
+                try
+                {
+                    if (File.Exists(filePath))
+                    {
+                        File.Delete(filePath);
+                    }
+                }
+                catch
+                {
+                    // Best effort cleanup - don't throw
+                }
+            }
+        }
+
+        /// <summary>
+        /// Creates a temporary directory for test files.
+        /// </summary>
+        public static string CreateTempDirectory()
+        {
+            var tempDir = Path.Combine(Path.GetTempPath(), $"S3Tests_{Guid.NewGuid()}");
+            Directory.CreateDirectory(tempDir);
+            return tempDir;
+        }
+
+        /// <summary>
+        /// Cleans up a temporary directory and all its contents.
+        /// Safe to call even if directory doesn't exist.
+        /// </summary>
+        public static void CleanupTempDirectory(string directoryPath)
+        {
+            if (string.IsNullOrEmpty(directoryPath))
+                return;
+
+            try
+            {
+                if (Directory.Exists(directoryPath))
+                {
+                    Directory.Delete(directoryPath, recursive: true);
+                }
+            }
+            catch
+            {
+                // Best effort cleanup - don't throw
+            }
+        }
+
+        #endregion
+
+        #region File Verification
+
+        /// <summary>
+        /// Verifies file contents match expected data.
+        /// </summary>
+        public static bool VerifyFileContents(string filePath, byte[] expectedData)
+        {
+            if (!File.Exists(filePath))
+                return false;
+
+            try
+            {
+                var actualData = File.ReadAllBytes(filePath);
+                return actualData.SequenceEqual(expectedData);
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// Verifies file exists and has expected size.
+        /// </summary>
+        public static bool VerifyFileSize(string filePath, long expectedSize)
+        {
+            if (!File.Exists(filePath))
+                return false;
+
+            try
+            {
+                var fileInfo = new FileInfo(filePath);
+                return fileInfo.Length == expectedSize;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// Reads file contents for verification.
+        /// </summary>
+        public static byte[] ReadFileContents(string filePath)
+        {
+            if (!File.Exists(filePath))
+                return null;
+
+            try
+            {
+                return File.ReadAllBytes(filePath);
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
+        #endregion
+
+        #region Multi-part File Writing Simulation
+
+        /// <summary>
+        /// Simulates writing multiple parts to a file for testing.
+        /// Each part has predictable data based on part number and seed.
+        /// </summary>
+        public static void WritePartsToFile(
+            string filePath,
+            int totalParts,
+            long partSize,
+            int seed = 0)
+        {
+            using (var fileStream = new FileStream(filePath, FileMode.Create, FileAccess.Write, FileShare.None))
+            {
+                for (int i = 0; i < totalParts; i++)
+                {
+                    var partData = GenerateTestData((int)partSize, seed + i * (int)partSize);
+                    fileStream.Write(partData, 0, partData.Length);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Verifies multi-part file contents match expected pattern.
+        /// </summary>
+        public static bool VerifyMultipartFileContents(
+            string filePath,
+            int totalParts,
+            long partSize,
+            int seed = 0)
+        {
+            if (!File.Exists(filePath))
+                return false;
+
+            try
+            {
+                using (var fileStream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read))
+                {
+                    for (int i = 0; i < totalParts; i++)
+                    {
+                        var expectedData = GenerateTestData((int)partSize, seed + i * (int)partSize);
+                        var actualData = new byte[partSize];
+                        
+                        var bytesRead = fileStream.Read(actualData, 0, (int)partSize);
+                        if (bytesRead != partSize)
+                            return false;
+
+                        if (!expectedData.SequenceEqual(actualData))
+                            return false;
+                    }
+                    
+                    // Verify no extra data
+                    return fileStream.Position == fileStream.Length;
+                }
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        #endregion
     }
 }
