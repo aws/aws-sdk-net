@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AutomatedReasoningPolicyBuildResultAssets Object
+    /// Response Unmarshaller for AutomatedReasoningPolicyGeneratedTestCases Object
     /// </summary>  
-    public class AutomatedReasoningPolicyBuildResultAssetsUnmarshaller : IJsonUnmarshaller<AutomatedReasoningPolicyBuildResultAssets, JsonUnmarshallerContext>
+    public class AutomatedReasoningPolicyGeneratedTestCasesUnmarshaller : IJsonUnmarshaller<AutomatedReasoningPolicyGeneratedTestCases, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AutomatedReasoningPolicyBuildResultAssets Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public AutomatedReasoningPolicyGeneratedTestCases Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            AutomatedReasoningPolicyBuildResultAssets unmarshalledObject = new AutomatedReasoningPolicyBuildResultAssets();
+            AutomatedReasoningPolicyGeneratedTestCases unmarshalledObject = new AutomatedReasoningPolicyGeneratedTestCases();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,28 +56,10 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("buildLog", targetDepth))
-                {
-                    var unmarshaller = AutomatedReasoningPolicyBuildLogUnmarshaller.Instance;
-                    unmarshalledObject.BuildLog = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
                 if (context.TestExpression("generatedTestCases", targetDepth))
                 {
-                    var unmarshaller = AutomatedReasoningPolicyGeneratedTestCasesUnmarshaller.Instance;
+                    var unmarshaller = new JsonListUnmarshaller<AutomatedReasoningPolicyGeneratedTestCase, AutomatedReasoningPolicyGeneratedTestCaseUnmarshaller>(AutomatedReasoningPolicyGeneratedTestCaseUnmarshaller.Instance);
                     unmarshalledObject.GeneratedTestCases = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("policyDefinition", targetDepth))
-                {
-                    var unmarshaller = AutomatedReasoningPolicyDefinitionUnmarshaller.Instance;
-                    unmarshalledObject.PolicyDefinition = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("qualityReport", targetDepth))
-                {
-                    var unmarshaller = AutomatedReasoningPolicyDefinitionQualityReportUnmarshaller.Instance;
-                    unmarshalledObject.QualityReport = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -85,12 +67,12 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
         }
 
 
-        private static AutomatedReasoningPolicyBuildResultAssetsUnmarshaller _instance = new AutomatedReasoningPolicyBuildResultAssetsUnmarshaller();        
+        private static AutomatedReasoningPolicyGeneratedTestCasesUnmarshaller _instance = new AutomatedReasoningPolicyGeneratedTestCasesUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AutomatedReasoningPolicyBuildResultAssetsUnmarshaller Instance
+        public static AutomatedReasoningPolicyGeneratedTestCasesUnmarshaller Instance
         {
             get
             {
