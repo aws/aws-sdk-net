@@ -158,6 +158,17 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetSybaseAseSettings())
+            {
+                context.Writer.WritePropertyName("SybaseAseSettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = SybaseAseDataProviderSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.SybaseAseSettings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

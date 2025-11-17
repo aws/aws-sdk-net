@@ -44,6 +44,7 @@ namespace Amazon.DatabaseMigrationService.Model
         private OracleDataProviderSettings _oracleSettings;
         private PostgreSqlDataProviderSettings _postgreSqlSettings;
         private RedshiftDataProviderSettings _redshiftSettings;
+        private SybaseAseDataProviderSettings _sybaseAseSettings;
 
         /// <summary>
         /// Gets and sets the property DocDbSettings.
@@ -205,6 +206,21 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetRedshiftSettings()
         {
             return this._redshiftSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SybaseAseSettings.
+        /// </summary>
+        public SybaseAseDataProviderSettings SybaseAseSettings
+        {
+            get { return this._sybaseAseSettings; }
+            set { this._sybaseAseSettings = value; }
+        }
+
+        // Check to see if SybaseAseSettings property is set
+        internal bool IsSetSybaseAseSettings()
+        {
+            return this._sybaseAseSettings != null;
         }
 
     }

@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for SchemaConversionRequest Object
+    /// Response Unmarshaller for SybaseAseDataProviderSettings Object
     /// </summary>  
-    public class SchemaConversionRequestUnmarshaller : IUnmarshaller<SchemaConversionRequest, XmlUnmarshallerContext>, IUnmarshaller<SchemaConversionRequest, JsonUnmarshallerContext>
+    public class SybaseAseDataProviderSettingsUnmarshaller : IUnmarshaller<SybaseAseDataProviderSettings, XmlUnmarshallerContext>, IUnmarshaller<SybaseAseDataProviderSettings, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        SchemaConversionRequest IUnmarshaller<SchemaConversionRequest, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        SybaseAseDataProviderSettings IUnmarshaller<SybaseAseDataProviderSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public SchemaConversionRequest Unmarshall(JsonUnmarshallerContext context)
+        public SybaseAseDataProviderSettings Unmarshall(JsonUnmarshallerContext context)
         {
-            SchemaConversionRequest unmarshalledObject = new SchemaConversionRequest();
+            SybaseAseDataProviderSettings unmarshalledObject = new SybaseAseDataProviderSettings();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,40 +66,40 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Error", targetDepth))
-                {
-                    var unmarshaller = ErrorDetailsUnmarshaller.Instance;
-                    unmarshalledObject.Error = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ExportSqlDetails", targetDepth))
-                {
-                    var unmarshaller = ExportSqlDetailsUnmarshaller.Instance;
-                    unmarshalledObject.ExportSqlDetails = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("MigrationProjectArn", targetDepth))
+                if (context.TestExpression("CertificateArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MigrationProjectArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CertificateArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Progress", targetDepth))
-                {
-                    var unmarshaller = ProgressUnmarshaller.Instance;
-                    unmarshalledObject.Progress = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("RequestIdentifier", targetDepth))
+                if (context.TestExpression("DatabaseName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RequestIdentifier = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DatabaseName = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Status", targetDepth))
+                if (context.TestExpression("EncryptPassword", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.EncryptPassword = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Port", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.Port = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ServerName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ServerName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SslMode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SslMode = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -107,12 +107,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
         }
 
 
-        private static SchemaConversionRequestUnmarshaller _instance = new SchemaConversionRequestUnmarshaller();        
+        private static SybaseAseDataProviderSettingsUnmarshaller _instance = new SybaseAseDataProviderSettingsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SchemaConversionRequestUnmarshaller Instance
+        public static SybaseAseDataProviderSettingsUnmarshaller Instance
         {
             get
             {

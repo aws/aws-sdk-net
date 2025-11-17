@@ -121,8 +121,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <para>
         /// The type of database engine for the data provider. Valid values include <c>"aurora"</c>,
         /// <c>"aurora-postgresql"</c>, <c>"mysql"</c>, <c>"oracle"</c>, <c>"postgres"</c>, <c>"sqlserver"</c>,
-        /// <c>redshift</c>, <c>mariadb</c>, <c>mongodb</c>, <c>db2</c>, <c>db2-zos</c> and <c>docdb</c>.
-        /// A value of <c>"aurora"</c> represents Amazon Aurora MySQL-Compatible Edition.
+        /// <c>redshift</c>, <c>mariadb</c>, <c>mongodb</c>, <c>db2</c>, <c>db2-zos</c>, <c>docdb</c>,
+        /// and <c>sybase</c>. A value of <c>"aurora"</c> represents Amazon Aurora MySQL-Compatible
+        /// Edition.
         /// </para>
         /// </summary>
         public string Engine
