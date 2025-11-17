@@ -174,6 +174,18 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.SceneChangeDetect);
             }
 
+            if(requestObject.IsSetSpatialAq())
+            {
+                context.Writer.WritePropertyName("spatialAq");
+                context.Writer.Write(requestObject.SpatialAq);
+            }
+
+            if(requestObject.IsSetTemporalAq())
+            {
+                context.Writer.WritePropertyName("temporalAq");
+                context.Writer.Write(requestObject.TemporalAq);
+            }
+
             if(requestObject.IsSetTimecodeBurninSettings())
             {
                 context.Writer.WritePropertyName("timecodeBurninSettings");

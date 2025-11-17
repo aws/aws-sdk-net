@@ -53,6 +53,8 @@ namespace Amazon.MediaLive.Model
         private int? _qvbrQualityLevel;
         private Av1RateControlMode _rateControlMode;
         private Av1SceneChangeDetect _sceneChangeDetect;
+        private Av1SpatialAq _spatialAq;
+        private Av1TemporalAq _temporalAq;
         private TimecodeBurninSettings _timecodeBurninSettings;
 
         /// <summary>
@@ -385,6 +387,43 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetSceneChangeDetect()
         {
             return this._sceneChangeDetect != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SpatialAq. Spatial AQ makes adjustments within each frame
+        /// based on spatial variation of content complexity. Enabled: MediaLive will determine
+        /// the appropriate level of spatial AQ to apply. Disabled: No spatial AQ. For more information,
+        /// see the topic about video adaptive quantization in the MediaLive user guide.
+        /// </summary>
+        public Av1SpatialAq SpatialAq
+        {
+            get { return this._spatialAq; }
+            set { this._spatialAq = value; }
+        }
+
+        // Check to see if SpatialAq property is set
+        internal bool IsSetSpatialAq()
+        {
+            return this._spatialAq != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TemporalAq. Temporal AQ makes adjustments within each frame
+        /// based on variations in content complexity over time. Enabled: MediaLive will determine
+        /// the appropriate level of temporal AQ to apply. Disabled: No temporal AQ. For more
+        /// information, see the topic about video adaptive quantization in the MediaLive user
+        /// guide.
+        /// </summary>
+        public Av1TemporalAq TemporalAq
+        {
+            get { return this._temporalAq; }
+            set { this._temporalAq = value; }
+        }
+
+        // Check to see if TemporalAq property is set
+        internal bool IsSetTemporalAq()
+        {
+            return this._temporalAq != null;
         }
 
         /// <summary>

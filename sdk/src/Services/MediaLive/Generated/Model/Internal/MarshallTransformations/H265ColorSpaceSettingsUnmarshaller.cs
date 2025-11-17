@@ -84,6 +84,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     unmarshalledObject.Hdr10Settings = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("hlg2020Settings", targetDepth))
+                {
+                    var unmarshaller = Hlg2020SettingsUnmarshaller.Instance;
+                    unmarshalledObject.Hlg2020Settings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("rec601Settings", targetDepth))
                 {
                     var unmarshaller = Rec601SettingsUnmarshaller.Instance;
