@@ -66,6 +66,12 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("assistedNluMode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AssistedNluMode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("enabled", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
