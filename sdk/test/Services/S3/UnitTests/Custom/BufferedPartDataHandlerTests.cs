@@ -255,16 +255,15 @@ namespace AWSSDK.UnitTests
             var response = new GetObjectResponse
             {
                 ContentLength = expectedBytes, // Promise 1MB
-                ResponseStream = new MemoryStream(partData) // Only deliver 512KB
+                ResponseStream = new MemoryStream(partData), // Only deliver 512KB
+                ResponseMetadata = new Amazon.Runtime.ResponseMetadata()
             };
 
             // Act & Assert
-            var exception = await Assert.ThrowsExceptionAsync<IOException>(
+            var exception = await Assert.ThrowsExceptionAsync<Amazon.S3.Model.StreamSizeMismatchException>(
                 async () => await handler.ProcessPartAsync(1, response, CancellationToken.None));
 
             // Verify exception message contains key information
-            StringAssert.Contains(exception.Message, "Unexpected end of stream");
-            StringAssert.Contains(exception.Message, "part 1");
             StringAssert.Contains(exception.Message, expectedBytes.ToString());
             StringAssert.Contains(exception.Message, actualBytes.ToString());
         }
@@ -285,16 +284,17 @@ namespace AWSSDK.UnitTests
             var response = new GetObjectResponse
             {
                 ContentLength = expectedBytes,
-                ResponseStream = new MemoryStream(partData)
+                ResponseStream = new MemoryStream(partData),
+                ResponseMetadata = new Amazon.Runtime.ResponseMetadata()
             };
 
             // Act
             try
             {
                 await handler.ProcessPartAsync(1, response, CancellationToken.None);
-                Assert.Fail("Expected IOException was not thrown");
+                Assert.Fail("Expected StreamSizeMismatchException was not thrown");
             }
-            catch (IOException)
+            catch (Amazon.S3.Model.StreamSizeMismatchException)
             {
                 // Expected
             }

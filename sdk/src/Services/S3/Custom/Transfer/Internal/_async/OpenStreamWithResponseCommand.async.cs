@@ -61,7 +61,15 @@ namespace Amazon.S3.Transfer.Internal
             response.Headers.ContentLength = discoveryResult.ObjectSize;
             
             // Set ContentRange to represent the entire object: bytes 0-(ContentLength-1)/ContentLength
-            response.ContentRange = $"bytes 0-{discoveryResult.ObjectSize - 1}/{discoveryResult.ObjectSize}";
+            // S3 returns null for 0-byte objects, so we match that behavior
+            if (discoveryResult.ObjectSize == 0)
+            {
+                response.ContentRange = null;
+            }
+            else
+            {
+                response.ContentRange = $"bytes 0-{discoveryResult.ObjectSize - 1}/{discoveryResult.ObjectSize}";
+            }
             
             // SEP Part GET Step 7 / Ranged GET Step 9:
             // Handle composite checksums for multipart objects

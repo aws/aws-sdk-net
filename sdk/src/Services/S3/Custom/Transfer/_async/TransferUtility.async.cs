@@ -139,16 +139,7 @@ namespace Amazon.S3.Transfer
             }
         }
 
-        /// <summary>
-        /// 	Aborts the multipart uploads based on the specified request parameters.
-        /// </summary>
-        /// <param name="request">
-        /// 	Contains all the parameters required to abort multipart uploads.
-        /// </param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <inheritdoc/>
         public async Task AbortMultipartUploadsAsync(TransferUtilityAbortMultipartUploadRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             using(CreateSpan(nameof(AbortMultipartUploadsAsync), null, Amazon.Runtime.Telemetry.Tracing.SpanKind.CLIENT))
@@ -170,6 +161,24 @@ namespace Amazon.S3.Transfer
                 CheckForBlockedArn(request.BucketName, "Download");
                 var command = new DownloadCommand(this._s3Client, request);
                 await command.ExecuteAsync(cancellationToken).ConfigureAwait(false);
+            }
+        }
+
+        /// <inheritdoc/>
+        public async Task<TransferUtilityDownloadResponse> DownloadWithResponseAsync(string filePath, string bucketName, string key, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var request = ConstructDownloadRequest(filePath, bucketName, key);
+            return await DownloadWithResponseAsync(request, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <inheritdoc/>
+        public async Task<TransferUtilityDownloadResponse> DownloadWithResponseAsync(TransferUtilityDownloadRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            using(CreateSpan(nameof(DownloadWithResponseAsync), null, Amazon.Runtime.Telemetry.Tracing.SpanKind.CLIENT))
+            {
+                CheckForBlockedArn(request.BucketName, "Download");
+                var command = new MultipartDownloadCommand(this._s3Client, request, this._config);
+                return await command.ExecuteAsync(cancellationToken).ConfigureAwait(false);
             }
         }
 

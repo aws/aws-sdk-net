@@ -29,6 +29,7 @@ using System.Threading.Tasks;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal.Util;
 using Amazon.S3.Model;
+using Amazon.S3.Util;
 
 namespace Amazon.S3.Transfer.Internal
 {
@@ -59,6 +60,14 @@ namespace Amazon.S3.Transfer.Internal
         }
 
         /// <summary>
+        /// Task that completes when all downloads finish (successfully or with error).
+        /// For file-based downloads, await this before returning to ensure file is committed.
+        /// For stream-based downloads, this can be ignored as the consumer naturally waits.
+        /// Returns a completed task if downloads haven't started or completed synchronously.
+        /// </summary>
+        public Task DownloadCompletionTask => _downloadCompletionTask ?? Task.CompletedTask;
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="MultipartDownloadManager"/> class.
         /// </summary>
         /// <param name="s3Client">The <see cref="IAmazonS3"/> client for making S3 requests.</param>
@@ -86,13 +95,6 @@ namespace Amazon.S3.Transfer.Internal
                 return _downloadException;
             }
         }
-
-        /// <summary>
-        /// Gets a task that completes when all download tasks have finished.
-        /// Returns a completed task for single-part downloads.
-        /// For multipart downloads, this task can be awaited to observe exceptions from background downloads.
-        /// </summary>
-        public Task DownloadCompletionTask => _downloadCompletionTask ?? Task.CompletedTask;
 
         /// <inheritdoc/>
         public async Task<DownloadDiscoveryResult> DiscoverDownloadStrategyAsync(CancellationToken cancellationToken)
@@ -146,6 +148,9 @@ namespace Amazon.S3.Transfer.Internal
 
             try
             {
+                // Prepare the data handler (e.g., create temp files for file-based downloads)
+                await _dataHandler.PrepareAsync(discoveryResult, cancellationToken).ConfigureAwait(false);
+                
                 // Process Part 1 from InitialResponse (applies to both single-part and multipart)
                 Logger.DebugFormat("MultipartDownloadManager: Buffering Part 1 from discovery response");
                 await _dataHandler.ProcessPartAsync(1, discoveryResult.InitialResponse, cancellationToken).ConfigureAwait(false);
@@ -345,6 +350,9 @@ namespace Amazon.S3.Transfer.Internal
 
         private async Task<DownloadDiscoveryResult> DiscoverUsingPartStrategyAsync(CancellationToken cancellationToken)
         {
+            // Check for cancellation before making any S3 calls
+            cancellationToken.ThrowIfCancellationRequested();
+            
             // SEP Part GET Step 1: "create a new GetObject request copying all fields in DownloadRequest. 
             // Set partNumber to 1."
             var firstPartRequest = CreateGetObjectRequest();
@@ -352,6 +360,9 @@ namespace Amazon.S3.Transfer.Internal
             
             // SEP Part GET Step 2: "send the request and wait for the response in a non-blocking fashion"
             var firstPartResponse = await _s3Client.GetObjectAsync(firstPartRequest, cancellationToken).ConfigureAwait(false);
+            
+            if (firstPartResponse == null)
+                throw new InvalidOperationException("Failed to retrieve object from S3");
             
             // SEP Part GET Step 3: Save ETag for later IfMatch validation in subsequent requests
             _savedETag = firstPartResponse.ETag;
@@ -397,6 +408,9 @@ namespace Amazon.S3.Transfer.Internal
 
         private async Task<DownloadDiscoveryResult> DiscoverUsingRangeStrategyAsync(CancellationToken cancellationToken)
         {
+            // Check for cancellation before making any S3 calls
+            cancellationToken.ThrowIfCancellationRequested();
+            
             // Get target part size for RANGE strategy (already set in config from request or default)
             var targetPartSize = _config.TargetPartSizeBytes;
             
@@ -407,6 +421,10 @@ namespace Amazon.S3.Transfer.Internal
             
             // SEP Ranged GET Step 2: "send the request and wait for the response in a non-blocking fashion"
             var firstRangeResponse = await _s3Client.GetObjectAsync(firstRangeRequest, cancellationToken).ConfigureAwait(false);
+            
+            // Defensive null check
+            if (firstRangeResponse == null)
+                throw new InvalidOperationException("Failed to retrieve object from S3");
             
             // SEP Ranged GET Step 5: "save Etag from the response to a variable" 
             // (for IfMatch validation in subsequent requests)
@@ -498,34 +516,14 @@ namespace Amazon.S3.Transfer.Internal
 
         internal (long startByte, long endByte, long totalSize) ParseContentRange(string contentRange)
         {
-            if (string.IsNullOrEmpty(contentRange))
-                throw new InvalidOperationException("Content-Range header is missing");
-
-            // Format: "bytes {start}-{end}/{total-size}"
-            var parts = contentRange.Replace("bytes ", "").Split('/');
-            if (parts.Length != 2)
-                throw new InvalidOperationException($"Invalid ContentRange format: {contentRange}");
-
-            // Parse byte range
-            var rangeParts = parts[0].Split('-');
-            if (rangeParts.Length != 2 ||
-                !long.TryParse(rangeParts[0], out var startByte) ||
-                !long.TryParse(rangeParts[1], out var endByte))
-                throw new InvalidOperationException($"Unable to parse ContentRange byte range: {contentRange}");
-
-            // Parse total size - S3 always returns exact sizes, never wildcards
-            if (parts[1] == "*")
-                throw new InvalidOperationException($"Unexpected wildcard in ContentRange total size: {contentRange}. S3 always returns exact object sizes.");
-            if (!long.TryParse(parts[1], out var totalSize))
-                throw new InvalidOperationException($"Unable to parse ContentRange total size: {contentRange}");
-
-            return (startByte, endByte, totalSize);
+            // Delegate to centralized ContentRange parsing utility
+            return ContentRangeParser.Parse(contentRange);
         }
 
         internal long ExtractTotalSizeFromContentRange(string contentRange)
         {
-            var (_, _, totalSize) = ParseContentRange(contentRange);
-            return totalSize;
+            // Delegate to centralized ContentRange parsing utility
+            return ContentRangeParser.GetTotalSize(contentRange);
         }
 
         internal void ValidateContentRange(GetObjectResponse response, int partNumber, long objectSize)
@@ -553,11 +551,6 @@ namespace Amazon.S3.Transfer.Internal
                         $"Actual: bytes {actualStartByte}-{actualEndByte}");
                 }
             }
-         
-            // TODO in future for file based download it also says
-            // Applicable to destinations to which the SDK writes parts parallelly, e.g., a file
-            // the content range of the response aligns with the starting offset of the destination to which the SDK writes the part. For example, given a part with content range of bytes 8388608-16777215/33555032, 
-            // it should be written to the file from offset 8,388,608 to 1,6777,215.
         }
 
         private void ThrowIfDisposed()
