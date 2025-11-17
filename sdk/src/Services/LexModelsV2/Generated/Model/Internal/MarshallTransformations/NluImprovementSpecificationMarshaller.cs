@@ -46,6 +46,12 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAssistedNluMode())
+            {
+                context.Writer.WritePropertyName("assistedNluMode");
+                context.Writer.WriteStringValue(requestObject.AssistedNluMode);
+            }
+
             if(requestObject.IsSetEnabled())
             {
                 context.Writer.WritePropertyName("enabled");
