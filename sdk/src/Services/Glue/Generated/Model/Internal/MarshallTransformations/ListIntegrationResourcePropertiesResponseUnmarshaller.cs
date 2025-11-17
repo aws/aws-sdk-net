@@ -35,9 +35,9 @@ using Amazon.Util;
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CreateIntegrationResourceProperty operation
+    /// Response Unmarshaller for ListIntegrationResourceProperties operation
     /// </summary>  
-    public class CreateIntegrationResourcePropertyResponseUnmarshaller : JsonResponseUnmarshaller
+    public class ListIntegrationResourcePropertiesResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,34 +46,22 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            CreateIntegrationResourcePropertyResponse response = new CreateIntegrationResourcePropertyResponse();
+            ListIntegrationResourcePropertiesResponse response = new ListIntegrationResourcePropertiesResponse();
             StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
             context.Read(ref reader);
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ResourceArn", targetDepth))
+                if (context.TestExpression("IntegrationResourcePropertyList", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<IntegrationResourceProperty, IntegrationResourcePropertyUnmarshaller>(IntegrationResourcePropertyUnmarshaller.Instance);
+                    response.IntegrationResourcePropertyList = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("Marker", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.ResourceArn = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("ResourcePropertyArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.ResourcePropertyArn = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("SourceProcessingProperties", targetDepth))
-                {
-                    var unmarshaller = SourceProcessingPropertiesUnmarshaller.Instance;
-                    response.SourceProcessingProperties = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("TargetProcessingProperties", targetDepth))
-                {
-                    var unmarshaller = TargetProcessingPropertiesUnmarshaller.Instance;
-                    response.TargetProcessingProperties = unmarshaller.Unmarshall(context, ref reader);
+                    response.Marker = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -105,10 +93,6 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 {
                     return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ConflictException"))
-                {
-                    return ConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("EntityNotFoundException"))
                 {
                     return EntityNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
@@ -137,9 +121,9 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             return new AmazonGlueException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static CreateIntegrationResourcePropertyResponseUnmarshaller _instance = new CreateIntegrationResourcePropertyResponseUnmarshaller();        
+        private static ListIntegrationResourcePropertiesResponseUnmarshaller _instance = new ListIntegrationResourcePropertiesResponseUnmarshaller();        
 
-        internal static CreateIntegrationResourcePropertyResponseUnmarshaller GetInstance()
+        internal static ListIntegrationResourcePropertiesResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -147,7 +131,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateIntegrationResourcePropertyResponseUnmarshaller Instance
+        public static ListIntegrationResourcePropertiesResponseUnmarshaller Instance
         {
             get
             {

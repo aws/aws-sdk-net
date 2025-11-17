@@ -37,9 +37,9 @@ using ThirdParty.RuntimeBackports;
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateIntegrationResourceProperty Request Marshaller
+    /// ListIntegrationResourceProperties Request Marshaller
     /// </summary>       
-    public class CreateIntegrationResourcePropertyRequestMarshaller : IMarshaller<IRequest, CreateIntegrationResourcePropertyRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class ListIntegrationResourcePropertiesRequestMarshaller : IMarshaller<IRequest, ListIntegrationResourcePropertiesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -48,7 +48,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateIntegrationResourcePropertyRequest)input);
+            return this.Marshall((ListIntegrationResourcePropertiesRequest)input);
         }
 
         /// <summary>
@@ -56,10 +56,10 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateIntegrationResourcePropertyRequest publicRequest)
+        public IRequest Marshall(ListIntegrationResourcePropertiesRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Glue");
-            string target = "AWSGlue.CreateIntegrationResourceProperty";
+            string target = "AWSGlue.ListIntegrationResourceProperties";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-03-31";
@@ -75,48 +75,32 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
-            if(publicRequest.IsSetResourceArn())
+            if(publicRequest.IsSetFilters())
             {
-                context.Writer.WritePropertyName("ResourceArn");
-                context.Writer.WriteStringValue(publicRequest.ResourceArn);
-            }
-
-            if(publicRequest.IsSetSourceProcessingProperties())
-            {
-                context.Writer.WritePropertyName("SourceProcessingProperties");
-                context.Writer.WriteStartObject();
-
-                var marshaller = SourceProcessingPropertiesMarshaller.Instance;
-                marshaller.Marshall(publicRequest.SourceProcessingProperties, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(publicRequest.IsSetTags())
-            {
-                context.Writer.WritePropertyName("Tags");
+                context.Writer.WritePropertyName("Filters");
                 context.Writer.WriteStartArray();
-                foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                foreach(var publicRequestFiltersListValue in publicRequest.Filters)
                 {
                     context.Writer.WriteStartObject();
 
-                    var marshaller = TagMarshaller.Instance;
-                    marshaller.Marshall(publicRequestTagsListValue, context);
+                    var marshaller = IntegrationResourcePropertyFilterMarshaller.Instance;
+                    marshaller.Marshall(publicRequestFiltersListValue, context);
 
                     context.Writer.WriteEndObject();
                 }
                 context.Writer.WriteEndArray();
             }
 
-            if(publicRequest.IsSetTargetProcessingProperties())
+            if(publicRequest.IsSetMarker())
             {
-                context.Writer.WritePropertyName("TargetProcessingProperties");
-                context.Writer.WriteStartObject();
+                context.Writer.WritePropertyName("Marker");
+                context.Writer.WriteStringValue(publicRequest.Marker);
+            }
 
-                var marshaller = TargetProcessingPropertiesMarshaller.Instance;
-                marshaller.Marshall(publicRequest.TargetProcessingProperties, context);
-
-                context.Writer.WriteEndObject();
+            if(publicRequest.IsSetMaxRecords())
+            {
+                context.Writer.WritePropertyName("MaxRecords");
+                context.Writer.WriteNumberValue(publicRequest.MaxRecords.Value);
             }
 
             writer.WriteEndObject();
@@ -132,9 +116,9 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateIntegrationResourcePropertyRequestMarshaller _instance = new CreateIntegrationResourcePropertyRequestMarshaller();        
+        private static ListIntegrationResourcePropertiesRequestMarshaller _instance = new ListIntegrationResourcePropertiesRequestMarshaller();        
 
-        internal static CreateIntegrationResourcePropertyRequestMarshaller GetInstance()
+        internal static ListIntegrationResourcePropertiesRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -142,7 +126,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateIntegrationResourcePropertyRequestMarshaller Instance
+        public static ListIntegrationResourcePropertiesRequestMarshaller Instance
         {
             get
             {
