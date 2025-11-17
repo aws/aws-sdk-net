@@ -31,17 +31,14 @@ namespace Amazon.DeviceFarm.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteTestGridProject operation.
-    /// Deletes a Selenium testing project and all content generated under it. 
+    /// Deletes a Selenium testing project and all content generated under it. You cannot
+    /// delete a project if it has active sessions.
     /// 
     ///  <important> 
     /// <para>
     /// You cannot undo this operation.
     /// </para>
-    ///  </important> <note> 
-    /// <para>
-    /// You cannot delete a project if it has active sessions.
-    /// </para>
-    ///  </note>
+    ///  </important>
     /// </summary>
     public partial class DeleteTestGridProjectRequest : AmazonDeviceFarmRequest
     {

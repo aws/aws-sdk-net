@@ -81,12 +81,6 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.AppArn);
             }
 
-            if(publicRequest.IsSetClientId())
-            {
-                context.Writer.WritePropertyName("clientId");
-                context.Writer.WriteStringValue(publicRequest.ClientId);
-            }
-
             if(publicRequest.IsSetConfiguration())
             {
                 context.Writer.WritePropertyName("configuration");
@@ -128,34 +122,10 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.ProjectArn);
             }
 
-            if(publicRequest.IsSetRemoteDebugEnabled())
-            {
-                context.Writer.WritePropertyName("remoteDebugEnabled");
-                context.Writer.WriteBooleanValue(publicRequest.RemoteDebugEnabled.Value);
-            }
-
-            if(publicRequest.IsSetRemoteRecordAppArn())
-            {
-                context.Writer.WritePropertyName("remoteRecordAppArn");
-                context.Writer.WriteStringValue(publicRequest.RemoteRecordAppArn);
-            }
-
-            if(publicRequest.IsSetRemoteRecordEnabled())
-            {
-                context.Writer.WritePropertyName("remoteRecordEnabled");
-                context.Writer.WriteBooleanValue(publicRequest.RemoteRecordEnabled.Value);
-            }
-
             if(publicRequest.IsSetSkipAppResign())
             {
                 context.Writer.WritePropertyName("skipAppResign");
                 context.Writer.WriteBooleanValue(publicRequest.SkipAppResign.Value);
-            }
-
-            if(publicRequest.IsSetSshPublicKey())
-            {
-                context.Writer.WritePropertyName("sshPublicKey");
-                context.Writer.WriteStringValue(publicRequest.SshPublicKey);
             }
 
             writer.WriteEndObject();
