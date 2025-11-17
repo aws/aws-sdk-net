@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AutomatedReasoningPolicyBuildResultAssets Object
+    /// Response Unmarshaller for AutomatedReasoningPolicyGeneratedTestCases Object
     /// </summary>  
-    public class AutomatedReasoningPolicyBuildResultAssetsUnmarshaller : IUnmarshaller<AutomatedReasoningPolicyBuildResultAssets, XmlUnmarshallerContext>, IUnmarshaller<AutomatedReasoningPolicyBuildResultAssets, JsonUnmarshallerContext>
+    public class AutomatedReasoningPolicyGeneratedTestCasesUnmarshaller : IUnmarshaller<AutomatedReasoningPolicyGeneratedTestCases, XmlUnmarshallerContext>, IUnmarshaller<AutomatedReasoningPolicyGeneratedTestCases, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        AutomatedReasoningPolicyBuildResultAssets IUnmarshaller<AutomatedReasoningPolicyBuildResultAssets, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AutomatedReasoningPolicyGeneratedTestCases IUnmarshaller<AutomatedReasoningPolicyGeneratedTestCases, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public AutomatedReasoningPolicyBuildResultAssets Unmarshall(JsonUnmarshallerContext context)
+        public AutomatedReasoningPolicyGeneratedTestCases Unmarshall(JsonUnmarshallerContext context)
         {
-            AutomatedReasoningPolicyBuildResultAssets unmarshalledObject = new AutomatedReasoningPolicyBuildResultAssets();
+            AutomatedReasoningPolicyGeneratedTestCases unmarshalledObject = new AutomatedReasoningPolicyGeneratedTestCases();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,28 +66,10 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("buildLog", targetDepth))
-                {
-                    var unmarshaller = AutomatedReasoningPolicyBuildLogUnmarshaller.Instance;
-                    unmarshalledObject.BuildLog = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("generatedTestCases", targetDepth))
                 {
-                    var unmarshaller = AutomatedReasoningPolicyGeneratedTestCasesUnmarshaller.Instance;
+                    var unmarshaller = new ListUnmarshaller<AutomatedReasoningPolicyGeneratedTestCase, AutomatedReasoningPolicyGeneratedTestCaseUnmarshaller>(AutomatedReasoningPolicyGeneratedTestCaseUnmarshaller.Instance);
                     unmarshalledObject.GeneratedTestCases = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("policyDefinition", targetDepth))
-                {
-                    var unmarshaller = AutomatedReasoningPolicyDefinitionUnmarshaller.Instance;
-                    unmarshalledObject.PolicyDefinition = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("qualityReport", targetDepth))
-                {
-                    var unmarshaller = AutomatedReasoningPolicyDefinitionQualityReportUnmarshaller.Instance;
-                    unmarshalledObject.QualityReport = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -95,12 +77,12 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
         }
 
 
-        private static AutomatedReasoningPolicyBuildResultAssetsUnmarshaller _instance = new AutomatedReasoningPolicyBuildResultAssetsUnmarshaller();        
+        private static AutomatedReasoningPolicyGeneratedTestCasesUnmarshaller _instance = new AutomatedReasoningPolicyGeneratedTestCasesUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AutomatedReasoningPolicyBuildResultAssetsUnmarshaller Instance
+        public static AutomatedReasoningPolicyGeneratedTestCasesUnmarshaller Instance
         {
             get
             {
