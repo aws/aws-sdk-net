@@ -293,6 +293,16 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeInstanceSqlHaHistoryStatesRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeInstanceSqlHaStatesRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EC2.Model.DescribeInstanceTopologyRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
@@ -708,6 +718,10 @@
     <property>Amazon.EC2.Model.DisassociateNatGatewayAddressRequest.MaxDrainDurationSeconds</property>
     <min>1</min>
     <max>4000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.EnableInstanceSqlHaStandbyDetectionsRequest.SqlServerCredentials</property>
+    <pattern>^(?=.{20,2048}$)arn:aws[a-z-]*:secretsmanager:[a-z0-9-]+:\d{12}:secret:[a-zA-Z0-9/_+=.@-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.GetAssociatedIpv6PoolCidrsRequest.MaxResults</property>

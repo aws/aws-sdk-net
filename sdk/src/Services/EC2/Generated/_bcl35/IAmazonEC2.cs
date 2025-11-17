@@ -15842,6 +15842,88 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DescribeInstanceSqlHaHistoryStates
+
+
+        /// <summary>
+        /// Describes the historical SQL Server High Availability states for Amazon EC2 instances
+        /// that are enabled for Amazon EC2 High Availability for SQL Server monitoring.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInstanceSqlHaHistoryStates service method.</param>
+        /// 
+        /// <returns>The response from the DescribeInstanceSqlHaHistoryStates service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceSqlHaHistoryStates">REST API Reference for DescribeInstanceSqlHaHistoryStates Operation</seealso>
+        DescribeInstanceSqlHaHistoryStatesResponse DescribeInstanceSqlHaHistoryStates(DescribeInstanceSqlHaHistoryStatesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeInstanceSqlHaHistoryStates operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInstanceSqlHaHistoryStates operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeInstanceSqlHaHistoryStates
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceSqlHaHistoryStates">REST API Reference for DescribeInstanceSqlHaHistoryStates Operation</seealso>
+        IAsyncResult BeginDescribeInstanceSqlHaHistoryStates(DescribeInstanceSqlHaHistoryStatesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeInstanceSqlHaHistoryStates operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeInstanceSqlHaHistoryStates.</param>
+        /// 
+        /// <returns>Returns a  DescribeInstanceSqlHaHistoryStatesResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceSqlHaHistoryStates">REST API Reference for DescribeInstanceSqlHaHistoryStates Operation</seealso>
+        DescribeInstanceSqlHaHistoryStatesResponse EndDescribeInstanceSqlHaHistoryStates(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeInstanceSqlHaStates
+
+
+        /// <summary>
+        /// Describes the SQL Server High Availability states for Amazon EC2 instances that are
+        /// enabled for Amazon EC2 High Availability for SQL Server monitoring.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInstanceSqlHaStates service method.</param>
+        /// 
+        /// <returns>The response from the DescribeInstanceSqlHaStates service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceSqlHaStates">REST API Reference for DescribeInstanceSqlHaStates Operation</seealso>
+        DescribeInstanceSqlHaStatesResponse DescribeInstanceSqlHaStates(DescribeInstanceSqlHaStatesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeInstanceSqlHaStates operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInstanceSqlHaStates operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeInstanceSqlHaStates
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceSqlHaStates">REST API Reference for DescribeInstanceSqlHaStates Operation</seealso>
+        IAsyncResult BeginDescribeInstanceSqlHaStates(DescribeInstanceSqlHaStatesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeInstanceSqlHaStates operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeInstanceSqlHaStates.</param>
+        /// 
+        /// <returns>Returns a  DescribeInstanceSqlHaStatesResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceSqlHaStates">REST API Reference for DescribeInstanceSqlHaStates Operation</seealso>
+        DescribeInstanceSqlHaStatesResponse EndDescribeInstanceSqlHaStates(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeInstanceStatus
 
 
@@ -22514,6 +22596,49 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DisableInstanceSqlHaStandbyDetections
+
+
+        /// <summary>
+        /// Disable Amazon EC2 instances running in an SQL Server High Availability cluster from
+        /// SQL Server High Availability instance standby detection monitoring. Once disabled,
+        /// Amazon Web Services no longer monitors the metadata for the instances to determine
+        /// whether they are active or standby nodes in the SQL Server High Availability cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableInstanceSqlHaStandbyDetections service method.</param>
+        /// 
+        /// <returns>The response from the DisableInstanceSqlHaStandbyDetections service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableInstanceSqlHaStandbyDetections">REST API Reference for DisableInstanceSqlHaStandbyDetections Operation</seealso>
+        DisableInstanceSqlHaStandbyDetectionsResponse DisableInstanceSqlHaStandbyDetections(DisableInstanceSqlHaStandbyDetectionsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisableInstanceSqlHaStandbyDetections operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisableInstanceSqlHaStandbyDetections operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisableInstanceSqlHaStandbyDetections
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableInstanceSqlHaStandbyDetections">REST API Reference for DisableInstanceSqlHaStandbyDetections Operation</seealso>
+        IAsyncResult BeginDisableInstanceSqlHaStandbyDetections(DisableInstanceSqlHaStandbyDetectionsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisableInstanceSqlHaStandbyDetections operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisableInstanceSqlHaStandbyDetections.</param>
+        /// 
+        /// <returns>Returns a  DisableInstanceSqlHaStandbyDetectionsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableInstanceSqlHaStandbyDetections">REST API Reference for DisableInstanceSqlHaStandbyDetections Operation</seealso>
+        DisableInstanceSqlHaStandbyDetectionsResponse EndDisableInstanceSqlHaStandbyDetections(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DisableIpamOrganizationAdminAccount
 
 
@@ -24322,6 +24447,60 @@ namespace Amazon.EC2
         /// <returns>Returns a  EnableImageDeregistrationProtectionResult from EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableImageDeregistrationProtection">REST API Reference for EnableImageDeregistrationProtection Operation</seealso>
         EnableImageDeregistrationProtectionResponse EndEnableImageDeregistrationProtection(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  EnableInstanceSqlHaStandbyDetections
+
+
+        /// <summary>
+        /// Enable Amazon EC2 instances running in an SQL Server High Availability cluster for
+        /// SQL Server High Availability instance standby detection monitoring. Once enabled,
+        /// Amazon Web Services monitors the metadata for the instances to determine whether they
+        /// are active or standby nodes in the SQL Server High Availability cluster. If the instances
+        /// are determined to be standby failover nodes, Amazon Web Services automatically applies
+        /// SQL Server licensing fee waiver for those instances.
+        /// 
+        ///  
+        /// <para>
+        /// To register an instance, it must be running a Windows SQL Server license-included
+        /// AMI and have the Amazon Web Services Systems Manager agent installed and running.
+        /// Only Windows Server 2019 and later and SQL Server (Standard and Enterprise editions)
+        /// 2017 and later are supported. For more information, see <a href="https://docs.aws.amazon.com/sql-server-ec2/latest/userguide/prerequisites-and-requirements.html">
+        /// Prerequisites for using SQL Server High Availability instance standby detection</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableInstanceSqlHaStandbyDetections service method.</param>
+        /// 
+        /// <returns>The response from the EnableInstanceSqlHaStandbyDetections service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableInstanceSqlHaStandbyDetections">REST API Reference for EnableInstanceSqlHaStandbyDetections Operation</seealso>
+        EnableInstanceSqlHaStandbyDetectionsResponse EnableInstanceSqlHaStandbyDetections(EnableInstanceSqlHaStandbyDetectionsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the EnableInstanceSqlHaStandbyDetections operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the EnableInstanceSqlHaStandbyDetections operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndEnableInstanceSqlHaStandbyDetections
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableInstanceSqlHaStandbyDetections">REST API Reference for EnableInstanceSqlHaStandbyDetections Operation</seealso>
+        IAsyncResult BeginEnableInstanceSqlHaStandbyDetections(EnableInstanceSqlHaStandbyDetectionsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  EnableInstanceSqlHaStandbyDetections operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginEnableInstanceSqlHaStandbyDetections.</param>
+        /// 
+        /// <returns>Returns a  EnableInstanceSqlHaStandbyDetectionsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableInstanceSqlHaStandbyDetections">REST API Reference for EnableInstanceSqlHaStandbyDetections Operation</seealso>
+        EnableInstanceSqlHaStandbyDetectionsResponse EndEnableInstanceSqlHaStandbyDetections(IAsyncResult asyncResult);
 
         #endregion
         
