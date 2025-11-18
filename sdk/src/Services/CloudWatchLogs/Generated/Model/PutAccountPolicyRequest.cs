@@ -224,6 +224,10 @@ namespace Amazon.CloudWatchLogs.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
+    ///  <c>@logStream</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <c>@aws.region</c> 
     /// </para>
     ///  </li> <li> 

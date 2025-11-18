@@ -1066,6 +1066,83 @@ namespace Amazon.CloudWatchLogs
 
         #endregion
         
+        #region  CreateScheduledQuery
+
+        /// <summary>
+        /// Creates a new Scheduled Query that runs CloudWatch Logs Insights queries on a schedule
+        /// and delivers results to specified destinations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateScheduledQuery service method.</param>
+        /// 
+        /// <returns>The response from the CreateScheduledQuery service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.AccessDeniedException">
+        /// You don't have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ConflictException">
+        /// This operation attempted to create a resource that already exists.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InternalServerException">
+        /// An internal server error occurred while processing the request. This is typically
+        /// a temporary issue and the request can be retried.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceQuotaExceededException">
+        /// This request exceeds a service quota.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ThrottlingException">
+        /// The request was throttled because of quota limits.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ValidationException">
+        /// One of the parameters for the request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/CreateScheduledQuery">REST API Reference for CreateScheduledQuery Operation</seealso>
+        public virtual CreateScheduledQueryResponse CreateScheduledQuery(CreateScheduledQueryRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateScheduledQueryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateScheduledQueryResponseUnmarshaller.Instance;
+
+            return Invoke<CreateScheduledQueryResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateScheduledQuery operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateScheduledQuery operation on AmazonCloudWatchLogsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateScheduledQuery
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/CreateScheduledQuery">REST API Reference for CreateScheduledQuery Operation</seealso>
+        public virtual IAsyncResult BeginCreateScheduledQuery(CreateScheduledQueryRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateScheduledQueryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateScheduledQueryResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateScheduledQuery operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateScheduledQuery.</param>
+        /// 
+        /// <returns>Returns a  CreateScheduledQueryResult from CloudWatchLogs.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/CreateScheduledQuery">REST API Reference for CreateScheduledQuery Operation</seealso>
+        public virtual CreateScheduledQueryResponse EndCreateScheduledQuery(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateScheduledQueryResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteAccountPolicy
 
         /// <summary>
@@ -2236,6 +2313,77 @@ namespace Amazon.CloudWatchLogs
         public virtual DeleteRetentionPolicyResponse EndDeleteRetentionPolicy(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteRetentionPolicyResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteScheduledQuery
+
+        /// <summary>
+        /// Deletes an existing scheduled query and all its associated configurations. This operation
+        /// permanently removes the scheduled query and cannot be undone.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteScheduledQuery service method.</param>
+        /// 
+        /// <returns>The response from the DeleteScheduledQuery service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.AccessDeniedException">
+        /// You don't have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InternalServerException">
+        /// An internal server error occurred while processing the request. This is typically
+        /// a temporary issue and the request can be retried.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ThrottlingException">
+        /// The request was throttled because of quota limits.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ValidationException">
+        /// One of the parameters for the request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteScheduledQuery">REST API Reference for DeleteScheduledQuery Operation</seealso>
+        public virtual DeleteScheduledQueryResponse DeleteScheduledQuery(DeleteScheduledQueryRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteScheduledQueryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteScheduledQueryResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteScheduledQueryResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteScheduledQuery operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteScheduledQuery operation on AmazonCloudWatchLogsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteScheduledQuery
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteScheduledQuery">REST API Reference for DeleteScheduledQuery Operation</seealso>
+        public virtual IAsyncResult BeginDeleteScheduledQuery(DeleteScheduledQueryRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteScheduledQueryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteScheduledQueryResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteScheduledQuery operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteScheduledQuery.</param>
+        /// 
+        /// <returns>Returns a  DeleteScheduledQueryResult from CloudWatchLogs.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteScheduledQuery">REST API Reference for DeleteScheduledQuery Operation</seealso>
+        public virtual DeleteScheduledQueryResponse EndDeleteScheduledQuery(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteScheduledQueryResponse>(asyncResult);
         }
 
         #endregion
@@ -4714,6 +4862,148 @@ namespace Amazon.CloudWatchLogs
 
         #endregion
         
+        #region  GetScheduledQuery
+
+        /// <summary>
+        /// Returns detailed information about a specified scheduled query, including its configuration,
+        /// current state, and execution history.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetScheduledQuery service method.</param>
+        /// 
+        /// <returns>The response from the GetScheduledQuery service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.AccessDeniedException">
+        /// You don't have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InternalServerException">
+        /// An internal server error occurred while processing the request. This is typically
+        /// a temporary issue and the request can be retried.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ThrottlingException">
+        /// The request was throttled because of quota limits.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ValidationException">
+        /// One of the parameters for the request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/GetScheduledQuery">REST API Reference for GetScheduledQuery Operation</seealso>
+        public virtual GetScheduledQueryResponse GetScheduledQuery(GetScheduledQueryRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetScheduledQueryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetScheduledQueryResponseUnmarshaller.Instance;
+
+            return Invoke<GetScheduledQueryResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetScheduledQuery operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetScheduledQuery operation on AmazonCloudWatchLogsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetScheduledQuery
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/GetScheduledQuery">REST API Reference for GetScheduledQuery Operation</seealso>
+        public virtual IAsyncResult BeginGetScheduledQuery(GetScheduledQueryRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetScheduledQueryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetScheduledQueryResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetScheduledQuery operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetScheduledQuery.</param>
+        /// 
+        /// <returns>Returns a  GetScheduledQueryResult from CloudWatchLogs.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/GetScheduledQuery">REST API Reference for GetScheduledQuery Operation</seealso>
+        public virtual GetScheduledQueryResponse EndGetScheduledQuery(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetScheduledQueryResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetScheduledQueryHistory
+
+        /// <summary>
+        /// Retrieves the execution history of a scheduled query within a specified time range,
+        /// including execution status and destination processing metadata.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetScheduledQueryHistory service method.</param>
+        /// 
+        /// <returns>The response from the GetScheduledQueryHistory service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.AccessDeniedException">
+        /// You don't have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InternalServerException">
+        /// An internal server error occurred while processing the request. This is typically
+        /// a temporary issue and the request can be retried.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ThrottlingException">
+        /// The request was throttled because of quota limits.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ValidationException">
+        /// One of the parameters for the request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/GetScheduledQueryHistory">REST API Reference for GetScheduledQueryHistory Operation</seealso>
+        public virtual GetScheduledQueryHistoryResponse GetScheduledQueryHistory(GetScheduledQueryHistoryRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetScheduledQueryHistoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetScheduledQueryHistoryResponseUnmarshaller.Instance;
+
+            return Invoke<GetScheduledQueryHistoryResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetScheduledQueryHistory operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetScheduledQueryHistory operation on AmazonCloudWatchLogsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetScheduledQueryHistory
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/GetScheduledQueryHistory">REST API Reference for GetScheduledQueryHistory Operation</seealso>
+        public virtual IAsyncResult BeginGetScheduledQueryHistory(GetScheduledQueryHistoryRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetScheduledQueryHistoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetScheduledQueryHistoryResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetScheduledQueryHistory operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetScheduledQueryHistory.</param>
+        /// 
+        /// <returns>Returns a  GetScheduledQueryHistoryResult from CloudWatchLogs.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/GetScheduledQueryHistory">REST API Reference for GetScheduledQueryHistory Operation</seealso>
+        public virtual GetScheduledQueryHistoryResponse EndGetScheduledQueryHistory(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetScheduledQueryHistoryResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetTransformer
 
         /// <summary>
@@ -5133,6 +5423,74 @@ namespace Amazon.CloudWatchLogs
 
         #endregion
         
+        #region  ListScheduledQueries
+
+        /// <summary>
+        /// Lists all scheduled queries in the current AWS account and region with optional filtering
+        /// by state.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListScheduledQueries service method.</param>
+        /// 
+        /// <returns>The response from the ListScheduledQueries service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.AccessDeniedException">
+        /// You don't have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InternalServerException">
+        /// An internal server error occurred while processing the request. This is typically
+        /// a temporary issue and the request can be retried.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ThrottlingException">
+        /// The request was throttled because of quota limits.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ValidationException">
+        /// One of the parameters for the request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/ListScheduledQueries">REST API Reference for ListScheduledQueries Operation</seealso>
+        public virtual ListScheduledQueriesResponse ListScheduledQueries(ListScheduledQueriesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListScheduledQueriesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListScheduledQueriesResponseUnmarshaller.Instance;
+
+            return Invoke<ListScheduledQueriesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListScheduledQueries operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListScheduledQueries operation on AmazonCloudWatchLogsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListScheduledQueries
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/ListScheduledQueries">REST API Reference for ListScheduledQueries Operation</seealso>
+        public virtual IAsyncResult BeginListScheduledQueries(ListScheduledQueriesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListScheduledQueriesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListScheduledQueriesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListScheduledQueries operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListScheduledQueries.</param>
+        /// 
+        /// <returns>Returns a  ListScheduledQueriesResult from CloudWatchLogs.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/ListScheduledQueries">REST API Reference for ListScheduledQueries Operation</seealso>
+        public virtual ListScheduledQueriesResponse EndListScheduledQueries(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListScheduledQueriesResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListTagsForResource
 
         /// <summary>
@@ -5464,6 +5822,10 @@ namespace Amazon.CloudWatchLogs
         /// 
         /// </para>
         ///  <ul> <li> 
+        /// <para>
+        ///  <c>@logStream</c> 
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         ///  <c>@aws.region</c> 
         /// </para>
@@ -6334,6 +6696,10 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  <ul> <li> 
         /// <para>
+        ///  <c>@logStream</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <c>@aws.region</c> 
         /// </para>
         ///  </li> <li> 
@@ -6877,8 +7243,31 @@ namespace Amazon.CloudWatchLogs
 
         /// <summary>
         /// Creates or updates a resource policy allowing other Amazon Web Services services to
-        /// put log events to this account, such as Amazon Route 53. An account can have up to
-        /// 10 resource policies per Amazon Web Services Region.
+        /// put log events to this account, such as Amazon Route 53. This API has the following
+        /// restrictions:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>Supported actions</b> - Policy only supports <c>logs:PutLogEvents</c> and <c>logs:CreateLogStream
+        /// </c> actions
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Supported principals</b> - Policy only applies when operations are invoked by
+        /// Amazon Web Services service principals (not IAM users, roles, or cross-account principals
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Policy limits</b> - An account can have a maximum of 10 policies without resourceARN
+        /// and one per LogGroup resourceARN
+        /// </para>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// Resource policies with actions invoked by non-Amazon Web Services service principals
+        /// (such as IAM users, roles, or other Amazon Web Services accounts) will not be enforced.
+        /// For access control involving these principals, use the IAM policies.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutResourcePolicy service method.</param>
         /// 
@@ -8280,6 +8669,77 @@ namespace Amazon.CloudWatchLogs
         public virtual UpdateLogAnomalyDetectorResponse EndUpdateLogAnomalyDetector(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateLogAnomalyDetectorResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateScheduledQuery
+
+        /// <summary>
+        /// Updates the configuration of an existing scheduled query. This operation follows PUT
+        /// semantics, replacing the existing configuration with the provided values.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateScheduledQuery service method.</param>
+        /// 
+        /// <returns>The response from the UpdateScheduledQuery service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.AccessDeniedException">
+        /// You don't have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InternalServerException">
+        /// An internal server error occurred while processing the request. This is typically
+        /// a temporary issue and the request can be retried.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ThrottlingException">
+        /// The request was throttled because of quota limits.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ValidationException">
+        /// One of the parameters for the request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/UpdateScheduledQuery">REST API Reference for UpdateScheduledQuery Operation</seealso>
+        public virtual UpdateScheduledQueryResponse UpdateScheduledQuery(UpdateScheduledQueryRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateScheduledQueryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateScheduledQueryResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateScheduledQueryResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateScheduledQuery operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateScheduledQuery operation on AmazonCloudWatchLogsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateScheduledQuery
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/UpdateScheduledQuery">REST API Reference for UpdateScheduledQuery Operation</seealso>
+        public virtual IAsyncResult BeginUpdateScheduledQuery(UpdateScheduledQueryRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateScheduledQueryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateScheduledQueryResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateScheduledQuery operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateScheduledQuery.</param>
+        /// 
+        /// <returns>Returns a  UpdateScheduledQueryResult from CloudWatchLogs.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/UpdateScheduledQuery">REST API Reference for UpdateScheduledQuery Operation</seealso>
+        public virtual UpdateScheduledQueryResponse EndUpdateScheduledQuery(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateScheduledQueryResponse>(asyncResult);
         }
 
         #endregion

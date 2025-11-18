@@ -138,6 +138,16 @@ namespace Amazon.CloudWatchLogs.Model
         IGetLogEventsPaginator GetLogEvents(GetLogEventsRequest request);
 
         /// <summary>
+        /// Paginator for GetScheduledQueryHistory operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IGetScheduledQueryHistoryPaginator GetScheduledQueryHistory(GetScheduledQueryHistoryRequest request);
+
+        /// <summary>
         /// Paginator for ListAnomalies operation
         ///</summary>
         [AWSPaginator(
@@ -166,5 +176,15 @@ namespace Amazon.CloudWatchLogs.Model
             OutputToken = new[] { "NextToken" }
         )]
         IListLogGroupsForQueryPaginator ListLogGroupsForQuery(ListLogGroupsForQueryRequest request);
+
+        /// <summary>
+        /// Paginator for ListScheduledQueries operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListScheduledQueriesPaginator ListScheduledQueries(ListScheduledQueriesRequest request);
     }
 }
