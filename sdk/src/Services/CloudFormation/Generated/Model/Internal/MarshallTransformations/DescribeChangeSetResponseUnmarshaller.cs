@@ -122,6 +122,12 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                         response.CreationTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("DeploymentMode", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.DeploymentMode = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("Description", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -196,6 +202,12 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         response.RootChangeSetId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("StackDriftStatus", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.StackDriftStatus = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("StackId", targetDepth))

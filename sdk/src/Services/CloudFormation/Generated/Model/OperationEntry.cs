@@ -30,18 +30,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
-    /// This is the response object from the RollbackStack operation.
+    /// Contains information about a CloudFormation operation.
     /// </summary>
-    public partial class RollbackStackResponse : AmazonWebServiceResponse
+    public partial class OperationEntry
     {
         private string _operationId;
-        private string _stackId;
+        private OperationType _operationType;
 
         /// <summary>
         /// Gets and sets the property OperationId. 
         /// <para>
-        /// A unique identifier for this rollback operation that can be used to track the operation's
-        /// progress and events.
+        /// The unique identifier for the operation.
         /// </para>
         /// </summary>
         public string OperationId
@@ -57,21 +56,21 @@ namespace Amazon.CloudFormation.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StackId. 
+        /// Gets and sets the property OperationType. 
         /// <para>
-        /// Unique identifier of the stack.
+        /// The type of operation.
         /// </para>
         /// </summary>
-        public string StackId
+        public OperationType OperationType
         {
-            get { return this._stackId; }
-            set { this._stackId = value; }
+            get { return this._operationType; }
+            set { this._operationType = value; }
         }
 
-        // Check to see if StackId property is set
-        internal bool IsSetStackId()
+        // Check to see if OperationType property is set
+        internal bool IsSetOperationType()
         {
-            return this._stackId != null;
+            return this._operationType != null;
         }
 
     }

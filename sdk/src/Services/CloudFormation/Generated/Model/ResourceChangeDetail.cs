@@ -99,6 +99,11 @@ namespace Amazon.CloudFormation.Model
         /// the nested stack's template might have changed. Changes to a nested stack's template
         /// aren't visible to CloudFormation until you run an update on the parent stack.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>NoModification</c> entities are changes made to the template that matches the
+        /// actual state of the resource.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         public ChangeSource ChangeSource

@@ -30,49 +30,43 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
-    /// The <c>StackEvent</c> data type.
+    /// Contains detailed information about an event that occurred during a CloudFormation
+    /// operation.
     /// </summary>
-    public partial class StackEvent
+    public partial class OperationEvent
     {
         private string _clientRequestToken;
         private DetailedStatus _detailedStatus;
+        private DateTime? _endTime;
         private string _eventId;
+        private EventType _eventType;
         private HookFailureMode _hookFailureMode;
-        private string _hookInvocationId;
         private HookInvocationPoint _hookInvocationPoint;
         private HookStatus _hookStatus;
         private string _hookStatusReason;
         private string _hookType;
         private string _logicalResourceId;
         private string _operationId;
+        private BeaconStackOperationStatus _operationStatus;
+        private OperationType _operationType;
         private string _physicalResourceId;
         private string _resourceProperties;
         private ResourceStatus _resourceStatus;
         private string _resourceStatusReason;
         private string _resourceType;
         private string _stackId;
-        private string _stackName;
+        private DateTime? _startTime;
         private DateTime? _timestamp;
+        private HookFailureMode _validationFailureMode;
+        private string _validationName;
+        private string _validationPath;
+        private ValidationStatus _validationStatus;
+        private string _validationStatusReason;
 
         /// <summary>
         /// Gets and sets the property ClientRequestToken. 
         /// <para>
-        /// The token passed to the operation that generated this event.
-        /// </para>
-        ///  
-        /// <para>
-        /// All events triggered by a given stack operation are assigned the same client request
-        /// token, which you can use to track operations. For example, if you execute a <c>CreateStack</c>
-        /// operation with the token <c>token1</c>, then all the <c>StackEvents</c> generated
-        /// by that operation will have <c>ClientRequestToken</c> set as <c>token1</c>.
-        /// </para>
-        ///  
-        /// <para>
-        /// In the console, stack operations display the client request token on the Events tab.
-        /// Stack operations that are initiated from the console use the token format <i>Console-StackOperation-ID</i>,
-        /// which helps you easily identify the stack operation . For example, if you create a
-        /// stack using the console, each stack event would be assigned the same token in the
-        /// following format: <c>Console-CreateStack-7f59c3cf-00d2-40c7-b2ff-e75db0987002</c>.
+        /// A unique identifier for the request that initiated this operation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -91,22 +85,8 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property DetailedStatus. 
         /// <para>
-        /// An optional field that contains information about the detailed status of the stack
-        /// event.
+        /// Additional status information about the operation.
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <c>CONFIGURATION_COMPLETE</c> - all of the resources in the stack have reached that
-        /// event. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stack-resource-configuration-complete.html">Understand
-        /// CloudFormation stack creation events</a> in the <i>CloudFormation User Guide</i>.
-        /// </para>
-        ///  </li> </ul> <ul> <li> 
-        /// <para>
-        ///  <c>VALIDATION_FAILED</c> - template validation failed because of invalid properties
-        /// in the template. The <c>ResourceStatusReason</c> field shows what properties are defined
-        /// incorrectly.
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         public DetailedStatus DetailedStatus
         {
@@ -121,12 +101,29 @@ namespace Amazon.CloudFormation.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EventId. 
+        /// Gets and sets the property EndTime. 
         /// <para>
-        /// The unique identifier of this event.
+        /// The time when the event ended.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        public DateTime? EndTime
+        {
+            get { return this._endTime; }
+            set { this._endTime = value; }
+        }
+
+        // Check to see if EndTime property is set
+        internal bool IsSetEndTime()
+        {
+            return this._endTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EventId. 
+        /// <para>
+        /// A unique identifier for this event.
+        /// </para>
+        /// </summary>
         public string EventId
         {
             get { return this._eventId; }
@@ -140,19 +137,28 @@ namespace Amazon.CloudFormation.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EventType. 
+        /// <para>
+        /// The type of event.
+        /// </para>
+        /// </summary>
+        public EventType EventType
+        {
+            get { return this._eventType; }
+            set { this._eventType = value; }
+        }
+
+        // Check to see if EventType property is set
+        internal bool IsSetEventType()
+        {
+            return this._eventType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property HookFailureMode. 
         /// <para>
-        /// Specify the Hook failure mode for non-compliant resources in the followings ways.
+        /// Specifies how Hook failures are handled.
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <c>FAIL</c> Stops provisioning resources.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>WARN</c> Allows provisioning to continue with a warning message.
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         public HookFailureMode HookFailureMode
         {
@@ -167,28 +173,9 @@ namespace Amazon.CloudFormation.Model
         }
 
         /// <summary>
-        /// Gets and sets the property HookInvocationId. 
-        /// <para>
-        /// The unique identifier of the Hook invocation.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=36, Max=36)]
-        public string HookInvocationId
-        {
-            get { return this._hookInvocationId; }
-            set { this._hookInvocationId = value; }
-        }
-
-        // Check to see if HookInvocationId property is set
-        internal bool IsSetHookInvocationId()
-        {
-            return this._hookInvocationId != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property HookInvocationPoint. 
         /// <para>
-        /// The specific point in the provisioning process where the Hook is invoked.
+        /// The point in the operation lifecycle when the Hook was invoked.
         /// </para>
         /// </summary>
         public HookInvocationPoint HookInvocationPoint
@@ -206,7 +193,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property HookStatus. 
         /// <para>
-        /// Provides the status of the change set Hook.
+        /// The status of the Hook invocation. 
         /// </para>
         /// </summary>
         public HookStatus HookStatus
@@ -224,7 +211,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property HookStatusReason. 
         /// <para>
-        /// Provides the reason for the Hook status.
+        /// Additional information about the Hook status.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -243,7 +230,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property HookType. 
         /// <para>
-        /// The name of the Hook.
+        /// The type name of the Hook that was invoked.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -262,7 +249,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property LogicalResourceId. 
         /// <para>
-        /// The logical name of the resource specified in the template.
+        /// The logical name of the resource as specified in the template.
         /// </para>
         /// </summary>
         public string LogicalResourceId
@@ -280,7 +267,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property OperationId. 
         /// <para>
-        /// The unique identifier of the operation that generated this stack event.
+        /// The unique identifier of the operation this event belongs to.
         /// </para>
         /// </summary>
         public string OperationId
@@ -296,9 +283,45 @@ namespace Amazon.CloudFormation.Model
         }
 
         /// <summary>
+        /// Gets and sets the property OperationStatus. 
+        /// <para>
+        /// The current status of the operation.
+        /// </para>
+        /// </summary>
+        public BeaconStackOperationStatus OperationStatus
+        {
+            get { return this._operationStatus; }
+            set { this._operationStatus = value; }
+        }
+
+        // Check to see if OperationStatus property is set
+        internal bool IsSetOperationStatus()
+        {
+            return this._operationStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OperationType. 
+        /// <para>
+        /// The type of operation.
+        /// </para>
+        /// </summary>
+        public OperationType OperationType
+        {
+            get { return this._operationType; }
+            set { this._operationType = value; }
+        }
+
+        // Check to see if OperationType property is set
+        internal bool IsSetOperationType()
+        {
+            return this._operationType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property PhysicalResourceId. 
         /// <para>
-        /// The name or unique identifier associated with the physical instance of the resource.
+        /// The name or unique identifier that corresponds to a physical instance ID of a resource.
         /// </para>
         /// </summary>
         public string PhysicalResourceId
@@ -316,7 +339,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property ResourceProperties. 
         /// <para>
-        /// BLOB of the properties used to create the resource.
+        /// The properties used to create the resource.
         /// </para>
         /// </summary>
         public string ResourceProperties
@@ -352,7 +375,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property ResourceStatusReason. 
         /// <para>
-        /// Success/failure message associated with the resource.
+        /// Success or failure message associated with the resource.
         /// </para>
         /// </summary>
         public string ResourceStatusReason
@@ -370,9 +393,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// Type of resource. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
-        /// Web Services resource and property types reference</a> in the <i>CloudFormation User
-        /// Guide</i>.
+        /// Type of resource.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -394,7 +415,6 @@ namespace Amazon.CloudFormation.Model
         /// The unique ID name of the instance of the stack.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string StackId
         {
             get { return this._stackId; }
@@ -408,22 +428,21 @@ namespace Amazon.CloudFormation.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StackName. 
+        /// Gets and sets the property StartTime. 
         /// <para>
-        /// The name associated with a stack.
+        /// The time when the event started.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public string StackName
+        public DateTime? StartTime
         {
-            get { return this._stackName; }
-            set { this._stackName = value; }
+            get { return this._startTime; }
+            set { this._startTime = value; }
         }
 
-        // Check to see if StackName property is set
-        internal bool IsSetStackName()
+        // Check to see if StartTime property is set
+        internal bool IsSetStartTime()
         {
-            return this._stackName != null;
+            return this._startTime.HasValue; 
         }
 
         /// <summary>
@@ -432,7 +451,6 @@ namespace Amazon.CloudFormation.Model
         /// Time the status was updated.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public DateTime? Timestamp
         {
             get { return this._timestamp; }
@@ -443,6 +461,96 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetTimestamp()
         {
             return this._timestamp.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ValidationFailureMode. 
+        /// <para>
+        /// Specifies how validation failures are handled.
+        /// </para>
+        /// </summary>
+        public HookFailureMode ValidationFailureMode
+        {
+            get { return this._validationFailureMode; }
+            set { this._validationFailureMode = value; }
+        }
+
+        // Check to see if ValidationFailureMode property is set
+        internal bool IsSetValidationFailureMode()
+        {
+            return this._validationFailureMode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ValidationName. 
+        /// <para>
+        /// The name of the validation that was performed.
+        /// </para>
+        /// </summary>
+        public string ValidationName
+        {
+            get { return this._validationName; }
+            set { this._validationName = value; }
+        }
+
+        // Check to see if ValidationName property is set
+        internal bool IsSetValidationName()
+        {
+            return this._validationName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ValidationPath. 
+        /// <para>
+        /// The path within the resource where the validation was applied.
+        /// </para>
+        /// </summary>
+        public string ValidationPath
+        {
+            get { return this._validationPath; }
+            set { this._validationPath = value; }
+        }
+
+        // Check to see if ValidationPath property is set
+        internal bool IsSetValidationPath()
+        {
+            return this._validationPath != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ValidationStatus. 
+        /// <para>
+        /// The status of the validation.
+        /// </para>
+        /// </summary>
+        public ValidationStatus ValidationStatus
+        {
+            get { return this._validationStatus; }
+            set { this._validationStatus = value; }
+        }
+
+        // Check to see if ValidationStatus property is set
+        internal bool IsSetValidationStatus()
+        {
+            return this._validationStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ValidationStatusReason. 
+        /// <para>
+        /// Additional information about the validation status.
+        /// </para>
+        /// </summary>
+        public string ValidationStatusReason
+        {
+            get { return this._validationStatusReason; }
+            set { this._validationStatusReason = value; }
+        }
+
+        // Check to see if ValidationStatusReason property is set
+        internal bool IsSetValidationStatusReason()
+        {
+            return this._validationStatusReason != null;
         }
 
     }

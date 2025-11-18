@@ -33,9 +33,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CreateStack operation
+    /// Response Unmarshaller for DescribeEvents operation
     /// </summary>  
-    public class CreateStackResponseUnmarshaller : XmlResponseUnmarshaller
+    public class DescribeEventsResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,7 +44,7 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
-            CreateStackResponse response = new CreateStackResponse();
+            DescribeEventsResponse response = new DescribeEventsResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
@@ -52,7 +52,7 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement)
                 {                    
-                    if(context.TestExpression("CreateStackResult", 2))
+                    if(context.TestExpression("DescribeEventsResult", 2))
                     {
                         UnmarshallResult(context, response);                        
                         continue;
@@ -68,7 +68,7 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
             return response;
         }
 
-        private static void UnmarshallResult(XmlUnmarshallerContext context, CreateStackResponse response)
+        private static void UnmarshallResult(XmlUnmarshallerContext context, DescribeEventsResponse response)
         {
             
             int originalDepth = context.CurrentDepth;
@@ -82,16 +82,21 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                 if (context.IsStartElement || context.IsAttribute)
                 {
 
-                    if (context.TestExpression("OperationId", targetDepth))
+                    if (context.TestExpression("NextToken", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        response.OperationId = unmarshaller.Unmarshall(context);
+                        response.NextToken = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("StackId", targetDepth))
+                    if (context.TestExpression("OperationEvents/member", targetDepth))
                     {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        response.StackId = unmarshaller.Unmarshall(context);
+                        var unmarshaller = OperationEventUnmarshaller.Instance;
+                        if (response.OperationEvents == null)
+                        {
+                            response.OperationEvents = new List<OperationEvent>();
+                        }
+                        var item = unmarshaller.Unmarshall(context);
+                        response.OperationEvents.Add(item);
                         continue;
                     }
                 } 
@@ -119,28 +124,12 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
             using (var streamCopy = new MemoryStream(responseBodyBytes))
             using (var contextCopy = new XmlUnmarshallerContext(streamCopy, false, null))
             {
-                if (errorResponse.Code != null && errorResponse.Code.Equals("AlreadyExistsException"))
-                {
-                    return AlreadyExistsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("InsufficientCapabilitiesException"))
-                {
-                    return InsufficientCapabilitiesExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("LimitExceededException"))
-                {
-                    return LimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("TokenAlreadyExistsException"))
-                {
-                    return TokenAlreadyExistsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
             }
             return new AmazonCloudFormationException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        private static CreateStackResponseUnmarshaller _instance = new CreateStackResponseUnmarshaller();        
+        private static DescribeEventsResponseUnmarshaller _instance = new DescribeEventsResponseUnmarshaller();        
 
-        internal static CreateStackResponseUnmarshaller GetInstance()
+        internal static DescribeEventsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -148,7 +137,7 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateStackResponseUnmarshaller Instance
+        public static DescribeEventsResponseUnmarshaller Instance
         {
             get
             {
