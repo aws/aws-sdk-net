@@ -33,18 +33,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for StackEvent Object
+    /// Response Unmarshaller for OperationEvent Object
     /// </summary>  
-    public class StackEventUnmarshaller : IUnmarshaller<StackEvent, XmlUnmarshallerContext>, IUnmarshaller<StackEvent, JsonUnmarshallerContext>
+    public class OperationEventUnmarshaller : IUnmarshaller<OperationEvent, XmlUnmarshallerContext>, IUnmarshaller<OperationEvent, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public StackEvent Unmarshall(XmlUnmarshallerContext context)
+        public OperationEvent Unmarshall(XmlUnmarshallerContext context)
         {
-            StackEvent unmarshalledObject = new StackEvent();
+            OperationEvent unmarshalledObject = new OperationEvent();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -67,22 +67,28 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                         unmarshalledObject.DetailedStatus = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("EndTime", targetDepth))
+                    {
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        unmarshalledObject.EndTime = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("EventId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.EventId = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("EventType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.EventType = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("HookFailureMode", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.HookFailureMode = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("HookInvocationId", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.HookInvocationId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("HookInvocationPoint", targetDepth))
@@ -121,6 +127,18 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                         unmarshalledObject.OperationId = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("OperationStatus", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.OperationStatus = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("OperationType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.OperationType = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("PhysicalResourceId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -157,16 +175,46 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                         unmarshalledObject.StackId = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("StackName", targetDepth))
+                    if (context.TestExpression("StartTime", targetDepth))
                     {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.StackName = unmarshaller.Unmarshall(context);
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        unmarshalledObject.StartTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Timestamp", targetDepth))
                     {
                         var unmarshaller = DateTimeUnmarshaller.Instance;
                         unmarshalledObject.Timestamp = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ValidationFailureMode", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ValidationFailureMode = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ValidationName", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ValidationName = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ValidationPath", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ValidationPath = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ValidationStatus", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ValidationStatus = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ValidationStatusReason", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ValidationStatusReason = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
@@ -184,18 +232,18 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public StackEvent Unmarshall(JsonUnmarshallerContext context)
+        public OperationEvent Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
 
-        private static StackEventUnmarshaller _instance = new StackEventUnmarshaller();        
+        private static OperationEventUnmarshaller _instance = new OperationEventUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static StackEventUnmarshaller Instance
+        public static OperationEventUnmarshaller Instance
         {
             get
             {

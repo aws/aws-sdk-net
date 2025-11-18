@@ -39,6 +39,7 @@ namespace Amazon.CloudFormation.Model
         private string _changeSetId;
         private string _changeSetName;
         private DateTime? _creationTime;
+        private DeploymentMode _deploymentMode;
         private string _description;
         private ExecutionStatus _executionStatus;
         private bool? _importExistingResources;
@@ -50,6 +51,7 @@ namespace Amazon.CloudFormation.Model
         private string _parentChangeSetId;
         private RollbackConfiguration _rollbackConfiguration;
         private string _rootChangeSetId;
+        private StackDriftStatus _stackDriftStatus;
         private string _stackId;
         private string _stackName;
         private ChangeSetStatus _status;
@@ -148,6 +150,25 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetCreationTime()
         {
             return this._creationTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeploymentMode. 
+        /// <para>
+        /// The deployment mode specified when the change set was created. Valid value is <c>REVERT_DRIFT</c>.
+        /// Only present for drift-aware change sets.
+        /// </para>
+        /// </summary>
+        public DeploymentMode DeploymentMode
+        {
+            get { return this._deploymentMode; }
+            set { this._deploymentMode = value; }
+        }
+
+        // Check to see if DeploymentMode property is set
+        internal bool IsSetDeploymentMode()
+        {
+            return this._deploymentMode != null;
         }
 
         /// <summary>
@@ -390,6 +411,44 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetRootChangeSetId()
         {
             return this._rootChangeSetId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StackDriftStatus. 
+        /// <para>
+        /// The drift status of the stack when the change set was created. Valid values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>DRIFTED</c> – The stack has drifted from its last deployment.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>IN_SYNC</c> – The stack is in sync with its last deployment.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>NOT_CHECKED</c> – CloudFormation doesn’t currently return this value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>UNKNOWN</c> – The drift status could not be determined.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Only present for drift-aware change sets.
+        /// </para>
+        /// </summary>
+        public StackDriftStatus StackDriftStatus
+        {
+            get { return this._stackDriftStatus; }
+            set { this._stackDriftStatus = value; }
+        }
+
+        // Check to see if StackDriftStatus property is set
+        internal bool IsSetStackDriftStatus()
+        {
+            return this._stackDriftStatus != null;
         }
 
         /// <summary>

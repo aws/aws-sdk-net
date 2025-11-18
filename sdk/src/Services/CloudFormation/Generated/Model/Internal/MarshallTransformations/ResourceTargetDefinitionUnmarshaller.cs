@@ -61,6 +61,12 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                         unmarshalledObject.AfterValue = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("AfterValueFrom", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.AfterValueFrom = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("Attribute", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -77,6 +83,18 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.BeforeValue = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("BeforeValueFrom", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.BeforeValueFrom = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Drift", targetDepth))
+                    {
+                        var unmarshaller = LiveResourceDriftUnmarshaller.Instance;
+                        unmarshalledObject.Drift = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Name", targetDepth))

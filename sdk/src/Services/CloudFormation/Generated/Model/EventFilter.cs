@@ -30,48 +30,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
-    /// This is the response object from the RollbackStack operation.
+    /// Event filter allows you to focus on specific events in an operation.
     /// </summary>
-    public partial class RollbackStackResponse : AmazonWebServiceResponse
+    public partial class EventFilter
     {
-        private string _operationId;
-        private string _stackId;
+        private bool? _failedEvents;
 
         /// <summary>
-        /// Gets and sets the property OperationId. 
+        /// Gets and sets the property FailedEvents. 
         /// <para>
-        /// A unique identifier for this rollback operation that can be used to track the operation's
-        /// progress and events.
+        /// When set to true, only returns failed events within the operation. This helps quickly
+        /// identify root causes for a failed operation.
         /// </para>
         /// </summary>
-        public string OperationId
+        public bool FailedEvents
         {
-            get { return this._operationId; }
-            set { this._operationId = value; }
+            get { return this._failedEvents.GetValueOrDefault(); }
+            set { this._failedEvents = value; }
         }
 
-        // Check to see if OperationId property is set
-        internal bool IsSetOperationId()
+        // Check to see if FailedEvents property is set
+        internal bool IsSetFailedEvents()
         {
-            return this._operationId != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property StackId. 
-        /// <para>
-        /// Unique identifier of the stack.
-        /// </para>
-        /// </summary>
-        public string StackId
-        {
-            get { return this._stackId; }
-            set { this._stackId = value; }
-        }
-
-        // Check to see if StackId property is set
-        internal bool IsSetStackId()
-        {
-            return this._stackId != null;
+            return this._failedEvents.HasValue; 
         }
 
     }

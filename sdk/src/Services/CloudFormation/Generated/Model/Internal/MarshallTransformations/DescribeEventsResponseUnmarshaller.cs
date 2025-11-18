@@ -33,9 +33,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for RollbackStack operation
+    /// Response Unmarshaller for DescribeEvents operation
     /// </summary>  
-    public class RollbackStackResponseUnmarshaller : XmlResponseUnmarshaller
+    public class DescribeEventsResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,7 +44,7 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
-            RollbackStackResponse response = new RollbackStackResponse();
+            DescribeEventsResponse response = new DescribeEventsResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
@@ -52,7 +52,7 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement)
                 {                    
-                    if(context.TestExpression("RollbackStackResult", 2))
+                    if(context.TestExpression("DescribeEventsResult", 2))
                     {
                         UnmarshallResult(context, response);                        
                         continue;
@@ -68,7 +68,7 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
             return response;
         }
 
-        private static void UnmarshallResult(XmlUnmarshallerContext context, RollbackStackResponse response)
+        private static void UnmarshallResult(XmlUnmarshallerContext context, DescribeEventsResponse response)
         {
             
             int originalDepth = context.CurrentDepth;
@@ -82,16 +82,21 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                 if (context.IsStartElement || context.IsAttribute)
                 {
 
-                    if (context.TestExpression("OperationId", targetDepth))
+                    if (context.TestExpression("NextToken", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        response.OperationId = unmarshaller.Unmarshall(context);
+                        response.NextToken = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("StackId", targetDepth))
+                    if (context.TestExpression("OperationEvents/member", targetDepth))
                     {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        response.StackId = unmarshaller.Unmarshall(context);
+                        var unmarshaller = OperationEventUnmarshaller.Instance;
+                        if (response.OperationEvents == null)
+                        {
+                            response.OperationEvents = new List<OperationEvent>();
+                        }
+                        var item = unmarshaller.Unmarshall(context);
+                        response.OperationEvents.Add(item);
                         continue;
                     }
                 } 
@@ -119,16 +124,12 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
             using (var streamCopy = new MemoryStream(responseBodyBytes))
             using (var contextCopy = new XmlUnmarshallerContext(streamCopy, false, null))
             {
-                if (errorResponse.Code != null && errorResponse.Code.Equals("TokenAlreadyExistsException"))
-                {
-                    return TokenAlreadyExistsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
             }
             return new AmazonCloudFormationException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        private static RollbackStackResponseUnmarshaller _instance = new RollbackStackResponseUnmarshaller();        
+        private static DescribeEventsResponseUnmarshaller _instance = new DescribeEventsResponseUnmarshaller();        
 
-        internal static RollbackStackResponseUnmarshaller GetInstance()
+        internal static DescribeEventsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -136,7 +137,7 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static RollbackStackResponseUnmarshaller Instance
+        public static DescribeEventsResponseUnmarshaller Instance
         {
             get
             {

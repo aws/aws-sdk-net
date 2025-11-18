@@ -69,6 +69,7 @@ namespace Amazon.CloudFormation.Model
         private string _changeSetName;
         private ChangeSetType _changeSetType;
         private string _clientToken;
+        private DeploymentMode _deploymentMode;
         private string _description;
         private bool? _importExistingResources;
         private bool? _includeNestedStacks;
@@ -297,6 +298,35 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetClientToken()
         {
             return this._clientToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeploymentMode. 
+        /// <para>
+        /// Determines how CloudFormation handles configuration drift during deployment.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>REVERT_DRIFT</c> – Creates a drift-aware change set that brings actual resource
+        /// states in line with template definitions. Provides a three-way comparison between
+        /// actual state, previous deployment state, and desired state.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/drift-aware-change-sets.html">Using
+        /// drift-aware change sets</a> in the <i>CloudFormation User Guide</i>.
+        /// </para>
+        /// </summary>
+        public DeploymentMode DeploymentMode
+        {
+            get { return this._deploymentMode; }
+            set { this._deploymentMode = value; }
+        }
+
+        // Check to see if DeploymentMode property is set
+        internal bool IsSetDeploymentMode()
+        {
+            return this._deploymentMode != null;
         }
 
         /// <summary>

@@ -350,6 +350,27 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudFormation.Model.DescribeEventsRequest.ChangeSetName</property>
+    <min>1</min>
+    <max>1600</max>
+    <pattern>[a-zA-Z][-a-zA-Z0-9]*|arn:[-a-zA-Z0-9:/]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.DescribeEventsRequest.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.DescribeEventsRequest.StackName</property>
+    <min>1</min>
+    <pattern>([a-zA-Z][-a-zA-Z0-9]*)|(arn:\b(aws|aws-us-gov|aws-cn)\b:[-a-zA-Z0-9:/._+]*)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.DescribeEventsResponse.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudFormation.Model.DescribeGeneratedTemplateRequest.GeneratedTemplateName</property>
     <min>1</min>
     <max>128</max>
@@ -1617,6 +1638,27 @@
     <min>1</min>
     <max>256</max>
     <pattern>arn:.+:iam::[0-9]{12}:role/.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.OperationEvent.ClientRequestToken</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9][-a-zA-Z0-9]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.OperationEvent.HookStatusReason</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.OperationEvent.HookType</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.OperationEvent.ResourceType</property>
+    <min>1</min>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudFormation.Model.OperationResultFilter.Values</property>
