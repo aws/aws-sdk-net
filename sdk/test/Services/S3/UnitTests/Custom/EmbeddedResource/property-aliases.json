@@ -39,12 +39,27 @@
       "ResponseContentEncoding": "ContentEncoding",
       "ResponseContentLanguage": "ContentLanguage",
       "ResponseContentType": "ContentType",
+      "ResponseExpires": "Expires",
       "IfMatch": "EtagToMatch",
       "IfNoneMatch": "EtagToNotMatch",
       "IfModifiedSince": "ModifiedSinceDate",
       "IfUnmodifiedSince": "UnmodifiedSinceDate"
     },
     "TransferUtilityDownloadRequest": {
+      "Bucket": "BucketName",
+      "IfModifiedSince": "ModifiedSinceDate",
+      "IfUnmodifiedSince": "UnmodifiedSinceDate",
+      "ResponseCacheControl": "CacheControl",
+      "ResponseContentDisposition": "ContentDisposition",
+      "ResponseContentEncoding": "ContentEncoding",
+      "ResponseContentLanguage": "ContentLanguage",
+      "ResponseContentType": "ContentType",
+      "ResponseExpires": "Expires",
+      "SSECustomerKey": "ServerSideEncryptionCustomerProvidedKey",
+      "SSECustomerAlgorithm": "ServerSideEncryptionCustomerMethod",
+      "SSECustomerKeyMD5": "ServerSideEncryptionCustomerProvidedKeyMD5"
+    },
+    "TransferUtilityOpenStreamRequest": {
       "Bucket": "BucketName",
       "IfModifiedSince": "ModifiedSinceDate",
       "IfUnmodifiedSince": "UnmodifiedSinceDate",

@@ -2,9 +2,10 @@
   "services": [
     {
       "serviceName": "S3",
-      "type": "patch",
+      "type": "minor",
       "changeLogMessages": [
-        "Add unit tests for Transfer Utility ConvertToGetObjectRequest method in BaseCommand"
+        "Add unit tests for Transfer Utility ConvertToGetObjectRequest method in BaseCommand",
+        "Setting both ResponseExpires and ResponseHeadersOverrides.Expires on GetObjectRequest now gives priority to ResponseExpires. Previously, ResponseHeadersOverrides.Expires was not being used even if it was set."
       ]
     }
   ]
