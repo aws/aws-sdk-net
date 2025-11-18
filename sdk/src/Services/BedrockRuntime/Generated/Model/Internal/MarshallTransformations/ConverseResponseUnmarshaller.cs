@@ -76,6 +76,12 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
                     response.PerformanceConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("serviceTier", targetDepth))
+                {
+                    var unmarshaller = ServiceTierUnmarshaller.Instance;
+                    response.ServiceTier = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("stopReason", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

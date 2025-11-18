@@ -40,8 +40,29 @@ namespace Amazon.BedrockRuntime.Model
     /// </summary>
     public partial class ConverseTokensRequest
     {
+        private Amazon.Runtime.Documents.Document _additionalModelRequestFields;
         private List<Message> _messages = AWSConfigs.InitializeCollections ? new List<Message>() : null;
         private List<SystemContentBlock> _system = AWSConfigs.InitializeCollections ? new List<SystemContentBlock>() : null;
+        private ToolConfiguration _toolConfig;
+
+        /// <summary>
+        /// Gets and sets the property AdditionalModelRequestFields. 
+        /// <para>
+        /// The additionalModelRequestFields of Converse input request to count tokens for. Use
+        /// this field when you want to pass additional parameters that the model supports.
+        /// </para>
+        /// </summary>
+        public Amazon.Runtime.Documents.Document AdditionalModelRequestFields
+        {
+            get { return this._additionalModelRequestFields; }
+            set { this._additionalModelRequestFields = value; }
+        }
+
+        // Check to see if AdditionalModelRequestFields property is set
+        internal bool IsSetAdditionalModelRequestFields()
+        {
+            return !this._additionalModelRequestFields.IsNull();
+        }
 
         /// <summary>
         /// Gets and sets the property Messages. 
@@ -79,6 +100,25 @@ namespace Amazon.BedrockRuntime.Model
         internal bool IsSetSystem()
         {
             return this._system != null && (this._system.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ToolConfig. 
+        /// <para>
+        /// The toolConfig of Converse input request to count tokens for. Configuration information
+        /// for the tools that the model can use when generating a response.
+        /// </para>
+        /// </summary>
+        public ToolConfiguration ToolConfig
+        {
+            get { return this._toolConfig; }
+            set { this._toolConfig = value; }
+        }
+
+        // Check to see if ToolConfig property is set
+        internal bool IsSetToolConfig()
+        {
+            return this._toolConfig != null;
         }
 
     }

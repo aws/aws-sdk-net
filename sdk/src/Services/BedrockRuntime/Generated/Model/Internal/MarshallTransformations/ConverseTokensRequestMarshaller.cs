@@ -48,6 +48,12 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAdditionalModelRequestFields())
+            {
+                context.Writer.WritePropertyName("additionalModelRequestFields");
+                Amazon.Runtime.Documents.Internal.Transform.DocumentMarshaller.Instance.Write(context.Writer, requestObject.AdditionalModelRequestFields);
+            }
+
             if(requestObject.IsSetMessages())
             {
                 context.Writer.WritePropertyName("messages");
@@ -78,6 +84,17 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
                 context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetToolConfig())
+            {
+                context.Writer.WritePropertyName("toolConfig");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ToolConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.ToolConfig, context);
+
+                context.Writer.WriteObjectEnd();
             }
 
         }

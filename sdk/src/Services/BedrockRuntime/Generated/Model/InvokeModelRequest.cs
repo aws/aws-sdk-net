@@ -70,6 +70,7 @@ namespace Amazon.BedrockRuntime.Model
         private string _guardrailVersion;
         private string _modelId;
         private PerformanceConfigLatency _performanceConfigLatency;
+        private ServiceTierType _serviceTier;
         private Trace _trace;
 
         /// <summary>
@@ -261,6 +262,24 @@ namespace Amazon.BedrockRuntime.Model
         internal bool IsSetPerformanceConfigLatency()
         {
             return !string.IsNullOrEmpty(this._performanceConfigLatency);
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServiceTier. 
+        /// <para>
+        /// Specifies the processing tier type used for serving the request.
+        /// </para>
+        /// </summary>
+        public ServiceTierType ServiceTier
+        {
+            get { return this._serviceTier; }
+            set { this._serviceTier = value; }
+        }
+
+        // Check to see if ServiceTier property is set
+        internal bool IsSetServiceTier()
+        {
+            return !string.IsNullOrEmpty(this._serviceTier);
         }
 
         /// <summary>

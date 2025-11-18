@@ -37,6 +37,7 @@ namespace Amazon.BedrockRuntime.Model
         private MemoryStream _body;
         private string _contentType;
         private PerformanceConfigLatency _performanceConfigLatency;
+        private ServiceTierType _serviceTier;
 
         /// <summary>
         /// Gets and sets the property Body. 
@@ -95,6 +96,24 @@ namespace Amazon.BedrockRuntime.Model
         internal bool IsSetPerformanceConfigLatency()
         {
             return !string.IsNullOrEmpty(this._performanceConfigLatency);
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServiceTier. 
+        /// <para>
+        /// Specifies the processing tier type used for serving the request.
+        /// </para>
+        /// </summary>
+        public ServiceTierType ServiceTier
+        {
+            get { return this._serviceTier; }
+            set { this._serviceTier = value; }
+        }
+
+        // Check to see if ServiceTier property is set
+        internal bool IsSetServiceTier()
+        {
+            return !string.IsNullOrEmpty(this._serviceTier);
         }
 
     }

@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ConverseStreamMetadataEvent Object
+    /// Response Unmarshaller for ServiceTier Object
     /// </summary>  
-    public class ConverseStreamMetadataEventUnmarshaller : IUnmarshaller<ConverseStreamMetadataEvent, XmlUnmarshallerContext>, IUnmarshaller<ConverseStreamMetadataEvent, JsonUnmarshallerContext>
+    public class ServiceTierUnmarshaller : IUnmarshaller<ServiceTier, XmlUnmarshallerContext>, IUnmarshaller<ServiceTier, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ConverseStreamMetadataEvent IUnmarshaller<ConverseStreamMetadataEvent, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ServiceTier IUnmarshaller<ServiceTier, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public ConverseStreamMetadataEvent Unmarshall(JsonUnmarshallerContext context)
+        public ServiceTier Unmarshall(JsonUnmarshallerContext context)
         {
-            ConverseStreamMetadataEvent unmarshalledObject = new ConverseStreamMetadataEvent();
+            ServiceTier unmarshalledObject = new ServiceTier();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,34 +66,10 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("metrics", targetDepth))
+                if (context.TestExpression("type", targetDepth))
                 {
-                    var unmarshaller = ConverseStreamMetricsUnmarshaller.Instance;
-                    unmarshalledObject.Metrics = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("performanceConfig", targetDepth))
-                {
-                    var unmarshaller = PerformanceConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.PerformanceConfig = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("serviceTier", targetDepth))
-                {
-                    var unmarshaller = ServiceTierUnmarshaller.Instance;
-                    unmarshalledObject.ServiceTier = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("trace", targetDepth))
-                {
-                    var unmarshaller = ConverseStreamTraceUnmarshaller.Instance;
-                    unmarshalledObject.Trace = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("usage", targetDepth))
-                {
-                    var unmarshaller = TokenUsageUnmarshaller.Instance;
-                    unmarshalledObject.Usage = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -101,12 +77,12 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
         }
 
 
-        private static ConverseStreamMetadataEventUnmarshaller _instance = new ConverseStreamMetadataEventUnmarshaller();        
+        private static ServiceTierUnmarshaller _instance = new ServiceTierUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ConverseStreamMetadataEventUnmarshaller Instance
+        public static ServiceTierUnmarshaller Instance
         {
             get
             {
