@@ -410,6 +410,32 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AutoScaling.Model.LaunchInstancesRequest.AutoScalingGroupName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AutoScaling.Model.LaunchInstancesRequest.ClientToken</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[A-Za-z0-9\-_\/]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AutoScaling.Model.LaunchInstancesRequest.RequestedCapacity</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AutoScaling.Model.LaunchInstancesResponse.AutoScalingGroupName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AutoScaling.Model.LaunchInstancesResponse.ClientToken</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[A-Za-z0-9\-_\/]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AutoScaling.Model.PutLifecycleHookRequest.AutoScalingGroupName</property>
     <min>1</min>
     <max>255</max>
@@ -874,6 +900,31 @@
     <max>32</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AutoScaling.Model.InstanceCollection.AvailabilityZone</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AutoScaling.Model.InstanceCollection.AvailabilityZoneId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AutoScaling.Model.InstanceCollection.InstanceType</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AutoScaling.Model.InstanceCollection.MarketType</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AutoScaling.Model.InstanceCollection.SubnetId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AutoScaling.Model.InstanceMaintenancePolicy.MaxHealthyPercentage</property>
     <min>-1</min>
     <max>200</max>
@@ -1011,6 +1062,39 @@
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.LaunchConfiguration.UserData</property>
     <max>21847</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AutoScaling.Model.LaunchInstancesError.AvailabilityZone</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AutoScaling.Model.LaunchInstancesError.AvailabilityZoneId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AutoScaling.Model.LaunchInstancesError.ErrorCode</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AutoScaling.Model.LaunchInstancesError.ErrorMessage</property>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AutoScaling.Model.LaunchInstancesError.InstanceType</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AutoScaling.Model.LaunchInstancesError.MarketType</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AutoScaling.Model.LaunchInstancesError.SubnetId</property>
+    <min>1</min>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.LaunchTemplateOverrides.InstanceType</property>

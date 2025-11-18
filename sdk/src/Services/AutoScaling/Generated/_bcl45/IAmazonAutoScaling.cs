@@ -4151,6 +4151,52 @@ namespace Amazon.AutoScaling
 
         #endregion
         
+        #region  LaunchInstances
+
+
+        /// <summary>
+        /// Launches a specified number of instances in an Auto Scaling group. Returns instance
+        /// IDs and other details if launch is successful or error details if launch is unsuccessful.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the LaunchInstances service method.</param>
+        /// 
+        /// <returns>The response from the LaunchInstances service method, as returned by AutoScaling.</returns>
+        /// <exception cref="Amazon.AutoScaling.Model.IdempotentParameterMismatchErrorException">
+        /// Indicates that the parameters in the current request do not match the parameters
+        /// from a previous request with the same client token within the idempotency window.
+        /// </exception>
+        /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
+        /// You already have a pending update to an Amazon EC2 Auto Scaling resource (for example,
+        /// an Auto Scaling group, instance, or load balancer).
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/LaunchInstances">REST API Reference for LaunchInstances Operation</seealso>
+        LaunchInstancesResponse LaunchInstances(LaunchInstancesRequest request);
+
+
+
+        /// <summary>
+        /// Launches a specified number of instances in an Auto Scaling group. Returns instance
+        /// IDs and other details if launch is successful or error details if launch is unsuccessful.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the LaunchInstances service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the LaunchInstances service method, as returned by AutoScaling.</returns>
+        /// <exception cref="Amazon.AutoScaling.Model.IdempotentParameterMismatchErrorException">
+        /// Indicates that the parameters in the current request do not match the parameters
+        /// from a previous request with the same client token within the idempotency window.
+        /// </exception>
+        /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
+        /// You already have a pending update to an Amazon EC2 Auto Scaling resource (for example,
+        /// an Auto Scaling group, instance, or load balancer).
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/LaunchInstances">REST API Reference for LaunchInstances Operation</seealso>
+        Task<LaunchInstancesResponse> LaunchInstancesAsync(LaunchInstancesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  PutLifecycleHook
 
 
