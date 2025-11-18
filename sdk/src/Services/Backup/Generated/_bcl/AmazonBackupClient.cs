@@ -1358,6 +1358,111 @@ namespace Amazon.Backup
 
         #endregion
         
+        #region  CreateTieringConfiguration
+
+
+        /// <summary>
+        /// Creates a tiering configuration.
+        /// 
+        ///  
+        /// <para>
+        /// A tiering configuration enables automatic movement of backup data to a lower-cost
+        /// storage tier based on the age of backed-up objects in the backup vault.
+        /// </para>
+        ///  
+        /// <para>
+        /// Each vault can only have one vault-specific tiering configuration, in addition to
+        /// any global configuration that applies to all vaults.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTieringConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the CreateTieringConfiguration service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.AlreadyExistsException">
+        /// The required resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ConflictException">
+        /// Backup can't perform the action that you requested until it finishes performing a
+        /// previous action. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.LimitExceededException">
+        /// A limit in the request has been exceeded; for example, a maximum number of items allowed
+        /// in a request.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
+        /// Indicates that a required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/CreateTieringConfiguration">REST API Reference for CreateTieringConfiguration Operation</seealso>
+        public virtual CreateTieringConfigurationResponse CreateTieringConfiguration(CreateTieringConfigurationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateTieringConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTieringConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<CreateTieringConfigurationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a tiering configuration.
+        /// 
+        ///  
+        /// <para>
+        /// A tiering configuration enables automatic movement of backup data to a lower-cost
+        /// storage tier based on the age of backed-up objects in the backup vault.
+        /// </para>
+        ///  
+        /// <para>
+        /// Each vault can only have one vault-specific tiering configuration, in addition to
+        /// any global configuration that applies to all vaults.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTieringConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateTieringConfiguration service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.AlreadyExistsException">
+        /// The required resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ConflictException">
+        /// Backup can't perform the action that you requested until it finishes performing a
+        /// previous action. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.LimitExceededException">
+        /// A limit in the request has been exceeded; for example, a maximum number of items allowed
+        /// in a request.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
+        /// Indicates that a required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/CreateTieringConfiguration">REST API Reference for CreateTieringConfiguration Operation</seealso>
+        public virtual Task<CreateTieringConfigurationResponse> CreateTieringConfigurationAsync(CreateTieringConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateTieringConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTieringConfigurationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateTieringConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteBackupPlan
 
 
@@ -2217,6 +2322,73 @@ namespace Amazon.Backup
             options.ResponseUnmarshaller = DeleteRestoreTestingSelectionResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeleteRestoreTestingSelectionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteTieringConfiguration
+
+
+        /// <summary>
+        /// Deletes the tiering configuration specified by a tiering configuration name.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTieringConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DeleteTieringConfiguration service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
+        /// Indicates that a required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DeleteTieringConfiguration">REST API Reference for DeleteTieringConfiguration Operation</seealso>
+        public virtual DeleteTieringConfigurationResponse DeleteTieringConfiguration(DeleteTieringConfigurationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteTieringConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTieringConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteTieringConfigurationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes the tiering configuration specified by a tiering configuration name.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTieringConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteTieringConfiguration service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
+        /// Indicates that a required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DeleteTieringConfiguration">REST API Reference for DeleteTieringConfiguration Operation</seealso>
+        public virtual Task<DeleteTieringConfigurationResponse> DeleteTieringConfigurationAsync(DeleteTieringConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteTieringConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTieringConfigurationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteTieringConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4190,6 +4362,77 @@ namespace Amazon.Backup
 
         #endregion
         
+        #region  GetTieringConfiguration
+
+
+        /// <summary>
+        /// Returns <c>TieringConfiguration</c> details for the specified <c>TieringConfigurationName</c>.
+        /// The details are the body of a tiering configuration in JSON format, in addition to
+        /// configuration metadata.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTieringConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the GetTieringConfiguration service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
+        /// Indicates that a required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/GetTieringConfiguration">REST API Reference for GetTieringConfiguration Operation</seealso>
+        public virtual GetTieringConfigurationResponse GetTieringConfiguration(GetTieringConfigurationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetTieringConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTieringConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<GetTieringConfigurationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns <c>TieringConfiguration</c> details for the specified <c>TieringConfigurationName</c>.
+        /// The details are the body of a tiering configuration in JSON format, in addition to
+        /// configuration metadata.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTieringConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetTieringConfiguration service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
+        /// Indicates that a required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/GetTieringConfiguration">REST API Reference for GetTieringConfiguration Operation</seealso>
+        public virtual Task<GetTieringConfigurationResponse> GetTieringConfigurationAsync(GetTieringConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetTieringConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTieringConfigurationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetTieringConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListBackupJobs
 
 
@@ -5930,6 +6173,61 @@ namespace Amazon.Backup
             options.ResponseUnmarshaller = ListTagsResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListTagsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListTieringConfigurations
+
+
+        /// <summary>
+        /// Returns a list of tiering configurations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTieringConfigurations service method.</param>
+        /// 
+        /// <returns>The response from the ListTieringConfigurations service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListTieringConfigurations">REST API Reference for ListTieringConfigurations Operation</seealso>
+        public virtual ListTieringConfigurationsResponse ListTieringConfigurations(ListTieringConfigurationsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListTieringConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTieringConfigurationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListTieringConfigurationsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns a list of tiering configurations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTieringConfigurations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTieringConfigurations service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListTieringConfigurations">REST API Reference for ListTieringConfigurations Operation</seealso>
+        public virtual Task<ListTieringConfigurationsResponse> ListTieringConfigurationsAsync(ListTieringConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListTieringConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTieringConfigurationsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListTieringConfigurationsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -7795,6 +8093,133 @@ namespace Amazon.Backup
             options.ResponseUnmarshaller = UpdateRestoreTestingSelectionResponseUnmarshaller.Instance;
             
             return InvokeAsync<UpdateRestoreTestingSelectionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateTieringConfiguration
+
+
+        /// <summary>
+        /// This request will send changes to your specified tiering configuration. <c>TieringConfigurationName</c>
+        /// cannot be updated after it is created.
+        /// 
+        ///  
+        /// <para>
+        ///  <c>ResourceSelection</c> can contain:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>Resources</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>TieringDownSettingsInDays</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ResourceType</c> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTieringConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the UpdateTieringConfiguration service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.AlreadyExistsException">
+        /// The required resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ConflictException">
+        /// Backup can't perform the action that you requested until it finishes performing a
+        /// previous action. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.LimitExceededException">
+        /// A limit in the request has been exceeded; for example, a maximum number of items allowed
+        /// in a request.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
+        /// Indicates that a required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/UpdateTieringConfiguration">REST API Reference for UpdateTieringConfiguration Operation</seealso>
+        public virtual UpdateTieringConfigurationResponse UpdateTieringConfiguration(UpdateTieringConfigurationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateTieringConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateTieringConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateTieringConfigurationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// This request will send changes to your specified tiering configuration. <c>TieringConfigurationName</c>
+        /// cannot be updated after it is created.
+        /// 
+        ///  
+        /// <para>
+        ///  <c>ResourceSelection</c> can contain:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>Resources</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>TieringDownSettingsInDays</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ResourceType</c> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTieringConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateTieringConfiguration service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.AlreadyExistsException">
+        /// The required resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ConflictException">
+        /// Backup can't perform the action that you requested until it finishes performing a
+        /// previous action. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.LimitExceededException">
+        /// A limit in the request has been exceeded; for example, a maximum number of items allowed
+        /// in a request.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
+        /// Indicates that a required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/UpdateTieringConfiguration">REST API Reference for UpdateTieringConfiguration Operation</seealso>
+        public virtual Task<UpdateTieringConfigurationResponse> UpdateTieringConfigurationAsync(UpdateTieringConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateTieringConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateTieringConfigurationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateTieringConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion

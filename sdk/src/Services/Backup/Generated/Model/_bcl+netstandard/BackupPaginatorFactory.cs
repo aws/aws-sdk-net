@@ -243,5 +243,13 @@ namespace Amazon.Backup.Model
         {
             return new ListTagsPaginator(this.client, request);
         }
+
+        /// <summary>
+        /// Paginator for ListTieringConfigurations operation
+        ///</summary>
+        public IListTieringConfigurationsPaginator ListTieringConfigurations(ListTieringConfigurationsRequest request) 
+        {
+            return new ListTieringConfigurationsPaginator(this.client, request);
+        }
     }
 }
