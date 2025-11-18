@@ -8448,6 +8448,34 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  CreateVpnConcentrator
+
+
+        /// <summary>
+        /// Creates a VPN concentrator that aggregates multiple VPN connections to a transit gateway.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateVpnConcentrator service method.</param>
+        /// 
+        /// <returns>The response from the CreateVpnConcentrator service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpnConcentrator">REST API Reference for CreateVpnConcentrator Operation</seealso>
+        CreateVpnConcentratorResponse CreateVpnConcentrator(CreateVpnConcentratorRequest request);
+
+
+
+        /// <summary>
+        /// Creates a VPN concentrator that aggregates multiple VPN connections to a transit gateway.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateVpnConcentrator service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateVpnConcentrator service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpnConcentrator">REST API Reference for CreateVpnConcentrator Operation</seealso>
+        Task<CreateVpnConcentratorResponse> CreateVpnConcentratorAsync(CreateVpnConcentratorRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  CreateVpnConnection
 
 
@@ -11600,6 +11628,34 @@ namespace Amazon.EC2
         /// <returns>The response from the DeleteVpcPeeringConnection service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpcPeeringConnection">REST API Reference for DeleteVpcPeeringConnection Operation</seealso>
         Task<DeleteVpcPeeringConnectionResponse> DeleteVpcPeeringConnectionAsync(DeleteVpcPeeringConnectionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteVpnConcentrator
+
+
+        /// <summary>
+        /// Deletes the specified VPN concentrator.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVpnConcentrator service method.</param>
+        /// 
+        /// <returns>The response from the DeleteVpnConcentrator service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpnConcentrator">REST API Reference for DeleteVpnConcentrator Operation</seealso>
+        DeleteVpnConcentratorResponse DeleteVpnConcentrator(DeleteVpnConcentratorRequest request);
+
+
+
+        /// <summary>
+        /// Deletes the specified VPN concentrator.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVpnConcentrator service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteVpnConcentrator service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpnConcentrator">REST API Reference for DeleteVpnConcentrator Operation</seealso>
+        Task<DeleteVpnConcentratorResponse> DeleteVpnConcentratorAsync(DeleteVpnConcentratorRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -21269,6 +21325,34 @@ namespace Amazon.EC2
         /// <returns>The response from the DescribeVpcs service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcs">REST API Reference for DescribeVpcs Operation</seealso>
         Task<DescribeVpcsResponse> DescribeVpcsAsync(DescribeVpcsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeVpnConcentrators
+
+
+        /// <summary>
+        /// Describes one or more of your VPN concentrators.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVpnConcentrators service method.</param>
+        /// 
+        /// <returns>The response from the DescribeVpnConcentrators service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpnConcentrators">REST API Reference for DescribeVpnConcentrators Operation</seealso>
+        DescribeVpnConcentratorsResponse DescribeVpnConcentrators(DescribeVpnConcentratorsRequest request);
+
+
+
+        /// <summary>
+        /// Describes one or more of your VPN concentrators.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVpnConcentrators service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeVpnConcentrators service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpnConcentrators">REST API Reference for DescribeVpnConcentrators Operation</seealso>
+        Task<DescribeVpnConcentratorsResponse> DescribeVpnConcentratorsAsync(DescribeVpnConcentratorsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

@@ -1085,6 +1085,14 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeVpnConcentrators operation
+        ///</summary>
+        public IDescribeVpnConcentratorsPaginator DescribeVpnConcentrators(DescribeVpnConcentratorsRequest request) 
+        {
+            return new DescribeVpnConcentratorsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for GetAssociatedIpv6PoolCidrs operation
         ///</summary>
         public IGetAssociatedIpv6PoolCidrsPaginator GetAssociatedIpv6PoolCidrs(GetAssociatedIpv6PoolCidrsRequest request) 

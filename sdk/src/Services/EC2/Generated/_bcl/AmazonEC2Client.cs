@@ -10687,6 +10687,47 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  CreateVpnConcentrator
+
+
+        /// <summary>
+        /// Creates a VPN concentrator that aggregates multiple VPN connections to a transit gateway.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateVpnConcentrator service method.</param>
+        /// 
+        /// <returns>The response from the CreateVpnConcentrator service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpnConcentrator">REST API Reference for CreateVpnConcentrator Operation</seealso>
+        public virtual CreateVpnConcentratorResponse CreateVpnConcentrator(CreateVpnConcentratorRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateVpnConcentratorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateVpnConcentratorResponseUnmarshaller.Instance;
+
+            return Invoke<CreateVpnConcentratorResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a VPN concentrator that aggregates multiple VPN connections to a transit gateway.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateVpnConcentrator service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateVpnConcentrator service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpnConcentrator">REST API Reference for CreateVpnConcentrator Operation</seealso>
+        public virtual Task<CreateVpnConcentratorResponse> CreateVpnConcentratorAsync(CreateVpnConcentratorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateVpnConcentratorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateVpnConcentratorResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateVpnConcentratorResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateVpnConnection
 
 
@@ -14948,6 +14989,47 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = DeleteVpcPeeringConnectionResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeleteVpcPeeringConnectionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteVpnConcentrator
+
+
+        /// <summary>
+        /// Deletes the specified VPN concentrator.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVpnConcentrator service method.</param>
+        /// 
+        /// <returns>The response from the DeleteVpnConcentrator service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpnConcentrator">REST API Reference for DeleteVpnConcentrator Operation</seealso>
+        public virtual DeleteVpnConcentratorResponse DeleteVpnConcentrator(DeleteVpnConcentratorRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteVpnConcentratorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteVpnConcentratorResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteVpnConcentratorResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes the specified VPN concentrator.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVpnConcentrator service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteVpnConcentrator service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpnConcentrator">REST API Reference for DeleteVpnConcentrator Operation</seealso>
+        public virtual Task<DeleteVpnConcentratorResponse> DeleteVpnConcentratorAsync(DeleteVpnConcentratorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteVpnConcentratorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteVpnConcentratorResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteVpnConcentratorResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -27213,6 +27295,47 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = DescribeVpcsResponseUnmarshaller.Instance;
             
             return InvokeAsync<DescribeVpcsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeVpnConcentrators
+
+
+        /// <summary>
+        /// Describes one or more of your VPN concentrators.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVpnConcentrators service method.</param>
+        /// 
+        /// <returns>The response from the DescribeVpnConcentrators service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpnConcentrators">REST API Reference for DescribeVpnConcentrators Operation</seealso>
+        public virtual DescribeVpnConcentratorsResponse DescribeVpnConcentrators(DescribeVpnConcentratorsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeVpnConcentratorsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeVpnConcentratorsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeVpnConcentratorsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Describes one or more of your VPN concentrators.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVpnConcentrators service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeVpnConcentrators service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpnConcentrators">REST API Reference for DescribeVpnConcentrators Operation</seealso>
+        public virtual Task<DescribeVpnConcentratorsResponse> DescribeVpnConcentratorsAsync(DescribeVpnConcentratorsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeVpnConcentratorsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeVpnConcentratorsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeVpnConcentratorsResponse>(request, options, cancellationToken);
         }
 
         #endregion

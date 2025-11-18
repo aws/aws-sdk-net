@@ -358,6 +358,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Type", StringUtils.FromString(publicRequest.Type));
                 }
+                if(publicRequest.IsSetVpnConcentratorId())
+                {
+                    request.Parameters.Add("VpnConcentratorId", StringUtils.FromString(publicRequest.VpnConcentratorId));
+                }
                 if(publicRequest.IsSetVpnGatewayId())
                 {
                     request.Parameters.Add("VpnGatewayId", StringUtils.FromString(publicRequest.VpnGatewayId));
