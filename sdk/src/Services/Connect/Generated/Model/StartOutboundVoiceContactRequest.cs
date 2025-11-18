@@ -59,6 +59,12 @@ namespace Amazon.Connect.Model
     /// href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#outbound-communications-quotas">Amazon
     /// Connect campaigns</a>. 
     /// </para>
+    ///  </note> <note> 
+    /// <para>
+    /// For Preview dialing mode, only the Amazon Connect outbound campaigns service principal
+    /// is allowed to assume a role in your account and call this API with OutboundStrategy.
+    /// 
+    /// </para>
     ///  </note>
     /// </summary>
     public partial class StartOutboundVoiceContactRequest : AmazonConnectRequest
@@ -76,6 +82,7 @@ namespace Amazon.Connect.Model
         private string _queueId;
         private Dictionary<string, Reference> _references = AWSConfigs.InitializeCollections ? new Dictionary<string, Reference>() : null;
         private string _relatedContactId;
+        private int? _ringTimeoutInSeconds;
         private string _sourcePhoneNumber;
         private TrafficType _trafficType;
 
@@ -362,6 +369,26 @@ namespace Amazon.Connect.Model
         internal bool IsSetRelatedContactId()
         {
             return this._relatedContactId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RingTimeoutInSeconds. 
+        /// <para>
+        /// The maximum time the outbound call will wait for the destination to answer the call,
+        /// in seconds 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=15, Max=60)]
+        public int? RingTimeoutInSeconds
+        {
+            get { return this._ringTimeoutInSeconds; }
+            set { this._ringTimeoutInSeconds = value; }
+        }
+
+        // Check to see if RingTimeoutInSeconds property is set
+        internal bool IsSetRingTimeoutInSeconds()
+        {
+            return this._ringTimeoutInSeconds.HasValue; 
         }
 
         /// <summary>

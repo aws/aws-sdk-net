@@ -3123,6 +3123,11 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.StartOutboundVoiceContactRequest.RingTimeoutInSeconds</property>
+    <min>15</min>
+    <max>60</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.StartOutboundVoiceContactRequest.SourcePhoneNumber</property>
     <pattern>\\+[1-9]\\d{1,14}$</pattern>
   </property-value-rule>
