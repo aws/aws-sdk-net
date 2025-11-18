@@ -154,6 +154,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.VgwTelemetry.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("vpnConcentratorId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.VpnConcentratorId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("vpnConnectionId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

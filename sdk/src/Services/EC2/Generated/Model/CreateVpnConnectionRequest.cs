@@ -71,6 +71,7 @@ namespace Amazon.EC2.Model
         private List<TagSpecification> _tagSpecifications = AWSConfigs.InitializeCollections ? new List<TagSpecification>() : null;
         private string _transitGatewayId;
         private string _type;
+        private string _vpnConcentratorId;
         private string _vpnGatewayId;
 
         /// <summary>
@@ -202,6 +203,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetType()
         {
             return this._type != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpnConcentratorId. 
+        /// <para>
+        /// The ID of the VPN concentrator to associate with the VPN connection.
+        /// </para>
+        /// </summary>
+        public string VpnConcentratorId
+        {
+            get { return this._vpnConcentratorId; }
+            set { this._vpnConcentratorId = value; }
+        }
+
+        // Check to see if VpnConcentratorId property is set
+        internal bool IsSetVpnConcentratorId()
+        {
+            return this._vpnConcentratorId != null;
         }
 
         /// <summary>

@@ -10645,6 +10645,60 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  CreateVpnConcentrator
+
+        /// <summary>
+        /// Creates a VPN concentrator that aggregates multiple VPN connections to a transit gateway.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateVpnConcentrator service method.</param>
+        /// 
+        /// <returns>The response from the CreateVpnConcentrator service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpnConcentrator">REST API Reference for CreateVpnConcentrator Operation</seealso>
+        public virtual CreateVpnConcentratorResponse CreateVpnConcentrator(CreateVpnConcentratorRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateVpnConcentratorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateVpnConcentratorResponseUnmarshaller.Instance;
+
+            return Invoke<CreateVpnConcentratorResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateVpnConcentrator operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateVpnConcentrator operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateVpnConcentrator
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpnConcentrator">REST API Reference for CreateVpnConcentrator Operation</seealso>
+        public virtual IAsyncResult BeginCreateVpnConcentrator(CreateVpnConcentratorRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateVpnConcentratorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateVpnConcentratorResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateVpnConcentrator operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateVpnConcentrator.</param>
+        /// 
+        /// <returns>Returns a  CreateVpnConcentratorResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpnConcentrator">REST API Reference for CreateVpnConcentrator Operation</seealso>
+        public virtual CreateVpnConcentratorResponse EndCreateVpnConcentrator(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateVpnConcentratorResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateVpnConnection
 
         /// <summary>
@@ -15619,6 +15673,60 @@ namespace Amazon.EC2
         public virtual DeleteVpcPeeringConnectionResponse EndDeleteVpcPeeringConnection(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteVpcPeeringConnectionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteVpnConcentrator
+
+        /// <summary>
+        /// Deletes the specified VPN concentrator.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVpnConcentrator service method.</param>
+        /// 
+        /// <returns>The response from the DeleteVpnConcentrator service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpnConcentrator">REST API Reference for DeleteVpnConcentrator Operation</seealso>
+        public virtual DeleteVpnConcentratorResponse DeleteVpnConcentrator(DeleteVpnConcentratorRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteVpnConcentratorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteVpnConcentratorResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteVpnConcentratorResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteVpnConcentrator operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVpnConcentrator operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteVpnConcentrator
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpnConcentrator">REST API Reference for DeleteVpnConcentrator Operation</seealso>
+        public virtual IAsyncResult BeginDeleteVpnConcentrator(DeleteVpnConcentratorRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteVpnConcentratorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteVpnConcentratorResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteVpnConcentrator operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteVpnConcentrator.</param>
+        /// 
+        /// <returns>Returns a  DeleteVpnConcentratorResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpnConcentrator">REST API Reference for DeleteVpnConcentrator Operation</seealso>
+        public virtual DeleteVpnConcentratorResponse EndDeleteVpnConcentrator(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteVpnConcentratorResponse>(asyncResult);
         }
 
         #endregion
@@ -27950,6 +28058,60 @@ namespace Amazon.EC2
         public virtual DescribeVpcsResponse EndDescribeVpcs(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeVpcsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeVpnConcentrators
+
+        /// <summary>
+        /// Describes one or more of your VPN concentrators.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVpnConcentrators service method.</param>
+        /// 
+        /// <returns>The response from the DescribeVpnConcentrators service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpnConcentrators">REST API Reference for DescribeVpnConcentrators Operation</seealso>
+        public virtual DescribeVpnConcentratorsResponse DescribeVpnConcentrators(DescribeVpnConcentratorsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeVpnConcentratorsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeVpnConcentratorsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeVpnConcentratorsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeVpnConcentrators operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVpnConcentrators operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeVpnConcentrators
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpnConcentrators">REST API Reference for DescribeVpnConcentrators Operation</seealso>
+        public virtual IAsyncResult BeginDescribeVpnConcentrators(DescribeVpnConcentratorsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeVpnConcentratorsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeVpnConcentratorsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeVpnConcentrators operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeVpnConcentrators.</param>
+        /// 
+        /// <returns>Returns a  DescribeVpnConcentratorsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpnConcentrators">REST API Reference for DescribeVpnConcentrators Operation</seealso>
+        public virtual DescribeVpnConcentratorsResponse EndDescribeVpnConcentrators(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeVpnConcentratorsResponse>(asyncResult);
         }
 
         #endregion
