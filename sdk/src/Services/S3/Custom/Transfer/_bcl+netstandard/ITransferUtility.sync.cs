@@ -534,6 +534,13 @@ namespace Amazon.S3.Transfer
         /// 	Downloads the objects in Amazon S3 that have a key that starts with the value 
         /// 	specified by <c>s3Directory</c>.
         /// </summary>
+        /// <remarks>
+        /// 	<para>
+        /// 	<b>Note:</b> Consider using <see cref="DownloadDirectoryWithResponse(string, string, string)"/> 
+        /// 	instead. The newer operation uses enhanced multipart download with concurrent part downloads 
+        /// 	for improved performance and returns response metadata including the total number of objects downloaded.
+        /// 	</para>
+        /// </remarks>
         /// <param name="bucketName">
         /// 	The name of the bucket containing the Amazon S3 objects to download.
         /// </param>
@@ -550,11 +557,48 @@ namespace Amazon.S3.Transfer
         /// 	specified by the <c>S3Directory</c>
         /// 	property of the passed in <c>TransferUtilityDownloadDirectoryRequest</c> object.
         /// </summary>
+        /// <remarks>
+        /// 	<para>
+        /// 	<b>Note:</b> Consider using <see cref="DownloadDirectoryWithResponse(TransferUtilityDownloadDirectoryRequest)"/> 
+        /// 	instead. The newer operation uses enhanced multipart download with concurrent part downloads 
+        /// 	for improved performance and returns response metadata including the total number of objects downloaded.
+        /// 	</para>
+        /// </remarks>
         /// <param name="request">
         /// 	Contains all the parameters required to download objects from Amazon S3 
         /// 	into a local directory.
         /// </param>
         void DownloadDirectory(TransferUtilityDownloadDirectoryRequest request);
+
+        /// <summary>
+        /// 	Downloads the objects in Amazon S3 that have a key that starts with the value 
+        /// 	specified by <c>s3Directory</c>, returning response metadata.
+        /// 	Uses enhanced multipart download with concurrent part downloads for improved performance.
+        /// </summary>
+        /// <param name="bucketName">
+        /// 	The name of the bucket containing the Amazon S3 objects to download.
+        /// </param>
+        /// <param name="s3Directory">
+        /// 	The directory in Amazon S3 to download.
+        /// </param>
+        /// <param name="localDirectory">
+        /// 	The local directory to download the objects to.
+        /// </param>
+        /// <returns>Response metadata including the number of objects downloaded.</returns>
+        TransferUtilityDownloadDirectoryResponse DownloadDirectoryWithResponse(string bucketName, string s3Directory, string localDirectory);
+
+        /// <summary>
+        /// 	Downloads the objects in Amazon S3 that have a key that starts with the value 
+        /// 	specified by the <c>S3Directory</c> property of the passed in 
+        /// 	<c>TransferUtilityDownloadDirectoryRequest</c> object, returning response metadata.
+        /// 	Uses enhanced multipart download with concurrent part downloads for improved performance.
+        /// </summary>
+        /// <param name="request">
+        /// 	Contains all the parameters required to download objects from Amazon S3 
+        /// 	into a local directory.
+        /// </param>
+        /// <returns>Response metadata including the number of objects downloaded.</returns>
+        TransferUtilityDownloadDirectoryResponse DownloadDirectoryWithResponse(TransferUtilityDownloadDirectoryRequest request);
         #endregion
 
         #region AbortMultipartUploads

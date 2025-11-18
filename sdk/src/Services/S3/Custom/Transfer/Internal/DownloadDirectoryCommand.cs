@@ -42,6 +42,7 @@ namespace Amazon.S3.Transfer.Internal
         private readonly IAmazonS3 _s3Client;
         private readonly TransferUtilityDownloadDirectoryRequest _request;
         private readonly bool _skipEncryptionInstructionFiles;
+        private readonly bool _useMultipartDownload;
         int _totalNumberOfFilesToDownload;
         int _numberOfFilesDownloaded;
         long _totalBytes;
@@ -49,9 +50,16 @@ namespace Amazon.S3.Transfer.Internal
         string _currentFile;
 
         internal DownloadDirectoryCommand(IAmazonS3 s3Client, TransferUtilityDownloadDirectoryRequest request)
+            : this(s3Client, request, useMultipartDownload: false)
+        {
+        }
+
+        internal DownloadDirectoryCommand(IAmazonS3 s3Client, TransferUtilityDownloadDirectoryRequest request, bool useMultipartDownload)
         {
             if (s3Client == null)
-                throw new ArgumentNullException("s3Client");
+                throw new ArgumentNullException(nameof(s3Client));
+            if (request == null)
+                throw new ArgumentNullException(nameof(request));
 
             this._s3Client = s3Client;
             this._request = request;
@@ -60,6 +68,13 @@ namespace Amazon.S3.Transfer.Internal
                 request.FailurePolicy == FailurePolicy.AbortOnFailure
                     ? new AbortOnFailurePolicy()
                     : new ContinueOnFailurePolicy(_errors);
+            this._useMultipartDownload = useMultipartDownload;
+        }
+
+        internal DownloadDirectoryCommand(IAmazonS3 s3Client, TransferUtilityDownloadDirectoryRequest request, TransferUtilityConfig config, bool useMultipartDownload)
+            : this(s3Client, request, useMultipartDownload)
+        {
+            this._config = config;
         }
 
         private void downloadedProgressEventCallback(object sender, WriteObjectProgressArgs e)

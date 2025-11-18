@@ -91,6 +91,42 @@ namespace AWSSDK.UnitTests
             var command = new MultipartDownloadCommand(_mockS3Client.Object, request, null);
         }
 
+        [TestMethod]
+        public void Constructor_WithSharedHttpThrottler_CreatesCommand()
+        {
+            // Arrange
+            var request = MultipartDownloadTestHelpers.CreateDownloadRequest(
+                filePath: Path.Combine(_testDirectory, "test.dat"));
+            var sharedThrottler = new SemaphoreSlim(10);
+
+            try
+            {
+                // Act
+                var command = new MultipartDownloadCommand(_mockS3Client.Object, request, _config, sharedThrottler);
+
+                // Assert
+                Assert.IsNotNull(command);
+            }
+            finally
+            {
+                sharedThrottler.Dispose();
+            }
+        }
+
+        [TestMethod]
+        public void Constructor_WithNullSharedHttpThrottler_CreatesCommand()
+        {
+            // Arrange
+            var request = MultipartDownloadTestHelpers.CreateDownloadRequest(
+                filePath: Path.Combine(_testDirectory, "test.dat"));
+
+            // Act
+            var command = new MultipartDownloadCommand(_mockS3Client.Object, request, _config, sharedHttpThrottler: null);
+
+            // Assert
+            Assert.IsNotNull(command);
+        }
+
         #endregion
 
         #region ValidateRequest Tests
@@ -739,6 +775,158 @@ namespace AWSSDK.UnitTests
             Assert.IsNotNull(response);
             Assert.IsTrue(File.Exists(nestedPath));
             Assert.IsTrue(MultipartDownloadTestHelpers.VerifyFileSize(nestedPath, fileSize));
+        }
+
+        #endregion
+
+        #region Shared HTTP Throttler Tests
+
+        [TestMethod]
+        public async Task ExecuteAsync_WithSharedHttpThrottler_CompletesSuccessfully()
+        {
+            // Arrange
+            var destinationPath = Path.Combine(_testDirectory, "throttled-download.dat");
+            var request = MultipartDownloadTestHelpers.CreateDownloadRequest(
+                filePath: destinationPath);
+
+            var fileSize = 1024;
+            SetupSuccessfulSinglePartDownload(fileSize);
+            
+            var sharedThrottler = new SemaphoreSlim(10);
+            try
+            {
+                var command = new MultipartDownloadCommand(_mockS3Client.Object, request, _config, sharedThrottler);
+
+                // Act
+                var response = await command.ExecuteAsync(CancellationToken.None);
+
+                // Assert
+                Assert.IsNotNull(response);
+                Assert.IsTrue(File.Exists(destinationPath));
+                Assert.IsTrue(MultipartDownloadTestHelpers.VerifyFileSize(destinationPath, fileSize));
+            }
+            finally
+            {
+                sharedThrottler.Dispose();
+            }
+        }
+
+        [TestMethod]
+        public async Task ExecuteAsync_WithoutSharedHttpThrottler_CompletesSuccessfully()
+        {
+            // Arrange
+            var destinationPath = Path.Combine(_testDirectory, "no-throttler-download.dat");
+            var request = MultipartDownloadTestHelpers.CreateDownloadRequest(
+                filePath: destinationPath);
+
+            var fileSize = 1024;
+            SetupSuccessfulSinglePartDownload(fileSize);
+            
+            var command = new MultipartDownloadCommand(_mockS3Client.Object, request, _config, sharedHttpThrottler: null);
+
+            // Act
+            var response = await command.ExecuteAsync(CancellationToken.None);
+
+            // Assert
+            Assert.IsNotNull(response);
+            Assert.IsTrue(File.Exists(destinationPath));
+            Assert.IsTrue(MultipartDownloadTestHelpers.VerifyFileSize(destinationPath, fileSize));
+        }
+
+        [TestMethod]
+        public async Task ExecuteAsync_SharedHttpThrottler_DoesNotBlockSinglePartDownload()
+        {
+            // Arrange
+            var destinationPath = Path.Combine(_testDirectory, "single-part-throttled.dat");
+            var request = MultipartDownloadTestHelpers.CreateDownloadRequest(
+                filePath: destinationPath);
+
+            var fileSize = 512; // Small file (single part)
+            SetupSuccessfulSinglePartDownload(fileSize);
+            
+            // Create throttler with limited capacity
+            var sharedThrottler = new SemaphoreSlim(1);
+            try
+            {
+                var command = new MultipartDownloadCommand(_mockS3Client.Object, request, _config, sharedThrottler);
+
+                // Act
+                var response = await command.ExecuteAsync(CancellationToken.None);
+
+                // Assert
+                Assert.IsNotNull(response);
+                Assert.IsTrue(File.Exists(destinationPath));
+                
+                // Verify throttler was not exhausted (single part doesn't use it heavily)
+                Assert.AreEqual(1, sharedThrottler.CurrentCount);
+            }
+            finally
+            {
+                sharedThrottler.Dispose();
+            }
+        }
+
+        [TestMethod]
+        public async Task ExecuteAsync_SharedHttpThrottler_ReleasedOnSuccess()
+        {
+            // Arrange
+            var destinationPath = Path.Combine(_testDirectory, "throttler-released.dat");
+            var request = MultipartDownloadTestHelpers.CreateDownloadRequest(
+                filePath: destinationPath);
+
+            var fileSize = 1024;
+            SetupSuccessfulSinglePartDownload(fileSize);
+            
+            var sharedThrottler = new SemaphoreSlim(5);
+            var initialCount = sharedThrottler.CurrentCount;
+            
+            try
+            {
+                var command = new MultipartDownloadCommand(_mockS3Client.Object, request, _config, sharedThrottler);
+
+                // Act
+                await command.ExecuteAsync(CancellationToken.None);
+
+                // Assert - throttler should be back to initial state
+                Assert.AreEqual(initialCount, sharedThrottler.CurrentCount);
+            }
+            finally
+            {
+                sharedThrottler.Dispose();
+            }
+        }
+
+        [TestMethod]
+        public async Task ExecuteAsync_SharedHttpThrottler_ReleasedOnException()
+        {
+            // Arrange
+            var destinationPath = Path.Combine(_testDirectory, "throttler-released-error.dat");
+            var request = MultipartDownloadTestHelpers.CreateDownloadRequest(
+                filePath: destinationPath);
+
+            _mockS3Client.Setup(c => c.GetObjectAsync(
+                It.IsAny<GetObjectRequest>(),
+                It.IsAny<CancellationToken>()))
+                .ThrowsAsync(new AmazonS3Exception("Test exception"));
+
+            var sharedThrottler = new SemaphoreSlim(5);
+            var initialCount = sharedThrottler.CurrentCount;
+            
+            try
+            {
+                var command = new MultipartDownloadCommand(_mockS3Client.Object, request, _config, sharedThrottler);
+
+                // Act & Assert
+                await Assert.ThrowsExceptionAsync<AmazonS3Exception>(
+                    async () => await command.ExecuteAsync(CancellationToken.None));
+
+                // Throttler should be back to initial state even after exception
+                Assert.AreEqual(initialCount, sharedThrottler.CurrentCount);
+            }
+            finally
+            {
+                sharedThrottler.Dispose();
+            }
         }
 
         #endregion

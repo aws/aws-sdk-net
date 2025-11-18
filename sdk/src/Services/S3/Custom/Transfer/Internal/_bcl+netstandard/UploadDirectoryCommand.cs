@@ -37,30 +37,44 @@ namespace Amazon.S3.Transfer.Internal
                 .ConfigureAwait(continueOnCapturedContext: false);                
             this._totalNumberOfFiles = filePaths.Length;
 
-            SemaphoreSlim asyncThrottler = null;
-            SemaphoreSlim loopThrottler = null;
+            // Two-level throttling architecture:
+            // 1. File-level throttler: Controls how many files are uploaded concurrently
+            // 2. HTTP-level throttler: Controls total HTTP requests across ALL file uploads
+            //
+            // Example with ConcurrentServiceRequests = 10:
+            //   - fileOperationThrottler = 10: Up to 10 files can upload simultaneously
+            //   - sharedHttpRequestThrottler = 10: All 10 files share 10 total HTTP request slots
+            //   - Without HTTP throttler: Would result in 10 files × 10 parts = 100 concurrent HTTP requests
+            //   - With HTTP throttler: Enforces 10 total concurrent HTTP requests across all files
+            //
+            // This prevents resource exhaustion when uploading many large files with multipart uploads.
+            SemaphoreSlim sharedHttpRequestThrottler = null;
+            SemaphoreSlim fileOperationThrottler = null;
             CancellationTokenSource internalCts = null;
             try
             {
                 var pendingTasks = new List<Task>();
-                loopThrottler = UploadFilesConcurrently ? 
+                
+                // File-level throttler: Controls concurrent file operations
+                fileOperationThrottler = UploadFilesConcurrently ? 
                     new SemaphoreSlim(this._config.ConcurrentServiceRequests) :
                     new SemaphoreSlim(1);
 
-                asyncThrottler = this._utility.S3Client is Amazon.S3.Internal.IAmazonS3Encryption ?
-                    // If we are using AmazonS3EncryptionClient, don't set the async throttler.
-                    // The loopThrottler will be used to control how many files are uploaded in parallel.
+                // HTTP-level throttler: Shared across all uploads to control total HTTP concurrency
+                sharedHttpRequestThrottler = this._utility.S3Client is Amazon.S3.Internal.IAmazonS3Encryption ?
+                    // If we are using AmazonS3EncryptionClient, don't set the HTTP throttler.
+                    // The fileOperationThrottler will be used to control how many files are uploaded in parallel.
                     // Each upload (multipart) will upload parts serially.
                     null :
                     // Use a throttler which will be shared between simple and multipart uploads
-                    // to control concurrent IO.
+                    // to control total concurrent HTTP requests across all file operations.
                     new SemaphoreSlim(this._config.ConcurrentServiceRequests);
 
 
                 internalCts = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
                 foreach (string filepath in filePaths)
                 {
-                    await loopThrottler.WaitAsync(cancellationToken).ConfigureAwait(continueOnCapturedContext: false);
+                    await fileOperationThrottler.WaitAsync(cancellationToken).ConfigureAwait(continueOnCapturedContext: false);
 
                     try
                     {
@@ -74,14 +88,14 @@ namespace Amazon.S3.Transfer.Internal
                             break;
                         }
                         var uploadRequest = ConstructRequest(basePath, filepath, prefix);
-                        var uploadCommand = _utility.GetUploadCommand(uploadRequest, asyncThrottler);
+                        var uploadCommand = _utility.GetUploadCommand(uploadRequest, sharedHttpRequestThrottler);
 
                         var task = ExecuteCommandAsync(uploadCommand, internalCts);
                         pendingTasks.Add(task);
                     }
                     finally
                     {
-                        loopThrottler.Release();
+                        fileOperationThrottler.Release();
                     }
                 }
                 await TaskHelpers.WhenAllOrFirstExceptionAsync(pendingTasks, cancellationToken)
@@ -90,9 +104,8 @@ namespace Amazon.S3.Transfer.Internal
             finally
             {                
                 internalCts.Dispose();
-                loopThrottler.Dispose();
-                if (asyncThrottler != null)
-                    asyncThrottler.Dispose();
+                fileOperationThrottler.Dispose();
+                sharedHttpRequestThrottler?.Dispose();
             }
 
             return new TransferUtilityUploadDirectoryResponse();
