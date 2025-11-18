@@ -282,6 +282,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     unmarshalledObject.RelatedContactId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("RingStartTimestamp", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.RingStartTimestamp = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("RoutingCriteria", targetDepth))
                 {
                     var unmarshaller = RoutingCriteriaUnmarshaller.Instance;

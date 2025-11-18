@@ -70,6 +70,7 @@ namespace Amazon.Connect.Model
         private int? _queueTimeAdjustmentSeconds;
         private List<RecordingInfo> _recordings = AWSConfigs.InitializeCollections ? new List<RecordingInfo>() : null;
         private string _relatedContactId;
+        private DateTime? _ringStartTimestamp;
         private RoutingCriteria _routingCriteria;
         private DateTime? _scheduledTimestamp;
         private Dictionary<string, SegmentAttributeValue> _segmentAttributes = AWSConfigs.InitializeCollections ? new Dictionary<string, SegmentAttributeValue>() : null;
@@ -757,6 +758,24 @@ namespace Amazon.Connect.Model
         internal bool IsSetRelatedContactId()
         {
             return this._relatedContactId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RingStartTimestamp. 
+        /// <para>
+        /// The timestamp when ringing started for a campaign call.
+        /// </para>
+        /// </summary>
+        public DateTime RingStartTimestamp
+        {
+            get { return this._ringStartTimestamp.GetValueOrDefault(); }
+            set { this._ringStartTimestamp = value; }
+        }
+
+        // Check to see if RingStartTimestamp property is set
+        internal bool IsSetRingStartTimestamp()
+        {
+            return this._ringStartTimestamp.HasValue; 
         }
 
         /// <summary>

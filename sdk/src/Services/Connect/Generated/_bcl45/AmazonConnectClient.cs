@@ -20545,6 +20545,12 @@ namespace Amazon.Connect
         /// href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#outbound-communications-quotas">Amazon
         /// Connect campaigns</a>. 
         /// </para>
+        ///  </note> <note> 
+        /// <para>
+        /// For Preview dialing mode, only the Amazon Connect outbound campaigns service principal
+        /// is allowed to assume a role in your account and call this API with OutboundStrategy.
+        /// 
+        /// </para>
         ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartOutboundVoiceContact service method.</param>
@@ -20610,6 +20616,12 @@ namespace Amazon.Connect
         /// = <c>CAMPAIGN</c>, you must submit a service quota increase request to the quota <a
         /// href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#outbound-communications-quotas">Amazon
         /// Connect campaigns</a>. 
+        /// </para>
+        ///  </note> <note> 
+        /// <para>
+        /// For Preview dialing mode, only the Amazon Connect outbound campaigns service principal
+        /// is allowed to assume a role in your account and call this API with OutboundStrategy.
+        /// 
         /// </para>
         ///  </note>
         /// </summary>
