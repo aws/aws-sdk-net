@@ -177,7 +177,17 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         /// For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
         /// Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.
         /// </para>
-        ///  </li> </ul> 
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// For the list of services whose resources you can tag using the Resource Groups Tagging
+        /// API, see <a href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/supported-services.html">Services
+        /// that support the Resource Groups Tagging API</a>. If an Amazon Web Services service
+        /// isn't listed on that page, you might still be able to tag that service's resources
+        /// by using that service's native tagging operations instead of using Resource Groups
+        /// Tagging API operations. All tagged resources, whether the tagging used the Resource
+        /// Groups Tagging API or not, are returned by the <c>Get*</c> operation.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// You can specify multiple resource types by using a comma separated array. The array
         /// can include up to 100 items. Note that the length constraint requirement applies to

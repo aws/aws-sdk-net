@@ -30,19 +30,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ResourceGroupsTaggingAPI.Model
 {
     /// <summary>
-    /// This error indicates one of the following:
+    /// The request failed because of one of the following reasons:
     /// 
     ///  <ul> <li> 
     /// <para>
-    /// A parameter is missing.
+    /// A required parameter is missing.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// A malformed string was supplied for the request parameter.
+    /// A provided string parameter is malformed.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// An out-of-range value was supplied for the request parameter.
+    /// An provided parameter value is out of range.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -51,9 +51,15 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
     ///  </li> <li> 
     /// <para>
     /// You can't access the Amazon S3 bucket for report storage. For more information, see
-    /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies-prereqs.html#bucket-policies-org-report">Additional
-    /// Requirements for Organization-wide Tag Compliance Reports</a> in the <i>Organizations
-    /// User Guide.</i> 
+    /// <a href="https://docs.aws.amazon.com/tag-editor/latest/userguide/tag-policies-orgs.html#bucket-policy">Amazon
+    /// S3 bucket policy for report storage</a> in the <i>Tagging Amazon Web Services resources
+    /// and Tag Editor</i> user guide. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The partition specified in an ARN parameter in the request doesn't match the partition
+    /// where you invoked the operation. The partition is specified by the second field of
+    /// the ARN.
     /// </para>
     ///  </li> </ul>
     /// </summary>

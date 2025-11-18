@@ -32,7 +32,7 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
     /// <summary>
     /// Container for the parameters to the GetResources operation.
     /// Returns all the tagged or previously tagged resources that are located in the specified
-    /// Amazon Web Services Region for the account.
+    /// Amazon Web Services Region for the account. 
     /// 
     ///  
     /// <para>
@@ -58,6 +58,17 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
     /// value. A null value for <c>PaginationToken</c> indicates that there are no more results
     /// waiting to be returned.
     /// </para>
+    ///  <note> 
+    /// <para>
+    ///  <c>GetResources</c> does not return untagged resources. 
+    /// </para>
+    ///  
+    /// <para>
+    /// To find untagged resources in your account, use Amazon Web Services Resource Explorer
+    /// with a query that uses <c>tag:none</c>. For more information, see <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/using-search-query-syntax.html">
+    /// Search query syntax reference for Resource Explorer</a>. 
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class GetResourcesRequest : AmazonResourceGroupsTaggingAPIRequest
     {
@@ -139,10 +150,23 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         /// <summary>
         /// Gets and sets the property ResourceARNList. 
         /// <para>
-        /// Specifies a list of ARNs of resources for which you want to retrieve tag data. You
-        /// can't specify both this parameter and any of the pagination parameters (<c>ResourcesPerPage</c>,
-        /// <c>TagsPerPage</c>, <c>PaginationToken</c>) in the same request. If you specify both,
-        /// you get an <c>Invalid Parameter</c> exception.
+        /// Specifies a list of ARNs of resources for which you want to retrieve tag data.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can't specify both this parameter and the <c>ResourceTypeFilters</c> parameter
+        /// in the same request. If you do, you get an <c>Invalid Parameter</c> exception.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can't specify both this parameter and the <c>TagFilters</c> parameter in the same
+        /// request. If you do, you get an <c>Invalid Parameter</c> exception.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can't specify both this parameter and any of the pagination parameters (<c>ResourcesPerPage</c>,
+        /// <c>TagsPerPage</c>, <c>PaginationToken</c>) in the same request. If you do, you get
+        /// an <c>Invalid Parameter</c> exception.
         /// </para>
         ///  
         /// <para>
@@ -195,18 +219,31 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         /// Gets and sets the property ResourceTypeFilters. 
         /// <para>
         /// Specifies the resource types that you want included in the response. The format of
-        /// each resource type is <c>service[:resourceType]</c>. For example, specifying a resource
-        /// type of <c>ec2</c> returns all Amazon EC2 resources (which includes EC2 instances).
-        /// Specifying a resource type of <c>ec2:instance</c> returns only EC2 instances. 
+        /// each resource type is <c>service[:resourceType]</c>. For example, specifying a service
+        /// of <c>ec2</c> returns all Amazon EC2 resources (which includes EC2 instances). Specifying
+        /// a resource type of <c>ec2:instance</c> returns only EC2 instances. 
+        /// </para>
+        ///  
+        /// <para>
+        /// You can't specify both this parameter and the <c>ResourceArnList</c> parameter in
+        /// the same request. If you do, you get an <c>Invalid Parameter</c> exception.
         /// </para>
         ///  
         /// <para>
         /// The string for each service name and resource type is the same as that embedded in
-        /// a resource's Amazon Resource Name (ARN). For the list of services whose resources
-        /// you can use in this parameter, see <a href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/supported-services.html">Services
-        /// that support the Resource Groups Tagging API</a>.
+        /// a resource's Amazon Resource Name (ARN).
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        /// For the list of services whose resources you can tag using the Resource Groups Tagging
+        /// API, see <a href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/supported-services.html">Services
+        /// that support the Resource Groups Tagging API</a>. If an Amazon Web Services service
+        /// isn't listed on that page, you might still be able to tag that service's resources
+        /// by using that service's native tagging operations instead of using Resource Groups
+        /// Tagging API operations. All tagged resources, whether the tagging used the Resource
+        /// Groups Tagging API or not, are returned by the <c>Get*</c> operation.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// You can specify multiple resource types by using an array. The array can include up
         /// to 100 items. Note that the length constraint requirement applies to each resource
@@ -240,13 +277,19 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         /// </para>
         ///  
         /// <para>
+        /// You can't specify both this parameter and the <c>ResourceArnList</c> parameter in
+        /// the same request. If you do, you get an <c>Invalid Parameter</c> exception.
+        /// </para>
+        ///  
+        /// <para>
         /// Note the following when deciding how to use TagFilters:
         /// </para>
         ///  <ul> <li> 
         /// <para>
         /// If you <i>don't</i> specify a <c>TagFilter</c>, the response includes all resources
-        /// that are currently tagged or ever had a tag. Resources that currently don't have tags
-        /// are shown with an empty tag set, like this: <c>"Tags": []</c>.
+        /// that are currently tagged or ever had a tag. Resources that were previously tagged,
+        /// <i>but do not currently</i> have tags, are shown with an empty tag set, like this:
+        /// <c>"Tags": []</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -265,8 +308,8 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         /// </para>
         ///  
         /// <para>
-        /// For example, for the following filters: <c>filter1= {keyA,{value1}}</c>, <c>filter2={keyB,{value2,value3,value4}}</c>,
-        /// <c>filter3= {keyC}</c>:
+        /// For example, for the following filters: <c>filter1= {key1,{value1}}</c>, <c>filter2={key2,{value2,value3,value4}}</c>,
+        /// <c>filter3= {key3}</c>:
         /// </para>
         ///  <ul> <li> 
         /// <para>

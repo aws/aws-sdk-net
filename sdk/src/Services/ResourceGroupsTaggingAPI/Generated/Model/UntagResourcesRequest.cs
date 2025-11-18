@@ -60,13 +60,20 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <c>tag:UntagResource</c> 
+    ///  <c>tag:UntagResources</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
     ///  <c>ec2:DeleteTags</c> 
     /// </para>
-    ///  </li> </ul>
+    ///  </li> </ul> <note> 
+    /// <para>
+    /// In addition, some services might have specific requirements for untagging some types
+    /// of resources. For example, to untag Amazon Web Services Glue Connection, you must
+    /// also have the <c>glue:GetConnection</c> permission. If the expected minimum permissions
+    /// don't work, check the documentation for that service's tagging APIs for more information.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class UntagResourcesRequest : AmazonResourceGroupsTaggingAPIRequest
     {

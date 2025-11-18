@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ResourceGroupsTaggingAPI.Model
 {
     /// <summary>
-    /// The request was denied because performing this operation violates a constraint. 
+    /// The request failed because performing the operation would violate a constraint.
     /// 
     ///  
     /// <para>
@@ -38,9 +38,9 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// You must meet the prerequisites for using tag policies. For information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies-prereqs.html">Prerequisites
-    /// and Permissions for Using Tag Policies</a> in the <i>Organizations User Guide.</i>
-    /// 
+    /// You must meet the prerequisites for using tag policies. For information, see <a href="https://docs.aws.amazon.com/tag-editor/latest/userguide/tag-policies-orgs.html#tag-policies-prereqs">Prerequisites
+    /// and permissions</a> in the <i>Tagging Amazon Web Services resources and Tag Editor</i>
+    /// user guide. 
     /// </para>
     ///  </li> <li> 
     /// <para>
