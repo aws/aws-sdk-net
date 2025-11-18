@@ -831,6 +831,78 @@ namespace Amazon.Backup
 
         #endregion
         
+        #region  CreateTieringConfiguration
+
+
+        /// <summary>
+        /// Creates a tiering configuration.
+        /// 
+        ///  
+        /// <para>
+        /// A tiering configuration enables automatic movement of backup data to a lower-cost
+        /// storage tier based on the age of backed-up objects in the backup vault.
+        /// </para>
+        ///  
+        /// <para>
+        /// Each vault can only have one vault-specific tiering configuration, in addition to
+        /// any global configuration that applies to all vaults.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTieringConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the CreateTieringConfiguration service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.AlreadyExistsException">
+        /// The required resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ConflictException">
+        /// Backup can't perform the action that you requested until it finishes performing a
+        /// previous action. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.LimitExceededException">
+        /// A limit in the request has been exceeded; for example, a maximum number of items allowed
+        /// in a request.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
+        /// Indicates that a required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/CreateTieringConfiguration">REST API Reference for CreateTieringConfiguration Operation</seealso>
+        CreateTieringConfigurationResponse CreateTieringConfiguration(CreateTieringConfigurationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateTieringConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateTieringConfiguration operation on AmazonBackupClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateTieringConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/CreateTieringConfiguration">REST API Reference for CreateTieringConfiguration Operation</seealso>
+        IAsyncResult BeginCreateTieringConfiguration(CreateTieringConfigurationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateTieringConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateTieringConfiguration.</param>
+        /// 
+        /// <returns>Returns a  CreateTieringConfigurationResult from Backup.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/CreateTieringConfiguration">REST API Reference for CreateTieringConfiguration Operation</seealso>
+        CreateTieringConfigurationResponse EndCreateTieringConfiguration(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeleteBackupPlan
 
 
@@ -1474,6 +1546,59 @@ namespace Amazon.Backup
         /// <returns>Returns a  DeleteRestoreTestingSelectionResult from Backup.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DeleteRestoreTestingSelection">REST API Reference for DeleteRestoreTestingSelection Operation</seealso>
         DeleteRestoreTestingSelectionResponse EndDeleteRestoreTestingSelection(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteTieringConfiguration
+
+
+        /// <summary>
+        /// Deletes the tiering configuration specified by a tiering configuration name.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTieringConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DeleteTieringConfiguration service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
+        /// Indicates that a required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DeleteTieringConfiguration">REST API Reference for DeleteTieringConfiguration Operation</seealso>
+        DeleteTieringConfigurationResponse DeleteTieringConfiguration(DeleteTieringConfigurationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteTieringConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTieringConfiguration operation on AmazonBackupClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteTieringConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DeleteTieringConfiguration">REST API Reference for DeleteTieringConfiguration Operation</seealso>
+        IAsyncResult BeginDeleteTieringConfiguration(DeleteTieringConfigurationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteTieringConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteTieringConfiguration.</param>
+        /// 
+        /// <returns>Returns a  DeleteTieringConfigurationResult from Backup.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DeleteTieringConfiguration">REST API Reference for DeleteTieringConfiguration Operation</seealso>
+        DeleteTieringConfigurationResponse EndDeleteTieringConfiguration(IAsyncResult asyncResult);
 
         #endregion
         
@@ -3027,6 +3152,61 @@ namespace Amazon.Backup
 
         #endregion
         
+        #region  GetTieringConfiguration
+
+
+        /// <summary>
+        /// Returns <c>TieringConfiguration</c> details for the specified <c>TieringConfigurationName</c>.
+        /// The details are the body of a tiering configuration in JSON format, in addition to
+        /// configuration metadata.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTieringConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the GetTieringConfiguration service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
+        /// Indicates that a required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/GetTieringConfiguration">REST API Reference for GetTieringConfiguration Operation</seealso>
+        GetTieringConfigurationResponse GetTieringConfiguration(GetTieringConfigurationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetTieringConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetTieringConfiguration operation on AmazonBackupClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetTieringConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/GetTieringConfiguration">REST API Reference for GetTieringConfiguration Operation</seealso>
+        IAsyncResult BeginGetTieringConfiguration(GetTieringConfigurationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetTieringConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetTieringConfiguration.</param>
+        /// 
+        /// <returns>Returns a  GetTieringConfigurationResult from Backup.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/GetTieringConfiguration">REST API Reference for GetTieringConfiguration Operation</seealso>
+        GetTieringConfigurationResponse EndGetTieringConfiguration(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListBackupJobs
 
 
@@ -4406,6 +4586,53 @@ namespace Amazon.Backup
 
         #endregion
         
+        #region  ListTieringConfigurations
+
+
+        /// <summary>
+        /// Returns a list of tiering configurations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTieringConfigurations service method.</param>
+        /// 
+        /// <returns>The response from the ListTieringConfigurations service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListTieringConfigurations">REST API Reference for ListTieringConfigurations Operation</seealso>
+        ListTieringConfigurationsResponse ListTieringConfigurations(ListTieringConfigurationsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTieringConfigurations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTieringConfigurations operation on AmazonBackupClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTieringConfigurations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListTieringConfigurations">REST API Reference for ListTieringConfigurations Operation</seealso>
+        IAsyncResult BeginListTieringConfigurations(ListTieringConfigurationsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListTieringConfigurations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTieringConfigurations.</param>
+        /// 
+        /// <returns>Returns a  ListTieringConfigurationsResult from Backup.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListTieringConfigurations">REST API Reference for ListTieringConfigurations Operation</seealso>
+        ListTieringConfigurationsResponse EndListTieringConfigurations(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  PutBackupVaultAccessPolicy
 
 
@@ -5745,6 +5972,89 @@ namespace Amazon.Backup
         /// <returns>Returns a  UpdateRestoreTestingSelectionResult from Backup.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/UpdateRestoreTestingSelection">REST API Reference for UpdateRestoreTestingSelection Operation</seealso>
         UpdateRestoreTestingSelectionResponse EndUpdateRestoreTestingSelection(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateTieringConfiguration
+
+
+        /// <summary>
+        /// This request will send changes to your specified tiering configuration. <c>TieringConfigurationName</c>
+        /// cannot be updated after it is created.
+        /// 
+        ///  
+        /// <para>
+        ///  <c>ResourceSelection</c> can contain:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>Resources</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>TieringDownSettingsInDays</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ResourceType</c> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTieringConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the UpdateTieringConfiguration service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.AlreadyExistsException">
+        /// The required resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ConflictException">
+        /// Backup can't perform the action that you requested until it finishes performing a
+        /// previous action. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.LimitExceededException">
+        /// A limit in the request has been exceeded; for example, a maximum number of items allowed
+        /// in a request.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
+        /// Indicates that a required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/UpdateTieringConfiguration">REST API Reference for UpdateTieringConfiguration Operation</seealso>
+        UpdateTieringConfigurationResponse UpdateTieringConfiguration(UpdateTieringConfigurationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateTieringConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTieringConfiguration operation on AmazonBackupClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateTieringConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/UpdateTieringConfiguration">REST API Reference for UpdateTieringConfiguration Operation</seealso>
+        IAsyncResult BeginUpdateTieringConfiguration(UpdateTieringConfigurationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateTieringConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateTieringConfiguration.</param>
+        /// 
+        /// <returns>Returns a  UpdateTieringConfigurationResult from Backup.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/UpdateTieringConfiguration">REST API Reference for UpdateTieringConfiguration Operation</seealso>
+        UpdateTieringConfigurationResponse EndUpdateTieringConfiguration(IAsyncResult asyncResult);
 
         #endregion
                 

@@ -286,5 +286,15 @@ namespace Amazon.Backup.Model
             OutputToken = new[] { "NextToken" }
         )]
         IListTagsPaginator ListTags(ListTagsRequest request);
+
+        /// <summary>
+        /// Paginator for ListTieringConfigurations operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListTieringConfigurationsPaginator ListTieringConfigurations(ListTieringConfigurationsRequest request);
     }
 }
