@@ -207,7 +207,7 @@ namespace Amazon.Bedrock.Model
         /// <para>
         /// Failed – This job has failed. Check the failure message for any further details. For
         /// further assistance, reach out to the <a href="https://console.aws.amazon.com/support/home/">Amazon
-        /// Web ServicesSupport Center</a>.
+        /// Web Services Support Center</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>

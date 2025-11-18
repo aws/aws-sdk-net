@@ -61,7 +61,6 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property NextToken. A token used to retrieve the next set of results
         /// in paginated list responses.
         /// </summary>
-        [AWSProperty(Min=1, Max=2048)]
         public string NextToken
         {
             get { return this._nextToken; }

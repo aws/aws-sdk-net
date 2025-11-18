@@ -525,6 +525,10 @@ namespace Amazon.Bedrock
         /// </summary>
         public static readonly AutomatedReasoningPolicyBuildResultAssetType BUILD_LOG = new AutomatedReasoningPolicyBuildResultAssetType("BUILD_LOG");
         /// <summary>
+        /// Constant GENERATED_TEST_CASES for AutomatedReasoningPolicyBuildResultAssetType
+        /// </summary>
+        public static readonly AutomatedReasoningPolicyBuildResultAssetType GENERATED_TEST_CASES = new AutomatedReasoningPolicyBuildResultAssetType("GENERATED_TEST_CASES");
+        /// <summary>
         /// Constant POLICY_DEFINITION for AutomatedReasoningPolicyBuildResultAssetType
         /// </summary>
         public static readonly AutomatedReasoningPolicyBuildResultAssetType POLICY_DEFINITION = new AutomatedReasoningPolicyBuildResultAssetType("POLICY_DEFINITION");

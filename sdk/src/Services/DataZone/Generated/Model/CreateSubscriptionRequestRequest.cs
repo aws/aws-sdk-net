@@ -35,12 +35,60 @@ namespace Amazon.DataZone.Model
     /// </summary>
     public partial class CreateSubscriptionRequestRequest : AmazonDataZoneRequest
     {
+        private List<AssetPermission> _assetPermissions = AWSConfigs.InitializeCollections ? new List<AssetPermission>() : null;
+        private List<AcceptedAssetScope> _assetScopes = AWSConfigs.InitializeCollections ? new List<AcceptedAssetScope>() : null;
         private string _clientToken;
         private string _domainIdentifier;
         private List<FormInput> _metadataForms = AWSConfigs.InitializeCollections ? new List<FormInput>() : null;
         private string _requestReason;
         private List<SubscribedListingInput> _subscribedListings = AWSConfigs.InitializeCollections ? new List<SubscribedListingInput>() : null;
         private List<SubscribedPrincipalInput> _subscribedPrincipals = AWSConfigs.InitializeCollections ? new List<SubscribedPrincipalInput>() : null;
+
+        /// <summary>
+        /// Gets and sets the property AssetPermissions. 
+        /// <para>
+        /// The asset permissions of the subscription request.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<AssetPermission> AssetPermissions
+        {
+            get { return this._assetPermissions; }
+            set { this._assetPermissions = value; }
+        }
+
+        // Check to see if AssetPermissions property is set
+        internal bool IsSetAssetPermissions()
+        {
+            return this._assetPermissions != null && (this._assetPermissions.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AssetScopes. 
+        /// <para>
+        /// The asset scopes of the subscription request.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<AcceptedAssetScope> AssetScopes
+        {
+            get { return this._assetScopes; }
+            set { this._assetScopes = value; }
+        }
+
+        // Check to see if AssetScopes property is set
+        internal bool IsSetAssetScopes()
+        {
+            return this._assetScopes != null && (this._assetScopes.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property ClientToken. 

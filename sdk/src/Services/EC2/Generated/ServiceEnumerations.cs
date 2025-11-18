@@ -7501,6 +7501,64 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type HaStatus.
+    /// </summary>
+    public class HaStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Active for HaStatus
+        /// </summary>
+        public static readonly HaStatus Active = new HaStatus("active");
+        /// <summary>
+        /// Constant Invalid for HaStatus
+        /// </summary>
+        public static readonly HaStatus Invalid = new HaStatus("invalid");
+        /// <summary>
+        /// Constant Processing for HaStatus
+        /// </summary>
+        public static readonly HaStatus Processing = new HaStatus("processing");
+        /// <summary>
+        /// Constant Standby for HaStatus
+        /// </summary>
+        public static readonly HaStatus Standby = new HaStatus("standby");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public HaStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HaStatus FindValue(string value)
+        {
+            return FindValue<HaStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HaStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type HostMaintenance.
     /// </summary>
     public class HostMaintenance : ConstantClass
@@ -23500,6 +23558,56 @@ namespace Amazon.EC2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SpreadLevel(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SqlServerLicenseUsage.
+    /// </summary>
+    public class SqlServerLicenseUsage : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Full for SqlServerLicenseUsage
+        /// </summary>
+        public static readonly SqlServerLicenseUsage Full = new SqlServerLicenseUsage("full");
+        /// <summary>
+        /// Constant Waived for SqlServerLicenseUsage
+        /// </summary>
+        public static readonly SqlServerLicenseUsage Waived = new SqlServerLicenseUsage("waived");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SqlServerLicenseUsage(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SqlServerLicenseUsage FindValue(string value)
+        {
+            return FindValue<SqlServerLicenseUsage>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SqlServerLicenseUsage(string value)
         {
             return FindValue(value);
         }

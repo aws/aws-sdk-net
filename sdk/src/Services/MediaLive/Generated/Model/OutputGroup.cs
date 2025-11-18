@@ -43,7 +43,6 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property Name. Custom output group name optionally defined by the
         /// user.
         /// </summary>
-        [AWSProperty(Max=32)]
         public string Name
         {
             get { return this._name; }

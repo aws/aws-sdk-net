@@ -31,7 +31,14 @@ namespace Amazon.DeviceFarm.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteRemoteAccessSession operation.
-    /// Deletes a completed remote access session and its results.
+    /// Deletes a completed remote access session and its results. You cannot delete a remote
+    /// access session if it is still active.
+    /// 
+    ///  <important> 
+    /// <para>
+    /// You cannot undo this operation.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class DeleteRemoteAccessSessionRequest : AmazonDeviceFarmRequest
     {

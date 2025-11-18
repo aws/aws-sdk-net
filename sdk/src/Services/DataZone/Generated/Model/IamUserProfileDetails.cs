@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataZone.Model
 {
     /// <summary>
-    /// The details of an IAM user profile in Amazon DataZone.
+    /// 
     /// </summary>
     public partial class IamUserProfileDetails
     {
@@ -40,7 +40,7 @@ namespace Amazon.DataZone.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The ARN of an IAM user profile in Amazon DataZone.
+        /// The ARN of the IAM user.
         /// </para>
         /// </summary>
         public string Arn
@@ -58,7 +58,7 @@ namespace Amazon.DataZone.Model
         /// <summary>
         /// Gets and sets the property PrincipalId. 
         /// <para>
-        /// Principal ID of the IAM user.
+        /// The principal ID as part of the IAM user profile details.
         /// </para>
         /// </summary>
         public string PrincipalId

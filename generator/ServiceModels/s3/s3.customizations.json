@@ -907,6 +907,106 @@
                     }
                 }
             ]
+        },
+        "PutBucketAnalyticsConfigurationRequest":{
+            "modify":[
+                {
+                    "Id":{"emitPropertyName":"AnalyticsId"}
+                },
+                {
+                    "ExpectedBucketOwner":{
+                        "injectXmlIsSet":["return !String.IsNullOrEmpty(this._expectedBucketOwner);"]
+                    }
+                }
+            ]
+        },
+        "AnalyticsConfiguration": {
+            "modify": [
+                {
+                    "Id":{"emitPropertyName": "AnalyticsId"}
+                },
+                {
+                    "Filter" :{"emitPropertyName": "AnalyticsFilter"}
+                },
+                {
+                    "AnalyticsFilter" :{
+                        "injectXmlMarshallCode": ["AnalyticsFilterCustomMarshall(publicRequest, xmlWriter);"]
+                    }
+                }
+            ],
+            "predicateListUnmarshallers": [
+                {
+                    "AnalyticsFilter" :{
+                        "predicateListUnmarshallerName" : "AnalyticsPredicateListUnmarshaller",
+                        "filterPredicateName": "AnalyticsFilterPredicate"
+                    }
+                }
+            ]
+        },
+        "GetBucketAnalyticsConfigurationRequest":{
+            "modify" :[
+                {
+                    "Id" :{"emitPropertyName": "AnalyticsId"}
+                },
+                {
+                    "ExpectedBucketOwner":{
+                        "injectXmlIsSet":[
+                            "return !String.IsNullOrEmpty(this._expectedBucketOwner);"
+                        ]
+                    }
+                }
+            ]
+        },
+        "AnalyticsS3BucketDestination" : {
+            "modify":[
+                {
+                    "BucketAccountId" :{
+                        "injectXmlIsSet":["return !String.IsNullOrEmpty(this._bucketAccountId);"]
+                    }
+                },
+                {
+                    "BucketName":{
+                        "injectXmlIsSet": ["return !String.IsNullOrEmpty(this._bucketName);"]
+                    }
+                },
+                {
+                    "Prefix":{
+                         "injectXmlIsSet": ["return !String.IsNullOrEmpty(this._prefix);"]
+                    }
+                },
+                {
+                    "Format" :{
+                        "skipContextTestExpressionUnmarshallingLogic" : true,
+                        "injectXmlUnmarshallCode": ["FormatCustomUnmarshall(context, unmarshalledObject);"]
+                    }
+                }
+            ]
+        },
+        "ListBucketAnalyticsConfigurationsRequest":{
+            "modify":[
+                {
+                    "ContinuationToken":{
+                        "injectXmlIsSet":["return !string.IsNullOrEmpty(this._continuationToken);"]
+                    }
+                },
+                {
+                    "ExpectedBucketOwner" :{
+                        "injectXmlIsSet":["return !string.IsNullOrEmpty(this._expectedBucketOwner);"]
+                    }
+                }
+            ]
+        },
+        "DeleteBucketAnalyticsConfigurationRequest":{
+            "modify":[
+                {
+                    "Id":{"emitPropertyName":"AnalyticsId"}
+                },
+                {
+                    "ExpectedBucketOwner":{"injectXmlIsSet":[
+                        "return !String.IsNullOrEmpty(this._expectedBucketOwner);"
+                    ]}
+                }
+            ]
         }
     },
     "operationModifiers": {
@@ -1195,6 +1295,13 @@
                 "Marshaller" : "Amazon.Util.AWSSDKUtils.Join",
                 "Unmarshaller" : "StringUnmarshaller"
             }
+        },
+        "AnalyticsS3BucketDestination":{
+            "Format":{
+                "Type": "string",
+                "Marshaller": "StringUtils.FromString",
+                "Unmarshaller": "StringUnmarshaller"
+            }
         }
     },
     "excludeMembers":{
@@ -1272,6 +1379,8 @@
         "NotificationConfiguration",
         "CopyPartResult",
         "MetricsFilter",
-        "MetricsAndOperator"
+        "MetricsAndOperator",
+        "AnalyticsFilter",
+        "AnalyticsAndOperator"
     ]
 }

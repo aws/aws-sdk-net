@@ -41,7 +41,6 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property FadeOut. The time in milliseconds for the image to fade
         /// out. Default is 0 (no fade-out).
         /// </summary>
-        [AWSProperty(Min=0)]
         public int? FadeOut
         {
             get { return this._fadeOut; }
@@ -58,7 +57,6 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property Layer. The image overlay layer to deactivate, 0 to 7. Default
         /// is 0.
         /// </summary>
-        [AWSProperty(Min=0, Max=7)]
         public int? Layer
         {
             get { return this._layer; }
