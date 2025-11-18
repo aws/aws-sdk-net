@@ -41,8 +41,6 @@ internal sealed partial class BedrockChatClient : IChatClient
     private const string ResponseFormatToolName = "generate_response";
     /// <summary>The description used for the synthetic tool that enforces response format.</summary>
     private const string ResponseFormatToolDescription = "Generate response in specified format";
-    /// <summary>Maximum nesting depth for Document to JSON conversion to prevent stack overflow.</summary>
-    private const int MaxDocumentNestingDepth = 100;
 
     /// <summary>The wrapped <see cref="IAmazonBedrockRuntime"/> instance.</summary>
     private readonly IAmazonBedrockRuntime _runtime;
@@ -51,7 +49,11 @@ internal sealed partial class BedrockChatClient : IChatClient
     /// <summary>Metadata describing the chat client.</summary>
     private readonly ChatClientMetadata _metadata;
 
-    /// <summary>Initializes a new instance of the <see cref="BedrockChatClient"/> class.</summary>
+    /// <summary>
+    /// Initializes a new instance of the <see cref="BedrockChatClient"/> class.
+    /// </summary>
+    /// <param name="runtime">The <see cref="IAmazonBedrockRuntime"/> instance to wrap.</param>
+    /// <param name="defaultModelId">Model ID to use as the default when no model ID is specified in a request.</param>
     public BedrockChatClient(IAmazonBedrockRuntime runtime, string? defaultModelId)
     {
         Debug.Assert(runtime is not null);
@@ -68,6 +70,12 @@ internal sealed partial class BedrockChatClient : IChatClient
     }
 
     /// <inheritdoc />
+    /// <remarks>
+    /// When <see cref="ChatOptions.ResponseFormat"/> is specified, the model must support
+    /// the ToolChoice feature. Models without this support will throw <see cref="NotSupportedException"/>.
+    /// If the model fails to return the expected structured output, <see cref="InvalidOperationException"/>
+    /// is thrown.
+    /// </remarks>
     public async Task<ChatResponse> GetResponseAsync(
         IEnumerable<ChatMessage> messages, ChatOptions? options = null, CancellationToken cancellationToken = default)
     {
@@ -84,7 +92,6 @@ internal sealed partial class BedrockChatClient : IChatClient
         request.InferenceConfig = CreateInferenceConfiguration(request.InferenceConfig, options);
         request.AdditionalModelRequestFields = CreateAdditionalModelRequestFields(request.AdditionalModelRequestFields, options);
 
-        // Execute the request with proper error handling for ResponseFormat scenarios
         ConverseResponse response;
         try
         {
@@ -92,16 +99,10 @@ internal sealed partial class BedrockChatClient : IChatClient
         }
         catch (AmazonBedrockRuntimeException ex) when (options?.ResponseFormat is ChatResponseFormatJson)
         {
-            // Check if this is a ToolChoice validation error (model doesn't support it)
-            bool isToolChoiceNotSupported =
-                ex.ErrorCode == "ValidationException" &&
-                (ex.Message.IndexOf("toolChoice", StringComparison.OrdinalIgnoreCase) >= 0 ||
-                 ex.Message.IndexOf("tool_choice", StringComparison.OrdinalIgnoreCase) >= 0 ||
-                 ex.Message.IndexOf("ToolChoice", StringComparison.OrdinalIgnoreCase) >= 0);
-
-            if (isToolChoiceNotSupported)
+            // Detect unsupported model: ValidationException mentioning "toolChoice"
+            if (ex.ErrorCode == "ValidationException" &&
+                ex.Message.IndexOf("toolchoice", StringComparison.OrdinalIgnoreCase) >= 0)
             {
-                // Provide a more helpful error message when ToolChoice fails due to model limitations
                 throw new NotSupportedException(
                     $"The model '{request.ModelId}' does not support ResponseFormat. " +
                     $"ResponseFormat requires ToolChoice support, which is only available in Claude 3+ and Mistral Large models. " +
@@ -109,7 +110,6 @@ internal sealed partial class BedrockChatClient : IChatClient
                     ex);
             }
 
-            // Re-throw other exceptions as-is
             throw;
         }
 
@@ -147,7 +147,7 @@ internal sealed partial class BedrockChatClient : IChatClient
             }
             else
             {
-                // User requested structured output but didn't get it - this is a contract violation
+                // Model succeeded but did not return expected structured output
                 var errorMessage = string.Format(
                     "ResponseFormat was specified but model did not return expected tool use. ModelId: {0}, StopReason: {1}",
                     request.ModelId,
@@ -155,7 +155,6 @@ internal sealed partial class BedrockChatClient : IChatClient
 
                 DefaultLogger.Error(new InvalidOperationException(errorMessage), errorMessage);
 
-                // Always throw when ResponseFormat was requested but not fulfilled
                 throw new InvalidOperationException(
                     $"Model '{request.ModelId}' did not return structured output as requested. " +
                     $"This may indicate the model refused to follow the tool use instruction, " +
@@ -1032,73 +1031,20 @@ internal sealed partial class BedrockChatClient : IChatClient
         return null;
     }
 
-    /// <summary>Converts a <see cref="Document"/> to a JSON string.</summary>
+    /// <summary>
+    /// Converts a <see cref="Document"/> to a JSON string using the SDK's standard DocumentMarshaller.
+    /// Note: Document is a struct (value type), so circular references are structurally impossible.
+    /// </summary>
     private static string DocumentToJsonString(Document document)
     {
         using var stream = new MemoryStream();
         using (var writer = new Utf8JsonWriter(stream, new JsonWriterOptions { Indented = false }))
         {
-            WriteDocumentAsJson(writer, document);
-        } // Explicit scope to ensure writer is flushed before reading buffer
-
+            Amazon.Runtime.Documents.Internal.Transform.DocumentMarshaller.Instance.Write(writer, document);
+        }
         return Encoding.UTF8.GetString(stream.ToArray());
     }
 
-    /// <summary>Recursively writes a <see cref="Document"/> as JSON.</summary>
-    private static void WriteDocumentAsJson(Utf8JsonWriter writer, Document document, int depth = 0)
-    {
-        // Check depth to prevent stack overflow from deeply nested or circular structures
-        if (depth > MaxDocumentNestingDepth)
-        {
-            throw new InvalidOperationException(
-                $"Document nesting depth exceeds maximum of {MaxDocumentNestingDepth}. " +
-                $"This may indicate a circular reference or excessively nested data structure.");
-        }
-
-        if (document.IsBool())
-        {
-            writer.WriteBooleanValue(document.AsBool());
-        }
-        else if (document.IsInt())
-        {
-            writer.WriteNumberValue(document.AsInt());
-        }
-        else if (document.IsLong())
-        {
-            writer.WriteNumberValue(document.AsLong());
-        }
-        else if (document.IsDouble())
-        {
-            writer.WriteNumberValue(document.AsDouble());
-        }
-        else if (document.IsString())
-        {
-            writer.WriteStringValue(document.AsString());
-        }
-        else if (document.IsDictionary())
-        {
-            writer.WriteStartObject();
-            foreach (var kvp in document.AsDictionary())
-            {
-                writer.WritePropertyName(kvp.Key);
-                WriteDocumentAsJson(writer, kvp.Value, depth + 1);
-            }
-            writer.WriteEndObject();
-        }
-        else if (document.IsList())
-        {
-            writer.WriteStartArray();
-            foreach (var item in document.AsList())
-            {
-                WriteDocumentAsJson(writer, item, depth + 1);
-            }
-            writer.WriteEndArray();
-        }
-        else
-        {
-            writer.WriteNullValue();
-        }
-    }
 
     /// <summary>Creates an <see cref="InferenceConfiguration"/> from the specified options.</summary>
     private static InferenceConfiguration CreateInferenceConfiguration(InferenceConfiguration config, ChatOptions? options)
