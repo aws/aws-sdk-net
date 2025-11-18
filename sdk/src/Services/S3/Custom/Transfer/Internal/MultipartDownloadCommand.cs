@@ -36,6 +36,9 @@ namespace Amazon.S3.Transfer.Internal
         private readonly IAmazonS3 _s3Client;
         private readonly TransferUtilityDownloadRequest _request;
         private readonly TransferUtilityConfig _config;
+        
+        // Track last known transferred bytes from coordinator's progress events
+        private long _lastKnownTransferredBytes;
 
         private static Logger Logger
         {
@@ -111,5 +114,89 @@ namespace Amazon.S3.Transfer.Internal
                 _request.FilePath
             );
         }
+
+        #region Event Firing Methods
+
+        /// <summary>
+        /// Fires the DownloadInitiatedEvent to notify subscribers that the download has started.
+        /// This event is fired exactly once at the beginning of the download operation.
+        /// </summary>
+        private void FireTransferInitiatedEvent()
+        {
+            var transferInitiatedEventArgs = new DownloadInitiatedEventArgs(_request, _request.FilePath);
+            _request.OnRaiseTransferInitiatedEvent(transferInitiatedEventArgs);
+        }
+
+        /// <summary>
+        /// Fires the DownloadCompletedEvent to notify subscribers that the download completed successfully.
+        /// This event is fired exactly once when all parts have been downloaded and assembled.
+        /// Downloads are complete, so transferred bytes equals total bytes.
+        /// </summary>
+        /// <param name="response">The unified TransferUtilityDownloadResponse containing S3 metadata</param>
+        /// <param name="totalBytes">The total number of bytes in the file</param>
+        private void FireTransferCompletedEvent(TransferUtilityDownloadResponse response, long totalBytes)
+        {
+            var transferCompletedEventArgs = new DownloadCompletedEventArgs(
+                _request,
+                response,
+                _request.FilePath,
+                totalBytes,
+                totalBytes);
+            _request.OnRaiseTransferCompletedEvent(transferCompletedEventArgs);
+        }
+
+        /// <summary>
+        /// Fires the DownloadFailedEvent to notify subscribers that the download failed.
+        /// This event is fired exactly once when an error occurs during the download.
+        /// Uses the last known transferred bytes from progress tracking.
+        /// </summary>
+        /// <param name="totalBytes">Total file size if known, otherwise -1</param>
+        private void FireTransferFailedEvent(long totalBytes = -1)
+        {
+            var eventArgs = new DownloadFailedEventArgs(
+                _request,
+                _request.FilePath,
+                System.Threading.Interlocked.Read(ref _lastKnownTransferredBytes),
+                totalBytes);
+            _request.OnRaiseTransferFailedEvent(eventArgs);
+        }
+
+        #endregion
+
+        #region Progress Tracking
+
+        /// <summary>
+        /// Callback for part download progress.
+        /// Forwards the aggregated progress events from the coordinator to the user's progress callback.
+        /// The coordinator has already aggregated progress across all concurrent part downloads.
+        /// Tracks the last known transferred bytes for failure reporting.
+        /// </summary>
+        /// <param name="sender">The event sender (coordinator)</param>
+        /// <param name="e">Aggregated progress information from the coordinator</param>
+        internal void DownloadPartProgressEventCallback(object sender, WriteObjectProgressArgs e)
+        {
+            // Track last known transferred bytes using Exchange (not Add).
+            // 
+            // Why Exchange? The coordinator already aggregates increments from concurrent parts:
+            //   Coordinator receives: Part 1: +512 bytes, Part 2: +1024 bytes, Part 3: +768 bytes
+            //   Coordinator aggregates: 0 -> 512 -> 1536 -> 2304 (using Interlocked.Add)
+            //   Coordinator passes to us: e.TransferredBytes = 2304 (pre-aggregated total)
+            //
+            // We receive the TOTAL (e.TransferredBytes = 2304), not an increment (+768).
+            // Using Add here would incorrectly accumulate totals: 0 + 2304 + 2304 + ... = wrong!
+            // Using Exchange correctly stores the latest total: 2304 (overwrite previous value).
+            //
+            // Compare to other commands (SimpleUploadCommand, DownloadCommand) which receive
+            // INCREMENTS directly from SDK streams and must use Add to accumulate them.
+            System.Threading.Interlocked.Exchange(ref _lastKnownTransferredBytes, e.TransferredBytes);
+            
+            // Set the Request property to enable access to the original download request
+            e.Request = _request;
+            
+            // Forward the coordinator's aggregated progress event to the user
+            _request.OnRaiseProgressEvent(e);
+        }
+
+        #endregion
     }
 }

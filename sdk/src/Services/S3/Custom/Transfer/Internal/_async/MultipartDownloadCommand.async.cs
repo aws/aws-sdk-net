@@ -33,6 +33,9 @@ namespace Amazon.S3.Transfer.Internal
         {
             // Validate request parameters
             ValidateRequest();
+            
+            // Fire initiated event before starting any network operations
+            FireTransferInitiatedEvent();
 
             // Create configuration from request settings
             var config = CreateConfiguration();
@@ -54,6 +57,7 @@ namespace Amazon.S3.Transfer.Internal
                     dataHandler,
                     RequestEventHandler))
                 {
+                    long totalBytes = -1;
                     try
                     {
                         // Step 1: Discover download strategy (PART or RANGE) and get metadata
@@ -61,12 +65,15 @@ namespace Amazon.S3.Transfer.Internal
                         var discoveryResult = await coordinator.DiscoverDownloadStrategyAsync(cancellationToken)
                             .ConfigureAwait(false);
                         
+                        totalBytes = discoveryResult.ObjectSize;
+
+                        
                         Logger.DebugFormat("MultipartDownloadCommand: Discovered {0} part(s), total size: {1} bytes, IsSinglePart={2}",
                             discoveryResult.TotalParts, discoveryResult.ObjectSize, discoveryResult.IsSinglePart);
                         
                         // Step 2: Start concurrent downloads for all parts
-                        Logger.DebugFormat("MultipartDownloadCommand: Starting downloads for {0} part(s)", discoveryResult.TotalParts);
-                        await coordinator.StartDownloadsAsync(discoveryResult, cancellationToken)
+                        Logger.DebugFormat("Starting downloads for {0} part(s)", discoveryResult.TotalParts);
+                        await coordinator.StartDownloadsAsync(discoveryResult, cancellationToken, DownloadPartProgressEventCallback)
                             .ConfigureAwait(false);
                         
                         // Step 2b: Wait for all downloads to complete before returning
@@ -110,11 +117,18 @@ namespace Amazon.S3.Transfer.Internal
                             mappedResponse.ChecksumSHA256 = null;
                         }
                         
+                        // Fire completed event
+                        FireTransferCompletedEvent(mappedResponse, totalBytes);
+                        
                         return mappedResponse;
                     }
                     catch (Exception ex)
                     {
                         Logger.Error(ex, "Exception during multipart download");
+                        
+                        // Fire failed event
+                        FireTransferFailedEvent(totalBytes);
+                        
                         throw;
                     }
                 }

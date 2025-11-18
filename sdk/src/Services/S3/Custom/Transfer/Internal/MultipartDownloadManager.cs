@@ -54,6 +54,17 @@ namespace Amazon.S3.Transfer.Internal
         private string _savedETag;
         private int _discoveredPartCount;
 
+        // Progress tracking fields for multipart download aggregation
+        private long _totalTransferredBytes = 0;
+        private long _totalObjectSize = 0;
+        private EventHandler<WriteObjectProgressArgs> _userProgressCallback;
+        
+        // Atomic flag to ensure completion event fires exactly once
+        // Without this, concurrent parts completing simultaneously can both see
+        // transferredBytes >= _totalObjectSize and fire duplicate completion events
+        // Uses int instead of bool because Interlocked.CompareExchange requires reference types
+        private int _completionEventFired = 0;  // 0 = false, 1 = true
+
         private Logger Logger
         {
             get { return Logger.GetLogger(typeof(TransferUtility)); }
@@ -133,12 +144,16 @@ namespace Amazon.S3.Transfer.Internal
         }
 
         /// <inheritdoc/>
-        public async Task StartDownloadsAsync(DownloadDiscoveryResult discoveryResult, CancellationToken cancellationToken)
+        public async Task StartDownloadsAsync(DownloadDiscoveryResult discoveryResult, CancellationToken cancellationToken, EventHandler<WriteObjectProgressArgs> progressCallback = null)
         {
             ThrowIfDisposed();
             
             if (discoveryResult == null)
                 throw new ArgumentNullException(nameof(discoveryResult));
+
+            // Store for progress aggregation
+            _userProgressCallback = progressCallback;
+            _totalObjectSize = discoveryResult.ObjectSize;
 
             Logger.DebugFormat("MultipartDownloadManager: Starting downloads - TotalParts={0}, IsSinglePart={1}",
                 discoveryResult.TotalParts, discoveryResult.IsSinglePart);
@@ -151,9 +166,26 @@ namespace Amazon.S3.Transfer.Internal
                 // Prepare the data handler (e.g., create temp files for file-based downloads)
                 await _dataHandler.PrepareAsync(discoveryResult, cancellationToken).ConfigureAwait(false);
                 
+                // Create delegate once and reuse for all parts
+                var wrappedCallback = progressCallback != null 
+                    ? new EventHandler<WriteObjectProgressArgs>(DownloadPartProgressEventCallback)
+                    : null;
+                
+                // Attach progress callback to Part 1's response if provided
+                if (wrappedCallback != null)
+                {
+                    discoveryResult.InitialResponse.WriteObjectProgressEvent += wrappedCallback;
+                }
+                
                 // Process Part 1 from InitialResponse (applies to both single-part and multipart)
                 Logger.DebugFormat("MultipartDownloadManager: Buffering Part 1 from discovery response");
                 await _dataHandler.ProcessPartAsync(1, discoveryResult.InitialResponse, cancellationToken).ConfigureAwait(false);
+
+                // Detach the event handler after processing to prevent memory leak
+                if (wrappedCallback != null)
+                {
+                    discoveryResult.InitialResponse.WriteObjectProgressEvent -= wrappedCallback;
+                }
 
                 if (discoveryResult.IsSinglePart)
                 {
@@ -169,7 +201,7 @@ namespace Amazon.S3.Transfer.Internal
 
                 for (int partNum = 2; partNum <= discoveryResult.TotalParts; partNum++)
                 {
-                    var task = CreateDownloadTaskAsync(partNum, discoveryResult.ObjectSize, internalCts.Token);
+                    var task = CreateDownloadTaskAsync(partNum, discoveryResult.ObjectSize, wrappedCallback, internalCts.Token);
                     downloadTasks.Add(task);
                 }
 
@@ -245,7 +277,7 @@ namespace Amazon.S3.Transfer.Internal
 
 
 
-        private async Task CreateDownloadTaskAsync(int partNumber, long objectSize, CancellationToken cancellationToken)
+        private async Task CreateDownloadTaskAsync(int partNumber, long objectSize, EventHandler<WriteObjectProgressArgs> progressCallback, CancellationToken cancellationToken)
         {
                 Logger.DebugFormat("MultipartDownloadManager: [Part {0}] Waiting for buffer space", partNumber);
 
@@ -301,6 +333,12 @@ namespace Amazon.S3.Transfer.Internal
                     }
                     
                     response = await _s3Client.GetObjectAsync(getObjectRequest, cancellationToken).ConfigureAwait(false);
+                    
+                    // Attach progress callback to response if provided
+                    if (progressCallback != null)
+                    {
+                        response.WriteObjectProgressEvent += progressCallback;
+                    }
 
                     Logger.DebugFormat("MultipartDownloadManager: [Part {0}] GetObject response received - ContentLength={1}",
                         partNumber, response.ContentLength);
@@ -551,6 +589,53 @@ namespace Amazon.S3.Transfer.Internal
                         $"Actual: bytes {actualStartByte}-{actualEndByte}");
                 }
             }
+        }
+
+        /// <summary>
+        /// Creates progress args with aggregated values for multipart downloads.
+        /// </summary>
+        private WriteObjectProgressArgs CreateProgressArgs(long incrementTransferred, long transferredBytes, bool completed = false)
+        {
+            string filePath = (_request as TransferUtilityDownloadRequest)?.FilePath;
+            
+            return new WriteObjectProgressArgs(
+                _request.BucketName,
+                _request.Key,
+                filePath,
+                _request.VersionId,
+                incrementTransferred,
+                transferredBytes,
+                _totalObjectSize,
+                completed
+            );
+        }
+
+        /// <summary>
+        /// Progress aggregation callback that combines progress across all concurrent part downloads.
+        /// Uses thread-safe counter increment to handle concurrent updates.
+        /// Detects completion naturally when transferred bytes reaches total size.
+        /// Uses atomic flag to ensure completion event fires exactly once.
+        /// </summary>
+        private void DownloadPartProgressEventCallback(object sender, WriteObjectProgressArgs e)
+        {
+            long transferredBytes = Interlocked.Add(ref _totalTransferredBytes, e.IncrementTransferred);
+            
+            // Use atomic CompareExchange to ensure only first thread fires completion
+            bool isComplete = false;
+            if (transferredBytes >= _totalObjectSize)
+            {
+                // CompareExchange returns the original value before the exchange
+                // If original value was 0 (false), we're the first thread and should fire completion
+                int originalValue = Interlocked.CompareExchange(ref _completionEventFired, 1, 0);
+                if (originalValue == 0)  // Was false, now set to true
+                {
+                    isComplete = true;
+                }
+            }
+            
+            // Create and fire aggregated progress event
+            var aggregatedArgs = CreateProgressArgs(e.IncrementTransferred, transferredBytes, isComplete);
+            _userProgressCallback?.Invoke(this, aggregatedArgs);
         }
 
         private void ThrowIfDisposed()
