@@ -9,14 +9,14 @@ namespace AWSSDK_DotNet.UnitTests
     public class ExpressionsTest
     {
         [TestMethod]
-        public void MergeUpdateExpressions_BothNull_ReturnsNull()
+        public void GivenBothExpressionsNull_WhenMergeUpdateExpressionsCalled_ThenReturnsNull()
         {
             var result = Expression.MergeUpdateExpressions(null, null);
             Assert.IsNull(result);
         }
 
         [TestMethod]
-        public void MergeUpdateExpressions_OneNull_ReturnsOther()
+        public void GivenOneExpressionNull_WhenMergeUpdateExpressionsCalled_ThenReturnsTheOtherExpressionStatement()
         {
             var left = new Expression { ExpressionStatement = "SET #A = :a" };
             var right = new Expression { ExpressionStatement = "SET #B = :b" };
@@ -26,7 +26,7 @@ namespace AWSSDK_DotNet.UnitTests
         }
 
         [TestMethod]
-        public void MergeUpdateExpressions_MergesSetSections()
+        public void GivenTwoSetSections_WhenMerged_ThenCombinedSetClauseContainsBothAssignments()
         {
             var left = new Expression
             {
@@ -54,7 +54,7 @@ namespace AWSSDK_DotNet.UnitTests
         }
 
         [TestMethod]
-        public void MergeUpdateExpressions_MergesDifferentSections()
+        public void GivenSetAndRemoveSections_WhenMerged_ThenStatementContainsBothSections()
         {
             var left = new Expression
             {
@@ -78,7 +78,7 @@ namespace AWSSDK_DotNet.UnitTests
         }
 
         [TestMethod]
-        public void MergeUpdateExpressions_AttributeNamesConflict_Throws()
+        public void GivenDuplicateAttributeNameDifferentValues_WhenMerged_ThenThrowsInvalidOperationException()
         {
             var left = new Expression
             {
@@ -91,7 +91,6 @@ namespace AWSSDK_DotNet.UnitTests
                 ExpressionAttributeNames = new Dictionary<string, string> { { "#A", "AttrB" } }
             };
 
-            // Simulate the validation logic for duplicate names with different values
             var mergedNames = new Dictionary<string, string>(left.ExpressionAttributeNames, StringComparer.Ordinal);
             Assert.ThrowsException<InvalidOperationException>(() =>
             {
@@ -114,7 +113,7 @@ namespace AWSSDK_DotNet.UnitTests
         }
 
         [TestMethod]
-        public void MergeUpdateExpressions_NoKeywords_ThrowsUnableToParse()
+        public void GivenExpressionWithoutKeywords_WhenMerged_ThenThrowsUnableToParseException()
         {
             var left = new Expression
             {
@@ -130,6 +129,77 @@ namespace AWSSDK_DotNet.UnitTests
 
             var ex = Assert.ThrowsException<InvalidOperationException>(() => Expression.MergeUpdateExpressions(right, left));
             Assert.AreEqual("Unable to parse update expression 'SOME_RANDOM_TEXT WITHOUT KEYWORDS'", ex.Message);
+        }
+
+        [TestMethod]
+        public void GivenDistinctAttributeNames_WhenMerged_ThenBothNamesPresent()
+        {
+            var left = new Expression
+            {
+                ExpressionStatement = "SET #A = :a",
+                ExpressionAttributeNames = new() { ["#A"] = "AttrA" },
+                ExpressionAttributeValues = new() { [":a"] = new Primitive("va") }
+            };
+            var right = new Expression
+            {
+                ExpressionStatement = "SET #B = :b",
+                ExpressionAttributeNames = new() { ["#B"] = "AttrB" },
+                ExpressionAttributeValues = new() { [":b"] = new Primitive("vb") }
+            };
+
+            var merged = Expression.MergeUpdateExpressions(right, left);
+
+            Assert.IsNotNull(merged);
+            Assert.IsNotNull(merged.ExpressionAttributeNames);
+            Assert.AreEqual(2, merged.ExpressionAttributeNames.Count);
+            Assert.AreEqual("AttrA", merged.ExpressionAttributeNames["#A"]);
+            Assert.AreEqual("AttrB", merged.ExpressionAttributeNames["#B"]);
+        }
+
+        [TestMethod]
+        public void GivenDuplicateAttributeNameSameValue_WhenMerged_ThenSingleNameRetained()
+        {
+            var left = new Expression
+            {
+                ExpressionStatement = "SET #X = :x1",
+                ExpressionAttributeNames = new() { ["#X"] = "Same" },
+                ExpressionAttributeValues = new() { [":x1"] = new Primitive("v1") }
+            };
+            var right = new Expression
+            {
+                ExpressionStatement = "SET #X = :x2",
+                ExpressionAttributeNames = new() { ["#X"] = "Same" },
+                ExpressionAttributeValues = new() { [":x2"] = new Primitive("v2") }
+            };
+
+            var merged = Expression.MergeUpdateExpressions(right, left);
+
+            Assert.IsNotNull(merged);
+            Assert.AreEqual(1, merged.ExpressionAttributeNames.Count);
+            Assert.AreEqual("Same", merged.ExpressionAttributeNames["#X"]);
+        }
+
+        [TestMethod]
+        public void GivenDuplicateAttributeNameDifferentValues_WhenMerged_ThenThrowsWithInnerException()
+        {
+            var left = new Expression
+            {
+                ExpressionStatement = "SET #C = :c1",
+                ExpressionAttributeNames = new() { ["#C"] = "CriticRating" },
+                ExpressionAttributeValues = new() { [":c1"] = new Primitive("1") }
+            };
+            var right = new Expression
+            {
+                ExpressionStatement = "SET #C = :c2",
+                ExpressionAttributeNames = new() { ["#C"] = "CustomerRating" },
+                ExpressionAttributeValues = new() { [":c2"] = new Primitive("2") }
+            };
+
+            var ex = Assert.ThrowsException<InvalidOperationException>(() =>
+                Expression.MergeUpdateExpressions(right, left));
+
+            StringAssert.StartsWith(ex.Message, "Failed to combine ExpressionAttributeNames due to duplicate keys with different values.");
+            Assert.IsNotNull(ex.InnerException);
         }
     }
 }
