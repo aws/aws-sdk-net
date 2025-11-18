@@ -555,7 +555,7 @@ namespace ServiceClientGenerator
 						new Operation(this, "GetBucketMetricsConfiguration", DocumentRoot[OperationsKey]["GetBucketMetricsConfiguration"]),
 						//new Operation(this, "GetBucketVersioning", DocumentRoot[OperationsKey]["GetBucketVersioning"]),
                         //new Operation(this, "GetBucketWebsite", DocumentRoot[OperationsKey]["GetBucketWebsite"]),
-						//new Operation(this, "ListBucketAnalyticsConfigurations", DocumentRoot[OperationsKey]["ListBucketAnalyticsConfigurations"]),
+						new Operation(this, "ListBucketAnalyticsConfigurations", DocumentRoot[OperationsKey]["ListBucketAnalyticsConfigurations"]),
                         //new Operation(this, "ListBucketIntelligentTieringConfigurations", DocumentRoot[OperationsKey]["ListBucketIntelligentTieringConfigurations"]),
                         //new Operation(this, "ListBucketInventoryConfigurations", DocumentRoot[OperationsKey]["ListBucketInventoryConfigurations"]),
                         new Operation(this, "ListBucketMetricsConfigurations", DocumentRoot[OperationsKey]["ListBucketMetricsConfigurations"]),
@@ -567,7 +567,7 @@ namespace ServiceClientGenerator
                         //new Operation(this, "PutBucketInventoryConfiguration", DocumentRoot[OperationsKey]["PutBucketInventoryConfiguration"]),
                         new Operation(this, "PutBucketMetricsConfiguration", DocumentRoot[OperationsKey]["PutBucketMetricsConfiguration"]),
                         new Operation(this, "DeleteBucketMetricsConfiguration", DocumentRoot[OperationsKey]["DeleteBucketMetricsConfiguration"]),
-                        //new Operation(this, "DeleteBucketAnalyticsConfiguration", DocumentRoot[OperationsKey]["DeleteBucketAnalyticsConfiguration"]),
+                        new Operation(this, "DeleteBucketAnalyticsConfiguration", DocumentRoot[OperationsKey]["DeleteBucketAnalyticsConfiguration"]),
                         //new Operation(this, "DeleteBucketIntelligentTieringConfiguration", DocumentRoot[OperationsKey]["DeleteBucketIntelligentTieringConfiguration"]),
                         //new Operation(this, "DeleteBucketInventoryConfiguration", DocumentRoot[OperationsKey]["DeleteBucketInventoryConfiguration"]),
 
