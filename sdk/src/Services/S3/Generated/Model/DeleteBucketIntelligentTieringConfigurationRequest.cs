@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -12,18 +12,33 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using Amazon.Runtime;
+
+/*
+ * Do not modify this file. This file is generated from the s3-2006-03-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
+using System.Xml.Serialization;
 using System.Text;
+using System.IO;
+using System.Net;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.S3.Model
 {
-
     /// <summary>
     /// Container for the parameters to the DeleteBucketIntelligentTieringConfiguration operation.
+    /// <note> 
+    /// <para>
+    /// This operation is not supported for directory buckets.
+    /// </para>
+    ///  </note> 
+    /// <para>
     /// Deletes the S3 Intelligent-Tiering configuration from the specified bucket.
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// The S3 Intelligent-Tiering storage class is designed to optimize storage costs by
@@ -48,7 +63,7 @@ namespace Amazon.S3.Model
     /// </para>
     ///  
     /// <para>
-    /// Operations related to <code>DeleteBucketIntelligentTieringConfiguration</code> include:
+    /// Operations related to <c>DeleteBucketIntelligentTieringConfiguration</c> include:
     /// 
     /// </para>
     ///  <ul> <li> 
@@ -66,27 +81,37 @@ namespace Amazon.S3.Model
     ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBucketIntelligentTieringConfigurations.html">ListBucketIntelligentTieringConfigurations</a>
     /// 
     /// </para>
-    ///  </li> </ul>
+    ///  </li> </ul> <important> 
+    /// <para>
+    /// You must URL encode any signed header values that contain spaces. For example, if
+    /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+    /// must URL encode this value to <c>my%20%20file.txt</c>.
+    /// </para>
+    ///  </important>
     /// </summary>
-	public partial class DeleteBucketIntelligentTieringConfigurationRequest : AmazonWebServiceRequest
-	{
-        private string bucketName;
-        private string expectedBucketOwner;
-        private string intelligentTieiringId;
+    public partial class DeleteBucketIntelligentTieringConfigurationRequest : AmazonWebServiceRequest
+    {
+        private string _bucketName;
+        private string _expectedBucketOwner;
+        private string _intelligentTieringId;
 
         /// <summary>
-        /// <para>The name of the Amazon S3 bucket whose configuration you want to modify or retrieve.</para>
+        /// Gets and sets the property BucketName. 
+        /// <para>
+        /// The name of the Amazon S3 bucket whose configuration you want to modify or retrieve.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string BucketName
         {
-            get { return this.bucketName; }
-            set { this.bucketName = value; }
+            get { return this._bucketName; }
+            set { this._bucketName = value; }
         }
 
         // Check to see if BucketName property is set
         internal bool IsSetBucketName()
         {
-            return !(string.IsNullOrEmpty(this.bucketName));
+            return this._bucketName != null;
         }
 
         /// <summary>
@@ -99,29 +124,34 @@ namespace Amazon.S3.Model
         /// </summary>
         public string ExpectedBucketOwner
         {
-            get { return this.expectedBucketOwner; }
-            set { this.expectedBucketOwner = value; }
+            get { return this._expectedBucketOwner; }
+            set { this._expectedBucketOwner = value; }
         }
 
         // Check to see if ExpectedBucketOwner property is set
         internal bool IsSetExpectedBucketOwner()
         {
-            return this.expectedBucketOwner != null;
+            return this._expectedBucketOwner != null;
         }
 
         /// <summary>
-        /// <para>The ID used to identify the S3 Intelligent-Tiering configuration.</para>
+        /// Gets and sets the property IntelligentTieringId. 
+        /// <para>
+        /// The ID used to identify the S3 Intelligent-Tiering configuration.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string IntelligentTieringId
         {
-            get { return this.intelligentTieiringId; }
-            set { this.intelligentTieiringId = value; }
+            get { return this._intelligentTieringId; }
+            set { this._intelligentTieringId = value; }
         }
 
-        // Check to see if IntelligentTieiringId property is set
-        internal bool IsSetIntelligentTieiringId()
+        // Check to see if IntelligentTieringId property is set
+        internal bool IsSetIntelligentTieringId()
         {
-            return !(string.IsNullOrEmpty(this.IntelligentTieringId));
+            return this._intelligentTieringId != null;
         }
+
     }
 }
