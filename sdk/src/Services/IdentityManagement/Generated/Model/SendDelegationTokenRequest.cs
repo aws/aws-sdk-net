@@ -30,47 +30,38 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// This is the response object from the CreateDelegationRequest operation.
+    /// Container for the parameters to the SendDelegationToken operation.
+    /// Sends the exchange token for an accepted delegation request.
+    /// 
+    ///  
+    /// <para>
+    /// The exchange token is sent to the partner via an asynchronous notification channel,
+    /// established by the partner.
+    /// </para>
+    ///  
+    /// <para>
+    /// The delegation request must be in the <c>ACCEPTED</c> state when calling this API.
+    /// After the <c>SendDelegationToken</c> API call is successful, the request transitions
+    /// to a <c>FINALIZED</c> state and cannot be rolled back. However, a user may reject
+    /// an accepted request before the <c>SendDelegationToken</c> API is called.
+    /// </para>
+    ///  
+    /// <para>
+    ///  For more details, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies-temporary-delegation.html#temporary-delegation-managing-permissions">
+    /// Managing Permissions for Delegation Requests</a>. 
+    /// </para>
     /// </summary>
-    public partial class CreateDelegationRequestResponse : AmazonWebServiceResponse
+    public partial class SendDelegationTokenRequest : AmazonIdentityManagementServiceRequest
     {
-        private string _consoleDeepLink;
         private string _delegationRequestId;
-
-        /// <summary>
-        /// Gets and sets the property ConsoleDeepLink. 
-        /// <para>
-        /// A deep link URL to the Amazon Web Services Management Console for managing the delegation
-        /// request.
-        /// </para>
-        ///  
-        /// <para>
-        /// For a console based workflow, partners should redirect the customer to this URL. If
-        /// the customer is not logged in to any Amazon Web Services account, the Amazon Web Services
-        /// workflow will automatically direct the customer to log in and then display the delegation
-        /// request approval page.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=255)]
-        public string ConsoleDeepLink
-        {
-            get { return this._consoleDeepLink; }
-            set { this._consoleDeepLink = value; }
-        }
-
-        // Check to see if ConsoleDeepLink property is set
-        internal bool IsSetConsoleDeepLink()
-        {
-            return this._consoleDeepLink != null;
-        }
 
         /// <summary>
         /// Gets and sets the property DelegationRequestId. 
         /// <para>
-        /// The unique identifier for the created delegation request.
+        /// The unique identifier of the delegation request for which to send the token.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=16, Max=128)]
+        [AWSProperty(Required=true, Min=16, Max=128)]
         public string DelegationRequestId
         {
             get { return this._delegationRequestId; }

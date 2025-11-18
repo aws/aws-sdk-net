@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// 
+    /// Contains information about a policy parameter used to customize delegated permissions.
     /// </summary>
     public partial class PolicyParameter
     {
@@ -39,7 +39,10 @@ namespace Amazon.IdentityManagement.Model
         private List<string> _values = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
-        /// Gets and sets the property Name.
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The name of the policy parameter.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=5, Max=256)]
         public string Name
@@ -55,7 +58,10 @@ namespace Amazon.IdentityManagement.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Type.
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The data type of the policy parameter value.
+        /// </para>
         /// </summary>
         public PolicyParameterTypeEnum Type
         {
@@ -70,7 +76,10 @@ namespace Amazon.IdentityManagement.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Values.
+        /// Gets and sets the property Values. 
+        /// <para>
+        /// The allowed values for the policy parameter.
+        /// </para>
         /// </summary>
         public List<string> Values
         {

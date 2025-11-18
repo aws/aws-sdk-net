@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// 
+    /// Contains information about the permissions being delegated in a delegation request.
     /// </summary>
     public partial class DelegationPermission
     {
@@ -38,7 +38,11 @@ namespace Amazon.IdentityManagement.Model
         private string _policyTemplateArn;
 
         /// <summary>
-        /// Gets and sets the property Parameters.
+        /// Gets and sets the property Parameters. 
+        /// <para>
+        /// A list of policy parameters that define the scope and constraints of the delegated
+        /// permissions.
+        /// </para>
         /// </summary>
         [AWSProperty(Max=50)]
         public List<PolicyParameter> Parameters
@@ -54,7 +58,11 @@ namespace Amazon.IdentityManagement.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PolicyTemplateArn.
+        /// Gets and sets the property PolicyTemplateArn. 
+        /// <para>
+        /// This ARN maps to a pre-registered policy content for this partner. See the <a href="">partner
+        /// onboarding documentation</a> to understand how to create a delegation template.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
         public string PolicyTemplateArn

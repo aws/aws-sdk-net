@@ -30,21 +30,38 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// This is the response object from the ListPoliciesGrantingServiceAccess operation.
+    /// This is the response object from the ListDelegationRequests operation.
     /// </summary>
-    public partial class ListPoliciesGrantingServiceAccessResponse : AmazonWebServiceResponse
+    public partial class ListDelegationRequestsResponse : AmazonWebServiceResponse
     {
+        private List<DelegationRequest> _delegationRequests = AWSConfigs.InitializeCollections ? new List<DelegationRequest>() : null;
         private bool? _isTruncated;
         private string _marker;
-        private List<ListPoliciesGrantingServiceAccessEntry> _policiesGrantingServiceAccess = AWSConfigs.InitializeCollections ? new List<ListPoliciesGrantingServiceAccessEntry>() : null;
+
+        /// <summary>
+        /// Gets and sets the property DelegationRequests. 
+        /// <para>
+        /// A list of delegation requests that match the specified criteria.
+        /// </para>
+        /// </summary>
+        public List<DelegationRequest> DelegationRequests
+        {
+            get { return this._delegationRequests; }
+            set { this._delegationRequests = value; }
+        }
+
+        // Check to see if DelegationRequests property is set
+        internal bool IsSetDelegationRequests()
+        {
+            return this._delegationRequests != null && (this._delegationRequests.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property IsTruncated. 
         /// <para>
         /// A flag that indicates whether there are more items to return. If your results were
         /// truncated, you can make a subsequent pagination request using the <c>Marker</c> request
-        /// parameter to retrieve more items. We recommend that you check <c>IsTruncated</c> after
-        /// every call to ensure that you receive all your results.
+        /// parameter to retrieve more items.
         /// </para>
         /// </summary>
         public bool IsTruncated
@@ -62,10 +79,11 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        /// When <c>IsTruncated</c> is <c>true</c>, this element is present and contains the value
+        /// When <c>isTruncated</c> is <c>true</c>, this element is present and contains the value
         /// to use for the <c>Marker</c> parameter in a subsequent pagination request.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=320)]
         public string Marker
         {
             get { return this._marker; }
@@ -76,26 +94,6 @@ namespace Amazon.IdentityManagement.Model
         internal bool IsSetMarker()
         {
             return this._marker != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property PoliciesGrantingServiceAccess. 
-        /// <para>
-        /// A <c>ListPoliciesGrantingServiceAccess</c> object that contains details about the
-        /// permissions policies attached to the specified identity (user, group, or role).
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public List<ListPoliciesGrantingServiceAccessEntry> PoliciesGrantingServiceAccess
-        {
-            get { return this._policiesGrantingServiceAccess; }
-            set { this._policiesGrantingServiceAccess = value; }
-        }
-
-        // Check to see if PoliciesGrantingServiceAccess property is set
-        internal bool IsSetPoliciesGrantingServiceAccess()
-        {
-            return this._policiesGrantingServiceAccess != null && (this._policiesGrantingServiceAccess.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }
