@@ -1722,6 +1722,148 @@ namespace Amazon.Kafka
 
         #endregion
         
+        #region  DescribeTopic
+
+
+        /// <summary>
+        /// Returns topic details of this topic on a MSK cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTopic service method.</param>
+        /// 
+        /// <returns>The response from the DescribeTopic service method, as returned by Kafka.</returns>
+        /// <exception cref="Amazon.Kafka.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.NotFoundException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.UnauthorizedException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/DescribeTopic">REST API Reference for DescribeTopic Operation</seealso>
+        public virtual DescribeTopicResponse DescribeTopic(DescribeTopicRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeTopicRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTopicResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeTopicResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns topic details of this topic on a MSK cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTopic service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeTopic service method, as returned by Kafka.</returns>
+        /// <exception cref="Amazon.Kafka.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.NotFoundException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.UnauthorizedException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/DescribeTopic">REST API Reference for DescribeTopic Operation</seealso>
+        public virtual Task<DescribeTopicResponse> DescribeTopicAsync(DescribeTopicRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeTopicRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTopicResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeTopicResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeTopicPartitions
+
+
+        /// <summary>
+        /// Returns partition details of this topic on a MSK cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTopicPartitions service method.</param>
+        /// 
+        /// <returns>The response from the DescribeTopicPartitions service method, as returned by Kafka.</returns>
+        /// <exception cref="Amazon.Kafka.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.NotFoundException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.UnauthorizedException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/DescribeTopicPartitions">REST API Reference for DescribeTopicPartitions Operation</seealso>
+        public virtual DescribeTopicPartitionsResponse DescribeTopicPartitions(DescribeTopicPartitionsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeTopicPartitionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTopicPartitionsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeTopicPartitionsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns partition details of this topic on a MSK cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTopicPartitions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeTopicPartitions service method, as returned by Kafka.</returns>
+        /// <exception cref="Amazon.Kafka.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.NotFoundException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.UnauthorizedException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/DescribeTopicPartitions">REST API Reference for DescribeTopicPartitions Operation</seealso>
+        public virtual Task<DescribeTopicPartitionsResponse> DescribeTopicPartitionsAsync(DescribeTopicPartitionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeTopicPartitionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTopicPartitionsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeTopicPartitionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeVpcConnection
 
 
@@ -2878,6 +3020,77 @@ namespace Amazon.Kafka
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListTopics
+
+
+        /// <summary>
+        /// List topics in a MSK cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTopics service method.</param>
+        /// 
+        /// <returns>The response from the ListTopics service method, as returned by Kafka.</returns>
+        /// <exception cref="Amazon.Kafka.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ServiceUnavailableException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.UnauthorizedException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ListTopics">REST API Reference for ListTopics Operation</seealso>
+        public virtual ListTopicsResponse ListTopics(ListTopicsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListTopicsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTopicsResponseUnmarshaller.Instance;
+
+            return Invoke<ListTopicsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// List topics in a MSK cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTopics service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTopics service method, as returned by Kafka.</returns>
+        /// <exception cref="Amazon.Kafka.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ServiceUnavailableException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.UnauthorizedException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ListTopics">REST API Reference for ListTopics Operation</seealso>
+        public virtual Task<ListTopicsResponse> ListTopicsAsync(ListTopicsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListTopicsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTopicsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListTopicsResponse>(request, options, cancellationToken);
         }
 
         #endregion
