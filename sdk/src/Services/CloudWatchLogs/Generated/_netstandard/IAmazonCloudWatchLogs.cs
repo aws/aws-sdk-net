@@ -593,6 +593,47 @@ namespace Amazon.CloudWatchLogs
 
         #endregion
                 
+        #region  CreateScheduledQuery
+
+
+
+        /// <summary>
+        /// Creates a new Scheduled Query that runs CloudWatch Logs Insights queries on a schedule
+        /// and delivers results to specified destinations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateScheduledQuery service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateScheduledQuery service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.AccessDeniedException">
+        /// You don't have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ConflictException">
+        /// This operation attempted to create a resource that already exists.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InternalServerException">
+        /// An internal server error occurred while processing the request. This is typically
+        /// a temporary issue and the request can be retried.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceQuotaExceededException">
+        /// This request exceeds a service quota.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ThrottlingException">
+        /// The request was throttled because of quota limits.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ValidationException">
+        /// One of the parameters for the request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/CreateScheduledQuery">REST API Reference for CreateScheduledQuery Operation</seealso>
+        Task<CreateScheduledQueryResponse> CreateScheduledQueryAsync(CreateScheduledQueryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DeleteAccountPolicy
 
 
@@ -1188,6 +1229,41 @@ namespace Amazon.CloudWatchLogs
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteRetentionPolicy">REST API Reference for DeleteRetentionPolicy Operation</seealso>
         Task<DeleteRetentionPolicyResponse> DeleteRetentionPolicyAsync(DeleteRetentionPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteScheduledQuery
+
+
+
+        /// <summary>
+        /// Deletes an existing scheduled query and all its associated configurations. This operation
+        /// permanently removes the scheduled query and cannot be undone.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteScheduledQuery service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteScheduledQuery service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.AccessDeniedException">
+        /// You don't have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InternalServerException">
+        /// An internal server error occurred while processing the request. This is typically
+        /// a temporary issue and the request can be retried.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ThrottlingException">
+        /// The request was throttled because of quota limits.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ValidationException">
+        /// One of the parameters for the request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteScheduledQuery">REST API Reference for DeleteScheduledQuery Operation</seealso>
+        Task<DeleteScheduledQueryResponse> DeleteScheduledQueryAsync(DeleteScheduledQueryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -2514,6 +2590,76 @@ namespace Amazon.CloudWatchLogs
 
         #endregion
                 
+        #region  GetScheduledQuery
+
+
+
+        /// <summary>
+        /// Returns detailed information about a specified scheduled query, including its configuration,
+        /// current state, and execution history.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetScheduledQuery service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetScheduledQuery service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.AccessDeniedException">
+        /// You don't have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InternalServerException">
+        /// An internal server error occurred while processing the request. This is typically
+        /// a temporary issue and the request can be retried.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ThrottlingException">
+        /// The request was throttled because of quota limits.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ValidationException">
+        /// One of the parameters for the request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/GetScheduledQuery">REST API Reference for GetScheduledQuery Operation</seealso>
+        Task<GetScheduledQueryResponse> GetScheduledQueryAsync(GetScheduledQueryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetScheduledQueryHistory
+
+
+
+        /// <summary>
+        /// Retrieves the execution history of a scheduled query within a specified time range,
+        /// including execution status and destination processing metadata.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetScheduledQueryHistory service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetScheduledQueryHistory service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.AccessDeniedException">
+        /// You don't have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InternalServerException">
+        /// An internal server error occurred while processing the request. This is typically
+        /// a temporary issue and the request can be retried.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ThrottlingException">
+        /// The request was throttled because of quota limits.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ValidationException">
+        /// One of the parameters for the request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/GetScheduledQueryHistory">REST API Reference for GetScheduledQueryHistory Operation</seealso>
+        Task<GetScheduledQueryHistoryResponse> GetScheduledQueryHistoryAsync(GetScheduledQueryHistoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  GetTransformer
 
 
@@ -2714,6 +2860,38 @@ namespace Amazon.CloudWatchLogs
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/ListLogGroupsForQuery">REST API Reference for ListLogGroupsForQuery Operation</seealso>
         Task<ListLogGroupsForQueryResponse> ListLogGroupsForQueryAsync(ListLogGroupsForQueryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListScheduledQueries
+
+
+
+        /// <summary>
+        /// Lists all scheduled queries in the current AWS account and region with optional filtering
+        /// by state.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListScheduledQueries service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListScheduledQueries service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.AccessDeniedException">
+        /// You don't have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InternalServerException">
+        /// An internal server error occurred while processing the request. This is typically
+        /// a temporary issue and the request can be retried.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ThrottlingException">
+        /// The request was throttled because of quota limits.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ValidationException">
+        /// One of the parameters for the request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/ListScheduledQueries">REST API Reference for ListScheduledQueries Operation</seealso>
+        Task<ListScheduledQueriesResponse> ListScheduledQueriesAsync(ListScheduledQueriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -2976,6 +3154,10 @@ namespace Amazon.CloudWatchLogs
         /// 
         /// </para>
         ///  <ul> <li> 
+        /// <para>
+        ///  <c>@logStream</c> 
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         ///  <c>@aws.region</c> 
         /// </para>
@@ -3594,6 +3776,10 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  <ul> <li> 
         /// <para>
+        ///  <c>@logStream</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <c>@aws.region</c> 
         /// </para>
         ///  </li> <li> 
@@ -3957,8 +4143,31 @@ namespace Amazon.CloudWatchLogs
 
         /// <summary>
         /// Creates or updates a resource policy allowing other Amazon Web Services services to
-        /// put log events to this account, such as Amazon Route 53. An account can have up to
-        /// 10 resource policies per Amazon Web Services Region.
+        /// put log events to this account, such as Amazon Route 53. This API has the following
+        /// restrictions:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>Supported actions</b> - Policy only supports <c>logs:PutLogEvents</c> and <c>logs:CreateLogStream
+        /// </c> actions
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Supported principals</b> - Policy only applies when operations are invoked by
+        /// Amazon Web Services service principals (not IAM users, roles, or cross-account principals
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Policy limits</b> - An account can have a maximum of 10 policies without resourceARN
+        /// and one per LogGroup resourceARN
+        /// </para>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// Resource policies with actions invoked by non-Amazon Web Services service principals
+        /// (such as IAM users, roles, or other Amazon Web Services accounts) will not be enforced.
+        /// For access control involving these principals, use the IAM policies.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutResourcePolicy service method.</param>
         /// <param name="cancellationToken">
@@ -4779,6 +4988,41 @@ namespace Amazon.CloudWatchLogs
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/UpdateLogAnomalyDetector">REST API Reference for UpdateLogAnomalyDetector Operation</seealso>
         Task<UpdateLogAnomalyDetectorResponse> UpdateLogAnomalyDetectorAsync(UpdateLogAnomalyDetectorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateScheduledQuery
+
+
+
+        /// <summary>
+        /// Updates the configuration of an existing scheduled query. This operation follows PUT
+        /// semantics, replacing the existing configuration with the provided values.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateScheduledQuery service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateScheduledQuery service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.AccessDeniedException">
+        /// You don't have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InternalServerException">
+        /// An internal server error occurred while processing the request. This is typically
+        /// a temporary issue and the request can be retried.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ThrottlingException">
+        /// The request was throttled because of quota limits.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ValidationException">
+        /// One of the parameters for the request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/UpdateScheduledQuery">REST API Reference for UpdateScheduledQuery Operation</seealso>
+        Task<UpdateScheduledQueryResponse> UpdateScheduledQueryAsync(UpdateScheduledQueryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
