@@ -933,6 +933,28 @@
                         "injectXmlMarshallCode": ["AnalyticsFilterCustomMarshall(publicRequest, xmlWriter);"]
                     }
                 }
+            ],
+            "predicateListUnmarshallers": [
+                {
+                    "AnalyticsFilter" :{
+                        "predicateListUnmarshallerName" : "AnalyticsPredicateListUnmarshaller",
+                        "filterPredicateName": "AnalyticsFilterPredicate"
+                    }
+                }
+            ]
+        },
+        "GetBucketAnalyticsConfigurationRequest":{
+            "modify" :[
+                {
+                    "Id" :{"emitPropertyName": "AnalyticsId"}
+                },
+                {
+                    "ExpectedBucketOwner":{
+                        "injectXmlIsSet":[
+                            "return !String.IsNullOrEmpty(this._expectedBucketOwner);"
+                        ]
+                    }
+                }
             ]
         },
         "AnalyticsS3BucketDestination" : {
@@ -951,6 +973,38 @@
                     "Prefix":{
                          "injectXmlIsSet": ["return !String.IsNullOrEmpty(this._prefix);"]
                     }
+                },
+                {
+                    "Format" :{
+                        "skipContextTestExpressionUnmarshallingLogic" : true,
+                        "injectXmlUnmarshallCode": ["FormatCustomUnmarshall(context, unmarshalledObject);"]
+                    }
+                }
+            ]
+        },
+        "ListBucketAnalyticsConfigurationsRequest":{
+            "modify":[
+                {
+                    "ContinuationToken":{
+                        "injectXmlIsSet":["return !string.IsNullOrEmpty(this._continuationToken);"]
+                    }
+                },
+                {
+                    "ExpectedBucketOwner" :{
+                        "injectXmlIsSet":["return !string.IsNullOrEmpty(this._expectedBucketOwner);"]
+                    }
+                }
+            ]
+        },
+        "DeleteBucketAnalyticsConfigurationRequest":{
+            "modify":[
+                {
+                    "Id":{"emitPropertyName":"AnalyticsId"}
+                },
+                {
+                    "ExpectedBucketOwner":{"injectXmlIsSet":[
+                        "return !String.IsNullOrEmpty(this._expectedBucketOwner);"
+                    ]}
                 }
             ]
         }
