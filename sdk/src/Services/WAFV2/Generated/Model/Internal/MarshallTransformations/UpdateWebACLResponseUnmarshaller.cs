@@ -93,6 +93,10 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
                 {
                     return WAFExpiredManagedRuleGroupVersionExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("WAFFeatureNotIncludedInPricingPlanException"))
+                {
+                    return WAFFeatureNotIncludedInPricingPlanExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("WAFInternalErrorException"))
                 {
                     return WAFInternalErrorExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
