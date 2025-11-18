@@ -1,3 +1,32 @@
+### 3.7.1168.0 (2025-11-18 19:28 UTC)
+* AutoScaling (3.7.503.0)
+	* This release adds the new LaunchInstances API, which can launch instances synchronously in an AutoScaling group. The API also returns instances info and launch error back immediately.
+* Backup (3.7.507.0)
+	* AWS Backup now supports a low-cost warm storage tier for Amazon S3 backup data.
+* BedrockRuntime (3.7.508.0)
+	* Amazon Bedrock Runtime Service Tier Support Launch
+* CloudFormation (3.7.505.0)
+	* New CloudFormation DescribeEvents API with operation ID tracking and failure filtering capabilities to quickly identify root causes of deployment failures. Also, a DeploymentMode parameter for the CreateChangeSet API that enables creation of drift-aware change sets for safe drift management.
+* CloudWatchLogs (3.7.503.0)
+	* CloudWatch Logs updates: Added capability to setup a recurring schedule for log insights queries. Logs introduced Scheduled Queries (managed through Create/Update/Get/Delete/List/History Scheduled Query APIs). For more information, see CloudWatch Logs API documentation.
+* Connect (3.7.513.0)
+	* This release added support for ring timer configuration for campaign calls.
+* EC2 (3.7.531.0)
+	* AWS Site-to-Site VPN now supports VPN Concentrator, a new feature that enables customers to connect multiple low-bandwidth sites connections through a single attachment, simplifying multi-site connectivity for distributed enterprises.
+* IdentityManagement (3.7.505.0)
+	* Added the AssociateDelegationRequest, GetDelegationRequest, AcceptDelegationRequest, RejectDelegatonRequest, ListDelegationRequests, UpdateDelegationRequest, SendDelegationToken and GetHumanReadableSummary APIs for the IAM temporary delegation feature.
+* Kafka (3.7.504.0)
+	* Amazon MSK adds three new APIs, ListTopics, DescribeTopic, and DescribeTopicPartitions for viewing Kafka topics in your MSK clusters.
+* ResourceGroupsTaggingAPI (3.7.502.0)
+	* Add support for new ListRequiredTags API used to retrieve the required tags specified in a customer's effective tag policy.
+* StorageGateway (3.7.502.0)
+	* Adds support for European Sovereign Cloud ARNs in Storage Gateway API parameters.
+* WAFV2 (3.7.504.0)
+	* AssociateWebACL, UpdateWebACL and PutLoggingConfiguration will now throw WAFFeatureNotIncludedInPricingPlanException when the request contains a feature that is not included in the CloudFront pricing plan of the WebACL.
+* Core 3.7.500.45
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.1167.0 (2025-11-17 20:14 UTC)
 * AppStream (3.7.504.0)
 	* Adding support for additional instances and extended storage

@@ -32,7 +32,7 @@ namespace Amazon.SSMGuiConnect
     public partial class AmazonSSMGuiConnectConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("SSM GuiConnect", "3.7.502.11");
+            InternalSDKUtils.BuildUserAgentString("SSM GuiConnect", "3.7.502.12");
 
         private string _userAgent = UserAgentString;
         ///<summary>
