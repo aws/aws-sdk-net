@@ -341,7 +341,9 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
             if (updateExpression != null)
             {
-                expressionAttributeValues = Expression.ConvertToAttributeValues(updateExpression.ExpressionAttributeValues, table);
+                var convertedAttributeValues = Expression.ConvertToAttributeValues(updateExpression.ExpressionAttributeValues, table);
+                if (convertedAttributeValues != null)
+                    expressionAttributeValues = convertedAttributeValues;
                 expressionAttributes = updateExpression.ExpressionAttributeNames;
             }
 
@@ -365,11 +367,15 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 var attributeReference = GetAttributeReference(variableName);
                 var attributeValueReference = GetAttributeValueReference(variableName);
 
-                if (update.Action == AttributeAction.DELETE && !createOnly)
+                if (update.Action == AttributeAction.DELETE)
                 {
-                    if (removes.Length > 0)
-                        removes.Append(", ");
-                    removes.Append(attributeReference);
+                    if (!createOnly)
+                    {
+                        if (removes.Length > 0)
+                            removes.Append(", ");
+                        removes.Append(attributeReference);
+                        expressionAttributes.Add(attributeReference, attribute);
+                    }
                 }
                 else
                 {
@@ -387,10 +393,9 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
                     // Add the attribute value for the variable in the added in the expression
                     expressionAttributeValues.Add(attributeValueReference, update.Value);
+                    expressionAttributes.Add(attributeReference, attribute);
                 }
 
-                // Add the attribute name for the variable in the added in the expression
-                expressionAttributes.Add(attributeReference, attribute);
             }
 
             // Combine the SET and REMOVE clause

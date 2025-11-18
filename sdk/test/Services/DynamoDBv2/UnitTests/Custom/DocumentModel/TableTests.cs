@@ -23,12 +23,9 @@ namespace AWSSDK_DotNet.UnitTests
             _ddbClientMock = new Mock<IAmazonDynamoDB>(MockBehavior.Strict);
             // Mock IClientConfig
             var clientConfigMock = new Mock<IClientConfig>();
-            // Setup any properties/methods you expect to be used, e.g.:
             clientConfigMock.SetupGet(c => c.RegionEndpoint).Returns((RegionEndpoint)null);
             clientConfigMock.SetupGet(c => c.ServiceURL).Returns((string)null);
-            // Add more setups as needed for your tests
 
-            // Setup the Config property on the IAmazonDynamoDB mock
             _ddbClientMock.SetupGet(c => c.Config).Returns(clientConfigMock.Object);
 
             var config = new TableConfig(_tableName);
@@ -40,7 +37,7 @@ namespace AWSSDK_DotNet.UnitTests
         }
 
         [TestMethod]
-        public void UpdateHelper_StandardUpdate_SendsCorrectRequest()
+        public void GivenDocument_WhenUpdateHelperCalledWithDefaultUpdateItemOperationConfig_ThenRequestSentWithAttributeUpdates()
         {
             // Arrange
             var doc = new Document { ["Id"] = "1", ["Name"] = "Test" };
@@ -67,7 +64,7 @@ namespace AWSSDK_DotNet.UnitTests
         }
 
         [TestMethod]
-        public void UpdateHelper_WithExpression_SetsUpdateExpression()
+        public void GivenExpressionProvided_WhenUpdateHelperCalled_ThenUpdateExpressionSet()
         {
             // Arrange
             var doc = new Document { ["Id"] = "1", ["Count"] = 5 };
@@ -86,12 +83,12 @@ namespace AWSSDK_DotNet.UnitTests
 
             _ddbClientMock
                 .Setup(c => c.UpdateItem(It.Is<UpdateItemRequest>
-                (r =>
-                    r.UpdateExpression != null &&
-                    r.UpdateExpression.Contains("if_not_exists")
-                    && r.ExpressionAttributeNames.ContainsKey("#C") &&
-                    r.ExpressionAttributeValues.ContainsKey(":zero")
-                )
+                    (r =>
+                        r.UpdateExpression != null &&
+                        r.UpdateExpression == "SET #C = if_not_exists(#C, :zero) + :inc "
+                        && r.ExpressionAttributeNames.ContainsKey("#C") &&
+                        r.ExpressionAttributeValues.ContainsKey(":zero")
+                    )
                 ))
                 .Returns(new UpdateItemResponse { Attributes = new Dictionary<string, AttributeValue>() });
 
@@ -104,7 +101,7 @@ namespace AWSSDK_DotNet.UnitTests
         }
 
         [TestMethod]
-        public void UpdateHelper_WithIfNotExistAttributeNames_SetsUpdateExpression()
+        public void GivenIfNotExistsAttributesProvided_WhenUpdateHelperCalled_ThenUpdateExpressionContainsIfNotExists()
         {
             // Arrange
             var doc = new Document { ["Id"] = "1", ["Score"] = 10 };
@@ -115,7 +112,7 @@ namespace AWSSDK_DotNet.UnitTests
             _ddbClientMock
                 .Setup(c => c.UpdateItem(It.Is<UpdateItemRequest>(r =>
                     r.UpdateExpression != null &&
-                    r.UpdateExpression.Contains("if_not_exists")
+                    r.UpdateExpression.Equals("SET #awsavar1 = if_not_exists(#awsavar1, :awsavar1) ")
                 )))
                 .Returns(new UpdateItemResponse { Attributes = new Dictionary<string, AttributeValue>() });
 
@@ -128,10 +125,10 @@ namespace AWSSDK_DotNet.UnitTests
         }
 
         [TestMethod]
-        public void UpdateHelper_WithExpressionAndIfNotExistAttributeNames_SetsUpdateExpression()
+        public void GivenExpressionAndIfNotExistsAttributes_WhenUpdateHelperCalled_ThenUpdateExpressionContainsIfNotExists()
         {
             // Arrange
-            var doc = new Document { ["Id"] = "1", ["Score"] = 10 };
+            var doc = new Document { ["Id"] = "1", ["Test"] = 10 };
             var key = new Key { ["Id"] = new AttributeValue { S = "1" } };
             var config = new UpdateItemOperationConfig();
             var expression = new Expression
@@ -144,12 +141,12 @@ namespace AWSSDK_DotNet.UnitTests
                     { ":val", 10 }
                 }
             };
-            var ifNotExistAttrs = new HashSet<string> { "Score" };
+            var ifNotExistAttrs = new HashSet<string> { "Test" };
 
             _ddbClientMock
                 .Setup(c => c.UpdateItem(It.Is<UpdateItemRequest>(r =>
                     r.UpdateExpression != null &&
-                    r.UpdateExpression.Contains("if_not_exists") &&
+                    r.UpdateExpression.Equals("SET #S = if_not_exists(#S, :zero) + :val, #awsavar1 = if_not_exists(#awsavar1, :awsavar1) ") &&
                     r.ExpressionAttributeNames.ContainsKey("#S")
                 )))
                 .Returns(new UpdateItemResponse { Attributes = new Dictionary<string, AttributeValue>() });
@@ -163,21 +160,20 @@ namespace AWSSDK_DotNet.UnitTests
         }
 
         [TestMethod]
-        public void UpdateHelper_KeysChanged_UpdatesAllAttributes()
+        public void GivenChangedKeys_WhenUpdateHelperCalled_ThenAllAttributesUpdated()
         {
             // Arrange
             var doc = new Document { ["Id"] = "2", ["Name"] = "Changed" };
+            doc.CommitChanges();
             var key = new Key { ["Id"] = new AttributeValue { S = "1" } };
             var config = new UpdateItemOperationConfig();
-
-            // Simulate key change
-            _table.HashKeys.Clear();
-            _table.HashKeys.Add("Id");
-            _table.Keys["Id"] = new KeyDescription { IsHash = true, Type = DynamoDBEntryType.String };
+            doc["Id"] = "1";
 
             _ddbClientMock
                 .Setup(c => c.UpdateItem(It.Is<UpdateItemRequest>(r =>
-                    r.Key["Id"].S == "1"
+                    r.Key["Id"].S == "1" &&
+                    r.AttributeUpdates!=null &&
+                    r.AttributeUpdates.ContainsKey("Name")
                 )))
                 .Returns(new UpdateItemResponse { Attributes = new Dictionary<string, AttributeValue>() });
 
@@ -190,7 +186,7 @@ namespace AWSSDK_DotNet.UnitTests
         }
 
         [TestMethod]
-        public void UpdateHelper_WithExpected_SetsExpectedOnRequest()
+        public void GivenExpectedDocument_WhenUpdateHelperCalled_ThenExpectedAddedToRequest()
         {
             // Arrange
             var doc = new Document { ["Id"] = "1", ["Status"] = "Active" };
@@ -215,7 +211,7 @@ namespace AWSSDK_DotNet.UnitTests
         }
 
         [TestMethod]
-        public void UpdateHelper_WithExpectedState_SetsExpectedOnRequest()
+        public void GivenExpectedState_WhenUpdateHelperCalled_ThenExpectedAddedToRequest()
         {
             // Arrange
             var doc = new Document { ["Id"] = "1", ["Status"] = "Active" };
@@ -240,9 +236,9 @@ namespace AWSSDK_DotNet.UnitTests
             Assert.IsNull(result);
             _ddbClientMock.VerifyAll();
         }
-        
+
         [TestMethod]
-        public void UpdateHelper_NoAttributeChanges_DoesNotSendAttributeUpdates()
+        public void GivenNoAttributeChanges_WhenUpdateHelperCalled_ThenNoAttributeUpdatesSent()
         {
             // Arrange
             var doc = new Document { ["Id"] = "1" };
