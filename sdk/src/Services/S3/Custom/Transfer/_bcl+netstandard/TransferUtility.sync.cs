@@ -327,6 +327,34 @@ namespace Amazon.S3.Transfer
                 ExceptionDispatchInfo.Capture(e.InnerException).Throw();
             }
         }
+
+        /// <inheritdoc/>
+        public TransferUtilityDownloadDirectoryResponse DownloadDirectoryWithResponse(string bucketName, string s3Directory, string localDirectory)
+        {
+            try
+            {
+                return DownloadDirectoryWithResponseAsync(bucketName, s3Directory, localDirectory).Result;
+            }
+            catch (AggregateException e)
+            {
+                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
+                return null;
+            }
+        }
+
+        /// <inheritdoc/>
+        public TransferUtilityDownloadDirectoryResponse DownloadDirectoryWithResponse(TransferUtilityDownloadDirectoryRequest request)
+        {
+            try
+            {
+                return DownloadDirectoryWithResponseAsync(request).Result;
+            }
+            catch (AggregateException e)
+            {
+                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
+                return null;
+            }
+        }
         #endregion
 
         #region AbortMultipartUploads

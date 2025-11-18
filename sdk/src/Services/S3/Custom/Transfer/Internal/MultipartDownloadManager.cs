@@ -44,6 +44,7 @@ namespace Amazon.S3.Transfer.Internal
         private readonly DownloadManagerConfiguration _config;
         private readonly IPartDataHandler _dataHandler;
         private readonly SemaphoreSlim _httpConcurrencySlots;
+        private readonly bool _ownsHttpThrottler;
         private readonly RequestEventHandler _requestEventHandler;
         
         private Exception _downloadException;
@@ -79,15 +80,64 @@ namespace Amazon.S3.Transfer.Internal
         public Task DownloadCompletionTask => _downloadCompletionTask ?? Task.CompletedTask;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="MultipartDownloadManager"/> class.
+        /// Initializes a new instance of the <see cref="MultipartDownloadManager"/> for single file downloads.
+        /// This constructor creates and owns its own HTTP concurrency throttler based on the configuration.
         /// </summary>
-        /// <param name="s3Client">The <see cref="IAmazonS3"/> client for making S3 requests.</param>
-        /// <param name="request">The <see cref="BaseDownloadRequest"/> containing download parameters.</param>
-        /// <param name="config">The <see cref="DownloadManagerConfiguration"/> with download settings.</param>
-        /// <param name="dataHandler">The <see cref="IPartDataHandler"/> for processing downloaded parts.</param>
-        /// <param name="requestEventHandler">Optional <see cref="RequestEventHandler"/> for user agent tracking.</param>
-        /// <exception cref="ArgumentNullException">Thrown when any required parameter is null.</exception>
+        /// <param name="s3Client">The <see cref="IAmazonS3"/> client used to make GetObject requests to S3.</param>
+        /// <param name="request">The <see cref="BaseDownloadRequest"/> containing bucket, key, version, and download strategy configuration.</param>
+        /// <param name="config">The <see cref="DownloadManagerConfiguration"/> specifying concurrency limits and part size settings.</param>
+        /// <param name="dataHandler">The <see cref="IPartDataHandler"/> responsible for buffering and processing downloaded part data.</param>
+        /// <param name="requestEventHandler">Optional request event handler for adding custom headers or tracking requests. May be null.</param>
+        /// <exception cref="ArgumentNullException">
+        /// Thrown when <paramref name="s3Client"/>, <paramref name="request"/>, <paramref name="config"/>, or <paramref name="dataHandler"/> is null.
+        /// </exception>
+        /// <remarks>
+        /// This constructor is used for single file downloads where each download manages its own HTTP concurrency.
+        /// The created <see cref="SemaphoreSlim"/> throttler will be disposed when this instance is disposed.
+        /// For directory downloads with shared concurrency management, use the overload that accepts a shared throttler.
+        /// </remarks>
+        /// <seealso cref="DownloadManagerConfiguration"/>
+        /// <seealso cref="IPartDataHandler"/>
+        /// <seealso cref="MultipartDownloadType"/>
         public MultipartDownloadManager(IAmazonS3 s3Client, BaseDownloadRequest request, DownloadManagerConfiguration config, IPartDataHandler dataHandler, RequestEventHandler requestEventHandler = null)
+            : this(s3Client, request, config, dataHandler, requestEventHandler, null)
+        {
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MultipartDownloadManager"/> for directory downloads or scenarios requiring shared concurrency control.
+        /// This constructor allows using a shared HTTP concurrency throttler across multiple concurrent file downloads.
+        /// </summary>
+        /// <param name="s3Client">The <see cref="IAmazonS3"/> client used to make GetObject requests to S3.</param>
+        /// <param name="request">The <see cref="BaseDownloadRequest"/> containing bucket, key, version, and download strategy configuration.</param>
+        /// <param name="config">The <see cref="DownloadManagerConfiguration"/> specifying concurrency limits and part size settings.</param>
+        /// <param name="dataHandler">The <see cref="IPartDataHandler"/> responsible for buffering and processing downloaded part data.</param>
+        /// <param name="requestEventHandler">Optional request event handler for adding custom headers or tracking requests. May be null.</param>
+        /// <param name="sharedHttpThrottler">
+        /// Optional shared <see cref="SemaphoreSlim"/> for coordinating HTTP concurrency across multiple downloads.
+        /// If null, a new throttler will be created and owned by this instance.
+        /// If provided, the caller retains ownership and responsibility for disposal.
+        /// </param>
+        /// <exception cref="ArgumentNullException">
+        /// Thrown when <paramref name="s3Client"/>, <paramref name="request"/>, <paramref name="config"/>, or <paramref name="dataHandler"/> is null.
+        /// </exception>
+        /// <remarks>
+        /// <para>
+        /// This constructor is typically used by directory download operations where multiple files are being downloaded
+        /// concurrently and need to share a global HTTP concurrency limit.
+        /// </para>
+        /// <para>
+        /// <strong>Resource Ownership:</strong>
+        /// If <paramref name="sharedHttpThrottler"/> is provided, this instance does NOT take ownership and will NOT dispose it.
+        /// If <paramref name="sharedHttpThrottler"/> is null, this instance creates and owns the throttler and will dispose it.
+        /// </para>
+        /// </remarks>
+        /// <seealso cref="DownloadManagerConfiguration"/>
+        /// <seealso cref="IPartDataHandler"/>
+        /// <seealso cref="MultipartDownloadType"/>
+        /// <seealso cref="DiscoverDownloadStrategyAsync"/>
+        /// <seealso cref="StartDownloadsAsync"/>
+        public MultipartDownloadManager(IAmazonS3 s3Client, BaseDownloadRequest request, DownloadManagerConfiguration config, IPartDataHandler dataHandler, RequestEventHandler requestEventHandler, SemaphoreSlim sharedHttpThrottler)
         {
             _s3Client = s3Client ?? throw new ArgumentNullException(nameof(s3Client));
             _request = request ?? throw new ArgumentNullException(nameof(request));
@@ -95,7 +145,17 @@ namespace Amazon.S3.Transfer.Internal
             _dataHandler = dataHandler ?? throw new ArgumentNullException(nameof(dataHandler));
             _requestEventHandler = requestEventHandler;
             
-            _httpConcurrencySlots = new SemaphoreSlim(_config.ConcurrentServiceRequests);
+            // Use shared throttler if provided, otherwise create our own
+            if (sharedHttpThrottler != null)
+            {
+                _httpConcurrencySlots = sharedHttpThrottler;
+                _ownsHttpThrottler = false; // Don't dispose - directory command owns it
+            }
+            else
+            {
+                _httpConcurrencySlots = new SemaphoreSlim(_config.ConcurrentServiceRequests);
+                _ownsHttpThrottler = true; // We own it, so we dispose it
+            }
         }
 
         /// <inheritdoc/>
@@ -654,7 +714,11 @@ namespace Amazon.S3.Transfer.Internal
             {
                 try
                 {
-                    _httpConcurrencySlots?.Dispose();
+                    // Only dispose HTTP throttler if we own it
+                    if (_ownsHttpThrottler)
+                    {
+                        _httpConcurrencySlots?.Dispose();
+                    }
                     _dataHandler?.Dispose();
                 }
                 catch (Exception)

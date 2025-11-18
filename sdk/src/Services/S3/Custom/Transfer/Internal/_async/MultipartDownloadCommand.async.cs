@@ -50,12 +50,14 @@ namespace Amazon.S3.Transfer.Internal
             using (var dataHandler = new FilePartDataHandler(config))
             {
                 // Create coordinator to manage the download process
+                // Pass shared HTTP throttler to control concurrency across files
                 using (var coordinator = new MultipartDownloadManager(
                     _s3Client,
                     _request,
                     config,
                     dataHandler,
-                    RequestEventHandler))
+                    RequestEventHandler,
+                    _sharedHttpThrottler))
                 {
                     long totalBytes = -1;
                     try

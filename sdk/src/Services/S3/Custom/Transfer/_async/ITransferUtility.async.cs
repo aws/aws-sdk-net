@@ -432,6 +432,41 @@ namespace Amazon.S3.Transfer
         /// <returns>The task object representing the asynchronous operation with download response metadata.</returns>
         Task<TransferUtilityDownloadResponse> DownloadWithResponseAsync(TransferUtilityDownloadRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
+        /// <summary>
+        /// 	Downloads the objects in Amazon S3 that have a key that starts with the value 
+        /// 	specified by <c>s3Directory</c> and returns response metadata.
+        /// 	Uses enhanced multipart download with concurrent part downloads for improved performance.
+        /// </summary>
+        /// <param name="bucketName">
+        /// 	The name of the bucket containing the Amazon S3 objects to download.
+        /// </param>
+        /// <param name="s3Directory">
+        /// 	The directory in Amazon S3 to download.
+        /// </param>
+        /// <param name="localDirectory">
+        /// 	The local directory to download the objects to.
+        /// </param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation with download response metadata.</returns>
+        Task<TransferUtilityDownloadDirectoryResponse> DownloadDirectoryWithResponseAsync(string bucketName, string s3Directory, string localDirectory, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// 	Downloads the objects in Amazon S3 that have a key that starts with the value 
+        /// 	specified by the <c>S3Directory</c> property and returns response metadata.
+        /// 	Uses enhanced multipart download with concurrent part downloads for improved performance.
+        /// </summary>
+        /// <param name="request">
+        /// 	Contains all the parameters required to download objects from Amazon S3 
+        /// 	into a local directory.
+        /// </param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation with download response metadata.</returns>
+        Task<TransferUtilityDownloadDirectoryResponse> DownloadDirectoryWithResponseAsync(TransferUtilityDownloadDirectoryRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
         #endregion
 
         #region OpenStream
