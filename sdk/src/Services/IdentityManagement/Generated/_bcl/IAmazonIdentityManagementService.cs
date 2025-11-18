@@ -52,6 +52,90 @@ namespace Amazon.IdentityManagement
         IIdentityManagementPaginatorFactory Paginators { get; }
 
         
+        #region  AcceptDelegationRequest
+
+
+        /// <summary>
+        /// Accepts a delegation request, granting the requested temporary access.
+        /// 
+        ///  
+        /// <para>
+        /// Once the delegation request is accepted, it is eligible to send the exchange token
+        /// to the partner. The <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_SendDelegationToken.html">SendDelegationToken</a>
+        /// API has to be explicitly called to send the delegation token. 
+        /// </para>
+        ///  
+        /// <para>
+        /// At the time of acceptance, IAM records the details and the state of the identity that
+        /// called this API. This is the identity that gets mapped to the delegated credential.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// An accepted request may be rejected before the exchange token is sent to the partner.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AcceptDelegationRequest service method.</param>
+        /// 
+        /// <returns>The response from the AcceptDelegationRequest service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.ConcurrentModificationException">
+        /// The request was rejected because multiple requests to change this object were submitted
+        /// simultaneously. Wait a few minutes and submit your request again.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/AcceptDelegationRequest">REST API Reference for AcceptDelegationRequest Operation</seealso>
+        AcceptDelegationRequestResponse AcceptDelegationRequest(AcceptDelegationRequestRequest request);
+
+
+
+        /// <summary>
+        /// Accepts a delegation request, granting the requested temporary access.
+        /// 
+        ///  
+        /// <para>
+        /// Once the delegation request is accepted, it is eligible to send the exchange token
+        /// to the partner. The <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_SendDelegationToken.html">SendDelegationToken</a>
+        /// API has to be explicitly called to send the delegation token. 
+        /// </para>
+        ///  
+        /// <para>
+        /// At the time of acceptance, IAM records the details and the state of the identity that
+        /// called this API. This is the identity that gets mapped to the delegated credential.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// An accepted request may be rejected before the exchange token is sent to the partner.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AcceptDelegationRequest service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AcceptDelegationRequest service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.ConcurrentModificationException">
+        /// The request was rejected because multiple requests to change this object were submitted
+        /// simultaneously. Wait a few minutes and submit your request again.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/AcceptDelegationRequest">REST API Reference for AcceptDelegationRequest Operation</seealso>
+        Task<AcceptDelegationRequestResponse> AcceptDelegationRequestAsync(AcceptDelegationRequestRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  AddClientIDToOpenIDConnectProvider
 
 
@@ -305,6 +389,110 @@ namespace Amazon.IdentityManagement
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/AddUserToGroup">REST API Reference for AddUserToGroup Operation</seealso>
         Task<AddUserToGroupResponse> AddUserToGroupAsync(AddUserToGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  AssociateDelegationRequest
+
+
+        /// <summary>
+        /// Associates a delegation request with the current identity.
+        /// 
+        ///  
+        /// <para>
+        /// If the partner that created the delegation request has specified the owner account
+        /// during creation, only an identity from that owner account can call the <c>AssociateDelegationRequest</c>
+        /// API for the specified delegation request. Once the <c>AssociateDelegationRequest</c>
+        /// API call is successful, the ARN of the current calling identity will be stored as
+        /// the <c>ownerId</c> of the request. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If the partner that created the delegation request has not specified the owner account
+        /// during creation, any caller from any account can call the <c>AssociateDelegationRequest</c>
+        /// API for the delegation request. Once this API call is successful, the ARN of the current
+        /// calling identity will be stored as the <c>ownerId</c> and the Amazon Web Services
+        /// account ID of the current calling identity will be stored as the <c>ownerAccount</c>
+        /// of the request. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  For more details, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies-temporary-delegation.html#temporary-delegation-managing-permissions">
+        /// Managing Permissions for Delegation Requests</a>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateDelegationRequest service method.</param>
+        /// 
+        /// <returns>The response from the AssociateDelegationRequest service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.ConcurrentModificationException">
+        /// The request was rejected because multiple requests to change this object were submitted
+        /// simultaneously. Wait a few minutes and submit your request again.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/AssociateDelegationRequest">REST API Reference for AssociateDelegationRequest Operation</seealso>
+        AssociateDelegationRequestResponse AssociateDelegationRequest(AssociateDelegationRequestRequest request);
+
+
+
+        /// <summary>
+        /// Associates a delegation request with the current identity.
+        /// 
+        ///  
+        /// <para>
+        /// If the partner that created the delegation request has specified the owner account
+        /// during creation, only an identity from that owner account can call the <c>AssociateDelegationRequest</c>
+        /// API for the specified delegation request. Once the <c>AssociateDelegationRequest</c>
+        /// API call is successful, the ARN of the current calling identity will be stored as
+        /// the <c>ownerId</c> of the request. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If the partner that created the delegation request has not specified the owner account
+        /// during creation, any caller from any account can call the <c>AssociateDelegationRequest</c>
+        /// API for the delegation request. Once this API call is successful, the ARN of the current
+        /// calling identity will be stored as the <c>ownerId</c> and the Amazon Web Services
+        /// account ID of the current calling identity will be stored as the <c>ownerAccount</c>
+        /// of the request. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  For more details, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies-temporary-delegation.html#temporary-delegation-managing-permissions">
+        /// Managing Permissions for Delegation Requests</a>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateDelegationRequest service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateDelegationRequest service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.ConcurrentModificationException">
+        /// The request was rejected because multiple requests to change this object were submitted
+        /// simultaneously. Wait a few minutes and submit your request again.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/AssociateDelegationRequest">REST API Reference for AssociateDelegationRequest Operation</seealso>
+        Task<AssociateDelegationRequestResponse> AssociateDelegationRequestAsync(AssociateDelegationRequestRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -987,7 +1175,14 @@ namespace Amazon.IdentityManagement
 
 
         /// <summary>
-        /// This API is currently unavailable for general use.
+        /// Creates an IAM delegation request for temporary access delegation.
+        /// 
+        ///  
+        /// <para>
+        /// This API is not available for general use. In order to use this API, a caller first
+        /// need to go through an onboarding process described in the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies-temporary-delegation-partner-guide.html">partner
+        /// onboarding documentation</a>. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDelegationRequest service method.</param>
         /// 
@@ -1016,7 +1211,14 @@ namespace Amazon.IdentityManagement
 
 
         /// <summary>
-        /// This API is currently unavailable for general use.
+        /// Creates an IAM delegation request for temporary access delegation.
+        /// 
+        ///  
+        /// <para>
+        /// This API is not available for general use. In order to use this API, a caller first
+        /// need to go through an onboarding process described in the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies-temporary-delegation-partner-guide.html">partner
+        /// onboarding documentation</a>. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDelegationRequest service method.</param>
         /// <param name="cancellationToken">
@@ -5064,14 +5266,14 @@ namespace Amazon.IdentityManagement
         /// </para>
         ///  <important> 
         /// <para>
-        /// The data includes all attempts to access Amazon Web Services, not just the successful
+        /// The data includes all attempts to access Amazon Web Services, not just the successful
         /// ones. This includes all attempts that were made using the Amazon Web Services Management
         /// Console, the Amazon Web Services API through any of the SDKs, or any of the command
         /// line tools. An unexpected entry in the service last accessed data does not mean that
         /// an account has been compromised, because the request might have been denied. Refer
         /// to your CloudTrail logs as the authoritative source for information about all API
-        /// calls and whether they were successful or denied access. For more information, see <a
-        /// href="https://docs.aws.amazon.com/IAM/latest/UserGuide/cloudtrail-integration.html">Logging
+        /// calls and whether they were successful or denied access. For more information, see
+        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/cloudtrail-integration.html">Logging
         /// IAM events with CloudTrail</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  </important> 
@@ -5220,14 +5422,14 @@ namespace Amazon.IdentityManagement
         /// </para>
         ///  <important> 
         /// <para>
-        /// The data includes all attempts to access Amazon Web Services, not just the successful
+        /// The data includes all attempts to access Amazon Web Services, not just the successful
         /// ones. This includes all attempts that were made using the Amazon Web Services Management
         /// Console, the Amazon Web Services API through any of the SDKs, or any of the command
         /// line tools. An unexpected entry in the service last accessed data does not mean that
         /// an account has been compromised, because the request might have been denied. Refer
         /// to your CloudTrail logs as the authoritative source for information about all API
-        /// calls and whether they were successful or denied access. For more information, see <a
-        /// href="https://docs.aws.amazon.com/IAM/latest/UserGuide/cloudtrail-integration.html">Logging
+        /// calls and whether they were successful or denied access. For more information, see
+        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/cloudtrail-integration.html">Logging
         /// IAM events with CloudTrail</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  </important> 
@@ -5358,14 +5560,14 @@ namespace Amazon.IdentityManagement
         /// 
         ///  <important> 
         /// <para>
-        /// The service last accessed data includes all attempts to access an Amazon Web Services
+        /// The service last accessed data includes all attempts to access an Amazon Web Services
         /// API, not just the successful ones. This includes all attempts that were made using
         /// the Amazon Web Services Management Console, the Amazon Web Services API through any
         /// of the SDKs, or any of the command line tools. An unexpected entry in the service
         /// last accessed data does not mean that your account has been compromised, because the
         /// request might have been denied. Refer to your CloudTrail logs as the authoritative
         /// source for information about all API calls and whether they were successful or denied
-        /// access. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/cloudtrail-integration.html">Logging
+        /// access. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/cloudtrail-integration.html">Logging
         /// IAM events with CloudTrail</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  </important> 
@@ -5448,14 +5650,14 @@ namespace Amazon.IdentityManagement
         /// 
         ///  <important> 
         /// <para>
-        /// The service last accessed data includes all attempts to access an Amazon Web Services
+        /// The service last accessed data includes all attempts to access an Amazon Web Services
         /// API, not just the successful ones. This includes all attempts that were made using
         /// the Amazon Web Services Management Console, the Amazon Web Services API through any
         /// of the SDKs, or any of the command line tools. An unexpected entry in the service
         /// last accessed data does not mean that your account has been compromised, because the
         /// request might have been denied. Refer to your CloudTrail logs as the authoritative
         /// source for information about all API calls and whether they were successful or denied
-        /// access. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/cloudtrail-integration.html">Logging
+        /// access. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/cloudtrail-integration.html">Logging
         /// IAM events with CloudTrail</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  </important> 
@@ -6305,6 +6507,70 @@ namespace Amazon.IdentityManagement
 
         #endregion
         
+        #region  GetDelegationRequest
+
+
+        /// <summary>
+        /// Retrieves information about a specific delegation request.
+        /// 
+        ///  
+        /// <para>
+        ///  If a delegation request has no owner or owner account, <c>GetDelegationRequest</c>
+        /// for that delegation request can be called by any account. If the owner account is
+        /// assigned but there is no owner id, only identities within that owner account can call
+        /// <c>GetDelegationRequest</c> for the delegation request. Once the delegation request
+        /// is fully owned, the owner of the request gets a default permission to get that delegation
+        /// request. For more details, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies-temporary-delegation.html#temporary-delegation-managing-permissions">
+        /// Managing Permissions for Delegation Requests</a>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDelegationRequest service method.</param>
+        /// 
+        /// <returns>The response from the GetDelegationRequest service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetDelegationRequest">REST API Reference for GetDelegationRequest Operation</seealso>
+        GetDelegationRequestResponse GetDelegationRequest(GetDelegationRequestRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves information about a specific delegation request.
+        /// 
+        ///  
+        /// <para>
+        ///  If a delegation request has no owner or owner account, <c>GetDelegationRequest</c>
+        /// for that delegation request can be called by any account. If the owner account is
+        /// assigned but there is no owner id, only identities within that owner account can call
+        /// <c>GetDelegationRequest</c> for the delegation request. Once the delegation request
+        /// is fully owned, the owner of the request gets a default permission to get that delegation
+        /// request. For more details, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies-temporary-delegation.html#temporary-delegation-managing-permissions">
+        /// Managing Permissions for Delegation Requests</a>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDelegationRequest service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetDelegationRequest service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetDelegationRequest">REST API Reference for GetDelegationRequest Operation</seealso>
+        Task<GetDelegationRequestResponse> GetDelegationRequestAsync(GetDelegationRequestRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetGroup
 
 
@@ -6432,6 +6698,96 @@ namespace Amazon.IdentityManagement
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetGroupPolicy">REST API Reference for GetGroupPolicy Operation</seealso>
         Task<GetGroupPolicyResponse> GetGroupPolicyAsync(GetGroupPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetHumanReadableSummary
+
+
+        /// <summary>
+        /// Retrieves a human readable summary for a given entity. At this time, the only supported
+        /// entity type is <c>delegation-request</c> 
+        /// 
+        ///  
+        /// <para>
+        /// This method uses a Large Language Model (LLM) to generate the summary.
+        /// </para>
+        ///  
+        /// <para>
+        ///  If a delegation request has no owner or owner account, <c>GetHumanReadableSummary</c>
+        /// for that delegation request can be called by any account. If the owner account is
+        /// assigned but there is no owner id, only identities within that owner account can call
+        /// <c>GetHumanReadableSummary</c> for the delegation request to retrieve a summary of
+        /// that request. Once the delegation request is fully owned, the owner of the request
+        /// gets a default permission to get that delegation request. For more details, read <a
+        /// href="">default permissions granted to delegation requests</a>. These rules are identical
+        /// to <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetDelegationRequest.html">GetDelegationRequest</a>
+        /// API behavior, such that a party who has permissions to call <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetDelegationRequest.html">GetDelegationRequest</a>
+        /// for a given delegation request will always be able to retrieve the human readable
+        /// summary for that request. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetHumanReadableSummary service method.</param>
+        /// 
+        /// <returns>The response from the GetHumanReadableSummary service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetHumanReadableSummary">REST API Reference for GetHumanReadableSummary Operation</seealso>
+        GetHumanReadableSummaryResponse GetHumanReadableSummary(GetHumanReadableSummaryRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves a human readable summary for a given entity. At this time, the only supported
+        /// entity type is <c>delegation-request</c> 
+        /// 
+        ///  
+        /// <para>
+        /// This method uses a Large Language Model (LLM) to generate the summary.
+        /// </para>
+        ///  
+        /// <para>
+        ///  If a delegation request has no owner or owner account, <c>GetHumanReadableSummary</c>
+        /// for that delegation request can be called by any account. If the owner account is
+        /// assigned but there is no owner id, only identities within that owner account can call
+        /// <c>GetHumanReadableSummary</c> for the delegation request to retrieve a summary of
+        /// that request. Once the delegation request is fully owned, the owner of the request
+        /// gets a default permission to get that delegation request. For more details, read <a
+        /// href="">default permissions granted to delegation requests</a>. These rules are identical
+        /// to <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetDelegationRequest.html">GetDelegationRequest</a>
+        /// API behavior, such that a party who has permissions to call <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetDelegationRequest.html">GetDelegationRequest</a>
+        /// for a given delegation request will always be able to retrieve the human readable
+        /// summary for that request. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetHumanReadableSummary service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetHumanReadableSummary service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetHumanReadableSummary">REST API Reference for GetHumanReadableSummary Operation</seealso>
+        Task<GetHumanReadableSummaryResponse> GetHumanReadableSummaryAsync(GetHumanReadableSummaryRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -8313,6 +8669,78 @@ namespace Amazon.IdentityManagement
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListAttachedUserPolicies">REST API Reference for ListAttachedUserPolicies Operation</seealso>
         Task<ListAttachedUserPoliciesResponse> ListAttachedUserPoliciesAsync(ListAttachedUserPoliciesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListDelegationRequests
+
+
+        /// <summary>
+        /// Lists delegation requests based on the specified criteria.
+        /// 
+        ///  
+        /// <para>
+        /// If a delegation request has no owner, even if it is assigned to a specific account,
+        /// it will not be part of the <c>ListDelegationRequests</c> output for that account.
+        /// </para>
+        ///  
+        /// <para>
+        ///  For more details, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies-temporary-delegation.html#temporary-delegation-managing-permissions">
+        /// Managing Permissions for Delegation Requests</a>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDelegationRequests service method.</param>
+        /// 
+        /// <returns>The response from the ListDelegationRequests service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListDelegationRequests">REST API Reference for ListDelegationRequests Operation</seealso>
+        ListDelegationRequestsResponse ListDelegationRequests(ListDelegationRequestsRequest request);
+
+
+
+        /// <summary>
+        /// Lists delegation requests based on the specified criteria.
+        /// 
+        ///  
+        /// <para>
+        /// If a delegation request has no owner, even if it is assigned to a specific account,
+        /// it will not be part of the <c>ListDelegationRequests</c> output for that account.
+        /// </para>
+        ///  
+        /// <para>
+        ///  For more details, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies-temporary-delegation.html#temporary-delegation-managing-permissions">
+        /// Managing Permissions for Delegation Requests</a>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDelegationRequests service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListDelegationRequests service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListDelegationRequests">REST API Reference for ListDelegationRequests Operation</seealso>
+        Task<ListDelegationRequestsResponse> ListDelegationRequestsAsync(ListDelegationRequestsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -11448,6 +11876,96 @@ namespace Amazon.IdentityManagement
 
         #endregion
         
+        #region  RejectDelegationRequest
+
+
+        /// <summary>
+        /// Rejects a delegation request, denying the requested temporary access.
+        /// 
+        ///  
+        /// <para>
+        /// Once a request is rejected, it cannot be accepted or updated later. Rejected requests
+        /// expire after 7 days.
+        /// </para>
+        ///  
+        /// <para>
+        /// When rejecting a request, an optional explanation can be added using the <c>Notes</c>
+        /// request parameter.
+        /// </para>
+        ///  
+        /// <para>
+        ///  For more details, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies-temporary-delegation.html#temporary-delegation-managing-permissions">
+        /// Managing Permissions for Delegation Requests</a>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RejectDelegationRequest service method.</param>
+        /// 
+        /// <returns>The response from the RejectDelegationRequest service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.ConcurrentModificationException">
+        /// The request was rejected because multiple requests to change this object were submitted
+        /// simultaneously. Wait a few minutes and submit your request again.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/RejectDelegationRequest">REST API Reference for RejectDelegationRequest Operation</seealso>
+        RejectDelegationRequestResponse RejectDelegationRequest(RejectDelegationRequestRequest request);
+
+
+
+        /// <summary>
+        /// Rejects a delegation request, denying the requested temporary access.
+        /// 
+        ///  
+        /// <para>
+        /// Once a request is rejected, it cannot be accepted or updated later. Rejected requests
+        /// expire after 7 days.
+        /// </para>
+        ///  
+        /// <para>
+        /// When rejecting a request, an optional explanation can be added using the <c>Notes</c>
+        /// request parameter.
+        /// </para>
+        ///  
+        /// <para>
+        ///  For more details, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies-temporary-delegation.html#temporary-delegation-managing-permissions">
+        /// Managing Permissions for Delegation Requests</a>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RejectDelegationRequest service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RejectDelegationRequest service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.ConcurrentModificationException">
+        /// The request was rejected because multiple requests to change this object were submitted
+        /// simultaneously. Wait a few minutes and submit your request again.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/RejectDelegationRequest">REST API Reference for RejectDelegationRequest Operation</seealso>
+        Task<RejectDelegationRequestResponse> RejectDelegationRequestAsync(RejectDelegationRequestRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  RemoveClientIDFromOpenIDConnectProvider
 
 
@@ -11783,6 +12301,100 @@ namespace Amazon.IdentityManagement
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ResyncMFADevice">REST API Reference for ResyncMFADevice Operation</seealso>
         Task<ResyncMFADeviceResponse> ResyncMFADeviceAsync(ResyncMFADeviceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  SendDelegationToken
+
+
+        /// <summary>
+        /// Sends the exchange token for an accepted delegation request.
+        /// 
+        ///  
+        /// <para>
+        /// The exchange token is sent to the partner via an asynchronous notification channel,
+        /// established by the partner.
+        /// </para>
+        ///  
+        /// <para>
+        /// The delegation request must be in the <c>ACCEPTED</c> state when calling this API.
+        /// After the <c>SendDelegationToken</c> API call is successful, the request transitions
+        /// to a <c>FINALIZED</c> state and cannot be rolled back. However, a user may reject
+        /// an accepted request before the <c>SendDelegationToken</c> API is called.
+        /// </para>
+        ///  
+        /// <para>
+        ///  For more details, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies-temporary-delegation.html#temporary-delegation-managing-permissions">
+        /// Managing Permissions for Delegation Requests</a>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SendDelegationToken service method.</param>
+        /// 
+        /// <returns>The response from the SendDelegationToken service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.ConcurrentModificationException">
+        /// The request was rejected because multiple requests to change this object were submitted
+        /// simultaneously. Wait a few minutes and submit your request again.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/SendDelegationToken">REST API Reference for SendDelegationToken Operation</seealso>
+        SendDelegationTokenResponse SendDelegationToken(SendDelegationTokenRequest request);
+
+
+
+        /// <summary>
+        /// Sends the exchange token for an accepted delegation request.
+        /// 
+        ///  
+        /// <para>
+        /// The exchange token is sent to the partner via an asynchronous notification channel,
+        /// established by the partner.
+        /// </para>
+        ///  
+        /// <para>
+        /// The delegation request must be in the <c>ACCEPTED</c> state when calling this API.
+        /// After the <c>SendDelegationToken</c> API call is successful, the request transitions
+        /// to a <c>FINALIZED</c> state and cannot be rolled back. However, a user may reject
+        /// an accepted request before the <c>SendDelegationToken</c> API is called.
+        /// </para>
+        ///  
+        /// <para>
+        ///  For more details, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies-temporary-delegation.html#temporary-delegation-managing-permissions">
+        /// Managing Permissions for Delegation Requests</a>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SendDelegationToken service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SendDelegationToken service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.ConcurrentModificationException">
+        /// The request was rejected because multiple requests to change this object were submitted
+        /// simultaneously. Wait a few minutes and submit your request again.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/SendDelegationToken">REST API Reference for SendDelegationToken Operation</seealso>
+        Task<SendDelegationTokenResponse> SendDelegationTokenAsync(SendDelegationTokenRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -14254,6 +14866,80 @@ namespace Amazon.IdentityManagement
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateAssumeRolePolicy">REST API Reference for UpdateAssumeRolePolicy Operation</seealso>
         Task<UpdateAssumeRolePolicyResponse> UpdateAssumeRolePolicyAsync(UpdateAssumeRolePolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateDelegationRequest
+
+
+        /// <summary>
+        /// Updates an existing delegation request with additional information. When the delegation
+        /// request is updated, it reaches the <c>PENDING_APPROVAL</c> state. 
+        /// 
+        ///  
+        /// <para>
+        /// Once a delegation request has an owner, that owner gets a default permission to update
+        /// the delegation request. For more details, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies-temporary-delegation.html#temporary-delegation-managing-permissions">
+        /// Managing Permissions for Delegation Requests</a>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDelegationRequest service method.</param>
+        /// 
+        /// <returns>The response from the UpdateDelegationRequest service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.ConcurrentModificationException">
+        /// The request was rejected because multiple requests to change this object were submitted
+        /// simultaneously. Wait a few minutes and submit your request again.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateDelegationRequest">REST API Reference for UpdateDelegationRequest Operation</seealso>
+        UpdateDelegationRequestResponse UpdateDelegationRequest(UpdateDelegationRequestRequest request);
+
+
+
+        /// <summary>
+        /// Updates an existing delegation request with additional information. When the delegation
+        /// request is updated, it reaches the <c>PENDING_APPROVAL</c> state. 
+        /// 
+        ///  
+        /// <para>
+        /// Once a delegation request has an owner, that owner gets a default permission to update
+        /// the delegation request. For more details, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies-temporary-delegation.html#temporary-delegation-managing-permissions">
+        /// Managing Permissions for Delegation Requests</a>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDelegationRequest service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateDelegationRequest service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.ConcurrentModificationException">
+        /// The request was rejected because multiple requests to change this object were submitted
+        /// simultaneously. Wait a few minutes and submit your request again.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateDelegationRequest">REST API Reference for UpdateDelegationRequest Operation</seealso>
+        Task<UpdateDelegationRequestResponse> UpdateDelegationRequestAsync(UpdateDelegationRequestRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

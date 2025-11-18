@@ -31,7 +31,14 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDelegationRequest operation.
-    /// This API is currently unavailable for general use.
+    /// Creates an IAM delegation request for temporary access delegation.
+    /// 
+    ///  
+    /// <para>
+    /// This API is not available for general use. In order to use this API, a caller first
+    /// need to go through an onboarding process described in the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies-temporary-delegation-partner-guide.html">partner
+    /// onboarding documentation</a>. 
+    /// </para>
     /// </summary>
     public partial class CreateDelegationRequestRequest : AmazonIdentityManagementServiceRequest
     {
@@ -46,7 +53,10 @@ namespace Amazon.IdentityManagement.Model
         private int? _sessionDuration;
 
         /// <summary>
-        /// Gets and sets the property Description.
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// A description of the delegation request.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=1000)]
         public string Description
@@ -62,7 +72,17 @@ namespace Amazon.IdentityManagement.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NotificationChannel.
+        /// Gets and sets the property NotificationChannel. 
+        /// <para>
+        /// The notification channel for updates about the delegation request.
+        /// </para>
+        ///  
+        /// <para>
+        /// At this time,only SNS topic ARNs are accepted for notification. This topic ARN must
+        /// have a resource policy granting <c>SNS:Publish</c> permission to the IAM service principal
+        /// (<c>iam.amazonaws.com</c>). See <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies-temporary-delegation-partner-guide.html">partner
+        /// onboarding documentation</a> for more details. 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=2, Max=400)]
         public string NotificationChannel
@@ -78,7 +98,18 @@ namespace Amazon.IdentityManagement.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OnlySendByOwner.
+        /// Gets and sets the property OnlySendByOwner. 
+        /// <para>
+        /// Specifies whether the delegation token should only be sent by the owner.
+        /// </para>
+        ///  
+        /// <para>
+        /// This flag prevents any party other than the owner from calling <c>SendDelegationToken</c>
+        /// API for this delegation request. This behavior becomes useful when the delegation
+        /// request owner needs to be present for subsequent partner interactions, but the delegation
+        /// request was sent to a more privileged user for approval due to the owner lacking sufficient
+        /// delegation permissions. 
+        /// </para>
         /// </summary>
         public bool? OnlySendByOwner
         {
@@ -93,7 +124,16 @@ namespace Amazon.IdentityManagement.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OwnerAccountId.
+        /// Gets and sets the property OwnerAccountId. 
+        /// <para>
+        /// The Amazon Web Services account ID this delegation request is targeted to.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the account ID is not known, this parameter can be omitted, resulting in a request
+        /// that can be associated by any account. If the account ID passed, then the created
+        /// delegation request can only be associated with an identity of that target account.
+        /// </para>
         /// </summary>
         public string OwnerAccountId
         {
@@ -108,7 +148,10 @@ namespace Amazon.IdentityManagement.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Permissions.
+        /// Gets and sets the property Permissions. 
+        /// <para>
+        /// The permissions to be delegated in this delegation request.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public DelegationPermission Permissions
@@ -124,7 +167,15 @@ namespace Amazon.IdentityManagement.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RedirectUrl.
+        /// Gets and sets the property RedirectUrl. 
+        /// <para>
+        /// The URL to redirect to after the delegation request is processed.
+        /// </para>
+        ///  
+        /// <para>
+        /// This URL is used by the IAM console to show a link to the customer to re-load the
+        /// partner workflow.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
         public string RedirectUrl
@@ -140,7 +191,21 @@ namespace Amazon.IdentityManagement.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RequestMessage.
+        /// Gets and sets the property RequestMessage. 
+        /// <para>
+        /// A message explaining the reason for the delegation request.
+        /// </para>
+        ///  
+        /// <para>
+        /// Requesters can utilize this field to add a custom note to the delegation request.
+        /// This field is different from the description such that this is to be utilized for
+        /// a custom messaging on a case-by-case basis.
+        /// </para>
+        ///  
+        /// <para>
+        /// For example, if the current delegation request is in response to a previous request
+        /// being rejected, this explanation can be added to the request via this field.
+        /// </para>
         /// </summary>
         [AWSProperty(Max=200)]
         public string RequestMessage
@@ -156,7 +221,20 @@ namespace Amazon.IdentityManagement.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RequestorWorkflowId.
+        /// Gets and sets the property RequestorWorkflowId. 
+        /// <para>
+        /// The workflow ID associated with the requestor.
+        /// </para>
+        ///  
+        /// <para>
+        /// This is the unique identifier on the partner side that can be used to track the progress
+        /// of the request.
+        /// </para>
+        ///  
+        /// <para>
+        /// IAM maintains a uniqueness check on this workflow id for each request - if a workflow
+        /// id for an existing request is passed, this API call will fail.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=5, Max=400)]
         public string RequestorWorkflowId
@@ -172,9 +250,17 @@ namespace Amazon.IdentityManagement.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SessionDuration.
+        /// Gets and sets the property SessionDuration. 
+        /// <para>
+        /// The duration for which the delegated session should remain active, in seconds.
+        /// </para>
+        ///  
+        /// <para>
+        /// The active time window for the session starts when the customer calls the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_SendDelegationToken.html">SendDelegationToken</a>
+        /// API.
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=3600, Max=43200)]
+        [AWSProperty(Required=true, Min=300, Max=43200)]
         public int? SessionDuration
         {
             get { return this._sessionDuration; }

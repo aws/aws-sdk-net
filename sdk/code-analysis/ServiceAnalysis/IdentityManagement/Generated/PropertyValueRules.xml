@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.AcceptDelegationRequestRequest.DelegationRequestId</property>
+    <min>16</min>
+    <max>128</max>
+    <pattern>[\w-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IdentityManagement.Model.AddClientIDToOpenIDConnectProviderRequest.ClientID</property>
     <min>1</min>
     <max>255</max>
@@ -33,6 +39,12 @@
     <min>1</min>
     <max>128</max>
     <pattern>[\w+=,.@-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.AssociateDelegationRequestRequest.DelegationRequestId</property>
+    <min>16</min>
+    <max>128</max>
+    <pattern>[\w-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.AttachGroupPolicyRequest.GroupName</property>
@@ -100,6 +112,7 @@
     <property>Amazon.IdentityManagement.Model.CreateDelegationRequestRequest.NotificationChannel</property>
     <min>2</min>
     <max>400</max>
+    <pattern>^[a-zA-Z0-9:_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.CreateDelegationRequestRequest.OwnerAccountId</property>
@@ -120,10 +133,11 @@
     <property>Amazon.IdentityManagement.Model.CreateDelegationRequestRequest.RequestorWorkflowId</property>
     <min>5</min>
     <max>400</max>
+    <pattern>[\u0009\u000A\u000D\u0020-\u007E\u00A1-\u00FF]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.CreateDelegationRequestRequest.SessionDuration</property>
-    <min>3600</min>
+    <min>300</min>
     <max>43200</max>
   </property-value-rule>
   <property-value-rule>
@@ -649,6 +663,12 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.GetDelegationRequestRequest.DelegationRequestId</property>
+    <min>16</min>
+    <max>128</max>
+    <pattern>[\w-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IdentityManagement.Model.GetGroupRequest.GroupName</property>
     <min>1</min>
     <max>128</max>
@@ -694,6 +714,26 @@
     <min>1</min>
     <max>128</max>
     <pattern>[\w+=,.@-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.GetHumanReadableSummaryRequest.EntityArn</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.GetHumanReadableSummaryRequest.Locale</property>
+    <min>2</min>
+    <max>12</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.GetHumanReadableSummaryResponse.Locale</property>
+    <min>2</min>
+    <max>12</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.GetHumanReadableSummaryResponse.SummaryContent</property>
+    <min>0</min>
+    <max>10000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.GetInstanceProfileRequest.InstanceProfileName</property>
@@ -1022,6 +1062,29 @@
     <min>1</min>
     <max>64</max>
     <pattern>[\w+=,.@-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.ListDelegationRequestsRequest.Marker</property>
+    <min>1</min>
+    <max>320</max>
+    <pattern>[\u0020-\u00FF]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.ListDelegationRequestsRequest.MaxItems</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.ListDelegationRequestsRequest.OwnerId</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^[a-zA-Z0-9:/+=,.@_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.ListDelegationRequestsResponse.Marker</property>
+    <min>1</min>
+    <max>320</max>
+    <pattern>[\u0020-\u00FF]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ListEntitiesForPolicyRequest.Marker</property>
@@ -1553,6 +1616,17 @@
     <pattern>[\w+=,.@-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.RejectDelegationRequestRequest.DelegationRequestId</property>
+    <min>16</min>
+    <max>128</max>
+    <pattern>[\w-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.RejectDelegationRequestRequest.Notes</property>
+    <max>500</max>
+    <pattern>[\u0009\u000A\u000D\u0020-\u007E\u00A1-\u00FF]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IdentityManagement.Model.RemoveClientIDFromOpenIDConnectProviderRequest.ClientID</property>
     <min>1</min>
     <max>255</max>
@@ -1621,6 +1695,12 @@
     <min>1</min>
     <max>128</max>
     <pattern>[\w+=,.@-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.SendDelegationTokenRequest.DelegationRequestId</property>
+    <min>16</min>
+    <max>128</max>
+    <pattern>[\w-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.SetDefaultPolicyVersionRequest.PolicyArn</property>
@@ -1828,6 +1908,17 @@
     <min>1</min>
     <max>64</max>
     <pattern>[\w+=,.@-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.UpdateDelegationRequestRequest.DelegationRequestId</property>
+    <min>16</min>
+    <max>128</max>
+    <pattern>[\w-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.UpdateDelegationRequestRequest.Notes</property>
+    <max>500</max>
+    <pattern>[\u0009\u000A\u000D\u0020-\u007E\u00A1-\u00FF]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.UpdateGroupRequest.GroupName</property>
@@ -2107,6 +2198,67 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.DelegationRequest.ApproverId</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.DelegationRequest.DelegationRequestId</property>
+    <min>16</min>
+    <max>128</max>
+    <pattern>[\w-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.DelegationRequest.Description</property>
+    <max>1000</max>
+    <pattern>[\u0009\u000A\u000D\u0020-\u007E\u00A1-\u00FF]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.DelegationRequest.Notes</property>
+    <max>500</max>
+    <pattern>[\u0009\u000A\u000D\u0020-\u007E\u00A1-\u00FF]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.DelegationRequest.OwnerAccountId</property>
+    <pattern>\d{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.DelegationRequest.OwnerId</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^[a-zA-Z0-9:/+=,.@_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.DelegationRequest.RedirectUrl</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^http(s?)://[a-zA-Z0-9._/-]*(\?[a-zA-Z0-9._=&amp;-]*)?(#[a-zA-Z0-9._/-]*)?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.DelegationRequest.RejectionReason</property>
+    <max>500</max>
+    <pattern>[\u0009\u000A\u000D\u0020-\u007E\u00A1-\u00FF]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.DelegationRequest.RequestMessage</property>
+    <max>200</max>
+    <pattern>[\u0009\u000A\u000D\u0020-\u007E\u00A1-\u00FF]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.DelegationRequest.RequestorId</property>
+    <pattern>\d{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.DelegationRequest.RequestorName</property>
+    <max>30</max>
+    <pattern>[\u0009\u000A\u000D\u0020-\u007E\u00A1-\u00FF]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.DelegationRequest.SessionDuration</property>
+    <min>300</min>
+    <max>43200</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IdentityManagement.Model.DeletionTaskFailureReasonType.Reason</property>
     <max>1000</max>
   </property-value-rule>
@@ -2363,6 +2515,7 @@
     <property>Amazon.IdentityManagement.Model.PolicyParameter.Name</property>
     <min>5</min>
     <max>256</max>
+    <pattern>[ -~]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.PolicyRole.RoleId</property>
