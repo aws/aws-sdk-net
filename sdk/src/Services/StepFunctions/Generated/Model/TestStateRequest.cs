@@ -100,7 +100,7 @@ namespace Amazon.StepFunctions.Model
     /// </para>
     ///  
     /// <para>
-    ///  <c>TestState</c> doesn't support <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-activities.html">Activity
+    ///  <c>TestState</c> only supports the following when a mock is specified: <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-activities.html">Activity
     /// tasks</a>, <c>.sync</c> or <c>.waitForTaskToken</c> <a href="https://docs.aws.amazon.com/step-functions/latest/dg/connect-to-resource.html">service
     /// integration patterns</a>, <a href="https://docs.aws.amazon.com/step-functions/latest/dg/amazon-states-language-parallel-state.html">Parallel</a>,
     /// or <a href="https://docs.aws.amazon.com/step-functions/latest/dg/amazon-states-language-map-state.html">Map</a>
@@ -109,18 +109,42 @@ namespace Amazon.StepFunctions.Model
     /// </summary>
     public partial class TestStateRequest : AmazonStepFunctionsRequest
     {
+        private string _context;
         private string _definition;
         private string _input;
         private InspectionLevel _inspectionLevel;
+        private MockInput _mock;
         private bool? _revealSecrets;
         private string _roleArn;
+        private TestStateConfiguration _stateConfiguration;
+        private string _stateName;
         private string _variables;
+
+        /// <summary>
+        /// Gets and sets the property Context. 
+        /// <para>
+        /// A JSON string representing a valid Context object for the state under test. This field
+        /// may only be specified if a mock is specified in the same request.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Max=262144)]
+        public string Context
+        {
+            get { return this._context; }
+            set { this._context = value; }
+        }
+
+        // Check to see if Context property is set
+        internal bool IsSetContext()
+        {
+            return this._context != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Definition. 
         /// <para>
         /// The <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon
-        /// States Language</a> (ASL) definition of the state.
+        /// States Language</a> (ASL) definition of the state or state machine.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=1, Max=1048576)]
@@ -195,6 +219,29 @@ namespace Amazon.StepFunctions.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Mock. 
+        /// <para>
+        /// Defines a mocked result or error for the state under test.
+        /// </para>
+        ///  
+        /// <para>
+        /// A mock can only be specified for Task, Map, or Parallel states. If it is specified
+        /// for another state type, an exception will be thrown.
+        /// </para>
+        /// </summary>
+        public MockInput Mock
+        {
+            get { return this._mock; }
+            set { this._mock = value; }
+        }
+
+        // Check to see if Mock property is set
+        internal bool IsSetMock()
+        {
+            return this._mock != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property RevealSecrets. 
         /// <para>
         /// Specifies whether or not to include secret information in the test result. For HTTP
@@ -246,6 +293,45 @@ namespace Amazon.StepFunctions.Model
         internal bool IsSetRoleArn()
         {
             return this._roleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StateConfiguration. 
+        /// <para>
+        /// Contains configurations for the state under test.
+        /// </para>
+        /// </summary>
+        public TestStateConfiguration StateConfiguration
+        {
+            get { return this._stateConfiguration; }
+            set { this._stateConfiguration = value; }
+        }
+
+        // Check to see if StateConfiguration property is set
+        internal bool IsSetStateConfiguration()
+        {
+            return this._stateConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StateName. 
+        /// <para>
+        /// Denotes the particular state within a state machine definition to be tested. If this
+        /// field is specified, the <c>definition</c> must contain a fully-formed state machine
+        /// definition.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Min=1, Max=80)]
+        public string StateName
+        {
+            get { return this._stateName; }
+            set { this._stateName = value; }
+        }
+
+        // Check to see if StateName property is set
+        internal bool IsSetStateName()
+        {
+            return this._stateName != null;
         }
 
         /// <summary>
