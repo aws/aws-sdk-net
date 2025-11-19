@@ -35,7 +35,30 @@ namespace Amazon.Invoicing.Model
     /// </summary>
     public partial class InvoiceUnitRule
     {
+        private List<string> _billSourceAccounts = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _linkedAccounts = AWSConfigs.InitializeCollections ? new List<string>() : null;
+
+        /// <summary>
+        /// Gets and sets the property BillSourceAccounts. 
+        /// <para>
+        ///  A list of Amazon Web Services account account IDs that have delegated their billing
+        /// responsibility to the receiver account through transfer billing. Unlike linked accounts,
+        /// these bill source accounts can be payer accounts from other organizations that have
+        /// authorized billing transfer to this account. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1000)]
+        public List<string> BillSourceAccounts
+        {
+            get { return this._billSourceAccounts; }
+            set { this._billSourceAccounts = value; }
+        }
+
+        // Check to see if BillSourceAccounts property is set
+        internal bool IsSetBillSourceAccounts()
+        {
+            return this._billSourceAccounts != null && (this._billSourceAccounts.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property LinkedAccounts. 
@@ -44,7 +67,7 @@ namespace Amazon.Invoicing.Model
         /// unit. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1000)]
+        [AWSProperty(Min=0, Max=1000)]
         public List<string> LinkedAccounts
         {
             get { return this._linkedAccounts; }
