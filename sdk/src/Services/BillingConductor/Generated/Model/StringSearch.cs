@@ -30,32 +30,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BillingConductor.Model
 {
     /// <summary>
-    /// An object that defines how custom line item charges are presented in the bill, containing
-    /// specifications for service presentation.
+    /// A structure that defines string search parameters.
     /// </summary>
-    public partial class PresentationObject
+    public partial class StringSearch
     {
-        private string _service;
+        private SearchOption _searchOption;
+        private string _searchValue;
 
         /// <summary>
-        /// Gets and sets the property Service. 
+        /// Gets and sets the property SearchOption. 
         /// <para>
-        ///  The service under which the custom line item charges will be presented. Must be a
-        /// string between 1 and 128 characters matching the pattern "<c>^[a-zA-Z0-9]+$</c>".
-        /// 
+        ///  The search option to be applied when performing the string search. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public SearchOption SearchOption
+        {
+            get { return this._searchOption; }
+            set { this._searchOption = value; }
+        }
+
+        // Check to see if SearchOption property is set
+        internal bool IsSetSearchOption()
+        {
+            return this._searchOption != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SearchValue. 
+        /// <para>
+        ///  The value to search for within the specified string field. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
-        public string Service
+        public string SearchValue
         {
-            get { return this._service; }
-            set { this._service = value; }
+            get { return this._searchValue; }
+            set { this._searchValue = value; }
         }
 
-        // Check to see if Service property is set
-        internal bool IsSetService()
+        // Check to see if SearchValue property is set
+        internal bool IsSetSearchValue()
         {
-            return this._service != null;
+            return this._searchValue != null;
         }
 
     }

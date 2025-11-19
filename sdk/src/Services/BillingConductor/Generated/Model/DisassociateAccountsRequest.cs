@@ -44,7 +44,7 @@ namespace Amazon.BillingConductor.Model
         /// The array of account IDs to disassociate. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=30)]
+        [AWSProperty(Required=true, Min=0, Max=30)]
         public List<string> AccountIds
         {
             get { return this._accountIds; }

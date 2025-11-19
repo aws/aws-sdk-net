@@ -65,6 +65,12 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetResponsibilityTransferArn())
+            {
+                context.Writer.WritePropertyName("ResponsibilityTransferArn");
+                context.Writer.Write(requestObject.ResponsibilityTransferArn);
+            }
+
         }
 
         /// <summary>

@@ -78,6 +78,12 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
                     unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("BillingGroupType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.BillingGroupType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ComputationPreference", targetDepth))
                 {
                     var unmarshaller = ComputationPreferenceUnmarshaller.Instance;

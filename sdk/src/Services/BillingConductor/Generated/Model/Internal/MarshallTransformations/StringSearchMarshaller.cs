@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// UpdateBillingGroupAccountGrouping Marshaller
+    /// StringSearch Marshaller
     /// </summary>
-    public class UpdateBillingGroupAccountGroupingMarshaller : IRequestMarshaller<UpdateBillingGroupAccountGrouping, JsonMarshallerContext> 
+    public class StringSearchMarshaller : IRequestMarshaller<StringSearch, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,20 +44,20 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(UpdateBillingGroupAccountGrouping requestObject, JsonMarshallerContext context)
+        public void Marshall(StringSearch requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetAutoAssociate())
+            if(requestObject.IsSetSearchOption())
             {
-                context.Writer.WritePropertyName("AutoAssociate");
-                context.Writer.Write(requestObject.AutoAssociate);
+                context.Writer.WritePropertyName("SearchOption");
+                context.Writer.Write(requestObject.SearchOption);
             }
 
-            if(requestObject.IsSetResponsibilityTransferArn())
+            if(requestObject.IsSetSearchValue())
             {
-                context.Writer.WritePropertyName("ResponsibilityTransferArn");
-                context.Writer.Write(requestObject.ResponsibilityTransferArn);
+                context.Writer.WritePropertyName("SearchValue");
+                context.Writer.Write(requestObject.SearchValue);
             }
 
         }
@@ -65,7 +65,7 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static UpdateBillingGroupAccountGroupingMarshaller Instance = new UpdateBillingGroupAccountGroupingMarshaller();
+        public readonly static StringSearchMarshaller Instance = new StringSearchMarshaller();
 
     }
 }

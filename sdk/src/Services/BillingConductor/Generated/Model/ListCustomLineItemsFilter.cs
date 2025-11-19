@@ -46,7 +46,7 @@ namespace Amazon.BillingConductor.Model
         /// The Amazon Web Services accounts in which this custom line item will be applied to.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=30)]
+        [AWSProperty(Min=0, Max=30)]
         public List<string> AccountIds
         {
             get { return this._accountIds; }
