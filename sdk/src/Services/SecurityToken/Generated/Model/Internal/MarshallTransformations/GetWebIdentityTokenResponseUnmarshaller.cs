@@ -33,9 +33,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.SecurityToken.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetDelegatedAccessToken operation
+    /// Response Unmarshaller for GetWebIdentityToken operation
     /// </summary>  
-    public class GetDelegatedAccessTokenResponseUnmarshaller : XmlResponseUnmarshaller
+    public class GetWebIdentityTokenResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,7 +44,7 @@ namespace Amazon.SecurityToken.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
-            GetDelegatedAccessTokenResponse response = new GetDelegatedAccessTokenResponse();
+            GetWebIdentityTokenResponse response = new GetWebIdentityTokenResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
@@ -52,7 +52,7 @@ namespace Amazon.SecurityToken.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement)
                 {                    
-                    if(context.TestExpression("GetDelegatedAccessTokenResult", 2))
+                    if(context.TestExpression("GetWebIdentityTokenResult", 2))
                     {
                         UnmarshallResult(context, response);                        
                         continue;
@@ -68,7 +68,7 @@ namespace Amazon.SecurityToken.Model.Internal.MarshallTransformations
             return response;
         }
 
-        private static void UnmarshallResult(XmlUnmarshallerContext context, GetDelegatedAccessTokenResponse response)
+        private static void UnmarshallResult(XmlUnmarshallerContext context, GetWebIdentityTokenResponse response)
         {
             
             int originalDepth = context.CurrentDepth;
@@ -82,22 +82,16 @@ namespace Amazon.SecurityToken.Model.Internal.MarshallTransformations
                 if (context.IsStartElement || context.IsAttribute)
                 {
 
-                    if (context.TestExpression("AssumedPrincipal", targetDepth))
+                    if (context.TestExpression("Expiration", targetDepth))
+                    {
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
+                        response.Expiration = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("WebIdentityToken", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        response.AssumedPrincipal = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("Credentials", targetDepth))
-                    {
-                        var unmarshaller = CredentialsUnmarshaller.Instance;
-                        response.Credentials = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("PackedPolicySize", targetDepth))
-                    {
-                        var unmarshaller = NullableIntUnmarshaller.Instance;
-                        response.PackedPolicySize = unmarshaller.Unmarshall(context);
+                        response.WebIdentityToken = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 } 
@@ -125,24 +119,24 @@ namespace Amazon.SecurityToken.Model.Internal.MarshallTransformations
             using (var streamCopy = new MemoryStream(responseBodyBytes))
             using (var contextCopy = new XmlUnmarshallerContext(streamCopy, false, null))
             {
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ExpiredTradeInTokenException"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("JWTPayloadSizeExceededException"))
                 {
-                    return ExpiredTradeInTokenExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return JWTPayloadSizeExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("PackedPolicyTooLarge"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("OutboundWebIdentityFederationDisabledException"))
                 {
-                    return PackedPolicyTooLargeExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return OutboundWebIdentityFederationDisabledExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("RegionDisabledException"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("SessionDurationEscalationException"))
                 {
-                    return RegionDisabledExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return SessionDurationEscalationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
             }
             return new AmazonSecurityTokenServiceException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        private static GetDelegatedAccessTokenResponseUnmarshaller _instance = new GetDelegatedAccessTokenResponseUnmarshaller();        
+        private static GetWebIdentityTokenResponseUnmarshaller _instance = new GetWebIdentityTokenResponseUnmarshaller();        
 
-        internal static GetDelegatedAccessTokenResponseUnmarshaller GetInstance()
+        internal static GetWebIdentityTokenResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -150,7 +144,7 @@ namespace Amazon.SecurityToken.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetDelegatedAccessTokenResponseUnmarshaller Instance
+        public static GetWebIdentityTokenResponseUnmarshaller Instance
         {
             get
             {

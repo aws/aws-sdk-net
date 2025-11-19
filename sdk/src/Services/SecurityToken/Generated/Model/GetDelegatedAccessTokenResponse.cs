@@ -39,7 +39,12 @@ namespace Amazon.SecurityToken.Model
         private int? _packedPolicySize;
 
         /// <summary>
-        /// Gets and sets the property AssumedPrincipal.
+        /// Gets and sets the property AssumedPrincipal. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the principal that was assumed when obtaining the
+        /// delegated access token. This ARN identifies the IAM entity whose permissions are granted
+        /// by the temporary credentials.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
         public string AssumedPrincipal
@@ -70,7 +75,12 @@ namespace Amazon.SecurityToken.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PackedPolicySize.
+        /// Gets and sets the property PackedPolicySize. 
+        /// <para>
+        /// The percentage of the maximum policy size that is used by the session policy. The
+        /// policy size is calculated as the sum of all the session policies and permission boundaries
+        /// attached to the session. If the packed size exceeds 100%, the request fails.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
         public int? PackedPolicySize
