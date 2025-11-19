@@ -31,7 +31,7 @@ namespace Amazon.MediaConnect.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTagsForResource operation.
-    /// List all tags on a MediaConnect resource.
+    /// List all tags on a MediaConnect resource in the current region.
     /// </summary>
     public partial class ListTagsForResourceRequest : AmazonMediaConnectRequest
     {

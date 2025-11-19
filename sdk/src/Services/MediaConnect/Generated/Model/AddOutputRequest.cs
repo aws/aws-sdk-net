@@ -49,6 +49,8 @@ namespace Amazon.MediaConnect.Model
         private int? _port;
         private Protocol _protocol;
         private string _remoteId;
+        private State _routerIntegrationState;
+        private FlowTransitEncryption _routerIntegrationTransitEncryption;
         private int? _senderControlPort;
         private int? _smoothingLatency;
         private string _streamId;
@@ -341,6 +343,40 @@ namespace Amazon.MediaConnect.Model
         internal bool IsSetRemoteId()
         {
             return this._remoteId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RouterIntegrationState. 
+        /// <para>
+        /// Indicates whether to enable or disable router integration when creating a new flow
+        /// output.
+        /// </para>
+        /// </summary>
+        public State RouterIntegrationState
+        {
+            get { return this._routerIntegrationState; }
+            set { this._routerIntegrationState = value; }
+        }
+
+        // Check to see if RouterIntegrationState property is set
+        internal bool IsSetRouterIntegrationState()
+        {
+            return this._routerIntegrationState != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RouterIntegrationTransitEncryption.
+        /// </summary>
+        public FlowTransitEncryption RouterIntegrationTransitEncryption
+        {
+            get { return this._routerIntegrationTransitEncryption; }
+            set { this._routerIntegrationTransitEncryption = value; }
+        }
+
+        // Check to see if RouterIntegrationTransitEncryption property is set
+        internal bool IsSetRouterIntegrationTransitEncryption()
+        {
+            return this._routerIntegrationTransitEncryption != null;
         }
 
         /// <summary>

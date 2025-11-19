@@ -389,6 +389,76 @@ namespace Amazon.MediaConnect
 
 
     /// <summary>
+    /// Constants used for properties of type Day.
+    /// </summary>
+    public class Day : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FRIDAY for Day
+        /// </summary>
+        public static readonly Day FRIDAY = new Day("FRIDAY");
+        /// <summary>
+        /// Constant MONDAY for Day
+        /// </summary>
+        public static readonly Day MONDAY = new Day("MONDAY");
+        /// <summary>
+        /// Constant SATURDAY for Day
+        /// </summary>
+        public static readonly Day SATURDAY = new Day("SATURDAY");
+        /// <summary>
+        /// Constant SUNDAY for Day
+        /// </summary>
+        public static readonly Day SUNDAY = new Day("SUNDAY");
+        /// <summary>
+        /// Constant THURSDAY for Day
+        /// </summary>
+        public static readonly Day THURSDAY = new Day("THURSDAY");
+        /// <summary>
+        /// Constant TUESDAY for Day
+        /// </summary>
+        public static readonly Day TUESDAY = new Day("TUESDAY");
+        /// <summary>
+        /// Constant WEDNESDAY for Day
+        /// </summary>
+        public static readonly Day WEDNESDAY = new Day("WEDNESDAY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Day(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Day FindValue(string value)
+        {
+            return FindValue<Day>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Day(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DesiredState.
     /// </summary>
     public class DesiredState : ConstantClass
@@ -647,6 +717,56 @@ namespace Amazon.MediaConnect
 
 
     /// <summary>
+    /// Constants used for properties of type FailoverInputSourcePriorityMode.
+    /// </summary>
+    public class FailoverInputSourcePriorityMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NO_PRIORITY for FailoverInputSourcePriorityMode
+        /// </summary>
+        public static readonly FailoverInputSourcePriorityMode NO_PRIORITY = new FailoverInputSourcePriorityMode("NO_PRIORITY");
+        /// <summary>
+        /// Constant PRIMARY_SECONDARY for FailoverInputSourcePriorityMode
+        /// </summary>
+        public static readonly FailoverInputSourcePriorityMode PRIMARY_SECONDARY = new FailoverInputSourcePriorityMode("PRIMARY_SECONDARY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FailoverInputSourcePriorityMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FailoverInputSourcePriorityMode FindValue(string value)
+        {
+            return FindValue<FailoverInputSourcePriorityMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FailoverInputSourcePriorityMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type FailoverMode.
     /// </summary>
     public class FailoverMode : ConstantClass
@@ -740,6 +860,106 @@ namespace Amazon.MediaConnect
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator FlowSize(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FlowTransitEncryptionKeyType.
+    /// </summary>
+    public class FlowTransitEncryptionKeyType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AUTOMATIC for FlowTransitEncryptionKeyType
+        /// </summary>
+        public static readonly FlowTransitEncryptionKeyType AUTOMATIC = new FlowTransitEncryptionKeyType("AUTOMATIC");
+        /// <summary>
+        /// Constant SECRETS_MANAGER for FlowTransitEncryptionKeyType
+        /// </summary>
+        public static readonly FlowTransitEncryptionKeyType SECRETS_MANAGER = new FlowTransitEncryptionKeyType("SECRETS_MANAGER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FlowTransitEncryptionKeyType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FlowTransitEncryptionKeyType FindValue(string value)
+        {
+            return FindValue<FlowTransitEncryptionKeyType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FlowTransitEncryptionKeyType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ForwardErrorCorrectionState.
+    /// </summary>
+    public class ForwardErrorCorrectionState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for ForwardErrorCorrectionState
+        /// </summary>
+        public static readonly ForwardErrorCorrectionState DISABLED = new ForwardErrorCorrectionState("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for ForwardErrorCorrectionState
+        /// </summary>
+        public static readonly ForwardErrorCorrectionState ENABLED = new ForwardErrorCorrectionState("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ForwardErrorCorrectionState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ForwardErrorCorrectionState FindValue(string value)
+        {
+            return FindValue<ForwardErrorCorrectionState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ForwardErrorCorrectionState(string value)
         {
             return FindValue(value);
         }
@@ -996,6 +1216,202 @@ namespace Amazon.MediaConnect
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator MaintenanceDay(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MaintenanceScheduleType.
+    /// </summary>
+    public class MaintenanceScheduleType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant WINDOW for MaintenanceScheduleType
+        /// </summary>
+        public static readonly MaintenanceScheduleType WINDOW = new MaintenanceScheduleType("WINDOW");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MaintenanceScheduleType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MaintenanceScheduleType FindValue(string value)
+        {
+            return FindValue<MaintenanceScheduleType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MaintenanceScheduleType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MaintenanceType.
+    /// </summary>
+    public class MaintenanceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DEFAULT for MaintenanceType
+        /// </summary>
+        public static readonly MaintenanceType DEFAULT = new MaintenanceType("DEFAULT");
+        /// <summary>
+        /// Constant PREFERRED_DAY_TIME for MaintenanceType
+        /// </summary>
+        public static readonly MaintenanceType PREFERRED_DAY_TIME = new MaintenanceType("PREFERRED_DAY_TIME");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MaintenanceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MaintenanceType FindValue(string value)
+        {
+            return FindValue<MaintenanceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MaintenanceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MediaLiveInputPipelineId.
+    /// </summary>
+    public class MediaLiveInputPipelineId : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PIPELINE_0 for MediaLiveInputPipelineId
+        /// </summary>
+        public static readonly MediaLiveInputPipelineId PIPELINE_0 = new MediaLiveInputPipelineId("PIPELINE_0");
+        /// <summary>
+        /// Constant PIPELINE_1 for MediaLiveInputPipelineId
+        /// </summary>
+        public static readonly MediaLiveInputPipelineId PIPELINE_1 = new MediaLiveInputPipelineId("PIPELINE_1");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MediaLiveInputPipelineId(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MediaLiveInputPipelineId FindValue(string value)
+        {
+            return FindValue<MediaLiveInputPipelineId>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MediaLiveInputPipelineId(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MediaLiveTransitEncryptionKeyType.
+    /// </summary>
+    public class MediaLiveTransitEncryptionKeyType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AUTOMATIC for MediaLiveTransitEncryptionKeyType
+        /// </summary>
+        public static readonly MediaLiveTransitEncryptionKeyType AUTOMATIC = new MediaLiveTransitEncryptionKeyType("AUTOMATIC");
+        /// <summary>
+        /// Constant SECRETS_MANAGER for MediaLiveTransitEncryptionKeyType
+        /// </summary>
+        public static readonly MediaLiveTransitEncryptionKeyType SECRETS_MANAGER = new MediaLiveTransitEncryptionKeyType("SECRETS_MANAGER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MediaLiveTransitEncryptionKeyType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MediaLiveTransitEncryptionKeyType FindValue(string value)
+        {
+            return FindValue<MediaLiveTransitEncryptionKeyType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MediaLiveTransitEncryptionKeyType(string value)
         {
             return FindValue(value);
         }
@@ -1494,6 +1910,776 @@ namespace Amazon.MediaConnect
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ResourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RouterInputProtocol.
+    /// </summary>
+    public class RouterInputProtocol : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant RIST for RouterInputProtocol
+        /// </summary>
+        public static readonly RouterInputProtocol RIST = new RouterInputProtocol("RIST");
+        /// <summary>
+        /// Constant RTP for RouterInputProtocol
+        /// </summary>
+        public static readonly RouterInputProtocol RTP = new RouterInputProtocol("RTP");
+        /// <summary>
+        /// Constant SRT_CALLER for RouterInputProtocol
+        /// </summary>
+        public static readonly RouterInputProtocol SRT_CALLER = new RouterInputProtocol("SRT_CALLER");
+        /// <summary>
+        /// Constant SRT_LISTENER for RouterInputProtocol
+        /// </summary>
+        public static readonly RouterInputProtocol SRT_LISTENER = new RouterInputProtocol("SRT_LISTENER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RouterInputProtocol(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RouterInputProtocol FindValue(string value)
+        {
+            return FindValue<RouterInputProtocol>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RouterInputProtocol(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RouterInputState.
+    /// </summary>
+    public class RouterInputState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for RouterInputState
+        /// </summary>
+        public static readonly RouterInputState ACTIVE = new RouterInputState("ACTIVE");
+        /// <summary>
+        /// Constant CREATING for RouterInputState
+        /// </summary>
+        public static readonly RouterInputState CREATING = new RouterInputState("CREATING");
+        /// <summary>
+        /// Constant DELETING for RouterInputState
+        /// </summary>
+        public static readonly RouterInputState DELETING = new RouterInputState("DELETING");
+        /// <summary>
+        /// Constant ERROR for RouterInputState
+        /// </summary>
+        public static readonly RouterInputState ERROR = new RouterInputState("ERROR");
+        /// <summary>
+        /// Constant MIGRATING for RouterInputState
+        /// </summary>
+        public static readonly RouterInputState MIGRATING = new RouterInputState("MIGRATING");
+        /// <summary>
+        /// Constant RECOVERING for RouterInputState
+        /// </summary>
+        public static readonly RouterInputState RECOVERING = new RouterInputState("RECOVERING");
+        /// <summary>
+        /// Constant STANDBY for RouterInputState
+        /// </summary>
+        public static readonly RouterInputState STANDBY = new RouterInputState("STANDBY");
+        /// <summary>
+        /// Constant STARTING for RouterInputState
+        /// </summary>
+        public static readonly RouterInputState STARTING = new RouterInputState("STARTING");
+        /// <summary>
+        /// Constant STOPPING for RouterInputState
+        /// </summary>
+        public static readonly RouterInputState STOPPING = new RouterInputState("STOPPING");
+        /// <summary>
+        /// Constant UPDATING for RouterInputState
+        /// </summary>
+        public static readonly RouterInputState UPDATING = new RouterInputState("UPDATING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RouterInputState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RouterInputState FindValue(string value)
+        {
+            return FindValue<RouterInputState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RouterInputState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RouterInputTier.
+    /// </summary>
+    public class RouterInputTier : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INPUT_100 for RouterInputTier
+        /// </summary>
+        public static readonly RouterInputTier INPUT_100 = new RouterInputTier("INPUT_100");
+        /// <summary>
+        /// Constant INPUT_20 for RouterInputTier
+        /// </summary>
+        public static readonly RouterInputTier INPUT_20 = new RouterInputTier("INPUT_20");
+        /// <summary>
+        /// Constant INPUT_50 for RouterInputTier
+        /// </summary>
+        public static readonly RouterInputTier INPUT_50 = new RouterInputTier("INPUT_50");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RouterInputTier(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RouterInputTier FindValue(string value)
+        {
+            return FindValue<RouterInputTier>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RouterInputTier(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RouterInputTransitEncryptionKeyType.
+    /// </summary>
+    public class RouterInputTransitEncryptionKeyType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AUTOMATIC for RouterInputTransitEncryptionKeyType
+        /// </summary>
+        public static readonly RouterInputTransitEncryptionKeyType AUTOMATIC = new RouterInputTransitEncryptionKeyType("AUTOMATIC");
+        /// <summary>
+        /// Constant SECRETS_MANAGER for RouterInputTransitEncryptionKeyType
+        /// </summary>
+        public static readonly RouterInputTransitEncryptionKeyType SECRETS_MANAGER = new RouterInputTransitEncryptionKeyType("SECRETS_MANAGER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RouterInputTransitEncryptionKeyType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RouterInputTransitEncryptionKeyType FindValue(string value)
+        {
+            return FindValue<RouterInputTransitEncryptionKeyType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RouterInputTransitEncryptionKeyType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RouterInputType.
+    /// </summary>
+    public class RouterInputType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILOVER for RouterInputType
+        /// </summary>
+        public static readonly RouterInputType FAILOVER = new RouterInputType("FAILOVER");
+        /// <summary>
+        /// Constant MEDIACONNECT_FLOW for RouterInputType
+        /// </summary>
+        public static readonly RouterInputType MEDIACONNECT_FLOW = new RouterInputType("MEDIACONNECT_FLOW");
+        /// <summary>
+        /// Constant MERGE for RouterInputType
+        /// </summary>
+        public static readonly RouterInputType MERGE = new RouterInputType("MERGE");
+        /// <summary>
+        /// Constant STANDARD for RouterInputType
+        /// </summary>
+        public static readonly RouterInputType STANDARD = new RouterInputType("STANDARD");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RouterInputType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RouterInputType FindValue(string value)
+        {
+            return FindValue<RouterInputType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RouterInputType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RouterNetworkInterfaceState.
+    /// </summary>
+    public class RouterNetworkInterfaceState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for RouterNetworkInterfaceState
+        /// </summary>
+        public static readonly RouterNetworkInterfaceState ACTIVE = new RouterNetworkInterfaceState("ACTIVE");
+        /// <summary>
+        /// Constant CREATING for RouterNetworkInterfaceState
+        /// </summary>
+        public static readonly RouterNetworkInterfaceState CREATING = new RouterNetworkInterfaceState("CREATING");
+        /// <summary>
+        /// Constant DELETING for RouterNetworkInterfaceState
+        /// </summary>
+        public static readonly RouterNetworkInterfaceState DELETING = new RouterNetworkInterfaceState("DELETING");
+        /// <summary>
+        /// Constant ERROR for RouterNetworkInterfaceState
+        /// </summary>
+        public static readonly RouterNetworkInterfaceState ERROR = new RouterNetworkInterfaceState("ERROR");
+        /// <summary>
+        /// Constant RECOVERING for RouterNetworkInterfaceState
+        /// </summary>
+        public static readonly RouterNetworkInterfaceState RECOVERING = new RouterNetworkInterfaceState("RECOVERING");
+        /// <summary>
+        /// Constant UPDATING for RouterNetworkInterfaceState
+        /// </summary>
+        public static readonly RouterNetworkInterfaceState UPDATING = new RouterNetworkInterfaceState("UPDATING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RouterNetworkInterfaceState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RouterNetworkInterfaceState FindValue(string value)
+        {
+            return FindValue<RouterNetworkInterfaceState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RouterNetworkInterfaceState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RouterNetworkInterfaceType.
+    /// </summary>
+    public class RouterNetworkInterfaceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PUBLIC for RouterNetworkInterfaceType
+        /// </summary>
+        public static readonly RouterNetworkInterfaceType PUBLIC = new RouterNetworkInterfaceType("PUBLIC");
+        /// <summary>
+        /// Constant VPC for RouterNetworkInterfaceType
+        /// </summary>
+        public static readonly RouterNetworkInterfaceType VPC = new RouterNetworkInterfaceType("VPC");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RouterNetworkInterfaceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RouterNetworkInterfaceType FindValue(string value)
+        {
+            return FindValue<RouterNetworkInterfaceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RouterNetworkInterfaceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RouterOutputProtocol.
+    /// </summary>
+    public class RouterOutputProtocol : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant RIST for RouterOutputProtocol
+        /// </summary>
+        public static readonly RouterOutputProtocol RIST = new RouterOutputProtocol("RIST");
+        /// <summary>
+        /// Constant RTP for RouterOutputProtocol
+        /// </summary>
+        public static readonly RouterOutputProtocol RTP = new RouterOutputProtocol("RTP");
+        /// <summary>
+        /// Constant SRT_CALLER for RouterOutputProtocol
+        /// </summary>
+        public static readonly RouterOutputProtocol SRT_CALLER = new RouterOutputProtocol("SRT_CALLER");
+        /// <summary>
+        /// Constant SRT_LISTENER for RouterOutputProtocol
+        /// </summary>
+        public static readonly RouterOutputProtocol SRT_LISTENER = new RouterOutputProtocol("SRT_LISTENER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RouterOutputProtocol(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RouterOutputProtocol FindValue(string value)
+        {
+            return FindValue<RouterOutputProtocol>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RouterOutputProtocol(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RouterOutputRoutedState.
+    /// </summary>
+    public class RouterOutputRoutedState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ROUTED for RouterOutputRoutedState
+        /// </summary>
+        public static readonly RouterOutputRoutedState ROUTED = new RouterOutputRoutedState("ROUTED");
+        /// <summary>
+        /// Constant ROUTING for RouterOutputRoutedState
+        /// </summary>
+        public static readonly RouterOutputRoutedState ROUTING = new RouterOutputRoutedState("ROUTING");
+        /// <summary>
+        /// Constant UNROUTED for RouterOutputRoutedState
+        /// </summary>
+        public static readonly RouterOutputRoutedState UNROUTED = new RouterOutputRoutedState("UNROUTED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RouterOutputRoutedState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RouterOutputRoutedState FindValue(string value)
+        {
+            return FindValue<RouterOutputRoutedState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RouterOutputRoutedState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RouterOutputState.
+    /// </summary>
+    public class RouterOutputState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for RouterOutputState
+        /// </summary>
+        public static readonly RouterOutputState ACTIVE = new RouterOutputState("ACTIVE");
+        /// <summary>
+        /// Constant CREATING for RouterOutputState
+        /// </summary>
+        public static readonly RouterOutputState CREATING = new RouterOutputState("CREATING");
+        /// <summary>
+        /// Constant DELETING for RouterOutputState
+        /// </summary>
+        public static readonly RouterOutputState DELETING = new RouterOutputState("DELETING");
+        /// <summary>
+        /// Constant ERROR for RouterOutputState
+        /// </summary>
+        public static readonly RouterOutputState ERROR = new RouterOutputState("ERROR");
+        /// <summary>
+        /// Constant MIGRATING for RouterOutputState
+        /// </summary>
+        public static readonly RouterOutputState MIGRATING = new RouterOutputState("MIGRATING");
+        /// <summary>
+        /// Constant RECOVERING for RouterOutputState
+        /// </summary>
+        public static readonly RouterOutputState RECOVERING = new RouterOutputState("RECOVERING");
+        /// <summary>
+        /// Constant STANDBY for RouterOutputState
+        /// </summary>
+        public static readonly RouterOutputState STANDBY = new RouterOutputState("STANDBY");
+        /// <summary>
+        /// Constant STARTING for RouterOutputState
+        /// </summary>
+        public static readonly RouterOutputState STARTING = new RouterOutputState("STARTING");
+        /// <summary>
+        /// Constant STOPPING for RouterOutputState
+        /// </summary>
+        public static readonly RouterOutputState STOPPING = new RouterOutputState("STOPPING");
+        /// <summary>
+        /// Constant UPDATING for RouterOutputState
+        /// </summary>
+        public static readonly RouterOutputState UPDATING = new RouterOutputState("UPDATING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RouterOutputState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RouterOutputState FindValue(string value)
+        {
+            return FindValue<RouterOutputState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RouterOutputState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RouterOutputTier.
+    /// </summary>
+    public class RouterOutputTier : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant OUTPUT_100 for RouterOutputTier
+        /// </summary>
+        public static readonly RouterOutputTier OUTPUT_100 = new RouterOutputTier("OUTPUT_100");
+        /// <summary>
+        /// Constant OUTPUT_20 for RouterOutputTier
+        /// </summary>
+        public static readonly RouterOutputTier OUTPUT_20 = new RouterOutputTier("OUTPUT_20");
+        /// <summary>
+        /// Constant OUTPUT_50 for RouterOutputTier
+        /// </summary>
+        public static readonly RouterOutputTier OUTPUT_50 = new RouterOutputTier("OUTPUT_50");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RouterOutputTier(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RouterOutputTier FindValue(string value)
+        {
+            return FindValue<RouterOutputTier>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RouterOutputTier(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RouterOutputType.
+    /// </summary>
+    public class RouterOutputType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MEDIACONNECT_FLOW for RouterOutputType
+        /// </summary>
+        public static readonly RouterOutputType MEDIACONNECT_FLOW = new RouterOutputType("MEDIACONNECT_FLOW");
+        /// <summary>
+        /// Constant MEDIALIVE_INPUT for RouterOutputType
+        /// </summary>
+        public static readonly RouterOutputType MEDIALIVE_INPUT = new RouterOutputType("MEDIALIVE_INPUT");
+        /// <summary>
+        /// Constant STANDARD for RouterOutputType
+        /// </summary>
+        public static readonly RouterOutputType STANDARD = new RouterOutputType("STANDARD");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RouterOutputType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RouterOutputType FindValue(string value)
+        {
+            return FindValue<RouterOutputType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RouterOutputType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RoutingScope.
+    /// </summary>
+    public class RoutingScope : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant GLOBAL for RoutingScope
+        /// </summary>
+        public static readonly RoutingScope GLOBAL = new RoutingScope("GLOBAL");
+        /// <summary>
+        /// Constant REGIONAL for RoutingScope
+        /// </summary>
+        public static readonly RoutingScope REGIONAL = new RoutingScope("REGIONAL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RoutingScope(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RoutingScope FindValue(string value)
+        {
+            return FindValue<RoutingScope>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RoutingScope(string value)
         {
             return FindValue(value);
         }

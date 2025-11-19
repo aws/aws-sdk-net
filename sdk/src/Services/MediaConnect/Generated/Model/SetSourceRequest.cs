@@ -46,6 +46,8 @@ namespace Amazon.MediaConnect.Model
         private int? _minLatency;
         private string _name;
         private Protocol _protocol;
+        private State _routerIntegrationState;
+        private FlowTransitEncryption _routerIntegrationTransitDecryption;
         private int? _senderControlPort;
         private string _senderIpAddress;
         private string _sourceListenerAddress;
@@ -285,6 +287,43 @@ namespace Amazon.MediaConnect.Model
         internal bool IsSetProtocol()
         {
             return this._protocol != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RouterIntegrationState. 
+        /// <para>
+        /// Indicates whether to enable or disable router integration when setting a flow source.
+        /// </para>
+        /// </summary>
+        public State RouterIntegrationState
+        {
+            get { return this._routerIntegrationState; }
+            set { this._routerIntegrationState = value; }
+        }
+
+        // Check to see if RouterIntegrationState property is set
+        internal bool IsSetRouterIntegrationState()
+        {
+            return this._routerIntegrationState != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RouterIntegrationTransitDecryption. 
+        /// <para>
+        /// The decryption configuration for the flow source when router integration is enabled.
+        /// Specifies how the source content should be decrypted when router integration is used.
+        /// </para>
+        /// </summary>
+        public FlowTransitEncryption RouterIntegrationTransitDecryption
+        {
+            get { return this._routerIntegrationTransitDecryption; }
+            set { this._routerIntegrationTransitDecryption = value; }
+        }
+
+        // Check to see if RouterIntegrationTransitDecryption property is set
+        internal bool IsSetRouterIntegrationTransitDecryption()
+        {
+            return this._routerIntegrationTransitDecryption != null;
         }
 
         /// <summary>

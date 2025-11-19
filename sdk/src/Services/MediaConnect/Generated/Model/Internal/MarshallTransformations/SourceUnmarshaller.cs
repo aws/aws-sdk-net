@@ -66,6 +66,12 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("connectedRouterOutputArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ConnectedRouterOutputArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("dataTransferSubscriberFeePercent", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
@@ -124,6 +130,18 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PeerIpAddress = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("routerIntegrationState", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RouterIntegrationState = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("routerIntegrationTransitDecryption", targetDepth))
+                {
+                    var unmarshaller = FlowTransitEncryptionUnmarshaller.Instance;
+                    unmarshalledObject.RouterIntegrationTransitDecryption = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("senderControlPort", targetDepth))
