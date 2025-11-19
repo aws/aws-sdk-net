@@ -42,6 +42,7 @@ namespace Amazon.FSx.Model
         private string _dailyAutomaticBackupStartTime;
         private WindowsDeploymentType _deploymentType;
         private DiskIopsConfiguration _diskIopsConfiguration;
+        private WindowsFsrmConfiguration _fsrmConfiguration;
         private List<string> _maintenanceOperationsInProgress = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _preferredFileServerIp;
         private string _preferredFileServerIpv6;
@@ -228,6 +229,25 @@ namespace Amazon.FSx.Model
         internal bool IsSetDiskIopsConfiguration()
         {
             return this._diskIopsConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FsrmConfiguration. 
+        /// <para>
+        /// The File Server Resource Manager (FSRM) configuration that Amazon FSx for Windows
+        /// File Server uses for the file system. FSRM is disabled by default.
+        /// </para>
+        /// </summary>
+        public WindowsFsrmConfiguration FsrmConfiguration
+        {
+            get { return this._fsrmConfiguration; }
+            set { this._fsrmConfiguration = value; }
+        }
+
+        // Check to see if FsrmConfiguration property is set
+        internal bool IsSetFsrmConfiguration()
+        {
+            return this._fsrmConfiguration != null;
         }
 
         /// <summary>
