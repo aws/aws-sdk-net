@@ -735,7 +735,9 @@ namespace Amazon.StepFunctions.Model
         /// <summary>
         /// Gets and sets the property Timestamp. 
         /// <para>
-        /// The date and time the event occurred.
+        /// The date and time the event occurred, expressed in seconds and fractional milliseconds
+        /// since the Unix epoch, which is defined as January 1, 1970, at 00:00:00 Coordinated
+        /// Universal Time (UTC).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

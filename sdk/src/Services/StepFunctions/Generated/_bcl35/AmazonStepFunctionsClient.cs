@@ -3325,7 +3325,7 @@ namespace Amazon.StepFunctions
         /// </para>
         ///  
         /// <para>
-        ///  <c>TestState</c> doesn't support <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-activities.html">Activity
+        ///  <c>TestState</c> only supports the following when a mock is specified: <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-activities.html">Activity
         /// tasks</a>, <c>.sync</c> or <c>.waitForTaskToken</c> <a href="https://docs.aws.amazon.com/step-functions/latest/dg/connect-to-resource.html">service
         /// integration patterns</a>, <a href="https://docs.aws.amazon.com/step-functions/latest/dg/amazon-states-language-parallel-state.html">Parallel</a>,
         /// or <a href="https://docs.aws.amazon.com/step-functions/latest/dg/amazon-states-language-map-state.html">Map</a>
