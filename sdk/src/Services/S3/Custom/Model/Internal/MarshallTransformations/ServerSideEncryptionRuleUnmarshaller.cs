@@ -44,6 +44,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("BlockedEncryptionTypes", targetDepth))
+                    {
+                        rule.BlockedEncryptionTypes = BlockedEncryptionTypesUnmarshaller.Instance.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("ApplyServerSideEncryptionByDefault", targetDepth))
                     {
                         rule.ServerSideEncryptionByDefault = ServerSideEncryptionByDefaultUnmarshaller.Instance.Unmarshall(context);

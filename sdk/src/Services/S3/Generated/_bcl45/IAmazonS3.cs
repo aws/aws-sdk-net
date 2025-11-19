@@ -6288,7 +6288,7 @@ namespace Amazon.S3
         /// </para>
         ///  </note> 
         /// <para>
-        /// Deletes the tags from the bucket.
+        /// Deletes tags from the bucket.
         /// </para>
         ///  
         /// <para>
@@ -6331,7 +6331,7 @@ namespace Amazon.S3
         /// </para>
         ///  </note> 
         /// <para>
-        /// Deletes the tags from the bucket.
+        /// Deletes tags from the bucket.
         /// </para>
         ///  
         /// <para>
@@ -6375,7 +6375,7 @@ namespace Amazon.S3
         /// </para>
         ///  </note> 
         /// <para>
-        /// Deletes the tags from the bucket.
+        /// Deletes tags from the bucket.
         /// </para>
         ///  
         /// <para>
@@ -6422,7 +6422,7 @@ namespace Amazon.S3
         /// </para>
         ///  </note> 
         /// <para>
-        /// Deletes the tags from the bucket.
+        /// Deletes tags from the bucket.
         /// </para>
         ///  
         /// <para>
@@ -7329,7 +7329,13 @@ namespace Amazon.S3
         /// from a versioning-enabled bucket, you must have the <c>s3:DeleteObjectVersion</c>
         /// permission.
         /// </para>
-        ///  </li> </ul> </li> <li> 
+        ///  <note> 
+        /// <para>
+        /// If the <c>s3:DeleteObject</c> or <c>s3:DeleteObjectVersion</c> permissions are explicitly
+        /// denied in your bucket policy, attempts to delete any unversioned objects result in
+        /// a <c>403 Access Denied</c> error.
+        /// </para>
+        ///  </note> </li> </ul> </li> <li> 
         /// <para>
         ///  <b>Directory bucket permissions</b> - To grant access to this API operation on a
         /// directory bucket, we recommend that you use the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateSession.html">
@@ -7470,7 +7476,13 @@ namespace Amazon.S3
         /// from a versioning-enabled bucket, you must have the <c>s3:DeleteObjectVersion</c>
         /// permission.
         /// </para>
-        ///  </li> </ul> </li> <li> 
+        ///  <note> 
+        /// <para>
+        /// If the <c>s3:DeleteObject</c> or <c>s3:DeleteObjectVersion</c> permissions are explicitly
+        /// denied in your bucket policy, attempts to delete any unversioned objects result in
+        /// a <c>403 Access Denied</c> error.
+        /// </para>
+        ///  </note> </li> </ul> </li> <li> 
         /// <para>
         ///  <b>Directory bucket permissions</b> - To grant access to this API operation on a
         /// directory bucket, we recommend that you use the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateSession.html">
@@ -7612,7 +7624,13 @@ namespace Amazon.S3
         /// from a versioning-enabled bucket, you must have the <c>s3:DeleteObjectVersion</c>
         /// permission.
         /// </para>
-        ///  </li> </ul> </li> <li> 
+        ///  <note> 
+        /// <para>
+        /// If the <c>s3:DeleteObject</c> or <c>s3:DeleteObjectVersion</c> permissions are explicitly
+        /// denied in your bucket policy, attempts to delete any unversioned objects result in
+        /// a <c>403 Access Denied</c> error.
+        /// </para>
+        ///  </note> </li> </ul> </li> <li> 
         /// <para>
         ///  <b>Directory bucket permissions</b> - To grant access to this API operation on a
         /// directory bucket, we recommend that you use the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateSession.html">
@@ -7753,7 +7771,13 @@ namespace Amazon.S3
         /// from a versioning-enabled bucket, you must have the <c>s3:DeleteObjectVersion</c>
         /// permission.
         /// </para>
-        ///  </li> </ul> </li> <li> 
+        ///  <note> 
+        /// <para>
+        /// If the <c>s3:DeleteObject</c> or <c>s3:DeleteObjectVersion</c> permissions are explicitly
+        /// denied in your bucket policy, attempts to delete any unversioned objects result in
+        /// a <c>403 Access Denied</c> error.
+        /// </para>
+        ///  </note> </li> </ul> </li> <li> 
         /// <para>
         ///  <b>Directory bucket permissions</b> - To grant access to this API operation on a
         /// directory bucket, we recommend that you use the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateSession.html">
@@ -7897,7 +7921,13 @@ namespace Amazon.S3
         /// from a versioning-enabled bucket, you must have the <c>s3:DeleteObjectVersion</c>
         /// permission.
         /// </para>
-        ///  </li> </ul> </li> <li> 
+        ///  <note> 
+        /// <para>
+        /// If the <c>s3:DeleteObject</c> or <c>s3:DeleteObjectVersion</c> permissions are explicitly
+        /// denied in your bucket policy, attempts to delete any unversioned objects result in
+        /// a <c>403 Access Denied</c> error.
+        /// </para>
+        ///  </note> </li> </ul> </li> <li> 
         /// <para>
         ///  <b>Directory bucket permissions</b> - To grant access to this API operation on a
         /// directory bucket, we recommend that you use the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateSession.html">
@@ -8043,7 +8073,13 @@ namespace Amazon.S3
         /// from a versioning-enabled bucket, you must have the <c>s3:DeleteObjectVersion</c>
         /// permission.
         /// </para>
-        ///  </li> </ul> </li> <li> 
+        ///  <note> 
+        /// <para>
+        /// If the <c>s3:DeleteObject</c> or <c>s3:DeleteObjectVersion</c> permissions are explicitly
+        /// denied in your bucket policy, attempts to delete any unversioned objects result in
+        /// a <c>403 Access Denied</c> error.
+        /// </para>
+        ///  </note> </li> </ul> </li> <li> 
         /// <para>
         ///  <b>Directory bucket permissions</b> - To grant access to this API operation on a
         /// directory bucket, we recommend that you use the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateSession.html">
@@ -8168,7 +8204,13 @@ namespace Amazon.S3
         /// from a versioning-enabled bucket, you must specify the <c>s3:DeleteObjectVersion</c>
         /// permission.
         /// </para>
-        ///  </li> </ul> </li> <li> 
+        ///  <note> 
+        /// <para>
+        /// If the <c>s3:DeleteObject</c> or <c>s3:DeleteObjectVersion</c> permissions are explicitly
+        /// denied in your bucket policy, attempts to delete any unversioned objects result in
+        /// a <c>403 Access Denied</c> error.
+        /// </para>
+        ///  </note> </li> </ul> </li> <li> 
         /// <para>
         ///  <b>Directory bucket permissions</b> - To grant access to this API operation on a
         /// directory bucket, we recommend that you use the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateSession.html">
@@ -8314,7 +8356,13 @@ namespace Amazon.S3
         /// from a versioning-enabled bucket, you must specify the <c>s3:DeleteObjectVersion</c>
         /// permission.
         /// </para>
-        ///  </li> </ul> </li> <li> 
+        ///  <note> 
+        /// <para>
+        /// If the <c>s3:DeleteObject</c> or <c>s3:DeleteObjectVersion</c> permissions are explicitly
+        /// denied in your bucket policy, attempts to delete any unversioned objects result in
+        /// a <c>403 Access Denied</c> error.
+        /// </para>
+        ///  </note> </li> </ul> </li> <li> 
         /// <para>
         ///  <b>Directory bucket permissions</b> - To grant access to this API operation on a
         /// directory bucket, we recommend that you use the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateSession.html">
@@ -9304,12 +9352,13 @@ namespace Amazon.S3
         /// <summary>
         /// Returns the default encryption configuration for an Amazon S3 bucket. By default,
         /// all buckets have a default encryption configuration that uses server-side encryption
-        /// with Amazon S3 managed keys (SSE-S3). 
+        /// with Amazon S3 managed keys (SSE-S3). This operation also returns the <c>BucketKeyEnabled</c>
+        /// and <c>BlockedEncryptionTypes</c> statuses. 
         /// 
         ///  <note> <ul> <li> 
         /// <para>
         ///  <b>General purpose buckets</b> - For information about the bucket default encryption
-        /// feature, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html">Amazon
+        /// feature, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-encryption.html">Amazon
         /// S3 Bucket Default Encryption</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  </li> <li> 
@@ -9376,12 +9425,13 @@ namespace Amazon.S3
         /// <summary>
         /// Returns the default encryption configuration for an Amazon S3 bucket. By default,
         /// all buckets have a default encryption configuration that uses server-side encryption
-        /// with Amazon S3 managed keys (SSE-S3). 
+        /// with Amazon S3 managed keys (SSE-S3). This operation also returns the <c>BucketKeyEnabled</c>
+        /// and <c>BlockedEncryptionTypes</c> statuses. 
         /// 
         ///  <note> <ul> <li> 
         /// <para>
         ///  <b>General purpose buckets</b> - For information about the bucket default encryption
-        /// feature, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html">Amazon
+        /// feature, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-encryption.html">Amazon
         /// S3 Bucket Default Encryption</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  </li> <li> 
@@ -11725,7 +11775,7 @@ namespace Amazon.S3
         /// </para>
         ///  </note> 
         /// <para>
-        /// Returns the tag set associated with the bucket.
+        /// Returns the tag set associated with the general purpose bucket.
         /// </para>
         ///  
         /// <para>
@@ -11782,7 +11832,7 @@ namespace Amazon.S3
         /// </para>
         ///  </note> 
         /// <para>
-        /// Returns the tag set associated with the bucket.
+        /// Returns the tag set associated with the general purpose bucket.
         /// </para>
         ///  
         /// <para>
@@ -23187,7 +23237,7 @@ namespace Amazon.S3
 
         /// <summary>
         /// This operation configures default encryption and Amazon S3 Bucket Keys for an existing
-        /// bucket.
+        /// bucket. You can also block encryption types using this operation.
         /// 
         ///  <note> 
         /// <para>
@@ -23344,7 +23394,7 @@ namespace Amazon.S3
 
         /// <summary>
         /// This operation configures default encryption and Amazon S3 Bucket Keys for an existing
-        /// bucket.
+        /// bucket. You can also block encryption types using this operation.
         /// 
         ///  <note> 
         /// <para>
@@ -25733,7 +25783,7 @@ namespace Amazon.S3
         /// </para>
         ///  </note> 
         /// <para>
-        /// Sets the tags for a bucket.
+        /// Sets the tags for a general purpose bucket. 
         /// </para>
         ///  
         /// <para>
@@ -25822,7 +25872,7 @@ namespace Amazon.S3
         /// </para>
         ///  </note> 
         /// <para>
-        /// Sets the tags for a bucket.
+        /// Sets the tags for a general purpose bucket. 
         /// </para>
         ///  
         /// <para>
@@ -25911,7 +25961,7 @@ namespace Amazon.S3
         /// </para>
         ///  </note> 
         /// <para>
-        /// Sets the tags for a bucket.
+        /// Sets the tags for a general purpose bucket. 
         /// </para>
         ///  
         /// <para>
@@ -26004,7 +26054,7 @@ namespace Amazon.S3
         /// </para>
         ///  </note> 
         /// <para>
-        /// Sets the tags for a bucket.
+        /// Sets the tags for a general purpose bucket. 
         /// </para>
         ///  
         /// <para>

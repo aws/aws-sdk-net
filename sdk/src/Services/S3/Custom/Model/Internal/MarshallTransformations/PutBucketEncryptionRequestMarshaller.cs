@@ -71,6 +71,21 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                             foreach (var serverSideEncryptionRule in sseConfiguration.ServerSideEncryptionRules)
                             {
                                 xmlWriter.WriteStartElement("Rule");
+                                if (serverSideEncryptionRule.BlockedEncryptionTypes != null)
+                                {
+                                    xmlWriter.WriteStartElement("BlockedEncryptionTypes");
+                                    var serverSideEncryptionRuleBlockedEncryptionTypesEncryptionType = serverSideEncryptionRule.BlockedEncryptionTypes.EncryptionType;
+                                    if (serverSideEncryptionRuleBlockedEncryptionTypesEncryptionType != null && (serverSideEncryptionRuleBlockedEncryptionTypesEncryptionType.Count > 0 || !AWSConfigs.InitializeCollections))
+                                    {
+                                        foreach (var serverSideEncryptionRuleBlockedEncryptionTypesEncryptionTypeValue in serverSideEncryptionRuleBlockedEncryptionTypesEncryptionType)
+                                        {
+                                            xmlWriter.WriteStartElement("EncryptionType");
+                                            xmlWriter.WriteValue(serverSideEncryptionRuleBlockedEncryptionTypesEncryptionTypeValue);
+                                            xmlWriter.WriteEndElement();
+                                        }
+                                    }
+                                    xmlWriter.WriteEndElement();
+                                }
                                 if (serverSideEncryptionRule != null)
                                 {
                                     if (serverSideEncryptionRule.IsSetServerSideEncryptionByDefault())
