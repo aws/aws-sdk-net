@@ -5931,6 +5931,9 @@ namespace Amazon.NetworkFirewall
         /// </para>
         ///  </li> </ul>
         /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidTokenException">
+        /// The token you provided is stale or isn't valid for the operation.
+        /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
         /// Unable to locate a resource using the parameters that you provided.
         /// </exception>
@@ -5978,6 +5981,9 @@ namespace Amazon.NetworkFirewall
         /// isn't valid in the context of the request.
         /// </para>
         ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidTokenException">
+        /// The token you provided is stale or isn't valid for the operation.
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
         /// Unable to locate a resource using the parameters that you provided.

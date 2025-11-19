@@ -733,9 +733,17 @@ namespace Amazon.NetworkFirewall
         /// </summary>
         public static readonly PerObjectSyncStatus CAPACITY_CONSTRAINED = new PerObjectSyncStatus("CAPACITY_CONSTRAINED");
         /// <summary>
+        /// Constant DEPRECATED for PerObjectSyncStatus
+        /// </summary>
+        public static readonly PerObjectSyncStatus DEPRECATED = new PerObjectSyncStatus("DEPRECATED");
+        /// <summary>
         /// Constant IN_SYNC for PerObjectSyncStatus
         /// </summary>
         public static readonly PerObjectSyncStatus IN_SYNC = new PerObjectSyncStatus("IN_SYNC");
+        /// <summary>
+        /// Constant NOT_SUBSCRIBED for PerObjectSyncStatus
+        /// </summary>
+        public static readonly PerObjectSyncStatus NOT_SUBSCRIBED = new PerObjectSyncStatus("NOT_SUBSCRIBED");
         /// <summary>
         /// Constant PENDING for PerObjectSyncStatus
         /// </summary>
@@ -844,6 +852,10 @@ namespace Amazon.NetworkFirewall
         /// Constant AWS_MANAGED_THREAT_SIGNATURES for ResourceManagedType
         /// </summary>
         public static readonly ResourceManagedType AWS_MANAGED_THREAT_SIGNATURES = new ResourceManagedType("AWS_MANAGED_THREAT_SIGNATURES");
+        /// <summary>
+        /// Constant PARTNER_MANAGED for ResourceManagedType
+        /// </summary>
+        public static readonly ResourceManagedType PARTNER_MANAGED = new ResourceManagedType("PARTNER_MANAGED");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1370,6 +1382,56 @@ namespace Amazon.NetworkFirewall
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator StreamExceptionPolicy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SubscriptionStatus.
+    /// </summary>
+    public class SubscriptionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NOT_SUBSCRIBED for SubscriptionStatus
+        /// </summary>
+        public static readonly SubscriptionStatus NOT_SUBSCRIBED = new SubscriptionStatus("NOT_SUBSCRIBED");
+        /// <summary>
+        /// Constant SUBSCRIBED for SubscriptionStatus
+        /// </summary>
+        public static readonly SubscriptionStatus SUBSCRIBED = new SubscriptionStatus("SUBSCRIBED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SubscriptionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SubscriptionStatus FindValue(string value)
+        {
+            return FindValue<SubscriptionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SubscriptionStatus(string value)
         {
             return FindValue(value);
         }

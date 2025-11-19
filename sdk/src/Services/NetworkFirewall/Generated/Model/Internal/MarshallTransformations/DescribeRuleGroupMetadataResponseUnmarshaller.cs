@@ -70,6 +70,18 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
                     response.LastModifiedTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ListingName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ListingName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ProductId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ProductId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("RuleGroupArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -92,6 +104,12 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Type = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("VendorName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.VendorName = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

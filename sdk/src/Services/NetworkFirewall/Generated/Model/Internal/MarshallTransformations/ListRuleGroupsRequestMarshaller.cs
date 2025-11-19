@@ -93,6 +93,12 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Scope);
                 }
 
+                if(publicRequest.IsSetSubscriptionStatus())
+                {
+                    context.Writer.WritePropertyName("SubscriptionStatus");
+                    context.Writer.Write(publicRequest.SubscriptionStatus);
+                }
+
                 if(publicRequest.IsSetType())
                 {
                     context.Writer.WritePropertyName("Type");
