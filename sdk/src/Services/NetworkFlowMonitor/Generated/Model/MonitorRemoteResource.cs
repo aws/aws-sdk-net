@@ -31,11 +31,27 @@ namespace Amazon.NetworkFlowMonitor.Model
 {
     /// <summary>
     /// A remote resource is the other endpoint in a network flow. That is, one endpoint is
-    /// the local resource and the other is the remote resource. Remote resources can be a
-    /// a subnet, a VPC, an Availability Zone, an Amazon Web Services service, or an Amazon
-    /// Web Services Region.
+    /// the local resource and the other is the remote resource. The values you can specify
+    /// are the following:
     /// 
-    ///  
+    ///  <ul> <li> 
+    /// <para>
+    /// For a VPC or subnet, this identifier is the VPC Amazon Resource Name (ARN) or subnet
+    /// ARN.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// For a service, this identifier is one of the following strings: <c>S3</c> or <c>DynamoDB</c>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// For an Availability Zone, this identifier is the AZ name, for example, us-west-2b.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// For a Region, this identifier is the Region name, for example, us-west-2.
+    /// </para>
+    ///  </li> </ul> 
     /// <para>
     /// When a remote resource is an Amazon Web Services Region, Network Flow Monitor provides
     /// network performance measurements up to the edge of the Region that you specify.
