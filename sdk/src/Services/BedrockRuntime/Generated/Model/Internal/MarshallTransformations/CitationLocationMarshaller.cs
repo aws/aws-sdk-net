@@ -81,6 +81,17 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetSearchResultLocation())
+            {
+                context.Writer.WritePropertyName("searchResultLocation");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = SearchResultLocationMarshaller.Instance;
+                marshaller.Marshall(requestObject.SearchResultLocation, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetWeb())
             {
                 context.Writer.WritePropertyName("web");

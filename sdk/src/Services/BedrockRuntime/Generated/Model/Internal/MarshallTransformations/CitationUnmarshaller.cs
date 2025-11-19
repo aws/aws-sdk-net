@@ -72,6 +72,12 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
                     unmarshalledObject.Location = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("source", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Source = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("sourceContent", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<CitationSourceContent, CitationSourceContentUnmarshaller>(CitationSourceContentUnmarshaller.Instance);

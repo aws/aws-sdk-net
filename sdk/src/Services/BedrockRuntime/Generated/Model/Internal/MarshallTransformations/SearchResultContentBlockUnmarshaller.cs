@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CitationsDelta Object
+    /// Response Unmarshaller for SearchResultContentBlock Object
     /// </summary>  
-    public class CitationsDeltaUnmarshaller : IUnmarshaller<CitationsDelta, XmlUnmarshallerContext>, IUnmarshaller<CitationsDelta, JsonUnmarshallerContext>
+    public class SearchResultContentBlockUnmarshaller : IUnmarshaller<SearchResultContentBlock, XmlUnmarshallerContext>, IUnmarshaller<SearchResultContentBlock, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        CitationsDelta IUnmarshaller<CitationsDelta, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        SearchResultContentBlock IUnmarshaller<SearchResultContentBlock, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public CitationsDelta Unmarshall(JsonUnmarshallerContext context)
+        public SearchResultContentBlock Unmarshall(JsonUnmarshallerContext context)
         {
-            CitationsDelta unmarshalledObject = new CitationsDelta();
+            SearchResultContentBlock unmarshalledObject = new SearchResultContentBlock();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,28 +66,10 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("location", targetDepth))
-                {
-                    var unmarshaller = CitationLocationUnmarshaller.Instance;
-                    unmarshalledObject.Location = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("source", targetDepth))
+                if (context.TestExpression("text", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Source = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("sourceContent", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<CitationSourceContentDelta, CitationSourceContentDeltaUnmarshaller>(CitationSourceContentDeltaUnmarshaller.Instance);
-                    unmarshalledObject.SourceContent = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("title", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Title = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Text = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -95,12 +77,12 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
         }
 
 
-        private static CitationsDeltaUnmarshaller _instance = new CitationsDeltaUnmarshaller();        
+        private static SearchResultContentBlockUnmarshaller _instance = new SearchResultContentBlockUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CitationsDeltaUnmarshaller Instance
+        public static SearchResultContentBlockUnmarshaller Instance
         {
             get
             {
