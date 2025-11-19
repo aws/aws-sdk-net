@@ -38,6 +38,7 @@ namespace Amazon.Backup.Model
         private string _backupPlanArn;
         private string _backupPlanId;
         private DateTime? _creationDate;
+        private List<ScanSetting> _scanSettings = AWSConfigs.InitializeCollections ? new List<ScanSetting>() : null;
         private string _versionId;
 
         /// <summary>
@@ -113,6 +114,25 @@ namespace Amazon.Backup.Model
         internal bool IsSetCreationDate()
         {
             return this._creationDate.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ScanSettings. 
+        /// <para>
+        /// Contains your scanning configuration for the backup plan and includes the Malware
+        /// scanner, your selected resources, and scanner role.
+        /// </para>
+        /// </summary>
+        public List<ScanSetting> ScanSettings
+        {
+            get { return this._scanSettings; }
+            set { this._scanSettings = value; }
+        }
+
+        // Check to see if ScanSettings property is set
+        internal bool IsSetScanSettings()
+        {
+            return this._scanSettings != null && (this._scanSettings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

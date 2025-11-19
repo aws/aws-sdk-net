@@ -34,6 +34,7 @@ namespace Amazon.Backup.Model
     /// </summary>
     public partial class RecoveryPointByResource
     {
+        private AggregatedScanResult _aggregatedScanResult;
         private long? _backupSizeBytes;
         private string _backupVaultName;
         private DateTime? _creationDate;
@@ -48,6 +49,25 @@ namespace Amazon.Backup.Model
         private RecoveryPointStatus _status;
         private string _statusMessage;
         private VaultType _vaultType;
+
+        /// <summary>
+        /// Gets and sets the property AggregatedScanResult. 
+        /// <para>
+        /// Contains the latest scanning results against the recovery point and currently include
+        /// <c>FailedScan</c>, <c>Findings</c>, <c>LastComputed</c>.
+        /// </para>
+        /// </summary>
+        public AggregatedScanResult AggregatedScanResult
+        {
+            get { return this._aggregatedScanResult; }
+            set { this._aggregatedScanResult = value; }
+        }
+
+        // Check to see if AggregatedScanResult property is set
+        internal bool IsSetAggregatedScanResult()
+        {
+            return this._aggregatedScanResult != null;
+        }
 
         /// <summary>
         /// Gets and sets the property BackupSizeBytes. 

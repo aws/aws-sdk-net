@@ -86,6 +86,22 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetScanSettings())
+            {
+                context.Writer.WritePropertyName("ScanSettings");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectScanSettingsListValue in requestObject.ScanSettings)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ScanSettingMarshaller.Instance;
+                    marshaller.Marshall(requestObjectScanSettingsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
         }
 
         /// <summary>

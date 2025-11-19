@@ -123,6 +123,22 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.RuleName);
             }
 
+            if(requestObject.IsSetScanActions())
+            {
+                context.Writer.WritePropertyName("ScanActions");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectScanActionsListValue in requestObject.ScanActions)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ScanActionMarshaller.Instance;
+                    marshaller.Marshall(requestObjectScanActionsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetScheduleExpression())
             {
                 context.Writer.WritePropertyName("ScheduleExpression");

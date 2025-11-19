@@ -41,6 +41,7 @@ namespace Amazon.Backup.Model
         private Lifecycle _lifecycle;
         private Dictionary<string, string> _recoveryPointTags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _ruleName;
+        private List<ScanAction> _scanActions = AWSConfigs.InitializeCollections ? new List<ScanAction>() : null;
         private string _scheduleExpression;
         private string _scheduleExpressionTimezone;
         private long? _startWindowMinutes;
@@ -210,6 +211,25 @@ namespace Amazon.Backup.Model
         internal bool IsSetRuleName()
         {
             return this._ruleName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ScanActions. 
+        /// <para>
+        /// Contains your scanning configuration for the backup rule and includes the malware
+        /// scanner, and scan mode of either full or incremental.
+        /// </para>
+        /// </summary>
+        public List<ScanAction> ScanActions
+        {
+            get { return this._scanActions; }
+            set { this._scanActions = value; }
+        }
+
+        // Check to see if ScanActions property is set
+        internal bool IsSetScanActions()
+        {
+            return this._scanActions != null && (this._scanActions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -84,6 +84,12 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                     unmarshalledObject.Rules = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ScanSettings", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ScanSetting, ScanSettingUnmarshaller>(ScanSettingUnmarshaller.Instance);
+                    unmarshalledObject.ScanSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

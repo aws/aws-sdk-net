@@ -2182,6 +2182,59 @@ namespace Amazon.Backup
 
         #endregion
         
+        #region  DescribeScanJob
+
+
+        /// <summary>
+        /// Returns scan job details for the specified ScanJobID.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeScanJob service method.</param>
+        /// 
+        /// <returns>The response from the DescribeScanJob service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
+        /// Indicates that a required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DescribeScanJob">REST API Reference for DescribeScanJob Operation</seealso>
+        DescribeScanJobResponse DescribeScanJob(DescribeScanJobRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeScanJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeScanJob operation on AmazonBackupClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeScanJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DescribeScanJob">REST API Reference for DescribeScanJob Operation</seealso>
+        IAsyncResult BeginDescribeScanJob(DescribeScanJobRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeScanJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeScanJob.</param>
+        /// 
+        /// <returns>Returns a  DescribeScanJobResult from Backup.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DescribeScanJob">REST API Reference for DescribeScanJob Operation</seealso>
+        DescribeScanJobResponse EndDescribeScanJob(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DisassociateBackupVaultMpaApprovalTeam
 
 
@@ -4514,6 +4567,102 @@ namespace Amazon.Backup
 
         #endregion
         
+        #region  ListScanJobs
+
+
+        /// <summary>
+        /// Returns a list of existing scan jobs for an authenticated account for the last 30
+        /// days.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListScanJobs service method.</param>
+        /// 
+        /// <returns>The response from the ListScanJobs service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListScanJobs">REST API Reference for ListScanJobs Operation</seealso>
+        ListScanJobsResponse ListScanJobs(ListScanJobsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListScanJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListScanJobs operation on AmazonBackupClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListScanJobs
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListScanJobs">REST API Reference for ListScanJobs Operation</seealso>
+        IAsyncResult BeginListScanJobs(ListScanJobsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListScanJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListScanJobs.</param>
+        /// 
+        /// <returns>Returns a  ListScanJobsResult from Backup.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListScanJobs">REST API Reference for ListScanJobs Operation</seealso>
+        ListScanJobsResponse EndListScanJobs(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListScanJobSummaries
+
+
+        /// <summary>
+        /// This is a request for a summary of scan jobs created or running within the most recent
+        /// 30 days.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListScanJobSummaries service method.</param>
+        /// 
+        /// <returns>The response from the ListScanJobSummaries service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListScanJobSummaries">REST API Reference for ListScanJobSummaries Operation</seealso>
+        ListScanJobSummariesResponse ListScanJobSummaries(ListScanJobSummariesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListScanJobSummaries operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListScanJobSummaries operation on AmazonBackupClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListScanJobSummaries
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListScanJobSummaries">REST API Reference for ListScanJobSummaries Operation</seealso>
+        IAsyncResult BeginListScanJobSummaries(ListScanJobSummariesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListScanJobSummaries operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListScanJobSummaries.</param>
+        /// 
+        /// <returns>Returns a  ListScanJobSummariesResult from Backup.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListScanJobSummaries">REST API Reference for ListScanJobSummaries Operation</seealso>
+        ListScanJobSummariesResponse EndListScanJobSummaries(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListTags
 
 
@@ -5170,6 +5319,67 @@ namespace Amazon.Backup
         /// <returns>Returns a  StartRestoreJobResult from Backup.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/StartRestoreJob">REST API Reference for StartRestoreJob Operation</seealso>
         StartRestoreJobResponse EndStartRestoreJob(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  StartScanJob
+
+
+        /// <summary>
+        /// Starts scanning jobs for specific resources.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartScanJob service method.</param>
+        /// 
+        /// <returns>The response from the StartScanJob service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a parameter
+        /// is of the wrong type.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.LimitExceededException">
+        /// A limit in the request has been exceeded; for example, a maximum number of items allowed
+        /// in a request.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
+        /// Indicates that a required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/StartScanJob">REST API Reference for StartScanJob Operation</seealso>
+        StartScanJobResponse StartScanJob(StartScanJobRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartScanJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartScanJob operation on AmazonBackupClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartScanJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/StartScanJob">REST API Reference for StartScanJob Operation</seealso>
+        IAsyncResult BeginStartScanJob(StartScanJobRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartScanJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartScanJob.</param>
+        /// 
+        /// <returns>Returns a  StartScanJobResult from Backup.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/StartScanJob">REST API Reference for StartScanJob Operation</seealso>
+        StartScanJobResponse EndStartScanJob(IAsyncResult asyncResult);
 
         #endregion
         
