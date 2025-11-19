@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// AccountGrouping Marshaller
+    /// StringSearch Marshaller
     /// </summary>
-    public class AccountGroupingMarshaller : IRequestMarshaller<AccountGrouping, JsonMarshallerContext> 
+    public class StringSearchMarshaller : IRequestMarshaller<StringSearch, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,31 +42,20 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(AccountGrouping requestObject, JsonMarshallerContext context)
+        public void Marshall(StringSearch requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetAutoAssociate())
+            if(requestObject.IsSetSearchOption())
             {
-                context.Writer.WritePropertyName("AutoAssociate");
-                context.Writer.WriteBooleanValue(requestObject.AutoAssociate.Value);
+                context.Writer.WritePropertyName("SearchOption");
+                context.Writer.WriteStringValue(requestObject.SearchOption);
             }
 
-            if(requestObject.IsSetLinkedAccountIds())
+            if(requestObject.IsSetSearchValue())
             {
-                context.Writer.WritePropertyName("LinkedAccountIds");
-                context.Writer.WriteStartArray();
-                foreach(var requestObjectLinkedAccountIdsListValue in requestObject.LinkedAccountIds)
-                {
-                        context.Writer.WriteStringValue(requestObjectLinkedAccountIdsListValue);
-                }
-                context.Writer.WriteEndArray();
-            }
-
-            if(requestObject.IsSetResponsibilityTransferArn())
-            {
-                context.Writer.WritePropertyName("ResponsibilityTransferArn");
-                context.Writer.WriteStringValue(requestObject.ResponsibilityTransferArn);
+                context.Writer.WritePropertyName("SearchValue");
+                context.Writer.WriteStringValue(requestObject.SearchValue);
             }
 
         }
@@ -74,7 +63,7 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static AccountGroupingMarshaller Instance = new AccountGroupingMarshaller();
+        public readonly static StringSearchMarshaller Instance = new StringSearchMarshaller();
 
     }
 }

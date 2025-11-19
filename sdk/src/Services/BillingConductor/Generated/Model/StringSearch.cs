@@ -30,49 +30,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BillingConductor.Model
 {
     /// <summary>
-    /// Specifies if the billing group has the following features enabled.
+    /// A structure that defines string search parameters.
     /// </summary>
-    public partial class ListBillingGroupAccountGrouping
+    public partial class StringSearch
     {
-        private bool? _autoAssociate;
-        private string _responsibilityTransferArn;
+        private SearchOption _searchOption;
+        private string _searchValue;
 
         /// <summary>
-        /// Gets and sets the property AutoAssociate. 
+        /// Gets and sets the property SearchOption. 
         /// <para>
-        /// Specifies if this billing group will automatically associate newly added Amazon Web
-        /// Services accounts that join your consolidated billing family.
+        ///  The search option to be applied when performing the string search. 
         /// </para>
         /// </summary>
-        public bool? AutoAssociate
+        [AWSProperty(Required=true)]
+        public SearchOption SearchOption
         {
-            get { return this._autoAssociate; }
-            set { this._autoAssociate = value; }
+            get { return this._searchOption; }
+            set { this._searchOption = value; }
         }
 
-        // Check to see if AutoAssociate property is set
-        internal bool IsSetAutoAssociate()
+        // Check to see if SearchOption property is set
+        internal bool IsSetSearchOption()
         {
-            return this._autoAssociate.HasValue; 
+            return this._searchOption != null;
         }
 
         /// <summary>
-        /// Gets and sets the property ResponsibilityTransferArn. 
+        /// Gets and sets the property SearchValue. 
         /// <para>
-        ///  The Amazon Resource Name (ARN) that identifies the transfer relationship for the
-        /// billing group. 
+        ///  The value to search for within the specified string field. 
         /// </para>
         /// </summary>
-        public string ResponsibilityTransferArn
+        [AWSProperty(Required=true, Min=1, Max=128)]
+        public string SearchValue
         {
-            get { return this._responsibilityTransferArn; }
-            set { this._responsibilityTransferArn = value; }
+            get { return this._searchValue; }
+            set { this._searchValue = value; }
         }
 
-        // Check to see if ResponsibilityTransferArn property is set
-        internal bool IsSetResponsibilityTransferArn()
+        // Check to see if SearchValue property is set
+        internal bool IsSetSearchValue()
         {
-            return this._responsibilityTransferArn != null;
+            return this._searchValue != null;
         }
 
     }

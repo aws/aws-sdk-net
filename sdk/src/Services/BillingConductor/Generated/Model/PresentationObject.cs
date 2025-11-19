@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BillingConductor.Model
 {
     /// <summary>
-    /// The presentation configuration of the custom line item
+    /// An object that defines how custom line item charges are presented in the bill, containing
+    /// specifications for service presentation.
     /// </summary>
     public partial class PresentationObject
     {
@@ -39,7 +40,9 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property Service. 
         /// <para>
-        /// This defines the service of where the custom line item is presented
+        ///  The service under which the custom line item charges will be presented. Must be a
+        /// string between 1 and 128 characters matching the pattern "<c>^[a-zA-Z0-9]+$</c>".
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
