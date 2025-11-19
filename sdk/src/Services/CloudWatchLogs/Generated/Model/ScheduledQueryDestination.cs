@@ -43,7 +43,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property DestinationIdentifier. 
         /// <para>
-        /// The destination identifier (S3 URI or EventBridge ARN).
+        /// The destination identifier (S3 URI).
         /// </para>
         /// </summary>
         public string DestinationIdentifier
@@ -61,7 +61,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property DestinationType. 
         /// <para>
-        /// The type of destination (S3 or EVENTBRIDGE).
+        /// The type of destination (S3).
         /// </para>
         /// </summary>
         public ScheduledQueryDestinationType DestinationType
@@ -97,7 +97,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property ProcessedIdentifier. 
         /// <para>
-        /// The processed identifier returned for the destination (S3 key or event ID).
+        /// The processed identifier returned for the destination (S3 key).
         /// </para>
         /// </summary>
         public string ProcessedIdentifier
