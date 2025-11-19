@@ -57,6 +57,7 @@ namespace Amazon.Backup.Model
         private string _resourceArn;
         private string _resourceName;
         private string _resourceType;
+        private List<ScanResult> _scanResults = AWSConfigs.InitializeCollections ? new List<ScanResult>() : null;
         private string _sourceBackupVaultArn;
         private RecoveryPointStatus _status;
         private string _statusMessage;
@@ -526,6 +527,32 @@ namespace Amazon.Backup.Model
         internal bool IsSetResourceType()
         {
             return this._resourceType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ScanResults. 
+        /// <para>
+        /// Contains the latest scanning results against the recovery point and currently include
+        /// <c>MalwareScanner</c>, <c>ScanJobState</c>, <c>Findings</c>, and <c>LastScanTimestamp</c>
+        /// 
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=0, Max=5)]
+        public List<ScanResult> ScanResults
+        {
+            get { return this._scanResults; }
+            set { this._scanResults = value; }
+        }
+
+        // Check to see if ScanResults property is set
+        internal bool IsSetScanResults()
+        {
+            return this._scanResults != null && (this._scanResults.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -278,6 +278,26 @@ namespace Amazon.Backup.Model
         IListRestoreTestingSelectionsPaginator ListRestoreTestingSelections(ListRestoreTestingSelectionsRequest request);
 
         /// <summary>
+        /// Paginator for ListScanJobs operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListScanJobsPaginator ListScanJobs(ListScanJobsRequest request);
+
+        /// <summary>
+        /// Paginator for ListScanJobSummaries operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListScanJobSummariesPaginator ListScanJobSummaries(ListScanJobSummariesRequest request);
+
+        /// <summary>
         /// Paginator for ListTags operation
         ///</summary>
         [AWSPaginator(

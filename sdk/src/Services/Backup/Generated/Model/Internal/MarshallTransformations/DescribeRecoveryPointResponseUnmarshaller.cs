@@ -190,6 +190,12 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                     response.ResourceType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("ScanResults", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<ScanResult, ScanResultUnmarshaller>(ScanResultUnmarshaller.Instance);
+                    response.ScanResults = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("SourceBackupVaultArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -2148,6 +2148,52 @@ namespace Amazon.Backup
         }
         #endregion
         
+        #region  DescribeScanJob
+
+        internal virtual DescribeScanJobResponse DescribeScanJob(DescribeScanJobRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeScanJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeScanJobResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeScanJobResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns scan job details for the specified ScanJobID.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeScanJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeScanJob service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
+        /// Indicates that a required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DescribeScanJob">REST API Reference for DescribeScanJob Operation</seealso>
+        public virtual Task<DescribeScanJobResponse> DescribeScanJobAsync(DescribeScanJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeScanJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeScanJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeScanJobResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  DisassociateBackupVaultMpaApprovalTeam
 
         internal virtual DisassociateBackupVaultMpaApprovalTeamResponse DisassociateBackupVaultMpaApprovalTeam(DisassociateBackupVaultMpaApprovalTeamRequest request)
@@ -4172,6 +4218,88 @@ namespace Amazon.Backup
         }
         #endregion
         
+        #region  ListScanJobs
+
+        internal virtual ListScanJobsResponse ListScanJobs(ListScanJobsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListScanJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListScanJobsResponseUnmarshaller.Instance;
+
+            return Invoke<ListScanJobsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns a list of existing scan jobs for an authenticated account for the last 30
+        /// days.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListScanJobs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListScanJobs service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListScanJobs">REST API Reference for ListScanJobs Operation</seealso>
+        public virtual Task<ListScanJobsResponse> ListScanJobsAsync(ListScanJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListScanJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListScanJobsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListScanJobsResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  ListScanJobSummaries
+
+        internal virtual ListScanJobSummariesResponse ListScanJobSummaries(ListScanJobSummariesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListScanJobSummariesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListScanJobSummariesResponseUnmarshaller.Instance;
+
+            return Invoke<ListScanJobSummariesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// This is a request for a summary of scan jobs created or running within the most recent
+        /// 30 days.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListScanJobSummaries service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListScanJobSummaries service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListScanJobSummaries">REST API Reference for ListScanJobSummaries Operation</seealso>
+        public virtual Task<ListScanJobSummariesResponse> ListScanJobSummariesAsync(ListScanJobSummariesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListScanJobSummariesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListScanJobSummariesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListScanJobSummariesResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  ListTags
 
         internal virtual ListTagsResponse ListTags(ListTagsRequest request)
@@ -4751,6 +4879,60 @@ namespace Amazon.Backup
             options.ResponseUnmarshaller = StartRestoreJobResponseUnmarshaller.Instance;
 
             return InvokeAsync<StartRestoreJobResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  StartScanJob
+
+        internal virtual StartScanJobResponse StartScanJob(StartScanJobRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartScanJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartScanJobResponseUnmarshaller.Instance;
+
+            return Invoke<StartScanJobResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Starts scanning jobs for specific resources.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartScanJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartScanJob service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a parameter
+        /// is of the wrong type.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.LimitExceededException">
+        /// A limit in the request has been exceeded; for example, a maximum number of items allowed
+        /// in a request.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
+        /// Indicates that a required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/StartScanJob">REST API Reference for StartScanJob Operation</seealso>
+        public virtual Task<StartScanJobResponse> StartScanJobAsync(StartScanJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartScanJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartScanJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartScanJobResponse>(request, options, cancellationToken);
         }
         #endregion
         

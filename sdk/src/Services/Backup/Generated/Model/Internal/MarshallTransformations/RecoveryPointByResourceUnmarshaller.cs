@@ -56,6 +56,12 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("AggregatedScanResult", targetDepth))
+                {
+                    var unmarshaller = AggregatedScanResultUnmarshaller.Instance;
+                    unmarshalledObject.AggregatedScanResult = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("BackupSizeBytes", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;

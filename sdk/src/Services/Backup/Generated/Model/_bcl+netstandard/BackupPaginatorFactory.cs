@@ -237,6 +237,22 @@ namespace Amazon.Backup.Model
         }
 
         /// <summary>
+        /// Paginator for ListScanJobs operation
+        ///</summary>
+        public IListScanJobsPaginator ListScanJobs(ListScanJobsRequest request) 
+        {
+            return new ListScanJobsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListScanJobSummaries operation
+        ///</summary>
+        public IListScanJobSummariesPaginator ListScanJobSummaries(ListScanJobSummariesRequest request) 
+        {
+            return new ListScanJobSummariesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListTags operation
         ///</summary>
         public IListTagsPaginator ListTags(ListTagsRequest request) 

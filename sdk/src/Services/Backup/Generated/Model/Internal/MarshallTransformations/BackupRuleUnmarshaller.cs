@@ -104,6 +104,12 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                     unmarshalledObject.RuleName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("ScanActions", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<ScanAction, ScanActionUnmarshaller>(ScanActionUnmarshaller.Instance);
+                    unmarshalledObject.ScanActions = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("ScheduleExpression", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
