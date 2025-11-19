@@ -6316,41 +6316,13 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
-        [Description("{Endpoint=https://dynamodb.eu-west-1.api.aws, Region=eu-west-1}")]
+        [Description("{Endpoint=https://dynamodb.us-east-1.api.aws, Region=us-east-1}")]
         [ExpectedException(typeof(AmazonClientException), @"Endpoint override is not supported for dual-stack endpoints. Please enable dual-stack functionality by enabling the configuration. For more details, see: https://docs.aws.amazon.com/sdkref/latest/guide/feature-endpoints.html")]
-        public void Endpointhttpsdynamodbeuwest1apiaws_Regioneuwest1_Test()
+        public void Endpointhttpsdynamodbuseast1apiaws_Regionuseast1_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
-            parameters["Endpoint"] = "https://dynamodb.eu-west-1.api.aws";
-            parameters["Region"] = "eu-west-1";
-            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("DynamoDBv2")]
-        [Description("{Endpoint=https://dynamodb.us-west-2.api.aws, Region=us-west-2}")]
-        [ExpectedException(typeof(AmazonClientException), @"Endpoint override is not supported for dual-stack endpoints. Please enable dual-stack functionality by enabling the configuration. For more details, see: https://docs.aws.amazon.com/sdkref/latest/guide/feature-endpoints.html")]
-        public void Endpointhttpsdynamodbuswest2apiaws_Regionuswest2_Test()
-        {
-            var parameters = new DynamoDBEndpointParameters();
-            parameters["Endpoint"] = "https://dynamodb.us-west-2.api.aws";
-            parameters["Region"] = "us-west-2";
-            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("DynamoDBv2")]
-        [Description("{Endpoint=https://dynamodb.cn-north-1.api.amazonwebservices.com.cn, Region=cn-north-1}")]
-        [ExpectedException(typeof(AmazonClientException), @"Endpoint override is not supported for dual-stack endpoints. Please enable dual-stack functionality by enabling the configuration. For more details, see: https://docs.aws.amazon.com/sdkref/latest/guide/feature-endpoints.html")]
-        public void Endpointhttpsdynamodbcnnorth1apiamazonwebservicescomcn_Regioncnnorth1_Test()
-        {
-            var parameters = new DynamoDBEndpointParameters();
-            parameters["Endpoint"] = "https://dynamodb.cn-north-1.api.amazonwebservices.com.cn";
-            parameters["Region"] = "cn-north-1";
+            parameters["Endpoint"] = "https://dynamodb.us-east-1.api.aws";
+            parameters["Region"] = "us-east-1";
             var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
         }
 
@@ -6372,13 +6344,13 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
-        [Description("{Endpoint=https://dynamodb.us-east-1.api.aws, Region=us-east-1}")]
+        [Description("{Endpoint=https://dynamodb.cn-north-1.api.amazonwebservices.com.cn, Region=cn-north-1}")]
         [ExpectedException(typeof(AmazonClientException), @"Endpoint override is not supported for dual-stack endpoints. Please enable dual-stack functionality by enabling the configuration. For more details, see: https://docs.aws.amazon.com/sdkref/latest/guide/feature-endpoints.html")]
-        public void Endpointhttpsdynamodbuseast1apiaws_Regionuseast1_Test()
+        public void Endpointhttpsdynamodbcnnorth1apiamazonwebservicescomcn_Regioncnnorth1_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
-            parameters["Endpoint"] = "https://dynamodb.us-east-1.api.aws";
-            parameters["Region"] = "us-east-1";
+            parameters["Endpoint"] = "https://dynamodb.cn-north-1.api.amazonwebservices.com.cn";
+            parameters["Region"] = "cn-north-1";
             var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
         }
 
@@ -6386,14 +6358,28 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
-        [Description("{Endpoint=https://111111111111.ddb.us-east-1.api.aws, Region=us-east-1}")]
-        public void Endpointhttps111111111111ddbuseast1apiaws_Regionuseast1_Test()
+        [Description("{Endpoint=https://dynamodb.us-west-2.api.aws, Region=us-west-2}")]
+        [ExpectedException(typeof(AmazonClientException), @"Endpoint override is not supported for dual-stack endpoints. Please enable dual-stack functionality by enabling the configuration. For more details, see: https://docs.aws.amazon.com/sdkref/latest/guide/feature-endpoints.html")]
+        public void Endpointhttpsdynamodbuswest2apiaws_Regionuswest2_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
-            parameters["Endpoint"] = "https://111111111111.ddb.us-east-1.api.aws";
-            parameters["Region"] = "us-east-1";
+            parameters["Endpoint"] = "https://dynamodb.us-west-2.api.aws";
+            parameters["Region"] = "us-west-2";
             var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://111111111111.ddb.us-east-1.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("DynamoDBv2")]
+        [Description("{Endpoint=https://dynamodb.eu-west-1.api.aws, Region=eu-west-1}")]
+        [ExpectedException(typeof(AmazonClientException), @"Endpoint override is not supported for dual-stack endpoints. Please enable dual-stack functionality by enabling the configuration. For more details, see: https://docs.aws.amazon.com/sdkref/latest/guide/feature-endpoints.html")]
+        public void Endpointhttpsdynamodbeuwest1apiaws_Regioneuwest1_Test()
+        {
+            var parameters = new DynamoDBEndpointParameters();
+            parameters["Endpoint"] = "https://dynamodb.eu-west-1.api.aws";
+            parameters["Region"] = "eu-west-1";
+            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
         }
 
         [TestMethod]
@@ -6408,6 +6394,20 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["Region"] = "us-east-1";
             var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://vpce-1a2b3c4d-5e6f.dynamodb.us-east-1.vpce.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("DynamoDBv2")]
+        [Description("{Endpoint=https://111111111111.ddb.us-east-1.api.aws, Region=us-east-1}")]
+        public void Endpointhttps111111111111ddbuseast1apiaws_Regionuseast1_Test()
+        {
+            var parameters = new DynamoDBEndpointParameters();
+            parameters["Endpoint"] = "https://111111111111.ddb.us-east-1.api.aws";
+            parameters["Region"] = "us-east-1";
+            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://111111111111.ddb.us-east-1.api.aws", endpoint.URL);
         }
 
     }

@@ -66,7 +66,7 @@ namespace Amazon.DynamoDBv2.Model
         /// The key schema for the global secondary index.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=2)]
+        [AWSProperty(Required=true, Min=1)]
         public List<KeySchemaElement> KeySchema
         {
             get { return this._keySchema; }

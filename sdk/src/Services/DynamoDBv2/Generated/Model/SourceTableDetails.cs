@@ -100,7 +100,7 @@ namespace Amazon.DynamoDBv2.Model
         /// Schema of the table. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=2)]
+        [AWSProperty(Required=true, Min=1)]
         public List<KeySchemaElement> KeySchema
         {
             get { return this._keySchema; }

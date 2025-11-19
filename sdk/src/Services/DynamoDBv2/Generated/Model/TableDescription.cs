@@ -391,7 +391,7 @@ namespace Amazon.DynamoDBv2.Model
         /// Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=2)]
+        [AWSProperty(Min=1)]
         public List<KeySchemaElement> KeySchema
         {
             get { return this._keySchema; }
