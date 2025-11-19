@@ -35,6 +35,7 @@ namespace Amazon.AWSHealth.Model
     /// </summary>
     public partial class OrganizationEventFilter
     {
+        private List<string> _actionabilities = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _awsAccountIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private DateTimeRange _endTime;
         private List<string> _entityArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
@@ -43,9 +44,31 @@ namespace Amazon.AWSHealth.Model
         private List<string> _eventTypeCategories = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _eventTypeCodes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private DateTimeRange _lastUpdatedTime;
+        private List<string> _personas = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _regions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _services = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private DateTimeRange _startTime;
+
+        /// <summary>
+        /// Gets and sets the property Actionabilities. 
+        /// <para>
+        /// A list of actionability values to filter events. Use this to filter events based on
+        /// whether they require action (<c>ACTION_REQUIRED</c>), may require action (<c>ACTION_MAY_BE_REQUIRED</c>)
+        /// or are informational (<c>INFORMATIONAL</c>).
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=3)]
+        public List<string> Actionabilities
+        {
+            get { return this._actionabilities; }
+            set { this._actionabilities = value; }
+        }
+
+        // Check to see if Actionabilities property is set
+        internal bool IsSetActionabilities()
+        {
+            return this._actionabilities != null && (this._actionabilities.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property AwsAccountIds. 
@@ -194,6 +217,26 @@ namespace Amazon.AWSHealth.Model
         internal bool IsSetLastUpdatedTime()
         {
             return this._lastUpdatedTime != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Personas. 
+        /// <para>
+        /// A list of persona values to filter events. Use this to filter events based on their
+        /// target audience: <c>OPERATIONS</c>, <c>SECURITY</c>, or <c>BILLING</c>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=3)]
+        public List<string> Personas
+        {
+            get { return this._personas; }
+            set { this._personas = value; }
+        }
+
+        // Check to see if Personas property is set
+        internal bool IsSetPersonas()
+        {
+            return this._personas != null && (this._personas.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

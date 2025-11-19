@@ -50,9 +50,35 @@ namespace Amazon.AWSHealth.Model
     /// </summary>
     public partial class EventType
     {
+        private EventTypeActionability _actionability;
         private EventTypeCategory _category;
         private string _code;
+        private List<string> _personas = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _service;
+
+        /// <summary>
+        /// Gets and sets the property Actionability. 
+        /// <para>
+        /// The actionability classification of the event. Possible values are <c>ACTION_REQUIRED</c>,
+        /// <c>ACTION_MAY_BE_REQUIRED</c> and <c>INFORMATIONAL</c>. Events with <c>ACTION_REQUIRED</c>
+        /// actionability require customer action to resolve or mitigate the event. Events with
+        /// <c>ACTION_MAY_BE_REQUIRED</c> actionability indicates that the current status is unknown
+        /// or conditional and inspection is needed to determine if action is required. Events
+        /// with <c>INFORMATIONAL</c> actionability are provided for awareness and do not require
+        /// immediate action.
+        /// </para>
+        /// </summary>
+        public EventTypeActionability Actionability
+        {
+            get { return this._actionability; }
+            set { this._actionability = value; }
+        }
+
+        // Check to see if Actionability property is set
+        internal bool IsSetActionability()
+        {
+            return this._actionability != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Category. 
@@ -93,6 +119,28 @@ namespace Amazon.AWSHealth.Model
         internal bool IsSetCode()
         {
             return this._code != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Personas. 
+        /// <para>
+        /// A list of persona classifications that indicate the target audience for the event.
+        /// Possible values are <c>OPERATIONS</c>, <c>SECURITY</c>, and <c>BILLING</c>. Events
+        /// can be associated with multiple personas to indicate relevance to different teams
+        /// or roles within an organization.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=3)]
+        public List<string> Personas
+        {
+            get { return this._personas; }
+            set { this._personas = value; }
+        }
+
+        // Check to see if Personas property is set
+        internal bool IsSetPersonas()
+        {
+            return this._personas != null && (this._personas.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

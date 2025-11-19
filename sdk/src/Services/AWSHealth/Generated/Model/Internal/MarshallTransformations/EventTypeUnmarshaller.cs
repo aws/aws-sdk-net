@@ -66,6 +66,12 @@ namespace Amazon.AWSHealth.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("actionability", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Actionability = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("category", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -76,6 +82,12 @@ namespace Amazon.AWSHealth.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Code = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("personas", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.Personas = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("service", targetDepth))
