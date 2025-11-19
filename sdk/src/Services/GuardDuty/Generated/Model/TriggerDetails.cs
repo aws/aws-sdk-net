@@ -36,6 +36,7 @@ namespace Amazon.GuardDuty.Model
     {
         private string _description;
         private string _guardDutyFindingId;
+        private TriggerType _triggerType;
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -73,6 +74,24 @@ namespace Amazon.GuardDuty.Model
         internal bool IsSetGuardDutyFindingId()
         {
             return this._guardDutyFindingId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TriggerType. 
+        /// <para>
+        /// Specifies the trigger type that started the malware scan.
+        /// </para>
+        /// </summary>
+        public TriggerType TriggerType
+        {
+            get { return this._triggerType; }
+            set { this._triggerType = value; }
+        }
+
+        // Check to see if TriggerType property is set
+        internal bool IsSetTriggerType()
+        {
+            return this._triggerType != null;
         }
 
     }

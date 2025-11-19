@@ -109,6 +109,14 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
+        /// Paginator for ListMalwareScans operation
+        ///</summary>
+        public IListMalwareScansPaginator ListMalwareScans(ListMalwareScansRequest request) 
+        {
+            return new ListMalwareScansPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListMembers operation
         ///</summary>
         public IListMembersPaginator ListMembers(ListMembersRequest request) 
