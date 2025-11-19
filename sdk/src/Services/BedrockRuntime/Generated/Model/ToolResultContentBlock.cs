@@ -38,6 +38,7 @@ namespace Amazon.BedrockRuntime.Model
         private DocumentBlock _document;
         private ImageBlock _image;
         private Amazon.Runtime.Documents.Document _json;
+        private SearchResultBlock _searchResult;
         private string _text;
         private VideoBlock _video;
 
@@ -98,6 +99,24 @@ namespace Amazon.BedrockRuntime.Model
         internal bool IsSetJson()
         {
             return !this._json.IsNull();
+        }
+
+        /// <summary>
+        /// Gets and sets the property SearchResult. 
+        /// <para>
+        /// A tool result that is a search result.
+        /// </para>
+        /// </summary>
+        public SearchResultBlock SearchResult
+        {
+            get { return this._searchResult; }
+            set { this._searchResult = value; }
+        }
+
+        // Check to see if SearchResult property is set
+        internal bool IsSetSearchResult()
+        {
+            return this._searchResult != null;
         }
 
         /// <summary>

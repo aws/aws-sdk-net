@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CitationsDelta Object
+    /// Response Unmarshaller for SearchResultBlock Object
     /// </summary>  
-    public class CitationsDeltaUnmarshaller : IJsonUnmarshaller<CitationsDelta, JsonUnmarshallerContext>
+    public class SearchResultBlockUnmarshaller : IJsonUnmarshaller<SearchResultBlock, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public CitationsDelta Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public SearchResultBlock Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            CitationsDelta unmarshalledObject = new CitationsDelta();
+            SearchResultBlock unmarshalledObject = new SearchResultBlock();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,22 +56,22 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("location", targetDepth))
+                if (context.TestExpression("citations", targetDepth))
                 {
-                    var unmarshaller = CitationLocationUnmarshaller.Instance;
-                    unmarshalledObject.Location = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = CitationsConfigUnmarshaller.Instance;
+                    unmarshalledObject.Citations = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("content", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<SearchResultContentBlock, SearchResultContentBlockUnmarshaller>(SearchResultContentBlockUnmarshaller.Instance);
+                    unmarshalledObject.Content = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("source", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Source = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("sourceContent", targetDepth))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<CitationSourceContentDelta, CitationSourceContentDeltaUnmarshaller>(CitationSourceContentDeltaUnmarshaller.Instance);
-                    unmarshalledObject.SourceContent = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("title", targetDepth))
@@ -85,12 +85,12 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
         }
 
 
-        private static CitationsDeltaUnmarshaller _instance = new CitationsDeltaUnmarshaller();        
+        private static SearchResultBlockUnmarshaller _instance = new SearchResultBlockUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CitationsDeltaUnmarshaller Instance
+        public static SearchResultBlockUnmarshaller Instance
         {
             get
             {

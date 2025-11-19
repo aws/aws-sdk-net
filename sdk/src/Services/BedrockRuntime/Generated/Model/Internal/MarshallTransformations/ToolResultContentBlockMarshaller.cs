@@ -74,6 +74,17 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
                 Amazon.Runtime.Documents.Internal.Transform.DocumentMarshaller.Instance.Write(context.Writer, requestObject.Json);
             }
 
+            if(requestObject.IsSetSearchResult())
+            {
+                context.Writer.WritePropertyName("searchResult");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SearchResultBlockMarshaller.Instance;
+                marshaller.Marshall(requestObject.SearchResult, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetText())
             {
                 context.Writer.WritePropertyName("text");
