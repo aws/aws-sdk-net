@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -12,82 +12,84 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the s3-2006-03-01.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.S3.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for SessionCredentials Object
+    /// Response Unmarshaller for StorageClassAnalysisDataExport Object
     /// </summary>  
-    public class SessionCredentialsUnmarshaller : IXmlUnmarshaller<SessionCredentials, XmlUnmarshallerContext>
+    public partial class StorageClassAnalysisDataExportUnmarshaller : IXmlUnmarshaller<StorageClassAnalysisDataExport, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public SessionCredentials Unmarshall(XmlUnmarshallerContext context)
+        public StorageClassAnalysisDataExport Unmarshall(XmlUnmarshallerContext context)
         {
-            SessionCredentials unmarshalledObject = new SessionCredentials();
+            StorageClassAnalysisDataExport unmarshalledObject = new StorageClassAnalysisDataExport();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
-
-            if (context.IsStartOfDocument)
-                targetDepth += 2;
-
+            
+            if (context.IsStartOfDocument) 
+               targetDepth += 2;
+            
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("AccessKeyId", targetDepth))
+                    if (context.TestExpression("Destination", targetDepth))
+                    {
+                        var unmarshaller = AnalyticsExportDestinationUnmarshaller.Instance;
+                        unmarshalledObject.Destination = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("OutputSchemaVersion", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.AccessKeyId = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.OutputSchemaVersion = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("Expiration", targetDepth))
-                    {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
-                        unmarshalledObject.Expiration = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("SecretAccessKey", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.SecretAccessKey = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("SessionToken", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.SessionToken = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
                     return unmarshalledObject;
                 }
-            }
+            }          
             return unmarshalledObject;
         }
 
-        private static SessionCredentialsUnmarshaller _instance = new SessionCredentialsUnmarshaller();
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, StorageClassAnalysisDataExport unmarshalledObject, int targetDepth);
+
+        private static StorageClassAnalysisDataExportUnmarshaller _instance = new StorageClassAnalysisDataExportUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SessionCredentialsUnmarshaller Instance
+        public static StorageClassAnalysisDataExportUnmarshaller Instance
         {
             get
             {
-                if (_instance == null)
-                {
-                    _instance = new SessionCredentialsUnmarshaller();
-                }
                 return _instance;
             }
         }

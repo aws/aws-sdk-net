@@ -1,4 +1,6 @@
-﻿/* 
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
@@ -10,35 +12,28 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the s3-2006-03-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// Class for AnalyticsExportDestination
+    /// This is the response object from the DeleteBucketAnalyticsConfiguration operation.
     /// </summary>
-    public class AnalyticsExportDestination
+    public partial class DeleteBucketAnalyticsConfigurationResponse : AmazonWebServiceResponse
     {
-        private AnalyticsS3BucketDestination analyticsS3BucketDestination;
 
-        /// <summary>
-        /// A destination signifying output to an S3 bucket.
-        /// </summary>
-        public AnalyticsS3BucketDestination S3BucketDestination
-        {
-            get { return this.analyticsS3BucketDestination; }
-            set { this.analyticsS3BucketDestination = value; }
-        }
-
-        // Check to see if S3BucketDestination property is set
-        internal bool IsSetS3BucketDestination()
-        {
-            return this.analyticsS3BucketDestination != null;
-        }
     }
 }

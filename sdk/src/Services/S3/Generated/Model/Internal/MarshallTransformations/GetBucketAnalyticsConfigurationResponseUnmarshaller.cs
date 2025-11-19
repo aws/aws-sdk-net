@@ -12,9 +12,17 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the s3-2006-03-01.normal.json service model.
+ */
 using System;
+using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.S3.Model;
 using Amazon.Runtime;
@@ -22,12 +30,13 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CreateSession operation
+    /// Response Unmarshaller for GetBucketAnalyticsConfiguration operation
     /// </summary>  
-    public class CreateSessionResponseUnmarshaller : S3ReponseUnmarshaller
+    public partial class GetBucketAnalyticsConfigurationResponseUnmarshaller : S3ReponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -36,27 +45,29 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
-            CreateSessionResponse response = new CreateSessionResponse();
-            UnmarshallResult(context, response);
-
+            GetBucketAnalyticsConfigurationResponse response = new GetBucketAnalyticsConfigurationResponse();
+            UnmarshallResult(context,response);
+            
+            PostUnmarshallCustomization(context, response);
             return response;
-        }
+        }        
 
-        private static void UnmarshallResult(XmlUnmarshallerContext context, CreateSessionResponse response)
+        private static void UnmarshallResult(XmlUnmarshallerContext context, GetBucketAnalyticsConfigurationResponse response)
         {
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
-            if (context.IsStartOfDocument)
-                targetDepth += 1;
-
+            if (context.IsEmptyResponse)
+            {
+                return;
+            }
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("Credentials", targetDepth))
+                    if (context.TestExpression("AnalyticsConfiguration", targetDepth))
                     {
-                        var unmarshaller = SessionCredentialsUnmarshaller.Instance;
-                        response.Credentials = unmarshaller.Unmarshall(context);
+                        var unmarshaller = AnalyticsConfigurationUnmarshaller.Instance;
+                        response.AnalyticsConfiguration = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
@@ -65,28 +76,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     return;
                 }
             }
-
-            IWebResponseData responseData = context.ResponseData;
-            if (responseData.IsHeaderPresent("x-amz-server-side-encryption"))
-            {
-                response.ServerSideEncryption = S3Transforms.ToString(responseData.GetHeaderValue("x-amz-server-side-encryption"));
-            }
-            if (responseData.IsHeaderPresent("x-amz-server-side-encryption-aws-kms-key-id"))
-            {
-                response.SSEKMSKeyId = S3Transforms.ToString(responseData.GetHeaderValue("x-amz-server-side-encryption-aws-kms-key-id"));
-            }
-            if (responseData.IsHeaderPresent("x-amz-server-side-encryption-context"))
-            {
-                response.SSEKMSEncryptionContext = S3Transforms.ToString(responseData.GetHeaderValue("x-amz-server-side-encryption-context"));
-            }
-            if (responseData.IsHeaderPresent("x-amz-server-side-encryption-bucket-key-enabled"))
-            {
-                response.BucketKeyEnabled = S3Transforms.ToBool(responseData.GetHeaderValue("x-amz-server-side-encryption-bucket-key-enabled"));
-            }
-
             return;
         }
-
+  
 
         /// <summary>
         /// Unmarshaller error response to exception.
@@ -97,7 +89,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            var errorResponse = S3ErrorResponseUnmarshaller.Instance.Unmarshall(context);
+            S3ErrorResponse errorResponse = S3ErrorResponseUnmarshaller.Instance.Unmarshall(context);
             errorResponse.InnerException = innerException;
             errorResponse.StatusCode = statusCode;
 
@@ -106,18 +98,15 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             using (var streamCopy = new MemoryStream(responseBodyBytes))
             using (var contextCopy = new XmlUnmarshallerContext(streamCopy, false, null))
             {
-                if (errorResponse.Code != null && errorResponse.Code.Equals("NoSuchBucket"))
-                {
-                    return NoSuchBucketExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
             }
-
             return base.ConstructS3Exception(context, errorResponse, innerException, statusCode);
         }
 
-        private static CreateSessionResponseUnmarshaller _instance = new CreateSessionResponseUnmarshaller();
+        partial void PostUnmarshallCustomization(XmlUnmarshallerContext context, GetBucketAnalyticsConfigurationResponse response);
 
-        internal static CreateSessionResponseUnmarshaller GetInstance()
+        private static GetBucketAnalyticsConfigurationResponseUnmarshaller _instance = new GetBucketAnalyticsConfigurationResponseUnmarshaller();        
+
+        internal static GetBucketAnalyticsConfigurationResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -125,14 +114,10 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateSessionResponseUnmarshaller Instance
+        public static GetBucketAnalyticsConfigurationResponseUnmarshaller Instance
         {
             get
             {
-                if (_instance == null)
-                {
-                    _instance = new CreateSessionResponseUnmarshaller();
-                }
                 return _instance;
             }
         }
