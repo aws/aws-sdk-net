@@ -47,6 +47,7 @@ namespace Amazon.Billing.Model
         private List<string> _arns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _billingViewTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _maxResults;
+        private List<StringSearch> _names = AWSConfigs.InitializeCollections ? new List<StringSearch>() : null;
         private string _nextToken;
         private string _ownerAccountId;
         private string _sourceAccountId;
@@ -127,6 +128,26 @@ namespace Amazon.Billing.Model
         internal bool IsSetMaxResults()
         {
             return this._maxResults.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Names. 
+        /// <para>
+        ///  Filters the list of billing views by name. You can specify search criteria to match
+        /// billing view names based on the search option provided. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1)]
+        public List<StringSearch> Names
+        {
+            get { return this._names; }
+            set { this._names = value; }
+        }
+
+        // Check to see if Names property is set
+        internal bool IsSetNames()
+        {
+            return this._names != null && (this._names.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

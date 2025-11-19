@@ -108,6 +108,22 @@ namespace Amazon.Billing.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.MaxResults);
                 }
 
+                if(publicRequest.IsSetNames())
+                {
+                    context.Writer.WritePropertyName("names");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestNamesListValue in publicRequest.Names)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = StringSearchMarshaller.Instance;
+                        marshaller.Marshall(publicRequestNamesListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetNextToken())
                 {
                     context.Writer.WritePropertyName("nextToken");
