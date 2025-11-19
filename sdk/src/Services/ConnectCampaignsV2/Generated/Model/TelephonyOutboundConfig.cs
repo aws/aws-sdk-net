@@ -37,6 +37,7 @@ namespace Amazon.ConnectCampaignsV2.Model
         private AnswerMachineDetectionConfig _answerMachineDetectionConfig;
         private string _connectContactFlowId;
         private string _connectSourcePhoneNumber;
+        private int? _ringTimeout;
 
         /// <summary>
         /// Gets and sets the property AnswerMachineDetectionConfig.
@@ -83,6 +84,22 @@ namespace Amazon.ConnectCampaignsV2.Model
         internal bool IsSetConnectSourcePhoneNumber()
         {
             return this._connectSourcePhoneNumber != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RingTimeout.
+        /// </summary>
+        [AWSProperty(Min=15, Max=60)]
+        public int RingTimeout
+        {
+            get { return this._ringTimeout.GetValueOrDefault(); }
+            set { this._ringTimeout = value; }
+        }
+
+        // Check to see if RingTimeout property is set
+        internal bool IsSetRingTimeout()
+        {
+            return this._ringTimeout.HasValue; 
         }
 
     }

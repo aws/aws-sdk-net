@@ -38,6 +38,7 @@ namespace Amazon.ConnectCampaignsV2.Model
         private Dictionary<string, string> _attributes = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _connectSourcePhoneNumber;
         private string _destinationPhoneNumber;
+        private int? _ringTimeout;
 
         /// <summary>
         /// Gets and sets the property AnswerMachineDetectionConfig.
@@ -100,6 +101,22 @@ namespace Amazon.ConnectCampaignsV2.Model
         internal bool IsSetDestinationPhoneNumber()
         {
             return this._destinationPhoneNumber != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RingTimeout.
+        /// </summary>
+        [AWSProperty(Min=15, Max=60)]
+        public int RingTimeout
+        {
+            get { return this._ringTimeout.GetValueOrDefault(); }
+            set { this._ringTimeout = value; }
+        }
+
+        // Check to see if RingTimeout property is set
+        internal bool IsSetRingTimeout()
+        {
+            return this._ringTimeout.HasValue; 
         }
 
     }
