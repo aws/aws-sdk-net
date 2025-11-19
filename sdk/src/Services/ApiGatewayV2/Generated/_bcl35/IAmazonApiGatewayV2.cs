@@ -496,6 +496,214 @@ namespace Amazon.ApiGatewayV2
 
         #endregion
         
+        #region  CreatePortal
+
+
+        /// <summary>
+        /// Creates a portal.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePortal service method.</param>
+        /// 
+        /// <returns>The response from the CreatePortal service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreatePortal">REST API Reference for CreatePortal Operation</seealso>
+        CreatePortalResponse CreatePortal(CreatePortalRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreatePortal operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreatePortal operation on AmazonApiGatewayV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreatePortal
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreatePortal">REST API Reference for CreatePortal Operation</seealso>
+        IAsyncResult BeginCreatePortal(CreatePortalRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreatePortal operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreatePortal.</param>
+        /// 
+        /// <returns>Returns a  CreatePortalResult from ApiGatewayV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreatePortal">REST API Reference for CreatePortal Operation</seealso>
+        CreatePortalResponse EndCreatePortal(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreatePortalProduct
+
+
+        /// <summary>
+        /// Creates a new portal product.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePortalProduct service method.</param>
+        /// 
+        /// <returns>The response from the CreatePortalProduct service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreatePortalProduct">REST API Reference for CreatePortalProduct Operation</seealso>
+        CreatePortalProductResponse CreatePortalProduct(CreatePortalProductRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreatePortalProduct operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreatePortalProduct operation on AmazonApiGatewayV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreatePortalProduct
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreatePortalProduct">REST API Reference for CreatePortalProduct Operation</seealso>
+        IAsyncResult BeginCreatePortalProduct(CreatePortalProductRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreatePortalProduct operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreatePortalProduct.</param>
+        /// 
+        /// <returns>Returns a  CreatePortalProductResult from ApiGatewayV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreatePortalProduct">REST API Reference for CreatePortalProduct Operation</seealso>
+        CreatePortalProductResponse EndCreatePortalProduct(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreateProductPage
+
+
+        /// <summary>
+        /// Creates a new product page for a portal product.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateProductPage service method.</param>
+        /// 
+        /// <returns>The response from the CreateProductPage service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreateProductPage">REST API Reference for CreateProductPage Operation</seealso>
+        CreateProductPageResponse CreateProductPage(CreateProductPageRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateProductPage operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateProductPage operation on AmazonApiGatewayV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateProductPage
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreateProductPage">REST API Reference for CreateProductPage Operation</seealso>
+        IAsyncResult BeginCreateProductPage(CreateProductPageRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateProductPage operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateProductPage.</param>
+        /// 
+        /// <returns>Returns a  CreateProductPageResult from ApiGatewayV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreateProductPage">REST API Reference for CreateProductPage Operation</seealso>
+        CreateProductPageResponse EndCreateProductPage(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreateProductRestEndpointPage
+
+
+        /// <summary>
+        /// Creates a product REST endpoint page for a portal product.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateProductRestEndpointPage service method.</param>
+        /// 
+        /// <returns>The response from the CreateProductRestEndpointPage service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreateProductRestEndpointPage">REST API Reference for CreateProductRestEndpointPage Operation</seealso>
+        CreateProductRestEndpointPageResponse CreateProductRestEndpointPage(CreateProductRestEndpointPageRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateProductRestEndpointPage operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateProductRestEndpointPage operation on AmazonApiGatewayV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateProductRestEndpointPage
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreateProductRestEndpointPage">REST API Reference for CreateProductRestEndpointPage Operation</seealso>
+        IAsyncResult BeginCreateProductRestEndpointPage(CreateProductRestEndpointPageRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateProductRestEndpointPage operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateProductRestEndpointPage.</param>
+        /// 
+        /// <returns>Returns a  CreateProductRestEndpointPageResult from ApiGatewayV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreateProductRestEndpointPage">REST API Reference for CreateProductRestEndpointPage Operation</seealso>
+        CreateProductRestEndpointPageResponse EndCreateProductRestEndpointPage(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateRoute
 
 
@@ -1242,6 +1450,272 @@ namespace Amazon.ApiGatewayV2
 
         #endregion
         
+        #region  DeletePortal
+
+
+        /// <summary>
+        /// Deletes a portal.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePortal service method.</param>
+        /// 
+        /// <returns>The response from the DeletePortal service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeletePortal">REST API Reference for DeletePortal Operation</seealso>
+        DeletePortalResponse DeletePortal(DeletePortalRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeletePortal operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeletePortal operation on AmazonApiGatewayV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeletePortal
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeletePortal">REST API Reference for DeletePortal Operation</seealso>
+        IAsyncResult BeginDeletePortal(DeletePortalRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeletePortal operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeletePortal.</param>
+        /// 
+        /// <returns>Returns a  DeletePortalResult from ApiGatewayV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeletePortal">REST API Reference for DeletePortal Operation</seealso>
+        DeletePortalResponse EndDeletePortal(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeletePortalProduct
+
+
+        /// <summary>
+        /// Deletes a portal product.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePortalProduct service method.</param>
+        /// 
+        /// <returns>The response from the DeletePortalProduct service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeletePortalProduct">REST API Reference for DeletePortalProduct Operation</seealso>
+        DeletePortalProductResponse DeletePortalProduct(DeletePortalProductRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeletePortalProduct operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeletePortalProduct operation on AmazonApiGatewayV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeletePortalProduct
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeletePortalProduct">REST API Reference for DeletePortalProduct Operation</seealso>
+        IAsyncResult BeginDeletePortalProduct(DeletePortalProductRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeletePortalProduct operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeletePortalProduct.</param>
+        /// 
+        /// <returns>Returns a  DeletePortalProductResult from ApiGatewayV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeletePortalProduct">REST API Reference for DeletePortalProduct Operation</seealso>
+        DeletePortalProductResponse EndDeletePortalProduct(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeletePortalProductSharingPolicy
+
+
+        /// <summary>
+        /// Deletes the sharing policy for a portal product.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePortalProductSharingPolicy service method.</param>
+        /// 
+        /// <returns>The response from the DeletePortalProductSharingPolicy service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeletePortalProductSharingPolicy">REST API Reference for DeletePortalProductSharingPolicy Operation</seealso>
+        DeletePortalProductSharingPolicyResponse DeletePortalProductSharingPolicy(DeletePortalProductSharingPolicyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeletePortalProductSharingPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeletePortalProductSharingPolicy operation on AmazonApiGatewayV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeletePortalProductSharingPolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeletePortalProductSharingPolicy">REST API Reference for DeletePortalProductSharingPolicy Operation</seealso>
+        IAsyncResult BeginDeletePortalProductSharingPolicy(DeletePortalProductSharingPolicyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeletePortalProductSharingPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeletePortalProductSharingPolicy.</param>
+        /// 
+        /// <returns>Returns a  DeletePortalProductSharingPolicyResult from ApiGatewayV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeletePortalProductSharingPolicy">REST API Reference for DeletePortalProductSharingPolicy Operation</seealso>
+        DeletePortalProductSharingPolicyResponse EndDeletePortalProductSharingPolicy(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteProductPage
+
+
+        /// <summary>
+        /// Deletes a product page of a portal product.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteProductPage service method.</param>
+        /// 
+        /// <returns>The response from the DeleteProductPage service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteProductPage">REST API Reference for DeleteProductPage Operation</seealso>
+        DeleteProductPageResponse DeleteProductPage(DeleteProductPageRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteProductPage operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteProductPage operation on AmazonApiGatewayV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteProductPage
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteProductPage">REST API Reference for DeleteProductPage Operation</seealso>
+        IAsyncResult BeginDeleteProductPage(DeleteProductPageRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteProductPage operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteProductPage.</param>
+        /// 
+        /// <returns>Returns a  DeleteProductPageResult from ApiGatewayV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteProductPage">REST API Reference for DeleteProductPage Operation</seealso>
+        DeleteProductPageResponse EndDeleteProductPage(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteProductRestEndpointPage
+
+
+        /// <summary>
+        /// Deletes a product REST endpoint page.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteProductRestEndpointPage service method.</param>
+        /// 
+        /// <returns>The response from the DeleteProductRestEndpointPage service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteProductRestEndpointPage">REST API Reference for DeleteProductRestEndpointPage Operation</seealso>
+        DeleteProductRestEndpointPageResponse DeleteProductRestEndpointPage(DeleteProductRestEndpointPageRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteProductRestEndpointPage operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteProductRestEndpointPage operation on AmazonApiGatewayV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteProductRestEndpointPage
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteProductRestEndpointPage">REST API Reference for DeleteProductRestEndpointPage Operation</seealso>
+        IAsyncResult BeginDeleteProductRestEndpointPage(DeleteProductRestEndpointPageRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteProductRestEndpointPage operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteProductRestEndpointPage.</param>
+        /// 
+        /// <returns>Returns a  DeleteProductRestEndpointPageResult from ApiGatewayV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteProductRestEndpointPage">REST API Reference for DeleteProductRestEndpointPage Operation</seealso>
+        DeleteProductRestEndpointPageResponse EndDeleteProductRestEndpointPage(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeleteRoute
 
 
@@ -1572,6 +2046,65 @@ namespace Amazon.ApiGatewayV2
         /// <returns>Returns a  DeleteVpcLinkResult from ApiGatewayV2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteVpcLink">REST API Reference for DeleteVpcLink Operation</seealso>
         DeleteVpcLinkResponse EndDeleteVpcLink(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DisablePortal
+
+
+        /// <summary>
+        /// Deletes the publication of a portal portal.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisablePortal service method.</param>
+        /// 
+        /// <returns>The response from the DisablePortal service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DisablePortal">REST API Reference for DisablePortal Operation</seealso>
+        DisablePortalResponse DisablePortal(DisablePortalRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisablePortal operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisablePortal operation on AmazonApiGatewayV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisablePortal
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DisablePortal">REST API Reference for DisablePortal Operation</seealso>
+        IAsyncResult BeginDisablePortal(DisablePortalRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisablePortal operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisablePortal.</param>
+        /// 
+        /// <returns>Returns a  DisablePortalResult from ApiGatewayV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DisablePortal">REST API Reference for DisablePortal Operation</seealso>
+        DisablePortalResponse EndDisablePortal(IAsyncResult asyncResult);
 
         #endregion
         
@@ -2461,6 +2994,276 @@ namespace Amazon.ApiGatewayV2
 
         #endregion
         
+        #region  GetPortal
+
+
+        /// <summary>
+        /// Gets a portal.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPortal service method.</param>
+        /// 
+        /// <returns>The response from the GetPortal service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetPortal">REST API Reference for GetPortal Operation</seealso>
+        GetPortalResponse GetPortal(GetPortalRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetPortal operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetPortal operation on AmazonApiGatewayV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetPortal
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetPortal">REST API Reference for GetPortal Operation</seealso>
+        IAsyncResult BeginGetPortal(GetPortalRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetPortal operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetPortal.</param>
+        /// 
+        /// <returns>Returns a  GetPortalResult from ApiGatewayV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetPortal">REST API Reference for GetPortal Operation</seealso>
+        GetPortalResponse EndGetPortal(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetPortalProduct
+
+
+        /// <summary>
+        /// Gets a portal product.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPortalProduct service method.</param>
+        /// 
+        /// <returns>The response from the GetPortalProduct service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetPortalProduct">REST API Reference for GetPortalProduct Operation</seealso>
+        GetPortalProductResponse GetPortalProduct(GetPortalProductRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetPortalProduct operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetPortalProduct operation on AmazonApiGatewayV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetPortalProduct
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetPortalProduct">REST API Reference for GetPortalProduct Operation</seealso>
+        IAsyncResult BeginGetPortalProduct(GetPortalProductRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetPortalProduct operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetPortalProduct.</param>
+        /// 
+        /// <returns>Returns a  GetPortalProductResult from ApiGatewayV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetPortalProduct">REST API Reference for GetPortalProduct Operation</seealso>
+        GetPortalProductResponse EndGetPortalProduct(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetPortalProductSharingPolicy
+
+
+        /// <summary>
+        /// Gets the sharing policy for a portal product.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPortalProductSharingPolicy service method.</param>
+        /// 
+        /// <returns>The response from the GetPortalProductSharingPolicy service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetPortalProductSharingPolicy">REST API Reference for GetPortalProductSharingPolicy Operation</seealso>
+        GetPortalProductSharingPolicyResponse GetPortalProductSharingPolicy(GetPortalProductSharingPolicyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetPortalProductSharingPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetPortalProductSharingPolicy operation on AmazonApiGatewayV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetPortalProductSharingPolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetPortalProductSharingPolicy">REST API Reference for GetPortalProductSharingPolicy Operation</seealso>
+        IAsyncResult BeginGetPortalProductSharingPolicy(GetPortalProductSharingPolicyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetPortalProductSharingPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetPortalProductSharingPolicy.</param>
+        /// 
+        /// <returns>Returns a  GetPortalProductSharingPolicyResult from ApiGatewayV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetPortalProductSharingPolicy">REST API Reference for GetPortalProductSharingPolicy Operation</seealso>
+        GetPortalProductSharingPolicyResponse EndGetPortalProductSharingPolicy(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetProductPage
+
+
+        /// <summary>
+        /// Gets a product page of a portal product.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetProductPage service method.</param>
+        /// 
+        /// <returns>The response from the GetProductPage service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetProductPage">REST API Reference for GetProductPage Operation</seealso>
+        GetProductPageResponse GetProductPage(GetProductPageRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetProductPage operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetProductPage operation on AmazonApiGatewayV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetProductPage
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetProductPage">REST API Reference for GetProductPage Operation</seealso>
+        IAsyncResult BeginGetProductPage(GetProductPageRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetProductPage operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetProductPage.</param>
+        /// 
+        /// <returns>Returns a  GetProductPageResult from ApiGatewayV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetProductPage">REST API Reference for GetProductPage Operation</seealso>
+        GetProductPageResponse EndGetProductPage(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetProductRestEndpointPage
+
+
+        /// <summary>
+        /// Gets a product REST endpoint page.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetProductRestEndpointPage service method.</param>
+        /// 
+        /// <returns>The response from the GetProductRestEndpointPage service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetProductRestEndpointPage">REST API Reference for GetProductRestEndpointPage Operation</seealso>
+        GetProductRestEndpointPageResponse GetProductRestEndpointPage(GetProductRestEndpointPageRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetProductRestEndpointPage operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetProductRestEndpointPage operation on AmazonApiGatewayV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetProductRestEndpointPage
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetProductRestEndpointPage">REST API Reference for GetProductRestEndpointPage Operation</seealso>
+        IAsyncResult BeginGetProductRestEndpointPage(GetProductRestEndpointPageRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetProductRestEndpointPage operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetProductRestEndpointPage.</param>
+        /// 
+        /// <returns>Returns a  GetProductRestEndpointPageResult from ApiGatewayV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetProductRestEndpointPage">REST API Reference for GetProductRestEndpointPage Operation</seealso>
+        GetProductRestEndpointPageResponse EndGetProductRestEndpointPage(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetRoute
 
 
@@ -3012,6 +3815,214 @@ namespace Amazon.ApiGatewayV2
 
         #endregion
         
+        #region  ListPortalProducts
+
+
+        /// <summary>
+        /// Lists portal products.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPortalProducts service method.</param>
+        /// 
+        /// <returns>The response from the ListPortalProducts service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/ListPortalProducts">REST API Reference for ListPortalProducts Operation</seealso>
+        ListPortalProductsResponse ListPortalProducts(ListPortalProductsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListPortalProducts operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListPortalProducts operation on AmazonApiGatewayV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListPortalProducts
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/ListPortalProducts">REST API Reference for ListPortalProducts Operation</seealso>
+        IAsyncResult BeginListPortalProducts(ListPortalProductsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListPortalProducts operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListPortalProducts.</param>
+        /// 
+        /// <returns>Returns a  ListPortalProductsResult from ApiGatewayV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/ListPortalProducts">REST API Reference for ListPortalProducts Operation</seealso>
+        ListPortalProductsResponse EndListPortalProducts(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListPortals
+
+
+        /// <summary>
+        /// Lists portals.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPortals service method.</param>
+        /// 
+        /// <returns>The response from the ListPortals service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/ListPortals">REST API Reference for ListPortals Operation</seealso>
+        ListPortalsResponse ListPortals(ListPortalsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListPortals operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListPortals operation on AmazonApiGatewayV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListPortals
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/ListPortals">REST API Reference for ListPortals Operation</seealso>
+        IAsyncResult BeginListPortals(ListPortalsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListPortals operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListPortals.</param>
+        /// 
+        /// <returns>Returns a  ListPortalsResult from ApiGatewayV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/ListPortals">REST API Reference for ListPortals Operation</seealso>
+        ListPortalsResponse EndListPortals(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListProductPages
+
+
+        /// <summary>
+        /// Lists the product pages for a portal product.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListProductPages service method.</param>
+        /// 
+        /// <returns>The response from the ListProductPages service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/ListProductPages">REST API Reference for ListProductPages Operation</seealso>
+        ListProductPagesResponse ListProductPages(ListProductPagesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListProductPages operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListProductPages operation on AmazonApiGatewayV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListProductPages
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/ListProductPages">REST API Reference for ListProductPages Operation</seealso>
+        IAsyncResult BeginListProductPages(ListProductPagesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListProductPages operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListProductPages.</param>
+        /// 
+        /// <returns>Returns a  ListProductPagesResult from ApiGatewayV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/ListProductPages">REST API Reference for ListProductPages Operation</seealso>
+        ListProductPagesResponse EndListProductPages(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListProductRestEndpointPages
+
+
+        /// <summary>
+        /// Lists the product REST endpoint pages of a portal product.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListProductRestEndpointPages service method.</param>
+        /// 
+        /// <returns>The response from the ListProductRestEndpointPages service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/ListProductRestEndpointPages">REST API Reference for ListProductRestEndpointPages Operation</seealso>
+        ListProductRestEndpointPagesResponse ListProductRestEndpointPages(ListProductRestEndpointPagesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListProductRestEndpointPages operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListProductRestEndpointPages operation on AmazonApiGatewayV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListProductRestEndpointPages
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/ListProductRestEndpointPages">REST API Reference for ListProductRestEndpointPages Operation</seealso>
+        IAsyncResult BeginListProductRestEndpointPages(ListProductRestEndpointPagesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListProductRestEndpointPages operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListProductRestEndpointPages.</param>
+        /// 
+        /// <returns>Returns a  ListProductRestEndpointPagesResult from ApiGatewayV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/ListProductRestEndpointPages">REST API Reference for ListProductRestEndpointPages Operation</seealso>
+        ListProductRestEndpointPagesResponse EndListProductRestEndpointPages(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListRoutingRules
 
 
@@ -3060,6 +4071,178 @@ namespace Amazon.ApiGatewayV2
         /// <returns>Returns a  ListRoutingRulesResult from ApiGatewayV2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/ListRoutingRules">REST API Reference for ListRoutingRules Operation</seealso>
         ListRoutingRulesResponse EndListRoutingRules(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  PreviewPortal
+
+
+        /// <summary>
+        /// Creates a portal preview.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PreviewPortal service method.</param>
+        /// 
+        /// <returns>The response from the PreviewPortal service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/PreviewPortal">REST API Reference for PreviewPortal Operation</seealso>
+        PreviewPortalResponse PreviewPortal(PreviewPortalRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PreviewPortal operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PreviewPortal operation on AmazonApiGatewayV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPreviewPortal
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/PreviewPortal">REST API Reference for PreviewPortal Operation</seealso>
+        IAsyncResult BeginPreviewPortal(PreviewPortalRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PreviewPortal operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPreviewPortal.</param>
+        /// 
+        /// <returns>Returns a  PreviewPortalResult from ApiGatewayV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/PreviewPortal">REST API Reference for PreviewPortal Operation</seealso>
+        PreviewPortalResponse EndPreviewPortal(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  PublishPortal
+
+
+        /// <summary>
+        /// Publishes a portal.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PublishPortal service method.</param>
+        /// 
+        /// <returns>The response from the PublishPortal service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/PublishPortal">REST API Reference for PublishPortal Operation</seealso>
+        PublishPortalResponse PublishPortal(PublishPortalRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PublishPortal operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PublishPortal operation on AmazonApiGatewayV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPublishPortal
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/PublishPortal">REST API Reference for PublishPortal Operation</seealso>
+        IAsyncResult BeginPublishPortal(PublishPortalRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PublishPortal operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPublishPortal.</param>
+        /// 
+        /// <returns>Returns a  PublishPortalResult from ApiGatewayV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/PublishPortal">REST API Reference for PublishPortal Operation</seealso>
+        PublishPortalResponse EndPublishPortal(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  PutPortalProductSharingPolicy
+
+
+        /// <summary>
+        /// Updates the sharing policy for a portal product.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutPortalProductSharingPolicy service method.</param>
+        /// 
+        /// <returns>The response from the PutPortalProductSharingPolicy service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/PutPortalProductSharingPolicy">REST API Reference for PutPortalProductSharingPolicy Operation</seealso>
+        PutPortalProductSharingPolicyResponse PutPortalProductSharingPolicy(PutPortalProductSharingPolicyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutPortalProductSharingPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutPortalProductSharingPolicy operation on AmazonApiGatewayV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutPortalProductSharingPolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/PutPortalProductSharingPolicy">REST API Reference for PutPortalProductSharingPolicy Operation</seealso>
+        IAsyncResult BeginPutPortalProductSharingPolicy(PutPortalProductSharingPolicyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutPortalProductSharingPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutPortalProductSharingPolicy.</param>
+        /// 
+        /// <returns>Returns a  PutPortalProductSharingPolicyResult from ApiGatewayV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/PutPortalProductSharingPolicy">REST API Reference for PutPortalProductSharingPolicy Operation</seealso>
+        PutPortalProductSharingPolicyResponse EndPutPortalProductSharingPolicy(IAsyncResult asyncResult);
 
         #endregion
         
@@ -3779,6 +4962,227 @@ namespace Amazon.ApiGatewayV2
         /// <returns>Returns a  UpdateModelResult from ApiGatewayV2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UpdateModel">REST API Reference for UpdateModel Operation</seealso>
         UpdateModelResponse EndUpdateModel(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdatePortal
+
+
+        /// <summary>
+        /// Updates a portal.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePortal service method.</param>
+        /// 
+        /// <returns>The response from the UpdatePortal service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UpdatePortal">REST API Reference for UpdatePortal Operation</seealso>
+        UpdatePortalResponse UpdatePortal(UpdatePortalRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdatePortal operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePortal operation on AmazonApiGatewayV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdatePortal
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UpdatePortal">REST API Reference for UpdatePortal Operation</seealso>
+        IAsyncResult BeginUpdatePortal(UpdatePortalRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdatePortal operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdatePortal.</param>
+        /// 
+        /// <returns>Returns a  UpdatePortalResult from ApiGatewayV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UpdatePortal">REST API Reference for UpdatePortal Operation</seealso>
+        UpdatePortalResponse EndUpdatePortal(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdatePortalProduct
+
+
+        /// <summary>
+        /// Updates the portal product.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePortalProduct service method.</param>
+        /// 
+        /// <returns>The response from the UpdatePortalProduct service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UpdatePortalProduct">REST API Reference for UpdatePortalProduct Operation</seealso>
+        UpdatePortalProductResponse UpdatePortalProduct(UpdatePortalProductRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdatePortalProduct operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePortalProduct operation on AmazonApiGatewayV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdatePortalProduct
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UpdatePortalProduct">REST API Reference for UpdatePortalProduct Operation</seealso>
+        IAsyncResult BeginUpdatePortalProduct(UpdatePortalProductRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdatePortalProduct operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdatePortalProduct.</param>
+        /// 
+        /// <returns>Returns a  UpdatePortalProductResult from ApiGatewayV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UpdatePortalProduct">REST API Reference for UpdatePortalProduct Operation</seealso>
+        UpdatePortalProductResponse EndUpdatePortalProduct(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateProductPage
+
+
+        /// <summary>
+        /// Updates a product page of a portal product.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateProductPage service method.</param>
+        /// 
+        /// <returns>The response from the UpdateProductPage service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UpdateProductPage">REST API Reference for UpdateProductPage Operation</seealso>
+        UpdateProductPageResponse UpdateProductPage(UpdateProductPageRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateProductPage operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateProductPage operation on AmazonApiGatewayV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateProductPage
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UpdateProductPage">REST API Reference for UpdateProductPage Operation</seealso>
+        IAsyncResult BeginUpdateProductPage(UpdateProductPageRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateProductPage operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateProductPage.</param>
+        /// 
+        /// <returns>Returns a  UpdateProductPageResult from ApiGatewayV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UpdateProductPage">REST API Reference for UpdateProductPage Operation</seealso>
+        UpdateProductPageResponse EndUpdateProductPage(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateProductRestEndpointPage
+
+
+        /// <summary>
+        /// Updates a product REST endpoint page.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateProductRestEndpointPage service method.</param>
+        /// 
+        /// <returns>The response from the UpdateProductRestEndpointPage service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UpdateProductRestEndpointPage">REST API Reference for UpdateProductRestEndpointPage Operation</seealso>
+        UpdateProductRestEndpointPageResponse UpdateProductRestEndpointPage(UpdateProductRestEndpointPageRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateProductRestEndpointPage operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateProductRestEndpointPage operation on AmazonApiGatewayV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateProductRestEndpointPage
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UpdateProductRestEndpointPage">REST API Reference for UpdateProductRestEndpointPage Operation</seealso>
+        IAsyncResult BeginUpdateProductRestEndpointPage(UpdateProductRestEndpointPageRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateProductRestEndpointPage operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateProductRestEndpointPage.</param>
+        /// 
+        /// <returns>Returns a  UpdateProductRestEndpointPageResult from ApiGatewayV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UpdateProductRestEndpointPage">REST API Reference for UpdateProductRestEndpointPage Operation</seealso>
+        UpdateProductRestEndpointPageResponse EndUpdateProductRestEndpointPage(IAsyncResult asyncResult);
 
         #endregion
         
