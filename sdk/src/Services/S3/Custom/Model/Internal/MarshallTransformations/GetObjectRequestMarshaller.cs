@@ -96,10 +96,16 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 request.Parameters.Add("response-content-language", S3Transforms.ToStringValue(headerOverrides.ContentLanguage));
             if (headerOverrides.ContentType != null)
                 request.Parameters.Add("response-content-type", S3Transforms.ToStringValue(headerOverrides.ContentType));
+            
             if (getObjectRequest.IsSetResponseExpires())
+            {
                 request.Parameters.Add("response-expires", S3Transforms.ToStringValue(getObjectRequest.ResponseExpires.Value));
+            }
             else if (headerOverrides.Expires != null)
+            {
                 request.Parameters.Add("response-expires", S3Transforms.ToStringValue(headerOverrides.Expires));
+            }
+            
             if (getObjectRequest.IsSetVersionId())
                 request.AddSubResource("versionId", S3Transforms.ToStringValue(getObjectRequest.VersionId));
             if (getObjectRequest.IsSetPartNumber())
