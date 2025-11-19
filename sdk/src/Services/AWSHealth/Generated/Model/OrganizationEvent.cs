@@ -35,16 +35,42 @@ namespace Amazon.AWSHealth.Model
     /// </summary>
     public partial class OrganizationEvent
     {
+        private EventActionability _actionability;
         private string _arn;
         private DateTime? _endTime;
         private EventScopeCode _eventScopeCode;
         private EventTypeCategory _eventTypeCategory;
         private string _eventTypeCode;
         private DateTime? _lastUpdatedTime;
+        private List<string> _personas = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _region;
         private string _service;
         private DateTime? _startTime;
         private EventStatusCode _statusCode;
+
+        /// <summary>
+        /// Gets and sets the property Actionability. 
+        /// <para>
+        /// The actionability classification of the event. Possible values are <c>ACTION_REQUIRED</c>,
+        /// <c>ACTION_MAY_BE_REQUIRED</c> and <c>INFORMATIONAL</c>. Events with <c>ACTION_REQUIRED</c>
+        /// actionability require customer action to resolve or mitigate the event. Events with
+        /// <c>ACTION_MAY_BE_REQUIRED</c> actionability indicates that the current status is unknown
+        /// or conditional and inspection is needed to determine if action is required. Events
+        /// with <c>INFORMATIONAL</c> actionability are provided for awareness and do not require
+        /// immediate action.
+        /// </para>
+        /// </summary>
+        public EventActionability Actionability
+        {
+            get { return this._actionability; }
+            set { this._actionability = value; }
+        }
+
+        // Check to see if Actionability property is set
+        internal bool IsSetActionability()
+        {
+            return this._actionability != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -187,6 +213,33 @@ namespace Amazon.AWSHealth.Model
         internal bool IsSetLastUpdatedTime()
         {
             return this._lastUpdatedTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Personas. 
+        /// <para>
+        /// A list of persona classifications that indicate the target audience for the event.
+        /// Possible values are <c>OPERATIONS</c>, <c>SECURITY</c>, and <c>BILLING</c>. Events
+        /// can be associated with multiple personas to indicate relevance to different teams
+        /// or roles within an organization.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=3)]
+        public List<string> Personas
+        {
+            get { return this._personas; }
+            set { this._personas = value; }
+        }
+
+        // Check to see if Personas property is set
+        internal bool IsSetPersonas()
+        {
+            return this._personas != null && (this._personas.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

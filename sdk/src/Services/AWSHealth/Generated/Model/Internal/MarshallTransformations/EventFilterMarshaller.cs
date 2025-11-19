@@ -46,6 +46,17 @@ namespace Amazon.AWSHealth.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetActionabilities())
+            {
+                context.Writer.WritePropertyName("actionabilities");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectActionabilitiesListValue in requestObject.Actionabilities)
+                {
+                        context.Writer.WriteStringValue(requestObjectActionabilitiesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(requestObject.IsSetAvailabilityZones())
             {
                 context.Writer.WritePropertyName("availabilityZones");
@@ -151,6 +162,17 @@ namespace Amazon.AWSHealth.Model.Internal.MarshallTransformations
                     marshaller.Marshall(requestObjectLastUpdatedTimesListValue, context);
 
                     context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(requestObject.IsSetPersonas())
+            {
+                context.Writer.WritePropertyName("personas");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectPersonasListValue in requestObject.Personas)
+                {
+                        context.Writer.WriteStringValue(requestObjectPersonasListValue);
                 }
                 context.Writer.WriteEndArray();
             }

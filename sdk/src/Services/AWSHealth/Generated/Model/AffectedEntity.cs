@@ -195,7 +195,7 @@ namespace Amazon.AWSHealth.Model
         /// Gets and sets the property StatusCode. 
         /// <para>
         /// The most recent status of the entity affected by the event. The possible values are
-        /// <c>IMPAIRED</c>, <c>UNIMPAIRED</c>, and <c>UNKNOWN</c>.
+        /// <c>IMPAIRED</c>, <c>UNIMPAIRED</c>, <c>UNKNOWN</c>, <c>PENDING</c>, and <c>RESOLVED</c>.
         /// </para>
         /// </summary>
         public EntityStatusCode StatusCode
