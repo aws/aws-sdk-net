@@ -76,6 +76,18 @@ namespace Amazon.SecretsManager.Model.Internal.MarshallTransformations
                     response.Description = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ExternalSecretRotationMetadata", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ExternalSecretRotationMetadataItem, ExternalSecretRotationMetadataItemUnmarshaller>(ExternalSecretRotationMetadataItemUnmarshaller.Instance);
+                    response.ExternalSecretRotationMetadata = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ExternalSecretRotationRoleArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ExternalSecretRotationRoleArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("KmsKeyId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -152,6 +164,12 @@ namespace Amazon.SecretsManager.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new ListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);
                     response.Tags = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Type", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Type = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("VersionIdsToStages", targetDepth))

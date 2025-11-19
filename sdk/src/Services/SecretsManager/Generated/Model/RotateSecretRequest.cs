@@ -69,6 +69,8 @@ namespace Amazon.SecretsManager.Model
     public partial class RotateSecretRequest : AmazonSecretsManagerRequest
     {
         private string _clientRequestToken;
+        private List<ExternalSecretRotationMetadataItem> _externalSecretRotationMetadata = AWSConfigs.InitializeCollections ? new List<ExternalSecretRotationMetadataItem>() : null;
+        private string _externalSecretRotationRoleArn;
         private bool? _rotateImmediately;
         private string _rotationLambdaARN;
         private RotationRulesType _rotationRules;
@@ -115,6 +117,48 @@ namespace Amazon.SecretsManager.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ExternalSecretRotationMetadata. 
+        /// <para>
+        /// The metadata needed to successfully rotate a managed external secret. A list of key
+        /// value pairs in JSON format specified by the partner. For more information about the
+        /// required information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/managed-external-secrets.html">Using
+        /// Secrets Manager managed external secrets</a> 
+        /// </para>
+        /// </summary>
+        public List<ExternalSecretRotationMetadataItem> ExternalSecretRotationMetadata
+        {
+            get { return this._externalSecretRotationMetadata; }
+            set { this._externalSecretRotationMetadata = value; }
+        }
+
+        // Check to see if ExternalSecretRotationMetadata property is set
+        internal bool IsSetExternalSecretRotationMetadata()
+        {
+            return this._externalSecretRotationMetadata != null && (this._externalSecretRotationMetadata.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExternalSecretRotationRoleArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the role that allows Secrets Manager to rotate a
+        /// secret held by a third-party partner. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/mes-security.html">Security
+        /// and permissions</a>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string ExternalSecretRotationRoleArn
+        {
+            get { return this._externalSecretRotationRoleArn; }
+            set { this._externalSecretRotationRoleArn = value; }
+        }
+
+        // Check to see if ExternalSecretRotationRoleArn property is set
+        internal bool IsSetExternalSecretRotationRoleArn()
+        {
+            return this._externalSecretRotationRoleArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property RotateImmediately. 
         /// <para>
         /// Specifies whether to rotate the secret immediately or wait until the next scheduled
@@ -122,15 +166,35 @@ namespace Amazon.SecretsManager.Model
         /// </para>
         ///  
         /// <para>
-        /// For secrets that use a Lambda rotation function to rotate, if you don't immediately
-        /// rotate the secret, Secrets Manager tests the rotation configuration by running the
-        /// <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_lambda-functions.html#rotate-secrets_lambda-functions-code">
-        /// <c>testSecret</c> step</a> of the Lambda rotation function. The test creates an <c>AWSPENDING</c>
+        /// The default for <c>RotateImmediately</c> is <c>true</c>. If you don't specify this
+        /// value, Secrets Manager rotates the secret immediately.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you set <c>RotateImmediately</c> to <c>false</c>, Secrets Manager tests the rotation
+        /// configuration by running the <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_how.html">
+        /// <c>testSecret</c> step</a> of the Lambda rotation function. This test creates an <c>AWSPENDING</c>
         /// version of the secret and then removes it.
         /// </para>
         ///  
         /// <para>
-        /// By default, Secrets Manager rotates the secret immediately.
+        /// When changing an existing rotation schedule and setting <c>RotateImmediately</c> to
+        /// <c>false</c>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If using <c>AutomaticallyAfterDays</c> or a <c>ScheduleExpression</c> with <c>rate()</c>,
+        /// the previously scheduled rotation might still occur.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To prevent unintended rotations, use a <c>ScheduleExpression</c> with <c>cron()</c>
+        /// for granular control over rotation windows.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Rotation is an asynchronous process. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_how.html">How
+        /// rotation works</a>.
         /// </para>
         /// </summary>
         public bool RotateImmediately
@@ -176,6 +240,22 @@ namespace Amazon.SecretsManager.Model
         /// <para>
         /// A structure that defines the rotation configuration for this secret.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// When changing an existing rotation schedule and setting <c>RotateImmediately</c> to
+        /// <c>false</c>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If using <c>AutomaticallyAfterDays</c> or a <c>ScheduleExpression</c> with <c>rate()</c>,
+        /// the previously scheduled rotation might still occur.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To prevent unintended rotations, use a <c>ScheduleExpression</c> with <c>cron()</c>
+        /// for granular control over rotation windows.
+        /// </para>
+        ///  </li> </ul> </important>
         /// </summary>
         public RotationRulesType RotationRules
         {

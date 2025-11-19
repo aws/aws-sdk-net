@@ -110,6 +110,12 @@ namespace Amazon.SecretsManager.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.SecretString);
                 }
 
+                if(publicRequest.IsSetType())
+                {
+                    context.Writer.WritePropertyName("Type");
+                    context.Writer.Write(publicRequest.Type);
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
