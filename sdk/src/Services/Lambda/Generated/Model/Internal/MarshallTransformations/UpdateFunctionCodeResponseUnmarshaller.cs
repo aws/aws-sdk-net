@@ -244,6 +244,12 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     response.StateReasonCode = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("TenancyConfig", targetDepth))
+                {
+                    var unmarshaller = TenancyConfigUnmarshaller.Instance;
+                    response.TenancyConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Timeout", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

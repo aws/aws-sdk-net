@@ -90,6 +90,11 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             {
                 request.Headers["X-Amz-Log-Type"] = publicRequest.LogType;
             }
+        
+            if (publicRequest.IsSetTenantId()) 
+            {
+                request.Headers["X-Amz-Tenant-Id"] = publicRequest.TenantId;
+            }
             request.UseQueryString = true;
 
             return request;

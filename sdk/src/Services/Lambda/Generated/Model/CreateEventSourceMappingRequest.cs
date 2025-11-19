@@ -602,8 +602,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property ProvisionedPollerConfig. 
         /// <para>
-        /// (Amazon MSK and self-managed Apache Kafka only) The provisioned mode configuration
-        /// for the event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventsourcemapping.html#invocation-eventsourcemapping-provisioned-mode">provisioned
+        /// (Amazon SQS, Amazon MSK, and self-managed Apache Kafka only) The provisioned mode
+        /// configuration for the event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventsourcemapping.html#invocation-eventsourcemapping-provisioned-mode">provisioned
         /// mode</a>.
         /// </para>
         /// </summary>

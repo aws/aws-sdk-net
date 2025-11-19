@@ -256,6 +256,17 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetTenancyConfig())
+                {
+                    context.Writer.WritePropertyName("TenancyConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = TenancyConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.TenancyConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetTimeout())
                 {
                     context.Writer.WritePropertyName("Timeout");
