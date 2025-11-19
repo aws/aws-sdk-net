@@ -1603,9 +1603,21 @@ namespace Amazon.CostExplorer
     {
 
         /// <summary>
+        /// Constant COST_CATEGORY for MonitorDimension
+        /// </summary>
+        public static readonly MonitorDimension COST_CATEGORY = new MonitorDimension("COST_CATEGORY");
+        /// <summary>
+        /// Constant LINKED_ACCOUNT for MonitorDimension
+        /// </summary>
+        public static readonly MonitorDimension LINKED_ACCOUNT = new MonitorDimension("LINKED_ACCOUNT");
+        /// <summary>
         /// Constant SERVICE for MonitorDimension
         /// </summary>
         public static readonly MonitorDimension SERVICE = new MonitorDimension("SERVICE");
+        /// <summary>
+        /// Constant TAG for MonitorDimension
+        /// </summary>
+        public static readonly MonitorDimension TAG = new MonitorDimension("TAG");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
