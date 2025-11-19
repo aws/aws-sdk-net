@@ -680,6 +680,8 @@ Protocol tests can be found in the `sdk/test/ProtocolTests` directory. Protocol 
 	* This is the initial release for AWS Outposts, a fully managed service that extends AWS infrastructure, services, APIs, and tools to customer sites. AWS Outposts enables you to launch and run EC2 instances and EBS volumes locally at your on-premises location. This release introduces new APIs for creating and viewing Outposts. 
 * [AWSSDK.Panorama](https://www.nuget.org/packages/AWSSDK.Panorama/)
 	* General availability for AWS Panorama. AWS SDK for Panorama includes APIs to manage your devices and nodes, and deploy computer vision applications to the edge. For more information, see the AWS Panorama documentation at http://docs.aws.amazon.com/panorama
+* [AWSSDK.PartnerCentralChannel](https://www.nuget.org/packages/AWSSDK.PartnerCentralChannel/)
+	* Initial GA launch of Partner Central Channel
 * [AWSSDK.PartnerCentralSelling](https://www.nuget.org/packages/AWSSDK.PartnerCentralSelling/)
 	* Announcing AWS Partner Central API for Selling: This service launch Introduces new APIs for co-selling opportunity management and related functions. Key features include notifications, a dynamic sandbox for testing, and streamlined validations.
 * [AWSSDK.PaymentCryptography](https://www.nuget.org/packages/AWSSDK.PaymentCryptography/)
