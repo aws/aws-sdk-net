@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.DataZone.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// RuleDetail Marshaller
+    /// AttributeInput Marshaller
     /// </summary>
-    public class RuleDetailMarshaller : IRequestMarshaller<RuleDetail, JsonMarshallerContext> 
+    public class AttributeInputMarshaller : IRequestMarshaller<AttributeInput, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,30 +42,30 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(RuleDetail requestObject, JsonMarshallerContext context)
+        public void Marshall(AttributeInput requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetGlossaryTermEnforcementDetail())
+            if(requestObject.IsSetAttributeIdentifier())
             {
-                context.Writer.WritePropertyName("glossaryTermEnforcementDetail");
-                context.Writer.WriteStartObject();
-
-                var marshaller = GlossaryTermEnforcementDetailMarshaller.Instance;
-                marshaller.Marshall(requestObject.GlossaryTermEnforcementDetail, context);
-
-                context.Writer.WriteEndObject();
+                context.Writer.WritePropertyName("attributeIdentifier");
+                context.Writer.WriteStringValue(requestObject.AttributeIdentifier);
             }
 
-            if(requestObject.IsSetMetadataFormEnforcementDetail())
+            if(requestObject.IsSetForms())
             {
-                context.Writer.WritePropertyName("metadataFormEnforcementDetail");
-                context.Writer.WriteStartObject();
+                context.Writer.WritePropertyName("forms");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectFormsListValue in requestObject.Forms)
+                {
+                    context.Writer.WriteStartObject();
 
-                var marshaller = MetadataFormEnforcementDetailMarshaller.Instance;
-                marshaller.Marshall(requestObject.MetadataFormEnforcementDetail, context);
+                    var marshaller = FormInputMarshaller.Instance;
+                    marshaller.Marshall(requestObjectFormsListValue, context);
 
-                context.Writer.WriteEndObject();
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
             }
 
         }
@@ -73,7 +73,7 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static RuleDetailMarshaller Instance = new RuleDetailMarshaller();
+        public readonly static AttributeInputMarshaller Instance = new AttributeInputMarshaller();
 
     }
 }

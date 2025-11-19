@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.DataZone.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for RuleDetail Object
+    /// Response Unmarshaller for BatchGetAttributeOutput Object
     /// </summary>  
-    public class RuleDetailUnmarshaller : IJsonUnmarshaller<RuleDetail, JsonUnmarshallerContext>
+    public class BatchGetAttributeOutputUnmarshaller : IJsonUnmarshaller<BatchGetAttributeOutput, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public RuleDetail Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public BatchGetAttributeOutput Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            RuleDetail unmarshalledObject = new RuleDetail();
+            BatchGetAttributeOutput unmarshalledObject = new BatchGetAttributeOutput();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,16 +56,16 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("glossaryTermEnforcementDetail", targetDepth))
+                if (context.TestExpression("attributeIdentifier", targetDepth))
                 {
-                    var unmarshaller = GlossaryTermEnforcementDetailUnmarshaller.Instance;
-                    unmarshalledObject.GlossaryTermEnforcementDetail = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AttributeIdentifier = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("metadataFormEnforcementDetail", targetDepth))
+                if (context.TestExpression("forms", targetDepth))
                 {
-                    var unmarshaller = MetadataFormEnforcementDetailUnmarshaller.Instance;
-                    unmarshalledObject.MetadataFormEnforcementDetail = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = new JsonListUnmarshaller<FormOutput, FormOutputUnmarshaller>(FormOutputUnmarshaller.Instance);
+                    unmarshalledObject.Forms = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -73,12 +73,12 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         }
 
 
-        private static RuleDetailUnmarshaller _instance = new RuleDetailUnmarshaller();        
+        private static BatchGetAttributeOutputUnmarshaller _instance = new BatchGetAttributeOutputUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static RuleDetailUnmarshaller Instance
+        public static BatchGetAttributeOutputUnmarshaller Instance
         {
             get
             {

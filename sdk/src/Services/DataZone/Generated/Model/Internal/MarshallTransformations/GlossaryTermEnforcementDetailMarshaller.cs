@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.DataZone.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// RuleDetail Marshaller
+    /// GlossaryTermEnforcementDetail Marshaller
     /// </summary>
-    public class RuleDetailMarshaller : IRequestMarshaller<RuleDetail, JsonMarshallerContext> 
+    public class GlossaryTermEnforcementDetailMarshaller : IRequestMarshaller<GlossaryTermEnforcementDetail, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,30 +42,19 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(RuleDetail requestObject, JsonMarshallerContext context)
+        public void Marshall(GlossaryTermEnforcementDetail requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetGlossaryTermEnforcementDetail())
+            if(requestObject.IsSetRequiredGlossaryTermIds())
             {
-                context.Writer.WritePropertyName("glossaryTermEnforcementDetail");
-                context.Writer.WriteStartObject();
-
-                var marshaller = GlossaryTermEnforcementDetailMarshaller.Instance;
-                marshaller.Marshall(requestObject.GlossaryTermEnforcementDetail, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(requestObject.IsSetMetadataFormEnforcementDetail())
-            {
-                context.Writer.WritePropertyName("metadataFormEnforcementDetail");
-                context.Writer.WriteStartObject();
-
-                var marshaller = MetadataFormEnforcementDetailMarshaller.Instance;
-                marshaller.Marshall(requestObject.MetadataFormEnforcementDetail, context);
-
-                context.Writer.WriteEndObject();
+                context.Writer.WritePropertyName("requiredGlossaryTermIds");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectRequiredGlossaryTermIdsListValue in requestObject.RequiredGlossaryTermIds)
+                {
+                        context.Writer.WriteStringValue(requestObjectRequiredGlossaryTermIdsListValue);
+                }
+                context.Writer.WriteEndArray();
             }
 
         }
@@ -73,7 +62,7 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static RuleDetailMarshaller Instance = new RuleDetailMarshaller();
+        public readonly static GlossaryTermEnforcementDetailMarshaller Instance = new GlossaryTermEnforcementDetailMarshaller();
 
     }
 }
