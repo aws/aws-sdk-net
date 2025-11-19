@@ -40,6 +40,7 @@ namespace Amazon.CloudTrail.Model
         private InsightType _insightType;
         private string _nextToken;
         private List<DateTime> _timestamps = AWSConfigs.InitializeCollections ? new List<DateTime>() : null;
+        private string _trailARN;
         private List<double> _values = AWSConfigs.InitializeCollections ? new List<double>() : null;
 
         /// <summary>
@@ -164,6 +165,25 @@ namespace Amazon.CloudTrail.Model
         internal bool IsSetTimestamps()
         {
             return this._timestamps != null && (this._timestamps.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TrailARN. 
+        /// <para>
+        /// Specifies the ARN of the trail. This is only returned when Insights is enabled on
+        /// a trail logging data events. 
+        /// </para>
+        /// </summary>
+        public string TrailARN
+        {
+            get { return this._trailARN; }
+            set { this._trailARN = value; }
+        }
+
+        // Check to see if TrailARN property is set
+        internal bool IsSetTrailARN()
+        {
+            return this._trailARN != null;
         }
 
         /// <summary>

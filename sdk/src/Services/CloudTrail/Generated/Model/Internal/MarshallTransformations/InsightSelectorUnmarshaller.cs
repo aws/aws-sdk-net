@@ -66,6 +66,12 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("EventCategories", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.EventCategories = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("InsightType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

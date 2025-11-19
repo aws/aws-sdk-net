@@ -627,6 +627,9 @@ namespace Amazon.CloudTrail
         /// that is not a member of an organization. To make this request, sign in using the credentials
         /// of an account that belongs to an organization.
         /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.ThrottlingException">
+        /// This exception is thrown when the request rate exceeds the limit.
+        /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.UnsupportedOperationException">
         /// This exception is thrown when the requested operation is not supported.
         /// </exception>
@@ -1165,6 +1168,22 @@ namespace Amazon.CloudTrail
         /// Deletes a trail. This operation must be called from the Region in which the trail
         /// was created. <c>DeleteTrail</c> cannot be called on the shadow trails (replicated
         /// trails in other Regions) of a trail that is enabled in all Regions.
+        /// 
+        ///  <important> 
+        /// <para>
+        ///  While deleting a CloudTrail trail is an irreversible action, CloudTrail does not
+        /// delete log files in the Amazon S3 bucket for that trail, the Amazon S3 bucket itself,
+        /// or the CloudWatchlog group to which the trail delivers events. Deleting a multi-Region
+        /// trail will stop logging of events in all Amazon Web Services Regions enabled in your
+        /// Amazon Web Services account. Deleting a single-Region trail will stop logging of events
+        /// in that Region only. It will not stop logging of events in other Regions even if the
+        /// trails in those other Regions have identical names to the deleted trail. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about account closure and deletion of CloudTrail trails, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-account-closure.html">https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-account-closure.html</a>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteTrail service method.</param>
         /// 
@@ -2416,10 +2435,10 @@ namespace Amazon.CloudTrail
         /// <summary>
         /// Describes the settings for the Insights event selectors that you configured for your
         /// trail or event data store. <c>GetInsightSelectors</c> shows if CloudTrail Insights
-        /// event logging is enabled on the trail or event data store, and if it is, which Insights
-        /// types are enabled. If you run <c>GetInsightSelectors</c> on a trail or event data
-        /// store that does not have Insights events enabled, the operation throws the exception
-        /// <c>InsightNotEnabledException</c> 
+        /// logging is enabled and which Insights types are configured with corresponding event
+        /// categories. If you run <c>GetInsightSelectors</c> on a trail or event data store that
+        /// does not have Insights events enabled, the operation throws the exception <c>InsightNotEnabledException</c>
+        /// 
         /// 
         ///  
         /// <para>
@@ -3172,6 +3191,84 @@ namespace Amazon.CloudTrail
 
         #endregion
         
+        #region  ListInsightsData
+
+
+        /// <summary>
+        /// Returns Insights events generated on a trail that logs data events. You can list Insights
+        /// events that occurred in a Region within the last 90 days.
+        /// 
+        ///  
+        /// <para>
+        /// ListInsightsData supports the following Dimensions for Insights events:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Event ID
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Event name
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Event source
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// All dimensions are optional. The default number of results returned is 50, with a
+        /// maximum of 50 possible. The response includes a token that you can use to get the
+        /// next page of results.
+        /// </para>
+        ///  
+        /// <para>
+        /// The rate of ListInsightsData requests is limited to two per second, per account, per
+        /// Region. If this limit is exceeded, a throttling error occurs.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListInsightsData service method.</param>
+        /// 
+        /// <returns>The response from the ListInsightsData service method, as returned by CloudTrail.</returns>
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidParameterException">
+        /// The request includes a parameter that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
+        /// This exception is thrown when the requested operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.UnsupportedOperationException">
+        /// This exception is thrown when the requested operation is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListInsightsData">REST API Reference for ListInsightsData Operation</seealso>
+        ListInsightsDataResponse ListInsightsData(ListInsightsDataRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListInsightsData operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListInsightsData operation on AmazonCloudTrailClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListInsightsData
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListInsightsData">REST API Reference for ListInsightsData Operation</seealso>
+        IAsyncResult BeginListInsightsData(ListInsightsDataRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListInsightsData operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListInsightsData.</param>
+        /// 
+        /// <returns>Returns a  ListInsightsDataResult from CloudTrail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListInsightsData">REST API Reference for ListInsightsData Operation</seealso>
+        ListInsightsDataResponse EndListInsightsData(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListInsightsMetricData
 
 
@@ -3203,16 +3300,58 @@ namespace Amazon.CloudTrail
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Access to the <c>ListInsightsMetricData</c> API operation is linked to the <c>cloudtrail:LookupEvents</c>
-        /// action. To use this operation, you must have permissions to perform the <c>cloudtrail:LookupEvents</c>
+        /// To use <c>ListInsightsMetricData</c> operation, you must have the following permissions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If <c>ListInsightsMetricData</c> is invoked with <c>TrailName</c> parameter, access
+        /// to the <c>ListInsightsMetricData</c> API operation is linked to the <c>cloudtrail:LookupEvents</c>
+        /// action and <c>cloudtrail:ListInsightsData</c>. To use this operation, you must have
+        /// permissions to perform the <c>cloudtrail:LookupEvents</c> and <c>cloudtrail:ListInsightsData</c>
+        /// action on the specific trail.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If <c>ListInsightsMetricData</c> is invoked without <c>TrailName</c> parameter, access
+        /// to the <c>ListInsightsMetricData</c> API operation is linked to the <c>cloudtrail:LookupEvents</c>
+        /// action only. To use this operation, you must have permissions to perform the <c>cloudtrail:LookupEvents</c>
         /// action.
         /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListInsightsMetricData service method.</param>
         /// 
         /// <returns>The response from the ListInsightsMetricData service method, as returned by CloudTrail.</returns>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidParameterException">
         /// The request includes a parameter that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidTrailNameException">
+        /// This exception is thrown when the provided trail name is not valid. Trail names must
+        /// meet the following requirements:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_),
+        /// or dashes (-)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Start with a letter or number, and end with a letter or number
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Be between 3 and 128 characters
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Have no adjacent periods, underscores or dashes. Names like <c>my-_namespace</c> and
+        /// <c>my--namespace</c> are not valid.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Not be in IP address format (for example, 192.168.5.4)
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
         /// This exception is thrown when the requested operation is not permitted.
@@ -4094,12 +4233,19 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
-        /// Lets you enable Insights event logging by specifying the Insights selectors that you
-        /// want to enable on an existing trail or event data store. You also use <c>PutInsightSelectors</c>
-        /// to turn off Insights event logging, by passing an empty list of Insights types. The
-        /// valid Insights event types are <c>ApiErrorRateInsight</c> and <c>ApiCallRateInsight</c>.
+        /// Lets you enable Insights event logging on specific event categories by specifying
+        /// the Insights selectors that you want to enable on an existing trail or event data
+        /// store. You also use <c>PutInsightSelectors</c> to turn off Insights event logging,
+        /// by passing an empty list of Insights types. The valid Insights event types are <c>ApiErrorRateInsight</c>
+        /// and <c>ApiCallRateInsight</c>, and valid EventCategories are <c>Management</c> and
+        /// <c>Data</c>.
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        ///  Insights on data events are not supported on event data stores. For event data stores,
+        /// you can only enable Insights on management events. 
+        /// </para>
+        ///  </note> 
         /// <para>
         /// To enable Insights on an event data store, you must specify the ARNs (or ID suffix
         /// of the ARNs) for the source event data store (<c>EventDataStore</c>) and the destination
@@ -4113,7 +4259,20 @@ namespace Amazon.CloudTrail
         /// To log Insights events for a trail, you must specify the name (<c>TrailName</c>) of
         /// the CloudTrail trail for which you want to change or add Insights selectors.
         /// </para>
-        ///  
+        ///  <ul> <li> 
+        /// <para>
+        ///  For Management events Insights: To log CloudTrail Insights on the API call rate,
+        /// the trail or event data store must log <c>write</c> management events. To log CloudTrail
+        /// Insights on the API error rate, the trail or event data store must log <c>read</c>
+        /// or <c>write</c> management events. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  For Data events Insights: To log CloudTrail Insights on the API call rate or API
+        /// error rate, the trail must log <c>read</c> or <c>write</c> data events. Data events
+        /// Insights are not supported on event data store. 
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// To log CloudTrail Insights events on API call volume, the trail or event data store
         /// must log <c>write</c> management events. To log CloudTrail Insights events on API
@@ -5755,6 +5914,12 @@ namespace Amazon.CloudTrail
         /// <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
         /// For Creating a Trail For Your Organization</a> in the <i>CloudTrail User Guide</i>.
         /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.ConflictException">
+        /// This exception is thrown when the specified resource is not ready for an operation.
+        /// This can occur when you try to run an operation on a resource before CloudTrail has
+        /// time to fully load the resource, or because another operation is modifying the resource.
+        /// If this exception occurs, wait a few minutes, and then try the operation again.
+        /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.EventDataStoreAlreadyExistsException">
         /// An event data store with that name already exists.
         /// </exception>
@@ -5881,6 +6046,9 @@ namespace Amazon.CloudTrail
         /// This exception is thrown when the request is made from an Amazon Web Services account
         /// that is not a member of an organization. To make this request, sign in using the credentials
         /// of an account that belongs to an organization.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.ThrottlingException">
+        /// This exception is thrown when the request rate exceeds the limit.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.UnsupportedOperationException">
         /// This exception is thrown when the requested operation is not supported.

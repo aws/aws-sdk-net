@@ -35,7 +35,39 @@ namespace Amazon.CloudTrail.Model
     /// </summary>
     public partial class InsightSelector
     {
+        private List<string> _eventCategories = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private InsightType _insightType;
+
+        /// <summary>
+        /// Gets and sets the property EventCategories. 
+        /// <para>
+        /// Select the event category on which Insights should be enabled. 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If EventCategories is not provided, the specified Insights types are enabled on management
+        /// API calls by default.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If EventCategories is provided, the given event categories will overwrite the existing
+        /// ones. For example, if a trail already has Insights enabled on management events, and
+        /// then a PutInsightSelectors request is made with only data events specified in EventCategories,
+        /// Insights on management events will be disabled. 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public List<string> EventCategories
+        {
+            get { return this._eventCategories; }
+            set { this._eventCategories = value; }
+        }
+
+        // Check to see if EventCategories property is set
+        internal bool IsSetEventCategories()
+        {
+            return this._eventCategories != null && (this._eventCategories.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property InsightType. 
@@ -46,12 +78,13 @@ namespace Amazon.CloudTrail.Model
         ///  
         /// <para>
         /// The <c>ApiCallRateInsight</c> Insights type analyzes write-only management API calls
-        /// that are aggregated per minute against a baseline API call volume.
+        /// or read and write data API calls that are aggregated per minute against a baseline
+        /// API call volume.
         /// </para>
         ///  
         /// <para>
-        /// The <c>ApiErrorRateInsight</c> Insights type analyzes management API calls that result
-        /// in error codes. The error is shown if the API call is unsuccessful.
+        /// The <c>ApiErrorRateInsight</c> Insights type analyzes management and data API calls
+        /// that result in error codes. The error is shown if the API call is unsuccessful.
         /// </para>
         /// </summary>
         public InsightType InsightType
