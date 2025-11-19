@@ -34,9 +34,66 @@ namespace Amazon.GuardDuty.Model
     /// </summary>
     public partial class Threat
     {
+        private long? _count;
+        private string _hash;
+        private List<ItemDetails> _itemDetails = AWSConfigs.InitializeCollections ? new List<ItemDetails>() : null;
         private List<ItemPath> _itemPaths = AWSConfigs.InitializeCollections ? new List<ItemPath>() : null;
         private string _name;
         private string _source;
+
+        /// <summary>
+        /// Gets and sets the property Count. 
+        /// <para>
+        /// The number of occurrences of this specific threat detected during the scan.
+        /// </para>
+        /// </summary>
+        public long Count
+        {
+            get { return this._count.GetValueOrDefault(); }
+            set { this._count = value; }
+        }
+
+        // Check to see if Count property is set
+        internal bool IsSetCount()
+        {
+            return this._count.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Hash. 
+        /// <para>
+        /// The hash identifier of the detected malware threat.
+        /// </para>
+        /// </summary>
+        public string Hash
+        {
+            get { return this._hash; }
+            set { this._hash = value; }
+        }
+
+        // Check to see if Hash property is set
+        internal bool IsSetHash()
+        {
+            return this._hash != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ItemDetails. 
+        /// <para>
+        /// Detailed information about the detected malware threat.
+        /// </para>
+        /// </summary>
+        public List<ItemDetails> ItemDetails
+        {
+            get { return this._itemDetails; }
+            set { this._itemDetails = value; }
+        }
+
+        // Check to see if ItemDetails property is set
+        internal bool IsSetItemDetails()
+        {
+            return this._itemDetails != null && (this._itemDetails.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property ItemPaths. 

@@ -78,10 +78,22 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                     unmarshalledObject.ContainerDetails = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ebsSnapshotDetails", targetDepth))
+                {
+                    var unmarshaller = EbsSnapshotDetailsUnmarshaller.Instance;
+                    unmarshalledObject.EbsSnapshotDetails = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ebsVolumeDetails", targetDepth))
                 {
                     var unmarshaller = EbsVolumeDetailsUnmarshaller.Instance;
                     unmarshalledObject.EbsVolumeDetails = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ec2ImageDetails", targetDepth))
+                {
+                    var unmarshaller = Ec2ImageDetailsUnmarshaller.Instance;
+                    unmarshalledObject.Ec2ImageDetails = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ecsClusterDetails", targetDepth))
@@ -130,6 +142,12 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = RdsLimitlessDbDetailsUnmarshaller.Instance;
                     unmarshalledObject.RdsLimitlessDbDetails = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("recoveryPointDetails", targetDepth))
+                {
+                    var unmarshaller = RecoveryPointDetailsUnmarshaller.Instance;
+                    unmarshalledObject.RecoveryPointDetails = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("resourceType", targetDepth))

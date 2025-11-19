@@ -66,6 +66,24 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("count", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.Count = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("hash", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Hash = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("itemDetails", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ItemDetails, ItemDetailsUnmarshaller>(ItemDetailsUnmarshaller.Instance);
+                    unmarshalledObject.ItemDetails = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("itemPaths", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<ItemPath, ItemPathUnmarshaller>(ItemPathUnmarshaller.Instance);
