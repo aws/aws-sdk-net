@@ -34,18 +34,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ServerSideEncryptionRule Object
+    /// Response Unmarshaller for BlockedEncryptionTypes Object
     /// </summary>  
-    public partial class ServerSideEncryptionRuleUnmarshaller : IXmlUnmarshaller<ServerSideEncryptionRule, XmlUnmarshallerContext>
+    public partial class BlockedEncryptionTypesUnmarshaller : IXmlUnmarshaller<BlockedEncryptionTypes, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ServerSideEncryptionRule Unmarshall(XmlUnmarshallerContext context)
+        public BlockedEncryptionTypes Unmarshall(XmlUnmarshallerContext context)
         {
-            ServerSideEncryptionRule unmarshalledObject = new ServerSideEncryptionRule();
+            BlockedEncryptionTypes unmarshalledObject = new BlockedEncryptionTypes();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -56,22 +56,14 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("BlockedEncryptionTypes", targetDepth))
+                    if (context.TestExpression("EncryptionType", targetDepth))
                     {
-                        var unmarshaller = BlockedEncryptionTypesUnmarshaller.Instance;
-                        unmarshalledObject.BlockedEncryptionTypes = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("BucketKeyEnabled", targetDepth))
-                    {
-                        var unmarshaller = NullableBoolUnmarshaller.Instance;
-                        unmarshalledObject.BucketKeyEnabled = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("ApplyServerSideEncryptionByDefault", targetDepth))
-                    {
-                        var unmarshaller = ServerSideEncryptionByDefaultUnmarshaller.Instance;
-                        unmarshalledObject.ServerSideEncryptionByDefault = unmarshaller.Unmarshall(context);
+                        if (unmarshalledObject.EncryptionType == null)
+                        {
+                            unmarshalledObject.EncryptionType = new List<string>();
+                        }
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.EncryptionType.Add(unmarshaller.Unmarshall(context));
                         continue;
                     }
 
@@ -85,14 +77,14 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
-        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, ServerSideEncryptionRule unmarshalledObject, int targetDepth);
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, BlockedEncryptionTypes unmarshalledObject, int targetDepth);
 
-        private static ServerSideEncryptionRuleUnmarshaller _instance = new ServerSideEncryptionRuleUnmarshaller();        
+        private static BlockedEncryptionTypesUnmarshaller _instance = new BlockedEncryptionTypesUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ServerSideEncryptionRuleUnmarshaller Instance
+        public static BlockedEncryptionTypesUnmarshaller Instance
         {
             get
             {

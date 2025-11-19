@@ -37,7 +37,7 @@ namespace Amazon.S3.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// Returns the tag set associated with the bucket.
+    /// Returns the tag set associated with the general purpose bucket.
     /// </para>
     ///  
     /// <para>

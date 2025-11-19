@@ -37,7 +37,7 @@ namespace Amazon.S3.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// Deletes the tags from the bucket.
+    /// Deletes tags from the bucket.
     /// </para>
     ///  
     /// <para>
