@@ -1,0 +1,11 @@
+{
+  "extensions": [
+    {
+      "extensionName": "Extensions.Bedrock.MEAI",
+      "type": "minor",
+      "changeLogMessages": [
+        "Add support for ChatOptions.ResponseFormat to enable structured JSON responses using JSON Schema."
+      ]
+    }
+  ]
+}
