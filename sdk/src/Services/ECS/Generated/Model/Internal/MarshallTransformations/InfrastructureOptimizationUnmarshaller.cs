@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ManagedInstancesProvider Object
+    /// Response Unmarshaller for InfrastructureOptimization Object
     /// </summary>  
-    public class ManagedInstancesProviderUnmarshaller : IJsonUnmarshaller<ManagedInstancesProvider, JsonUnmarshallerContext>
+    public class InfrastructureOptimizationUnmarshaller : IJsonUnmarshaller<InfrastructureOptimization, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ManagedInstancesProvider Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public InfrastructureOptimization Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            ManagedInstancesProvider unmarshalledObject = new ManagedInstancesProvider();
+            InfrastructureOptimization unmarshalledObject = new InfrastructureOptimization();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,28 +56,10 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("infrastructureOptimization", targetDepth))
+                if (context.TestExpression("scaleInAfter", targetDepth))
                 {
-                    var unmarshaller = InfrastructureOptimizationUnmarshaller.Instance;
-                    unmarshalledObject.InfrastructureOptimization = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("infrastructureRoleArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.InfrastructureRoleArn = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("instanceLaunchTemplate", targetDepth))
-                {
-                    var unmarshaller = InstanceLaunchTemplateUnmarshaller.Instance;
-                    unmarshalledObject.InstanceLaunchTemplate = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("propagateTags", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PropagateTags = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.ScaleInAfter = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -85,12 +67,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         }
 
 
-        private static ManagedInstancesProviderUnmarshaller _instance = new ManagedInstancesProviderUnmarshaller();        
+        private static InfrastructureOptimizationUnmarshaller _instance = new InfrastructureOptimizationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ManagedInstancesProviderUnmarshaller Instance
+        public static InfrastructureOptimizationUnmarshaller Instance
         {
             get
             {
