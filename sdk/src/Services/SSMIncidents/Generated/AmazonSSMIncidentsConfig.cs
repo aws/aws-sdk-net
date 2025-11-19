@@ -33,7 +33,7 @@ namespace Amazon.SSMIncidents
     public partial class AmazonSSMIncidentsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("SSM Incidents", "4.0.2.5");
+            InternalSDKUtils.BuildUserAgentString("SSM Incidents", "4.0.2.6");
 
         private static readonly AmazonSSMIncidentsEndpointResolver EndpointResolver =
             new AmazonSSMIncidentsEndpointResolver();

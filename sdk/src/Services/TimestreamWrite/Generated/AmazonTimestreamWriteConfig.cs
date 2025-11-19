@@ -33,7 +33,7 @@ namespace Amazon.TimestreamWrite
     public partial class AmazonTimestreamWriteConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Timestream Write", "4.0.3.5");
+            InternalSDKUtils.BuildUserAgentString("Timestream Write", "4.0.3.6");
 
         private static readonly AmazonTimestreamWriteEndpointResolver EndpointResolver =
             new AmazonTimestreamWriteEndpointResolver();

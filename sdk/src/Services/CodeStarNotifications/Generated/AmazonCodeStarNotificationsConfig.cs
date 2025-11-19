@@ -33,7 +33,7 @@ namespace Amazon.CodeStarNotifications
     public partial class AmazonCodeStarNotificationsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("codestar notifications", "4.0.1.5");
+            InternalSDKUtils.BuildUserAgentString("codestar notifications", "4.0.1.6");
 
         private static readonly AmazonCodeStarNotificationsEndpointResolver EndpointResolver =
             new AmazonCodeStarNotificationsEndpointResolver();
