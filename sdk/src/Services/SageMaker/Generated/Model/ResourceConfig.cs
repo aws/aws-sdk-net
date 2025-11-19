@@ -259,7 +259,7 @@ namespace Amazon.SageMaker.Model
         /// and Outputs</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1)]
+        [AWSProperty(Min=0)]
         public int VolumeSizeInGB
         {
             get { return this._volumeSizeInGB.GetValueOrDefault(); }

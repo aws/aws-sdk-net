@@ -45,6 +45,7 @@ namespace Amazon.SageMaker.Model
         private string _failureReason;
         private DeploymentConfig _lastDeploymentConfig;
         private DateTime? _lastModifiedTime;
+        private MetricsConfig _metricsConfig;
         private PendingDeploymentSummary _pendingDeploymentSummary;
         private List<ProductionVariantSummary> _productionVariants = AWSConfigs.InitializeCollections ? new List<ProductionVariantSummary>() : null;
         private List<ProductionVariantSummary> _shadowProductionVariants = AWSConfigs.InitializeCollections ? new List<ProductionVariantSummary>() : null;
@@ -307,6 +308,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetLastModifiedTime()
         {
             return this._lastModifiedTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MetricsConfig. 
+        /// <para>
+        /// The configuration parameters for utilization metrics.
+        /// </para>
+        /// </summary>
+        public MetricsConfig MetricsConfig
+        {
+            get { return this._metricsConfig; }
+            set { this._metricsConfig = value; }
+        }
+
+        // Check to see if MetricsConfig property is set
+        internal bool IsSetMetricsConfig()
+        {
+            return this._metricsConfig != null;
         }
 
         /// <summary>

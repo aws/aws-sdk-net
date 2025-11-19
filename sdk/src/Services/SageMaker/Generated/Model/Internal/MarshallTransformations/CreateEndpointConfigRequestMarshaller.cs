@@ -126,6 +126,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.KmsKeyId);
                 }
 
+                if(publicRequest.IsSetMetricsConfig())
+                {
+                    context.Writer.WritePropertyName("MetricsConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = MetricsConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.MetricsConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetProductionVariants())
                 {
                     context.Writer.WritePropertyName("ProductionVariants");

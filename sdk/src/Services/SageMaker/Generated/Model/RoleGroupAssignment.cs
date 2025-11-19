@@ -30,8 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Defines the mapping between an in-app role and the AWS IAM Identity Center group patterns
-    /// that should be assigned to that role within the SageMaker Partner AI App.
+    /// Defines the mapping between an in-app role and the Amazon Web Services IAM Identity
+    /// Center group patterns that should be assigned to that role within the SageMaker Partner
+    /// AI App.
     /// </summary>
     public partial class RoleGroupAssignment
     {
@@ -41,8 +42,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property GroupPatterns. 
         /// <para>
-        /// A list of AWS IAM Identity Center group patterns that should be assigned to the specified
-        /// role. Group patterns support wildcard matching using <c>*</c>.
+        /// A list of Amazon Web Services IAM Identity Center group patterns that should be assigned
+        /// to the specified role. Group patterns support wildcard matching using <c>*</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=10)]
