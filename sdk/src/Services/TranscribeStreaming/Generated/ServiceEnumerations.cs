@@ -359,6 +359,10 @@ namespace Amazon.TranscribeStreaming
         /// </summary>
         public static readonly LanguageCode AfZA = new LanguageCode("af-ZA");
         /// <summary>
+        /// Constant AmET for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode AmET = new LanguageCode("am-ET");
+        /// <summary>
         /// Constant ArAE for LanguageCode
         /// </summary>
         public static readonly LanguageCode ArAE = new LanguageCode("ar-AE");
@@ -367,13 +371,41 @@ namespace Amazon.TranscribeStreaming
         /// </summary>
         public static readonly LanguageCode ArSA = new LanguageCode("ar-SA");
         /// <summary>
+        /// Constant BeBY for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode BeBY = new LanguageCode("be-BY");
+        /// <summary>
+        /// Constant BgBG for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode BgBG = new LanguageCode("bg-BG");
+        /// <summary>
+        /// Constant BnIN for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode BnIN = new LanguageCode("bn-IN");
+        /// <summary>
+        /// Constant BsBA for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode BsBA = new LanguageCode("bs-BA");
+        /// <summary>
         /// Constant CaES for LanguageCode
         /// </summary>
         public static readonly LanguageCode CaES = new LanguageCode("ca-ES");
         /// <summary>
+        /// Constant CkbIQ for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode CkbIQ = new LanguageCode("ckb-IQ");
+        /// <summary>
+        /// Constant CkbIR for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode CkbIR = new LanguageCode("ckb-IR");
+        /// <summary>
         /// Constant CsCZ for LanguageCode
         /// </summary>
         public static readonly LanguageCode CsCZ = new LanguageCode("cs-CZ");
+        /// <summary>
+        /// Constant CyWL for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode CyWL = new LanguageCode("cy-WL");
         /// <summary>
         /// Constant DaDK for LanguageCode
         /// </summary>
@@ -431,13 +463,25 @@ namespace Amazon.TranscribeStreaming
         /// </summary>
         public static readonly LanguageCode EsES = new LanguageCode("es-ES");
         /// <summary>
+        /// Constant EsMX for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode EsMX = new LanguageCode("es-MX");
+        /// <summary>
         /// Constant EsUS for LanguageCode
         /// </summary>
         public static readonly LanguageCode EsUS = new LanguageCode("es-US");
         /// <summary>
+        /// Constant EtET for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode EtET = new LanguageCode("et-ET");
+        /// <summary>
         /// Constant EuES for LanguageCode
         /// </summary>
         public static readonly LanguageCode EuES = new LanguageCode("eu-ES");
+        /// <summary>
+        /// Constant FaAF for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode FaAF = new LanguageCode("fa-AF");
         /// <summary>
         /// Constant FaIR for LanguageCode
         /// </summary>
@@ -459,6 +503,10 @@ namespace Amazon.TranscribeStreaming
         /// </summary>
         public static readonly LanguageCode GlES = new LanguageCode("gl-ES");
         /// <summary>
+        /// Constant GuIN for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode GuIN = new LanguageCode("gu-IN");
+        /// <summary>
         /// Constant HeIL for LanguageCode
         /// </summary>
         public static readonly LanguageCode HeIL = new LanguageCode("he-IL");
@@ -471,9 +519,25 @@ namespace Amazon.TranscribeStreaming
         /// </summary>
         public static readonly LanguageCode HrHR = new LanguageCode("hr-HR");
         /// <summary>
+        /// Constant HtHT for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode HtHT = new LanguageCode("ht-HT");
+        /// <summary>
+        /// Constant HuHU for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode HuHU = new LanguageCode("hu-HU");
+        /// <summary>
+        /// Constant HyAM for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode HyAM = new LanguageCode("hy-AM");
+        /// <summary>
         /// Constant IdID for LanguageCode
         /// </summary>
         public static readonly LanguageCode IdID = new LanguageCode("id-ID");
+        /// <summary>
+        /// Constant IsIS for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode IsIS = new LanguageCode("is-IS");
         /// <summary>
         /// Constant ItIT for LanguageCode
         /// </summary>
@@ -483,17 +547,69 @@ namespace Amazon.TranscribeStreaming
         /// </summary>
         public static readonly LanguageCode JaJP = new LanguageCode("ja-JP");
         /// <summary>
+        /// Constant JvID for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode JvID = new LanguageCode("jv-ID");
+        /// <summary>
+        /// Constant KabDZ for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode KabDZ = new LanguageCode("kab-DZ");
+        /// <summary>
+        /// Constant KaGE for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode KaGE = new LanguageCode("ka-GE");
+        /// <summary>
+        /// Constant KkKZ for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode KkKZ = new LanguageCode("kk-KZ");
+        /// <summary>
+        /// Constant KmKH for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode KmKH = new LanguageCode("km-KH");
+        /// <summary>
+        /// Constant KnIN for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode KnIN = new LanguageCode("kn-IN");
+        /// <summary>
         /// Constant KoKR for LanguageCode
         /// </summary>
         public static readonly LanguageCode KoKR = new LanguageCode("ko-KR");
+        /// <summary>
+        /// Constant LgIN for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode LgIN = new LanguageCode("lg-IN");
+        /// <summary>
+        /// Constant LtLT for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode LtLT = new LanguageCode("lt-LT");
         /// <summary>
         /// Constant LvLV for LanguageCode
         /// </summary>
         public static readonly LanguageCode LvLV = new LanguageCode("lv-LV");
         /// <summary>
+        /// Constant MkMK for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode MkMK = new LanguageCode("mk-MK");
+        /// <summary>
+        /// Constant MlIN for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode MlIN = new LanguageCode("ml-IN");
+        /// <summary>
+        /// Constant MrIN for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode MrIN = new LanguageCode("mr-IN");
+        /// <summary>
         /// Constant MsMY for LanguageCode
         /// </summary>
         public static readonly LanguageCode MsMY = new LanguageCode("ms-MY");
+        /// <summary>
+        /// Constant MyMM for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode MyMM = new LanguageCode("my-MM");
+        /// <summary>
+        /// Constant NeNP for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode NeNP = new LanguageCode("ne-NP");
         /// <summary>
         /// Constant NlNL for LanguageCode
         /// </summary>
@@ -503,9 +619,21 @@ namespace Amazon.TranscribeStreaming
         /// </summary>
         public static readonly LanguageCode NoNO = new LanguageCode("no-NO");
         /// <summary>
+        /// Constant OrIN for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode OrIN = new LanguageCode("or-IN");
+        /// <summary>
+        /// Constant PaIN for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode PaIN = new LanguageCode("pa-IN");
+        /// <summary>
         /// Constant PlPL for LanguageCode
         /// </summary>
         public static readonly LanguageCode PlPL = new LanguageCode("pl-PL");
+        /// <summary>
+        /// Constant PsAF for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode PsAF = new LanguageCode("ps-AF");
         /// <summary>
         /// Constant PtBR for LanguageCode
         /// </summary>
@@ -523,21 +651,65 @@ namespace Amazon.TranscribeStreaming
         /// </summary>
         public static readonly LanguageCode RuRU = new LanguageCode("ru-RU");
         /// <summary>
+        /// Constant SiLK for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode SiLK = new LanguageCode("si-LK");
+        /// <summary>
         /// Constant SkSK for LanguageCode
         /// </summary>
         public static readonly LanguageCode SkSK = new LanguageCode("sk-SK");
+        /// <summary>
+        /// Constant SlSI for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode SlSI = new LanguageCode("sl-SI");
         /// <summary>
         /// Constant SoSO for LanguageCode
         /// </summary>
         public static readonly LanguageCode SoSO = new LanguageCode("so-SO");
         /// <summary>
+        /// Constant SqAL for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode SqAL = new LanguageCode("sq-AL");
+        /// <summary>
         /// Constant SrRS for LanguageCode
         /// </summary>
         public static readonly LanguageCode SrRS = new LanguageCode("sr-RS");
         /// <summary>
+        /// Constant SuID for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode SuID = new LanguageCode("su-ID");
+        /// <summary>
         /// Constant SvSE for LanguageCode
         /// </summary>
         public static readonly LanguageCode SvSE = new LanguageCode("sv-SE");
+        /// <summary>
+        /// Constant SwBI for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode SwBI = new LanguageCode("sw-BI");
+        /// <summary>
+        /// Constant SwKE for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode SwKE = new LanguageCode("sw-KE");
+        /// <summary>
+        /// Constant SwRW for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode SwRW = new LanguageCode("sw-RW");
+        /// <summary>
+        /// Constant SwTZ for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode SwTZ = new LanguageCode("sw-TZ");
+        /// <summary>
+        /// Constant SwUG for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode SwUG = new LanguageCode("sw-UG");
+        /// <summary>
+        /// Constant TaIN for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode TaIN = new LanguageCode("ta-IN");
+        /// <summary>
+        /// Constant TeIN for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode TeIN = new LanguageCode("te-IN");
         /// <summary>
         /// Constant ThTH for LanguageCode
         /// </summary>
@@ -547,9 +719,17 @@ namespace Amazon.TranscribeStreaming
         /// </summary>
         public static readonly LanguageCode TlPH = new LanguageCode("tl-PH");
         /// <summary>
+        /// Constant TrTR for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode TrTR = new LanguageCode("tr-TR");
+        /// <summary>
         /// Constant UkUA for LanguageCode
         /// </summary>
         public static readonly LanguageCode UkUA = new LanguageCode("uk-UA");
+        /// <summary>
+        /// Constant UzUZ for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode UzUZ = new LanguageCode("uz-UZ");
         /// <summary>
         /// Constant ViVN for LanguageCode
         /// </summary>
