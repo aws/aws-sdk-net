@@ -470,6 +470,21 @@
     <min>0</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.CloudWatchLogConfiguration.EncryptionKeyArn</property>
+    <min>0</min>
+    <max>10280</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.CloudWatchLogConfiguration.LogGroupName</property>
+    <min>0</min>
+    <max>10280</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.CloudWatchLogConfiguration.LogStreamNamePrefix</property>
+    <min>0</min>
+    <max>10280</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ElasticMapReduce.Model.Cluster.AutoScalingRole</property>
     <min>0</min>
     <max>10280</max>
