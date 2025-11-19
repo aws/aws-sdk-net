@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ManagedInstancesProvider Object
+    /// Response Unmarshaller for InfrastructureOptimization Object
     /// </summary>  
-    public class ManagedInstancesProviderUnmarshaller : IUnmarshaller<ManagedInstancesProvider, XmlUnmarshallerContext>, IUnmarshaller<ManagedInstancesProvider, JsonUnmarshallerContext>
+    public class InfrastructureOptimizationUnmarshaller : IUnmarshaller<InfrastructureOptimization, XmlUnmarshallerContext>, IUnmarshaller<InfrastructureOptimization, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ManagedInstancesProvider IUnmarshaller<ManagedInstancesProvider, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        InfrastructureOptimization IUnmarshaller<InfrastructureOptimization, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public ManagedInstancesProvider Unmarshall(JsonUnmarshallerContext context)
+        public InfrastructureOptimization Unmarshall(JsonUnmarshallerContext context)
         {
-            ManagedInstancesProvider unmarshalledObject = new ManagedInstancesProvider();
+            InfrastructureOptimization unmarshalledObject = new InfrastructureOptimization();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,28 +66,10 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("infrastructureOptimization", targetDepth))
+                if (context.TestExpression("scaleInAfter", targetDepth))
                 {
-                    var unmarshaller = InfrastructureOptimizationUnmarshaller.Instance;
-                    unmarshalledObject.InfrastructureOptimization = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("infrastructureRoleArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.InfrastructureRoleArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("instanceLaunchTemplate", targetDepth))
-                {
-                    var unmarshaller = InstanceLaunchTemplateUnmarshaller.Instance;
-                    unmarshalledObject.InstanceLaunchTemplate = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("propagateTags", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PropagateTags = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.ScaleInAfter = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -95,12 +77,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         }
 
 
-        private static ManagedInstancesProviderUnmarshaller _instance = new ManagedInstancesProviderUnmarshaller();        
+        private static InfrastructureOptimizationUnmarshaller _instance = new InfrastructureOptimizationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ManagedInstancesProviderUnmarshaller Instance
+        public static InfrastructureOptimizationUnmarshaller Instance
         {
             get
             {

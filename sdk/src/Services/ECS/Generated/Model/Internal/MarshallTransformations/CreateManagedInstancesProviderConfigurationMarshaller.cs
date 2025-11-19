@@ -48,6 +48,17 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetInfrastructureOptimization())
+            {
+                context.Writer.WritePropertyName("infrastructureOptimization");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = InfrastructureOptimizationMarshaller.Instance;
+                marshaller.Marshall(requestObject.InfrastructureOptimization, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetInfrastructureRoleArn())
             {
                 context.Writer.WritePropertyName("infrastructureRoleArn");

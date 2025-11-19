@@ -37,9 +37,30 @@ namespace Amazon.ECS.Model
     /// </summary>
     public partial class ManagedInstancesProvider
     {
+        private InfrastructureOptimization _infrastructureOptimization;
         private string _infrastructureRoleArn;
         private InstanceLaunchTemplate _instanceLaunchTemplate;
         private PropagateMITags _propagateTags;
+
+        /// <summary>
+        /// Gets and sets the property InfrastructureOptimization. 
+        /// <para>
+        /// Defines how Amazon ECS Managed Instances optimizes the infrastastructure in your capacity
+        /// provider. Configure it to turn on or off the infrastructure optimization in your capacity
+        /// provider, and to control the idle or underutilized EC2 instances optimization delay.
+        /// </para>
+        /// </summary>
+        public InfrastructureOptimization InfrastructureOptimization
+        {
+            get { return this._infrastructureOptimization; }
+            set { this._infrastructureOptimization = value; }
+        }
+
+        // Check to see if InfrastructureOptimization property is set
+        internal bool IsSetInfrastructureOptimization()
+        {
+            return this._infrastructureOptimization != null;
+        }
 
         /// <summary>
         /// Gets and sets the property InfrastructureRoleArn. 
