@@ -1,16 +1,16 @@
-﻿using System;
-using System.Text;
-using System.Collections.Generic;
-using System.Threading;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-using AWSSDK_DotNet.IntegrationTests.Utils;
-using Amazon.DynamoDBv2;
-using Amazon.DynamoDBv2.Model;
-using Amazon.DynamoDBv2.DocumentModel;
-using System.IO;
-using ReturnValuesOnConditionCheckFailure = Amazon.DynamoDBv2.DocumentModel.ReturnValuesOnConditionCheckFailure;
 using Amazon;
+using Amazon.DynamoDBv2;
+using Amazon.DynamoDBv2.DocumentModel;
+using Amazon.DynamoDBv2.Model;
+using AWSSDK_DotNet.IntegrationTests.Utils;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading;
+using ReturnValuesOnConditionCheckFailure = Amazon.DynamoDBv2.DocumentModel.ReturnValuesOnConditionCheckFailure;
 
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
@@ -29,9 +29,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 ITable hashTable;
                 ITable hashRangeTable;
                 ITable numericHashRangeTable;
+                ITable compositeHashRangeTable;
 
                 // Load tables using provided conversion schema
-                LoadTables(conversion, out hashTable, out hashRangeTable, out numericHashRangeTable);
+                LoadTables(conversion, out hashTable, out hashRangeTable, out numericHashRangeTable, out compositeHashRangeTable);
 
                 TestEmptyString(hashTable);
 
@@ -43,6 +44,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
                 // Test operations on hash-and-range-key table
                 TestHashRangeTable(hashRangeTable, conversion);
+
+                // Test operations on composite hash-and-range-key table
+                TestCompositeHashRangeTable(compositeHashRangeTable,conversion);
 
                 // Test using multiple test batch writer
                 TestMultiTableDocumentBatchWrite(hashTable, hashRangeTable);
@@ -745,8 +749,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             items = hashRangeTable.Query(queryConfig).GetRemaining();
             Assert.AreEqual(1, items.Count);
 
-
-
             // Query local index
             items = hashRangeTable.Query(new QueryOperationConfig
             {
@@ -764,6 +766,91 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 Filter = queryFilter
             }).GetRemaining();
             Assert.AreEqual(1, items.Count);
+
+            // Additional Query scenarios using QueryDocumentOperationRequest
+            // 1) Basic key condition expression
+            var req1 = new QueryDocumentOperationRequest
+            {
+                KeyConditionExpression = new Expression
+                {
+                    ExpressionAttributeNames = new Dictionary<string, string> { { "#N", "Name" } },
+                    ExpressionAttributeValues = new Dictionary<string, DynamoDBEntry> { { ":v", "Diane" } },
+                    ExpressionStatement = "#N = :v"
+                }
+            };
+            items = hashRangeTable.Query(req1).GetRemaining();
+            Assert.AreEqual(2, items.Count);
+
+            // 2) Key condition + filter expression
+            var req2 = new QueryDocumentOperationRequest
+            {
+                KeyConditionExpression = new Expression
+                {
+                    ExpressionAttributeNames = new Dictionary<string, string> { { "#N", "Name" } },
+                    ExpressionAttributeValues = new Dictionary<string, DynamoDBEntry> { { ":v", "Diane" } },
+                    ExpressionStatement = "#N = :v"
+                },
+                FilterExpression = new Expression
+                {
+                    ExpressionAttributeNames = new Dictionary<string, string> { { "#S", "Score" } },
+                    ExpressionAttributeValues = new Dictionary<string, DynamoDBEntry> { { ":v2", 120 } },
+                    ExpressionStatement = "#S > :v2"
+                }
+            };
+            items = hashRangeTable.Query(req2).GetRemaining();
+            Assert.AreEqual(1, items.Count);
+
+            // 3) ProjectionExpression + Select specific attributes
+            var req3 = new QueryDocumentOperationRequest
+            {
+                KeyConditionExpression = new Expression
+                {
+                    ExpressionAttributeNames = new Dictionary<string, string> { { "#N", "Name" } },
+                    ExpressionAttributeValues = new Dictionary<string, DynamoDBEntry> { { ":v", "Diane" } },
+                    ExpressionStatement = "#N = :v"
+                },
+                ProjectionExpression = new Expression
+                {
+                    ExpressionAttributeNames = new Dictionary<string, string> { { "#A", "Age" } },
+                    ExpressionStatement = "#A"
+                },
+                Select = SelectValues.SpecificAttributes
+            };
+            items = hashRangeTable.Query(req3).GetRemaining();
+            Assert.AreEqual(2, items.Count);
+            Assert.AreEqual(1, items[0].Count);
+            Assert.IsTrue(items[0].ContainsKey("Age"));
+
+            // 4) IndexName + key condition expression (querying local index)
+            var req4 = new QueryDocumentOperationRequest
+            {
+                IndexName = "LocalIndex",
+                KeyConditionExpression = new Expression
+                {
+                    ExpressionAttributeNames = new Dictionary<string, string> { { "#N", "Name" } },
+                    ExpressionAttributeValues = new Dictionary<string, DynamoDBEntry> { { ":v", "Diane" } },
+                    ExpressionStatement = "#N = :v"
+                }
+            };
+            items = hashRangeTable.Query(req4).GetRemaining();
+            Assert.AreEqual(2, items.Count);
+
+            // 5) Select Count
+            var req5 = new QueryDocumentOperationRequest
+            {
+                KeyConditionExpression = new Expression
+                {
+                    ExpressionAttributeNames = new Dictionary<string, string> { { "#N", "Name" } },
+                    ExpressionAttributeValues = new Dictionary<string, DynamoDBEntry> { { ":v", "Diane" } },
+                    ExpressionStatement = "#N = :v"
+                },
+                Select = SelectValues.Count
+            };
+            var searchCount = hashRangeTable.Query(req5);
+            var docsCount = searchCount.GetRemaining();
+            Assert.AreEqual(2, searchCount.Count);
+            Assert.AreEqual(0, docsCount.Count);
+
 
             // Scan local index
             var scanFilter = new ScanFilter();
@@ -786,6 +873,357 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             }).GetRemaining();
             Assert.AreEqual(1, items.Count);
         }
+        private void TestCompositeHashRangeTable(ITable compositeHashRangeTable, DynamoDBEntryConversion conversion)
+        {
+            var docs = new List<Document>
+            {
+                new Document
+                {
+                    ["Id"] = 1,
+                    ["UserName"] = "alice",
+                    ["OrderId"] = "order-100",
+                    ["Timestamp"] = 1000,
+                    ["Region"] = "us-east-1",
+                    ["Status"] = "pending",
+                    ["Amount"] = 50,
+                    ["Category"] = "books",
+                    ["Priority"] = 1
+                },
+                new Document
+                {
+                    ["Id"] = 2,
+                    ["UserName"] = "bob",
+                    ["OrderId"] = "order-100",
+                    ["Timestamp"] = 1001,
+                    ["Region"] = "us-west-1",
+                    ["Status"] = "shipped",
+                    ["Amount"] = 75,
+                    ["Category"] = "electronics",
+                    ["Priority"] = 2
+                },
+                new Document
+                {
+                    ["Id"] = 21,
+                    ["UserName"] = "bob",
+                    ["OrderId"] = "order-100",
+                    ["Timestamp"] = 1000,
+                    ["Region"] = "us-west-1",
+                    ["Status"] = "delivered",
+                    ["Amount"] = 85,
+                    ["Category"] = "electronics",
+                    ["Priority"] = 3
+                },
+                new Document
+                {
+                    ["Id"] = 3,
+                    ["UserName"] = "alice",
+                    ["OrderId"] = "order-102",
+                    ["Timestamp"] = 1002,
+                    ["Region"] = "us-east-1",
+                    ["Status"] = "delivered",
+                    ["Amount"] = 120,
+                    ["Category"] = "books",
+                    ["Priority"] = 3
+                },
+                new Document
+                {
+                    ["Id"] = 4,
+                    ["UserName"] = "carol",
+                    ["OrderId"] = "order-103",
+                    ["Timestamp"] = 1003,
+                    ["Region"] = "eu-central-1",
+                    ["Status"] = "pending",
+                    ["Amount"] = 200,
+                    ["Category"] = "clothing",
+                    ["Priority"] = 4
+                }
+            };
+            foreach (var doc in docs)
+                compositeHashRangeTable.PutItem(doc);
+
+            // Query GSI1
+            var gsi1Filter = new QueryFilter("UserName", QueryOperator.Equal, "alice");
+            gsi1Filter.AddCondition("Timestamp", QueryOperator.GreaterThan, 1000);
+            var items = compositeHashRangeTable.Query(new QueryOperationConfig
+            {
+                IndexName = "GSI1",
+                Filter = gsi1Filter
+            }).GetRemaining();
+            Assert.AreEqual(1, items.Count);
+            Assert.IsTrue(items.All(d => d["UserName"].AsString() == "alice"));
+
+            var req1 = new QueryDocumentOperationRequest
+            {
+                IndexName = "GSI1",
+                KeyConditionExpression = new Expression
+                {
+                    ExpressionAttributeNames = new Dictionary<string, string> { { "#U", "UserName" } },
+                    ExpressionAttributeValues = new Dictionary<string, DynamoDBEntry> { { ":v", "alice" } },
+                    ExpressionStatement = "#U = :v"
+                }
+            };
+            items = compositeHashRangeTable.Query(req1).GetRemaining();
+            Assert.AreEqual(2, items.Count);
+            Assert.IsTrue(items.All(d => d["UserName"].AsString() == "alice"));
+
+            var req2 = new QueryDocumentOperationRequest
+            {
+                IndexName = "GSI1",
+                KeyConditionExpression = new Expression
+                {
+                    ExpressionAttributeNames = new Dictionary<string, string> { { "#U", "UserName" }, { "#T", "Timestamp" } },
+                    ExpressionAttributeValues = new Dictionary<string, DynamoDBEntry> { { ":v", "alice" } ,{ ":v2", 1000 } },
+                    ExpressionStatement = "#U = :v AND #T > :v2"
+                }
+            };
+            items = compositeHashRangeTable.Query(req2).GetRemaining();
+            Assert.AreEqual(1, items.Count);
+            Assert.AreEqual(1002, items[0]["Timestamp"].AsInt());
+
+            // 3) ProjectionExpression + Select specific attributes (GSI1, project OrderId)
+            var req3 = new QueryDocumentOperationRequest
+            {
+                IndexName = "GSI1",
+                KeyConditionExpression = new Expression
+                {
+                    ExpressionAttributeNames = new Dictionary<string, string> { { "#U", "UserName" } },
+                    ExpressionAttributeValues = new Dictionary<string, DynamoDBEntry> { { ":v", "alice" } },
+                    ExpressionStatement = "#U = :v"
+                },
+                ProjectionExpression = new Expression
+                {
+                    ExpressionAttributeNames = new Dictionary<string, string> { { "#O", "OrderId" } },
+                    ExpressionStatement = "#O"
+                },
+                Select = SelectValues.SpecificAttributes
+            };
+            items = compositeHashRangeTable.Query(req3).GetRemaining();
+            Assert.AreEqual(2, items.Count);
+            Assert.AreEqual(1, items[0].Count);
+            Assert.IsTrue(items[0].ContainsKey("OrderId"));
+
+            // 5) Select Count (GSI1)
+            var req5 = new QueryDocumentOperationRequest
+            {
+                IndexName = "GSI1",
+                KeyConditionExpression = new Expression
+                {
+                    ExpressionAttributeNames = new Dictionary<string, string> { { "#U", "UserName" } },
+                    ExpressionAttributeValues = new Dictionary<string, DynamoDBEntry> { { ":v", "alice" } },
+                    ExpressionStatement = "#U = :v"
+                },
+                Select = SelectValues.Count
+            };
+            var searchCount = compositeHashRangeTable.Query(req5);
+            var docsCount = searchCount.GetRemaining();
+            Assert.AreEqual(2, searchCount.Count);
+            Assert.AreEqual(0, docsCount.Count);
+
+            // Query GSI2: UserName + OrderId + Timestamp
+            var gsi2Filter = new QueryFilter("OrderId", QueryOperator.Equal, "order-100");
+            gsi2Filter.AddCondition("UserName", QueryOperator.Equal, "bob"); ;
+            items = compositeHashRangeTable.Query(new QueryOperationConfig
+            {
+                IndexName = "GSI2",
+                Filter = gsi2Filter
+            }).GetRemaining();
+            Assert.AreEqual(2, items.Count);
+            Assert.IsTrue(items.All(d => d["UserName"].AsString() == "bob"));
+            Assert.IsTrue(items.All(d => d["OrderId"].AsString() == "order-100"));
+
+            var reqGsi2 = new QueryDocumentOperationRequest
+            {
+                IndexName = "GSI2",
+                KeyConditionExpression = new Expression
+                {
+                    ExpressionAttributeNames = new Dictionary<string, string> { { "#O", "OrderId" }, { "#U", "UserName" } },
+                    ExpressionAttributeValues = new Dictionary<string, DynamoDBEntry> { { ":o", "order-100" }, { ":u", "bob" } },
+                    ExpressionStatement = "#O = :o AND #U = :u"
+                }
+            };
+            items = compositeHashRangeTable.Query(reqGsi2).GetRemaining();
+            Assert.AreEqual(2, items.Count);
+            Assert.IsTrue(items.All(d => d["UserName"].AsString() == "bob"));
+            Assert.IsTrue(items.All(d => d["OrderId"].AsString() == "order-100"));
+
+            var gsi2Filter2 = new QueryFilter("OrderId", QueryOperator.Equal, "order-100");
+            gsi2Filter2.AddCondition("UserName", QueryOperator.Equal, "bob"); 
+            gsi2Filter2.AddCondition("Timestamp", QueryOperator.GreaterThan, 1000);
+
+            items = compositeHashRangeTable.Query(new QueryOperationConfig
+            {
+                IndexName = "GSI2",
+                Filter = gsi2Filter2
+            }).GetRemaining();
+            Assert.AreEqual(1, items.Count);
+            Assert.AreEqual("order-100", items[0]["OrderId"].AsString());
+
+            var reqGsi2Filter = new QueryDocumentOperationRequest
+            {
+                IndexName = "GSI2",
+                KeyConditionExpression = new Expression
+                {
+                    ExpressionAttributeNames = new Dictionary<string, string> { { "#O", "OrderId" }, { "#U", "UserName" }, { "#T", "Timestamp" } },
+                    ExpressionAttributeValues = new Dictionary<string, DynamoDBEntry> { { ":o", "order-100" }, { ":u", "bob" } , { ":t", 1000 } },
+                    ExpressionStatement = "#O = :o AND #U = :u AND #T > :t"
+                }
+            };
+            items = compositeHashRangeTable.Query(reqGsi2Filter).GetRemaining();
+            Assert.AreEqual(1, items.Count);
+            Assert.AreEqual("order-100", items[0]["OrderId"].AsString());
+
+            // Query GSI3: UserName + Region + Status + Category
+            var gsi3Filter = new QueryFilter("Region", QueryOperator.Equal, "us-west-1");
+            gsi3Filter.AddCondition("UserName", QueryOperator.Equal, "bob");
+            gsi3Filter.AddCondition("Status", QueryOperator.Equal, "delivered");
+            items = compositeHashRangeTable.Query(new QueryOperationConfig
+            {
+                IndexName = "GSI3",
+                Filter = gsi3Filter
+            }).GetRemaining();
+            Assert.AreEqual(1, items.Count);
+            Assert.AreEqual(21, items[0]["Id"].AsInt());
+
+            var reqGsi3 = new QueryDocumentOperationRequest
+            {
+                IndexName = "GSI3",
+                KeyConditionExpression = new Expression
+                {
+                    ExpressionAttributeNames = new Dictionary<string, string> { { "#R", "Region" }, { "#U", "UserName" }, { "#S", "Status" } },
+                    ExpressionAttributeValues = new Dictionary<string, DynamoDBEntry> { { ":r", "us-west-1" }, { ":u", "bob" }, { ":s", "delivered" } },
+                    ExpressionStatement = "#R = :r AND #U = :u AND #S = :s"
+                }
+            };
+            items = compositeHashRangeTable.Query(reqGsi3).GetRemaining();
+            Assert.AreEqual(1, items.Count);
+            Assert.AreEqual(21, items[0]["Id"].AsInt());
+
+            // Query GSI3 with all 4 keys: Region + UserName + Status + Category
+            var gsi3Filter4Keys = new QueryFilter("Region", QueryOperator.Equal, "us-west-1");
+            gsi3Filter4Keys.AddCondition("UserName", QueryOperator.Equal, "bob");
+            gsi3Filter4Keys.AddCondition("Status", QueryOperator.Equal, "delivered");
+            gsi3Filter4Keys.AddCondition("Category", QueryOperator.Equal, "electronics");
+            items = compositeHashRangeTable.Query(new QueryOperationConfig
+            {
+                IndexName = "GSI3",
+                Filter = gsi3Filter4Keys
+            }).GetRemaining();
+            Assert.AreEqual(1, items.Count);
+            Assert.AreEqual(21, items[0]["Id"].AsInt());
+
+            var reqGsi3FourKeys = new QueryDocumentOperationRequest
+            {
+                IndexName = "GSI3",
+                KeyConditionExpression = new Expression
+                {
+                    ExpressionAttributeNames = new Dictionary<string, string> { { "#R", "Region" }, { "#U", "UserName" }, { "#S", "Status" }, { "#C", "Category" } },
+                    ExpressionAttributeValues = new Dictionary<string, DynamoDBEntry> { { ":r", "us-west-1" }, { ":u", "bob" }, { ":s", "delivered" }, { ":c", "electronics" } },
+                    ExpressionStatement = "#R = :r AND #U = :u AND #S = :s AND #C = :c"
+                }
+            };
+            items = compositeHashRangeTable.Query(reqGsi3FourKeys).GetRemaining();
+            Assert.AreEqual(1, items.Count);
+            Assert.AreEqual(21, items[0]["Id"].AsInt());
+
+            // Query GSI4 with all 8 keys: Id + UserName + OrderId + Region (HASH) + Status + Category + Amount + Priority (RANGE)
+            var gsi4Filter = new QueryFilter("Id", QueryOperator.Equal, 21);
+            gsi4Filter.AddCondition("UserName", QueryOperator.Equal, "bob");
+            gsi4Filter.AddCondition("OrderId", QueryOperator.Equal, "order-100");
+            gsi4Filter.AddCondition("Region", QueryOperator.Equal, "us-west-1");
+            gsi4Filter.AddCondition("Status", QueryOperator.Equal, "delivered");
+            gsi4Filter.AddCondition("Category", QueryOperator.Equal, "electronics");
+            gsi4Filter.AddCondition("Amount", QueryOperator.Equal, 85);
+            gsi4Filter.AddCondition("Priority", QueryOperator.Equal, 3);
+            items = compositeHashRangeTable.Query(new QueryOperationConfig
+            {
+                IndexName = "GSI4",
+                Filter = gsi4Filter
+            }).GetRemaining();
+            Assert.AreEqual(1, items.Count);
+            Assert.AreEqual(21, items[0]["Id"].AsInt());
+
+            var reqGsi4 = new QueryDocumentOperationRequest
+            {
+                IndexName = "GSI4",
+                KeyConditionExpression = new Expression
+                {
+                    ExpressionAttributeNames = new Dictionary<string, string> 
+                    { 
+                        { "#I", "Id" }, { "#U", "UserName" }, { "#O", "OrderId" }, { "#R", "Region" },
+                        { "#S", "Status" }, { "#C", "Category" }, { "#A", "Amount" }, { "#P", "Priority" }
+                    },
+                    ExpressionAttributeValues = new Dictionary<string, DynamoDBEntry> 
+                    { 
+                        { ":i", 21 }, { ":u", "bob" }, { ":o", "order-100" }, { ":r", "us-west-1" },
+                        { ":s", "delivered" }, { ":c", "electronics" }, { ":a", 85 }, { ":p", 3 }
+                    },
+                    ExpressionStatement = "#I = :i AND #U = :u AND #O = :o AND #R = :r AND #S = :s AND #C = :c AND #A = :a AND #P = :p"
+                }
+            };
+            items = compositeHashRangeTable.Query(reqGsi4).GetRemaining();
+            Assert.AreEqual(1, items.Count);
+            Assert.AreEqual(21, items[0]["Id"].AsInt());
+
+            // GSI4 with rightmost range key using GreaterThan
+            var reqGsi4GreaterThan = new QueryDocumentOperationRequest
+            {
+                IndexName = "GSI4",
+                KeyConditionExpression = new Expression
+                {
+                    ExpressionAttributeNames = new Dictionary<string, string> 
+                    { 
+                        { "#I", "Id" }, { "#U", "UserName" }, { "#O", "OrderId" }, { "#R", "Region" },
+                        { "#S", "Status" }, { "#C", "Category" }, { "#A", "Amount" }, { "#P", "Priority" }
+                    },
+                    ExpressionAttributeValues = new Dictionary<string, DynamoDBEntry> 
+                    { 
+                        { ":i", 21 }, { ":u", "bob" }, { ":o", "order-100" }, { ":r", "us-west-1" },
+                        { ":s", "delivered" }, { ":c", "electronics" }, { ":a", 85 }, { ":p", 2 }
+                    },
+                    ExpressionStatement = "#I = :i AND #U = :u AND #O = :o AND #R = :r AND #S = :s AND #C = :c AND #A = :a AND #P > :p"
+                }
+            };
+            items = compositeHashRangeTable.Query(reqGsi4GreaterThan).GetRemaining();
+            Assert.AreEqual(1, items.Count);
+
+            // GSI3 with rightmost range key using BeginsWith
+            var reqGsi3BeginsWith = new QueryDocumentOperationRequest
+            {
+                IndexName = "GSI3",
+                KeyConditionExpression = new Expression
+                {
+                    ExpressionAttributeNames = new Dictionary<string, string> { { "#U", "UserName" }, { "#R", "Region" }, { "#S", "Status" }, { "#C", "Category" } },
+                    ExpressionAttributeValues = new Dictionary<string, DynamoDBEntry> { { ":u", "bob" }, { ":r", "us-west-1" }, { ":s", "delivered" }, { ":c", "ele" } },
+                    ExpressionStatement = "#U = :u AND #R = :r AND #S = :s AND begins_with(#C, :c)"
+                }
+            };
+            items = compositeHashRangeTable.Query(reqGsi3BeginsWith).GetRemaining();
+            Assert.AreEqual(1, items.Count);
+
+            // GSI4 with partial range keys and LessThan on rightmost
+            var reqGsi4Partial = new QueryDocumentOperationRequest
+            {
+                IndexName = "GSI4",
+                KeyConditionExpression = new Expression
+                {
+                    ExpressionAttributeNames = new Dictionary<string, string> 
+                    { 
+                        { "#I", "Id" }, { "#U", "UserName" }, { "#O", "OrderId" }, { "#R", "Region" },
+                        { "#S", "Status" }, { "#C", "Category" }, { "#A", "Amount" }
+                    },
+                    ExpressionAttributeValues = new Dictionary<string, DynamoDBEntry> 
+                    { 
+                        { ":i", 21 }, { ":u", "bob" }, { ":o", "order-100" }, { ":r", "us-west-1" },
+                        { ":s", "delivered" }, { ":c", "electronics" }, { ":a", 100 }
+                    },
+                    ExpressionStatement = "#I = :i AND #U = :u AND #O = :o AND #R = :r AND #S = :s AND #C = :c AND #A < :a" 
+                }
+            };
+            items = compositeHashRangeTable.Query(reqGsi4Partial).GetRemaining();
+            Assert.AreEqual(1, items.Count);
+
+        }
+
         private void TestLargeBatchOperations(ITable hashTable)
         {
             int itemCount = 30;
@@ -1901,7 +2339,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 return true;
             return docA.Equals(docB);
         }
-        private void LoadTables(DynamoDBEntryConversion conversion, out ITable hashTable, out ITable hashRangeTable, out ITable numericHashRangeTable)
+        private void LoadTables(DynamoDBEntryConversion conversion, out ITable hashTable, out ITable hashRangeTable, out ITable numericHashRangeTable, out ITable compositeHashRangeTable)
         {
             TableCache.Clear();
 
@@ -1958,6 +2396,19 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 Assert.AreEqual(2, numericHashRangeTable.Keys.Count);
                 Assert.IsTrue(numericHashRangeTable.Keys.ContainsKey("CreationTime"));
                 Assert.IsTrue(numericHashRangeTable.Keys.ContainsKey("Name"));
+
+#pragma warning disable CS0618 // Disable the warning for the deprecated DynamoDBContext constructors
+                compositeHashRangeTable = Table.LoadTable(Client, compositeHashRangeTableName, conversion, true);
+#pragma warning restore CS0618 // Re-enable the warning
+                Assert.AreEqual(4, counter.ResponseCount);
+                Assert.IsNotNull(compositeHashRangeTable);
+                Assert.AreEqual(compositeHashRangeTableName, compositeHashRangeTable.TableName);
+                Assert.AreEqual(9, compositeHashRangeTable.Attributes.Count);
+                Assert.AreEqual(4, compositeHashRangeTable.GlobalSecondaryIndexes.Count);
+                Assert.AreEqual(4, compositeHashRangeTable.GlobalSecondaryIndexNames.Count);
+                Assert.AreEqual(1, compositeHashRangeTable.HashKeys.Count);
+                Assert.AreEqual(1, compositeHashRangeTable.RangeKeys.Count);
+                Assert.AreEqual(2, compositeHashRangeTable.Keys.Count);
             }
         }
     }

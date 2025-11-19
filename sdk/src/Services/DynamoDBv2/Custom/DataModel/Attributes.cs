@@ -589,17 +589,23 @@ namespace Amazon.DynamoDBv2.DataModel
         }
     }
 
-
+    /// <summary>
     /// DynamoDB property attribute that marks up current member as a hash key element for a Global Secondary Index on a table.
     /// 
     /// Members that are marked as a Global Secondary Index hash key element must be convertible to a Primitive object.
-    [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property, Inherited = true, AllowMultiple = false)]
+    /// </summary>
+    [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property, Inherited = true, AllowMultiple = true)]
     public class DynamoDBGlobalSecondaryIndexHashKeyAttribute : DynamoDBHashKeyAttribute
     {
         /// <summary>
         /// Indexes associated with this hash key.
         /// </summary>
         public string[] IndexNames { get; set; }
+
+        /// <summary>
+        /// Order of the hash key in the composite key sequence.
+        /// </summary>
+        public int Order { get; set; }
 
         /// <summary>
         /// Constructor that accepts a single index name.
@@ -609,6 +615,18 @@ namespace Amazon.DynamoDBv2.DataModel
             : base()
         {
             IndexNames = new string[] { indexName };
+            Order = 0;
+        }
+        /// <summary>
+        /// Constructor that accepts a single index name.
+        /// </summary>
+        /// <param name="indexName">Name of the Global Secondary Index this hash key belongs to.</param>
+        /// <param name="order">Order of the hash key in the composite key sequence.</param>
+        public DynamoDBGlobalSecondaryIndexHashKeyAttribute(string indexName, int order)
+            : base()
+        {
+            IndexNames = new string[] { indexName };
+            Order = order;
         }
 
         /// <summary>
@@ -619,13 +637,28 @@ namespace Amazon.DynamoDBv2.DataModel
             : base()
         {
             IndexNames = indexNames.Distinct(StringComparer.Ordinal).ToArray();
+            Order = 0;
+        }
+
+        /// <summary>
+        /// Constructor that accepts multiple index names.
+        /// </summary>
+        /// <param name="order">Order of the hash key in the composite key sequence.</param>
+        /// <param name="indexNames">Names of the Global Secondary Indexes this hash key belongs to.</param>
+        public DynamoDBGlobalSecondaryIndexHashKeyAttribute(int order, params string[] indexNames)
+            : base()
+        {
+            IndexNames = indexNames.Distinct(StringComparer.Ordinal).ToArray();
+            Order = order;
         }
     }
 
+    /// <summary>
     /// DynamoDB property attribute that marks up current member as range key element for a Global Secondary Index on a table.
     /// 
     /// Members that are marked as a Global Secondary Index range key element must be convertible to a Primitive object.
-    [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property, Inherited = true, AllowMultiple = false)]
+    /// </summary>
+    [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property, Inherited = true, AllowMultiple = true)]
     public class DynamoDBGlobalSecondaryIndexRangeKeyAttribute : DynamoDBRangeKeyAttribute
     {
         /// <summary>
@@ -634,13 +667,31 @@ namespace Amazon.DynamoDBv2.DataModel
         public string[] IndexNames { get; set; }
 
         /// <summary>
+        /// Order of the range key in the composite key sequence.
+        /// </summary>
+        public int Order { get; set; }
+
+        /// <summary>
         /// Constructor that accepts a single index name.
         /// </summary>
         /// <param name="indexName">Name of the Global Secondary Index this range key belongs to.</param>
         public DynamoDBGlobalSecondaryIndexRangeKeyAttribute(string indexName)
+        {
+
+            IndexNames = new string[] { indexName };
+            Order = 0;
+        }
+
+        /// <summary>
+        /// Constructor that accepts a single index name.
+        /// </summary>
+        /// <param name="indexName">Name of the Global Secondary Index this range key belongs to.</param>
+        /// <param name="order">Order of the range key in the composite key sequence.</param>
+        public DynamoDBGlobalSecondaryIndexRangeKeyAttribute(string indexName, int order)
             : base()
         {
             IndexNames = new string[] { indexName };
+            Order = order;
         }
 
         /// <summary>
@@ -651,6 +702,19 @@ namespace Amazon.DynamoDBv2.DataModel
             : base()
         {
             IndexNames = indexNames.Distinct(StringComparer.Ordinal).ToArray();
+            Order = 0;
+        }
+
+        /// <summary>
+        /// Constructor that accepts multiple index names.
+        /// </summary>
+        /// <param name="order">Order of the range key in the composite key sequence.</param>
+        /// <param name="indexNames">Names of the Global Secondary Indexes this range key belongs to.</param>
+        public DynamoDBGlobalSecondaryIndexRangeKeyAttribute(int order, params string[] indexNames)
+            : base()
+        {
+            IndexNames = indexNames.Distinct(StringComparer.Ordinal).ToArray();
+            Order = order;
         }
     }
 

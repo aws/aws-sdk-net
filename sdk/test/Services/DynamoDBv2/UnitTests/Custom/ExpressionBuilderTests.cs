@@ -565,6 +565,207 @@ namespace AWSSDK_DotNet.UnitTests
             Assert.AreEqual(1, resultNode.ExpressionAttributeValues.Count);
             Assert.AreEqual(10, resultNode.ExpressionAttributeValues[":C0"]);
         }
+
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public void KeyExpressionBuilder_Equal_ReturnsKeyCondition()
+        {
+            var result = NameBuilder.New("PK").KeyEqual("user123");
+            var resultNode = result.Build();
+            
+            Assert.IsNotNull(resultNode);
+            Assert.AreEqual("#K0 = :K0", resultNode.ExpressionStatement);
+            Assert.AreEqual(1, resultNode.ExpressionAttributeNames.Count);
+            Assert.AreEqual("PK", resultNode.ExpressionAttributeNames["#K0"]);
+            Assert.AreEqual(1, resultNode.ExpressionAttributeValues.Count);
+            Assert.AreEqual("user123", resultNode.ExpressionAttributeValues[":K0"].AsString());
+        }
+
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public void KeyExpressionBuilder_LessThan_ReturnsKeyCondition()
+        {
+            var result = NameBuilder.New("SK").KeyLessThan(100);
+            var resultNode = result.Build();
+            
+            Assert.IsNotNull(resultNode);
+            Assert.AreEqual("#K0 < :K0", resultNode.ExpressionStatement);
+            Assert.AreEqual(1, resultNode.ExpressionAttributeNames.Count);
+            Assert.AreEqual("SK", resultNode.ExpressionAttributeNames["#K0"]);
+            Assert.AreEqual(1, resultNode.ExpressionAttributeValues.Count);
+            Assert.AreEqual(100, resultNode.ExpressionAttributeValues[":K0"]);
+        }
+
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public void KeyExpressionBuilder_LessThanOrEqual_ReturnsKeyCondition()
+        {
+            var result = NameBuilder.New("SK").KeyLessThanOrEqual(50);
+            var resultNode = result.Build();
+            
+            Assert.IsNotNull(resultNode);
+            Assert.AreEqual("#K0 <= :K0", resultNode.ExpressionStatement);
+            Assert.AreEqual(1, resultNode.ExpressionAttributeNames.Count);
+            Assert.AreEqual("SK", resultNode.ExpressionAttributeNames["#K0"]);
+            Assert.AreEqual(1, resultNode.ExpressionAttributeValues.Count);
+            Assert.AreEqual(50, resultNode.ExpressionAttributeValues[":K0"]);
+        }
+
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public void KeyExpressionBuilder_GreaterThan_ReturnsKeyCondition()
+        {
+            var result = NameBuilder.New("SK").KeyGreaterThan(25);
+            var resultNode = result.Build();
+            
+            Assert.IsNotNull(resultNode);
+            Assert.AreEqual("#K0 > :K0", resultNode.ExpressionStatement);
+            Assert.AreEqual(1, resultNode.ExpressionAttributeNames.Count);
+            Assert.AreEqual("SK", resultNode.ExpressionAttributeNames["#K0"]);
+            Assert.AreEqual(1, resultNode.ExpressionAttributeValues.Count);
+            Assert.AreEqual(25, resultNode.ExpressionAttributeValues[":K0"]);
+        }
+
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public void KeyExpressionBuilder_GreaterThanOrEqual_ReturnsKeyCondition()
+        {
+            var result = NameBuilder.New("SK").KeyGreaterThanOrEqual(75);
+            var resultNode = result.Build();
+            
+            Assert.IsNotNull(resultNode);
+            Assert.AreEqual("#K0 >= :K0", resultNode.ExpressionStatement);
+            Assert.AreEqual(1, resultNode.ExpressionAttributeNames.Count);
+            Assert.AreEqual("SK", resultNode.ExpressionAttributeNames["#K0"]);
+            Assert.AreEqual(1, resultNode.ExpressionAttributeValues.Count);
+            Assert.AreEqual(75, resultNode.ExpressionAttributeValues[":K0"]);
+        }
+
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public void KeyExpressionBuilder_Between_ReturnsKeyCondition()
+        {
+            var result = NameBuilder.New("SK").KeyBetween(10, 90);
+            var resultNode = result.Build();
+            
+            Assert.IsNotNull(resultNode);
+            Assert.AreEqual("#K0 BETWEEN :K0 AND :K1", resultNode.ExpressionStatement);
+            Assert.AreEqual(1, resultNode.ExpressionAttributeNames.Count);
+            Assert.AreEqual("SK", resultNode.ExpressionAttributeNames["#K0"]);
+            Assert.AreEqual(2, resultNode.ExpressionAttributeValues.Count);
+            Assert.AreEqual(10, resultNode.ExpressionAttributeValues[":K0"]);
+            Assert.AreEqual(90, resultNode.ExpressionAttributeValues[":K1"]);
+        }
+
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public void KeyExpressionBuilder_BeginsWith_ReturnsKeyCondition()
+        {
+            var result = NameBuilder.New("SK").KeyBeginsWith("prefix");
+            var resultNode = result.Build();
+            
+            Assert.IsNotNull(resultNode);
+            Assert.AreEqual("begins_with (#K0, :K0)", resultNode.ExpressionStatement);
+            Assert.AreEqual(1, resultNode.ExpressionAttributeNames.Count);
+            Assert.AreEqual("SK", resultNode.ExpressionAttributeNames["#K0"]);
+            Assert.AreEqual(1, resultNode.ExpressionAttributeValues.Count);
+            Assert.AreEqual("prefix", resultNode.ExpressionAttributeValues[":K0"].AsString());
+        }
+
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public void KeyExpressionBuilder_And_ReturnsKeyCondition()
+        {
+            var result = NameBuilder.New("PK").KeyEqual("user123")
+                .And(NameBuilder.New("SK").KeyGreaterThan(50));
+            var resultNode = result.Build();
+            
+            Assert.IsNotNull(resultNode);
+            Assert.AreEqual("(#K0 = :K0) AND (#K1 > :K1)", resultNode.ExpressionStatement);
+            Assert.AreEqual(2, resultNode.ExpressionAttributeNames.Count);
+            Assert.AreEqual("PK", resultNode.ExpressionAttributeNames["#K0"]);
+            Assert.AreEqual("SK", resultNode.ExpressionAttributeNames["#K1"]);
+            Assert.AreEqual(2, resultNode.ExpressionAttributeValues.Count);
+            Assert.AreEqual("user123", resultNode.ExpressionAttributeValues[":K0"].AsString());
+            Assert.AreEqual(50, resultNode.ExpressionAttributeValues[":K1"]);
+        }
+
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public void KeyExpressionBuilder_StaticAnd_ReturnsKeyCondition()
+        {
+            var result = KeyExpressionBuilder.And(
+                NameBuilder.New("PK").KeyEqual("user123"),
+                NameBuilder.New("SK").KeyLessThan(100));
+            var resultNode = result.Build();
+            
+            Assert.IsNotNull(resultNode);
+            Assert.AreEqual("(#K0 = :K0) AND (#K1 < :K1)", resultNode.ExpressionStatement);
+            Assert.AreEqual(2, resultNode.ExpressionAttributeNames.Count);
+            Assert.AreEqual("PK", resultNode.ExpressionAttributeNames["#K0"]);
+            Assert.AreEqual("SK", resultNode.ExpressionAttributeNames["#K1"]);
+            Assert.AreEqual(2, resultNode.ExpressionAttributeValues.Count);
+            Assert.AreEqual("user123", resultNode.ExpressionAttributeValues[":K0"].AsString());
+            Assert.AreEqual(100, resultNode.ExpressionAttributeValues[":K1"]);
+        }
+
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public void KeyExpressionBuilder_WithName_ReturnsNameBuilder()
+        {
+            var keyBuilder = KeyExpressionBuilder.New();
+            var nameBuilder = keyBuilder.WithName("TestAttribute");
+            
+            Assert.IsNotNull(nameBuilder);
+            Assert.IsInstanceOfType(nameBuilder, typeof(NameBuilder));
+        }
+
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public void KeyExpressionBuilder_WithName_ComplexPath_ReturnsNameBuilder()
+        {
+            var keyBuilder = KeyExpressionBuilder.New();
+            var nameBuilder = keyBuilder.WithName("parent.child[0].attribute");
+            
+            Assert.IsNotNull(nameBuilder);
+            Assert.IsInstanceOfType(nameBuilder, typeof(NameBuilder));
+        }
+
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public void KeyExpressionBuilder_StaticEqual_WithOperands_ReturnsKeyCondition()
+        {
+            var nameOperand = NameBuilder.New("PK");
+            var valueOperand = ValueBuilder.New("user456");
+            var result = KeyExpressionBuilder.Equal(nameOperand, valueOperand);
+            var resultNode = result.Build();
+            
+            Assert.IsNotNull(resultNode);
+            Assert.AreEqual("#K0 = :K0", resultNode.ExpressionStatement);
+            Assert.AreEqual(1, resultNode.ExpressionAttributeNames.Count);
+            Assert.AreEqual("PK", resultNode.ExpressionAttributeNames["#K0"]);
+            Assert.AreEqual(1, resultNode.ExpressionAttributeValues.Count);
+            Assert.AreEqual("user456", resultNode.ExpressionAttributeValues[":K0"].AsString());
+        }
+
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public void KeyExpressionBuilder_StaticEqual_WithNumericValue_ReturnsKeyCondition()
+        {
+            var nameOperand = NameBuilder.New("SK");
+            var valueOperand = ValueBuilder.New(42);
+            var result = KeyExpressionBuilder.Equal(nameOperand, valueOperand);
+            var resultNode = result.Build();
+            
+            Assert.IsNotNull(resultNode);
+            Assert.AreEqual("#K0 = :K0", resultNode.ExpressionStatement);
+            Assert.AreEqual(1, resultNode.ExpressionAttributeNames.Count);
+            Assert.AreEqual("SK", resultNode.ExpressionAttributeNames["#K0"]);
+            Assert.AreEqual(1, resultNode.ExpressionAttributeValues.Count);
+            Assert.AreEqual(42, resultNode.ExpressionAttributeValues[":K0"]);
+        }
+
+
     }
 
 }

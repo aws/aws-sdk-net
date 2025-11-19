@@ -13,16 +13,16 @@ namespace AWSSDK_DotNet.UnitTests
     public class ContextExpressionsUtilsTests
     {
         [TestMethod]
-        [DataRow(QueryOperator.Equal, " AND myKey = :rangeKey0")]
-        [DataRow(QueryOperator.LessThan, " AND myKey < :rangeKey0")]
-        [DataRow(QueryOperator.LessThanOrEqual, " AND myKey <= :rangeKey0")]
-        [DataRow(QueryOperator.GreaterThan, " AND myKey > :rangeKey0")]
-        [DataRow(QueryOperator.GreaterThanOrEqual, " AND myKey >= :rangeKey0")]
-        [DataRow(QueryOperator.Between, " AND myKey BETWEEN :rangeKey0 AND :rangeKey0")]
-        [DataRow(QueryOperator.BeginsWith, " AND begins_with(myKey, :rangeKey0)")]
+        [DataRow(QueryOperator.Equal, " AND myKey0 = :rangeKey0")]
+        [DataRow(QueryOperator.LessThan, " AND myKey0 < :rangeKey0")]
+        [DataRow(QueryOperator.LessThanOrEqual, " AND myKey0 <= :rangeKey0")]
+        [DataRow(QueryOperator.GreaterThan, " AND myKey0 > :rangeKey0")]
+        [DataRow(QueryOperator.GreaterThanOrEqual, " AND myKey0 >= :rangeKey0")]
+        [DataRow(QueryOperator.Between, " AND myKey0 BETWEEN :rangeKeyL0 AND :rangeKeyH0")]
+        [DataRow(QueryOperator.BeginsWith, " AND begins_with(myKey0, :rangeKey0)")]
         public void GetRangeKeyConditionExpression_ReturnsExpected(QueryOperator op, string expected)
         {
-            var result = ContextExpressionsUtils.GetRangeKeyConditionExpression("myKey", op);
+            var result = ContextExpressionsUtils.GetRangeKeyConditionExpression("myKey", op, 0);
             Assert.AreEqual(expected, result);
         }
 
@@ -30,7 +30,7 @@ namespace AWSSDK_DotNet.UnitTests
         public void GetRangeKeyConditionExpression_ThrowsOnUnsupported()
         {
             Assert.ThrowsException<NotSupportedException>(() =>
-                ContextExpressionsUtils.GetRangeKeyConditionExpression("myKey", (QueryOperator)999));
+                ContextExpressionsUtils.GetRangeKeyConditionExpression("myKey", (QueryOperator)999,0));
         }
 
         [TestMethod]

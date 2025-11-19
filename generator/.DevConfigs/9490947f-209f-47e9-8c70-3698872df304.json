@@ -1,0 +1,11 @@
+{
+  "services": [
+    {
+      "serviceName": "DynamoDBv2",
+      "type": "minor",
+      "changeLogMessages": [
+        "Add support for composite keys in Query operation for high-level libraries (Document Model and DataModel)."
+      ]
+    }
+  ]
+}
