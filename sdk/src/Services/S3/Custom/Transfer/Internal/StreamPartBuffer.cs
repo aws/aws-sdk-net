@@ -44,7 +44,7 @@ namespace Amazon.S3.Transfer.Internal
 
         /// <summary>
         /// Gets or sets the ArrayPool buffer containing the downloaded part data.
-        /// Ownership is transferred to this StreamPartBuffer and will be returned to pool on disposal.
+        /// Ownership belongs to this StreamPartBuffer and will be returned to pool on disposal.
         /// </summary>
         public byte[] ArrayPoolBuffer { get; set; }
 
@@ -67,11 +67,12 @@ namespace Amazon.S3.Transfer.Internal
 
         /// <summary>
         /// Creates a new StreamPartBuffer for streaming scenarios.
+        /// For internal use only - external callers should use Create() factory method.
         /// </summary>
         /// <param name="partNumber">The part number for ordering</param>
         /// <param name="arrayPoolBuffer">The ArrayPool buffer containing the data (ownership transferred)</param>
         /// <param name="length">The length of valid data in the buffer</param>
-        public StreamPartBuffer(int partNumber, byte[] arrayPoolBuffer, int length)
+        internal StreamPartBuffer(int partNumber, byte[] arrayPoolBuffer, int length)
         {
             PartNumber = partNumber;
             ArrayPoolBuffer = arrayPoolBuffer;
@@ -80,16 +81,37 @@ namespace Amazon.S3.Transfer.Internal
         }
 
         /// <summary>
-        /// Creates a StreamPartBuffer from ArrayPool buffer
-        /// Transfers ownership of the ArrayPool buffer to this StreamPartBuffer.
+        /// Creates a new StreamPartBuffer with a rented ArrayPool buffer.
+        /// The StreamPartBuffer takes ownership and will return the buffer on disposal.
         /// </summary>
         /// <param name="partNumber">The part number for ordering</param>
-        /// <param name="arrayPoolBuffer">The ArrayPool buffer containing downloaded data (ownership transferred)</param>
-        /// <param name="length">Length of valid data in buffer</param>
-        /// <returns>A StreamPartBuffer ready for sequential reading</returns>
-        public static StreamPartBuffer FromArrayPoolBuffer(int partNumber, byte[] arrayPoolBuffer, int length)
+        /// <param name="capacity">Initial capacity needed for the buffer</param>
+        /// <returns>A StreamPartBuffer with rented buffer ready for writing</returns>
+        public static StreamPartBuffer Create(int partNumber, int capacity)
         {
-            return new StreamPartBuffer(partNumber, arrayPoolBuffer, length);
+            var buffer = ArrayPool<byte>.Shared.Rent(capacity);
+            return new StreamPartBuffer(partNumber, buffer, 0); // Length will be set after writing
+        }
+
+        /// <summary>
+        /// Sets the length of valid data in the buffer after writing.
+        /// Can only be called once to prevent state corruption.
+        /// </summary>
+        /// <param name="length">The number of valid bytes written to the buffer</param>
+        /// <exception cref="InvalidOperationException">Thrown if length has already been set</exception>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown if length is negative or exceeds buffer capacity</exception>
+        internal void SetLength(int length)
+        {
+            if (Length > 0)
+                throw new InvalidOperationException("Length has already been set and cannot be changed");
+            
+            if (length < 0)
+                throw new ArgumentOutOfRangeException(nameof(length), "Length must be non-negative");
+            
+            if (ArrayPoolBuffer != null && length > ArrayPoolBuffer.Length)
+                throw new ArgumentOutOfRangeException(nameof(length), "Length exceeds buffer capacity");
+            
+            Length = length;
         }
 
         /// <summary>

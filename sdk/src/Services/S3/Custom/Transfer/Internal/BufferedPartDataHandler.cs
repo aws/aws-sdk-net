@@ -85,7 +85,6 @@ namespace Amazon.S3.Transfer.Internal
             CancellationToken cancellationToken)
         {
             StreamPartBuffer downloadedPart = null;
-            byte[] partBuffer = null;
             
             try
             {
@@ -93,7 +92,10 @@ namespace Amazon.S3.Transfer.Internal
                 long expectedBytes = response.ContentLength;
                 int initialBufferSize = (int)expectedBytes;
                 
-                partBuffer = ArrayPool<byte>.Shared.Rent(initialBufferSize);
+                downloadedPart = StreamPartBuffer.Create(partNumber, initialBufferSize);
+                
+                // Get reference to the buffer for writing
+                var partBuffer = downloadedPart.ArrayPoolBuffer;
                 
                 int totalRead = 0;
                 
@@ -103,13 +105,6 @@ namespace Amazon.S3.Transfer.Internal
                     // Calculate how many bytes we still need to read
                     int remainingBytes = (int)(expectedBytes - totalRead);
                     int bufferSpace = partBuffer.Length - totalRead;
-                    
-                    // Expand buffer if needed BEFORE reading
-                    if (bufferSpace == 0)
-                    {
-                        partBuffer = ExpandPartBuffer(partBuffer, totalRead);
-                        bufferSpace = partBuffer.Length - totalRead;
-                    }
                     
                     // Read size is minimum of: remaining bytes needed, buffer space available, and configured buffer size
                     int readSize = Math.Min(Math.Min(remainingBytes, bufferSpace), _config.BufferSize);
@@ -130,36 +125,17 @@ namespace Amazon.S3.Transfer.Internal
                     totalRead += bytesRead;
                 }
 
-                // Create ArrayPool-based StreamPartBuffer (no copying!)
-                downloadedPart = StreamPartBuffer.FromArrayPoolBuffer(
-                    partNumber,
-                    partBuffer,     // Transfer ownership to StreamPartBuffer
-                    totalRead       // Actual data length
-                );
-
-                partBuffer = null; // Clear reference to prevent return in finally
+                // Set the length to reflect actual bytes read
+                downloadedPart.SetLength(totalRead);
+                
                 return downloadedPart;
             }
-            finally
+            catch
             {
-                // Only return partBuffer if ownership wasn't transferred
-                if (partBuffer != null)
-                    ArrayPool<byte>.Shared.Return(partBuffer);
+                // If something goes wrong, StreamPartBuffer.Dispose() will handle cleanup
+                downloadedPart?.Dispose();
+                throw;
             }
-        }
-
-        private byte[] ExpandPartBuffer(byte[] currentBuffer, int validDataLength)
-        {
-            var newSize = Math.Max(currentBuffer.Length * 2, validDataLength + (int)_config.TargetPartSizeBytes);
-            var expandedBuffer = ArrayPool<byte>.Shared.Rent(newSize);
-
-            // Single copy of valid data to expanded buffer
-            Buffer.BlockCopy(currentBuffer, 0, expandedBuffer, 0, validDataLength);
-
-            // Return old buffer to pool
-            ArrayPool<byte>.Shared.Return(currentBuffer);
-
-            return expandedBuffer;
         }
     }
 }

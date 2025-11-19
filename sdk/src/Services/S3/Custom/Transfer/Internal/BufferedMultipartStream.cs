@@ -42,6 +42,7 @@ namespace Amazon.S3.Transfer.Internal
         private bool _initialized = false;
         private bool _disposed = false;
         private DownloadDiscoveryResult _discoveryResult;
+        private long _totalBytesRead = 0;
 
         /// <summary>
         /// Gets the discovery result containing metadata from the initial GetObject response.
@@ -143,6 +144,12 @@ namespace Amazon.S3.Transfer.Internal
             var bytesRead = await _partBufferManager.ReadAsync(buffer, offset, count, cancellationToken)
                 .ConfigureAwait(false);
             
+            // Track total bytes read for Position property
+            if (bytesRead > 0)
+            {
+                Interlocked.Add(ref _totalBytesRead, bytesRead);
+            }
+            
             return bytesRead;
         }
 
@@ -153,11 +160,25 @@ namespace Amazon.S3.Transfer.Internal
         public override bool CanSeek => false;
         public override bool CanWrite => false;
 
-        public override long Length => throw new NotSupportedException("Length not supported for multipart download streams");
+        public override long Length 
+        { 
+            get 
+            {
+                if (!_initialized)
+                    throw new InvalidOperationException("Stream must be initialized before accessing Length");
+                return _discoveryResult.ObjectSize;
+            }
+        }
+
         public override long Position 
         { 
-            get => throw new NotSupportedException("Position not supported for multipart download streams"); 
-            set => throw new NotSupportedException("Position not supported for multipart download streams"); 
+            get 
+            {
+                if (!_initialized)
+                    throw new InvalidOperationException("Stream must be initialized before accessing Position");
+                return Interlocked.Read(ref _totalBytesRead);
+            }
+            set => throw new NotSupportedException("Position setter not supported for read-only streams"); 
         }
 
         public override void Flush() { }

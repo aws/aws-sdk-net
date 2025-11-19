@@ -47,7 +47,6 @@ namespace Amazon.S3.Transfer.Internal
         private Exception _downloadException;
         private bool _disposed = false;
         private bool _discoveryCompleted = false;
-        private readonly object _lockObject = new object();
 
         private string _savedETag;
         private int _discoveredPartCount;
@@ -67,10 +66,7 @@ namespace Amazon.S3.Transfer.Internal
         { 
             get 
             { 
-                lock (_lockObject)
-                {
-                    return _downloadException;
-                }
+                return _downloadException;
             }
         }
 
@@ -78,11 +74,8 @@ namespace Amazon.S3.Transfer.Internal
         {
             ThrowIfDisposed();
             
-            lock (_lockObject)
-            {
-                if (_discoveryCompleted)
-                    throw new InvalidOperationException("Discovery has already been performed");
-            }
+            if (_discoveryCompleted)
+                throw new InvalidOperationException("Discovery has already been performed");
 
             try
             {
@@ -91,19 +84,13 @@ namespace Amazon.S3.Transfer.Internal
                     ? await DiscoverUsingPartStrategyAsync(cancellationToken).ConfigureAwait(false)
                     : await DiscoverUsingRangeStrategyAsync(cancellationToken).ConfigureAwait(false);
                 
-                lock (_lockObject)
-                {
-                    _discoveryCompleted = true;
-                }
+                _discoveryCompleted = true;
                 
                 return result;
             }
             catch (Exception ex)
             {
-                lock (_lockObject)
-                {
-                    _downloadException = ex;
-                }
+                _downloadException = ex;
                 throw;
             }
         }
@@ -161,10 +148,7 @@ namespace Amazon.S3.Transfer.Internal
             }
             catch (Exception ex)
             {
-                lock (_lockObject)
-                {
-                    _downloadException = ex;
-                }
+                _downloadException = ex;
                 
                 _dataHandler.OnDownloadComplete(ex);
                 throw;
@@ -304,8 +288,8 @@ namespace Amazon.S3.Transfer.Internal
 
         private async Task<DownloadDiscoveryResult> DiscoverUsingRangeStrategyAsync(CancellationToken cancellationToken)
         {
-            // Get target part size for RANGE strategy
-            var targetPartSize = _request.IsSetPartSize() ? _request.PartSize : _config.TargetPartSizeBytes;
+            // Get target part size for RANGE strategy (already set in config from request or default)
+            var targetPartSize = _config.TargetPartSizeBytes;
             
             // SEP Ranged GET Step 1: "create a new GetObject request copying all fields in the original request. 
             // Set range value to bytes=0-{targetPartSizeBytes-1} to request the first part."
@@ -393,34 +377,48 @@ namespace Amazon.S3.Transfer.Internal
             return request;
         }
 
-        private (long startByte, long endByte) CalculatePartRange(int partNumber, long objectSize)
+        internal (long startByte, long endByte) CalculatePartRange(int partNumber, long objectSize)
         {
-            var targetPartSize = _request.IsSetPartSize() ? _request.PartSize : _config.TargetPartSizeBytes;
+            var targetPartSize = _config.TargetPartSizeBytes;
             
             var startByte = (partNumber - 1) * targetPartSize;
             var endByte = Math.Min(startByte + targetPartSize - 1, objectSize - 1);
             return (startByte, endByte);
         }
 
-        private long ExtractTotalSizeFromContentRange(string contentRange)
+        internal (long startByte, long endByte, long totalSize) ParseContentRange(string contentRange)
         {
             if (string.IsNullOrEmpty(contentRange))
-                throw new InvalidOperationException("Content-Range header is missing from range request response");
+                throw new InvalidOperationException("Content-Range header is missing");
 
-            // Format: "bytes 0-{end}/{total-size}" or "bytes 0-{end}/*"
-            var parts = contentRange.Split('/');
-            if (parts.Length == 2 && parts[1] != "*")
-            {
-                if (long.TryParse(parts[1], out var totalSize))
-                {
-                    return totalSize;
-                }
-            }
+            // Format: "bytes {start}-{end}/{total-size}"
+            var parts = contentRange.Replace("bytes ", "").Split('/');
+            if (parts.Length != 2)
+                throw new InvalidOperationException($"Invalid ContentRange format: {contentRange}");
 
-            throw new InvalidOperationException($"Unable to parse Content-Range header: {contentRange}");
+            // Parse byte range
+            var rangeParts = parts[0].Split('-');
+            if (rangeParts.Length != 2 ||
+                !long.TryParse(rangeParts[0], out var startByte) ||
+                !long.TryParse(rangeParts[1], out var endByte))
+                throw new InvalidOperationException($"Unable to parse ContentRange byte range: {contentRange}");
+
+            // Parse total size - S3 always returns exact sizes, never wildcards
+            if (parts[1] == "*")
+                throw new InvalidOperationException($"Unexpected wildcard in ContentRange total size: {contentRange}. S3 always returns exact object sizes.");
+            if (!long.TryParse(parts[1], out var totalSize))
+                throw new InvalidOperationException($"Unable to parse ContentRange total size: {contentRange}");
+
+            return (startByte, endByte, totalSize);
         }
 
-        private void ValidateContentRange(GetObjectResponse response, int partNumber, long objectSize)
+        internal long ExtractTotalSizeFromContentRange(string contentRange)
+        {
+            var (_, _, totalSize) = ParseContentRange(contentRange);
+            return totalSize;
+        }
+
+        internal void ValidateContentRange(GetObjectResponse response, int partNumber, long objectSize)
         {
             // Ranged GET Step 7: 
             // "validate that ContentRange matches with the requested range"            
@@ -428,27 +426,13 @@ namespace Amazon.S3.Transfer.Internal
             {
                 var (expectedStartByte, expectedEndByte) = CalculatePartRange(partNumber, objectSize);
 
-                // Parse actual ContentRange from response
-                // Format: "bytes {start}-{end}/{total}"
-                var contentRange = response.ContentRange;
-                if (string.IsNullOrEmpty(contentRange))
+                // Parse actual ContentRange from response using unified helper
+                if (string.IsNullOrEmpty(response.ContentRange))
                 {
                     throw new InvalidOperationException($"ContentRange header missing from part {partNumber} response");
                 }
 
-                var parts = contentRange.Replace("bytes ", "").Split('/');
-                if (parts.Length != 2)
-                {
-                    throw new InvalidOperationException($"Invalid ContentRange format: {contentRange}");
-                }
-
-                var rangeParts = parts[0].Split('-');
-                if (rangeParts.Length != 2 ||
-                    !long.TryParse(rangeParts[0], out var actualStartByte) ||
-                    !long.TryParse(rangeParts[1], out var actualEndByte))
-                {
-                    throw new InvalidOperationException($"Unable to parse ContentRange: {contentRange}");
-                }
+                var (actualStartByte, actualEndByte, _) = ParseContentRange(response.ContentRange);
 
                 // Validate range matches what we requested
                 if (actualStartByte != expectedStartByte || actualEndByte != expectedEndByte)

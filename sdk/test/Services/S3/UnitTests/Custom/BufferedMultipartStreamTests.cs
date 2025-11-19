@@ -450,31 +450,288 @@ namespace AWSSDK.UnitTests
             Assert.IsFalse(stream.CanWrite, "Stream should not be writable");
         }
 
-        [DataTestMethod]
-        [DataRow("Length", DisplayName = "Length Property")]
-        [DataRow("Position_Get", DisplayName = "Position Get")]
-        [DataRow("Position_Set", DisplayName = "Position Set")]
-        public void UnsupportedProperties_ThrowNotSupportedException(string propertyName)
+        [TestMethod]
+        [ExpectedException(typeof(InvalidOperationException))]
+        public void Length_BeforeInitialization_ThrowsInvalidOperationException()
         {
             // Arrange
             var stream = CreateStream();
 
-            // Act & Assert
-            Assert.ThrowsException<NotSupportedException>(() =>
+            // Act
+            _ = stream.Length;
+        }
+
+        [TestMethod]
+        public async Task Length_AfterInitialization_ReturnsObjectSize()
+        {
+            // Arrange
+            var objectSize = MEDIUM_OBJECT_SIZE;
+            var stream = await CreateInitializedStreamAsync(objectSize: objectSize);
+
+            // Act
+            var length = stream.Length;
+
+            // Assert
+            Assert.AreEqual(objectSize, length, "Length should return ObjectSize from discovery result");
+
+            // Cleanup
+            stream.Dispose();
+        }
+
+        [TestMethod]
+        public async Task Length_ForLargeObject_ReturnsCorrectSize()
+        {
+            // Arrange
+            var objectSize = VERY_LARGE_OBJECT_SIZE;
+            var stream = await CreateInitializedStreamAsync(objectSize: objectSize, totalParts: 10);
+
+            // Act
+            var length = stream.Length;
+
+            // Assert
+            Assert.AreEqual(objectSize, length, "Length should return correct size for large objects");
+
+            // Cleanup
+            stream.Dispose();
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(InvalidOperationException))]
+        public void Position_BeforeInitialization_ThrowsInvalidOperationException()
+        {
+            // Arrange
+            var stream = CreateStream();
+
+            // Act
+            _ = stream.Position;
+        }
+
+        [TestMethod]
+        public async Task Position_AfterInitialization_ReturnsZero()
+        {
+            // Arrange
+            var stream = await CreateInitializedStreamAsync();
+
+            // Act
+            var position = stream.Position;
+
+            // Assert
+            Assert.AreEqual(0, position, "Position should be 0 before any reads");
+
+            // Cleanup
+            stream.Dispose();
+        }
+
+        [TestMethod]
+        public async Task Position_AfterSingleRead_ReturnsCorrectValue()
+        {
+            // Arrange
+            var objectSize = MEDIUM_OBJECT_SIZE;
+            var testData = MultipartDownloadTestHelpers.GenerateTestData(objectSize, 0);
+            var mockResponse = MultipartDownloadTestHelpers.CreateMockGetObjectResponse(
+                objectSize, null, null, "test-etag", testData);
+            var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client(
+                (req, ct) => Task.FromResult(mockResponse));
+            
+            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest();
+            var transferConfig = new TransferUtilityConfig();
+            var stream = BufferedMultipartStream.Create(mockClient.Object, request, transferConfig);
+            await stream.InitializeAsync(CancellationToken.None);
+
+            // Act
+            var buffer = new byte[SMALL_CHUNK_SIZE];
+            var bytesRead = await stream.ReadAsync(buffer, 0, buffer.Length);
+            var position = stream.Position;
+
+            // Assert
+            Assert.AreEqual(bytesRead, position, "Position should equal bytes read");
+
+            // Cleanup
+            stream.Dispose();
+        }
+
+        [TestMethod]
+        public async Task Position_AfterMultipleReads_AccumulatesCorrectly()
+        {
+            // Arrange
+            var objectSize = MEDIUM_OBJECT_SIZE;
+            var testData = MultipartDownloadTestHelpers.GenerateTestData(objectSize, 0);
+            var mockResponse = MultipartDownloadTestHelpers.CreateMockGetObjectResponse(
+                objectSize, null, null, "test-etag", testData);
+            var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client(
+                (req, ct) => Task.FromResult(mockResponse));
+            
+            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest();
+            var transferConfig = new TransferUtilityConfig();
+            var stream = BufferedMultipartStream.Create(mockClient.Object, request, transferConfig);
+            await stream.InitializeAsync(CancellationToken.None);
+
+            // Act - Perform multiple reads
+            var buffer = new byte[SMALL_CHUNK_SIZE];
+            var totalBytesRead = 0;
+            
+            var read1 = await stream.ReadAsync(buffer, 0, buffer.Length);
+            totalBytesRead += read1;
+            Assert.AreEqual(totalBytesRead, stream.Position, "Position should match after first read");
+            
+            var read2 = await stream.ReadAsync(buffer, 0, buffer.Length);
+            totalBytesRead += read2;
+            Assert.AreEqual(totalBytesRead, stream.Position, "Position should accumulate after second read");
+            
+            var read3 = await stream.ReadAsync(buffer, 0, buffer.Length);
+            totalBytesRead += read3;
+            Assert.AreEqual(totalBytesRead, stream.Position, "Position should accumulate after third read");
+
+            // Assert
+            Assert.IsTrue(totalBytesRead > 0, "Should have read some data");
+            Assert.AreEqual(totalBytesRead, stream.Position, "Position should equal total bytes read");
+
+            // Cleanup
+            stream.Dispose();
+        }
+
+        [TestMethod]
+        public async Task Position_AtEndOfStream_EqualsLength()
+        {
+            // Arrange
+            var objectSize = SMALL_OBJECT_SIZE;
+            var testData = MultipartDownloadTestHelpers.GenerateTestData(objectSize, 0);
+            var mockResponse = MultipartDownloadTestHelpers.CreateMockGetObjectResponse(
+                objectSize, null, null, "test-etag", testData);
+            var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client(
+                (req, ct) => Task.FromResult(mockResponse));
+            
+            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest();
+            var transferConfig = new TransferUtilityConfig();
+            var stream = BufferedMultipartStream.Create(mockClient.Object, request, transferConfig);
+            await stream.InitializeAsync(CancellationToken.None);
+
+            // Act - Read entire stream
+            var buffer = new byte[objectSize];
+            await stream.ReadAsync(buffer, 0, buffer.Length);
+
+            // Assert
+            Assert.AreEqual(stream.Length, stream.Position, 
+                "Position should equal Length after reading entire stream");
+
+            // Cleanup
+            stream.Dispose();
+        }
+
+        [TestMethod]
+        public async Task Position_WithZeroByteRead_DoesNotChange()
+        {
+            // Arrange
+            var objectSize = SMALL_OBJECT_SIZE;
+            var testData = MultipartDownloadTestHelpers.GenerateTestData(objectSize, 0);
+            var mockResponse = MultipartDownloadTestHelpers.CreateMockGetObjectResponse(
+                objectSize, null, null, "test-etag", testData);
+            var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client(
+                (req, ct) => Task.FromResult(mockResponse));
+            
+            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest();
+            var transferConfig = new TransferUtilityConfig();
+            var stream = BufferedMultipartStream.Create(mockClient.Object, request, transferConfig);
+            await stream.InitializeAsync(CancellationToken.None);
+
+            // Act - Read entire stream, then try to read again
+            var buffer = new byte[objectSize];
+            await stream.ReadAsync(buffer, 0, buffer.Length);
+            var positionAfterFullRead = stream.Position;
+            
+            // Try to read past end
+            await stream.ReadAsync(buffer, 0, buffer.Length);
+            var positionAfterSecondRead = stream.Position;
+
+            // Assert
+            Assert.AreEqual(positionAfterFullRead, positionAfterSecondRead,
+                "Position should not change when read returns 0 bytes");
+
+            // Cleanup
+            stream.Dispose();
+        }
+
+        [TestMethod]
+        public async Task Position_SynchronousRead_UpdatesCorrectly()
+        {
+            // Arrange
+            var objectSize = MEDIUM_OBJECT_SIZE;
+            var testData = MultipartDownloadTestHelpers.GenerateTestData(objectSize, 0);
+            var mockResponse = MultipartDownloadTestHelpers.CreateMockGetObjectResponse(
+                objectSize, null, null, "test-etag", testData);
+            var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client(
+                (req, ct) => Task.FromResult(mockResponse));
+            
+            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest();
+            var transferConfig = new TransferUtilityConfig();
+            var stream = BufferedMultipartStream.Create(mockClient.Object, request, transferConfig);
+            await stream.InitializeAsync(CancellationToken.None);
+
+            // Act - Use synchronous Read method
+            var buffer = new byte[SMALL_CHUNK_SIZE];
+            var bytesRead = stream.Read(buffer, 0, buffer.Length);
+
+            // Assert
+            Assert.AreEqual(bytesRead, stream.Position, 
+                "Position should update correctly for synchronous Read");
+
+            // Cleanup
+            stream.Dispose();
+        }
+
+        [TestMethod]
+        public async Task Position_LengthAndPosition_ProvideProgressTracking()
+        {
+            // Arrange
+            var objectSize = LARGE_OBJECT_SIZE;
+            var testData = MultipartDownloadTestHelpers.GenerateTestData(objectSize, 0);
+            var mockResponse = MultipartDownloadTestHelpers.CreateMockGetObjectResponse(
+                objectSize, null, null, "test-etag", testData);
+            var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client(
+                (req, ct) => Task.FromResult(mockResponse));
+            
+            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest();
+            var transferConfig = new TransferUtilityConfig();
+            var stream = BufferedMultipartStream.Create(mockClient.Object, request, transferConfig);
+            await stream.InitializeAsync(CancellationToken.None);
+
+            // Act & Assert - Verify progress calculation
+            var buffer = new byte[MEDIUM_CHUNK_SIZE];
+            var totalBytesRead = 0;
+
+            while (true)
             {
-                switch (propertyName)
-                {
-                    case "Length":
-                        _ = stream.Length;
-                        break;
-                    case "Position_Get":
-                        _ = stream.Position;
-                        break;
-                    case "Position_Set":
-                        stream.Position = 100;
-                        break;
-                }
-            });
+                var bytesRead = await stream.ReadAsync(buffer, 0, buffer.Length);
+                if (bytesRead == 0) break;
+
+                totalBytesRead += bytesRead;
+
+                // Verify progress can be calculated
+                var progressPercentage = (double)stream.Position / stream.Length * 100;
+                Assert.IsTrue(progressPercentage >= 0 && progressPercentage <= 100,
+                    "Progress percentage should be between 0 and 100");
+                Assert.AreEqual(totalBytesRead, stream.Position,
+                    "Position should track total bytes read");
+            }
+
+            // Final verification
+            Assert.AreEqual(objectSize, totalBytesRead, "Should read entire object");
+            Assert.AreEqual(100.0, (double)stream.Position / stream.Length * 100,
+                "Progress should be 100% at completion");
+
+            // Cleanup
+            stream.Dispose();
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(NotSupportedException))]
+        public async Task Position_Setter_ThrowsNotSupportedException()
+        {
+            // Arrange
+            var stream = await CreateInitializedStreamAsync();
+
+            // Act
+            stream.Position = 100;
         }
 
         #endregion

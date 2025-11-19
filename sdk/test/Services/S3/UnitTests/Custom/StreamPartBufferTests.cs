@@ -15,53 +15,57 @@ namespace AWSSDK.UnitTests
         #region Creation Tests
 
         [TestMethod]
-        public void Constructor_WithValidParameters_CreatesBuffer()
+        public void Create_WithValidParameters_CreatesBuffer()
         {
             // Arrange
             int partNumber = 1;
-            byte[] testBuffer = ArrayPool<byte>.Shared.Rent(1024);
+            int capacity = 1024;
             int actualLength = 512;
+
+            // Act
+            var partBuffer = StreamPartBuffer.Create(partNumber, capacity);
 
             try
             {
-                // Act
-                var partBuffer = new StreamPartBuffer(partNumber, testBuffer, actualLength);
+                // Simulate writing data
+                partBuffer.SetLength(actualLength);
 
                 // Assert
                 Assert.AreEqual(partNumber, partBuffer.PartNumber);
-                Assert.AreSame(testBuffer, partBuffer.ArrayPoolBuffer);
+                Assert.IsNotNull(partBuffer.ArrayPoolBuffer);
+                Assert.IsTrue(partBuffer.ArrayPoolBuffer.Length >= capacity); // ArrayPool may return larger
                 Assert.AreEqual(actualLength, partBuffer.Length);
                 Assert.AreEqual(0, partBuffer.CurrentPosition);
                 Assert.AreEqual(actualLength, partBuffer.RemainingBytes);
             }
             finally
             {
-                // Note: Buffer ownership transferred to partBuffer, will be returned on dispose
+                partBuffer.Dispose();
             }
         }
 
         [TestMethod]
-        public void FromArrayPoolBuffer_CreatesBuffer()
+        public void Create_InitializesWithZeroLength()
         {
             // Arrange
             int partNumber = 2;
-            byte[] testBuffer = ArrayPool<byte>.Shared.Rent(2048);
-            int actualLength = 1024;
+            int capacity = 2048;
+
+            // Act
+            var partBuffer = StreamPartBuffer.Create(partNumber, capacity);
 
             try
             {
-                // Act
-                var partBuffer = StreamPartBuffer.FromArrayPoolBuffer(partNumber, testBuffer, actualLength);
-
-                // Assert
+                // Assert - Length should be 0 until SetLength is called
                 Assert.AreEqual(partNumber, partBuffer.PartNumber);
-                Assert.AreSame(testBuffer, partBuffer.ArrayPoolBuffer);
-                Assert.AreEqual(actualLength, partBuffer.Length);
+                Assert.IsNotNull(partBuffer.ArrayPoolBuffer);
+                Assert.AreEqual(0, partBuffer.Length);
                 Assert.AreEqual(0, partBuffer.CurrentPosition);
+                Assert.AreEqual(0, partBuffer.RemainingBytes);
             }
             finally
             {
-                // Note: Buffer ownership transferred to partBuffer
+                partBuffer.Dispose();
             }
         }
 
@@ -73,8 +77,8 @@ namespace AWSSDK.UnitTests
         public void RemainingBytes_ReturnsCorrectValue()
         {
             // Arrange
-            byte[] testBuffer = ArrayPool<byte>.Shared.Rent(1024);
-            var partBuffer = new StreamPartBuffer(1, testBuffer, 500);
+            var partBuffer = StreamPartBuffer.Create(1, 1024);
+            partBuffer.SetLength(500);
 
             try
             {
@@ -99,9 +103,9 @@ namespace AWSSDK.UnitTests
         public void Length_ReturnsCorrectValue()
         {
             // Arrange
-            byte[] testBuffer = ArrayPool<byte>.Shared.Rent(2048);
             int actualLength = 1000;
-            var partBuffer = new StreamPartBuffer(1, testBuffer, actualLength);
+            var partBuffer = StreamPartBuffer.Create(1, 2048);
+            partBuffer.SetLength(actualLength);
 
             try
             {
@@ -118,8 +122,8 @@ namespace AWSSDK.UnitTests
         public void CurrentPosition_CanBeUpdated()
         {
             // Arrange
-            byte[] testBuffer = ArrayPool<byte>.Shared.Rent(1024);
-            var partBuffer = new StreamPartBuffer(1, testBuffer, 500);
+            var partBuffer = StreamPartBuffer.Create(1, 1024);
+            partBuffer.SetLength(500);
 
             try
             {
@@ -143,8 +147,8 @@ namespace AWSSDK.UnitTests
         public void CurrentPosition_AfterReading_UpdatesCorrectly()
         {
             // Arrange
-            byte[] testBuffer = ArrayPool<byte>.Shared.Rent(1024);
-            var partBuffer = new StreamPartBuffer(1, testBuffer, 500);
+            var partBuffer = StreamPartBuffer.Create(1, 1024);
+            partBuffer.SetLength(500);
 
             try
             {
@@ -168,8 +172,8 @@ namespace AWSSDK.UnitTests
         public void RemainingBytes_WhenFullyRead_ReturnsZero()
         {
             // Arrange
-            byte[] testBuffer = ArrayPool<byte>.Shared.Rent(1024);
-            var partBuffer = new StreamPartBuffer(1, testBuffer, 500);
+            var partBuffer = StreamPartBuffer.Create(1, 1024);
+            partBuffer.SetLength(500);
 
             try
             {
@@ -187,14 +191,93 @@ namespace AWSSDK.UnitTests
 
         #endregion
 
+        #region SetLength Tests
+
+        [TestMethod]
+        public void SetLength_WithValidLength_SetsCorrectly()
+        {
+            // Arrange
+            var partBuffer = StreamPartBuffer.Create(1, 1024);
+
+            // Act
+            partBuffer.SetLength(500);
+
+            try
+            {
+                // Assert
+                Assert.AreEqual(500, partBuffer.Length);
+            }
+            finally
+            {
+                partBuffer.Dispose();
+            }
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(InvalidOperationException))]
+        public void SetLength_CalledTwice_ThrowsException()
+        {
+            // Arrange
+            var partBuffer = StreamPartBuffer.Create(1, 1024);
+            partBuffer.SetLength(500);
+
+            try
+            {
+                // Act - Try to set length again
+                partBuffer.SetLength(600);
+            }
+            finally
+            {
+                partBuffer.Dispose();
+            }
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        public void SetLength_WithNegativeLength_ThrowsException()
+        {
+            // Arrange
+            var partBuffer = StreamPartBuffer.Create(1, 1024);
+
+            try
+            {
+                // Act
+                partBuffer.SetLength(-1);
+            }
+            finally
+            {
+                partBuffer.Dispose();
+            }
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        public void SetLength_ExceedsBufferCapacity_ThrowsException()
+        {
+            // Arrange
+            var partBuffer = StreamPartBuffer.Create(1, 1024);
+
+            try
+            {
+                // Act - Try to set length larger than buffer capacity
+                partBuffer.SetLength(10000);
+            }
+            finally
+            {
+                partBuffer.Dispose();
+            }
+        }
+
+        #endregion
+
         #region Disposal Tests
 
         [TestMethod]
         public void Dispose_ReturnsBufferToArrayPool()
         {
             // Arrange
-            byte[] testBuffer = ArrayPool<byte>.Shared.Rent(1024);
-            var partBuffer = new StreamPartBuffer(1, testBuffer, 500);
+            var partBuffer = StreamPartBuffer.Create(1, 1024);
+            partBuffer.SetLength(500);
 
             // Act
             partBuffer.Dispose();
@@ -207,8 +290,8 @@ namespace AWSSDK.UnitTests
         public void Dispose_MultipleCalls_IsIdempotent()
         {
             // Arrange
-            byte[] testBuffer = ArrayPool<byte>.Shared.Rent(1024);
-            var partBuffer = new StreamPartBuffer(1, testBuffer, 500);
+            var partBuffer = StreamPartBuffer.Create(1, 1024);
+            partBuffer.SetLength(500);
 
             // Act - Dispose multiple times
             partBuffer.Dispose();
@@ -223,8 +306,8 @@ namespace AWSSDK.UnitTests
         public void Dispose_SetsArrayPoolBufferToNull()
         {
             // Arrange
-            byte[] testBuffer = ArrayPool<byte>.Shared.Rent(1024);
-            var partBuffer = new StreamPartBuffer(1, testBuffer, 500);
+            var partBuffer = StreamPartBuffer.Create(1, 1024);
+            partBuffer.SetLength(500);
 
             // Act
             partBuffer.Dispose();

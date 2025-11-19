@@ -1012,5 +1012,495 @@ namespace AWSSDK.UnitTests
         }
 
         #endregion
+
+        #region ContentRange and Part Range Calculation Tests
+
+        [TestMethod]
+        public void ParseContentRange_ValidFormat_ReturnsCorrectValues()
+        {
+            // Arrange
+            var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client();
+            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
+            var coordinator = new MultipartDownloadCoordinator(mockClient.Object, request, config, CreateMockDataHandler().Object);
+            var contentRange = "bytes 0-8388607/52428800";
+
+            // Act
+            var (startByte, endByte, totalSize) = coordinator.ParseContentRange(contentRange);
+
+            // Assert
+            Assert.AreEqual(0L, startByte);
+            Assert.AreEqual(8388607L, endByte);
+            Assert.AreEqual(52428800L, totalSize);
+        }
+
+        [TestMethod]
+        public void ParseContentRange_SingleByteRange_ReturnsCorrectValues()
+        {
+            // Arrange
+            var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client();
+            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
+            var coordinator = new MultipartDownloadCoordinator(mockClient.Object, request, config, CreateMockDataHandler().Object);
+            var contentRange = "bytes 0-0/1";
+
+            // Act
+            var (startByte, endByte, totalSize) = coordinator.ParseContentRange(contentRange);
+
+            // Assert
+            Assert.AreEqual(0L, startByte);
+            Assert.AreEqual(0L, endByte);
+            Assert.AreEqual(1L, totalSize);
+        }
+
+        [TestMethod]
+        public void ParseContentRange_LargeFileLastPart_ReturnsCorrectValues()
+        {
+            // Arrange
+            var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client();
+            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
+            var coordinator = new MultipartDownloadCoordinator(mockClient.Object, request, config, CreateMockDataHandler().Object);
+            var contentRange = "bytes 50331648-52428799/52428800";
+
+            // Act
+            var (startByte, endByte, totalSize) = coordinator.ParseContentRange(contentRange);
+
+            // Assert
+            Assert.AreEqual(50331648L, startByte);
+            Assert.AreEqual(52428799L, endByte);
+            Assert.AreEqual(52428800L, totalSize);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(InvalidOperationException))]
+        public void ParseContentRange_NullContentRange_ThrowsInvalidOperationException()
+        {
+            // Arrange
+            var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client();
+            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
+            var coordinator = new MultipartDownloadCoordinator(mockClient.Object, request, config, CreateMockDataHandler().Object);
+
+            // Act
+            coordinator.ParseContentRange(null);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(InvalidOperationException))]
+        public void ParseContentRange_EmptyContentRange_ThrowsInvalidOperationException()
+        {
+            // Arrange
+            var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client();
+            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
+            var coordinator = new MultipartDownloadCoordinator(mockClient.Object, request, config, CreateMockDataHandler().Object);
+
+            // Act
+            coordinator.ParseContentRange(string.Empty);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(InvalidOperationException))]
+        public void ParseContentRange_InvalidFormat_NoSlash_ThrowsInvalidOperationException()
+        {
+            // Arrange
+            var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client();
+            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
+            var coordinator = new MultipartDownloadCoordinator(mockClient.Object, request, config, CreateMockDataHandler().Object);
+
+            // Act
+            coordinator.ParseContentRange("bytes 0-1000");
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(InvalidOperationException))]
+        public void ParseContentRange_InvalidFormat_NoDash_ThrowsInvalidOperationException()
+        {
+            // Arrange
+            var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client();
+            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
+            var coordinator = new MultipartDownloadCoordinator(mockClient.Object, request, config, CreateMockDataHandler().Object);
+
+            // Act
+            coordinator.ParseContentRange("bytes 01000/5000");
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(InvalidOperationException))]
+        public void ParseContentRange_InvalidFormat_NonNumericRange_ThrowsInvalidOperationException()
+        {
+            // Arrange
+            var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client();
+            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
+            var coordinator = new MultipartDownloadCoordinator(mockClient.Object, request, config, CreateMockDataHandler().Object);
+
+            // Act
+            coordinator.ParseContentRange("bytes abc-def/5000");
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(InvalidOperationException))]
+        public void ParseContentRange_WildcardTotalSize_ThrowsInvalidOperationExceptionWithMessage()
+        {
+            // Arrange
+            var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client();
+            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
+            var coordinator = new MultipartDownloadCoordinator(mockClient.Object, request, config, CreateMockDataHandler().Object);
+
+            // Act & Assert
+            try
+            {
+                coordinator.ParseContentRange("bytes 0-1000/*");
+                Assert.Fail("Expected InvalidOperationException was not thrown");
+            }
+            catch (InvalidOperationException ex)
+            {
+                Assert.IsTrue(ex.Message.Contains("Unexpected wildcard"));
+                Assert.IsTrue(ex.Message.Contains("S3 always returns exact object sizes"));
+                throw;
+            }
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(InvalidOperationException))]
+        public void ParseContentRange_NonNumericTotalSize_ThrowsInvalidOperationException()
+        {
+            // Arrange
+            var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client();
+            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
+            var coordinator = new MultipartDownloadCoordinator(mockClient.Object, request, config, CreateMockDataHandler().Object);
+
+            // Act
+            coordinator.ParseContentRange("bytes 0-1000/abc");
+        }
+
+        [TestMethod]
+        public void ExtractTotalSizeFromContentRange_ValidFormat_ReturnsTotalSize()
+        {
+            // Arrange
+            var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client();
+            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
+            var coordinator = new MultipartDownloadCoordinator(mockClient.Object, request, config, CreateMockDataHandler().Object);
+            var contentRange = "bytes 0-8388607/52428800";
+
+            // Act
+            var totalSize = coordinator.ExtractTotalSizeFromContentRange(contentRange);
+
+            // Assert
+            Assert.AreEqual(52428800L, totalSize);
+        }
+
+        [TestMethod]
+        public void ExtractTotalSizeFromContentRange_SmallFile_ReturnsTotalSize()
+        {
+            // Arrange
+            var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client();
+            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
+            var coordinator = new MultipartDownloadCoordinator(mockClient.Object, request, config, CreateMockDataHandler().Object);
+            var contentRange = "bytes 0-999/1000";
+
+            // Act
+            var totalSize = coordinator.ExtractTotalSizeFromContentRange(contentRange);
+
+            // Assert
+            Assert.AreEqual(1000L, totalSize);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(InvalidOperationException))]
+        public void ExtractTotalSizeFromContentRange_InvalidFormat_ThrowsInvalidOperationException()
+        {
+            // Arrange
+            var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client();
+            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
+            var coordinator = new MultipartDownloadCoordinator(mockClient.Object, request, config, CreateMockDataHandler().Object);
+
+            // Act
+            coordinator.ExtractTotalSizeFromContentRange("invalid-format");
+        }
+
+        [TestMethod]
+        public void CalculatePartRange_FirstPart_ReturnsCorrectRange()
+        {
+            // Arrange
+            var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client();
+            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest(partSize: 8 * 1024 * 1024);
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
+            var coordinator = new MultipartDownloadCoordinator(mockClient.Object, request, config, CreateMockDataHandler().Object);
+            var objectSize = 50 * 1024 * 1024; // 50MB
+
+            // Act
+            var (startByte, endByte) = coordinator.CalculatePartRange(1, objectSize);
+
+            // Assert
+            Assert.AreEqual(0L, startByte);
+            Assert.AreEqual(8 * 1024 * 1024 - 1, endByte);
+        }
+
+        [TestMethod]
+        public void CalculatePartRange_MiddlePart_ReturnsCorrectRange()
+        {
+            // Arrange
+            var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client();
+            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest(partSize: 8 * 1024 * 1024);
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
+            var coordinator = new MultipartDownloadCoordinator(mockClient.Object, request, config, CreateMockDataHandler().Object);
+            var objectSize = 50 * 1024 * 1024; // 50MB
+
+            // Act
+            var (startByte, endByte) = coordinator.CalculatePartRange(3, objectSize);
+
+            // Assert
+            Assert.AreEqual(2 * 8 * 1024 * 1024, startByte); // Part 3 starts at 16MB
+            Assert.AreEqual(3 * 8 * 1024 * 1024 - 1, endByte); // Part 3 ends at 24MB - 1
+        }
+
+        [TestMethod]
+        public void CalculatePartRange_LastPartFullSize_ReturnsCorrectRange()
+        {
+            // Arrange
+            var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client();
+            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest(partSize: 8 * 1024 * 1024);
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
+            var coordinator = new MultipartDownloadCoordinator(mockClient.Object, request, config, CreateMockDataHandler().Object);
+            var objectSize = 48 * 1024 * 1024; // 48MB (exactly 6 parts)
+
+            // Act
+            var (startByte, endByte) = coordinator.CalculatePartRange(6, objectSize);
+
+            // Assert
+            Assert.AreEqual(5 * 8 * 1024 * 1024, startByte); // Part 6 starts at 40MB
+            Assert.AreEqual(48 * 1024 * 1024 - 1, endByte); // Part 6 ends at object end
+        }
+
+        [TestMethod]
+        public void CalculatePartRange_LastPartPartialSize_ReturnsCorrectRange()
+        {
+            // Arrange
+            var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client();
+            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest(partSize: 8 * 1024 * 1024);
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
+            var coordinator = new MultipartDownloadCoordinator(mockClient.Object, request, config, CreateMockDataHandler().Object);
+            var objectSize = 52428800; // 50MB (7 parts with last part partial)
+
+            // Act
+            var (startByte, endByte) = coordinator.CalculatePartRange(7, objectSize);
+
+            // Assert
+            Assert.AreEqual(6 * 8 * 1024 * 1024, startByte); // Part 7 starts at 48MB
+            Assert.AreEqual(52428800 - 1, endByte); // Part 7 ends at object end (partial part)
+        }
+
+        [TestMethod]
+        public void CalculatePartRange_SmallObject_SinglePart_ReturnsCorrectRange()
+        {
+            // Arrange
+            var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client();
+            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest(partSize: 8 * 1024 * 1024);
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
+            var coordinator = new MultipartDownloadCoordinator(mockClient.Object, request, config, CreateMockDataHandler().Object);
+            var objectSize = 1024; // 1KB
+
+            // Act
+            var (startByte, endByte) = coordinator.CalculatePartRange(1, objectSize);
+
+            // Assert
+            Assert.AreEqual(0L, startByte);
+            Assert.AreEqual(1023L, endByte); // 1KB - 1
+        }
+
+        [TestMethod]
+        public void ValidateContentRange_RangeStrategy_ValidRange_DoesNotThrow()
+        {
+            // Arrange
+            var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client();
+            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest(
+                partSize: 8 * 1024 * 1024,
+                downloadType: MultipartDownloadType.RANGE);
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
+            var coordinator = new MultipartDownloadCoordinator(mockClient.Object, request, config, CreateMockDataHandler().Object);
+            
+            var response = new GetObjectResponse
+            {
+                ContentRange = "bytes 0-8388607/52428800"
+            };
+            var objectSize = 52428800L;
+
+            // Act - should not throw
+            coordinator.ValidateContentRange(response, 1, objectSize);
+        }
+
+        [TestMethod]
+        public void ValidateContentRange_RangeStrategy_MiddlePart_ValidRange_DoesNotThrow()
+        {
+            // Arrange
+            var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client();
+            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest(
+                partSize: 8 * 1024 * 1024,
+                downloadType: MultipartDownloadType.RANGE);
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
+            var coordinator = new MultipartDownloadCoordinator(mockClient.Object, request, config, CreateMockDataHandler().Object);
+            
+            var response = new GetObjectResponse
+            {
+                ContentRange = "bytes 16777216-25165823/52428800"
+            };
+            var objectSize = 52428800L;
+
+            // Act - should not throw
+            coordinator.ValidateContentRange(response, 3, objectSize);
+        }
+
+        [TestMethod]
+        public void ValidateContentRange_PartStrategy_DoesNotValidate()
+        {
+            // Arrange - PART strategy should skip validation
+            var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client();
+            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest(
+                downloadType: MultipartDownloadType.PART);
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
+            var coordinator = new MultipartDownloadCoordinator(mockClient.Object, request, config, CreateMockDataHandler().Object);
+            
+            var response = new GetObjectResponse
+            {
+                ContentRange = "bytes 0-8388607/52428800" // Valid range
+            };
+            var objectSize = 52428800L;
+
+            // Act - should not throw and should not validate
+            coordinator.ValidateContentRange(response, 1, objectSize);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(InvalidOperationException))]
+        public void ValidateContentRange_RangeStrategy_MissingContentRange_ThrowsInvalidOperationException()
+        {
+            // Arrange
+            var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client();
+            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest(
+                partSize: 8 * 1024 * 1024,
+                downloadType: MultipartDownloadType.RANGE);
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
+            var coordinator = new MultipartDownloadCoordinator(mockClient.Object, request, config, CreateMockDataHandler().Object);
+            
+            var response = new GetObjectResponse
+            {
+                ContentRange = null
+            };
+            var objectSize = 52428800L;
+
+            // Act
+            coordinator.ValidateContentRange(response, 1, objectSize);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(InvalidOperationException))]
+        public void ValidateContentRange_RangeStrategy_EmptyContentRange_ThrowsInvalidOperationException()
+        {
+            // Arrange
+            var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client();
+            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest(
+                partSize: 8 * 1024 * 1024,
+                downloadType: MultipartDownloadType.RANGE);
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
+            var coordinator = new MultipartDownloadCoordinator(mockClient.Object, request, config, CreateMockDataHandler().Object);
+            
+            var response = new GetObjectResponse
+            {
+                ContentRange = string.Empty
+            };
+            var objectSize = 52428800L;
+
+            // Act
+            coordinator.ValidateContentRange(response, 1, objectSize);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(InvalidOperationException))]
+        public void ValidateContentRange_RangeStrategy_WrongStartByte_ThrowsInvalidOperationException()
+        {
+            // Arrange
+            var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client();
+            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest(
+                partSize: 8 * 1024 * 1024,
+                downloadType: MultipartDownloadType.RANGE);
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
+            var coordinator = new MultipartDownloadCoordinator(mockClient.Object, request, config, CreateMockDataHandler().Object);
+            
+            // Expected: bytes 0-8388607, Actual: bytes 100-8388607 (wrong start)
+            var response = new GetObjectResponse
+            {
+                ContentRange = "bytes 100-8388607/52428800"
+            };
+            var objectSize = 52428800L;
+
+            // Act
+            coordinator.ValidateContentRange(response, 1, objectSize);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(InvalidOperationException))]
+        public void ValidateContentRange_RangeStrategy_WrongEndByte_ThrowsInvalidOperationException()
+        {
+            // Arrange
+            var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client();
+            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest(
+                partSize: 8 * 1024 * 1024,
+                downloadType: MultipartDownloadType.RANGE);
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
+            var coordinator = new MultipartDownloadCoordinator(mockClient.Object, request, config, CreateMockDataHandler().Object);
+            
+            // Expected: bytes 0-8388607, Actual: bytes 0-8388600 (wrong end)
+            var response = new GetObjectResponse
+            {
+                ContentRange = "bytes 0-8388600/52428800"
+            };
+            var objectSize = 52428800L;
+
+            // Act
+            coordinator.ValidateContentRange(response, 1, objectSize);
+        }
+
+        [TestMethod]
+        public void ValidateContentRange_RangeStrategy_ExceptionMessage_ContainsExpectedAndActualRanges()
+        {
+            // Arrange
+            var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client();
+            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest(
+                partSize: 8 * 1024 * 1024,
+                downloadType: MultipartDownloadType.RANGE);
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
+            var coordinator = new MultipartDownloadCoordinator(mockClient.Object, request, config, CreateMockDataHandler().Object);
+            
+            var response = new GetObjectResponse
+            {
+                ContentRange = "bytes 100-8388607/52428800"
+            };
+            var objectSize = 52428800L;
+
+            // Act & Assert
+            try
+            {
+                coordinator.ValidateContentRange(response, 1, objectSize);
+                Assert.Fail("Expected InvalidOperationException was not thrown");
+            }
+            catch (InvalidOperationException ex)
+            {
+                Assert.IsTrue(ex.Message.Contains("ContentRange mismatch"));
+                Assert.IsTrue(ex.Message.Contains("Expected: bytes 0-8388607"));
+                Assert.IsTrue(ex.Message.Contains("Actual: bytes 100-8388607"));
+            }
+        }
+
+        #endregion
     }
 }
