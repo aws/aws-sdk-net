@@ -62,6 +62,12 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
                     unmarshalledObject.ExpiringImageTotalCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("transitioningImageTotalCounts", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<TransitioningImageTotalCount, TransitioningImageTotalCountUnmarshaller>(TransitioningImageTotalCountUnmarshaller.Instance);
+                    unmarshalledObject.TransitioningImageTotalCounts = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

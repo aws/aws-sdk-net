@@ -25,6 +25,118 @@ namespace Amazon.ECR
 {
 
     /// <summary>
+    /// Constants used for properties of type ArtifactStatus.
+    /// </summary>
+    public class ArtifactStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVATING for ArtifactStatus
+        /// </summary>
+        public static readonly ArtifactStatus ACTIVATING = new ArtifactStatus("ACTIVATING");
+        /// <summary>
+        /// Constant ACTIVE for ArtifactStatus
+        /// </summary>
+        public static readonly ArtifactStatus ACTIVE = new ArtifactStatus("ACTIVE");
+        /// <summary>
+        /// Constant ARCHIVED for ArtifactStatus
+        /// </summary>
+        public static readonly ArtifactStatus ARCHIVED = new ArtifactStatus("ARCHIVED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ArtifactStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ArtifactStatus FindValue(string value)
+        {
+            return FindValue<ArtifactStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ArtifactStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ArtifactStatusFilter.
+    /// </summary>
+    public class ArtifactStatusFilter : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVATING for ArtifactStatusFilter
+        /// </summary>
+        public static readonly ArtifactStatusFilter ACTIVATING = new ArtifactStatusFilter("ACTIVATING");
+        /// <summary>
+        /// Constant ACTIVE for ArtifactStatusFilter
+        /// </summary>
+        public static readonly ArtifactStatusFilter ACTIVE = new ArtifactStatusFilter("ACTIVE");
+        /// <summary>
+        /// Constant ANY for ArtifactStatusFilter
+        /// </summary>
+        public static readonly ArtifactStatusFilter ANY = new ArtifactStatusFilter("ANY");
+        /// <summary>
+        /// Constant ARCHIVED for ArtifactStatusFilter
+        /// </summary>
+        public static readonly ArtifactStatusFilter ARCHIVED = new ArtifactStatusFilter("ARCHIVED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ArtifactStatusFilter(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ArtifactStatusFilter FindValue(string value)
+        {
+            return FindValue<ArtifactStatusFilter>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ArtifactStatusFilter(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type EncryptionType.
     /// </summary>
     public class EncryptionType : ConstantClass
@@ -154,6 +266,10 @@ namespace Amazon.ECR
         /// Constant EXPIRE for ImageActionType
         /// </summary>
         public static readonly ImageActionType EXPIRE = new ImageActionType("EXPIRE");
+        /// <summary>
+        /// Constant TRANSITION for ImageActionType
+        /// </summary>
+        public static readonly ImageActionType TRANSITION = new ImageActionType("TRANSITION");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -196,6 +312,10 @@ namespace Amazon.ECR
     public class ImageFailureCode : ConstantClass
     {
 
+        /// <summary>
+        /// Constant ImageInaccessible for ImageFailureCode
+        /// </summary>
+        public static readonly ImageFailureCode ImageInaccessible = new ImageFailureCode("ImageInaccessible");
         /// <summary>
         /// Constant ImageNotFound for ImageFailureCode
         /// </summary>
@@ -266,6 +386,118 @@ namespace Amazon.ECR
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ImageFailureCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ImageStatus.
+    /// </summary>
+    public class ImageStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVATING for ImageStatus
+        /// </summary>
+        public static readonly ImageStatus ACTIVATING = new ImageStatus("ACTIVATING");
+        /// <summary>
+        /// Constant ACTIVE for ImageStatus
+        /// </summary>
+        public static readonly ImageStatus ACTIVE = new ImageStatus("ACTIVE");
+        /// <summary>
+        /// Constant ARCHIVED for ImageStatus
+        /// </summary>
+        public static readonly ImageStatus ARCHIVED = new ImageStatus("ARCHIVED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ImageStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ImageStatus FindValue(string value)
+        {
+            return FindValue<ImageStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ImageStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ImageStatusFilter.
+    /// </summary>
+    public class ImageStatusFilter : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVATING for ImageStatusFilter
+        /// </summary>
+        public static readonly ImageStatusFilter ACTIVATING = new ImageStatusFilter("ACTIVATING");
+        /// <summary>
+        /// Constant ACTIVE for ImageStatusFilter
+        /// </summary>
+        public static readonly ImageStatusFilter ACTIVE = new ImageStatusFilter("ACTIVE");
+        /// <summary>
+        /// Constant ANY for ImageStatusFilter
+        /// </summary>
+        public static readonly ImageStatusFilter ANY = new ImageStatusFilter("ANY");
+        /// <summary>
+        /// Constant ARCHIVED for ImageStatusFilter
+        /// </summary>
+        public static readonly ImageStatusFilter ARCHIVED = new ImageStatusFilter("ARCHIVED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ImageStatusFilter(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ImageStatusFilter FindValue(string value)
+        {
+            return FindValue<ImageStatusFilter>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ImageStatusFilter(string value)
         {
             return FindValue(value);
         }
@@ -382,6 +614,10 @@ namespace Amazon.ECR
     public class LayerAvailability : ConstantClass
     {
 
+        /// <summary>
+        /// Constant ARCHIVED for LayerAvailability
+        /// </summary>
+        public static readonly LayerAvailability ARCHIVED = new LayerAvailability("ARCHIVED");
         /// <summary>
         /// Constant AVAILABLE for LayerAvailability
         /// </summary>
@@ -528,6 +764,102 @@ namespace Amazon.ECR
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator LifecyclePolicyPreviewStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type LifecyclePolicyStorageClass.
+    /// </summary>
+    public class LifecyclePolicyStorageClass : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ARCHIVE for LifecyclePolicyStorageClass
+        /// </summary>
+        public static readonly LifecyclePolicyStorageClass ARCHIVE = new LifecyclePolicyStorageClass("ARCHIVE");
+        /// <summary>
+        /// Constant STANDARD for LifecyclePolicyStorageClass
+        /// </summary>
+        public static readonly LifecyclePolicyStorageClass STANDARD = new LifecyclePolicyStorageClass("STANDARD");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LifecyclePolicyStorageClass(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LifecyclePolicyStorageClass FindValue(string value)
+        {
+            return FindValue<LifecyclePolicyStorageClass>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LifecyclePolicyStorageClass(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type LifecyclePolicyTargetStorageClass.
+    /// </summary>
+    public class LifecyclePolicyTargetStorageClass : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ARCHIVE for LifecyclePolicyTargetStorageClass
+        /// </summary>
+        public static readonly LifecyclePolicyTargetStorageClass ARCHIVE = new LifecyclePolicyTargetStorageClass("ARCHIVE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LifecyclePolicyTargetStorageClass(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LifecyclePolicyTargetStorageClass FindValue(string value)
+        {
+            return FindValue<LifecyclePolicyTargetStorageClass>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LifecyclePolicyTargetStorageClass(string value)
         {
             return FindValue(value);
         }
@@ -853,6 +1185,10 @@ namespace Amazon.ECR
         /// </summary>
         public static readonly ScanStatus FINDINGS_UNAVAILABLE = new ScanStatus("FINDINGS_UNAVAILABLE");
         /// <summary>
+        /// Constant IMAGE_ARCHIVED for ScanStatus
+        /// </summary>
+        public static readonly ScanStatus IMAGE_ARCHIVED = new ScanStatus("IMAGE_ARCHIVED");
+        /// <summary>
         /// Constant IN_PROGRESS for ScanStatus
         /// </summary>
         public static readonly ScanStatus IN_PROGRESS = new ScanStatus("IN_PROGRESS");
@@ -1006,6 +1342,56 @@ namespace Amazon.ECR
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator TagStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TargetStorageClass.
+    /// </summary>
+    public class TargetStorageClass : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ARCHIVE for TargetStorageClass
+        /// </summary>
+        public static readonly TargetStorageClass ARCHIVE = new TargetStorageClass("ARCHIVE");
+        /// <summary>
+        /// Constant STANDARD for TargetStorageClass
+        /// </summary>
+        public static readonly TargetStorageClass STANDARD = new TargetStorageClass("STANDARD");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TargetStorageClass(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TargetStorageClass FindValue(string value)
+        {
+            return FindValue<TargetStorageClass>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TargetStorageClass(string value)
         {
             return FindValue(value);
         }

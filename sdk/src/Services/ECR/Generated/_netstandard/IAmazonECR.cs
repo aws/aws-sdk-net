@@ -607,6 +607,43 @@ namespace Amazon.ECR
 
         #endregion
                 
+        #region  DeregisterPullTimeUpdateExclusion
+
+
+
+        /// <summary>
+        /// Removes a principal from the pull time update exclusion list for a registry. Once
+        /// removed, Amazon ECR will resume updating the pull time if the specified principal
+        /// pulls an image.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterPullTimeUpdateExclusion service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeregisterPullTimeUpdateExclusion service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.ExclusionNotFoundException">
+        /// The specified pull time update exclusion was not found.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.LimitExceededException">
+        /// The operation did not succeed because it would have exceeded a service limit for your
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/service-quotas.html">Amazon
+        /// ECR service quotas</a> in the Amazon Elastic Container Registry User Guide.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ValidationException">
+        /// There was an exception validating this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DeregisterPullTimeUpdateExclusion">REST API Reference for DeregisterPullTimeUpdateExclusion Operation</seealso>
+        Task<DeregisterPullTimeUpdateExclusionResponse> DeregisterPullTimeUpdateExclusionAsync(DeregisterPullTimeUpdateExclusionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DescribeImageReplicationStatus
 
 
@@ -1160,6 +1197,37 @@ namespace Amazon.ECR
 
         #endregion
                 
+        #region  ListImageReferrers
+
+
+
+        /// <summary>
+        /// Lists the artifacts associated with a specified subject image.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListImageReferrers service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListImageReferrers service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.RepositoryNotFoundException">
+        /// The specified repository could not be found. Check the spelling of the specified repository
+        /// and ensure that you are performing operations on the correct registry.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ValidationException">
+        /// There was an exception validating this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/ListImageReferrers">REST API Reference for ListImageReferrers Operation</seealso>
+        Task<ListImageReferrersResponse> ListImageReferrersAsync(ListImageReferrersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListImages
 
 
@@ -1194,6 +1262,38 @@ namespace Amazon.ECR
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/ListImages">REST API Reference for ListImages Operation</seealso>
         Task<ListImagesResponse> ListImagesAsync(ListImagesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListPullTimeUpdateExclusions
+
+
+
+        /// <summary>
+        /// Lists the IAM principals that are excluded from having their image pull times recorded.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPullTimeUpdateExclusions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListPullTimeUpdateExclusions service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.LimitExceededException">
+        /// The operation did not succeed because it would have exceeded a service limit for your
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/service-quotas.html">Amazon
+        /// ECR service quotas</a> in the Amazon Elastic Container Registry User Guide.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ValidationException">
+        /// There was an exception validating this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/ListPullTimeUpdateExclusions">REST API Reference for ListPullTimeUpdateExclusions Operation</seealso>
+        Task<ListPullTimeUpdateExclusionsResponse> ListPullTimeUpdateExclusionsAsync(ListPullTimeUpdateExclusionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -1477,6 +1577,9 @@ namespace Amazon.ECR
         /// </param>
         /// 
         /// <returns>The response from the PutRegistryScanningConfiguration service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.BlockedByOrganizationPolicyException">
+        /// The operation did not succeed because the account is managed by a organization policy.
+        /// </exception>
         /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
         /// The specified parameter is invalid. Review the available parameters for the API request.
         /// </exception>
@@ -1533,6 +1636,42 @@ namespace Amazon.ECR
 
         #endregion
                 
+        #region  RegisterPullTimeUpdateExclusion
+
+
+
+        /// <summary>
+        /// Adds an IAM principal to the pull time update exclusion list for a registry. Amazon
+        /// ECR will not record the pull time if an excluded principal pulls an image.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RegisterPullTimeUpdateExclusion service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RegisterPullTimeUpdateExclusion service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.ExclusionAlreadyExistsException">
+        /// The specified pull time update exclusion already exists for the registry.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.LimitExceededException">
+        /// The operation did not succeed because it would have exceeded a service limit for your
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/service-quotas.html">Amazon
+        /// ECR service quotas</a> in the Amazon Elastic Container Registry User Guide.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ValidationException">
+        /// There was an exception validating this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/RegisterPullTimeUpdateExclusion">REST API Reference for RegisterPullTimeUpdateExclusion Operation</seealso>
+        Task<RegisterPullTimeUpdateExclusionResponse> RegisterPullTimeUpdateExclusionAsync(RegisterPullTimeUpdateExclusionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  SetRepositoryPolicy
 
 
@@ -1585,6 +1724,9 @@ namespace Amazon.ECR
         /// </param>
         /// 
         /// <returns>The response from the StartImageScan service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.ImageArchivedException">
+        /// The specified image is archived and cannot be scanned.
+        /// </exception>
         /// <exception cref="Amazon.ECR.Model.ImageNotFoundException">
         /// The image requested does not exist in the specified repository.
         /// </exception>
@@ -1722,6 +1864,45 @@ namespace Amazon.ECR
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/UntagResource">REST API Reference for UntagResource Operation</seealso>
         Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateImageStorageClass
+
+
+
+        /// <summary>
+        /// Transitions an image between storage classes. You can transition images from Amazon
+        /// ECR standard storage class to Amazon ECR archival storage class for long-term storage,
+        /// or restore archived images back to Amazon ECR standard.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateImageStorageClass service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateImageStorageClass service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.ImageNotFoundException">
+        /// The image requested does not exist in the specified repository.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ImageStorageClassUpdateNotSupportedException">
+        /// The requested image storage class update is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.RepositoryNotFoundException">
+        /// The specified repository could not be found. Check the spelling of the specified repository
+        /// and ensure that you are performing operations on the correct registry.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ValidationException">
+        /// There was an exception validating this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/UpdateImageStorageClass">REST API Reference for UpdateImageStorageClass Operation</seealso>
+        Task<UpdateImageStorageClassResponse> UpdateImageStorageClassAsync(UpdateImageStorageClassRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

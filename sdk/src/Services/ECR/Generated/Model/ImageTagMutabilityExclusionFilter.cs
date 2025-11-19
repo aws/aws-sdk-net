@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECR.Model
 {
     /// <summary>
-    /// Overrides the default image tag mutability setting of the repository for image tags
-    /// that match the specified filters.
+    /// A filter that specifies which image tags should be excluded from the repository's
+    /// image tag mutability setting.
     /// </summary>
     public partial class ImageTagMutabilityExclusionFilter
     {
@@ -41,8 +41,7 @@ namespace Amazon.ECR.Model
         /// <summary>
         /// Gets and sets the property Filter. 
         /// <para>
-        /// The value to use when filtering image tags. Must be either a regular expression pattern
-        /// or a tag prefix value based on the specified filter type.
+        /// The filter value used to match image tags for exclusion from mutability settings.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -61,8 +60,7 @@ namespace Amazon.ECR.Model
         /// <summary>
         /// Gets and sets the property FilterType. 
         /// <para>
-        /// Specifies the type of filter to use for excluding image tags from the repository's
-        /// mutability setting.
+        /// The type of filter to apply for excluding image tags from mutability settings.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
