@@ -50,6 +50,13 @@ namespace AWSSDK.UnitTests
             SecretKey = nameof(CredentialProfileOptions.SecretKey),
         };
 
+        private static readonly CredentialProfileOptions LoginProfileOptions = new CredentialProfileOptions()
+        {
+            LoginSession = "arn:aws:signin::123456789012:identity/test-session"
+        };
+
+        private static readonly CredentialProfileOptions EmptyProfileOptions = new CredentialProfileOptions();
+
         [TestMethod]
         public void DetectProfileTypeBasic()
         {
@@ -76,6 +83,111 @@ namespace AWSSDK.UnitTests
         {
             Assert.AreEqual(CredentialProfileType.SSO,
                 CredentialProfileTypeDetector.DetectProfileType(SsoWithOtherPropertiesProfileOptions));
+        }
+
+        [TestMethod]
+        public void DetectProfileTypeLogin()
+        {
+            Assert.AreEqual(CredentialProfileType.Login,
+                CredentialProfileTypeDetector.DetectProfileType(LoginProfileOptions));
+        }
+
+        [TestMethod]
+        public void DetectProfileTypeLoginMissingFields()
+        {
+            Assert.AreNotEqual(CredentialProfileType.Login,
+                CredentialProfileTypeDetector.DetectProfileType(EmptyProfileOptions));
+        }
+
+        [TestMethod]
+        public void DetectProfileTypeLoginWithBasicCredentials()
+        {
+            var options = new CredentialProfileOptions()
+            {
+                LoginSession = "arn:aws:signin::123456789012:identity/test-session",
+                AccessKey = "access-key",
+                SecretKey = "secret-key"
+            };
+            
+            Assert.AreEqual(CredentialProfileType.Basic,
+                CredentialProfileTypeDetector.DetectProfileType(options));
+        }
+
+        [TestMethod]
+        public void DetectProfileTypeLoginWithSsoCredentials()
+        {
+            var options = new CredentialProfileOptions()
+            {
+                LoginSession = "arn:aws:signin::123456789012:identity/test-session",
+                SsoAccountId = "123456789012",
+                SsoRegion = "us-east-1",
+                SsoRoleName = "TestRole",
+                SsoStartUrl = "https://test.awsapps.com/start"
+            };
+            
+            Assert.AreEqual(CredentialProfileType.SSO,
+                CredentialProfileTypeDetector.DetectProfileType(options));
+        }
+
+        [TestMethod]
+        public void DetectProfileTypeLoginWithSessionCredentials()
+        {
+            var options = new CredentialProfileOptions()
+            {
+                LoginSession = "arn:aws:signin::123456789012:identity/test-session",
+                AccessKey = "access-key",
+                SecretKey = "secret-key",
+                Token = "session-token"
+            };
+            
+            Assert.AreEqual(CredentialProfileType.Session,
+                CredentialProfileTypeDetector.DetectProfileType(options));
+        }
+
+        [TestMethod]
+        public void DetectProfileTypeLoginWithAssumeRole()
+        {
+            var options = new CredentialProfileOptions()
+            {
+                LoginSession = "arn:aws:signin::123456789012:identity/test-session",
+                RoleArn = "arn:aws:iam::123456789012:role/TestRole",
+                SourceProfile = "default"
+            };
+            
+            Assert.AreEqual(CredentialProfileType.AssumeRole,
+                CredentialProfileTypeDetector.DetectProfileType(options));
+        }
+
+        [TestMethod]
+        public void DetectProfileTypeLoginWithInvalidCombination()
+        {
+            var options = new CredentialProfileOptions()
+            {
+                LoginSession = "arn:aws:signin::123456789012:identity/test-session",
+                AccessKey = "access-key"
+                // Missing SecretKey - invalid Basic profile
+            };
+            
+            Assert.AreEqual(CredentialProfileType.Login,
+                CredentialProfileTypeDetector.DetectProfileType(options));
+        }
+
+        [TestMethod]
+        public void DetectProfileTypeLoginPrecedenceOverOtherTypes()
+        {
+            // Test that Login has lower precedence than SSO, Basic, and CredentialProcess
+            // but higher precedence than incomplete profiles
+            
+            // Login should be detected when no other valid profile type matches
+            var loginOnlyOptions = new CredentialProfileOptions()
+            {
+                LoginSession = "arn:aws:signin::123456789012:identity/test-session",
+                RoleArn = "arn:aws:iam::123456789012:role/TestRole"
+                // Missing SourceProfile - invalid AssumeRole profile
+            };
+            
+            Assert.AreEqual(CredentialProfileType.Login,
+                CredentialProfileTypeDetector.DetectProfileType(loginOnlyOptions));
         }
     }
 }

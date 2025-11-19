@@ -85,8 +85,6 @@
             <PrivateAssets>all</PrivateAssets>
         </PackageReference>
   </ItemGroup>
-  <ItemGroup>
-  </ItemGroup>
 
   <ItemGroup>
   </ItemGroup>
