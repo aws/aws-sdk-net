@@ -950,6 +950,10 @@ namespace Amazon.CloudWatchLogs
         /// Constant V11 for OCSFVersion
         /// </summary>
         public static readonly OCSFVersion V11 = new OCSFVersion("V1.1");
+        /// <summary>
+        /// Constant V15 for OCSFVersion
+        /// </summary>
+        public static readonly OCSFVersion V15 = new OCSFVersion("V1.5");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

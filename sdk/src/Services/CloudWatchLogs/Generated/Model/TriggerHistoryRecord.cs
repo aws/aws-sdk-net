@@ -45,8 +45,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// Gets and sets the property Destinations. 
         /// <para>
         /// The list of destinations where the scheduled query results were delivered for this
-        /// execution. This includes S3 buckets and EventBridge targets configured for the scheduled
-        /// query.
+        /// execution. This includes S3 buckets configured for the scheduled query.
         /// </para>
         /// </summary>
         public List<ScheduledQueryDestination> Destinations
@@ -83,7 +82,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property ExecutionStatus. 
         /// <para>
-        /// The status of the query execution (SUCCEEDED, FAILED, TIMEOUT, or INVALID_QUERY).
+        /// The status of the query execution (Running, Complete, Failed, Timeout, or InvalidQuery).
         /// </para>
         /// </summary>
         public ExecutionStatus ExecutionStatus

@@ -54,6 +54,12 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.EventSource);
             }
 
+            if(requestObject.IsSetMappingVersion())
+            {
+                context.Writer.WritePropertyName("mappingVersion");
+                context.Writer.Write(requestObject.MappingVersion);
+            }
+
             if(requestObject.IsSetOcsfVersion())
             {
                 context.Writer.WritePropertyName("ocsfVersion");

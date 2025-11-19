@@ -149,7 +149,15 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// For Network Load Balancer, the valid value is <c>NLB_ACCESS_LOGS</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// For PCS, the valid values are <c>PCS_SCHEDULER_LOGS</c> and <c>PCS_JOBCOMP_LOGS</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For Amazon Web Services RTB Fabric, the valid values is <c>APPLICATION_LOGS</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
