@@ -47,6 +47,7 @@ namespace Amazon.APIGateway.Model
         private Dictionary<string, string> _requestParameters = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private Dictionary<string, string> _requestTemplates = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _resourceId;
+        private ResponseTransferMode _responseTransferMode;
         private string _restApiId;
         private int? _timeoutInMillis;
         private TlsConfig _tlsConfig;
@@ -294,6 +295,24 @@ namespace Amazon.APIGateway.Model
         internal bool IsSetResourceId()
         {
             return this._resourceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResponseTransferMode. 
+        /// <para>
+        ///  The response transfer mode of the integration. 
+        /// </para>
+        /// </summary>
+        public ResponseTransferMode ResponseTransferMode
+        {
+            get { return this._responseTransferMode; }
+            set { this._responseTransferMode = value; }
+        }
+
+        // Check to see if ResponseTransferMode property is set
+        internal bool IsSetResponseTransferMode()
+        {
+            return this._responseTransferMode != null;
         }
 
         /// <summary>

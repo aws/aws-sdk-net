@@ -157,6 +157,12 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetResponseTransferMode())
+                {
+                    context.Writer.WritePropertyName("responseTransferMode");
+                    context.Writer.Write(publicRequest.ResponseTransferMode);
+                }
+
                 if(publicRequest.IsSetTimeoutInMillis())
                 {
                     context.Writer.WritePropertyName("timeoutInMillis");

@@ -103,6 +103,12 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.DomainName);
                 }
 
+                if(publicRequest.IsSetEndpointAccessMode())
+                {
+                    context.Writer.WritePropertyName("endpointAccessMode");
+                    context.Writer.Write(publicRequest.EndpointAccessMode);
+                }
+
                 if(publicRequest.IsSetEndpointConfiguration())
                 {
                     context.Writer.WritePropertyName("endpointConfiguration");

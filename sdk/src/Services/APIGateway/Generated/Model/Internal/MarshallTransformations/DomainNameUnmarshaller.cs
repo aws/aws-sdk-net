@@ -120,6 +120,12 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                     unmarshalledObject.DomainNameStatusMessage = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("endpointAccessMode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.EndpointAccessMode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("endpointConfiguration", targetDepth))
                 {
                     var unmarshaller = EndpointConfigurationUnmarshaller.Instance;

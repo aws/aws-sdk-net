@@ -58,6 +58,18 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                     response.ApiKeySource = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("apiStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ApiStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("apiStatusMessage", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ApiStatusMessage = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("binaryMediaTypes", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
@@ -80,6 +92,12 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
                     response.DisableExecuteApiEndpoint = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("endpointAccessMode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.EndpointAccessMode = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("endpointConfiguration", targetDepth))
@@ -116,6 +134,12 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.RootResourceId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("securityPolicy", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.SecurityPolicy = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("tags", targetDepth))

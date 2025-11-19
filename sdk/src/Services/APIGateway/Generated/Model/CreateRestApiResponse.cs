@@ -35,16 +35,20 @@ namespace Amazon.APIGateway.Model
     public partial class CreateRestApiResponse : AmazonWebServiceResponse
     {
         private ApiKeySourceType _apiKeySource;
+        private ApiStatus _apiStatus;
+        private string _apiStatusMessage;
         private List<string> _binaryMediaTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private DateTime? _createdDate;
         private string _description;
         private bool? _disableExecuteApiEndpoint;
+        private EndpointAccessMode _endpointAccessMode;
         private EndpointConfiguration _endpointConfiguration;
         private string _id;
         private int? _minimumCompressionSize;
         private string _name;
         private string _policy;
         private string _rootResourceId;
+        private SecurityPolicy _securityPolicy;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _version;
         private List<string> _warnings = AWSConfigs.InitializeCollections ? new List<string>() : null;
@@ -68,6 +72,43 @@ namespace Amazon.APIGateway.Model
         internal bool IsSetApiKeySource()
         {
             return this._apiKeySource != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ApiStatus. 
+        /// <para>
+        /// The ApiStatus of the RestApi. 
+        /// </para>
+        /// </summary>
+        public ApiStatus ApiStatus
+        {
+            get { return this._apiStatus; }
+            set { this._apiStatus = value; }
+        }
+
+        // Check to see if ApiStatus property is set
+        internal bool IsSetApiStatus()
+        {
+            return this._apiStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ApiStatusMessage. 
+        /// <para>
+        ///  The status message of the RestApi. When the status message is <c>UPDATING</c> you
+        /// can still invoke it. 
+        /// </para>
+        /// </summary>
+        public string ApiStatusMessage
+        {
+            get { return this._apiStatusMessage; }
+            set { this._apiStatusMessage = value; }
+        }
+
+        // Check to see if ApiStatusMessage property is set
+        internal bool IsSetApiStatusMessage()
+        {
+            return this._apiStatusMessage != null;
         }
 
         /// <summary>
@@ -144,6 +185,24 @@ namespace Amazon.APIGateway.Model
         internal bool IsSetDisableExecuteApiEndpoint()
         {
             return this._disableExecuteApiEndpoint.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EndpointAccessMode. 
+        /// <para>
+        ///  The endpoint access mode of the RestApi. 
+        /// </para>
+        /// </summary>
+        public EndpointAccessMode EndpointAccessMode
+        {
+            get { return this._endpointAccessMode; }
+            set { this._endpointAccessMode = value; }
+        }
+
+        // Check to see if EndpointAccessMode property is set
+        internal bool IsSetEndpointAccessMode()
+        {
+            return this._endpointAccessMode != null;
         }
 
         /// <summary>
@@ -258,6 +317,24 @@ namespace Amazon.APIGateway.Model
         internal bool IsSetRootResourceId()
         {
             return this._rootResourceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SecurityPolicy. 
+        /// <para>
+        ///  The Transport Layer Security (TLS) version + cipher suite for this RestApi. 
+        /// </para>
+        /// </summary>
+        public SecurityPolicy SecurityPolicy
+        {
+            get { return this._securityPolicy; }
+            set { this._securityPolicy = value; }
+        }
+
+        // Check to see if SecurityPolicy property is set
+        internal bool IsSetSecurityPolicy()
+        {
+            return this._securityPolicy != null;
         }
 
         /// <summary>
