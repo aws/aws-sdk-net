@@ -1243,7 +1243,10 @@ namespace Amazon.SecurityToken
 
 
         /// <summary>
-        /// This API is currently unavailable for general use.
+        /// Exchanges a trade-in token for temporary Amazon Web Services credentials with the
+        /// permissions associated with the assumed principal. This operation allows you to obtain
+        /// credentials for a specific principal based on a trade-in token, enabling delegation
+        /// of access to Amazon Web Services resources.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDelegatedAccessToken service method.</param>
         /// <param name="cancellationToken">
@@ -1252,7 +1255,23 @@ namespace Amazon.SecurityToken
         /// 
         /// <returns>The response from the GetDelegatedAccessToken service method, as returned by SecurityTokenService.</returns>
         /// <exception cref="Amazon.SecurityToken.Model.ExpiredTradeInTokenException">
+        /// The trade-in token provided in the request has expired and can no longer be exchanged
+        /// for credentials. Request a new token and retry the operation.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityToken.Model.PackedPolicyTooLargeException">
+        /// The request was rejected because the total packed size of the session policies and
+        /// session tags combined was too large. An Amazon Web Services conversion compresses
+        /// the session policy document, session policy ARNs, and session tags into a packed binary
+        /// format that has a separate limit. The error message indicates by percentage how close
+        /// the policies and tags are to the upper size limit. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Passing
+        /// Session Tags in STS</a> in the <i>IAM User Guide</i>.
         /// 
+        ///  
+        /// <para>
+        /// You could receive this error even though you meet other defined session policy and
+        /// session tag limits. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-limits-entity-length">IAM
+        /// and STS Entity Character Limits</a> in the <i>IAM User Guide</i>.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.SecurityToken.Model.RegionDisabledException">
         /// STS is not activated in the requested region for the account that is being asked to
@@ -1668,6 +1687,58 @@ namespace Amazon.SecurityToken
             options.ResponseUnmarshaller = GetSessionTokenResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetSessionTokenResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetWebIdentityToken
+
+        internal virtual GetWebIdentityTokenResponse GetWebIdentityToken(GetWebIdentityTokenRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetWebIdentityTokenRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetWebIdentityTokenResponseUnmarshaller.Instance;
+
+            return Invoke<GetWebIdentityTokenResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns a signed JSON Web Token (JWT) that represents the calling Amazon Web Services
+        /// identity. The returned JWT can be used to authenticate with external services that
+        /// support OIDC discovery. The token is signed by Amazon Web Services STS and can be
+        /// publicly verified using the verification keys published at the issuer's JWKS endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetWebIdentityToken service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetWebIdentityToken service method, as returned by SecurityTokenService.</returns>
+        /// <exception cref="Amazon.SecurityToken.Model.JWTPayloadSizeExceededException">
+        /// The requested token payload size exceeds the maximum allowed size. Reduce the number
+        /// of request tags included in the <c>GetWebIdentityToken</c> API call to reduce the
+        /// token payload size.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityToken.Model.OutboundWebIdentityFederationDisabledException">
+        /// The outbound web identity federation feature is not enabled for this account. To use
+        /// this feature, you must first enable it through the Amazon Web Services Management
+        /// Console or API.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityToken.Model.SessionDurationEscalationException">
+        /// The requested token duration would extend the session beyond its original expiration
+        /// time. You cannot use this operation to extend the lifetime of a session beyond what
+        /// was granted when the session was originally created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/GetWebIdentityToken">REST API Reference for GetWebIdentityToken Operation</seealso>
+        public virtual Task<GetWebIdentityTokenResponse> GetWebIdentityTokenAsync(GetWebIdentityTokenRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetWebIdentityTokenRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetWebIdentityTokenResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetWebIdentityTokenResponse>(request, options, cancellationToken);
         }
 
         #endregion

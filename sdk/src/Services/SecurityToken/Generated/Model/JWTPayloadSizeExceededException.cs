@@ -30,42 +30,43 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityToken.Model
 {
     /// <summary>
-    /// The trade-in token provided in the request has expired and can no longer be exchanged
-    /// for credentials. Request a new token and retry the operation.
+    /// The requested token payload size exceeds the maximum allowed size. Reduce the number
+    /// of request tags included in the <c>GetWebIdentityToken</c> API call to reduce the
+    /// token payload size.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
-    public partial class ExpiredTradeInTokenException : AmazonSecurityTokenServiceException
+    public partial class JWTPayloadSizeExceededException : AmazonSecurityTokenServiceException
     {
 
         /// <summary>
-        /// Constructs a new ExpiredTradeInTokenException with the specified error
+        /// Constructs a new JWTPayloadSizeExceededException with the specified error
         /// message.
         /// </summary>
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        public ExpiredTradeInTokenException(string message) 
+        public JWTPayloadSizeExceededException(string message) 
             : base(message) {}
 
         /// <summary>
-        /// Construct instance of ExpiredTradeInTokenException
+        /// Construct instance of JWTPayloadSizeExceededException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="innerException"></param>
-        public ExpiredTradeInTokenException(string message, Exception innerException) 
+        public JWTPayloadSizeExceededException(string message, Exception innerException) 
             : base(message, innerException) {}
 
         /// <summary>
-        /// Construct instance of ExpiredTradeInTokenException
+        /// Construct instance of JWTPayloadSizeExceededException
         /// </summary>
         /// <param name="innerException"></param>
-        public ExpiredTradeInTokenException(Exception innerException) 
+        public JWTPayloadSizeExceededException(Exception innerException) 
             : base(innerException) {}
 
         /// <summary>
-        /// Construct instance of ExpiredTradeInTokenException
+        /// Construct instance of JWTPayloadSizeExceededException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="innerException"></param>
@@ -73,30 +74,30 @@ namespace Amazon.SecurityToken.Model
         /// <param name="errorCode"></param>
         /// <param name="requestId"></param>
         /// <param name="statusCode"></param>
-        public ExpiredTradeInTokenException(string message, Exception innerException, Amazon.Runtime.ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+        public JWTPayloadSizeExceededException(string message, Exception innerException, Amazon.Runtime.ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, requestId, statusCode) {}
 
         /// <summary>
-        /// Construct instance of ExpiredTradeInTokenException
+        /// Construct instance of JWTPayloadSizeExceededException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="errorType"></param>
         /// <param name="errorCode"></param>
         /// <param name="requestId"></param>
         /// <param name="statusCode"></param>
-        public ExpiredTradeInTokenException(string message, Amazon.Runtime.ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+        public JWTPayloadSizeExceededException(string message, Amazon.Runtime.ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
 #if !NETSTANDARD
         /// <summary>
-        /// Constructs a new instance of the ExpiredTradeInTokenException class with serialized data.
+        /// Constructs a new instance of the JWTPayloadSizeExceededException class with serialized data.
         /// </summary>
         /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
         /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
         /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is null. </exception>
         /// <exception cref="T:System.Runtime.Serialization.SerializationException">The class name is null or <see cref="P:System.Exception.HResult" /> is zero (0). </exception>
-        protected ExpiredTradeInTokenException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+        protected JWTPayloadSizeExceededException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
         }

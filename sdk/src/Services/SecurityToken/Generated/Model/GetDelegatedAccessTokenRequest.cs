@@ -31,14 +31,21 @@ namespace Amazon.SecurityToken.Model
 {
     /// <summary>
     /// Container for the parameters to the GetDelegatedAccessToken operation.
-    /// This API is currently unavailable for general use.
+    /// Exchanges a trade-in token for temporary Amazon Web Services credentials with the
+    /// permissions associated with the assumed principal. This operation allows you to obtain
+    /// credentials for a specific principal based on a trade-in token, enabling delegation
+    /// of access to Amazon Web Services resources.
     /// </summary>
     public partial class GetDelegatedAccessTokenRequest : AmazonSecurityTokenServiceRequest
     {
         private string _tradeInToken;
 
         /// <summary>
-        /// Gets and sets the property TradeInToken.
+        /// Gets and sets the property TradeInToken. 
+        /// <para>
+        /// The token to exchange for temporary Amazon Web Services credentials. This token must
+        /// be valid and unexpired at the time of the request.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true)]
         public string TradeInToken
