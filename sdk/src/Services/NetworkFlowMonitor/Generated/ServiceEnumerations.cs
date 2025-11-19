@@ -263,6 +263,10 @@ namespace Amazon.NetworkFlowMonitor
         /// </summary>
         public static readonly MonitorLocalResourceType AWSEC2VPC = new MonitorLocalResourceType("AWS::EC2::VPC");
         /// <summary>
+        /// Constant AWSEKSCluster for MonitorLocalResourceType
+        /// </summary>
+        public static readonly MonitorLocalResourceType AWSEKSCluster = new MonitorLocalResourceType("AWS::EKS::Cluster");
+        /// <summary>
         /// Constant AWSRegion for MonitorLocalResourceType
         /// </summary>
         public static readonly MonitorLocalResourceType AWSRegion = new MonitorLocalResourceType("AWS::Region");
