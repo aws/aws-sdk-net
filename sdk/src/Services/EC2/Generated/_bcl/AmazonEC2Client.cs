@@ -6194,6 +6194,81 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  CreateIpamPolicy
+
+
+        /// <summary>
+        /// Creates an IPAM policy.
+        /// 
+        ///  
+        /// <para>
+        /// An IPAM policy is a set of rules that define how public IPv4 addresses from IPAM pools
+        /// are allocated to Amazon Web Services resources. Each rule maps an Amazon Web Services
+        /// service to IPAM pools that the service will use to get IP addresses. A single policy
+        /// can have multiple rules and be applied to multiple Amazon Web Services Regions. If
+        /// the IPAM pool run out of addresses then the services fallback to Amazon-provided IP
+        /// addresses. A policy can be applied to an individual Amazon Web Services account or
+        /// an entity within Amazon Web Services Organizations.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/define-public-ipv4-allocation-strategy-with-ipam-policies.html">Define
+        /// public IPv4 allocation strategy with IPAM policies</a> in the <i>Amazon VPC IPAM User
+        /// Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateIpamPolicy service method.</param>
+        /// 
+        /// <returns>The response from the CreateIpamPolicy service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateIpamPolicy">REST API Reference for CreateIpamPolicy Operation</seealso>
+        public virtual CreateIpamPolicyResponse CreateIpamPolicy(CreateIpamPolicyRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateIpamPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateIpamPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<CreateIpamPolicyResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates an IPAM policy.
+        /// 
+        ///  
+        /// <para>
+        /// An IPAM policy is a set of rules that define how public IPv4 addresses from IPAM pools
+        /// are allocated to Amazon Web Services resources. Each rule maps an Amazon Web Services
+        /// service to IPAM pools that the service will use to get IP addresses. A single policy
+        /// can have multiple rules and be applied to multiple Amazon Web Services Regions. If
+        /// the IPAM pool run out of addresses then the services fallback to Amazon-provided IP
+        /// addresses. A policy can be applied to an individual Amazon Web Services account or
+        /// an entity within Amazon Web Services Organizations.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/define-public-ipv4-allocation-strategy-with-ipam-policies.html">Define
+        /// public IPv4 allocation strategy with IPAM policies</a> in the <i>Amazon VPC IPAM User
+        /// Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateIpamPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateIpamPolicy service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateIpamPolicy">REST API Reference for CreateIpamPolicy Operation</seealso>
+        public virtual Task<CreateIpamPolicyResponse> CreateIpamPolicyAsync(CreateIpamPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateIpamPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateIpamPolicyResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateIpamPolicyResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateIpamPool
 
 
@@ -11899,6 +11974,69 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = DeleteIpamExternalResourceVerificationTokenResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeleteIpamExternalResourceVerificationTokenResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteIpamPolicy
+
+
+        /// <summary>
+        /// Deletes an IPAM policy.
+        /// 
+        ///  
+        /// <para>
+        /// An IPAM policy is a set of rules that define how public IPv4 addresses from IPAM pools
+        /// are allocated to Amazon Web Services resources. Each rule maps an Amazon Web Services
+        /// service to IPAM pools that the service will use to get IP addresses. A single policy
+        /// can have multiple rules and be applied to multiple Amazon Web Services Regions. If
+        /// the IPAM pool run out of addresses then the services fallback to Amazon-provided IP
+        /// addresses. A policy can be applied to an individual Amazon Web Services account or
+        /// an entity within Amazon Web Services Organizations.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIpamPolicy service method.</param>
+        /// 
+        /// <returns>The response from the DeleteIpamPolicy service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteIpamPolicy">REST API Reference for DeleteIpamPolicy Operation</seealso>
+        public virtual DeleteIpamPolicyResponse DeleteIpamPolicy(DeleteIpamPolicyRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteIpamPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteIpamPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteIpamPolicyResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes an IPAM policy.
+        /// 
+        ///  
+        /// <para>
+        /// An IPAM policy is a set of rules that define how public IPv4 addresses from IPAM pools
+        /// are allocated to Amazon Web Services resources. Each rule maps an Amazon Web Services
+        /// service to IPAM pools that the service will use to get IP addresses. A single policy
+        /// can have multiple rules and be applied to multiple Amazon Web Services Regions. If
+        /// the IPAM pool run out of addresses then the services fallback to Amazon-provided IP
+        /// addresses. A policy can be applied to an individual Amazon Web Services account or
+        /// an entity within Amazon Web Services Organizations.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIpamPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteIpamPolicy service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteIpamPolicy">REST API Reference for DeleteIpamPolicy Operation</seealso>
+        public virtual Task<DeleteIpamPolicyResponse> DeleteIpamPolicyAsync(DeleteIpamPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteIpamPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteIpamPolicyResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteIpamPolicyResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -20482,10 +20620,15 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describe verification tokens. A verification token is an Amazon Web Services-generated
-        /// random value that you can use to prove ownership of an external resource. For example,
-        /// you can use a verification token to validate that you control a public IP address
-        /// range when you bring an IP address range to Amazon Web Services (BYOIP).
+        /// Describe verification tokens.
+        /// 
+        ///  
+        /// <para>
+        /// A verification token is an Amazon Web Services-generated random value that you can
+        /// use to prove ownership of an external resource. For example, you can use a verification
+        /// token to validate that you control a public IP address range when you bring an IP
+        /// address range to Amazon Web Services (BYOIP). 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeIpamExternalResourceVerificationTokens service method.</param>
         /// 
@@ -20502,10 +20645,15 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describe verification tokens. A verification token is an Amazon Web Services-generated
-        /// random value that you can use to prove ownership of an external resource. For example,
-        /// you can use a verification token to validate that you control a public IP address
-        /// range when you bring an IP address range to Amazon Web Services (BYOIP).
+        /// Describe verification tokens.
+        /// 
+        ///  
+        /// <para>
+        /// A verification token is an Amazon Web Services-generated random value that you can
+        /// use to prove ownership of an external resource. For example, you can use a verification
+        /// token to validate that you control a public IP address range when you bring an IP
+        /// address range to Amazon Web Services (BYOIP). 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeIpamExternalResourceVerificationTokens service method.</param>
         /// <param name="cancellationToken">
@@ -20521,6 +20669,69 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = DescribeIpamExternalResourceVerificationTokensResponseUnmarshaller.Instance;
             
             return InvokeAsync<DescribeIpamExternalResourceVerificationTokensResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeIpamPolicies
+
+
+        /// <summary>
+        /// Describes one or more IPAM policies.
+        /// 
+        ///  
+        /// <para>
+        /// An IPAM policy is a set of rules that define how public IPv4 addresses from IPAM pools
+        /// are allocated to Amazon Web Services resources. Each rule maps an Amazon Web Services
+        /// service to IPAM pools that the service will use to get IP addresses. A single policy
+        /// can have multiple rules and be applied to multiple Amazon Web Services Regions. If
+        /// the IPAM pool run out of addresses then the services fallback to Amazon-provided IP
+        /// addresses. A policy can be applied to an individual Amazon Web Services account or
+        /// an entity within Amazon Web Services Organizations.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeIpamPolicies service method.</param>
+        /// 
+        /// <returns>The response from the DescribeIpamPolicies service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpamPolicies">REST API Reference for DescribeIpamPolicies Operation</seealso>
+        public virtual DescribeIpamPoliciesResponse DescribeIpamPolicies(DescribeIpamPoliciesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeIpamPoliciesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeIpamPoliciesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeIpamPoliciesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Describes one or more IPAM policies.
+        /// 
+        ///  
+        /// <para>
+        /// An IPAM policy is a set of rules that define how public IPv4 addresses from IPAM pools
+        /// are allocated to Amazon Web Services resources. Each rule maps an Amazon Web Services
+        /// service to IPAM pools that the service will use to get IP addresses. A single policy
+        /// can have multiple rules and be applied to multiple Amazon Web Services Regions. If
+        /// the IPAM pool run out of addresses then the services fallback to Amazon-provided IP
+        /// addresses. A policy can be applied to an individual Amazon Web Services account or
+        /// an entity within Amazon Web Services Organizations.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeIpamPolicies service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeIpamPolicies service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpamPolicies">REST API Reference for DescribeIpamPolicies Operation</seealso>
+        public virtual Task<DescribeIpamPoliciesResponse> DescribeIpamPoliciesAsync(DescribeIpamPoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeIpamPoliciesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeIpamPoliciesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeIpamPoliciesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -28605,6 +28816,69 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DisableIpamPolicy
+
+
+        /// <summary>
+        /// Disables an IPAM policy.
+        /// 
+        ///  
+        /// <para>
+        /// An IPAM policy is a set of rules that define how public IPv4 addresses from IPAM pools
+        /// are allocated to Amazon Web Services resources. Each rule maps an Amazon Web Services
+        /// service to IPAM pools that the service will use to get IP addresses. A single policy
+        /// can have multiple rules and be applied to multiple Amazon Web Services Regions. If
+        /// the IPAM pool run out of addresses then the services fallback to Amazon-provided IP
+        /// addresses. A policy can be applied to an individual Amazon Web Services account or
+        /// an entity within Amazon Web Services Organizations.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableIpamPolicy service method.</param>
+        /// 
+        /// <returns>The response from the DisableIpamPolicy service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableIpamPolicy">REST API Reference for DisableIpamPolicy Operation</seealso>
+        public virtual DisableIpamPolicyResponse DisableIpamPolicy(DisableIpamPolicyRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DisableIpamPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisableIpamPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<DisableIpamPolicyResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Disables an IPAM policy.
+        /// 
+        ///  
+        /// <para>
+        /// An IPAM policy is a set of rules that define how public IPv4 addresses from IPAM pools
+        /// are allocated to Amazon Web Services resources. Each rule maps an Amazon Web Services
+        /// service to IPAM pools that the service will use to get IP addresses. A single policy
+        /// can have multiple rules and be applied to multiple Amazon Web Services Regions. If
+        /// the IPAM pool run out of addresses then the services fallback to Amazon-provided IP
+        /// addresses. A policy can be applied to an individual Amazon Web Services account or
+        /// an entity within Amazon Web Services Organizations.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableIpamPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisableIpamPolicy service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableIpamPolicy">REST API Reference for DisableIpamPolicy Operation</seealso>
+        public virtual Task<DisableIpamPolicyResponse> DisableIpamPolicyAsync(DisableIpamPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DisableIpamPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisableIpamPolicyResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DisableIpamPolicyResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DisableRouteServerPropagation
 
 
@@ -30857,6 +31131,81 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  EnableIpamPolicy
+
+
+        /// <summary>
+        /// Enables an IPAM policy.
+        /// 
+        ///  
+        /// <para>
+        /// An IPAM policy is a set of rules that define how public IPv4 addresses from IPAM pools
+        /// are allocated to Amazon Web Services resources. Each rule maps an Amazon Web Services
+        /// service to IPAM pools that the service will use to get IP addresses. A single policy
+        /// can have multiple rules and be applied to multiple Amazon Web Services Regions. If
+        /// the IPAM pool run out of addresses then the services fallback to Amazon-provided IP
+        /// addresses. A policy can be applied to an individual Amazon Web Services account or
+        /// an entity within Amazon Web Services Organizations.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/define-public-ipv4-allocation-strategy-with-ipam-policies.html">Define
+        /// public IPv4 allocation strategy with IPAM policies</a> in the <i>Amazon VPC IPAM User
+        /// Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableIpamPolicy service method.</param>
+        /// 
+        /// <returns>The response from the EnableIpamPolicy service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableIpamPolicy">REST API Reference for EnableIpamPolicy Operation</seealso>
+        public virtual EnableIpamPolicyResponse EnableIpamPolicy(EnableIpamPolicyRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = EnableIpamPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EnableIpamPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<EnableIpamPolicyResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Enables an IPAM policy.
+        /// 
+        ///  
+        /// <para>
+        /// An IPAM policy is a set of rules that define how public IPv4 addresses from IPAM pools
+        /// are allocated to Amazon Web Services resources. Each rule maps an Amazon Web Services
+        /// service to IPAM pools that the service will use to get IP addresses. A single policy
+        /// can have multiple rules and be applied to multiple Amazon Web Services Regions. If
+        /// the IPAM pool run out of addresses then the services fallback to Amazon-provided IP
+        /// addresses. A policy can be applied to an individual Amazon Web Services account or
+        /// an entity within Amazon Web Services Organizations.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/define-public-ipv4-allocation-strategy-with-ipam-policies.html">Define
+        /// public IPv4 allocation strategy with IPAM policies</a> in the <i>Amazon VPC IPAM User
+        /// Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableIpamPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the EnableIpamPolicy service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableIpamPolicy">REST API Reference for EnableIpamPolicy Operation</seealso>
+        public virtual Task<EnableIpamPolicyResponse> EnableIpamPolicyAsync(EnableIpamPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = EnableIpamPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EnableIpamPolicyResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<EnableIpamPolicyResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  EnableReachabilityAnalyzerOrganizationSharing
 
 
@@ -32431,6 +32780,69 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  GetEnabledIpamPolicy
+
+
+        /// <summary>
+        /// Gets the enabled IPAM policy.
+        /// 
+        ///  
+        /// <para>
+        /// An IPAM policy is a set of rules that define how public IPv4 addresses from IPAM pools
+        /// are allocated to Amazon Web Services resources. Each rule maps an Amazon Web Services
+        /// service to IPAM pools that the service will use to get IP addresses. A single policy
+        /// can have multiple rules and be applied to multiple Amazon Web Services Regions. If
+        /// the IPAM pool run out of addresses then the services fallback to Amazon-provided IP
+        /// addresses. A policy can be applied to an individual Amazon Web Services account or
+        /// an entity within Amazon Web Services Organizations.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetEnabledIpamPolicy service method.</param>
+        /// 
+        /// <returns>The response from the GetEnabledIpamPolicy service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetEnabledIpamPolicy">REST API Reference for GetEnabledIpamPolicy Operation</seealso>
+        public virtual GetEnabledIpamPolicyResponse GetEnabledIpamPolicy(GetEnabledIpamPolicyRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetEnabledIpamPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetEnabledIpamPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<GetEnabledIpamPolicyResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Gets the enabled IPAM policy.
+        /// 
+        ///  
+        /// <para>
+        /// An IPAM policy is a set of rules that define how public IPv4 addresses from IPAM pools
+        /// are allocated to Amazon Web Services resources. Each rule maps an Amazon Web Services
+        /// service to IPAM pools that the service will use to get IP addresses. A single policy
+        /// can have multiple rules and be applied to multiple Amazon Web Services Regions. If
+        /// the IPAM pool run out of addresses then the services fallback to Amazon-provided IP
+        /// addresses. A policy can be applied to an individual Amazon Web Services account or
+        /// an entity within Amazon Web Services Organizations.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetEnabledIpamPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetEnabledIpamPolicy service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetEnabledIpamPolicy">REST API Reference for GetEnabledIpamPolicy Operation</seealso>
+        public virtual Task<GetEnabledIpamPolicyResponse> GetEnabledIpamPolicyAsync(GetEnabledIpamPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetEnabledIpamPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetEnabledIpamPolicyResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetEnabledIpamPolicyResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetFlowLogsIntegrationTemplate
 
 
@@ -33148,6 +33560,154 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = GetIpamDiscoveredResourceCidrsResponseUnmarshaller.Instance;
             
             return InvokeAsync<GetIpamDiscoveredResourceCidrsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetIpamPolicyAllocationRules
+
+
+        /// <summary>
+        /// Gets the allocation rules for an IPAM policy.
+        /// 
+        ///  
+        /// <para>
+        /// An IPAM policy is a set of rules that define how public IPv4 addresses from IPAM pools
+        /// are allocated to Amazon Web Services resources. Each rule maps an Amazon Web Services
+        /// service to IPAM pools that the service will use to get IP addresses. A single policy
+        /// can have multiple rules and be applied to multiple Amazon Web Services Regions. If
+        /// the IPAM pool run out of addresses then the services fallback to Amazon-provided IP
+        /// addresses. A policy can be applied to an individual Amazon Web Services account or
+        /// an entity within Amazon Web Services Organizations.
+        /// </para>
+        ///  
+        /// <para>
+        /// Allocation rules are optional configurations within an IPAM policy that map Amazon
+        /// Web Services resource types to specific IPAM pools. If no rules are defined, the resource
+        /// types default to using Amazon-provided IP addresses.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetIpamPolicyAllocationRules service method.</param>
+        /// 
+        /// <returns>The response from the GetIpamPolicyAllocationRules service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamPolicyAllocationRules">REST API Reference for GetIpamPolicyAllocationRules Operation</seealso>
+        public virtual GetIpamPolicyAllocationRulesResponse GetIpamPolicyAllocationRules(GetIpamPolicyAllocationRulesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetIpamPolicyAllocationRulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetIpamPolicyAllocationRulesResponseUnmarshaller.Instance;
+
+            return Invoke<GetIpamPolicyAllocationRulesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Gets the allocation rules for an IPAM policy.
+        /// 
+        ///  
+        /// <para>
+        /// An IPAM policy is a set of rules that define how public IPv4 addresses from IPAM pools
+        /// are allocated to Amazon Web Services resources. Each rule maps an Amazon Web Services
+        /// service to IPAM pools that the service will use to get IP addresses. A single policy
+        /// can have multiple rules and be applied to multiple Amazon Web Services Regions. If
+        /// the IPAM pool run out of addresses then the services fallback to Amazon-provided IP
+        /// addresses. A policy can be applied to an individual Amazon Web Services account or
+        /// an entity within Amazon Web Services Organizations.
+        /// </para>
+        ///  
+        /// <para>
+        /// Allocation rules are optional configurations within an IPAM policy that map Amazon
+        /// Web Services resource types to specific IPAM pools. If no rules are defined, the resource
+        /// types default to using Amazon-provided IP addresses.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetIpamPolicyAllocationRules service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetIpamPolicyAllocationRules service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamPolicyAllocationRules">REST API Reference for GetIpamPolicyAllocationRules Operation</seealso>
+        public virtual Task<GetIpamPolicyAllocationRulesResponse> GetIpamPolicyAllocationRulesAsync(GetIpamPolicyAllocationRulesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetIpamPolicyAllocationRulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetIpamPolicyAllocationRulesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetIpamPolicyAllocationRulesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetIpamPolicyOrganizationTargets
+
+
+        /// <summary>
+        /// Gets the Amazon Web Services Organizations targets for an IPAM policy.
+        /// 
+        ///  
+        /// <para>
+        /// An IPAM policy is a set of rules that define how public IPv4 addresses from IPAM pools
+        /// are allocated to Amazon Web Services resources. Each rule maps an Amazon Web Services
+        /// service to IPAM pools that the service will use to get IP addresses. A single policy
+        /// can have multiple rules and be applied to multiple Amazon Web Services Regions. If
+        /// the IPAM pool run out of addresses then the services fallback to Amazon-provided IP
+        /// addresses. A policy can be applied to an individual Amazon Web Services account or
+        /// an entity within Amazon Web Services Organizations.
+        /// </para>
+        ///  
+        /// <para>
+        /// A target can be an individual Amazon Web Services account or an entity within an Amazon
+        /// Web Services Organization to which an IPAM policy can be applied.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetIpamPolicyOrganizationTargets service method.</param>
+        /// 
+        /// <returns>The response from the GetIpamPolicyOrganizationTargets service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamPolicyOrganizationTargets">REST API Reference for GetIpamPolicyOrganizationTargets Operation</seealso>
+        public virtual GetIpamPolicyOrganizationTargetsResponse GetIpamPolicyOrganizationTargets(GetIpamPolicyOrganizationTargetsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetIpamPolicyOrganizationTargetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetIpamPolicyOrganizationTargetsResponseUnmarshaller.Instance;
+
+            return Invoke<GetIpamPolicyOrganizationTargetsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Gets the Amazon Web Services Organizations targets for an IPAM policy.
+        /// 
+        ///  
+        /// <para>
+        /// An IPAM policy is a set of rules that define how public IPv4 addresses from IPAM pools
+        /// are allocated to Amazon Web Services resources. Each rule maps an Amazon Web Services
+        /// service to IPAM pools that the service will use to get IP addresses. A single policy
+        /// can have multiple rules and be applied to multiple Amazon Web Services Regions. If
+        /// the IPAM pool run out of addresses then the services fallback to Amazon-provided IP
+        /// addresses. A policy can be applied to an individual Amazon Web Services account or
+        /// an entity within Amazon Web Services Organizations.
+        /// </para>
+        ///  
+        /// <para>
+        /// A target can be an individual Amazon Web Services account or an entity within an Amazon
+        /// Web Services Organization to which an IPAM policy can be applied.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetIpamPolicyOrganizationTargets service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetIpamPolicyOrganizationTargets service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamPolicyOrganizationTargets">REST API Reference for GetIpamPolicyOrganizationTargets Operation</seealso>
+        public virtual Task<GetIpamPolicyOrganizationTargetsResponse> GetIpamPolicyOrganizationTargetsAsync(GetIpamPolicyOrganizationTargetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetIpamPolicyOrganizationTargetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetIpamPolicyOrganizationTargetsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetIpamPolicyOrganizationTargetsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -37341,6 +37901,81 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = ModifyIpamResponseUnmarshaller.Instance;
             
             return InvokeAsync<ModifyIpamResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ModifyIpamPolicyAllocationRules
+
+
+        /// <summary>
+        /// Modifies the allocation rules in an IPAM policy.
+        /// 
+        ///  
+        /// <para>
+        /// An IPAM policy is a set of rules that define how public IPv4 addresses from IPAM pools
+        /// are allocated to Amazon Web Services resources. Each rule maps an Amazon Web Services
+        /// service to IPAM pools that the service will use to get IP addresses. A single policy
+        /// can have multiple rules and be applied to multiple Amazon Web Services Regions. If
+        /// the IPAM pool run out of addresses then the services fallback to Amazon-provided IP
+        /// addresses. A policy can be applied to an individual Amazon Web Services account or
+        /// an entity within Amazon Web Services Organizations.
+        /// </para>
+        ///  
+        /// <para>
+        /// Allocation rules are optional configurations within an IPAM policy that map Amazon
+        /// Web Services resource types to specific IPAM pools. If no rules are defined, the resource
+        /// types default to using Amazon-provided IP addresses.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyIpamPolicyAllocationRules service method.</param>
+        /// 
+        /// <returns>The response from the ModifyIpamPolicyAllocationRules service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyIpamPolicyAllocationRules">REST API Reference for ModifyIpamPolicyAllocationRules Operation</seealso>
+        public virtual ModifyIpamPolicyAllocationRulesResponse ModifyIpamPolicyAllocationRules(ModifyIpamPolicyAllocationRulesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ModifyIpamPolicyAllocationRulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyIpamPolicyAllocationRulesResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyIpamPolicyAllocationRulesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Modifies the allocation rules in an IPAM policy.
+        /// 
+        ///  
+        /// <para>
+        /// An IPAM policy is a set of rules that define how public IPv4 addresses from IPAM pools
+        /// are allocated to Amazon Web Services resources. Each rule maps an Amazon Web Services
+        /// service to IPAM pools that the service will use to get IP addresses. A single policy
+        /// can have multiple rules and be applied to multiple Amazon Web Services Regions. If
+        /// the IPAM pool run out of addresses then the services fallback to Amazon-provided IP
+        /// addresses. A policy can be applied to an individual Amazon Web Services account or
+        /// an entity within Amazon Web Services Organizations.
+        /// </para>
+        ///  
+        /// <para>
+        /// Allocation rules are optional configurations within an IPAM policy that map Amazon
+        /// Web Services resource types to specific IPAM pools. If no rules are defined, the resource
+        /// types default to using Amazon-provided IP addresses.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyIpamPolicyAllocationRules service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyIpamPolicyAllocationRules service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyIpamPolicyAllocationRules">REST API Reference for ModifyIpamPolicyAllocationRules Operation</seealso>
+        public virtual Task<ModifyIpamPolicyAllocationRulesResponse> ModifyIpamPolicyAllocationRulesAsync(ModifyIpamPolicyAllocationRulesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ModifyIpamPolicyAllocationRulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyIpamPolicyAllocationRulesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ModifyIpamPolicyAllocationRulesResponse>(request, options, cancellationToken);
         }
 
         #endregion

@@ -34,6 +34,9 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class NatGateway
     {
+        private AutoProvisionZonesState _autoProvisionZones;
+        private AutoScalingIpsState _autoScalingIps;
+        private AvailabilityMode _availabilityMode;
         private ConnectivityType _connectivityType;
         private DateTime? _createTime;
         private DateTime? _deleteTime;
@@ -42,10 +45,101 @@ namespace Amazon.EC2.Model
         private List<NatGatewayAddress> _natGatewayAddresses = AWSConfigs.InitializeCollections ? new List<NatGatewayAddress>() : null;
         private string _natGatewayId;
         private ProvisionedBandwidth _provisionedBandwidth;
+        private string _routeTableId;
         private NatGatewayState _state;
         private string _subnetId;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _vpcId;
+
+        /// <summary>
+        /// Gets and sets the property AutoProvisionZones. 
+        /// <para>
+        /// For regional NAT gateways only: Indicates whether Amazon Web Services automatically
+        /// manages AZ coverage. When enabled, the NAT gateway associates EIPs in all AZs where
+        /// your VPC has subnets to handle outbound NAT traffic, expands to new AZs when you create
+        /// subnets there, and retracts from AZs where you've removed all subnets. When disabled,
+        /// you must manually manage which AZs the NAT gateway supports and their corresponding
+        /// EIPs.
+        /// </para>
+        ///  
+        /// <para>
+        /// A regional NAT gateway is a single NAT Gateway that works across multiple availability
+        /// zones (AZs) in your VPC, providing redundancy, scalability and availability across
+        /// all the AZs in a Region.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/nat-gateways-regional.html">Regional
+        /// NAT gateways for automatic multi-AZ expansion</a> in the <i>Amazon VPC User Guide</i>.
+        /// </para>
+        /// </summary>
+        public AutoProvisionZonesState AutoProvisionZones
+        {
+            get { return this._autoProvisionZones; }
+            set { this._autoProvisionZones = value; }
+        }
+
+        // Check to see if AutoProvisionZones property is set
+        internal bool IsSetAutoProvisionZones()
+        {
+            return this._autoProvisionZones != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AutoScalingIps. 
+        /// <para>
+        /// For regional NAT gateways only: Indicates whether Amazon Web Services automatically
+        /// allocates additional Elastic IP addresses (EIPs) in an AZ when the NAT gateway needs
+        /// more ports due to increased concurrent connections to a single destination from that
+        /// AZ.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/nat-gateways-regional.html">Regional
+        /// NAT gateways for automatic multi-AZ expansion</a> in the <i>Amazon VPC User Guide</i>.
+        /// </para>
+        /// </summary>
+        public AutoScalingIpsState AutoScalingIps
+        {
+            get { return this._autoScalingIps; }
+            set { this._autoScalingIps = value; }
+        }
+
+        // Check to see if AutoScalingIps property is set
+        internal bool IsSetAutoScalingIps()
+        {
+            return this._autoScalingIps != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AvailabilityMode. 
+        /// <para>
+        /// Indicates whether this is a zonal (single-AZ) or regional (multi-AZ) NAT gateway.
+        /// </para>
+        ///  
+        /// <para>
+        /// A zonal NAT gateway is a NAT Gateway that provides redundancy and scalability within
+        /// a single availability zone. A regional NAT gateway is a single NAT Gateway that works
+        /// across multiple availability zones (AZs) in your VPC, providing redundancy, scalability
+        /// and availability across all the AZs in a Region.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/nat-gateways-regional.html">Regional
+        /// NAT gateways for automatic multi-AZ expansion</a> in the <i>Amazon VPC User Guide</i>.
+        /// </para>
+        /// </summary>
+        public AvailabilityMode AvailabilityMode
+        {
+            get { return this._availabilityMode; }
+            set { this._availabilityMode = value; }
+        }
+
+        // Check to see if AvailabilityMode property is set
+        internal bool IsSetAvailabilityMode()
+        {
+            return this._availabilityMode != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ConnectivityType. 
@@ -227,6 +321,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetProvisionedBandwidth()
         {
             return this._provisionedBandwidth != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RouteTableId. 
+        /// <para>
+        /// For regional NAT gateways only, this is the ID of the NAT gateway.
+        /// </para>
+        /// </summary>
+        public string RouteTableId
+        {
+            get { return this._routeTableId; }
+            set { this._routeTableId = value; }
+        }
+
+        // Check to see if RouteTableId property is set
+        internal bool IsSetRouteTableId()
+        {
+            return this._routeTableId != null;
         }
 
         /// <summary>
