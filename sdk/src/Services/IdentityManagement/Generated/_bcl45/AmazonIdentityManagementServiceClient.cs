@@ -5754,6 +5754,61 @@ namespace Amazon.IdentityManagement
 
         #endregion
         
+        #region  DisableOutboundWebIdentityFederation
+
+
+        /// <summary>
+        /// Disables the outbound identity federation feature for your Amazon Web Services account.
+        /// When disabled, IAM principals in the account cannot use the <c>GetWebIdentityToken</c>
+        /// API to obtain JSON Web Tokens (JWTs) for authentication with external services. This
+        /// operation does not affect tokens that were issued before the feature was disabled.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableOutboundWebIdentityFederation service method.</param>
+        /// 
+        /// <returns>The response from the DisableOutboundWebIdentityFederation service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.FeatureDisabledException">
+        /// The request failed because outbound identity federation is already disabled for your
+        /// Amazon Web Services account. You cannot disable the feature multiple times
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DisableOutboundWebIdentityFederation">REST API Reference for DisableOutboundWebIdentityFederation Operation</seealso>
+        public virtual DisableOutboundWebIdentityFederationResponse DisableOutboundWebIdentityFederation(DisableOutboundWebIdentityFederationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DisableOutboundWebIdentityFederationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisableOutboundWebIdentityFederationResponseUnmarshaller.Instance;
+
+            return Invoke<DisableOutboundWebIdentityFederationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Disables the outbound identity federation feature for your Amazon Web Services account.
+        /// When disabled, IAM principals in the account cannot use the <c>GetWebIdentityToken</c>
+        /// API to obtain JSON Web Tokens (JWTs) for authentication with external services. This
+        /// operation does not affect tokens that were issued before the feature was disabled.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableOutboundWebIdentityFederation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisableOutboundWebIdentityFederation service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.FeatureDisabledException">
+        /// The request failed because outbound identity federation is already disabled for your
+        /// Amazon Web Services account. You cannot disable the feature multiple times
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DisableOutboundWebIdentityFederation">REST API Reference for DisableOutboundWebIdentityFederation Operation</seealso>
+        public virtual Task<DisableOutboundWebIdentityFederationResponse> DisableOutboundWebIdentityFederationAsync(DisableOutboundWebIdentityFederationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DisableOutboundWebIdentityFederationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisableOutboundWebIdentityFederationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DisableOutboundWebIdentityFederationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  EnableMFADevice
 
 
@@ -6097,6 +6152,65 @@ namespace Amazon.IdentityManagement
             options.ResponseUnmarshaller = EnableOrganizationsRootSessionsResponseUnmarshaller.Instance;
             
             return InvokeAsync<EnableOrganizationsRootSessionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  EnableOutboundWebIdentityFederation
+
+
+        /// <summary>
+        /// Enables the outbound identity federation feature for your Amazon Web Services account.
+        /// When enabled, IAM principals in your account can use the <c>GetWebIdentityToken</c>
+        /// API to obtain JSON Web Tokens (JWTs) for secure authentication with external services.
+        /// This operation also generates a unique issuer URL for your Amazon Web Services account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableOutboundWebIdentityFederation service method.</param>
+        /// 
+        /// <returns>The response from the EnableOutboundWebIdentityFederation service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.FeatureEnabledException">
+        /// The request failed because outbound identity federation is already enabled for your
+        /// Amazon Web Services account. You cannot enable the feature multiple times. To fetch
+        /// the current configuration (including the unique issuer URL), use the <c>GetOutboundWebIdentityFederationInfo</c>
+        /// operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/EnableOutboundWebIdentityFederation">REST API Reference for EnableOutboundWebIdentityFederation Operation</seealso>
+        public virtual EnableOutboundWebIdentityFederationResponse EnableOutboundWebIdentityFederation(EnableOutboundWebIdentityFederationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = EnableOutboundWebIdentityFederationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EnableOutboundWebIdentityFederationResponseUnmarshaller.Instance;
+
+            return Invoke<EnableOutboundWebIdentityFederationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Enables the outbound identity federation feature for your Amazon Web Services account.
+        /// When enabled, IAM principals in your account can use the <c>GetWebIdentityToken</c>
+        /// API to obtain JSON Web Tokens (JWTs) for secure authentication with external services.
+        /// This operation also generates a unique issuer URL for your Amazon Web Services account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableOutboundWebIdentityFederation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the EnableOutboundWebIdentityFederation service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.FeatureEnabledException">
+        /// The request failed because outbound identity federation is already enabled for your
+        /// Amazon Web Services account. You cannot enable the feature multiple times. To fetch
+        /// the current configuration (including the unique issuer URL), use the <c>GetOutboundWebIdentityFederationInfo</c>
+        /// operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/EnableOutboundWebIdentityFederation">REST API Reference for EnableOutboundWebIdentityFederation Operation</seealso>
+        public virtual Task<EnableOutboundWebIdentityFederationResponse> EnableOutboundWebIdentityFederationAsync(EnableOutboundWebIdentityFederationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = EnableOutboundWebIdentityFederationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EnableOutboundWebIdentityFederationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<EnableOutboundWebIdentityFederationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -8361,6 +8475,63 @@ namespace Amazon.IdentityManagement
             options.ResponseUnmarshaller = GetOrganizationsAccessReportResponseUnmarshaller.Instance;
             
             return InvokeAsync<GetOrganizationsAccessReportResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetOutboundWebIdentityFederationInfo
+
+
+        /// <summary>
+        /// Retrieves the configuration information for the outbound identity federation feature
+        /// in your Amazon Web Services account. The response includes the unique issuer URL for
+        /// your Amazon Web Services account and the current enabled/disabled status of the feature.
+        /// Use this operation to obtain the issuer URL that you need to configure trust relationships
+        /// with external services.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetOutboundWebIdentityFederationInfo service method.</param>
+        /// 
+        /// <returns>The response from the GetOutboundWebIdentityFederationInfo service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.FeatureDisabledException">
+        /// The request failed because outbound identity federation is already disabled for your
+        /// Amazon Web Services account. You cannot disable the feature multiple times
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetOutboundWebIdentityFederationInfo">REST API Reference for GetOutboundWebIdentityFederationInfo Operation</seealso>
+        public virtual GetOutboundWebIdentityFederationInfoResponse GetOutboundWebIdentityFederationInfo(GetOutboundWebIdentityFederationInfoRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetOutboundWebIdentityFederationInfoRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetOutboundWebIdentityFederationInfoResponseUnmarshaller.Instance;
+
+            return Invoke<GetOutboundWebIdentityFederationInfoResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves the configuration information for the outbound identity federation feature
+        /// in your Amazon Web Services account. The response includes the unique issuer URL for
+        /// your Amazon Web Services account and the current enabled/disabled status of the feature.
+        /// Use this operation to obtain the issuer URL that you need to configure trust relationships
+        /// with external services.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetOutboundWebIdentityFederationInfo service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetOutboundWebIdentityFederationInfo service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.FeatureDisabledException">
+        /// The request failed because outbound identity federation is already disabled for your
+        /// Amazon Web Services account. You cannot disable the feature multiple times
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetOutboundWebIdentityFederationInfo">REST API Reference for GetOutboundWebIdentityFederationInfo Operation</seealso>
+        public virtual Task<GetOutboundWebIdentityFederationInfoResponse> GetOutboundWebIdentityFederationInfoAsync(GetOutboundWebIdentityFederationInfoRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetOutboundWebIdentityFederationInfoRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetOutboundWebIdentityFederationInfoResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetOutboundWebIdentityFederationInfoResponse>(request, options, cancellationToken);
         }
 
         #endregion

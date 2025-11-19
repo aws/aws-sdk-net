@@ -4785,6 +4785,67 @@ namespace Amazon.IdentityManagement
 
         #endregion
         
+        #region  DisableOutboundWebIdentityFederation
+
+        /// <summary>
+        /// Disables the outbound identity federation feature for your Amazon Web Services account.
+        /// When disabled, IAM principals in the account cannot use the <c>GetWebIdentityToken</c>
+        /// API to obtain JSON Web Tokens (JWTs) for authentication with external services. This
+        /// operation does not affect tokens that were issued before the feature was disabled.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableOutboundWebIdentityFederation service method.</param>
+        /// 
+        /// <returns>The response from the DisableOutboundWebIdentityFederation service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.FeatureDisabledException">
+        /// The request failed because outbound identity federation is already disabled for your
+        /// Amazon Web Services account. You cannot disable the feature multiple times
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DisableOutboundWebIdentityFederation">REST API Reference for DisableOutboundWebIdentityFederation Operation</seealso>
+        public virtual DisableOutboundWebIdentityFederationResponse DisableOutboundWebIdentityFederation(DisableOutboundWebIdentityFederationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DisableOutboundWebIdentityFederationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisableOutboundWebIdentityFederationResponseUnmarshaller.Instance;
+
+            return Invoke<DisableOutboundWebIdentityFederationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisableOutboundWebIdentityFederation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisableOutboundWebIdentityFederation operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisableOutboundWebIdentityFederation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DisableOutboundWebIdentityFederation">REST API Reference for DisableOutboundWebIdentityFederation Operation</seealso>
+        public virtual IAsyncResult BeginDisableOutboundWebIdentityFederation(DisableOutboundWebIdentityFederationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DisableOutboundWebIdentityFederationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisableOutboundWebIdentityFederationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisableOutboundWebIdentityFederation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisableOutboundWebIdentityFederation.</param>
+        /// 
+        /// <returns>Returns a  DisableOutboundWebIdentityFederationResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DisableOutboundWebIdentityFederation">REST API Reference for DisableOutboundWebIdentityFederation Operation</seealso>
+        public virtual DisableOutboundWebIdentityFederationResponse EndDisableOutboundWebIdentityFederation(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DisableOutboundWebIdentityFederationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  EnableMFADevice
 
         /// <summary>
@@ -5055,6 +5116,69 @@ namespace Amazon.IdentityManagement
         public virtual EnableOrganizationsRootSessionsResponse EndEnableOrganizationsRootSessions(IAsyncResult asyncResult)
         {
             return EndInvoke<EnableOrganizationsRootSessionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  EnableOutboundWebIdentityFederation
+
+        /// <summary>
+        /// Enables the outbound identity federation feature for your Amazon Web Services account.
+        /// When enabled, IAM principals in your account can use the <c>GetWebIdentityToken</c>
+        /// API to obtain JSON Web Tokens (JWTs) for secure authentication with external services.
+        /// This operation also generates a unique issuer URL for your Amazon Web Services account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableOutboundWebIdentityFederation service method.</param>
+        /// 
+        /// <returns>The response from the EnableOutboundWebIdentityFederation service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.FeatureEnabledException">
+        /// The request failed because outbound identity federation is already enabled for your
+        /// Amazon Web Services account. You cannot enable the feature multiple times. To fetch
+        /// the current configuration (including the unique issuer URL), use the <c>GetOutboundWebIdentityFederationInfo</c>
+        /// operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/EnableOutboundWebIdentityFederation">REST API Reference for EnableOutboundWebIdentityFederation Operation</seealso>
+        public virtual EnableOutboundWebIdentityFederationResponse EnableOutboundWebIdentityFederation(EnableOutboundWebIdentityFederationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = EnableOutboundWebIdentityFederationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EnableOutboundWebIdentityFederationResponseUnmarshaller.Instance;
+
+            return Invoke<EnableOutboundWebIdentityFederationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the EnableOutboundWebIdentityFederation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the EnableOutboundWebIdentityFederation operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndEnableOutboundWebIdentityFederation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/EnableOutboundWebIdentityFederation">REST API Reference for EnableOutboundWebIdentityFederation Operation</seealso>
+        public virtual IAsyncResult BeginEnableOutboundWebIdentityFederation(EnableOutboundWebIdentityFederationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = EnableOutboundWebIdentityFederationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EnableOutboundWebIdentityFederationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  EnableOutboundWebIdentityFederation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginEnableOutboundWebIdentityFederation.</param>
+        /// 
+        /// <returns>Returns a  EnableOutboundWebIdentityFederationResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/EnableOutboundWebIdentityFederation">REST API Reference for EnableOutboundWebIdentityFederation Operation</seealso>
+        public virtual EnableOutboundWebIdentityFederationResponse EndEnableOutboundWebIdentityFederation(IAsyncResult asyncResult)
+        {
+            return EndInvoke<EnableOutboundWebIdentityFederationResponse>(asyncResult);
         }
 
         #endregion
@@ -6811,6 +6935,68 @@ namespace Amazon.IdentityManagement
         public virtual GetOrganizationsAccessReportResponse EndGetOrganizationsAccessReport(IAsyncResult asyncResult)
         {
             return EndInvoke<GetOrganizationsAccessReportResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetOutboundWebIdentityFederationInfo
+
+        /// <summary>
+        /// Retrieves the configuration information for the outbound identity federation feature
+        /// in your Amazon Web Services account. The response includes the unique issuer URL for
+        /// your Amazon Web Services account and the current enabled/disabled status of the feature.
+        /// Use this operation to obtain the issuer URL that you need to configure trust relationships
+        /// with external services.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetOutboundWebIdentityFederationInfo service method.</param>
+        /// 
+        /// <returns>The response from the GetOutboundWebIdentityFederationInfo service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.FeatureDisabledException">
+        /// The request failed because outbound identity federation is already disabled for your
+        /// Amazon Web Services account. You cannot disable the feature multiple times
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetOutboundWebIdentityFederationInfo">REST API Reference for GetOutboundWebIdentityFederationInfo Operation</seealso>
+        public virtual GetOutboundWebIdentityFederationInfoResponse GetOutboundWebIdentityFederationInfo(GetOutboundWebIdentityFederationInfoRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetOutboundWebIdentityFederationInfoRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetOutboundWebIdentityFederationInfoResponseUnmarshaller.Instance;
+
+            return Invoke<GetOutboundWebIdentityFederationInfoResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetOutboundWebIdentityFederationInfo operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetOutboundWebIdentityFederationInfo operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetOutboundWebIdentityFederationInfo
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetOutboundWebIdentityFederationInfo">REST API Reference for GetOutboundWebIdentityFederationInfo Operation</seealso>
+        public virtual IAsyncResult BeginGetOutboundWebIdentityFederationInfo(GetOutboundWebIdentityFederationInfoRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetOutboundWebIdentityFederationInfoRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetOutboundWebIdentityFederationInfoResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetOutboundWebIdentityFederationInfo operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetOutboundWebIdentityFederationInfo.</param>
+        /// 
+        /// <returns>Returns a  GetOutboundWebIdentityFederationInfoResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetOutboundWebIdentityFederationInfo">REST API Reference for GetOutboundWebIdentityFederationInfo Operation</seealso>
+        public virtual GetOutboundWebIdentityFederationInfoResponse EndGetOutboundWebIdentityFederationInfo(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetOutboundWebIdentityFederationInfoResponse>(asyncResult);
         }
 
         #endregion
