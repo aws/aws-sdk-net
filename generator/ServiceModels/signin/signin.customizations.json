@@ -1,0 +1,7 @@
+{
+    "runtimePipelineOverride": {
+        "overrides": [
+            { "operation": "addAfter", "newType": "Amazon.Signin.Internal.AmazonSigninPostMarshallerHandler", "targetType": "Amazon.Runtime.Internal.EndpointResolver" }
+        ]
+    }
+}
