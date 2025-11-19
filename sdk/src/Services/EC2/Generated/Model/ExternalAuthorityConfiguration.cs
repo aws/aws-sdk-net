@@ -37,7 +37,7 @@ namespace Amazon.EC2.Model
     ///  
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/integrate-infoblox-ipam.html">Integrate
-    /// VPC IPAM with Infoblox infrastructure</a> in the <i>Amazon VPC IPAM User Guide</i>..
+    /// VPC IPAM with Infoblox infrastructure</a> in the <i>Amazon VPC IPAM User Guide</i>.
     /// </para>
     /// </summary>
     public partial class ExternalAuthorityConfiguration

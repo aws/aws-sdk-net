@@ -4696,6 +4696,63 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  CreateIpamPolicy
+
+
+        /// <summary>
+        /// Creates an IPAM policy.
+        /// 
+        ///  
+        /// <para>
+        /// An IPAM policy is a set of rules that define how public IPv4 addresses from IPAM pools
+        /// are allocated to Amazon Web Services resources. Each rule maps an Amazon Web Services
+        /// service to IPAM pools that the service will use to get IP addresses. A single policy
+        /// can have multiple rules and be applied to multiple Amazon Web Services Regions. If
+        /// the IPAM pool run out of addresses then the services fallback to Amazon-provided IP
+        /// addresses. A policy can be applied to an individual Amazon Web Services account or
+        /// an entity within Amazon Web Services Organizations.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/define-public-ipv4-allocation-strategy-with-ipam-policies.html">Define
+        /// public IPv4 allocation strategy with IPAM policies</a> in the <i>Amazon VPC IPAM User
+        /// Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateIpamPolicy service method.</param>
+        /// 
+        /// <returns>The response from the CreateIpamPolicy service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateIpamPolicy">REST API Reference for CreateIpamPolicy Operation</seealso>
+        CreateIpamPolicyResponse CreateIpamPolicy(CreateIpamPolicyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateIpamPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateIpamPolicy operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateIpamPolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateIpamPolicy">REST API Reference for CreateIpamPolicy Operation</seealso>
+        IAsyncResult BeginCreateIpamPolicy(CreateIpamPolicyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateIpamPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateIpamPolicy.</param>
+        /// 
+        /// <returns>Returns a  CreateIpamPolicyResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateIpamPolicy">REST API Reference for CreateIpamPolicy Operation</seealso>
+        CreateIpamPolicyResponse EndCreateIpamPolicy(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateIpamPool
 
 
@@ -9283,6 +9340,57 @@ namespace Amazon.EC2
         /// <returns>Returns a  DeleteIpamExternalResourceVerificationTokenResult from EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteIpamExternalResourceVerificationToken">REST API Reference for DeleteIpamExternalResourceVerificationToken Operation</seealso>
         DeleteIpamExternalResourceVerificationTokenResponse EndDeleteIpamExternalResourceVerificationToken(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteIpamPolicy
+
+
+        /// <summary>
+        /// Deletes an IPAM policy.
+        /// 
+        ///  
+        /// <para>
+        /// An IPAM policy is a set of rules that define how public IPv4 addresses from IPAM pools
+        /// are allocated to Amazon Web Services resources. Each rule maps an Amazon Web Services
+        /// service to IPAM pools that the service will use to get IP addresses. A single policy
+        /// can have multiple rules and be applied to multiple Amazon Web Services Regions. If
+        /// the IPAM pool run out of addresses then the services fallback to Amazon-provided IP
+        /// addresses. A policy can be applied to an individual Amazon Web Services account or
+        /// an entity within Amazon Web Services Organizations.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIpamPolicy service method.</param>
+        /// 
+        /// <returns>The response from the DeleteIpamPolicy service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteIpamPolicy">REST API Reference for DeleteIpamPolicy Operation</seealso>
+        DeleteIpamPolicyResponse DeleteIpamPolicy(DeleteIpamPolicyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteIpamPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIpamPolicy operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteIpamPolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteIpamPolicy">REST API Reference for DeleteIpamPolicy Operation</seealso>
+        IAsyncResult BeginDeleteIpamPolicy(DeleteIpamPolicyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteIpamPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteIpamPolicy.</param>
+        /// 
+        /// <returns>Returns a  DeleteIpamPolicyResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteIpamPolicy">REST API Reference for DeleteIpamPolicy Operation</seealso>
+        DeleteIpamPolicyResponse EndDeleteIpamPolicy(IAsyncResult asyncResult);
 
         #endregion
         
@@ -16379,10 +16487,15 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describe verification tokens. A verification token is an Amazon Web Services-generated
-        /// random value that you can use to prove ownership of an external resource. For example,
-        /// you can use a verification token to validate that you control a public IP address
-        /// range when you bring an IP address range to Amazon Web Services (BYOIP).
+        /// Describe verification tokens.
+        /// 
+        ///  
+        /// <para>
+        /// A verification token is an Amazon Web Services-generated random value that you can
+        /// use to prove ownership of an external resource. For example, you can use a verification
+        /// token to validate that you control a public IP address range when you bring an IP
+        /// address range to Amazon Web Services (BYOIP). 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeIpamExternalResourceVerificationTokens service method.</param>
         /// 
@@ -16415,6 +16528,57 @@ namespace Amazon.EC2
         /// <returns>Returns a  DescribeIpamExternalResourceVerificationTokensResult from EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpamExternalResourceVerificationTokens">REST API Reference for DescribeIpamExternalResourceVerificationTokens Operation</seealso>
         DescribeIpamExternalResourceVerificationTokensResponse EndDescribeIpamExternalResourceVerificationTokens(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeIpamPolicies
+
+
+        /// <summary>
+        /// Describes one or more IPAM policies.
+        /// 
+        ///  
+        /// <para>
+        /// An IPAM policy is a set of rules that define how public IPv4 addresses from IPAM pools
+        /// are allocated to Amazon Web Services resources. Each rule maps an Amazon Web Services
+        /// service to IPAM pools that the service will use to get IP addresses. A single policy
+        /// can have multiple rules and be applied to multiple Amazon Web Services Regions. If
+        /// the IPAM pool run out of addresses then the services fallback to Amazon-provided IP
+        /// addresses. A policy can be applied to an individual Amazon Web Services account or
+        /// an entity within Amazon Web Services Organizations.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeIpamPolicies service method.</param>
+        /// 
+        /// <returns>The response from the DescribeIpamPolicies service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpamPolicies">REST API Reference for DescribeIpamPolicies Operation</seealso>
+        DescribeIpamPoliciesResponse DescribeIpamPolicies(DescribeIpamPoliciesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeIpamPolicies operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeIpamPolicies operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeIpamPolicies
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpamPolicies">REST API Reference for DescribeIpamPolicies Operation</seealso>
+        IAsyncResult BeginDescribeIpamPolicies(DescribeIpamPoliciesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeIpamPolicies operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeIpamPolicies.</param>
+        /// 
+        /// <returns>Returns a  DescribeIpamPoliciesResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpamPolicies">REST API Reference for DescribeIpamPolicies Operation</seealso>
+        DescribeIpamPoliciesResponse EndDescribeIpamPolicies(IAsyncResult asyncResult);
 
         #endregion
         
@@ -22800,6 +22964,57 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DisableIpamPolicy
+
+
+        /// <summary>
+        /// Disables an IPAM policy.
+        /// 
+        ///  
+        /// <para>
+        /// An IPAM policy is a set of rules that define how public IPv4 addresses from IPAM pools
+        /// are allocated to Amazon Web Services resources. Each rule maps an Amazon Web Services
+        /// service to IPAM pools that the service will use to get IP addresses. A single policy
+        /// can have multiple rules and be applied to multiple Amazon Web Services Regions. If
+        /// the IPAM pool run out of addresses then the services fallback to Amazon-provided IP
+        /// addresses. A policy can be applied to an individual Amazon Web Services account or
+        /// an entity within Amazon Web Services Organizations.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableIpamPolicy service method.</param>
+        /// 
+        /// <returns>The response from the DisableIpamPolicy service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableIpamPolicy">REST API Reference for DisableIpamPolicy Operation</seealso>
+        DisableIpamPolicyResponse DisableIpamPolicy(DisableIpamPolicyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisableIpamPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisableIpamPolicy operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisableIpamPolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableIpamPolicy">REST API Reference for DisableIpamPolicy Operation</seealso>
+        IAsyncResult BeginDisableIpamPolicy(DisableIpamPolicyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisableIpamPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisableIpamPolicy.</param>
+        /// 
+        /// <returns>Returns a  DisableIpamPolicyResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableIpamPolicy">REST API Reference for DisableIpamPolicy Operation</seealso>
+        DisableIpamPolicyResponse EndDisableIpamPolicy(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DisableRouteServerPropagation
 
 
@@ -24667,6 +24882,63 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  EnableIpamPolicy
+
+
+        /// <summary>
+        /// Enables an IPAM policy.
+        /// 
+        ///  
+        /// <para>
+        /// An IPAM policy is a set of rules that define how public IPv4 addresses from IPAM pools
+        /// are allocated to Amazon Web Services resources. Each rule maps an Amazon Web Services
+        /// service to IPAM pools that the service will use to get IP addresses. A single policy
+        /// can have multiple rules and be applied to multiple Amazon Web Services Regions. If
+        /// the IPAM pool run out of addresses then the services fallback to Amazon-provided IP
+        /// addresses. A policy can be applied to an individual Amazon Web Services account or
+        /// an entity within Amazon Web Services Organizations.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/define-public-ipv4-allocation-strategy-with-ipam-policies.html">Define
+        /// public IPv4 allocation strategy with IPAM policies</a> in the <i>Amazon VPC IPAM User
+        /// Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableIpamPolicy service method.</param>
+        /// 
+        /// <returns>The response from the EnableIpamPolicy service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableIpamPolicy">REST API Reference for EnableIpamPolicy Operation</seealso>
+        EnableIpamPolicyResponse EnableIpamPolicy(EnableIpamPolicyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the EnableIpamPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the EnableIpamPolicy operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndEnableIpamPolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableIpamPolicy">REST API Reference for EnableIpamPolicy Operation</seealso>
+        IAsyncResult BeginEnableIpamPolicy(EnableIpamPolicyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  EnableIpamPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginEnableIpamPolicy.</param>
+        /// 
+        /// <returns>Returns a  EnableIpamPolicyResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableIpamPolicy">REST API Reference for EnableIpamPolicy Operation</seealso>
+        EnableIpamPolicyResponse EndEnableIpamPolicy(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  EnableReachabilityAnalyzerOrganizationSharing
 
 
@@ -26039,6 +26311,57 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  GetEnabledIpamPolicy
+
+
+        /// <summary>
+        /// Gets the enabled IPAM policy.
+        /// 
+        ///  
+        /// <para>
+        /// An IPAM policy is a set of rules that define how public IPv4 addresses from IPAM pools
+        /// are allocated to Amazon Web Services resources. Each rule maps an Amazon Web Services
+        /// service to IPAM pools that the service will use to get IP addresses. A single policy
+        /// can have multiple rules and be applied to multiple Amazon Web Services Regions. If
+        /// the IPAM pool run out of addresses then the services fallback to Amazon-provided IP
+        /// addresses. A policy can be applied to an individual Amazon Web Services account or
+        /// an entity within Amazon Web Services Organizations.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetEnabledIpamPolicy service method.</param>
+        /// 
+        /// <returns>The response from the GetEnabledIpamPolicy service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetEnabledIpamPolicy">REST API Reference for GetEnabledIpamPolicy Operation</seealso>
+        GetEnabledIpamPolicyResponse GetEnabledIpamPolicy(GetEnabledIpamPolicyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetEnabledIpamPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetEnabledIpamPolicy operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetEnabledIpamPolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetEnabledIpamPolicy">REST API Reference for GetEnabledIpamPolicy Operation</seealso>
+        IAsyncResult BeginGetEnabledIpamPolicy(GetEnabledIpamPolicyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetEnabledIpamPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetEnabledIpamPolicy.</param>
+        /// 
+        /// <returns>Returns a  GetEnabledIpamPolicyResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetEnabledIpamPolicy">REST API Reference for GetEnabledIpamPolicy Operation</seealso>
+        GetEnabledIpamPolicyResponse EndGetEnabledIpamPolicy(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetFlowLogsIntegrationTemplate
 
 
@@ -26650,6 +26973,119 @@ namespace Amazon.EC2
         /// <returns>Returns a  GetIpamDiscoveredResourceCidrsResult from EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamDiscoveredResourceCidrs">REST API Reference for GetIpamDiscoveredResourceCidrs Operation</seealso>
         GetIpamDiscoveredResourceCidrsResponse EndGetIpamDiscoveredResourceCidrs(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetIpamPolicyAllocationRules
+
+
+        /// <summary>
+        /// Gets the allocation rules for an IPAM policy.
+        /// 
+        ///  
+        /// <para>
+        /// An IPAM policy is a set of rules that define how public IPv4 addresses from IPAM pools
+        /// are allocated to Amazon Web Services resources. Each rule maps an Amazon Web Services
+        /// service to IPAM pools that the service will use to get IP addresses. A single policy
+        /// can have multiple rules and be applied to multiple Amazon Web Services Regions. If
+        /// the IPAM pool run out of addresses then the services fallback to Amazon-provided IP
+        /// addresses. A policy can be applied to an individual Amazon Web Services account or
+        /// an entity within Amazon Web Services Organizations.
+        /// </para>
+        ///  
+        /// <para>
+        /// Allocation rules are optional configurations within an IPAM policy that map Amazon
+        /// Web Services resource types to specific IPAM pools. If no rules are defined, the resource
+        /// types default to using Amazon-provided IP addresses.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetIpamPolicyAllocationRules service method.</param>
+        /// 
+        /// <returns>The response from the GetIpamPolicyAllocationRules service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamPolicyAllocationRules">REST API Reference for GetIpamPolicyAllocationRules Operation</seealso>
+        GetIpamPolicyAllocationRulesResponse GetIpamPolicyAllocationRules(GetIpamPolicyAllocationRulesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetIpamPolicyAllocationRules operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetIpamPolicyAllocationRules operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetIpamPolicyAllocationRules
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamPolicyAllocationRules">REST API Reference for GetIpamPolicyAllocationRules Operation</seealso>
+        IAsyncResult BeginGetIpamPolicyAllocationRules(GetIpamPolicyAllocationRulesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetIpamPolicyAllocationRules operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetIpamPolicyAllocationRules.</param>
+        /// 
+        /// <returns>Returns a  GetIpamPolicyAllocationRulesResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamPolicyAllocationRules">REST API Reference for GetIpamPolicyAllocationRules Operation</seealso>
+        GetIpamPolicyAllocationRulesResponse EndGetIpamPolicyAllocationRules(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetIpamPolicyOrganizationTargets
+
+
+        /// <summary>
+        /// Gets the Amazon Web Services Organizations targets for an IPAM policy.
+        /// 
+        ///  
+        /// <para>
+        /// An IPAM policy is a set of rules that define how public IPv4 addresses from IPAM pools
+        /// are allocated to Amazon Web Services resources. Each rule maps an Amazon Web Services
+        /// service to IPAM pools that the service will use to get IP addresses. A single policy
+        /// can have multiple rules and be applied to multiple Amazon Web Services Regions. If
+        /// the IPAM pool run out of addresses then the services fallback to Amazon-provided IP
+        /// addresses. A policy can be applied to an individual Amazon Web Services account or
+        /// an entity within Amazon Web Services Organizations.
+        /// </para>
+        ///  
+        /// <para>
+        /// A target can be an individual Amazon Web Services account or an entity within an Amazon
+        /// Web Services Organization to which an IPAM policy can be applied.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetIpamPolicyOrganizationTargets service method.</param>
+        /// 
+        /// <returns>The response from the GetIpamPolicyOrganizationTargets service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamPolicyOrganizationTargets">REST API Reference for GetIpamPolicyOrganizationTargets Operation</seealso>
+        GetIpamPolicyOrganizationTargetsResponse GetIpamPolicyOrganizationTargets(GetIpamPolicyOrganizationTargetsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetIpamPolicyOrganizationTargets operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetIpamPolicyOrganizationTargets operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetIpamPolicyOrganizationTargets
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamPolicyOrganizationTargets">REST API Reference for GetIpamPolicyOrganizationTargets Operation</seealso>
+        IAsyncResult BeginGetIpamPolicyOrganizationTargets(GetIpamPolicyOrganizationTargetsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetIpamPolicyOrganizationTargets operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetIpamPolicyOrganizationTargets.</param>
+        /// 
+        /// <returns>Returns a  GetIpamPolicyOrganizationTargetsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamPolicyOrganizationTargets">REST API Reference for GetIpamPolicyOrganizationTargets Operation</seealso>
+        GetIpamPolicyOrganizationTargetsResponse EndGetIpamPolicyOrganizationTargets(IAsyncResult asyncResult);
 
         #endregion
         
@@ -30092,6 +30528,63 @@ namespace Amazon.EC2
         /// <returns>Returns a  ModifyIpamResult from EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyIpam">REST API Reference for ModifyIpam Operation</seealso>
         ModifyIpamResponse EndModifyIpam(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ModifyIpamPolicyAllocationRules
+
+
+        /// <summary>
+        /// Modifies the allocation rules in an IPAM policy.
+        /// 
+        ///  
+        /// <para>
+        /// An IPAM policy is a set of rules that define how public IPv4 addresses from IPAM pools
+        /// are allocated to Amazon Web Services resources. Each rule maps an Amazon Web Services
+        /// service to IPAM pools that the service will use to get IP addresses. A single policy
+        /// can have multiple rules and be applied to multiple Amazon Web Services Regions. If
+        /// the IPAM pool run out of addresses then the services fallback to Amazon-provided IP
+        /// addresses. A policy can be applied to an individual Amazon Web Services account or
+        /// an entity within Amazon Web Services Organizations.
+        /// </para>
+        ///  
+        /// <para>
+        /// Allocation rules are optional configurations within an IPAM policy that map Amazon
+        /// Web Services resource types to specific IPAM pools. If no rules are defined, the resource
+        /// types default to using Amazon-provided IP addresses.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyIpamPolicyAllocationRules service method.</param>
+        /// 
+        /// <returns>The response from the ModifyIpamPolicyAllocationRules service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyIpamPolicyAllocationRules">REST API Reference for ModifyIpamPolicyAllocationRules Operation</seealso>
+        ModifyIpamPolicyAllocationRulesResponse ModifyIpamPolicyAllocationRules(ModifyIpamPolicyAllocationRulesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyIpamPolicyAllocationRules operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyIpamPolicyAllocationRules operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyIpamPolicyAllocationRules
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyIpamPolicyAllocationRules">REST API Reference for ModifyIpamPolicyAllocationRules Operation</seealso>
+        IAsyncResult BeginModifyIpamPolicyAllocationRules(ModifyIpamPolicyAllocationRulesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifyIpamPolicyAllocationRules operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyIpamPolicyAllocationRules.</param>
+        /// 
+        /// <returns>Returns a  ModifyIpamPolicyAllocationRulesResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyIpamPolicyAllocationRules">REST API Reference for ModifyIpamPolicyAllocationRules Operation</seealso>
+        ModifyIpamPolicyAllocationRulesResponse EndModifyIpamPolicyAllocationRules(IAsyncResult asyncResult);
 
         #endregion
         

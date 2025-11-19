@@ -333,6 +333,11 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeIpamPoliciesRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EC2.Model.DescribeIpamPoolsRequest.MaxResults</property>
     <min>5</min>
     <max>1000</max>
@@ -774,6 +779,16 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EC2.Model.GetIpamPolicyAllocationRulesRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.GetIpamPolicyOrganizationTargetsRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EC2.Model.GetIpamPoolAllocationsRequest.MaxResults</property>
     <min>1000</min>
     <max>100000</max>
@@ -1166,6 +1181,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.IpamExternalResourceVerificationToken.IpamExternalResourceVerificationTokenArn</property>
+    <min>1</min>
+    <max>1283</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.IpamPolicy.IpamPolicyArn</property>
     <min>1</min>
     <max>1283</max>
   </property-value-rule>

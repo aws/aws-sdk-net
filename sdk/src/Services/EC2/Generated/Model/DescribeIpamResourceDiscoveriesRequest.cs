@@ -99,8 +99,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Specify the pagination token from a previous request to retrieve the next page of
-        /// results.
+        /// The token for the next page of results.
         /// </para>
         /// </summary>
         public string NextToken

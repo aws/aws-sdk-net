@@ -1671,6 +1671,156 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type AutoProvisionZonesState.
+    /// </summary>
+    public class AutoProvisionZonesState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Disabled for AutoProvisionZonesState
+        /// </summary>
+        public static readonly AutoProvisionZonesState Disabled = new AutoProvisionZonesState("disabled");
+        /// <summary>
+        /// Constant Enabled for AutoProvisionZonesState
+        /// </summary>
+        public static readonly AutoProvisionZonesState Enabled = new AutoProvisionZonesState("enabled");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AutoProvisionZonesState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AutoProvisionZonesState FindValue(string value)
+        {
+            return FindValue<AutoProvisionZonesState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AutoProvisionZonesState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AutoScalingIpsState.
+    /// </summary>
+    public class AutoScalingIpsState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Disabled for AutoScalingIpsState
+        /// </summary>
+        public static readonly AutoScalingIpsState Disabled = new AutoScalingIpsState("disabled");
+        /// <summary>
+        /// Constant Enabled for AutoScalingIpsState
+        /// </summary>
+        public static readonly AutoScalingIpsState Enabled = new AutoScalingIpsState("enabled");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AutoScalingIpsState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AutoScalingIpsState FindValue(string value)
+        {
+            return FindValue<AutoScalingIpsState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AutoScalingIpsState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AvailabilityMode.
+    /// </summary>
+    public class AvailabilityMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Regional for AvailabilityMode
+        /// </summary>
+        public static readonly AvailabilityMode Regional = new AvailabilityMode("regional");
+        /// <summary>
+        /// Constant Zonal for AvailabilityMode
+        /// </summary>
+        public static readonly AvailabilityMode Zonal = new AvailabilityMode("zonal");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AvailabilityMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AvailabilityMode FindValue(string value)
+        {
+            return FindValue<AvailabilityMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AvailabilityMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AvailabilityZoneOptInStatus.
     /// </summary>
     public class AvailabilityZoneOptInStatus : ConstantClass
@@ -7118,6 +7268,10 @@ namespace Amazon.EC2
         /// Constant NetworkInterface for FlowLogsResourceType
         /// </summary>
         public static readonly FlowLogsResourceType NetworkInterface = new FlowLogsResourceType("NetworkInterface");
+        /// <summary>
+        /// Constant RegionalNatGateway for FlowLogsResourceType
+        /// </summary>
+        public static readonly FlowLogsResourceType RegionalNatGateway = new FlowLogsResourceType("RegionalNatGateway");
         /// <summary>
         /// Constant Subnet for FlowLogsResourceType
         /// </summary>
@@ -14731,6 +14885,204 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type IpamPolicyManagedBy.
+    /// </summary>
+    public class IpamPolicyManagedBy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Account for IpamPolicyManagedBy
+        /// </summary>
+        public static readonly IpamPolicyManagedBy Account = new IpamPolicyManagedBy("account");
+        /// <summary>
+        /// Constant DelegatedAdministratorForIpam for IpamPolicyManagedBy
+        /// </summary>
+        public static readonly IpamPolicyManagedBy DelegatedAdministratorForIpam = new IpamPolicyManagedBy("delegated-administrator-for-ipam");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IpamPolicyManagedBy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IpamPolicyManagedBy FindValue(string value)
+        {
+            return FindValue<IpamPolicyManagedBy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IpamPolicyManagedBy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type IpamPolicyResourceType.
+    /// </summary>
+    public class IpamPolicyResourceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Alb for IpamPolicyResourceType
+        /// </summary>
+        public static readonly IpamPolicyResourceType Alb = new IpamPolicyResourceType("alb");
+        /// <summary>
+        /// Constant Eip for IpamPolicyResourceType
+        /// </summary>
+        public static readonly IpamPolicyResourceType Eip = new IpamPolicyResourceType("eip");
+        /// <summary>
+        /// Constant Rds for IpamPolicyResourceType
+        /// </summary>
+        public static readonly IpamPolicyResourceType Rds = new IpamPolicyResourceType("rds");
+        /// <summary>
+        /// Constant Rnat for IpamPolicyResourceType
+        /// </summary>
+        public static readonly IpamPolicyResourceType Rnat = new IpamPolicyResourceType("rnat");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IpamPolicyResourceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IpamPolicyResourceType FindValue(string value)
+        {
+            return FindValue<IpamPolicyResourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IpamPolicyResourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type IpamPolicyState.
+    /// </summary>
+    public class IpamPolicyState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CreateComplete for IpamPolicyState
+        /// </summary>
+        public static readonly IpamPolicyState CreateComplete = new IpamPolicyState("create-complete");
+        /// <summary>
+        /// Constant CreateFailed for IpamPolicyState
+        /// </summary>
+        public static readonly IpamPolicyState CreateFailed = new IpamPolicyState("create-failed");
+        /// <summary>
+        /// Constant CreateInProgress for IpamPolicyState
+        /// </summary>
+        public static readonly IpamPolicyState CreateInProgress = new IpamPolicyState("create-in-progress");
+        /// <summary>
+        /// Constant DeleteComplete for IpamPolicyState
+        /// </summary>
+        public static readonly IpamPolicyState DeleteComplete = new IpamPolicyState("delete-complete");
+        /// <summary>
+        /// Constant DeleteFailed for IpamPolicyState
+        /// </summary>
+        public static readonly IpamPolicyState DeleteFailed = new IpamPolicyState("delete-failed");
+        /// <summary>
+        /// Constant DeleteInProgress for IpamPolicyState
+        /// </summary>
+        public static readonly IpamPolicyState DeleteInProgress = new IpamPolicyState("delete-in-progress");
+        /// <summary>
+        /// Constant IsolateComplete for IpamPolicyState
+        /// </summary>
+        public static readonly IpamPolicyState IsolateComplete = new IpamPolicyState("isolate-complete");
+        /// <summary>
+        /// Constant IsolateInProgress for IpamPolicyState
+        /// </summary>
+        public static readonly IpamPolicyState IsolateInProgress = new IpamPolicyState("isolate-in-progress");
+        /// <summary>
+        /// Constant ModifyComplete for IpamPolicyState
+        /// </summary>
+        public static readonly IpamPolicyState ModifyComplete = new IpamPolicyState("modify-complete");
+        /// <summary>
+        /// Constant ModifyFailed for IpamPolicyState
+        /// </summary>
+        public static readonly IpamPolicyState ModifyFailed = new IpamPolicyState("modify-failed");
+        /// <summary>
+        /// Constant ModifyInProgress for IpamPolicyState
+        /// </summary>
+        public static readonly IpamPolicyState ModifyInProgress = new IpamPolicyState("modify-in-progress");
+        /// <summary>
+        /// Constant RestoreInProgress for IpamPolicyState
+        /// </summary>
+        public static readonly IpamPolicyState RestoreInProgress = new IpamPolicyState("restore-in-progress");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IpamPolicyState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IpamPolicyState FindValue(string value)
+        {
+            return FindValue<IpamPolicyState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IpamPolicyState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type IpamPoolAllocationResourceType.
     /// </summary>
     public class IpamPoolAllocationResourceType : ConstantClass
@@ -21087,6 +21439,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly ResourceType IpamExternalResourceVerificationToken = new ResourceType("ipam-external-resource-verification-token");
         /// <summary>
+        /// Constant IpamPolicy for ResourceType
+        /// </summary>
+        public static readonly ResourceType IpamPolicy = new ResourceType("ipam-policy");
+        /// <summary>
         /// Constant IpamPool for ResourceType
         /// </summary>
         public static readonly ResourceType IpamPool = new ResourceType("ipam-pool");
@@ -22802,6 +23158,10 @@ namespace Amazon.EC2
         /// Constant Nlb for ServiceManaged
         /// </summary>
         public static readonly ServiceManaged Nlb = new ServiceManaged("nlb");
+        /// <summary>
+        /// Constant Rds for ServiceManaged
+        /// </summary>
+        public static readonly ServiceManaged Rds = new ServiceManaged("rds");
         /// <summary>
         /// Constant Rnat for ServiceManaged
         /// </summary>

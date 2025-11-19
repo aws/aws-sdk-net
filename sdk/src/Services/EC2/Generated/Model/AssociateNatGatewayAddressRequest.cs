@@ -58,6 +58,8 @@ namespace Amazon.EC2.Model
     public partial class AssociateNatGatewayAddressRequest : AmazonEC2Request
     {
         private List<string> _allocationIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private string _availabilityZone;
+        private string _availabilityZoneId;
         private string _natGatewayId;
         private List<string> _privateIpAddresses = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
@@ -78,6 +80,59 @@ namespace Amazon.EC2.Model
         internal bool IsSetAllocationIds()
         {
             return this._allocationIds != null && (this._allocationIds.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AvailabilityZone. 
+        /// <para>
+        /// For regional NAT gateways only: The Availability Zone where you want to associate
+        /// an Elastic IP address (EIP). The regional NAT gateway uses a separate EIP in each
+        /// AZ to handle outbound NAT traffic from that AZ.
+        /// </para>
+        ///  
+        /// <para>
+        /// A regional NAT gateway is a single NAT Gateway that works across multiple availability
+        /// zones (AZs) in your VPC, providing redundancy, scalability and availability across
+        /// all the AZs in a Region.
+        /// </para>
+        /// </summary>
+        public string AvailabilityZone
+        {
+            get { return this._availabilityZone; }
+            set { this._availabilityZone = value; }
+        }
+
+        // Check to see if AvailabilityZone property is set
+        internal bool IsSetAvailabilityZone()
+        {
+            return this._availabilityZone != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AvailabilityZoneId. 
+        /// <para>
+        /// For regional NAT gateways only: The ID of the Availability Zone where you want to
+        /// associate an Elastic IP address (EIP). The regional NAT gateway uses a separate EIP
+        /// in each AZ to handle outbound NAT traffic from that AZ. Use this instead of AvailabilityZone
+        /// for consistent identification of AZs across Amazon Web Services Regions. 
+        /// </para>
+        ///  
+        /// <para>
+        /// A regional NAT gateway is a single NAT Gateway that works across multiple availability
+        /// zones (AZs) in your VPC, providing redundancy, scalability and availability across
+        /// all the AZs in a Region.
+        /// </para>
+        /// </summary>
+        public string AvailabilityZoneId
+        {
+            get { return this._availabilityZoneId; }
+            set { this._availabilityZoneId = value; }
+        }
+
+        // Check to see if AvailabilityZoneId property is set
+        internal bool IsSetAvailabilityZoneId()
+        {
+            return this._availabilityZoneId != null;
         }
 
         /// <summary>

@@ -63,6 +63,35 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("AllocationId", StringUtils.FromString(publicRequest.AllocationId));
                 }
+                if(publicRequest.IsSetAvailabilityMode())
+                {
+                    request.Parameters.Add("AvailabilityMode", StringUtils.FromString(publicRequest.AvailabilityMode));
+                }
+                if(publicRequest.IsSetAvailabilityZoneAddresses())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.AvailabilityZoneAddresses)
+                    {
+                        if(publicRequestlistValue.IsSetAllocationIds())
+                        {
+                            int publicRequestlistValuelistValueIndex = 1;
+                            foreach(var publicRequestlistValuelistValue in publicRequestlistValue.AllocationIds)
+                            {
+                                request.Parameters.Add("AvailabilityZoneAddress" + "." + publicRequestlistValueIndex + "." + "AllocationId" + "." + publicRequestlistValuelistValueIndex, StringUtils.FromString(publicRequestlistValuelistValue));
+                                publicRequestlistValuelistValueIndex++;
+                            }
+                        }
+                        if(publicRequestlistValue.IsSetAvailabilityZone())
+                        {
+                            request.Parameters.Add("AvailabilityZoneAddress" + "." + publicRequestlistValueIndex + "." + "AvailabilityZone", StringUtils.FromString(publicRequestlistValue.AvailabilityZone));
+                        }
+                        if(publicRequestlistValue.IsSetAvailabilityZoneId())
+                        {
+                            request.Parameters.Add("AvailabilityZoneAddress" + "." + publicRequestlistValueIndex + "." + "AvailabilityZoneId", StringUtils.FromString(publicRequestlistValue.AvailabilityZoneId));
+                        }
+                        publicRequestlistValueIndex++;
+                    }
+                }
                 if(publicRequest.IsSetClientToken())
                 {
                     request.Parameters.Add("ClientToken", StringUtils.FromString(publicRequest.ClientToken));
@@ -132,6 +161,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         }
                         publicRequestlistValueIndex++;
                     }
+                }
+                if(publicRequest.IsSetVpcId())
+                {
+                    request.Parameters.Add("VpcId", StringUtils.FromString(publicRequest.VpcId));
                 }
             }
             return request;
