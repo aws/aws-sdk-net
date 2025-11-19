@@ -41,10 +41,14 @@ namespace Amazon.ECR.Model
         private ImageScanFindingsSummary _imageScanFindingsSummary;
         private ImageScanStatus _imageScanStatus;
         private long? _imageSizeInBytes;
+        private ImageStatus _imageStatus;
         private List<string> _imageTags = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private DateTime? _lastActivatedAt;
+        private DateTime? _lastArchivedAt;
         private DateTime? _lastRecordedPullTime;
         private string _registryId;
         private string _repositoryName;
+        private string _subjectManifestDigest;
 
         /// <summary>
         /// Gets and sets the property ArtifactMediaType. 
@@ -187,6 +191,24 @@ namespace Amazon.ECR.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ImageStatus. 
+        /// <para>
+        /// The current status of the image.
+        /// </para>
+        /// </summary>
+        public ImageStatus ImageStatus
+        {
+            get { return this._imageStatus; }
+            set { this._imageStatus = value; }
+        }
+
+        // Check to see if ImageStatus property is set
+        internal bool IsSetImageStatus()
+        {
+            return this._imageStatus != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ImageTags. 
         /// <para>
         /// The list of tags associated with this image.
@@ -202,6 +224,44 @@ namespace Amazon.ECR.Model
         internal bool IsSetImageTags()
         {
             return this._imageTags != null && (this._imageTags.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastActivatedAt. 
+        /// <para>
+        /// The date and time, expressed in standard JavaScript date format, when the image was
+        /// last restored from Amazon ECR archive to Amazon ECR standard.
+        /// </para>
+        /// </summary>
+        public DateTime LastActivatedAt
+        {
+            get { return this._lastActivatedAt.GetValueOrDefault(); }
+            set { this._lastActivatedAt = value; }
+        }
+
+        // Check to see if LastActivatedAt property is set
+        internal bool IsSetLastActivatedAt()
+        {
+            return this._lastActivatedAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastArchivedAt. 
+        /// <para>
+        /// The date and time, expressed in standard JavaScript date format, when the image was
+        /// last transitioned to Amazon ECR archive.
+        /// </para>
+        /// </summary>
+        public DateTime LastArchivedAt
+        {
+            get { return this._lastArchivedAt.GetValueOrDefault(); }
+            set { this._lastArchivedAt = value; }
+        }
+
+        // Check to see if LastArchivedAt property is set
+        internal bool IsSetLastArchivedAt()
+        {
+            return this._lastArchivedAt.HasValue; 
         }
 
         /// <summary>
@@ -269,6 +329,24 @@ namespace Amazon.ECR.Model
         internal bool IsSetRepositoryName()
         {
             return this._repositoryName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SubjectManifestDigest. 
+        /// <para>
+        /// The digest of the subject manifest for images that are referrers.
+        /// </para>
+        /// </summary>
+        public string SubjectManifestDigest
+        {
+            get { return this._subjectManifestDigest; }
+            set { this._subjectManifestDigest = value; }
+        }
+
+        // Check to see if SubjectManifestDigest property is set
+        internal bool IsSetSubjectManifestDigest()
+        {
+            return this._subjectManifestDigest != null;
         }
 
     }

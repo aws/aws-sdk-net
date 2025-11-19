@@ -99,6 +99,10 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
             using (var streamCopy = new MemoryStream(responseBodyBytes))
             using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
             {
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ImageArchivedException"))
+                {
+                    return ImageArchivedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ImageNotFoundException"))
                 {
                     return ImageNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);

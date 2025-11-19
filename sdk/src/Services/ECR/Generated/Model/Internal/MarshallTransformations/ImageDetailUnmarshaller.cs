@@ -108,10 +108,28 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
                     unmarshalledObject.ImageSizeInBytes = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("imageStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ImageStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("imageTags", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.ImageTags = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("lastActivatedAt", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.LastActivatedAt = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("lastArchivedAt", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.LastArchivedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("lastRecordedPullTime", targetDepth))
@@ -130,6 +148,12 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RepositoryName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("subjectManifestDigest", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SubjectManifestDigest = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

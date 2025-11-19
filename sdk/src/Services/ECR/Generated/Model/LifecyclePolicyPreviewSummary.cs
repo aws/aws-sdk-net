@@ -35,6 +35,7 @@ namespace Amazon.ECR.Model
     public partial class LifecyclePolicyPreviewSummary
     {
         private int? _expiringImageTotalCount;
+        private List<TransitioningImageTotalCount> _transitioningImageTotalCounts = AWSConfigs.InitializeCollections ? new List<TransitioningImageTotalCount>() : null;
 
         /// <summary>
         /// Gets and sets the property ExpiringImageTotalCount. 
@@ -53,6 +54,25 @@ namespace Amazon.ECR.Model
         internal bool IsSetExpiringImageTotalCount()
         {
             return this._expiringImageTotalCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TransitioningImageTotalCounts. 
+        /// <para>
+        /// The total count of images that will be transitioned to each storage class. This field
+        /// is only present if at least one image will be transitoned in the summary.
+        /// </para>
+        /// </summary>
+        public List<TransitioningImageTotalCount> TransitioningImageTotalCounts
+        {
+            get { return this._transitioningImageTotalCounts; }
+            set { this._transitioningImageTotalCounts = value; }
+        }
+
+        // Check to see if TransitioningImageTotalCounts property is set
+        internal bool IsSetTransitioningImageTotalCounts()
+        {
+            return this._transitioningImageTotalCounts != null && (this._transitioningImageTotalCounts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

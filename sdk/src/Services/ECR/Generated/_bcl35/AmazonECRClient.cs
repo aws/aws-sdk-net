@@ -1332,6 +1332,79 @@ namespace Amazon.ECR
 
         #endregion
         
+        #region  DeregisterPullTimeUpdateExclusion
+
+        /// <summary>
+        /// Removes a principal from the pull time update exclusion list for a registry. Once
+        /// removed, Amazon ECR will resume updating the pull time if the specified principal
+        /// pulls an image.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterPullTimeUpdateExclusion service method.</param>
+        /// 
+        /// <returns>The response from the DeregisterPullTimeUpdateExclusion service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.ExclusionNotFoundException">
+        /// The specified pull time update exclusion was not found.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.LimitExceededException">
+        /// The operation did not succeed because it would have exceeded a service limit for your
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/service-quotas.html">Amazon
+        /// ECR service quotas</a> in the Amazon Elastic Container Registry User Guide.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ValidationException">
+        /// There was an exception validating this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DeregisterPullTimeUpdateExclusion">REST API Reference for DeregisterPullTimeUpdateExclusion Operation</seealso>
+        public virtual DeregisterPullTimeUpdateExclusionResponse DeregisterPullTimeUpdateExclusion(DeregisterPullTimeUpdateExclusionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeregisterPullTimeUpdateExclusionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeregisterPullTimeUpdateExclusionResponseUnmarshaller.Instance;
+
+            return Invoke<DeregisterPullTimeUpdateExclusionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeregisterPullTimeUpdateExclusion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterPullTimeUpdateExclusion operation on AmazonECRClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeregisterPullTimeUpdateExclusion
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DeregisterPullTimeUpdateExclusion">REST API Reference for DeregisterPullTimeUpdateExclusion Operation</seealso>
+        public virtual IAsyncResult BeginDeregisterPullTimeUpdateExclusion(DeregisterPullTimeUpdateExclusionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeregisterPullTimeUpdateExclusionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeregisterPullTimeUpdateExclusionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeregisterPullTimeUpdateExclusion operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeregisterPullTimeUpdateExclusion.</param>
+        /// 
+        /// <returns>Returns a  DeregisterPullTimeUpdateExclusionResult from ECR.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DeregisterPullTimeUpdateExclusion">REST API Reference for DeregisterPullTimeUpdateExclusion Operation</seealso>
+        public virtual DeregisterPullTimeUpdateExclusionResponse EndDeregisterPullTimeUpdateExclusion(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeregisterPullTimeUpdateExclusionResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeImageReplicationStatus
 
         /// <summary>
@@ -2461,6 +2534,73 @@ namespace Amazon.ECR
 
         #endregion
         
+        #region  ListImageReferrers
+
+        /// <summary>
+        /// Lists the artifacts associated with a specified subject image.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListImageReferrers service method.</param>
+        /// 
+        /// <returns>The response from the ListImageReferrers service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.RepositoryNotFoundException">
+        /// The specified repository could not be found. Check the spelling of the specified repository
+        /// and ensure that you are performing operations on the correct registry.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ValidationException">
+        /// There was an exception validating this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/ListImageReferrers">REST API Reference for ListImageReferrers Operation</seealso>
+        public virtual ListImageReferrersResponse ListImageReferrers(ListImageReferrersRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListImageReferrersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListImageReferrersResponseUnmarshaller.Instance;
+
+            return Invoke<ListImageReferrersResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListImageReferrers operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListImageReferrers operation on AmazonECRClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListImageReferrers
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/ListImageReferrers">REST API Reference for ListImageReferrers Operation</seealso>
+        public virtual IAsyncResult BeginListImageReferrers(ListImageReferrersRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListImageReferrersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListImageReferrersResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListImageReferrers operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListImageReferrers.</param>
+        /// 
+        /// <returns>Returns a  ListImageReferrersResult from ECR.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/ListImageReferrers">REST API Reference for ListImageReferrers Operation</seealso>
+        public virtual ListImageReferrersResponse EndListImageReferrers(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListImageReferrersResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListImages
 
         /// <summary>
@@ -2530,6 +2670,74 @@ namespace Amazon.ECR
         public virtual ListImagesResponse EndListImages(IAsyncResult asyncResult)
         {
             return EndInvoke<ListImagesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListPullTimeUpdateExclusions
+
+        /// <summary>
+        /// Lists the IAM principals that are excluded from having their image pull times recorded.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPullTimeUpdateExclusions service method.</param>
+        /// 
+        /// <returns>The response from the ListPullTimeUpdateExclusions service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.LimitExceededException">
+        /// The operation did not succeed because it would have exceeded a service limit for your
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/service-quotas.html">Amazon
+        /// ECR service quotas</a> in the Amazon Elastic Container Registry User Guide.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ValidationException">
+        /// There was an exception validating this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/ListPullTimeUpdateExclusions">REST API Reference for ListPullTimeUpdateExclusions Operation</seealso>
+        public virtual ListPullTimeUpdateExclusionsResponse ListPullTimeUpdateExclusions(ListPullTimeUpdateExclusionsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListPullTimeUpdateExclusionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPullTimeUpdateExclusionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListPullTimeUpdateExclusionsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListPullTimeUpdateExclusions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListPullTimeUpdateExclusions operation on AmazonECRClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListPullTimeUpdateExclusions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/ListPullTimeUpdateExclusions">REST API Reference for ListPullTimeUpdateExclusions Operation</seealso>
+        public virtual IAsyncResult BeginListPullTimeUpdateExclusions(ListPullTimeUpdateExclusionsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListPullTimeUpdateExclusionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPullTimeUpdateExclusionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListPullTimeUpdateExclusions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListPullTimeUpdateExclusions.</param>
+        /// 
+        /// <returns>Returns a  ListPullTimeUpdateExclusionsResult from ECR.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/ListPullTimeUpdateExclusions">REST API Reference for ListPullTimeUpdateExclusions Operation</seealso>
+        public virtual ListPullTimeUpdateExclusionsResponse EndListPullTimeUpdateExclusions(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListPullTimeUpdateExclusionsResponse>(asyncResult);
         }
 
         #endregion
@@ -3061,6 +3269,9 @@ namespace Amazon.ECR
         /// <param name="request">Container for the necessary parameters to execute the PutRegistryScanningConfiguration service method.</param>
         /// 
         /// <returns>The response from the PutRegistryScanningConfiguration service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.BlockedByOrganizationPolicyException">
+        /// The operation did not succeed because the account is managed by a organization policy.
+        /// </exception>
         /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
         /// The specified parameter is invalid. Review the available parameters for the API request.
         /// </exception>
@@ -3194,6 +3405,78 @@ namespace Amazon.ECR
 
         #endregion
         
+        #region  RegisterPullTimeUpdateExclusion
+
+        /// <summary>
+        /// Adds an IAM principal to the pull time update exclusion list for a registry. Amazon
+        /// ECR will not record the pull time if an excluded principal pulls an image.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RegisterPullTimeUpdateExclusion service method.</param>
+        /// 
+        /// <returns>The response from the RegisterPullTimeUpdateExclusion service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.ExclusionAlreadyExistsException">
+        /// The specified pull time update exclusion already exists for the registry.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.LimitExceededException">
+        /// The operation did not succeed because it would have exceeded a service limit for your
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/service-quotas.html">Amazon
+        /// ECR service quotas</a> in the Amazon Elastic Container Registry User Guide.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ValidationException">
+        /// There was an exception validating this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/RegisterPullTimeUpdateExclusion">REST API Reference for RegisterPullTimeUpdateExclusion Operation</seealso>
+        public virtual RegisterPullTimeUpdateExclusionResponse RegisterPullTimeUpdateExclusion(RegisterPullTimeUpdateExclusionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = RegisterPullTimeUpdateExclusionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegisterPullTimeUpdateExclusionResponseUnmarshaller.Instance;
+
+            return Invoke<RegisterPullTimeUpdateExclusionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RegisterPullTimeUpdateExclusion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RegisterPullTimeUpdateExclusion operation on AmazonECRClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRegisterPullTimeUpdateExclusion
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/RegisterPullTimeUpdateExclusion">REST API Reference for RegisterPullTimeUpdateExclusion Operation</seealso>
+        public virtual IAsyncResult BeginRegisterPullTimeUpdateExclusion(RegisterPullTimeUpdateExclusionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = RegisterPullTimeUpdateExclusionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegisterPullTimeUpdateExclusionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  RegisterPullTimeUpdateExclusion operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRegisterPullTimeUpdateExclusion.</param>
+        /// 
+        /// <returns>Returns a  RegisterPullTimeUpdateExclusionResult from ECR.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/RegisterPullTimeUpdateExclusion">REST API Reference for RegisterPullTimeUpdateExclusion Operation</seealso>
+        public virtual RegisterPullTimeUpdateExclusionResponse EndRegisterPullTimeUpdateExclusion(IAsyncResult asyncResult)
+        {
+            return EndInvoke<RegisterPullTimeUpdateExclusionResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  SetRepositoryPolicy
 
         /// <summary>
@@ -3277,6 +3560,9 @@ namespace Amazon.ECR
         /// <param name="request">Container for the necessary parameters to execute the StartImageScan service method.</param>
         /// 
         /// <returns>The response from the StartImageScan service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.ImageArchivedException">
+        /// The specified image is archived and cannot be scanned.
+        /// </exception>
         /// <exception cref="Amazon.ECR.Model.ImageNotFoundException">
         /// The image requested does not exist in the specified repository.
         /// </exception>
@@ -3562,6 +3848,81 @@ namespace Amazon.ECR
         public virtual UntagResourceResponse EndUntagResource(IAsyncResult asyncResult)
         {
             return EndInvoke<UntagResourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateImageStorageClass
+
+        /// <summary>
+        /// Transitions an image between storage classes. You can transition images from Amazon
+        /// ECR standard storage class to Amazon ECR archival storage class for long-term storage,
+        /// or restore archived images back to Amazon ECR standard.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateImageStorageClass service method.</param>
+        /// 
+        /// <returns>The response from the UpdateImageStorageClass service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.ImageNotFoundException">
+        /// The image requested does not exist in the specified repository.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ImageStorageClassUpdateNotSupportedException">
+        /// The requested image storage class update is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.RepositoryNotFoundException">
+        /// The specified repository could not be found. Check the spelling of the specified repository
+        /// and ensure that you are performing operations on the correct registry.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ValidationException">
+        /// There was an exception validating this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/UpdateImageStorageClass">REST API Reference for UpdateImageStorageClass Operation</seealso>
+        public virtual UpdateImageStorageClassResponse UpdateImageStorageClass(UpdateImageStorageClassRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateImageStorageClassRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateImageStorageClassResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateImageStorageClassResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateImageStorageClass operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateImageStorageClass operation on AmazonECRClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateImageStorageClass
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/UpdateImageStorageClass">REST API Reference for UpdateImageStorageClass Operation</seealso>
+        public virtual IAsyncResult BeginUpdateImageStorageClass(UpdateImageStorageClassRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateImageStorageClassRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateImageStorageClassResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateImageStorageClass operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateImageStorageClass.</param>
+        /// 
+        /// <returns>Returns a  UpdateImageStorageClassResult from ECR.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/UpdateImageStorageClass">REST API Reference for UpdateImageStorageClass Operation</seealso>
+        public virtual UpdateImageStorageClassResponse EndUpdateImageStorageClass(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateImageStorageClassResponse>(asyncResult);
         }
 
         #endregion

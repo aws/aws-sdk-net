@@ -117,9 +117,8 @@ namespace Amazon.ECR.Model
         /// <summary>
         /// Gets and sets the property ImageTagMutabilityExclusionFilters. 
         /// <para>
-        /// The image tag mutability exclusion filters associated with the repository. These filters
-        /// specify which image tags can override the repository's default image tag mutability
-        /// setting.
+        /// A list of filters that specify which image tags are excluded from the repository's
+        /// image tag mutability setting.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=5)]
