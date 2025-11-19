@@ -1,3 +1,85 @@
+### 3.7.1169.0 (2025-11-19 22:54 UTC)
+* APIGateway (3.7.503.0)
+	* API Gateway now supports response streaming and new security policies for REST APIs and custom domain names.
+* ApiGatewayV2 (3.7.503.0)
+	* Support for API Gateway portals and portal products.
+* AWSHealth (3.7.502.0)
+	* Adds actionability and personas properties to Health events exposed through DescribeEvents, DescribeEventsForOrganization, DescribeEventDetails, and DescribeEventTypes APIs. Adds filtering by actionabilities and personas in EventFilter, OrganizationEventFilter, EventTypeFilter.
+* Backup (3.7.508.0)
+	* Amazon GuardDuty Malware Protection now supports AWS Backup, extending malware detection capabilities to EC2, EBS, and S3 backups.
+* BCMPricingCalculator (3.7.503.0)
+	* Add GroupSharingPreference, CostCategoryGroupSharingPreferenceArn, and CostCategoryGroupSharingPreferenceEffectiveDate to Bill Estimate. Add GroupSharingPreference and CostCategoryGroupSharingPreferenceArn to Bill Scenario.
+* BedrockRuntime (3.7.509.0)
+	* This release includes support for Search Results.
+* Billing (3.7.505.0)
+	* Added name filtering support to ListBillingViews API through the new names parameter to efficiently filter billing views by name.
+* BillingConductor (3.7.503.0)
+	* This release adds support for Billing Transfers, enabling management of billing transfers with billing groups on AWS Billing Conductor.
+* CloudTrail (3.7.503.0)
+	* AWS CloudTrail now supports Insights for data events, expanding beyond management events to automatically detect unusual activity on data plane operations.
+* CloudWatchLogs (3.7.504.0)
+	* Adding support for ocsf version 1.5, add optional parameter MappingVersion
+* CloudWatchRUM (3.7.503.0)
+	* CloudWatch RUM now supports mobile application monitoring for Android and iOS platforms
+* ConnectCampaignsV2 (3.7.503.0)
+	* This release added support for ring timer configuration for campaign calls.
+* CostExplorer (3.7.506.0)
+	* Add support for COST_CATEGORY, TAG, and LINKED_ACCOUNT AWS managed cost anomaly detection monitors
+* CostOptimizationHub (3.7.503.0)
+	* Release ListEfficiencyMetrics API
+* DataZone (3.7.512.0)
+	* Amazon DataZone now supports business metadata (readme and metadata forms) at the individual attribute (column) level, a new rule type for glossary terms, and the ability to update the owner of the root domain unit.
+* DynamoDBv2 (3.7.509.0)
+	* Extended Global Secondary Index (GSI) composite keys to support up to 8 attributes.
+* EC2 (3.7.532.0)
+	* This launch adds support for two new features: Regional NAT Gateway and IPAM Policies. IPAM policies offers customers central control for public IPv4 assignments across AWS services. Regional NAT is a single NAT Gateway that automatically expands across AZs in a VPC to maintain high availability.
+* ECR (3.7.504.0)
+	* Add support for ECR archival storage class and Inspector org policy for scanning
+* ECS (3.7.505.0)
+	* Added support for Amazon ECS Managed Instances infrastructure optimization configuration.
+* ElasticMapReduce (3.7.504.0)
+	* Add CloudWatch Logs integration for Spark driver, executor and step logs
+* FSx (3.7.506.0)
+	* Adding File Server Resource Manager configuration to FSx Windows
+* GuardDuty (3.7.508.0)
+	* Add support for scanning and viewing scan results for backup resource types
+* IdentityManagement (3.7.506.0)
+	* Added the EnableOutboundWebIdentityFederation, DisableOutboundWebIdentityFederation and GetOutboundWebIdentityFederationInfo APIs for the IAM outbound federation feature.
+* Inspector2 (3.7.504.0)
+	* This release introduces BLOCKED_BY_ORGANIZATION_POLICY error code and IMAGE_ARCHIVED scanStatusReason. BLOCKED_BY_ORGANIZATION_POLICY error code is returned when an operation is blocked by an AWS Organizations policy. IMAGE_ARCHIVED scanStatusReason is returned when an Image is archived in ECR.
+* Invoicing (3.7.504.0)
+	* Add support for adding Billing transfers in Invoice configuration
+* Lambda (3.7.505.0)
+	* Added support for creating and invoking Tenant Isolated functions in AWS Lambda APIs.
+* MediaConnect (3.7.504.0)
+	* This release adds support for global routing in AWS Elemental MediaConnect. You can now use router inputs and router outputs to manage global video and audio routing workflows both within the AWS-Cloud and over the public internet.
+* MediaLive (3.7.509.0)
+	* MediaLive is adding support for MediaConnect Router by supporting a new input type called MEDIACONNECT_ROUTER. This new input type will provide seamless encrypted transport between MediaConnect Router and your MediaLive channel.
+* NetworkFirewall (3.7.505.0)
+	* Partner Managed Rulegroup feature support
+* NetworkFlowMonitor (3.7.504.0)
+	* Added new enum value (AWS::EKS::Cluster) for type field under MonitorLocalResource
+* PartnerCentralChannel (3.7.500.0)
+	* Initial GA launch of Partner Central Channel
+* Route53 (3.7.504.0)
+	* Add dual-stack endpoint support for Route53
+* S3 (3.7.505.0)
+	* Adds support for blocking SSE-C writes to general purpose buckets.
+* SageMaker (3.7.520.0)
+	* Added support for enhanced metrics for SageMaker AI Endpoints. This features provides Utilization Metrics at instance and container granularity and also provides easy configuration of metric publish frequency from 10 sec -> 5 mins
+* SecretsManager (3.7.503.0)
+	* Adds support to create, update, retrieve, rotate, and delete managed external secrets.
+* SecurityToken (3.7.504.0)
+	* IAM now supports outbound identity federation via the STS GetWebIdentityToken API, enabling AWS workloads to securely authenticate with external services using short-lived JSON Web Tokens.
+* Signin (3.7.500.0)
+	* AWS Sign-In manages authentication for AWS services. This service provides secure authentication flows for accessing AWS resources from the console and developer tools. This release adds the CreateOAuth2Token API, which can be used to fetch OAuth2 access tokens and refresh tokens from Sign-In.
+* StepFunctions (3.7.502.0)
+	* Adds support to TestState for mocked results and exceptions, along with additional inspection data.
+* Core 3.7.500.46
+	* Added support for LoginAWSCredentials.
+	* Updated generator to support TFM based conditions in ItemGroup while adding project package references defined for various targets in service model metadata.json.
+	* All services packages updated to require new Core
+
 ### 3.7.1168.0 (2025-11-18 19:28 UTC)
 * AutoScaling (3.7.503.0)
 	* This release adds the new LaunchInstances API, which can launch instances synchronously in an AutoScaling group. The API also returns instances info and launch error back immediately.
