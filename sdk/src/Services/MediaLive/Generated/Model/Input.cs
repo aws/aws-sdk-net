@@ -47,6 +47,7 @@ namespace Amazon.MediaLive.Model
         private MulticastSettings _multicastSettings;
         private string _name;
         private string _roleArn;
+        private RouterInputSettings _routerSettings;
         private List<string> _sdiSources = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _securityGroups = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private Smpte2110ReceiverGroupSettings _smpte2110ReceiverGroupSettings;
@@ -263,6 +264,22 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetRoleArn()
         {
             return this._roleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RouterSettings. Information about any MediaConnect router
+        /// association with this input.
+        /// </summary>
+        public RouterInputSettings RouterSettings
+        {
+            get { return this._routerSettings; }
+            set { this._routerSettings = value; }
+        }
+
+        // Check to see if RouterSettings property is set
+        internal bool IsSetRouterSettings()
+        {
+            return this._routerSettings != null;
         }
 
         /// <summary>

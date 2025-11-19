@@ -166,6 +166,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.RoleArn);
                 }
 
+                if(publicRequest.IsSetRouterSettings())
+                {
+                    context.Writer.WritePropertyName("routerSettings");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = RouterSettingsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.RouterSettings, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetSdiSources())
                 {
                     context.Writer.WritePropertyName("sdiSources");

@@ -190,6 +190,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetSpecialRouterSettings())
+                {
+                    context.Writer.WritePropertyName("specialRouterSettings");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = SpecialRouterSettingsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.SpecialRouterSettings, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetSrtSettings())
                 {
                     context.Writer.WritePropertyName("srtSettings");

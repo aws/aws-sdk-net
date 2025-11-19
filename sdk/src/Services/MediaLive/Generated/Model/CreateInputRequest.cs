@@ -44,6 +44,7 @@ namespace Amazon.MediaLive.Model
         private string _name;
         private string _requestId;
         private string _roleArn;
+        private RouterSettings _routerSettings;
         private List<string> _sdiSources = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private Smpte2110ReceiverGroupSettings _smpte2110ReceiverGroupSettings;
         private List<InputSourceRequest> _sources = AWSConfigs.InitializeCollections ? new List<InputSourceRequest>() : null;
@@ -193,6 +194,21 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetRoleArn()
         {
             return this._roleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RouterSettings.
+        /// </summary>
+        public RouterSettings RouterSettings
+        {
+            get { return this._routerSettings; }
+            set { this._routerSettings = value; }
+        }
+
+        // Check to see if RouterSettings property is set
+        internal bool IsSetRouterSettings()
+        {
+            return this._routerSettings != null;
         }
 
         /// <summary>
