@@ -61,7 +61,8 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property SecretId. 
         /// <para>
-        /// The ARN of the primary secret. 
+        /// The name of the secret or the replica ARN. The replica ARN is the same as the original
+        /// primary secret ARN expect the Region is changed to the replica Region. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]
