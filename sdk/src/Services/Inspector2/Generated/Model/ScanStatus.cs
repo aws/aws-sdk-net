@@ -198,6 +198,11 @@ namespace Amazon.Inspector2.Model
         ///  <c>UNSUPPORTED_RUNTIME</c> - The function was not scanned because it has an unsupported
         /// runtime. To see a complete list of supported runtimes see: <a href=" https://docs.aws.amazon.com/inspector/latest/user/supported.html">https://docs.aws.amazon.com/inspector/latest/user/supported.html</a>.
         /// </para>
+        ///  
+        /// <para>
+        ///  <c>IMAGE_ARCHIVED</c> - This image has been archived in Amazon ECR and is no longer
+        /// available for scanning in Amazon Inspector. 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public ScanStatusReason Reason
