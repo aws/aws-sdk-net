@@ -422,6 +422,83 @@ namespace Amazon.CostOptimizationHub
 
         #endregion
         
+        #region  ListEfficiencyMetrics
+
+        /// <summary>
+        /// Returns cost efficiency metrics aggregated over time and optionally grouped by a specified
+        /// dimension. The metrics provide insights into your cost optimization progress by tracking
+        /// estimated savings, spending, and measures how effectively you're optimizing your Cloud
+        /// resources.
+        /// 
+        ///  
+        /// <para>
+        /// The operation supports both daily and monthly time granularities and allows grouping
+        /// results by account ID, Amazon Web Services Region. Results are returned as time-series
+        /// data, enabling you to analyze trends in your cost optimization performance over the
+        /// specified time period.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListEfficiencyMetrics service method.</param>
+        /// 
+        /// <returns>The response from the ListEfficiencyMetrics service method, as returned by CostOptimizationHub.</returns>
+        /// <exception cref="Amazon.CostOptimizationHub.Model.AccessDeniedException">
+        /// You are not authorized to use this operation with the given parameters.
+        /// </exception>
+        /// <exception cref="Amazon.CostOptimizationHub.Model.InternalServerException">
+        /// An error on the server occurred during the processing of your request. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CostOptimizationHub.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CostOptimizationHub.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cost-optimization-hub-2022-07-26/ListEfficiencyMetrics">REST API Reference for ListEfficiencyMetrics Operation</seealso>
+        public virtual ListEfficiencyMetricsResponse ListEfficiencyMetrics(ListEfficiencyMetricsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListEfficiencyMetricsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListEfficiencyMetricsResponseUnmarshaller.Instance;
+
+            return Invoke<ListEfficiencyMetricsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListEfficiencyMetrics operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListEfficiencyMetrics operation on AmazonCostOptimizationHubClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListEfficiencyMetrics
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cost-optimization-hub-2022-07-26/ListEfficiencyMetrics">REST API Reference for ListEfficiencyMetrics Operation</seealso>
+        public virtual IAsyncResult BeginListEfficiencyMetrics(ListEfficiencyMetricsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListEfficiencyMetricsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListEfficiencyMetricsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListEfficiencyMetrics operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListEfficiencyMetrics.</param>
+        /// 
+        /// <returns>Returns a  ListEfficiencyMetricsResult from CostOptimizationHub.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cost-optimization-hub-2022-07-26/ListEfficiencyMetrics">REST API Reference for ListEfficiencyMetrics Operation</seealso>
+        public virtual ListEfficiencyMetricsResponse EndListEfficiencyMetrics(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListEfficiencyMetricsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListEnrollmentStatuses
 
         /// <summary>
@@ -637,8 +714,8 @@ namespace Amazon.CostOptimizationHub
         /// 
         ///  
         /// <para>
-        /// If the account is a management account or delegated administrator of an organization,
-        /// this action can also be used to enroll member accounts of the organization.
+        /// If the account is a management account of an organization, this action can also be
+        /// used to enroll member accounts of the organization.
         /// </para>
         ///  
         /// <para>

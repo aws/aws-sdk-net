@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CostOptimizationHub.Model
 {
     /// <summary>
-    /// Pricing information about a Savings Plan.
+    /// Pricing information about a Savings Plans.
     /// </summary>
     public partial class SavingsPlansPricing
     {
@@ -42,7 +42,7 @@ namespace Amazon.CostOptimizationHub.Model
         /// <summary>
         /// Gets and sets the property EstimatedMonthlyCommitment. 
         /// <para>
-        /// Estimated monthly commitment for the Savings Plan.
+        /// Estimated monthly commitment for the Savings Plans.
         /// </para>
         /// </summary>
         public double EstimatedMonthlyCommitment
@@ -60,7 +60,7 @@ namespace Amazon.CostOptimizationHub.Model
         /// <summary>
         /// Gets and sets the property EstimatedOnDemandCost. 
         /// <para>
-        /// Estimated On-Demand cost you will pay after buying the Savings Plan.
+        /// Estimated On-Demand cost you will pay after buying the Savings Plans.
         /// </para>
         /// </summary>
         public double EstimatedOnDemandCost
@@ -78,7 +78,7 @@ namespace Amazon.CostOptimizationHub.Model
         /// <summary>
         /// Gets and sets the property MonthlySavingsPlansEligibleCost. 
         /// <para>
-        /// The cost of paying for the recommended Savings Plan monthly.
+        /// The cost of paying for the recommended Savings Plans monthly.
         /// </para>
         /// </summary>
         public double MonthlySavingsPlansEligibleCost
@@ -96,7 +96,7 @@ namespace Amazon.CostOptimizationHub.Model
         /// <summary>
         /// Gets and sets the property SavingsPercentage. 
         /// <para>
-        /// Estimated savings as a percentage of your overall costs after buying the Savings Plan.
+        /// Estimated savings as a percentage of your overall costs after buying the Savings Plans.
         /// </para>
         /// </summary>
         public double SavingsPercentage
