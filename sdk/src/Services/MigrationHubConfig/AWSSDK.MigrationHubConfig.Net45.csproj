@@ -63,8 +63,6 @@
             <PrivateAssets>all</PrivateAssets>
         </PackageReference>
   </ItemGroup>
-  <ItemGroup>
-  </ItemGroup>
 
   <ItemGroup>
     <Reference Include="System.Configuration"/>

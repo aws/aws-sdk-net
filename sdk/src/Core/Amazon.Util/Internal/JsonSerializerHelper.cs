@@ -70,6 +70,19 @@ namespace Amazon.Util.Internal
 #endif
     }
 
+    [JsonSerializable(typeof(Dictionary<string, object>))]
+    [JsonSerializable(typeof(Dictionary<string, string>))]
+    [JsonSerializable(typeof(long))]
+    public partial class DictionaryStringObjectJsonSerializerContexts : JsonSerializerContext
+    {
+#if !NET8_0_OR_GREATER
+        public DictionaryStringObjectJsonSerializerContexts(JsonSerializerOptions defaultOptions)
+            : base(defaultOptions)
+        {
+        }
+#endif
+    }
+
     [JsonSerializable(typeof(List<string>))]
     public partial class ListStringJsonSerializerContexts : JsonSerializerContext
     {

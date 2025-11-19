@@ -25,6 +25,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.UnitTests.Custom.Net
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.DynamoDBv2.NetStandard", "src\Services\DynamoDBv2\AWSSDK.DynamoDBv2.NetStandard.csproj", "{B52234D7-08EA-4D07-A9B7-9F71E6AE5490}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.Signin.NetStandard", "src\Services\Signin\AWSSDK.Signin.NetStandard.csproj", "{C9A417D3-D190-0E49-2F9E-7082683E5D3A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{B52234D7-08EA-4D07-A9B7-9F71E6AE5490}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B52234D7-08EA-4D07-A9B7-9F71E6AE5490}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B52234D7-08EA-4D07-A9B7-9F71E6AE5490}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9A417D3-D190-0E49-2F9E-7082683E5D3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9A417D3-D190-0E49-2F9E-7082683E5D3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9A417D3-D190-0E49-2F9E-7082683E5D3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9A417D3-D190-0E49-2F9E-7082683E5D3A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -76,6 +82,7 @@ Global
 		{0BF01833-13DD-4BD5-84AA-BC8844F46470} = {4CD78D56-2ABB-4F58-A0CB-08CED1B06370}
 		{27D0813B-6FB9-438B-8B8E-C59636A35C30} = {CAEA0944-D530-499D-BC5D-4F3EB68407B3}
 		{B52234D7-08EA-4D07-A9B7-9F71E6AE5490} = {4CD78D56-2ABB-4F58-A0CB-08CED1B06370}
+		{C9A417D3-D190-0E49-2F9E-7082683E5D3A} = {4CD78D56-2ABB-4F58-A0CB-08CED1B06370}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BBAD3467-3B24-41C1-898E-1B34BB9931DE}

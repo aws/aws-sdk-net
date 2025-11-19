@@ -59,6 +59,9 @@ namespace Amazon.Runtime.CredentialManagement
         private const string SsoRoleName = "sso_role_name";
         private const string SsoStartUrl = "sso_start_url";
         private const string SsoSession = "sso_session";
+#if !BCL
+        private const string LoginSession = "login_session";
+#endif
         private const string EC2MetadataServiceEndpointField = "ec2_metadata_service_endpoint";
         private const string EC2MetadataServiceEndpointModeField = "ec2_metadata_service_endpoint_mode";
         private const string EC2MetadataV1DisabledField = "ec2_metadata_v1_disabled";
@@ -94,6 +97,9 @@ namespace Amazon.Runtime.CredentialManagement
             SsoRoleName,
             SsoStartUrl,
             SsoSession,
+#if !BCL
+            LoginSession,
+#endif
             EC2MetadataServiceEndpointField,
             EC2MetadataServiceEndpointModeField,
             EC2MetadataV1DisabledField,
@@ -178,6 +184,9 @@ namespace Amazon.Runtime.CredentialManagement
 #if !BCL35
                 CredentialProfileType.SSO,
 #endif
+#if !BCL
+                CredentialProfileType.Login,
+#endif
             };
 
         private static readonly CredentialProfilePropertyMapping PropertyMapping =
@@ -206,6 +215,9 @@ namespace Amazon.Runtime.CredentialManagement
                     { nameof(CredentialProfileOptions.SsoRoleName), SsoRoleName },
                     { nameof(CredentialProfileOptions.SsoSession), SsoSession },
                     { nameof(CredentialProfileOptions.SsoStartUrl), SsoStartUrl },
+#endif
+#if !BCL
+                    { nameof(CredentialProfileOptions.LoginSession), LoginSession },
 #endif
                 }
             );

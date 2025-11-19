@@ -168,5 +168,29 @@ namespace Amazon.RuntimeDependencies
         {
             RegisterInstance(ServiceClientHelpers.SSO_OIDC_ASSEMBLY_NAME, ServiceClientHelpers.SSO_OIDC_SERVICE_CLASS_NAME, factory);
         }
+#if NETSTANDARD
+
+        /// <summary>
+        /// Register the Amazon.Signin.AmazonSigninClient instance from the AWSSDK.Signin package.
+        /// 
+        /// The Signin service client is used for credentials providers.
+        /// </summary>
+        /// <param name="instance"></param>
+        public void RegisterSigninClient(object instance)
+        {
+            RegisterInstance(ServiceClientHelpers.SIGNIN_ASSEMBLY_NAME, ServiceClientHelpers.SIGNIN_SERVICE_CLASS_NAME, instance);
+        }
+
+        /// <summary>
+        /// Register the Amazon.Signin.AmazonSigninClient instance from the AWSSDK.Signin package.
+        /// 
+        /// The Signin service client is used for credentials providers.
+        /// </summary>
+        /// <param name="factory"></param>
+        public void RegisterSigninClient(RuntimeDependencyFactory factory)
+        {
+            RegisterInstance(ServiceClientHelpers.SIGNIN_ASSEMBLY_NAME, ServiceClientHelpers.SIGNIN_SERVICE_CLASS_NAME, factory);
+        }
+#endif
     }
 }

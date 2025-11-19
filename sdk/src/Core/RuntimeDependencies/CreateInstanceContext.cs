@@ -56,7 +56,14 @@ namespace Amazon.RuntimeDependencies
             /// <summary>
             /// Context for creating AmazonSSOOIDCClient
             /// </summary>
-            SSOOIDCClient
+            SSOOIDCClient,
+#if NETSTANDARD
+
+            /// <summary>
+            /// Context for creating AmazonSigninClient
+            /// </summary>
+            SigninClient
+#endif
         }
 
         /// <summary>
@@ -119,6 +126,18 @@ namespace Amazon.RuntimeDependencies
             Type = ContextType.SSOOIDCClient;
         }
 
+#if NETSTANDARD
+        /// <summary>
+        /// Create an instance of CreateInstanceContext with the SigninClientContext context
+        /// </summary>
+        /// <param name="context"></param>
+        public CreateInstanceContext(SigninClientContext context)
+        {
+            SigninClientContextData = context;
+            Type = ContextType.SigninClient;
+        }
+#endif
+
         /// <summary>
         /// The type of context being sent into the factory method. For each type there is a corresponding Data property set containing any relevant information that can be
         /// used for creating the dependency instance.
@@ -154,6 +173,13 @@ namespace Amazon.RuntimeDependencies
         /// Data for the SOOIDCClient context
         /// </summary>
         public SSOOIDCClientContext SSOOIDCClientContextData { get; }
+#if NETSTANDARD
+
+        /// <summary>
+        /// Data for the SigninClient context
+        /// </summary>
+        public SigninClientContext SigninClientContextData { get; }
+#endif
     }
 
 
@@ -261,4 +287,33 @@ namespace Amazon.RuntimeDependencies
         /// </summary>
         public IWebProxy ProxySettings { get; set; }
     }
+#if NETSTANDARD
+
+    /// <summary>
+    /// Context for the factory method to create the SigninClient runtime dependency.
+    /// </summary>
+    public class SigninClientContext
+    {
+
+        /// <summary>
+        /// The region the SDK expects the SigninClient to be configured for.
+        /// </summary>
+        public RegionEndpoint Region { get; set; }
+
+        /// <summary>
+        /// Profile name that was used to resolve credentials.
+        /// </summary>
+        public string ProfileName { get; set; }
+
+        /// <summary>
+        /// Proxy settings that can be applied to the service client config object.
+        /// </summary>
+        public IWebProxy ProxySettings { get; set; }
+
+        /// <summary>
+        /// ServiceURL to override for the SigninClient.
+        /// </summary>
+        public string ServiceURL { get; set; }
+    }
+#endif
 }

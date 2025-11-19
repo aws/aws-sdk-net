@@ -340,6 +340,16 @@ namespace Amazon.Runtime.CredentialManagement
                         );
                     }
 #endif
+#if !BCL
+                    case CredentialProfileType.Login:
+                        var loginAWSCredentialsOptions = new LoginAWSCredentialsOptions
+                        {
+                            LoginSession = options.LoginSession,
+                            Region = stsRegion?.SystemName,
+                            ProfileName = profileName
+                        };
+                        return new LoginAWSCredentials(loginAWSCredentialsOptions);
+#endif
                     case CredentialProfileType.SAMLRole:
                     case CredentialProfileType.SAMLRoleWithServices:
                     case CredentialProfileType.SAMLRoleWithGlobalEndpoint:

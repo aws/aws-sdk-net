@@ -242,33 +242,53 @@
             else
             {
 #>
-	    <PackageReference Include="<#=package.Include#>" Version="<#=package.Version#>"/>
+        <PackageReference Include="<#=package.Include#>" Version="<#=package.Version#>"/>
 <#
-		    }
+            }
         }
 #>
   </ItemGroup>
-  <ItemGroup>
 <#
-        foreach(var package in this.Project.PackageReferences.Where(p => !p.IsAnalyzer))
+        var nonAnalyzerPackages = this.Project.PackageReferences.Where(p => !p.IsAnalyzer);
+        var nonAnalyzerPackagesConditionGroup = nonAnalyzerPackages.GroupBy(p => p.Condition);
+
+        foreach (var group in nonAnalyzerPackagesConditionGroup)
         {
-            if(package.HasPrivateAssets)
+            if (string.IsNullOrWhiteSpace(group.Key))
             {
 #>
-        <PackageReference Include="<#=package.Include#>" Version="<#=package.Version#>">
-            <PrivateAssets><#=package.PrivateAssets#></PrivateAssets>
-        </PackageReference>
+  <ItemGroup>
 <#
             }
             else
             {
 #>
-	    <PackageReference Include="<#=package.Include#>" Version="<#=package.Version#>"/>
+  <ItemGroup Condition="<#=group.Key#>">
 <#
-		    }
-        }
+            }
+
+            foreach (var package in group)
+            {
+                if (package.HasPrivateAssets)
+                {
+#>
+    <PackageReference Include="<#=package.Include#>" Version="<#=package.Version#>">
+      <PrivateAssets><#=package.PrivateAssets#></PrivateAssets>
+    </PackageReference>
+<#
+             }
+             else
+                {
+#>
+    <PackageReference Include="<#=package.Include#>" Version="<#=package.Version#>"/>
+<#
+                }
+            }
 #>
   </ItemGroup>
+<#
+        }
+#>
 
 <#
     }

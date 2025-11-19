@@ -1,0 +1,12 @@
+{
+  "core": {
+    "changeLogMessages": [
+      "Added support for LoginAWSCredentials."
+    ],
+    "type": "patch",
+    "updateMinimum": true,
+    "backwardIncompatibilitiesToIgnore": [
+        "Amazon.RuntimeDependencies.CreateInstanceContext/MethodOverloadAdded"
+    ]
+  }
+}

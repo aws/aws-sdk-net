@@ -66,4 +66,8 @@
     <None Remove="obj\**" />
     <None Remove="Services\**" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Runtime\Credentials\LoginAWSCredentialsTest.cs" />
+  </ItemGroup>
 </Project>

@@ -32,6 +32,7 @@ namespace ServiceClientGenerator
             public const string DependenciesKey = "dependencies";
             public const string ReferenceDependenciesKey = "reference-dependencies";
             public const string NugetDependenciesKey = "nuget-dependencies";
+            public const string TargetsListKey = "targets";
             public const string DependencyNameKey = "name";
             public const string DependencyVersionKey = "version";
             public const string DependencyHintPathKey = "hint-path";
@@ -328,6 +329,19 @@ namespace ServiceClientGenerator
                             Name = item[ModelsSectionKeys.DependencyNameKey].ToString(),
                             Version = item[ModelsSectionKeys.DependencyVersionKey].ToString(),
                         };
+
+                        if (item[ModelsSectionKeys.TargetsListKey]?.Count > 0)
+                        {
+                            nugetDependency.Targets = new List<string>();
+
+                            for (int i = 0; i < item[ModelsSectionKeys.TargetsListKey].Count; i++)
+                            {
+                                nugetDependency.Targets.Add((string)item[ModelsSectionKeys.TargetsListKey][i]);
+                            }
+
+                            nugetDependency.Targets.Sort(); // We will create Condition property for ItemGroup later and group similar conditions together.
+                        }
+
                         nugetDependencies.Add(nugetDependency);
                     }
                     config.NugetDependencies.Add(kvp.Key, nugetDependencies);
