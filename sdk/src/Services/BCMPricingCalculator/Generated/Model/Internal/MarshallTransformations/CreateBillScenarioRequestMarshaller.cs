@@ -80,6 +80,18 @@ namespace Amazon.BCMPricingCalculator.Model.Internal.MarshallTransformations
                     context.Writer.WritePropertyName("clientToken");
                     context.Writer.Write(Guid.NewGuid().ToString());
                 }
+                if(publicRequest.IsSetCostCategoryGroupSharingPreferenceArn())
+                {
+                    context.Writer.WritePropertyName("costCategoryGroupSharingPreferenceArn");
+                    context.Writer.Write(publicRequest.CostCategoryGroupSharingPreferenceArn);
+                }
+
+                if(publicRequest.IsSetGroupSharingPreference())
+                {
+                    context.Writer.WritePropertyName("groupSharingPreference");
+                    context.Writer.Write(publicRequest.GroupSharingPreference);
+                }
+
                 if(publicRequest.IsSetName())
                 {
                     context.Writer.WritePropertyName("name");

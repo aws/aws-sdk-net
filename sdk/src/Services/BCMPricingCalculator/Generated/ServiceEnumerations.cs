@@ -577,6 +577,60 @@ namespace Amazon.BCMPricingCalculator
 
 
     /// <summary>
+    /// Constants used for properties of type GroupSharingPreferenceEnum.
+    /// </summary>
+    public class GroupSharingPreferenceEnum : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant OPEN for GroupSharingPreferenceEnum
+        /// </summary>
+        public static readonly GroupSharingPreferenceEnum OPEN = new GroupSharingPreferenceEnum("OPEN");
+        /// <summary>
+        /// Constant PRIORITIZED for GroupSharingPreferenceEnum
+        /// </summary>
+        public static readonly GroupSharingPreferenceEnum PRIORITIZED = new GroupSharingPreferenceEnum("PRIORITIZED");
+        /// <summary>
+        /// Constant RESTRICTED for GroupSharingPreferenceEnum
+        /// </summary>
+        public static readonly GroupSharingPreferenceEnum RESTRICTED = new GroupSharingPreferenceEnum("RESTRICTED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GroupSharingPreferenceEnum(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GroupSharingPreferenceEnum FindValue(string value)
+        {
+            return FindValue<GroupSharingPreferenceEnum>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GroupSharingPreferenceEnum(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ListBillEstimateLineItemsFilterName.
     /// </summary>
     public class ListBillEstimateLineItemsFilterName : ConstantClass
@@ -698,6 +752,14 @@ namespace Amazon.BCMPricingCalculator
     public class ListBillScenariosFilterName : ConstantClass
     {
 
+        /// <summary>
+        /// Constant COST_CATEGORY_ARN for ListBillScenariosFilterName
+        /// </summary>
+        public static readonly ListBillScenariosFilterName COST_CATEGORY_ARN = new ListBillScenariosFilterName("COST_CATEGORY_ARN");
+        /// <summary>
+        /// Constant GROUP_SHARING_PREFERENCE for ListBillScenariosFilterName
+        /// </summary>
+        public static readonly ListBillScenariosFilterName GROUP_SHARING_PREFERENCE = new ListBillScenariosFilterName("GROUP_SHARING_PREFERENCE");
         /// <summary>
         /// Constant NAME for ListBillScenariosFilterName
         /// </summary>
