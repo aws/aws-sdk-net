@@ -2564,7 +2564,9 @@ namespace Amazon.Inspector2
 
 
         /// <summary>
-        /// Lists the permissions an account has to configure Amazon Inspector.
+        /// Lists the permissions an account has to configure Amazon Inspector. If the account
+        /// is a member account or standalone account with resources managed by an Organizations
+        /// policy, the operation returns fewer permissions.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAccountPermissions service method.</param>
         /// <param name="cancellationToken">
