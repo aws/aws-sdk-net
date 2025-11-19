@@ -21,6 +21,7 @@ using System;
 using System.Buffers;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -97,11 +98,14 @@ internal sealed partial class BedrockChatClient : IChatClient
         {
             response = await _runtime.ConverseAsync(request, cancellationToken).ConfigureAwait(false);
         }
+        // Transforms ValidationException to NotSupportedException when error message indicates model lacks tool use support (required for ResponseFormat).
+        // This detection relies on error message text which may change in future Bedrock API versions.
         catch (AmazonBedrockRuntimeException ex) when (options?.ResponseFormat is ChatResponseFormatJson)
         {
-            // Detect unsupported model: ValidationException mentioning "toolChoice"
+            // Detect unsupported model: ValidationException with specific tool support error messages
             if (ex.ErrorCode == "ValidationException" &&
-                ex.Message.IndexOf("toolchoice", StringComparison.OrdinalIgnoreCase) >= 0)
+                (ex.Message.IndexOf("toolChoice is not supported by this model", StringComparison.OrdinalIgnoreCase) >= 0 ||
+                 ex.Message.IndexOf("This model doesn't support tool use", StringComparison.OrdinalIgnoreCase) >= 0))
             {
                 throw new NotSupportedException(
                     $"The model '{request.ModelId}' does not support ResponseFormat. " +
@@ -148,18 +152,11 @@ internal sealed partial class BedrockChatClient : IChatClient
             else
             {
                 // Model succeeded but did not return expected structured output
-                var errorMessage = string.Format(
-                    "ResponseFormat was specified but model did not return expected tool use. ModelId: {0}, StopReason: {1}",
-                    request.ModelId,
-                    response.StopReason?.Value ?? "unknown");
-
-                DefaultLogger.Error(new InvalidOperationException(errorMessage), errorMessage);
-
                 throw new InvalidOperationException(
                     $"Model '{request.ModelId}' did not return structured output as requested. " +
                     $"This may indicate the model refused to follow the tool use instruction, " +
                     $"the schema was too complex, or the prompt conflicted with the requirement. " +
-                    $"StopReason: {response.StopReason?.Value ?? "unknown"}");
+                    $"StopReason: {response.StopReason?.Value ?? "unknown"}.");
             }
         }
 
