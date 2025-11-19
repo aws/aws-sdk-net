@@ -37,9 +37,9 @@ using ThirdParty.RuntimeBackports;
 namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ListInsightsMetricData Request Marshaller
+    /// ListInsightsData Request Marshaller
     /// </summary>       
-    public class ListInsightsMetricDataRequestMarshaller : IMarshaller<IRequest, ListInsightsMetricDataRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class ListInsightsDataRequestMarshaller : IMarshaller<IRequest, ListInsightsDataRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -48,7 +48,7 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((ListInsightsMetricDataRequest)input);
+            return this.Marshall((ListInsightsDataRequest)input);
         }
 
         /// <summary>
@@ -56,10 +56,10 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(ListInsightsMetricDataRequest publicRequest)
+        public IRequest Marshall(ListInsightsDataRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudTrail");
-            string target = "com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.ListInsightsMetricData";
+            string target = "com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.ListInsightsData";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2013-11-01";
@@ -81,34 +81,30 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.DataType);
             }
 
+            if(publicRequest.IsSetDimensions())
+            {
+                context.Writer.WritePropertyName("Dimensions");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestDimensionsKvp in publicRequest.Dimensions)
+                {
+                    context.Writer.WritePropertyName(publicRequestDimensionsKvp.Key);
+                    var publicRequestDimensionsValue = publicRequestDimensionsKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestDimensionsValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetEndTime())
             {
                 context.Writer.WritePropertyName("EndTime");
                 context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.EndTime.Value)));
             }
 
-            if(publicRequest.IsSetErrorCode())
+            if(publicRequest.IsSetInsightSource())
             {
-                context.Writer.WritePropertyName("ErrorCode");
-                context.Writer.WriteStringValue(publicRequest.ErrorCode);
-            }
-
-            if(publicRequest.IsSetEventName())
-            {
-                context.Writer.WritePropertyName("EventName");
-                context.Writer.WriteStringValue(publicRequest.EventName);
-            }
-
-            if(publicRequest.IsSetEventSource())
-            {
-                context.Writer.WritePropertyName("EventSource");
-                context.Writer.WriteStringValue(publicRequest.EventSource);
-            }
-
-            if(publicRequest.IsSetInsightType())
-            {
-                context.Writer.WritePropertyName("InsightType");
-                context.Writer.WriteStringValue(publicRequest.InsightType);
+                context.Writer.WritePropertyName("InsightSource");
+                context.Writer.WriteStringValue(publicRequest.InsightSource);
             }
 
             if(publicRequest.IsSetMaxResults())
@@ -123,22 +119,10 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.NextToken);
             }
 
-            if(publicRequest.IsSetPeriod())
-            {
-                context.Writer.WritePropertyName("Period");
-                context.Writer.WriteNumberValue(publicRequest.Period.Value);
-            }
-
             if(publicRequest.IsSetStartTime())
             {
                 context.Writer.WritePropertyName("StartTime");
                 context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.StartTime.Value)));
-            }
-
-            if(publicRequest.IsSetTrailName())
-            {
-                context.Writer.WritePropertyName("TrailName");
-                context.Writer.WriteStringValue(publicRequest.TrailName);
             }
 
             writer.WriteEndObject();
@@ -154,9 +138,9 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static ListInsightsMetricDataRequestMarshaller _instance = new ListInsightsMetricDataRequestMarshaller();        
+        private static ListInsightsDataRequestMarshaller _instance = new ListInsightsDataRequestMarshaller();        
 
-        internal static ListInsightsMetricDataRequestMarshaller GetInstance()
+        internal static ListInsightsDataRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -164,7 +148,7 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ListInsightsMetricDataRequestMarshaller Instance
+        public static ListInsightsDataRequestMarshaller Instance
         {
             get
             {

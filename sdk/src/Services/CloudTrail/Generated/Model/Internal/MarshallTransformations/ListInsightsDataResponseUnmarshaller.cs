@@ -35,9 +35,9 @@ using Amazon.Util;
 namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ListInsightsMetricData operation
+    /// Response Unmarshaller for ListInsightsData operation
     /// </summary>  
-    public class ListInsightsMetricDataResponseUnmarshaller : JsonResponseUnmarshaller
+    public class ListInsightsDataResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,58 +46,22 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            ListInsightsMetricDataResponse response = new ListInsightsMetricDataResponse();
+            ListInsightsDataResponse response = new ListInsightsDataResponse();
             StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
             context.Read(ref reader);
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ErrorCode", targetDepth))
+                if (context.TestExpression("Events", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.ErrorCode = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("EventName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.EventName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("EventSource", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.EventSource = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("InsightType", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.InsightType = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = new JsonListUnmarshaller<Event, EventUnmarshaller>(EventUnmarshaller.Instance);
+                    response.Events = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("NextToken", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Timestamps", targetDepth))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<DateTime, DateTimeUnmarshaller>(DateTimeUnmarshaller.Instance);
-                    response.Timestamps = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("TrailARN", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.TrailARN = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Values", targetDepth))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<double, DoubleUnmarshaller>(DoubleUnmarshaller.Instance);
-                    response.Values = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -129,10 +93,6 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
                 {
                     return InvalidParameterExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidTrailNameException"))
-                {
-                    return InvalidTrailNameExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("OperationNotPermittedException"))
                 {
                     return OperationNotPermittedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
@@ -145,9 +105,9 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
             return new AmazonCloudTrailException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static ListInsightsMetricDataResponseUnmarshaller _instance = new ListInsightsMetricDataResponseUnmarshaller();        
+        private static ListInsightsDataResponseUnmarshaller _instance = new ListInsightsDataResponseUnmarshaller();        
 
-        internal static ListInsightsMetricDataResponseUnmarshaller GetInstance()
+        internal static ListInsightsDataResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -155,7 +115,7 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ListInsightsMetricDataResponseUnmarshaller Instance
+        public static ListInsightsDataResponseUnmarshaller Instance
         {
             get
             {
