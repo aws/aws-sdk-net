@@ -847,6 +847,12 @@
     <pattern>(|[a-zA-Z0-9$_-]+)</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Lambda.Model.InvokeRequest.TenantId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9\._:\/=+\-@ ]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Lambda.Model.InvokeResponse.ExecutedVersion</property>
     <min>1</min>
     <max>1024</max>
@@ -863,6 +869,12 @@
     <min>1</min>
     <max>128</max>
     <pattern>(|[a-zA-Z0-9$_-]+)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lambda.Model.InvokeWithResponseStreamRequest.TenantId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9\._:\/=+\-@ ]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.InvokeWithResponseStreamResponse.ExecutedVersion</property>
