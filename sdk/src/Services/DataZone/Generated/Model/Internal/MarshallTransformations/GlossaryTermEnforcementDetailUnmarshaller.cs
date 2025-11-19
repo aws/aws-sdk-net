@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DataZone.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for RuleDetail Object
+    /// Response Unmarshaller for GlossaryTermEnforcementDetail Object
     /// </summary>  
-    public class RuleDetailUnmarshaller : IUnmarshaller<RuleDetail, XmlUnmarshallerContext>, IUnmarshaller<RuleDetail, JsonUnmarshallerContext>
+    public class GlossaryTermEnforcementDetailUnmarshaller : IUnmarshaller<GlossaryTermEnforcementDetail, XmlUnmarshallerContext>, IUnmarshaller<GlossaryTermEnforcementDetail, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        RuleDetail IUnmarshaller<RuleDetail, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        GlossaryTermEnforcementDetail IUnmarshaller<GlossaryTermEnforcementDetail, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public RuleDetail Unmarshall(JsonUnmarshallerContext context)
+        public GlossaryTermEnforcementDetail Unmarshall(JsonUnmarshallerContext context)
         {
-            RuleDetail unmarshalledObject = new RuleDetail();
+            GlossaryTermEnforcementDetail unmarshalledObject = new GlossaryTermEnforcementDetail();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,16 +66,10 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("glossaryTermEnforcementDetail", targetDepth))
+                if (context.TestExpression("requiredGlossaryTermIds", targetDepth))
                 {
-                    var unmarshaller = GlossaryTermEnforcementDetailUnmarshaller.Instance;
-                    unmarshalledObject.GlossaryTermEnforcementDetail = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("metadataFormEnforcementDetail", targetDepth))
-                {
-                    var unmarshaller = MetadataFormEnforcementDetailUnmarshaller.Instance;
-                    unmarshalledObject.MetadataFormEnforcementDetail = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.RequiredGlossaryTermIds = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -83,12 +77,12 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         }
 
 
-        private static RuleDetailUnmarshaller _instance = new RuleDetailUnmarshaller();        
+        private static GlossaryTermEnforcementDetailUnmarshaller _instance = new GlossaryTermEnforcementDetailUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static RuleDetailUnmarshaller Instance
+        public static GlossaryTermEnforcementDetailUnmarshaller Instance
         {
             get
             {

@@ -423,6 +423,125 @@ namespace Amazon.DataZone
 
         #endregion
         
+        #region  BatchGetAttributesMetadata
+
+
+        /// <summary>
+        /// Gets the attribute metadata.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetAttributesMetadata service method.</param>
+        /// 
+        /// <returns>The response from the BatchGetAttributesMetadata service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/BatchGetAttributesMetadata">REST API Reference for BatchGetAttributesMetadata Operation</seealso>
+        BatchGetAttributesMetadataResponse BatchGetAttributesMetadata(BatchGetAttributesMetadataRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchGetAttributesMetadata operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetAttributesMetadata operation on AmazonDataZoneClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchGetAttributesMetadata
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/BatchGetAttributesMetadata">REST API Reference for BatchGetAttributesMetadata Operation</seealso>
+        IAsyncResult BeginBatchGetAttributesMetadata(BatchGetAttributesMetadataRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchGetAttributesMetadata operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchGetAttributesMetadata.</param>
+        /// 
+        /// <returns>Returns a  BatchGetAttributesMetadataResult from DataZone.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/BatchGetAttributesMetadata">REST API Reference for BatchGetAttributesMetadata Operation</seealso>
+        BatchGetAttributesMetadataResponse EndBatchGetAttributesMetadata(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  BatchPutAttributesMetadata
+
+
+        /// <summary>
+        /// Writes the attribute metadata.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchPutAttributesMetadata service method.</param>
+        /// 
+        /// <returns>The response from the BatchPutAttributesMetadata service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ConflictException">
+        /// There is a conflict while performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/BatchPutAttributesMetadata">REST API Reference for BatchPutAttributesMetadata Operation</seealso>
+        BatchPutAttributesMetadataResponse BatchPutAttributesMetadata(BatchPutAttributesMetadataRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchPutAttributesMetadata operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchPutAttributesMetadata operation on AmazonDataZoneClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchPutAttributesMetadata
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/BatchPutAttributesMetadata">REST API Reference for BatchPutAttributesMetadata Operation</seealso>
+        IAsyncResult BeginBatchPutAttributesMetadata(BatchPutAttributesMetadataRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchPutAttributesMetadata operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchPutAttributesMetadata.</param>
+        /// 
+        /// <returns>Returns a  BatchPutAttributesMetadataResult from DataZone.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/BatchPutAttributesMetadata">REST API Reference for BatchPutAttributesMetadata Operation</seealso>
+        BatchPutAttributesMetadataResponse EndBatchPutAttributesMetadata(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CancelMetadataGenerationRun
 
 
@@ -10848,6 +10967,67 @@ namespace Amazon.DataZone
         /// <returns>Returns a  UpdateProjectProfileResult from DataZone.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/UpdateProjectProfile">REST API Reference for UpdateProjectProfile Operation</seealso>
         UpdateProjectProfileResponse EndUpdateProjectProfile(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateRootDomainUnitOwner
+
+
+        /// <summary>
+        /// Updates the owner of the root domain unit.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRootDomainUnitOwner service method.</param>
+        /// 
+        /// <returns>The response from the UpdateRootDomainUnitOwner service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ConflictException">
+        /// There is a conflict while performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/UpdateRootDomainUnitOwner">REST API Reference for UpdateRootDomainUnitOwner Operation</seealso>
+        UpdateRootDomainUnitOwnerResponse UpdateRootDomainUnitOwner(UpdateRootDomainUnitOwnerRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateRootDomainUnitOwner operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRootDomainUnitOwner operation on AmazonDataZoneClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateRootDomainUnitOwner
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/UpdateRootDomainUnitOwner">REST API Reference for UpdateRootDomainUnitOwner Operation</seealso>
+        IAsyncResult BeginUpdateRootDomainUnitOwner(UpdateRootDomainUnitOwnerRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateRootDomainUnitOwner operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateRootDomainUnitOwner.</param>
+        /// 
+        /// <returns>Returns a  UpdateRootDomainUnitOwnerResult from DataZone.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/UpdateRootDomainUnitOwner">REST API Reference for UpdateRootDomainUnitOwner Operation</seealso>
+        UpdateRootDomainUnitOwnerResponse EndUpdateRootDomainUnitOwner(IAsyncResult asyncResult);
 
         #endregion
         

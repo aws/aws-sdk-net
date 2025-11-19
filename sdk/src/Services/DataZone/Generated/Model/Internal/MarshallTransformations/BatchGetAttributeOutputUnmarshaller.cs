@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DataZone.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for RuleDetail Object
+    /// Response Unmarshaller for BatchGetAttributeOutput Object
     /// </summary>  
-    public class RuleDetailUnmarshaller : IUnmarshaller<RuleDetail, XmlUnmarshallerContext>, IUnmarshaller<RuleDetail, JsonUnmarshallerContext>
+    public class BatchGetAttributeOutputUnmarshaller : IUnmarshaller<BatchGetAttributeOutput, XmlUnmarshallerContext>, IUnmarshaller<BatchGetAttributeOutput, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        RuleDetail IUnmarshaller<RuleDetail, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        BatchGetAttributeOutput IUnmarshaller<BatchGetAttributeOutput, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public RuleDetail Unmarshall(JsonUnmarshallerContext context)
+        public BatchGetAttributeOutput Unmarshall(JsonUnmarshallerContext context)
         {
-            RuleDetail unmarshalledObject = new RuleDetail();
+            BatchGetAttributeOutput unmarshalledObject = new BatchGetAttributeOutput();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,16 +66,16 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("glossaryTermEnforcementDetail", targetDepth))
+                if (context.TestExpression("attributeIdentifier", targetDepth))
                 {
-                    var unmarshaller = GlossaryTermEnforcementDetailUnmarshaller.Instance;
-                    unmarshalledObject.GlossaryTermEnforcementDetail = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AttributeIdentifier = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("metadataFormEnforcementDetail", targetDepth))
+                if (context.TestExpression("forms", targetDepth))
                 {
-                    var unmarshaller = MetadataFormEnforcementDetailUnmarshaller.Instance;
-                    unmarshalledObject.MetadataFormEnforcementDetail = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<FormOutput, FormOutputUnmarshaller>(FormOutputUnmarshaller.Instance);
+                    unmarshalledObject.Forms = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -83,12 +83,12 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         }
 
 
-        private static RuleDetailUnmarshaller _instance = new RuleDetailUnmarshaller();        
+        private static BatchGetAttributeOutputUnmarshaller _instance = new BatchGetAttributeOutputUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static RuleDetailUnmarshaller Instance
+        public static BatchGetAttributeOutputUnmarshaller Instance
         {
             get
             {

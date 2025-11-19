@@ -30,47 +30,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataZone.Model
 {
     /// <summary>
-    /// The details of the IAM user profile.
+    /// The attribute input.
     /// </summary>
-    public partial class IamUserProfileDetails
+    public partial class AttributeInput
     {
-        private string _arn;
-        private string _principalId;
+        private string _attributeIdentifier;
+        private List<FormInput> _forms = AWSConfigs.InitializeCollections ? new List<FormInput>() : null;
 
         /// <summary>
-        /// Gets and sets the property Arn. 
+        /// Gets and sets the property AttributeIdentifier. 
         /// <para>
-        /// The ARN of the IAM user.
+        /// The ID of the attribute.
         /// </para>
         /// </summary>
-        public string Arn
+        [AWSProperty(Required=true, Min=1, Max=256)]
+        public string AttributeIdentifier
         {
-            get { return this._arn; }
-            set { this._arn = value; }
+            get { return this._attributeIdentifier; }
+            set { this._attributeIdentifier = value; }
         }
 
-        // Check to see if Arn property is set
-        internal bool IsSetArn()
+        // Check to see if AttributeIdentifier property is set
+        internal bool IsSetAttributeIdentifier()
         {
-            return this._arn != null;
+            return this._attributeIdentifier != null;
         }
 
         /// <summary>
-        /// Gets and sets the property PrincipalId. 
+        /// Gets and sets the property Forms. 
         /// <para>
-        /// The principal ID as part of the IAM user profile details.
+        /// The metadata forms as part of the attribute input.
         /// </para>
         /// </summary>
-        public string PrincipalId
+        [AWSProperty(Required=true, Sensitive=true, Min=0, Max=10)]
+        public List<FormInput> Forms
         {
-            get { return this._principalId; }
-            set { this._principalId = value; }
+            get { return this._forms; }
+            set { this._forms = value; }
         }
 
-        // Check to see if PrincipalId property is set
-        internal bool IsSetPrincipalId()
+        // Check to see if Forms property is set
+        internal bool IsSetForms()
         {
-            return this._principalId != null;
+            return this._forms != null && (this._forms.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

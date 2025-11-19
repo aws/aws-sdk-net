@@ -782,6 +782,166 @@ namespace Amazon.DataZone
 
         #endregion
         
+        #region  BatchGetAttributesMetadata
+
+
+        /// <summary>
+        /// Gets the attribute metadata.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetAttributesMetadata service method.</param>
+        /// 
+        /// <returns>The response from the BatchGetAttributesMetadata service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/BatchGetAttributesMetadata">REST API Reference for BatchGetAttributesMetadata Operation</seealso>
+        public virtual BatchGetAttributesMetadataResponse BatchGetAttributesMetadata(BatchGetAttributesMetadataRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchGetAttributesMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetAttributesMetadataResponseUnmarshaller.Instance;
+
+            return Invoke<BatchGetAttributesMetadataResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Gets the attribute metadata.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetAttributesMetadata service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchGetAttributesMetadata service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/BatchGetAttributesMetadata">REST API Reference for BatchGetAttributesMetadata Operation</seealso>
+        public virtual Task<BatchGetAttributesMetadataResponse> BatchGetAttributesMetadataAsync(BatchGetAttributesMetadataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchGetAttributesMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetAttributesMetadataResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<BatchGetAttributesMetadataResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  BatchPutAttributesMetadata
+
+
+        /// <summary>
+        /// Writes the attribute metadata.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchPutAttributesMetadata service method.</param>
+        /// 
+        /// <returns>The response from the BatchPutAttributesMetadata service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ConflictException">
+        /// There is a conflict while performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/BatchPutAttributesMetadata">REST API Reference for BatchPutAttributesMetadata Operation</seealso>
+        public virtual BatchPutAttributesMetadataResponse BatchPutAttributesMetadata(BatchPutAttributesMetadataRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchPutAttributesMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchPutAttributesMetadataResponseUnmarshaller.Instance;
+
+            return Invoke<BatchPutAttributesMetadataResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Writes the attribute metadata.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchPutAttributesMetadata service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchPutAttributesMetadata service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ConflictException">
+        /// There is a conflict while performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/BatchPutAttributesMetadata">REST API Reference for BatchPutAttributesMetadata Operation</seealso>
+        public virtual Task<BatchPutAttributesMetadataResponse> BatchPutAttributesMetadataAsync(BatchPutAttributesMetadataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchPutAttributesMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchPutAttributesMetadataResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<BatchPutAttributesMetadataResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CancelMetadataGenerationRun
 
 
@@ -15472,6 +15632,89 @@ namespace Amazon.DataZone
             options.ResponseUnmarshaller = UpdateProjectProfileResponseUnmarshaller.Instance;
             
             return InvokeAsync<UpdateProjectProfileResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateRootDomainUnitOwner
+
+
+        /// <summary>
+        /// Updates the owner of the root domain unit.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRootDomainUnitOwner service method.</param>
+        /// 
+        /// <returns>The response from the UpdateRootDomainUnitOwner service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ConflictException">
+        /// There is a conflict while performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/UpdateRootDomainUnitOwner">REST API Reference for UpdateRootDomainUnitOwner Operation</seealso>
+        public virtual UpdateRootDomainUnitOwnerResponse UpdateRootDomainUnitOwner(UpdateRootDomainUnitOwnerRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateRootDomainUnitOwnerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateRootDomainUnitOwnerResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateRootDomainUnitOwnerResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates the owner of the root domain unit.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRootDomainUnitOwner service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateRootDomainUnitOwner service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ConflictException">
+        /// There is a conflict while performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/UpdateRootDomainUnitOwner">REST API Reference for UpdateRootDomainUnitOwner Operation</seealso>
+        public virtual Task<UpdateRootDomainUnitOwnerResponse> UpdateRootDomainUnitOwnerAsync(UpdateRootDomainUnitOwnerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateRootDomainUnitOwnerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateRootDomainUnitOwnerResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateRootDomainUnitOwnerResponse>(request, options, cancellationToken);
         }
 
         #endregion

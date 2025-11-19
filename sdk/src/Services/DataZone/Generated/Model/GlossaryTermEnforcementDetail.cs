@@ -30,47 +30,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataZone.Model
 {
     /// <summary>
-    /// The details of the IAM user profile.
+    /// The enforcement details of a glossary term.
     /// </summary>
-    public partial class IamUserProfileDetails
+    public partial class GlossaryTermEnforcementDetail
     {
-        private string _arn;
-        private string _principalId;
+        private List<string> _requiredGlossaryTermIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
-        /// Gets and sets the property Arn. 
+        /// Gets and sets the property RequiredGlossaryTermIds. 
         /// <para>
-        /// The ARN of the IAM user.
+        /// The ID of the required glossary term.
         /// </para>
         /// </summary>
-        public string Arn
+        [AWSProperty(Min=1, Max=5)]
+        public List<string> RequiredGlossaryTermIds
         {
-            get { return this._arn; }
-            set { this._arn = value; }
+            get { return this._requiredGlossaryTermIds; }
+            set { this._requiredGlossaryTermIds = value; }
         }
 
-        // Check to see if Arn property is set
-        internal bool IsSetArn()
+        // Check to see if RequiredGlossaryTermIds property is set
+        internal bool IsSetRequiredGlossaryTermIds()
         {
-            return this._arn != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property PrincipalId. 
-        /// <para>
-        /// The principal ID as part of the IAM user profile details.
-        /// </para>
-        /// </summary>
-        public string PrincipalId
-        {
-            get { return this._principalId; }
-            set { this._principalId = value; }
-        }
-
-        // Check to see if PrincipalId property is set
-        internal bool IsSetPrincipalId()
-        {
-            return this._principalId != null;
+            return this._requiredGlossaryTermIds != null && (this._requiredGlossaryTermIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }
