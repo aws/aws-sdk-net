@@ -247,54 +247,51 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
             // Paginated scan
             {
-                var request = new ScanOperationConfig
+                var search = hashRangeTable.Scan(new ScanOperationConfig
                 {
                     Limit = 1
-                };
-                var search = hashRangeTable.Scan(request);
+                });
+
                 var tokens = new List<string>();
                 var retrievedCount = VerifyPagination(search, tokens);
-                Assert.AreEqual(retrievedCount, itemCount);
+                Assert.AreEqual(itemCount, retrievedCount);
                 Assert.AreEqual(itemCount, tokens.Count);
 
-                var token4 = tokens[4];
-                var token5 = tokens[5];
+                var currentToken = tokens[4];
                 search = hashRangeTable.Scan(new ScanOperationConfig
                 {
                     Limit = 1,
-                    PaginationToken = token4
+                    PaginationToken = currentToken
                 });
-                search.GetNextSet();
-                Assert.AreNotEqual(token4, search.PaginationToken);
-                Assert.AreEqual(token5, search.PaginationToken);
+                var items = search.GetNextSet();
+                Assert.AreEqual(1, items.Count);
+                Assert.AreNotEqual(currentToken, search.PaginationToken);
             }
 
             // Paginated query
             {
                 var filter = new QueryFilter("Name", QueryOperator.Equal, name);
-                var request = new QueryOperationConfig
+                var search = hashRangeTable.Query(new QueryOperationConfig
                 {
                     Limit = 1,
                     Filter = filter
-                };
-                var search = hashRangeTable.Query(request);
+                });
 
                 var tokens = new List<string>();
                 var retrievedCount = VerifyPagination(search, tokens);
-                Assert.AreEqual(retrievedCount, itemCount);
+                Assert.AreEqual(itemCount, retrievedCount);
                 Assert.AreEqual(itemCount, tokens.Count);
 
-                var token4 = tokens[4];
-                var token5 = tokens[5];
+                var currentToken = tokens[4];
                 search = hashRangeTable.Query(new QueryOperationConfig
                 {
                     Limit = 1,
                     Filter = filter,
-                    PaginationToken = token4
+                    PaginationToken = currentToken
                 });
-                search.GetNextSet();
-                Assert.AreNotEqual(token4, search.PaginationToken);
-                Assert.AreEqual(token5, search.PaginationToken);
+                var items = search.GetNextSet();
+                Assert.AreEqual(1, items.Count);
+                Assert.AreNotEqual(currentToken, search.PaginationToken);
             }
         }
 
