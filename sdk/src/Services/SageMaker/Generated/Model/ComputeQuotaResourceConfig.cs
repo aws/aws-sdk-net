@@ -34,11 +34,30 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class ComputeQuotaResourceConfig
     {
+        private AcceleratorPartitionConfig _acceleratorPartition;
         private int? _accelerators;
         private int? _count;
         private ClusterInstanceType _instanceType;
         private float? _memoryInGiB;
         private float? _vCpu;
+
+        /// <summary>
+        /// Gets and sets the property AcceleratorPartition. 
+        /// <para>
+        /// The accelerator partition configuration for fractional GPU allocation.
+        /// </para>
+        /// </summary>
+        public AcceleratorPartitionConfig AcceleratorPartition
+        {
+            get { return this._acceleratorPartition; }
+            set { this._acceleratorPartition = value; }
+        }
+
+        // Check to see if AcceleratorPartition property is set
+        internal bool IsSetAcceleratorPartition()
+        {
+            return this._acceleratorPartition != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Accelerators. 

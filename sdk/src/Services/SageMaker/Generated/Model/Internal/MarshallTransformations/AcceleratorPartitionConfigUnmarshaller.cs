@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ComputeQuotaResourceConfig Object
+    /// Response Unmarshaller for AcceleratorPartitionConfig Object
     /// </summary>  
-    public class ComputeQuotaResourceConfigUnmarshaller : IUnmarshaller<ComputeQuotaResourceConfig, XmlUnmarshallerContext>, IUnmarshaller<ComputeQuotaResourceConfig, JsonUnmarshallerContext>
+    public class AcceleratorPartitionConfigUnmarshaller : IUnmarshaller<AcceleratorPartitionConfig, XmlUnmarshallerContext>, IUnmarshaller<AcceleratorPartitionConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ComputeQuotaResourceConfig IUnmarshaller<ComputeQuotaResourceConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AcceleratorPartitionConfig IUnmarshaller<AcceleratorPartitionConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public ComputeQuotaResourceConfig Unmarshall(JsonUnmarshallerContext context)
+        public AcceleratorPartitionConfig Unmarshall(JsonUnmarshallerContext context)
         {
-            ComputeQuotaResourceConfig unmarshalledObject = new ComputeQuotaResourceConfig();
+            AcceleratorPartitionConfig unmarshalledObject = new AcceleratorPartitionConfig();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,40 +66,16 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("AcceleratorPartition", targetDepth))
-                {
-                    var unmarshaller = AcceleratorPartitionConfigUnmarshaller.Instance;
-                    unmarshalledObject.AcceleratorPartition = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Accelerators", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.Accelerators = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("Count", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
                     unmarshalledObject.Count = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("InstanceType", targetDepth))
+                if (context.TestExpression("Type", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.InstanceType = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("MemoryInGiB", targetDepth))
-                {
-                    var unmarshaller = FloatUnmarshaller.Instance;
-                    unmarshalledObject.MemoryInGiB = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("VCpu", targetDepth))
-                {
-                    var unmarshaller = FloatUnmarshaller.Instance;
-                    unmarshalledObject.VCpu = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -107,12 +83,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         }
 
 
-        private static ComputeQuotaResourceConfigUnmarshaller _instance = new ComputeQuotaResourceConfigUnmarshaller();        
+        private static AcceleratorPartitionConfigUnmarshaller _instance = new AcceleratorPartitionConfigUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ComputeQuotaResourceConfigUnmarshaller Instance
+        public static AcceleratorPartitionConfigUnmarshaller Instance
         {
             get
             {

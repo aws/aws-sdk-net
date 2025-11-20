@@ -108,6 +108,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.NodeLogicalId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("PrivateDnsHostname", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PrivateDnsHostname = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("UltraServerInfo", targetDepth))
                 {
                     var unmarshaller = UltraServerInfoUnmarshaller.Instance;

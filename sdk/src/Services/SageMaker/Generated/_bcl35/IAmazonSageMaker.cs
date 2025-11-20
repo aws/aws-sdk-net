@@ -442,6 +442,152 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  BatchRebootClusterNodes
+
+
+        /// <summary>
+        /// Reboots specific nodes within a SageMaker HyperPod cluster using a soft recovery mechanism.
+        /// <c>BatchRebootClusterNodes</c> performs a graceful reboot of the specified nodes by
+        /// calling the Amazon Elastic Compute Cloud <c>RebootInstances</c> API, which attempts
+        /// to cleanly shut down the operating system before restarting the instance.
+        /// 
+        ///  
+        /// <para>
+        /// This operation is useful for recovering from transient issues or applying certain
+        /// configuration changes that require a restart.
+        /// </para>
+        ///  <note> <ul> <li> 
+        /// <para>
+        /// Rebooting a node may cause temporary service interruption for workloads running on
+        /// that node. Ensure your workloads can handle node restarts or use appropriate scheduling
+        /// to minimize impact.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You can reboot up to 25 nodes in a single request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For SageMaker HyperPod clusters using the Slurm workload manager, ensure rebooting
+        /// nodes will not disrupt critical cluster operations.
+        /// </para>
+        ///  </li> </ul> </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchRebootClusterNodes service method.</param>
+        /// 
+        /// <returns>The response from the BatchRebootClusterNodes service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/BatchRebootClusterNodes">REST API Reference for BatchRebootClusterNodes Operation</seealso>
+        BatchRebootClusterNodesResponse BatchRebootClusterNodes(BatchRebootClusterNodesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchRebootClusterNodes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchRebootClusterNodes operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchRebootClusterNodes
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/BatchRebootClusterNodes">REST API Reference for BatchRebootClusterNodes Operation</seealso>
+        IAsyncResult BeginBatchRebootClusterNodes(BatchRebootClusterNodesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchRebootClusterNodes operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchRebootClusterNodes.</param>
+        /// 
+        /// <returns>Returns a  BatchRebootClusterNodesResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/BatchRebootClusterNodes">REST API Reference for BatchRebootClusterNodes Operation</seealso>
+        BatchRebootClusterNodesResponse EndBatchRebootClusterNodes(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  BatchReplaceClusterNodes
+
+
+        /// <summary>
+        /// Replaces specific nodes within a SageMaker HyperPod cluster with new hardware. <c>BatchReplaceClusterNodes</c>
+        /// terminates the specified instances and provisions new replacement instances with the
+        /// same configuration but fresh hardware. The Amazon Machine Image (AMI) and instance
+        /// configuration remain the same.
+        /// 
+        ///  
+        /// <para>
+        /// This operation is useful for recovering from hardware failures or persistent issues
+        /// that cannot be resolved through a reboot.
+        /// </para>
+        ///  <important> <ul> <li> 
+        /// <para>
+        ///  <b>Data Loss Warning:</b> Replacing nodes destroys all instance volumes, including
+        /// both root and secondary volumes. All data stored on these volumes will be permanently
+        /// lost and cannot be recovered.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To safeguard your work, back up your data to Amazon S3 or an FSx for Lustre file system
+        /// before invoking the API on a worker node group. This will help prevent any potential
+        /// data loss from the instance root volume. For more information about backup, see <a
+        /// href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-hyperpod-operate-cli-command.html#sagemaker-hyperpod-operate-cli-command-update-cluster-software-backup">Use
+        /// the backup script provided by SageMaker HyperPod</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you want to invoke this API on an existing cluster, you'll first need to patch
+        /// the cluster by running the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateClusterSoftware.html">UpdateClusterSoftware
+        /// API</a>. For more information about patching a cluster, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-hyperpod-operate-cli-command.html#sagemaker-hyperpod-operate-cli-command-update-cluster-software">Update
+        /// the SageMaker HyperPod platform software of a cluster</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You can replace up to 25 nodes in a single request.
+        /// </para>
+        ///  </li> </ul> </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchReplaceClusterNodes service method.</param>
+        /// 
+        /// <returns>The response from the BatchReplaceClusterNodes service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/BatchReplaceClusterNodes">REST API Reference for BatchReplaceClusterNodes Operation</seealso>
+        BatchReplaceClusterNodesResponse BatchReplaceClusterNodes(BatchReplaceClusterNodesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchReplaceClusterNodes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchReplaceClusterNodes operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchReplaceClusterNodes
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/BatchReplaceClusterNodes">REST API Reference for BatchReplaceClusterNodes Operation</seealso>
+        IAsyncResult BeginBatchReplaceClusterNodes(BatchReplaceClusterNodesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchReplaceClusterNodes operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchReplaceClusterNodes.</param>
+        /// 
+        /// <returns>Returns a  BatchReplaceClusterNodesResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/BatchReplaceClusterNodes">REST API Reference for BatchReplaceClusterNodes Operation</seealso>
+        BatchReplaceClusterNodesResponse EndBatchReplaceClusterNodes(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateAction
 
 

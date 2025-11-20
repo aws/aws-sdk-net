@@ -254,8 +254,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property TargetResources. 
         /// <para>
-        /// The target resources (e.g., training jobs, HyperPod clusters) that can use this training
-        /// plan.
+        /// The target resources (e.g., training jobs, HyperPod clusters, Endpoints) that can
+        /// use this training plan.
         /// </para>
         ///  
         /// <para>
@@ -270,6 +270,11 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// A training plan for HyperPod clusters can be used exclusively to provide compute resources
         /// to a cluster's instance group.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A training plan for SageMaker endpoints can be used exclusively to provide compute
+        /// resources to SageMaker endpoints for model deployment.
         /// </para>
         ///  </li> </ul>
         /// </summary>

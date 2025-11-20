@@ -115,6 +115,18 @@
     <pattern>(arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:cluster/[a-z0-9]{12})|([a-zA-Z0-9](-*[a-zA-Z0-9]){0,62})</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.BatchRebootClusterNodesRequest.ClusterName</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>(arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:cluster/[a-z0-9]{12})|([a-zA-Z0-9](-*[a-zA-Z0-9]){0,62})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.BatchReplaceClusterNodesRequest.ClusterName</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>(arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:cluster/[a-z0-9]{12})|([a-zA-Z0-9](-*[a-zA-Z0-9]){0,62})</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.CreateActionRequest.ActionName</property>
     <min>1</min>
     <max>120</max>
@@ -8272,6 +8284,11 @@
     <pattern>[a-zA-Z0-9](-*[a-zA-Z0-9]){0,62}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.AcceleratorPartitionConfig.Count</property>
+    <min>0</min>
+    <max>10000000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.ActionSource.SourceId</property>
     <min>0</min>
     <max>256</max>
@@ -8814,6 +8831,30 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.BatchRebootClusterNodeLogicalIdsError.NodeLogicalId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9\-]*[a-zA-Z0-9]</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.BatchRebootClusterNodesError.NodeId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>i-[a-f0-9]{8}(?:[a-f0-9]{9})?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.BatchReplaceClusterNodeLogicalIdsError.NodeLogicalId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9\-]*[a-zA-Z0-9]</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.BatchReplaceClusterNodesError.NodeId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>i-[a-f0-9]{8}(?:[a-f0-9]{9})?</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.BatchTransformInput.DataCapturedDestinationS3Uri</property>
     <min>0</min>
     <max>512</max>
@@ -9346,6 +9387,10 @@
     <min>1</min>
     <max>63</max>
     <pattern>[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ClusterNodeSummary.PrivateDnsHostname</property>
+    <pattern>ip-((25[0-5]|(2[0-4]|1\d|[1-9]|)\d)-?\b){4}\..*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ClusterOrchestratorEksConfig.ClusterArn</property>
