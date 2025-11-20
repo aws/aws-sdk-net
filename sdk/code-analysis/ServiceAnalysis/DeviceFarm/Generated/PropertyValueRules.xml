@@ -53,6 +53,12 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DeviceFarm.Model.CreateProjectRequest.ExecutionRoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:aws:iam::[0-9]{12}:role/.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DeviceFarm.Model.CreateProjectRequest.Name</property>
     <min>0</min>
     <max>256</max>
@@ -840,6 +846,12 @@
     <pattern>^arn:aws:devicefarm:.+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DeviceFarm.Model.UpdateProjectRequest.ExecutionRoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:aws:iam::[0-9]{12}:role/.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DeviceFarm.Model.UpdateProjectRequest.Name</property>
     <min>0</min>
     <max>256</max>
@@ -976,6 +988,17 @@
     <max>65535</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DeviceFarm.Model.EnvironmentVariable.Name</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z_][a-zA-Z_0-9]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DeviceFarm.Model.EnvironmentVariable.Value</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DeviceFarm.Model.IncompatibilityMessage.Message</property>
     <min>0</min>
     <max>16384</max>
@@ -1093,6 +1116,12 @@
     <pattern>^arn:aws:devicefarm:.+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DeviceFarm.Model.Project.ExecutionRoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:aws:iam::[0-9]{12}:role/.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DeviceFarm.Model.Project.Name</property>
     <min>0</min>
     <max>256</max>
@@ -1159,6 +1188,12 @@
     <pattern>^arn:aws:devicefarm:.+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DeviceFarm.Model.Run.ExecutionRoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:aws:iam::[0-9]{12}:role/.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DeviceFarm.Model.Run.Message</property>
     <min>0</min>
     <max>16384</max>
@@ -1184,6 +1219,12 @@
     <property>Amazon.DeviceFarm.Model.Sample.Url</property>
     <min>0</min>
     <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DeviceFarm.Model.ScheduleRunConfiguration.ExecutionRoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:aws:iam::[0-9]{12}:role/.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.ScheduleRunConfiguration.ExtraDataPackageArn</property>

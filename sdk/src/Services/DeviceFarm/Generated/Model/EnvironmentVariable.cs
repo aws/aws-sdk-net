@@ -30,33 +30,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DeviceFarm.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListTagsForResource operation.
-    /// List the tags for an AWS Device Farm resource.
+    /// Information about an environment variable for a project or a run.
     /// </summary>
-    public partial class ListTagsForResourceRequest : AmazonDeviceFarmRequest
+    public partial class EnvironmentVariable
     {
-        private string _resourceARN;
+        private string _name;
+        private string _value;
 
         /// <summary>
-        /// Gets and sets the property ResourceARN. 
+        /// Gets and sets the property Name. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the resource or resources for which to list tags.
-        /// You can associate tags with the following Device Farm resources: <c>PROJECT</c>, <c>TESTGRID_PROJECT</c>,
-        /// <c>RUN</c>, <c>NETWORK_PROFILE</c>, <c>INSTANCE_PROFILE</c>, <c>DEVICE_INSTANCE</c>,
-        /// <c>SESSION</c>, <c>DEVICE_POOL</c>, <c>DEVICE</c>, and <c>VPCE_CONFIGURATION</c>.
+        /// The name of the environment variable.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=32, Max=1011)]
-        public string ResourceARN
+        [AWSProperty(Required=true, Min=1, Max=256)]
+        public string Name
         {
-            get { return this._resourceARN; }
-            set { this._resourceARN = value; }
+            get { return this._name; }
+            set { this._name = value; }
         }
 
-        // Check to see if ResourceARN property is set
-        internal bool IsSetResourceARN()
+        // Check to see if Name property is set
+        internal bool IsSetName()
         {
-            return this._resourceARN != null;
+            return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Value. 
+        /// <para>
+        /// The value of the environment variable.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
+        public string Value
+        {
+            get { return this._value; }
+            set { this._value = value; }
+        }
+
+        // Check to see if Value property is set
+        internal bool IsSetValue()
+        {
+            return this._value != null;
         }
 
     }
