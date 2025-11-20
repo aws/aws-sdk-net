@@ -48,6 +48,39 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAxisLabelFontConfiguration())
+            {
+                context.Writer.WritePropertyName("AxisLabelFontConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = FontConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.AxisLabelFontConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetAxisTitleFontConfiguration())
+            {
+                context.Writer.WritePropertyName("AxisTitleFontConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = FontConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.AxisTitleFontConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetDataLabelFontConfiguration())
+            {
+                context.Writer.WritePropertyName("DataLabelFontConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = FontConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.DataLabelFontConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetFontFamilies())
             {
                 context.Writer.WritePropertyName("FontFamilies");
@@ -62,6 +95,50 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
                 context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetLegendTitleFontConfiguration())
+            {
+                context.Writer.WritePropertyName("LegendTitleFontConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = FontConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.LegendTitleFontConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetLegendValueFontConfiguration())
+            {
+                context.Writer.WritePropertyName("LegendValueFontConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = FontConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.LegendValueFontConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetVisualSubtitleFontConfiguration())
+            {
+                context.Writer.WritePropertyName("VisualSubtitleFontConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = VisualSubtitleFontConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.VisualSubtitleFontConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetVisualTitleFontConfiguration())
+            {
+                context.Writer.WritePropertyName("VisualTitleFontConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = VisualTitleFontConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.VisualTitleFontConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
             }
 
         }

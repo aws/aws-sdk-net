@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for BorderStyle Object
+    /// Response Unmarshaller for GridLayoutElementBorderStyle Object
     /// </summary>  
-    public class BorderStyleUnmarshaller : IUnmarshaller<BorderStyle, XmlUnmarshallerContext>, IUnmarshaller<BorderStyle, JsonUnmarshallerContext>
+    public class GridLayoutElementBorderStyleUnmarshaller : IUnmarshaller<GridLayoutElementBorderStyle, XmlUnmarshallerContext>, IUnmarshaller<GridLayoutElementBorderStyle, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        BorderStyle IUnmarshaller<BorderStyle, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        GridLayoutElementBorderStyle IUnmarshaller<GridLayoutElementBorderStyle, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public BorderStyle Unmarshall(JsonUnmarshallerContext context)
+        public GridLayoutElementBorderStyle Unmarshall(JsonUnmarshallerContext context)
         {
-            BorderStyle unmarshalledObject = new BorderStyle();
+            GridLayoutElementBorderStyle unmarshalledObject = new GridLayoutElementBorderStyle();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -72,10 +72,10 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.Color = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Show", targetDepth))
+                if (context.TestExpression("Visibility", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.Show = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Visibility = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Width", targetDepth))
@@ -89,12 +89,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         }
 
 
-        private static BorderStyleUnmarshaller _instance = new BorderStyleUnmarshaller();        
+        private static GridLayoutElementBorderStyleUnmarshaller _instance = new GridLayoutElementBorderStyleUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static BorderStyleUnmarshaller Instance
+        public static GridLayoutElementBorderStyleUnmarshaller Instance
         {
             get
             {

@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// TileStyle Marshaller
+    /// VisualTitleFontConfiguration Marshaller
     /// </summary>
-    public class TileStyleMarshaller : IRequestMarshaller<TileStyle, JsonMarshallerContext> 
+    public class VisualTitleFontConfigurationMarshaller : IRequestMarshaller<VisualTitleFontConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,37 +44,31 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(TileStyle requestObject, JsonMarshallerContext context)
+        public void Marshall(VisualTitleFontConfiguration requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetBackgroundColor())
+            if(requestObject.IsSetFontConfiguration())
             {
-                context.Writer.WritePropertyName("BackgroundColor");
-                context.Writer.Write(requestObject.BackgroundColor);
-            }
-
-            if(requestObject.IsSetBorder())
-            {
-                context.Writer.WritePropertyName("Border");
+                context.Writer.WritePropertyName("FontConfiguration");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = BorderStyleMarshaller.Instance;
-                marshaller.Marshall(requestObject.Border, context);
+                var marshaller = FontConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.FontConfiguration, context);
 
                 context.Writer.WriteObjectEnd();
             }
 
-            if(requestObject.IsSetBorderRadius())
+            if(requestObject.IsSetTextAlignment())
             {
-                context.Writer.WritePropertyName("BorderRadius");
-                context.Writer.Write(requestObject.BorderRadius);
+                context.Writer.WritePropertyName("TextAlignment");
+                context.Writer.Write(requestObject.TextAlignment);
             }
 
-            if(requestObject.IsSetPadding())
+            if(requestObject.IsSetTextTransform())
             {
-                context.Writer.WritePropertyName("Padding");
-                context.Writer.Write(requestObject.Padding);
+                context.Writer.WritePropertyName("TextTransform");
+                context.Writer.Write(requestObject.TextTransform);
             }
 
         }
@@ -82,7 +76,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static TileStyleMarshaller Instance = new TileStyleMarshaller();
+        public readonly static VisualTitleFontConfigurationMarshaller Instance = new VisualTitleFontConfigurationMarshaller();
 
     }
 }

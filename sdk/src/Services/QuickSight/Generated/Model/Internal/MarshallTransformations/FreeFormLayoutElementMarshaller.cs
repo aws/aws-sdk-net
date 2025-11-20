@@ -59,6 +59,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetBorderRadius())
+            {
+                context.Writer.WritePropertyName("BorderRadius");
+                context.Writer.Write(requestObject.BorderRadius);
+            }
+
             if(requestObject.IsSetBorderStyle())
             {
                 context.Writer.WritePropertyName("BorderStyle");
@@ -97,6 +103,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 marshaller.Marshall(requestObject.LoadingAnimation, context);
 
                 context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetPadding())
+            {
+                context.Writer.WritePropertyName("Padding");
+                context.Writer.Write(requestObject.Padding);
             }
 
             if(requestObject.IsSetRenderingRules())

@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for BorderStyle Object
+    /// Response Unmarshaller for SheetBackgroundStyle Object
     /// </summary>  
-    public class BorderStyleUnmarshaller : IUnmarshaller<BorderStyle, XmlUnmarshallerContext>, IUnmarshaller<BorderStyle, JsonUnmarshallerContext>
+    public class SheetBackgroundStyleUnmarshaller : IUnmarshaller<SheetBackgroundStyle, XmlUnmarshallerContext>, IUnmarshaller<SheetBackgroundStyle, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        BorderStyle IUnmarshaller<BorderStyle, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        SheetBackgroundStyle IUnmarshaller<SheetBackgroundStyle, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public BorderStyle Unmarshall(JsonUnmarshallerContext context)
+        public SheetBackgroundStyle Unmarshall(JsonUnmarshallerContext context)
         {
-            BorderStyle unmarshalledObject = new BorderStyle();
+            SheetBackgroundStyle unmarshalledObject = new SheetBackgroundStyle();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -72,16 +72,10 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.Color = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Show", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.Show = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Width", targetDepth))
+                if (context.TestExpression("Gradient", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Width = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Gradient = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -89,12 +83,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         }
 
 
-        private static BorderStyleUnmarshaller _instance = new BorderStyleUnmarshaller();        
+        private static SheetBackgroundStyleUnmarshaller _instance = new SheetBackgroundStyleUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static BorderStyleUnmarshaller Instance
+        public static SheetBackgroundStyleUnmarshaller Instance
         {
             get
             {

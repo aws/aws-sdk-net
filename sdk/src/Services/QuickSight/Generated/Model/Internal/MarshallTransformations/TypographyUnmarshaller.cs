@@ -66,10 +66,52 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AxisLabelFontConfiguration", targetDepth))
+                {
+                    var unmarshaller = FontConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.AxisLabelFontConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("AxisTitleFontConfiguration", targetDepth))
+                {
+                    var unmarshaller = FontConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.AxisTitleFontConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("DataLabelFontConfiguration", targetDepth))
+                {
+                    var unmarshaller = FontConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.DataLabelFontConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("FontFamilies", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<Font, FontUnmarshaller>(FontUnmarshaller.Instance);
                     unmarshalledObject.FontFamilies = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("LegendTitleFontConfiguration", targetDepth))
+                {
+                    var unmarshaller = FontConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.LegendTitleFontConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("LegendValueFontConfiguration", targetDepth))
+                {
+                    var unmarshaller = FontConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.LegendValueFontConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("VisualSubtitleFontConfiguration", targetDepth))
+                {
+                    var unmarshaller = VisualSubtitleFontConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.VisualSubtitleFontConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("VisualTitleFontConfiguration", targetDepth))
+                {
+                    var unmarshaller = VisualTitleFontConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.VisualTitleFontConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

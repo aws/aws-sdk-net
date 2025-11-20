@@ -72,6 +72,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.BackgroundStyle = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("BorderRadius", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.BorderRadius = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("BorderStyle", targetDepth))
                 {
                     var unmarshaller = FreeFormLayoutElementBorderStyleUnmarshaller.Instance;
@@ -100,6 +106,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = LoadingAnimationUnmarshaller.Instance;
                     unmarshalledObject.LoadingAnimation = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Padding", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Padding = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("RenderingRules", targetDepth))

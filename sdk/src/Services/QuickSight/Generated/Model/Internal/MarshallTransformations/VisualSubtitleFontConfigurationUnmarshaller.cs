@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for BorderStyle Object
+    /// Response Unmarshaller for VisualSubtitleFontConfiguration Object
     /// </summary>  
-    public class BorderStyleUnmarshaller : IUnmarshaller<BorderStyle, XmlUnmarshallerContext>, IUnmarshaller<BorderStyle, JsonUnmarshallerContext>
+    public class VisualSubtitleFontConfigurationUnmarshaller : IUnmarshaller<VisualSubtitleFontConfiguration, XmlUnmarshallerContext>, IUnmarshaller<VisualSubtitleFontConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        BorderStyle IUnmarshaller<BorderStyle, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        VisualSubtitleFontConfiguration IUnmarshaller<VisualSubtitleFontConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public BorderStyle Unmarshall(JsonUnmarshallerContext context)
+        public VisualSubtitleFontConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
-            BorderStyle unmarshalledObject = new BorderStyle();
+            VisualSubtitleFontConfiguration unmarshalledObject = new VisualSubtitleFontConfiguration();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,22 +66,22 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Color", targetDepth))
+                if (context.TestExpression("FontConfiguration", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Color = unmarshaller.Unmarshall(context);
+                    var unmarshaller = FontConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.FontConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Show", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.Show = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Width", targetDepth))
+                if (context.TestExpression("TextAlignment", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Width = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TextAlignment = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("TextTransform", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TextTransform = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -89,12 +89,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         }
 
 
-        private static BorderStyleUnmarshaller _instance = new BorderStyleUnmarshaller();        
+        private static VisualSubtitleFontConfigurationUnmarshaller _instance = new VisualSubtitleFontConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static BorderStyleUnmarshaller Instance
+        public static VisualSubtitleFontConfigurationUnmarshaller Instance
         {
             get
             {
