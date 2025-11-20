@@ -2593,8 +2593,10 @@ namespace Amazon.Kinesis
         /// </para>
         ///  
         /// <para>
-        /// You can register up to 20 consumers per stream. A given consumer can only be registered
-        /// with one stream at a time.
+        /// With On-demand Advantage streams, you can register up to 50 consumers per stream to
+        /// use Enhanced Fan-out. With On-demand Standard and Provisioned streams, you can register
+        /// up to 20 consumers per stream to use Enhanced Fan-out. A given consumer can only be
+        /// registered with one stream at a time.
         /// </para>
         ///  
         /// <para>
