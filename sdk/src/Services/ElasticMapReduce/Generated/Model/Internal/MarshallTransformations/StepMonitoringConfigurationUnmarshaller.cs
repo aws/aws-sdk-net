@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for StepConfig Object
+    /// Response Unmarshaller for StepMonitoringConfiguration Object
     /// </summary>  
-    public class StepConfigUnmarshaller : IUnmarshaller<StepConfig, XmlUnmarshallerContext>, IUnmarshaller<StepConfig, JsonUnmarshallerContext>
+    public class StepMonitoringConfigurationUnmarshaller : IUnmarshaller<StepMonitoringConfiguration, XmlUnmarshallerContext>, IUnmarshaller<StepMonitoringConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        StepConfig IUnmarshaller<StepConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        StepMonitoringConfiguration IUnmarshaller<StepMonitoringConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public StepConfig Unmarshall(JsonUnmarshallerContext context)
+        public StepMonitoringConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
-            StepConfig unmarshalledObject = new StepConfig();
+            StepMonitoringConfiguration unmarshalledObject = new StepMonitoringConfiguration();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,28 +66,10 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ActionOnFailure", targetDepth))
+                if (context.TestExpression("S3MonitoringConfiguration", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ActionOnFailure = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("HadoopJarStep", targetDepth))
-                {
-                    var unmarshaller = HadoopJarStepConfigUnmarshaller.Instance;
-                    unmarshalledObject.HadoopJarStep = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Name", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("StepMonitoringConfiguration", targetDepth))
-                {
-                    var unmarshaller = StepMonitoringConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.StepMonitoringConfiguration = unmarshaller.Unmarshall(context);
+                    var unmarshaller = S3MonitoringConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.S3MonitoringConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -95,12 +77,12 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
         }
 
 
-        private static StepConfigUnmarshaller _instance = new StepConfigUnmarshaller();        
+        private static StepMonitoringConfigurationUnmarshaller _instance = new StepMonitoringConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static StepConfigUnmarshaller Instance
+        public static StepMonitoringConfigurationUnmarshaller Instance
         {
             get
             {

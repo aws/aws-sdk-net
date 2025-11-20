@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Step Object
+    /// Response Unmarshaller for S3MonitoringConfiguration Object
     /// </summary>  
-    public class StepUnmarshaller : IUnmarshaller<Step, XmlUnmarshallerContext>, IUnmarshaller<Step, JsonUnmarshallerContext>
+    public class S3MonitoringConfigurationUnmarshaller : IUnmarshaller<S3MonitoringConfiguration, XmlUnmarshallerContext>, IUnmarshaller<S3MonitoringConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Step IUnmarshaller<Step, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        S3MonitoringConfiguration IUnmarshaller<S3MonitoringConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public Step Unmarshall(JsonUnmarshallerContext context)
+        public S3MonitoringConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
-            Step unmarshalledObject = new Step();
+            S3MonitoringConfiguration unmarshalledObject = new S3MonitoringConfiguration();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,34 +66,10 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ActionOnFailure", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ActionOnFailure = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Config", targetDepth))
-                {
-                    var unmarshaller = HadoopStepConfigUnmarshaller.Instance;
-                    unmarshalledObject.Config = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("EncryptionKeyArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EncryptionKeyArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ExecutionRoleArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ExecutionRoleArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Id", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Id = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("LogUri", targetDepth))
@@ -102,29 +78,17 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                     unmarshalledObject.LogUri = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Name", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Status", targetDepth))
-                {
-                    var unmarshaller = StepStatusUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
-                    continue;
-                }
             }
             return unmarshalledObject;
         }
 
 
-        private static StepUnmarshaller _instance = new StepUnmarshaller();        
+        private static S3MonitoringConfigurationUnmarshaller _instance = new S3MonitoringConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static StepUnmarshaller Instance
+        public static S3MonitoringConfigurationUnmarshaller Instance
         {
             get
             {
