@@ -315,6 +315,75 @@ namespace Amazon.BedrockDataAutomationRuntime
 
         #endregion
         
+        #region  InvokeDataAutomation
+
+        /// <summary>
+        /// Sync API: Invoke data automation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the InvokeDataAutomation service method.</param>
+        /// 
+        /// <returns>The response from the InvokeDataAutomation service method, as returned by BedrockDataAutomationRuntime.</returns>
+        /// <exception cref="Amazon.BedrockDataAutomationRuntime.Model.AccessDeniedException">
+        /// This exception will be thrown when customer does not have access to API.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomationRuntime.Model.InternalServerException">
+        /// This exception is for any internal un-expected service errors.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomationRuntime.Model.ServiceUnavailableException">
+        /// This exception will be thrown when service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomationRuntime.Model.ThrottlingException">
+        /// This exception will be thrown when customer reached API TPS limit.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomationRuntime.Model.ValidationException">
+        /// This exception will be thrown when customer provided invalid parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-data-automation-runtime-2024-06-13/InvokeDataAutomation">REST API Reference for InvokeDataAutomation Operation</seealso>
+        public virtual InvokeDataAutomationResponse InvokeDataAutomation(InvokeDataAutomationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = InvokeDataAutomationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = InvokeDataAutomationResponseUnmarshaller.Instance;
+
+            return Invoke<InvokeDataAutomationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the InvokeDataAutomation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the InvokeDataAutomation operation on AmazonBedrockDataAutomationRuntimeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndInvokeDataAutomation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-data-automation-runtime-2024-06-13/InvokeDataAutomation">REST API Reference for InvokeDataAutomation Operation</seealso>
+        public virtual IAsyncResult BeginInvokeDataAutomation(InvokeDataAutomationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = InvokeDataAutomationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = InvokeDataAutomationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  InvokeDataAutomation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginInvokeDataAutomation.</param>
+        /// 
+        /// <returns>Returns a  InvokeDataAutomationResult from BedrockDataAutomationRuntime.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-data-automation-runtime-2024-06-13/InvokeDataAutomation">REST API Reference for InvokeDataAutomation Operation</seealso>
+        public virtual InvokeDataAutomationResponse EndInvokeDataAutomation(IAsyncResult asyncResult)
+        {
+            return EndInvoke<InvokeDataAutomationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  InvokeDataAutomationAsync
 
         /// <summary>
