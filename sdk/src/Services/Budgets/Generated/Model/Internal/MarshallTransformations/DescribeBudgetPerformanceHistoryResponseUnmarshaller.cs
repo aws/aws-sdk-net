@@ -91,6 +91,10 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
                 {
                     return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("BillingViewHealthStatusException"))
+                {
+                    return BillingViewHealthStatusExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ExpiredNextTokenException"))
                 {
                     return ExpiredNextTokenExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);

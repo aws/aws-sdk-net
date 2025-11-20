@@ -382,7 +382,7 @@ namespace Amazon.Budgets
         /// We can’t locate the resource that you specified.
         /// </exception>
         /// <exception cref="Amazon.Budgets.Model.ServiceQuotaExceededException">
-        /// You've reached the limit on the number of tags you can associate with a resource.
+        /// You've reached a Service Quota limit on this resource.
         /// </exception>
         /// <exception cref="Amazon.Budgets.Model.ThrottlingException">
         /// The number of API requests has exceeded the maximum allowed API request throttling
@@ -461,7 +461,7 @@ namespace Amazon.Budgets
         /// We can’t locate the resource that you specified.
         /// </exception>
         /// <exception cref="Amazon.Budgets.Model.ServiceQuotaExceededException">
-        /// You've reached the limit on the number of tags you can associate with a resource.
+        /// You've reached a Service Quota limit on this resource.
         /// </exception>
         /// <exception cref="Amazon.Budgets.Model.ThrottlingException">
         /// The number of API requests has exceeded the maximum allowed API request throttling
@@ -1423,6 +1423,10 @@ namespace Amazon.Budgets
         /// <exception cref="Amazon.Budgets.Model.AccessDeniedException">
         /// You are not authorized to use this operation with the given parameters.
         /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.BillingViewHealthStatusException">
+        /// The billing view status must be HEALTHY to perform this action. Try again when the
+        /// status is HEALTHY.
+        /// </exception>
         /// <exception cref="Amazon.Budgets.Model.ExpiredNextTokenException">
         /// The pagination token expired.
         /// </exception>
@@ -1889,7 +1893,7 @@ namespace Amazon.Budgets
         /// We can’t locate the resource that you specified.
         /// </exception>
         /// <exception cref="Amazon.Budgets.Model.ServiceQuotaExceededException">
-        /// You've reached the limit on the number of tags you can associate with a resource.
+        /// You've reached a Service Quota limit on this resource.
         /// </exception>
         /// <exception cref="Amazon.Budgets.Model.ThrottlingException">
         /// The number of API requests has exceeded the maximum allowed API request throttling
@@ -2053,6 +2057,9 @@ namespace Amazon.Budgets
         /// </exception>
         /// <exception cref="Amazon.Budgets.Model.NotFoundException">
         /// We can’t locate the resource that you specified.
+        /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.ServiceQuotaExceededException">
+        /// You've reached a Service Quota limit on this resource.
         /// </exception>
         /// <exception cref="Amazon.Budgets.Model.ThrottlingException">
         /// The number of API requests has exceeded the maximum allowed API request throttling
