@@ -34,18 +34,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AnycastIpList Object
+    /// Response Unmarshaller for IpamCidrConfig Object
     /// </summary>  
-    public partial class AnycastIpListUnmarshaller : IXmlUnmarshaller<AnycastIpList, XmlUnmarshallerContext>
+    public partial class IpamCidrConfigUnmarshaller : IXmlUnmarshaller<IpamCidrConfig, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public AnycastIpList Unmarshall(XmlUnmarshallerContext context)
+        public IpamCidrConfig Unmarshall(XmlUnmarshallerContext context)
         {
-            AnycastIpList unmarshalledObject = new AnycastIpList();
+            IpamCidrConfig unmarshalledObject = new IpamCidrConfig();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -56,56 +56,22 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("AnycastIps/AnycastIp", targetDepth))
-                    {
-                        if (unmarshalledObject.AnycastIps == null)
-                        {
-                            unmarshalledObject.AnycastIps = new List<string>();
-                        }
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.AnycastIps.Add(unmarshaller.Unmarshall(context));
-                        continue;
-                    }
-                    if (context.TestExpression("Arn", targetDepth))
+                    if (context.TestExpression("AnycastIp", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.AnycastIp = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("Id", targetDepth))
+                    if (context.TestExpression("Cidr", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Id = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Cidr = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("IpAddressType", targetDepth))
+                    if (context.TestExpression("IpamPoolArn", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.IpAddressType = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("IpamConfig", targetDepth))
-                    {
-                        var unmarshaller = IpamConfigUnmarshaller.Instance;
-                        unmarshalledObject.IpamConfig = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("IpCount", targetDepth))
-                    {
-                        var unmarshaller = NullableIntUnmarshaller.Instance;
-                        unmarshalledObject.IpCount = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("LastModifiedTime", targetDepth))
-                    {
-                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                        unmarshalledObject.LastModifiedTime = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("Name", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.IpamPoolArn = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Status", targetDepth))
@@ -125,14 +91,14 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
-        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, AnycastIpList unmarshalledObject, int targetDepth);
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, IpamCidrConfig unmarshalledObject, int targetDepth);
 
-        private static AnycastIpListUnmarshaller _instance = new AnycastIpListUnmarshaller();        
+        private static IpamCidrConfigUnmarshaller _instance = new IpamCidrConfigUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AnycastIpListUnmarshaller Instance
+        public static IpamCidrConfigUnmarshaller Instance
         {
             get
             {
