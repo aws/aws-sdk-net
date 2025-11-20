@@ -32,7 +32,7 @@ namespace Amazon.SecurityHub.Model
     /// <summary>
     /// Container for the parameters to the GetConnectorV2 operation.
     /// Grants permission to retrieve details for a connectorV2 based on connector id. This
-    /// API is in preview release and subject to change.
+    /// API is in public preview and subject to change.
     /// </summary>
     public partial class GetConnectorV2Request : AmazonSecurityHubRequest
     {

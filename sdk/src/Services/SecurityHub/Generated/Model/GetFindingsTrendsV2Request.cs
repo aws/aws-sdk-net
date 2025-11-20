@@ -30,39 +30,60 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListConnectorsV2 operation.
-    /// Grants permission to retrieve a list of connectorsV2 and their metadata for the calling
-    /// account. This API is in public preview and subject to change.
+    /// Container for the parameters to the GetFindingsTrendsV2 operation.
+    /// Returns findings trend data based on the specified criteria. This operation helps
+    /// you analyze patterns and changes in findings over time. This API is in public preview
+    /// and subject to change.
     /// </summary>
-    public partial class ListConnectorsV2Request : AmazonSecurityHubRequest
+    public partial class GetFindingsTrendsV2Request : AmazonSecurityHubRequest
     {
-        private ConnectorStatus _connectorStatus;
+        private DateTime? _endTime;
+        private FindingsTrendsFilters _filters;
         private int? _maxResults;
         private string _nextToken;
-        private ConnectorProviderName _providerName;
+        private DateTime? _startTime;
 
         /// <summary>
-        /// Gets and sets the property ConnectorStatus. 
+        /// Gets and sets the property EndTime. 
         /// <para>
-        /// The status for the connectorV2.
+        /// The ending timestamp for the time period to analyze findings trends, in ISO 8601 format.
         /// </para>
         /// </summary>
-        public ConnectorStatus ConnectorStatus
+        [AWSProperty(Required=true)]
+        public DateTime? EndTime
         {
-            get { return this._connectorStatus; }
-            set { this._connectorStatus = value; }
+            get { return this._endTime; }
+            set { this._endTime = value; }
         }
 
-        // Check to see if ConnectorStatus property is set
-        internal bool IsSetConnectorStatus()
+        // Check to see if EndTime property is set
+        internal bool IsSetEndTime()
         {
-            return this._connectorStatus != null;
+            return this._endTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Filters. 
+        /// <para>
+        /// The filters to apply to the findings trend data.
+        /// </para>
+        /// </summary>
+        public FindingsTrendsFilters Filters
+        {
+            get { return this._filters; }
+            set { this._filters = value; }
+        }
+
+        // Check to see if Filters property is set
+        internal bool IsSetFilters()
+        {
+            return this._filters != null;
         }
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of results to be returned.
+        /// The maximum number of trend data points to return in a single response.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -81,7 +102,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The pagination token per the Amazon Web Services Pagination standard
+        /// The token to use for paginating results. This value is returned in the response if
+        /// more results are available.
         /// </para>
         /// </summary>
         public string NextToken
@@ -97,21 +119,23 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ProviderName. 
+        /// Gets and sets the property StartTime. 
         /// <para>
-        /// The name of the third-party provider.
+        /// The starting timestamp for the time period to analyze findings trends, in ISO 8601
+        /// format.
         /// </para>
         /// </summary>
-        public ConnectorProviderName ProviderName
+        [AWSProperty(Required=true)]
+        public DateTime? StartTime
         {
-            get { return this._providerName; }
-            set { this._providerName = value; }
+            get { return this._startTime; }
+            set { this._startTime = value; }
         }
 
-        // Check to see if ProviderName property is set
-        internal bool IsSetProviderName()
+        // Check to see if StartTime property is set
+        internal bool IsSetStartTime()
         {
-            return this._providerName != null;
+            return this._startTime.HasValue; 
         }
 
     }

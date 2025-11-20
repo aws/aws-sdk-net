@@ -30,31 +30,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteConnectorV2 operation.
-    /// Grants permission to delete a connectorV2. This API is in public preview and subject
-    /// to change.
+    /// Contains the aggregated resource count values for a specific point in the resources
+    /// trend timeline.
     /// </summary>
-    public partial class DeleteConnectorV2Request : AmazonSecurityHubRequest
+    public partial class ResourcesTrendsValues
     {
-        private string _connectorId;
+        private ResourcesCount _resourcesCount;
 
         /// <summary>
-        /// Gets and sets the property ConnectorId. 
+        /// Gets and sets the property ResourcesCount. 
         /// <para>
-        /// The UUID of the connectorV2 to identify connectorV2 resource.
+        /// The resource count statistics for this data point in the trend timeline.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public string ConnectorId
+        public ResourcesCount ResourcesCount
         {
-            get { return this._connectorId; }
-            set { this._connectorId = value; }
+            get { return this._resourcesCount; }
+            set { this._resourcesCount = value; }
         }
 
-        // Check to see if ConnectorId property is set
-        internal bool IsSetConnectorId()
+        // Check to see if ResourcesCount property is set
+        internal bool IsSetResourcesCount()
         {
-            return this._connectorId != null;
+            return this._resourcesCount != null;
         }
 
     }

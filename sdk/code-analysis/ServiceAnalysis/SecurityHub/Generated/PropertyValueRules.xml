@@ -483,6 +483,11 @@
     <max>400</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SecurityHub.Model.GetFindingsTrendsV2Request.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SecurityHub.Model.GetFindingsV2Request.MaxResults</property>
     <min>1</min>
     <max>100</max>
@@ -500,6 +505,11 @@
     <property>Amazon.SecurityHub.Model.GetResourcesStatisticsV2Request.MaxStatisticResults</property>
     <min>1</min>
     <max>400</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.GetResourcesTrendsV2Request.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityHub.Model.GetResourcesV2Request.MaxResults</property>
@@ -6904,6 +6914,10 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SecurityHub.Model.ResourcesCount.AllResources</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SecurityHub.Model.ResourceTag.Key</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
@@ -7114,6 +7128,38 @@
   <property-value-rule>
     <property>Amazon.SecurityHub.Model.Severity.Original</property>
     <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.SeverityTrendsCount.Critical</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.SeverityTrendsCount.Fatal</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.SeverityTrendsCount.High</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.SeverityTrendsCount.Informational</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.SeverityTrendsCount.Low</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.SeverityTrendsCount.Medium</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.SeverityTrendsCount.Other</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.SeverityTrendsCount.Unknown</property>
+    <min>0</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityHub.Model.SeverityUpdate.Normalized</property>
