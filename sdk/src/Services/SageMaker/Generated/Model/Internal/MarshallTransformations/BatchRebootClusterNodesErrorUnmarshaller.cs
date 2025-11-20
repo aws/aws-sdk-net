@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ComputeQuotaResourceConfig Object
+    /// Response Unmarshaller for BatchRebootClusterNodesError Object
     /// </summary>  
-    public class ComputeQuotaResourceConfigUnmarshaller : IJsonUnmarshaller<ComputeQuotaResourceConfig, JsonUnmarshallerContext>
+    public class BatchRebootClusterNodesErrorUnmarshaller : IJsonUnmarshaller<BatchRebootClusterNodesError, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ComputeQuotaResourceConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public BatchRebootClusterNodesError Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            ComputeQuotaResourceConfig unmarshalledObject = new ComputeQuotaResourceConfig();
+            BatchRebootClusterNodesError unmarshalledObject = new BatchRebootClusterNodesError();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,40 +56,22 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AcceleratorPartition", targetDepth))
-                {
-                    var unmarshaller = AcceleratorPartitionConfigUnmarshaller.Instance;
-                    unmarshalledObject.AcceleratorPartition = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Accelerators", targetDepth))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.Accelerators = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Count", targetDepth))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.Count = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("InstanceType", targetDepth))
+                if (context.TestExpression("ErrorCode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.InstanceType = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.ErrorCode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MemoryInGiB", targetDepth))
+                if (context.TestExpression("Message", targetDepth))
                 {
-                    var unmarshaller = NullableFloatUnmarshaller.Instance;
-                    unmarshalledObject.MemoryInGiB = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Message = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VCpu", targetDepth))
+                if (context.TestExpression("NodeId", targetDepth))
                 {
-                    var unmarshaller = NullableFloatUnmarshaller.Instance;
-                    unmarshalledObject.VCpu = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.NodeId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -97,12 +79,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         }
 
 
-        private static ComputeQuotaResourceConfigUnmarshaller _instance = new ComputeQuotaResourceConfigUnmarshaller();        
+        private static BatchRebootClusterNodesErrorUnmarshaller _instance = new BatchRebootClusterNodesErrorUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ComputeQuotaResourceConfigUnmarshaller Instance
+        public static BatchRebootClusterNodesErrorUnmarshaller Instance
         {
             get
             {
