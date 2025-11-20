@@ -35,9 +35,9 @@ using Amazon.Util;
 namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ListAuditFindings operation
+    /// Response Unmarshaller for ListEntityEvents operation
     /// </summary>  
-    public class ListAuditFindingsResponseUnmarshaller : JsonResponseUnmarshaller
+    public class ListEntityEventsResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,16 +46,16 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            ListAuditFindingsResponse response = new ListAuditFindingsResponse();
+            ListEntityEventsResponse response = new ListEntityEventsResponse();
             StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
             context.Read(ref reader);
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AuditFindings", targetDepth))
+                if (context.TestExpression("ChangeEvents", targetDepth))
                 {
-                    var unmarshaller = new JsonListUnmarshaller<AuditFinding, AuditFindingUnmarshaller>(AuditFindingUnmarshaller.Instance);
-                    response.AuditFindings = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = new JsonListUnmarshaller<ChangeEvent, ChangeEventUnmarshaller>(ChangeEventUnmarshaller.Instance);
+                    response.ChangeEvents = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EndTime", targetDepth))
@@ -113,9 +113,9 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
             return new AmazonApplicationSignalsException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static ListAuditFindingsResponseUnmarshaller _instance = new ListAuditFindingsResponseUnmarshaller();        
+        private static ListEntityEventsResponseUnmarshaller _instance = new ListEntityEventsResponseUnmarshaller();        
 
-        internal static ListAuditFindingsResponseUnmarshaller GetInstance()
+        internal static ListEntityEventsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -123,7 +123,7 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ListAuditFindingsResponseUnmarshaller Instance
+        public static ListEntityEventsResponseUnmarshaller Instance
         {
             get
             {

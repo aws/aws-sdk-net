@@ -30,20 +30,46 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ApplicationSignals.Model
 {
     /// <summary>
-    /// This is the response object from the ListServiceStates operation.
+    /// This is the response object from the ListEntityEvents operation.
     /// </summary>
-    public partial class ListServiceStatesResponse : AmazonWebServiceResponse
+    public partial class ListEntityEventsResponse : AmazonWebServiceResponse
     {
+        private List<ChangeEvent> _changeEvents = AWSConfigs.InitializeCollections ? new List<ChangeEvent>() : null;
         private DateTime? _endTime;
         private string _nextToken;
-        private List<ServiceState> _serviceStates = AWSConfigs.InitializeCollections ? new List<ServiceState>() : null;
         private DateTime? _startTime;
+
+        /// <summary>
+        /// Gets and sets the property ChangeEvents. 
+        /// <para>
+        /// An array of structures, where each structure contains information about one change
+        /// event that occurred for the specified entity during the requested time period.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=250)]
+        public List<ChangeEvent> ChangeEvents
+        {
+            get { return this._changeEvents; }
+            set { this._changeEvents = value; }
+        }
+
+        // Check to see if ChangeEvents property is set
+        internal bool IsSetChangeEvents()
+        {
+            return this._changeEvents != null && (this._changeEvents.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property EndTime. 
         /// <para>
-        /// The end of the time period that the returned information applies to. When used in
-        /// a raw HTTP Query API, it is formatted as epoch time in seconds. For example, <c>1698778057</c>.
+        /// The end of the time period that the returned change events apply to. When used in
+        /// a raw HTTP Query API, it is formatted as epoch time in seconds. For example: <c>1698778057</c>
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -62,7 +88,7 @@ namespace Amazon.ApplicationSignals.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Include this value in your next use of this API to get the next set of service states.
+        /// Include this value in your next use of this API to get the next set of change events.
         /// </para>
         /// </summary>
         public string NextToken
@@ -78,35 +104,11 @@ namespace Amazon.ApplicationSignals.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ServiceStates. 
-        /// <para>
-        /// An array of structures, where each structure contains information about the state
-        /// of one service, including its latest change events such as deployments.
-        /// </para>
-        /// <para />
-        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
-        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
-        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
-        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
-        /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=250)]
-        public List<ServiceState> ServiceStates
-        {
-            get { return this._serviceStates; }
-            set { this._serviceStates = value; }
-        }
-
-        // Check to see if ServiceStates property is set
-        internal bool IsSetServiceStates()
-        {
-            return this._serviceStates != null && (this._serviceStates.Count > 0 || !AWSConfigs.InitializeCollections); 
-        }
-
-        /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
-        /// The start of the time period that the returned information applies to. When used in
-        /// a raw HTTP Query API, it is formatted as epoch time in seconds. For example, <c>1698778057</c>.
+        /// The start of the time period that the returned change events apply to. When used in
+        /// a raw HTTP Query API, it is formatted as epoch time in seconds. For example: <c>1698778057</c>
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

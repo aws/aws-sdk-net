@@ -16,26 +16,24 @@
 /*
  * Do not modify this file. This file is generated from the application-signals-2024-04-15.normal.json service model.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
-using System.IO;
-using System.Net;
-
 using Amazon.Runtime;
-using Amazon.Runtime.Internal;
 
-#pragma warning disable CS0612,CS0618,CS1570
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ApplicationSignals.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteGroupingConfiguration operation.
-    /// Deletes the grouping configuration for this account. This removes all custom grouping
-    /// attribute definitions that were previously configured.
-    /// </summary>
-    public partial class DeleteGroupingConfigurationRequest : AmazonApplicationSignalsRequest
+    /// Paginator for the ListEntityEvents operation
+    ///</summary>
+    public interface IListEntityEventsPaginator
     {
+        /// <summary>
+        /// Enumerable containing all full responses for the operation
+        /// </summary>
+        IPaginatedEnumerable<ListEntityEventsResponse> Responses { get; }
 
+        /// <summary>
+        /// Enumerable containing all of the ChangeEvents
+        /// </summary>
+        IPaginatedEnumerable<ChangeEvent> ChangeEvents { get; }
     }
 }
