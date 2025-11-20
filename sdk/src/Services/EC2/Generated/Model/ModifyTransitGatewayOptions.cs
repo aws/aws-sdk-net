@@ -41,6 +41,7 @@ namespace Amazon.EC2.Model
         private DefaultRouteTableAssociationValue _defaultRouteTableAssociation;
         private DefaultRouteTablePropagationValue _defaultRouteTablePropagation;
         private DnsSupportValue _dnsSupport;
+        private EncryptionSupportOptionValue _encryptionSupport;
         private string _propagationDefaultRouteTableId;
         private List<string> _removeTransitGatewayCidrBlocks = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private SecurityGroupReferencingSupportValue _securityGroupReferencingSupport;
@@ -201,6 +202,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetDnsSupport()
         {
             return this._dnsSupport != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EncryptionSupport. 
+        /// <para>
+        /// Enable or disable encryption support for VPC Encryption Control.
+        /// </para>
+        /// </summary>
+        public EncryptionSupportOptionValue EncryptionSupport
+        {
+            get { return this._encryptionSupport; }
+            set { this._encryptionSupport = value; }
+        }
+
+        // Check to see if EncryptionSupport property is set
+        internal bool IsSetEncryptionSupport()
+        {
+            return this._encryptionSupport != null;
         }
 
         /// <summary>

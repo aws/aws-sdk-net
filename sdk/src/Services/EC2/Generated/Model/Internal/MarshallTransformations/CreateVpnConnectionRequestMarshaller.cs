@@ -138,6 +138,18 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                             {
                                 if(publicRequestOptionslistValue.LogOptions.IsSetCloudWatchLogOptions())
                                 {
+                                    if(publicRequestOptionslistValue.LogOptions.CloudWatchLogOptions.IsSetBgpLogEnabled())
+                                    {
+                                        request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "LogOptions" + "." + "CloudWatchLogOptions" + "." + "BgpLogEnabled", StringUtils.FromBool(publicRequestOptionslistValue.LogOptions.CloudWatchLogOptions.BgpLogEnabled));
+                                    }
+                                    if(publicRequestOptionslistValue.LogOptions.CloudWatchLogOptions.IsSetBgpLogGroupArn())
+                                    {
+                                        request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "LogOptions" + "." + "CloudWatchLogOptions" + "." + "BgpLogGroupArn", StringUtils.FromString(publicRequestOptionslistValue.LogOptions.CloudWatchLogOptions.BgpLogGroupArn));
+                                    }
+                                    if(publicRequestOptionslistValue.LogOptions.CloudWatchLogOptions.IsSetBgpLogOutputFormat())
+                                    {
+                                        request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "LogOptions" + "." + "CloudWatchLogOptions" + "." + "BgpLogOutputFormat", StringUtils.FromString(publicRequestOptionslistValue.LogOptions.CloudWatchLogOptions.BgpLogOutputFormat));
+                                    }
                                     if(publicRequestOptionslistValue.LogOptions.CloudWatchLogOptions.IsSetLogEnabled())
                                     {
                                         request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "LogOptions" + "." + "CloudWatchLogOptions" + "." + "LogEnabled", StringUtils.FromBool(publicRequestOptionslistValue.LogOptions.CloudWatchLogOptions.LogEnabled));

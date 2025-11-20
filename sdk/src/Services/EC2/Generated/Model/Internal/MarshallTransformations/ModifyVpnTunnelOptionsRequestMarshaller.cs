@@ -97,6 +97,18 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         if(publicRequest.TunnelOptions.LogOptions.IsSetCloudWatchLogOptions())
                         {
+                            if(publicRequest.TunnelOptions.LogOptions.CloudWatchLogOptions.IsSetBgpLogEnabled())
+                            {
+                                request.Parameters.Add("TunnelOptions" + "." + "LogOptions" + "." + "CloudWatchLogOptions" + "." + "BgpLogEnabled", StringUtils.FromBool(publicRequest.TunnelOptions.LogOptions.CloudWatchLogOptions.BgpLogEnabled));
+                            }
+                            if(publicRequest.TunnelOptions.LogOptions.CloudWatchLogOptions.IsSetBgpLogGroupArn())
+                            {
+                                request.Parameters.Add("TunnelOptions" + "." + "LogOptions" + "." + "CloudWatchLogOptions" + "." + "BgpLogGroupArn", StringUtils.FromString(publicRequest.TunnelOptions.LogOptions.CloudWatchLogOptions.BgpLogGroupArn));
+                            }
+                            if(publicRequest.TunnelOptions.LogOptions.CloudWatchLogOptions.IsSetBgpLogOutputFormat())
+                            {
+                                request.Parameters.Add("TunnelOptions" + "." + "LogOptions" + "." + "CloudWatchLogOptions" + "." + "BgpLogOutputFormat", StringUtils.FromString(publicRequest.TunnelOptions.LogOptions.CloudWatchLogOptions.BgpLogOutputFormat));
+                            }
                             if(publicRequest.TunnelOptions.LogOptions.CloudWatchLogOptions.IsSetLogEnabled())
                             {
                                 request.Parameters.Add("TunnelOptions" + "." + "LogOptions" + "." + "CloudWatchLogOptions" + "." + "LogEnabled", StringUtils.FromBool(publicRequest.TunnelOptions.LogOptions.CloudWatchLogOptions.LogEnabled));

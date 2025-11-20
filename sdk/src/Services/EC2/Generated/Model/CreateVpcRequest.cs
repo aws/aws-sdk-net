@@ -69,6 +69,7 @@ namespace Amazon.EC2.Model
         private int? _ipv6NetmaskLength;
         private string _ipv6Pool;
         private List<TagSpecification> _tagSpecifications = AWSConfigs.InitializeCollections ? new List<TagSpecification>() : null;
+        private VpcEncryptionControlConfiguration _vpcEncryptionControl;
 
         /// <summary>
         /// Empty constructor used to set  properties independently even when a simple constructor is available
@@ -317,6 +318,31 @@ namespace Amazon.EC2.Model
         internal bool IsSetTagSpecifications()
         {
             return this._tagSpecifications != null && (this._tagSpecifications.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcEncryptionControl. 
+        /// <para>
+        /// Specifies the encryption control configuration to apply to the VPC during creation.
+        /// VPC Encryption Control enables you to enforce encryption for all data in transit within
+        /// and between VPCs to meet compliance requirements.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-encryption-controls.html">Enforce
+        /// VPC encryption in transit</a> in the <i>Amazon VPC User Guide</i>.
+        /// </para>
+        /// </summary>
+        public VpcEncryptionControlConfiguration VpcEncryptionControl
+        {
+            get { return this._vpcEncryptionControl; }
+            set { this._vpcEncryptionControl = value; }
+        }
+
+        // Check to see if VpcEncryptionControl property is set
+        internal bool IsSetVpcEncryptionControl()
+        {
+            return this._vpcEncryptionControl != null;
         }
 
     }

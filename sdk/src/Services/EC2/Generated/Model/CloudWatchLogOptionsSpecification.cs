@@ -34,9 +34,76 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class CloudWatchLogOptionsSpecification
     {
+        private bool? _bgpLogEnabled;
+        private string _bgpLogGroupArn;
+        private string _bgpLogOutputFormat;
         private bool? _logEnabled;
         private string _logGroupArn;
         private string _logOutputFormat;
+
+        /// <summary>
+        /// Gets and sets the property BgpLogEnabled. 
+        /// <para>
+        /// Specifies whether to enable BGP logging for the VPN connection. Default value is <c>False</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values: <c>True</c> | <c>False</c> 
+        /// </para>
+        /// </summary>
+        public bool BgpLogEnabled
+        {
+            get { return this._bgpLogEnabled.GetValueOrDefault(); }
+            set { this._bgpLogEnabled = value; }
+        }
+
+        // Check to see if BgpLogEnabled property is set
+        internal bool IsSetBgpLogEnabled()
+        {
+            return this._bgpLogEnabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property BgpLogGroupArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the CloudWatch log group where BGP logs will be
+        /// sent.
+        /// </para>
+        /// </summary>
+        public string BgpLogGroupArn
+        {
+            get { return this._bgpLogGroupArn; }
+            set { this._bgpLogGroupArn = value; }
+        }
+
+        // Check to see if BgpLogGroupArn property is set
+        internal bool IsSetBgpLogGroupArn()
+        {
+            return this._bgpLogGroupArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BgpLogOutputFormat. 
+        /// <para>
+        /// The desired output format for BGP logs to be sent to CloudWatch. Default format is
+        /// <c>json</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values: <c>json</c> | <c>text</c> 
+        /// </para>
+        /// </summary>
+        public string BgpLogOutputFormat
+        {
+            get { return this._bgpLogOutputFormat; }
+            set { this._bgpLogOutputFormat = value; }
+        }
+
+        // Check to see if BgpLogOutputFormat property is set
+        internal bool IsSetBgpLogOutputFormat()
+        {
+            return this._bgpLogOutputFormat != null;
+        }
 
         /// <summary>
         /// Gets and sets the property LogEnabled. 

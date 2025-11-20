@@ -91,6 +91,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.DnsSupport = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("encryptionSupport", targetDepth))
+                    {
+                        var unmarshaller = EncryptionSupportUnmarshaller.Instance;
+                        unmarshalledObject.EncryptionSupport = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("multicastSupport", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

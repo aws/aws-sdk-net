@@ -614,6 +614,11 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeTransitGatewayMeteringPoliciesRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EC2.Model.DescribeTransitGatewayMulticastDomainsRequest.MaxResults</property>
     <min>5</min>
     <max>1000</max>
@@ -697,6 +702,11 @@
     <property>Amazon.EC2.Model.DescribeVpcClassicLinkDnsSupportResponse.NextToken</property>
     <min>1</min>
     <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeVpcEncryptionControlsRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.DescribeVpcEndpointAssociationsRequest.MaxResults</property>
@@ -864,6 +874,11 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EC2.Model.GetTransitGatewayMeteringPolicyEntriesRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EC2.Model.GetTransitGatewayMulticastDomainAssociationsRequest.MaxResults</property>
     <min>5</min>
     <max>1000</max>
@@ -895,6 +910,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.GetVerifiedAccessEndpointTargetsRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.GetVpcResourcesBlockingEncryptionEnforcementRequest.MaxResults</property>
     <min>5</min>
     <max>1000</max>
   </property-value-rule>

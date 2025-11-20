@@ -663,7 +663,8 @@ namespace Amazon.EC2.Model
         ///  </li> <li> 
         /// <para>
         ///  <c>requester-id</c> - The ID of the entity that launched the instance on your behalf
-        /// (for example, Amazon Web Services Management Console, Auto Scaling, and so on).
+        /// (for example, Amazon Web Services Management Console, Amazon EC2 Auto Scaling, and
+        /// so on).
         /// </para>
         ///  </li> <li> 
         /// <para>

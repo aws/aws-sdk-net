@@ -127,6 +127,45 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+                if(publicRequest.IsSetVpcEncryptionControl())
+                {
+                    if(publicRequest.VpcEncryptionControl.IsSetEgressOnlyInternetGatewayExclusion())
+                    {
+                        request.Parameters.Add("VpcEncryptionControl" + "." + "EgressOnlyInternetGatewayExclusion", StringUtils.FromString(publicRequest.VpcEncryptionControl.EgressOnlyInternetGatewayExclusion));
+                    }
+                    if(publicRequest.VpcEncryptionControl.IsSetElasticFileSystemExclusion())
+                    {
+                        request.Parameters.Add("VpcEncryptionControl" + "." + "ElasticFileSystemExclusion", StringUtils.FromString(publicRequest.VpcEncryptionControl.ElasticFileSystemExclusion));
+                    }
+                    if(publicRequest.VpcEncryptionControl.IsSetInternetGatewayExclusion())
+                    {
+                        request.Parameters.Add("VpcEncryptionControl" + "." + "InternetGatewayExclusion", StringUtils.FromString(publicRequest.VpcEncryptionControl.InternetGatewayExclusion));
+                    }
+                    if(publicRequest.VpcEncryptionControl.IsSetLambdaExclusion())
+                    {
+                        request.Parameters.Add("VpcEncryptionControl" + "." + "LambdaExclusion", StringUtils.FromString(publicRequest.VpcEncryptionControl.LambdaExclusion));
+                    }
+                    if(publicRequest.VpcEncryptionControl.IsSetMode())
+                    {
+                        request.Parameters.Add("VpcEncryptionControl" + "." + "Mode", StringUtils.FromString(publicRequest.VpcEncryptionControl.Mode));
+                    }
+                    if(publicRequest.VpcEncryptionControl.IsSetNatGatewayExclusion())
+                    {
+                        request.Parameters.Add("VpcEncryptionControl" + "." + "NatGatewayExclusion", StringUtils.FromString(publicRequest.VpcEncryptionControl.NatGatewayExclusion));
+                    }
+                    if(publicRequest.VpcEncryptionControl.IsSetVirtualPrivateGatewayExclusion())
+                    {
+                        request.Parameters.Add("VpcEncryptionControl" + "." + "VirtualPrivateGatewayExclusion", StringUtils.FromString(publicRequest.VpcEncryptionControl.VirtualPrivateGatewayExclusion));
+                    }
+                    if(publicRequest.VpcEncryptionControl.IsSetVpcLatticeExclusion())
+                    {
+                        request.Parameters.Add("VpcEncryptionControl" + "." + "VpcLatticeExclusion", StringUtils.FromString(publicRequest.VpcEncryptionControl.VpcLatticeExclusion));
+                    }
+                    if(publicRequest.VpcEncryptionControl.IsSetVpcPeeringExclusion())
+                    {
+                        request.Parameters.Add("VpcEncryptionControl" + "." + "VpcPeeringExclusion", StringUtils.FromString(publicRequest.VpcEncryptionControl.VpcPeeringExclusion));
+                    }
+                }
             }
             return request;
         }

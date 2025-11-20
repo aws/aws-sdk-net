@@ -9539,6 +9539,115 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  CreateTransitGatewayMeteringPolicy
+
+        /// <summary>
+        /// Creates a metering policy for a transit gateway to track and measure network traffic.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTransitGatewayMeteringPolicy service method.</param>
+        /// 
+        /// <returns>The response from the CreateTransitGatewayMeteringPolicy service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayMeteringPolicy">REST API Reference for CreateTransitGatewayMeteringPolicy Operation</seealso>
+        public virtual CreateTransitGatewayMeteringPolicyResponse CreateTransitGatewayMeteringPolicy(CreateTransitGatewayMeteringPolicyRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateTransitGatewayMeteringPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTransitGatewayMeteringPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<CreateTransitGatewayMeteringPolicyResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateTransitGatewayMeteringPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateTransitGatewayMeteringPolicy operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateTransitGatewayMeteringPolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayMeteringPolicy">REST API Reference for CreateTransitGatewayMeteringPolicy Operation</seealso>
+        public virtual IAsyncResult BeginCreateTransitGatewayMeteringPolicy(CreateTransitGatewayMeteringPolicyRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateTransitGatewayMeteringPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTransitGatewayMeteringPolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateTransitGatewayMeteringPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateTransitGatewayMeteringPolicy.</param>
+        /// 
+        /// <returns>Returns a  CreateTransitGatewayMeteringPolicyResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayMeteringPolicy">REST API Reference for CreateTransitGatewayMeteringPolicy Operation</seealso>
+        public virtual CreateTransitGatewayMeteringPolicyResponse EndCreateTransitGatewayMeteringPolicy(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateTransitGatewayMeteringPolicyResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateTransitGatewayMeteringPolicyEntry
+
+        /// <summary>
+        /// Creates an entry in a transit gateway metering policy to define traffic measurement
+        /// rules.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTransitGatewayMeteringPolicyEntry service method.</param>
+        /// 
+        /// <returns>The response from the CreateTransitGatewayMeteringPolicyEntry service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayMeteringPolicyEntry">REST API Reference for CreateTransitGatewayMeteringPolicyEntry Operation</seealso>
+        public virtual CreateTransitGatewayMeteringPolicyEntryResponse CreateTransitGatewayMeteringPolicyEntry(CreateTransitGatewayMeteringPolicyEntryRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateTransitGatewayMeteringPolicyEntryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTransitGatewayMeteringPolicyEntryResponseUnmarshaller.Instance;
+
+            return Invoke<CreateTransitGatewayMeteringPolicyEntryResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateTransitGatewayMeteringPolicyEntry operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateTransitGatewayMeteringPolicyEntry operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateTransitGatewayMeteringPolicyEntry
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayMeteringPolicyEntry">REST API Reference for CreateTransitGatewayMeteringPolicyEntry Operation</seealso>
+        public virtual IAsyncResult BeginCreateTransitGatewayMeteringPolicyEntry(CreateTransitGatewayMeteringPolicyEntryRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateTransitGatewayMeteringPolicyEntryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTransitGatewayMeteringPolicyEntryResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateTransitGatewayMeteringPolicyEntry operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateTransitGatewayMeteringPolicyEntry.</param>
+        /// 
+        /// <returns>Returns a  CreateTransitGatewayMeteringPolicyEntryResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayMeteringPolicyEntry">REST API Reference for CreateTransitGatewayMeteringPolicyEntry Operation</seealso>
+        public virtual CreateTransitGatewayMeteringPolicyEntryResponse EndCreateTransitGatewayMeteringPolicyEntry(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateTransitGatewayMeteringPolicyEntryResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateTransitGatewayMulticastDomain
 
         /// <summary>
@@ -10435,6 +10544,68 @@ namespace Amazon.EC2
         public virtual CreateVpcBlockPublicAccessExclusionResponse EndCreateVpcBlockPublicAccessExclusion(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateVpcBlockPublicAccessExclusionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateVpcEncryptionControl
+
+        /// <summary>
+        /// Creates a VPC Encryption Control configuration for a specified VPC. VPC Encryption
+        /// Control enables you to enforce encryption for all data in transit within and between
+        /// VPCs to meet compliance requirements for standards like HIPAA, FedRAMP, and PCI DSS.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-encryption-controls.html">Enforce
+        /// VPC encryption in transit</a> in the <i>Amazon VPC User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateVpcEncryptionControl service method.</param>
+        /// 
+        /// <returns>The response from the CreateVpcEncryptionControl service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpcEncryptionControl">REST API Reference for CreateVpcEncryptionControl Operation</seealso>
+        public virtual CreateVpcEncryptionControlResponse CreateVpcEncryptionControl(CreateVpcEncryptionControlRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateVpcEncryptionControlRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateVpcEncryptionControlResponseUnmarshaller.Instance;
+
+            return Invoke<CreateVpcEncryptionControlResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateVpcEncryptionControl operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateVpcEncryptionControl operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateVpcEncryptionControl
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpcEncryptionControl">REST API Reference for CreateVpcEncryptionControl Operation</seealso>
+        public virtual IAsyncResult BeginCreateVpcEncryptionControl(CreateVpcEncryptionControlRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateVpcEncryptionControlRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateVpcEncryptionControlResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateVpcEncryptionControl operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateVpcEncryptionControl.</param>
+        /// 
+        /// <returns>Returns a  CreateVpcEncryptionControlResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpcEncryptionControl">REST API Reference for CreateVpcEncryptionControl Operation</seealso>
+        public virtual CreateVpcEncryptionControlResponse EndCreateVpcEncryptionControl(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateVpcEncryptionControlResponse>(asyncResult);
         }
 
         #endregion
@@ -14733,6 +14904,114 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DeleteTransitGatewayMeteringPolicy
+
+        /// <summary>
+        /// Deletes a transit gateway metering policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTransitGatewayMeteringPolicy service method.</param>
+        /// 
+        /// <returns>The response from the DeleteTransitGatewayMeteringPolicy service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayMeteringPolicy">REST API Reference for DeleteTransitGatewayMeteringPolicy Operation</seealso>
+        public virtual DeleteTransitGatewayMeteringPolicyResponse DeleteTransitGatewayMeteringPolicy(DeleteTransitGatewayMeteringPolicyRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteTransitGatewayMeteringPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTransitGatewayMeteringPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteTransitGatewayMeteringPolicyResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteTransitGatewayMeteringPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTransitGatewayMeteringPolicy operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteTransitGatewayMeteringPolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayMeteringPolicy">REST API Reference for DeleteTransitGatewayMeteringPolicy Operation</seealso>
+        public virtual IAsyncResult BeginDeleteTransitGatewayMeteringPolicy(DeleteTransitGatewayMeteringPolicyRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteTransitGatewayMeteringPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTransitGatewayMeteringPolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteTransitGatewayMeteringPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteTransitGatewayMeteringPolicy.</param>
+        /// 
+        /// <returns>Returns a  DeleteTransitGatewayMeteringPolicyResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayMeteringPolicy">REST API Reference for DeleteTransitGatewayMeteringPolicy Operation</seealso>
+        public virtual DeleteTransitGatewayMeteringPolicyResponse EndDeleteTransitGatewayMeteringPolicy(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteTransitGatewayMeteringPolicyResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteTransitGatewayMeteringPolicyEntry
+
+        /// <summary>
+        /// Deletes an entry from a transit gateway metering policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTransitGatewayMeteringPolicyEntry service method.</param>
+        /// 
+        /// <returns>The response from the DeleteTransitGatewayMeteringPolicyEntry service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayMeteringPolicyEntry">REST API Reference for DeleteTransitGatewayMeteringPolicyEntry Operation</seealso>
+        public virtual DeleteTransitGatewayMeteringPolicyEntryResponse DeleteTransitGatewayMeteringPolicyEntry(DeleteTransitGatewayMeteringPolicyEntryRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteTransitGatewayMeteringPolicyEntryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTransitGatewayMeteringPolicyEntryResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteTransitGatewayMeteringPolicyEntryResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteTransitGatewayMeteringPolicyEntry operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTransitGatewayMeteringPolicyEntry operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteTransitGatewayMeteringPolicyEntry
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayMeteringPolicyEntry">REST API Reference for DeleteTransitGatewayMeteringPolicyEntry Operation</seealso>
+        public virtual IAsyncResult BeginDeleteTransitGatewayMeteringPolicyEntry(DeleteTransitGatewayMeteringPolicyEntryRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteTransitGatewayMeteringPolicyEntryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTransitGatewayMeteringPolicyEntryResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteTransitGatewayMeteringPolicyEntry operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteTransitGatewayMeteringPolicyEntry.</param>
+        /// 
+        /// <returns>Returns a  DeleteTransitGatewayMeteringPolicyEntryResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayMeteringPolicyEntry">REST API Reference for DeleteTransitGatewayMeteringPolicyEntry Operation</seealso>
+        public virtual DeleteTransitGatewayMeteringPolicyEntryResponse EndDeleteTransitGatewayMeteringPolicyEntry(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteTransitGatewayMeteringPolicyEntryResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteTransitGatewayMulticastDomain
 
         /// <summary>
@@ -15571,6 +15850,67 @@ namespace Amazon.EC2
         public virtual DeleteVpcBlockPublicAccessExclusionResponse EndDeleteVpcBlockPublicAccessExclusion(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteVpcBlockPublicAccessExclusionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteVpcEncryptionControl
+
+        /// <summary>
+        /// Deletes a VPC Encryption Control configuration. This removes the encryption policy
+        /// enforcement from the specified VPC.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-encryption-controls.html">Enforce
+        /// VPC encryption in transit</a> in the <i>Amazon VPC User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVpcEncryptionControl service method.</param>
+        /// 
+        /// <returns>The response from the DeleteVpcEncryptionControl service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpcEncryptionControl">REST API Reference for DeleteVpcEncryptionControl Operation</seealso>
+        public virtual DeleteVpcEncryptionControlResponse DeleteVpcEncryptionControl(DeleteVpcEncryptionControlRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteVpcEncryptionControlRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteVpcEncryptionControlResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteVpcEncryptionControlResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteVpcEncryptionControl operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVpcEncryptionControl operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteVpcEncryptionControl
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpcEncryptionControl">REST API Reference for DeleteVpcEncryptionControl Operation</seealso>
+        public virtual IAsyncResult BeginDeleteVpcEncryptionControl(DeleteVpcEncryptionControlRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteVpcEncryptionControlRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteVpcEncryptionControlResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteVpcEncryptionControl operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteVpcEncryptionControl.</param>
+        /// 
+        /// <returns>Returns a  DeleteVpcEncryptionControlResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpcEncryptionControl">REST API Reference for DeleteVpcEncryptionControl Operation</seealso>
+        public virtual DeleteVpcEncryptionControlResponse EndDeleteVpcEncryptionControl(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteVpcEncryptionControlResponse>(asyncResult);
         }
 
         #endregion
@@ -26334,6 +26674,60 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DescribeTransitGatewayMeteringPolicies
+
+        /// <summary>
+        /// Describes one or more transit gateway metering policies.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTransitGatewayMeteringPolicies service method.</param>
+        /// 
+        /// <returns>The response from the DescribeTransitGatewayMeteringPolicies service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayMeteringPolicies">REST API Reference for DescribeTransitGatewayMeteringPolicies Operation</seealso>
+        public virtual DescribeTransitGatewayMeteringPoliciesResponse DescribeTransitGatewayMeteringPolicies(DescribeTransitGatewayMeteringPoliciesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeTransitGatewayMeteringPoliciesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTransitGatewayMeteringPoliciesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeTransitGatewayMeteringPoliciesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeTransitGatewayMeteringPolicies operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTransitGatewayMeteringPolicies operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeTransitGatewayMeteringPolicies
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayMeteringPolicies">REST API Reference for DescribeTransitGatewayMeteringPolicies Operation</seealso>
+        public virtual IAsyncResult BeginDescribeTransitGatewayMeteringPolicies(DescribeTransitGatewayMeteringPoliciesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeTransitGatewayMeteringPoliciesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTransitGatewayMeteringPoliciesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeTransitGatewayMeteringPolicies operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeTransitGatewayMeteringPolicies.</param>
+        /// 
+        /// <returns>Returns a  DescribeTransitGatewayMeteringPoliciesResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayMeteringPolicies">REST API Reference for DescribeTransitGatewayMeteringPolicies Operation</seealso>
+        public virtual DescribeTransitGatewayMeteringPoliciesResponse EndDescribeTransitGatewayMeteringPolicies(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeTransitGatewayMeteringPoliciesResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeTransitGatewayMulticastDomains
 
         /// <summary>
@@ -27731,6 +28125,69 @@ namespace Amazon.EC2
         public virtual DescribeVpcClassicLinkDnsSupportResponse EndDescribeVpcClassicLinkDnsSupport(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeVpcClassicLinkDnsSupportResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeVpcEncryptionControls
+
+        /// <summary>
+        /// Describes one or more VPC Encryption Control configurations. VPC Encryption Control
+        /// enables you to enforce encryption for all data in transit within and between VPCs
+        /// to meet compliance requirements You can filter the results to return information about
+        /// specific encryption controls or VPCs.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-encryption-controls.html">Enforce
+        /// VPC encryption in transit</a> in the <i>Amazon VPC User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVpcEncryptionControls service method.</param>
+        /// 
+        /// <returns>The response from the DescribeVpcEncryptionControls service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcEncryptionControls">REST API Reference for DescribeVpcEncryptionControls Operation</seealso>
+        public virtual DescribeVpcEncryptionControlsResponse DescribeVpcEncryptionControls(DescribeVpcEncryptionControlsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeVpcEncryptionControlsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeVpcEncryptionControlsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeVpcEncryptionControlsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeVpcEncryptionControls operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVpcEncryptionControls operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeVpcEncryptionControls
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcEncryptionControls">REST API Reference for DescribeVpcEncryptionControls Operation</seealso>
+        public virtual IAsyncResult BeginDescribeVpcEncryptionControls(DescribeVpcEncryptionControlsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeVpcEncryptionControlsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeVpcEncryptionControlsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeVpcEncryptionControls operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeVpcEncryptionControls.</param>
+        /// 
+        /// <returns>Returns a  DescribeVpcEncryptionControlsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcEncryptionControls">REST API Reference for DescribeVpcEncryptionControls Operation</seealso>
+        public virtual DescribeVpcEncryptionControlsResponse EndDescribeVpcEncryptionControls(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeVpcEncryptionControlsResponse>(asyncResult);
         }
 
         #endregion
@@ -36393,6 +36850,60 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  GetTransitGatewayMeteringPolicyEntries
+
+        /// <summary>
+        /// Retrieves the entries for a transit gateway metering policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTransitGatewayMeteringPolicyEntries service method.</param>
+        /// 
+        /// <returns>The response from the GetTransitGatewayMeteringPolicyEntries service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetTransitGatewayMeteringPolicyEntries">REST API Reference for GetTransitGatewayMeteringPolicyEntries Operation</seealso>
+        public virtual GetTransitGatewayMeteringPolicyEntriesResponse GetTransitGatewayMeteringPolicyEntries(GetTransitGatewayMeteringPolicyEntriesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetTransitGatewayMeteringPolicyEntriesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTransitGatewayMeteringPolicyEntriesResponseUnmarshaller.Instance;
+
+            return Invoke<GetTransitGatewayMeteringPolicyEntriesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetTransitGatewayMeteringPolicyEntries operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetTransitGatewayMeteringPolicyEntries operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetTransitGatewayMeteringPolicyEntries
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetTransitGatewayMeteringPolicyEntries">REST API Reference for GetTransitGatewayMeteringPolicyEntries Operation</seealso>
+        public virtual IAsyncResult BeginGetTransitGatewayMeteringPolicyEntries(GetTransitGatewayMeteringPolicyEntriesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetTransitGatewayMeteringPolicyEntriesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTransitGatewayMeteringPolicyEntriesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetTransitGatewayMeteringPolicyEntries operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetTransitGatewayMeteringPolicyEntries.</param>
+        /// 
+        /// <returns>Returns a  GetTransitGatewayMeteringPolicyEntriesResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetTransitGatewayMeteringPolicyEntries">REST API Reference for GetTransitGatewayMeteringPolicyEntries Operation</seealso>
+        public virtual GetTransitGatewayMeteringPolicyEntriesResponse EndGetTransitGatewayMeteringPolicyEntries(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetTransitGatewayMeteringPolicyEntriesResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetTransitGatewayMulticastDomainAssociations
 
         /// <summary>
@@ -36877,6 +37388,66 @@ namespace Amazon.EC2
         public virtual GetVerifiedAccessGroupPolicyResponse EndGetVerifiedAccessGroupPolicy(IAsyncResult asyncResult)
         {
             return EndInvoke<GetVerifiedAccessGroupPolicyResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetVpcResourcesBlockingEncryptionEnforcement
+
+        /// <summary>
+        /// Gets information about resources in a VPC that are blocking encryption enforcement.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-encryption-controls.html">Enforce
+        /// VPC encryption in transit</a> in the <i>Amazon VPC User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetVpcResourcesBlockingEncryptionEnforcement service method.</param>
+        /// 
+        /// <returns>The response from the GetVpcResourcesBlockingEncryptionEnforcement service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetVpcResourcesBlockingEncryptionEnforcement">REST API Reference for GetVpcResourcesBlockingEncryptionEnforcement Operation</seealso>
+        public virtual GetVpcResourcesBlockingEncryptionEnforcementResponse GetVpcResourcesBlockingEncryptionEnforcement(GetVpcResourcesBlockingEncryptionEnforcementRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetVpcResourcesBlockingEncryptionEnforcementRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetVpcResourcesBlockingEncryptionEnforcementResponseUnmarshaller.Instance;
+
+            return Invoke<GetVpcResourcesBlockingEncryptionEnforcementResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetVpcResourcesBlockingEncryptionEnforcement operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetVpcResourcesBlockingEncryptionEnforcement operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetVpcResourcesBlockingEncryptionEnforcement
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetVpcResourcesBlockingEncryptionEnforcement">REST API Reference for GetVpcResourcesBlockingEncryptionEnforcement Operation</seealso>
+        public virtual IAsyncResult BeginGetVpcResourcesBlockingEncryptionEnforcement(GetVpcResourcesBlockingEncryptionEnforcementRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetVpcResourcesBlockingEncryptionEnforcementRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetVpcResourcesBlockingEncryptionEnforcementResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetVpcResourcesBlockingEncryptionEnforcement operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetVpcResourcesBlockingEncryptionEnforcement.</param>
+        /// 
+        /// <returns>Returns a  GetVpcResourcesBlockingEncryptionEnforcementResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetVpcResourcesBlockingEncryptionEnforcement">REST API Reference for GetVpcResourcesBlockingEncryptionEnforcement Operation</seealso>
+        public virtual GetVpcResourcesBlockingEncryptionEnforcementResponse EndGetVpcResourcesBlockingEncryptionEnforcement(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetVpcResourcesBlockingEncryptionEnforcementResponse>(asyncResult);
         }
 
         #endregion
@@ -37562,6 +38133,60 @@ namespace Amazon.EC2
         public virtual ListSnapshotsInRecycleBinResponse EndListSnapshotsInRecycleBin(IAsyncResult asyncResult)
         {
             return EndInvoke<ListSnapshotsInRecycleBinResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListVolumesInRecycleBin
+
+        /// <summary>
+        /// Lists one or more volumes that are currently in the Recycle Bin.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListVolumesInRecycleBin service method.</param>
+        /// 
+        /// <returns>The response from the ListVolumesInRecycleBin service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ListVolumesInRecycleBin">REST API Reference for ListVolumesInRecycleBin Operation</seealso>
+        public virtual ListVolumesInRecycleBinResponse ListVolumesInRecycleBin(ListVolumesInRecycleBinRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListVolumesInRecycleBinRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListVolumesInRecycleBinResponseUnmarshaller.Instance;
+
+            return Invoke<ListVolumesInRecycleBinResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListVolumesInRecycleBin operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListVolumesInRecycleBin operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListVolumesInRecycleBin
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ListVolumesInRecycleBin">REST API Reference for ListVolumesInRecycleBin Operation</seealso>
+        public virtual IAsyncResult BeginListVolumesInRecycleBin(ListVolumesInRecycleBinRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListVolumesInRecycleBinRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListVolumesInRecycleBinResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListVolumesInRecycleBin operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListVolumesInRecycleBin.</param>
+        /// 
+        /// <returns>Returns a  ListVolumesInRecycleBinResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ListVolumesInRecycleBin">REST API Reference for ListVolumesInRecycleBin Operation</seealso>
+        public virtual ListVolumesInRecycleBinResponse EndListVolumesInRecycleBin(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListVolumesInRecycleBinResponse>(asyncResult);
         }
 
         #endregion
@@ -40893,6 +41518,60 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  ModifyTransitGatewayMeteringPolicy
+
+        /// <summary>
+        /// Modifies a transit gateway metering policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyTransitGatewayMeteringPolicy service method.</param>
+        /// 
+        /// <returns>The response from the ModifyTransitGatewayMeteringPolicy service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyTransitGatewayMeteringPolicy">REST API Reference for ModifyTransitGatewayMeteringPolicy Operation</seealso>
+        public virtual ModifyTransitGatewayMeteringPolicyResponse ModifyTransitGatewayMeteringPolicy(ModifyTransitGatewayMeteringPolicyRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ModifyTransitGatewayMeteringPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyTransitGatewayMeteringPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyTransitGatewayMeteringPolicyResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyTransitGatewayMeteringPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyTransitGatewayMeteringPolicy operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyTransitGatewayMeteringPolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyTransitGatewayMeteringPolicy">REST API Reference for ModifyTransitGatewayMeteringPolicy Operation</seealso>
+        public virtual IAsyncResult BeginModifyTransitGatewayMeteringPolicy(ModifyTransitGatewayMeteringPolicyRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ModifyTransitGatewayMeteringPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyTransitGatewayMeteringPolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifyTransitGatewayMeteringPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyTransitGatewayMeteringPolicy.</param>
+        /// 
+        /// <returns>Returns a  ModifyTransitGatewayMeteringPolicyResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyTransitGatewayMeteringPolicy">REST API Reference for ModifyTransitGatewayMeteringPolicy Operation</seealso>
+        public virtual ModifyTransitGatewayMeteringPolicyResponse EndModifyTransitGatewayMeteringPolicy(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ModifyTransitGatewayMeteringPolicyResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ModifyTransitGatewayPrefixListReference
 
         /// <summary>
@@ -41698,6 +42377,67 @@ namespace Amazon.EC2
         public virtual ModifyVpcBlockPublicAccessOptionsResponse EndModifyVpcBlockPublicAccessOptions(IAsyncResult asyncResult)
         {
             return EndInvoke<ModifyVpcBlockPublicAccessOptionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ModifyVpcEncryptionControl
+
+        /// <summary>
+        /// Modifies the encryption control configuration for a VPC. You can update the encryption
+        /// mode and exclusion settings for various gateway types and peering connections.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-encryption-controls.html">Enforce
+        /// VPC encryption in transit</a> in the <i>Amazon VPC User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyVpcEncryptionControl service method.</param>
+        /// 
+        /// <returns>The response from the ModifyVpcEncryptionControl service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcEncryptionControl">REST API Reference for ModifyVpcEncryptionControl Operation</seealso>
+        public virtual ModifyVpcEncryptionControlResponse ModifyVpcEncryptionControl(ModifyVpcEncryptionControlRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ModifyVpcEncryptionControlRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyVpcEncryptionControlResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyVpcEncryptionControlResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyVpcEncryptionControl operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyVpcEncryptionControl operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyVpcEncryptionControl
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcEncryptionControl">REST API Reference for ModifyVpcEncryptionControl Operation</seealso>
+        public virtual IAsyncResult BeginModifyVpcEncryptionControl(ModifyVpcEncryptionControlRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ModifyVpcEncryptionControlRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyVpcEncryptionControlResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifyVpcEncryptionControl operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyVpcEncryptionControl.</param>
+        /// 
+        /// <returns>Returns a  ModifyVpcEncryptionControlResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcEncryptionControl">REST API Reference for ModifyVpcEncryptionControl Operation</seealso>
+        public virtual ModifyVpcEncryptionControlResponse EndModifyVpcEncryptionControl(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ModifyVpcEncryptionControlResponse>(asyncResult);
         }
 
         #endregion
@@ -45592,6 +46332,61 @@ namespace Amazon.EC2
         public virtual RestoreSnapshotTierResponse EndRestoreSnapshotTier(IAsyncResult asyncResult)
         {
             return EndInvoke<RestoreSnapshotTierResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  RestoreVolumeFromRecycleBin
+
+        /// <summary>
+        /// Restores a volume from the Recycle Bin. For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/recycle-bin-working-with-volumes.html#recycle-bin-restore-volumes">Restore
+        /// volumes from the Recycle Bin</a> in the <i>Amazon EBS User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RestoreVolumeFromRecycleBin service method.</param>
+        /// 
+        /// <returns>The response from the RestoreVolumeFromRecycleBin service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RestoreVolumeFromRecycleBin">REST API Reference for RestoreVolumeFromRecycleBin Operation</seealso>
+        public virtual RestoreVolumeFromRecycleBinResponse RestoreVolumeFromRecycleBin(RestoreVolumeFromRecycleBinRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = RestoreVolumeFromRecycleBinRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RestoreVolumeFromRecycleBinResponseUnmarshaller.Instance;
+
+            return Invoke<RestoreVolumeFromRecycleBinResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RestoreVolumeFromRecycleBin operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RestoreVolumeFromRecycleBin operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRestoreVolumeFromRecycleBin
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RestoreVolumeFromRecycleBin">REST API Reference for RestoreVolumeFromRecycleBin Operation</seealso>
+        public virtual IAsyncResult BeginRestoreVolumeFromRecycleBin(RestoreVolumeFromRecycleBinRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = RestoreVolumeFromRecycleBinRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RestoreVolumeFromRecycleBinResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  RestoreVolumeFromRecycleBin operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRestoreVolumeFromRecycleBin.</param>
+        /// 
+        /// <returns>Returns a  RestoreVolumeFromRecycleBinResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RestoreVolumeFromRecycleBin">REST API Reference for RestoreVolumeFromRecycleBin Operation</seealso>
+        public virtual RestoreVolumeFromRecycleBinResponse EndRestoreVolumeFromRecycleBin(IAsyncResult asyncResult)
+        {
+            return EndInvoke<RestoreVolumeFromRecycleBinResponse>(asyncResult);
         }
 
         #endregion

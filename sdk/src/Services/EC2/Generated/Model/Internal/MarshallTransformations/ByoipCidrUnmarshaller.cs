@@ -55,6 +55,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("advertisementType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.AdvertisementType = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("asnAssociationSet/item", targetDepth))
                     {
                         var unmarshaller = AsnAssociationUnmarshaller.Instance;

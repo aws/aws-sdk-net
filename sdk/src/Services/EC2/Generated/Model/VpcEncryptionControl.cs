@@ -30,7 +30,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
+    /// Describes the configuration and state of VPC encryption controls.
     /// 
+    ///  
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-encryption-controls.html">Enforce
+    /// VPC encryption in transit</a> in the <i>Amazon VPC User Guide</i>.
+    /// </para>
     /// </summary>
     public partial class VpcEncryptionControl
     {
@@ -43,7 +49,10 @@ namespace Amazon.EC2.Model
         private string _vpcId;
 
         /// <summary>
-        /// Gets and sets the property Mode.
+        /// Gets and sets the property Mode. 
+        /// <para>
+        /// The encryption mode for the VPC Encryption Control configuration.
+        /// </para>
         /// </summary>
         public VpcEncryptionControlMode Mode
         {
@@ -58,7 +67,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ResourceExclusions.
+        /// Gets and sets the property ResourceExclusions. 
+        /// <para>
+        /// Information about resource exclusions for the VPC Encryption Control configuration.
+        /// </para>
         /// </summary>
         public VpcEncryptionControlExclusions ResourceExclusions
         {
@@ -73,7 +85,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property State.
+        /// Gets and sets the property State. 
+        /// <para>
+        /// The current state of the VPC Encryption Control configuration.
+        /// </para>
         /// </summary>
         public VpcEncryptionControlState State
         {
@@ -88,7 +103,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StateMessage.
+        /// Gets and sets the property StateMessage. 
+        /// <para>
+        /// A message providing additional information about the encryption control state.
+        /// </para>
         /// </summary>
         public string StateMessage
         {
@@ -103,7 +121,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Tags.
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags assigned to the VPC Encryption Control configuration.
+        /// </para>
         /// </summary>
         public List<Tag> Tags
         {
@@ -118,7 +139,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VpcEncryptionControlId.
+        /// Gets and sets the property VpcEncryptionControlId. 
+        /// <para>
+        /// The ID of the VPC Encryption Control configuration.
+        /// </para>
         /// </summary>
         public string VpcEncryptionControlId
         {
@@ -133,7 +157,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VpcId.
+        /// Gets and sets the property VpcId. 
+        /// <para>
+        /// The ID of the VPC associated with the encryption control configuration.
+        /// </para>
         /// </summary>
         public string VpcId
         {
