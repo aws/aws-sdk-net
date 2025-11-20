@@ -101,6 +101,14 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
+        /// Paginator for GetFindingsTrendsV2 operation
+        ///</summary>
+        public IGetFindingsTrendsV2Paginator GetFindingsTrendsV2(GetFindingsTrendsV2Request request) 
+        {
+            return new GetFindingsTrendsV2Paginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for GetFindingsV2 operation
         ///</summary>
         public IGetFindingsV2Paginator GetFindingsV2(GetFindingsV2Request request) 
@@ -114,6 +122,14 @@ namespace Amazon.SecurityHub.Model
         public IGetInsightsPaginator GetInsights(GetInsightsRequest request) 
         {
             return new GetInsightsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for GetResourcesTrendsV2 operation
+        ///</summary>
+        public IGetResourcesTrendsV2Paginator GetResourcesTrendsV2(GetResourcesTrendsV2Request request) 
+        {
+            return new GetResourcesTrendsV2Paginator(this.client, request);
         }
 
         /// <summary>

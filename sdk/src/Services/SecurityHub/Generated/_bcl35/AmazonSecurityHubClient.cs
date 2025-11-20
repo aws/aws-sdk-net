@@ -1590,7 +1590,7 @@ namespace Amazon.SecurityHub
 
         /// <summary>
         /// Grants permission to complete the authorization based on input parameters. This API
-        /// is in preview release and subject to change.
+        /// is in public preview and subject to change.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ConnectorRegistrationsV2 service method.</param>
         /// 
@@ -2034,7 +2034,7 @@ namespace Amazon.SecurityHub
 
         /// <summary>
         /// Grants permission to create a connectorV2 based on input parameters. This API is in
-        /// preview release and subject to change.
+        /// public preview and subject to change.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateConnectorV2 service method.</param>
         /// 
@@ -2409,8 +2409,8 @@ namespace Amazon.SecurityHub
 
         /// <summary>
         /// Grants permission to create a ticket in the chosen ITSM based on finding information
-        /// for the provided finding metadata UID. This API is in preview release and subject
-        /// to change.
+        /// for the provided finding metadata UID. This API is in public preview and subject to
+        /// change.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateTicketV2 service method.</param>
         /// 
@@ -2870,7 +2870,7 @@ namespace Amazon.SecurityHub
         #region  DeleteConnectorV2
 
         /// <summary>
-        /// Grants permission to delete a connectorV2. This API is in preview release and subject
+        /// Grants permission to delete a connectorV2. This API is in public preview and subject
         /// to change.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteConnectorV2 service method.</param>
@@ -5124,7 +5124,7 @@ namespace Amazon.SecurityHub
 
         /// <summary>
         /// Grants permission to retrieve details for a connectorV2 based on connector id. This
-        /// API is in preview release and subject to change.
+        /// API is in public preview and subject to change.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetConnectorV2 service method.</param>
         /// 
@@ -5574,6 +5574,75 @@ namespace Amazon.SecurityHub
         public virtual GetFindingStatisticsV2Response EndGetFindingStatisticsV2(IAsyncResult asyncResult)
         {
             return EndInvoke<GetFindingStatisticsV2Response>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetFindingsTrendsV2
+
+        /// <summary>
+        /// Returns findings trend data based on the specified criteria. This operation helps
+        /// you analyze patterns and changes in findings over time. This API is in public preview
+        /// and subject to change.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetFindingsTrendsV2 service method.</param>
+        /// 
+        /// <returns>The response from the GetFindingsTrendsV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetFindingsTrendsV2">REST API Reference for GetFindingsTrendsV2 Operation</seealso>
+        public virtual GetFindingsTrendsV2Response GetFindingsTrendsV2(GetFindingsTrendsV2Request request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetFindingsTrendsV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetFindingsTrendsV2ResponseUnmarshaller.Instance;
+
+            return Invoke<GetFindingsTrendsV2Response>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetFindingsTrendsV2 operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetFindingsTrendsV2 operation on AmazonSecurityHubClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetFindingsTrendsV2
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetFindingsTrendsV2">REST API Reference for GetFindingsTrendsV2 Operation</seealso>
+        public virtual IAsyncResult BeginGetFindingsTrendsV2(GetFindingsTrendsV2Request request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetFindingsTrendsV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetFindingsTrendsV2ResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetFindingsTrendsV2 operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetFindingsTrendsV2.</param>
+        /// 
+        /// <returns>Returns a  GetFindingsTrendsV2Result from SecurityHub.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetFindingsTrendsV2">REST API Reference for GetFindingsTrendsV2 Operation</seealso>
+        public virtual GetFindingsTrendsV2Response EndGetFindingsTrendsV2(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetFindingsTrendsV2Response>(asyncResult);
         }
 
         #endregion
@@ -6123,6 +6192,75 @@ namespace Amazon.SecurityHub
         public virtual GetResourcesStatisticsV2Response EndGetResourcesStatisticsV2(IAsyncResult asyncResult)
         {
             return EndInvoke<GetResourcesStatisticsV2Response>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetResourcesTrendsV2
+
+        /// <summary>
+        /// Returns resource trend data based on the specified criteria. This operation helps
+        /// you analyze patterns and changes in resource compliance over time. This API is in
+        /// public preview and subject to change.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetResourcesTrendsV2 service method.</param>
+        /// 
+        /// <returns>The response from the GetResourcesTrendsV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetResourcesTrendsV2">REST API Reference for GetResourcesTrendsV2 Operation</seealso>
+        public virtual GetResourcesTrendsV2Response GetResourcesTrendsV2(GetResourcesTrendsV2Request request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetResourcesTrendsV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResourcesTrendsV2ResponseUnmarshaller.Instance;
+
+            return Invoke<GetResourcesTrendsV2Response>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetResourcesTrendsV2 operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetResourcesTrendsV2 operation on AmazonSecurityHubClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetResourcesTrendsV2
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetResourcesTrendsV2">REST API Reference for GetResourcesTrendsV2 Operation</seealso>
+        public virtual IAsyncResult BeginGetResourcesTrendsV2(GetResourcesTrendsV2Request request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetResourcesTrendsV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResourcesTrendsV2ResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetResourcesTrendsV2 operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetResourcesTrendsV2.</param>
+        /// 
+        /// <returns>Returns a  GetResourcesTrendsV2Result from SecurityHub.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetResourcesTrendsV2">REST API Reference for GetResourcesTrendsV2 Operation</seealso>
+        public virtual GetResourcesTrendsV2Response EndGetResourcesTrendsV2(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetResourcesTrendsV2Response>(asyncResult);
         }
 
         #endregion
@@ -6740,7 +6878,7 @@ namespace Amazon.SecurityHub
 
         /// <summary>
         /// Grants permission to retrieve a list of connectorsV2 and their metadata for the calling
-        /// account. This API is in preview release and subject to change.
+        /// account. This API is in public preview and subject to change.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListConnectorsV2 service method.</param>
         /// 
@@ -7972,7 +8110,7 @@ namespace Amazon.SecurityHub
 
         /// <summary>
         /// Grants permission to update a connectorV2 based on its id and input parameters. This
-        /// API is in preview release and subject to change.
+        /// API is in public preview and subject to change.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateConnectorV2 service method.</param>
         /// 

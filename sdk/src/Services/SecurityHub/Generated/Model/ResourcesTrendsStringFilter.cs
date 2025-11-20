@@ -30,31 +30,46 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteConnectorV2 operation.
-    /// Grants permission to delete a connectorV2. This API is in public preview and subject
-    /// to change.
+    /// A filter for string-based fields in resources trend data, such as resource type or
+    /// account ID.
     /// </summary>
-    public partial class DeleteConnectorV2Request : AmazonSecurityHubRequest
+    public partial class ResourcesTrendsStringFilter
     {
-        private string _connectorId;
+        private ResourcesTrendsStringField _fieldName;
+        private StringFilter _filter;
 
         /// <summary>
-        /// Gets and sets the property ConnectorId. 
+        /// Gets and sets the property FieldName. 
         /// <para>
-        /// The UUID of the connectorV2 to identify connectorV2 resource.
+        /// The name of the resources field to filter on, such as resourceType, accountId, or
+        /// region.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public string ConnectorId
+        public ResourcesTrendsStringField FieldName
         {
-            get { return this._connectorId; }
-            set { this._connectorId = value; }
+            get { return this._fieldName; }
+            set { this._fieldName = value; }
         }
 
-        // Check to see if ConnectorId property is set
-        internal bool IsSetConnectorId()
+        // Check to see if FieldName property is set
+        internal bool IsSetFieldName()
         {
-            return this._connectorId != null;
+            return this._fieldName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Filter.
+        /// </summary>
+        public StringFilter Filter
+        {
+            get { return this._filter; }
+            set { this._filter = value; }
+        }
+
+        // Check to see if Filter property is set
+        internal bool IsSetFilter()
+        {
+            return this._filter != null;
         }
 
     }

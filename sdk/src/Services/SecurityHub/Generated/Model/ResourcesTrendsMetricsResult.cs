@@ -30,52 +30,51 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// Container for the parameters to the ConnectorRegistrationsV2 operation.
-    /// Grants permission to complete the authorization based on input parameters. This API
-    /// is in public preview and subject to change.
+    /// Contains the resource trend metrics data for a specific time point in the requested
+    /// time period.
     /// </summary>
-    public partial class ConnectorRegistrationsV2Request : AmazonSecurityHubRequest
+    public partial class ResourcesTrendsMetricsResult
     {
-        private string _authCode;
-        private string _authState;
+        private DateTime? _timestamp;
+        private ResourcesTrendsValues _trendsValues;
 
         /// <summary>
-        /// Gets and sets the property AuthCode. 
+        /// Gets and sets the property Timestamp. 
         /// <para>
-        /// The authCode retrieved from authUrl to complete the OAuth 2.0 authorization code flow.
+        /// The timestamp for this data point in the resources trend metrics.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public string AuthCode
+        public DateTime Timestamp
         {
-            get { return this._authCode; }
-            set { this._authCode = value; }
+            get { return this._timestamp.GetValueOrDefault(); }
+            set { this._timestamp = value; }
         }
 
-        // Check to see if AuthCode property is set
-        internal bool IsSetAuthCode()
+        // Check to see if Timestamp property is set
+        internal bool IsSetTimestamp()
         {
-            return this._authCode != null;
+            return this._timestamp.HasValue; 
         }
 
         /// <summary>
-        /// Gets and sets the property AuthState. 
+        /// Gets and sets the property TrendsValues. 
         /// <para>
-        /// The authState retrieved from authUrl to complete the OAuth 2.0 authorization code
-        /// flow.
+        /// The resource trend metric values associated with this timestamp, including resource
+        /// counts.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public string AuthState
+        public ResourcesTrendsValues TrendsValues
         {
-            get { return this._authState; }
-            set { this._authState = value; }
+            get { return this._trendsValues; }
+            set { this._trendsValues = value; }
         }
 
-        // Check to see if AuthState property is set
-        internal bool IsSetAuthState()
+        // Check to see if TrendsValues property is set
+        internal bool IsSetTrendsValues()
         {
-            return this._authState != null;
+            return this._trendsValues != null;
         }
 
     }
