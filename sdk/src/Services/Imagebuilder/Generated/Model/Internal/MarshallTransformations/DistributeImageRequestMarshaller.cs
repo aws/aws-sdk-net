@@ -37,9 +37,9 @@ using ThirdParty.RuntimeBackports;
 namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateComponent Request Marshaller
+    /// DistributeImage Request Marshaller
     /// </summary>       
-    public class CreateComponentRequestMarshaller : IMarshaller<IRequest, CreateComponentRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class DistributeImageRequestMarshaller : IMarshaller<IRequest, DistributeImageRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -48,7 +48,7 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateComponentRequest)input);
+            return this.Marshall((DistributeImageRequest)input);
         }
 
         /// <summary>
@@ -56,14 +56,14 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateComponentRequest publicRequest)
+        public IRequest Marshall(DistributeImageRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Imagebuilder");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-12-02";
             request.HttpMethod = "PUT";
 
-            request.ResourcePath = "/CreateComponent";
+            request.ResourcePath = "/DistributeImage";
 #if !NETFRAMEWORK
             using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
             using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
@@ -73,12 +73,6 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
-            if(publicRequest.IsSetChangeDescription())
-            {
-                context.Writer.WritePropertyName("changeDescription");
-                context.Writer.WriteStringValue(publicRequest.ChangeDescription);
-            }
-
             if(publicRequest.IsSetClientToken())
             {
                 context.Writer.WritePropertyName("clientToken");
@@ -90,57 +84,33 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("clientToken");
                 context.Writer.WriteStringValue(Guid.NewGuid().ToString());
             }
-            if(publicRequest.IsSetData())
+            if(publicRequest.IsSetDistributionConfigurationArn())
             {
-                context.Writer.WritePropertyName("data");
-                context.Writer.WriteStringValue(publicRequest.Data);
+                context.Writer.WritePropertyName("distributionConfigurationArn");
+                context.Writer.WriteStringValue(publicRequest.DistributionConfigurationArn);
             }
 
-            if(publicRequest.IsSetDescription())
+            if(publicRequest.IsSetExecutionRole())
             {
-                context.Writer.WritePropertyName("description");
-                context.Writer.WriteStringValue(publicRequest.Description);
+                context.Writer.WritePropertyName("executionRole");
+                context.Writer.WriteStringValue(publicRequest.ExecutionRole);
             }
 
-            if(publicRequest.IsSetDryRun())
+            if(publicRequest.IsSetLoggingConfiguration())
             {
-                context.Writer.WritePropertyName("dryRun");
-                context.Writer.WriteBooleanValue(publicRequest.DryRun.Value);
+                context.Writer.WritePropertyName("loggingConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ImageLoggingConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.LoggingConfiguration, context);
+
+                context.Writer.WriteEndObject();
             }
 
-            if(publicRequest.IsSetKmsKeyId())
+            if(publicRequest.IsSetSourceImage())
             {
-                context.Writer.WritePropertyName("kmsKeyId");
-                context.Writer.WriteStringValue(publicRequest.KmsKeyId);
-            }
-
-            if(publicRequest.IsSetName())
-            {
-                context.Writer.WritePropertyName("name");
-                context.Writer.WriteStringValue(publicRequest.Name);
-            }
-
-            if(publicRequest.IsSetPlatform())
-            {
-                context.Writer.WritePropertyName("platform");
-                context.Writer.WriteStringValue(publicRequest.Platform);
-            }
-
-            if(publicRequest.IsSetSemanticVersion())
-            {
-                context.Writer.WritePropertyName("semanticVersion");
-                context.Writer.WriteStringValue(publicRequest.SemanticVersion);
-            }
-
-            if(publicRequest.IsSetSupportedOsVersions())
-            {
-                context.Writer.WritePropertyName("supportedOsVersions");
-                context.Writer.WriteStartArray();
-                foreach(var publicRequestSupportedOsVersionsListValue in publicRequest.SupportedOsVersions)
-                {
-                        context.Writer.WriteStringValue(publicRequestSupportedOsVersionsListValue);
-                }
-                context.Writer.WriteEndArray();
+                context.Writer.WritePropertyName("sourceImage");
+                context.Writer.WriteStringValue(publicRequest.SourceImage);
             }
 
             if(publicRequest.IsSetTags())
@@ -157,12 +127,6 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
-            if(publicRequest.IsSetUri())
-            {
-                context.Writer.WritePropertyName("uri");
-                context.Writer.WriteStringValue(publicRequest.Uri);
-            }
-
             writer.WriteEndObject();
             writer.Flush();
             // ToArray() must be called here because aspects of sigv4 signing require a byte array
@@ -176,9 +140,9 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateComponentRequestMarshaller _instance = new CreateComponentRequestMarshaller();        
+        private static DistributeImageRequestMarshaller _instance = new DistributeImageRequestMarshaller();        
 
-        internal static CreateComponentRequestMarshaller GetInstance()
+        internal static DistributeImageRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -186,7 +150,7 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateComponentRequestMarshaller Instance
+        public static DistributeImageRequestMarshaller Instance
         {
             get
             {

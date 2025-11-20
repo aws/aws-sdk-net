@@ -37,9 +37,9 @@ using ThirdParty.RuntimeBackports;
 namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateWorkflow Request Marshaller
+    /// RetryImage Request Marshaller
     /// </summary>       
-    public class CreateWorkflowRequestMarshaller : IMarshaller<IRequest, CreateWorkflowRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class RetryImageRequestMarshaller : IMarshaller<IRequest, RetryImageRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -48,7 +48,7 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateWorkflowRequest)input);
+            return this.Marshall((RetryImageRequest)input);
         }
 
         /// <summary>
@@ -56,14 +56,14 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateWorkflowRequest publicRequest)
+        public IRequest Marshall(RetryImageRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Imagebuilder");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-12-02";
             request.HttpMethod = "PUT";
 
-            request.ResourcePath = "/CreateWorkflow";
+            request.ResourcePath = "/RetryImage";
 #if !NETFRAMEWORK
             using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
             using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
@@ -73,12 +73,6 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
-            if(publicRequest.IsSetChangeDescription())
-            {
-                context.Writer.WritePropertyName("changeDescription");
-                context.Writer.WriteStringValue(publicRequest.ChangeDescription);
-            }
-
             if(publicRequest.IsSetClientToken())
             {
                 context.Writer.WritePropertyName("clientToken");
@@ -90,66 +84,10 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("clientToken");
                 context.Writer.WriteStringValue(Guid.NewGuid().ToString());
             }
-            if(publicRequest.IsSetData())
+            if(publicRequest.IsSetImageBuildVersionArn())
             {
-                context.Writer.WritePropertyName("data");
-                context.Writer.WriteStringValue(publicRequest.Data);
-            }
-
-            if(publicRequest.IsSetDescription())
-            {
-                context.Writer.WritePropertyName("description");
-                context.Writer.WriteStringValue(publicRequest.Description);
-            }
-
-            if(publicRequest.IsSetDryRun())
-            {
-                context.Writer.WritePropertyName("dryRun");
-                context.Writer.WriteBooleanValue(publicRequest.DryRun.Value);
-            }
-
-            if(publicRequest.IsSetKmsKeyId())
-            {
-                context.Writer.WritePropertyName("kmsKeyId");
-                context.Writer.WriteStringValue(publicRequest.KmsKeyId);
-            }
-
-            if(publicRequest.IsSetName())
-            {
-                context.Writer.WritePropertyName("name");
-                context.Writer.WriteStringValue(publicRequest.Name);
-            }
-
-            if(publicRequest.IsSetSemanticVersion())
-            {
-                context.Writer.WritePropertyName("semanticVersion");
-                context.Writer.WriteStringValue(publicRequest.SemanticVersion);
-            }
-
-            if(publicRequest.IsSetTags())
-            {
-                context.Writer.WritePropertyName("tags");
-                context.Writer.WriteStartObject();
-                foreach (var publicRequestTagsKvp in publicRequest.Tags)
-                {
-                    context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                    var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                        context.Writer.WriteStringValue(publicRequestTagsValue);
-                }
-                context.Writer.WriteEndObject();
-            }
-
-            if(publicRequest.IsSetType())
-            {
-                context.Writer.WritePropertyName("type");
-                context.Writer.WriteStringValue(publicRequest.Type);
-            }
-
-            if(publicRequest.IsSetUri())
-            {
-                context.Writer.WritePropertyName("uri");
-                context.Writer.WriteStringValue(publicRequest.Uri);
+                context.Writer.WritePropertyName("imageBuildVersionArn");
+                context.Writer.WriteStringValue(publicRequest.ImageBuildVersionArn);
             }
 
             writer.WriteEndObject();
@@ -165,9 +103,9 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateWorkflowRequestMarshaller _instance = new CreateWorkflowRequestMarshaller();        
+        private static RetryImageRequestMarshaller _instance = new RetryImageRequestMarshaller();        
 
-        internal static CreateWorkflowRequestMarshaller GetInstance()
+        internal static RetryImageRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -175,7 +113,7 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateWorkflowRequestMarshaller Instance
+        public static RetryImageRequestMarshaller Instance
         {
             get
             {

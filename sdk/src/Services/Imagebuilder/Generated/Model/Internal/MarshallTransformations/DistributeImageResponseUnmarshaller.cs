@@ -35,9 +35,9 @@ using Amazon.Util;
 namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CreateImageRecipe operation
+    /// Response Unmarshaller for DistributeImage operation
     /// </summary>  
-    public class CreateImageRecipeResponseUnmarshaller : JsonResponseUnmarshaller
+    public class DistributeImageResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,7 +46,7 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            CreateImageRecipeResponse response = new CreateImageRecipeResponse();
+            DistributeImageResponse response = new DistributeImageResponse();
             StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
             context.Read(ref reader);
             int targetDepth = context.CurrentDepth;
@@ -58,22 +58,10 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
                     response.ClientToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("imageRecipeArn", targetDepth))
+                if (context.TestExpression("imageBuildVersionArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.ImageRecipeArn = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("latestVersionReferences", targetDepth))
-                {
-                    var unmarshaller = LatestVersionReferencesUnmarshaller.Instance;
-                    response.LatestVersionReferences = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("requestId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.RequestId = unmarshaller.Unmarshall(context, ref reader);
+                    response.ImageBuildVersionArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -101,6 +89,10 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
             using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, context.ResponseData))
             {
                 StreamingUtf8JsonReader readerCopy = new StreamingUtf8JsonReader(streamCopy);
+                if (errorResponse.Code != null && errorResponse.Code.Equals("AccessDeniedException"))
+                {
+                    return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("CallRateLimitExceededException"))
                 {
                     return CallRateLimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
@@ -121,17 +113,13 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
                 {
                     return InvalidRequestExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidVersionNumberException"))
-                {
-                    return InvalidVersionNumberExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceAlreadyExistsException"))
-                {
-                    return ResourceAlreadyExistsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceInUseException"))
                 {
                     return ResourceInUseExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
+                {
+                    return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceException"))
                 {
@@ -145,13 +133,17 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
                 {
                     return ServiceUnavailableExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("TooManyRequestsException"))
+                {
+                    return TooManyRequestsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                }
             }
             return new AmazonImagebuilderException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static CreateImageRecipeResponseUnmarshaller _instance = new CreateImageRecipeResponseUnmarshaller();        
+        private static DistributeImageResponseUnmarshaller _instance = new DistributeImageResponseUnmarshaller();        
 
-        internal static CreateImageRecipeResponseUnmarshaller GetInstance()
+        internal static DistributeImageResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -159,7 +151,7 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateImageRecipeResponseUnmarshaller Instance
+        public static DistributeImageResponseUnmarshaller Instance
         {
             get
             {
