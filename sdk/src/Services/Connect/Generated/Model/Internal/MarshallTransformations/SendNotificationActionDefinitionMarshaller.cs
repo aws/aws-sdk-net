@@ -66,6 +66,17 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.DeliveryMethod);
             }
 
+            if(requestObject.IsSetExclusion())
+            {
+                context.Writer.WritePropertyName("Exclusion");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = NotificationRecipientTypeMarshaller.Instance;
+                marshaller.Marshall(requestObject.Exclusion, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetRecipient())
             {
                 context.Writer.WritePropertyName("Recipient");
