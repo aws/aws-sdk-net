@@ -87,6 +87,10 @@
     <pattern>[a-z0-9]{26}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DSQL.Model.GetVpcEndpointServiceNameResponse.ClusterVpcEndpoint</property>
+    <pattern>[a-zA-Z0-9.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DSQL.Model.GetVpcEndpointServiceNameResponse.ServiceName</property>
     <min>1</min>
     <max>128</max>
