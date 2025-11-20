@@ -15,6 +15,7 @@
 
 using Amazon.S3.Model;
 using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -110,7 +111,7 @@ namespace Amazon.S3.Transfer.Internal
         /// Executes a command and optionally cancels remaining work on failure.
         /// If cancelOnFailure is false, exceptions are captured into the provided errors list (if any) and suppressed.
         /// </summary>
-        protected static async Task ExecuteCommandAsync<T>(BaseCommand<T> command, CancellationTokenSource internalCts, SemaphoreSlim throttler, bool cancelOnFailure, List<Exception> errors = null) where T : class
+        protected static async Task ExecuteCommandAsync<T>(BaseCommand<T> command, CancellationTokenSource internalCts, SemaphoreSlim throttler, bool cancelOnFailure, ConcurrentBag<Exception> errors = null) where T : class
         {
             try
             {
@@ -119,29 +120,21 @@ namespace Amazon.S3.Transfer.Internal
             }
             catch (Exception exception)
             {
-                if (!(exception is OperationCanceledException))
+                if (cancelOnFailure)
                 {
-                    if (cancelOnFailure)
-                    {
-                        // Cancel scheduling any more tasks and cancel other requests.
-                        internalCts.Cancel();
-                    }
-
-                    if (!cancelOnFailure)
-                    {
-                        if (errors != null)
-                        {
-                            lock (errors)
-                            {
-                                errors.Add(exception);
-                            }
-                        }
-                        // Swallow exception to allow other tasks to continue when not cancelling on failure.
-                        return;
-                    }
+                    // Cancel scheduling any more tasks and cancel other requests.
+                    internalCts.Cancel();
+                    throw;
                 }
-                // For cancelOnFailure or OperationCanceledException, rethrow to preserve original behavior.
-                throw;
+                else
+                {
+                    if (errors != null)
+                    {
+                        errors.Add(exception);
+                    }
+                    // Swallow exception to allow other tasks to continue when not cancelling on failure.
+                    return;
+                }
             }
             finally
             {

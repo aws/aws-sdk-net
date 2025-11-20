@@ -16,6 +16,7 @@
 using System;
 using System.Collections.Generic;
 using Amazon.Runtime;
+using AWSSDK.S3.Transfer.Model;
 
 namespace Amazon.S3.Transfer
 {
@@ -36,35 +37,13 @@ namespace Amazon.S3.Transfer
 
         /// <summary>
         /// The collection of exceptions encountered when downloading individual objects.
-        /// Only populated when the FailurePolicy is CONTINUE_ON_FAILURE.
+        /// Only populated when the <see cref="FailurePolicy"/> is <see cref="FailurePolicy.ContinueOnFailure"/>.
         /// </summary>
         public IList<Exception> Errors { get; set; }
 
         /// <summary>
         /// Overall result of the directory download operation.
-        /// SUCCESS: All objects downloaded.
-        /// PARTIAL_SUCCESS: Some objects downloaded, some failed (CONTINUE_ON_FAILURE policy).
-        /// FAILURE: All attempted objects failed (CONTINUE_ON_FAILURE policy).
         /// </summary>
-        public TransferUtilityDownloadDirectoryResult Result { get; set; } = TransferUtilityDownloadDirectoryResult.SUCCESS;
-    }
-
-    /// <summary>
-    /// Overall outcome of a directory download operation.
-    /// </summary>
-    public enum TransferUtilityDownloadDirectoryResult
-    {
-        /// <summary>
-        /// All objects downloaded successfully.
-        /// </summary>
-        SUCCESS,
-        /// <summary>
-        /// Some objects succeeded and some failed.
-        /// </summary>
-        PARTIAL_SUCCESS,
-        /// <summary>
-        /// All attempted objects failed.
-        /// </summary>
-        FAILURE
+        public DirectoryResult Result { get; set; }
     }
 }

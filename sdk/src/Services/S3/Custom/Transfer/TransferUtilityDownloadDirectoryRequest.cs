@@ -57,7 +57,7 @@ namespace Amazon.S3.Transfer
         private string ifMatch;
         private string ifNoneMatch;
         private ResponseHeaderOverrides responseHeaders;
-        private FailurePolicy failurePolicy = FailurePolicy.ABORT_ON_FAILURE;
+        private FailurePolicy failurePolicy = FailurePolicy.AbortOnFailure;
 
         /// <summary>
         /// Gets or sets the failure policy for the download directory operation.

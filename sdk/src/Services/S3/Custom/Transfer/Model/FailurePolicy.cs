@@ -8,11 +8,11 @@
         /// <summary>
         /// Abort the directory transfer operation on failure.
         /// </summary>
-        ABORT_ON_FAILURE,
+        AbortOnFailure,
 
         /// <summary>
         /// Continue the directory transfer operation despite failures.
         /// </summary>
-        CONTINUE_ON_FAILURE
+        ContinueOnFailure
     }
 }

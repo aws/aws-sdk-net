@@ -17,6 +17,7 @@ using Amazon.S3.Model;
 using Amazon.S3.Util;
 using AWSSDK.S3.Transfer.Model;
 using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -77,8 +78,8 @@ namespace Amazon.S3.Transfer.Internal
                 internalCts = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
                 var pendingTasks = new List<Task>();
                 // Collect errors when continuing on failure
-                var errors = _failurePolicy == FailurePolicy.CONTINUE_ON_FAILURE ? new List<Exception>() : null;
-                bool cancelOnFailure = _failurePolicy != FailurePolicy.CONTINUE_ON_FAILURE;
+                var errors = _failurePolicy == FailurePolicy.ContinueOnFailure ? new ConcurrentBag<Exception>() : null;
+                bool cancelOnFailure = _failurePolicy != FailurePolicy.ContinueOnFailure;
 
                 foreach (S3Object s3o in objs)
                 {
@@ -110,7 +111,33 @@ namespace Amazon.S3.Transfer.Internal
 
                     this._currentFile = s3o.Key.Substring(prefixLength);
 
-                    var downloadRequest = ConstructTransferUtilityDownloadRequest(s3o, prefixLength);
+                    TransferUtilityDownloadRequest downloadRequest;
+                    try
+                    {
+                        downloadRequest = ConstructTransferUtilityDownloadRequest(s3o, prefixLength);
+                    }
+                    catch (Exception ex)
+                    {
+                        if (cancelOnFailure)
+                        {
+                            // Cancel scheduling any more tasks and cancel other requests.
+                            internalCts.Cancel();
+                            throw;
+                        }
+                        else
+                        {
+                            if (errors != null)
+                            {
+                                errors.Add(ex);
+                            }
+                            // Swallow exception to allow other tasks to continue when not cancelling on failure.
+                            continue;
+                        }
+                    }
+                    finally
+                    {
+                        asyncThrottler.Release();
+                    }
                     var command = new DownloadCommand(this._s3Client, downloadRequest);
 
                     // Use failure policy aware execution
@@ -121,9 +148,7 @@ namespace Amazon.S3.Transfer.Internal
                     pendingTasks.Add(task);
                 }
 
-                TransferUtilityDownloadDirectoryResponse response;
-
-                if (_failurePolicy == FailurePolicy.CONTINUE_ON_FAILURE)
+                if (_failurePolicy == FailurePolicy.ContinueOnFailure)
                 {
                     // Drain all tasks; exceptions were suppressed and collected
                     while (pendingTasks.Count > 0)
@@ -132,52 +157,24 @@ namespace Amazon.S3.Transfer.Internal
                         await completed.ConfigureAwait(false); // will not throw because we suppressed
                         pendingTasks.Remove(completed);
                     }
-
-                    // If any errors occurred, throw an aggregate exception capturing them but after all downloads attempted
-                    if (errors != null && errors.Count > 0)
-                    {
-                        long failed = errors.Count;
-                        long succeeded = _numberOfFilesDownloaded;
-                        var result = TransferUtilityDownloadDirectoryResult.SUCCESS;
-                        if (failed > 0 && succeeded > 0)
-                            result = TransferUtilityDownloadDirectoryResult.PARTIAL_SUCCESS;
-                        else if (failed > 0 && succeeded == 0)
-                            result = TransferUtilityDownloadDirectoryResult.FAILURE;
-
-                        response = new TransferUtilityDownloadDirectoryResponse
-                        {
-                            ObjectsDownloaded = succeeded,
-                            ObjectsFailed = failed,
-                            Errors = errors,
-                            Result = result
-                        };
-                    }
-                    else
-                    {
-                        response = new TransferUtilityDownloadDirectoryResponse
-                        {
-                            ObjectsDownloaded = _numberOfFilesDownloaded,
-                            ObjectsFailed = 0,
-                            Errors = null,
-                            Result = TransferUtilityDownloadDirectoryResult.SUCCESS
-                        };
-                    }
                 }
                 else
                 {
                     await WhenAllOrFirstExceptionAsync(pendingTasks, cancellationToken)
                         .ConfigureAwait(continueOnCapturedContext: false);
-
-                    response = new TransferUtilityDownloadDirectoryResponse
-                    {
-                        ObjectsDownloaded = _numberOfFilesDownloaded,
-                        ObjectsFailed = 0,
-                        Errors = null,
-                        Result = TransferUtilityDownloadDirectoryResult.SUCCESS
-                    };
                 }
 
-                return response;
+                return new TransferUtilityDownloadDirectoryResponse
+                {
+                    ObjectsDownloaded = _numberOfFilesDownloaded,
+                    ObjectsFailed = errors?.Count ?? 0,
+                    Errors = errors?.ToList(),
+                    Result = (errors is null || errors.Count == 0) ?
+                        DirectoryResult.Success :
+                        (_numberOfFilesDownloaded > 0 ?
+                            DirectoryResult.PartialSuccess :
+                            DirectoryResult.Failure)
+                };
             }
             finally
             {
