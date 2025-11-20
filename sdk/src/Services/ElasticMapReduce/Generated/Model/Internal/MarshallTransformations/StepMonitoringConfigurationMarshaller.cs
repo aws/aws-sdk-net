@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// StepConfig Marshaller
+    /// StepMonitoringConfiguration Marshaller
     /// </summary>
-    public class StepConfigMarshaller : IRequestMarshaller<StepConfig, JsonMarshallerContext> 
+    public class StepMonitoringConfigurationMarshaller : IRequestMarshaller<StepMonitoringConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,40 +42,17 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(StepConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(StepMonitoringConfiguration requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetActionOnFailure())
+            if(requestObject.IsSetS3MonitoringConfiguration())
             {
-                context.Writer.WritePropertyName("ActionOnFailure");
-                context.Writer.WriteStringValue(requestObject.ActionOnFailure);
-            }
-
-            if(requestObject.IsSetHadoopJarStep())
-            {
-                context.Writer.WritePropertyName("HadoopJarStep");
+                context.Writer.WritePropertyName("S3MonitoringConfiguration");
                 context.Writer.WriteStartObject();
 
-                var marshaller = HadoopJarStepConfigMarshaller.Instance;
-                marshaller.Marshall(requestObject.HadoopJarStep, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(requestObject.IsSetName())
-            {
-                context.Writer.WritePropertyName("Name");
-                context.Writer.WriteStringValue(requestObject.Name);
-            }
-
-            if(requestObject.IsSetStepMonitoringConfiguration())
-            {
-                context.Writer.WritePropertyName("StepMonitoringConfiguration");
-                context.Writer.WriteStartObject();
-
-                var marshaller = StepMonitoringConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.StepMonitoringConfiguration, context);
+                var marshaller = S3MonitoringConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.S3MonitoringConfiguration, context);
 
                 context.Writer.WriteEndObject();
             }
@@ -85,7 +62,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static StepConfigMarshaller Instance = new StepConfigMarshaller();
+        public readonly static StepMonitoringConfigurationMarshaller Instance = new StepMonitoringConfigurationMarshaller();
 
     }
 }

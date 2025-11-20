@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for StepConfig Object
+    /// Response Unmarshaller for StepMonitoringConfiguration Object
     /// </summary>  
-    public class StepConfigUnmarshaller : IJsonUnmarshaller<StepConfig, JsonUnmarshallerContext>
+    public class StepMonitoringConfigurationUnmarshaller : IJsonUnmarshaller<StepMonitoringConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public StepConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public StepMonitoringConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            StepConfig unmarshalledObject = new StepConfig();
+            StepMonitoringConfiguration unmarshalledObject = new StepMonitoringConfiguration();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,28 +56,10 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ActionOnFailure", targetDepth))
+                if (context.TestExpression("S3MonitoringConfiguration", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ActionOnFailure = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("HadoopJarStep", targetDepth))
-                {
-                    var unmarshaller = HadoopJarStepConfigUnmarshaller.Instance;
-                    unmarshalledObject.HadoopJarStep = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Name", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("StepMonitoringConfiguration", targetDepth))
-                {
-                    var unmarshaller = StepMonitoringConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.StepMonitoringConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = S3MonitoringConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.S3MonitoringConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -85,12 +67,12 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
         }
 
 
-        private static StepConfigUnmarshaller _instance = new StepConfigUnmarshaller();        
+        private static StepMonitoringConfigurationUnmarshaller _instance = new StepMonitoringConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static StepConfigUnmarshaller Instance
+        public static StepMonitoringConfigurationUnmarshaller Instance
         {
             get
             {
