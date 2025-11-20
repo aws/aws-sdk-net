@@ -37,9 +37,9 @@ using ThirdParty.RuntimeBackports;
 namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ListServices Request Marshaller
+    /// UpdateExpressGatewayService Request Marshaller
     /// </summary>       
-    public class ListServicesRequestMarshaller : IMarshaller<IRequest, ListServicesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class UpdateExpressGatewayServiceRequestMarshaller : IMarshaller<IRequest, UpdateExpressGatewayServiceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -48,7 +48,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((ListServicesRequest)input);
+            return this.Marshall((UpdateExpressGatewayServiceRequest)input);
         }
 
         /// <summary>
@@ -56,10 +56,10 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(ListServicesRequest publicRequest)
+        public IRequest Marshall(UpdateExpressGatewayServiceRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ECS");
-            string target = "AmazonEC2ContainerServiceV20141113.ListServices";
+            string target = "AmazonEC2ContainerServiceV20141113.UpdateExpressGatewayService";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2014-11-13";
@@ -75,40 +75,73 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
-            if(publicRequest.IsSetCluster())
+            if(publicRequest.IsSetCpu())
             {
-                context.Writer.WritePropertyName("cluster");
-                context.Writer.WriteStringValue(publicRequest.Cluster);
+                context.Writer.WritePropertyName("cpu");
+                context.Writer.WriteStringValue(publicRequest.Cpu);
             }
 
-            if(publicRequest.IsSetLaunchType())
+            if(publicRequest.IsSetExecutionRoleArn())
             {
-                context.Writer.WritePropertyName("launchType");
-                context.Writer.WriteStringValue(publicRequest.LaunchType);
+                context.Writer.WritePropertyName("executionRoleArn");
+                context.Writer.WriteStringValue(publicRequest.ExecutionRoleArn);
             }
 
-            if(publicRequest.IsSetMaxResults())
+            if(publicRequest.IsSetHealthCheckPath())
             {
-                context.Writer.WritePropertyName("maxResults");
-                context.Writer.WriteNumberValue(publicRequest.MaxResults.Value);
+                context.Writer.WritePropertyName("healthCheckPath");
+                context.Writer.WriteStringValue(publicRequest.HealthCheckPath);
             }
 
-            if(publicRequest.IsSetNextToken())
+            if(publicRequest.IsSetMemory())
             {
-                context.Writer.WritePropertyName("nextToken");
-                context.Writer.WriteStringValue(publicRequest.NextToken);
+                context.Writer.WritePropertyName("memory");
+                context.Writer.WriteStringValue(publicRequest.Memory);
             }
 
-            if(publicRequest.IsSetResourceManagementType())
+            if(publicRequest.IsSetNetworkConfiguration())
             {
-                context.Writer.WritePropertyName("resourceManagementType");
-                context.Writer.WriteStringValue(publicRequest.ResourceManagementType);
+                context.Writer.WritePropertyName("networkConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ExpressGatewayServiceNetworkConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.NetworkConfiguration, context);
+
+                context.Writer.WriteEndObject();
             }
 
-            if(publicRequest.IsSetSchedulingStrategy())
+            if(publicRequest.IsSetPrimaryContainer())
             {
-                context.Writer.WritePropertyName("schedulingStrategy");
-                context.Writer.WriteStringValue(publicRequest.SchedulingStrategy);
+                context.Writer.WritePropertyName("primaryContainer");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ExpressGatewayContainerMarshaller.Instance;
+                marshaller.Marshall(publicRequest.PrimaryContainer, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetScalingTarget())
+            {
+                context.Writer.WritePropertyName("scalingTarget");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ExpressGatewayScalingTargetMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ScalingTarget, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetServiceArn())
+            {
+                context.Writer.WritePropertyName("serviceArn");
+                context.Writer.WriteStringValue(publicRequest.ServiceArn);
+            }
+
+            if(publicRequest.IsSetTaskRoleArn())
+            {
+                context.Writer.WritePropertyName("taskRoleArn");
+                context.Writer.WriteStringValue(publicRequest.TaskRoleArn);
             }
 
             writer.WriteEndObject();
@@ -124,9 +157,9 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static ListServicesRequestMarshaller _instance = new ListServicesRequestMarshaller();        
+        private static UpdateExpressGatewayServiceRequestMarshaller _instance = new UpdateExpressGatewayServiceRequestMarshaller();        
 
-        internal static ListServicesRequestMarshaller GetInstance()
+        internal static UpdateExpressGatewayServiceRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -134,7 +167,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ListServicesRequestMarshaller Instance
+        public static UpdateExpressGatewayServiceRequestMarshaller Instance
         {
             get
             {

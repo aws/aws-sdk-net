@@ -37,9 +37,9 @@ using ThirdParty.RuntimeBackports;
 namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ListServices Request Marshaller
+    /// DeleteExpressGatewayService Request Marshaller
     /// </summary>       
-    public class ListServicesRequestMarshaller : IMarshaller<IRequest, ListServicesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class DeleteExpressGatewayServiceRequestMarshaller : IMarshaller<IRequest, DeleteExpressGatewayServiceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -48,7 +48,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((ListServicesRequest)input);
+            return this.Marshall((DeleteExpressGatewayServiceRequest)input);
         }
 
         /// <summary>
@@ -56,10 +56,10 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(ListServicesRequest publicRequest)
+        public IRequest Marshall(DeleteExpressGatewayServiceRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ECS");
-            string target = "AmazonEC2ContainerServiceV20141113.ListServices";
+            string target = "AmazonEC2ContainerServiceV20141113.DeleteExpressGatewayService";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2014-11-13";
@@ -75,40 +75,10 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
-            if(publicRequest.IsSetCluster())
+            if(publicRequest.IsSetServiceArn())
             {
-                context.Writer.WritePropertyName("cluster");
-                context.Writer.WriteStringValue(publicRequest.Cluster);
-            }
-
-            if(publicRequest.IsSetLaunchType())
-            {
-                context.Writer.WritePropertyName("launchType");
-                context.Writer.WriteStringValue(publicRequest.LaunchType);
-            }
-
-            if(publicRequest.IsSetMaxResults())
-            {
-                context.Writer.WritePropertyName("maxResults");
-                context.Writer.WriteNumberValue(publicRequest.MaxResults.Value);
-            }
-
-            if(publicRequest.IsSetNextToken())
-            {
-                context.Writer.WritePropertyName("nextToken");
-                context.Writer.WriteStringValue(publicRequest.NextToken);
-            }
-
-            if(publicRequest.IsSetResourceManagementType())
-            {
-                context.Writer.WritePropertyName("resourceManagementType");
-                context.Writer.WriteStringValue(publicRequest.ResourceManagementType);
-            }
-
-            if(publicRequest.IsSetSchedulingStrategy())
-            {
-                context.Writer.WritePropertyName("schedulingStrategy");
-                context.Writer.WriteStringValue(publicRequest.SchedulingStrategy);
+                context.Writer.WritePropertyName("serviceArn");
+                context.Writer.WriteStringValue(publicRequest.ServiceArn);
             }
 
             writer.WriteEndObject();
@@ -124,9 +94,9 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static ListServicesRequestMarshaller _instance = new ListServicesRequestMarshaller();        
+        private static DeleteExpressGatewayServiceRequestMarshaller _instance = new DeleteExpressGatewayServiceRequestMarshaller();        
 
-        internal static ListServicesRequestMarshaller GetInstance()
+        internal static DeleteExpressGatewayServiceRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -134,7 +104,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ListServicesRequestMarshaller Instance
+        public static DeleteExpressGatewayServiceRequestMarshaller Instance
         {
             get
             {
