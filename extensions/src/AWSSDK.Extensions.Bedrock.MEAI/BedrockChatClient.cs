@@ -1040,7 +1040,6 @@ internal sealed partial class BedrockChatClient : IChatClient
         return Encoding.UTF8.GetString(stream.ToArray());
     }
 
-
     /// <summary>Creates an <see cref="InferenceConfiguration"/> from the specified options.</summary>
     private static InferenceConfiguration CreateInferenceConfiguration(InferenceConfiguration config, ChatOptions? options)
     {
