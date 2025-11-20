@@ -68,18 +68,23 @@ namespace Amazon.Organizations.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
+    /// LEGACY_PERMISSIONS_STILL_IN_USE: Your organization must migrate to use the new IAM
+    /// fine-grained actions for billing, cost management, and accounts.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     /// ORGANIZATION_ALREADY_HAS_ALL_FEATURES: The handshake request is invalid because the
     /// organization has already enabled all features.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// ORGANIZATION_IS_ALREADY_PENDING_ALL_FEATURES_MIGRATION: The handshake request is invalid
-    /// because the organization has already started the process to enable all features.
+    /// ORGANIZATION_FROM_DIFFERENT_SELLER_OF_RECORD: The request failed because the account
+    /// is from a different marketplace than the accounts in the organization.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// ORGANIZATION_FROM_DIFFERENT_SELLER_OF_RECORD: The request failed because the account
-    /// is from a different marketplace than the accounts in the organization.
+    /// ORGANIZATION_IS_ALREADY_PENDING_ALL_FEATURES_MIGRATION: The handshake request is invalid
+    /// because the organization has already started the process to enable all features.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -90,6 +95,20 @@ namespace Amazon.Organizations.Model
     /// <para>
     /// PAYMENT_INSTRUMENT_REQUIRED: You can't complete the operation with an account that
     /// doesn't have a payment instrument, such as a credit card, associated with it.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// RESPONSIBILITY_TRANSFER_ALREADY_EXISTS: You cannot perform this operation with the
+    /// current transfer.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// SOURCE_AND_TARGET_CANNOT_MATCH: An account can't accept a transfer invitation if it
+    /// is both the sender and recipient of the invitation.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// UNUSED_PREPAYMENT_BALANCE: Your organization has an outstanding pre-payment balance.
     /// </para>
     ///  </li> </ul>
     /// </summary>

@@ -40,8 +40,7 @@ namespace Amazon.Organizations.Model
         /// <summary>
         /// Gets and sets the property Handshakes. 
         /// <para>
-        /// A list of <a>Handshake</a> objects with details about each of the handshakes that
-        /// is associated with the specified account.
+        /// An array of <c>Handshake</c>objects. Contains details for a handshake.
         /// </para>
         /// </summary>
         public List<Handshake> Handshakes

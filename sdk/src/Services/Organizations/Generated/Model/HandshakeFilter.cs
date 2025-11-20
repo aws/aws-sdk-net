@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Organizations.Model
 {
     /// <summary>
-    /// Specifies the criteria that are used to select the handshakes for the operation.
+    /// Contains the filter used to select the handshakes for an operation.
     /// </summary>
     public partial class HandshakeFilter
     {
@@ -40,7 +40,7 @@ namespace Amazon.Organizations.Model
         /// <summary>
         /// Gets and sets the property ActionType. 
         /// <para>
-        /// Specifies the type of handshake action.
+        /// The type of handshake.
         /// </para>
         ///  
         /// <para>
@@ -62,8 +62,7 @@ namespace Amazon.Organizations.Model
         /// <summary>
         /// Gets and sets the property ParentHandshakeId. 
         /// <para>
-        /// Specifies the parent handshake. Only used for handshake types that are a child of
-        /// another type.
+        /// The parent handshake. Only used for handshake types that are a child of another type.
         /// </para>
         ///  
         /// <para>

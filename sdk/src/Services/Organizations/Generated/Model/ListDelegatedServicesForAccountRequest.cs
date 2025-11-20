@@ -36,8 +36,8 @@ namespace Amazon.Organizations.Model
     /// 
     ///  
     /// <para>
-    /// This operation can be called only from the organization's management account or by
-    /// a member account that is a delegated administrator.
+    /// You can only call this operation from the management account or a member account that
+    /// is a delegated administrator.
     /// </para>
     /// </summary>
     public partial class ListDelegatedServicesForAccountRequest : AmazonOrganizationsRequest
@@ -68,14 +68,9 @@ namespace Amazon.Organizations.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The total number of results that you want included on each page of the response. If
-        /// you do not include this parameter, it defaults to a value that is specific to the
-        /// operation. If additional items exist beyond the maximum you specify, the <c>NextToken</c>
-        /// response element is present and has a value (is not null). Include that value as the
-        /// <c>NextToken</c> request parameter in the next call to the operation to get the next
-        /// part of the results. Note that Organizations might return fewer results than the maximum
-        /// even when there are more results available. You should check <c>NextToken</c> after
-        /// every operation to ensure that you receive all of the results.
+        /// The maximum number of items to return in the response. If more results exist than
+        /// the specified <c>MaxResults</c> value, a token is included in the response so that
+        /// you can retrieve the remaining results.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=20)]
