@@ -250,11 +250,11 @@ namespace Amazon.RedshiftDataAPIService.Model
         /// <summary>
         /// Gets and sets the property Sqls. 
         /// <para>
-        /// One or more SQL statements to run. <pre><c> The SQL statements are run as a single
-        /// transaction. They run serially in the order of the array. Subsequent SQL statements
-        /// don't start until the previous statement in the array completes. If any SQL statement
-        /// fails, then because they are run as one transaction, all work is rolled back.&lt;/p&gt;
-        /// </c></pre>
+        /// One or more SQL statements to run. The SQL statements are run as a single transaction.
+        /// They run serially in the order of the array. Subsequent SQL statements don't start
+        /// until the previous statement in the array completes. If any SQL statement fails, then
+        /// because they are run as one transaction, all work is rolled back.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=40)]
         public List<string> Sqls
@@ -276,7 +276,7 @@ namespace Amazon.RedshiftDataAPIService.Model
         /// to identify the query. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=500)]
+        [AWSProperty(Min=0, Max=2048)]
         public string StatementName
         {
             get { return this._statementName; }

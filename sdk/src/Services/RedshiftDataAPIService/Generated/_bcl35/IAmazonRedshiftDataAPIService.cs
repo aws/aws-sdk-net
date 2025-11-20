@@ -119,6 +119,9 @@ namespace Amazon.RedshiftDataAPIService
         /// <exception cref="Amazon.RedshiftDataAPIService.Model.InternalServerException">
         /// The Amazon Redshift Data API operation failed due to invalid input.
         /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.ResourceNotFoundException">
+        /// The Amazon Redshift Data API operation failed due to a missing resource.
+        /// </exception>
         /// <exception cref="Amazon.RedshiftDataAPIService.Model.ValidationException">
         /// The Amazon Redshift Data API operation failed due to invalid input.
         /// </exception>
@@ -174,6 +177,9 @@ namespace Amazon.RedshiftDataAPIService
         /// </exception>
         /// <exception cref="Amazon.RedshiftDataAPIService.Model.InternalServerException">
         /// The Amazon Redshift Data API operation failed due to invalid input.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.QueryTimeoutException">
+        /// The Amazon Redshift Data API operation failed due to timeout.
         /// </exception>
         /// <exception cref="Amazon.RedshiftDataAPIService.Model.ResourceNotFoundException">
         /// The Amazon Redshift Data API operation failed due to a missing resource.
@@ -333,6 +339,9 @@ namespace Amazon.RedshiftDataAPIService
         /// <exception cref="Amazon.RedshiftDataAPIService.Model.QueryTimeoutException">
         /// The Amazon Redshift Data API operation failed due to timeout.
         /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.ResourceNotFoundException">
+        /// The Amazon Redshift Data API operation failed due to a missing resource.
+        /// </exception>
         /// <exception cref="Amazon.RedshiftDataAPIService.Model.ValidationException">
         /// The Amazon Redshift Data API operation failed due to invalid input.
         /// </exception>
@@ -432,6 +441,9 @@ namespace Amazon.RedshiftDataAPIService
         /// </exception>
         /// <exception cref="Amazon.RedshiftDataAPIService.Model.InternalServerException">
         /// The Amazon Redshift Data API operation failed due to invalid input.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.ResourceNotFoundException">
+        /// The Amazon Redshift Data API operation failed due to a missing resource.
         /// </exception>
         /// <exception cref="Amazon.RedshiftDataAPIService.Model.ValidationException">
         /// The Amazon Redshift Data API operation failed due to invalid input.
@@ -647,6 +659,9 @@ namespace Amazon.RedshiftDataAPIService
         /// <exception cref="Amazon.RedshiftDataAPIService.Model.QueryTimeoutException">
         /// The Amazon Redshift Data API operation failed due to timeout.
         /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.ResourceNotFoundException">
+        /// The Amazon Redshift Data API operation failed due to a missing resource.
+        /// </exception>
         /// <exception cref="Amazon.RedshiftDataAPIService.Model.ValidationException">
         /// The Amazon Redshift Data API operation failed due to invalid input.
         /// </exception>
@@ -743,6 +758,9 @@ namespace Amazon.RedshiftDataAPIService
         /// <exception cref="Amazon.RedshiftDataAPIService.Model.QueryTimeoutException">
         /// The Amazon Redshift Data API operation failed due to timeout.
         /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.ResourceNotFoundException">
+        /// The Amazon Redshift Data API operation failed due to a missing resource.
+        /// </exception>
         /// <exception cref="Amazon.RedshiftDataAPIService.Model.ValidationException">
         /// The Amazon Redshift Data API operation failed due to invalid input.
         /// </exception>
@@ -804,6 +822,9 @@ namespace Amazon.RedshiftDataAPIService
         /// <returns>The response from the ListStatements service method, as returned by RedshiftDataAPIService.</returns>
         /// <exception cref="Amazon.RedshiftDataAPIService.Model.InternalServerException">
         /// The Amazon Redshift Data API operation failed due to invalid input.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.ResourceNotFoundException">
+        /// The Amazon Redshift Data API operation failed due to a missing resource.
         /// </exception>
         /// <exception cref="Amazon.RedshiftDataAPIService.Model.ValidationException">
         /// The Amazon Redshift Data API operation failed due to invalid input.
@@ -901,6 +922,9 @@ namespace Amazon.RedshiftDataAPIService
         /// </exception>
         /// <exception cref="Amazon.RedshiftDataAPIService.Model.QueryTimeoutException">
         /// The Amazon Redshift Data API operation failed due to timeout.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.ResourceNotFoundException">
+        /// The Amazon Redshift Data API operation failed due to a missing resource.
         /// </exception>
         /// <exception cref="Amazon.RedshiftDataAPIService.Model.ValidationException">
         /// The Amazon Redshift Data API operation failed due to invalid input.
