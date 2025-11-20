@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ImageOverrideConfiguration Object
+    /// Response Unmarshaller for SensitiveDataConfiguration Object
     /// </summary>  
-    public class ImageOverrideConfigurationUnmarshaller : IJsonUnmarshaller<ImageOverrideConfiguration, JsonUnmarshallerContext>
+    public class SensitiveDataConfigurationUnmarshaller : IJsonUnmarshaller<SensitiveDataConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ImageOverrideConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public SensitiveDataConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            ImageOverrideConfiguration unmarshalledObject = new ImageOverrideConfiguration();
+            SensitiveDataConfiguration unmarshalledObject = new SensitiveDataConfiguration();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,16 +56,22 @@ namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("modalityProcessing", targetDepth))
+                if (context.TestExpression("detectionMode", targetDepth))
                 {
-                    var unmarshaller = ModalityProcessingConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.ModalityProcessing = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DetectionMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sensitiveDataConfiguration", targetDepth))
+                if (context.TestExpression("detectionScope", targetDepth))
                 {
-                    var unmarshaller = SensitiveDataConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.SensitiveDataConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.DetectionScope = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("piiEntitiesConfiguration", targetDepth))
+                {
+                    var unmarshaller = PIIEntitiesConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.PiiEntitiesConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -73,12 +79,12 @@ namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
         }
 
 
-        private static ImageOverrideConfigurationUnmarshaller _instance = new ImageOverrideConfigurationUnmarshaller();        
+        private static SensitiveDataConfigurationUnmarshaller _instance = new SensitiveDataConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ImageOverrideConfigurationUnmarshaller Instance
+        public static SensitiveDataConfigurationUnmarshaller Instance
         {
             get
             {

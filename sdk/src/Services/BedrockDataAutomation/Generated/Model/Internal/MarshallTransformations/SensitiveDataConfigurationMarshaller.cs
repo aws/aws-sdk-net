@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// DocumentOverrideConfiguration Marshaller
+    /// SensitiveDataConfiguration Marshaller
     /// </summary>
-    public class DocumentOverrideConfigurationMarshaller : IRequestMarshaller<DocumentOverrideConfiguration, JsonMarshallerContext> 
+    public class SensitiveDataConfigurationMarshaller : IRequestMarshaller<SensitiveDataConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,39 +42,34 @@ namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(DocumentOverrideConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(SensitiveDataConfiguration requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetModalityProcessing())
+            if(requestObject.IsSetDetectionMode())
             {
-                context.Writer.WritePropertyName("modalityProcessing");
-                context.Writer.WriteStartObject();
-
-                var marshaller = ModalityProcessingConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.ModalityProcessing, context);
-
-                context.Writer.WriteEndObject();
+                context.Writer.WritePropertyName("detectionMode");
+                context.Writer.WriteStringValue(requestObject.DetectionMode);
             }
 
-            if(requestObject.IsSetSensitiveDataConfiguration())
+            if(requestObject.IsSetDetectionScope())
             {
-                context.Writer.WritePropertyName("sensitiveDataConfiguration");
-                context.Writer.WriteStartObject();
-
-                var marshaller = SensitiveDataConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.SensitiveDataConfiguration, context);
-
-                context.Writer.WriteEndObject();
+                context.Writer.WritePropertyName("detectionScope");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectDetectionScopeListValue in requestObject.DetectionScope)
+                {
+                        context.Writer.WriteStringValue(requestObjectDetectionScopeListValue);
+                }
+                context.Writer.WriteEndArray();
             }
 
-            if(requestObject.IsSetSplitter())
+            if(requestObject.IsSetPiiEntitiesConfiguration())
             {
-                context.Writer.WritePropertyName("splitter");
+                context.Writer.WritePropertyName("piiEntitiesConfiguration");
                 context.Writer.WriteStartObject();
 
-                var marshaller = SplitterConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.Splitter, context);
+                var marshaller = PIIEntitiesConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.PiiEntitiesConfiguration, context);
 
                 context.Writer.WriteEndObject();
             }
@@ -84,7 +79,7 @@ namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static DocumentOverrideConfigurationMarshaller Instance = new DocumentOverrideConfigurationMarshaller();
+        public readonly static SensitiveDataConfigurationMarshaller Instance = new SensitiveDataConfigurationMarshaller();
 
     }
 }
