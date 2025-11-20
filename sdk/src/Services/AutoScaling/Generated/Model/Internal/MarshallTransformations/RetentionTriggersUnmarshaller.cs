@@ -33,18 +33,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for LaunchTemplateOverrides Object
+    /// Response Unmarshaller for RetentionTriggers Object
     /// </summary>  
-    public class LaunchTemplateOverridesUnmarshaller : IXmlUnmarshaller<LaunchTemplateOverrides, XmlUnmarshallerContext>
+    public class RetentionTriggersUnmarshaller : IXmlUnmarshaller<RetentionTriggers, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public LaunchTemplateOverrides Unmarshall(XmlUnmarshallerContext context)
+        public RetentionTriggers Unmarshall(XmlUnmarshallerContext context)
         {
-            LaunchTemplateOverrides unmarshalledObject = new LaunchTemplateOverrides();
+            RetentionTriggers unmarshalledObject = new RetentionTriggers();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -55,34 +55,10 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("ImageId", targetDepth))
+                    if (context.TestExpression("TerminateHookAbandon", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.ImageId = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("InstanceRequirements", targetDepth))
-                    {
-                        var unmarshaller = InstanceRequirementsUnmarshaller.Instance;
-                        unmarshalledObject.InstanceRequirements = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("InstanceType", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.InstanceType = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("LaunchTemplateSpecification", targetDepth))
-                    {
-                        var unmarshaller = LaunchTemplateSpecificationUnmarshaller.Instance;
-                        unmarshalledObject.LaunchTemplateSpecification = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("WeightedCapacity", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.WeightedCapacity = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.TerminateHookAbandon = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
@@ -95,12 +71,12 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
-        private static LaunchTemplateOverridesUnmarshaller _instance = new LaunchTemplateOverridesUnmarshaller();        
+        private static RetentionTriggersUnmarshaller _instance = new RetentionTriggersUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static LaunchTemplateOverridesUnmarshaller Instance
+        public static RetentionTriggersUnmarshaller Instance
         {
             get
             {
