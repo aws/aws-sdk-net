@@ -108,6 +108,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     unmarshalledObject.KeyLength = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("KmsKeyId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.KmsKeyId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SigningAlgorithm", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

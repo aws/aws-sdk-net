@@ -4253,6 +4253,9 @@ namespace Amazon.DatabaseMigrationService
         /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidCertificateException">
         /// The certificate was not valid.
         /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.KMSKeyNotAccessibleException">
+        /// DMS cannot access the KMS key.
+        /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceAlreadyExistsException">
         /// The resource you are attempting to create already exists.
         /// </exception>
@@ -4275,6 +4278,9 @@ namespace Amazon.DatabaseMigrationService
         /// <returns>The response from the ImportCertificate service method, as returned by DatabaseMigrationService.</returns>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidCertificateException">
         /// The certificate was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.KMSKeyNotAccessibleException">
+        /// DMS cannot access the KMS key.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceAlreadyExistsException">
         /// The resource you are attempting to create already exists.

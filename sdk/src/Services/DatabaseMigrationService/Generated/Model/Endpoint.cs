@@ -65,9 +65,11 @@ namespace Amazon.DatabaseMigrationService.Model
         private string _extraConnectionAttributes;
         private GcpMySQLSettings _gcpMySQLSettings;
         private IBMDb2Settings _ibmDb2Settings;
+        private bool? _isReadOnly;
         private KafkaSettings _kafkaSettings;
         private KinesisSettings _kinesisSettings;
         private string _kmsKeyId;
+        private LakehouseSettings _lakehouseSettings;
         private MicrosoftSQLServerSettings _microsoftSQLServerSettings;
         private MongoDbSettings _mongoDbSettings;
         private MySQLSettings _mySQLSettings;
@@ -386,6 +388,27 @@ namespace Amazon.DatabaseMigrationService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IsReadOnly. 
+        /// <para>
+        /// Indicates whether the endpoint is read-only. When set to <c>true</c>, this endpoint
+        /// is managed by DMS as part of a zero-ETL integration and cannot be modified or deleted
+        /// directly. You can only modify or delete read-only endpoints through their associated
+        /// zero-ETL integration.
+        /// </para>
+        /// </summary>
+        public bool IsReadOnly
+        {
+            get { return this._isReadOnly.GetValueOrDefault(); }
+            set { this._isReadOnly = value; }
+        }
+
+        // Check to see if IsReadOnly property is set
+        internal bool IsSetIsReadOnly()
+        {
+            return this._isReadOnly.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property KafkaSettings. 
         /// <para>
         /// The settings for the Apache Kafka target endpoint. For more information, see the <c>KafkaSettings</c>
@@ -450,6 +473,26 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetKmsKeyId()
         {
             return this._kmsKeyId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LakehouseSettings. 
+        /// <para>
+        /// Settings in JSON format for the target Lakehouse endpoint. This parameter applies
+        /// to endpoints that are automatically created by DMS for a Lakehouse data warehouse
+        /// as part of a zero-ETL integration.
+        /// </para>
+        /// </summary>
+        public LakehouseSettings LakehouseSettings
+        {
+            get { return this._lakehouseSettings; }
+            set { this._lakehouseSettings = value; }
+        }
+
+        // Check to see if LakehouseSettings property is set
+        internal bool IsSetLakehouseSettings()
+        {
+            return this._lakehouseSettings != null;
         }
 
         /// <summary>

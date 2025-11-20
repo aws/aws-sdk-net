@@ -72,6 +72,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     unmarshalledObject.ComputeConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("IsReadOnly", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.IsReadOnly = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ReplicationConfigArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

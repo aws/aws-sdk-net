@@ -66,6 +66,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("IsReadOnly", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.IsReadOnly = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ReplicationSubnetGroupDescription", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

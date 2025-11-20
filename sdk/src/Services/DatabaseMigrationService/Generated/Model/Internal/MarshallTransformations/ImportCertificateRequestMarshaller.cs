@@ -87,6 +87,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     context.Writer.Write(StringUtils.FromMemoryStream(publicRequest.CertificateWallet));
                 }
 
+                if(publicRequest.IsSetKmsKeyId())
+                {
+                    context.Writer.WritePropertyName("KmsKeyId");
+                    context.Writer.Write(publicRequest.KmsKeyId);
+                }
+
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("Tags");

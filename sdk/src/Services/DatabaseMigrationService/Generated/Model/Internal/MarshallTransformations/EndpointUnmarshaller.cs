@@ -162,6 +162,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     unmarshalledObject.IBMDb2Settings = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("IsReadOnly", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.IsReadOnly = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("KafkaSettings", targetDepth))
                 {
                     var unmarshaller = KafkaSettingsUnmarshaller.Instance;
@@ -178,6 +184,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.KmsKeyId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("LakehouseSettings", targetDepth))
+                {
+                    var unmarshaller = LakehouseSettingsUnmarshaller.Instance;
+                    unmarshalledObject.LakehouseSettings = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("MicrosoftSQLServerSettings", targetDepth))

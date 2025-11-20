@@ -90,6 +90,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     unmarshalledObject.FailureMessages = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("IsReadOnly", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.IsReadOnly = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("PremigrationAssessmentStatuses", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<PremigrationAssessmentStatus, PremigrationAssessmentStatusUnmarshaller>(PremigrationAssessmentStatusUnmarshaller.Instance);

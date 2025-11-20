@@ -39,6 +39,7 @@ namespace Amazon.DatabaseMigrationService.Model
         private DateTime? _cdcStartTime;
         private string _cdcStopPosition;
         private List<string> _failureMessages = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private bool? _isReadOnly;
         private List<PremigrationAssessmentStatus> _premigrationAssessmentStatuses = AWSConfigs.InitializeCollections ? new List<PremigrationAssessmentStatus>() : null;
         private ProvisionData _provisionData;
         private string _recoveryCheckpoint;
@@ -131,6 +132,27 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetFailureMessages()
         {
             return this._failureMessages != null && (this._failureMessages.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IsReadOnly. 
+        /// <para>
+        /// Indicates whether the serverless replication is read-only. When set to <c>true</c>,
+        /// this replication is managed by DMS as part of a zero-ETL integration and cannot be
+        /// modified or deleted directly. You can only modify or delete read-only replications
+        /// through their associated zero-ETL integration.
+        /// </para>
+        /// </summary>
+        public bool IsReadOnly
+        {
+            get { return this._isReadOnly.GetValueOrDefault(); }
+            set { this._isReadOnly = value; }
+        }
+
+        // Check to see if IsReadOnly property is set
+        internal bool IsSetIsReadOnly()
+        {
+            return this._isReadOnly.HasValue; 
         }
 
         /// <summary>
