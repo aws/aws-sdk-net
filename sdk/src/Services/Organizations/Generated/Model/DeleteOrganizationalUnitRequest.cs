@@ -36,7 +36,7 @@ namespace Amazon.Organizations.Model
     /// 
     ///  
     /// <para>
-    /// This operation can be called only from the organization's management account.
+    /// You can only call this operation from the management account.
     /// </para>
     /// </summary>
     public partial class DeleteOrganizationalUnitRequest : AmazonOrganizationsRequest
@@ -46,8 +46,8 @@ namespace Amazon.Organizations.Model
         /// <summary>
         /// Gets and sets the property OrganizationalUnitId. 
         /// <para>
-        /// The unique identifier (ID) of the organizational unit that you want to delete. You
-        /// can get the ID from the <a>ListOrganizationalUnitsForParent</a> operation.
+        /// ID for the organizational unit that you want to delete. You can get the ID from the
+        /// <a>ListOrganizationalUnitsForParent</a> operation.
         /// </para>
         ///  
         /// <para>

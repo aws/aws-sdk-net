@@ -67,6 +67,12 @@ namespace Amazon.Organizations.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
+    /// ACTIVE_RESPONSIBILITY_TRANSFER_PROCESS: You cannot delete organization due to an ongoing
+    /// responsibility transfer process. For example, a pending invitation or an in-progress
+    /// transfer. To delete the organization, you must resolve the current transfer process.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     /// ACCOUNT_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the limit on the number of
     /// accounts in an organization. If you need more accounts, contact <a href="https://console.aws.amazon.com/support/home#/">Amazon
     /// Web Services Support</a> to request an increase in your limit. 
@@ -146,7 +152,7 @@ namespace Amazon.Organizations.Model
     ///  </li> <li> 
     /// <para>
     /// EMAIL_VERIFICATION_CODE_EXPIRED: The email verification code is only valid for a limited
-    /// period of time. You must resubmit the request and generate a new verfication code.
+    /// period of time. You must resubmit the request and generate a new verification code.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -256,6 +262,26 @@ namespace Amazon.Organizations.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
+    /// RESPONSIBILITY_TRANSFER_MAX_INBOUND_QUOTA_VIOLATION: You have exceeded your inbound
+    /// transfers limit.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// RESPONSIBILITY_TRANSFER_MAX_LEVEL_VIOLATION: You have exceeded the maximum length
+    /// of your transfer chain.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// RESPONSIBILITY_TRANSFER_MAX_OUTBOUND_QUOTA_VIOLATION: You have exceeded your outbound
+    /// transfers limit.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// RESPONSIBILITY_TRANSFER_MAX_TRANSFERS_QUOTA_VIOLATION: You have exceeded the maximum
+    /// number of inbound transfers allowed in a transfer chain.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     /// SERVICE_ACCESS_NOT_ENABLED:
     /// </para>
     ///  <ul> <li> 
@@ -272,6 +298,20 @@ namespace Amazon.Organizations.Model
     /// <para>
     /// TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that
     /// are not compliant with the tag policy requirements for this account.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// TRANSFER_RESPONSIBILITY_SOURCE_DELETION_IN_PROGRESS: The source organization cannot
+    /// accept this transfer invitation because it is marked for deletion.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// TRANSFER_RESPONSIBILITY_TARGET_DELETION_IN_PROGRESS: The source organization cannot
+    /// accept this transfer invitation because target organization is marked for deletion.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// UNSUPPORTED_PRICING: Your organization has a pricing contract that is unsupported.
     /// </para>
     ///  </li> <li> 
     /// <para>
