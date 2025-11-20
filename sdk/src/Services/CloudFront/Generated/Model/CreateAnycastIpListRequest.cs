@@ -36,6 +36,7 @@ namespace Amazon.CloudFront.Model
     public partial class CreateAnycastIpListRequest : AmazonCloudFrontRequest
     {
         private IpAddressType _ipAddressType;
+        private List<IpamCidrConfig> _ipamCidrConfigs = AWSConfigs.InitializeCollections ? new List<IpamCidrConfig>() : null;
         private int? _ipCount;
         private string _name;
         private Tags _tags;
@@ -48,11 +49,11 @@ namespace Amazon.CloudFront.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>ipv4</c> - Allocate a list of only IPv4 addresses
+        ///  <c>ipv4</c> only
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>ipv6</c> - Allocate a list of only IPv4 addresses
+        ///  <c>ipv6</c> only 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -70,6 +71,25 @@ namespace Amazon.CloudFront.Model
         internal bool IsSetIpAddressType()
         {
             return this._ipAddressType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IpamCidrConfigs. 
+        /// <para>
+        ///  A list of IPAM CIDR configurations that specify the IP address ranges and IPAM pool
+        /// settings for creating the Anycast static IP list. 
+        /// </para>
+        /// </summary>
+        public List<IpamCidrConfig> IpamCidrConfigs
+        {
+            get { return this._ipamCidrConfigs; }
+            set { this._ipamCidrConfigs = value; }
+        }
+
+        // Check to see if IpamCidrConfigs property is set
+        internal bool IsSetIpamCidrConfigs()
+        {
+            return this._ipamCidrConfigs != null && (this._ipamCidrConfigs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

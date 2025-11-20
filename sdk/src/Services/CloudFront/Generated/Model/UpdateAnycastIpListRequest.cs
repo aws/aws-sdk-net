@@ -85,11 +85,11 @@ namespace Amazon.CloudFront.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>ipv4</c> - Allocate a list of only IPv4 addresses
+        ///  <c>ipv4</c> only
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>ipv6</c> - Allocate a list of only IPv4 addresses
+        ///  <c>ipv6</c> only
         /// </para>
         ///  </li> <li> 
         /// <para>

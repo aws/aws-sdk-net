@@ -40,6 +40,7 @@ namespace Amazon.CloudFront.Model
         private string _arn;
         private string _id;
         private IpAddressType _ipAddressType;
+        private IpamConfig _ipamConfig;
         private int? _ipCount;
         private DateTime? _lastModifiedTime;
         private string _name;
@@ -118,6 +119,25 @@ namespace Amazon.CloudFront.Model
         internal bool IsSetIpAddressType()
         {
             return this._ipAddressType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IpamConfig. 
+        /// <para>
+        /// The IPAM configuration for the Anycast static IP list, that contains the quantity
+        /// and list of IPAM CIDR configurations.
+        /// </para>
+        /// </summary>
+        public IpamConfig IpamConfig
+        {
+            get { return this._ipamConfig; }
+            set { this._ipamConfig = value; }
+        }
+
+        // Check to see if IpamConfig property is set
+        internal bool IsSetIpamConfig()
+        {
+            return this._ipamConfig != null;
         }
 
         /// <summary>
