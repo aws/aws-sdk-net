@@ -1037,7 +1037,7 @@ internal sealed partial class BedrockChatClient : IChatClient
         {
             Amazon.Runtime.Documents.Internal.Transform.DocumentMarshaller.Instance.Write(writer, document);
         }
-        return Encoding.UTF8.GetString(stream.ToArray());
+        return Encoding.UTF8.GetString(stream.GetBuffer(), 0, (int)stream.Position);
     }
 
     /// <summary>Creates an <see cref="InferenceConfiguration"/> from the specified options.</summary>
