@@ -56,5 +56,15 @@ namespace Amazon.Braket.Model
             OutputToken = new[] { "NextToken" }
         )]
         ISearchQuantumTasksPaginator SearchQuantumTasks(SearchQuantumTasksRequest request);
+
+        /// <summary>
+        /// Paginator for SearchSpendingLimits operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        ISearchSpendingLimitsPaginator SearchSpendingLimits(SearchSpendingLimitsRequest request);
     }
 }
