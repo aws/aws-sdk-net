@@ -361,6 +361,52 @@ namespace Amazon.CloudTrail
 
 
     /// <summary>
+    /// Constants used for properties of type EventCategoryAggregation.
+    /// </summary>
+    public class EventCategoryAggregation : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Data for EventCategoryAggregation
+        /// </summary>
+        public static readonly EventCategoryAggregation Data = new EventCategoryAggregation("Data");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EventCategoryAggregation(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EventCategoryAggregation FindValue(string value)
+        {
+            return FindValue<EventCategoryAggregation>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EventCategoryAggregation(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type EventDataStoreStatus.
     /// </summary>
     public class EventDataStoreStatus : ConstantClass
@@ -1188,6 +1234,60 @@ namespace Amazon.CloudTrail
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SourceEventCategory(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Template.
+    /// </summary>
+    public class Template : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant API_ACTIVITY for Template
+        /// </summary>
+        public static readonly Template API_ACTIVITY = new Template("API_ACTIVITY");
+        /// <summary>
+        /// Constant RESOURCE_ACCESS for Template
+        /// </summary>
+        public static readonly Template RESOURCE_ACCESS = new Template("RESOURCE_ACCESS");
+        /// <summary>
+        /// Constant USER_ACTIONS for Template
+        /// </summary>
+        public static readonly Template USER_ACTIONS = new Template("USER_ACTIONS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Template(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Template FindValue(string value)
+        {
+            return FindValue<Template>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Template(string value)
         {
             return FindValue(value);
         }

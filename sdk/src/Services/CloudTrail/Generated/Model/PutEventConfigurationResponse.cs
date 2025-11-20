@@ -34,9 +34,30 @@ namespace Amazon.CloudTrail.Model
     /// </summary>
     public partial class PutEventConfigurationResponse : AmazonWebServiceResponse
     {
+        private List<AggregationConfiguration> _aggregationConfigurations = AWSConfigs.InitializeCollections ? new List<AggregationConfiguration>() : null;
         private List<ContextKeySelector> _contextKeySelectors = AWSConfigs.InitializeCollections ? new List<ContextKeySelector>() : null;
         private string _eventDataStoreArn;
         private MaxEventSize _maxEventSize;
+        private string _trailARN;
+
+        /// <summary>
+        /// Gets and sets the property AggregationConfigurations. 
+        /// <para>
+        /// A list of aggregation configurations that are configured for the trail.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=1)]
+        public List<AggregationConfiguration> AggregationConfigurations
+        {
+            get { return this._aggregationConfigurations; }
+            set { this._aggregationConfigurations = value; }
+        }
+
+        // Check to see if AggregationConfigurations property is set
+        internal bool IsSetAggregationConfigurations()
+        {
+            return this._aggregationConfigurations != null && (this._aggregationConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property ContextKeySelectors. 
@@ -93,6 +114,24 @@ namespace Amazon.CloudTrail.Model
         internal bool IsSetMaxEventSize()
         {
             return this._maxEventSize != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TrailARN. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the trail that has aggregation enabled.
+        /// </para>
+        /// </summary>
+        public string TrailARN
+        {
+            get { return this._trailARN; }
+            set { this._trailARN = value; }
+        }
+
+        // Check to see if TrailARN property is set
+        internal bool IsSetTrailARN()
+        {
+            return this._trailARN != null;
         }
 
     }

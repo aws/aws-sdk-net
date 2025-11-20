@@ -75,6 +75,12 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.EventDataStore);
                 }
 
+                if(publicRequest.IsSetTrailName())
+                {
+                    context.Writer.WritePropertyName("TrailName");
+                    context.Writer.Write(publicRequest.TrailName);
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

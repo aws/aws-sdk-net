@@ -31,14 +31,36 @@ namespace Amazon.CloudTrail.Model
 {
     /// <summary>
     /// Container for the parameters to the PutEventConfiguration operation.
-    /// Updates the event configuration settings for the specified event data store. You can
-    /// update the maximum event size and context key selectors.
+    /// Updates the event configuration settings for the specified event data store or trail.
+    /// This operation supports updating the maximum event size, adding or modifying context
+    /// key selectors for event data store, and configuring aggregation settings for the trail.
     /// </summary>
     public partial class PutEventConfigurationRequest : AmazonCloudTrailRequest
     {
+        private List<AggregationConfiguration> _aggregationConfigurations = AWSConfigs.InitializeCollections ? new List<AggregationConfiguration>() : null;
         private List<ContextKeySelector> _contextKeySelectors = AWSConfigs.InitializeCollections ? new List<ContextKeySelector>() : null;
         private string _eventDataStore;
         private MaxEventSize _maxEventSize;
+        private string _trailName;
+
+        /// <summary>
+        /// Gets and sets the property AggregationConfigurations. 
+        /// <para>
+        /// The list of aggregation configurations that you want to configure for the trail.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=1)]
+        public List<AggregationConfiguration> AggregationConfigurations
+        {
+            get { return this._aggregationConfigurations; }
+            set { this._aggregationConfigurations = value; }
+        }
+
+        // Check to see if AggregationConfigurations property is set
+        internal bool IsSetAggregationConfigurations()
+        {
+            return this._aggregationConfigurations != null && (this._aggregationConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property ContextKeySelectors. 
@@ -46,7 +68,7 @@ namespace Amazon.CloudTrail.Model
         /// A list of context key selectors that will be included to provide enriched event data.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=2)]
+        [AWSProperty(Max=2)]
         public List<ContextKeySelector> ContextKeySelectors
         {
             get { return this._contextKeySelectors; }
@@ -63,7 +85,7 @@ namespace Amazon.CloudTrail.Model
         /// Gets and sets the property EventDataStore. 
         /// <para>
         /// The Amazon Resource Name (ARN) or ID suffix of the ARN of the event data store for
-        /// which you want to update event configuration settings.
+        /// which event configuration settings are updated.
         /// </para>
         /// </summary>
         public string EventDataStore
@@ -85,7 +107,6 @@ namespace Amazon.CloudTrail.Model
         /// If you are using context key selectors, MaxEventSize must be set to Large.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public MaxEventSize MaxEventSize
         {
             get { return this._maxEventSize; }
@@ -96,6 +117,24 @@ namespace Amazon.CloudTrail.Model
         internal bool IsSetMaxEventSize()
         {
             return this._maxEventSize != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TrailName. 
+        /// <para>
+        /// The name of the trail for which you want to update event configuration settings.
+        /// </para>
+        /// </summary>
+        public string TrailName
+        {
+            get { return this._trailName; }
+            set { this._trailName = value; }
+        }
+
+        // Check to see if TrailName property is set
+        internal bool IsSetTrailName()
+        {
+            return this._trailName != null;
         }
 
     }

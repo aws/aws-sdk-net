@@ -52,6 +52,12 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AggregationConfigurations", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<AggregationConfiguration, AggregationConfigurationUnmarshaller>(AggregationConfigurationUnmarshaller.Instance);
+                    response.AggregationConfigurations = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ContextKeySelectors", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<ContextKeySelector, ContextKeySelectorUnmarshaller>(ContextKeySelectorUnmarshaller.Instance);
@@ -68,6 +74,12 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.MaxEventSize = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("TrailARN", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.TrailARN = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -121,6 +133,10 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
                 {
                     return InvalidParameterExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidTrailNameException"))
+                {
+                    return InvalidTrailNameExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("NoManagementAccountSLRExistsException"))
                 {
                     return NoManagementAccountSLRExistsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
@@ -128,6 +144,10 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
                 if (errorResponse.Code != null && errorResponse.Code.Equals("OperationNotPermittedException"))
                 {
                     return OperationNotPermittedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("TrailNotFoundException"))
+                {
+                    return TrailNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("UnsupportedOperationException"))
                 {

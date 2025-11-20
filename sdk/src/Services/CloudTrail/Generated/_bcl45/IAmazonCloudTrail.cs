@@ -3092,9 +3092,10 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
-        /// Retrieves the current event configuration settings for the specified event data store,
-        /// including details about maximum event size and context key selectors configured for
-        /// the event data store.
+        /// Retrieves the current event configuration settings for the specified event data store
+        /// or trail. The response includes maximum event size configuration, the context key
+        /// selectors configured for the event data store, and any aggregation settings configured
+        /// for the trail.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEventConfiguration service method.</param>
         /// 
@@ -3143,12 +3144,43 @@ namespace Amazon.CloudTrail
         /// <exception cref="Amazon.CloudTrail.Model.InvalidParameterException">
         /// The request includes a parameter that is not valid.
         /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidTrailNameException">
+        /// This exception is thrown when the provided trail name is not valid. Trail names must
+        /// meet the following requirements:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_),
+        /// or dashes (-)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Start with a letter or number, and end with a letter or number
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Be between 3 and 128 characters
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Have no adjacent periods, underscores or dashes. Names like <c>my-_namespace</c> and
+        /// <c>my--namespace</c> are not valid.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Not be in IP address format (for example, 192.168.5.4)
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.NoManagementAccountSLRExistsException">
         /// This exception is thrown when the management account does not have a service-linked
         /// role.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
         /// This exception is thrown when the requested operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.TrailNotFoundException">
+        /// This exception is thrown when the trail with the given name is not found.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.UnsupportedOperationException">
         /// This exception is thrown when the requested operation is not supported.
@@ -3159,9 +3191,10 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
-        /// Retrieves the current event configuration settings for the specified event data store,
-        /// including details about maximum event size and context key selectors configured for
-        /// the event data store.
+        /// Retrieves the current event configuration settings for the specified event data store
+        /// or trail. The response includes maximum event size configuration, the context key
+        /// selectors configured for the event data store, and any aggregation settings configured
+        /// for the trail.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEventConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -3213,12 +3246,43 @@ namespace Amazon.CloudTrail
         /// <exception cref="Amazon.CloudTrail.Model.InvalidParameterException">
         /// The request includes a parameter that is not valid.
         /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidTrailNameException">
+        /// This exception is thrown when the provided trail name is not valid. Trail names must
+        /// meet the following requirements:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_),
+        /// or dashes (-)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Start with a letter or number, and end with a letter or number
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Be between 3 and 128 characters
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Have no adjacent periods, underscores or dashes. Names like <c>my-_namespace</c> and
+        /// <c>my--namespace</c> are not valid.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Not be in IP address format (for example, 192.168.5.4)
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.NoManagementAccountSLRExistsException">
         /// This exception is thrown when the management account does not have a service-linked
         /// role.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
         /// This exception is thrown when the requested operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.TrailNotFoundException">
+        /// This exception is thrown when the trail with the given name is not found.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.UnsupportedOperationException">
         /// This exception is thrown when the requested operation is not supported.
@@ -5546,8 +5610,9 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
-        /// Updates the event configuration settings for the specified event data store. You can
-        /// update the maximum event size and context key selectors.
+        /// Updates the event configuration settings for the specified event data store or trail.
+        /// This operation supports updating the maximum event size, adding or modifying context
+        /// key selectors for event data store, and configuring aggregation settings for the trail.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutEventConfiguration service method.</param>
         /// 
@@ -5609,11 +5674,43 @@ namespace Amazon.CloudTrail
         /// <exception cref="Amazon.CloudTrail.Model.InvalidEventDataStoreStatusException">
         /// The event data store is not in a status that supports the operation.
         /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidHomeRegionException">
+        /// This exception is thrown when an operation is called on a trail from a Region other
+        /// than the Region in which the trail was created.
+        /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidParameterCombinationException">
         /// This exception is thrown when the combination of parameters provided is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidParameterException">
         /// The request includes a parameter that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidTrailNameException">
+        /// This exception is thrown when the provided trail name is not valid. Trail names must
+        /// meet the following requirements:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_),
+        /// or dashes (-)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Start with a letter or number, and end with a letter or number
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Be between 3 and 128 characters
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Have no adjacent periods, underscores or dashes. Names like <c>my-_namespace</c> and
+        /// <c>my--namespace</c> are not valid.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Not be in IP address format (for example, 192.168.5.4)
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.NoManagementAccountSLRExistsException">
         /// This exception is thrown when the management account does not have a service-linked
@@ -5632,6 +5729,9 @@ namespace Amazon.CloudTrail
         /// <exception cref="Amazon.CloudTrail.Model.ThrottlingException">
         /// This exception is thrown when the request rate exceeds the limit.
         /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.TrailNotFoundException">
+        /// This exception is thrown when the trail with the given name is not found.
+        /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.UnsupportedOperationException">
         /// This exception is thrown when the requested operation is not supported.
         /// </exception>
@@ -5641,8 +5741,9 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
-        /// Updates the event configuration settings for the specified event data store. You can
-        /// update the maximum event size and context key selectors.
+        /// Updates the event configuration settings for the specified event data store or trail.
+        /// This operation supports updating the maximum event size, adding or modifying context
+        /// key selectors for event data store, and configuring aggregation settings for the trail.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutEventConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -5707,11 +5808,43 @@ namespace Amazon.CloudTrail
         /// <exception cref="Amazon.CloudTrail.Model.InvalidEventDataStoreStatusException">
         /// The event data store is not in a status that supports the operation.
         /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidHomeRegionException">
+        /// This exception is thrown when an operation is called on a trail from a Region other
+        /// than the Region in which the trail was created.
+        /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidParameterCombinationException">
         /// This exception is thrown when the combination of parameters provided is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidParameterException">
         /// The request includes a parameter that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidTrailNameException">
+        /// This exception is thrown when the provided trail name is not valid. Trail names must
+        /// meet the following requirements:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_),
+        /// or dashes (-)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Start with a letter or number, and end with a letter or number
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Be between 3 and 128 characters
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Have no adjacent periods, underscores or dashes. Names like <c>my-_namespace</c> and
+        /// <c>my--namespace</c> are not valid.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Not be in IP address format (for example, 192.168.5.4)
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.NoManagementAccountSLRExistsException">
         /// This exception is thrown when the management account does not have a service-linked
@@ -5729,6 +5862,9 @@ namespace Amazon.CloudTrail
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.ThrottlingException">
         /// This exception is thrown when the request rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.TrailNotFoundException">
+        /// This exception is thrown when the trail with the given name is not found.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.UnsupportedOperationException">
         /// This exception is thrown when the requested operation is not supported.
