@@ -30,63 +30,45 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ApplicationSignals.Model
 {
     /// <summary>
-    /// A structure that contains information about a change event that occurred for a service,
-    /// such as a deployment or configuration change.
+    /// Container for the parameters to the ListEntityEvents operation.
+    /// Returns a list of change events for a specific entity, such as deployments, configuration
+    /// changes, or other state-changing activities. This operation helps track the history
+    /// of changes that may have affected service performance.
     /// </summary>
-    public partial class ChangeEvent
+    public partial class ListEntityEventsRequest : AmazonApplicationSignalsRequest
     {
-        private string _accountId;
-        private ChangeEventType _changeEventType;
+        private DateTime? _endTime;
         private Dictionary<string, string> _entity = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
-        private string _eventId;
-        private string _eventName;
-        private string _region;
-        private DateTime? _timestamp;
-        private string _userName;
+        private int? _maxResults;
+        private string _nextToken;
+        private DateTime? _startTime;
 
         /// <summary>
-        /// Gets and sets the property AccountId. 
+        /// Gets and sets the property EndTime. 
         /// <para>
-        /// The Amazon Web Services account ID where this change event occurred.
+        /// The end of the time period to retrieve change events for. When used in a raw HTTP
+        /// Query API, it is formatted as epoch time in seconds. For example: <c>1698778057</c>
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public string AccountId
+        public DateTime EndTime
         {
-            get { return this._accountId; }
-            set { this._accountId = value; }
+            get { return this._endTime.GetValueOrDefault(); }
+            set { this._endTime = value; }
         }
 
-        // Check to see if AccountId property is set
-        internal bool IsSetAccountId()
+        // Check to see if EndTime property is set
+        internal bool IsSetEndTime()
         {
-            return this._accountId != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property ChangeEventType. 
-        /// <para>
-        /// The type of change event that occurred, such as <c>DEPLOYMENT</c>.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public ChangeEventType ChangeEventType
-        {
-            get { return this._changeEventType; }
-            set { this._changeEventType = value; }
-        }
-
-        // Check to see if ChangeEventType property is set
-        internal bool IsSetChangeEventType()
-        {
-            return this._changeEventType != null;
+            return this._endTime.HasValue; 
         }
 
         /// <summary>
         /// Gets and sets the property Entity. 
         /// <para>
-        /// The entity (service or resource) that was affected by this change event, including
-        /// its key attributes.
+        /// The entity for which to retrieve change events. This specifies the service, resource,
+        /// or other entity whose event history you want to examine.
         /// </para>
         ///  
         /// <para>
@@ -153,98 +135,63 @@ namespace Amazon.ApplicationSignals.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EventId. 
+        /// Gets and sets the property MaxResults. 
         /// <para>
-        /// A unique identifier for this change event. For CloudTrail-based events, this is the
-        /// CloudTrail event id. For other events, this will be <c>Unknown</c>.
+        /// The maximum number of change events to return in one operation. If you omit this parameter,
+        /// the default of 50 is used.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=250)]
+        public int MaxResults
+        {
+            get { return this._maxResults.GetValueOrDefault(); }
+            set { this._maxResults = value; }
+        }
+
+        // Check to see if MaxResults property is set
+        internal bool IsSetMaxResults()
+        {
+            return this._maxResults.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// Include this value, if it was returned by the previous operation, to get the next
+        /// set of change events.
+        /// </para>
+        /// </summary>
+        public string NextToken
+        {
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
+        }
+
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
+        {
+            return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StartTime. 
+        /// <para>
+        /// The start of the time period to retrieve change events for. When used in a raw HTTP
+        /// Query API, it is formatted as epoch time in seconds. For example: <c>1698778057</c>
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public string EventId
+        public DateTime StartTime
         {
-            get { return this._eventId; }
-            set { this._eventId = value; }
+            get { return this._startTime.GetValueOrDefault(); }
+            set { this._startTime = value; }
         }
 
-        // Check to see if EventId property is set
-        internal bool IsSetEventId()
+        // Check to see if StartTime property is set
+        internal bool IsSetStartTime()
         {
-            return this._eventId != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property EventName. 
-        /// <para>
-        /// The name or description of this change event.
-        /// </para>
-        /// </summary>
-        public string EventName
-        {
-            get { return this._eventName; }
-            set { this._eventName = value; }
-        }
-
-        // Check to see if EventName property is set
-        internal bool IsSetEventName()
-        {
-            return this._eventName != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Region. 
-        /// <para>
-        /// The Amazon Web Services region where this change event occurred.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public string Region
-        {
-            get { return this._region; }
-            set { this._region = value; }
-        }
-
-        // Check to see if Region property is set
-        internal bool IsSetRegion()
-        {
-            return this._region != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Timestamp. 
-        /// <para>
-        /// The timestamp when this change event occurred. When used in a raw HTTP Query API,
-        /// it is formatted as epoch time in seconds.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public DateTime Timestamp
-        {
-            get { return this._timestamp.GetValueOrDefault(); }
-            set { this._timestamp = value; }
-        }
-
-        // Check to see if Timestamp property is set
-        internal bool IsSetTimestamp()
-        {
-            return this._timestamp.HasValue; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property UserName. 
-        /// <para>
-        /// The name of the user who initiated this change event, if available.
-        /// </para>
-        /// </summary>
-        public string UserName
-        {
-            get { return this._userName; }
-            set { this._userName = value; }
-        }
-
-        // Check to see if UserName property is set
-        internal bool IsSetUserName()
-        {
-            return this._userName != null;
+            return this._startTime.HasValue; 
         }
 
     }

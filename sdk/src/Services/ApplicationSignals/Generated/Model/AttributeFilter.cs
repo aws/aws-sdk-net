@@ -30,8 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ApplicationSignals.Model
 {
     /// <summary>
-    /// Represents a filter for service attributes. Used to narrow down results based on specific
-    /// attribute names and values.
+    /// A structure that defines a filter for narrowing down results based on specific attribute
+    /// values. This can be used to filter services by platform, environment, or other service
+    /// characteristics.
     /// </summary>
     public partial class AttributeFilter
     {
@@ -41,8 +42,8 @@ namespace Amazon.ApplicationSignals.Model
         /// <summary>
         /// Gets and sets the property AttributeFilterName. 
         /// <para>
-        /// The name of the attribute to filter on. This corresponds to service metadata attributes
-        /// such as environment, team, or custom tags.
+        /// The name of the attribute to filter by, such as <c>Platform</c>, <c>Environment</c>,
+        /// or <c>BusinessUnit</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -61,8 +62,8 @@ namespace Amazon.ApplicationSignals.Model
         /// <summary>
         /// Gets and sets the property AttributeFilterValues. 
         /// <para>
-        /// An array of values to match against the specified attribute. Services with attribute
-        /// values matching any of these values will be included in the results.
+        /// An array of values to match for the specified attribute. Services that have any of
+        /// these values for the attribute will be included in the results.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=20)]

@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ApplicationSignals.Model
 {
     /// <summary>
-    /// Represents a connection between two nodes in a dependency graph, showing how services
-    /// or components interact with each other.
+    /// A structure that represents a connection between two nodes in a dependency graph,
+    /// showing the relationship and characteristics of the connection.
     /// </summary>
     public partial class Edge
     {
@@ -43,8 +43,7 @@ namespace Amazon.ApplicationSignals.Model
         /// <summary>
         /// Gets and sets the property ConnectionType. 
         /// <para>
-        /// The type of connection between the nodes, such as "HTTP", "Database", "Queue", or
-        /// "Internal".
+        /// The type of connection between the nodes, indicating the nature of the relationship.
         /// </para>
         /// </summary>
         public ConnectionType ConnectionType
@@ -62,7 +61,7 @@ namespace Amazon.ApplicationSignals.Model
         /// <summary>
         /// Gets and sets the property DestinationNodeId. 
         /// <para>
-        /// The identifier of the destination node in the dependency relationship.
+        /// The identifier of the destination node in this edge connection.
         /// </para>
         /// </summary>
         public string DestinationNodeId
@@ -80,7 +79,7 @@ namespace Amazon.ApplicationSignals.Model
         /// <summary>
         /// Gets and sets the property Duration. 
         /// <para>
-        /// The typical duration or latency of interactions along this edge, measured in milliseconds.
+        /// The duration or latency associated with this connection, if applicable.
         /// </para>
         /// </summary>
         public double Duration
@@ -98,7 +97,7 @@ namespace Amazon.ApplicationSignals.Model
         /// <summary>
         /// Gets and sets the property SourceNodeId. 
         /// <para>
-        /// The identifier of the source node in the dependency relationship.
+        /// The identifier of the source node in this edge connection.
         /// </para>
         /// </summary>
         public string SourceNodeId

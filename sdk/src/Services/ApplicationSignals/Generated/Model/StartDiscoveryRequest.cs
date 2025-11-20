@@ -65,6 +65,12 @@ namespace Amazon.ApplicationSignals.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
+    /// A service-linked CloudTrail event channel is created to process CloudTrail events
+    /// and return change event information. This includes last deployment time, userName,
+    /// eventName, and other event metadata.
+    /// </para>
+    ///  
+    /// <para>
     /// After completing this step, you still need to instrument your Java and Python applications
     /// to send data to Application Signals. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Application-Signals-Enable.html">
     /// Enabling Application Signals</a>.

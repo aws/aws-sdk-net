@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ApplicationSignals.Model
 {
     /// <summary>
-    /// Represents a graph of metric data over time, showing performance trends and patterns
-    /// for monitored resources.
+    /// A structure that contains metric data queries and time range information that provides
+    /// context for audit findings through relevant performance metrics.
     /// </summary>
     public partial class MetricGraph
     {
@@ -42,8 +42,8 @@ namespace Amazon.ApplicationSignals.Model
         /// <summary>
         /// Gets and sets the property EndTime. 
         /// <para>
-        /// The end time for the metric data displayed in the graph, expressed as the number of
-        /// milliseconds since January 1, 1970, 00:00:00 UTC.
+        /// The end time for the metric data included in this graph. When used in a raw HTTP Query
+        /// API, it is formatted as epoch time in seconds.
         /// </para>
         /// </summary>
         public DateTime EndTime
@@ -61,8 +61,8 @@ namespace Amazon.ApplicationSignals.Model
         /// <summary>
         /// Gets and sets the property MetricDataQueries. 
         /// <para>
-        /// An array of metric data queries that define what metrics to display in the graph.
-        /// Each query specifies the metric source, aggregation, and time range.
+        /// An array of metric data queries that define the metrics to be retrieved and analyzed
+        /// as part of the audit finding context.
         /// </para>
         /// </summary>
         public List<MetricDataQuery> MetricDataQueries
@@ -80,8 +80,8 @@ namespace Amazon.ApplicationSignals.Model
         /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
-        /// The start time for the metric data displayed in the graph, expressed as the number
-        /// of milliseconds since January 1, 1970, 00:00:00 UTC.
+        /// The start time for the metric data included in this graph. When used in a raw HTTP
+        /// Query API, it is formatted as epoch time in seconds.
         /// </para>
         /// </summary>
         public DateTime StartTime

@@ -243,7 +243,7 @@ namespace Amazon.ApplicationSignals.Model
         /// Gets and sets the property ServiceGroups. 
         /// <para>
         /// An array of service groups that this service belongs to, based on the configured grouping
-        /// rules.
+        /// attributes.
         /// </para>
         /// </summary>
         public List<ServiceGroup> ServiceGroups

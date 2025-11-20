@@ -41,8 +41,8 @@ namespace Amazon.ApplicationSignals.Model
         /// <summary>
         /// Gets and sets the property GroupingAttributeDefinitions. 
         /// <para>
-        /// An array of available grouping attribute definitions that can be used to create grouping
-        /// configurations.
+        /// An array of structures, where each structure contains information about one grouping
+        /// attribute definition, including the grouping name, source keys, and default values.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -61,8 +61,8 @@ namespace Amazon.ApplicationSignals.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token to use for retrieving the next page of results. This value is present only
-        /// if there are more results available than were returned in the current response.
+        /// Include this value in your next use of this API to get the next set of grouping attribute
+        /// definitions.
         /// </para>
         /// </summary>
         public string NextToken
@@ -80,8 +80,8 @@ namespace Amazon.ApplicationSignals.Model
         /// <summary>
         /// Gets and sets the property UpdatedAt. 
         /// <para>
-        /// The timestamp when the grouping attribute definitions were last updated. Expressed
-        /// as the number of milliseconds since January 1, 1970, 00:00:00 UTC.
+        /// The timestamp when the grouping configuration was last updated. When used in a raw
+        /// HTTP Query API, it is formatted as epoch time in seconds.
         /// </para>
         /// </summary>
         public DateTime UpdatedAt

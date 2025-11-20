@@ -60,6 +60,12 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             
+            if (publicRequest.IsSetAwsAccountId())
+                request.Parameters.Add("AwsAccountId", StringUtils.FromString(publicRequest.AwsAccountId));
+            
+            if (publicRequest.IsSetIncludeLinkedAccounts())
+                request.Parameters.Add("IncludeLinkedAccounts", StringUtils.FromBool(publicRequest.IncludeLinkedAccounts));
+            
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("NextToken", StringUtils.FromString(publicRequest.NextToken));
             request.ResourcePath = "/grouping-attribute-definitions";

@@ -299,15 +299,8 @@ namespace Amazon.ApplicationSignals
 
 
         /// <summary>
-        /// Deletes a grouping configuration that defines how services are grouped and organized
-        /// in Application Signals. Once deleted, services will no longer be grouped according
-        /// to the specified configuration rules.
-        /// 
-        ///  
-        /// <para>
-        /// This operation is irreversible. After deletion, you must recreate the grouping configuration
-        /// if you want to restore the same grouping behavior.
-        /// </para>
+        /// Deletes the grouping configuration for this account. This removes all custom grouping
+        /// attribute definitions that were previously configured.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteGroupingConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -412,16 +405,11 @@ namespace Amazon.ApplicationSignals
 
 
         /// <summary>
-        /// Retrieves a list of audit findings for Application Signals resources. Audit findings
-        /// identify potential issues, misconfigurations, or compliance violations in your observability
-        /// setup.
-        /// 
-        ///  
-        /// <para>
-        /// You can filter findings by time range, auditor type, and target resources to focus
-        /// on specific areas of concern. This operation supports pagination for large result
-        /// sets.
-        /// </para>
+        /// Returns a list of audit findings that provide automated analysis of service behavior
+        /// and root cause analysis. These findings help identify the most significant observations
+        /// about your services, including performance issues, anomalies, and potential problems.
+        /// The findings are generated using heuristic algorithms based on established troubleshooting
+        /// patterns.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAuditFindings service method.</param>
         /// <param name="cancellationToken">
@@ -440,20 +428,41 @@ namespace Amazon.ApplicationSignals
 
         #endregion
                 
+        #region  ListEntityEvents
+
+
+
+        /// <summary>
+        /// Returns a list of change events for a specific entity, such as deployments, configuration
+        /// changes, or other state-changing activities. This operation helps track the history
+        /// of changes that may have affected service performance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListEntityEvents service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListEntityEvents service method, as returned by ApplicationSignals.</returns>
+        /// <exception cref="Amazon.ApplicationSignals.Model.ThrottlingException">
+        /// The request was throttled because of quota limits.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationSignals.Model.ValidationException">
+        /// The resource is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/ListEntityEvents">REST API Reference for ListEntityEvents Operation</seealso>
+        Task<ListEntityEventsResponse> ListEntityEventsAsync(ListEntityEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListGroupingAttributeDefinitions
 
 
 
         /// <summary>
-        /// Retrieves the available grouping attribute definitions that can be used to create
-        /// grouping configurations. These definitions specify the attributes and rules available
-        /// for organizing services.
-        /// 
-        ///  
-        /// <para>
-        /// Use this operation to discover what grouping options are available before creating
-        /// or updating grouping configurations.
-        /// </para>
+        /// Returns the current grouping configuration for this account, including all custom
+        /// grouping attribute definitions that have been configured. These definitions determine
+        /// how services are logically grouped based on telemetry attributes, Amazon Web Services
+        /// tags, or predefined mappings.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListGroupingAttributeDefinitions service method.</param>
         /// <param name="cancellationToken">
@@ -636,16 +645,9 @@ namespace Amazon.ApplicationSignals
 
 
         /// <summary>
-        /// Retrieves the current state information for services monitored by Application Signals.
-        /// Service states include health status, recent change events, and other operational
-        /// metadata.
-        /// 
-        ///  
-        /// <para>
-        /// You can filter results by time range, AWS account, and service attributes to focus
-        /// on specific services or time periods. This operation supports pagination and can include
-        /// data from linked accounts.
-        /// </para>
+        /// Returns information about the last deployment and other change states of services.
+        /// This API provides visibility into recent changes that may have affected service performance,
+        /// helping with troubleshooting and change correlation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListServiceStates service method.</param>
         /// <param name="cancellationToken">
@@ -694,15 +696,11 @@ namespace Amazon.ApplicationSignals
 
 
         /// <summary>
-        /// Creates or updates a grouping configuration that defines how services are organized
-        /// and grouped in Application Signals dashboards and service maps.
-        /// 
-        ///  
-        /// <para>
-        /// Grouping configurations allow you to logically organize services based on attributes
-        /// such as environment, team ownership, or business function, making it easier to monitor
-        /// and manage related services together.
-        /// </para>
+        /// Creates or updates the grouping configuration for this account. This operation allows
+        /// you to define custom grouping attributes that determine how services are logically
+        /// grouped based on telemetry attributes, Amazon Web Services tags, or predefined mappings.
+        /// These grouping attributes can then be used to organize and filter services in the
+        /// Application Signals console and APIs.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutGroupingConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -762,6 +760,12 @@ namespace Amazon.ApplicationSignals
         ///  <c>autoscaling:DescribeAutoScalingGroups</c> 
         /// </para>
         ///  </li> </ul> 
+        /// <para>
+        /// A service-linked CloudTrail event channel is created to process CloudTrail events
+        /// and return change event information. This includes last deployment time, userName,
+        /// eventName, and other event metadata.
+        /// </para>
+        ///  
         /// <para>
         /// After completing this step, you still need to instrument your Java and Python applications
         /// to send data to Application Signals. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Application-Signals-Enable.html">

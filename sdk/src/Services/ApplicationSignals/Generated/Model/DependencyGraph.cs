@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ApplicationSignals.Model
 {
     /// <summary>
-    /// Represents a graph showing the dependencies between services and components in your
-    /// application architecture.
+    /// A structure that represents the dependency relationships relevant to an audit finding,
+    /// containing nodes and edges that show how services and resources are connected.
     /// </summary>
     public partial class DependencyGraph
     {
@@ -41,8 +41,8 @@ namespace Amazon.ApplicationSignals.Model
         /// <summary>
         /// Gets and sets the property Edges. 
         /// <para>
-        /// An array of edges in the dependency graph, where each edge represents a connection
-        /// or dependency between two nodes.
+        /// An array of edges representing the connections and relationships between the nodes
+        /// in the dependency graph.
         /// </para>
         /// </summary>
         public List<Edge> Edges
@@ -60,8 +60,8 @@ namespace Amazon.ApplicationSignals.Model
         /// <summary>
         /// Gets and sets the property Nodes. 
         /// <para>
-        /// An array of nodes in the dependency graph, where each node represents a service or
-        /// component.
+        /// An array of nodes representing the services, resources, or other entities in the dependency
+        /// graph.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=4)]

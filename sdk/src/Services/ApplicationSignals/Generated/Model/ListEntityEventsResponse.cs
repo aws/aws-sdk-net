@@ -30,44 +30,44 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ApplicationSignals.Model
 {
     /// <summary>
-    /// This is the response object from the ListAuditFindings operation.
+    /// This is the response object from the ListEntityEvents operation.
     /// </summary>
-    public partial class ListAuditFindingsResponse : AmazonWebServiceResponse
+    public partial class ListEntityEventsResponse : AmazonWebServiceResponse
     {
-        private List<AuditFinding> _auditFindings = AWSConfigs.InitializeCollections ? new List<AuditFinding>() : null;
+        private List<ChangeEvent> _changeEvents = AWSConfigs.InitializeCollections ? new List<ChangeEvent>() : null;
         private DateTime? _endTime;
         private string _nextToken;
         private DateTime? _startTime;
 
         /// <summary>
-        /// Gets and sets the property AuditFindings. 
+        /// Gets and sets the property ChangeEvents. 
         /// <para>
-        /// An array of structures, where each structure contains information about one audit
-        /// finding, including the auditor results, severity, and associated metric and dependency
-        /// graphs.
+        /// An array of structures, where each structure contains information about one change
+        /// event that occurred for the specified entity during the requested time period.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=10)]
-        public List<AuditFinding> AuditFindings
+        [AWSProperty(Required=true, Min=0, Max=250)]
+        public List<ChangeEvent> ChangeEvents
         {
-            get { return this._auditFindings; }
-            set { this._auditFindings = value; }
+            get { return this._changeEvents; }
+            set { this._changeEvents = value; }
         }
 
-        // Check to see if AuditFindings property is set
-        internal bool IsSetAuditFindings()
+        // Check to see if ChangeEvents property is set
+        internal bool IsSetChangeEvents()
         {
-            return this._auditFindings != null && (this._auditFindings.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._changeEvents != null && (this._changeEvents.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
         /// Gets and sets the property EndTime. 
         /// <para>
-        /// The end of the time period that the returned audit findings apply to. When used in
-        /// a raw HTTP Query API, it is formatted as epoch time in seconds. For example, <c>1698778057</c>
+        /// The end of the time period that the returned change events apply to. When used in
+        /// a raw HTTP Query API, it is formatted as epoch time in seconds. For example: <c>1698778057</c>
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime EndTime
         {
             get { return this._endTime.GetValueOrDefault(); }
@@ -83,7 +83,7 @@ namespace Amazon.ApplicationSignals.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Include this value in your next use of this API to get the next set of audit findings.
+        /// Include this value in your next use of this API to get the next set of change events.
         /// </para>
         /// </summary>
         public string NextToken
@@ -101,11 +101,12 @@ namespace Amazon.ApplicationSignals.Model
         /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
-        /// The start of the time period that the returned audit findings apply to. When used
-        /// in a raw HTTP Query API, it is formatted as epoch time in seconds. For example, <c>1698778057</c>
+        /// The start of the time period that the returned change events apply to. When used in
+        /// a raw HTTP Query API, it is formatted as epoch time in seconds. For example: <c>1698778057</c>
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime StartTime
         {
             get { return this._startTime.GetValueOrDefault(); }

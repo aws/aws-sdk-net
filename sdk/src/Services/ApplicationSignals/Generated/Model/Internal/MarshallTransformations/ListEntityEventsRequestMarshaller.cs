@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ListAuditFindings Request Marshaller
+    /// ListEntityEvents Request Marshaller
     /// </summary>       
-    public class ListAuditFindingsRequestMarshaller : IMarshaller<IRequest, ListAuditFindingsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class ListEntityEventsRequestMarshaller : IMarshaller<IRequest, ListEntityEventsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -45,7 +45,7 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((ListAuditFindingsRequest)input);
+            return this.Marshall((ListEntityEventsRequest)input);
         }
 
         /// <summary>
@@ -53,7 +53,7 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(ListAuditFindingsRequest publicRequest)
+        public IRequest Marshall(ListEntityEventsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ApplicationSignals");
             request.Headers["Content-Type"] = "application/json";
@@ -61,61 +61,42 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             
-            if (publicRequest.IsSetEndTime())
-                request.Parameters.Add("EndTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.EndTime));
+            if (publicRequest.IsSetMaxResults())
+                request.Parameters.Add("MaxResults", StringUtils.FromInt(publicRequest.MaxResults));
             
-            if (publicRequest.IsSetStartTime())
-                request.Parameters.Add("StartTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.StartTime));
-            request.ResourcePath = "/auditFindings";
+            if (publicRequest.IsSetNextToken())
+                request.Parameters.Add("NextToken", StringUtils.FromString(publicRequest.NextToken));
+            request.ResourcePath = "/events";
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAuditors())
+                if(publicRequest.IsSetEndTime())
                 {
-                    context.Writer.WritePropertyName("Auditors");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestAuditorsListValue in publicRequest.Auditors)
+                    context.Writer.WritePropertyName("EndTime");
+                    context.Writer.Write(publicRequest.EndTime);
+                }
+
+                if(publicRequest.IsSetEntity())
+                {
+                    context.Writer.WritePropertyName("Entity");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestEntityKvp in publicRequest.Entity)
                     {
-                            context.Writer.Write(publicRequestAuditorsListValue);
+                        context.Writer.WritePropertyName(publicRequestEntityKvp.Key);
+                        var publicRequestEntityValue = publicRequestEntityKvp.Value;
+
+                            context.Writer.Write(publicRequestEntityValue);
                     }
-                    context.Writer.WriteArrayEnd();
+                    context.Writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetAuditTargets())
+                if(publicRequest.IsSetStartTime())
                 {
-                    context.Writer.WritePropertyName("AuditTargets");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestAuditTargetsListValue in publicRequest.AuditTargets)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = AuditTargetMarshaller.Instance;
-                        marshaller.Marshall(publicRequestAuditTargetsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetDetailLevel())
-                {
-                    context.Writer.WritePropertyName("DetailLevel");
-                    context.Writer.Write(publicRequest.DetailLevel);
-                }
-
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("NextToken");
-                    context.Writer.Write(publicRequest.NextToken);
+                    context.Writer.WritePropertyName("StartTime");
+                    context.Writer.Write(publicRequest.StartTime);
                 }
 
                 writer.WriteObjectEnd();
@@ -127,9 +108,9 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static ListAuditFindingsRequestMarshaller _instance = new ListAuditFindingsRequestMarshaller();        
+        private static ListEntityEventsRequestMarshaller _instance = new ListEntityEventsRequestMarshaller();        
 
-        internal static ListAuditFindingsRequestMarshaller GetInstance()
+        internal static ListEntityEventsRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -137,7 +118,7 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ListAuditFindingsRequestMarshaller Instance
+        public static ListEntityEventsRequestMarshaller Instance
         {
             get
             {
