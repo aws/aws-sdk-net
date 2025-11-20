@@ -81,6 +81,17 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
                 context.Writer.WriteBooleanValue(publicRequest.EnableCrossAccountsDiscovery.Value);
             }
 
+            if(publicRequest.IsSetEnabledDiscoverySourceRegions())
+            {
+                context.Writer.WritePropertyName("EnabledDiscoverySourceRegions");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestEnabledDiscoverySourceRegionsListValue in publicRequest.EnabledDiscoverySourceRegions)
+                {
+                        context.Writer.WriteStringValue(publicRequestEnabledDiscoverySourceRegionsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(publicRequest.IsSetOrganizationConfiguration())
             {
                 context.Writer.WritePropertyName("OrganizationConfiguration");

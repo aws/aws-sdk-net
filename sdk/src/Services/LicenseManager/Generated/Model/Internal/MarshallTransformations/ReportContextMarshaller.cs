@@ -46,6 +46,17 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetLicenseAssetGroupArns())
+            {
+                context.Writer.WritePropertyName("licenseAssetGroupArns");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectLicenseAssetGroupArnsListValue in requestObject.LicenseAssetGroupArns)
+                {
+                        context.Writer.WriteStringValue(requestObjectLicenseAssetGroupArnsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(requestObject.IsSetLicenseConfigurationArns())
             {
                 context.Writer.WritePropertyName("licenseConfigurationArns");
@@ -55,6 +66,18 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
                         context.Writer.WriteStringValue(requestObjectLicenseConfigurationArnsListValue);
                 }
                 context.Writer.WriteEndArray();
+            }
+
+            if(requestObject.IsSetReportEndDate())
+            {
+                context.Writer.WritePropertyName("reportEndDate");
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.ReportEndDate.Value)));
+            }
+
+            if(requestObject.IsSetReportStartDate())
+            {
+                context.Writer.WritePropertyName("reportStartDate");
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.ReportStartDate.Value)));
             }
 
         }
