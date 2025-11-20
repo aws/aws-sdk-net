@@ -55,7 +55,7 @@ namespace Amazon.ElasticLoadBalancingV2
     ///  </li> <li> 
     /// <para>
     /// Network Load Balancer - Operates at the transport layer (layer 4) and supports TCP,
-    /// TLS, and UDP.
+    /// TLS, UDP, and QUIC.
     /// </para>
     ///  </li> <li> 
     /// <para>

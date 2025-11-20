@@ -47,6 +47,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         private int? _port;
         private ProtocolEnum _protocol;
         private string _protocolVersion;
+        private int? _targetControlPort;
         private string _targetGroupArn;
         private string _targetGroupName;
         private TargetTypeEnum _targetType;
@@ -296,6 +297,26 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         internal bool IsSetProtocolVersion()
         {
             return this._protocolVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TargetControlPort. 
+        /// <para>
+        /// The port on which the target control agent and application load balancer exchange
+        /// management traffic for the target optimizer feature.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=65535)]
+        public int TargetControlPort
+        {
+            get { return this._targetControlPort.GetValueOrDefault(); }
+            set { this._targetControlPort = value; }
+        }
+
+        // Check to see if TargetControlPort property is set
+        internal bool IsSetTargetControlPort()
+        {
+            return this._targetControlPort.HasValue; 
         }
 
         /// <summary>

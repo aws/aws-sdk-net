@@ -138,6 +138,12 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                         unmarshalledObject.ProtocolVersion = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("TargetControlPort", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.TargetControlPort = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("TargetGroupArn", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

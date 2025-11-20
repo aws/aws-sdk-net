@@ -141,7 +141,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// Load Balancers, the default is TCP. The TCP protocol is not supported for health checks
         /// if the protocol of the target group is HTTP or HTTPS. It is supported for health checks
         /// only if the protocol of the target group is TCP, TLS, UDP, or TCP_UDP. The GENEVE,
-        /// TLS, UDP, and TCP_UDP protocols are not supported for health checks.
+        /// TLS, UDP, TCP_UDP, QUIC, and TCP_QUIC protocols are not supported for health checks.
         /// </para>
         /// </summary>
         public ProtocolEnum HealthCheckProtocol

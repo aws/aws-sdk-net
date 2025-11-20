@@ -74,6 +74,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         private ProtocolEnum _protocol;
         private string _protocolVersion;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
+        private int? _targetControlPort;
         private TargetTypeEnum _targetType;
         private int? _unhealthyThresholdCount;
         private string _vpcId;
@@ -103,9 +104,9 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <para>
         /// The approximate amount of time, in seconds, between health checks of an individual
         /// target. The range is 5-300. If the target group protocol is TCP, TLS, UDP, TCP_UDP,
-        /// HTTP or HTTPS, the default is 30 seconds. If the target group protocol is GENEVE,
-        /// the default is 10 seconds. If the target type is <c>lambda</c>, the default is 35
-        /// seconds.
+        /// QUIC, TCP_QUIC, HTTP or HTTPS, the default is 30 seconds. If the target group protocol
+        /// is GENEVE, the default is 10 seconds. If the target type is <c>lambda</c>, the default
+        /// is 35 seconds.
         /// </para>
         /// </summary>
         [AWSProperty(Min=5, Max=300)]
@@ -153,9 +154,9 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// Gets and sets the property HealthCheckPort. 
         /// <para>
         /// The port the load balancer uses when performing health checks on targets. If the protocol
-        /// is HTTP, HTTPS, TCP, TLS, UDP, or TCP_UDP, the default is <c>traffic-port</c>, which
-        /// is the port on which each target receives traffic from the load balancer. If the protocol
-        /// is GENEVE, the default is port 80.
+        /// is HTTP, HTTPS, TCP, TLS, UDP, TCP_UDP, QUIC, or TCP_QUIC the default is <c>traffic-port</c>,
+        /// which is the port on which each target receives traffic from the load balancer. If
+        /// the protocol is GENEVE, the default is port 80.
         /// </para>
         /// </summary>
         public string HealthCheckPort
@@ -176,8 +177,8 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// The protocol the load balancer uses when performing health checks on targets. For
         /// Application Load Balancers, the default is HTTP. For Network Load Balancers and Gateway
         /// Load Balancers, the default is TCP. The TCP protocol is not supported for health checks
-        /// if the protocol of the target group is HTTP or HTTPS. The GENEVE, TLS, UDP, and TCP_UDP
-        /// protocols are not supported for health checks.
+        /// if the protocol of the target group is HTTP or HTTPS. The GENEVE, TLS, UDP, TCP_UDP,
+        /// QUIC, and TCP_QUIC protocols are not supported for health checks.
         /// </para>
         /// </summary>
         public ProtocolEnum HealthCheckProtocol
@@ -259,9 +260,10 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// Gets and sets the property Matcher. 
         /// <para>
         /// [HTTP/HTTPS health checks] The HTTP or gRPC codes to use when checking for a successful
-        /// response from a target. For target groups with a protocol of TCP, TCP_UDP, UDP or
-        /// TLS the range is 200-599. For target groups with a protocol of HTTP or HTTPS, the
-        /// range is 200-499. For target groups with a protocol of GENEVE, the range is 200-399.
+        /// response from a target. For target groups with a protocol of TCP, TCP_UDP, UDP, QUIC,
+        /// TCP_QUIC, or TLS the range is 200-599. For target groups with a protocol of HTTP or
+        /// HTTPS, the range is 200-499. For target groups with a protocol of GENEVE, the range
+        /// is 200-399.
         /// </para>
         /// </summary>
         public Matcher Matcher
@@ -327,8 +329,9 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <para>
         /// The protocol to use for routing traffic to the targets. For Application Load Balancers,
         /// the supported protocols are HTTP and HTTPS. For Network Load Balancers, the supported
-        /// protocols are TCP, TLS, UDP, or TCP_UDP. For Gateway Load Balancers, the supported
-        /// protocol is GENEVE. A TCP_UDP listener must be associated with a TCP_UDP target group.
+        /// protocols are TCP, TLS, UDP, TCP_UDP, QUIC, or TCP_QUIC. For Gateway Load Balancers,
+        /// the supported protocol is GENEVE. A TCP_UDP listener must be associated with a TCP_UDP
+        /// target group. A TCP_QUIC listener must be associated with a TCP_QUIC target group.
         /// If the target is a Lambda function, this parameter does not apply.
         /// </para>
         /// </summary>
@@ -384,6 +387,26 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property TargetControlPort. 
+        /// <para>
+        /// The port on which the target control agent and application load balancer exchange
+        /// management traffic for the target optimizer feature.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=65535)]
+        public int TargetControlPort
+        {
+            get { return this._targetControlPort.GetValueOrDefault(); }
+            set { this._targetControlPort = value; }
+        }
+
+        // Check to see if TargetControlPort property is set
+        internal bool IsSetTargetControlPort()
+        {
+            return this._targetControlPort.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property TargetType. 
         /// <para>
         /// The type of target that you must specify when registering targets with this target
@@ -427,8 +450,8 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <para>
         /// The number of consecutive health check failures required before considering a target
         /// unhealthy. The range is 2-10. If the target group protocol is TCP, TCP_UDP, UDP, TLS,
-        /// HTTP or HTTPS, the default is 2. For target groups with a protocol of GENEVE, the
-        /// default is 2. If the target type is <c>lambda</c>, the default is 5.
+        /// QUIC, TCP_QUIC, HTTP or HTTPS, the default is 2. For target groups with a protocol
+        /// of GENEVE, the default is 2. If the target type is <c>lambda</c>, the default is 5.
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=10)]
