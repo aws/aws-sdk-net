@@ -143,10 +143,22 @@ namespace Amazon.RecycleBin.Model
         /// Gets and sets the property ResourceType. 
         /// <para>
         /// The resource type retained by the retention rule. Only retention rules that retain
-        /// the specified resource type are listed. Currently, only Amazon EBS snapshots and EBS-backed
-        /// AMIs are supported. To list retention rules that retain snapshots, specify <c>EBS_SNAPSHOT</c>.
+        /// the specified resource type are listed. Currently, only EBS volumes, EBS snapshots,
+        /// and EBS-backed AMIs are supported.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// To list retention rules that retain EBS volumes, specify <c>EBS_VOLUME</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To list retention rules that retain EBS snapshots, specify <c>EBS_SNAPSHOT</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// To list retention rules that retain EBS-backed AMIs, specify <c>EC2_IMAGE</c>.
         /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public ResourceType ResourceType

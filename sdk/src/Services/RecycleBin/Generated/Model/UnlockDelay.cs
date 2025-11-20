@@ -44,7 +44,7 @@ namespace Amazon.RecycleBin.Model
         /// Gets and sets the property UnlockDelayUnit. 
         /// <para>
         /// The unit of time in which to measure the unlock delay. Currently, the unlock delay
-        /// can be measure only in days.
+        /// can be measured only in days.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
