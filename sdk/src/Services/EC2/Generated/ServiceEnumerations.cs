@@ -2469,6 +2469,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly ByoipCidrState FailedProvision = new ByoipCidrState("failed-provision");
         /// <summary>
+        /// Constant PendingAdvertising for ByoipCidrState
+        /// </summary>
+        public static readonly ByoipCidrState PendingAdvertising = new ByoipCidrState("pending-advertising");
+        /// <summary>
         /// Constant PendingDeprovision for ByoipCidrState
         /// </summary>
         public static readonly ByoipCidrState PendingDeprovision = new ByoipCidrState("pending-deprovision");
@@ -2476,6 +2480,10 @@ namespace Amazon.EC2
         /// Constant PendingProvision for ByoipCidrState
         /// </summary>
         public static readonly ByoipCidrState PendingProvision = new ByoipCidrState("pending-provision");
+        /// <summary>
+        /// Constant PendingWithdrawal for ByoipCidrState
+        /// </summary>
+        public static readonly ByoipCidrState PendingWithdrawal = new ByoipCidrState("pending-withdrawal");
         /// <summary>
         /// Constant Provisioned for ByoipCidrState
         /// </summary>
@@ -5900,6 +5908,114 @@ namespace Amazon.EC2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator EnaSupport(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type EncryptionStateValue.
+    /// </summary>
+    public class EncryptionStateValue : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Disabled for EncryptionStateValue
+        /// </summary>
+        public static readonly EncryptionStateValue Disabled = new EncryptionStateValue("disabled");
+        /// <summary>
+        /// Constant Disabling for EncryptionStateValue
+        /// </summary>
+        public static readonly EncryptionStateValue Disabling = new EncryptionStateValue("disabling");
+        /// <summary>
+        /// Constant Enabled for EncryptionStateValue
+        /// </summary>
+        public static readonly EncryptionStateValue Enabled = new EncryptionStateValue("enabled");
+        /// <summary>
+        /// Constant Enabling for EncryptionStateValue
+        /// </summary>
+        public static readonly EncryptionStateValue Enabling = new EncryptionStateValue("enabling");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EncryptionStateValue(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EncryptionStateValue FindValue(string value)
+        {
+            return FindValue<EncryptionStateValue>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EncryptionStateValue(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type EncryptionSupportOptionValue.
+    /// </summary>
+    public class EncryptionSupportOptionValue : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Disable for EncryptionSupportOptionValue
+        /// </summary>
+        public static readonly EncryptionSupportOptionValue Disable = new EncryptionSupportOptionValue("disable");
+        /// <summary>
+        /// Constant Enable for EncryptionSupportOptionValue
+        /// </summary>
+        public static readonly EncryptionSupportOptionValue Enable = new EncryptionSupportOptionValue("enable");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EncryptionSupportOptionValue(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EncryptionSupportOptionValue FindValue(string value)
+        {
+            return FindValue<EncryptionSupportOptionValue>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EncryptionSupportOptionValue(string value)
         {
             return FindValue(value);
         }
@@ -15089,6 +15205,10 @@ namespace Amazon.EC2
     {
 
         /// <summary>
+        /// Constant AnycastIpList for IpamPoolAllocationResourceType
+        /// </summary>
+        public static readonly IpamPoolAllocationResourceType AnycastIpList = new IpamPoolAllocationResourceType("anycast-ip-list");
+        /// <summary>
         /// Constant Custom for IpamPoolAllocationResourceType
         /// </summary>
         public static readonly IpamPoolAllocationResourceType Custom = new IpamPoolAllocationResourceType("custom");
@@ -15158,6 +15278,10 @@ namespace Amazon.EC2
         /// Constant Ec2 for IpamPoolAwsService
         /// </summary>
         public static readonly IpamPoolAwsService Ec2 = new IpamPoolAwsService("ec2");
+        /// <summary>
+        /// Constant GlobalServices for IpamPoolAwsService
+        /// </summary>
+        public static readonly IpamPoolAwsService GlobalServices = new IpamPoolAwsService("global-services");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -15915,6 +16039,10 @@ namespace Amazon.EC2
     {
 
         /// <summary>
+        /// Constant Cloudfront for IpamPublicAddressAwsService
+        /// </summary>
+        public static readonly IpamPublicAddressAwsService Cloudfront = new IpamPublicAddressAwsService("cloudfront");
+        /// <summary>
         /// Constant DatabaseMigrationService for IpamPublicAddressAwsService
         /// </summary>
         public static readonly IpamPublicAddressAwsService DatabaseMigrationService = new IpamPublicAddressAwsService("database-migration-service");
@@ -16000,6 +16128,10 @@ namespace Amazon.EC2
         /// Constant AmazonOwnedEip for IpamPublicAddressType
         /// </summary>
         public static readonly IpamPublicAddressType AmazonOwnedEip = new IpamPublicAddressType("amazon-owned-eip");
+        /// <summary>
+        /// Constant AnycastIpListIp for IpamPublicAddressType
+        /// </summary>
+        public static readonly IpamPublicAddressType AnycastIpListIp = new IpamPublicAddressType("anycast-ip-list-ip");
         /// <summary>
         /// Constant Byoip for IpamPublicAddressType
         /// </summary>
@@ -16280,6 +16412,10 @@ namespace Amazon.EC2
     public class IpamResourceType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant AnycastIpList for IpamResourceType
+        /// </summary>
+        public static readonly IpamResourceType AnycastIpList = new IpamResourceType("anycast-ip-list");
         /// <summary>
         /// Constant Eip for IpamResourceType
         /// </summary>
@@ -21635,6 +21771,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly ResourceType TransitGatewayConnectPeer = new ResourceType("transit-gateway-connect-peer");
         /// <summary>
+        /// Constant TransitGatewayMeteringPolicy for ResourceType
+        /// </summary>
+        public static readonly ResourceType TransitGatewayMeteringPolicy = new ResourceType("transit-gateway-metering-policy");
+        /// <summary>
         /// Constant TransitGatewayMulticastDomain for ResourceType
         /// </summary>
         public static readonly ResourceType TransitGatewayMulticastDomain = new ResourceType("transit-gateway-multicast-domain");
@@ -21686,6 +21826,10 @@ namespace Amazon.EC2
         /// Constant VpcBlockPublicAccessExclusion for ResourceType
         /// </summary>
         public static readonly ResourceType VpcBlockPublicAccessExclusion = new ResourceType("vpc-block-public-access-exclusion");
+        /// <summary>
+        /// Constant VpcEncryptionControl for ResourceType
+        /// </summary>
+        public static readonly ResourceType VpcEncryptionControl = new ResourceType("vpc-encryption-control");
         /// <summary>
         /// Constant VpcEndpoint for ResourceType
         /// </summary>
@@ -25833,6 +25977,172 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type TransitGatewayMeteringPayerType.
+    /// </summary>
+    public class TransitGatewayMeteringPayerType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DestinationAttachmentOwner for TransitGatewayMeteringPayerType
+        /// </summary>
+        public static readonly TransitGatewayMeteringPayerType DestinationAttachmentOwner = new TransitGatewayMeteringPayerType("destination-attachment-owner");
+        /// <summary>
+        /// Constant SourceAttachmentOwner for TransitGatewayMeteringPayerType
+        /// </summary>
+        public static readonly TransitGatewayMeteringPayerType SourceAttachmentOwner = new TransitGatewayMeteringPayerType("source-attachment-owner");
+        /// <summary>
+        /// Constant TransitGatewayOwner for TransitGatewayMeteringPayerType
+        /// </summary>
+        public static readonly TransitGatewayMeteringPayerType TransitGatewayOwner = new TransitGatewayMeteringPayerType("transit-gateway-owner");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TransitGatewayMeteringPayerType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TransitGatewayMeteringPayerType FindValue(string value)
+        {
+            return FindValue<TransitGatewayMeteringPayerType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TransitGatewayMeteringPayerType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TransitGatewayMeteringPolicyEntryState.
+    /// </summary>
+    public class TransitGatewayMeteringPolicyEntryState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Available for TransitGatewayMeteringPolicyEntryState
+        /// </summary>
+        public static readonly TransitGatewayMeteringPolicyEntryState Available = new TransitGatewayMeteringPolicyEntryState("available");
+        /// <summary>
+        /// Constant Deleted for TransitGatewayMeteringPolicyEntryState
+        /// </summary>
+        public static readonly TransitGatewayMeteringPolicyEntryState Deleted = new TransitGatewayMeteringPolicyEntryState("deleted");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TransitGatewayMeteringPolicyEntryState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TransitGatewayMeteringPolicyEntryState FindValue(string value)
+        {
+            return FindValue<TransitGatewayMeteringPolicyEntryState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TransitGatewayMeteringPolicyEntryState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TransitGatewayMeteringPolicyState.
+    /// </summary>
+    public class TransitGatewayMeteringPolicyState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Available for TransitGatewayMeteringPolicyState
+        /// </summary>
+        public static readonly TransitGatewayMeteringPolicyState Available = new TransitGatewayMeteringPolicyState("available");
+        /// <summary>
+        /// Constant Deleted for TransitGatewayMeteringPolicyState
+        /// </summary>
+        public static readonly TransitGatewayMeteringPolicyState Deleted = new TransitGatewayMeteringPolicyState("deleted");
+        /// <summary>
+        /// Constant Deleting for TransitGatewayMeteringPolicyState
+        /// </summary>
+        public static readonly TransitGatewayMeteringPolicyState Deleting = new TransitGatewayMeteringPolicyState("deleting");
+        /// <summary>
+        /// Constant Modifying for TransitGatewayMeteringPolicyState
+        /// </summary>
+        public static readonly TransitGatewayMeteringPolicyState Modifying = new TransitGatewayMeteringPolicyState("modifying");
+        /// <summary>
+        /// Constant Pending for TransitGatewayMeteringPolicyState
+        /// </summary>
+        public static readonly TransitGatewayMeteringPolicyState Pending = new TransitGatewayMeteringPolicyState("pending");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TransitGatewayMeteringPolicyState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TransitGatewayMeteringPolicyState FindValue(string value)
+        {
+            return FindValue<TransitGatewayMeteringPolicyState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TransitGatewayMeteringPolicyState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type TransitGatewayMulitcastDomainAssociationState.
     /// </summary>
     public class TransitGatewayMulitcastDomainAssociationState : ConstantClass
@@ -27998,6 +28308,56 @@ namespace Amazon.EC2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator VpcEncryptionControlExclusionState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type VpcEncryptionControlExclusionStateInput.
+    /// </summary>
+    public class VpcEncryptionControlExclusionStateInput : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Disable for VpcEncryptionControlExclusionStateInput
+        /// </summary>
+        public static readonly VpcEncryptionControlExclusionStateInput Disable = new VpcEncryptionControlExclusionStateInput("disable");
+        /// <summary>
+        /// Constant Enable for VpcEncryptionControlExclusionStateInput
+        /// </summary>
+        public static readonly VpcEncryptionControlExclusionStateInput Enable = new VpcEncryptionControlExclusionStateInput("enable");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public VpcEncryptionControlExclusionStateInput(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VpcEncryptionControlExclusionStateInput FindValue(string value)
+        {
+            return FindValue<VpcEncryptionControlExclusionStateInput>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VpcEncryptionControlExclusionStateInput(string value)
         {
             return FindValue(value);
         }
