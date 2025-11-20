@@ -45,8 +45,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ImageBuildVersionArn. 
         /// <para>
-        /// The image build version resource ARN that's associated with the specified runtime
-        /// instance of the workflow.
+        /// The image build version resource Amazon Resource Name (ARN) that's associated with
+        /// the specified runtime instance of the workflow.
         /// </para>
         /// </summary>
         public string ImageBuildVersionArn
@@ -142,8 +142,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property WorkflowBuildVersionArn. 
         /// <para>
-        /// The build version ARN for the Image Builder workflow resource that defines the steps
-        /// for this runtime instance of the workflow.
+        /// The build version Amazon Resource Name (ARN) for the Image Builder workflow resource
+        /// that defines the steps for this runtime instance of the workflow.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]

@@ -35,9 +35,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetWorkflow operation
+    /// Response Unmarshaller for RetryImage operation
     /// </summary>  
-    public class GetWorkflowResponseUnmarshaller : JsonResponseUnmarshaller
+    public class RetryImageResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,22 +46,22 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            GetWorkflowResponse response = new GetWorkflowResponse();
+            RetryImageResponse response = new RetryImageResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("latestVersionReferences", targetDepth))
+                if (context.TestExpression("clientToken", targetDepth))
                 {
-                    var unmarshaller = LatestVersionReferencesUnmarshaller.Instance;
-                    response.LatestVersionReferences = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ClientToken = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("workflow", targetDepth))
+                if (context.TestExpression("imageBuildVersionArn", targetDepth))
                 {
-                    var unmarshaller = WorkflowUnmarshaller.Instance;
-                    response.Workflow = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ImageBuildVersionArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -99,9 +99,17 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
                 {
                     return ForbiddenExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("IdempotentParameterMismatchException"))
+                {
+                    return IdempotentParameterMismatchExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidRequestException"))
                 {
                     return InvalidRequestExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceInUseException"))
+                {
+                    return ResourceInUseExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceException"))
                 {
@@ -115,9 +123,9 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
             return new AmazonImagebuilderException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static GetWorkflowResponseUnmarshaller _instance = new GetWorkflowResponseUnmarshaller();        
+        private static RetryImageResponseUnmarshaller _instance = new RetryImageResponseUnmarshaller();        
 
-        internal static GetWorkflowResponseUnmarshaller GetInstance()
+        internal static RetryImageResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -125,7 +133,7 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetWorkflowResponseUnmarshaller Instance
+        public static RetryImageResponseUnmarshaller Instance
         {
             get
             {

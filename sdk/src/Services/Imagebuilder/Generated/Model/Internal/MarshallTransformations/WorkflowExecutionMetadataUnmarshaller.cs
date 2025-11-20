@@ -84,6 +84,12 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
                     unmarshalledObject.ParallelGroup = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("retried", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.Retried = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("startTime", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateWorkflow Request Marshaller
+    /// DistributeImage Request Marshaller
     /// </summary>       
-    public class CreateWorkflowRequestMarshaller : IMarshaller<IRequest, CreateWorkflowRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class DistributeImageRequestMarshaller : IMarshaller<IRequest, DistributeImageRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -45,7 +45,7 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateWorkflowRequest)input);
+            return this.Marshall((DistributeImageRequest)input);
         }
 
         /// <summary>
@@ -53,26 +53,20 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateWorkflowRequest publicRequest)
+        public IRequest Marshall(DistributeImageRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Imagebuilder");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-12-02";
             request.HttpMethod = "PUT";
 
-            request.ResourcePath = "/CreateWorkflow";
+            request.ResourcePath = "/DistributeImage";
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetChangeDescription())
-                {
-                    context.Writer.WritePropertyName("changeDescription");
-                    context.Writer.Write(publicRequest.ChangeDescription);
-                }
-
                 if(publicRequest.IsSetClientToken())
                 {
                     context.Writer.WritePropertyName("clientToken");
@@ -84,40 +78,33 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
                     context.Writer.WritePropertyName("clientToken");
                     context.Writer.Write(Guid.NewGuid().ToString());
                 }
-                if(publicRequest.IsSetData())
+                if(publicRequest.IsSetDistributionConfigurationArn())
                 {
-                    context.Writer.WritePropertyName("data");
-                    context.Writer.Write(publicRequest.Data);
+                    context.Writer.WritePropertyName("distributionConfigurationArn");
+                    context.Writer.Write(publicRequest.DistributionConfigurationArn);
                 }
 
-                if(publicRequest.IsSetDescription())
+                if(publicRequest.IsSetExecutionRole())
                 {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
+                    context.Writer.WritePropertyName("executionRole");
+                    context.Writer.Write(publicRequest.ExecutionRole);
                 }
 
-                if(publicRequest.IsSetDryRun())
+                if(publicRequest.IsSetLoggingConfiguration())
                 {
-                    context.Writer.WritePropertyName("dryRun");
-                    context.Writer.Write(publicRequest.DryRun);
+                    context.Writer.WritePropertyName("loggingConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ImageLoggingConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.LoggingConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetKmsKeyId())
+                if(publicRequest.IsSetSourceImage())
                 {
-                    context.Writer.WritePropertyName("kmsKeyId");
-                    context.Writer.Write(publicRequest.KmsKeyId);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetSemanticVersion())
-                {
-                    context.Writer.WritePropertyName("semanticVersion");
-                    context.Writer.Write(publicRequest.SemanticVersion);
+                    context.Writer.WritePropertyName("sourceImage");
+                    context.Writer.Write(publicRequest.SourceImage);
                 }
 
                 if(publicRequest.IsSetTags())
@@ -134,18 +121,6 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetType())
-                {
-                    context.Writer.WritePropertyName("type");
-                    context.Writer.Write(publicRequest.Type);
-                }
-
-                if(publicRequest.IsSetUri())
-                {
-                    context.Writer.WritePropertyName("uri");
-                    context.Writer.Write(publicRequest.Uri);
-                }
-
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
@@ -154,9 +129,9 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateWorkflowRequestMarshaller _instance = new CreateWorkflowRequestMarshaller();        
+        private static DistributeImageRequestMarshaller _instance = new DistributeImageRequestMarshaller();        
 
-        internal static CreateWorkflowRequestMarshaller GetInstance()
+        internal static DistributeImageRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -164,7 +139,7 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateWorkflowRequestMarshaller Instance
+        public static DistributeImageRequestMarshaller Instance
         {
             get
             {

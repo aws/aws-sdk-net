@@ -30,13 +30,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
-    /// This is the response object from the CreateWorkflow operation.
+    /// This is the response object from the DistributeImage operation.
     /// </summary>
-    public partial class CreateWorkflowResponse : AmazonWebServiceResponse
+    public partial class DistributeImageResponse : AmazonWebServiceResponse
     {
         private string _clientToken;
-        private LatestVersionReferences _latestVersionReferences;
-        private string _workflowBuildVersionArn;
+        private string _imageBuildVersionArn;
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
@@ -58,40 +57,21 @@ namespace Amazon.Imagebuilder.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LatestVersionReferences. 
+        /// Gets and sets the property ImageBuildVersionArn. 
         /// <para>
-        /// The resource ARNs with different wildcard variations of semantic versioning.
+        /// The Amazon Resource Name (ARN) of the image to be distributed.
         /// </para>
         /// </summary>
-        public LatestVersionReferences LatestVersionReferences
+        public string ImageBuildVersionArn
         {
-            get { return this._latestVersionReferences; }
-            set { this._latestVersionReferences = value; }
+            get { return this._imageBuildVersionArn; }
+            set { this._imageBuildVersionArn = value; }
         }
 
-        // Check to see if LatestVersionReferences property is set
-        internal bool IsSetLatestVersionReferences()
+        // Check to see if ImageBuildVersionArn property is set
+        internal bool IsSetImageBuildVersionArn()
         {
-            return this._latestVersionReferences != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property WorkflowBuildVersionArn. 
-        /// <para>
-        /// The Amazon Resource Name (ARN) of the workflow resource that the request created.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Max=1024)]
-        public string WorkflowBuildVersionArn
-        {
-            get { return this._workflowBuildVersionArn; }
-            set { this._workflowBuildVersionArn = value; }
-        }
-
-        // Check to see if WorkflowBuildVersionArn property is set
-        internal bool IsSetWorkflowBuildVersionArn()
-        {
-            return this._workflowBuildVersionArn != null;
+            return this._imageBuildVersionArn != null;
         }
 
     }

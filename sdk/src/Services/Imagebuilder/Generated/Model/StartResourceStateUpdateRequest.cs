@@ -125,8 +125,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The ARN of the Image Builder resource that is updated. The state update might also
-        /// impact associated resources.
+        /// The Amazon Resource Name (ARN) of the Image Builder resource that is updated. The
+        /// state update might also impact associated resources.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
