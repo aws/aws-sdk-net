@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// VideoOverrideConfiguration Marshaller
+    /// SensitiveDataConfiguration Marshaller
     /// </summary>
-    public class VideoOverrideConfigurationMarshaller : IRequestMarshaller<VideoOverrideConfiguration, JsonMarshallerContext> 
+    public class SensitiveDataConfigurationMarshaller : IRequestMarshaller<SensitiveDataConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,28 +44,34 @@ namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(VideoOverrideConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(SensitiveDataConfiguration requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetModalityProcessing())
+            if(requestObject.IsSetDetectionMode())
             {
-                context.Writer.WritePropertyName("modalityProcessing");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = ModalityProcessingConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.ModalityProcessing, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("detectionMode");
+                context.Writer.Write(requestObject.DetectionMode);
             }
 
-            if(requestObject.IsSetSensitiveDataConfiguration())
+            if(requestObject.IsSetDetectionScope())
             {
-                context.Writer.WritePropertyName("sensitiveDataConfiguration");
+                context.Writer.WritePropertyName("detectionScope");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectDetectionScopeListValue in requestObject.DetectionScope)
+                {
+                        context.Writer.Write(requestObjectDetectionScopeListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetPiiEntitiesConfiguration())
+            {
+                context.Writer.WritePropertyName("piiEntitiesConfiguration");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = SensitiveDataConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.SensitiveDataConfiguration, context);
+                var marshaller = PIIEntitiesConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.PiiEntitiesConfiguration, context);
 
                 context.Writer.WriteObjectEnd();
             }
@@ -75,7 +81,7 @@ namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static VideoOverrideConfigurationMarshaller Instance = new VideoOverrideConfigurationMarshaller();
+        public readonly static SensitiveDataConfigurationMarshaller Instance = new SensitiveDataConfigurationMarshaller();
 
     }
 }

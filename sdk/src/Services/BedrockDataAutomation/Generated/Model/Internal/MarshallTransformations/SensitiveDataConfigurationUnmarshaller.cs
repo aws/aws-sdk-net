@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DataAutomationProjectSummary Object
+    /// Response Unmarshaller for SensitiveDataConfiguration Object
     /// </summary>  
-    public class DataAutomationProjectSummaryUnmarshaller : IUnmarshaller<DataAutomationProjectSummary, XmlUnmarshallerContext>, IUnmarshaller<DataAutomationProjectSummary, JsonUnmarshallerContext>
+    public class SensitiveDataConfigurationUnmarshaller : IUnmarshaller<SensitiveDataConfiguration, XmlUnmarshallerContext>, IUnmarshaller<SensitiveDataConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        DataAutomationProjectSummary IUnmarshaller<DataAutomationProjectSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        SensitiveDataConfiguration IUnmarshaller<SensitiveDataConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public DataAutomationProjectSummary Unmarshall(JsonUnmarshallerContext context)
+        public SensitiveDataConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
-            DataAutomationProjectSummary unmarshalledObject = new DataAutomationProjectSummary();
+            SensitiveDataConfiguration unmarshalledObject = new SensitiveDataConfiguration();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,34 +66,22 @@ namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("creationTime", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("projectArn", targetDepth))
+                if (context.TestExpression("detectionMode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ProjectArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DetectionMode = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("projectName", targetDepth))
+                if (context.TestExpression("detectionScope", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ProjectName = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.DetectionScope = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("projectStage", targetDepth))
+                if (context.TestExpression("piiEntitiesConfiguration", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ProjectStage = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("projectType", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ProjectType = unmarshaller.Unmarshall(context);
+                    var unmarshaller = PIIEntitiesConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.PiiEntitiesConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -101,12 +89,12 @@ namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
         }
 
 
-        private static DataAutomationProjectSummaryUnmarshaller _instance = new DataAutomationProjectSummaryUnmarshaller();        
+        private static SensitiveDataConfigurationUnmarshaller _instance = new SensitiveDataConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DataAutomationProjectSummaryUnmarshaller Instance
+        public static SensitiveDataConfigurationUnmarshaller Instance
         {
             get
             {

@@ -78,6 +78,12 @@ namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
                     unmarshalledObject.ModalityProcessing = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("sensitiveDataConfiguration", targetDepth))
+                {
+                    var unmarshaller = SensitiveDataConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.SensitiveDataConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

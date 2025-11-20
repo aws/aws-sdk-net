@@ -36,6 +36,7 @@ namespace Amazon.BedrockDataAutomation.Model
     {
         private AudioLanguageConfiguration _languageConfiguration;
         private ModalityProcessingConfiguration _modalityProcessing;
+        private SensitiveDataConfiguration _sensitiveDataConfiguration;
 
         /// <summary>
         /// Gets and sets the property LanguageConfiguration.
@@ -65,6 +66,21 @@ namespace Amazon.BedrockDataAutomation.Model
         internal bool IsSetModalityProcessing()
         {
             return this._modalityProcessing != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SensitiveDataConfiguration.
+        /// </summary>
+        public SensitiveDataConfiguration SensitiveDataConfiguration
+        {
+            get { return this._sensitiveDataConfiguration; }
+            set { this._sensitiveDataConfiguration = value; }
+        }
+
+        // Check to see if SensitiveDataConfiguration property is set
+        internal bool IsSetSensitiveDataConfiguration()
+        {
+            return this._sensitiveDataConfiguration != null;
         }
 
     }

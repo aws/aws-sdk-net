@@ -126,6 +126,12 @@ namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
                     unmarshalledObject.ProjectStage = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("projectType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ProjectType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("standardOutputConfiguration", targetDepth))
                 {
                     var unmarshaller = StandardOutputConfigurationUnmarshaller.Instance;
