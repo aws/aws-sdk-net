@@ -15,6 +15,7 @@
 
 using Amazon.S3.Model;
 using Amazon.S3.Util;
+using AWSSDK.S3.Transfer.Model;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -27,7 +28,7 @@ namespace Amazon.S3.Transfer.Internal
 {
     internal partial class DownloadDirectoryCommand : BaseCommand<TransferUtilityDownloadDirectoryResponse>
     {
-
+        FailurePolicy _failurePolicy;
         TransferUtilityConfig _config;
 
         public bool DownloadFilesConcurrently { get; set; }
@@ -36,6 +37,7 @@ namespace Amazon.S3.Transfer.Internal
             : this(s3Client, request)
         {
             this._config = config;
+            this._failurePolicy = request.FailurePolicy;
         }
 
         public override async Task<TransferUtilityDownloadDirectoryResponse> ExecuteAsync(CancellationToken cancellationToken)
@@ -74,6 +76,10 @@ namespace Amazon.S3.Transfer.Internal
 
                 internalCts = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
                 var pendingTasks = new List<Task>();
+                // Collect errors when continuing on failure
+                var errors = _failurePolicy == FailurePolicy.CONTINUE_ON_FAILURE ? new List<Exception>() : null;
+                bool cancelOnFailure = _failurePolicy != FailurePolicy.CONTINUE_ON_FAILURE;
+
                 foreach (S3Object s3o in objs)
                 {
                     if (s3o.Key.EndsWith("/", StringComparison.Ordinal))
@@ -107,17 +113,71 @@ namespace Amazon.S3.Transfer.Internal
                     var downloadRequest = ConstructTransferUtilityDownloadRequest(s3o, prefixLength);
                     var command = new DownloadCommand(this._s3Client, downloadRequest);
 
-                    var task = ExecuteCommandAsync(command, internalCts, asyncThrottler);
+                    // Use failure policy aware execution
+                    var task = cancelOnFailure
+                        ? ExecuteCommandAsync(command, internalCts, asyncThrottler)
+                        : ExecuteCommandAsync(command, internalCts, asyncThrottler, cancelOnFailure: false, errors: errors);
                     
                     pendingTasks.Add(task);
                 }
-                await WhenAllOrFirstExceptionAsync(pendingTasks, cancellationToken)
-                    .ConfigureAwait(continueOnCapturedContext: false);
 
-                return new TransferUtilityDownloadDirectoryResponse
+                TransferUtilityDownloadDirectoryResponse response;
+
+                if (_failurePolicy == FailurePolicy.CONTINUE_ON_FAILURE)
                 {
-                    ObjectsDownloaded = _numberOfFilesDownloaded
-                };
+                    // Drain all tasks; exceptions were suppressed and collected
+                    while (pendingTasks.Count > 0)
+                    {
+                        var completed = await Task.WhenAny(pendingTasks).ConfigureAwait(false);
+                        await completed.ConfigureAwait(false); // will not throw because we suppressed
+                        pendingTasks.Remove(completed);
+                    }
+
+                    // If any errors occurred, throw an aggregate exception capturing them but after all downloads attempted
+                    if (errors != null && errors.Count > 0)
+                    {
+                        long failed = errors.Count;
+                        long succeeded = _numberOfFilesDownloaded;
+                        var result = TransferUtilityDownloadDirectoryResult.SUCCESS;
+                        if (failed > 0 && succeeded > 0)
+                            result = TransferUtilityDownloadDirectoryResult.PARTIAL_SUCCESS;
+                        else if (failed > 0 && succeeded == 0)
+                            result = TransferUtilityDownloadDirectoryResult.FAILURE;
+
+                        response = new TransferUtilityDownloadDirectoryResponse
+                        {
+                            ObjectsDownloaded = succeeded,
+                            ObjectsFailed = failed,
+                            Errors = errors,
+                            Result = result
+                        };
+                    }
+                    else
+                    {
+                        response = new TransferUtilityDownloadDirectoryResponse
+                        {
+                            ObjectsDownloaded = _numberOfFilesDownloaded,
+                            ObjectsFailed = 0,
+                            Errors = null,
+                            Result = TransferUtilityDownloadDirectoryResult.SUCCESS
+                        };
+                    }
+                }
+                else
+                {
+                    await WhenAllOrFirstExceptionAsync(pendingTasks, cancellationToken)
+                        .ConfigureAwait(continueOnCapturedContext: false);
+
+                    response = new TransferUtilityDownloadDirectoryResponse
+                    {
+                        ObjectsDownloaded = _numberOfFilesDownloaded,
+                        ObjectsFailed = 0,
+                        Errors = null,
+                        Result = TransferUtilityDownloadDirectoryResult.SUCCESS
+                    };
+                }
+
+                return response;
             }
             finally
             {

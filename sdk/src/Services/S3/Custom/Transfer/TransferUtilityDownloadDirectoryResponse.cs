@@ -13,6 +13,8 @@
  * permissions and limitations under the License.
  */
 
+using System;
+using System.Collections.Generic;
 using Amazon.Runtime;
 
 namespace Amazon.S3.Transfer
@@ -23,8 +25,46 @@ namespace Amazon.S3.Transfer
     public class TransferUtilityDownloadDirectoryResponse
     {
         /// <summary>
-        /// The number of objects that have been downloaded
+        /// The number of objects that have been successfully downloaded.
         /// </summary>
         public long ObjectsDownloaded { get; set; }
+
+        /// <summary>
+        /// The number of objects that failed to download. Zero if all succeeded.
+        /// </summary>
+        public long ObjectsFailed { get; set; }
+
+        /// <summary>
+        /// The collection of exceptions encountered when downloading individual objects.
+        /// Only populated when the FailurePolicy is CONTINUE_ON_FAILURE.
+        /// </summary>
+        public IList<Exception> Errors { get; set; }
+
+        /// <summary>
+        /// Overall result of the directory download operation.
+        /// SUCCESS: All objects downloaded.
+        /// PARTIAL_SUCCESS: Some objects downloaded, some failed (CONTINUE_ON_FAILURE policy).
+        /// FAILURE: All attempted objects failed (CONTINUE_ON_FAILURE policy).
+        /// </summary>
+        public TransferUtilityDownloadDirectoryResult Result { get; set; } = TransferUtilityDownloadDirectoryResult.SUCCESS;
+    }
+
+    /// <summary>
+    /// Overall outcome of a directory download operation.
+    /// </summary>
+    public enum TransferUtilityDownloadDirectoryResult
+    {
+        /// <summary>
+        /// All objects downloaded successfully.
+        /// </summary>
+        SUCCESS,
+        /// <summary>
+        /// Some objects succeeded and some failed.
+        /// </summary>
+        PARTIAL_SUCCESS,
+        /// <summary>
+        /// All attempted objects failed.
+        /// </summary>
+        FAILURE
     }
 }

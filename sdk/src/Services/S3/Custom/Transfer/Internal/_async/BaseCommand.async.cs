@@ -105,5 +105,48 @@ namespace Amazon.S3.Transfer.Internal
                 throttler.Release();
             }
         }
+
+        /// <summary>
+        /// Executes a command and optionally cancels remaining work on failure.
+        /// If cancelOnFailure is false, exceptions are captured into the provided errors list (if any) and suppressed.
+        /// </summary>
+        protected static async Task ExecuteCommandAsync<T>(BaseCommand<T> command, CancellationTokenSource internalCts, SemaphoreSlim throttler, bool cancelOnFailure, List<Exception> errors = null) where T : class
+        {
+            try
+            {
+                await command.ExecuteAsync(internalCts.Token)
+                    .ConfigureAwait(continueOnCapturedContext: false);
+            }
+            catch (Exception exception)
+            {
+                if (!(exception is OperationCanceledException))
+                {
+                    if (cancelOnFailure)
+                    {
+                        // Cancel scheduling any more tasks and cancel other requests.
+                        internalCts.Cancel();
+                    }
+
+                    if (!cancelOnFailure)
+                    {
+                        if (errors != null)
+                        {
+                            lock (errors)
+                            {
+                                errors.Add(exception);
+                            }
+                        }
+                        // Swallow exception to allow other tasks to continue when not cancelling on failure.
+                        return;
+                    }
+                }
+                // For cancelOnFailure or OperationCanceledException, rethrow to preserve original behavior.
+                throw;
+            }
+            finally
+            {
+                throttler.Release();
+            }
+        }
     }
 }

@@ -29,6 +29,7 @@ using Amazon.S3.Model;
 using Amazon.Util;
 using Amazon.Runtime.Internal;
 using System.Globalization;
+using AWSSDK.S3.Transfer.Model;
 
 
 namespace Amazon.S3.Transfer
@@ -56,6 +57,18 @@ namespace Amazon.S3.Transfer
         private string ifMatch;
         private string ifNoneMatch;
         private ResponseHeaderOverrides responseHeaders;
+        private FailurePolicy failurePolicy = FailurePolicy.ABORT_ON_FAILURE;
+
+        /// <summary>
+        /// Gets or sets the failure policy for the download directory operation.
+        /// Determines whether the operation should abort or continue when a failure occurs during download.
+        /// The default value is <c>ABORT_ON_FAILURE</c>.
+        /// </summary>
+        public FailurePolicy FailurePolicy
+        {
+            get { return this.failurePolicy; }
+            set { this.failurePolicy = value; }
+        }
 
         /// <summary>
         /// 	Gets or sets the name of the bucket.
