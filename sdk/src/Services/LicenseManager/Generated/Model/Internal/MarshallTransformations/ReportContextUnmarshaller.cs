@@ -66,10 +66,28 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("licenseAssetGroupArns", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.LicenseAssetGroupArns = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("licenseConfigurationArns", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.LicenseConfigurationArns = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("reportEndDate", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.ReportEndDate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("reportStartDate", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.ReportStartDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

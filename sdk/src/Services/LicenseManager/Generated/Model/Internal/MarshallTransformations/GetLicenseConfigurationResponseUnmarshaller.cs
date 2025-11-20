@@ -112,6 +112,12 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
                     response.LicenseCountingType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("LicenseExpiry", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    response.LicenseExpiry = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("LicenseRules", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);

@@ -99,6 +99,12 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.LicenseCountingType);
                 }
 
+                if(publicRequest.IsSetLicenseExpiry())
+                {
+                    context.Writer.WritePropertyName("LicenseExpiry");
+                    context.Writer.Write(publicRequest.LicenseExpiry);
+                }
+
                 if(publicRequest.IsSetLicenseRules())
                 {
                     context.Writer.WritePropertyName("LicenseRules");

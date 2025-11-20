@@ -34,12 +34,90 @@ namespace Amazon.LicenseManager.Model
     /// </summary>
     public partial class ResourceInventory
     {
+        private string _amiId;
+        private string _hostId;
+        private string _instanceType;
+        private List<string> _marketplaceProductCodes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _platform;
         private string _platformVersion;
+        private string _region;
         private string _resourceArn;
         private string _resourceId;
         private string _resourceOwningAccountId;
         private ResourceType _resourceType;
+        private string _usageOperation;
+
+        /// <summary>
+        /// Gets and sets the property AmiId. 
+        /// <para>
+        /// Amazon Machine Image (AMI) ID associated with the resource.
+        /// </para>
+        /// </summary>
+        public string AmiId
+        {
+            get { return this._amiId; }
+            set { this._amiId = value; }
+        }
+
+        // Check to see if AmiId property is set
+        internal bool IsSetAmiId()
+        {
+            return this._amiId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HostId. 
+        /// <para>
+        /// Dedicated Host ID where the resource is running.
+        /// </para>
+        /// </summary>
+        public string HostId
+        {
+            get { return this._hostId; }
+            set { this._hostId = value; }
+        }
+
+        // Check to see if HostId property is set
+        internal bool IsSetHostId()
+        {
+            return this._hostId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstanceType. 
+        /// <para>
+        /// EC2 instance type of the resource.
+        /// </para>
+        /// </summary>
+        public string InstanceType
+        {
+            get { return this._instanceType; }
+            set { this._instanceType = value; }
+        }
+
+        // Check to see if InstanceType property is set
+        internal bool IsSetInstanceType()
+        {
+            return this._instanceType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MarketplaceProductCodes. 
+        /// <para>
+        /// List of Marketplace product codes associated with the resource.
+        /// </para>
+        /// </summary>
+        public List<string> MarketplaceProductCodes
+        {
+            get { return this._marketplaceProductCodes; }
+            set { this._marketplaceProductCodes = value; }
+        }
+
+        // Check to see if MarketplaceProductCodes property is set
+        internal bool IsSetMarketplaceProductCodes()
+        {
+            return this._marketplaceProductCodes != null && (this._marketplaceProductCodes.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property Platform. 
@@ -75,6 +153,24 @@ namespace Amazon.LicenseManager.Model
         internal bool IsSetPlatformVersion()
         {
             return this._platformVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Region. 
+        /// <para>
+        /// Region where the resource is located.
+        /// </para>
+        /// </summary>
+        public string Region
+        {
+            get { return this._region; }
+            set { this._region = value; }
+        }
+
+        // Check to see if Region property is set
+        internal bool IsSetRegion()
+        {
+            return this._region != null;
         }
 
         /// <summary>
@@ -147,6 +243,24 @@ namespace Amazon.LicenseManager.Model
         internal bool IsSetResourceType()
         {
             return this._resourceType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UsageOperation. 
+        /// <para>
+        /// Usage operation value that corresponds to the license type for billing purposes.
+        /// </para>
+        /// </summary>
+        public string UsageOperation
+        {
+            get { return this._usageOperation; }
+            set { this._usageOperation = value; }
+        }
+
+        // Check to see if UsageOperation property is set
+        internal bool IsSetUsageOperation()
+        {
+            return this._usageOperation != null;
         }
 
     }

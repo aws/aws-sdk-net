@@ -36,6 +36,7 @@ namespace Amazon.LicenseManager.Model
     public partial class UpdateServiceSettingsRequest : AmazonLicenseManagerRequest
     {
         private bool? _enableCrossAccountsDiscovery;
+        private List<string> _enabledDiscoverySourceRegions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private OrganizationConfiguration _organizationConfiguration;
         private string _s3BucketArn;
         private string _snsTopicArn;
@@ -56,6 +57,24 @@ namespace Amazon.LicenseManager.Model
         internal bool IsSetEnableCrossAccountsDiscovery()
         {
             return this._enableCrossAccountsDiscovery.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnabledDiscoverySourceRegions. 
+        /// <para>
+        /// Cross region discovery enabled source regions.
+        /// </para>
+        /// </summary>
+        public List<string> EnabledDiscoverySourceRegions
+        {
+            get { return this._enabledDiscoverySourceRegions; }
+            set { this._enabledDiscoverySourceRegions = value; }
+        }
+
+        // Check to see if EnabledDiscoverySourceRegions property is set
+        internal bool IsSetEnabledDiscoverySourceRegions()
+        {
+            return this._enabledDiscoverySourceRegions != null && (this._enabledDiscoverySourceRegions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
