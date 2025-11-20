@@ -649,6 +649,68 @@ namespace Amazon.NetworkManager
 
         #endregion
         
+        #region  CreateCoreNetworkPrefixListAssociation
+
+
+        /// <summary>
+        /// Creates an association between a core network and a prefix list for routing control.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCoreNetworkPrefixListAssociation service method.</param>
+        /// 
+        /// <returns>The response from the CreateCoreNetworkPrefixListAssociation service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ServiceQuotaExceededException">
+        /// A service limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateCoreNetworkPrefixListAssociation">REST API Reference for CreateCoreNetworkPrefixListAssociation Operation</seealso>
+        CreateCoreNetworkPrefixListAssociationResponse CreateCoreNetworkPrefixListAssociation(CreateCoreNetworkPrefixListAssociationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateCoreNetworkPrefixListAssociation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateCoreNetworkPrefixListAssociation operation on AmazonNetworkManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateCoreNetworkPrefixListAssociation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateCoreNetworkPrefixListAssociation">REST API Reference for CreateCoreNetworkPrefixListAssociation Operation</seealso>
+        IAsyncResult BeginCreateCoreNetworkPrefixListAssociation(CreateCoreNetworkPrefixListAssociationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateCoreNetworkPrefixListAssociation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateCoreNetworkPrefixListAssociation.</param>
+        /// 
+        /// <returns>Returns a  CreateCoreNetworkPrefixListAssociationResult from NetworkManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateCoreNetworkPrefixListAssociation">REST API Reference for CreateCoreNetworkPrefixListAssociation Operation</seealso>
+        CreateCoreNetworkPrefixListAssociationResponse EndCreateCoreNetworkPrefixListAssociation(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateDevice
 
 
@@ -1484,6 +1546,68 @@ namespace Amazon.NetworkManager
         /// <returns>Returns a  DeleteCoreNetworkPolicyVersionResult from NetworkManager.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeleteCoreNetworkPolicyVersion">REST API Reference for DeleteCoreNetworkPolicyVersion Operation</seealso>
         DeleteCoreNetworkPolicyVersionResponse EndDeleteCoreNetworkPolicyVersion(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteCoreNetworkPrefixListAssociation
+
+
+        /// <summary>
+        /// Deletes an association between a core network and a prefix list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCoreNetworkPrefixListAssociation service method.</param>
+        /// 
+        /// <returns>The response from the DeleteCoreNetworkPrefixListAssociation service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ServiceQuotaExceededException">
+        /// A service limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeleteCoreNetworkPrefixListAssociation">REST API Reference for DeleteCoreNetworkPrefixListAssociation Operation</seealso>
+        DeleteCoreNetworkPrefixListAssociationResponse DeleteCoreNetworkPrefixListAssociation(DeleteCoreNetworkPrefixListAssociationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteCoreNetworkPrefixListAssociation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCoreNetworkPrefixListAssociation operation on AmazonNetworkManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteCoreNetworkPrefixListAssociation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeleteCoreNetworkPrefixListAssociation">REST API Reference for DeleteCoreNetworkPrefixListAssociation Operation</seealso>
+        IAsyncResult BeginDeleteCoreNetworkPrefixListAssociation(DeleteCoreNetworkPrefixListAssociationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteCoreNetworkPrefixListAssociation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteCoreNetworkPrefixListAssociation.</param>
+        /// 
+        /// <returns>Returns a  DeleteCoreNetworkPrefixListAssociationResult from NetworkManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeleteCoreNetworkPrefixListAssociation">REST API Reference for DeleteCoreNetworkPrefixListAssociation Operation</seealso>
+        DeleteCoreNetworkPrefixListAssociationResponse EndDeleteCoreNetworkPrefixListAssociation(IAsyncResult asyncResult);
 
         #endregion
         
@@ -3765,6 +3889,61 @@ namespace Amazon.NetworkManager
 
         #endregion
         
+        #region  ListAttachmentRoutingPolicyAssociations
+
+
+        /// <summary>
+        /// Lists the routing policy associations for attachments in a core network.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAttachmentRoutingPolicyAssociations service method.</param>
+        /// 
+        /// <returns>The response from the ListAttachmentRoutingPolicyAssociations service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListAttachmentRoutingPolicyAssociations">REST API Reference for ListAttachmentRoutingPolicyAssociations Operation</seealso>
+        ListAttachmentRoutingPolicyAssociationsResponse ListAttachmentRoutingPolicyAssociations(ListAttachmentRoutingPolicyAssociationsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAttachmentRoutingPolicyAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAttachmentRoutingPolicyAssociations operation on AmazonNetworkManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAttachmentRoutingPolicyAssociations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListAttachmentRoutingPolicyAssociations">REST API Reference for ListAttachmentRoutingPolicyAssociations Operation</seealso>
+        IAsyncResult BeginListAttachmentRoutingPolicyAssociations(ListAttachmentRoutingPolicyAssociationsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListAttachmentRoutingPolicyAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAttachmentRoutingPolicyAssociations.</param>
+        /// 
+        /// <returns>Returns a  ListAttachmentRoutingPolicyAssociationsResult from NetworkManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListAttachmentRoutingPolicyAssociations">REST API Reference for ListAttachmentRoutingPolicyAssociations Operation</seealso>
+        ListAttachmentRoutingPolicyAssociationsResponse EndListAttachmentRoutingPolicyAssociations(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListAttachments
 
 
@@ -3921,6 +4100,116 @@ namespace Amazon.NetworkManager
         /// <returns>Returns a  ListCoreNetworkPolicyVersionsResult from NetworkManager.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListCoreNetworkPolicyVersions">REST API Reference for ListCoreNetworkPolicyVersions Operation</seealso>
         ListCoreNetworkPolicyVersionsResponse EndListCoreNetworkPolicyVersions(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListCoreNetworkPrefixListAssociations
+
+
+        /// <summary>
+        /// Lists the prefix list associations for a core network.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCoreNetworkPrefixListAssociations service method.</param>
+        /// 
+        /// <returns>The response from the ListCoreNetworkPrefixListAssociations service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListCoreNetworkPrefixListAssociations">REST API Reference for ListCoreNetworkPrefixListAssociations Operation</seealso>
+        ListCoreNetworkPrefixListAssociationsResponse ListCoreNetworkPrefixListAssociations(ListCoreNetworkPrefixListAssociationsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListCoreNetworkPrefixListAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListCoreNetworkPrefixListAssociations operation on AmazonNetworkManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListCoreNetworkPrefixListAssociations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListCoreNetworkPrefixListAssociations">REST API Reference for ListCoreNetworkPrefixListAssociations Operation</seealso>
+        IAsyncResult BeginListCoreNetworkPrefixListAssociations(ListCoreNetworkPrefixListAssociationsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListCoreNetworkPrefixListAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListCoreNetworkPrefixListAssociations.</param>
+        /// 
+        /// <returns>Returns a  ListCoreNetworkPrefixListAssociationsResult from NetworkManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListCoreNetworkPrefixListAssociations">REST API Reference for ListCoreNetworkPrefixListAssociations Operation</seealso>
+        ListCoreNetworkPrefixListAssociationsResponse EndListCoreNetworkPrefixListAssociations(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListCoreNetworkRoutingInformation
+
+
+        /// <summary>
+        /// Lists routing information for a core network, including routes and their attributes.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCoreNetworkRoutingInformation service method.</param>
+        /// 
+        /// <returns>The response from the ListCoreNetworkRoutingInformation service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListCoreNetworkRoutingInformation">REST API Reference for ListCoreNetworkRoutingInformation Operation</seealso>
+        ListCoreNetworkRoutingInformationResponse ListCoreNetworkRoutingInformation(ListCoreNetworkRoutingInformationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListCoreNetworkRoutingInformation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListCoreNetworkRoutingInformation operation on AmazonNetworkManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListCoreNetworkRoutingInformation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListCoreNetworkRoutingInformation">REST API Reference for ListCoreNetworkRoutingInformation Operation</seealso>
+        IAsyncResult BeginListCoreNetworkRoutingInformation(ListCoreNetworkRoutingInformationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListCoreNetworkRoutingInformation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListCoreNetworkRoutingInformation.</param>
+        /// 
+        /// <returns>Returns a  ListCoreNetworkRoutingInformationResult from NetworkManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListCoreNetworkRoutingInformation">REST API Reference for ListCoreNetworkRoutingInformation Operation</seealso>
+        ListCoreNetworkRoutingInformationResponse EndListCoreNetworkRoutingInformation(IAsyncResult asyncResult);
 
         #endregion
         
@@ -4121,6 +4410,68 @@ namespace Amazon.NetworkManager
         /// <returns>Returns a  ListTagsForResourceResult from NetworkManager.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         ListTagsForResourceResponse EndListTagsForResource(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  PutAttachmentRoutingPolicyLabel
+
+
+        /// <summary>
+        /// Applies a routing policy label to an attachment for traffic routing decisions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutAttachmentRoutingPolicyLabel service method.</param>
+        /// 
+        /// <returns>The response from the PutAttachmentRoutingPolicyLabel service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ServiceQuotaExceededException">
+        /// A service limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/PutAttachmentRoutingPolicyLabel">REST API Reference for PutAttachmentRoutingPolicyLabel Operation</seealso>
+        PutAttachmentRoutingPolicyLabelResponse PutAttachmentRoutingPolicyLabel(PutAttachmentRoutingPolicyLabelRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutAttachmentRoutingPolicyLabel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutAttachmentRoutingPolicyLabel operation on AmazonNetworkManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutAttachmentRoutingPolicyLabel
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/PutAttachmentRoutingPolicyLabel">REST API Reference for PutAttachmentRoutingPolicyLabel Operation</seealso>
+        IAsyncResult BeginPutAttachmentRoutingPolicyLabel(PutAttachmentRoutingPolicyLabelRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutAttachmentRoutingPolicyLabel operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutAttachmentRoutingPolicyLabel.</param>
+        /// 
+        /// <returns>Returns a  PutAttachmentRoutingPolicyLabelResult from NetworkManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/PutAttachmentRoutingPolicyLabel">REST API Reference for PutAttachmentRoutingPolicyLabel Operation</seealso>
+        PutAttachmentRoutingPolicyLabelResponse EndPutAttachmentRoutingPolicyLabel(IAsyncResult asyncResult);
 
         #endregion
         
@@ -4366,6 +4717,68 @@ namespace Amazon.NetworkManager
         /// <returns>Returns a  RejectAttachmentResult from NetworkManager.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/RejectAttachment">REST API Reference for RejectAttachment Operation</seealso>
         RejectAttachmentResponse EndRejectAttachment(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  RemoveAttachmentRoutingPolicyLabel
+
+
+        /// <summary>
+        /// Removes a routing policy label from an attachment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RemoveAttachmentRoutingPolicyLabel service method.</param>
+        /// 
+        /// <returns>The response from the RemoveAttachmentRoutingPolicyLabel service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ServiceQuotaExceededException">
+        /// A service limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/RemoveAttachmentRoutingPolicyLabel">REST API Reference for RemoveAttachmentRoutingPolicyLabel Operation</seealso>
+        RemoveAttachmentRoutingPolicyLabelResponse RemoveAttachmentRoutingPolicyLabel(RemoveAttachmentRoutingPolicyLabelRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RemoveAttachmentRoutingPolicyLabel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RemoveAttachmentRoutingPolicyLabel operation on AmazonNetworkManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRemoveAttachmentRoutingPolicyLabel
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/RemoveAttachmentRoutingPolicyLabel">REST API Reference for RemoveAttachmentRoutingPolicyLabel Operation</seealso>
+        IAsyncResult BeginRemoveAttachmentRoutingPolicyLabel(RemoveAttachmentRoutingPolicyLabelRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  RemoveAttachmentRoutingPolicyLabel operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRemoveAttachmentRoutingPolicyLabel.</param>
+        /// 
+        /// <returns>Returns a  RemoveAttachmentRoutingPolicyLabelResult from NetworkManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/RemoveAttachmentRoutingPolicyLabel">REST API Reference for RemoveAttachmentRoutingPolicyLabel Operation</seealso>
+        RemoveAttachmentRoutingPolicyLabelResponse EndRemoveAttachmentRoutingPolicyLabel(IAsyncResult asyncResult);
 
         #endregion
         

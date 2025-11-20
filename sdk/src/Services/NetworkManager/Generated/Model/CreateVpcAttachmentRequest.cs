@@ -38,6 +38,7 @@ namespace Amazon.NetworkManager.Model
         private string _clientToken;
         private string _coreNetworkId;
         private VpcOptions _options;
+        private string _routingPolicyLabel;
         private List<string> _subnetArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _vpcArn;
@@ -96,6 +97,25 @@ namespace Amazon.NetworkManager.Model
         internal bool IsSetOptions()
         {
             return this._options != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RoutingPolicyLabel. 
+        /// <para>
+        /// The routing policy label to apply to the VPC attachment for traffic routing decisions.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=256)]
+        public string RoutingPolicyLabel
+        {
+            get { return this._routingPolicyLabel; }
+            set { this._routingPolicyLabel = value; }
+        }
+
+        // Check to see if RoutingPolicyLabel property is set
+        internal bool IsSetRoutingPolicyLabel()
+        {
+            return this._routingPolicyLabel != null;
         }
 
         /// <summary>

@@ -35,12 +35,17 @@ namespace Amazon.NetworkManager.Model
     public partial class CoreNetworkChangeValues
     {
         private long? _asn;
+        private string _attachmentId;
         private string _cidr;
         private string _destinationIdentifier;
         private bool? _dnsSupport;
         private List<string> _edgeLocations = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _insideCidrBlocks = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _networkFunctionGroupName;
+        private List<string> _peerEdgeLocations = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private string _routingPolicy;
+        private List<RoutingPolicyAssociationDetail> _routingPolicyAssociationDetails = AWSConfigs.InitializeCollections ? new List<RoutingPolicyAssociationDetail>() : null;
+        private RoutingPolicyDirection _routingPolicyDirection;
         private bool? _securityGroupReferencingSupport;
         private string _segmentName;
         private List<ServiceInsertionAction> _serviceInsertionActions = AWSConfigs.InitializeCollections ? new List<ServiceInsertionAction>() : null;
@@ -63,6 +68,25 @@ namespace Amazon.NetworkManager.Model
         internal bool IsSetAsn()
         {
             return this._asn.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AttachmentId. 
+        /// <para>
+        /// The attachment identifier in the core network change values.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=256)]
+        public string AttachmentId
+        {
+            get { return this._attachmentId; }
+            set { this._attachmentId = value; }
+        }
+
+        // Check to see if AttachmentId property is set
+        internal bool IsSetAttachmentId()
+        {
+            return this._attachmentId != null;
         }
 
         /// <summary>
@@ -175,6 +199,80 @@ namespace Amazon.NetworkManager.Model
         internal bool IsSetNetworkFunctionGroupName()
         {
             return this._networkFunctionGroupName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PeerEdgeLocations. 
+        /// <para>
+        /// The edge locations of peers in the core network change values.
+        /// </para>
+        /// </summary>
+        public List<string> PeerEdgeLocations
+        {
+            get { return this._peerEdgeLocations; }
+            set { this._peerEdgeLocations = value; }
+        }
+
+        // Check to see if PeerEdgeLocations property is set
+        internal bool IsSetPeerEdgeLocations()
+        {
+            return this._peerEdgeLocations != null && (this._peerEdgeLocations.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RoutingPolicy. 
+        /// <para>
+        /// The routing policy configuration in the core network change values.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=10000000)]
+        public string RoutingPolicy
+        {
+            get { return this._routingPolicy; }
+            set { this._routingPolicy = value; }
+        }
+
+        // Check to see if RoutingPolicy property is set
+        internal bool IsSetRoutingPolicy()
+        {
+            return this._routingPolicy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RoutingPolicyAssociationDetails. 
+        /// <para>
+        /// The names of the routing policies and other association details in the core network
+        /// change values.
+        /// </para>
+        /// </summary>
+        public List<RoutingPolicyAssociationDetail> RoutingPolicyAssociationDetails
+        {
+            get { return this._routingPolicyAssociationDetails; }
+            set { this._routingPolicyAssociationDetails = value; }
+        }
+
+        // Check to see if RoutingPolicyAssociationDetails property is set
+        internal bool IsSetRoutingPolicyAssociationDetails()
+        {
+            return this._routingPolicyAssociationDetails != null && (this._routingPolicyAssociationDetails.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RoutingPolicyDirection. 
+        /// <para>
+        /// The routing policy direction (inbound/outbound) in a core network change event.
+        /// </para>
+        /// </summary>
+        public RoutingPolicyDirection RoutingPolicyDirection
+        {
+            get { return this._routingPolicyDirection; }
+            set { this._routingPolicyDirection = value; }
+        }
+
+        // Check to see if RoutingPolicyDirection property is set
+        internal bool IsSetRoutingPolicyDirection()
+        {
+            return this._routingPolicyDirection != null;
         }
 
         /// <summary>

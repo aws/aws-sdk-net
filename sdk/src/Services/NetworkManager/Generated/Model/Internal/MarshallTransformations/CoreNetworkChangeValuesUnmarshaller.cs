@@ -72,6 +72,12 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
                     unmarshalledObject.Asn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("AttachmentId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AttachmentId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Cidr", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -106,6 +112,30 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.NetworkFunctionGroupName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("PeerEdgeLocations", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.PeerEdgeLocations = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("RoutingPolicy", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RoutingPolicy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("RoutingPolicyAssociationDetails", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<RoutingPolicyAssociationDetail, RoutingPolicyAssociationDetailUnmarshaller>(RoutingPolicyAssociationDetailUnmarshaller.Instance);
+                    unmarshalledObject.RoutingPolicyAssociationDetails = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("RoutingPolicyDirection", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RoutingPolicyDirection = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("SecurityGroupReferencingSupport", targetDepth))
