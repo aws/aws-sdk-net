@@ -219,6 +219,95 @@ namespace Amazon.ECS
 
         #endregion
         
+        #region  CreateExpressGatewayService
+
+
+        /// <summary>
+        /// Creates an Express service that simplifies deploying containerized web applications
+        /// on Amazon ECS with managed Amazon Web Services infrastructure. This operation provisions
+        /// and configures Application Load Balancers, target groups, security groups, and auto-scaling
+        /// policies automatically.
+        /// 
+        ///  
+        /// <para>
+        /// Specify a primary container configuration with your application image and basic settings.
+        /// Amazon ECS creates the necessary Amazon Web Services resources for traffic distribution,
+        /// health monitoring, network access control, and capacity management.
+        /// </para>
+        ///  
+        /// <para>
+        /// Provide an execution role for task operations and an infrastructure role for managing
+        /// Amazon Web Services resources on your behalf.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateExpressGatewayService service method.</param>
+        /// 
+        /// <returns>The response from the CreateExpressGatewayService service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClientException">
+        /// These errors are usually caused by a client action. This client action might be using
+        /// an action or resource on behalf of a user that doesn't have permissions to use the
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
+        /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
+        /// Amazon ECS clusters are Region specific.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.PlatformTaskDefinitionIncompatibilityException">
+        /// The specified platform version doesn't satisfy the required capabilities of the task
+        /// definition.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.PlatformUnknownException">
+        /// The specified platform version doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">
+        /// The specified task isn't supported in this Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateExpressGatewayService">REST API Reference for CreateExpressGatewayService Operation</seealso>
+        CreateExpressGatewayServiceResponse CreateExpressGatewayService(CreateExpressGatewayServiceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateExpressGatewayService operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateExpressGatewayService operation on AmazonECSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateExpressGatewayService
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateExpressGatewayService">REST API Reference for CreateExpressGatewayService Operation</seealso>
+        IAsyncResult BeginCreateExpressGatewayService(CreateExpressGatewayServiceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateExpressGatewayService operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateExpressGatewayService.</param>
+        /// 
+        /// <returns>Returns a  CreateExpressGatewayServiceResult from ECS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateExpressGatewayService">REST API Reference for CreateExpressGatewayService Operation</seealso>
+        CreateExpressGatewayServiceResponse EndCreateExpressGatewayService(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateService
 
 
@@ -957,6 +1046,95 @@ namespace Amazon.ECS
 
         #endregion
         
+        #region  DeleteExpressGatewayService
+
+
+        /// <summary>
+        /// Deletes an Express service and removes all associated Amazon Web Services resources.
+        /// This operation stops service tasks, removes the Application Load Balancer, target
+        /// groups, security groups, auto-scaling policies, and other managed infrastructure components.
+        /// 
+        ///  
+        /// <para>
+        /// The service enters a <c>DRAINING</c> state where existing tasks complete current requests
+        /// without starting new tasks. After all tasks stop, the service and infrastructure are
+        /// permanently removed.
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation cannot be reversed. Back up important data and verify the service is
+        /// no longer needed before deletion.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteExpressGatewayService service method.</param>
+        /// 
+        /// <returns>The response from the DeleteExpressGatewayService service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClientException">
+        /// These errors are usually caused by a client action. This client action might be using
+        /// an action or resource on behalf of a user that doesn't have permissions to use the
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
+        /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
+        /// Amazon ECS clusters are Region specific.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServiceNotActiveException">
+        /// The specified service isn't active. You can't update a service that's inactive. If
+        /// you have previously deleted a service, you can re-create it with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateService.html">CreateService</a>.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServiceNotFoundException">
+        /// The specified service wasn't found. You can view your available services with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListServices.html">ListServices</a>.
+        /// Amazon ECS services are cluster specific and Region specific.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">
+        /// The specified task isn't supported in this Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteExpressGatewayService">REST API Reference for DeleteExpressGatewayService Operation</seealso>
+        DeleteExpressGatewayServiceResponse DeleteExpressGatewayService(DeleteExpressGatewayServiceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteExpressGatewayService operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteExpressGatewayService operation on AmazonECSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteExpressGatewayService
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteExpressGatewayService">REST API Reference for DeleteExpressGatewayService Operation</seealso>
+        IAsyncResult BeginDeleteExpressGatewayService(DeleteExpressGatewayServiceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteExpressGatewayService operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteExpressGatewayService.</param>
+        /// 
+        /// <returns>Returns a  DeleteExpressGatewayServiceResult from ECS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteExpressGatewayService">REST API Reference for DeleteExpressGatewayService Operation</seealso>
+        DeleteExpressGatewayServiceResponse EndDeleteExpressGatewayService(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeleteService
 
 
@@ -1570,6 +1748,89 @@ namespace Amazon.ECS
         /// <returns>Returns a  DescribeContainerInstancesResult from ECS.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeContainerInstances">REST API Reference for DescribeContainerInstances Operation</seealso>
         DescribeContainerInstancesResponse EndDescribeContainerInstances(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeExpressGatewayService
+
+
+        /// <summary>
+        /// Retrieves detailed information about an Express service, including current status,
+        /// configuration, managed infrastructure, and service revisions.
+        /// 
+        ///  
+        /// <para>
+        /// Returns comprehensive service details, active service revisions, ingress paths with
+        /// endpoints, and managed Amazon Web Services resource status including load balancers
+        /// and auto-scaling policies.
+        /// </para>
+        ///  
+        /// <para>
+        /// Use the <c>include</c> parameter to retrieve additional information such as resource
+        /// tags.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeExpressGatewayService service method.</param>
+        /// 
+        /// <returns>The response from the DescribeExpressGatewayService service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClientException">
+        /// These errors are usually caused by a client action. This client action might be using
+        /// an action or resource on behalf of a user that doesn't have permissions to use the
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
+        /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
+        /// Amazon ECS clusters are Region specific.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ResourceNotFoundException">
+        /// The specified resource wasn't found.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">
+        /// The specified task isn't supported in this Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeExpressGatewayService">REST API Reference for DescribeExpressGatewayService Operation</seealso>
+        DescribeExpressGatewayServiceResponse DescribeExpressGatewayService(DescribeExpressGatewayServiceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeExpressGatewayService operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeExpressGatewayService operation on AmazonECSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeExpressGatewayService
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeExpressGatewayService">REST API Reference for DescribeExpressGatewayService Operation</seealso>
+        IAsyncResult BeginDescribeExpressGatewayService(DescribeExpressGatewayServiceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeExpressGatewayService operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeExpressGatewayService.</param>
+        /// 
+        /// <returns>Returns a  DescribeExpressGatewayServiceResult from ECS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeExpressGatewayService">REST API Reference for DescribeExpressGatewayService Operation</seealso>
+        DescribeExpressGatewayServiceResponse EndDescribeExpressGatewayService(IAsyncResult asyncResult);
 
         #endregion
         
@@ -4299,6 +4560,95 @@ namespace Amazon.ECS
         /// <returns>Returns a  UpdateContainerInstancesStateResult from ECS.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateContainerInstancesState">REST API Reference for UpdateContainerInstancesState Operation</seealso>
         UpdateContainerInstancesStateResponse EndUpdateContainerInstancesState(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateExpressGatewayService
+
+
+        /// <summary>
+        /// Updates an existing Express service configuration. Modifies container settings, resource
+        /// allocation, auto-scaling configuration, and other service parameters without recreating
+        /// the service.
+        /// 
+        ///  
+        /// <para>
+        /// Amazon ECS creates a new service revision with updated configuration and performs
+        /// a rolling deployment to replace existing tasks. The service remains available during
+        /// updates, ensuring zero-downtime deployments.
+        /// </para>
+        ///  
+        /// <para>
+        /// Some parameters like the infrastructure role cannot be modified after service creation
+        /// and require creating a new service.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateExpressGatewayService service method.</param>
+        /// 
+        /// <returns>The response from the UpdateExpressGatewayService service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClientException">
+        /// These errors are usually caused by a client action. This client action might be using
+        /// an action or resource on behalf of a user that doesn't have permissions to use the
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
+        /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
+        /// Amazon ECS clusters are Region specific.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServiceNotActiveException">
+        /// The specified service isn't active. You can't update a service that's inactive. If
+        /// you have previously deleted a service, you can re-create it with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateService.html">CreateService</a>.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServiceNotFoundException">
+        /// The specified service wasn't found. You can view your available services with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListServices.html">ListServices</a>.
+        /// Amazon ECS services are cluster specific and Region specific.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">
+        /// The specified task isn't supported in this Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateExpressGatewayService">REST API Reference for UpdateExpressGatewayService Operation</seealso>
+        UpdateExpressGatewayServiceResponse UpdateExpressGatewayService(UpdateExpressGatewayServiceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateExpressGatewayService operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateExpressGatewayService operation on AmazonECSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateExpressGatewayService
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateExpressGatewayService">REST API Reference for UpdateExpressGatewayService Operation</seealso>
+        IAsyncResult BeginUpdateExpressGatewayService(UpdateExpressGatewayServiceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateExpressGatewayService operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateExpressGatewayService.</param>
+        /// 
+        /// <returns>Returns a  UpdateExpressGatewayServiceResult from ECS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateExpressGatewayService">REST API Reference for UpdateExpressGatewayService Operation</seealso>
+        UpdateExpressGatewayServiceResponse EndUpdateExpressGatewayService(IAsyncResult asyncResult);
 
         #endregion
         

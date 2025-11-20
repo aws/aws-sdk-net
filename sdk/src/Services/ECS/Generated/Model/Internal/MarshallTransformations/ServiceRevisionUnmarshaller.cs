@@ -90,6 +90,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ecsManagedResources", targetDepth))
+                {
+                    var unmarshaller = ECSManagedResourcesUnmarshaller.Instance;
+                    unmarshalledObject.EcsManagedResources = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("fargateEphemeralStorage", targetDepth))
                 {
                     var unmarshaller = DeploymentEphemeralStorageUnmarshaller.Instance;

@@ -93,6 +93,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.NextToken);
                 }
 
+                if(publicRequest.IsSetResourceManagementType())
+                {
+                    context.Writer.WritePropertyName("resourceManagementType");
+                    context.Writer.Write(publicRequest.ResourceManagementType);
+                }
+
                 if(publicRequest.IsSetSchedulingStrategy())
                 {
                     context.Writer.WritePropertyName("schedulingStrategy");

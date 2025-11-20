@@ -1,0 +1,196 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the ecs-2014-11-13.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Text;
+using System.Xml.Serialization;
+
+using Amazon.ECS.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+#pragma warning disable CS0612,CS0618
+namespace Amazon.ECS.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// CreateExpressGatewayService Request Marshaller
+    /// </summary>       
+    public class CreateExpressGatewayServiceRequestMarshaller : IMarshaller<IRequest, CreateExpressGatewayServiceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    {
+        /// <summary>
+        /// Marshaller the request object to the HTTP request.
+        /// </summary>  
+        /// <param name="input"></param>
+        /// <returns></returns>
+        public IRequest Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((CreateExpressGatewayServiceRequest)input);
+        }
+
+        /// <summary>
+        /// Marshaller the request object to the HTTP request.
+        /// </summary>  
+        /// <param name="publicRequest"></param>
+        /// <returns></returns>
+        public IRequest Marshall(CreateExpressGatewayServiceRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.ECS");
+            string target = "AmazonEC2ContainerServiceV20141113.CreateExpressGatewayService";
+            request.Headers["X-Amz-Target"] = target;
+            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2014-11-13";
+            request.HttpMethod = "POST";
+
+            request.ResourcePath = "/";
+            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            {
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetCluster())
+                {
+                    context.Writer.WritePropertyName("cluster");
+                    context.Writer.Write(publicRequest.Cluster);
+                }
+
+                if(publicRequest.IsSetCpu())
+                {
+                    context.Writer.WritePropertyName("cpu");
+                    context.Writer.Write(publicRequest.Cpu);
+                }
+
+                if(publicRequest.IsSetExecutionRoleArn())
+                {
+                    context.Writer.WritePropertyName("executionRoleArn");
+                    context.Writer.Write(publicRequest.ExecutionRoleArn);
+                }
+
+                if(publicRequest.IsSetHealthCheckPath())
+                {
+                    context.Writer.WritePropertyName("healthCheckPath");
+                    context.Writer.Write(publicRequest.HealthCheckPath);
+                }
+
+                if(publicRequest.IsSetInfrastructureRoleArn())
+                {
+                    context.Writer.WritePropertyName("infrastructureRoleArn");
+                    context.Writer.Write(publicRequest.InfrastructureRoleArn);
+                }
+
+                if(publicRequest.IsSetMemory())
+                {
+                    context.Writer.WritePropertyName("memory");
+                    context.Writer.Write(publicRequest.Memory);
+                }
+
+                if(publicRequest.IsSetNetworkConfiguration())
+                {
+                    context.Writer.WritePropertyName("networkConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ExpressGatewayServiceNetworkConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.NetworkConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetPrimaryContainer())
+                {
+                    context.Writer.WritePropertyName("primaryContainer");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ExpressGatewayContainerMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.PrimaryContainer, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetScalingTarget())
+                {
+                    context.Writer.WritePropertyName("scalingTarget");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ExpressGatewayScalingTargetMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ScalingTarget, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetServiceName())
+                {
+                    context.Writer.WritePropertyName("serviceName");
+                    context.Writer.Write(publicRequest.ServiceName);
+                }
+
+                if(publicRequest.IsSetTags())
+                {
+                    context.Writer.WritePropertyName("tags");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = TagMarshaller.Instance;
+                        marshaller.Marshall(publicRequestTagsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetTaskRoleArn())
+                {
+                    context.Writer.WritePropertyName("taskRoleArn");
+                    context.Writer.Write(publicRequest.TaskRoleArn);
+                }
+
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+            }
+
+
+            return request;
+        }
+        private static CreateExpressGatewayServiceRequestMarshaller _instance = new CreateExpressGatewayServiceRequestMarshaller();        
+
+        internal static CreateExpressGatewayServiceRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static CreateExpressGatewayServiceRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
+    }
+}
