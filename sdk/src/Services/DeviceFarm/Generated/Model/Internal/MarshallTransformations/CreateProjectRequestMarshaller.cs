@@ -75,6 +75,28 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.DefaultJobTimeoutMinutes);
                 }
 
+                if(publicRequest.IsSetEnvironmentVariables())
+                {
+                    context.Writer.WritePropertyName("environmentVariables");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestEnvironmentVariablesListValue in publicRequest.EnvironmentVariables)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = EnvironmentVariableMarshaller.Instance;
+                        marshaller.Marshall(publicRequestEnvironmentVariablesListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetExecutionRoleArn())
+                {
+                    context.Writer.WritePropertyName("executionRoleArn");
+                    context.Writer.Write(publicRequest.ExecutionRoleArn);
+                }
+
                 if(publicRequest.IsSetName())
                 {
                     context.Writer.WritePropertyName("name");

@@ -46,7 +46,9 @@ namespace Amazon.DeviceFarm.Model
         private string _devicePoolArn;
         private DeviceProxy _deviceProxy;
         private DeviceSelectionResult _deviceSelectionResult;
+        private List<EnvironmentVariable> _environmentVariables = AWSConfigs.InitializeCollections ? new List<EnvironmentVariable>() : null;
         private int? _eventCount;
+        private string _executionRoleArn;
         private int? _jobTimeoutMinutes;
         private string _locale;
         private Location _location;
@@ -278,6 +280,25 @@ namespace Amazon.DeviceFarm.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EnvironmentVariables. 
+        /// <para>
+        /// Environment variables associated with the run.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=32)]
+        public List<EnvironmentVariable> EnvironmentVariables
+        {
+            get { return this._environmentVariables; }
+            set { this._environmentVariables = value; }
+        }
+
+        // Check to see if EnvironmentVariables property is set
+        internal bool IsSetEnvironmentVariables()
+        {
+            return this._environmentVariables != null && (this._environmentVariables.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
         /// Gets and sets the property EventCount. 
         /// <para>
         /// For fuzz tests, this is the number of events, between 1 and 10000, that the UI fuzz
@@ -294,6 +315,25 @@ namespace Amazon.DeviceFarm.Model
         internal bool IsSetEventCount()
         {
             return this._eventCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExecutionRoleArn. 
+        /// <para>
+        /// The IAM role associated with the run.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string ExecutionRoleArn
+        {
+            get { return this._executionRoleArn; }
+            set { this._executionRoleArn = value; }
+        }
+
+        // Check to see if ExecutionRoleArn property is set
+        internal bool IsSetExecutionRoleArn()
+        {
+            return this._executionRoleArn != null;
         }
 
         /// <summary>

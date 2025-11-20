@@ -36,6 +36,8 @@ namespace Amazon.DeviceFarm.Model
     public partial class CreateProjectRequest : AmazonDeviceFarmRequest
     {
         private int? _defaultJobTimeoutMinutes;
+        private List<EnvironmentVariable> _environmentVariables = AWSConfigs.InitializeCollections ? new List<EnvironmentVariable>() : null;
+        private string _executionRoleArn;
         private string _name;
         private VpcConfig _vpcConfig;
 
@@ -57,6 +59,51 @@ namespace Amazon.DeviceFarm.Model
         internal bool IsSetDefaultJobTimeoutMinutes()
         {
             return this._defaultJobTimeoutMinutes.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnvironmentVariables. 
+        /// <para>
+        ///  A set of environment variables which are used by default for all runs in the project.
+        /// These environment variables are applied to the test run during the execution of a
+        /// test spec file. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  For more information about using test spec files, please see <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/custom-test-environments.html">Custom
+        /// test environments </a> in <i>AWS Device Farm.</i> 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=32)]
+        public List<EnvironmentVariable> EnvironmentVariables
+        {
+            get { return this._environmentVariables; }
+            set { this._environmentVariables = value; }
+        }
+
+        // Check to see if EnvironmentVariables property is set
+        internal bool IsSetEnvironmentVariables()
+        {
+            return this._environmentVariables != null && (this._environmentVariables.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExecutionRoleArn. 
+        /// <para>
+        /// An IAM role to be assumed by the test host for all runs in the project.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string ExecutionRoleArn
+        {
+            get { return this._executionRoleArn; }
+            set { this._executionRoleArn = value; }
+        }
+
+        // Check to see if ExecutionRoleArn property is set
+        internal bool IsSetExecutionRoleArn()
+        {
+            return this._executionRoleArn != null;
         }
 
         /// <summary>

@@ -132,10 +132,22 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
                     unmarshalledObject.DeviceSelectionResult = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("environmentVariables", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<EnvironmentVariable, EnvironmentVariableUnmarshaller>(EnvironmentVariableUnmarshaller.Instance);
+                    unmarshalledObject.EnvironmentVariables = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("eventCount", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
                     unmarshalledObject.EventCount = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("executionRoleArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ExecutionRoleArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("jobTimeoutMinutes", targetDepth))

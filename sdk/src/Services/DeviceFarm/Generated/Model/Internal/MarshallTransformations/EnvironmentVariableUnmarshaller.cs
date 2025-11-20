@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Project Object
+    /// Response Unmarshaller for EnvironmentVariable Object
     /// </summary>  
-    public class ProjectUnmarshaller : IUnmarshaller<Project, XmlUnmarshallerContext>, IUnmarshaller<Project, JsonUnmarshallerContext>
+    public class EnvironmentVariableUnmarshaller : IUnmarshaller<EnvironmentVariable, XmlUnmarshallerContext>, IUnmarshaller<EnvironmentVariable, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Project IUnmarshaller<Project, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        EnvironmentVariable IUnmarshaller<EnvironmentVariable, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public Project Unmarshall(JsonUnmarshallerContext context)
+        public EnvironmentVariable Unmarshall(JsonUnmarshallerContext context)
         {
-            Project unmarshalledObject = new Project();
+            EnvironmentVariable unmarshalledObject = new EnvironmentVariable();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,46 +66,16 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("arn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("created", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.Created = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("defaultJobTimeoutMinutes", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.DefaultJobTimeoutMinutes = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("environmentVariables", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<EnvironmentVariable, EnvironmentVariableUnmarshaller>(EnvironmentVariableUnmarshaller.Instance);
-                    unmarshalledObject.EnvironmentVariables = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("executionRoleArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ExecutionRoleArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("vpcConfig", targetDepth))
+                if (context.TestExpression("value", targetDepth))
                 {
-                    var unmarshaller = VpcConfigUnmarshaller.Instance;
-                    unmarshalledObject.VpcConfig = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Value = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -113,12 +83,12 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
         }
 
 
-        private static ProjectUnmarshaller _instance = new ProjectUnmarshaller();        
+        private static EnvironmentVariableUnmarshaller _instance = new EnvironmentVariableUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ProjectUnmarshaller Instance
+        public static EnvironmentVariableUnmarshaller Instance
         {
             get
             {
