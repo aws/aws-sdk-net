@@ -30,48 +30,48 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentCore.Model
 {
     /// <summary>
-    /// Contains the payload content for an event.
+    /// This is the response object from the ListMemoryExtractionJobs operation.
     /// </summary>
-    public partial class PayloadType
+    public partial class ListMemoryExtractionJobsResponse : AmazonWebServiceResponse
     {
-        private Amazon.Runtime.Documents.Document _blob;
-        private Conversational _conversational;
+        private List<ExtractionJobMetadata> _jobs = AWSConfigs.InitializeCollections ? new List<ExtractionJobMetadata>() : null;
+        private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property Blob. 
+        /// Gets and sets the property Jobs. 
         /// <para>
-        /// The binary content of the payload.
+        /// List of extraction job metadata matching the specified criteria.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true)]
-        public Amazon.Runtime.Documents.Document Blob
+        [AWSProperty(Required=true)]
+        public List<ExtractionJobMetadata> Jobs
         {
-            get { return this._blob; }
-            set { this._blob = value; }
+            get { return this._jobs; }
+            set { this._jobs = value; }
         }
 
-        // Check to see if Blob property is set
-        internal bool IsSetBlob()
+        // Check to see if Jobs property is set
+        internal bool IsSetJobs()
         {
-            return !this._blob.IsNull();
+            return this._jobs != null && (this._jobs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
-        /// Gets and sets the property Conversational. 
+        /// Gets and sets the property NextToken. 
         /// <para>
-        /// The conversational content of the payload.
+        /// Token to retrieve the next page of results, if available.
         /// </para>
         /// </summary>
-        public Conversational Conversational
+        public string NextToken
         {
-            get { return this._conversational; }
-            set { this._conversational = value; }
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
         }
 
-        // Check to see if Conversational property is set
-        internal bool IsSetConversational()
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
         {
-            return this._conversational != null;
+            return this._nextToken != null;
         }
 
     }

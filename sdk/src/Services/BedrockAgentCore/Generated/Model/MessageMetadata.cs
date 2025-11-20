@@ -30,48 +30,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentCore.Model
 {
     /// <summary>
-    /// Contains the payload content for an event.
+    /// Metadata information associated with this message.
     /// </summary>
-    public partial class PayloadType
+    public partial class MessageMetadata
     {
-        private Amazon.Runtime.Documents.Document _blob;
-        private Conversational _conversational;
+        private string _eventId;
+        private int? _messageIndex;
 
         /// <summary>
-        /// Gets and sets the property Blob. 
+        /// Gets and sets the property EventId. 
         /// <para>
-        /// The binary content of the payload.
+        /// The identifier of the event associated with this message.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true)]
-        public Amazon.Runtime.Documents.Document Blob
+        [AWSProperty(Required=true)]
+        public string EventId
         {
-            get { return this._blob; }
-            set { this._blob = value; }
+            get { return this._eventId; }
+            set { this._eventId = value; }
         }
 
-        // Check to see if Blob property is set
-        internal bool IsSetBlob()
+        // Check to see if EventId property is set
+        internal bool IsSetEventId()
         {
-            return !this._blob.IsNull();
+            return this._eventId != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Conversational. 
+        /// Gets and sets the property MessageIndex. 
         /// <para>
-        /// The conversational content of the payload.
+        /// The position of this message within that event’s ordered list of messages.
         /// </para>
         /// </summary>
-        public Conversational Conversational
+        [AWSProperty(Required=true)]
+        public int MessageIndex
         {
-            get { return this._conversational; }
-            set { this._conversational = value; }
+            get { return this._messageIndex.GetValueOrDefault(); }
+            set { this._messageIndex = value; }
         }
 
-        // Check to see if Conversational property is set
-        internal bool IsSetConversational()
+        // Check to see if MessageIndex property is set
+        internal bool IsSetMessageIndex()
         {
-            return this._conversational != null;
+            return this._messageIndex.HasValue; 
         }
 
     }

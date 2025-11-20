@@ -418,6 +418,16 @@
     <pattern>[a-zA-Z0-9][a-zA-Z0-9-_]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BedrockAgentCore.Model.ListMemoryExtractionJobsRequest.MaxResults</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCore.Model.ListMemoryExtractionJobsRequest.MemoryId</property>
+    <min>12</min>
+    <pattern>[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.ListMemoryRecordsRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
@@ -530,6 +540,11 @@
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.StartCodeInterpreterSessionResponse.SessionId</property>
     <pattern>[0-9a-zA-Z]{1,40}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCore.Model.StartMemoryExtractionJobRequest.MemoryId</property>
+    <min>12</min>
+    <pattern>[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.StopBrowserSessionRequest.ClientToken</property>

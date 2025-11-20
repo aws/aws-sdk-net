@@ -30,48 +30,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentCore.Model
 {
     /// <summary>
-    /// Contains the payload content for an event.
+    /// This is the response object from the StartMemoryExtractionJob operation.
     /// </summary>
-    public partial class PayloadType
+    public partial class StartMemoryExtractionJobResponse : AmazonWebServiceResponse
     {
-        private Amazon.Runtime.Documents.Document _blob;
-        private Conversational _conversational;
+        private string _jobId;
 
         /// <summary>
-        /// Gets and sets the property Blob. 
+        /// Gets and sets the property JobId. 
         /// <para>
-        /// The binary content of the payload.
+        /// Extraction Job ID that was attempted to start.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true)]
-        public Amazon.Runtime.Documents.Document Blob
+        [AWSProperty(Required=true)]
+        public string JobId
         {
-            get { return this._blob; }
-            set { this._blob = value; }
+            get { return this._jobId; }
+            set { this._jobId = value; }
         }
 
-        // Check to see if Blob property is set
-        internal bool IsSetBlob()
+        // Check to see if JobId property is set
+        internal bool IsSetJobId()
         {
-            return !this._blob.IsNull();
-        }
-
-        /// <summary>
-        /// Gets and sets the property Conversational. 
-        /// <para>
-        /// The conversational content of the payload.
-        /// </para>
-        /// </summary>
-        public Conversational Conversational
-        {
-            get { return this._conversational; }
-            set { this._conversational = value; }
-        }
-
-        // Check to see if Conversational property is set
-        internal bool IsSetConversational()
-        {
-            return this._conversational != null;
+            return this._jobId != null;
         }
 
     }

@@ -30,48 +30,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentCore.Model
 {
     /// <summary>
-    /// Contains the payload content for an event.
+    /// The list of messages that compose this extraction job.
     /// </summary>
-    public partial class PayloadType
+    public partial class ExtractionJobMessages
     {
-        private Amazon.Runtime.Documents.Document _blob;
-        private Conversational _conversational;
+        private List<MessageMetadata> _messagesList = AWSConfigs.InitializeCollections ? new List<MessageMetadata>() : null;
 
         /// <summary>
-        /// Gets and sets the property Blob. 
+        /// Gets and sets the property MessagesList. 
         /// <para>
-        /// The binary content of the payload.
+        /// The list of messages that compose this extraction job.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true)]
-        public Amazon.Runtime.Documents.Document Blob
+        public List<MessageMetadata> MessagesList
         {
-            get { return this._blob; }
-            set { this._blob = value; }
+            get { return this._messagesList; }
+            set { this._messagesList = value; }
         }
 
-        // Check to see if Blob property is set
-        internal bool IsSetBlob()
+        // Check to see if MessagesList property is set
+        internal bool IsSetMessagesList()
         {
-            return !this._blob.IsNull();
-        }
-
-        /// <summary>
-        /// Gets and sets the property Conversational. 
-        /// <para>
-        /// The conversational content of the payload.
-        /// </para>
-        /// </summary>
-        public Conversational Conversational
-        {
-            get { return this._conversational; }
-            set { this._conversational = value; }
-        }
-
-        // Check to see if Conversational property is set
-        internal bool IsSetConversational()
-        {
-            return this._conversational != null;
+            return this._messagesList != null && (this._messagesList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

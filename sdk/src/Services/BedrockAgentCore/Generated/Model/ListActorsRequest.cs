@@ -48,8 +48,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of results to return in a single call. Minimum value of 1, maximum
-        /// value of 100. Default is 20.
+        /// The maximum number of results to return in a single call. The default value is 20.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

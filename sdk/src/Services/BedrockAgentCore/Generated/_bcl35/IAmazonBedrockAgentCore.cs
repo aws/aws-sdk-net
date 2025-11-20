@@ -30,17 +30,8 @@ namespace Amazon.BedrockAgentCore
     /// <summary>
     /// <para>Interface for accessing BedrockAgentCore</para>
     ///
-    /// <note> 
-    /// <para>
-    /// Amazon Bedrock AgentCore is in preview release and is subject to change.
-    /// 
-    ///  </note> 
-    /// <para>
     /// Welcome to the Amazon Bedrock AgentCore Data Plane API reference. Data Plane actions
-    /// process and handle data or workloads within Amazon Web Services services. 
-    /// </para>
-    /// 
-    /// </para>
+    /// process and handle data or workloads within Amazon Web Services services.
     /// </summary>
     public partial interface IAmazonBedrockAgentCore : IAmazonService, IDisposable
     {
@@ -1878,6 +1869,80 @@ namespace Amazon.BedrockAgentCore
 
         #endregion
         
+        #region  ListMemoryExtractionJobs
+
+
+        /// <summary>
+        /// Lists all long-term memory extraction jobs that are eligible to be started with optional
+        /// filtering.
+        /// 
+        ///  
+        /// <para>
+        /// To use this operation, you must have the <c>bedrock-agentcore:ListMemoryExtractionJobs</c>
+        /// permission.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMemoryExtractionJobs service method.</param>
+        /// 
+        /// <returns>The response from the ListMemoryExtractionJobs service method, as returned by BedrockAgentCore.</returns>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.AccessDeniedException">
+        /// The exception that occurs when you do not have sufficient permissions to perform an
+        /// action. Verify that your IAM policy includes the necessary permissions for the operation
+        /// you are trying to perform.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ResourceNotFoundException">
+        /// The exception that occurs when the specified resource does not exist. This can happen
+        /// when using an invalid identifier or when trying to access a resource that has been
+        /// deleted.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ServiceException">
+        /// The service encountered an internal error. Try your request again later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ServiceQuotaExceededException">
+        /// The exception that occurs when the request would cause a service quota to be exceeded.
+        /// Review your service quotas and either reduce your request rate or request a quota
+        /// increase.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ThrottledException">
+        /// The request was denied due to request throttling. Reduce the frequency of requests
+        /// and try again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ValidationException">
+        /// The exception that occurs when the input fails to satisfy the constraints specified
+        /// by the service. Check the error message for details about which input parameter is
+        /// invalid and correct your request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/ListMemoryExtractionJobs">REST API Reference for ListMemoryExtractionJobs Operation</seealso>
+        ListMemoryExtractionJobsResponse ListMemoryExtractionJobs(ListMemoryExtractionJobsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListMemoryExtractionJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListMemoryExtractionJobs operation on AmazonBedrockAgentCoreClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListMemoryExtractionJobs
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/ListMemoryExtractionJobs">REST API Reference for ListMemoryExtractionJobs Operation</seealso>
+        IAsyncResult BeginListMemoryExtractionJobs(ListMemoryExtractionJobsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListMemoryExtractionJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListMemoryExtractionJobs.</param>
+        /// 
+        /// <returns>Returns a  ListMemoryExtractionJobsResult from BedrockAgentCore.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/ListMemoryExtractionJobs">REST API Reference for ListMemoryExtractionJobs Operation</seealso>
+        ListMemoryExtractionJobsResponse EndListMemoryExtractionJobs(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListMemoryRecords
 
 
@@ -2318,6 +2383,82 @@ namespace Amazon.BedrockAgentCore
         /// <returns>Returns a  StartCodeInterpreterSessionResult from BedrockAgentCore.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/StartCodeInterpreterSession">REST API Reference for StartCodeInterpreterSession Operation</seealso>
         StartCodeInterpreterSessionResponse EndStartCodeInterpreterSession(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  StartMemoryExtractionJob
+
+
+        /// <summary>
+        /// Starts a memory extraction job that processes events that failed extraction previously
+        /// in an AgentCore Memory resource and produces structured memory records. When earlier
+        /// extraction attempts have left events unprocessed, this job will pick up and extract
+        /// those as well. 
+        /// 
+        ///  
+        /// <para>
+        /// To use this operation, you must have the <c>bedrock-agentcore:StartMemoryExtractionJob</c>
+        /// permission.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartMemoryExtractionJob service method.</param>
+        /// 
+        /// <returns>The response from the StartMemoryExtractionJob service method, as returned by BedrockAgentCore.</returns>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.AccessDeniedException">
+        /// The exception that occurs when you do not have sufficient permissions to perform an
+        /// action. Verify that your IAM policy includes the necessary permissions for the operation
+        /// you are trying to perform.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ResourceNotFoundException">
+        /// The exception that occurs when the specified resource does not exist. This can happen
+        /// when using an invalid identifier or when trying to access a resource that has been
+        /// deleted.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ServiceException">
+        /// The service encountered an internal error. Try your request again later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ServiceQuotaExceededException">
+        /// The exception that occurs when the request would cause a service quota to be exceeded.
+        /// Review your service quotas and either reduce your request rate or request a quota
+        /// increase.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ThrottledException">
+        /// The request was denied due to request throttling. Reduce the frequency of requests
+        /// and try again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ValidationException">
+        /// The exception that occurs when the input fails to satisfy the constraints specified
+        /// by the service. Check the error message for details about which input parameter is
+        /// invalid and correct your request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/StartMemoryExtractionJob">REST API Reference for StartMemoryExtractionJob Operation</seealso>
+        StartMemoryExtractionJobResponse StartMemoryExtractionJob(StartMemoryExtractionJobRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartMemoryExtractionJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartMemoryExtractionJob operation on AmazonBedrockAgentCoreClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartMemoryExtractionJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/StartMemoryExtractionJob">REST API Reference for StartMemoryExtractionJob Operation</seealso>
+        IAsyncResult BeginStartMemoryExtractionJob(StartMemoryExtractionJobRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartMemoryExtractionJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartMemoryExtractionJob.</param>
+        /// 
+        /// <returns>Returns a  StartMemoryExtractionJobResult from BedrockAgentCore.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/StartMemoryExtractionJob">REST API Reference for StartMemoryExtractionJob Operation</seealso>
+        StartMemoryExtractionJobResponse EndStartMemoryExtractionJob(IAsyncResult asyncResult);
 
         #endregion
         

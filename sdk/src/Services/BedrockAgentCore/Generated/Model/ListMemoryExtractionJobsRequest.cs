@@ -30,51 +30,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentCore.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListEvents operation.
-    /// Lists events in an AgentCore Memory resource based on specified criteria. We recommend
-    /// using pagination to ensure that the operation returns quickly and successfully.
+    /// Container for the parameters to the ListMemoryExtractionJobs operation.
+    /// Lists all long-term memory extraction jobs that are eligible to be started with optional
+    /// filtering.
     /// 
     ///  
     /// <para>
-    /// To use this operation, you must have the <c>bedrock-agentcore:ListEvents</c> permission.
+    /// To use this operation, you must have the <c>bedrock-agentcore:ListMemoryExtractionJobs</c>
+    /// permission.
     /// </para>
     /// </summary>
-    public partial class ListEventsRequest : AmazonBedrockAgentCoreRequest
+    public partial class ListMemoryExtractionJobsRequest : AmazonBedrockAgentCoreRequest
     {
-        private string _actorId;
-        private FilterInput _filter;
-        private bool? _includePayloads;
+        private ExtractionJobFilterInput _filter;
         private int? _maxResults;
         private string _memoryId;
         private string _nextToken;
-        private string _sessionId;
-
-        /// <summary>
-        /// Gets and sets the property ActorId. 
-        /// <para>
-        /// The identifier of the actor for which to list events.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=255)]
-        public string ActorId
-        {
-            get { return this._actorId; }
-            set { this._actorId = value; }
-        }
-
-        // Check to see if ActorId property is set
-        internal bool IsSetActorId()
-        {
-            return this._actorId != null;
-        }
 
         /// <summary>
         /// Gets and sets the property Filter. 
         /// <para>
-        /// Filter criteria to apply when listing events.
+        /// Filter criteria to apply when listing extraction jobs.
         /// </para>
         /// </summary>
-        public FilterInput Filter
+        public ExtractionJobFilterInput Filter
         {
             get { return this._filter; }
             set { this._filter = value; }
@@ -87,31 +66,12 @@ namespace Amazon.BedrockAgentCore.Model
         }
 
         /// <summary>
-        /// Gets and sets the property IncludePayloads. 
-        /// <para>
-        /// Specifies whether to include event payloads in the response. Set to true to include
-        /// payloads, or false to exclude them.
-        /// </para>
-        /// </summary>
-        public bool IncludePayloads
-        {
-            get { return this._includePayloads.GetValueOrDefault(); }
-            set { this._includePayloads = value; }
-        }
-
-        // Check to see if IncludePayloads property is set
-        internal bool IsSetIncludePayloads()
-        {
-            return this._includePayloads.HasValue; 
-        }
-
-        /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// The maximum number of results to return in a single call. The default value is 20.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
+        [AWSProperty(Min=1, Max=50)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -127,7 +87,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property MemoryId. 
         /// <para>
-        /// The identifier of the AgentCore Memory resource for which to list events.
+        /// The unique identifier of the memory to list extraction jobs for.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12)]
@@ -160,25 +120,6 @@ namespace Amazon.BedrockAgentCore.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property SessionId. 
-        /// <para>
-        /// The identifier of the session for which to list events.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=100)]
-        public string SessionId
-        {
-            get { return this._sessionId; }
-            set { this._sessionId = value; }
-        }
-
-        // Check to see if SessionId property is set
-        internal bool IsSetSessionId()
-        {
-            return this._sessionId != null;
         }
 
     }
