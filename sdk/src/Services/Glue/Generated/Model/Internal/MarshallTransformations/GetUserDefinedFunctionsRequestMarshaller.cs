@@ -81,6 +81,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.DatabaseName);
                 }
 
+                if(publicRequest.IsSetFunctionType())
+                {
+                    context.Writer.WritePropertyName("FunctionType");
+                    context.Writer.Write(publicRequest.FunctionType);
+                }
+
                 if(publicRequest.IsSetMaxResults())
                 {
                     context.Writer.WritePropertyName("MaxResults");

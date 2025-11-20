@@ -60,6 +60,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.FunctionName);
             }
 
+            if(requestObject.IsSetFunctionType())
+            {
+                context.Writer.WritePropertyName("FunctionType");
+                context.Writer.Write(requestObject.FunctionType);
+            }
+
             if(requestObject.IsSetOwnerName())
             {
                 context.Writer.WritePropertyName("OwnerName");

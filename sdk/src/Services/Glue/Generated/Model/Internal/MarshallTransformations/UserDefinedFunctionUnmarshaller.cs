@@ -96,6 +96,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     unmarshalledObject.FunctionName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("FunctionType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.FunctionType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("OwnerName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
