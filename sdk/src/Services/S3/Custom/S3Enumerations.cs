@@ -3603,4 +3603,49 @@ namespace Amazon.S3
             return FindValue(value);
         }
     }
+
+    /// <summary>
+    /// The ABAC status of the general purpose bucket.
+    /// </summary>
+    public sealed class BucketAbacStatus : ConstantClass
+    {
+        /// <summary>
+        /// ABAC status of the general purpose bucket is enabled.
+        /// </summary>
+        public static readonly BucketAbacStatus Enabled = new BucketAbacStatus("Enabled");
+
+        /// <summary>
+        /// ABAC status of the general purpose bucket is disabled.
+        /// </summary>
+        public static readonly BucketAbacStatus Disabled = new BucketAbacStatus("Disabled");
+
+        /// <summary>
+        /// Construct instance of BucketAbacStatus.
+        /// </summary>
+        /// <param name="value"></param>
+        public BucketAbacStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BucketAbacStatus FindValue(string value)
+        {
+            return FindValue<BucketAbacStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BucketAbacStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
 }
