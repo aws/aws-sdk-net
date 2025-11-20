@@ -30,23 +30,40 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentCore.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListMemoryRecords operation.
-    /// Lists memory records in an AgentCore Memory resource based on specified criteria.
-    /// We recommend using pagination to ensure that the operation returns quickly and successfully.
+    /// Container for the parameters to the ListMemoryExtractionJobs operation.
+    /// Lists all long-term memory extraction jobs that are eligible to be started with optional
+    /// filtering.
     /// 
     ///  
     /// <para>
-    /// To use this operation, you must have the <c>bedrock-agentcore:ListMemoryRecords</c>
+    /// To use this operation, you must have the <c>bedrock-agentcore:ListMemoryExtractionJobs</c>
     /// permission.
     /// </para>
     /// </summary>
-    public partial class ListMemoryRecordsRequest : AmazonBedrockAgentCoreRequest
+    public partial class ListMemoryExtractionJobsRequest : AmazonBedrockAgentCoreRequest
     {
+        private ExtractionJobFilterInput _filter;
         private int? _maxResults;
         private string _memoryId;
-        private string _memoryStrategyId;
-        private string _awsNamespace;
         private string _nextToken;
+
+        /// <summary>
+        /// Gets and sets the property Filter. 
+        /// <para>
+        /// Filter criteria to apply when listing extraction jobs.
+        /// </para>
+        /// </summary>
+        public ExtractionJobFilterInput Filter
+        {
+            get { return this._filter; }
+            set { this._filter = value; }
+        }
+
+        // Check to see if Filter property is set
+        internal bool IsSetFilter()
+        {
+            return this._filter != null;
+        }
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
@@ -54,7 +71,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// The maximum number of results to return in a single call. The default value is 20.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
+        [AWSProperty(Min=1, Max=50)]
         public int? MaxResults
         {
             get { return this._maxResults; }
@@ -70,7 +87,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property MemoryId. 
         /// <para>
-        /// The identifier of the AgentCore Memory resource for which to list memory records.
+        /// The unique identifier of the memory to list extraction jobs for.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12)]
@@ -84,46 +101,6 @@ namespace Amazon.BedrockAgentCore.Model
         internal bool IsSetMemoryId()
         {
             return this._memoryId != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property MemoryStrategyId. 
-        /// <para>
-        /// The memory strategy identifier to filter memory records by. If specified, only memory
-        /// records with this strategy ID are returned.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=100)]
-        public string MemoryStrategyId
-        {
-            get { return this._memoryStrategyId; }
-            set { this._memoryStrategyId = value; }
-        }
-
-        // Check to see if MemoryStrategyId property is set
-        internal bool IsSetMemoryStrategyId()
-        {
-            return this._memoryStrategyId != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Namespace. 
-        /// <para>
-        /// The namespace to filter memory records by. If specified, only memory records in this
-        /// namespace are returned.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1024)]
-        public string Namespace
-        {
-            get { return this._awsNamespace; }
-            set { this._awsNamespace = value; }
-        }
-
-        // Check to see if Namespace property is set
-        internal bool IsSetNamespace()
-        {
-            return this._awsNamespace != null;
         }
 
         /// <summary>
