@@ -154,6 +154,16 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("InstanceId", StringUtils.FromString(publicRequest.InstanceId));
                 }
+                if(publicRequest.IsSetInstanceLifecyclePolicy())
+                {
+                    if(publicRequest.InstanceLifecyclePolicy.IsSetRetentionTriggers())
+                    {
+                        if(publicRequest.InstanceLifecyclePolicy.RetentionTriggers.IsSetTerminateHookAbandon())
+                        {
+                            request.Parameters.Add("InstanceLifecyclePolicy" + "." + "RetentionTriggers" + "." + "TerminateHookAbandon", StringUtils.FromString(publicRequest.InstanceLifecyclePolicy.RetentionTriggers.TerminateHookAbandon));
+                        }
+                    }
+                }
                 if(publicRequest.IsSetInstanceMaintenancePolicy())
                 {
                     if(publicRequest.InstanceMaintenancePolicy.IsSetMaxHealthyPercentage())
@@ -292,6 +302,10 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                             int publicRequestMixedInstancesPolicyLaunchTemplatelistValueIndex = 1;
                             foreach(var publicRequestMixedInstancesPolicyLaunchTemplatelistValue in publicRequest.MixedInstancesPolicy.LaunchTemplate.Overrides)
                             {
+                                if(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.IsSetImageId())
+                                {
+                                    request.Parameters.Add("MixedInstancesPolicy" + "." + "LaunchTemplate" + "." + "Overrides" + "." + "member" + "." + publicRequestMixedInstancesPolicyLaunchTemplatelistValueIndex + "." + "ImageId", StringUtils.FromString(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.ImageId));
+                                }
                                 if(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.IsSetInstanceRequirements())
                                 {
                                     if(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.IsSetAcceleratorCount())

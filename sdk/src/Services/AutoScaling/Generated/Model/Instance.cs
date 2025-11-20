@@ -36,6 +36,7 @@ namespace Amazon.AutoScaling.Model
     {
         private string _availabilityZone;
         private string _healthStatus;
+        private string _imageId;
         private string _instanceId;
         private string _instanceType;
         private string _launchConfigurationName;
@@ -82,6 +83,52 @@ namespace Amazon.AutoScaling.Model
         internal bool IsSetHealthStatus()
         {
             return this._healthStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ImageId. 
+        /// <para>
+        ///  The ID of the Amazon Machine Image (AMI) used for the instance's current root volume.
+        /// This value reflects the most recent AMI applied to the instance, including updates
+        /// made through root volume replacement operations. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  This field appears for: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Instances with root volume replacements through Instance Refresh
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Instances launched with AMI overrides 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// This field won't appear for:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Existing instances launched from Launch Templates without overrides
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Existing instances that didn’t have their root volume replaced through Instance Refresh
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string ImageId
+        {
+            get { return this._imageId; }
+            set { this._imageId = value; }
+        }
+
+        // Check to see if ImageId property is set
+        internal bool IsSetImageId()
+        {
+            return this._imageId != null;
         }
 
         /// <summary>

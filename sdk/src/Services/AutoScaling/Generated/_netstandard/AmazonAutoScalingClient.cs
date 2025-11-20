@@ -397,6 +397,10 @@ namespace Amazon.AutoScaling
         /// </param>
         /// 
         /// <returns>The response from the AttachLoadBalancers service method, as returned by AutoScaling.</returns>
+        /// <exception cref="Amazon.AutoScaling.Model.InstanceRefreshInProgressException">
+        /// The request failed because an active instance refresh already exists for the specified
+        /// Auto Scaling group.
+        /// </exception>
         /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
         /// You already have a pending update to an Amazon EC2 Auto Scaling resource (for example,
         /// an Auto Scaling group, instance, or load balancer).
@@ -484,6 +488,10 @@ namespace Amazon.AutoScaling
         /// </param>
         /// 
         /// <returns>The response from the AttachLoadBalancerTargetGroups service method, as returned by AutoScaling.</returns>
+        /// <exception cref="Amazon.AutoScaling.Model.InstanceRefreshInProgressException">
+        /// The request failed because an active instance refresh already exists for the specified
+        /// Auto Scaling group.
+        /// </exception>
         /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
         /// You already have a pending update to an Amazon EC2 Auto Scaling resource (for example,
         /// an Auto Scaling group, instance, or load balancer).
@@ -563,6 +571,10 @@ namespace Amazon.AutoScaling
         /// </param>
         /// 
         /// <returns>The response from the AttachTrafficSources service method, as returned by AutoScaling.</returns>
+        /// <exception cref="Amazon.AutoScaling.Model.InstanceRefreshInProgressException">
+        /// The request failed because an active instance refresh already exists for the specified
+        /// Auto Scaling group.
+        /// </exception>
         /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
         /// You already have a pending update to an Amazon EC2 Auto Scaling resource (for example,
         /// an Auto Scaling group, instance, or load balancer).
@@ -3840,6 +3852,10 @@ namespace Amazon.AutoScaling
         /// </param>
         /// 
         /// <returns>The response from the PutWarmPool service method, as returned by AutoScaling.</returns>
+        /// <exception cref="Amazon.AutoScaling.Model.InstanceRefreshInProgressException">
+        /// The request failed because an active instance refresh already exists for the specified
+        /// Auto Scaling group.
+        /// </exception>
         /// <exception cref="Amazon.AutoScaling.Model.LimitExceededException">
         /// You have already reached a limit for your Amazon EC2 Auto Scaling resources (for example,
         /// Auto Scaling groups, launch configurations, or lifecycle hooks). For more information,

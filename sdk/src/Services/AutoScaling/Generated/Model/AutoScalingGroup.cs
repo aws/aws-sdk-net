@@ -50,6 +50,7 @@ namespace Amazon.AutoScaling.Model
         private List<EnabledMetric> _enabledMetrics = AWSConfigs.InitializeCollections ? new List<EnabledMetric>() : null;
         private int? _healthCheckGracePeriod;
         private string _healthCheckType;
+        private InstanceLifecyclePolicy _instanceLifecyclePolicy;
         private InstanceMaintenancePolicy _instanceMaintenancePolicy;
         private List<Instance> _instances = AWSConfigs.InitializeCollections ? new List<Instance>() : null;
         private string _launchConfigurationName;
@@ -369,6 +370,26 @@ namespace Amazon.AutoScaling.Model
         internal bool IsSetHealthCheckType()
         {
             return this._healthCheckType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstanceLifecyclePolicy. 
+        /// <para>
+        ///  The instance lifecycle policy applied to this Auto Scaling group. This policy determines
+        /// instance behavior when an instance transitions through its lifecycle states. It provides
+        /// additional control over graceful instance management processes. 
+        /// </para>
+        /// </summary>
+        public InstanceLifecyclePolicy InstanceLifecyclePolicy
+        {
+            get { return this._instanceLifecyclePolicy; }
+            set { this._instanceLifecyclePolicy = value; }
+        }
+
+        // Check to see if InstanceLifecyclePolicy property is set
+        internal bool IsSetInstanceLifecyclePolicy()
+        {
+            return this._instanceLifecyclePolicy != null;
         }
 
         /// <summary>

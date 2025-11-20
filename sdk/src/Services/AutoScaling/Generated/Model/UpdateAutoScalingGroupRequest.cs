@@ -104,6 +104,7 @@ namespace Amazon.AutoScaling.Model
         private string _desiredCapacityType;
         private int? _healthCheckGracePeriod;
         private string _healthCheckType;
+        private InstanceLifecyclePolicy _instanceLifecyclePolicy;
         private InstanceMaintenancePolicy _instanceMaintenancePolicy;
         private string _launchConfigurationName;
         private LaunchTemplateSpecification _launchTemplate;
@@ -424,6 +425,27 @@ namespace Amazon.AutoScaling.Model
         internal bool IsSetHealthCheckType()
         {
             return this._healthCheckType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstanceLifecyclePolicy. 
+        /// <para>
+        ///  The instance lifecycle policy for the Auto Scaling group. Use this to add, modify,
+        /// or remove lifecycle policies that control instance behavior when an instance transitions
+        /// through its lifecycle states. Configure retention triggers to specify when to preserve
+        /// instances for manual intervention. 
+        /// </para>
+        /// </summary>
+        public InstanceLifecyclePolicy InstanceLifecyclePolicy
+        {
+            get { return this._instanceLifecyclePolicy; }
+            set { this._instanceLifecyclePolicy = value; }
+        }
+
+        // Check to see if InstanceLifecyclePolicy property is set
+        internal bool IsSetInstanceLifecyclePolicy()
+        {
+            return this._instanceLifecyclePolicy != null;
         }
 
         /// <summary>
