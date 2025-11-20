@@ -58,6 +58,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.Visibility);
             }
 
+            if(requestObject.IsSetWidth())
+            {
+                context.Writer.WritePropertyName("Width");
+                context.Writer.WriteStringValue(requestObject.Width);
+            }
+
         }
 
         /// <summary>

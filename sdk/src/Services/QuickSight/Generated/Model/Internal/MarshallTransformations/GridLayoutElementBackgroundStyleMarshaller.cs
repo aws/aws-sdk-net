@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// TileStyle Marshaller
+    /// GridLayoutElementBackgroundStyle Marshaller
     /// </summary>
-    public class TileStyleMarshaller : IRequestMarshaller<TileStyle, JsonMarshallerContext> 
+    public class GridLayoutElementBackgroundStyleMarshaller : IRequestMarshaller<GridLayoutElementBackgroundStyle, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,37 +42,20 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(TileStyle requestObject, JsonMarshallerContext context)
+        public void Marshall(GridLayoutElementBackgroundStyle requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetBackgroundColor())
+            if(requestObject.IsSetColor())
             {
-                context.Writer.WritePropertyName("BackgroundColor");
-                context.Writer.WriteStringValue(requestObject.BackgroundColor);
+                context.Writer.WritePropertyName("Color");
+                context.Writer.WriteStringValue(requestObject.Color);
             }
 
-            if(requestObject.IsSetBorder())
+            if(requestObject.IsSetVisibility())
             {
-                context.Writer.WritePropertyName("Border");
-                context.Writer.WriteStartObject();
-
-                var marshaller = BorderStyleMarshaller.Instance;
-                marshaller.Marshall(requestObject.Border, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(requestObject.IsSetBorderRadius())
-            {
-                context.Writer.WritePropertyName("BorderRadius");
-                context.Writer.WriteStringValue(requestObject.BorderRadius);
-            }
-
-            if(requestObject.IsSetPadding())
-            {
-                context.Writer.WritePropertyName("Padding");
-                context.Writer.WriteStringValue(requestObject.Padding);
+                context.Writer.WritePropertyName("Visibility");
+                context.Writer.WriteStringValue(requestObject.Visibility);
             }
 
         }
@@ -80,7 +63,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static TileStyleMarshaller Instance = new TileStyleMarshaller();
+        public readonly static GridLayoutElementBackgroundStyleMarshaller Instance = new GridLayoutElementBackgroundStyleMarshaller();
 
     }
 }

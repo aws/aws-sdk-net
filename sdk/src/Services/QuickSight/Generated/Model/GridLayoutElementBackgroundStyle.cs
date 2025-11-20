@@ -30,18 +30,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// The background style configuration of a free-form layout element.
+    /// The background style configuration of a grid layout element.
     /// </summary>
-    public partial class FreeFormLayoutElementBorderStyle
+    public partial class GridLayoutElementBackgroundStyle
     {
         private string _color;
         private Visibility _visibility;
-        private string _width;
 
         /// <summary>
         /// Gets and sets the property Color. 
         /// <para>
-        /// The border color of a free-form layout element.
+        /// The background color of a grid layout element.
         /// </para>
         /// </summary>
         public string Color
@@ -59,7 +58,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Visibility. 
         /// <para>
-        /// The border visibility of a free-form layout element.
+        /// The background visibility of a grid layout element.
         /// </para>
         /// </summary>
         public Visibility Visibility
@@ -72,25 +71,6 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetVisibility()
         {
             return this._visibility != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Width. 
-        /// <para>
-        /// The border width of a free-form layout element.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Max=50)]
-        public string Width
-        {
-            get { return this._width; }
-            set { this._width = value; }
-        }
-
-        // Check to see if Width property is set
-        internal bool IsSetWidth()
-        {
-            return this._width != null;
         }
 
     }

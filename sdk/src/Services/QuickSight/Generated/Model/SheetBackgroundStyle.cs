@@ -30,18 +30,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// The background style configuration of a free-form layout element.
+    /// The background configuration for sheets.
     /// </summary>
-    public partial class FreeFormLayoutElementBorderStyle
+    public partial class SheetBackgroundStyle
     {
         private string _color;
-        private Visibility _visibility;
-        private string _width;
+        private string _gradient;
 
         /// <summary>
         /// Gets and sets the property Color. 
         /// <para>
-        /// The border color of a free-form layout element.
+        /// The solid color background option for sheets.
         /// </para>
         /// </summary>
         public string Color
@@ -57,40 +56,21 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Visibility. 
+        /// Gets and sets the property Gradient. 
         /// <para>
-        /// The border visibility of a free-form layout element.
+        /// The gradient background option for sheets.
         /// </para>
         /// </summary>
-        public Visibility Visibility
+        public string Gradient
         {
-            get { return this._visibility; }
-            set { this._visibility = value; }
+            get { return this._gradient; }
+            set { this._gradient = value; }
         }
 
-        // Check to see if Visibility property is set
-        internal bool IsSetVisibility()
+        // Check to see if Gradient property is set
+        internal bool IsSetGradient()
         {
-            return this._visibility != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Width. 
-        /// <para>
-        /// The border width of a free-form layout element.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Max=50)]
-        public string Width
-        {
-            get { return this._width; }
-            set { this._width = value; }
-        }
-
-        // Check to see if Width property is set
-        internal bool IsSetWidth()
-        {
-            return this._width != null;
+            return this._gradient != null;
         }
 
     }

@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for SheetStyle Object
+    /// Response Unmarshaller for SheetBackgroundStyle Object
     /// </summary>  
-    public class SheetStyleUnmarshaller : IJsonUnmarshaller<SheetStyle, JsonUnmarshallerContext>
+    public class SheetBackgroundStyleUnmarshaller : IJsonUnmarshaller<SheetBackgroundStyle, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public SheetStyle Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public SheetBackgroundStyle Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            SheetStyle unmarshalledObject = new SheetStyle();
+            SheetBackgroundStyle unmarshalledObject = new SheetBackgroundStyle();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,22 +56,16 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Background", targetDepth))
+                if (context.TestExpression("Color", targetDepth))
                 {
-                    var unmarshaller = SheetBackgroundStyleUnmarshaller.Instance;
-                    unmarshalledObject.Background = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Color = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Tile", targetDepth))
+                if (context.TestExpression("Gradient", targetDepth))
                 {
-                    var unmarshaller = TileStyleUnmarshaller.Instance;
-                    unmarshalledObject.Tile = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("TileLayout", targetDepth))
-                {
-                    var unmarshaller = TileLayoutStyleUnmarshaller.Instance;
-                    unmarshalledObject.TileLayout = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Gradient = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -79,12 +73,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         }
 
 
-        private static SheetStyleUnmarshaller _instance = new SheetStyleUnmarshaller();        
+        private static SheetBackgroundStyleUnmarshaller _instance = new SheetBackgroundStyleUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SheetStyleUnmarshaller Instance
+        public static SheetBackgroundStyleUnmarshaller Instance
         {
             get
             {

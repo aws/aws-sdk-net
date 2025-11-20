@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for SheetStyle Object
+    /// Response Unmarshaller for VisualSubtitleFontConfiguration Object
     /// </summary>  
-    public class SheetStyleUnmarshaller : IJsonUnmarshaller<SheetStyle, JsonUnmarshallerContext>
+    public class VisualSubtitleFontConfigurationUnmarshaller : IJsonUnmarshaller<VisualSubtitleFontConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public SheetStyle Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public VisualSubtitleFontConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            SheetStyle unmarshalledObject = new SheetStyle();
+            VisualSubtitleFontConfiguration unmarshalledObject = new VisualSubtitleFontConfiguration();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,22 +56,22 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Background", targetDepth))
+                if (context.TestExpression("FontConfiguration", targetDepth))
                 {
-                    var unmarshaller = SheetBackgroundStyleUnmarshaller.Instance;
-                    unmarshalledObject.Background = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = FontConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.FontConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Tile", targetDepth))
+                if (context.TestExpression("TextAlignment", targetDepth))
                 {
-                    var unmarshaller = TileStyleUnmarshaller.Instance;
-                    unmarshalledObject.Tile = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TextAlignment = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TileLayout", targetDepth))
+                if (context.TestExpression("TextTransform", targetDepth))
                 {
-                    var unmarshaller = TileLayoutStyleUnmarshaller.Instance;
-                    unmarshalledObject.TileLayout = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TextTransform = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -79,12 +79,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         }
 
 
-        private static SheetStyleUnmarshaller _instance = new SheetStyleUnmarshaller();        
+        private static VisualSubtitleFontConfigurationUnmarshaller _instance = new VisualSubtitleFontConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SheetStyleUnmarshaller Instance
+        public static VisualSubtitleFontConfigurationUnmarshaller Instance
         {
             get
             {
