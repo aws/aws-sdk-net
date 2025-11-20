@@ -45,8 +45,30 @@ namespace Amazon.LakeFormation.Model
     /// access from Lake Formation which is authorized via the virtual API <c>GetDataAccess</c>.
     /// Therefore, all SAML roles that can be assumed via <c>AssumeDecoratedRoleWithSAML</c>
     /// must at a minimum include <c>lakeformation:GetDataAccess</c> in their role policies.
-    /// A typical IAM policy attached to such a role would look as follows: 
+    /// A typical IAM policy attached to such a role would include the following actions:
+    /// 
     /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// glue:*Database*
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// glue:*Table*
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// glue:*Partition*
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// glue:*UserDefinedFunction*
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// lakeformation:GetDataAccess
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class AssumeDecoratedRoleWithSAMLRequest : AmazonLakeFormationRequest
     {

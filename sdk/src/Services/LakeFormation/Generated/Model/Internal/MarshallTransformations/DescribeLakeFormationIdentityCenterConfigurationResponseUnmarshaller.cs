@@ -82,6 +82,12 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
                     response.ResourceShare = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ServiceIntegrations", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ServiceIntegrationUnion, ServiceIntegrationUnionUnmarshaller>(ServiceIntegrationUnionUnmarshaller.Instance);
+                    response.ServiceIntegrations = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ShareRecipients", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<DataLakePrincipal, DataLakePrincipalUnmarshaller>(DataLakePrincipalUnmarshaller.Instance);

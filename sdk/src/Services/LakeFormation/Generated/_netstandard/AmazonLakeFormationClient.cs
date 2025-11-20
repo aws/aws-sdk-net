@@ -351,8 +351,30 @@ namespace Amazon.LakeFormation
         /// access from Lake Formation which is authorized via the virtual API <c>GetDataAccess</c>.
         /// Therefore, all SAML roles that can be assumed via <c>AssumeDecoratedRoleWithSAML</c>
         /// must at a minimum include <c>lakeformation:GetDataAccess</c> in their role policies.
-        /// A typical IAM policy attached to such a role would look as follows: 
+        /// A typical IAM policy attached to such a role would include the following actions:
+        /// 
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// glue:*Database*
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// glue:*Table*
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// glue:*Partition*
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// glue:*UserDefinedFunction*
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// lakeformation:GetDataAccess
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssumeDecoratedRoleWithSAML service method.</param>
         /// <param name="cancellationToken">
@@ -1027,11 +1049,19 @@ namespace Amazon.LakeFormation
 
 
         /// <summary>
-        /// Deletes the specified LF-tag given a key name. If the input parameter tag key was
-        /// not found, then the operation will throw an exception. When you delete an LF-tag,
-        /// the <c>LFTagPolicy</c> attached to the LF-tag becomes invalid. If the deleted LF-tag
-        /// was still assigned to any resource, the tag policy attach to the deleted LF-tag will
-        /// no longer be applied to the resource.
+        /// Deletes an LF-tag by its key name. The operation fails if the specified tag key doesn't
+        /// exist. When you delete an LF-Tag: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// The associated LF-Tag policy becomes invalid.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  Resources that had this tag assigned will no longer have the tag policy applied to
+        /// them.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteLFTag service method.</param>
         /// <param name="cancellationToken">
@@ -2416,7 +2446,9 @@ namespace Amazon.LakeFormation
         /// 
         ///  
         /// <para>
-        /// This operation returns only those permissions that have been explicitly granted.
+        /// This operation returns only those permissions that have been explicitly granted. If
+        /// both <c>Principal</c> and <c>Resource</c> parameters are provided, the response returns
+        /// effective permissions rather than the explicitly granted permissions.
         /// </para>
         ///  
         /// <para>

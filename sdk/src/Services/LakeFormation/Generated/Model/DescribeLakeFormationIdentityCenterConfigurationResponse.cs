@@ -39,6 +39,7 @@ namespace Amazon.LakeFormation.Model
         private ExternalFilteringConfiguration _externalFiltering;
         private string _instanceArn;
         private string _resourceShare;
+        private List<ServiceIntegrationUnion> _serviceIntegrations = AWSConfigs.InitializeCollections ? new List<ServiceIntegrationUnion>() : null;
         private List<DataLakePrincipal> _shareRecipients = AWSConfigs.InitializeCollections ? new List<DataLakePrincipal>() : null;
 
         /// <summary>
@@ -133,6 +134,25 @@ namespace Amazon.LakeFormation.Model
         internal bool IsSetResourceShare()
         {
             return this._resourceShare != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServiceIntegrations. 
+        /// <para>
+        /// A list of service integrations for enabling trusted identity propagation with external
+        /// services such as Redshift.
+        /// </para>
+        /// </summary>
+        public List<ServiceIntegrationUnion> ServiceIntegrations
+        {
+            get { return this._serviceIntegrations; }
+            set { this._serviceIntegrations = value; }
+        }
+
+        // Check to see if ServiceIntegrations property is set
+        internal bool IsSetServiceIntegrations()
+        {
+            return this._serviceIntegrations != null && (this._serviceIntegrations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

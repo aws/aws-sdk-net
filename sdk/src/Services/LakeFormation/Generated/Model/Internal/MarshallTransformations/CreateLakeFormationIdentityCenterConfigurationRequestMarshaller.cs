@@ -90,6 +90,22 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.InstanceArn);
                 }
 
+                if(publicRequest.IsSetServiceIntegrations())
+                {
+                    context.Writer.WritePropertyName("ServiceIntegrations");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestServiceIntegrationsListValue in publicRequest.ServiceIntegrations)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ServiceIntegrationUnionMarshaller.Instance;
+                        marshaller.Marshall(publicRequestServiceIntegrationsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetShareRecipients())
                 {
                     context.Writer.WritePropertyName("ShareRecipients");
