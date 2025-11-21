@@ -37,6 +37,7 @@ namespace Amazon.SageMaker.Model
         private ModelCompilationConfig _modelCompilationConfig;
         private ModelQuantizationConfig _modelQuantizationConfig;
         private ModelShardingConfig _modelShardingConfig;
+        private ModelSpeculativeDecodingConfig _modelSpeculativeDecodingConfig;
 
         /// <summary>
         /// Gets and sets the property ModelCompilationConfig. 
@@ -92,6 +93,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetModelShardingConfig()
         {
             return this._modelShardingConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ModelSpeculativeDecodingConfig. 
+        /// <para>
+        /// Settings for the model speculative decoding technique that's applied by a model optimization
+        /// job.
+        /// </para>
+        /// </summary>
+        public ModelSpeculativeDecodingConfig ModelSpeculativeDecodingConfig
+        {
+            get { return this._modelSpeculativeDecodingConfig; }
+            set { this._modelSpeculativeDecodingConfig = value; }
+        }
+
+        // Check to see if ModelSpeculativeDecodingConfig property is set
+        internal bool IsSetModelSpeculativeDecodingConfig()
+        {
+            return this._modelSpeculativeDecodingConfig != null;
         }
 
     }

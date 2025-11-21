@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// OptimizationJobOutputConfig Marshaller
+    /// ClusterKubernetesConfig Marshaller
     /// </summary>
-    public class OptimizationJobOutputConfigMarshaller : IRequestMarshaller<OptimizationJobOutputConfig, JsonMarshallerContext> 
+    public class ClusterKubernetesConfigMarshaller : IRequestMarshaller<ClusterKubernetesConfig, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,31 +42,38 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(OptimizationJobOutputConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(ClusterKubernetesConfig requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetKmsKeyId())
+            if(requestObject.IsSetLabels())
             {
-                context.Writer.WritePropertyName("KmsKeyId");
-                context.Writer.WriteStringValue(requestObject.KmsKeyId);
-            }
-
-            if(requestObject.IsSetS3OutputLocation())
-            {
-                context.Writer.WritePropertyName("S3OutputLocation");
-                context.Writer.WriteStringValue(requestObject.S3OutputLocation);
-            }
-
-            if(requestObject.IsSetSageMakerModel())
-            {
-                context.Writer.WritePropertyName("SageMakerModel");
+                context.Writer.WritePropertyName("Labels");
                 context.Writer.WriteStartObject();
+                foreach (var requestObjectLabelsKvp in requestObject.Labels)
+                {
+                    context.Writer.WritePropertyName(requestObjectLabelsKvp.Key);
+                    var requestObjectLabelsValue = requestObjectLabelsKvp.Value;
 
-                var marshaller = OptimizationSageMakerModelMarshaller.Instance;
-                marshaller.Marshall(requestObject.SageMakerModel, context);
-
+                        context.Writer.WriteStringValue(requestObjectLabelsValue);
+                }
                 context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetTaints())
+            {
+                context.Writer.WritePropertyName("Taints");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectTaintsListValue in requestObject.Taints)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = ClusterKubernetesTaintMarshaller.Instance;
+                    marshaller.Marshall(requestObjectTaintsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
             }
 
         }
@@ -74,7 +81,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static OptimizationJobOutputConfigMarshaller Instance = new OptimizationJobOutputConfigMarshaller();
+        public readonly static ClusterKubernetesConfigMarshaller Instance = new ClusterKubernetesConfigMarshaller();
 
     }
 }

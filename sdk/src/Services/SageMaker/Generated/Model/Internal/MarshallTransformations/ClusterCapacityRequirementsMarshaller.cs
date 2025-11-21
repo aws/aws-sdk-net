@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// OptimizationJobOutputConfig Marshaller
+    /// ClusterCapacityRequirements Marshaller
     /// </summary>
-    public class OptimizationJobOutputConfigMarshaller : IRequestMarshaller<OptimizationJobOutputConfig, JsonMarshallerContext> 
+    public class ClusterCapacityRequirementsMarshaller : IRequestMarshaller<ClusterCapacityRequirements, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,29 +42,28 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(OptimizationJobOutputConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(ClusterCapacityRequirements requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetKmsKeyId())
+            if(requestObject.IsSetOnDemand())
             {
-                context.Writer.WritePropertyName("KmsKeyId");
-                context.Writer.WriteStringValue(requestObject.KmsKeyId);
-            }
-
-            if(requestObject.IsSetS3OutputLocation())
-            {
-                context.Writer.WritePropertyName("S3OutputLocation");
-                context.Writer.WriteStringValue(requestObject.S3OutputLocation);
-            }
-
-            if(requestObject.IsSetSageMakerModel())
-            {
-                context.Writer.WritePropertyName("SageMakerModel");
+                context.Writer.WritePropertyName("OnDemand");
                 context.Writer.WriteStartObject();
 
-                var marshaller = OptimizationSageMakerModelMarshaller.Instance;
-                marshaller.Marshall(requestObject.SageMakerModel, context);
+                var marshaller = ClusterOnDemandOptionsMarshaller.Instance;
+                marshaller.Marshall(requestObject.OnDemand, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetSpot())
+            {
+                context.Writer.WritePropertyName("Spot");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ClusterSpotOptionsMarshaller.Instance;
+                marshaller.Marshall(requestObject.Spot, context);
 
                 context.Writer.WriteEndObject();
             }
@@ -74,7 +73,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static OptimizationJobOutputConfigMarshaller Instance = new OptimizationJobOutputConfigMarshaller();
+        public readonly static ClusterCapacityRequirementsMarshaller Instance = new ClusterCapacityRequirementsMarshaller();
 
     }
 }

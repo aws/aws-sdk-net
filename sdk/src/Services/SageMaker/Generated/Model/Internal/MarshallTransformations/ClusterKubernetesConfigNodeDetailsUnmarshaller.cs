@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for OptimizationConfig Object
+    /// Response Unmarshaller for ClusterKubernetesConfigNodeDetails Object
     /// </summary>  
-    public class OptimizationConfigUnmarshaller : IJsonUnmarshaller<OptimizationConfig, JsonUnmarshallerContext>
+    public class ClusterKubernetesConfigNodeDetailsUnmarshaller : IJsonUnmarshaller<ClusterKubernetesConfigNodeDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public OptimizationConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public ClusterKubernetesConfigNodeDetails Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            OptimizationConfig unmarshalledObject = new OptimizationConfig();
+            ClusterKubernetesConfigNodeDetails unmarshalledObject = new ClusterKubernetesConfigNodeDetails();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,28 +56,28 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ModelCompilationConfig", targetDepth))
+                if (context.TestExpression("CurrentLabels", targetDepth))
                 {
-                    var unmarshaller = ModelCompilationConfigUnmarshaller.Instance;
-                    unmarshalledObject.ModelCompilationConfig = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.CurrentLabels = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ModelQuantizationConfig", targetDepth))
+                if (context.TestExpression("CurrentTaints", targetDepth))
                 {
-                    var unmarshaller = ModelQuantizationConfigUnmarshaller.Instance;
-                    unmarshalledObject.ModelQuantizationConfig = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = new JsonListUnmarshaller<ClusterKubernetesTaint, ClusterKubernetesTaintUnmarshaller>(ClusterKubernetesTaintUnmarshaller.Instance);
+                    unmarshalledObject.CurrentTaints = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ModelShardingConfig", targetDepth))
+                if (context.TestExpression("DesiredLabels", targetDepth))
                 {
-                    var unmarshaller = ModelShardingConfigUnmarshaller.Instance;
-                    unmarshalledObject.ModelShardingConfig = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.DesiredLabels = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ModelSpeculativeDecodingConfig", targetDepth))
+                if (context.TestExpression("DesiredTaints", targetDepth))
                 {
-                    var unmarshaller = ModelSpeculativeDecodingConfigUnmarshaller.Instance;
-                    unmarshalledObject.ModelSpeculativeDecodingConfig = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = new JsonListUnmarshaller<ClusterKubernetesTaint, ClusterKubernetesTaintUnmarshaller>(ClusterKubernetesTaintUnmarshaller.Instance);
+                    unmarshalledObject.DesiredTaints = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -85,12 +85,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         }
 
 
-        private static OptimizationConfigUnmarshaller _instance = new OptimizationConfigUnmarshaller();        
+        private static ClusterKubernetesConfigNodeDetailsUnmarshaller _instance = new ClusterKubernetesConfigNodeDetailsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static OptimizationConfigUnmarshaller Instance
+        public static ClusterKubernetesConfigNodeDetailsUnmarshaller Instance
         {
             get
             {

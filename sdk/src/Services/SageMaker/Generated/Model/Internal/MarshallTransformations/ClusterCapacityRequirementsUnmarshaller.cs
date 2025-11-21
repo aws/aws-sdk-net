@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for OptimizationJobModelSource Object
+    /// Response Unmarshaller for ClusterCapacityRequirements Object
     /// </summary>  
-    public class OptimizationJobModelSourceUnmarshaller : IJsonUnmarshaller<OptimizationJobModelSource, JsonUnmarshallerContext>
+    public class ClusterCapacityRequirementsUnmarshaller : IJsonUnmarshaller<ClusterCapacityRequirements, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public OptimizationJobModelSource Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public ClusterCapacityRequirements Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            OptimizationJobModelSource unmarshalledObject = new OptimizationJobModelSource();
+            ClusterCapacityRequirements unmarshalledObject = new ClusterCapacityRequirements();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,16 +56,16 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("S3", targetDepth))
+                if (context.TestExpression("OnDemand", targetDepth))
                 {
-                    var unmarshaller = OptimizationJobModelSourceS3Unmarshaller.Instance;
-                    unmarshalledObject.S3 = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = ClusterOnDemandOptionsUnmarshaller.Instance;
+                    unmarshalledObject.OnDemand = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SageMakerModel", targetDepth))
+                if (context.TestExpression("Spot", targetDepth))
                 {
-                    var unmarshaller = OptimizationSageMakerModelUnmarshaller.Instance;
-                    unmarshalledObject.SageMakerModel = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = ClusterSpotOptionsUnmarshaller.Instance;
+                    unmarshalledObject.Spot = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -73,12 +73,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         }
 
 
-        private static OptimizationJobModelSourceUnmarshaller _instance = new OptimizationJobModelSourceUnmarshaller();        
+        private static ClusterCapacityRequirementsUnmarshaller _instance = new ClusterCapacityRequirementsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static OptimizationJobModelSourceUnmarshaller Instance
+        public static ClusterCapacityRequirementsUnmarshaller Instance
         {
             get
             {

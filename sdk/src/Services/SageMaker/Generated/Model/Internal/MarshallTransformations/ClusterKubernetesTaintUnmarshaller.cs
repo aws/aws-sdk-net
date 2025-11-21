@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for OptimizationJobModelSource Object
+    /// Response Unmarshaller for ClusterKubernetesTaint Object
     /// </summary>  
-    public class OptimizationJobModelSourceUnmarshaller : IJsonUnmarshaller<OptimizationJobModelSource, JsonUnmarshallerContext>
+    public class ClusterKubernetesTaintUnmarshaller : IJsonUnmarshaller<ClusterKubernetesTaint, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public OptimizationJobModelSource Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public ClusterKubernetesTaint Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            OptimizationJobModelSource unmarshalledObject = new OptimizationJobModelSource();
+            ClusterKubernetesTaint unmarshalledObject = new ClusterKubernetesTaint();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,16 +56,22 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("S3", targetDepth))
+                if (context.TestExpression("Effect", targetDepth))
                 {
-                    var unmarshaller = OptimizationJobModelSourceS3Unmarshaller.Instance;
-                    unmarshalledObject.S3 = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Effect = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SageMakerModel", targetDepth))
+                if (context.TestExpression("Key", targetDepth))
                 {
-                    var unmarshaller = OptimizationSageMakerModelUnmarshaller.Instance;
-                    unmarshalledObject.SageMakerModel = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Key = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("Value", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Value = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -73,12 +79,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         }
 
 
-        private static OptimizationJobModelSourceUnmarshaller _instance = new OptimizationJobModelSourceUnmarshaller();        
+        private static ClusterKubernetesTaintUnmarshaller _instance = new ClusterKubernetesTaintUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static OptimizationJobModelSourceUnmarshaller Instance
+        public static ClusterKubernetesTaintUnmarshaller Instance
         {
             get
             {

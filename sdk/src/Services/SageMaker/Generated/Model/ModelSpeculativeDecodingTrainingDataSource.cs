@@ -30,47 +30,50 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// The location of the source model to optimize with an optimization job.
+    /// Contains information about the training data source for speculative decoding.
     /// </summary>
-    public partial class OptimizationJobModelSource
+    public partial class ModelSpeculativeDecodingTrainingDataSource
     {
-        private OptimizationJobModelSourceS3 _s3;
-        private OptimizationSageMakerModel _sageMakerModel;
+        private ModelSpeculativeDecodingS3DataType _s3DataType;
+        private string _s3Uri;
 
         /// <summary>
-        /// Gets and sets the property S3. 
+        /// Gets and sets the property S3DataType. 
         /// <para>
-        /// The Amazon S3 location of a source model to optimize with an optimization job.
+        /// The type of data stored in the Amazon S3 location. Valid values are <c>S3Prefix</c>
+        /// or <c>ManifestFile</c>.
         /// </para>
         /// </summary>
-        public OptimizationJobModelSourceS3 S3
+        [AWSProperty(Required=true)]
+        public ModelSpeculativeDecodingS3DataType S3DataType
         {
-            get { return this._s3; }
-            set { this._s3 = value; }
+            get { return this._s3DataType; }
+            set { this._s3DataType = value; }
         }
 
-        // Check to see if S3 property is set
-        internal bool IsSetS3()
+        // Check to see if S3DataType property is set
+        internal bool IsSetS3DataType()
         {
-            return this._s3 != null;
+            return this._s3DataType != null;
         }
 
         /// <summary>
-        /// Gets and sets the property SageMakerModel. 
+        /// Gets and sets the property S3Uri. 
         /// <para>
-        /// The name of an existing SageMaker model to optimize with an optimization job.
+        /// The Amazon S3 URI that points to the training data for speculative decoding.
         /// </para>
         /// </summary>
-        public OptimizationSageMakerModel SageMakerModel
+        [AWSProperty(Required=true, Min=0, Max=1024)]
+        public string S3Uri
         {
-            get { return this._sageMakerModel; }
-            set { this._sageMakerModel = value; }
+            get { return this._s3Uri; }
+            set { this._s3Uri = value; }
         }
 
-        // Check to see if SageMakerModel property is set
-        internal bool IsSetSageMakerModel()
+        // Check to see if S3Uri property is set
+        internal bool IsSetS3Uri()
         {
-            return this._sageMakerModel != null;
+            return this._s3Uri != null;
         }
 
     }

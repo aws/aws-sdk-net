@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for OptimizationJobModelSource Object
+    /// Response Unmarshaller for ModelSpeculativeDecodingTrainingDataSource Object
     /// </summary>  
-    public class OptimizationJobModelSourceUnmarshaller : IJsonUnmarshaller<OptimizationJobModelSource, JsonUnmarshallerContext>
+    public class ModelSpeculativeDecodingTrainingDataSourceUnmarshaller : IJsonUnmarshaller<ModelSpeculativeDecodingTrainingDataSource, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public OptimizationJobModelSource Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public ModelSpeculativeDecodingTrainingDataSource Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            OptimizationJobModelSource unmarshalledObject = new OptimizationJobModelSource();
+            ModelSpeculativeDecodingTrainingDataSource unmarshalledObject = new ModelSpeculativeDecodingTrainingDataSource();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,16 +56,16 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("S3", targetDepth))
+                if (context.TestExpression("S3DataType", targetDepth))
                 {
-                    var unmarshaller = OptimizationJobModelSourceS3Unmarshaller.Instance;
-                    unmarshalledObject.S3 = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.S3DataType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SageMakerModel", targetDepth))
+                if (context.TestExpression("S3Uri", targetDepth))
                 {
-                    var unmarshaller = OptimizationSageMakerModelUnmarshaller.Instance;
-                    unmarshalledObject.SageMakerModel = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.S3Uri = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -73,12 +73,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         }
 
 
-        private static OptimizationJobModelSourceUnmarshaller _instance = new OptimizationJobModelSourceUnmarshaller();        
+        private static ModelSpeculativeDecodingTrainingDataSourceUnmarshaller _instance = new ModelSpeculativeDecodingTrainingDataSourceUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static OptimizationJobModelSourceUnmarshaller Instance
+        public static ModelSpeculativeDecodingTrainingDataSourceUnmarshaller Instance
         {
             get
             {

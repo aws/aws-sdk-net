@@ -30,47 +30,48 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// The location of the source model to optimize with an optimization job.
+    /// Defines the instance capacity requirements for an instance group, including configurations
+    /// for both Spot and On-Demand capacity types.
     /// </summary>
-    public partial class OptimizationJobModelSource
+    public partial class ClusterCapacityRequirements
     {
-        private OptimizationJobModelSourceS3 _s3;
-        private OptimizationSageMakerModel _sageMakerModel;
+        private ClusterOnDemandOptions _onDemand;
+        private ClusterSpotOptions _spot;
 
         /// <summary>
-        /// Gets and sets the property S3. 
+        /// Gets and sets the property OnDemand. 
         /// <para>
-        /// The Amazon S3 location of a source model to optimize with an optimization job.
+        /// Configuration options specific to On-Demand instances.
         /// </para>
         /// </summary>
-        public OptimizationJobModelSourceS3 S3
+        public ClusterOnDemandOptions OnDemand
         {
-            get { return this._s3; }
-            set { this._s3 = value; }
+            get { return this._onDemand; }
+            set { this._onDemand = value; }
         }
 
-        // Check to see if S3 property is set
-        internal bool IsSetS3()
+        // Check to see if OnDemand property is set
+        internal bool IsSetOnDemand()
         {
-            return this._s3 != null;
+            return this._onDemand != null;
         }
 
         /// <summary>
-        /// Gets and sets the property SageMakerModel. 
+        /// Gets and sets the property Spot. 
         /// <para>
-        /// The name of an existing SageMaker model to optimize with an optimization job.
+        /// Configuration options specific to Spot instances.
         /// </para>
         /// </summary>
-        public OptimizationSageMakerModel SageMakerModel
+        public ClusterSpotOptions Spot
         {
-            get { return this._sageMakerModel; }
-            set { this._sageMakerModel = value; }
+            get { return this._spot; }
+            set { this._spot = value; }
         }
 
-        // Check to see if SageMakerModel property is set
-        internal bool IsSetSageMakerModel()
+        // Check to see if Spot property is set
+        internal bool IsSetSpot()
         {
-            return this._sageMakerModel != null;
+            return this._spot != null;
         }
 
     }
