@@ -1063,6 +1063,10 @@ namespace Amazon.KeyManagementService
         /// </summary>
         public static readonly KeyMaterialState NON_CURRENT = new KeyMaterialState("NON_CURRENT");
         /// <summary>
+        /// Constant PENDING_MULTI_REGION_IMPORT_AND_ROTATION for KeyMaterialState
+        /// </summary>
+        public static readonly KeyMaterialState PENDING_MULTI_REGION_IMPORT_AND_ROTATION = new KeyMaterialState("PENDING_MULTI_REGION_IMPORT_AND_ROTATION");
+        /// <summary>
         /// Constant PENDING_ROTATION for KeyMaterialState
         /// </summary>
         public static readonly KeyMaterialState PENDING_ROTATION = new KeyMaterialState("PENDING_ROTATION");
