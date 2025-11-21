@@ -58,6 +58,16 @@ namespace Amazon.SecurityIR.Model
         IListCommentsPaginator ListComments(ListCommentsRequest request);
 
         /// <summary>
+        /// Paginator for ListInvestigations operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListInvestigationsPaginator ListInvestigations(ListInvestigationsRequest request);
+
+        /// <summary>
         /// Paginator for ListMemberships operation
         ///</summary>
         [AWSPaginator(
