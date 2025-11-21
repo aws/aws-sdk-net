@@ -12,35 +12,47 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the s3-2006-03-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
+using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// GetInventoryConfigurationResponse Response
+    /// This is the response object from the GetBucketInventoryConfiguration operation.
     /// </summary>
     public partial class GetBucketInventoryConfigurationResponse : AmazonWebServiceResponse
     {
-        InventoryConfiguration inventoryConfiguration;
+        private InventoryConfiguration _inventoryConfiguration;
 
         /// <summary>
+        /// Gets and sets the property InventoryConfiguration. 
+        /// <para>
         /// Specifies the inventory configuration.
+        /// </para>
         /// </summary>
         public InventoryConfiguration InventoryConfiguration
         {
-            get { return this.inventoryConfiguration; }
-            set { this.inventoryConfiguration = value; }
+            get { return this._inventoryConfiguration; }
+            set { this._inventoryConfiguration = value; }
         }
 
         // Check to see if InventoryConfiguration property is set
         internal bool IsSetInventoryConfiguration()
         {
-            return this.inventoryConfiguration != null;
+            return this._inventoryConfiguration != null;
         }
+
     }
 }
