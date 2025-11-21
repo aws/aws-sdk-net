@@ -76,8 +76,8 @@ namespace Amazon.Lambda.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// The following error handling options are available only for DynamoDB and Kinesis event
-    /// sources:
+    /// The following error handling options are available for stream sources (DynamoDB, Kinesis,
+    /// Amazon MSK, and self-managed Apache Kafka):
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -98,18 +98,17 @@ namespace Amazon.Lambda.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <c>ParallelizationFactor</c> – Process multiple batches from each shard concurrently.
+    ///  <c>OnFailure</c> – Send discarded records to an Amazon SQS queue, Amazon SNS topic,
+    /// Kafka topic, or Amazon S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async-retain-records.html#invocation-async-destinations">Adding
+    /// a destination</a>.
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// For stream sources (DynamoDB, Kinesis, Amazon MSK, and self-managed Apache Kafka),
-    /// the following option is also available:
+    /// The following option is available only for DynamoDB and Kinesis event sources:
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <c>OnFailure</c> – Send discarded records to an Amazon SQS queue, Amazon SNS topic,
-    /// or Amazon S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async-retain-records.html#invocation-async-destinations">Adding
-    /// a destination</a>.
+    ///  <c>ParallelizationFactor</c> – Process multiple batches from each shard concurrently.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -247,8 +246,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property BisectBatchOnFunctionError. 
         /// <para>
-        /// (Kinesis and DynamoDB Streams only) If the function returns an error, split the batch
-        /// in two and retry.
+        /// (Kinesis, DynamoDB Streams, Amazon MSK, and self-managed Apache Kafka) If the function
+        /// returns an error, split the batch in two and retry.
         /// </para>
         /// </summary>
         public bool BisectBatchOnFunctionError
@@ -266,7 +265,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property DestinationConfig. 
         /// <para>
-        /// (Kinesis, DynamoDB Streams, Amazon MSK, and self-managed Kafka only) A configuration
+        /// (Kinesis, DynamoDB Streams, Amazon MSK, and self-managed Apache Kafka) A configuration
         /// object that specifies the destination of an event after Lambda processes it.
         /// </para>
         /// </summary>
@@ -390,8 +389,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property FunctionResponseTypes. 
         /// <para>
-        /// (Kinesis, DynamoDB Streams, and Amazon SQS) A list of current response type enums
-        /// applied to the event source mapping.
+        /// (Kinesis, DynamoDB Streams, Amazon MSK, self-managed Apache Kafka, and Amazon SQS)
+        /// A list of current response type enums applied to the event source mapping.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]
@@ -467,8 +466,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property MaximumRecordAgeInSeconds. 
         /// <para>
-        /// (Kinesis and DynamoDB Streams only) Discard records older than the specified age.
-        /// The default value is infinite (-1).
+        /// (Kinesis, DynamoDB Streams, Amazon MSK, and self-managed Apache Kafka) Discard records
+        /// older than the specified age. The default value is infinite (-1).
         /// </para>
         /// </summary>
         [AWSProperty(Min=-1, Max=604800)]
@@ -487,9 +486,9 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property MaximumRetryAttempts. 
         /// <para>
-        /// (Kinesis and DynamoDB Streams only) Discard records after the specified number of
-        /// retries. The default value is infinite (-1). When set to infinite (-1), failed records
-        /// are retried until the record expires.
+        /// (Kinesis, DynamoDB Streams, Amazon MSK, and self-managed Apache Kafka) Discard records
+        /// after the specified number of retries. The default value is infinite (-1). When set
+        /// to infinite (-1), failed records are retried until the record expires.
         /// </para>
         /// </summary>
         [AWSProperty(Min=-1, Max=10000)]
