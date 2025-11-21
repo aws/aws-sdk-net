@@ -59,6 +59,7 @@ namespace Amazon.KinesisVideo.Model
         private string _kmsKeyId;
         private string _mediaType;
         private string _streamName;
+        private StreamStorageConfiguration _streamStorageConfiguration;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
@@ -69,7 +70,8 @@ namespace Amazon.KinesisVideo.Model
         /// </para>
         ///  
         /// <para>
-        /// The default value is 0, indicating that the stream does not persist data.
+        /// The default value is 0, indicating that the stream does not persist data. The minimum
+        /// is 1 hour.
         /// </para>
         ///  
         /// <para>
@@ -99,7 +101,7 @@ namespace Amazon.KinesisVideo.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// In the current implementation, Kinesis Video Streams does not use this name.
+        /// In the current implementation, Kinesis Video Streams doesn't use this name.
         /// </para>
         ///  </note>
         /// </summary>
@@ -124,7 +126,7 @@ namespace Amazon.KinesisVideo.Model
         /// </para>
         ///  
         /// <para>
-        /// If no key ID is specified, the default, Kinesis Video-managed key (<c>Amazon Web Services/kinesisvideo</c>)
+        /// If no key ID is specified, the default, Kinesis Video-managed key (<c>aws/kinesisvideo</c>)
         /// is used.
         /// </para>
         ///  
@@ -198,6 +200,31 @@ namespace Amazon.KinesisVideo.Model
         internal bool IsSetStreamName()
         {
             return this._streamName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StreamStorageConfiguration. 
+        /// <para>
+        /// The configuration for the stream's storage, including the default storage tier for
+        /// stream data. This configuration determines how stream data is stored and accessed,
+        /// with different tiers offering varying levels of performance and cost optimization.
+        /// </para>
+        ///  
+        /// <para>
+        /// If not specified, the stream will use the default storage configuration with HOT tier
+        /// for optimal performance.
+        /// </para>
+        /// </summary>
+        public StreamStorageConfiguration StreamStorageConfiguration
+        {
+            get { return this._streamStorageConfiguration; }
+            set { this._streamStorageConfiguration = value; }
+        }
+
+        // Check to see if StreamStorageConfiguration property is set
+        internal bool IsSetStreamStorageConfiguration()
+        {
+            return this._streamStorageConfiguration != null;
         }
 
         /// <summary>

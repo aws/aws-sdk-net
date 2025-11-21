@@ -1260,6 +1260,83 @@ namespace Amazon.KinesisVideo
 
         #endregion
         
+        #region  DescribeStreamStorageConfiguration
+
+        /// <summary>
+        /// Retrieves the current storage configuration for the specified Kinesis video stream.
+        /// 
+        ///  
+        /// <para>
+        /// In the request, you must specify either the <c>StreamName</c> or the <c>StreamARN</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You must have permissions for the <c>KinesisVideo:DescribeStreamStorageConfiguration</c>
+        /// action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeStreamStorageConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DescribeStreamStorageConfiguration service method, as returned by KinesisVideo.</returns>
+        /// <exception cref="Amazon.KinesisVideo.Model.AccessDeniedException">
+        /// You do not have required permissions to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisVideo.Model.ClientLimitExceededException">
+        /// Kinesis Video Streams has throttled the request because you have exceeded the limit
+        /// of allowed client calls. Try making the call later.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisVideo.Model.InvalidArgumentException">
+        /// The value for this input parameter is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisVideo.Model.ResourceNotFoundException">
+        /// Amazon Kinesis Video Streams can't find the stream that you specified.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DescribeStreamStorageConfiguration">REST API Reference for DescribeStreamStorageConfiguration Operation</seealso>
+        public virtual DescribeStreamStorageConfigurationResponse DescribeStreamStorageConfiguration(DescribeStreamStorageConfigurationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeStreamStorageConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeStreamStorageConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeStreamStorageConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeStreamStorageConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeStreamStorageConfiguration operation on AmazonKinesisVideoClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeStreamStorageConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DescribeStreamStorageConfiguration">REST API Reference for DescribeStreamStorageConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginDescribeStreamStorageConfiguration(DescribeStreamStorageConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeStreamStorageConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeStreamStorageConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeStreamStorageConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeStreamStorageConfiguration.</param>
+        /// 
+        /// <returns>Returns a  DescribeStreamStorageConfigurationResult from KinesisVideo.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DescribeStreamStorageConfiguration">REST API Reference for DescribeStreamStorageConfiguration Operation</seealso>
+        public virtual DescribeStreamStorageConfigurationResponse EndDescribeStreamStorageConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeStreamStorageConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetDataEndpoint
 
         /// <summary>
@@ -1352,7 +1429,8 @@ namespace Amazon.KinesisVideo
         ///  <c>Protocols</c> is used to determine the communication mechanism. For example, if
         /// you specify <c>WSS</c> as the protocol, this API produces a secure websocket endpoint.
         /// If you specify <c>HTTPS</c> as the protocol, this API generates an HTTPS endpoint.
-        /// 
+        /// If you specify <c>WEBRTC</c> as the protocol, but the signaling channel isn't configured
+        /// for ingestion, you will receive the error <c>InvalidArgumentException</c>.
         /// </para>
         ///  
         /// <para>
@@ -2848,6 +2926,116 @@ namespace Amazon.KinesisVideo
         public virtual UpdateStreamResponse EndUpdateStream(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateStreamResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateStreamStorageConfiguration
+
+        /// <summary>
+        /// Updates the storage configuration for an existing Kinesis video stream.
+        /// 
+        ///  
+        /// <para>
+        /// This operation allows you to modify the storage tier settings for a stream, enabling
+        /// you to optimize storage costs and performance based on your access patterns.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>UpdateStreamStorageConfiguration</c> is an asynchronous operation.
+        /// </para>
+        ///  
+        /// <para>
+        /// You must have permissions for the <c>KinesisVideo:UpdateStreamStorageConfiguration</c>
+        /// action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateStreamStorageConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the UpdateStreamStorageConfiguration service method, as returned by KinesisVideo.</returns>
+        /// <exception cref="Amazon.KinesisVideo.Model.AccessDeniedException">
+        /// You do not have required permissions to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisVideo.Model.ClientLimitExceededException">
+        /// Kinesis Video Streams has throttled the request because you have exceeded the limit
+        /// of allowed client calls. Try making the call later.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisVideo.Model.InvalidArgumentException">
+        /// The value for this input parameter is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisVideo.Model.ResourceInUseException">
+        /// When the input <c>StreamARN</c> or <c>ChannelARN</c> in <c>CLOUD_STORAGE_MODE</c>
+        /// is already mapped to a different Kinesis Video Stream resource, or if the provided
+        /// input <c>StreamARN</c> or <c>ChannelARN</c> is not in Active status, try one of the
+        /// following : 
+        /// 
+        ///  <ol> <li> 
+        /// <para>
+        /// The <c>DescribeMediaStorageConfiguration</c> API to determine what the stream given
+        /// channel is mapped to. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The <c>DescribeMappedResourceConfiguration</c> API to determine the channel that the
+        /// given stream is mapped to. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The <c>DescribeStream</c> or <c>DescribeSignalingChannel</c> API to determine the
+        /// status of the resource. 
+        /// </para>
+        ///  </li> </ol>
+        /// </exception>
+        /// <exception cref="Amazon.KinesisVideo.Model.ResourceNotFoundException">
+        /// Amazon Kinesis Video Streams can't find the stream that you specified.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisVideo.Model.VersionMismatchException">
+        /// The stream version that you specified is not the latest version. To get the latest
+        /// version, use the <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_DescribeStream.html">DescribeStream</a>
+        /// API.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/UpdateStreamStorageConfiguration">REST API Reference for UpdateStreamStorageConfiguration Operation</seealso>
+        public virtual UpdateStreamStorageConfigurationResponse UpdateStreamStorageConfiguration(UpdateStreamStorageConfigurationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateStreamStorageConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateStreamStorageConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateStreamStorageConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateStreamStorageConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateStreamStorageConfiguration operation on AmazonKinesisVideoClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateStreamStorageConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/UpdateStreamStorageConfiguration">REST API Reference for UpdateStreamStorageConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginUpdateStreamStorageConfiguration(UpdateStreamStorageConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateStreamStorageConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateStreamStorageConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateStreamStorageConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateStreamStorageConfiguration.</param>
+        /// 
+        /// <returns>Returns a  UpdateStreamStorageConfigurationResult from KinesisVideo.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/UpdateStreamStorageConfiguration">REST API Reference for UpdateStreamStorageConfiguration Operation</seealso>
+        public virtual UpdateStreamStorageConfigurationResponse EndUpdateStreamStorageConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateStreamStorageConfigurationResponse>(asyncResult);
         }
 
         #endregion
