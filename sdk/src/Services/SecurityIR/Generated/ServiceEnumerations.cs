@@ -25,6 +25,60 @@ namespace Amazon.SecurityIR
 {
 
     /// <summary>
+    /// Constants used for properties of type ActionType.
+    /// </summary>
+    public class ActionType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Evidence for ActionType
+        /// </summary>
+        public static readonly ActionType Evidence = new ActionType("Evidence");
+        /// <summary>
+        /// Constant Investigation for ActionType
+        /// </summary>
+        public static readonly ActionType Investigation = new ActionType("Investigation");
+        /// <summary>
+        /// Constant Summarization for ActionType
+        /// </summary>
+        public static readonly ActionType Summarization = new ActionType("Summarization");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ActionType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ActionType FindValue(string value)
+        {
+            return FindValue<ActionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ActionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AwsRegion.
     /// </summary>
     public class AwsRegion : ConstantClass
@@ -599,6 +653,72 @@ namespace Amazon.SecurityIR
 
 
     /// <summary>
+    /// Constants used for properties of type ExecutionStatus.
+    /// </summary>
+    public class ExecutionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Cancelled for ExecutionStatus
+        /// </summary>
+        public static readonly ExecutionStatus Cancelled = new ExecutionStatus("Cancelled");
+        /// <summary>
+        /// Constant Completed for ExecutionStatus
+        /// </summary>
+        public static readonly ExecutionStatus Completed = new ExecutionStatus("Completed");
+        /// <summary>
+        /// Constant Failed for ExecutionStatus
+        /// </summary>
+        public static readonly ExecutionStatus Failed = new ExecutionStatus("Failed");
+        /// <summary>
+        /// Constant InProgress for ExecutionStatus
+        /// </summary>
+        public static readonly ExecutionStatus InProgress = new ExecutionStatus("InProgress");
+        /// <summary>
+        /// Constant Pending for ExecutionStatus
+        /// </summary>
+        public static readonly ExecutionStatus Pending = new ExecutionStatus("Pending");
+        /// <summary>
+        /// Constant Waiting for ExecutionStatus
+        /// </summary>
+        public static readonly ExecutionStatus Waiting = new ExecutionStatus("Waiting");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ExecutionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ExecutionStatus FindValue(string value)
+        {
+            return FindValue<ExecutionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ExecutionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type MembershipAccountRelationshipStatus.
     /// </summary>
     public class MembershipAccountRelationshipStatus : ConstantClass
@@ -954,6 +1074,56 @@ namespace Amazon.SecurityIR
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SelfManagedCaseStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type UsefulnessRating.
+    /// </summary>
+    public class UsefulnessRating : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NOT_USEFUL for UsefulnessRating
+        /// </summary>
+        public static readonly UsefulnessRating NOT_USEFUL = new UsefulnessRating("NOT_USEFUL");
+        /// <summary>
+        /// Constant USEFUL for UsefulnessRating
+        /// </summary>
+        public static readonly UsefulnessRating USEFUL = new UsefulnessRating("USEFUL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public UsefulnessRating(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static UsefulnessRating FindValue(string value)
+        {
+            return FindValue<UsefulnessRating>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator UsefulnessRating(string value)
         {
             return FindValue(value);
         }

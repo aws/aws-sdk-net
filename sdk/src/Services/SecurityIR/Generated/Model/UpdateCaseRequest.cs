@@ -37,6 +37,7 @@ namespace Amazon.SecurityIR.Model
     {
         private DateTime? _actualIncidentStartDate;
         private string _caseId;
+        private List<CaseMetadataEntry> _caseMetadata = AWSConfigs.InitializeCollections ? new List<CaseMetadataEntry>() : null;
         private string _description;
         private EngagementType _engagementType;
         private List<string> _impactedAccountsToAdd = AWSConfigs.InitializeCollections ? new List<string>() : null;
@@ -87,6 +88,25 @@ namespace Amazon.SecurityIR.Model
         internal bool IsSetCaseId()
         {
             return this._caseId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CaseMetadata. 
+        /// <para>
+        /// Update the case request with case metadata
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=30)]
+        public List<CaseMetadataEntry> CaseMetadata
+        {
+            get { return this._caseMetadata; }
+            set { this._caseMetadata = value; }
+        }
+
+        // Check to see if CaseMetadata property is set
+        internal bool IsSetCaseMetadata()
+        {
+            return this._caseMetadata != null && (this._caseMetadata.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -1325,6 +1325,87 @@ namespace Amazon.SecurityIR
 
         #endregion
         
+        #region  ListInvestigations
+
+        /// <summary>
+        /// Investigation performed by an agent for a security incident...
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListInvestigations service method.</param>
+        /// 
+        /// <returns>The response from the ListInvestigations service method, as returned by SecurityIR.</returns>
+        /// <exception cref="Amazon.SecurityIR.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.SecurityIR.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.SecurityIR.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.SecurityIR.Model.InvalidTokenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.SecurityIR.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.SecurityIR.Model.SecurityIncidentResponseNotActiveException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.SecurityIR.Model.ServiceQuotaExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.SecurityIR.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.SecurityIR.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/ListInvestigations">REST API Reference for ListInvestigations Operation</seealso>
+        public virtual ListInvestigationsResponse ListInvestigations(ListInvestigationsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListInvestigationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListInvestigationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListInvestigationsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListInvestigations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListInvestigations operation on AmazonSecurityIRClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListInvestigations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/ListInvestigations">REST API Reference for ListInvestigations Operation</seealso>
+        public virtual IAsyncResult BeginListInvestigations(ListInvestigationsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListInvestigationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListInvestigationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListInvestigations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListInvestigations.</param>
+        /// 
+        /// <returns>Returns a  ListInvestigationsResult from SecurityIR.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/ListInvestigations">REST API Reference for ListInvestigations Operation</seealso>
+        public virtual ListInvestigationsResponse EndListInvestigations(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListInvestigationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListMemberships
 
         /// <summary>
@@ -1483,6 +1564,87 @@ namespace Amazon.SecurityIR
         public virtual ListTagsForResourceResponse EndListTagsForResource(IAsyncResult asyncResult)
         {
             return EndInvoke<ListTagsForResourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  SendFeedback
+
+        /// <summary>
+        /// Send feedback based on response investigation action
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SendFeedback service method.</param>
+        /// 
+        /// <returns>The response from the SendFeedback service method, as returned by SecurityIR.</returns>
+        /// <exception cref="Amazon.SecurityIR.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.SecurityIR.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.SecurityIR.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.SecurityIR.Model.InvalidTokenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.SecurityIR.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.SecurityIR.Model.SecurityIncidentResponseNotActiveException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.SecurityIR.Model.ServiceQuotaExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.SecurityIR.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.SecurityIR.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/SendFeedback">REST API Reference for SendFeedback Operation</seealso>
+        public virtual SendFeedbackResponse SendFeedback(SendFeedbackRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SendFeedbackRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SendFeedbackResponseUnmarshaller.Instance;
+
+            return Invoke<SendFeedbackResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SendFeedback operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SendFeedback operation on AmazonSecurityIRClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSendFeedback
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/SendFeedback">REST API Reference for SendFeedback Operation</seealso>
+        public virtual IAsyncResult BeginSendFeedback(SendFeedbackRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SendFeedbackRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SendFeedbackResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  SendFeedback operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSendFeedback.</param>
+        /// 
+        /// <returns>Returns a  SendFeedbackResult from SecurityIR.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/SendFeedback">REST API Reference for SendFeedback Operation</seealso>
+        public virtual SendFeedbackResponse EndSendFeedback(IAsyncResult asyncResult)
+        {
+            return EndInvoke<SendFeedbackResponse>(asyncResult);
         }
 
         #endregion

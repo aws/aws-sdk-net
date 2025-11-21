@@ -70,6 +70,12 @@ namespace Amazon.SecurityIR.Model.Internal.MarshallTransformations
                     response.CaseAttachments = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("caseMetadata", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<CaseMetadataEntry, CaseMetadataEntryUnmarshaller>(CaseMetadataEntryUnmarshaller.Instance);
+                    response.CaseMetadata = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("caseStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

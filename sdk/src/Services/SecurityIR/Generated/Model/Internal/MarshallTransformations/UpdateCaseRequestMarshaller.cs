@@ -76,6 +76,22 @@ namespace Amazon.SecurityIR.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ActualIncidentStartDate);
                 }
 
+                if(publicRequest.IsSetCaseMetadata())
+                {
+                    context.Writer.WritePropertyName("caseMetadata");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestCaseMetadataListValue in publicRequest.CaseMetadata)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = CaseMetadataEntryMarshaller.Instance;
+                        marshaller.Marshall(publicRequestCaseMetadataListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetDescription())
                 {
                     context.Writer.WritePropertyName("description");

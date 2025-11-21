@@ -1125,6 +1125,88 @@ namespace Amazon.SecurityIR
 
         #endregion
         
+        #region  ListInvestigations
+
+
+        /// <summary>
+        /// Investigation performed by an agent for a security incident...
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListInvestigations service method.</param>
+        /// 
+        /// <returns>The response from the ListInvestigations service method, as returned by SecurityIR.</returns>
+        /// <exception cref="Amazon.SecurityIR.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.SecurityIR.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.SecurityIR.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.SecurityIR.Model.InvalidTokenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.SecurityIR.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.SecurityIR.Model.SecurityIncidentResponseNotActiveException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.SecurityIR.Model.ServiceQuotaExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.SecurityIR.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.SecurityIR.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/ListInvestigations">REST API Reference for ListInvestigations Operation</seealso>
+        ListInvestigationsResponse ListInvestigations(ListInvestigationsRequest request);
+
+
+
+        /// <summary>
+        /// Investigation performed by an agent for a security incident...
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListInvestigations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListInvestigations service method, as returned by SecurityIR.</returns>
+        /// <exception cref="Amazon.SecurityIR.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.SecurityIR.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.SecurityIR.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.SecurityIR.Model.InvalidTokenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.SecurityIR.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.SecurityIR.Model.SecurityIncidentResponseNotActiveException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.SecurityIR.Model.ServiceQuotaExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.SecurityIR.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.SecurityIR.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/ListInvestigations">REST API Reference for ListInvestigations Operation</seealso>
+        Task<ListInvestigationsResponse> ListInvestigationsAsync(ListInvestigationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListMemberships
 
 
@@ -1286,6 +1368,88 @@ namespace Amazon.SecurityIR
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  SendFeedback
+
+
+        /// <summary>
+        /// Send feedback based on response investigation action
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SendFeedback service method.</param>
+        /// 
+        /// <returns>The response from the SendFeedback service method, as returned by SecurityIR.</returns>
+        /// <exception cref="Amazon.SecurityIR.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.SecurityIR.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.SecurityIR.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.SecurityIR.Model.InvalidTokenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.SecurityIR.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.SecurityIR.Model.SecurityIncidentResponseNotActiveException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.SecurityIR.Model.ServiceQuotaExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.SecurityIR.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.SecurityIR.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/SendFeedback">REST API Reference for SendFeedback Operation</seealso>
+        SendFeedbackResponse SendFeedback(SendFeedbackRequest request);
+
+
+
+        /// <summary>
+        /// Send feedback based on response investigation action
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SendFeedback service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SendFeedback service method, as returned by SecurityIR.</returns>
+        /// <exception cref="Amazon.SecurityIR.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.SecurityIR.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.SecurityIR.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.SecurityIR.Model.InvalidTokenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.SecurityIR.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.SecurityIR.Model.SecurityIncidentResponseNotActiveException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.SecurityIR.Model.ServiceQuotaExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.SecurityIR.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.SecurityIR.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/SendFeedback">REST API Reference for SendFeedback Operation</seealso>
+        Task<SendFeedbackResponse> SendFeedbackAsync(SendFeedbackRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
