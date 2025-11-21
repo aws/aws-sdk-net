@@ -33,9 +33,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetCapacityReservationUsage operation
+    /// Response Unmarshaller for UpdateInterruptibleCapacityReservationAllocation operation
     /// </summary>  
-    public class GetCapacityReservationUsageResponseUnmarshaller : EC2ResponseUnmarshaller
+    public class UpdateInterruptibleCapacityReservationAllocationResponseUnmarshaller : EC2ResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,7 +44,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
-            GetCapacityReservationUsageResponse response = new GetCapacityReservationUsageResponse();
+            UpdateInterruptibleCapacityReservationAllocationResponse response = new UpdateInterruptibleCapacityReservationAllocationResponse();
 
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
@@ -56,69 +56,40 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 if (context.IsStartElement || context.IsAttribute)
                 {
 
-                    if (context.TestExpression("availableInstanceCount", targetDepth))
+                    if (context.TestExpression("instanceCount", targetDepth))
                     {
                         var unmarshaller = NullableIntUnmarshaller.Instance;
-                        response.AvailableInstanceCount = unmarshaller.Unmarshall(context);
+                        response.InstanceCount = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("capacityReservationId", targetDepth))
+                    if (context.TestExpression("interruptibleCapacityReservationId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        response.CapacityReservationId = unmarshaller.Unmarshall(context);
+                        response.InterruptibleCapacityReservationId = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("instanceType", targetDepth))
+                    if (context.TestExpression("interruptionType", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        response.InstanceType = unmarshaller.Unmarshall(context);
+                        response.InterruptionType = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("instanceUsageSet/item", targetDepth))
-                    {
-                        var unmarshaller = InstanceUsageUnmarshaller.Instance;
-                        if (response.InstanceUsages == null)
-                        {
-                            response.InstanceUsages = new List<InstanceUsage>();
-                        }
-                        var item = unmarshaller.Unmarshall(context);
-                        response.InstanceUsages.Add(item);
-                        continue;
-                    }
-                    if (context.TestExpression("interruptible", targetDepth))
-                    {
-                        var unmarshaller = NullableBoolUnmarshaller.Instance;
-                        response.Interruptible = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("interruptibleCapacityAllocation", targetDepth))
-                    {
-                        var unmarshaller = InterruptibleCapacityAllocationUnmarshaller.Instance;
-                        response.InterruptibleCapacityAllocation = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("interruptionInfo", targetDepth))
-                    {
-                        var unmarshaller = InterruptionInfoUnmarshaller.Instance;
-                        response.InterruptionInfo = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("nextToken", targetDepth))
+                    if (context.TestExpression("sourceCapacityReservationId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        response.NextToken = unmarshaller.Unmarshall(context);
+                        response.SourceCapacityReservationId = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("state", targetDepth))
+                    if (context.TestExpression("status", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        response.State = unmarshaller.Unmarshall(context);
+                        response.Status = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("totalInstanceCount", targetDepth))
+                    if (context.TestExpression("targetInstanceCount", targetDepth))
                     {
                         var unmarshaller = NullableIntUnmarshaller.Instance;
-                        response.TotalInstanceCount = unmarshaller.Unmarshall(context);
+                        response.TargetInstanceCount = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 } 
@@ -139,9 +110,9 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             ErrorResponse errorResponse = XmlErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
             return new AmazonEC2Exception(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        private static GetCapacityReservationUsageResponseUnmarshaller _instance = new GetCapacityReservationUsageResponseUnmarshaller();        
+        private static UpdateInterruptibleCapacityReservationAllocationResponseUnmarshaller _instance = new UpdateInterruptibleCapacityReservationAllocationResponseUnmarshaller();        
 
-        internal static GetCapacityReservationUsageResponseUnmarshaller GetInstance()
+        internal static UpdateInterruptibleCapacityReservationAllocationResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -149,7 +120,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetCapacityReservationUsageResponseUnmarshaller Instance
+        public static UpdateInterruptibleCapacityReservationAllocationResponseUnmarshaller Instance
         {
             get
             {
