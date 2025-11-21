@@ -100,6 +100,12 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                     response.GatewayUrl = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("interceptorConfigurations", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<GatewayInterceptorConfiguration, GatewayInterceptorConfigurationUnmarshaller>(GatewayInterceptorConfigurationUnmarshaller.Instance);
+                    response.InterceptorConfigurations = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("kmsKeyArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

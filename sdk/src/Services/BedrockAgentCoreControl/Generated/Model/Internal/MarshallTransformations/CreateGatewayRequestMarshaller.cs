@@ -107,6 +107,22 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ExceptionLevel);
                 }
 
+                if(publicRequest.IsSetInterceptorConfigurations())
+                {
+                    context.Writer.WritePropertyName("interceptorConfigurations");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestInterceptorConfigurationsListValue in publicRequest.InterceptorConfigurations)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = GatewayInterceptorConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequestInterceptorConfigurationsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetKmsKeyArn())
                 {
                     context.Writer.WritePropertyName("kmsKeyArn");

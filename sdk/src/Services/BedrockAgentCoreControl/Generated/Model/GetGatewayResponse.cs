@@ -42,6 +42,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         private string _gatewayArn;
         private string _gatewayId;
         private string _gatewayUrl;
+        private List<GatewayInterceptorConfiguration> _interceptorConfigurations = AWSConfigs.InitializeCollections ? new List<GatewayInterceptorConfiguration>() : null;
         private string _kmsKeyArn;
         private string _name;
         private GatewayProtocolConfiguration _protocolConfiguration;
@@ -210,6 +211,25 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetGatewayUrl()
         {
             return this._gatewayUrl != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InterceptorConfigurations. 
+        /// <para>
+        /// The interceptors configured on the gateway.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2)]
+        public List<GatewayInterceptorConfiguration> InterceptorConfigurations
+        {
+            get { return this._interceptorConfigurations; }
+            set { this._interceptorConfigurations = value; }
+        }
+
+        // Check to see if InterceptorConfigurations property is set
+        internal bool IsSetInterceptorConfigurations()
+        {
+            return this._interceptorConfigurations != null && (this._interceptorConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
