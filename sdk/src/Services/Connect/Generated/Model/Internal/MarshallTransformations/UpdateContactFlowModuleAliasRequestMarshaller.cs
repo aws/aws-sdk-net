@@ -37,9 +37,9 @@ using ThirdParty.RuntimeBackports;
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateContactFlowModule Request Marshaller
+    /// UpdateContactFlowModuleAlias Request Marshaller
     /// </summary>       
-    public class CreateContactFlowModuleRequestMarshaller : IMarshaller<IRequest, CreateContactFlowModuleRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class UpdateContactFlowModuleAliasRequestMarshaller : IMarshaller<IRequest, UpdateContactFlowModuleAliasRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -48,7 +48,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateContactFlowModuleRequest)input);
+            return this.Marshall((UpdateContactFlowModuleAliasRequest)input);
         }
 
         /// <summary>
@@ -56,17 +56,23 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateContactFlowModuleRequest publicRequest)
+        public IRequest Marshall(UpdateContactFlowModuleAliasRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Connect");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-08-08";
-            request.HttpMethod = "PUT";
+            request.HttpMethod = "POST";
 
+            if (!publicRequest.IsSetAliasId())
+                throw new AmazonConnectException("Request object does not have required field AliasId set");
+            request.AddPathResource("{AliasId}", StringUtils.FromString(publicRequest.AliasId));
+            if (!publicRequest.IsSetContactFlowModuleId())
+                throw new AmazonConnectException("Request object does not have required field ContactFlowModuleId set");
+            request.AddPathResource("{ContactFlowModuleId}", StringUtils.FromString(publicRequest.ContactFlowModuleId));
             if (!publicRequest.IsSetInstanceId())
                 throw new AmazonConnectException("Request object does not have required field InstanceId set");
             request.AddPathResource("{InstanceId}", StringUtils.FromString(publicRequest.InstanceId));
-            request.ResourcePath = "/contact-flow-modules/{InstanceId}";
+            request.ResourcePath = "/contact-flow-modules/{InstanceId}/{ContactFlowModuleId}/alias/{AliasId}";
 #if !NETFRAMEWORK
             using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
             using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
@@ -76,21 +82,10 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
-            if(publicRequest.IsSetClientToken())
+            if(publicRequest.IsSetContactFlowModuleVersion())
             {
-                context.Writer.WritePropertyName("ClientToken");
-                context.Writer.WriteStringValue(publicRequest.ClientToken);
-            }
-
-            else if(!(publicRequest.IsSetClientToken()))
-            {
-                context.Writer.WritePropertyName("ClientToken");
-                context.Writer.WriteStringValue(Guid.NewGuid().ToString());
-            }
-            if(publicRequest.IsSetContent())
-            {
-                context.Writer.WritePropertyName("Content");
-                context.Writer.WriteStringValue(publicRequest.Content);
+                context.Writer.WritePropertyName("ContactFlowModuleVersion");
+                context.Writer.WriteNumberValue(publicRequest.ContactFlowModuleVersion.Value);
             }
 
             if(publicRequest.IsSetDescription())
@@ -99,41 +94,10 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.Description);
             }
 
-            if(publicRequest.IsSetExternalInvocationConfiguration())
-            {
-                context.Writer.WritePropertyName("ExternalInvocationConfiguration");
-                context.Writer.WriteStartObject();
-
-                var marshaller = ExternalInvocationConfigurationMarshaller.Instance;
-                marshaller.Marshall(publicRequest.ExternalInvocationConfiguration, context);
-
-                context.Writer.WriteEndObject();
-            }
-
             if(publicRequest.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");
                 context.Writer.WriteStringValue(publicRequest.Name);
-            }
-
-            if(publicRequest.IsSetSettings())
-            {
-                context.Writer.WritePropertyName("Settings");
-                context.Writer.WriteStringValue(publicRequest.Settings);
-            }
-
-            if(publicRequest.IsSetTags())
-            {
-                context.Writer.WritePropertyName("Tags");
-                context.Writer.WriteStartObject();
-                foreach (var publicRequestTagsKvp in publicRequest.Tags)
-                {
-                    context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                    var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                        context.Writer.WriteStringValue(publicRequestTagsValue);
-                }
-                context.Writer.WriteEndObject();
             }
 
             writer.WriteEndObject();
@@ -149,9 +113,9 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateContactFlowModuleRequestMarshaller _instance = new CreateContactFlowModuleRequestMarshaller();        
+        private static UpdateContactFlowModuleAliasRequestMarshaller _instance = new UpdateContactFlowModuleAliasRequestMarshaller();        
 
-        internal static CreateContactFlowModuleRequestMarshaller GetInstance()
+        internal static UpdateContactFlowModuleAliasRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -159,7 +123,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateContactFlowModuleRequestMarshaller Instance
+        public static UpdateContactFlowModuleAliasRequestMarshaller Instance
         {
             get
             {

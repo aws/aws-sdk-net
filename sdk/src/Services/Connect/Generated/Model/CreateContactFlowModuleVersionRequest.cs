@@ -30,23 +30,16 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// Container for the parameters to the UpdateContactFlowModuleContent operation.
-    /// Updates specified flow module for the specified Amazon Connect instance. 
-    /// 
-    ///  
-    /// <para>
-    /// Use the <c>$SAVED</c> alias in the request to describe the <c>SAVED</c> content of
-    /// a Flow. For example, <c>arn:aws:.../contact-flow/{id}:$SAVED</c>. After a flow is
-    /// published, <c>$SAVED</c> needs to be supplied to view saved content that has not been
-    /// published.
-    /// </para>
+    /// Container for the parameters to the CreateContactFlowModuleVersion operation.
+    /// Creates an immutable snapshot of a contact flow module, preserving its content and
+    /// settings at a specific point in time for version control and rollback capabilities.
     /// </summary>
-    public partial class UpdateContactFlowModuleContentRequest : AmazonConnectRequest
+    public partial class CreateContactFlowModuleVersionRequest : AmazonConnectRequest
     {
         private string _contactFlowModuleId;
-        private string _content;
+        private string _description;
+        private string _flowModuleContentSha256;
         private string _instanceId;
-        private string _settings;
 
         /// <summary>
         /// Gets and sets the property ContactFlowModuleId. 
@@ -54,7 +47,7 @@ namespace Amazon.Connect.Model
         /// The identifier of the flow module.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=256)]
+        [AWSProperty(Required=true)]
         public string ContactFlowModuleId
         {
             get { return this._contactFlowModuleId; }
@@ -68,23 +61,41 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Content. 
+        /// Gets and sets the property Description. 
         /// <para>
-        /// The JSON string that represents the content of the flow. For an example, see <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language-example.html">Example
-        /// flow in Amazon Connect Flow language</a>. 
+        /// The description of the flow module version.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=256000)]
-        public string Content
+        [AWSProperty(Min=0, Max=500)]
+        public string Description
         {
-            get { return this._content; }
-            set { this._content = value; }
+            get { return this._description; }
+            set { this._description = value; }
         }
 
-        // Check to see if Content property is set
-        internal bool IsSetContent()
+        // Check to see if Description property is set
+        internal bool IsSetDescription()
         {
-            return this._content != null;
+            return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FlowModuleContentSha256. 
+        /// <para>
+        /// Indicates the checksum value of the flow module content.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string FlowModuleContentSha256
+        {
+            get { return this._flowModuleContentSha256; }
+            set { this._flowModuleContentSha256 = value; }
+        }
+
+        // Check to see if FlowModuleContentSha256 property is set
+        internal bool IsSetFlowModuleContentSha256()
+        {
+            return this._flowModuleContentSha256 != null;
         }
 
         /// <summary>
@@ -105,24 +116,6 @@ namespace Amazon.Connect.Model
         internal bool IsSetInstanceId()
         {
             return this._instanceId != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Settings. 
-        /// <para>
-        /// Serialized JSON string of the flow module Settings schema.
-        /// </para>
-        /// </summary>
-        public string Settings
-        {
-            get { return this._settings; }
-            set { this._settings = value; }
-        }
-
-        // Check to see if Settings property is set
-        internal bool IsSetSettings()
-        {
-            return this._settings != null;
         }
 
     }

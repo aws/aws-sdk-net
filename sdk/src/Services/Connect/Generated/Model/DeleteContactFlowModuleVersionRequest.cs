@@ -30,23 +30,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// Container for the parameters to the UpdateContactFlowModuleContent operation.
-    /// Updates specified flow module for the specified Amazon Connect instance. 
-    /// 
-    ///  
-    /// <para>
-    /// Use the <c>$SAVED</c> alias in the request to describe the <c>SAVED</c> content of
-    /// a Flow. For example, <c>arn:aws:.../contact-flow/{id}:$SAVED</c>. After a flow is
-    /// published, <c>$SAVED</c> needs to be supplied to view saved content that has not been
-    /// published.
-    /// </para>
+    /// Container for the parameters to the DeleteContactFlowModuleVersion operation.
+    /// Removes a specific version of a contact flow module.
     /// </summary>
-    public partial class UpdateContactFlowModuleContentRequest : AmazonConnectRequest
+    public partial class DeleteContactFlowModuleVersionRequest : AmazonConnectRequest
     {
         private string _contactFlowModuleId;
-        private string _content;
+        private long? _contactFlowModuleVersion;
         private string _instanceId;
-        private string _settings;
 
         /// <summary>
         /// Gets and sets the property ContactFlowModuleId. 
@@ -54,7 +45,7 @@ namespace Amazon.Connect.Model
         /// The identifier of the flow module.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=256)]
+        [AWSProperty(Required=true)]
         public string ContactFlowModuleId
         {
             get { return this._contactFlowModuleId; }
@@ -68,23 +59,22 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Content. 
+        /// Gets and sets the property ContactFlowModuleVersion. 
         /// <para>
-        /// The JSON string that represents the content of the flow. For an example, see <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language-example.html">Example
-        /// flow in Amazon Connect Flow language</a>. 
+        /// The version of the flow module to delete.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=256000)]
-        public string Content
+        [AWSProperty(Required=true, Min=1)]
+        public long? ContactFlowModuleVersion
         {
-            get { return this._content; }
-            set { this._content = value; }
+            get { return this._contactFlowModuleVersion; }
+            set { this._contactFlowModuleVersion = value; }
         }
 
-        // Check to see if Content property is set
-        internal bool IsSetContent()
+        // Check to see if ContactFlowModuleVersion property is set
+        internal bool IsSetContactFlowModuleVersion()
         {
-            return this._content != null;
+            return this._contactFlowModuleVersion.HasValue; 
         }
 
         /// <summary>
@@ -105,24 +95,6 @@ namespace Amazon.Connect.Model
         internal bool IsSetInstanceId()
         {
             return this._instanceId != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Settings. 
-        /// <para>
-        /// Serialized JSON string of the flow module Settings schema.
-        /// </para>
-        /// </summary>
-        public string Settings
-        {
-            get { return this._settings; }
-            set { this._settings = value; }
-        }
-
-        // Check to see if Settings property is set
-        internal bool IsSetSettings()
-        {
-            return this._settings != null;
         }
 
     }
