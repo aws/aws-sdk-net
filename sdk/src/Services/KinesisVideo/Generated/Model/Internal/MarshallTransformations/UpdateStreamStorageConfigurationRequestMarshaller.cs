@@ -37,9 +37,9 @@ using ThirdParty.RuntimeBackports;
 namespace Amazon.KinesisVideo.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateStream Request Marshaller
+    /// UpdateStreamStorageConfiguration Request Marshaller
     /// </summary>       
-    public class CreateStreamRequestMarshaller : IMarshaller<IRequest, CreateStreamRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class UpdateStreamStorageConfigurationRequestMarshaller : IMarshaller<IRequest, UpdateStreamStorageConfigurationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -48,7 +48,7 @@ namespace Amazon.KinesisVideo.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateStreamRequest)input);
+            return this.Marshall((UpdateStreamStorageConfigurationRequest)input);
         }
 
         /// <summary>
@@ -56,14 +56,14 @@ namespace Amazon.KinesisVideo.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateStreamRequest publicRequest)
+        public IRequest Marshall(UpdateStreamStorageConfigurationRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.KinesisVideo");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-09-30";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/createStream";
+            request.ResourcePath = "/updateStreamStorageConfiguration";
 #if !NETFRAMEWORK
             using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
             using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
@@ -73,28 +73,16 @@ namespace Amazon.KinesisVideo.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
-            if(publicRequest.IsSetDataRetentionInHours())
+            if(publicRequest.IsSetCurrentVersion())
             {
-                context.Writer.WritePropertyName("DataRetentionInHours");
-                context.Writer.WriteNumberValue(publicRequest.DataRetentionInHours.Value);
+                context.Writer.WritePropertyName("CurrentVersion");
+                context.Writer.WriteStringValue(publicRequest.CurrentVersion);
             }
 
-            if(publicRequest.IsSetDeviceName())
+            if(publicRequest.IsSetStreamARN())
             {
-                context.Writer.WritePropertyName("DeviceName");
-                context.Writer.WriteStringValue(publicRequest.DeviceName);
-            }
-
-            if(publicRequest.IsSetKmsKeyId())
-            {
-                context.Writer.WritePropertyName("KmsKeyId");
-                context.Writer.WriteStringValue(publicRequest.KmsKeyId);
-            }
-
-            if(publicRequest.IsSetMediaType())
-            {
-                context.Writer.WritePropertyName("MediaType");
-                context.Writer.WriteStringValue(publicRequest.MediaType);
+                context.Writer.WritePropertyName("StreamARN");
+                context.Writer.WriteStringValue(publicRequest.StreamARN);
             }
 
             if(publicRequest.IsSetStreamName())
@@ -114,20 +102,6 @@ namespace Amazon.KinesisVideo.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
-            if(publicRequest.IsSetTags())
-            {
-                context.Writer.WritePropertyName("Tags");
-                context.Writer.WriteStartObject();
-                foreach (var publicRequestTagsKvp in publicRequest.Tags)
-                {
-                    context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                    var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                        context.Writer.WriteStringValue(publicRequestTagsValue);
-                }
-                context.Writer.WriteEndObject();
-            }
-
             writer.WriteEndObject();
             writer.Flush();
             // ToArray() must be called here because aspects of sigv4 signing require a byte array
@@ -141,9 +115,9 @@ namespace Amazon.KinesisVideo.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateStreamRequestMarshaller _instance = new CreateStreamRequestMarshaller();        
+        private static UpdateStreamStorageConfigurationRequestMarshaller _instance = new UpdateStreamStorageConfigurationRequestMarshaller();        
 
-        internal static CreateStreamRequestMarshaller GetInstance()
+        internal static UpdateStreamStorageConfigurationRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -151,7 +125,7 @@ namespace Amazon.KinesisVideo.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateStreamRequestMarshaller Instance
+        public static UpdateStreamStorageConfigurationRequestMarshaller Instance
         {
             get
             {

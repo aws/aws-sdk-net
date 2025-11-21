@@ -607,6 +607,47 @@ namespace Amazon.KinesisVideo
 
         #endregion
                 
+        #region  DescribeStreamStorageConfiguration
+
+
+
+        /// <summary>
+        /// Retrieves the current storage configuration for the specified Kinesis video stream.
+        /// 
+        ///  
+        /// <para>
+        /// In the request, you must specify either the <c>StreamName</c> or the <c>StreamARN</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You must have permissions for the <c>KinesisVideo:DescribeStreamStorageConfiguration</c>
+        /// action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeStreamStorageConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeStreamStorageConfiguration service method, as returned by KinesisVideo.</returns>
+        /// <exception cref="Amazon.KinesisVideo.Model.AccessDeniedException">
+        /// You do not have required permissions to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisVideo.Model.ClientLimitExceededException">
+        /// Kinesis Video Streams has throttled the request because you have exceeded the limit
+        /// of allowed client calls. Try making the call later.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisVideo.Model.InvalidArgumentException">
+        /// The value for this input parameter is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisVideo.Model.ResourceNotFoundException">
+        /// Amazon Kinesis Video Streams can't find the stream that you specified.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DescribeStreamStorageConfiguration">REST API Reference for DescribeStreamStorageConfiguration Operation</seealso>
+        Task<DescribeStreamStorageConfigurationResponse> DescribeStreamStorageConfigurationAsync(DescribeStreamStorageConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  GetDataEndpoint
 
 
@@ -665,7 +706,8 @@ namespace Amazon.KinesisVideo
         ///  <c>Protocols</c> is used to determine the communication mechanism. For example, if
         /// you specify <c>WSS</c> as the protocol, this API produces a secure websocket endpoint.
         /// If you specify <c>HTTPS</c> as the protocol, this API generates an HTTPS endpoint.
-        /// 
+        /// If you specify <c>WEBRTC</c> as the protocol, but the signaling channel isn't configured
+        /// for ingestion, you will receive the error <c>InvalidArgumentException</c>.
         /// </para>
         ///  
         /// <para>
@@ -1548,6 +1590,80 @@ namespace Amazon.KinesisVideo
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/UpdateStream">REST API Reference for UpdateStream Operation</seealso>
         Task<UpdateStreamResponse> UpdateStreamAsync(UpdateStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateStreamStorageConfiguration
+
+
+
+        /// <summary>
+        /// Updates the storage configuration for an existing Kinesis video stream.
+        /// 
+        ///  
+        /// <para>
+        /// This operation allows you to modify the storage tier settings for a stream, enabling
+        /// you to optimize storage costs and performance based on your access patterns.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>UpdateStreamStorageConfiguration</c> is an asynchronous operation.
+        /// </para>
+        ///  
+        /// <para>
+        /// You must have permissions for the <c>KinesisVideo:UpdateStreamStorageConfiguration</c>
+        /// action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateStreamStorageConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateStreamStorageConfiguration service method, as returned by KinesisVideo.</returns>
+        /// <exception cref="Amazon.KinesisVideo.Model.AccessDeniedException">
+        /// You do not have required permissions to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisVideo.Model.ClientLimitExceededException">
+        /// Kinesis Video Streams has throttled the request because you have exceeded the limit
+        /// of allowed client calls. Try making the call later.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisVideo.Model.InvalidArgumentException">
+        /// The value for this input parameter is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisVideo.Model.ResourceInUseException">
+        /// When the input <c>StreamARN</c> or <c>ChannelARN</c> in <c>CLOUD_STORAGE_MODE</c>
+        /// is already mapped to a different Kinesis Video Stream resource, or if the provided
+        /// input <c>StreamARN</c> or <c>ChannelARN</c> is not in Active status, try one of the
+        /// following : 
+        /// 
+        ///  <ol> <li> 
+        /// <para>
+        /// The <c>DescribeMediaStorageConfiguration</c> API to determine what the stream given
+        /// channel is mapped to. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The <c>DescribeMappedResourceConfiguration</c> API to determine the channel that the
+        /// given stream is mapped to. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The <c>DescribeStream</c> or <c>DescribeSignalingChannel</c> API to determine the
+        /// status of the resource. 
+        /// </para>
+        ///  </li> </ol>
+        /// </exception>
+        /// <exception cref="Amazon.KinesisVideo.Model.ResourceNotFoundException">
+        /// Amazon Kinesis Video Streams can't find the stream that you specified.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisVideo.Model.VersionMismatchException">
+        /// The stream version that you specified is not the latest version. To get the latest
+        /// version, use the <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_DescribeStream.html">DescribeStream</a>
+        /// API.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/UpdateStreamStorageConfiguration">REST API Reference for UpdateStreamStorageConfiguration Operation</seealso>
+        Task<UpdateStreamStorageConfigurationResponse> UpdateStreamStorageConfigurationAsync(UpdateStreamStorageConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
