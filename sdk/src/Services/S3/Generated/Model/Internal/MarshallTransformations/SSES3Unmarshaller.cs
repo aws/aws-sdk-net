@@ -12,66 +12,72 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the s3-2006-03-01.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.S3.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    ///   InventorySchedule Unmarshaller
-    /// </summary>
-    public class InventoryScheduleUnmarshaller : IXmlUnmarshaller<InventorySchedule, XmlUnmarshallerContext> 
+    /// Response Unmarshaller for SSES3 Object
+    /// </summary>  
+    public partial class SSES3Unmarshaller : IXmlUnmarshaller<SSES3, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
-        /// </summary>
+        /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public InventorySchedule Unmarshall(XmlUnmarshallerContext context)
+        public SSES3 Unmarshall(XmlUnmarshallerContext context)
         {
-            InventorySchedule condition = new InventorySchedule();
+            SSES3 unmarshalledObject = new SSES3();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
-
-            if (context.IsStartOfDocument)
-                targetDepth += 2;
-
+            
+            if (context.IsStartOfDocument) 
+               targetDepth += 2;
+            
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("Frequency", targetDepth))
-                    {
 
-                        condition.Frequency = InventoryFrequency.FindValue(StringUnmarshaller.GetInstance().Unmarshall(context));
-
-                        continue;
-                    }
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return condition;
+                    return unmarshalledObject;
                 }
-            }
-
-            return condition;
+            }          
+            return unmarshalledObject;
         }
 
-        private static InventoryScheduleUnmarshaller _instance;
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, SSES3 unmarshalledObject, int targetDepth);
+
+        private static SSES3Unmarshaller _instance = new SSES3Unmarshaller();        
 
         /// <summary>
-        /// Singleton for the unmarshaller
-        /// </summary>
-        public static InventoryScheduleUnmarshaller Instance
+        /// Gets the singleton.
+        /// </summary>  
+        public static SSES3Unmarshaller Instance
         {
             get
             {
-                if (_instance == null)
-                {
-                    _instance = new InventoryScheduleUnmarshaller();
-                }
                 return _instance;
             }
         }

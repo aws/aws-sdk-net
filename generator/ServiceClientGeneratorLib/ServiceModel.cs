@@ -552,7 +552,7 @@ namespace ServiceClientGenerator
                         new Operation(this, "CreateSession", DocumentRoot[OperationsKey]["CreateSession"]),
                         new Operation(this, "GetBucketAnalyticsConfiguration", DocumentRoot[OperationsKey]["GetBucketAnalyticsConfiguration"]),
                         new Operation(this, "GetBucketIntelligentTieringConfiguration", DocumentRoot[OperationsKey]["GetBucketIntelligentTieringConfiguration"]),
-                        //new Operation(this, "GetBucketInventoryConfiguration", DocumentRoot[OperationsKey]["GetBucketInventoryConfiguration"]),
+                        new Operation(this, "GetBucketInventoryConfiguration", DocumentRoot[OperationsKey]["GetBucketInventoryConfiguration"]),
 						//new Operation(this, "GetBucketLogging", DocumentRoot[OperationsKey]["GetBucketLogging"]),
 						new Operation(this, "GetBucketMetricsConfiguration", DocumentRoot[OperationsKey]["GetBucketMetricsConfiguration"]),
 						//new Operation(this, "GetBucketVersioning", DocumentRoot[OperationsKey]["GetBucketVersioning"]),
