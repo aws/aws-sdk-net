@@ -1,0 +1,9 @@
+{
+    "core": {
+        "updateMinimum": true,
+        "type": "Patch",
+        "changeLogMessages": [
+            "Update the SDK to throw an error when the resolved AWS region is not a valid host label"
+        ]
+    }
+}
