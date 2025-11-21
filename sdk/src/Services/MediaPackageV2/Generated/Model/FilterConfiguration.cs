@@ -36,6 +36,7 @@ namespace Amazon.MediaPackageV2.Model
     public partial class FilterConfiguration
     {
         private DateTime? _clipStartTime;
+        private string _drmSettings;
         private DateTime? _end;
         private string _manifestFilter;
         private DateTime? _start;
@@ -59,6 +60,27 @@ namespace Amazon.MediaPackageV2.Model
         internal bool IsSetClipStartTime()
         {
             return this._clipStartTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DrmSettings. 
+        /// <para>
+        /// Optionally specify one or more DRM settings for all of your manifest egress requests.
+        /// When you include a DRM setting, note that you cannot use an identical DRM setting
+        /// query parameter for this manifest's endpoint URL.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
+        public string DrmSettings
+        {
+            get { return this._drmSettings; }
+            set { this._drmSettings = value; }
+        }
+
+        // Check to see if DrmSettings property is set
+        internal bool IsSetDrmSettings()
+        {
+            return this._drmSettings != null;
         }
 
         /// <summary>

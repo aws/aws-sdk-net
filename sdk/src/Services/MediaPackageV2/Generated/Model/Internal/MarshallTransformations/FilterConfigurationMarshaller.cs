@@ -54,6 +54,12 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ClipStartTime);
             }
 
+            if(requestObject.IsSetDrmSettings())
+            {
+                context.Writer.WritePropertyName("DrmSettings");
+                context.Writer.Write(requestObject.DrmSettings);
+            }
+
             if(requestObject.IsSetEnd())
             {
                 context.Writer.WritePropertyName("End");

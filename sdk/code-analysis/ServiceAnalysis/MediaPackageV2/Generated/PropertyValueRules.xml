@@ -945,6 +945,11 @@
     <max>31536000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaPackageV2.Model.FilterConfiguration.DrmSettings</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaPackageV2.Model.FilterConfiguration.ManifestFilter</property>
     <min>1</min>
     <max>1024</max>

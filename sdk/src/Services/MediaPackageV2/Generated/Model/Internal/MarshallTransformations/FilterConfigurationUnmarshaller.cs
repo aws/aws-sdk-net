@@ -72,6 +72,12 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.ClipStartTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DrmSettings", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DrmSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("End", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
