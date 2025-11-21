@@ -46,6 +46,7 @@ namespace Amazon.QuickSight.Model
         private RegisteredUserDashboardVisualEmbeddingConfiguration _dashboardVisual;
         private RegisteredUserGenerativeQnAEmbeddingConfiguration _generativeQnA;
         private RegisteredUserQSearchBarEmbeddingConfiguration _qSearchBar;
+        private RegisteredUserQuickChatEmbeddingConfiguration _quickChat;
         private RegisteredUserQuickSightConsoleEmbeddingConfiguration _quickSightConsole;
 
         /// <summary>
@@ -128,6 +129,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetQSearchBar()
         {
             return this._qSearchBar != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property QuickChat. 
+        /// <para>
+        /// The configuration details for embedding the Quick chat agent.
+        /// </para>
+        /// </summary>
+        public RegisteredUserQuickChatEmbeddingConfiguration QuickChat
+        {
+            get { return this._quickChat; }
+            set { this._quickChat = value; }
+        }
+
+        // Check to see if QuickChat property is set
+        internal bool IsSetQuickChat()
+        {
+            return this._quickChat != null;
         }
 
         /// <summary>

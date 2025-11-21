@@ -92,6 +92,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetQuickChat())
+            {
+                context.Writer.WritePropertyName("QuickChat");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = RegisteredUserQuickChatEmbeddingConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.QuickChat, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetQuickSightConsole())
             {
                 context.Writer.WritePropertyName("QuickSightConsole");
