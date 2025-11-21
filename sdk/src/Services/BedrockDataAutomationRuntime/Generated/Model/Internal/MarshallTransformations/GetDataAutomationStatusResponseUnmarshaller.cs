@@ -64,6 +64,24 @@ namespace Amazon.BedrockDataAutomationRuntime.Model.Internal.MarshallTransformat
                     response.ErrorType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("jobCompletionTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    response.JobCompletionTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("jobDurationInSeconds", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    response.JobDurationInSeconds = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("jobSubmissionTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    response.JobSubmissionTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("outputConfiguration", targetDepth))
                 {
                     var unmarshaller = OutputConfigurationUnmarshaller.Instance;

@@ -36,6 +36,9 @@ namespace Amazon.BedrockDataAutomationRuntime.Model
     {
         private string _errorMessage;
         private string _errorType;
+        private DateTime? _jobCompletionTime;
+        private int? _jobDurationInSeconds;
+        private DateTime? _jobSubmissionTime;
         private OutputConfiguration _outputConfiguration;
         private AutomationJobStatus _status;
 
@@ -73,6 +76,60 @@ namespace Amazon.BedrockDataAutomationRuntime.Model
         internal bool IsSetErrorType()
         {
             return this._errorType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property JobCompletionTime. 
+        /// <para>
+        /// Job completion time.
+        /// </para>
+        /// </summary>
+        public DateTime JobCompletionTime
+        {
+            get { return this._jobCompletionTime.GetValueOrDefault(); }
+            set { this._jobCompletionTime = value; }
+        }
+
+        // Check to see if JobCompletionTime property is set
+        internal bool IsSetJobCompletionTime()
+        {
+            return this._jobCompletionTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property JobDurationInSeconds. 
+        /// <para>
+        /// Job duration in seconds.
+        /// </para>
+        /// </summary>
+        public int JobDurationInSeconds
+        {
+            get { return this._jobDurationInSeconds.GetValueOrDefault(); }
+            set { this._jobDurationInSeconds = value; }
+        }
+
+        // Check to see if JobDurationInSeconds property is set
+        internal bool IsSetJobDurationInSeconds()
+        {
+            return this._jobDurationInSeconds.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property JobSubmissionTime. 
+        /// <para>
+        /// Job Submission time.
+        /// </para>
+        /// </summary>
+        public DateTime JobSubmissionTime
+        {
+            get { return this._jobSubmissionTime.GetValueOrDefault(); }
+            set { this._jobSubmissionTime = value; }
+        }
+
+        // Check to see if JobSubmissionTime property is set
+        internal bool IsSetJobSubmissionTime()
+        {
+            return this._jobSubmissionTime.HasValue; 
         }
 
         /// <summary>
