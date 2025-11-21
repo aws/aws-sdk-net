@@ -616,6 +616,10 @@
     <pattern>(arn:aws(|-us-gov|-cn|-iso|-iso-b):bedrock:[a-z0-9-]{1,20}:[0-9]{12}:custom-model-deployment/[a-z0-9]{12})|^([0-9a-zA-Z][_-]?){1,63}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Bedrock.Model.DeleteEnforcedGuardrailConfigurationRequest.ConfigId</property>
+    <pattern>[a-z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Bedrock.Model.DeleteFoundationModelAgreementRequest.ModelId</property>
     <min>0</min>
     <max>140</max>
@@ -1559,6 +1563,18 @@
     <pattern>\S*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Bedrock.Model.ListEnforcedGuardrailsConfigurationRequest.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>\S*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.ListEnforcedGuardrailsConfigurationResponse.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>\S*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Bedrock.Model.ListEvaluationJobsRequest.MaxResults</property>
     <min>1</min>
     <max>1000</max>
@@ -1836,6 +1852,14 @@
     <min>20</min>
     <max>1011</max>
     <pattern>.*(^[a-zA-Z0-9][a-zA-Z0-9\-]*$)|(^arn:aws(-[^:]+)?:bedrock:[a-z0-9-]{1,20}:[0-9]{12}:custom-model/(imported)/[a-z0-9]{12}$)|(^arn:aws(-[^:]+)?:bedrock:[a-z0-9-]{1,20}:([0-9]{12}|)((:(fine-tuning-job|model-customization-job|custom-model)/[a-z0-9-]{1,63}[.]{1}[a-z0-9-]{1,63}([a-z0-9-]{1,63}[.]){0,2}[a-z0-9-]{1,63}([:][a-z0-9-]{1,63}){0,2}(/[a-z0-9]{12})$)|(:guardrail/[a-z0-9]+$)|(:automated-reasoning-policy/[a-zA-Z0-9]+(:[a-zA-Z0-9]+)?$)|(:(inference-profile|application-inference-profile)/[a-zA-Z0-9-:.]+$)|(:(provisioned-model|model-invocation-job|model-evaluation-job|evaluation-job|model-import-job|imported-model|async-invoke|provisioned-model-v2|provisioned-model-reservation|prompt-router|custom-model-deployment)/[a-z0-9]{12}$))).*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.PutEnforcedGuardrailConfigurationRequest.ConfigId</property>
+    <pattern>[a-z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.PutEnforcedGuardrailConfigurationResponse.ConfigId</property>
+    <pattern>[a-z0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Bedrock.Model.PutUseCaseForModelAccessRequest.FormData</property>
@@ -2125,6 +2149,36 @@
   <property-value-rule>
     <property>Amazon.Bedrock.Model.UpdateProvisionedModelThroughputRequest.ProvisionedModelId</property>
     <pattern>((([0-9a-zA-Z][_-]?)+)|(arn:aws(-[^:]+)?:bedrock:[a-z0-9-]{1,20}:[0-9]{12}:provisioned-model/[a-z0-9]{12}))</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.AccountEnforcedGuardrailInferenceInputConfiguration.GuardrailIdentifier</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>(([a-z0-9]+)|(arn:aws(-[^:]+)?:bedrock:[a-z0-9-]{1,20}:[0-9]{12}:guardrail/[a-z0-9]+))</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.AccountEnforcedGuardrailInferenceInputConfiguration.GuardrailVersion</property>
+    <pattern>[1-9][0-9]{0,7}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.AccountEnforcedGuardrailOutputConfiguration.ConfigId</property>
+    <pattern>[a-z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.AccountEnforcedGuardrailOutputConfiguration.GuardrailArn</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>arn:aws(-[^:]+)?:bedrock:[a-z0-9-]{1,20}:[0-9]{12}:guardrail/[a-z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.AccountEnforcedGuardrailOutputConfiguration.GuardrailId</property>
+    <min>0</min>
+    <max>64</max>
+    <pattern>[a-z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.AccountEnforcedGuardrailOutputConfiguration.GuardrailVersion</property>
+    <pattern>[1-9][0-9]{0,7}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Bedrock.Model.AutomatedReasoningCheckInputTextReference.Text</property>

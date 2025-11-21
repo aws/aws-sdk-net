@@ -85,6 +85,14 @@ namespace Amazon.Bedrock.Model
         }
 
         /// <summary>
+        /// Paginator for ListEnforcedGuardrailsConfiguration operation
+        ///</summary>
+        public IListEnforcedGuardrailsConfigurationPaginator ListEnforcedGuardrailsConfiguration(ListEnforcedGuardrailsConfigurationRequest request) 
+        {
+            return new ListEnforcedGuardrailsConfigurationPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListEvaluationJobs operation
         ///</summary>
         public IListEvaluationJobsPaginator ListEvaluationJobs(ListEvaluationJobsRequest request) 
