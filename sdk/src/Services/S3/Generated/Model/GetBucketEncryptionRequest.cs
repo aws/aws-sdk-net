@@ -33,8 +33,9 @@ namespace Amazon.S3.Model
     /// Container for the parameters to the GetBucketEncryption operation.
     /// Returns the default encryption configuration for an Amazon S3 bucket. By default,
     /// all buckets have a default encryption configuration that uses server-side encryption
-    /// with Amazon S3 managed keys (SSE-S3). This operation also returns the <c>BucketKeyEnabled</c>
-    /// and <c>BlockedEncryptionTypes</c> statuses. 
+    /// with Amazon S3 managed keys (SSE-S3). This operation also returns the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_BucketKeyEnabled.html">BucketKeyEnabled</a>
+    /// and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_BlockedEncryptionTypes.html">BlockedEncryptionTypes</a>
+    /// statuses. 
     /// 
     ///  <note> <ul> <li> 
     /// <para>

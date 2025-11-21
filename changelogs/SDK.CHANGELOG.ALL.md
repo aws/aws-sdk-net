@@ -1,3 +1,71 @@
+### 4.0.138.0 (2025-11-20 21:25 UTC)
+* ApplicationSignals (4.0.5.0)
+	* Amazon CloudWatch Application Signals now supports un-instrumented services discovery, cross-account views, and change history, helping SRE and DevOps teams monitor and troubleshoot their large-scale distributed applications.
+* AutoScaling (4.0.6.0)
+	* This release adds support for three new features: 1) Image ID overrides in mixed instances policy, 2) Replace Root Volume - a new strategy for Instance Refresh, and 3) Instance Lifecycle Policy for enhanced instance lifecycle management.
+* BedrockAgentCore (4.0.7.0)
+	* Bedrock AgentCore Memory release for redriving memory extraction jobs (StartMemoryExtractionJob and ListMemoryExtractionJob)
+* BedrockDataAutomation (4.0.6.0)
+	* Added support for Synchronous project type and PII Detection and Redaction
+* BedrockDataAutomationRuntime (4.0.3.0)
+	* Bedrock Data Automation Runtime Sync API
+* Braket (4.0.4.0)
+	* Add support for Braket spending limits.
+* Budgets (4.0.8.0)
+	* Add BillingViewHealthStatusException to DescribeBudgetPerformanceHistory and ServiceQuotaExceededException to UpdateBudget for improved error handling with Billing Views.
+* CloudFront (4.0.9.0)
+	* This release adds support for bring your own IP (BYOIP) to CloudFront's CreateAnycastIpList API through an optional IpamCidrConfigs field.
+* CloudTrail (4.0.5.0)
+	* AWS launches CloudTrail aggregated events to simplify monitoring of data events at scale. This feature delivers both granular and summarized data events for resources like S3/Lambda, helping security teams identify patterns without custom aggregation logic.
+* Connect (4.0.18.0)
+	* Add optional ability to exclude users from send notification actions for Contact Lens Rules.
+* DatabaseMigrationService (4.0.7.0)
+	* Added support for customer-managed KMS key (CMK) for encryption for import private key certificate. Additionally added Amazon SageMaker Lakehouse endpoint used for zero-ETL integrations with data warehouses.
+* DataSync (4.0.7.0)
+	* The partition value "aws-eusc" is now permitted for ARN (Amazon Resource Name) fields.
+* DeviceFarm (4.0.4.0)
+	* Add support for environment variables and an IAM execution role.
+* DSQL (4.0.8.0)
+	* Added clusterVpcEndpoint field to GetVpcEndpointServiceName API response, returning the VPC connection endpoint for the cluster
+* EC2 (4.0.59.0)
+	* This release adds support for multiple features including: VPC Encryption Control for the status of traffic flow; S2S VPN BGP Logging; TGW Flexible Costs; IPAM allocation of static IPs from IPAM pools to CF Anycast IP lists used on CloudFront distribution; and EBS Volume Integration with Recycle Bin
+* ECS (4.0.10.0)
+	* Launching Amazon ECS Express Mode - a new feature that enables developers to quickly launch highly available, scalable containerized applications with a single command.
+* ElasticLoadBalancingV2 (4.0.6.0)
+	* This release adds the target optimizer feature in ALB, enabling strict concurrency enforcement on targets.
+* ElasticMapReduce (4.0.7.0)
+	* Add support for configuring S3 destination for step logs on a per-step basis.
+* Glue (4.0.22.0)
+	* Added FunctionType parameter to Glue GetuserDefinedFunctions.
+* Imagebuilder (4.0.6.0)
+	* EC2 Image Builder now enables the distribution of existing AMIs, retry distribution, and define distribution workflows. It also supports automatic versioning for recipes and components, allowing automatic version increments and dynamic referencing in pipelines.
+* Kinesis (4.0.7.5)
+	* Kinesis Data Streams now supports up to 50 Enhance Fan-out consumers for On-demand Advantage Streams. On-demand Standard and Provisioned streams will continue with the existing limit of 20 consumers for Enhanced Fan-out.
+* LakeFormation (4.0.3.0)
+	* Added ServiceIntegrations as a request parameter for CreateLakeFormationIdentityCenterConfigurationRequest and UpdateLakeFormationIdentityCenterConfigurationRequest and response parameter for DescribeLakeFormationIdentityCenterConfigurationResponse
+* LicenseManager (4.0.4.0)
+	* Added cross-account resource aggregation via license asset groups and expiry tracking for Self-Managed Licenses. Extended Org-Wide View to Self-Managed Licenses, added reporting for license asset groups, and removed Athena/Glue dependencies for cross-account resource discovery in commercial regions.
+* NetworkManager (4.0.4.0)
+	* This release adds support for Cloud WAN Routing Policy providing customers sophisticated routing controls to better manage their global networks
+* Organizations (4.0.7.0)
+	* Added new APIs for Billing Transfer, new policy type INSPECTOR_POLICY, and allow an account to transfer between organizations
+* QuickSight (4.0.9.0)
+	* Introducing comprehensive theme styling controls. New features include border customization (radius, width, color), flexible padding controls, background styling for cards and sheets, centralized typography management, and visual-level override support across layouts.
+* RDS (4.0.12.0)
+	* Add support for VPC Encryption Controls.
+* RecycleBin (4.0.3.0)
+	* Add support for EBS volume in Recycle Bin
+* RedshiftDataAPIService (4.0.3.0)
+	* Increasing the length limit of Statement Name from 500 to 2048.
+* S3 (4.0.13.0)
+	* Enable / Disable ABAC on a general purpose bucket.
+	* Add unit tests for Transfer Utility ConvertToGetObjectRequest method in BaseCommand
+	* Setting both ResponseExpires and ResponseHeadersOverrides.Expires on GetObjectRequest now gives priority to ResponseExpires. Previously, ResponseHeadersOverrides.Expires was not being used even if it was set.
+* SageMaker (4.0.35.0)
+	* Added training plan support for inference endpoints. Added HyperPod task governance with accelerator partition-based quota allocation. Added BatchRebootClusterNodes and BatchReplaceClusterNodes APIs. Updated ListClusterNodes to include privateDnsHostName.
+* SecurityHub (4.0.6.0)
+	* Release Findings and Resources Trends APIs- GetFindingsTrendsV2 and GetResourcesTrendsV2. This supports time-series aggregated counts with composite filtering for 1-year of historical data analysis of Findings and Resources.
+
 ### 4.0.137.0 (2025-11-19 20:10 UTC)
 * APIGateway (4.0.4.0)
 	* API Gateway now supports response streaming and new security policies for REST APIs and custom domain names.

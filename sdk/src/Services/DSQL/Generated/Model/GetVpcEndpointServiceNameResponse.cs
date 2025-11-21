@@ -34,7 +34,26 @@ namespace Amazon.DSQL.Model
     /// </summary>
     public partial class GetVpcEndpointServiceNameResponse : AmazonWebServiceResponse
     {
+        private string _clusterVpcEndpoint;
         private string _serviceName;
+
+        /// <summary>
+        /// Gets and sets the property ClusterVpcEndpoint. 
+        /// <para>
+        /// The VPC connection endpoint for the cluster.
+        /// </para>
+        /// </summary>
+        public string ClusterVpcEndpoint
+        {
+            get { return this._clusterVpcEndpoint; }
+            set { this._clusterVpcEndpoint = value; }
+        }
+
+        // Check to see if ClusterVpcEndpoint property is set
+        internal bool IsSetClusterVpcEndpoint()
+        {
+            return this._clusterVpcEndpoint != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ServiceName. 

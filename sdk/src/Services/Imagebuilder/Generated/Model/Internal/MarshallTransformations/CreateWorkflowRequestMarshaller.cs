@@ -102,6 +102,12 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.Description);
             }
 
+            if(publicRequest.IsSetDryRun())
+            {
+                context.Writer.WritePropertyName("dryRun");
+                context.Writer.WriteBooleanValue(publicRequest.DryRun.Value);
+            }
+
             if(publicRequest.IsSetKmsKeyId())
             {
                 context.Writer.WritePropertyName("kmsKeyId");

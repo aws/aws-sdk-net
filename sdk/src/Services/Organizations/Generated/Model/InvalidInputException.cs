@@ -41,7 +41,22 @@ namespace Amazon.Organizations.Model
     /// </para>
     ///  </note> <ul> <li> 
     /// <para>
+    /// CALLER_REQUIRED_FIELD_MISSING: At least one of the required field is missing: Caller
+    /// Account Id, Management Account Id or Organization Id.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     /// DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// END_DATE_NOT_END_OF_MONTH: You provided an invalid end date. The end date must be
+    /// the end of the last day of the month (23.59.59.999).
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// END_DATE_TOO_EARLY: You provided an invalid end date. It is too early for the transfer
+    /// to end.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -56,6 +71,12 @@ namespace Amazon.Organizations.Model
     /// <para>
     /// INVALID_EMAIL_ADDRESS_TARGET: You specified an invalid email address for the invited
     /// account owner.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
+    /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
+    /// or contact your Amazon Web Services Partner for help.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -101,6 +122,10 @@ namespace Amazon.Organizations.Model
     /// <para>
     /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
     /// with the reserved prefix <c>AWSServiceRoleFor</c>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// INVALID_START_DATE: The start date doesn't meet the minimum requirements.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -150,11 +175,34 @@ namespace Amazon.Organizations.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
+    /// START_DATE_NOT_BEGINNING_OF_DAY: You provided an invalid start date. The start date
+    /// must be the beginning of the day (00:00:00.000).
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// START_DATE_NOT_BEGINNING_OF_MONTH: You provided an invalid start date. The start date
+    /// must be the first day of the month.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// START_DATE_TOO_EARLY: You provided an invalid start date. The start date is too early.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// START_DATE_TOO_LATE: You provided an invalid start date. The start date is too late.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     /// TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
     /// </para>
     ///  </li> <li> 
     /// <para>
     /// UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// UNSUPPORTED_ACTION_IN_RESPONSIBILITY_TRANSFER: You provided a value that is not supported
+    /// by this operation.
     /// </para>
     ///  </li> </ul>
     /// </summary>

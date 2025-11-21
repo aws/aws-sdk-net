@@ -42,8 +42,9 @@ namespace Amazon.Connect.Model
     /// </para>
     ///  
     /// <para>
-    /// There is a 60-second dialing timeout for this operation. If the call is not connected
-    /// after 60 seconds, it fails.
+    /// Dialing timeout for this operation can be configured with the “RingTimeoutInSeconds”
+    /// parameter. If not specified, the default dialing timeout will be 60 seconds which
+    /// means if the call is not connected within 60 seconds, it fails.
     /// </para>
     ///  <note> 
     /// <para>

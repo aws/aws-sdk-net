@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ApplicationSignals.Model
 {
     /// <summary>
-    /// Represents a CloudWatch Synthetics canary that can be audited for performance and
-    /// configuration issues.
+    /// A structure that contains identifying information for a CloudWatch Synthetics canary
+    /// entity used in audit targeting.
     /// </summary>
     public partial class CanaryEntity
     {

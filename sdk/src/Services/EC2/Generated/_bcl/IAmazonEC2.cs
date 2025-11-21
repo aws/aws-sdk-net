@@ -7676,6 +7676,64 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  CreateTransitGatewayMeteringPolicy
+
+
+        /// <summary>
+        /// Creates a metering policy for a transit gateway to track and measure network traffic.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTransitGatewayMeteringPolicy service method.</param>
+        /// 
+        /// <returns>The response from the CreateTransitGatewayMeteringPolicy service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayMeteringPolicy">REST API Reference for CreateTransitGatewayMeteringPolicy Operation</seealso>
+        CreateTransitGatewayMeteringPolicyResponse CreateTransitGatewayMeteringPolicy(CreateTransitGatewayMeteringPolicyRequest request);
+
+
+
+        /// <summary>
+        /// Creates a metering policy for a transit gateway to track and measure network traffic.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTransitGatewayMeteringPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateTransitGatewayMeteringPolicy service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayMeteringPolicy">REST API Reference for CreateTransitGatewayMeteringPolicy Operation</seealso>
+        Task<CreateTransitGatewayMeteringPolicyResponse> CreateTransitGatewayMeteringPolicyAsync(CreateTransitGatewayMeteringPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateTransitGatewayMeteringPolicyEntry
+
+
+        /// <summary>
+        /// Creates an entry in a transit gateway metering policy to define traffic measurement
+        /// rules.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTransitGatewayMeteringPolicyEntry service method.</param>
+        /// 
+        /// <returns>The response from the CreateTransitGatewayMeteringPolicyEntry service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayMeteringPolicyEntry">REST API Reference for CreateTransitGatewayMeteringPolicyEntry Operation</seealso>
+        CreateTransitGatewayMeteringPolicyEntryResponse CreateTransitGatewayMeteringPolicyEntry(CreateTransitGatewayMeteringPolicyEntryRequest request);
+
+
+
+        /// <summary>
+        /// Creates an entry in a transit gateway metering policy to define traffic measurement
+        /// rules.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTransitGatewayMeteringPolicyEntry service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateTransitGatewayMeteringPolicyEntry service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayMeteringPolicyEntry">REST API Reference for CreateTransitGatewayMeteringPolicyEntry Operation</seealso>
+        Task<CreateTransitGatewayMeteringPolicyEntryResponse> CreateTransitGatewayMeteringPolicyEntryAsync(CreateTransitGatewayMeteringPolicyEntryRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  CreateTransitGatewayMulticastDomain
 
 
@@ -8273,6 +8331,50 @@ namespace Amazon.EC2
         /// <returns>The response from the CreateVpcBlockPublicAccessExclusion service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpcBlockPublicAccessExclusion">REST API Reference for CreateVpcBlockPublicAccessExclusion Operation</seealso>
         Task<CreateVpcBlockPublicAccessExclusionResponse> CreateVpcBlockPublicAccessExclusionAsync(CreateVpcBlockPublicAccessExclusionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateVpcEncryptionControl
+
+
+        /// <summary>
+        /// Creates a VPC Encryption Control configuration for a specified VPC. VPC Encryption
+        /// Control enables you to enforce encryption for all data in transit within and between
+        /// VPCs to meet compliance requirements for standards like HIPAA, FedRAMP, and PCI DSS.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-encryption-controls.html">Enforce
+        /// VPC encryption in transit</a> in the <i>Amazon VPC User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateVpcEncryptionControl service method.</param>
+        /// 
+        /// <returns>The response from the CreateVpcEncryptionControl service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpcEncryptionControl">REST API Reference for CreateVpcEncryptionControl Operation</seealso>
+        CreateVpcEncryptionControlResponse CreateVpcEncryptionControl(CreateVpcEncryptionControlRequest request);
+
+
+
+        /// <summary>
+        /// Creates a VPC Encryption Control configuration for a specified VPC. VPC Encryption
+        /// Control enables you to enforce encryption for all data in transit within and between
+        /// VPCs to meet compliance requirements for standards like HIPAA, FedRAMP, and PCI DSS.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-encryption-controls.html">Enforce
+        /// VPC encryption in transit</a> in the <i>Amazon VPC User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateVpcEncryptionControl service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateVpcEncryptionControl service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpcEncryptionControl">REST API Reference for CreateVpcEncryptionControl Operation</seealso>
+        Task<CreateVpcEncryptionControlResponse> CreateVpcEncryptionControlAsync(CreateVpcEncryptionControlRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -11103,6 +11205,62 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DeleteTransitGatewayMeteringPolicy
+
+
+        /// <summary>
+        /// Deletes a transit gateway metering policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTransitGatewayMeteringPolicy service method.</param>
+        /// 
+        /// <returns>The response from the DeleteTransitGatewayMeteringPolicy service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayMeteringPolicy">REST API Reference for DeleteTransitGatewayMeteringPolicy Operation</seealso>
+        DeleteTransitGatewayMeteringPolicyResponse DeleteTransitGatewayMeteringPolicy(DeleteTransitGatewayMeteringPolicyRequest request);
+
+
+
+        /// <summary>
+        /// Deletes a transit gateway metering policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTransitGatewayMeteringPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteTransitGatewayMeteringPolicy service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayMeteringPolicy">REST API Reference for DeleteTransitGatewayMeteringPolicy Operation</seealso>
+        Task<DeleteTransitGatewayMeteringPolicyResponse> DeleteTransitGatewayMeteringPolicyAsync(DeleteTransitGatewayMeteringPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteTransitGatewayMeteringPolicyEntry
+
+
+        /// <summary>
+        /// Deletes an entry from a transit gateway metering policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTransitGatewayMeteringPolicyEntry service method.</param>
+        /// 
+        /// <returns>The response from the DeleteTransitGatewayMeteringPolicyEntry service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayMeteringPolicyEntry">REST API Reference for DeleteTransitGatewayMeteringPolicyEntry Operation</seealso>
+        DeleteTransitGatewayMeteringPolicyEntryResponse DeleteTransitGatewayMeteringPolicyEntry(DeleteTransitGatewayMeteringPolicyEntryRequest request);
+
+
+
+        /// <summary>
+        /// Deletes an entry from a transit gateway metering policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTransitGatewayMeteringPolicyEntry service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteTransitGatewayMeteringPolicyEntry service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayMeteringPolicyEntry">REST API Reference for DeleteTransitGatewayMeteringPolicyEntry Operation</seealso>
+        Task<DeleteTransitGatewayMeteringPolicyEntryResponse> DeleteTransitGatewayMeteringPolicyEntryAsync(DeleteTransitGatewayMeteringPolicyEntryRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeleteTransitGatewayMulticastDomain
 
 
@@ -11584,6 +11742,48 @@ namespace Amazon.EC2
         /// <returns>The response from the DeleteVpcBlockPublicAccessExclusion service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpcBlockPublicAccessExclusion">REST API Reference for DeleteVpcBlockPublicAccessExclusion Operation</seealso>
         Task<DeleteVpcBlockPublicAccessExclusionResponse> DeleteVpcBlockPublicAccessExclusionAsync(DeleteVpcBlockPublicAccessExclusionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteVpcEncryptionControl
+
+
+        /// <summary>
+        /// Deletes a VPC Encryption Control configuration. This removes the encryption policy
+        /// enforcement from the specified VPC.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-encryption-controls.html">Enforce
+        /// VPC encryption in transit</a> in the <i>Amazon VPC User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVpcEncryptionControl service method.</param>
+        /// 
+        /// <returns>The response from the DeleteVpcEncryptionControl service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpcEncryptionControl">REST API Reference for DeleteVpcEncryptionControl Operation</seealso>
+        DeleteVpcEncryptionControlResponse DeleteVpcEncryptionControl(DeleteVpcEncryptionControlRequest request);
+
+
+
+        /// <summary>
+        /// Deletes a VPC Encryption Control configuration. This removes the encryption policy
+        /// enforcement from the specified VPC.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-encryption-controls.html">Enforce
+        /// VPC encryption in transit</a> in the <i>Amazon VPC User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVpcEncryptionControl service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteVpcEncryptionControl service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpcEncryptionControl">REST API Reference for DeleteVpcEncryptionControl Operation</seealso>
+        Task<DeleteVpcEncryptionControlResponse> DeleteVpcEncryptionControlAsync(DeleteVpcEncryptionControlRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -20116,6 +20316,34 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DescribeTransitGatewayMeteringPolicies
+
+
+        /// <summary>
+        /// Describes one or more transit gateway metering policies.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTransitGatewayMeteringPolicies service method.</param>
+        /// 
+        /// <returns>The response from the DescribeTransitGatewayMeteringPolicies service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayMeteringPolicies">REST API Reference for DescribeTransitGatewayMeteringPolicies Operation</seealso>
+        DescribeTransitGatewayMeteringPoliciesResponse DescribeTransitGatewayMeteringPolicies(DescribeTransitGatewayMeteringPoliciesRequest request);
+
+
+
+        /// <summary>
+        /// Describes one or more transit gateway metering policies.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTransitGatewayMeteringPolicies service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeTransitGatewayMeteringPolicies service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayMeteringPolicies">REST API Reference for DescribeTransitGatewayMeteringPolicies Operation</seealso>
+        Task<DescribeTransitGatewayMeteringPoliciesResponse> DescribeTransitGatewayMeteringPoliciesAsync(DescribeTransitGatewayMeteringPoliciesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DescribeTransitGatewayMulticastDomains
 
 
@@ -21153,6 +21381,52 @@ namespace Amazon.EC2
         /// <returns>The response from the DescribeVpcClassicLinkDnsSupport service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcClassicLinkDnsSupport">REST API Reference for DescribeVpcClassicLinkDnsSupport Operation</seealso>
         Task<DescribeVpcClassicLinkDnsSupportResponse> DescribeVpcClassicLinkDnsSupportAsync(DescribeVpcClassicLinkDnsSupportRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeVpcEncryptionControls
+
+
+        /// <summary>
+        /// Describes one or more VPC Encryption Control configurations. VPC Encryption Control
+        /// enables you to enforce encryption for all data in transit within and between VPCs
+        /// to meet compliance requirements You can filter the results to return information about
+        /// specific encryption controls or VPCs.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-encryption-controls.html">Enforce
+        /// VPC encryption in transit</a> in the <i>Amazon VPC User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVpcEncryptionControls service method.</param>
+        /// 
+        /// <returns>The response from the DescribeVpcEncryptionControls service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcEncryptionControls">REST API Reference for DescribeVpcEncryptionControls Operation</seealso>
+        DescribeVpcEncryptionControlsResponse DescribeVpcEncryptionControls(DescribeVpcEncryptionControlsRequest request);
+
+
+
+        /// <summary>
+        /// Describes one or more VPC Encryption Control configurations. VPC Encryption Control
+        /// enables you to enforce encryption for all data in transit within and between VPCs
+        /// to meet compliance requirements You can filter the results to return information about
+        /// specific encryption controls or VPCs.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-encryption-controls.html">Enforce
+        /// VPC encryption in transit</a> in the <i>Amazon VPC User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVpcEncryptionControls service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeVpcEncryptionControls service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcEncryptionControls">REST API Reference for DescribeVpcEncryptionControls Operation</seealso>
+        Task<DescribeVpcEncryptionControlsResponse> DescribeVpcEncryptionControlsAsync(DescribeVpcEncryptionControlsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -27348,6 +27622,34 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  GetTransitGatewayMeteringPolicyEntries
+
+
+        /// <summary>
+        /// Retrieves the entries for a transit gateway metering policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTransitGatewayMeteringPolicyEntries service method.</param>
+        /// 
+        /// <returns>The response from the GetTransitGatewayMeteringPolicyEntries service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetTransitGatewayMeteringPolicyEntries">REST API Reference for GetTransitGatewayMeteringPolicyEntries Operation</seealso>
+        GetTransitGatewayMeteringPolicyEntriesResponse GetTransitGatewayMeteringPolicyEntries(GetTransitGatewayMeteringPolicyEntriesRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves the entries for a transit gateway metering policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTransitGatewayMeteringPolicyEntries service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetTransitGatewayMeteringPolicyEntries service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetTransitGatewayMeteringPolicyEntries">REST API Reference for GetTransitGatewayMeteringPolicyEntries Operation</seealso>
+        Task<GetTransitGatewayMeteringPolicyEntriesResponse> GetTransitGatewayMeteringPolicyEntriesAsync(GetTransitGatewayMeteringPolicyEntriesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetTransitGatewayMulticastDomainAssociations
 
 
@@ -27601,6 +27903,46 @@ namespace Amazon.EC2
         /// <returns>The response from the GetVerifiedAccessGroupPolicy service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetVerifiedAccessGroupPolicy">REST API Reference for GetVerifiedAccessGroupPolicy Operation</seealso>
         Task<GetVerifiedAccessGroupPolicyResponse> GetVerifiedAccessGroupPolicyAsync(GetVerifiedAccessGroupPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetVpcResourcesBlockingEncryptionEnforcement
+
+
+        /// <summary>
+        /// Gets information about resources in a VPC that are blocking encryption enforcement.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-encryption-controls.html">Enforce
+        /// VPC encryption in transit</a> in the <i>Amazon VPC User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetVpcResourcesBlockingEncryptionEnforcement service method.</param>
+        /// 
+        /// <returns>The response from the GetVpcResourcesBlockingEncryptionEnforcement service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetVpcResourcesBlockingEncryptionEnforcement">REST API Reference for GetVpcResourcesBlockingEncryptionEnforcement Operation</seealso>
+        GetVpcResourcesBlockingEncryptionEnforcementResponse GetVpcResourcesBlockingEncryptionEnforcement(GetVpcResourcesBlockingEncryptionEnforcementRequest request);
+
+
+
+        /// <summary>
+        /// Gets information about resources in a VPC that are blocking encryption enforcement.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-encryption-controls.html">Enforce
+        /// VPC encryption in transit</a> in the <i>Amazon VPC User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetVpcResourcesBlockingEncryptionEnforcement service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetVpcResourcesBlockingEncryptionEnforcement service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetVpcResourcesBlockingEncryptionEnforcement">REST API Reference for GetVpcResourcesBlockingEncryptionEnforcement Operation</seealso>
+        Task<GetVpcResourcesBlockingEncryptionEnforcementResponse> GetVpcResourcesBlockingEncryptionEnforcementAsync(GetVpcResourcesBlockingEncryptionEnforcementRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -28091,6 +28433,34 @@ namespace Amazon.EC2
         /// <returns>The response from the ListSnapshotsInRecycleBin service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ListSnapshotsInRecycleBin">REST API Reference for ListSnapshotsInRecycleBin Operation</seealso>
         Task<ListSnapshotsInRecycleBinResponse> ListSnapshotsInRecycleBinAsync(ListSnapshotsInRecycleBinRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListVolumesInRecycleBin
+
+
+        /// <summary>
+        /// Lists one or more volumes that are currently in the Recycle Bin.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListVolumesInRecycleBin service method.</param>
+        /// 
+        /// <returns>The response from the ListVolumesInRecycleBin service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ListVolumesInRecycleBin">REST API Reference for ListVolumesInRecycleBin Operation</seealso>
+        ListVolumesInRecycleBinResponse ListVolumesInRecycleBin(ListVolumesInRecycleBinRequest request);
+
+
+
+        /// <summary>
+        /// Lists one or more volumes that are currently in the Recycle Bin.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListVolumesInRecycleBin service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListVolumesInRecycleBin service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ListVolumesInRecycleBin">REST API Reference for ListVolumesInRecycleBin Operation</seealso>
+        Task<ListVolumesInRecycleBinResponse> ListVolumesInRecycleBinAsync(ListVolumesInRecycleBinRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -30668,6 +31038,34 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  ModifyTransitGatewayMeteringPolicy
+
+
+        /// <summary>
+        /// Modifies a transit gateway metering policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyTransitGatewayMeteringPolicy service method.</param>
+        /// 
+        /// <returns>The response from the ModifyTransitGatewayMeteringPolicy service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyTransitGatewayMeteringPolicy">REST API Reference for ModifyTransitGatewayMeteringPolicy Operation</seealso>
+        ModifyTransitGatewayMeteringPolicyResponse ModifyTransitGatewayMeteringPolicy(ModifyTransitGatewayMeteringPolicyRequest request);
+
+
+
+        /// <summary>
+        /// Modifies a transit gateway metering policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyTransitGatewayMeteringPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyTransitGatewayMeteringPolicy service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyTransitGatewayMeteringPolicy">REST API Reference for ModifyTransitGatewayMeteringPolicy Operation</seealso>
+        Task<ModifyTransitGatewayMeteringPolicyResponse> ModifyTransitGatewayMeteringPolicyAsync(ModifyTransitGatewayMeteringPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ModifyTransitGatewayPrefixListReference
 
 
@@ -31163,6 +31561,48 @@ namespace Amazon.EC2
         /// <returns>The response from the ModifyVpcBlockPublicAccessOptions service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcBlockPublicAccessOptions">REST API Reference for ModifyVpcBlockPublicAccessOptions Operation</seealso>
         Task<ModifyVpcBlockPublicAccessOptionsResponse> ModifyVpcBlockPublicAccessOptionsAsync(ModifyVpcBlockPublicAccessOptionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ModifyVpcEncryptionControl
+
+
+        /// <summary>
+        /// Modifies the encryption control configuration for a VPC. You can update the encryption
+        /// mode and exclusion settings for various gateway types and peering connections.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-encryption-controls.html">Enforce
+        /// VPC encryption in transit</a> in the <i>Amazon VPC User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyVpcEncryptionControl service method.</param>
+        /// 
+        /// <returns>The response from the ModifyVpcEncryptionControl service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcEncryptionControl">REST API Reference for ModifyVpcEncryptionControl Operation</seealso>
+        ModifyVpcEncryptionControlResponse ModifyVpcEncryptionControl(ModifyVpcEncryptionControlRequest request);
+
+
+
+        /// <summary>
+        /// Modifies the encryption control configuration for a VPC. You can update the encryption
+        /// mode and exclusion settings for various gateway types and peering connections.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-encryption-controls.html">Enforce
+        /// VPC encryption in transit</a> in the <i>Amazon VPC User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyVpcEncryptionControl service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyVpcEncryptionControl service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcEncryptionControl">REST API Reference for ModifyVpcEncryptionControl Operation</seealso>
+        Task<ModifyVpcEncryptionControlResponse> ModifyVpcEncryptionControlAsync(ModifyVpcEncryptionControlRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -34071,6 +34511,36 @@ namespace Amazon.EC2
         /// <returns>The response from the RestoreSnapshotTier service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RestoreSnapshotTier">REST API Reference for RestoreSnapshotTier Operation</seealso>
         Task<RestoreSnapshotTierResponse> RestoreSnapshotTierAsync(RestoreSnapshotTierRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  RestoreVolumeFromRecycleBin
+
+
+        /// <summary>
+        /// Restores a volume from the Recycle Bin. For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/recycle-bin-working-with-volumes.html#recycle-bin-restore-volumes">Restore
+        /// volumes from the Recycle Bin</a> in the <i>Amazon EBS User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RestoreVolumeFromRecycleBin service method.</param>
+        /// 
+        /// <returns>The response from the RestoreVolumeFromRecycleBin service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RestoreVolumeFromRecycleBin">REST API Reference for RestoreVolumeFromRecycleBin Operation</seealso>
+        RestoreVolumeFromRecycleBinResponse RestoreVolumeFromRecycleBin(RestoreVolumeFromRecycleBinRequest request);
+
+
+
+        /// <summary>
+        /// Restores a volume from the Recycle Bin. For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/recycle-bin-working-with-volumes.html#recycle-bin-restore-volumes">Restore
+        /// volumes from the Recycle Bin</a> in the <i>Amazon EBS User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RestoreVolumeFromRecycleBin service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RestoreVolumeFromRecycleBin service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RestoreVolumeFromRecycleBin">REST API Reference for RestoreVolumeFromRecycleBin Operation</seealso>
+        Task<RestoreVolumeFromRecycleBinResponse> RestoreVolumeFromRecycleBinAsync(RestoreVolumeFromRecycleBinRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

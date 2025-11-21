@@ -139,6 +139,10 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                          }
                     }
                 }
+                if(publicRequest.IsSetTargetControlPort())
+                {
+                    request.Parameters.Add("TargetControlPort", StringUtils.FromInt(publicRequest.TargetControlPort));
+                }
                 if(publicRequest.IsSetTargetType())
                 {
                     request.Parameters.Add("TargetType", StringUtils.FromString(publicRequest.TargetType));

@@ -6694,6 +6694,73 @@ namespace Amazon.EC2
         }
         #endregion
         
+        #region  CreateTransitGatewayMeteringPolicy
+
+        internal virtual CreateTransitGatewayMeteringPolicyResponse CreateTransitGatewayMeteringPolicy(CreateTransitGatewayMeteringPolicyRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateTransitGatewayMeteringPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTransitGatewayMeteringPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<CreateTransitGatewayMeteringPolicyResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a metering policy for a transit gateway to track and measure network traffic.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTransitGatewayMeteringPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateTransitGatewayMeteringPolicy service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayMeteringPolicy">REST API Reference for CreateTransitGatewayMeteringPolicy Operation</seealso>
+        public virtual Task<CreateTransitGatewayMeteringPolicyResponse> CreateTransitGatewayMeteringPolicyAsync(CreateTransitGatewayMeteringPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateTransitGatewayMeteringPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTransitGatewayMeteringPolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateTransitGatewayMeteringPolicyResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  CreateTransitGatewayMeteringPolicyEntry
+
+        internal virtual CreateTransitGatewayMeteringPolicyEntryResponse CreateTransitGatewayMeteringPolicyEntry(CreateTransitGatewayMeteringPolicyEntryRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateTransitGatewayMeteringPolicyEntryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTransitGatewayMeteringPolicyEntryResponseUnmarshaller.Instance;
+
+            return Invoke<CreateTransitGatewayMeteringPolicyEntryResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates an entry in a transit gateway metering policy to define traffic measurement
+        /// rules.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTransitGatewayMeteringPolicyEntry service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateTransitGatewayMeteringPolicyEntry service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayMeteringPolicyEntry">REST API Reference for CreateTransitGatewayMeteringPolicyEntry Operation</seealso>
+        public virtual Task<CreateTransitGatewayMeteringPolicyEntryResponse> CreateTransitGatewayMeteringPolicyEntryAsync(CreateTransitGatewayMeteringPolicyEntryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateTransitGatewayMeteringPolicyEntryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTransitGatewayMeteringPolicyEntryResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateTransitGatewayMeteringPolicyEntryResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  CreateTransitGatewayMulticastDomain
 
         internal virtual CreateTransitGatewayMulticastDomainResponse CreateTransitGatewayMulticastDomain(CreateTransitGatewayMulticastDomainRequest request)
@@ -7276,6 +7343,47 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = CreateVpcBlockPublicAccessExclusionResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateVpcBlockPublicAccessExclusionResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  CreateVpcEncryptionControl
+
+        internal virtual CreateVpcEncryptionControlResponse CreateVpcEncryptionControl(CreateVpcEncryptionControlRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateVpcEncryptionControlRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateVpcEncryptionControlResponseUnmarshaller.Instance;
+
+            return Invoke<CreateVpcEncryptionControlResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a VPC Encryption Control configuration for a specified VPC. VPC Encryption
+        /// Control enables you to enforce encryption for all data in transit within and between
+        /// VPCs to meet compliance requirements for standards like HIPAA, FedRAMP, and PCI DSS.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-encryption-controls.html">Enforce
+        /// VPC encryption in transit</a> in the <i>Amazon VPC User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateVpcEncryptionControl service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateVpcEncryptionControl service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpcEncryptionControl">REST API Reference for CreateVpcEncryptionControl Operation</seealso>
+        public virtual Task<CreateVpcEncryptionControlResponse> CreateVpcEncryptionControlAsync(CreateVpcEncryptionControlRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateVpcEncryptionControlRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateVpcEncryptionControlResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateVpcEncryptionControlResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -10069,6 +10177,72 @@ namespace Amazon.EC2
         }
         #endregion
         
+        #region  DeleteTransitGatewayMeteringPolicy
+
+        internal virtual DeleteTransitGatewayMeteringPolicyResponse DeleteTransitGatewayMeteringPolicy(DeleteTransitGatewayMeteringPolicyRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteTransitGatewayMeteringPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTransitGatewayMeteringPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteTransitGatewayMeteringPolicyResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a transit gateway metering policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTransitGatewayMeteringPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteTransitGatewayMeteringPolicy service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayMeteringPolicy">REST API Reference for DeleteTransitGatewayMeteringPolicy Operation</seealso>
+        public virtual Task<DeleteTransitGatewayMeteringPolicyResponse> DeleteTransitGatewayMeteringPolicyAsync(DeleteTransitGatewayMeteringPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteTransitGatewayMeteringPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTransitGatewayMeteringPolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteTransitGatewayMeteringPolicyResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  DeleteTransitGatewayMeteringPolicyEntry
+
+        internal virtual DeleteTransitGatewayMeteringPolicyEntryResponse DeleteTransitGatewayMeteringPolicyEntry(DeleteTransitGatewayMeteringPolicyEntryRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteTransitGatewayMeteringPolicyEntryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTransitGatewayMeteringPolicyEntryResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteTransitGatewayMeteringPolicyEntryResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes an entry from a transit gateway metering policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTransitGatewayMeteringPolicyEntry service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteTransitGatewayMeteringPolicyEntry service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayMeteringPolicyEntry">REST API Reference for DeleteTransitGatewayMeteringPolicyEntry Operation</seealso>
+        public virtual Task<DeleteTransitGatewayMeteringPolicyEntryResponse> DeleteTransitGatewayMeteringPolicyEntryAsync(DeleteTransitGatewayMeteringPolicyEntryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteTransitGatewayMeteringPolicyEntryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTransitGatewayMeteringPolicyEntryResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteTransitGatewayMeteringPolicyEntryResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  DeleteTransitGatewayMulticastDomain
 
         internal virtual DeleteTransitGatewayMulticastDomainResponse DeleteTransitGatewayMulticastDomain(DeleteTransitGatewayMulticastDomainRequest request)
@@ -10593,6 +10767,46 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = DeleteVpcBlockPublicAccessExclusionResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteVpcBlockPublicAccessExclusionResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  DeleteVpcEncryptionControl
+
+        internal virtual DeleteVpcEncryptionControlResponse DeleteVpcEncryptionControl(DeleteVpcEncryptionControlRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteVpcEncryptionControlRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteVpcEncryptionControlResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteVpcEncryptionControlResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a VPC Encryption Control configuration. This removes the encryption policy
+        /// enforcement from the specified VPC.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-encryption-controls.html">Enforce
+        /// VPC encryption in transit</a> in the <i>Amazon VPC User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVpcEncryptionControl service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteVpcEncryptionControl service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpcEncryptionControl">REST API Reference for DeleteVpcEncryptionControl Operation</seealso>
+        public virtual Task<DeleteVpcEncryptionControlResponse> DeleteVpcEncryptionControlAsync(DeleteVpcEncryptionControlRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteVpcEncryptionControlRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteVpcEncryptionControlResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteVpcEncryptionControlResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -18185,6 +18399,39 @@ namespace Amazon.EC2
         }
         #endregion
         
+        #region  DescribeTransitGatewayMeteringPolicies
+
+        internal virtual DescribeTransitGatewayMeteringPoliciesResponse DescribeTransitGatewayMeteringPolicies(DescribeTransitGatewayMeteringPoliciesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeTransitGatewayMeteringPoliciesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTransitGatewayMeteringPoliciesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeTransitGatewayMeteringPoliciesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describes one or more transit gateway metering policies.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTransitGatewayMeteringPolicies service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeTransitGatewayMeteringPolicies service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayMeteringPolicies">REST API Reference for DescribeTransitGatewayMeteringPolicies Operation</seealso>
+        public virtual Task<DescribeTransitGatewayMeteringPoliciesResponse> DescribeTransitGatewayMeteringPoliciesAsync(DescribeTransitGatewayMeteringPoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeTransitGatewayMeteringPoliciesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTransitGatewayMeteringPoliciesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeTransitGatewayMeteringPoliciesResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  DescribeTransitGatewayMulticastDomains
 
         internal virtual DescribeTransitGatewayMulticastDomainsResponse DescribeTransitGatewayMulticastDomains(DescribeTransitGatewayMulticastDomainsRequest request)
@@ -19137,6 +19384,48 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = DescribeVpcClassicLinkDnsSupportResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeVpcClassicLinkDnsSupportResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  DescribeVpcEncryptionControls
+
+        internal virtual DescribeVpcEncryptionControlsResponse DescribeVpcEncryptionControls(DescribeVpcEncryptionControlsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeVpcEncryptionControlsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeVpcEncryptionControlsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeVpcEncryptionControlsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describes one or more VPC Encryption Control configurations. VPC Encryption Control
+        /// enables you to enforce encryption for all data in transit within and between VPCs
+        /// to meet compliance requirements You can filter the results to return information about
+        /// specific encryption controls or VPCs.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-encryption-controls.html">Enforce
+        /// VPC encryption in transit</a> in the <i>Amazon VPC User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVpcEncryptionControls service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeVpcEncryptionControls service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcEncryptionControls">REST API Reference for DescribeVpcEncryptionControls Operation</seealso>
+        public virtual Task<DescribeVpcEncryptionControlsResponse> DescribeVpcEncryptionControlsAsync(DescribeVpcEncryptionControlsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeVpcEncryptionControlsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeVpcEncryptionControlsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeVpcEncryptionControlsResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -24911,6 +25200,39 @@ namespace Amazon.EC2
         }
         #endregion
         
+        #region  GetTransitGatewayMeteringPolicyEntries
+
+        internal virtual GetTransitGatewayMeteringPolicyEntriesResponse GetTransitGatewayMeteringPolicyEntries(GetTransitGatewayMeteringPolicyEntriesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetTransitGatewayMeteringPolicyEntriesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTransitGatewayMeteringPolicyEntriesResponseUnmarshaller.Instance;
+
+            return Invoke<GetTransitGatewayMeteringPolicyEntriesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves the entries for a transit gateway metering policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTransitGatewayMeteringPolicyEntries service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetTransitGatewayMeteringPolicyEntries service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetTransitGatewayMeteringPolicyEntries">REST API Reference for GetTransitGatewayMeteringPolicyEntries Operation</seealso>
+        public virtual Task<GetTransitGatewayMeteringPolicyEntriesResponse> GetTransitGatewayMeteringPolicyEntriesAsync(GetTransitGatewayMeteringPolicyEntriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetTransitGatewayMeteringPolicyEntriesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTransitGatewayMeteringPolicyEntriesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetTransitGatewayMeteringPolicyEntriesResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  GetTransitGatewayMulticastDomainAssociations
 
         internal virtual GetTransitGatewayMulticastDomainAssociationsResponse GetTransitGatewayMulticastDomainAssociations(GetTransitGatewayMulticastDomainAssociationsRequest request)
@@ -25207,6 +25529,45 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = GetVerifiedAccessGroupPolicyResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetVerifiedAccessGroupPolicyResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  GetVpcResourcesBlockingEncryptionEnforcement
+
+        internal virtual GetVpcResourcesBlockingEncryptionEnforcementResponse GetVpcResourcesBlockingEncryptionEnforcement(GetVpcResourcesBlockingEncryptionEnforcementRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetVpcResourcesBlockingEncryptionEnforcementRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetVpcResourcesBlockingEncryptionEnforcementResponseUnmarshaller.Instance;
+
+            return Invoke<GetVpcResourcesBlockingEncryptionEnforcementResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Gets information about resources in a VPC that are blocking encryption enforcement.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-encryption-controls.html">Enforce
+        /// VPC encryption in transit</a> in the <i>Amazon VPC User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetVpcResourcesBlockingEncryptionEnforcement service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetVpcResourcesBlockingEncryptionEnforcement service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetVpcResourcesBlockingEncryptionEnforcement">REST API Reference for GetVpcResourcesBlockingEncryptionEnforcement Operation</seealso>
+        public virtual Task<GetVpcResourcesBlockingEncryptionEnforcementResponse> GetVpcResourcesBlockingEncryptionEnforcementAsync(GetVpcResourcesBlockingEncryptionEnforcementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetVpcResourcesBlockingEncryptionEnforcementRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetVpcResourcesBlockingEncryptionEnforcementResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetVpcResourcesBlockingEncryptionEnforcementResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -25661,6 +26022,39 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = ListSnapshotsInRecycleBinResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListSnapshotsInRecycleBinResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  ListVolumesInRecycleBin
+
+        internal virtual ListVolumesInRecycleBinResponse ListVolumesInRecycleBin(ListVolumesInRecycleBinRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListVolumesInRecycleBinRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListVolumesInRecycleBinResponseUnmarshaller.Instance;
+
+            return Invoke<ListVolumesInRecycleBinResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists one or more volumes that are currently in the Recycle Bin.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListVolumesInRecycleBin service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListVolumesInRecycleBin service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ListVolumesInRecycleBin">REST API Reference for ListVolumesInRecycleBin Operation</seealso>
+        public virtual Task<ListVolumesInRecycleBinResponse> ListVolumesInRecycleBinAsync(ListVolumesInRecycleBinRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListVolumesInRecycleBinRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListVolumesInRecycleBinResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListVolumesInRecycleBinResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -27920,6 +28314,39 @@ namespace Amazon.EC2
         }
         #endregion
         
+        #region  ModifyTransitGatewayMeteringPolicy
+
+        internal virtual ModifyTransitGatewayMeteringPolicyResponse ModifyTransitGatewayMeteringPolicy(ModifyTransitGatewayMeteringPolicyRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ModifyTransitGatewayMeteringPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyTransitGatewayMeteringPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyTransitGatewayMeteringPolicyResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Modifies a transit gateway metering policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyTransitGatewayMeteringPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyTransitGatewayMeteringPolicy service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyTransitGatewayMeteringPolicy">REST API Reference for ModifyTransitGatewayMeteringPolicy Operation</seealso>
+        public virtual Task<ModifyTransitGatewayMeteringPolicyResponse> ModifyTransitGatewayMeteringPolicyAsync(ModifyTransitGatewayMeteringPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ModifyTransitGatewayMeteringPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyTransitGatewayMeteringPolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ModifyTransitGatewayMeteringPolicyResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  ModifyTransitGatewayPrefixListReference
 
         internal virtual ModifyTransitGatewayPrefixListReferenceResponse ModifyTransitGatewayPrefixListReference(ModifyTransitGatewayPrefixListReferenceRequest request)
@@ -28432,6 +28859,46 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = ModifyVpcBlockPublicAccessOptionsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ModifyVpcBlockPublicAccessOptionsResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  ModifyVpcEncryptionControl
+
+        internal virtual ModifyVpcEncryptionControlResponse ModifyVpcEncryptionControl(ModifyVpcEncryptionControlRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ModifyVpcEncryptionControlRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyVpcEncryptionControlResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyVpcEncryptionControlResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Modifies the encryption control configuration for a VPC. You can update the encryption
+        /// mode and exclusion settings for various gateway types and peering connections.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-encryption-controls.html">Enforce
+        /// VPC encryption in transit</a> in the <i>Amazon VPC User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyVpcEncryptionControl service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyVpcEncryptionControl service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcEncryptionControl">REST API Reference for ModifyVpcEncryptionControl Operation</seealso>
+        public virtual Task<ModifyVpcEncryptionControlResponse> ModifyVpcEncryptionControlAsync(ModifyVpcEncryptionControlRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ModifyVpcEncryptionControlRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyVpcEncryptionControlResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ModifyVpcEncryptionControlResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -31045,6 +31512,40 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = RestoreSnapshotTierResponseUnmarshaller.Instance;
 
             return InvokeAsync<RestoreSnapshotTierResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  RestoreVolumeFromRecycleBin
+
+        internal virtual RestoreVolumeFromRecycleBinResponse RestoreVolumeFromRecycleBin(RestoreVolumeFromRecycleBinRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = RestoreVolumeFromRecycleBinRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RestoreVolumeFromRecycleBinResponseUnmarshaller.Instance;
+
+            return Invoke<RestoreVolumeFromRecycleBinResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Restores a volume from the Recycle Bin. For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/recycle-bin-working-with-volumes.html#recycle-bin-restore-volumes">Restore
+        /// volumes from the Recycle Bin</a> in the <i>Amazon EBS User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RestoreVolumeFromRecycleBin service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RestoreVolumeFromRecycleBin service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RestoreVolumeFromRecycleBin">REST API Reference for RestoreVolumeFromRecycleBin Operation</seealso>
+        public virtual Task<RestoreVolumeFromRecycleBinResponse> RestoreVolumeFromRecycleBinAsync(RestoreVolumeFromRecycleBinRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = RestoreVolumeFromRecycleBinRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RestoreVolumeFromRecycleBinResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RestoreVolumeFromRecycleBinResponse>(request, options, cancellationToken);
         }
         #endregion
         

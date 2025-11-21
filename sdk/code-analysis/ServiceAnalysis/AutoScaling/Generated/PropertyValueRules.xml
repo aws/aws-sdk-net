@@ -772,6 +772,11 @@
     <max>32</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AutoScaling.Model.AutoScalingInstanceDetails.ImageId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AutoScaling.Model.AutoScalingInstanceDetails.InstanceId</property>
     <min>1</min>
     <max>19</max>
@@ -878,6 +883,11 @@
     <property>Amazon.AutoScaling.Model.Instance.HealthStatus</property>
     <min>1</min>
     <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AutoScaling.Model.Instance.ImageId</property>
+    <min>1</min>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.Instance.InstanceId</property>
@@ -1095,6 +1105,12 @@
     <property>Amazon.AutoScaling.Model.LaunchInstancesError.SubnetId</property>
     <min>1</min>
     <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AutoScaling.Model.LaunchTemplateOverrides.ImageId</property>
+    <min>5</min>
+    <max>21</max>
+    <pattern>^ami-[a-z0-9]{1,17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.LaunchTemplateOverrides.InstanceType</property>

@@ -32,7 +32,8 @@ namespace Amazon.S3.Model
     /// <summary>
     /// Container for the parameters to the PutBucketEncryption operation.
     /// This operation configures default encryption and Amazon S3 Bucket Keys for an existing
-    /// bucket. You can also block encryption types using this operation.
+    /// bucket. You can also <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_BlockedEncryptionTypes.html">block
+    /// encryption types</a> using this operation.
     /// 
     ///  <note> 
     /// <para>

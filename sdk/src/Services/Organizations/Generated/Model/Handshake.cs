@@ -30,10 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Organizations.Model
 {
     /// <summary>
-    /// Contains information that must be exchanged to securely establish a relationship between
-    /// two accounts (an <i>originator</i> and a <i>recipient</i>). For example, when a management
-    /// account (the originator) invites another account (the recipient) to join its organization,
-    /// the two accounts exchange information as a series of handshake requests and responses.
+    /// Contains details for a handshake. A handshake is the secure exchange of information
+    /// between two Amazon Web Services accounts: a sender and a recipient.
     /// 
     ///  
     /// <para>
@@ -56,28 +54,28 @@ namespace Amazon.Organizations.Model
         /// <summary>
         /// Gets and sets the property Action. 
         /// <para>
-        /// The type of handshake, indicating what action occurs when the recipient accepts the
-        /// handshake. The following handshake types are supported:
+        /// The type of handshake:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b>INVITE</b>: This type of handshake represents a request to join an organization.
-        /// It is always sent from the management account to only non-member accounts.
+        ///  <b>INVITE</b>: Handshake sent to a standalone account requesting that it to join
+        /// the sender's organization.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>ENABLE_ALL_FEATURES</b>: This type of handshake represents a request to enable
-        /// all features in an organization. It is always sent from the management account to
-        /// only <i>invited</i> member accounts. Created accounts do not receive this because
-        /// those accounts were created by the organization's management account and approval
-        /// is inferred.
+        ///  <b>ENABLE_ALL_FEATURES</b>: Handshake sent to invited member accounts to enable all
+        /// features for the organization.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>APPROVE_ALL_FEATURES</b>: This type of handshake is sent from the Organizations
-        /// service when all member accounts have approved the <c>ENABLE_ALL_FEATURES</c> invitation.
-        /// It is sent only to the management account and signals the master that it can finalize
-        /// the process to enable all features.
+        ///  <b>APPROVE_ALL_FEATURES</b>: Handshake sent to the management account when all invited
+        /// member accounts have approved to enable all features.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>TRANSFER_RESPONSIBILITY</b>: Handshake sent to another organization's management
+        /// account requesting that it designate the sender with the specified responsibilities
+        /// for recipient's organization.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -96,7 +94,7 @@ namespace Amazon.Organizations.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of a handshake.
+        /// Amazon Resource Name (ARN) for the handshake.
         /// </para>
         ///  
         /// <para>
@@ -120,9 +118,7 @@ namespace Amazon.Organizations.Model
         /// <summary>
         /// Gets and sets the property ExpirationTimestamp. 
         /// <para>
-        /// The date and time that the handshake expires. If the recipient of the handshake request
-        /// fails to respond before the specified date and time, the handshake becomes inactive
-        /// and is no longer valid.
+        /// Timestamp when the handshake expires.
         /// </para>
         /// </summary>
         public DateTime? ExpirationTimestamp
@@ -140,8 +136,7 @@ namespace Amazon.Organizations.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The unique identifier (ID) of a handshake. The originating account creates the ID
-        /// when it initiates the handshake.
+        /// ID for the handshake.
         /// </para>
         ///  
         /// <para>
@@ -165,7 +160,7 @@ namespace Amazon.Organizations.Model
         /// <summary>
         /// Gets and sets the property Parties. 
         /// <para>
-        /// Information about the two accounts that are participating in the handshake.
+        /// An array of <c>HandshakeParty</c> objects. Contains details for participant in a handshake.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -188,7 +183,7 @@ namespace Amazon.Organizations.Model
         /// <summary>
         /// Gets and sets the property RequestedTimestamp. 
         /// <para>
-        /// The date and time that the handshake request was made.
+        /// Timestamp when the handshake request was made.
         /// </para>
         /// </summary>
         public DateTime? RequestedTimestamp
@@ -206,7 +201,8 @@ namespace Amazon.Organizations.Model
         /// <summary>
         /// Gets and sets the property Resources. 
         /// <para>
-        /// Additional information that is needed to process the handshake.
+        /// An array of <c>HandshakeResource</c> objects. When needed, contains additional details
+        /// for a handshake. For example, the email address for the sender.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -229,40 +225,32 @@ namespace Amazon.Organizations.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// The current state of the handshake. Use the state to trace the flow of the handshake
-        /// through the process from its creation to its acceptance. The meaning of each of the
-        /// valid values is as follows:
+        /// Current state for the handshake.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b>REQUESTED</b>: This handshake was sent to multiple recipients (applicable to only
-        /// some handshake types) and not all recipients have responded yet. The request stays
-        /// in this state until all recipients respond.
+        ///  <b>REQUESTED</b>: Handshake awaiting a response from the recipient.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>OPEN</b>: This handshake was sent to multiple recipients (applicable to only some
-        /// policy types) and all recipients have responded, allowing the originator to complete
-        /// the handshake action.
+        ///  <b>OPEN</b>: Handshake sent to multiple recipients and all recipients have responded.
+        /// The sender can now complete the handshake action.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>CANCELED</b>: This handshake is no longer active because it was canceled by the
-        /// originating account.
+        ///  <b>CANCELED</b>: Handshake canceled by the sender.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>ACCEPTED</b>: This handshake is complete because it has been accepted by the recipient.
+        ///  <b>ACCEPTED</b>: Handshake accepted by the recipient.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>DECLINED</b>: This handshake is no longer active because it was declined by the
-        /// recipient account.
+        ///  <b>DECLINED</b>: Handshake declined by the recipient.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>EXPIRED</b>: This handshake is no longer active because the originator did not
-        /// receive a response of any kind from the recipient before the expiration time (15 days).
+        ///  <b>EXPIRED</b>: Handshake has expired.
         /// </para>
         ///  </li> </ul>
         /// </summary>
