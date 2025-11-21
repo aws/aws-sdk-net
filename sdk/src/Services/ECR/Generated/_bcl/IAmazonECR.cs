@@ -1045,6 +1045,78 @@ namespace Amazon.ECR
 
         #endregion
         
+        #region  DeleteSigningConfiguration
+
+
+        /// <summary>
+        /// Deletes the registry's signing configuration. Images pushed after deletion of the
+        /// signing configuration will no longer be automatically signed.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/managed-signing.html">Managed
+        /// signing</a> in the <i>Amazon Elastic Container Registry User Guide</i>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Deleting the signing configuration does not affect existing image signatures.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSigningConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DeleteSigningConfiguration service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.SigningConfigurationNotFoundException">
+        /// The specified signing configuration was not found. This occurs when attempting to
+        /// retrieve or delete a signing configuration that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ValidationException">
+        /// There was an exception validating this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DeleteSigningConfiguration">REST API Reference for DeleteSigningConfiguration Operation</seealso>
+        DeleteSigningConfigurationResponse DeleteSigningConfiguration(DeleteSigningConfigurationRequest request);
+
+
+
+        /// <summary>
+        /// Deletes the registry's signing configuration. Images pushed after deletion of the
+        /// signing configuration will no longer be automatically signed.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/managed-signing.html">Managed
+        /// signing</a> in the <i>Amazon Elastic Container Registry User Guide</i>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Deleting the signing configuration does not affect existing image signatures.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSigningConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteSigningConfiguration service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.SigningConfigurationNotFoundException">
+        /// The specified signing configuration was not found. This occurs when attempting to
+        /// retrieve or delete a signing configuration that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ValidationException">
+        /// There was an exception validating this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DeleteSigningConfiguration">REST API Reference for DeleteSigningConfiguration Operation</seealso>
+        Task<DeleteSigningConfigurationResponse> DeleteSigningConfigurationAsync(DeleteSigningConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeregisterPullTimeUpdateExclusion
 
 
@@ -1324,6 +1396,80 @@ namespace Amazon.ECR
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DescribeImageScanFindings">REST API Reference for DescribeImageScanFindings Operation</seealso>
         Task<DescribeImageScanFindingsResponse> DescribeImageScanFindingsAsync(DescribeImageScanFindingsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeImageSigningStatus
+
+
+        /// <summary>
+        /// Returns the signing status for a specified image. If the image matched signing rules
+        /// that reference different signing profiles, a status is returned for each profile.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/managed-signing.html">Managed
+        /// signing</a> in the <i>Amazon Elastic Container Registry User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeImageSigningStatus service method.</param>
+        /// 
+        /// <returns>The response from the DescribeImageSigningStatus service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.ImageNotFoundException">
+        /// The image requested does not exist in the specified repository.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.RepositoryNotFoundException">
+        /// The specified repository could not be found. Check the spelling of the specified repository
+        /// and ensure that you are performing operations on the correct registry.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ValidationException">
+        /// There was an exception validating this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DescribeImageSigningStatus">REST API Reference for DescribeImageSigningStatus Operation</seealso>
+        DescribeImageSigningStatusResponse DescribeImageSigningStatus(DescribeImageSigningStatusRequest request);
+
+
+
+        /// <summary>
+        /// Returns the signing status for a specified image. If the image matched signing rules
+        /// that reference different signing profiles, a status is returned for each profile.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/managed-signing.html">Managed
+        /// signing</a> in the <i>Amazon Elastic Container Registry User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeImageSigningStatus service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeImageSigningStatus service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.ImageNotFoundException">
+        /// The image requested does not exist in the specified repository.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.RepositoryNotFoundException">
+        /// The specified repository could not be found. Check the spelling of the specified repository
+        /// and ensure that you are performing operations on the correct registry.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ValidationException">
+        /// There was an exception validating this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DescribeImageSigningStatus">REST API Reference for DescribeImageSigningStatus Operation</seealso>
+        Task<DescribeImageSigningStatusResponse> DescribeImageSigningStatusAsync(DescribeImageSigningStatusRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -2004,6 +2150,74 @@ namespace Amazon.ECR
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetRepositoryPolicy">REST API Reference for GetRepositoryPolicy Operation</seealso>
         Task<GetRepositoryPolicyResponse> GetRepositoryPolicyAsync(GetRepositoryPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetSigningConfiguration
+
+
+        /// <summary>
+        /// Retrieves the registry's signing configuration, which defines rules for automatically
+        /// signing images using Amazon Web Services Signer.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/managed-signing.html">Managed
+        /// signing</a> in the <i>Amazon Elastic Container Registry User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSigningConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the GetSigningConfiguration service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.SigningConfigurationNotFoundException">
+        /// The specified signing configuration was not found. This occurs when attempting to
+        /// retrieve or delete a signing configuration that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ValidationException">
+        /// There was an exception validating this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetSigningConfiguration">REST API Reference for GetSigningConfiguration Operation</seealso>
+        GetSigningConfigurationResponse GetSigningConfiguration(GetSigningConfigurationRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves the registry's signing configuration, which defines rules for automatically
+        /// signing images using Amazon Web Services Signer.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/managed-signing.html">Managed
+        /// signing</a> in the <i>Amazon Elastic Container Registry User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSigningConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetSigningConfiguration service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.SigningConfigurationNotFoundException">
+        /// The specified signing configuration was not found. This occurs when attempting to
+        /// retrieve or delete a signing configuration that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ValidationException">
+        /// There was an exception validating this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetSigningConfiguration">REST API Reference for GetSigningConfiguration Operation</seealso>
+        Task<GetSigningConfigurationResponse> GetSigningConfigurationAsync(GetSigningConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -2868,6 +3082,80 @@ namespace Amazon.ECR
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutReplicationConfiguration">REST API Reference for PutReplicationConfiguration Operation</seealso>
         Task<PutReplicationConfigurationResponse> PutReplicationConfigurationAsync(PutReplicationConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  PutSigningConfiguration
+
+
+        /// <summary>
+        /// Creates or updates the registry's signing configuration, which defines rules for automatically
+        /// signing images with Amazon Web Services Signer.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/managed-signing.html">Managed
+        /// signing</a> in the <i>Amazon Elastic Container Registry User Guide</i>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// To successfully generate a signature, the IAM principal pushing images must have permission
+        /// to sign payloads with the Amazon Web Services Signer signing profile referenced in
+        /// the signing configuration.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutSigningConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the PutSigningConfiguration service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ValidationException">
+        /// There was an exception validating this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutSigningConfiguration">REST API Reference for PutSigningConfiguration Operation</seealso>
+        PutSigningConfigurationResponse PutSigningConfiguration(PutSigningConfigurationRequest request);
+
+
+
+        /// <summary>
+        /// Creates or updates the registry's signing configuration, which defines rules for automatically
+        /// signing images with Amazon Web Services Signer.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/managed-signing.html">Managed
+        /// signing</a> in the <i>Amazon Elastic Container Registry User Guide</i>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// To successfully generate a signature, the IAM principal pushing images must have permission
+        /// to sign payloads with the Amazon Web Services Signer signing profile referenced in
+        /// the signing configuration.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutSigningConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutSigningConfiguration service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ValidationException">
+        /// There was an exception validating this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutSigningConfiguration">REST API Reference for PutSigningConfiguration Operation</seealso>
+        Task<PutSigningConfigurationResponse> PutSigningConfigurationAsync(PutSigningConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
