@@ -32,7 +32,7 @@ namespace Amazon.AppIntegrationsService
     public partial class AmazonAppIntegrationsServiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("AppIntegrations", "3.7.502.13");
+            InternalSDKUtils.BuildUserAgentString("AppIntegrations", "3.7.502.14");
 
         private string _userAgent = UserAgentString;
         ///<summary>
