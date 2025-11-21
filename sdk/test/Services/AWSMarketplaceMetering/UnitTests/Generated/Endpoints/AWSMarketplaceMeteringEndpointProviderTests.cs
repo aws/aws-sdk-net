@@ -218,7 +218,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
             var endpoint = new AmazonAWSMarketplaceMeteringEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://metering.marketplace.eusc-de-east-1.amazonaws.eu", endpoint.URL);
+            Assert.AreEqual("https://metering-marketplace.eusc-de-east-1.amazonaws.eu", endpoint.URL);
         }
 
         [TestMethod]
