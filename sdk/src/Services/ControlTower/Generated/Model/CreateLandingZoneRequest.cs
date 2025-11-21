@@ -50,7 +50,6 @@ namespace Amazon.ControlTower.Model
         /// your landing zone</a>. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public Amazon.Runtime.Documents.Document Manifest
         {
             get { return this._manifest; }
