@@ -223,6 +223,12 @@ namespace Amazon.SimpleEmailV2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <c>AWS_SES_CA_WEST_1</c> – Indicates that DKIM was configured for the identity by
+        /// replicating signing attributes from a parent identity in Canada (Calgary) region using
+        /// Deterministic Easy-DKIM (DEED). 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <c>AWS_SES_AP_SOUTHEAST_1</c> – Indicates that DKIM was configured for the identity
         /// by replicating signing attributes from a parent identity in Asia Pacific (Singapore)
         /// region using Deterministic Easy-DKIM (DEED). 
@@ -237,6 +243,12 @@ namespace Amazon.SimpleEmailV2.Model
         /// <para>
         ///  <c>AWS_SES_AP_SOUTHEAST_3</c> – Indicates that DKIM was configured for the identity
         /// by replicating signing attributes from a parent identity in Asia Pacific (Jakarta)
+        /// region using Deterministic Easy-DKIM (DEED). 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AWS_SES_AP_SOUTHEAST_5</c> – Indicates that DKIM was configured for the identity
+        /// by replicating signing attributes from a parent identity in Asia Pacific (Malaysia)
         /// region using Deterministic Easy-DKIM (DEED). 
         /// </para>
         ///  </li> <li> 
