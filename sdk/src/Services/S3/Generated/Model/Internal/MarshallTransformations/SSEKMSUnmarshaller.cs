@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -12,67 +12,78 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the s3-2006-03-01.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.S3.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    ///   SSEKMS Unmarshaller
-    /// </summary>
-    public class SSEKMSUnmarshaller : IXmlUnmarshaller<SSEKMS, XmlUnmarshallerContext>
+    /// Response Unmarshaller for SSEKMS Object
+    /// </summary>  
+    public partial class SSEKMSUnmarshaller : IXmlUnmarshaller<SSEKMS, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
-        /// </summary>
+        /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
         public SSEKMS Unmarshall(XmlUnmarshallerContext context)
         {
-            SSEKMS condition = new SSEKMS();
+            SSEKMS unmarshalledObject = new SSEKMS();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
-
-            if (context.IsStartOfDocument)
-                targetDepth += 2;
-
+            
+            if (context.IsStartOfDocument) 
+               targetDepth += 2;
+            
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
                     if (context.TestExpression("KeyId", targetDepth))
                     {
-                        condition.KeyId = StringUnmarshaller.GetInstance().Unmarshall(context);
-
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.KeyId = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return condition;
+                    return unmarshalledObject;
                 }
-            }
-
-
-
-            return condition;
+            }          
+            return unmarshalledObject;
         }
 
-        private static SSEKMSUnmarshaller _instance;
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, SSEKMS unmarshalledObject, int targetDepth);
+
+        private static SSEKMSUnmarshaller _instance = new SSEKMSUnmarshaller();        
 
         /// <summary>
-        /// Singleton for the unmarshaller
-        /// </summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static SSEKMSUnmarshaller Instance
         {
             get
             {
-                if (_instance == null)
-                {
-                    _instance = new SSEKMSUnmarshaller();
-                }
                 return _instance;
             }
         }
