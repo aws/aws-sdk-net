@@ -4736,6 +4736,40 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  CreateInterruptibleCapacityReservationAllocation
+
+
+        /// <summary>
+        /// Creates an interruptible Capacity Reservation by specifying the number of unused
+        /// instances you want to allocate from your source reservation. This helps you make unused
+        /// capacity available for other workloads within your account while maintaining control
+        /// to reclaim it.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateInterruptibleCapacityReservationAllocation service method.</param>
+        /// 
+        /// <returns>The response from the CreateInterruptibleCapacityReservationAllocation service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateInterruptibleCapacityReservationAllocation">REST API Reference for CreateInterruptibleCapacityReservationAllocation Operation</seealso>
+        CreateInterruptibleCapacityReservationAllocationResponse CreateInterruptibleCapacityReservationAllocation(CreateInterruptibleCapacityReservationAllocationRequest request);
+
+
+
+        /// <summary>
+        /// Creates an interruptible Capacity Reservation by specifying the number of unused
+        /// instances you want to allocate from your source reservation. This helps you make unused
+        /// capacity available for other workloads within your account while maintaining control
+        /// to reclaim it.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateInterruptibleCapacityReservationAllocation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateInterruptibleCapacityReservationAllocation service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateInterruptibleCapacityReservationAllocation">REST API Reference for CreateInterruptibleCapacityReservationAllocation Operation</seealso>
+        Task<CreateInterruptibleCapacityReservationAllocationResponse> CreateInterruptibleCapacityReservationAllocationAsync(CreateInterruptibleCapacityReservationAllocationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  CreateIpam
 
 
@@ -15225,7 +15259,8 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Describes the specified attribute of the specified instance. You can specify only
-        /// one attribute at a time.
+        /// one attribute at a time. Available attributes include SQL license exemption configuration
+        /// for instances registered with the SQL LE service.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeInstanceAttribute service method.</param>
         /// 
@@ -15237,7 +15272,8 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Describes the specified attribute of the specified instance. You can specify only
-        /// one attribute at a time.
+        /// one attribute at a time. Available attributes include SQL license exemption configuration
+        /// for instances registered with the SQL LE service.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeInstanceAttribute service method.</param>
         /// <param name="cancellationToken">
@@ -15573,6 +15609,12 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
+        /// The response includes SQL license exemption status information for instances registered
+        /// with the SQL LE service, providing visibility into license exemption configuration
+        /// and status.
+        /// </para>
+        ///  
+        /// <para>
         /// If you specify an instance ID that is not valid, an error is returned. If you specify
         /// an instance that you do not own, it is not included in the output.
         /// </para>
@@ -15625,6 +15667,12 @@ namespace Amazon.EC2
         /// the output includes information for all instances, which can affect performance. We
         /// recommend that you use pagination to ensure that the operation returns quickly and
         /// successfully.
+        /// </para>
+        ///  
+        /// <para>
+        /// The response includes SQL license exemption status information for instances registered
+        /// with the SQL LE service, providing visibility into license exemption configuration
+        /// and status.
         /// </para>
         ///  
         /// <para>
@@ -15684,6 +15732,12 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
+        /// The response includes SQL license exemption status information for instances registered
+        /// with the SQL LE service, providing visibility into license exemption configuration
+        /// and status.
+        /// </para>
+        ///  
+        /// <para>
         /// If you specify an instance ID that is not valid, an error is returned. If you specify
         /// an instance that you do not own, it is not included in the output.
         /// </para>
@@ -15740,6 +15794,12 @@ namespace Amazon.EC2
         /// the output includes information for all instances, which can affect performance. We
         /// recommend that you use pagination to ensure that the operation returns quickly and
         /// successfully.
+        /// </para>
+        ///  
+        /// <para>
+        /// The response includes SQL license exemption status information for instances registered
+        /// with the SQL LE service, providing visibility into license exemption configuration
+        /// and status.
         /// </para>
         ///  
         /// <para>
@@ -15881,6 +15941,12 @@ namespace Amazon.EC2
         /// them through their termination. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
         /// lifecycle</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>SQL license exemption monitoring</b> - For instances registered with the SQL LE
+        /// service, status includes SQL license exemption monitoring health and processing status
+        /// to provide operational visibility into license exemption functionality.
+        /// </para>
         ///  </li> </ul> 
         /// <para>
         /// The Amazon EC2 API follows an eventual consistency model. This means that the result
@@ -15930,6 +15996,12 @@ namespace Amazon.EC2
         ///  <b>Instance state</b> - You can manage your instances from the moment you launch
         /// them through their termination. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
         /// lifecycle</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>SQL license exemption monitoring</b> - For instances registered with the SQL LE
+        /// service, status includes SQL license exemption monitoring health and processing status
+        /// to provide operational visibility into license exemption functionality.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -15981,6 +16053,12 @@ namespace Amazon.EC2
         ///  <b>Instance state</b> - You can manage your instances from the moment you launch
         /// them through their termination. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
         /// lifecycle</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>SQL license exemption monitoring</b> - For instances registered with the SQL LE
+        /// service, status includes SQL license exemption monitoring health and processing status
+        /// to provide operational visibility into license exemption functionality.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -16035,6 +16113,12 @@ namespace Amazon.EC2
         ///  <b>Instance state</b> - You can manage your instances from the moment you launch
         /// them through their termination. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
         /// lifecycle</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>SQL license exemption monitoring</b> - For instances registered with the SQL LE
+        /// service, status includes SQL license exemption monitoring health and processing status
+        /// to provide operational visibility into license exemption functionality.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -36099,6 +36183,36 @@ namespace Amazon.EC2
         /// <returns>The response from the UpdateCapacityManagerOrganizationsAccess service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UpdateCapacityManagerOrganizationsAccess">REST API Reference for UpdateCapacityManagerOrganizationsAccess Operation</seealso>
         Task<UpdateCapacityManagerOrganizationsAccessResponse> UpdateCapacityManagerOrganizationsAccessAsync(UpdateCapacityManagerOrganizationsAccessRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateInterruptibleCapacityReservationAllocation
+
+
+        /// <summary>
+        /// Modifies the number of instances allocated to an interruptible reservation, allowing
+        /// you to add more capacity or reclaim capacity to your source Capacity Reservation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateInterruptibleCapacityReservationAllocation service method.</param>
+        /// 
+        /// <returns>The response from the UpdateInterruptibleCapacityReservationAllocation service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UpdateInterruptibleCapacityReservationAllocation">REST API Reference for UpdateInterruptibleCapacityReservationAllocation Operation</seealso>
+        UpdateInterruptibleCapacityReservationAllocationResponse UpdateInterruptibleCapacityReservationAllocation(UpdateInterruptibleCapacityReservationAllocationRequest request);
+
+
+
+        /// <summary>
+        /// Modifies the number of instances allocated to an interruptible reservation, allowing
+        /// you to add more capacity or reclaim capacity to your source Capacity Reservation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateInterruptibleCapacityReservationAllocation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateInterruptibleCapacityReservationAllocation service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UpdateInterruptibleCapacityReservationAllocation">REST API Reference for UpdateInterruptibleCapacityReservationAllocation Operation</seealso>
+        Task<UpdateInterruptibleCapacityReservationAllocationResponse> UpdateInterruptibleCapacityReservationAllocationAsync(UpdateInterruptibleCapacityReservationAllocationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

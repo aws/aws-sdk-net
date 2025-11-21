@@ -38,6 +38,9 @@ namespace Amazon.EC2.Model
         private string _capacityReservationId;
         private string _instanceType;
         private List<InstanceUsage> _instanceUsages = AWSConfigs.InitializeCollections ? new List<InstanceUsage>() : null;
+        private bool? _interruptible;
+        private InterruptibleCapacityAllocation _interruptibleCapacityAllocation;
+        private InterruptionInfo _interruptionInfo;
         private string _nextToken;
         private CapacityReservationState _state;
         private int? _totalInstanceCount;
@@ -113,6 +116,63 @@ namespace Amazon.EC2.Model
         internal bool IsSetInstanceUsages()
         {
             return this._instanceUsages != null && (this._instanceUsages.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Interruptible. 
+        /// <para>
+        ///  Indicates whether the Capacity Reservation is interruptible, meaning instances may
+        /// be terminated when the owner reclaims capacity. 
+        /// </para>
+        /// </summary>
+        public bool Interruptible
+        {
+            get { return this._interruptible.GetValueOrDefault(); }
+            set { this._interruptible = value; }
+        }
+
+        // Check to see if Interruptible property is set
+        internal bool IsSetInterruptible()
+        {
+            return this._interruptible.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property InterruptibleCapacityAllocation. 
+        /// <para>
+        ///  Information about the capacity allocated to the interruptible Capacity Reservation,
+        /// including instance counts and allocation status. 
+        /// </para>
+        /// </summary>
+        public InterruptibleCapacityAllocation InterruptibleCapacityAllocation
+        {
+            get { return this._interruptibleCapacityAllocation; }
+            set { this._interruptibleCapacityAllocation = value; }
+        }
+
+        // Check to see if InterruptibleCapacityAllocation property is set
+        internal bool IsSetInterruptibleCapacityAllocation()
+        {
+            return this._interruptibleCapacityAllocation != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InterruptionInfo. 
+        /// <para>
+        ///  Details about the interruption configuration and source reservation for interruptible
+        /// Capacity Reservations. 
+        /// </para>
+        /// </summary>
+        public InterruptionInfo InterruptionInfo
+        {
+            get { return this._interruptionInfo; }
+            set { this._interruptionInfo = value; }
+        }
+
+        // Check to see if InterruptionInfo property is set
+        internal bool IsSetInterruptionInfo()
+        {
+            return this._interruptionInfo != null;
         }
 
         /// <summary>

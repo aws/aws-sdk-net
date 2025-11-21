@@ -9353,6 +9353,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceLifecycleType CapacityBlock = new InstanceLifecycleType("capacity-block");
         /// <summary>
+        /// Constant InterruptibleCapacityReservation for InstanceLifecycleType
+        /// </summary>
+        public static readonly InstanceLifecycleType InterruptibleCapacityReservation = new InstanceLifecycleType("interruptible-capacity-reservation");
+        /// <summary>
         /// Constant Scheduled for InstanceLifecycleType
         /// </summary>
         public static readonly InstanceLifecycleType Scheduled = new InstanceLifecycleType("scheduled");
@@ -14449,6 +14453,118 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type InterruptibleCapacityReservationAllocationStatus.
+    /// </summary>
+    public class InterruptibleCapacityReservationAllocationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Active for InterruptibleCapacityReservationAllocationStatus
+        /// </summary>
+        public static readonly InterruptibleCapacityReservationAllocationStatus Active = new InterruptibleCapacityReservationAllocationStatus("active");
+        /// <summary>
+        /// Constant Canceled for InterruptibleCapacityReservationAllocationStatus
+        /// </summary>
+        public static readonly InterruptibleCapacityReservationAllocationStatus Canceled = new InterruptibleCapacityReservationAllocationStatus("canceled");
+        /// <summary>
+        /// Constant Canceling for InterruptibleCapacityReservationAllocationStatus
+        /// </summary>
+        public static readonly InterruptibleCapacityReservationAllocationStatus Canceling = new InterruptibleCapacityReservationAllocationStatus("canceling");
+        /// <summary>
+        /// Constant Failed for InterruptibleCapacityReservationAllocationStatus
+        /// </summary>
+        public static readonly InterruptibleCapacityReservationAllocationStatus Failed = new InterruptibleCapacityReservationAllocationStatus("failed");
+        /// <summary>
+        /// Constant Pending for InterruptibleCapacityReservationAllocationStatus
+        /// </summary>
+        public static readonly InterruptibleCapacityReservationAllocationStatus Pending = new InterruptibleCapacityReservationAllocationStatus("pending");
+        /// <summary>
+        /// Constant Updating for InterruptibleCapacityReservationAllocationStatus
+        /// </summary>
+        public static readonly InterruptibleCapacityReservationAllocationStatus Updating = new InterruptibleCapacityReservationAllocationStatus("updating");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InterruptibleCapacityReservationAllocationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InterruptibleCapacityReservationAllocationStatus FindValue(string value)
+        {
+            return FindValue<InterruptibleCapacityReservationAllocationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InterruptibleCapacityReservationAllocationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type InterruptionType.
+    /// </summary>
+    public class InterruptionType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Adhoc for InterruptionType
+        /// </summary>
+        public static readonly InterruptionType Adhoc = new InterruptionType("adhoc");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InterruptionType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InterruptionType FindValue(string value)
+        {
+            return FindValue<InterruptionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InterruptionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type IpAddressType.
     /// </summary>
     public class IpAddressType : ConstantClass
@@ -18362,6 +18478,10 @@ namespace Amazon.EC2
         /// Constant CapacityBlock for MarketType
         /// </summary>
         public static readonly MarketType CapacityBlock = new MarketType("capacity-block");
+        /// <summary>
+        /// Constant InterruptibleCapacityReservation for MarketType
+        /// </summary>
+        public static readonly MarketType InterruptibleCapacityReservation = new MarketType("interruptible-capacity-reservation");
         /// <summary>
         /// Constant Spot for MarketType
         /// </summary>

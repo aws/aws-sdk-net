@@ -168,6 +168,24 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.InstanceType = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("interruptible", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.Interruptible = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("interruptibleCapacityAllocation", targetDepth))
+                    {
+                        var unmarshaller = InterruptibleCapacityAllocationUnmarshaller.Instance;
+                        unmarshalledObject.InterruptibleCapacityAllocation = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("interruptionInfo", targetDepth))
+                    {
+                        var unmarshaller = InterruptionInfoUnmarshaller.Instance;
+                        unmarshalledObject.InterruptionInfo = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("outpostArn", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

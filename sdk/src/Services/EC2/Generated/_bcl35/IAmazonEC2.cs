@@ -4599,6 +4599,49 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  CreateInterruptibleCapacityReservationAllocation
+
+
+        /// <summary>
+        /// Creates an interruptible Capacity Reservation by specifying the number of unused
+        /// instances you want to allocate from your source reservation. This helps you make unused
+        /// capacity available for other workloads within your account while maintaining control
+        /// to reclaim it.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateInterruptibleCapacityReservationAllocation service method.</param>
+        /// 
+        /// <returns>The response from the CreateInterruptibleCapacityReservationAllocation service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateInterruptibleCapacityReservationAllocation">REST API Reference for CreateInterruptibleCapacityReservationAllocation Operation</seealso>
+        CreateInterruptibleCapacityReservationAllocationResponse CreateInterruptibleCapacityReservationAllocation(CreateInterruptibleCapacityReservationAllocationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateInterruptibleCapacityReservationAllocation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateInterruptibleCapacityReservationAllocation operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateInterruptibleCapacityReservationAllocation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateInterruptibleCapacityReservationAllocation">REST API Reference for CreateInterruptibleCapacityReservationAllocation Operation</seealso>
+        IAsyncResult BeginCreateInterruptibleCapacityReservationAllocation(CreateInterruptibleCapacityReservationAllocationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateInterruptibleCapacityReservationAllocation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateInterruptibleCapacityReservationAllocation.</param>
+        /// 
+        /// <returns>Returns a  CreateInterruptibleCapacityReservationAllocationResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateInterruptibleCapacityReservationAllocation">REST API Reference for CreateInterruptibleCapacityReservationAllocation Operation</seealso>
+        CreateInterruptibleCapacityReservationAllocationResponse EndCreateInterruptibleCapacityReservationAllocation(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateIpam
 
 
@@ -15827,7 +15870,8 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Describes the specified attribute of the specified instance. You can specify only
-        /// one attribute at a time.
+        /// one attribute at a time. Available attributes include SQL license exemption configuration
+        /// for instances registered with the SQL LE service.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeInstanceAttribute service method.</param>
         /// 
@@ -16163,6 +16207,12 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
+        /// The response includes SQL license exemption status information for instances registered
+        /// with the SQL LE service, providing visibility into license exemption configuration
+        /// and status.
+        /// </para>
+        ///  
+        /// <para>
         /// If you specify an instance ID that is not valid, an error is returned. If you specify
         /// an instance that you do not own, it is not included in the output.
         /// </para>
@@ -16214,6 +16264,12 @@ namespace Amazon.EC2
         /// the output includes information for all instances, which can affect performance. We
         /// recommend that you use pagination to ensure that the operation returns quickly and
         /// successfully.
+        /// </para>
+        ///  
+        /// <para>
+        /// The response includes SQL license exemption status information for instances registered
+        /// with the SQL LE service, providing visibility into license exemption configuration
+        /// and status.
         /// </para>
         ///  
         /// <para>
@@ -16400,6 +16456,12 @@ namespace Amazon.EC2
         /// them through their termination. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
         /// lifecycle</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>SQL license exemption monitoring</b> - For instances registered with the SQL LE
+        /// service, status includes SQL license exemption monitoring health and processing status
+        /// to provide operational visibility into license exemption functionality.
+        /// </para>
         ///  </li> </ul> 
         /// <para>
         /// The Amazon EC2 API follows an eventual consistency model. This means that the result
@@ -16448,6 +16510,12 @@ namespace Amazon.EC2
         ///  <b>Instance state</b> - You can manage your instances from the moment you launch
         /// them through their termination. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
         /// lifecycle</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>SQL license exemption monitoring</b> - For instances registered with the SQL LE
+        /// service, status includes SQL license exemption monitoring health and processing status
+        /// to provide operational visibility into license exemption functionality.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -37323,6 +37391,47 @@ namespace Amazon.EC2
         /// <returns>Returns a  UpdateCapacityManagerOrganizationsAccessResult from EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UpdateCapacityManagerOrganizationsAccess">REST API Reference for UpdateCapacityManagerOrganizationsAccess Operation</seealso>
         UpdateCapacityManagerOrganizationsAccessResponse EndUpdateCapacityManagerOrganizationsAccess(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateInterruptibleCapacityReservationAllocation
+
+
+        /// <summary>
+        /// Modifies the number of instances allocated to an interruptible reservation, allowing
+        /// you to add more capacity or reclaim capacity to your source Capacity Reservation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateInterruptibleCapacityReservationAllocation service method.</param>
+        /// 
+        /// <returns>The response from the UpdateInterruptibleCapacityReservationAllocation service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UpdateInterruptibleCapacityReservationAllocation">REST API Reference for UpdateInterruptibleCapacityReservationAllocation Operation</seealso>
+        UpdateInterruptibleCapacityReservationAllocationResponse UpdateInterruptibleCapacityReservationAllocation(UpdateInterruptibleCapacityReservationAllocationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateInterruptibleCapacityReservationAllocation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateInterruptibleCapacityReservationAllocation operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateInterruptibleCapacityReservationAllocation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UpdateInterruptibleCapacityReservationAllocation">REST API Reference for UpdateInterruptibleCapacityReservationAllocation Operation</seealso>
+        IAsyncResult BeginUpdateInterruptibleCapacityReservationAllocation(UpdateInterruptibleCapacityReservationAllocationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateInterruptibleCapacityReservationAllocation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateInterruptibleCapacityReservationAllocation.</param>
+        /// 
+        /// <returns>Returns a  UpdateInterruptibleCapacityReservationAllocationResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UpdateInterruptibleCapacityReservationAllocation">REST API Reference for UpdateInterruptibleCapacityReservationAllocation Operation</seealso>
+        UpdateInterruptibleCapacityReservationAllocationResponse EndUpdateInterruptibleCapacityReservationAllocation(IAsyncResult asyncResult);
 
         #endregion
         
